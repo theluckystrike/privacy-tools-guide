@@ -46,6 +46,13 @@ The CAG holds primary enforcement authority for CCPA violations. Unlike some pri
 
 Before filing, ensure your complaint involves a for-profit business that collects California residents' personal information and meets one of these thresholds: annual gross revenue exceeding $25 million, buys or sells personal information of 100,000+ consumers, or derives 50% or more of annual revenue from selling personal information.
 
+## Table of Contents
+
+- [Prerequisites for Filing a Complaint](#prerequisites-for-filing-a-complaint)
+- [Practical Compliance Checklist for Organizations](#practical-compliance-checklist-for-organizations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites for Filing a Complaint
 
 Gather documentation before submitting your complaint. The CAG needs specific evidence to evaluate your case effectively.

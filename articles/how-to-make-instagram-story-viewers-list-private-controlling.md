@@ -42,6 +42,13 @@ When you watch a story, your username becomes visible to the story creator.
 - **The only workaround involves**: creating a secondary "lurker" account, though this approach has limitations and ethical considerations.
 - **Close Friends List**: Use the Close Friends feature strategically.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Account Segmentation Strategies](#advanced-account-segmentation-strategies)
+- [Compliance and Terms of Service](#compliance-and-terms-of-service)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

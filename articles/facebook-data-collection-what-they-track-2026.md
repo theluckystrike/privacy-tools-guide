@@ -212,6 +212,17 @@ The export process typically takes 30 days and delivers data in JSON or HTML for
 
 Understanding Facebook's data collection practices helps you make informed choices about platform usage. Review your privacy settings regularly, minimize third-party app connections, and stay aware of how your data contributes to Meta's advertising ecosystem.
 
+## Table of Contents
+
+- [Technical Deep-Dive: How Meta Pixel Works](#technical-deep-dive-how-meta-pixel-works)
+- [Analyzing Facebook's Data Requests](#analyzing-facebooks-data-requests)
+- [Data Subject Access Requests](#data-subject-access-requests)
+- [Third-Party Data Aggregation](#third-party-data-aggregation)
+- [Blocking Facebook Tracking on External Sites](#blocking-facebook-tracking-on-external-sites)
+- [Data Retention and Deletion](#data-retention-and-deletion)
+- [Regulatory Compliance Requirements](#regulatory-compliance-requirements)
+- [Developer Guidelines for Privacy-First Integration](#developer-guidelines-for-privacy-first-integration)
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

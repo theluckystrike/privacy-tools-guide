@@ -42,6 +42,17 @@ Proton Drive offers zero-knowledge encryption with strong UI and ecosystem integ
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose zero-knowledge for privacy**: assurances, server-side for compliance features, or self-hosted for complete control.
 
+## Table of Contents
+
+- [Encryption Models Explained](#encryption-models-explained)
+- [Service Comparison](#service-comparison)
+- [Detailed Service Specifications](#detailed-service-specifications)
+- [Encryption Comparison Table](#encryption-comparison-table)
+- [Decision Framework](#decision-framework)
+- [Security Considerations](#security-considerations)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Encryption Models Explained
 
 Three encryption models define the ecosystem. Client-Side Encryption (CSE) encrypts files on your device before upload — the server stores only encrypted data, protecting against server-side breaches but requiring trust in the client's implementation. Zero-Knowledge (ZK) goes further: the provider cannot decrypt your files, and even if subpoenaed they can only hand over encrypted blobs. This requires memorizing a strong master password or managing encryption keys yourself. Server-Side Encryption (SSE) has the provider encrypt files at rest while managing the keys — useful for compliance but no protection against malicious providers or compromised accounts.

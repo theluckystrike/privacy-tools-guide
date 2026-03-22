@@ -29,6 +29,18 @@ Your ISP's DNS resolver logs every website you visit, selling this data to data 
 
 It depends on your background.
 
+## Table of Contents
+
+- [How DNS Leaks Your Browsing](#how-dns-leaks-your-browsing)
+- [DNS Resolver Privacy Comparison](#dns-resolver-privacy-comparison)
+- [Detailed Analysis: Which Resolver to Use](#detailed-analysis-which-resolver-to-use)
+- [Performance Comparison: Real-World Benchmarks](#performance-comparison-real-world-benchmarks)
+- [Blocking Effectiveness](#blocking-effectiveness)
+- [Which Resolver Should You Choose?](#which-resolver-should-you-choose)
+- [Configuration Examples for All Platforms](#configuration-examples-for-all-platforms)
+- [Testing Your DNS Configuration](#testing-your-dns-configuration)
+- [Related Reading](#related-reading)
+
 ## How DNS Leaks Your Browsing
 
 When you visit google.com, your device asks a DNS resolver: "What's the IP address for google.com?" The resolver logs your IP address, the domain you requested, the time, and your device fingerprint. This data reveals:

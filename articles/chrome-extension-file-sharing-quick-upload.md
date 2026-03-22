@@ -42,6 +42,29 @@ Chrome extension file sharing tools have become essential for quickly transferri
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What is a File Sharing Chrome Extension?](#what-is-a-file-sharing-chrome-extension)
+- [Why Privacy Matters for File Sharing](#why-privacy-matters-for-file-sharing)
+- [Top Privacy-Focused File Sharing Extensions](#top-privacy-focused-file-sharing-extensions)
+- [Comparing Features and Privacy](#comparing-features-and-privacy)
+- [Quick Upload Features That Matter](#quick-upload-features-that-matter)
+- [Security Best Practices](#security-best-practices)
+- [Use Cases for Different Privacy Levels](#use-cases-for-different-privacy-levels)
+- [Installation and Setup Best Practices](#installation-and-setup-best-practices)
+- [Practical Example: Setting Up FileStash](#practical-example-setting-up-filestash)
+- [Handling Sensitive Data: Additional Layers](#handling-sensitive-data-additional-layers)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Mobile Considerations](#mobile-considerations)
+- [Regulatory Compliance](#regulatory-compliance)
+- [Building Your Own File Sharing Extension](#building-your-own-file-sharing-extension)
+- [Extension Performance Benchmarks](#extension-performance-benchmarks)
+- [Enterprise Considerations](#enterprise-considerations)
+- [Advanced Threat Model: Supply Chain](#advanced-threat-model-supply-chain)
+- [Testing Before Production](#testing-before-production)
+- [Regulatory Compliance Quick Start](#regulatory-compliance-quick-start)
+- [Incident Response](#incident-response)
+
 ## What is a File Sharing Chrome Extension?
 
 A file sharing Chrome extension enables you to upload and share files directly from your browser without needing to visit a separate file hosting website. These extensions typically integrate with cloud storage services, dedicated file sharing platforms, or create temporary peer-to-peer connections for direct transfer.

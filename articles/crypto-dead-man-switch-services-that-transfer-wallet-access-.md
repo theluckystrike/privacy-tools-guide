@@ -44,6 +44,18 @@ This guide examines how these services work, reviews available implementations, 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Crypto Dead Man Switch Services Work](#how-crypto-dead-man-switch-services-work)
+- [Implementing a Self-Hosted Dead Man Switch](#implementing-a-self-hosted-dead-man-switch)
+- [Third-Party Services Overview](#third-party-services-overview)
+- [Practical Considerations for Implementation](#practical-considerations-for-implementation)
+- [Best Practices for Production Use](#best-practices-for-production-use)
+- [Multisig as an Alternative to Dead Man Switches](#multisig-as-an-alternative-to-dead-man-switches)
+- [Testing Your Setup on Testnet](#testing-your-setup-on-testnet)
+- [Common Failure Points](#common-failure-points)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+
 ## How Crypto Dead Man Switch Services Work
 
 A crypto dead man switch monitors wallet activity and triggers a succession event if no activity occurs within a specified timeframe. The core mechanism involves three components:

@@ -30,6 +30,14 @@ This guide covers full-drive encryption, hidden volumes, keyfile setup, and cros
 - **Choose Encrypt partition in**: place if data already exists, or Create encrypted volume and format it for a blank drive 6.
 - **Set a strong passphrase**: (25+ characters) or use a keyfile 8.
 
+## Table of Contents
+
+- [What VeraCrypt Provides](#what-veracrypt-provides)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## What VeraCrypt Provides
 
 VeraCrypt creates encrypted volumes either as container files or as encrypted partitions/drives. For USB drives you have two main options:

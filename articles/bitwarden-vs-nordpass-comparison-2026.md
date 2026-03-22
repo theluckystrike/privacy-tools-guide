@@ -42,6 +42,22 @@ Choose Bitwarden if you need open-source transparency, self-hosting, extensive A
 - **However**: if you're already invested in the Nord ecosystem or prefer XChaCha20's modern cipher design, NordPass remains a solid choice.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Developer API and CLI Access](#developer-api-and-cli-access)
+- [Self-Hosting Capabilities](#self-hosting-capabilities)
+- [Open Source and Security Audits](#open-source-and-security-audits)
+- [Security Features for Power Users](#security-features-for-power-users)
+- [Pricing Comparison](#pricing-comparison)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Migration Strategies](#migration-strategies)
+- [Team Password Sharing](#team-password-sharing)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Cost of Ownership Analysis](#cost-of-ownership-analysis)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Hardware Security Key Support](#hardware-security-key-support)
+
 ## Encryption Architecture
 
 Both password managers use AES-256 encryption, but the implementation details differ significantly.

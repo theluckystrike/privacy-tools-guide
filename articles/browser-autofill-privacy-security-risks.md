@@ -42,6 +42,18 @@ Browser autofill is one of those conveniences that feels invisible until it beco
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For developers and power users who value privacy, understanding how autofill works**: and where it fails—is essential for building secure forms and protecting sensitive data.
 
+## Table of Contents
+
+- [How Browser Autofill Actually Works](#how-browser-autofill-actually-works)
+- [The Core Privacy Risks](#the-core-privacy-risks)
+- [Security Implications for Developers](#security-implications-for-developers)
+- [Mitigation Strategies for Power Users](#mitigation-strategies-for-power-users)
+- [The Passkey Alternative](#the-passkey-alternative)
+- [Testing Autofill Vulnerability](#testing-autofill-vulnerability)
+- [Implementing Zero-Trust Form Design](#implementing-zero-trust-form-design)
+- [Comparing Password Managers to Browser Autofill](#comparing-password-managers-to-browser-autofill)
+- [Regulatory Compliance for Form Builders](#regulatory-compliance-for-form-builders)
+
 ## How Browser Autofill Actually Works
 
 Modern browsers store autofill data in several places. Chrome maintains a SQLite database at `~/Library/Application Support/Google/Chrome/Default/Web Data` on macOS, containing tables for credit cards, addresses, and profile information. Firefox uses a JSON-based storage format encrypted with a master password if set, otherwise stored in plain text.

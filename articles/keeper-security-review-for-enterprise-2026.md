@@ -42,6 +42,22 @@ Conservative estimate: 50-100 person organization saves $10,000-20,000 annually 
 - **Free and basic plans**: typically get community forum support and documentation.
 - **Administrators can manage users**: enforce security policies, configure enforcement rules, and generate compliance reports without requiring technical expertise.
 
+## Table of Contents
+
+- [Enterprise Architecture Overview](#enterprise-architecture-overview)
+- [Administrative Console Features](#administrative-console-features)
+- [Secrets Management and DevOps Integration](#secrets-management-and-devops-integration)
+- [Compliance and Audit Capabilities](#compliance-and-audit-capabilities)
+- [Performance and User Experience](#performance-and-user-experience)
+- [Enterprise Pricing Considerations](#enterprise-pricing-considerations)
+- [Keeper vs. Alternative Enterprise Password Managers](#keeper-vs-alternative-enterprise-password-managers)
+- [Technical Architecture Deep Dive](#technical-architecture-deep-dive)
+- [Deployment Models and Infrastructure Considerations](#deployment-models-and-infrastructure-considerations)
+- [Pricing and ROI Analysis](#pricing-and-roi-analysis)
+- [Implementation Timeline and Change Management](#implementation-timeline-and-change-management)
+- [Integration Patterns for Common Enterprise Scenarios](#integration-patterns-for-common-enterprise-scenarios)
+- [Ongoing Management and Maintenance](#ongoing-management-and-maintenance)
+
 ## Enterprise Architecture Overview
 
 Keeper uses a zero-knowledge security architecture where encryption and decryption occur client-side. The master password never leaves the user's device, and all data is encrypted using AES-256 encryption before transmission to Keeper's cloud infrastructure. This approach ensures that even if Keeper's servers are compromised, organizational credentials remain secure.

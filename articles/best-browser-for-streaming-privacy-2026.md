@@ -42,6 +42,16 @@ Streaming platforms collect extensive user data including viewing habits, device
 - **The browser also includes**: a Tor mode for users who need additional anonymity.
 - **The best streaming browsers**: should either disable WebRTC or provide leak protection.
 
+## Table of Contents
+
+- [Understanding Streaming Privacy Risks](#understanding-streaming-privacy-risks)
+- [Browser Recommendations](#browser-recommendations)
+- [Testing Browser Privacy](#testing-browser-privacy)
+- [Additional Privacy Measures](#additional-privacy-measures)
+- [Advanced Streaming Configuration](#advanced-streaming-configuration)
+- [Making Your Choice](#making-your-choice)
+- [Monitoring Your Streaming Privacy](#monitoring-your-streaming-privacy)
+
 ## Understanding Streaming Privacy Risks
 
 When you stream content, your browser exposes multiple data points to the streaming service and its partners:

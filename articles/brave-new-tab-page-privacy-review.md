@@ -43,6 +43,25 @@ The Brave browser has positioned itself as a privacy-first alternative to Chrome
 - **The Brave browser has**: positioned itself as a privacy-first alternative to Chrome and Firefox, but its new tab page deserves closer scrutiny from developers and power users who value data sovereignty.
 - **You can examine its**: source code in the Brave repository, but the compiled version you interact with daily may differ slightly from the open-source code due to build configurations and feature flags.
 
+## Table of Contents
+
+- [Understanding Brave's New Tab Architecture](#understanding-braves-new-tab-architecture)
+- [Network Request Analysis](#network-request-analysis)
+- [Data Collection Mechanisms](#data-collection-mechanisms)
+- [Custom Tiles and Third-Party Content](#custom-tiles-and-third-party-content)
+- [The Brave News Integration](#the-brave-news-integration)
+- [Privacy-Focused Alternatives](#privacy-focused-alternatives)
+- [Inspecting Your Installation](#inspecting-your-installation)
+- [Configuration Recommendations](#configuration-recommendations)
+- [Network Monitoring Methodology](#network-monitoring-methodology)
+- [Threat Model: What NTP Data Leaks Reveal](#threat-model-what-ntp-data-leaks-reveal)
+- [Advanced Hardening Configuration](#advanced-hardening-configuration)
+- [Custom New Tab Page Implementation](#custom-new-tab-page-implementation)
+- [Privacy Comparison: Brave NTP vs Alternatives](#privacy-comparison-brave-ntp-vs-alternatives)
+- [Verification: Check Current NTP Settings](#verification-check-current-ntp-settings)
+- [Troubleshooting NTP Privacy Issues](#troubleshooting-ntp-privacy-issues)
+- [Related Reading](#related-reading)
+
 ## Understanding Brave's New Tab Architecture
 
 When you open a new tab in Brave, the browser displays a customizable dashboard that can show news, bookmarks, speed dials, and aggregated statistics. The page loads from Brave's servers and may include elements fetched from third-party sources. Understanding this architecture is essential for anyone conducting a thorough privacy review.

@@ -42,6 +42,17 @@ Managing data subject rights requests has become one of the most resource-intens
 - **When scaled across thousands**: or millions of users, manually processing these requests becomes unsustainable.
 - **The platform uses machine**: learning to identify personal data, sensitive categories, and data subjects with high accuracy.
 
+## Table of Contents
+
+- [Understanding Data Subject Rights Under GDPR](#understanding-data-subject-rights-under-gdpr)
+- [Top Data Subject Rights Automation Tools in 2026](#top-data-subject-rights-automation-tools-in-2026)
+- [Implementing DSAR Automation: A Practical Approach](#implementing-dsar-automation-a-practical-approach)
+- [Code Example: Basic DSAR Request Handler](#code-example-basic-dsar-request-handler)
+- [Advanced Implementation: Custom DSAR Workflow](#advanced-implementation-custom-dsar-workflow)
+- [DSAR Compliance Verification Script](#dsar-compliance-verification-script)
+- [Tool Feature Comparison Matrix](#tool-feature-comparison-matrix)
+- [Regulatory Context: GDPR vs CCPA vs DPDP](#regulatory-context-gdpr-vs-ccpa-vs-dpdp)
+
 ## Understanding Data Subject Rights Under GDPR
 
 The GDPR establishes eight distinct rights for data subjects that organizations must honor within strict timelines. The right of access allows individuals to obtain confirmation of whether their personal data is being processed and to receive a copy of that data. The right to rectification enables subjects to correct inaccurate personal data. The right to erasure, often called the "right to be forgotten," requires organizations to delete personal data under specific circumstances. The right to data portability allows individuals to receive their data in a structured, commonly used format and transfer it to another controller.

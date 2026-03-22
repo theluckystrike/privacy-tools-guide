@@ -27,6 +27,23 @@ Mullvad VPN and Private Internet Access (PIA) reliably bypass Globoplay's geo-re
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Accounts created from unusual**: locations trigger flags: ```bash # Recommended approach: # 1.
 
+## Table of Contents
+
+- [How Globoplay Detects VPN Connections](#how-globoplay-detects-vpn-connections)
+- [VPN Configuration Strategy for Globoplay Access](#vpn-configuration-strategy-for-globoplay-access)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Alternative Approaches](#alternative-approaches)
+- [Security Considerations](#security-considerations)
+- [Complete VPN Provider Comparison for Globoplay](#complete-vpn-provider-comparison-for-globoplay)
+- [Optimization for Brazilian Streaming Quality](#optimization-for-brazilian-streaming-quality)
+- [Account Management Strategy](#account-management-strategy)
+- [Alternative Streaming Methods](#alternative-streaming-methods)
+- [Detecting Blocking Before Account Issues](#detecting-blocking-before-account-issues)
+- [Account Recovery After Blocking](#account-recovery-after-blocking)
+- [Regulatory Considerations](#regulatory-considerations)
+- [Performance Benchmarking Over Time](#performance-benchmarking-over-time)
+
 ## How Globoplay Detects VPN Connections
 
 Streaming services employ sophisticated detection mechanisms to enforce geographic restrictions. Globoplay uses multiple detection vectors that you need to understand before building an effective workaround.

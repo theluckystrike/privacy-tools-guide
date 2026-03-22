@@ -38,6 +38,16 @@ Consumer router firmware often logs network traffic, phones home to manufacturer
 - **Hardware cost**: $70-200 for suitable routers.
 - **Hardware cost**: $100-200.
 
+## Table of Contents
+
+- [Why Router Privacy Matters](#why-router-privacy-matters)
+- [Router Firmware Comparison](#router-firmware-comparison)
+- [Router Firmware Selection Guide](#router-firmware-selection-guide)
+- [Installation Checklist](#installation-checklist)
+- [Privacy Best Practices After Installation](#privacy-best-practices-after-installation)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
+
 ## Why Router Privacy Matters
 
 Your router sees all network traffic from your devices: websites visited, DNS queries, connected devices, bandwidth usage. Many consumer routers:

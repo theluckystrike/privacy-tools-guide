@@ -46,6 +46,21 @@ Google processes 8.5 billion searches daily and builds profiles on users through
 Alignment with privacy claims: Good.
 - **Google processes 8.5 billion**: searches daily and builds profiles on users through search history, location data, and behavioral tracking.
 
+## Table of Contents
+
+- [Google's Privacy Model vs. Alternatives](#googles-privacy-model-vs-alternatives)
+- [Top Privacy Search Engines Comparison](#top-privacy-search-engines-comparison)
+- [DuckDuckGo: The Mainstream Privacy Choice](#duckduckgo-the-mainstream-privacy-choice)
+- [Brave Search: The Independent Crawler](#brave-search-the-independent-crawler)
+- [Startpage: The Proxied Google Alternative](#startpage-the-proxied-google-alternative)
+- [Kagi: The Premium Search Engine](#kagi-the-premium-search-engine)
+- [SearXNG: The Self-Hosted Option](#searxng-the-self-hosted-option)
+- [Comparison Table: Privacy Implementation](#comparison-table-privacy-implementation)
+- [Practical Selection Guide](#practical-selection-guide)
+- [Switching Process](#switching-process)
+- [Transitioning from Google](#transitioning-from-google)
+- [Cost Analysis](#cost-analysis)
+
 ## Google's Privacy Model vs. Alternatives
 
 **Google Search tracking:**

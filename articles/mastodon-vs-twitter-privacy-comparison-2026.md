@@ -46,6 +46,16 @@ For power users concerned about privacy:
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **This comparison examines the**: technical privacy differences that matter to developers and power users.
 
+## Table of Contents
+
+- [Architectural Differences](#architectural-differences)
+- [Quick Comparison](#quick-comparison)
+- [Data Collection Analysis](#data-collection-analysis)
+- [Account Migration and Portability](#account-migration-and-portability)
+- [API Access and Developer Considerations](#api-access-and-developer-considerations)
+- [Content Moderation and Control](#content-moderation-and-control)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Architectural Differences
 
 ### Centralized vs Decentralized

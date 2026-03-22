@@ -44,6 +44,14 @@ The Apple Digital Legacy Program allows you to designate trusted contacts who ca
 - **Choose to select from**: Contacts or create a message Select someone from your contacts or enter their details manually.
 - **User should update or**: designate new contact.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for Power Users](#best-practices-for-power-users)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Technical Integration for Enterprise Deployments](#technical-integration-for-enterprise-deployments)
+- [Comparison with Other Digital Legacy Services](#comparison-with-other-digital-legacy-services)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

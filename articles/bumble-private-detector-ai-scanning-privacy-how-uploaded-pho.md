@@ -26,6 +26,17 @@ Bumble's Private Detector analyzes uploaded photos in real-time using computer v
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is Bumble's Private Detector?](#what-is-bumbles-private-detector)
+- [How Photo Upload Analysis Works](#how-photo-upload-analysis-works)
+- [Privacy Considerations for Uploaded Photos](#privacy-considerations-for-uploaded-photos)
+- [Developer Considerations for Similar Systems](#developer-considerations-for-similar-systems)
+- [What Users Should Know](#what-users-should-know)
+- [Building Privacy-Preserving Image Moderation Systems](#building-privacy-preserving-image-moderation-systems)
+- [User Recourse for Data Concerns](#user-recourse-for-data-concerns)
+- [Transparency and Accountability](#transparency-and-accountability)
+
 ## What Is Bumble's Private Detector?
 
 Bumble's Private Detector is an AI-powered image analysis system designed to automatically detect and flag inappropriate images before they reach other users. Introduced as a proactive privacy measure, this system analyzes uploaded photos in real-time to identify explicit content, providing an additional layer of safety beyond user reporting.

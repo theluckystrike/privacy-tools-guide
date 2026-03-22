@@ -42,6 +42,16 @@ Building a compliant cookie consent solution from scratch takes significant time
 - **Lightweight libraries such as Klaro**: CookieConsent, and Osano offer open-source or affordably-priced solutions that handle the core consent mechanism without the overhead of enterprise platforms.
 - **However**: it requires ongoing subscription costs and sends user consent data to Cookiebot's servers.
 
+## Table of Contents
+
+- [Categories of Cookie Consent Solutions](#categories-of-cookie-consent-solutions)
+- [Quick Comparison](#quick-comparison)
+- [Comparison of Popular Options](#comparison-of-popular-options)
+- [Implementation Patterns by Use Case](#implementation-patterns-by-use-case)
+- [Compliance Considerations](#compliance-considerations)
+- [Performance Considerations](#performance-considerations)
+- [Making the Decision](#making-the-decision)
+
 ## Categories of Cookie Consent Solutions
 
 Cookie consent tools fall into three main categories: full-featured CMPs, lightweight consent libraries, and custom-built solutions. Each serves different needs depending on traffic volume, compliance requirements, and development resources.

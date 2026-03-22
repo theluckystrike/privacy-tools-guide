@@ -28,6 +28,24 @@ Brave Browser in 2026 is worth using if you want Chrome-level extension compatib
 - **Ad delivery**: Brave shows opt-in ads (user controls frequency)
 2.
 
+## Table of Contents
+
+- [Privacy Architecture Under the Hood](#privacy-architecture-under-the-hood)
+- [Developer Tools and Extension Compatibility](#developer-tools-and-extension-compatibility)
+- [Performance Benchmarks and Resource Usage](#performance-benchmarks-and-resource-usage)
+- [Cryptocurrency and Rewards: A Power User's Assessment](#cryptocurrency-and-rewards-a-power-users-assessment)
+- [What Falls Short](#what-falls-short)
+- [Configuration for Power Users](#configuration-for-power-users)
+- [Benchmark Comparisons: Brave vs Competitors](#benchmark-comparisons-brave-vs-competitors)
+- [Specific Workflow Optimization for Developers](#specific-workflow-optimization-for-developers)
+- [Brave Crypto and Rewards Economics](#brave-crypto-and-rewards-economics)
+- [Configuration for Maximum Privacy](#configuration-for-maximum-privacy)
+- [Container Tabs and Profile Isolation](#container-tabs-and-profile-isolation)
+- [Known Issues in 2026](#known-issues-in-2026)
+- [When NOT to Use Brave](#when-not-to-use-brave)
+- [Integration with Security Tools](#integration-with-security-tools)
+- [Verdict for Developers and Power Users](#verdict-for-developers-and-power-users)
+
 ## Privacy Architecture Under the Hood
 
 Brave's privacy claims rest on several architectural decisions. The browser blocks trackers and ads by default, using its own blocklist that incorporates EasyList and EasyPrivacy rules. For developers testing analytics implementations, this default behavior creates immediate friction—you'll need to disable shields to verify tracking code functions correctly.

@@ -40,6 +40,13 @@ Removing yourself from the internet requires a systematic approach. Most people 
 - **If you prefer a hands-on approach**: maintain a spreadsheet tracking each broker's opt-out status and renewal requirements, as some require annual re-submission.
 - **Review all services sending**: emails to your inbox and systematically close unused accounts.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Data Breach Sanitization](#advanced-data-breach-sanitization)
+- [Website Scrubbing Services Comparison](#website-scrubbing-services-comparison)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

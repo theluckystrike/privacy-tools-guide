@@ -46,6 +46,13 @@ Typical performance impact ranges from 1-5% for compute-heavy workloads.
 - **The hardened kernel provides**: substantial security improvements for privacy-conscious users.
 - **Combined with proper system**: configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation Prerequisites](#installation-prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Considerations](#performance-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

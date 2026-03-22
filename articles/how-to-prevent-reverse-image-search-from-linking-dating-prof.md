@@ -39,6 +39,13 @@ Reverse image search poses a significant risk to dating profile privacy. When so
 - **While this data often**: gets stripped during upload to most platforms, some dating services preserve certain tags or re-embed data that could aid identification.
 - **If your photo returns**: matches to your real identity, don't use it.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Additional Protective Measures](#additional-protective-measures)
+- [Advanced: Perceptual Hash Resistance Testing](#advanced-perceptual-hash-resistance-testing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

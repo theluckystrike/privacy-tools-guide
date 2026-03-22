@@ -47,6 +47,17 @@ Recommendation: Joplin has best Evernote import compatibility.
 
 Recommendation**: Pandoc conversion best for OneNote.
 
+## Table of Contents
+
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](#privacy-focused-note-taking-apps-comparison-2026)
+- [The Privacy Problem with Mainstream Notes](#the-privacy-problem-with-mainstream-notes)
+- [Top Privacy-Focused Note Apps](#top-privacy-focused-note-apps)
+- [Detailed Comparison Table](#detailed-comparison-table)
+- [Encryption Strength Comparison](#encryption-strength-comparison)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Migration Paths](#migration-paths)
+- [Practical Security Setup Examples](#practical-security-setup-examples)
+
 ## Privacy-Focused Note-Taking Apps Comparison (2026)
 
 Note-taking apps store your most sensitive information: passwords, medical notes, financial records, private thoughts. Most mainstream options (Evernote, OneNote) use weak encryption and scan content for ads or AI training. This guide compares privacy-respecting alternatives with detailed encryption analysis, sync protocols, and real pricing.

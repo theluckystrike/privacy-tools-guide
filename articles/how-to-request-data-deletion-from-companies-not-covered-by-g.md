@@ -38,6 +38,16 @@ Send formal deletion requests explicitly referencing applicable state laws (Virg
 - **For developers and power users**: this means building automation around data deletion requests requires understanding both legal frameworks and practical API-driven approaches.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding the Data Protection Gap](#understanding-the-data-protection-gap)
+- [What Data Companies Typically Hold](#what-data-companies-typically-hold)
+- [Automating Data Discovery with Developer Tools](#automating-data-discovery-with-developer-tools)
+- [Step-by-Step Method to Request Data Deletion](#step-by-step-method-to-request-data-deletion)
+- [Alternative Strategies](#alternative-strategies)
+- [What to Do If They Refuse](#what-to-do-if-they-refuse)
+- [Template Collection](#template-collection)
+
 ## Understanding the Data Protection Gap
 
 When GDPR and CCPA don't apply to a company, your personal data rights become significantly limited. GDPR covers companies with EU connections—either offering goods/services to EU residents or monitoring their behavior. CCPA applies primarily to for-profit businesses meeting specific thresholds (>$25M revenue, data >100K consumers, or deriving 50%+ revenue from selling personal data).

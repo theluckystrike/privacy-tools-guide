@@ -44,6 +44,22 @@ This guide evaluates password managers based on criteria that matter to develope
 - **1Password uses a similar**: architecture with their own implementation.
 - **This guide evaluates password**: managers based on criteria that matter to developers: export formats, CLI availability, open-source auditability, and self-hosting options.
 
+## Table of Contents
+
+- [What Developers Need from Password Managers](#what-developers-need-from-password-managers)
+- [Bitwarden: The Open-Source Standard](#bitwarden-the-open-source-standard)
+- [Aegis: Open-Source Android Purity](#aegis-open-source-android-purity)
+- [KeePassXC: Local-Only Veteran](#keepassxc-local-only-veteran)
+- [1Password: Polished Experience with Trade-Offs](#1password-polished-experience-with-trade-offs)
+- [Comparison: Export Capabilities](#comparison-export-capabilities)
+- [CLI-First Workflows](#cli-first-workflows)
+- [Security Considerations](#security-considerations)
+- [Making Your Choice](#making-your-choice)
+- [Advanced Integration Patterns for Developers](#advanced-integration-patterns-for-developers)
+- [Encryption Algorithm Comparison](#encryption-algorithm-comparison)
+- [Mobile Security Considerations](#mobile-security-considerations)
+- [Data Migration Between Managers](#data-migration-between-managers)
+
 ## What Developers Need from Password Managers
 
 Developer requirements differ from casual users. You need programmatic access through APIs and CLIs for integration with scripts, automation, and CI/CD pipelines. Encrypted exports in standard formats (CSV, JSON, KDBX) ensure you can migrate between tools or access data without proprietary lock-in. Open-source code allows security audits and self-hosted deployment options. Cross-platform synchronization across desktop, mobile, and terminal environments is essential for consistent workflows.

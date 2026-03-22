@@ -96,6 +96,19 @@ Your hardened network will have:
 
 ## Component 1: Pi-hole (DNS Filtering & Blocking)
 
+## Table of Contents
+
+- [Component 1: Pi-hole (DNS Filtering & Blocking)](#component-1-pi-hole-dns-filtering-blocking)
+- [Component 2: pfSense or OPNsense (Firewall + VLAN Control)](#component-2-pfsense-or-opnsense-firewall-vlan-control)
+- [Component 3: WireGuard Home VPN (Access Home Network Remotely + Encrypt Upstream)](#component-3-wireguard-home-vpn-access-home-network-remotely-encrypt-upstream)
+- [Component 4: WiFi Access Point Configuration](#component-4-wifi-access-point-configuration)
+- [Complete Network Diagram (Final Configuration)](#complete-network-diagram-final-configuration)
+- [Monitoring & Maintenance](#monitoring-maintenance)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Maintenance Timeline](#maintenance-timeline)
+- [Privacy Gains vs. ISP](#privacy-gains-vs-isp)
+- [Related Reading](#related-reading)
+
 Pi-hole intercepts all DNS queries from your network and blocks trackers before they load. Instead of your ISP seeing "device queried www.google-analytics.com", Pi-hole blocks that query locally.
 
 ### Installation

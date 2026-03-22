@@ -44,6 +44,14 @@ Some Android versions require additional commands to prevent apps from triggerin
 - **Both scanning types occur**: automatically in the background, often without explicit user notification.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Control Using ADB Commands](#advanced-control-using-adb-commands)
+- [Threat Model: Location Inference from Scanning](#threat-model-location-inference-from-scanning)
+- [Advanced Scanning Detection and Prevention](#advanced-scanning-detection-and-prevention)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

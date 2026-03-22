@@ -41,6 +41,14 @@ Shamir Secret Sharing (SSS) provides a mathematically elegant solution for secur
 - **Uses the reference implementation**: from trezor/trezor-crypto.
 - **Use a hardware wallet**: to generate your seed initially, then export it in hex format for SSS processing.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Air-Gapped Security Considerations](#air-gapped-security-considerations)
+- [Advanced: Multi-Signature Integration](#advanced-multi-signature-integration)
+- [Physical Share Storage Best Practices](#physical-share-storage-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

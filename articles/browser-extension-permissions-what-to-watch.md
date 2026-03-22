@@ -40,6 +40,20 @@ The most dangerous browser extension permissions to watch are `<all_urls>` host 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide explains each**: permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
 
+## Table of Contents
+
+- [How Browser Extension Permissions Work](#how-browser-extension-permissions-work)
+- [Critical Permissions to Watch](#critical-permissions-to-watch)
+- [Evaluating Extensions Before Installation](#evaluating-extensions-before-installation)
+- [Auditing Installed Extensions](#auditing-installed-extensions)
+- [Developer Best Practices](#developer-best-practices)
+- [Extension Permissions and Privacy](#extension-permissions-and-privacy)
+- [Permission Risk Analysis Framework](#permission-risk-analysis-framework)
+- [Advanced Permission Auditing](#advanced-permission-auditing)
+- [Manifest V3 and Permission Evolution](#manifest-v3-and-permission-evolution)
+- [Developer Best Practices for Permission Minimization](#developer-best-practices-for-permission-minimization)
+- [Extension Signature and Verification](#extension-signature-and-verification)
+
 ## How Browser Extension Permissions Work
 
 When you install a browser extension, it requests permissions through the `manifest.json` file. Chrome, Firefox, and Edge all use variations of this manifest format. The permissions declared determine what data the extension can access and what actions it can perform.

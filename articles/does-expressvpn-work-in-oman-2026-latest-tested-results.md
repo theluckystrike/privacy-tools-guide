@@ -42,6 +42,20 @@ Testing VPN functionality in regions with network restrictions requires a system
 - **This guide provides practical**: testing methods and configuration recommendations based on March 2026 testing conditions.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Oman's Network Restrictions](#understanding-omans-network-restrictions)
+- [Testing Methodology](#testing-methodology)
+- [March 2026 Test Results](#march-2026-test-results)
+- [Recommended Configuration](#recommended-configuration)
+- [Handling Connection Drops](#handling-connection-drops)
+- [Technical Considerations](#technical-considerations)
+- [Port-Level Obfuscation Techniques](#port-level-obfuscation-techniques)
+- [DNS Leak Prevention in Restricted Networks](#dns-leak-prevention-in-restricted-networks)
+- [Alternative Solutions for Developers](#alternative-solutions-for-developers)
+- [Benchmarking Speed After Connection](#benchmarking-speed-after-connection)
+- [Legal Context](#legal-context)
+
 ## Understanding Oman's Network Restrictions
 
 The Telecommunications Regulatory Authority (TRA) of Oman maintains active blocking of VPN traffic. The restriction targets both protocol signatures and known VPN server IP ranges. However, modern VPN protocols with proper obfuscation can still establish connections.

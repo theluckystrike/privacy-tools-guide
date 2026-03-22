@@ -17,6 +17,18 @@ tags: [privacy-tools-guide, comparison]
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Implementation Comparison: Technical Approach](#implementation-comparison-technical-approach)
+- [Compliance Automation and Workflow](#compliance-automation-and-workflow)
+- [Multi-Language Support and Regional Compliance](#multi-language-support-and-regional-compliance)
+- [Analytics Integration Comparison](#analytics-integration-comparison)
+- [Audit and Compliance Reporting](#audit-and-compliance-reporting)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Security Considerations](#security-considerations)
+- [Migration Path](#migration-path)
+- [Real-World Scenario: Multi-Domain Setup](#real-world-scenario-multi-domain-setup)
+
 **Can I use the first tool and the second tool together?**
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.

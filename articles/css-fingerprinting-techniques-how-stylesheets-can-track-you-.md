@@ -159,6 +159,15 @@ The broader privacy community continues developing tools like privacy.resistFing
 
 CSS fingerprinting demonstrates that web tracking persists through mechanisms beyond JavaScript. Stylesheets provide sufficient expressiveness for device identification, font profiling, and capability detection. For developers prioritizing user privacy, understanding these techniques informs both defensive implementation and respectful data practices. The web benefits when we treat every vector—including CSS—as worthy of privacy consideration.
 
+## Table of Contents
+
+- [Measuring CSS Fingerprint Entropy](#measuring-css-fingerprint-entropy)
+- [Practical CSS Fingerprinting Attack: Step-by-Step](#practical-css-fingerprinting-attack-step-by-step)
+- [Defensive CSS Implementation](#defensive-css-implementation)
+- [Browser Extensions for CSS Fingerprinting Defense](#browser-extensions-for-css-fingerprinting-defense)
+- [Server-Side Mitigations](#server-side-mitigations)
+- [Testing Your CSS Fingerprinting Defenses](#testing-your-css-fingerprinting-defenses)
+
 ## Measuring CSS Fingerprint Entropy
 
 Like JavaScript fingerprinting, CSS fingerprints can be quantified by their entropy:

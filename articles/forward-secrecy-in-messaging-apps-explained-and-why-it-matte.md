@@ -26,6 +26,19 @@ Forward secrecy (also called perfect forward secrecy or PFS) is a cryptographic 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The most common mechanism**: is the Diffie-Hellman key exchange.
 
+## Table of Contents
+
+- [How Forward Secrecy Works](#how-forward-secrecy-works)
+- [The Double Ratchet: Achieving Both Forward and Future Secrecy](#the-double-ratchet-achieving-both-forward-and-future-secrecy)
+- [Why Forward Secrecy Matters in 2026](#why-forward-secrecy-matters-in-2026)
+- [Apps That Actually Implement Forward Secrecy](#apps-that-actually-implement-forward-secrecy)
+- [Implementation Details Developers Should Know](#implementation-details-developers-should-know)
+- [What to Do Today](#what-to-do-today)
+- [Practical Verification: Testing Forward Secrecy Claims](#practical-verification-testing-forward-secrecy-claims)
+- [Breaking Forward Secrecy: Attack Scenarios](#breaking-forward-secrecy-attack-scenarios)
+- [Measuring Forward Secrecy Strength](#measuring-forward-secrecy-strength)
+- [Building Forward Secrecy Into Your Own System](#building-forward-secrecy-into-your-own-system)
+
 ## How Forward Secrecy Works
 
 Traditional encryption often relies on a single long-term key to protect all messages in a conversation. While this simplifies key management, it creates a catastrophic failure point—compromising that one key exposes the entire message history.

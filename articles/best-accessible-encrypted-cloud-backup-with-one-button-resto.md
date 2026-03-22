@@ -38,6 +38,19 @@ This guide evaluates solutions that combine client-side encryption, accessible i
 - **Encryption uses AES-256 with**: a passphrase you set.
 - **However, Duplicacy does not encrypt by default**: you must use B2's server-side encryption or add encryption through other means.
 
+## Table of Contents
+
+- [What Makes a Backup Solution Accessible and Secure](#what-makes-a-backup-solution-accessible-and-secure)
+- [Top Contenders for Simple Encrypted Cloud Backup](#top-contenders-for-simple-encrypted-cloud-backup)
+- [Implementation Patterns for Developers](#implementation-patterns-for-developers)
+- [Duplicacy: Version Control for Backups](#duplicacy-version-control-for-backups)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Verification Testing Procedure](#verification-testing-procedure)
+- [Disaster Recovery Time Objective](#disaster-recovery-time-objective)
+- [Backup Performance Metrics](#backup-performance-metrics)
+- [Combining Backup Solutions](#combining-backup-solutions)
+- [Selecting Your Solution](#selecting-your-solution)
+
 ## What Makes a Backup Solution Accessible and Secure
 
 Before examining specific tools, understanding the core requirements helps narrow the selection significantly. Accessibility in backup solutions means minimal friction during setup, clear status indicators, and most importantly, a restoration process that anyone can execute without consulting documentation.

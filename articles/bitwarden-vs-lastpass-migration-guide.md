@@ -43,6 +43,15 @@ Migrating password managers requires careful handling of sensitive data. For dev
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Why Developers Choose Bitwarden Over LastPass](#why-developers-choose-bitwarden-over-lastpass)
+- [Quick Comparison](#quick-comparison)
+- [Prerequisites](#prerequisites)
+- [Migrating TOTP Authenticators](#migrating-totp-authenticators)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Developers Choose Bitwarden Over LastPass
 
 Several technical factors make Bitwarden the preferred choice for developers:

@@ -38,6 +38,25 @@ Users with motor impairments face unique challenges when selecting a keyboard ap
 - **Optional cloud services**: Users choose whether to enable cloud-based features
 3.
 
+## Table of Contents
+
+- [Understanding the Privacy-Accessibility Intersection](#understanding-the-privacy-accessibility-intersection)
+- [Top Privacy-Focused Accessible Keyboards](#top-privacy-focused-accessible-keyboards)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Configuration Recommendations](#configuration-recommendations)
+- [Switch Control and Scanning Input](#switch-control-and-scanning-input)
+- [Word Prediction Without Cloud Data](#word-prediction-without-cloud-data)
+- [Configuring iOS Built-In Keyboard for Motor Impairments](#configuring-ios-built-in-keyboard-for-motor-impairments)
+- [Future Considerations](#future-considerations)
+- [iOS Accessibility Options](#ios-accessibility-options)
+- [Windows and macOS Considerations](#windows-and-macos-considerations)
+- [Testing Motor Impairment Accommodations](#testing-motor-impairment-accommodations)
+- [Customization Plugins and Extensions](#customization-plugins-and-extensions)
+- [Transitioning Between Keyboards](#transitioning-between-keyboards)
+- [Privacy-First Keyboard Selection Matrix](#privacy-first-keyboard-selection-matrix)
+- [Performance Considerations for Users with Tremors](#performance-considerations-for-users-with-tremors)
+- [Future Developments](#future-developments)
+
 ## Understanding the Privacy-Accessibility Intersection
 
 Keyboard apps collect various types of data: typing patterns, autocorrect learning data, usage analytics, and sometimes keystroke logging. For users with motor impairments, this data sensitivity increases because typing patterns can reveal personal information about physical capabilities and daily routines.

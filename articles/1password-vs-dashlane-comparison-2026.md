@@ -41,6 +41,24 @@ Choose 1Password if you need a powerful CLI, application-level secret management
 - **Dashlane uses PBKDF2 with 100**:000 iterations for key derivation.
 - **Both approaches are sound**: but 1Password's secret key provides defense-in-depth for users with higher threat models.
 
+## Table of Contents
+
+- [Security Architecture](#security-architecture)
+- [Command-Line Interface](#command-line-interface)
+- [Passkey Support](#passkey-support)
+- [Developer Integrations](#developer-integrations)
+- [Password Sharing and Teams](#password-sharing-and-teams)
+- [Pricing Comparison](#pricing-comparison)
+- [Code Example: Environment Variable Management](#code-example-environment-variable-management)
+- [Real-World Use Case Comparisons](#real-world-use-case-comparisons)
+- [Browser Extension Comparison](#browser-extension-comparison)
+- [Security Features Deep Dive](#security-features-deep-dive)
+- [Import and Migration Strategies](#import-and-migration-strategies)
+- [Advanced Features Comparison](#advanced-features-comparison)
+- [Long-Term Viability and Company Stability](#long-term-viability-and-company-stability)
+- [Cost-Benefit Analysis for Different Users](#cost-benefit-analysis-for-different-users)
+- [Migration Path Recommendation](#migration-path-recommendation)
+
 ## Security Architecture
 
 Both managers use AES-256 encryption, but their approach to key derivation and zero-knowledge architecture differs.

@@ -40,6 +40,18 @@ Migrating your passwords from a local KeePass database to Bitwarden's cloud vaul
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Migrate From KeePass to Bitwarden](#why-migrate-from-keepass-to-bitwarden)
+- [Prerequisites](#prerequisites)
+- [Step 1: Export Your KeePass Database](#step-1-export-your-keepass-database)
+- [Step 2: Authenticate with Bitwarden CLI](#step-2-authenticate-with-bitwarden-cli)
+- [Step 3: Import Entries to Bitwarden](#step-3-import-entries-to-bitwarden)
+- [Step 4: Automate the Full Migration](#step-4-automate-the-full-migration)
+- [Step 5: Verify and Clean Up](#step-5-verify-and-clean-up)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Security Considerations](#security-considerations)
+
 ## Why Migrate From KeePass to Bitwarden
 
 KeePass and KeePassXC store your password database in an encrypted file (`.kdbx`) on your local machine. This approach gives you full control over your data but lacks native cloud synchronization. You likely sync your database manually or through a service like Dropbox, which can create version conflicts and leaves your vault vulnerable if your sync folder is compromised.

@@ -39,6 +39,16 @@ OPNsense, an open-source firewall and routing platform based on FreeBSD, provide
 - **Users have limited control**: over these connections at the app level.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Block Trackers at the Firewall Level](#why-block-trackers-at-the-firewall-level)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Threat Model: Network-Level Tracking](#threat-model-network-level-tracking)
+- [Advanced Blocklist Management](#advanced-blocklist-management)
+- [Performance Tuning for Large Blocklists](#performance-tuning-for-large-blocklists)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Block Trackers at the Firewall Level
 
 Browser-based ad blockers like uBlock Origin effectively handle tracking scripts within web pages, but they cannot address tracker connections from native applications, smart devices, or system services. When tracker domains are blocked at the firewall level, the blocking happens before any connection attempt reaches your devices, reducing latency and preventing tracker data from leaving your network entirely.

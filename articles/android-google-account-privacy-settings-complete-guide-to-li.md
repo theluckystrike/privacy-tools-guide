@@ -43,6 +43,15 @@ This guide walks you through the most effective settings and configurations to m
 - **Select Turn off (or**: choose auto-delete to automatically remove data after 3, 18, or 36 months) 3.
 - **Go to Settings >**: Google > Contacts preferences 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Web and Cross-Device Activity](#web-and-cross-device-activity)
+- [Payments and Transaction Tracking](#payments-and-transaction-tracking)
+- [Going Further: Advanced Privacy Measures](#going-further-advanced-privacy-measures)
+- [Biometric and Authentication Privacy](#biometric-and-authentication-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

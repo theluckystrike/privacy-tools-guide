@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "macOS Privacy Hardening Checklist 2026"
-description: "A complete macOS privacy checklist covering Gatekeeper, Siri, telemetry, location services, firewall, iCloud, and system-level settings for Sequoia and later"
-date: 2026-03-21
-author: theluckystrike
-permalink: /macos-privacy-hardening-checklist-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -39,6 +27,18 @@ Work through each section. Many of these settings are buried in submenus that mo
 - **This expands end-to-end encryption**: to cover iCloud Backup, Photos, Notes, and most other iCloud data.
 - **Prompt**: "won't this phone home?" — yes, but running outdated software with known vulnerabilities is a worse trade-off.
 - **Choose "Create a recovery key and do not use my iCloud account" for the recovery option**: this keeps the recovery key local rather than escrowed with Apple.
+
+## Table of Contents
+
+- [System Settings: Privacy and Security](#system-settings-privacy-and-security)
+- [Network Privacy Settings](#network-privacy-settings)
+- [iCloud Settings](#icloud-settings)
+- [Software and Updates](#software-and-updates)
+- [Safari Privacy Settings](#safari-privacy-settings)
+- [Terminal Hardening Commands](#terminal-hardening-commands)
+- [FileVault](#filevault)
+- [Audit Installed Apps and Login Items](#audit-installed-apps-and-login-items)
+- [Related Reading](#related-reading)
 
 ## System Settings: Privacy and Security
 
@@ -236,6 +236,14 @@ This shows every app that has requested any system permission and whether it was
 - [Two-Factor Authentication Setup 2026](/two-factor-authentication-setup-2026/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+
+## Related Articles
+
+- [How to Configure macOS Privacy Settings 2026](/privacy-tools-guide/how-to-configure-macos-privacy-settings-2026/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

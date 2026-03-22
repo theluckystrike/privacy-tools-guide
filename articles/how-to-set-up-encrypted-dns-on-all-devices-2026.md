@@ -53,6 +53,14 @@ Most Linux distros use systemd-resolved for DNS.
 2.
 - **Reality**: Negligible performance difference (0-5ms added latency).
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Provider Comparison Table](#provider-comparison-table)
+- [Performance Impact](#performance-impact)
+- [Troubleshooting](#troubleshooting)
+
 ## Overview
 
 Standard DNS (Domain Name System) broadcasts every website you visit to your ISP, router, and network administrators. Encrypted DNS (DoH/DoT) encrypts DNS queries, preventing surveillance of your browsing. This guide shows how to configure encrypted DNS on all major devices and provides provider comparison with privacy ratings.

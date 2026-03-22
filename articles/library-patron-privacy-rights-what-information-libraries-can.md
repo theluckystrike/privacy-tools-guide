@@ -40,6 +40,23 @@ Libraries serve as one of the last true public spaces where anyone can access in
 - **Use temporary operating system**: (Tails live USB) if possible # 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Legal Framework Behind Library Privacy](#the-legal-framework-behind-library-privacy)
+- [What Information Libraries Typically Collect](#what-information-libraries-typically-collect)
+- [What Law Enforcement Can Actually Obtain](#what-law-enforcement-can-actually-obtain)
+- [Protecting Your Library Privacy](#protecting-your-library-privacy)
+- [Libraries as Privacy Advocates](#libraries-as-privacy-advocates)
+- [What To Do If Your Rights Are Violated](#what-to-do-if-your-rights-are-violated)
+- [Verifying VPN Leak Protection](#verifying-vpn-leak-protection)
+- [Split Tunneling Configuration](#split-tunneling-configuration)
+- [Threat Model Analysis: Library Privacy Risks](#threat-model-analysis-library-privacy-risks)
+- [State-Level Privacy Protections](#state-level-privacy-protections)
+- [Legal Recourse and Advocacy Resources](#legal-recourse-and-advocacy-resources)
+- [Creating a Minimal Digital Footprint at Libraries](#creating-a-minimal-digital-footprint-at-libraries)
+- [Digital Tools for Enhanced Library Privacy](#digital-tools-for-enhanced-library-privacy)
+- [Advocating for Better Library Privacy](#advocating-for-better-library-privacy)
+
 ## The Legal Framework Behind Library Privacy
 
 Library patron privacy in the United States rests on a complex layering of federal and state laws. The primary federal law protecting library records is the USA PATRIOT Act, which amended the Electronic Communications Privacy Act (ECPA). Under these laws, libraries can be compelled to turn over certain records if law enforcement presents a valid subpoena, court order, or warrant.

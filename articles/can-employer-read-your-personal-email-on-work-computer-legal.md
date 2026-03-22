@@ -42,6 +42,14 @@ The question of whether your employer can read your personal email on a work com
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide breaks down**: the legal space for developers and power users who want to understand their rights and protect their privacy.
 
+## Table of Contents
+
+- [The Basic Legal Framework](#the-basic-legal-framework)
+- [Technical Reality: What Employers Can Actually See](#technical-reality-what-employers-can-actually-see)
+- [Practical Recommendations for Developers and Power Users](#practical-recommendations-for-developers-and-power-users)
+- [What Your Employer Cannot Do (Generally)](#what-your-employer-cannot-do-generally)
+- [Quick Reference by Jurisdiction](#quick-reference-by-jurisdiction)
+
 ## The Basic Legal Framework
 
 In most developed jurisdictions, employers have broad rights to monitor devices they own and networks they control. When you use a work computer for personal activities, you typically implicit consent to some level of monitoring. However, the extent of that monitoring varies significantly by region.

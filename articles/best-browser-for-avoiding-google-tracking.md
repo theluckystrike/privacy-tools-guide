@@ -43,6 +43,20 @@ Firefox with uBlock Origin and strict tracking protection is the best browser fo
 3.
 - **Profile isolation for Google**: services you must access prevents correlation with your privacy-focused browsing.
 
+## Table of Contents
+
+- [Understanding Google's Tracking Ecosystem](#understanding-googles-tracking-ecosystem)
+- [Firefox: The Open-Source Standard](#firefox-the-open-source-standard)
+- [Brave: Privacy by Default](#brave-privacy-by-default)
+- [Hardening Your Browser Configuration](#hardening-your-browser-configuration)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Monitoring Your Tracking Exposure](#monitoring-your-tracking-exposure)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Practical Workflow Integration](#practical-workflow-integration)
+- [Extension Maintenance and Updates](#extension-maintenance-and-updates)
+- [Combining Browsers for Different Contexts](#combining-browsers-for-different-contexts)
+- [Privacy Extension Conflicts and Solutions](#privacy-extension-conflicts-and-solutions)
+
 ## Understanding Google's Tracking Ecosystem
 
 Google's tracking extends far beyond google.com. The company operates the largest advertising network in the world, and thousands of websites embed Google Analytics, Google Tag Manager, and DoubleClick scripts. Even if you avoid Google's search engine, visiting any site that loads these resources transmits your activity back to Google.

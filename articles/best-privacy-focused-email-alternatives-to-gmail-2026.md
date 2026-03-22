@@ -40,6 +40,19 @@ This guide compares privacy-first email services and shows how to migrate from G
 3.
 - **Download as MBOX format**: (importable to most email clients) 4.
 
+## Table of Contents
+
+- [Why Email Privacy Matters](#why-email-privacy-matters)
+- [ProtonMail](#protonmail)
+- [Tutanota](#tutanota)
+- [Fastmail](#fastmail)
+- [Comparison by Use Case](#comparison-by-use-case)
+- [Migration from Gmail](#migration-from-gmail)
+- [Comparison Matrix](#comparison-matrix)
+- [Best Practices with Privacy Email](#best-practices-with-privacy-email)
+- [When Privacy Email Isn't Enough](#when-privacy-email-isnt-enough)
+- [Recommendation](#recommendation)
+
 ## Why Email Privacy Matters
 
 Email is the master key to your digital identity. Your email can:

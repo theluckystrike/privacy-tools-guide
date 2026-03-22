@@ -23,6 +23,14 @@ This guide walks you through creating a webhook relay that strips PII before del
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Strip PII from Webhooks?](#why-strip-pii-from-webhooks)
+- [Prerequisites](#prerequisites)
+- [Compliance and Auditing](#compliance-and-auditing)
+- [Performance Optimization](#performance-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Strip PII from Webhooks?
 
 When Stripe sends you a payment webhook, it includes customer email addresses, names, and billing details. When a SaaS platform notifies you of a new user signup, it might include full names and phone numbers. If your system only needs the event type and ID, you're accumulating liability by storing unnecessary PII.

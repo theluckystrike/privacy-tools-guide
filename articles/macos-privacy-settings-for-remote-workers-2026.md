@@ -40,6 +40,19 @@ Working remotely introduces unique privacy challenges that differ significantly 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This panel contains most**: privacy-critical options.
 
+## Table of Contents
+
+- [System Settings Privacy Configuration](#system-settings-privacy-configuration)
+- [Application Permission Audit](#application-permission-audit)
+- [Firewall Configuration](#firewall-configuration)
+- [Network Privacy Protections](#network-privacy-protections)
+- [FileVault and Encryption](#filevault-and-encryption)
+- [Spotlight and Search Privacy](#spotlight-and-search-privacy)
+- [Terminal and Developer Privacy](#terminal-and-developer-privacy)
+- [Browser Privacy for Remote Work](#browser-privacy-for-remote-work)
+- [Monitoring and Ongoing Maintenance](#monitoring-and-ongoing-maintenance)
+- [Additional Privacy Considerations for Remote Work Environments](#additional-privacy-considerations-for-remote-work-environments)
+
 ## System Settings Privacy Configuration
 
 Start by navigating to **System Settings → Privacy & Security**. This panel contains most privacy-critical options. For remote workers, several categories demand immediate attention.

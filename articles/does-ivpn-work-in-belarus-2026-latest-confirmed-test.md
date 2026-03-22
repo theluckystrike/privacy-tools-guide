@@ -43,6 +43,24 @@ Belarus presents unique challenges for VPN users. The country's regulatory envir
 - **Belarus presents unique challenges**: for VPN users.
 - **These tools use SOCKS5**: proxies with obfuscation, making traffic appear like normal HTTPS connections.
 
+## Table of Contents
+
+- [Understanding Belarus's VPN Regulatory Environment](#understanding-belaruss-vpn-regulatory-environment)
+- [Protocol Compatibility: What Works in 2026](#protocol-compatibility-what-works-in-2026)
+- [Configuration Recommendations for Developers](#configuration-recommendations-for-developers)
+- [Technical Considerations for Power Users](#technical-considerations-for-power-users)
+- [Testing Your VPN Connection](#testing-your-vpn-connection)
+- [Future Outlook](#future-outlook)
+- [IVPN Specific Capabilities in Belarus](#ivpn-specific-capabilities-in-belarus)
+- [Comparative Testing: IVPN vs. Alternatives](#comparative-testing-ivpn-vs-alternatives)
+- [Advanced Protocol Manipulation](#advanced-protocol-manipulation)
+- [Alternative Tools for Belarus Developers](#alternative-tools-for-belarus-developers)
+- [Testing Reproducibility and Documentation](#testing-reproducibility-and-documentation)
+- [Regulatory and Legal Context](#regulatory-and-legal-context)
+- [Performance Optimization for Restricted Networks](#performance-optimization-for-restricted-networks)
+- [Monitoring and Alerting](#monitoring-and-alerting)
+- [Practical Recommendations for March 2026](#practical-recommendations-for-march-2026)
+
 ## Understanding Belarus's VPN Regulatory Environment
 
 Belarus maintains strict internet regulations that affect how VPN services operate within its borders. The National Regulatory Authority (BELGIO) monitors internet traffic, and certain protocols face active blocking or throttling. However, VPNs remain legal for personal and business use, provided they comply with local registration requirements—a detail that affects which services function reliably.

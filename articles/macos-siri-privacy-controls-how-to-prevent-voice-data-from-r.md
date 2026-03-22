@@ -40,6 +40,13 @@ Siri, Apple's voice assistant built into macOS, processes voice commands to prov
 - **Apple processes most voice**: queries on its servers, which means your voice commands travel over the internet to Apple's infrastructure.
 - **Even though Apple states**: it uses differential privacy techniques and on-device processing for some queries, the reality is that voice recordings can be stored and associated with your Apple ID.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Privacy Hardening: Removing Siri Binaries](#advanced-privacy-hardening-removing-siri-binaries)
+- [Best Practices for Voice Privacy](#best-practices-for-voice-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

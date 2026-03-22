@@ -44,6 +44,17 @@ Proton Mail is the best secure Gmail alternative in 2026 for most developers and
 4.
 - **For developers building applications**: that handle sensitive user data, or individuals dealing with legally privileged communications, this is an unacceptable risk model.
 
+## Table of Contents
+
+- [Why Developers Are Moving Away from Gmail](#why-developers-are-moving-away-from-gmail)
+- [Quick Comparison](#quick-comparison)
+- [Hosted Secure Email Services](#hosted-secure-email-services)
+- [Self-Hosted Solutions: Maximum Control](#self-hosted-solutions-maximum-control)
+- [Migration Strategies](#migration-strategies)
+- [DNS Configuration for Self-Hosted](#dns-configuration-for-self-hosted)
+- [Making Your Decision](#making-your-decision)
+- [Security Implementation Checklist](#security-implementation-checklist)
+
 ## Why Developers Are Moving Away from Gmail
 
 The primary concerns driving migration include:

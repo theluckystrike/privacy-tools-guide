@@ -40,6 +40,13 @@ Mobile Device Management (MDM) profiles represent one of the most powerful yet u
 - **This is typically used**: for single-user devices where you want policy enforcement.
 - **Malicious profiles can restrict**: device functionality or exfiltrate data, so only install profiles from trusted sources.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

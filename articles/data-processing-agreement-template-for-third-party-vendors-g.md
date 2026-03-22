@@ -40,6 +40,33 @@ A Data Processing Agreement (DPA) is required under GDPR Article 28 whenever a t
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Makes a DPA GDPR Compliant](#what-makes-a-dpa-gdpr-compliant)
+- [Essential DPA Clauses](#essential-dpa-clauses)
+- [Practical DPA Template](#practical-dpa-template)
+- [1. DEFINITIONS](#1-definitions)
+- [2. SUBJECT MATTER AND DURATION](#2-subject-matter-and-duration)
+- [3. NATURE AND PURPOSE OF PROCESSING](#3-nature-and-purpose-of-processing)
+- [4. CATEGORIES OF DATA](#4-categories-of-data)
+- [5. PROCESSOR OBLIGATIONS](#5-processor-obligations)
+- [6. SUB-PROCESSORS](#6-sub-processors)
+- [7. DATA TRANSFERS](#7-data-transfers)
+- [8. SECURITY MEASURES](#8-security-measures)
+- [9. BREACH NOTIFICATION](#9-breach-notification)
+- [10. DATA SUBJECT RIGHTS](#10-data-subject-rights)
+- [11. AUDITS](#11-audits)
+- [12. TERMINATION](#12-termination)
+- [Automating DPA Compliance with Code](#automating-dpa-compliance-with-code)
+- [Implementation Checklist](#implementation-checklist)
+- [International Considerations Beyond GDPR](#international-considerations-beyond-gdpr)
+- [Practical DPA Negotiation Tips](#practical-dpa-negotiation-tips)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Real-World DPA Negotiation Scenarios](#real-world-dpa-negotiation-scenarios)
+- [Documentation and Ongoing Management](#documentation-and-ongoing-management)
+- [Special Cases: SaaS, Cloud Providers, and Processors of Processors](#special-cases-saas-cloud-providers-and-processors-of-processors)
+- [Building a Culture of Compliance](#building-a-culture-of-compliance)
+
 ## What Makes a DPA GDPR Compliant
 
 Under GDPR Article 28, a data processing agreement must establish the subject matter, duration, nature, and purpose of processing. The agreement must also specify the types of personal data processed and the categories of data subjects involved.

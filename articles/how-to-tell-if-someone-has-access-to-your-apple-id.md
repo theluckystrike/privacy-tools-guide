@@ -40,6 +40,15 @@ Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Your Apple ID Security Matters](#why-your-apple-id-security-matters)
+- [Warning Signs Someone Has Access to Your Apple ID](#warning-signs-someone-has-access-to-your-apple-id)
+- [How to Check If Someone Has Access to Your Apple ID](#how-to-check-if-someone-has-access-to-your-apple-id)
+- [How to Secure Your Apple ID After Detecting Unauthorized Access](#how-to-secure-your-apple-id-after-detecting-unauthorized-access)
+- [What To Do If You Can't Access Your Apple ID](#what-to-do-if-you-cant-access-your-apple-id)
+- [Scripted Session Audit](#scripted-session-audit)
+
 ## Why Your Apple ID Security Matters
 
 Your Apple ID contains a wealth of personal information. When someone unauthorized accesses your account, they can:

@@ -42,6 +42,14 @@ DoT is simpler than DNS over HTTPS (DoH) for system-level deployment: one dedica
 - **Cloudflare offers better performance**: in many regions but retains some logs for up to 24 hours.
 - **Use these steps to confirm**: 1.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced DoT Configuration for Maximum Privacy](#advanced-dot-configuration-for-maximum-privacy)
+- [Performance Monitoring](#performance-monitoring)
+- [Troubleshooting DoT Issues](#troubleshooting-dot-issues)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

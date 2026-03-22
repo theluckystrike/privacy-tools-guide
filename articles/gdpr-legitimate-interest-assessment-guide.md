@@ -40,6 +40,14 @@ Each component is examined below with developer-focused examples.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers what**: is legitimate interest under gdpr, the three-part legitimate interest test, implementing the assessment in code, with specific setup instructions
 
+## Table of Contents
+
+- [What Is Legitimate Interest Under GDPR](#what-is-legitimate-interest-under-gdpr)
+- [Prerequisites](#prerequisites)
+- [Practical Example: Analytics Processing](#practical-example-analytics-processing)
+- [Documentation Requirements](#documentation-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is Legitimate Interest Under GDPR
 
 Legitimate interest is one of six lawful bases for processing personal data under GDPR (Article 6(1)(f)). It allows you to process data when your organization has a legitimate purpose that outweighs the individual's right to privacy.

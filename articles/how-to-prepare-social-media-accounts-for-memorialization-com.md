@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Prepare Social Media Accounts For Memorialization"
-description: "A practical checklist and technical guide for preparing social media accounts for memorialization across all major platforms in 2026"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /how-to-prepare-social-media-accounts-for-memorialization-com/
-categories: [guides, security]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -282,11 +269,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
-- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
-- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
-
+- [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
+- [How To Document All Online Accounts For Executor Of Estate](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

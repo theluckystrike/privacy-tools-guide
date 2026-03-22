@@ -39,6 +39,13 @@ Managing SSH keys for multiple home servers creates a security and organization 
 - **KeePassXC suits users who**: need completely offline key storage.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Store SSH Keys in a Password Manager](#why-store-ssh-keys-in-a-password-manager)
+- [Prerequisites](#prerequisites)
+- [Best Practices for SSH Key Management](#best-practices-for-ssh-key-management)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Store SSH Keys in a Password Manager
 
 SSH keys are password equivalents—they grant access to your servers. Losing them means losing server access. Keeping them scattered across `.ssh` folders on various machines creates backup gaps and makes rotation painful. A password manager centralizes these critical credentials with encryption, version history, and secure sharing.

@@ -50,6 +50,13 @@ AutoEnable=false
 - **Enable PIN-based or numeric**: comparison pairing - Don't use "Just Works" pairing (no verification) - Use 6-digit numeric comparison when available 3.
 - **Use air-gapped devices for**: sensitive communications 4.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [When to Escalate](#when-to-escalate)
+- [When to Escalate](#when-to-escalate)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

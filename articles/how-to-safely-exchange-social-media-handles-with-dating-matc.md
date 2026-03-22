@@ -40,6 +40,13 @@ When you match with someone on a dating app, transitioning to social media feels
 - **For power users and**: developers concerned about privacy, this guide provides technical strategies for exchanging social media handles while minimizing your exposure footprint.
 - **Even for everyday users**: the discomfort of granting strangers access to your personal life deserves a privacy-conscious solution.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Account Compartmentalization Script](#advanced-account-compartmentalization-script)
+- [Privacy Comparison: Dating Platforms](#privacy-comparison-dating-platforms)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

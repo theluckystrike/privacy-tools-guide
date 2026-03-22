@@ -40,6 +40,24 @@ Understanding the fundamental differences between I2P and Tor is essential for d
 - **If you operate infrastructure**: supporting either network strengthens privacy for all users.
 - **Tor continues steady growth**: with approximately 2.5 million daily users.
 
+## Table of Contents
+
+- [Network Architecture](#network-architecture)
+- [Threat Model Differences](#threat-model-differences)
+- [Performance Characteristics](#performance-characteristics)
+- [Implementation for Developers](#implementation-for-developers)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Security Considerations](#security-considerations)
+- [Network Resilience and Censorship Resistance](#network-resilience-and-censorship-resistance)
+- [Network Fingerprinting and Detection](#network-fingerprinting-and-detection)
+- [Recent Security Research (2024-2026)](#recent-security-research-2024-2026)
+- [Cost and Resource Implications](#cost-and-resource-implications)
+- [2026 Network State](#2026-network-state)
+- [Development Ecosystem Comparison](#development-ecosystem-comparison)
+- [Mixing Anonymity Networks](#mixing-anonymity-networks)
+- [Legal and Regulatory Status](#legal-and-regulatory-status)
+- [Practical Migration Path](#practical-migration-path)
+
 ## Network Architecture
 
 Tor uses a centralized directory authority model with approximately 7,000+ relays worldwide. Clients connect through a three-hop circuit, with the entry node knowing the client IP, the middle node being blind to both ends, and the exit node knowing the destination but not the origin. This design prioritizes web browsing and supports exit nodes—making Tor suitable for accessing clearnet services anonymously.

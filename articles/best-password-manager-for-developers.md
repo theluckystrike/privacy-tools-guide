@@ -44,6 +44,19 @@ Managing credentials securely is a fundamental skill for developers. Whether you
 4.
 - **While the core service is closed-source**: the developer experience is polished, and the secret integration product (1Password Secrets) provides dedicated infrastructure for application secrets.
 
+## Table of Contents
+
+- [Why Developers Need Specialized Password Management](#why-developers-need-specialized-password-management)
+- [Bitwarden: Open-Source with Excellent CLI Support](#bitwarden-open-source-with-excellent-cli-support)
+- [1Password: Developer-Friendly Integrations](#1password-developer-friendly-integrations)
+- [HashiCorp Vault: Enterprise-Grade Secret Management](#hashicorp-vault-enterprise-grade-secret-management)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Advanced Integration Patterns](#advanced-integration-patterns)
+- [Security Best Practices for Password Managers](#security-best-practices-for-password-managers)
+- [Threat Model: Password Manager Compromise](#threat-model-password-manager-compromise)
+- [Comparing Database Password Storage](#comparing-database-password-storage)
+- [Tools Comparison Deep Dive](#tools-comparison-deep-dive)
+
 ## Why Developers Need Specialized Password Management
 
 Developers face unique challenges that generic password managers don't address. You need to store API tokens, database credentials, SSH keys, and environment variables—not just website passwords. The best password manager for developers offers command-line interface access, support for multiple secret types, and the ability to inject credentials directly into applications and development workflows.

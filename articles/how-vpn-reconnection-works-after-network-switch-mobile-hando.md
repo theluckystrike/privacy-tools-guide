@@ -40,6 +40,14 @@ When switching networks, most VPN protocols detect the IP address change and aut
 - **The `ping-restart 20` setting**: tells OpenVPN to attempt reconnection after 20 seconds of no response, rather than completely abandoning the session.
 - **Many enterprise VPN solutions**: use IKEv2 specifically because of its handoff capabilities.
 
+## Table of Contents
+
+- [The Core Problem: IP Address Changes](#the-core-problem-ip-address-changes)
+- [How Major VPN Protocols Handle Network Transitions](#how-major-vpn-protocols-handle-network-transitions)
+- [Detecting Network Changes Programmatically](#detecting-network-changes-programmatically)
+- [Building a Resilient VPN Reconnection Strategy](#building-a-resilient-vpn-reconnection-strategy)
+- [Practical Considerations for Power Users](#practical-considerations-for-power-users)
+
 ## The Core Problem: IP Address Changes
 
 A VPN creates an encrypted tunnel through which all your traffic flows. This tunnel terminates at the VPN server using a specific IP address. When your device switches networks, your public IP address typically changes. The existing VPN session was established with the original IP, and the server may interpret the new IP as a potential security event or simply lose track of the session state.

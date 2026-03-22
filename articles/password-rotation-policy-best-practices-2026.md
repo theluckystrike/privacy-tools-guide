@@ -39,6 +39,17 @@ In 2026, best practice is risk-based rotation: rotate database passwords every 3
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 - **Should I switch tools**: if something better comes out? Switching costs are real: learning curves, workflow disruption, and data migration all take time.
 
+## Table of Contents
+
+- [Why Rotation Still Matters](#why-rotation-still-matters)
+- [Risk-Based Rotation Schedules](#risk-based-rotation-schedules)
+- [Automating Rotation with Password Managers](#automating-rotation-with-password-managers)
+- [SSH Key Rotation](#ssh-key-rotation)
+- [API Key Management](#api-key-management)
+- [Monitoring and Alerts](#monitoring-and-alerts)
+- [Service Account Rotation](#service-account-rotation)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Why Rotation Still Matters
 
 Even with the best password managers generating unique, complex credentials, rotation provides defense in depth. If a service experiences a breach, rotated credentials limit the window of exposure. High-privilege accounts, API keys, and service tokens particularly benefit from regular rotation schedules.

@@ -26,6 +26,16 @@ Bitwarden is the best password manager for small teams in 2026, offering the str
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What Small Teams Actually Need](#what-small-teams-actually-need)
+- [CLI-First Solutions](#cli-first-solutions)
+- [Hosted Solutions with Team Features](#hosted-solutions-with-team-features)
+- [Automation and CI/CD Integration](#automation-and-cicd-integration)
+- [Self-Hosted Solutions](#self-hosted-solutions)
+- [Making the Choice](#making-the-choice)
+- [Implementation Checklist](#implementation-checklist)
+
 ## What Small Teams Actually Need
 
 When evaluating password managers, small teams should prioritize:

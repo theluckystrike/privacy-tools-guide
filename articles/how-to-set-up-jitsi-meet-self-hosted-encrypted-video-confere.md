@@ -41,6 +41,13 @@ Deploying a self-hosted Jitsi Meet instance with end-to-end encryption gives you
 - **Jitsi Meet supports E2EE**: using the WebRTC Insertable Streams API, which allows JavaScript to process media frames before transmission.
 - **Guests can still join**: meetings started by authenticated users, but they cannot initiate new conferences.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Server Requirements and Preparation](#server-requirements-and-preparation)
+- [Production Hardening Recommendations](#production-hardening-recommendations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -27,6 +27,25 @@ Choosing between Bitwarden and KeePassXC comes down to a fundamental decision: d
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Security Architecture](#security-architecture)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [Command-Line Interface](#command-line-interface)
+- [Self-Hosting and Deployment](#self-hosting-and-deployment)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Security Audit and Transparency](#security-audit-and-transparency)
+- [Mobile and Cross-Platform Support](#mobile-and-cross-platform-support)
+- [When to Choose Bitwarden](#when-to-choose-bitwarden)
+- [When to Choose KeePassXC](#when-to-choose-keepassxc)
+- [Migration Between Tools](#migration-between-tools)
+- [Advanced KeePassXC Setup: Syncthing Integration](#advanced-keepassxc-setup-syncthing-integration)
+- [Bitwarden Self-Hosting Deep Dive](#bitwarden-self-hosting-deep-dive)
+- [Encryption Key Derivation Comparison](#encryption-key-derivation-comparison)
+- [Migration Path: Switching Between Managers](#migration-path-switching-between-managers)
+- [Performance and Scalability](#performance-and-scalability)
+- [Threat Model Decision Matrix](#threat-model-decision-matrix)
+
 ## Security Architecture
 
 **Bitwarden** operates as a zero-knowledge password manager with cloud synchronization. Your vault is encrypted client-side using AES-256 bit encryption before it ever leaves your device. Bitwarden uses PBKDF2 with 600,000 iterations for key derivation, and the server never sees your master password or decrypted data.

@@ -44,6 +44,14 @@ Email subaddressing (also known as plus addressing or tagged addressing) is a po
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Choose your base email**: - use a privacy-respecting provider 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Custom Domain Subaddressing](#advanced-custom-domain-subaddressing)
+- [Advanced: Automated Leak Detection System](#advanced-automated-leak-detection-system)
+- [Service-Level Comparison: Which Services Leak Most](#service-level-comparison-which-services-leak-most)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

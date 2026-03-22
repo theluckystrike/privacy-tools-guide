@@ -59,6 +59,13 @@ How It Works:
 - **Provides address used only**: for official documents 4.
 - **Submit removal request (most**: require email verification) 6.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Comparison Table](#comparison-table)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -27,6 +27,21 @@ Privacy browser extensions have become essential tools for developers and power 
 - **The extension doesn't rely**: on pre-compiled filter lists, instead building a unique tracker database per user.
 - **By serving common JavaScript**: libraries from local storage, it blocks approximately 40% of third-party requests while adding 50-100ms to page loads.
 
+## Table of Contents
+
+- [Understanding Performance Impact Metrics](#understanding-performance-impact-metrics)
+- [Extension Rankings by Performance Impact](#extension-rankings-by-performance-impact)
+- [Optimizing Extension Performance](#optimizing-extension-performance)
+- [Implementation Example: Measuring Extension Impact](#implementation-example-measuring-extension-impact)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Advanced Extension Configurations](#advanced-extension-configurations)
+- [Benchmarking Extensions in Your Environment](#benchmarking-extensions-in-your-environment)
+- [Firefox vs Chrome Extension Differences](#firefox-vs-chrome-extension-differences)
+- [Privacy Extension Stack Comparison](#privacy-extension-stack-comparison)
+- [Monitoring Extension Impact Over Time](#monitoring-extension-impact-over-time)
+- [Extension Interaction Effects](#extension-interaction-effects)
+
 ## Understanding Performance Impact Metrics
 
 Before examining specific extensions, it's important to understand how performance impact is measured. The primary metrics include:

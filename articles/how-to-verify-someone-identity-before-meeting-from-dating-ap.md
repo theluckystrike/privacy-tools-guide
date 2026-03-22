@@ -42,6 +42,13 @@ Meeting someone from a dating app in person requires trust, but blind trust can 
 4.
 - **- Be aware that asking someone for their LinkedIn is revealing your LinkedIn to them**: use a privacy-reviewed profile with limited information if you choose to share.
 
+## Table of Contents
+
+- [Why Identity Verification Matters Before a First Meeting](#why-identity-verification-matters-before-a-first-meeting)
+- [Prerequisites](#prerequisites)
+- [Safety Best Practices Before Meeting](#safety-best-practices-before-meeting)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Identity Verification Matters Before a First Meeting
 
 Romance scams caused over $1.1 billion in losses in the United States in 2023 according to the FTC. Catfishing does not always have a financial motive — some cases involve stalking, harassment, or social manipulation. Understanding the threat model helps you calibrate how much verification is proportionate.

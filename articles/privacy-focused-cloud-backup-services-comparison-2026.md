@@ -38,6 +38,20 @@ intent-checked: true---
 - **This guide compares encrypted**: backup solutions with pricing, encryption specs, jurisdiction analysis, and real-world recommendations.
 - **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [The Cloud Backup Privacy Problem](#the-cloud-backup-privacy-problem)
+- [Encryption Standards Explained](#encryption-standards-explained)
+- [Top Privacy-Focused Backup Services](#top-privacy-focused-backup-services)
+- [Detailed Comparison Table](#detailed-comparison-table)
+- [Jurisdiction Deep Dive](#jurisdiction-deep-dive)
+- [Setup & Configuration](#setup-configuration)
+- [Real-World Scenarios](#real-world-scenarios)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Backup Best Practices](#backup-best-practices)
+- [Restoration Testing](#restoration-testing)
+
 ## Overview
 
 Cloud backups centralize data but create surveillance risks. Unencrypted backups expose files to cloud provider, governments, and hackers. Privacy-focused backup services use zero-knowledge encryption—providers cannot access your files even if forced by law. This guide compares encrypted backup solutions with pricing, encryption specs, jurisdiction analysis, and real-world recommendations.

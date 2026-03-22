@@ -36,6 +36,18 @@ When selecting privacy extensions for Firefox, developers and power users who re
 - **Extensions that inject shadow**: DOM content also create navigation dead zones for keyboard-only and screen reader users.
 - **This option offers the**: best compatibility since it is integrated into the browser and has been accessibility-tested by Mozilla's own QA team.
 
+## Table of Contents
+
+- [The Accessibility-Privacy Tradeoff](#the-accessibility-privacy-tradeoff)
+- [Recommended Privacy Extensions](#recommended-privacy-extensions)
+- [Testing Extension Compatibility](#testing-extension-compatibility)
+- [Configuration for Developer Workflows](#configuration-for-developer-workflows)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Extension Combinations](#extension-combinations)
+- [Advanced Configuration for Power Users](#advanced-configuration-for-power-users)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Performance Monitoring](#performance-monitoring)
+
 ## The Accessibility-Privacy Tradeoff
 
 Privacy extensions typically work by intercepting network requests, modifying page content, or blocking specific DOM elements. These same mechanisms can break screen reader functionality. For instance, an extension that removes tracking parameters from URLs might also strip legitimate form data that screen readers need. Extensions that hide or modify page elements can destroy the semantic structure that assistive technologies rely on.

@@ -44,6 +44,22 @@ End-to-end encryption (E2EE) means your data is encrypted on your device before 
 4.
 - **This is the model Signal**: WhatsApp (with encryption enabled), and secure email providers use.
 
+## Table of Contents
+
+- [What End-to-End Encryption Actually Means](#what-end-to-end-encryption-actually-means)
+- [The Foundation: Asymmetric Key Exchange](#the-foundation-asymmetric-key-exchange)
+- [The Signal Protocol: Modern E2EE in Practice](#the-signal-protocol-modern-e2ee-in-practice)
+- [Cryptographic Foundations](#cryptographic-foundations)
+- [Implementing E2EE in Your Application](#implementing-e2ee-in-your-application)
+- [Verifying Encryption: Safety Numbers and Fingerprints](#verifying-encryption-safety-numbers-and-fingerprints)
+- [Common Misconceptions](#common-misconceptions)
+- [Perfect Forward Secrecy and Key Rotation](#perfect-forward-secrecy-and-key-rotation)
+- [Implementing E2EE: TweetNaCl Example](#implementing-e2ee-tweetnacl-example)
+- [E2EE in Different Application Domains](#e2ee-in-different-application-domains)
+- [Threat Models E2EE Solves and Doesn't Solve](#threat-models-e2ee-solves-and-doesnt-solve)
+- [Real-World Vulnerabilities in E2EE Systems](#real-world-vulnerabilities-in-e2ee-systems)
+- [Evaluating E2EE in Products](#evaluating-e2ee-in-products)
+
 ## What End-to-End Encryption Actually Means
 
 In traditional encryption models, data is encrypted between you and the server, then decrypted on the server, then re-encrypted to the recipient. This means the service provider holds the keys. With E2EE, the encryption keys never leave your device. The server acts only as a relay—it cannot decrypt anything.

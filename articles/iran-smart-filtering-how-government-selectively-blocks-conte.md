@@ -26,6 +26,18 @@ Iran operates one of the most sophisticated internet filtering systems in the wo
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Iran's Smart Filtering Works](#how-irans-smart-filtering-works)
+- [Detection Evasion Techniques](#detection-evasion-techniques)
+- [Building Resilient Applications](#building-resilient-applications)
+- [Technical Considerations](#technical-considerations)
+- [ISP-Level Monitoring and Metadata](#isp-level-monitoring-and-metadata)
+- [Bridge Selection and Server Rotation](#bridge-selection-and-server-rotation)
+- [Building Fault-Tolerant Applications](#building-fault-tolerant-applications)
+- [Ethical and Legal Considerations](#ethical-and-legal-considerations)
+- [Monitoring Policy Changes](#monitoring-policy-changes)
+
 ## How Iran's Smart Filtering Works
 
 The Iranian filtering infrastructure operates at multiple network layers, combining several detection techniques to identify and block access to prohibited content.

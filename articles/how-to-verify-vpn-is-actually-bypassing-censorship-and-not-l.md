@@ -42,6 +42,15 @@ Using a VPN to bypass censorship or protect your privacy only works if you can v
 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why VPNs Sometimes Fail to Mask Your Location](#why-vpns-sometimes-fail-to-mask-your-location)
+- [Prerequisites](#prerequisites)
+- [Advanced: Manual Traffic Analysis](#advanced-manual-traffic-analysis)
+- [Advanced: Traffic Flow Verification with tcpdump](#advanced-traffic-flow-verification-with-tcpdump)
+- [Performance Impact Testing](#performance-impact-testing)
+- [Troubleshooting](#troubleshooting)
+
 ## Why VPNs Sometimes Fail to Mask Your Location
 
 A VPN creates an encrypted tunnel between your device and a remote server, routing your traffic through that server's IP address. However, several failure points can expose your real location:

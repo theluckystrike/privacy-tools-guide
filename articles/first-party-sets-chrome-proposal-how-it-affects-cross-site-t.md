@@ -191,6 +191,22 @@ The era of frictionless cross-site tracking is ending. First Party Sets offer a 
 
 ## Testing First Party Sets Implementation
 
+## Table of Contents
+
+- [Testing First Party Sets Implementation](#testing-first-party-sets-implementation)
+- [Migration Strategies for Cross-Site Tracking](#migration-strategies-for-cross-site-tracking)
+- [Privacy Sandbox Integration](#privacy-sandbox-integration)
+- [Handling Sensitive Data with FPS](#handling-sensitive-data-with-fps)
+- [Compliance and Documentation](#compliance-and-documentation)
+- [Organization](#organization)
+- [Associated Sites](#associated-sites)
+- [Service Sites](#service-sites)
+- [Data Sharing Policy](#data-sharing-policy)
+- [Competitor Analysis and Market Market](#competitor-analysis-and-market-market)
+- [User Privacy Controls](#user-privacy-controls)
+- [Future Evolution of FPS](#future-evolution-of-fps)
+- [Common Implementation Mistakes](#common-implementation-mistakes)
+
 Developers can test FPS implementations using Chrome's debugging tools:
 
 ```bash

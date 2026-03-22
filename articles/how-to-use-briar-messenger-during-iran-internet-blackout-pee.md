@@ -40,6 +40,14 @@ During Iran's internet blackouts, use Briar Messenger, which works entirely offl
 - **One user displays their**: QR code 3.
 - **Educate your circle about**: proper usage Having Briar operational before internet restrictions begin gives you the best chance at maintaining communication when it matters most.
 
+## Table of Contents
+
+- [Why Briar Works When Other Apps Fail](#why-briar-works-when-other-apps-fail)
+- [Prerequisites](#prerequisites)
+- [Advanced Briar Configurations for Maximum Reach](#advanced-briar-configurations-for-maximum-reach)
+- [Security Considerations During Use](#security-considerations-during-use)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Briar Works When Other Apps Fail
 
 Conventional messaging apps require internet connectivity to reach servers. When Iran blocks internet traffic at the ISP level, these apps become useless. Briar takes a fundamentally different approach by enabling direct device-to-device communication through Bluetooth and Wi-Fi Direct.

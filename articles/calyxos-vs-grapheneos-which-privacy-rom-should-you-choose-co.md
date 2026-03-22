@@ -41,6 +41,20 @@ Choosing a privacy-focused Android ROM requires understanding the technical trad
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choosing a privacy-focused Android**: ROM requires understanding the technical tradeoffs between CalyxOS and GrapheneOS.
 
+## Table of Contents
+
+- [Security Architecture](#security-architecture)
+- [Device Compatibility](#device-compatibility)
+- [DevOps Integration and Automation](#devops-integration-and-automation)
+- [Privacy Features Comparison](#privacy-features-comparison)
+- [Development Environment Considerations](#development-environment-considerations)
+- [Application Store Compatibility and Installation](#application-store-compatibility-and-installation)
+- [Kernel Hardening and Memory Safety](#kernel-hardening-and-memory-safety)
+- [Real-World Security Incident Response](#real-world-security-incident-response)
+- [Storage Encryption and Data Loss Scenarios](#storage-encryption-and-data-loss-scenarios)
+- [Network-Level Privacy Features](#network-level-privacy-features)
+- [Use Case Recommendations](#use-case-recommendations)
+
 ## Security Architecture
 
 GrapheneOS implements a hardened security model built on Android's application sandbox. The project adds extra security layers including memory tagging, improved Exynos mitigations for supported devices, and a custom kernel with additional hardening patches. The sandbox configuration restricts app capabilities more aggressively than stock Android.

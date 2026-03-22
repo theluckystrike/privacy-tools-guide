@@ -27,6 +27,21 @@ Achieving genuine financial privacy with Bitcoin requires more than just using a
 - **The protocol uses a**: coordinator running as a Tor hidden service, ensuring no network-level information leaks during mixing.
 - **Bitcoin mixing is legal**: in most developed countries, but this may change.
 
+## Table of Contents
+
+- [Why Tor and Coin Mixing Matter](#why-tor-and-coin-mixing-matter)
+- [Prerequisites](#prerequisites)
+- [Additional Privacy Considerations](#additional-privacy-considerations)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Mixing Strategies](#advanced-mixing-strategies)
+- [Threat Models and Assumptions](#threat-models-and-assumptions)
+- [Custody Models and Key Management](#custody-models-and-key-management)
+- [Privacy Testing and Verification](#privacy-testing-and-verification)
+- [Legal and Regulatory Considerations](#legal-and-regulatory-considerations)
+- [Service Reliability and Backup Plans](#service-reliability-and-backup-plans)
+- [Combining Mixing with Other Privacy Techniques](#combining-mixing-with-other-privacy-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Tor and Coin Mixing Matter
 
 Bitcoin's blockchain is inherently transparent. Every transaction links to previous transactions, creating a traceable history that can reveal identities through exchange KYC data, IP addresses, and spending patterns. While Bitcoin addresses don't contain personal information by default, blockchain analysis firms have developed sophisticated techniques to de-anonymize users through pattern recognition and metadata correlation.

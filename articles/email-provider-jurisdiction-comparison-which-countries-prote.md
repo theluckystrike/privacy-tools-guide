@@ -46,6 +46,22 @@ echo "Step 1**: Create new email account at $NEW_PROVIDER"
 
 # 2.
 
+## Table of Contents
+
+- [Understanding Email Jurisdiction](#understanding-email-jurisdiction)
+- [Countries With Strong Email Privacy Protections](#countries-with-strong-email-privacy-protections)
+- [Countries With Problematic Jurisdiction](#countries-with-problematic-jurisdiction)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Server Location Matters](#server-location-matters)
+- [Making an Informed Choice](#making-an-informed-choice)
+- [Government Data Request Analysis by Jurisdiction](#government-data-request-analysis-by-jurisdiction)
+- [Metadata Exposure by Country](#metadata-exposure-by-country)
+- [Email Provider Audit: Checking Jurisdiction Claims](#email-provider-audit-checking-jurisdiction-claims)
+- [Jurisdiction-Aware Email Architecture](#jurisdiction-aware-email-architecture)
+- [Alternative Jurisdiction Strategies](#alternative-jurisdiction-strategies)
+- [Transitioning Between Providers](#transitioning-between-providers)
+- [Legal Considerations in Email Provider Choice](#legal-considerations-in-email-provider-choice)
+
 ## Understanding Email Jurisdiction
 
 Email provider jurisdiction refers to the legal framework governing the company that operates your email service. This determines which laws apply when government agencies request access to your data. Different countries have vastly different approaches to privacy, ranging from strong constitutional protections to expansive surveillance authorities.

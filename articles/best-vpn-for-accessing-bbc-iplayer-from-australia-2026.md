@@ -42,6 +42,26 @@ Accessing BBC iPlayer from Australia presents a unique technical challenge. The 
 - **This guide covers the**: technical implementation details, configuration approaches, and verification methods that developers and power users need to know in 2026.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding BBC iPlayer's Geo-Restriction Mechanism](#understanding-bbc-iplayers-geo-restriction-mechanism)
+- [DNS Configuration for Streaming Services](#dns-configuration-for-streaming-services)
+- [VPN Protocol Considerations](#vpn-protocol-considerations)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Technical Verification Methods](#technical-verification-methods)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Privacy Considerations](#privacy-considerations)
+- [Configuration Example: WireGuard](#configuration-example-wireguard)
+- [Final Recommendations](#final-recommendations)
+- [Advanced Geo-Blocking Circumvention](#advanced-geo-blocking-circumvention)
+- [VPN Provider Capability Matrix](#vpn-provider-capability-matrix)
+- [Custom VPN Server Configuration for BBC](#custom-vpn-server-configuration-for-bbc)
+- [BBC Payload Analysis and Optimization](#bbc-payload-analysis-and-optimization)
+- [Server Selection Algorithm](#server-selection-algorithm)
+- [BBC Authentication Token Handling](#bbc-authentication-token-handling)
+- [Troubleshooting With Packet Analysis](#troubleshooting-with-packet-analysis)
+- [Performance Tuning for Streaming Quality](#performance-tuning-for-streaming-quality)
+
 ## Understanding BBC iPlayer's Geo-Restriction Mechanism
 
 BBC iPlayer employs multiple layers of detection beyond simple IP blocking. The primary methods include:

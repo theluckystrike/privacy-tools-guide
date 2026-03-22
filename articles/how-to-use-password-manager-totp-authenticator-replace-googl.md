@@ -39,6 +39,19 @@ Migrate from Google Authenticator to password manager TOTP by adding TOTP secret
 - **Require test token before**: enabling (user provides one generated token to verify) 4.
 - **Use Hardware Security Keys**: for Critical Accounts: For high-value accounts (cryptocurrency, primary email), consider hardware keys like YubiKey over TOTP.
 
+## Table of Contents
+
+- [Understanding TOTP Mechanics](#understanding-totp-mechanics)
+- [Why Migrate to Your Password Manager](#why-migrate-to-your-password-manager)
+- [Migrating from Google Authenticator](#migrating-from-google-authenticator)
+- [Using TOTP Programmatically](#using-totp-programmatically)
+- [Implementing TOTP in Your Applications](#implementing-totp-in-your-applications)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced TOTP Implementation for Developers](#advanced-totp-implementation-for-developers)
+- [Comparison: Password Manager TOTP vs Dedicated Authenticators](#comparison-password-manager-totp-vs-dedicated-authenticators)
+- [TOTP at Scale: Enterprise Implementation](#totp-at-scale-enterprise-implementation)
+
 ## Understanding TOTP Mechanics
 
 TOTP generates temporary codes based on a shared secret and the current time. The algorithm follows [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238) and produces 6-digit codes that expire every 30 seconds.

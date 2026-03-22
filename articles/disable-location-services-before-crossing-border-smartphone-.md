@@ -27,6 +27,22 @@ Crossing international borders with a smartphone exposes your location history, 
 - **Never use the device**: in high-trust environments (banking, work) 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Disable Location Services Before Border Crossing](#why-disable-location-services-before-border-crossing)
+- [Android: Location Disabling Methods](#android-location-disabling-methods)
+- [iOS: Location Services Control Methods](#ios-location-services-control-methods)
+- [Additional Privacy Measures](#additional-privacy-measures)
+- [Verification Steps](#verification-steps)
+- [After Crossing the Border](#after-crossing-the-border)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Network Location Data: The Hidden Exposure](#network-location-data-the-hidden-exposure)
+- [Pre-Border Data Cleaning Procedures](#pre-border-data-cleaning-procedures)
+- [Customs Authority Data Seizure Preparedness](#customs-authority-data-seizure-preparedness)
+- [Regional Variations in Location Privacy](#regional-variations-in-location-privacy)
+- [Post-Border Forensic Check](#post-border-forensic-check)
+- [Pre-Travel Checklist](#pre-travel-checklist)
+
 ## Why Disable Location Services Before Border Crossing
 
 Customs agencies in multiple countries have authority to search electronic devices at borders. Your smartphone contains location data that reveals your movements, visited places, and potentially sensitive information about your activities. Even with location services disabled, apps may have cached location data or use alternative methods to track your position.

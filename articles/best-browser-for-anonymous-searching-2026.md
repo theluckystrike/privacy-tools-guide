@@ -44,6 +44,15 @@ Anonymous searching requires more than just using a private or incognito window.
 - **Casual research**: Use Brave with Shields at strict level and Brave Search
 2.
 
+## Table of Contents
+
+- [The Anatomy of Search Tracking](#the-anatomy-of-search-tracking)
+- [Tor Browser: Maximum Anonymity](#tor-browser-maximum-anonymity)
+- [Firefox with Hardened Configuration](#firefox-with-hardened-configuration)
+- [Brave Browser: Built-In Privacy](#brave-browser-built-in-privacy)
+- [Advanced: Browser Fingerprint Mitigation](#advanced-browser-fingerprint-mitigation)
+- [Practical Search Workflow](#practical-search-workflow)
+
 ## The Anatomy of Search Tracking
 
 When you type a query into a search engine, multiple tracking mechanisms come into play. The search terms themselves are logged and associated with your IP address, browser fingerprint, and account if you're signed in. Beyond the search engine, websites you click through receive referrer information that can reveal your query. DNS lookups expose your browsing activity to your ISP, and browser fingerprinting techniques create persistent identifiers across sessions.

@@ -54,6 +54,17 @@ This guide focuses on technical implementation rather than product recommendatio
 - **- Multi-SIM Devices**: Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Technical Challenge](#understanding-the-technical-challenge)
+- [Protocols That Work in 2026](#protocols-that-work-in-2026)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Client Configuration Examples](#client-configuration-examples)
+- [Testing Your Connection](#testing-your-connection)
+- [Alternative Approaches](#alternative-approaches)
+- [Maintenance and Reliability](#maintenance-and-reliability)
+- [Getting Started](#getting-started)
+
 ## Understanding the Technical Challenge
 
 The GFW uses multiple layers of filtering. Standard VPN protocols like OpenVPN and IKEv2 are frequently detected and blocked through DPI, which examines packet headers and payload patterns. The blocking is dynamic—new detection methods are deployed regularly, meaning solutions that work today may fail tomorrow.

@@ -41,6 +41,21 @@ You use encryption software like VeraCrypt or FileVault.
 - **Consider whether traveling with**: a fully populated password manager is advisable, or use a travel-specific instance with only essential credentials.
 - **Restrict devices to minimal credentials**: use VPN connections rather than stored auth tokens, and separate work/personal data across devices.
 
+## Table of Contents
+
+- [The Legal Framework: Border Search Exception](#the-legal-framework-border-search-exception)
+- [What Officers Can Legally Do](#what-officers-can-legally-do)
+- [Practical Scenarios for Developers](#practical-scenarios-for-developers)
+- [Defensive Strategies for Power Users](#defensive-strategies-for-power-users)
+- [What They Cannot Do (In Theory)](#what-they-cannot-do-in-theory)
+- [Recent Legal Developments](#recent-legal-developments)
+- [Device Seizure and Data Retention](#device-seizure-and-data-retention)
+- [Travel-Specific Threat Models](#travel-specific-threat-models)
+- [The Gray Area: Biometric vs. Passcode Compulsion](#the-gray-area-biometric-vs-passcode-compulsion)
+- [Encrypted Container Strategy](#encrypted-container-strategy)
+- [Post-Travel Forensic Inspection](#post-travel-forensic-inspection)
+- [Cooperation vs. Refusal Framework](#cooperation-vs-refusal-framework)
+
 ## The Legal Framework: Border Search Exception
 
 The Fourth Amendment protects against unreasonable searches, but U.S. borders operate under a different legal standard known as the "border search exception." This exception grants Customs and Border Protection (CBP) and Immigration and Customs Enforcement (ICE) broad authority to search travelers and their belongings without a warrant, probable cause, or even reasonable suspicion in most cases.

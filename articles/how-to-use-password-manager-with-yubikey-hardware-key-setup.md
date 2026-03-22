@@ -44,6 +44,19 @@ Some browsers block WebAuthn requests by default.
 - **Password managers support YubiKey**: through the FIDO2/WebAuthn standard.
 - **This means your YubiKey**: becomes a second authentication factor that cannot be intercepted or reused on fraudulent websites.
 
+## Table of Contents
+
+- [Understanding YubiKey and Password Manager Integration](#understanding-yubikey-and-password-manager-integration)
+- [Prerequisites](#prerequisites)
+- [Setting Up Bitwarden with YubiKey](#setting-up-bitwarden-with-yubikey)
+- [Setting Up 1Password with YubiKey](#setting-up-1password-with-yubikey)
+- [Configuring YubiKey for Maximum Security](#configuring-yubikey-for-maximum-security)
+- [Using Multiple YubiKeys in Production](#using-multiple-yubikeys-in-production)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+- [Auditing Your Password Vault](#auditing-your-password-vault)
+- [Generating Strong Passphrases](#generating-strong-passphrases)
+
 ## Understanding YubiKey and Password Manager Integration
 
 YubiKey devices provide cryptographic authentication that resists phishing, SIM swapping, and man-in-the-middle attacks. Unlike time-based one-time passwords (TOTPs) stored in your phone, hardware keys store private keys in tamper-resistant hardware that never leaves your possession.

@@ -41,6 +41,13 @@ This guide covers the Intelius opt-out process, verification techniques, and aut
 - **Use manual verification or**: official removal verification tools when available.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Additional Resources](#additional-resources)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

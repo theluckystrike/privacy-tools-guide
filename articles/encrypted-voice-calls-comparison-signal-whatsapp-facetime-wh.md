@@ -42,6 +42,20 @@ When evaluating privacy-focused communication tools, the encryption itself is on
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding Metadata in Voice Calls](#understanding-metadata-in-voice-calls)
+- [Signal: Minimal Metadata Architecture](#signal-minimal-metadata-architecture)
+- [WhatsApp: Substantial Metadata Collection](#whatsapp-substantial-metadata-collection)
+- [FaceTime: Apple's Ecosystem Approach](#facetime-apples-ecosystem-approach)
+- [Comparative Analysis](#comparative-analysis)
+- [Practical Recommendations for Developers](#practical-recommendations-for-developers)
+- [Real-World Metadata Collection Examples](#real-world-metadata-collection-examples)
+- [Privacy-Focused Call Recommendations by Use Case](#privacy-focused-call-recommendations-by-use-case)
+- [Testing Encryption Claims](#testing-encryption-claims)
+- [Server Architecture and Encryption Design](#server-architecture-and-encryption-design)
+- [Metadata Retention Policies](#metadata-retention-policies)
+
 ## Understanding Metadata in Voice Calls
 
 Before examining specific platforms, it is useful to understand what metadata actually gets collected during a typical voice call:

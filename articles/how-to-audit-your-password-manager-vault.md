@@ -40,6 +40,13 @@ Regularly auditing your password manager vault is essential for maintaining stro
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Vault Auditing Matters](#why-vault-auditing-matters)
+- [Prerequisites](#prerequisites)
+- [Additional Audit Areas](#additional-audit-areas)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Vault Auditing Matters
 
 Password managers simplify credential management, but they can also become repositories of security debt. A vault with hundreds of entries likely contains:

@@ -42,6 +42,19 @@ China's real name registration system represents one of the most identity verifi
 - **Sophisticated users can employ**: anti-fingerprinting techniques, use privacy-focused browsers, and implement other countermeasures to limit these tracking methods.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is Real Name Registration in China](#what-is-real-name-registration-in-china)
+- [How Online Identity Verification Works](#how-online-identity-verification-works)
+- [Impact on Digital Anonymity](#impact-on-digital-anonymity)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [What Remains Private](#what-remains-private)
+- [Real Name Registration Scope by Service Category](#real-name-registration-scope-by-service-category)
+- [Workarounds and Their Limitations](#workarounds-and-their-limitations)
+- [Technical Implementation Patterns](#technical-implementation-patterns)
+- [Legal Risks and Consequences](#legal-risks-and-consequences)
+- [Practical Guidance for Users](#practical-guidance-for-users)
+
 ## What Is Real Name Registration in China
 
 Real name registration (实名制, shímíng zhì) is a regulatory framework that requires individuals to verify their real-world identity before accessing certain online services. This system emerged gradually, beginning with telecommunications in 2010 and expanding to internet services, social media, e-commerce, and financial platforms.

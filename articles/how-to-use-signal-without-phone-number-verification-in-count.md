@@ -39,6 +39,14 @@ In countries with mandatory SIM registration (India, Pakistan, Turkey), use Sign
 - **Use 6+ digits (maximum**: security) # 2.
 - **The long-term solution would**: be for Signal to support usernames or alternative identifiers alongside phone numbers, but this would fundamentally alter Signal's architecture.
 
+## Table of Contents
+
+- [Understanding Signal's Verification Requirements](#understanding-signals-verification-requirements)
+- [Prerequisites](#prerequisites)
+- [Detailed Comparison: Virtual Number Providers](#detailed-comparison-virtual-number-providers)
+- [Advanced: Device Registration with Signal Server](#advanced-device-registration-with-signal-server)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding Signal's Verification Requirements
 
 Signal's architecture relies on phone numbers as unique identifiers. When you register, the app requests an SMS or voice call to verify you control that number. This design choice has tradeoffs: it simplifies contact discovery but creates friction in regions with restrictive SIM laws.

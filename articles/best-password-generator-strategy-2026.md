@@ -52,6 +52,20 @@ The best password generator strategy in 2026 is to use a cryptographically secur
 - **Each approach offers distinct**: advantages depending on the use case.
 - **User input**: timestamps, and sequential patterns provide minimal entropy.
 
+## Table of Contents
+
+- [Understanding Entropy and Password Strength](#understanding-entropy-and-password-strength)
+- [Building a Cryptographically Secure Generator](#building-a-cryptographically-secure-generator)
+- [Passphrases vs. Random Character Strings](#passphrases-vs-random-character-strings)
+- [Implementing Generation Strategies](#implementing-generation-strategies)
+- [Integration with Password Managers](#integration-with-password-managers)
+- [Avoiding Common Pitfalls](#avoiding-common-pitfalls)
+- [Hardware Security Keys and Generated Passwords](#hardware-security-keys-and-generated-passwords)
+- [Batch Generation for Development Teams](#batch-generation-for-development-teams)
+- [Auditing Password Generation Implementations](#auditing-password-generation-implementations)
+- [Handling Legacy Systems with Weak Password Requirements](#handling-legacy-systems-with-weak-password-requirements)
+- [Distributed Password Generation](#distributed-password-generation)
+
 ## Understanding Entropy and Password Strength
 
 The strength of a randomly generated password derives from its entropy—the measure of unpredictability expressed in bits. A password generated from a truly random source with an entropy of 128 bits provides adequate protection against brute-force attacks for most applications. For high-security contexts, 256 bits offers defense against future quantum computing threats.

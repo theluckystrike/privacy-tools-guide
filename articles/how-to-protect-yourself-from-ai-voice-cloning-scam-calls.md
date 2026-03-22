@@ -42,6 +42,13 @@ Understanding these threats and learning how to protect yourself is no longer op
 - **Knowledge is your most**: powerful weapon against fraud.
 - **Many organizations offer resources**: specifically focused on protecting against AI-driven threats.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Threat Model: What Voice Cloning Targets](#threat-model-what-voice-cloning-targets)
+- [Advanced Verification Technologies](#advanced-verification-technologies)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

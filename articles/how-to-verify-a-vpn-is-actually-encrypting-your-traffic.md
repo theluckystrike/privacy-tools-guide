@@ -42,6 +42,13 @@ You cannot trust a VPN's marketing claims—you must verify encryption yourself.
 - **Worse, some are honeypots**: services run by security agencies to collect information.
 - **It queries STUN (Simple**: Traversal of User Datagram Protocol through NAT) servers to determine your real IP.
 
+## Table of Contents
+
+- [Why Verification Matters](#why-verification-matters)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Verification Matters
 
 A VPN's job is simple: encrypt your traffic so your ISP, network administrator, or monitoring service cannot see what you're doing. The promise is confidentiality through encryption.

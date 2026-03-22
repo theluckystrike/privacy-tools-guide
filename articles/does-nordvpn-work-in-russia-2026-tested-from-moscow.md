@@ -42,6 +42,23 @@ Testing VPN connectivity from within Russia presents unique challenges. The Russ
 - **Connection success rate hovered**: around 40-60% depending on time of day.
 - **OpenVPN (UDP)**: Traditional OpenVPN connections succeeded approximately 25% of the time.
 
+## Table of Contents
+
+- [Understanding the Current Restrictions](#understanding-the-current-restrictions)
+- [Testing Methodology](#testing-methodology)
+- [NordVPN Connection Results](#nordvpn-connection-results)
+- [Configuration Recommendations](#configuration-recommendations)
+- [Performance Considerations](#performance-considerations)
+- [Alternative Approaches](#alternative-approaches)
+- [VPN Apps vs. Manual Configuration](#vpn-apps-vs-manual-configuration)
+- [Staying Compliant With Russian Law](#staying-compliant-with-russian-law)
+- [DPI Fingerprinting: How Russia Detects VPN Traffic](#dpi-fingerprinting-how-russia-detects-vpn-traffic)
+- [Building Obfuscated Tunnels Manually](#building-obfuscated-tunnels-manually)
+- [Timing Attack Mitigation](#timing-attack-mitigation)
+- [Testing VPN Connectivity in Real-Time](#testing-vpn-connectivity-in-real-time)
+- [Failover Strategy for Blocked Connections](#failover-strategy-for-blocked-connections)
+- [Threat Assessment: Current Russia Environment (March 2026)](#threat-assessment-current-russia-environment-march-2026)
+
 ## Understanding the Current Restrictions
 
 Russia's internet regulatory framework has evolved significantly. The Roskomnadzor (Russian Federal Service for Supervision of Communications, Information Technology and Mass Media) employs deep packet inspection (DPI) and maintains active blocking lists for known VPN server IPs. The blocking mechanism targets both the VPN protocol headers and the IP addresses associated with major VPN providers.

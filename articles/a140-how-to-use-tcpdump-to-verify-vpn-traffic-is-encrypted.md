@@ -44,6 +44,15 @@ In this guide, we'll walk through how to use tcpdump to capture and analyze VPN 
 - **In this guide**: we'll walk through how to use tcpdump to capture and analyze VPN traffic, interpret the results, and confirm that your sensitive data is truly protected from prying eyes.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [What is tcpdump and Why Use It for VPN Verification?](#what-is-tcpdump-and-why-use-it-for-vpn-verification)
+- [Prerequisites](#prerequisites)
+- [Common Issues and Troubleshooting](#common-issues-and-troubleshooting)
+- [Security Considerations](#security-considerations)
+- [Best Practices for Regular VPN Verification](#best-practices-for-regular-vpn-verification)
+- [Troubleshooting](#troubleshooting)
+
 ## What is tcpdump and Why Use It for VPN Verification?
 
 tcpdump is a command-line packet sniffer that has been a staple of network administration and security auditing for decades. Unlike graphical network tools, tcpdump works directly with the raw network packets flowing through your network interfaces, giving you an unfiltered view of what's actually happening on your network.

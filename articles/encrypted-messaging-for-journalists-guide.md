@@ -27,6 +27,13 @@ Journalist-source communication faces a specific threat model: state actors, cor
 - **Scanning a QR code**: in person (most secure) 2.
 - **Signal's sealed sender encrypts the sender's identity**: Signal servers can verify that the message came from a Signal user but not which one.
 
+## Table of Contents
+
+- [Threat Model for Journalists](#threat-model-for-journalists)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Threat Model for Journalists
 
 Before choosing tools, be specific about the threat:

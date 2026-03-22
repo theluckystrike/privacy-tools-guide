@@ -27,6 +27,13 @@ Understanding how VPN traffic interacts with firewall rules is essential for mai
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This distinction matters because**: it determines which rules actually apply to your VPN traffic and in what order.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations for VPN Firewall Rules](#security-considerations-for-vpn-firewall-rules)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

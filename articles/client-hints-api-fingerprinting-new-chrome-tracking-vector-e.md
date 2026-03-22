@@ -47,6 +47,24 @@ The Client Hints API automatically sends your device model, operating system, CP
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Are Client Hints?](#what-are-client-hints)
+- [How Websites Use Client Hints for Fingerprinting](#how-websites-use-client-hints-for-fingerprinting)
+- [Practical Fingerprinting Example](#practical-fingerprinting-example)
+- [Browser Support and Availability](#browser-support-and-availability)
+- [Defending Against Client Hints Tracking](#defending-against-client-hints-tracking)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [The Broader Privacy Sandbox Context](#the-broader-privacy-sandbox-context)
+- [Fingerprinting Entropy Analysis](#fingerprinting-entropy-analysis)
+- [Practical Fingerprinting Implementation](#practical-fingerprinting-implementation)
+- [Cross-Site Tracking with Client Hints](#cross-site-tracking-with-client-hints)
+- [Protection Mechanisms by Browser](#protection-mechanisms-by-browser)
+- [Browser Extension Blocking Rules](#browser-extension-blocking-rules)
+- [Advanced Fingerprinting via Hints Combination](#advanced-fingerprinting-via-hints-combination)
+- [Privacy Sandbox and Future Tracking APIs](#privacy-sandbox-and-future-tracking-apis)
+- [Recommendations by Threat Model](#recommendations-by-threat-model)
+
 ## What Are Client Hints?
 
 Client Hints are HTTP headers that browsers send with each request, providing servers with information about the client device and browser configuration. Unlike traditional fingerprinting techniques that require JavaScript execution, Client Hints transmit this data automatically at the network level.

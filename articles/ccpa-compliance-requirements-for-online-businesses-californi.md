@@ -29,6 +29,18 @@ CCPA requires California businesses to disclose what data they collect, allow us
 - **Configure opt-out mechanisms**: Add GPC support and do-not-sell links
 5.
 
+## Table of Contents
+
+- [Who Must Comply?](#who-must-comply)
+- [Consumer Rights Under CCPA](#consumer-rights-under-ccpa)
+- [Implementing Consumer Rights in Your Application](#implementing-consumer-rights-in-your-application)
+- [Privacy Notice Requirements](#privacy-notice-requirements)
+- [Technical Safeguards for Data Protection](#technical-safeguards-for-data-protection)
+- [Sale of Personal Information](#sale-of-personal-information)
+- [Record Keeping and Compliance Evidence](#record-keeping-and-compliance-evidence)
+- [Non-Compliance Consequences](#non-compliance-consequences)
+- [Getting Started](#getting-started)
+
 ## Who Must Comply?
 
 CCPA applies to for-profit businesses that meet any of these thresholds:

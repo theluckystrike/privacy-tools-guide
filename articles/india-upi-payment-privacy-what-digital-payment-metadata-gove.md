@@ -40,6 +40,20 @@ Unified Payments Interface (UPI) has transformed digital payments in India, enab
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **While carriers assign dynamic IPs**: law enforcement can correlate transaction times with ISP records to identify users.
 
+## Table of Contents
+
+- [What is UPI Metadata?](#what-is-upi-metadata)
+- [What Banks Can Access](#what-banks-can-access)
+- [Government Access and Surveillance](#government-access-and-surveillance)
+- [Privacy Implications for Developers](#privacy-implications-for-developers)
+- [Reducing Your UPI Metadata Footprint](#reducing-your-upi-metadata-footprint)
+- [The Regulatory Framework](#the-regulatory-framework)
+- [UPI Transaction Timeline and Data Retention](#upi-transaction-timeline-and-data-retention)
+- [Analyzing Your Own UPI Metadata](#analyzing-your-own-upi-metadata)
+- [Government Access: The Technical Reality](#government-access-the-technical-reality)
+- [Strategies to Reduce UPI Metadata Footprint](#strategies-to-reduce-upi-metadata-footprint)
+- [Cross-Border Implications](#cross-border-implications)
+
 ## What is UPI Metadata?
 
 Every UPI transaction generates metadata beyond the transaction amount. This includes:

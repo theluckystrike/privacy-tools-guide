@@ -26,6 +26,23 @@ VPNs typically add 10-50ms of additional latency depending on the VPN server's l
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **VPNs typically add 10-50ms**: of additional latency depending on the VPN server's location relative to the game server.
 
+## Table of Contents
+
+- [Understanding Latency Components](#understanding-latency-components)
+- [Measuring Baseline Latency](#measuring-baseline-latency)
+- [Actual VPN Latency Measurements](#actual-vpn-latency-measurements)
+- [Why VPNs Increase Latency](#why-vpns-increase-latency)
+- [When VPNs Actually Reduce Latency](#when-vpns-actually-reduce-latency)
+- [Optimizing VPN for Gaming](#optimizing-vpn-for-gaming)
+- [Protocol Comparison for Gaming](#protocol-comparison-for-gaming)
+- [Practical Recommendations](#practical-recommendations)
+- [Troubleshooting VPN Gaming Issues](#troubleshooting-vpn-gaming-issues)
+- [Automated Latency Testing Framework](#automated-latency-testing-framework)
+- [WireGuard vs OpenVPN: Gaming Specific Benchmarks](#wireguard-vs-openvpn-gaming-specific-benchmarks)
+- [Geolocation-Based VPN Selection](#geolocation-based-vpn-selection)
+- [Network Configuration for Minimal Gaming Latency](#network-configuration-for-minimal-gaming-latency)
+- [Real-World Gaming Results with Different VPN Setups](#real-world-gaming-results-with-different-vpn-setups)
+
 ## Understanding Latency Components
 
 Before examining VPN impact, you need to understand what constitutes your baseline latency. Round-trip time (RTT) consists of three primary components:

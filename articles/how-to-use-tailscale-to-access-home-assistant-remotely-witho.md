@@ -40,6 +40,20 @@ Access Home Assistant remotely without port forwarding by using Tailscale's mesh
 - **This guide walks through**: setting up Tailscale for remote access, targeting developers and power users who want enterprise-grade security without complexity.
 - **Each device gets a**: unique Tailscale IP address (in the 100.x.x.x range), and your Home Assistant instance becomes reachable at that private IP from any device logged into your Tailscale network.
 
+## Table of Contents
+
+- [Why Avoid Port Forwarding](#why-avoid-port-forwarding)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Tailscale SSH and Emergency Access](#advanced-tailscale-ssh-and-emergency-access)
+- [Advanced: Multi-Network Federation](#advanced-multi-network-federation)
+- [Threat Model and Security Analysis](#threat-model-and-security-analysis)
+- [Performance Optimization and Monitoring](#performance-optimization-and-monitoring)
+- [Advanced: Tailscale SSH with MFA](#advanced-tailscale-ssh-with-mfa)
+- [Troubleshooting Connection Quality](#troubleshooting-connection-quality)
+- [Related Reading](#related-reading)
+
 ## Why Avoid Port Forwarding
 
 Opening ports on your router directly exposes services to the internet. Even with strong passwords, port scans and automated attacks target known vulnerabilities. Home Assistant running on your local network should remain private—Tailscale creates an encrypted tunnel that keeps your smart home infrastructure invisible to the public internet while remaining accessible to authorized devices.

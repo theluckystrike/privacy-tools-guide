@@ -29,6 +29,24 @@ China's mandatory QR code system creates surveillance trails of citizens' moveme
 - **Client sends**: {user_id, merchant_id, timestamp, amount}
 3.
 
+## Table of Contents
+
+- [The Architecture of QR Code Surveillance](#the-architecture-of-qr-code-surveillance)
+- [How the Tracking System Works](#how-the-tracking-system-works)
+- [Data Collection Points](#data-collection-points)
+- [Technical Implications for Privacy](#technical-implications-for-privacy)
+- [Cross-Referencing and Profile Building](#cross-referencing-and-profile-building)
+- [Regional Variations and Implementation](#regional-variations-and-implementation)
+- [What Developers Should Understand](#what-developers-should-understand)
+- [Technical Analysis of QR Code Data Flows](#technical-analysis-of-qr-code-data-flows)
+- [Differential Privacy Evasion](#differential-privacy-evasion)
+- [Global QR Tracking Adoption](#global-qr-tracking-adoption)
+- [Legal and Regulatory Framework](#legal-and-regulatory-framework)
+- [Technical Countermeasures (Limited Effectiveness)](#technical-countermeasures-limited-effectiveness)
+- [Defending Against QR-Based Surveillance](#defending-against-qr-based-surveillance)
+- [Lessons for Developers Building Location Systems](#lessons-for-developers-building-location-systems)
+- [Protecting Yourself](#protecting-yourself)
+
 ## The Architecture of QR Code Surveillance
 
 QR codes in China serve as more than convenient payment mechanisms. They function as de facto identity documents that create permanent records of where you go, when you arrived, and who you encountered. The system operates through several integrated components:

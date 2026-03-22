@@ -52,6 +52,15 @@ For quick encrypted transfers between two machines, Magic Wormhole is the best o
 - **Files transfer directly between**: machines without intermediate storage, and the protocol uses SPAKE2 for key exchange.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Developers Need from File Sharing Services](#what-developers-need-from-file-sharing-services)
+- [CLI-First Options for Developers](#cli-first-options-for-developers)
+- [Self-Hosted Solutions](#self-hosted-solutions)
+- [Cloud Services with Strong Developer Support](#cloud-services-with-strong-developer-support)
+- [API-First Approaches for Developers](#api-first-approaches-for-developers)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+
 ## What Developers Need from File Sharing Services
 
 Developer-focused file sharing goes beyond simple drag-and-drop uploads. Your requirements include programmatic access through APIs, command-line interface support, audit trails for compliance, and granular access controls. The service should integrate into existing workflows without creating friction.

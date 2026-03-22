@@ -40,6 +40,17 @@ Building GDPR-compliant applications requires more than just checkbox privacy po
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **loadMarketingScripts(); } ``` This**: pattern ensures you only process personal data after receiving explicit consent, as required by GDPR Article 6.
 
+## Table of Contents
+
+- [Why GDPR Compliance Matters for Developers](#why-gdpr-compliance-matters-for-developers)
+- [Consent Management Platforms](#consent-management-platforms)
+- [Data Anonymization Libraries](#data-anonymization-libraries)
+- [Right to Erasure Implementation](#right-to-erasure-implementation)
+- [Data Portability and Export](#data-portability-and-export)
+- [Privacy-Preserving Analytics](#privacy-preserving-analytics)
+- [Cross-Border Transfer Tools](#cross-border-transfer-tools)
+- [Getting Started](#getting-started)
+
 ## Why GDPR Compliance Matters for Developers
 
 The GDPR (General Data Protection Regulation) imposes legal obligations on organizations processing personal data of EU residents. Non-compliance can result in fines up to €20 million or 4% of annual global turnover. For developers, this means building systems that respect data subject rights from the ground up, not as afterthoughts.

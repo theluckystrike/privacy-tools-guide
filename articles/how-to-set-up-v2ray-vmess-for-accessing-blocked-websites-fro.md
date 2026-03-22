@@ -42,6 +42,14 @@ This guide walks through setting up V2Ray with VMess from scratch. You'll learn 
 - **Values between 4 and**: 16 work well for most connections.
 - **V2Ray is a powerful**: network proxy tool that supports multiple protocols, including VMess.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Advanced: Running Behind Nginx](#advanced-running-behind-nginx)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Getting Started](#getting-started)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

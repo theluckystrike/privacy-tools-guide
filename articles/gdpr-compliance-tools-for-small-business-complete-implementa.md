@@ -40,6 +40,21 @@ The General Data Protection Regulation (GDPR) affects any business handling Euro
 - **The key requirement is maintaining demonstrable proof of consent**: timestamps, IP addresses, and the specific language presented to users.
 - **Effective CMPs provide granular**: consent options, allowing users to differentiate between different processing purposes.
 
+## Table of Contents
+
+- [Understanding Your GDPR Obligations](#understanding-your-gdpr-obligations)
+- [Data Mapping and Inventory Tools](#data-mapping-and-inventory-tools)
+- [Consent Management Solutions](#consent-management-solutions)
+- [Legitimate Interest Assessment Tools](#legitimate-interest-assessment-tools)
+- [Data Subject Request Automation](#data-subject-request-automation)
+- [Advanced Data Protection Considerations](#advanced-data-protection-considerations)
+- [Security and Encryption Tools](#security-and-encryption-tools)
+- [Incident Response and Breach Notification](#incident-response-and-breach-notification)
+- [Vendor Management and Data Processing Agreements](#vendor-management-and-data-processing-agreements)
+- [Record of Processing Activities](#record-of-processing-activities)
+- [Record of Processing Activities Template](#record-of-processing-activities-template)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Understanding Your GDPR Obligations
 
 Before selecting tools, identify what personal data your business collects and processes. GDPR defines personal data broadly—anything that can identify an individual, including names, email addresses, IP addresses, or location data. If you store customer information, process employee records, or handle newsletter subscriptions, you likely fall under GDPR scope.

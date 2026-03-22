@@ -42,6 +42,13 @@ Set up an application performance monitoring (APM) workflow by instrumenting you
 - **First**: it enables rapid incident detection so your team can resolve issues before they impact users.
 - **Second**: it provides the data needed for root cause analysis when problems occur.
 
+## Table of Contents
+
+- [Why Application Performance Monitoring Matters](#why-application-performance-monitoring-matters)
+- [Prerequisites](#prerequisites)
+- [Alerting Best Practices](#alerting-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Application Performance Monitoring Matters
 
 Application performance monitoring provides visibility into how your software behaves in production. Without proper monitoring, you're flying blind—unable to detect degraded performance, understand root causes of incidents, or make data-driven decisions about optimization investments. Modern APM tools collect metrics, logs, and traces to give you a complete picture of system health.

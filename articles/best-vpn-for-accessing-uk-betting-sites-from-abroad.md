@@ -42,6 +42,22 @@ Accessing UK betting platforms while traveling outside the United Kingdom presen
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Geo-Blocking Mechanisms](#understanding-geo-blocking-mechanisms)
+- [VPN Configuration Requirements](#vpn-configuration-requirements)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Protocol Selection for Reliability](#protocol-selection-for-reliability)
+- [WebRTC Leak Prevention](#webrtc-leak-prevention)
+- [Advanced: Custom DNS withHosts File](#advanced-custom-dns-withhosts-file)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Recommended VPN Providers for UK Betting Access (2026)](#recommended-vpn-providers-for-uk-betting-access-2026)
+- [Advanced VPN Configuration for Maximum Reliability](#advanced-vpn-configuration-for-maximum-reliability)
+- [VPN Performance Benchmarking](#vpn-performance-benchmarking)
+- [Troubleshooting Persistent Blocks](#troubleshooting-persistent-blocks)
+- [Cost Comparison: 2026 VPN Pricing](#cost-comparison-2026-vpn-pricing)
+- [Legal and Responsible Usage](#legal-and-responsible-usage)
+
 ## Understanding Geo-Blocking Mechanisms
 
 UK licensed betting sites employ multiple layers of detection to enforce geographic restrictions mandated by the UK Gambling Commission. The primary methods include:

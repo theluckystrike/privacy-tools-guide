@@ -40,6 +40,13 @@ Cryptocurrency wallet security remains one of the most critical skills for anyon
 - **For developers and power**: users managing significant holdings, understanding the attack vectors and implementing defense-in-depth strategies is essential.
 - **For developers building applications**: the recommended approach involves separating funds between hot and cold wallets.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Attack Vectors and Defenses](#advanced-attack-vectors-and-defenses)
+- [Regulatory Compliance Considerations](#regulatory-compliance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

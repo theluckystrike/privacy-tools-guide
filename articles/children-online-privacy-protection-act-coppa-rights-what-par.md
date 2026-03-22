@@ -43,6 +43,21 @@ This link will expire in 24 hours.
 - **Use built-in parental controls**: Many services offer parental control features that allow parents to monitor or restrict data collection.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What COPPA Requires from Companies](#what-coppa-requires-from-companies)
+- [Parental Rights Under COPPA](#parental-rights-under-coppa)
+- [Practical Implementation for Developers](#practical-implementation-for-developers)
+- [Data Retention and Security Requirements](#data-retention-and-security-requirements)
+- [What Happens When Companies Violate COPPA](#what-happens-when-companies-violate-coppa)
+- [How Parents Can Exercise Their Rights](#how-parents-can-exercise-their-rights)
+- [Enforcement and Penalties](#enforcement-and-penalties)
+- [COPPA Safe Harbor Programs](#coppa-safe-harbor-programs)
+- [Technical Implementation Patterns](#technical-implementation-patterns)
+- [Special Considerations for Different Service Types](#special-considerations-for-different-service-types)
+- [International COPPA Equivalents](#international-coppa-equivalents)
+- [Common Compliance Mistakes](#common-compliance-mistakes)
+
 ## What COPPA Requires from Companies
 
 The Federal Trade Commission (FTC) enforces COPPA, which applies to any operator of a website or online service directed to children, or any operator that has actual knowledge it is collecting personal information from a child. The law defines "personal information" broadly to include:

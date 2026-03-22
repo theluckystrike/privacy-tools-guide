@@ -40,6 +40,30 @@ Set up an effective distributed PR workflow by adopting trunk-based development 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Pull Request Fundamentals](#understanding-pull-request-fundamentals)
+- [Branch Strategy for Distributed Teams](#branch-strategy-for-distributed-teams)
+- [Effective PR Descriptions](#effective-pr-descriptions)
+- [Changes](#changes)
+- [Testing](#testing)
+- [Code Review Best Practices](#code-review-best-practices)
+- [Time Zone Considerations](#time-zone-considerations)
+- [Automation and GitHub Actions](#automation-and-github-actions)
+- [Handling Disagreements](#handling-disagreements)
+- [Measuring Workflow Effectiveness](#measuring-workflow-effectiveness)
+- [Advanced PR Metrics and Analytics](#advanced-pr-metrics-and-analytics)
+- [Handling Sensitive Code in PRs](#handling-sensitive-code-in-prs)
+- [Security Checklist](#security-checklist)
+- [Remote Team Communication Patterns](#remote-team-communication-patterns)
+- [Overview](#overview)
+- [Video Walkthrough](#video-walkthrough)
+- [Key Changes](#key-changes)
+- [Testing](#testing)
+- [Design Decision: Why OAuth2 over JWT](#design-decision-why-oauth2-over-jwt)
+- [Performance Implications of Large PRs](#performance-implications-of-large-prs)
+- [Automation Reduces Friction Points](#automation-reduces-friction-points)
+
 ## Understanding Pull Request Fundamentals
 
 A pull request (PR) is more than just a code submission mechanism—it's a communication channel between team members. In distributed teams, PRs become the primary venue for technical discussion, knowledge sharing, and quality assurance. When done right, PRs accelerate learning across the team and reduce the friction that often accompanies remote collaboration.

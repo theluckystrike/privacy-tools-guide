@@ -40,6 +40,13 @@ Social media share buttons appear on nearly every website, from news articles to
 - **The key is to**: replace automatic script loading with user-initiated loading.
 - **Ensure users can still**: share content through all intended platforms.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Implementation Tools and Best Practices](#implementation-tools-and-best-practices)
+- [Performance Benefits](#performance-benefits)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

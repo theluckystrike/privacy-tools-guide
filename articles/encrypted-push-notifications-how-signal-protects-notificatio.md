@@ -41,6 +41,20 @@ Standard push notifications expose sender information and message metadata to Go
 - **Fallback mechanisms**: When Sealed Sender isn't available (first message from new contact, offline devices), traditional notifications are used
 4.
 
+## Table of Contents
+
+- [The Privacy Problem With Traditional Push Notifications](#the-privacy-problem-with-traditional-push-notifications)
+- [Signal's Solution: Sealed Sender and Encrypted Payloads](#signals-solution-sealed-sender-and-encrypted-payloads)
+- [Implementation Details: How Signal Encrypts Push Content](#implementation-details-how-signal-encrypts-push-content)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Enabling Signal's Privacy Features](#enabling-signals-privacy-features)
+- [Alternative Messaging Apps and Their Notification Approaches](#alternative-messaging-apps-and-their-notification-approaches)
+- [Developing Encrypted Push Infrastructure](#developing-encrypted-push-infrastructure)
+- [Metadata Protection Beyond Message Content](#metadata-protection-beyond-message-content)
+- [Regulatory and Compliance Considerations](#regulatory-and-compliance-considerations)
+- [Testing Your Notification Privacy](#testing-your-notification-privacy)
+
 ## The Privacy Problem With Traditional Push Notifications
 
 When you receive a traditional push notification, your device sends a device token to the messaging server. When a message arrives, the server sends a payload through FCM or APNs containing the sender ID, notification title, and message body. The push service then delivers this to your device.

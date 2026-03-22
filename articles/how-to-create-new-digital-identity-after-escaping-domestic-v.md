@@ -207,6 +207,19 @@ Building a new digital identity after escaping domestic violence requires delibe
 
 ## Step 7: Social Media and Online Presence Isolation
 
+## Table of Contents
+
+- [Step 7: Social Media and Online Presence Isolation](#step-7-social-media-and-online-presence-isolation)
+- [Platform-Specific Deletion (must follow each platform's exact process)](#platform-specific-deletion-must-follow-each-platforms-exact-process)
+- [Data Deletion Request Template](#data-deletion-request-template)
+- [Step 8: Building Trusted Support Systems](#step-8-building-trusted-support-systems)
+- [Trusted Contact Briefing (share in person or sealed envelope)](#trusted-contact-briefing-share-in-person-or-sealed-envelope)
+- [If locked out of primary email:](#if-locked-out-of-primary-email)
+- [If locked out of password manager:](#if-locked-out-of-password-manager)
+- [If phone lost:](#if-phone-lost)
+- [Step 9: Ongoing Security Maintenance](#step-9-ongoing-security-maintenance)
+- [First Friday of Each Month - Security Review (30 min)](#first-friday-of-each-month-security-review-30-min)
+
 Social media accounts are often the easiest way for abusers to track you. Creating clean accounts while removing old presences is essential.
 
 ### Complete Old Account Removal

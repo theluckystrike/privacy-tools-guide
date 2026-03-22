@@ -52,6 +52,23 @@ tags: [privacy-tools-guide, best-of, vpn]
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **This guide focuses on**: the technical implementation details that determine whether your YouTube streams play smoothly or constantly pause to buffer.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Technical Challenges with YouTube Streaming in China](#technical-challenges-with-youtube-streaming-in-china)
+- [Protocol Selection for Streaming](#protocol-selection-for-streaming)
+- [Server Architecture Considerations](#server-architecture-considerations)
+- [Client-Side Optimization](#client-side-optimization)
+- [Troubleshooting Buffering Issues](#troubleshooting-buffering-issues)
+- [Advanced Techniques for Power Users](#advanced-techniques-for-power-users)
+- [Regional Network Provider Considerations](#regional-network-provider-considerations)
+- [Advanced DPI Evasion Techniques](#advanced-dpi-evasion-techniques)
+- [Streaming Quality Degradation: Diagnosis and Solutions](#streaming-quality-degradation-diagnosis-and-solutions)
+- [Split Tunneling and YouTube-Specific Optimization](#split-tunneling-and-youtube-specific-optimization)
+- [Monitoring and Alerting for Disruption](#monitoring-and-alerting-for-disruption)
+- [Troubleshooting ISP-Specific Issues](#troubleshooting-isp-specific-issues)
+- [Bandwidth Optimization Code Example](#bandwidth-optimization-code-example)
+
 ## Introduction
 
 Streaming YouTube from within China requires more than a standard VPN configuration. The Great Firewall employs sophisticated traffic analysis that can detect and throttle VPN connections, while bandwidth limitations on exit nodes cause buffering even when connections remain stable. For developers and power users who need reliable access to video content, understanding the underlying technical challenges and solutions matters more than purchasing premium services.

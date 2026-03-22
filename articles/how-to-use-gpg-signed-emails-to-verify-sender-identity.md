@@ -40,6 +40,14 @@ To use GPG signed emails, generate a key pair with `gpg --gen-key`, configure yo
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **To use GPG signed emails**: generate a key pair with `gpg --gen-key`, configure your email client to sign outgoing messages with your private key, and share your public key with recipients.
 
+## Table of Contents
+
+- [Why GPG Sign Your Emails?](#why-gpg-sign-your-emails)
+- [Prerequisites](#prerequisites)
+- [Key Management Best Practices](#key-management-best-practices)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Why GPG Sign Your Emails?
 
 Email spoofing is trivial to perform. Attackers can easily forge the "From" header to appear as anyone. GPG signing adds a cryptographic layer that proves:

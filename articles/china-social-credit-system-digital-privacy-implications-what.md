@@ -27,6 +27,19 @@ The China Social Credit System (SCS) represents one of the most digital surveill
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The China Social Credit**: System (SCS) represents one of the most digital surveillance infrastructures ever deployed at national scale.
 
+## Table of Contents
+
+- [What Data Points Are Collected](#what-data-points-are-collected)
+- [Online Behavior Monitoring Mechanisms](#online-behavior-monitoring-mechanisms)
+- [Technical Implications for Developers](#technical-implications-for-developers)
+- [What This Means for Digital Privacy](#what-this-means-for-digital-privacy)
+- [Protecting Your Digital Footprint](#protecting-your-digital-footprint)
+- [Practical Technical Defenses](#practical-technical-defenses)
+- [Data Aggregation Risks in Other Contexts](#data-aggregation-risks-in-other-contexts)
+- [Building Privacy-Conscious Applications](#building-privacy-conscious-applications)
+- [International Data Transfer Considerations](#international-data-transfer-considerations)
+- [The Surveillance-as-a-Service Ecosystem](#the-surveillance-as-a-service-ecosystem)
+
 ## What Data Points Are Collected
 
 The SCS aggregates data from multiple government agencies, private companies, and public records. Understanding the data sources helps developers grasp the system's reach:

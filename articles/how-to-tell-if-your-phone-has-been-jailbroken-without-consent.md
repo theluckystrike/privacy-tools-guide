@@ -42,6 +42,13 @@ The distinction between intentional jailbreaking (which you control) and unautho
 - **Let them use it for 2-3 weeks**: then gather their honest feedback.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why Unauthorized Jailbreaking Matters](#why-unauthorized-jailbreaking-matters)
+- [Advanced Forensic Indicators](#advanced-forensic-indicators)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

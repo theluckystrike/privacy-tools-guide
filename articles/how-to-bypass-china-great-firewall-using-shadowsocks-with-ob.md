@@ -40,6 +40,14 @@ Bypassing the Great Firewall of China requires understanding how traffic inspect
 - **Shadowsocks remains a popular**: choice among developers and power users due to its lightweight design and flexibility.
 - **Standard VPN protocols often**: fail because their handshake patterns are distinctive.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Obfuscation with V2Ray Integration](#advanced-obfuscation-with-v2ray-integration)
+- [Performance Optimization](#performance-optimization)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

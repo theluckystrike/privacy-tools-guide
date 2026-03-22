@@ -42,6 +42,18 @@ tags: [privacy-tools-guide, vpn]
 - **During peak evening hours**: (7 PM - 11 PM local time), speeds typically dropped by 30-40% compared to early morning tests.
 - **Use split tunneling**: If you only need VPN for specific applications, enable split tunneling to reduce bandwidth usage and improve performance.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Cuba's Internet Space in 2026](#cubas-internet-space-in-2026)
+- [ExpressVPN Havana Connection Test Results](#expressvpn-havana-connection-test-results)
+- [Technical Implementation Details](#technical-implementation-details)
+- [Alternative VPN Options](#alternative-vpn-options)
+- [Threat Model and Security Considerations](#threat-model-and-security-considerations)
+- [Testing Methodology and Verification](#testing-methodology-and-verification)
+- [DNS and Leak Testing](#dns-and-leak-testing)
+- [Practical Considerations](#practical-considerations)
+
 ## Introduction
 
 Testing VPN functionality in Cuba presents unique challenges due to the country's internet infrastructure and regulatory environment. In this article, we share real-world test results for ExpressVPN conducted from Havana in early 2026. Whether you're a traveler, remote worker, or someone needing secure internet access in Cuba, this guide provides the practical information you need.

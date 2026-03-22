@@ -26,6 +26,13 @@ A honeypot is a decoy system that looks valuable but has no legitimate users. An
 - **This guide covers honeypot types**: cowrie: ssh honeypot, install cowrie, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Honeypot Types](#honeypot-types)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Honeypot Types
 
 | Type | What it simulates | Complexity | Risk |

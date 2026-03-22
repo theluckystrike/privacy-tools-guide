@@ -42,6 +42,22 @@ To set up an air-gapped computer for maximum security, you need dedicated hardwa
 - **Store the machine in a secure location**: use a chassis lock or locked case, and establish procedures for access control.
 - **Verification Export public keys**: or signed artifacts back to the main workstation via read-only media 5.
 
+## Table of Contents
+
+- [Why Air Gapping Matters in 2026](#why-air-gapping-matters-in-2026)
+- [Prerequisites](#prerequisites)
+- [Practical Example: Secure Development Workflow](#practical-example-secure-development-workflow)
+- [Detailed Hardware Disabling Procedures](#detailed-hardware-disabling-procedures)
+- [Advanced Encryption with LUKS and KeyFile](#advanced-encryption-with-luks-and-keyfile)
+- [Tails OS Alternative](#tails-os-alternative)
+- [Qubes OS for Compartmentalization](#qubes-os-for-compartmentalization)
+- [Maintenance Schedule for Air-Gapped Systems](#maintenance-schedule-for-air-gapped-systems)
+- [Monthly Tasks](#monthly-tasks)
+- [Quarterly Tasks](#quarterly-tasks)
+- [Annually](#annually)
+- [Cost and Time Investment](#cost-and-time-investment)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Air Gapping Matters in 2026
 
 Modern attack vectors have evolved beyond network-based intrusions. Supply chain compromises, firmware-level malware, and side-channel attacks demonstrate that network isolation alone does not guarantee security. However, an air-gapped system eliminates the most common attack surface: network connectivity. When properly implemented, even if an attacker gains remote access to your main workstation, they cannot reach the air-gapped machine without physical presence.

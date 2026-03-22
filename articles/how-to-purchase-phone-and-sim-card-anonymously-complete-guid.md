@@ -42,6 +42,13 @@ Maintaining anonymity when purchasing a mobile phone and SIM card requires under
 - **Use a privacy-focused exchange**: (non-KYC) # 2.
 - **Disable telemetry completely adb**: shell settings put global stay_on_while_plugged_in 0 adb shell pm disable-user --user 0 com.google.android.gms/.analytics # 3.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Payment Anonymization](#advanced-payment-anonymization)
+- [Threat Models: Anonymity Levels](#threat-models-anonymity-levels)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

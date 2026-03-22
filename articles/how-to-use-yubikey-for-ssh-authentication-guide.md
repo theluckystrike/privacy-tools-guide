@@ -65,6 +65,18 @@ Hardware security keys solve these by:
 
 ## YubiKey Hardware Options
 
+## Table of Contents
+
+- [YubiKey Hardware Options](#yubikey-hardware-options)
+- [SSH Authentication Modes](#ssh-authentication-modes)
+- [Part 1: Setup FIDO2-Based SSH](#part-1-setup-fido2-based-ssh)
+- [Part 2: Backup Key Strategy](#part-2-backup-key-strategy)
+- [Part 3: GPG-Based SSH (Alternative)](#part-3-gpg-based-ssh-alternative)
+- [Server-Side Configuration](#server-side-configuration)
+- [Troubleshooting](#troubleshooting)
+- [Security Best Practices](#security-best-practices)
+- [Related Reading](#related-reading)
+
 ### YubiKey 5 Series
 
 **Cost:** $45-60

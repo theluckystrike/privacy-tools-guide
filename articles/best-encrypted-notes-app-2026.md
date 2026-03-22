@@ -42,6 +42,20 @@ Standard Notes is the best encrypted notes app for developers in 2026, offering 
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
+## Table of Contents
+
+- [What Makes an Encrypted Notes App Developer-Friendly](#what-makes-an-encrypted-notes-app-developer-friendly)
+- [Top Encrypted Notes Apps for 2026](#top-encrypted-notes-apps-for-2026)
+- [Building Your Own Encrypted Notes System](#building-your-own-encrypted-notes-system)
+- [Comparing Encryption Standards](#comparing-encryption-standards)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Pricing Comparison and Feature Matrix](#pricing-comparison-and-feature-matrix)
+- [Advanced Integration Scenarios](#advanced-integration-scenarios)
+- [Security Audit and Trust Considerations](#security-audit-and-trust-considerations)
+- [Backup and Recovery Strategies](#backup-and-recovery-strategies)
+- [Data Portability and Vendor Lock-in](#data-portability-and-vendor-lock-in)
+- [Real-World Workflow Examples](#real-world-workflow-examples)
+
 ## What Makes an Encrypted Notes App Developer-Friendly
 
 Here are the criteria that matter for technical users:

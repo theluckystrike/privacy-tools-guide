@@ -44,6 +44,24 @@ Most stalkerware does NOT give a visible app icon (because Apple prevents this).
 - **Use a packet analyzer app (e.g.**: Wireshark if device is jailbroken)
 3.
 
+## Table of Contents
+
+- [Why iOS Stalkerware Is Different](#why-ios-stalkerware-is-different)
+- [Diagnostic Checklist](#diagnostic-checklist)
+- [Step 1: Check Your iCloud Account Security](#step-1-check-your-icloud-account-security)
+- [Step 2: Check for MDM Profiles](#step-2-check-for-mdm-profiles)
+- [Step 3: Check Location Services Settings](#step-3-check-location-services-settings)
+- [Step 4: Analyze Cellular and Wi-Fi Usage](#step-4-analyze-cellular-and-wi-fi-usage)
+- [Step 5: Check for Jailbreak Indicators](#step-5-check-for-jailbreak-indicators)
+- [Step 6: Check iCloud Backup Contents](#step-6-check-icloud-backup-contents)
+- [Step 7: Verify No Hidden Accessibility Features](#step-7-verify-no-hidden-accessibility-features)
+- [Step 8: Factory Reset (Nuclear Option)](#step-8-factory-reset-nuclear-option)
+- [Step 9: Secure Your Passwords After Suspected Compromise](#step-9-secure-your-passwords-after-suspected-compromise)
+- [Prevention: Stop Future Stalkerware](#prevention-stop-future-stalkerware)
+- [Trusted Contacts for Remote Assistance](#trusted-contacts-for-remote-assistance)
+- [When to Involve Law Enforcement](#when-to-involve-law-enforcement)
+- [Related Reading](#related-reading)
+
 ## Why iOS Stalkerware Is Different
 
 iOS stalkerware typically requires one of these:

@@ -43,6 +43,14 @@ Building a portable censorship circumvention kit on an USB drive enables reliabl
 # 3.
 - **DOCUMENT THE INTERACTION #**: Try to remember: Time, location, badge numbers, questions asked # Report interaction to press freedoms organizations # 4.
 
+## Table of Contents
+
+- [Why Build a Portable Kit](#why-build-a-portable-kit)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Advanced: Chaining Multiple Proxies for Resilience](#advanced-chaining-multiple-proxies-for-resilience)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Build a Portable Kit
 
 Many countries implement network-level censorship that blocks access to news sites, social media platforms, and communication tools. When traveling to these regions, having a portable solution means you do not need to install software on every computer you use. An USB-based kit runs directly from the drive, leaves no installed software behind, and works on any computer with an USB port and operating system.

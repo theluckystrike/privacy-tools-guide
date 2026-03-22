@@ -40,6 +40,13 @@ To export passwords from any manager, use its CLI tool for the most control: `op
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Export Your Passwords?](#why-export-your-passwords)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Export Your Passwords?
 
 Several legitimate scenarios require password export. Switching to a different password manager is the most common—you might prefer an open-source solution or need features unavailable in your current tool. Creating regular encrypted backups provides insurance against account lockouts or service outages. Developers building integration tools need programmatic access to credential data. Security researchers auditing password practices may need to analyze stored credentials.

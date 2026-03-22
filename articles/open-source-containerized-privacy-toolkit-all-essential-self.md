@@ -25,6 +25,17 @@ Running your own privacy-focused services gives you control over your data witho
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Running your own privacy-focused**: services gives you control over your data without relying on third-party providers.
 
+## Table of Contents
+
+- [Why Containerize Your Privacy Stack?](#why-containerize-your-privacy-stack)
+- [Core Components of Your Privacy Stack](#core-components-of-your-privacy-stack)
+- [Orchestrating Your Stack](#orchestrating-your-stack)
+- [Security Considerations](#security-considerations)
+- [Maintenance and Backups](#maintenance-and-backups)
+- [Starting Your Stack](#starting-your-stack)
+- [Hardening Container Security](#hardening-container-security)
+- [Monitoring Your Stack for Anomalies](#monitoring-your-stack-for-anomalies)
+
 ## Why Containerize Your Privacy Stack?
 
 Containerization provides consistent environments across development and production. Each service runs in an isolated container, meaning dependencies don't conflict and you can update individual services without affecting others. Docker Compose orchestrates multi-container setups, letting you define your entire stack in a single configuration file.

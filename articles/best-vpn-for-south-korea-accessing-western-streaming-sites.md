@@ -52,6 +52,17 @@ Mullvad VPN and Private Internet Access reliably access Western streaming platfo
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Technical Barriers](#understanding-the-technical-barriers)
+- [VPN Protocol Selection](#vpn-protocol-selection)
+- [DNS Configuration Strategies](#dns-configuration-strategies)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Performance Optimization](#performance-optimization)
+- [Self-Hosted Solutions](#self-hosted-solutions)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+
 ## Understanding the Technical Barriers
 
 Western streaming services employ several methods to enforce geographic restrictions. The most common approach involves DNS-based geolocation, where the service examines the DNS resolver's location rather than just the IP address. More sophisticated systems analyze network latency patterns, BGP routing data, and behavioral signals to detect VPN usage.

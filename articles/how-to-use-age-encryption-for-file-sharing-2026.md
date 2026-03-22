@@ -27,6 +27,13 @@ This guide covers age command-line usage, integration with Git, automation, key 
 - **File won't decrypt -**: The key used to encrypt might be different from the key you're using to decrypt.
 - **Use strong passphrases (if**: encrypting keys with a passphrase).
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Comparison: Age vs GPG for Different Use Cases](#comparison-age-vs-gpg-for-different-use-cases)
+- [Troubleshooting](#troubleshooting)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

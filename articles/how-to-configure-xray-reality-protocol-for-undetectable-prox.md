@@ -40,6 +40,14 @@ The Reality protocol represents one of the most sophisticated approaches to bypa
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration for Maximum Stealth](#advanced-configuration-for-maximum-stealth)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+- [Performance Optimization](#performance-optimization)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -40,6 +40,14 @@ Use Privacy.com to generate unique virtual card numbers for each merchant: sign 
 - **The card becomes useless**: after one transaction, meaning even if the merchant database is compromised, there's nothing valuable to steal.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Usage Patterns](#advanced-usage-patterns)
+- [Security Considerations](#security-considerations)
+- [Practical Example: Developer Subscription Management](#practical-example-developer-subscription-management)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -40,6 +40,14 @@ For activist organizations, Matrix with Synapse (self-hosted) provides the best 
 - **By default**: Matrix rooms can federate across servers, meaning users from other homeservers can join your rooms if invited.
 - **Set "Who can read**: history" to "Members only (since joining)" 5.
 
+## Table of Contents
+
+- [Threat Modeling for Group Communications](#threat-modeling-for-group-communications)
+- [Prerequisites](#prerequisites)
+- [Key Management Best Practices](#key-management-best-practices)
+- [Advanced: Using Matrix for Sensitive Operations](#advanced-using-matrix-for-sensitive-operations)
+- [Troubleshooting](#troubleshooting)
+
 ## Threat Modeling for Group Communications
 
 Before selecting tools, define your threat model. Consider these attack vectors:

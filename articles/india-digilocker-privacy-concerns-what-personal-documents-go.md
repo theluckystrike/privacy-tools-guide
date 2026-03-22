@@ -42,6 +42,22 @@ DigiLocker stores identity documents (Aadhaar, PAN, passport) and links them to 
 6.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Documents Does DigiLocker Store?](#what-documents-does-digilocker-store)
+- [Technical Architecture and Authentication](#technical-architecture-and-authentication)
+- [Data Storage and API Exposure](#data-storage-and-api-exposure)
+- [Access Risks and Threat Vectors](#access-risks-and-threat-vectors)
+- [Mitigating Privacy Risks](#mitigating-privacy-risks)
+- [Alternatives and Future Considerations](#alternatives-and-future-considerations)
+- [Practical Data Minimization Strategies](#practical-data-minimization-strategies)
+- [Analyzing DigiLocker Risks by Document Type](#analyzing-digilocker-risks-by-document-type)
+- [Governmental Surveillance and Access](#governmental-surveillance-and-access)
+- [Comparing to International Privacy Standards](#comparing-to-international-privacy-standards)
+- [Organizational and Compliance Risks](#organizational-and-compliance-risks)
+- [Future Evolution and Policy Recommendations](#future-evolution-and-policy-recommendations)
+- [Personal Privacy Audit for DigiLocker Users](#personal-privacy-audit-for-digilocker-users)
+
 ## What Documents Does DigiLocker Store?
 
 DigiLocker serves as a centralized repository for various identity and government-related documents. When you sign up and verify your identity, the platform stores several categories of personal data:

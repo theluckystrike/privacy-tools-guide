@@ -27,6 +27,22 @@ VPN reconnection after a network switch works by detecting the broken tunnel via
 - **Use connection managers**: Let the system manage network preferences when possible
 3.
 
+## Table of Contents
+
+- [Network Handoff Fundamentals](#network-handoff-fundamentals)
+- [What Happens to Your VPN During a Network Switch](#what-happens-to-your-vpn-during-a-network-switch)
+- [Technical Implementation Patterns](#technical-implementation-patterns)
+- [Protocol-Specific Behavior](#protocol-specific-behavior)
+- [Handling Partial Network Transitions](#handling-partial-network-transitions)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Best Practices for Developers](#best-practices-for-developers)
+- [Detailed Protocol Behavior During Transitions](#detailed-protocol-behavior-during-transitions)
+- [MTU and Path MTU Discovery](#mtu-and-path-mtu-discovery)
+- [DNS Resolution During Transitions](#dns-resolution-during-transitions)
+- [Connection State Machine](#connection-state-machine)
+- [Monitoring VPN Health](#monitoring-vpn-health)
+- [Network Interface Priority](#network-interface-priority)
+
 ## Network Handoff Fundamentals
 
 Mobile devices constantly switch between network interfaces. A network switch mobile handoff occurs when your device transitions from one network to another—this happens when walking from home to a coffee shop, or when WiFi signal drops and cellular takes over. The underlying protocol handling this transition varies by operating system and network type.

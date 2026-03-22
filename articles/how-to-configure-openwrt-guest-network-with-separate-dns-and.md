@@ -40,6 +40,22 @@ OpenWRT provides powerful network isolation capabilities that go beyond simple W
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Create the Guest Network Interface](#step-1-create-the-guest-network-interface)
+- [Step 2: Configure Separate DNS Resolution](#step-2-configure-separate-dns-resolution)
+- [Step 3: Set Up Wireless for Guest Access](#step-3-set-up-wireless-for-guest-access)
+- [Step 4: Configure Firewall Isolation Rules](#step-4-configure-firewall-isolation-rules)
+- [Step 5: Apply and Verify Configuration](#step-5-apply-and-verify-configuration)
+- [Testing the Setup](#testing-the-setup)
+- [Advanced: VLAN-Based Isolation](#advanced-vlan-based-isolation)
+- [Preventing DNS Leaks on the Guest Network](#preventing-dns-leaks-on-the-guest-network)
+- [Captive Portal for Guest Authentication](#captive-portal-for-guest-authentication)
+- [Rate Limiting and Bandwidth Fairness](#rate-limiting-and-bandwidth-fairness)
+- [Monitoring Guest Activity](#monitoring-guest-activity)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before starting, ensure you have:

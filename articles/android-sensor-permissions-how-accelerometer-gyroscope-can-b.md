@@ -44,6 +44,19 @@ This guide covers how Android sensor permissions work, what data these sensors p
 - **Provide disclosure Clearly explain**: sensor usage in your privacy policy For users concerned about motion sensor tracking: 1.
 - **Use security-focused ROMs Some**: privacy-oriented Android distributions offer sensor access controls 3.
 
+## Table of Contents
+
+- [Understanding Android Motion Sensors](#understanding-android-motion-sensors)
+- [Sensor Permissions in Android](#sensor-permissions-in-android)
+- [How Motion Sensors Enable Tracking](#how-motion-sensors-enable-tracking)
+- [Practical Code Examples](#practical-code-examples)
+- [Privacy Recommendations](#privacy-recommendations)
+- [Practical Sensor Fingerprinting Defense](#practical-sensor-fingerprinting-defense)
+- [Keystroke Inference Attack Mitigation](#keystroke-inference-attack-mitigation)
+- [Threat Model: Sensor-Based Attacks](#threat-model-sensor-based-attacks)
+- [System-Level Sensor Control](#system-level-sensor-control)
+- [Monitoring Sensor Access](#monitoring-sensor-access)
+
 ## Understanding Android Motion Sensors
 
 Android provides a sensor framework through the `android.hardware.Sensor` API. The accelerometer and gyroscope serve different but complementary purposes:

@@ -43,6 +43,17 @@ When you store data in the cloud, you trust a provider to keep it secure. But th
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Cloud Providers Respond to Legal Requests](#how-cloud-providers-respond-to-legal-requests)
+- [Legal Mechanisms: Subpoenas vs. Warrants vs. Court Orders](#legal-mechanisms-subpoenas-vs-warrants-vs-court-orders)
+- [Technical Countermeasures for Developers](#technical-countermeasures-for-developers)
+- [What This Means for Your Users](#what-this-means-for-your-users)
+- [Practical Steps Developers Should Take](#practical-steps-developers-should-take)
+- [Building Zero-Knowledge Cloud Infrastructure](#building-zero-knowledge-cloud-infrastructure)
+- [Transparency Report Analysis](#transparency-report-analysis)
+- [Legal Risk Mitigation Strategies](#legal-risk-mitigation-strategies)
+
 ## How Cloud Providers Respond to Legal Requests
 
 Cloud storage providers maintain legal teams that review and respond to law enforcement requests. The process typically follows a predictable path: authorities submit a legal demand, the provider's legal team evaluates its validity, and—if valid—compliance occurs. What varies significantly is what data providers can actually produce.

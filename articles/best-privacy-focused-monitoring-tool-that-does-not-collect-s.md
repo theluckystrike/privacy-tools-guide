@@ -35,6 +35,20 @@ mem_use_percent = True
 - **Prometheus with Local Storage**: Prometheus is an open-source monitoring system with a pull-based model.
 - **The open-source version can**: run in "standalone" mode, collecting and displaying data locally without any cloud connection.
 
+## Table of Contents
+
+- [Why Privacy Matters in Monitoring Tools](#why-privacy-matters-in-monitoring-tools)
+- [Top Privacy-Focused Monitoring Solutions](#top-privacy-focused-monitoring-solutions)
+- [Comparison Matrix](#comparison-matrix)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Advanced Monitoring Scenarios](#advanced-monitoring-scenarios)
+- [Performance Comparison Table](#performance-comparison-table)
+- [Privacy Monitoring Compliance](#privacy-monitoring-compliance)
+- [Cost Comparison: Self-Hosted vs SaaS](#cost-comparison-self-hosted-vs-saas)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Integration with Alerts and Notifications](#integration-with-alerts-and-notifications)
+- [Scaling Private Monitoring](#scaling-private-monitoring)
+
 ## Why Privacy Matters in Monitoring Tools
 
 When you deploy a monitoring tool, you grant it access to sensitive system information—CPU usage, memory consumption, network traffic, running processes, and sometimes even application data. The question becomes: where does this data go?

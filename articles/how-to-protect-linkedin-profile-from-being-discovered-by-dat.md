@@ -40,6 +40,14 @@ LinkedIn is one of the most publicly available professional databases, containin
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Your LinkedIn Profile Is a Data Broker Target](#why-your-linkedin-profile-is-a-data-broker-target)
+- [Prerequisites](#prerequisites)
+- [Advanced Protection Strategies](#advanced-protection-strategies)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Your LinkedIn Profile Is a Data Broker Target
 
 ### What Information Is Exposed

@@ -40,6 +40,13 @@ Detecting unauthorized access to your home network requires a combination of rou
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Most modern routers display**: device names, MAC addresses, and IP addresses.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Full Network Audit Script](#practical-example-full-network-audit-script)
+- [Advanced Network Monitoring with Wireshark](#advanced-network-monitoring-with-wireshark)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

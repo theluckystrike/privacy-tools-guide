@@ -44,6 +44,26 @@ This guide examines encrypted collaboration tools that give teams zero-knowledge
 - **Each user verifies their**: identity with a recovery phrase or password # 3.
 - **Users verify each other's**: devices through a challenge-response # 4.
 
+## Table of Contents
+
+- [Understanding Zero-Knowledge Architecture](#understanding-zero-knowledge-architecture)
+- [Matrix: Decentralized Chat with E2EE Support](#matrix-decentralized-chat-with-e2ee-support)
+- [CryptPad: Collaborative Documents with Zero Knowledge](#cryptpad-collaborative-documents-with-zero-knowledge)
+- [Silo: Purpose-Built Encrypted Workspace](#silo-purpose-built-encrypted-workspace)
+- [Session: Metadata-Resistant Messaging](#session-metadata-resistant-messaging)
+- [Implementation Considerations](#implementation-considerations)
+- [Setting Up a Private Matrix Server](#setting-up-a-private-matrix-server)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Advanced Encryption Key Management](#advanced-encryption-key-management)
+- [Team Size and Complexity Scaling](#team-size-and-complexity-scaling)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Compliance and Data Residency](#compliance-and-data-residency)
+- [Security Incident Response in Encrypted Environments](#security-incident-response-in-encrypted-environments)
+- [Advanced Self-Hosting Architecture](#advanced-self-hosting-architecture)
+- [Performance Optimization for Large Deployments](#performance-optimization-for-large-deployments)
+- [Audit Logging for Compliance](#audit-logging-for-compliance)
+- [Testing and Validation Before Deployment](#testing-and-validation-before-deployment)
+
 ## Understanding Zero-Knowledge Architecture
 
 Zero-knowledge encryption means the service provider cannot access your plaintext data. The encryption keys never leave your control. When you encrypt a message, only the intended recipients can decrypt it—everyone else, including the service operator, sees only opaque ciphertext.

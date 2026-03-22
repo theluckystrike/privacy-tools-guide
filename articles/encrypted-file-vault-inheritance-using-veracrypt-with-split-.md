@@ -43,6 +43,26 @@ VeraCrypt's hidden volume and split-password features enable secure digital esta
 - Choose Hidden VeraCrypt volume
 3.
 
+## Table of Contents
+
+- [Why Split Password Authentication Matters](#why-split-password-authentication-matters)
+- [Setting Up Your VeraCrypt Inheritance Vault](#setting-up-your-veracrypt-inheritance-vault)
+- [Automating Mount with Split Passwords](#automating-mount-with-split-passwords)
+- [Implementing Shamir's Secret Sharing](#implementing-shamirs-secret-sharing)
+- [Recovery and Succession Planning](#recovery-and-succession-planning)
+- [Testing Your Setup](#testing-your-setup)
+- [Advanced Scenarios: Multiple Inheritance Layers](#advanced-scenarios-multiple-inheritance-layers)
+- [Implementing Time-Based Access Control](#implementing-time-based-access-control)
+- [Documenting Vault Access Procedures](#documenting-vault-access-procedures)
+- [Quick Start](#quick-start)
+- [Step-by-Step Mount Procedure](#step-by-step-mount-procedure)
+- [Troubleshooting](#troubleshooting)
+- [Post-Access](#post-access)
+- [Integration with Estate Planning Documents](#integration-with-estate-planning-documents)
+- [Auditing Access Attempts](#auditing-access-attempts)
+- [Key Rotation and Updates](#key-rotation-and-updates)
+- [Testing Without Revealing Contents](#testing-without-revealing-contents)
+
 ## Why Split Password Authentication Matters
 
 Traditional password sharing creates a single point of failure. If one person learns the password, they have complete access. Split password authentication divides the secret so that two (or more) parties must collaborate to decrypt the vault. This provides accountability and ensures that neither party can access sensitive documents independently.

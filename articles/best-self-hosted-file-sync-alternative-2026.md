@@ -33,6 +33,18 @@ For developers managing repositories, config files, or sensitive documents, self
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Choose Syncthing for minimal overhead**: Nextcloud for feature-rich collaboration, or hybrid setups combining both for maximum flexibility.
 
+## Table of Contents
+
+- [Syncthing: Decentralized Peer-to-Peer Sync](#syncthing-decentralized-peer-to-peer-sync)
+- [Nextcloud: Full-Featured Cloud Suite](#nextcloud-full-featured-cloud-suite)
+- [FileRun: Lightweight File Manager](#filerun-lightweight-file-manager)
+- [Tahoe-LAFS: Distributed Encrypted Storage](#tahoe-lafs-distributed-encrypted-storage)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Production Hardening and Security](#production-hardening-and-security)
+- [Performance Optimization Strategies](#performance-optimization-strategies)
+- [Migration and Switching Between Solutions](#migration-and-switching-between-solutions)
+- [Team Collaboration Features](#team-collaboration-features)
+
 ## Syncthing: Decentralized Peer-to-Peer Sync
 
 Syncthing remains the top choice for developers who want serverless file synchronization. It replaces cloud storage with direct device-to-device connections using encrypted protocols.

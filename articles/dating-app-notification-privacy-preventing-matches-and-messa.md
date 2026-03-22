@@ -42,6 +42,18 @@ Lock screen privacy remains a critical concern for dating app users. When a matc
 - **Lock screen privacy remains**: a critical concern for dating app users.
 - **On iOS**: this is Apple Push Notification service (APNS), while Android uses Firebase Cloud Messaging (FCM).
 
+## Table of Contents
+
+- [Understanding Lock Screen Notification Channels](#understanding-lock-screen-notification-channels)
+- [iOS: Notification Privacy Settings](#ios-notification-privacy-settings)
+- [Android: Lock Screen and Notification Channels](#android-lock-screen-and-notification-channels)
+- [Custom ROM and LineageOS Considerations](#custom-rom-and-lineageos-considerations)
+- [Developer APIs for Notification Control](#developer-apis-for-notification-control)
+- [Automating Privacy Based on Context](#automating-privacy-based-on-context)
+- [Third-Party Launchers and Notification Management](#third-party-launchers-and-notification-management)
+- [Security Considerations](#security-considerations)
+- [Debugging Notification Issues](#debugging-notification-issues)
+
 ## Understanding Lock Screen Notification Channels
 
 Dating apps typically send notifications through platform-specific push notification services. On iOS, this is Apple Push Notification service (APNS), while Android uses Firebase Cloud Messaging (FCM). The app developer controls what data appears in these notifications, but users have significant control through device settings and, for developers, through notification configuration APIs.

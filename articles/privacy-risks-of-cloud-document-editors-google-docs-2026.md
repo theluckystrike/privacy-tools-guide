@@ -77,6 +77,19 @@ Google Docs shares data with:
 
 ## What Notion Collects
 
+## Table of Contents
+
+- [What Notion Collects](#what-notion-collects)
+- [What Microsoft Office365 Collects](#what-microsoft-office365-collects)
+- [Comparison: What Each Platform Stores](#comparison-what-each-platform-stores)
+- [Privacy Risks in Practice](#privacy-risks-in-practice)
+- [What Privacy Alternatives Exist?](#what-privacy-alternatives-exist)
+- [Privacy Comparison: All Options](#privacy-comparison-all-options)
+- [Practical Recommendations](#practical-recommendations)
+- [Red Flags: When NOT to Use Cloud Docs](#red-flags-when-not-to-use-cloud-docs)
+- [Checking Your Current Exposure](#checking-your-current-exposure)
+- [Data Deletion: What Actually Happens](#data-deletion-what-actually-happens)
+
 Notion's privacy is worse than Google Docs in some ways.
 
 ### Content Collection

@@ -26,6 +26,16 @@ When data connectivity is unavailable—traveling without cellular data, in netw
 - **Encrypted SMS alternatives require**: both sender and recipient to use compatible software.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Core Challenge](#the-core-challenge)
+- [Carrier-Based Solutions: S/MIME and Rich Communication Services](#carrier-based-solutions-smime-and-rich-communication-services)
+- [Application-Layer SMS Encryption](#application-layer-sms-encryption)
+- [Mesh Networking Applications](#mesh-networking-applications)
+- [Offline Message Queuing Strategies](#offline-message-queuing-strategies)
+- [Practical Considerations](#practical-considerations)
+- [Building a Hybrid Approach](#building-a-hybrid-approach)
+
 ## The Core Challenge
 
 Standard SMS operates independently of data networks, but it lacks encryption by default. The challenge is achieving cryptographic protection for messages transmitted through the plain SMS channel. Unlike OTT (Over-The-Top) messaging that establishes its own encrypted transport, SMS encryption must work within the constraints of the cellular messaging infrastructure.

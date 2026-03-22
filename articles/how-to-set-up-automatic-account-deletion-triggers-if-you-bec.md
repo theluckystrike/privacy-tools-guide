@@ -40,6 +40,15 @@ This guide walks you through practical methods to configure automatic account de
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: the problem, method 1: cron-based dead man's switch, setting up the checker script, with specific setup instructions
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [Method 1: Cron-Based Dead Man's Switch](#method-1-cron-based-dead-mans-switch)
+- [Method 2: Cloud Function with External Heartbeat](#method-2-cloud-function-with-external-heartbeat)
+- [Method 3: Time-Locked Encryption with Social Recovery](#method-3-time-locked-encryption-with-social-recovery)
+- [Practical Implementation Steps](#practical-implementation-steps)
+- [Additional Considerations](#additional-considerations)
+
 ## Understanding the Problem
 
 When you die or become incapacitated, your digital accounts don't automatically close. Social media platforms may memorialize accounts, but they rarely delete them. Email accounts containing sensitive information remain accessible. Cloud storage files persist indefinitely. This creates privacy risks for your family and potential security vulnerabilities.

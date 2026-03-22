@@ -43,6 +43,17 @@ Android's Privacy Dashboard provides a centralized view of how apps access sensi
 6.
 - **Rather than guessing which**: apps have access to your camera or location, you can see exactly when each permission was used and for how long.
 
+## Table of Contents
+
+- [What is the Privacy Dashboard?](#what-is-the-privacy-dashboard)
+- [Prerequisites](#prerequisites)
+- [Additional Privacy Controls](#additional-privacy-controls)
+- [Advanced Permission Management Strategies](#advanced-permission-management-strategies)
+- [Android Version Differences](#android-version-differences)
+- [Automation and Monitoring Tools](#automation-and-monitoring-tools)
+- [Corporate/MDM Considerations](#corporatemdm-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## What is the Privacy Dashboard?
 
 The Privacy Dashboard is a native Android feature that displays a timeline of permission usage across all apps on your device. Rather than guessing which apps have access to your camera or location, you can see exactly when each permission was used and for how long. This visibility is the first step toward taking control of your digital privacy.

@@ -39,6 +39,14 @@ Standard DNS queries are unencrypted. Your ISP, network operator, and DNS resolv
 - Toggle "Use custom DNS"
 5.
 
+## Table of Contents
+
+- [Why DoH Matters](#why-doh-matters)
+- [Prerequisites](#prerequisites)
+- [Provider Comparison Table](#provider-comparison-table)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting DoH Issues](#troubleshooting-doh-issues)
+
 ## Why DoH Matters
 
 When you visit example.com, your device sends an unencrypted DNS query: "What is the IP for example.com?" Every network device between you and the DNS resolver can see this query. DoH wraps DNS queries in HTTPS encryption, hiding your traffic from ISPs, corporate networks, and attackers on public WiFi.

@@ -39,6 +39,24 @@ Configure Private DNS (DNS over TLS) on Android to encrypt all DNS queries and b
 - **Verify the hostname -**: Typos in the custom hostname will cause failures 3.
 - **Test with a different**: provider - Some providers may be temporarily unavailable ### Performance Degradation DNS resolution through encrypted channels adds minimal latency (typically 5-20ms).
 
+## Table of Contents
+
+- [Understanding How Private DNS Works](#understanding-how-private-dns-works)
+- [Prerequisites](#prerequisites)
+- [Configuring Private DNS on Android](#configuring-private-dns-on-android)
+- [Private DNS Provider Options](#private-dns-provider-options)
+- [Verifying Your Configuration](#verifying-your-configuration)
+- [Advanced Configuration for Developers](#advanced-configuration-for-developers)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Security Considerations](#security-considerations)
+- [Provider Comparison Table](#provider-comparison-table)
+- [Rooting Considerations](#rooting-considerations)
+- [Integration with VPN Services](#integration-with-vpn-services)
+- [Mobile Carrier DNS Interception](#mobile-carrier-dns-interception)
+- [Performance Optimization](#performance-optimization)
+- [DNS Monitoring and Logging](#dns-monitoring-and-logging)
+
 ## Understanding How Private DNS Works
 
 When you type a website address in your browser, your device performs a DNS lookup to translate the human-readable domain name into an IP address. By default, these queries are sent to your ISP's DNS servers in plaintext, meaning anyone monitoring your network traffic can see which domains you access. Trackers exploit this by embedding their domains in websites and apps, allowing them to build detailed profiles of your browsing habits.

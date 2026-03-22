@@ -42,6 +42,21 @@ Data brokers are quietly collecting, analyzing, and selling your personal inform
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is an Identity Graph?](#what-is-an-identity-graph)
+- [How Data Brokers Connect Your Records](#how-data-brokers-connect-your-records)
+- [What Data Brokers Know About You](#what-data-brokers-know-about-you)
+- [Code Example: Simple Identity Resolution](#code-example-simple-identity-resolution)
+- [Data Sources Feeding Identity Graphs](#data-sources-feeding-identity-graphs)
+- [How Data Brokers Monetize Your Graph](#how-data-brokers-monetize-your-graph)
+- [Advanced Identity Resolution Techniques](#advanced-identity-resolution-techniques)
+- [Data Broker Inventory](#data-broker-inventory)
+- [Monitoring and Removing Your Data](#monitoring-and-removing-your-data)
+- [State Privacy Laws and Data Access Rights](#state-privacy-laws-and-data-access-rights)
+- [The Economics of Identity Graphs](#the-economics-of-identity-graphs)
+- [Protecting Yourself from Identity Graph Tracking](#protecting-yourself-from-identity-graph-tracking)
+
 ## What Is an Identity Graph?
 
 An identity graph is a database structure that links together various identifiers belonging to the same individual. These identifiers include:

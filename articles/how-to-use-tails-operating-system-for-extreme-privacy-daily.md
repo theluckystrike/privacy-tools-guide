@@ -44,6 +44,13 @@ TAILS is a live Linux distribution that boots from USB, runs entirely in RAM lea
 4.
 - **Use TAILS for maximum**: privacy when handling sensitive data, whistleblowing, or circumventing surveillance.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Privacy Configurations](#advanced-privacy-configurations)
+- [Limitations and Threat Models](#limitations-and-threat-models)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

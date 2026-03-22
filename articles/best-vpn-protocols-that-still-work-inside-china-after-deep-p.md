@@ -43,6 +43,17 @@ V2Ray with VMess over WebSocket+TLS, Shadowsocks with obfsproxy, and Trojan all 
 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Enemy: How DPI Detects VPNs](#understanding-the-enemy-how-dpi-detects-vpns)
+- [WireGuard with UDP Obfuscation](#wireguard-with-udp-obfuscation)
+- [OpenVPN with obfsproxy](#openvpn-with-obfsproxy)
+- [V2Ray and Shadowsocks: Purpose-Built for Censorship](#v2ray-and-shadowsocks-purpose-built-for-censorship)
+- [Custom TLS Tunnel: The Developer Approach](#custom-tls-tunnel-the-developer-approach)
+- [Protocol Comparison for China Use](#protocol-comparison-for-china-use)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Verifying Your Setup](#verifying-your-setup)
+
 ## Understanding the Enemy: How DPI Detects VPNs
 
 Deep packet inspection examines not just packet headers, but the payload contents. Standard VPN protocols have recognizable signatures:

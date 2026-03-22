@@ -40,6 +40,18 @@ For accessing Amazon Prime Video across different regions, a self-hosted WireGua
 - **For accessing Amazon Prime**: Video across different regions, a self-hosted WireGuard server on a cloud provider offers the most reliable results, since its IP won't appear on commercial VPN blacklists.
 - **Here is how the**: major options compare on the criteria that matter most for streaming: | VPN | Dedicated Streaming IPs | Obfuscation | Kill Switch | Avg.
 
+## Table of Contents
+
+- [How Amazon Prime Video Detects VPN Traffic](#how-amazon-prime-video-detects-vpn-traffic)
+- [Commercial VPN Comparison for Prime Video](#commercial-vpn-comparison-for-prime-video)
+- [Essential VPN Configuration for Prime Video](#essential-vpn-configuration-for-prime-video)
+- [Testing Your VPN Connection](#testing-your-vpn-connection)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Step-by-Step: Self-Hosted WireGuard Setup](#step-by-step-self-hosted-wireguard-setup)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Privacy Considerations](#privacy-considerations)
+- [Alternatives to Traditional VPNs](#alternatives-to-traditional-vpns)
+
 ## How Amazon Prime Video Detects VPN Traffic
 
 Amazon employs several detection methods to identify and block VPN connections:

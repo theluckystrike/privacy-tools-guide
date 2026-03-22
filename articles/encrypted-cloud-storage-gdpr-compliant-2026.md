@@ -42,6 +42,20 @@ For GDPR compliance with cloud storage, implement client-side encryption using A
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding GDPR's Encryption Requirements](#understanding-gdprs-encryption-requirements)
+- [Client-Side vs Server-Side Encryption](#client-side-vs-server-side-encryption)
+- [Implementing Client-Side Encryption](#implementing-client-side-encryption)
+- [Key Management Strategies](#key-management-strategies)
+- [Breach Notification and Encryption Status](#breach-notification-and-encryption-status)
+- [Key Management Audit and Compliance Logging](#key-management-audit-and-compliance-logging)
+- [Data Subject Rights Implementation](#data-subject-rights-implementation)
+- [Practical Example: GDPR-Compliant Storage Implementation](#practical-example-gdpr-compliant-storage-implementation)
+- [Compliance Documentation Template](#compliance-documentation-template)
+- [Data Protection Impact Assessment (DPIA)](#data-protection-impact-assessment-dpia)
+- [Verifying GDPR Compliance](#verifying-gdpr-compliance)
+
 ## Understanding GDPR's Encryption Requirements
 
 GDPR does not mandate specific encryption technologies, but Article 32 explicitly mentions encryption as a measure for protecting personal data. The regulation requires "appropriate technical and organisational measures" including "the ability to restore the availability and access to personal data in a timely manner" and protection against unauthorized access.

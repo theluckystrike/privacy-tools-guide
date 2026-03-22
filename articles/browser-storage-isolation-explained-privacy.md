@@ -42,6 +42,22 @@ Browser storage isolation is a fundamental security mechanism that determines ho
 - **Understanding these boundaries helps**: developers build privacy-respecting applications and enables users to make informed decisions about their browsing habits.
 - **For example, `https**: //example.com` and `https://api.example.com` are different origins because the subdomain differs.
 
+## Table of Contents
+
+- [What Is Browser Storage Isolation](#what-is-browser-storage-isolation)
+- [Types of Browser Storage Mechanisms](#types-of-browser-storage-mechanisms)
+- [The Same-Origin Policy for Storage](#the-same-origin-policy-for-storage)
+- [Understanding SameSite Cookies](#understanding-samesite-cookies)
+- [Third-Party Storage and Privacy Concerns](#third-party-storage-and-privacy-concerns)
+- [Storage Access API for Legitimate Use Cases](#storage-access-api-for-legitimate-use-cases)
+- [Best Practices for Privacy-Conscious Development](#best-practices-for-privacy-conscious-development)
+- [Browser-Specific Storage Isolation Features](#browser-specific-storage-isolation-features)
+- [Testing Storage Isolation in Your Application](#testing-storage-isolation-in-your-application)
+- [Partitioned Cookie Implementation](#partitioned-cookie-implementation)
+- [Storage Quota Limits and User Privacy](#storage-quota-limits-and-user-privacy)
+- [Clearing Browser Storage for Privacy](#clearing-browser-storage-for-privacy)
+- [Storage Isolation Audit Tools](#storage-isolation-audit-tools)
+
 ## What Is Browser Storage Isolation
 
 Browser storage isolation refers to the rules governing how different websites can store data locally and access that data later. Modern browsers implement multiple storage mechanisms, each with different isolation characteristics. The core principle is that web content from different origins should be strictly separated to prevent unauthorized data access.

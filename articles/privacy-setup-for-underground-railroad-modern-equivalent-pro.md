@@ -44,6 +44,14 @@ The Tor network functions as the most accessible equivalent to the Underground R
 Just as the Underground Railroad used coded songs and phrases, modern privacy relies on encrypted communication.
 - **The same applies today**: - Device separation: Use a dedicated device for sensitive activities.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Threat Model: Know What You Are Defending Against](#threat-model-know-what-you-are-defending-against)
+- [Advanced: Building Your Privacy Stack](#advanced-building-your-privacy-stack)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

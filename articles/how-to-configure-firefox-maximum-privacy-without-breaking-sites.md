@@ -45,6 +45,19 @@ Configuration:
 - **But they use Google**: as default search (revenue sharing), and many default settings are permissive for compatibility.
 - **If you want 99.9% privacy**: you'll lose some sites.
 
+## Table of Contents
+
+- [The Privacy Problem Firefox Solves](#the-privacy-problem-firefox-solves)
+- [The Balance: Privacy vs. Breakage](#the-balance-privacy-vs-breakage)
+- [Step 1: Firefox Settings (about:preferences)](#step-1-firefox-settings-aboutpreferences)
+- [Step 2: about:config Advanced Settings](#step-2-aboutconfig-advanced-settings)
+- [Step 3: Privacy Extensions (Minimal Set)](#step-3-privacy-extensions-minimal-set)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Avoiding Fingerprinting While Maintaining Functionality](#avoiding-fingerprinting-while-maintaining-functionality)
+- [Site Breakage: Troubleshooting](#site-breakage-troubleshooting)
+- [Advanced: Container Tabs](#advanced-container-tabs)
+- [Privacy Maintenance Checklist](#privacy-maintenance-checklist)
+
 ## The Privacy Problem Firefox Solves
 
 Most browsers (Chrome, Edge, Safari) are built by corporations that profit from your data:

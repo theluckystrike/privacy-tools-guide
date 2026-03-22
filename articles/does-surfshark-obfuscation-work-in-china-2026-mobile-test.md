@@ -47,6 +47,20 @@ The app's Kill Switch feature is critical.
 - Wait 2 seconds
 // 3.
 
+## Table of Contents
+
+- [Understanding Obfuscation Technology](#understanding-obfuscation-technology)
+- [Testing Methodology](#testing-methodology)
+- [Protocols Tested](#protocols-tested)
+- [Mobile-Specific Findings](#mobile-specific-findings)
+- [Connection Stability Observations](#connection-stability-observations)
+- [Protocol Performance Comparison Table](#protocol-performance-comparison-table)
+- [Network Environment Matters](#network-environment-matters)
+- [Optimizing Surfshark App Settings for China](#optimizing-surfshark-app-settings-for-china)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [Alternative Approaches](#alternative-approaches)
+- [Common Mistakes That Lead to Failed Connections](#common-mistakes-that-lead-to-failed-connections)
+
 ## Understanding Obfuscation Technology
 
 Obfuscation works by wrapping VPN traffic in additional encryption layers that make it appear like normal HTTPS traffic. For developers, this means your VPN protocol traffic gets masked as standard web traffic, bypassing deep packet inspection (DPI) systems that China uses to block VPN connections.

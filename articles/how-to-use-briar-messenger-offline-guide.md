@@ -40,6 +40,14 @@ To use Briar offline, install the app from F-Droid or Google Play, enable Blueto
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration](#advanced-configuration)
+- [Performance Characteristics](#performance-characteristics)
+- [Troubleshooting Offline Connectivity](#troubleshooting-offline-connectivity)
+- [Performance Tuning for Resource-Constrained Devices](#performance-tuning-for-resource-constrained-devices)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

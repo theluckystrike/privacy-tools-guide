@@ -42,6 +42,27 @@ Yes, 1Password Families is worth it for power users in 2026, especially technica
 - **Technical users accustomed to**: admin panels might find this limiting.
 - **For households with mixed**: technical sophistication, these limitations matter less.
 
+## Table of Contents
+
+- [Pricing and Core Features](#pricing-and-core-features)
+- [Vault Architecture and Organization](#vault-architecture-and-organization)
+- [Sharing Mechanisms](#sharing-mechanisms)
+- [Administrator Capabilities](#administrator-capabilities)
+- [CLI Integration for Power Users](#cli-integration-for-power-users)
+- [Watchtower and Security Monitoring](#watchtower-and-security-monitoring)
+- [What Families Plan Lacks](#what-families-plan-lacks)
+- [Comparison to Alternatives](#comparison-to-alternatives)
+- [Decision Factors](#decision-factors)
+- [SSH Agent Integration and Development Workflows](#ssh-agent-integration-and-development-workflows)
+- [Family Member Onboarding Process](#family-member-onboarding-process)
+- [Watchtower Advanced Features](#watchtower-advanced-features)
+- [Custom Vaults Architecture for Complex Families](#custom-vaults-architecture-for-complex-families)
+- [Travel Mode for Power Users](#travel-mode-for-power-users)
+- [Biometric Authentication Across Family Devices](#biometric-authentication-across-family-devices)
+- [Cost-Benefit Analysis for 2026](#cost-benefit-analysis-for-2026)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Decision Matrix for 2026](#decision-matrix-for-2026)
+
 ## Pricing and Core Features
 
 At its core, 1Password Families provides up to five family members with unlimited item storage, 1GB document storage per person, and 1Password Watchtower security monitoring. The family organizer has administrative capabilities that separate it from individual accounts, including the ability to recover family member vaults and manage sharing invitations.

@@ -52,6 +52,13 @@ The cryptocurrency exchange field has shifted dramatically in 2026. Stricter glo
 - **This guide covers the**: remaining no-KYC exchanges that actually work, with practical details for developers building privacy-focused applications.
 - **The platform uses reputation**: scores rather than identity verification.
 
+## Table of Contents
+
+- [Understanding the No-KYC Field in 2026](#understanding-the-no-kyc-field-in-2026)
+- [Practical No-KYC Exchange Options](#practical-no-kyc-exchange-options)
+- [Security Considerations](#security-considerations)
+- [Limitations of No-KYC in 2026](#limitations-of-no-kyc-in-2026)
+
 ## Understanding the No-KYC Field in 2026
 
 Regulatory pressure increased significantly after the EU's MiCA framework fully took effect and the US SEC intensified enforcement actions. Many exchanges that once offered limited no-KYC trading now require identity verification for any crypto-to-crypto or crypto-to-fiat transactions.

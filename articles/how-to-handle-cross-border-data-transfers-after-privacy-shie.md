@@ -39,6 +39,13 @@ Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessme
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Monitoring and Documentation Requirements](#monitoring-and-documentation-requirements)
+- [Verification and Compliance Testing](#verification-and-compliance-testing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

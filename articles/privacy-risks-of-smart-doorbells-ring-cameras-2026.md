@@ -27,6 +27,18 @@ Ring, Google Nest, and Arlo sell doorbell and camera footage to law enforcement 
 - **Privacy alternatives**: Wyze (no police partnerships, local storage option), Logitech Logi Circle View (local-first), Reolink (no cloud required, local NVR/PoE).
 - **Risk level**: High for Ring. Medium for Arlo. Medium-Low for Nest. Depends on threat model.
 
+## Table of Contents
+
+- [Understanding Smart Doorbell Architecture](#understanding-smart-doorbell-architecture)
+- [Ring: Aggressive Law Enforcement Partnerships](#ring-aggressive-law-enforcement-partnerships)
+- [Google Nest: Balancing Security and Integration](#google-nest-balancing-security-and-integration)
+- [Arlo: Privacy-Focused, Expensive](#arlo-privacy-focused-expensive)
+- [Feature and Privacy Comparison Matrix](#feature-and-privacy-comparison-matrix)
+- [Privacy-First Alternatives](#privacy-first-alternatives)
+- [Real-World Privacy Risks: Case Studies](#real-world-privacy-risks-case-studies)
+- [Protecting Your Privacy With Smart Cameras](#protecting-your-privacy-with-smart-cameras)
+- [Alternative Approaches Without Cameras](#alternative-approaches-without-cameras)
+
 ## Understanding Smart Doorbell Architecture
 
 Smart doorbells and cameras follow this data flow:

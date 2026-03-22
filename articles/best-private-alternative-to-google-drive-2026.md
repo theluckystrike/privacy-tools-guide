@@ -42,6 +42,16 @@ If you are a developer or power user searching for the best private alternative 
 - **Use `rclone copy gdrive**: nextcloud: --transfers 8`.
 - **- Limited CLI and automation support**: The Google Drive API has rate limits, OAuth complexity, and no native POSIX filesystem interface — all of which complicate scripted workflows.
 
+## Table of Contents
+
+- [Why Developers Are Moving Away from Google Drive](#why-developers-are-moving-away-from-google-drive)
+- [Syncthing: Decentralized P2P File Synchronization](#syncthing-decentralized-p2p-file-synchronization)
+- [Nextcloud: Full-Featured Self-Hosted Cloud](#nextcloud-full-featured-self-hosted-cloud)
+- [Seafile: High-Performance Storage with Encrypted Libraries](#seafile-high-performance-storage-with-encrypted-libraries)
+- [Cryptomator: Client-Side Encryption for Any Backend](#cryptomator-client-side-encryption-for-any-backend)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Security Considerations](#security-considerations)
+
 ## Why Developers Are Moving Away from Google Drive
 
 Google Drive offers collaboration, but it comes with significant privacy trade-offs. Google's terms of service grant the company broad rights to analyze content for advertising and service improvement. This analysis extends to documents, spreadsheets, and files you store — even those marked private. Encryption is applied, but Google holds the keys, meaning any government request or internal access can expose your data without your knowledge.

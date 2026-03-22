@@ -38,6 +38,22 @@ Consumer routers ship with default credentials, remote management enabled, and f
 - **Malware on a compromised**: device can use UPnP to expose it directly to the internet.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understand What You're Working With](#understand-what-youre-working-with)
+- [Access Your Router Admin Panel](#access-your-router-admin-panel)
+- [Step 1: Update the Firmware](#step-1-update-the-firmware)
+- [Step 2: Disable WPS](#step-2-disable-wps)
+- [Step 3: Disable UPnP](#step-3-disable-upnp)
+- [Step 4: Disable Remote Management](#step-4-disable-remote-management)
+- [Step 5: Set Strong Wi-Fi Credentials](#step-5-set-strong-wi-fi-credentials)
+- [Step 6: Set Up a Guest Network](#step-6-set-up-a-guest-network)
+- [Step 7: Disable Unnecessary Services](#step-7-disable-unnecessary-services)
+- [Step 8: Enable the Firewall](#step-8-enable-the-firewall)
+- [Option: Replace Firmware with OpenWrt](#option-replace-firmware-with-openwrt)
+- [Verify Your Setup](#verify-your-setup)
+- [Hardening Checklist](#hardening-checklist)
+
 ## Understand What You're Working With
 
 Before making changes, note:

@@ -52,6 +52,14 @@ When handling sensitive financial transactions, the browser you choose plays a c
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **When handling sensitive financial**: transactions, the browser you choose plays a critical role in protecting your credentials, session tokens, and personal data.
 
+## Table of Contents
+
+- [What Makes a Browser Secure for Banking](#what-makes-a-browser-secure-for-banking)
+- [Browser Security Analysis](#browser-security-analysis)
+- [Extension Strategy for Banking Security](#extension-strategy-for-banking-security)
+- [Network-Level Protections](#network-level-protections)
+- [Practical Banking Browser Setup](#practical-banking-browser-setup)
+
 ## What Makes a Browser Secure for Banking
 
 Online banking sessions expose multiple attack vectors that attackers actively exploit. Understanding these vectors helps you evaluate browser security objectively rather than relying on marketing claims.

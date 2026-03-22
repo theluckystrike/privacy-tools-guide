@@ -40,6 +40,14 @@ Create encrypted local backups of chat history using database exports encrypted 
 - **Choose based on your**: downstream processing needs.
 - **This method works across**: platforms and uses well-audited cryptographic implementations.
 
+## Table of Contents
+
+- [Why Local Encrypted Backups Matter](#why-local-encrypted-backups-matter)
+- [Prerequisites](#prerequisites)
+- [Threat Model Considerations for Chat Backups](#threat-model-considerations-for-chat-backups)
+- [Advanced Backup Strategies for High-Risk Users](#advanced-backup-strategies-for-high-risk-users)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Local Encrypted Backups Matter
 
 Cloud-based chat backups offer convenience but introduce significant risks. Data breaches, service shutdowns, subpoena requests, and platform policy changes can all compromise your message history. By creating encrypted local backups, you maintain complete control over your data. The encryption ensures that even if physical access to your storage is compromised, your messages remain unreadable.

@@ -40,6 +40,14 @@ ESPHome converts ESP32 and ESP8266 microcontrollers into local smart sensors tha
 - **When you use commercial**: smart home platforms like Tuya, SmartThings, or Google Home, every sensor reading travels through vendor servers before reaching your dashboard.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why ESPHome for Local Sensors](#why-esphome-for-local-sensors)
+- [Prerequisites](#prerequisites)
+- [Common ESPHome Sensor Platform Comparison](#common-esphome-sensor-platform-comparison)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
+
 ## Why ESPHome for Local Sensors
 
 ESPHome is an ecosystem that converts ESP32 and ESP8266 microcontrollers into smart devices through declarative YAML configurations. Unlike commercial smart sensors that require cloud accounts, ESPHome devices communicate directly with your local Home Assistant instance over MQTT or the native ESPHome API.

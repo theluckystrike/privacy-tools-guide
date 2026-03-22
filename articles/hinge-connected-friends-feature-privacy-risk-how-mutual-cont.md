@@ -40,6 +40,20 @@ Dating applications have evolved beyond simple profile matching algorithms. Mode
 - **LinkedIn integration**: Your professional identity becomes linkable to your dating profile, creating a risk of professional reputation damage if you use Hinge.
 - **Contact exposure (Hinge users**: have your phone number and uploaded it) 3.
 
+## Table of Contents
+
+- [What Is the Hinge Connected Friends Feature?](#what-is-the-hinge-connected-friends-feature)
+- [How Mutual Contacts Can Identify Your Profile](#how-mutual-contacts-can-identify-your-profile)
+- [Privacy Implications for Developers](#privacy-implications-for-developers)
+- [Protecting Your Privacy on Hinge](#protecting-your-privacy-on-hinge)
+- [Technical Mechanisms: Phone Number Hashing and Matching](#technical-mechanisms-phone-number-hashing-and-matching)
+- [Data Leakage Through Android Contact Picker](#data-leakage-through-android-contact-picker)
+- [Privacy Risk Escalation: Cross-Platform Linking](#privacy-risk-escalation-cross-platform-linking)
+- [Building a Privacy-Protecting Dating App Architecture](#building-a-privacy-protecting-dating-app-architecture)
+- [Regulatory and Legal Considerations](#regulatory-and-legal-considerations)
+- [Advanced Exposure Analysis](#advanced-exposure-analysis)
+- [Removal and Deletion Considerations](#removal-and-deletion-considerations)
+
 ## What Is the Hinge Connected Friends Feature?
 
 Hinge's Connected Friends feature allows users to link their Facebook accounts to discover whether friends or contacts also use the platform. The feature claims to help users "avoid awkward moments" by revealing mutual connections before matching. However, the implementation creates a subtle but powerful mechanism for profile identification that operates even when users have not explicitly connected their accounts.

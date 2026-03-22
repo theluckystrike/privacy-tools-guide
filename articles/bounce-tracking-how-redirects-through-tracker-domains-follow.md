@@ -31,6 +31,22 @@ These headers contain unique identifiers that correlate your email address with 
 - **User clicks a tracked**: link pointing to `tracker.example.com` 2.
 - **User clicks a newsletter**: link Original: retailer.com/product/shoes 2.
 
+## Table of Contents
+
+- [What Is Bounce Tracking?](#what-is-bounce-tracking)
+- [The Mechanics of Redirect-Based Tracking](#the-mechanics-of-redirect-based-tracking)
+- [Real-World Examples](#real-world-examples)
+- [Technical Deep Dive: How Tracking Domains Operate](#technical-deep-dive-how-tracking-domains-operate)
+- [Detecting Bounce Tracking](#detecting-bounce-tracking)
+- [Protecting Yourself](#protecting-yourself)
+- [Implications for Privacy](#implications-for-privacy)
+- [Anatomy of a Tracking Redirect Attack Chain](#anatomy-of-a-tracking-redirect-attack-chain)
+- [Advanced Protection Techniques](#advanced-protection-techniques)
+- [Bounce Tracking in Email Headers](#bounce-tracking-in-email-headers)
+- [Third-Party Cookie Implications](#third-party-cookie-implications)
+- [Historical Examples and Timeline](#historical-examples-and-timeline)
+- [Legal Considerations](#legal-considerations)
+
 ## What Is Bounce Tracking?
 
 When you click a link on one website that leads to another, your browser performs a series of operations invisible to most users. Normally, your browser would directly navigate from the source site to the destination. However, many websites insert intermediary URLs—typically managed by tracking companies—between your click and final destination.

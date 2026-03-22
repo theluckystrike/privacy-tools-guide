@@ -56,6 +56,20 @@ The technical challenge is significant because Hulu combines multiple detection 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **A WireGuard-based connection generally**: outperforms OpenVPN for streaming quality, and self-hosted solutions on an US VPS give the most reliable long-term access.
 
+## Table of Contents
+
+- [Why Streaming Services Block Geographic Access](#why-streaming-services-block-geographic-access)
+- [Understanding Hulu's Geo-Blocking Mechanisms](#understanding-hulus-geo-blocking-mechanisms)
+- [Technical Requirements for Hulu VPN](#technical-requirements-for-hulu-vpn)
+- [Verifying VPN Functionality](#verifying-vpn-functionality)
+- [VPN Protocol Configuration](#vpn-protocol-configuration)
+- [WebRTC Leak Prevention](#webrtc-leak-prevention)
+- [Self-Hosted VPN Considerations](#self-hosted-vpn-considerations)
+- [Commercial VPN vs Self-Hosted Comparison](#commercial-vpn-vs-self-hosted-comparison)
+- [Verification Checklist](#verification-checklist)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Long-Term Reliability Considerations](#long-term-reliability-considerations)
+
 ## Why Streaming Services Block Geographic Access
 
 Hulu's blocking represents a licensing issue, not a technical limitation. Content rights vary by geography—a show available to stream in the US may be licensed only for broadcast in Europe, unavailable in Asia, or exclusively licensed to different streaming services in different regions. Hulu must enforce these regional restrictions or face license violations and legal consequences.

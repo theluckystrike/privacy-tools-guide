@@ -40,6 +40,23 @@ Hardware concurrency—specifically the number of logical processor cores availa
 - **Entropy (bits) - Lower**: is better # 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is Hardware Concurrency?](#what-is-hardware-concurrency)
+- [Why CPU Core Count Matters for Fingerprinting](#why-cpu-core-count-matters-for-fingerprinting)
+- [How Websites Detect Your Core Count](#how-websites-detect-your-core-count)
+- [Browser Behavior and Inconsistencies](#browser-behavior-and-inconsistencies)
+- [Privacy Implications](#privacy-implications)
+- [Mitigation Strategies](#mitigation-strategies)
+- [For Developers: Building Privacy-Aware Applications](#for-developers-building-privacy-aware-applications)
+- [Testing Your Exposure](#testing-your-exposure)
+- [Advanced Fingerprinting Combinations](#advanced-fingerprinting-combinations)
+- [Browser-Specific Defenses](#browser-specific-defenses)
+- [Developer Considerations: Building Private Applications](#developer-considerations-building-private-applications)
+- [System-Level Spoof Attempts](#system-level-spoof-attempts)
+- [Tracking Fingerprint Consistency](#tracking-fingerprint-consistency)
+- [Fingerprinting Resistance Testing](#fingerprinting-resistance-testing)
+
 ## What Is Hardware Concurrency?
 
 Hardware concurrency refers to the number of parallel execution units (threads) your CPU can handle simultaneously. Modern processors use techniques like hyper-threading or simultaneous multithreading to provide more logical cores than physical cores. A quad-core processor with hyper-threading typically reports 8 logical processors to the operating system and applications.

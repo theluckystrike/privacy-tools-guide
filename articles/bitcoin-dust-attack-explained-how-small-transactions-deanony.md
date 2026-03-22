@@ -42,6 +42,19 @@ Bitcoin's pseudonymous nature provides a layer of privacy, but that pseudonymity
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is a Dust Attack?](#what-is-a-dust-attack)
+- [How Dust Attacks Deanonymize Wallets](#how-dust-attacks-deanonymize-wallets)
+- [Detecting Dust Attacks](#detecting-dust-attacks)
+- [Mitigation Strategies](#mitigation-strategies)
+- [When Dust Attacks Matter Most](#when-dust-attacks-matter-most)
+- [Advanced: Blockchain Analysis Resistance](#advanced-blockchain-analysis-resistance)
+- [Wallet Best Practices for Dust Avoidance](#wallet-best-practices-for-dust-avoidance)
+- [Real-World Dust Attack Scenarios](#real-world-dust-attack-scenarios)
+- [Integration with Cold Storage](#integration-with-cold-storage)
+- [Privacy Comparison: Bitcoin vs Alternatives](#privacy-comparison-bitcoin-vs-alternatives)
+
 ## What Is a Dust Attack?
 
 A dust attack involves sending tiny amounts of Bitcoin — often just a few satoshis (the smallest unit of Bitcoin, 1 BTC = 100,000,000 satoshis) — to a large number of addresses. These amounts are small enough to be practically useless for spending, but large enough to create traceable links on the blockchain.

@@ -40,6 +40,22 @@ First, check whether your university already provides a free VPN for remote acce
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **If not**: the best option for students abroad is a commercial VPN with WireGuard support, servers in your home country, and static IP options that universities can whitelist.
 
+## Table of Contents
+
+- [The University Access Problem](#the-university-access-problem)
+- [Protocol Considerations for Academic Use](#protocol-considerations-for-academic-use)
+- [Self-Hosted vs. Commercial Solutions](#self-hosted-vs-commercial-solutions)
+- [Network Configuration for Specific Platforms](#network-configuration-for-specific-platforms)
+- [Security Considerations for Research](#security-considerations-for-research)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Optimization](#performance-optimization)
+- [University VPN Bypass Techniques](#university-vpn-bypass-techniques)
+- [Advanced WireGuard Deployment for Students](#advanced-wireguard-deployment-for-students)
+- [VPN Comparison for Student Use](#vpn-comparison-for-student-use)
+- [Detecting University VPN Access Logs](#detecting-university-vpn-access-logs)
+- [Troubleshooting Authentication Issues](#troubleshooting-authentication-issues)
+- [Compliance and Ethical Considerations](#compliance-and-ethical-considerations)
+
 ## The University Access Problem
 
 University networks typically restrict access to licensed resources based on IP address geolocation. When you're studying in Germany but need access to your US university's IEEE Xplore subscription, the license server sees a German IP and denies access. This geographic restriction affects:

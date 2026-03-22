@@ -45,6 +45,14 @@ This guide walks through deploying Bitwarden on a Linux server using Docker, con
 - **Uses Microsoft SQL Server**: by default (or SQLite for simpler setups), is backed by Bitwarden Inc., and receives official support.
 - **Memory usage is higher**: (approximately 1-2GB at idle) because it runs multiple microservices.
 
+## Table of Contents
+
+- [Why Self-Host Bitwarden?](#why-self-host-bitwarden)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Legal and Compliance Considerations](#legal-and-compliance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Self-Host Bitwarden?
 
 The cloud-hosted Bitwarden service is solid, but self-hosting offers distinct advantages. You decide where data resides, who accesses it, and when upgrades happen. Organizations with compliance requirements often need on-premises solutions. Developers may want to test integrations without production data.

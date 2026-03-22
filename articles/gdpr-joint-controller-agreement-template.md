@@ -40,6 +40,31 @@ When multiple organizations process personal data together, GDPR requires clarit
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **"Joint controller" is not**: a standard term; use "co-discloser" terminology instead.
 
+## Table of Contents
+
+- [What Is a Joint Controller Agreement?](#what-is-a-joint-controller-agreement)
+- [Key Elements Required Under GDPR](#key-elements-required-under-gdpr)
+- [Practical Template](#practical-template)
+- [1. Purpose and Scope](#1-purpose-and-scope)
+- [2. Responsibilities](#2-responsibilities)
+- [3. Data Protection Measures](#3-data-protection-measures)
+- [4. Data Subject Rights](#4-data-subject-rights)
+- [5. Breach Notification](#5-breach-notification)
+- [6. Term and Termination](#6-term-and-termination)
+- [7. Governing Law](#7-governing-law)
+- [Code Example: Mapping Responsibilities](#code-example-mapping-responsibilities)
+- [Implementation Checklist](#implementation-checklist)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Automating Agreement Management](#automating-agreement-management)
+- [Practical Implementation Workflows](#practical-implementation-workflows)
+- [Data Flow Diagram Example](#data-flow-diagram-example)
+- [Handling Sub-Processors](#handling-sub-processors)
+- [Dispute Resolution Procedures](#dispute-resolution-procedures)
+- [Dispute Resolution (Add to Agreement)](#dispute-resolution-add-to-agreement)
+- [Compliance During Mergers and Acquisitions](#compliance-during-mergers-and-acquisitions)
+- [Regional Variations](#regional-variations)
+- [When to Seek Legal Counsel](#when-to-seek-legal-counsel)
+
 ## What Is a Joint Controller Agreement?
 
 Under GDPR (Article 26), two or more controllers can determine the purposes and means of processing jointly. When this happens, they must establish "joint controllership" through a legal agreement. The agreement doesn't reduce liability—each party remains responsible for compliance—but it defines internal responsibilities.

@@ -41,6 +41,20 @@ The Battery Status API exposes your device's battery level, charging status, and
 - **You can disable Battery**: API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is the Battery Status API?](#what-is-the-battery-status-api)
+- [How Battery API Enables Fingerprinting](#how-battery-api-enables-fingerprinting)
+- [Code Example: Battery Fingerprinting in Action](#code-example-battery-fingerprinting-in-action)
+- [Browser Implementation Differences](#browser-implementation-differences)
+- [Privacy Implications](#privacy-implications)
+- [Protecting Against Battery API Tracking](#protecting-against-battery-api-tracking)
+- [What Developers Should Consider](#what-developers-should-consider)
+- [Detecting Battery API Access in Your Codebase](#detecting-battery-api-access-in-your-codebase)
+- [Advanced: Reducing Fingerprinting Vectors Fully](#advanced-reducing-fingerprinting-vectors-fully)
+- [Testing Battery API Behavior Across Browsers](#testing-battery-api-behavior-across-browsers)
+- [Real-World Impact: Tracking Studies](#real-world-impact-tracking-studies)
+
 ## What Is the Battery Status API?
 
 The Battery Status API, also known as the Battery Manager API, provides JavaScript access to battery information on client devices. Implemented in most modern browsers, it exposes four key properties:

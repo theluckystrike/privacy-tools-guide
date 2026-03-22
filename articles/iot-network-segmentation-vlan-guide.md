@@ -23,6 +23,23 @@ Smart bulbs, thermostats, cameras, and voice assistants are computers running ou
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **---
 
+## Table of Contents
+
+- [Step 5**: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Why IoT Devices Are a Risk](#why-iot-devices-are-a-risk)
+- [Architecture: Three-Network Model](#architecture-three-network-model)
+- [Prerequisites](#prerequisites)
+- [Step 1: Create the IoT VLAN in OpenWrt](#step-1-create-the-iot-vlan-in-openwrt)
+- [Step 2: Create IoT Network Interface](#step-2-create-iot-network-interface)
+- [Step 3: Create IoT Firewall Zone](#step-3-create-iot-firewall-zone)
+- [Step 4: Create IoT WiFi SSID](#step-4-create-iot-wifi-ssid)
+- [Step 5: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Step 6: Assign IoT Devices to the VLAN](#step-6-assign-iot-devices-to-the-vlan)
+- [Monitor IoT Traffic](#monitor-iot-traffic)
+- [Block IoT Telemetry at DNS Level](#block-iot-telemetry-at-dns-level)
+- [Verify the Segmentation Works](#verify-the-segmentation-works)
+- [Related Reading](#related-reading)
+
 ## Step 5**: mDNS/Bonjour Forwarding (Optional)
 
 Some IoT ecosystems use mDNS for device discovery.

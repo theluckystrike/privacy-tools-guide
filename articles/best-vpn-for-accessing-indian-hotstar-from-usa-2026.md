@@ -42,6 +42,21 @@ Mullvad and Private Internet Access (PIA) are the most reliable VPNs for accessi
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Hotstar's Geo-Restriction Mechanisms](#understanding-hotstars-geo-restriction-mechanisms)
+- [Technical Requirements for Hotstar Access](#technical-requirements-for-hotstar-access)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Protocol Configuration for Streaming](#protocol-configuration-for-streaming)
+- [DNS Configuration for Hotstar](#dns-configuration-for-hotstar)
+- [Verification and Troubleshooting](#verification-and-troubleshooting)
+- [Advanced: Building a Custom Streaming Proxy](#advanced-building-a-custom-streaming-proxy)
+- [Performance Optimization](#performance-optimization)
+- [Security Considerations](#security-considerations)
+- [Advanced IP Rotation Techniques](#advanced-ip-rotation-techniques)
+- [WebRTC Leak Detection and Prevention](#webrtc-leak-detection-and-prevention)
+- [Custom Streaming Proxy Implementation](#custom-streaming-proxy-implementation)
+
 ## Understanding Hotstar's Geo-Restriction Mechanisms
 
 Hotstar employs several layers of geographic detection. The primary method involves IP-based geolocation using MaxMind and similar databases. When you connect from an US IP address, Hotstar's CDN (Content Delivery Network) serves different content based on licensing agreements.

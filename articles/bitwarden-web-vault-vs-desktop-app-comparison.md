@@ -42,6 +42,25 @@ Choose the Bitwarden desktop app if you need offline access, faster vault search
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose the web vault**: if you access Bitwarden from multiple browsers or devices, want minimal resource usage, and prefer not to install additional software.
 
+## Table of Contents
+
+- [Security Architecture](#security-architecture)
+- [Performance and Responsiveness](#performance-and-responsiveness)
+- [Browser Extension Integration](#browser-extension-integration)
+- [Command-Line and Developer Features](#command-line-and-developer-features)
+- [Offline Access and Sync Behavior](#offline-access-and-sync-behavior)
+- [System Tray and Quick Access](#system-tray-and-quick-access)
+- [Memory and Resource Usage](#memory-and-resource-usage)
+- [When to Choose Each Option](#when-to-choose-each-option)
+- [Practical Example: Managing Development Credentials](#practical-example-managing-development-credentials)
+- [Advanced Configuration: Desktop App with CLI](#advanced-configuration-desktop-app-with-cli)
+- [Comparative Performance Analysis](#comparative-performance-analysis)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Integration Patterns for Development Teams](#integration-patterns-for-development-teams)
+- [Web Vault Optimization Techniques](#web-vault-optimization-techniques)
+- [Multi-Device Synchronization Strategy](#multi-device-synchronization-strategy)
+- [Disaster Recovery Planning](#disaster-recovery-planning)
+
 ## Security Architecture
 
 Both the web vault and desktop app encrypt your data locally before transmission. The master password never leaves your device, and all decryption happens client-side. However, the desktop app provides additional security layers that the web vault cannot match.

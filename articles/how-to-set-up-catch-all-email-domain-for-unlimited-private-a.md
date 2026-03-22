@@ -43,6 +43,20 @@ For most users, the forwarding-only approach works well.
 - **Simple forwarding only**: You receive emails but reply from your primary address
 2.
 
+## Table of Contents
+
+- [Understanding Catch-All Email Domains](#understanding-catch-all-email-domains)
+- [Prerequisites](#prerequisites)
+- [Step 1: Choose an Email Forwarding Service](#step-1-choose-an-email-forwarding-service)
+- [Step 2: Configure DNS Records](#step-2-configure-dns-records)
+- [Step 3: Set Up Catch-All Routing](#step-3-set-up-catch-all-routing)
+- [Step 4: Create Aliases for Specific Services](#step-4-create-aliases-for-specific-services)
+- [Step 5: Automate Alias Creation](#step-5-automate-alias-creation)
+- [Step 6: Manage Incoming Emails](#step-6-manage-incoming-emails)
+- [Step 7: Handle Reply functionality](#step-7-handle-reply-functionality)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+
 ## Understanding Catch-All Email Domains
 
 A catch-all email domain (also called a wildcard domain) intercepts any email sent to addresses that don't explicitly exist on your mail server. When you configure `*@yourdomain.com` as a catch-all, emails to `amazon@yourdomain.com`, `netflix@yourdomain.com`, or any random string all land in your inbox.

@@ -40,6 +40,20 @@ India has deployed over 28 million CCTV cameras across smart cities with real-ti
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Technical Architecture of Smart City Camera Networks](#technical-architecture-of-smart-city-camera-networks)
+- [Privacy Implications for Developers and Power Users](#privacy-implications-for-developers-and-power-users)
+- [Practical Countermeasures for Privacy-Conscious Users](#practical-countermeasures-for-privacy-conscious-users)
+- [Building Privacy-First Applications](#building-privacy-first-applications)
+- [Regulatory ecosystem in 2026](#regulatory-ecosystem-in-2026)
+- [Advanced Evasion Techniques for Tech-Savvy Users](#advanced-evasion-techniques-for-tech-savvy-users)
+- [Corporate and Organizational Implications](#corporate-and-organizational-implications)
+- [Developer Tools and Libraries](#developer-tools-and-libraries)
+- [Infrastructure Hardening for Teams in Monitored Regions](#infrastructure-hardening-for-teams-in-monitored-regions)
+- [Surveillance Awareness Training](#surveillance-awareness-training)
+- [Looking Forward: Evolution of Smart City Surveillance](#looking-forward-evolution-of-smart-city-surveillance)
+
 ## Technical Architecture of Smart City Camera Networks
 
 Modern Indian smart city surveillance systems consist of three primary layers:

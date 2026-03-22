@@ -25,6 +25,20 @@ Protect election observer witness testimony using Signal for encrypted communica
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Never store unencrypted witness**: identities with evidence, and use separate devices for different operations to compartmentalize data.
 
+## Table of Contents
+
+- [Understanding the Threat Model](#understanding-the-threat-model)
+- [Secure Data Collection](#secure-data-collection)
+- [Encryption Fundamentals](#encryption-fundamentals)
+- [Secure Communication Channels](#secure-communication-channels)
+- [Network Operational Security](#network-operational-security)
+- [Device Security](#device-security)
+- [Metadata Considerations](#metadata-considerations)
+- [Incident Response](#incident-response)
+- [Building Custom Solutions](#building-custom-solutions)
+- [Chain of Custody for Digital Evidence](#chain-of-custody-for-digital-evidence)
+- [Cross-Border Data Transfer Considerations](#cross-border-data-transfer-considerations)
+
 ## Understanding the Threat Model
 
 Election observers operate in hostile environments where data breaches can endanger witnesses and invalidate evidence. Your threat model typically includes:

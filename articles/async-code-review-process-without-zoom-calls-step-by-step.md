@@ -40,6 +40,43 @@ Asynchronous code review processes have become essential for distributed enginee
 - **Teams that switch to**: async code review typically see higher quality feedback, faster iteration cycles, and better knowledge sharing across the organization.
 - **Should reviewers use inline comments**: leave a summary comment, or both? Should they use a thumbs-up emoji to signal approval? Clear conventions prevent miscommunication.
 
+## Table of Contents
+
+- [Why Async Code Reviews Work Better Than Live Meetings](#why-async-code-reviews-work-better-than-live-meetings)
+- [Step 1: Set Up Pull Request Templates](#step-1-set-up-pull-request-templates)
+- [Description](#description)
+- [Type of Change](#type-of-change)
+- [Testing Performed](#testing-performed)
+- [Screenshots (if applicable)](#screenshots-if-applicable)
+- [Self-Review Checklist](#self-review-checklist)
+- [Step 2: Establish Clear Review Guidelines](#step-2-establish-clear-review-guidelines)
+- [Step 3: Use Inline Comments Effectively](#step-3-use-inline-comments-effectively)
+- [Step 4: Create Structured Approval Workflows](#step-4-create-structured-approval-workflows)
+- [Step 5: Handle Disagreements Asynchronously](#step-5-handle-disagreements-asynchronously)
+- [Step 6: Review Your Process Regularly](#step-6-review-your-process-regularly)
+- [Advanced PR Template Examples](#advanced-pr-template-examples)
+- [Security Checklist](#security-checklist)
+- [Security Review Required](#security-review-required)
+- [Migration Details](#migration-details)
+- [Performance Impact](#performance-impact)
+- [Deployment Order](#deployment-order)
+- [Performance Metrics](#performance-metrics)
+- [Benchmark Results](#benchmark-results)
+- [Load Testing](#load-testing)
+- [Reviewer Checklists](#reviewer-checklists)
+- [Code Quality Checks](#code-quality-checks)
+- [Performance Checks](#performance-checks)
+- [Security Checks](#security-checks)
+- [Testing Checks](#testing-checks)
+- [Documentation Checks](#documentation-checks)
+- [Time-Zone Friendly Review Practices](#time-zone-friendly-review-practices)
+- [Decision Protocol for Disagreements](#decision-protocol-for-disagreements)
+- [Decision Point: [Issue Title]](#decision-point-issue-title)
+- [Architecture Decisions](#architecture-decisions)
+- [Automation for Async Review Efficiency](#automation-for-async-review-efficiency)
+- [Metrics and Continuous Improvement](#metrics-and-continuous-improvement)
+- [Implementation Phases](#implementation-phases)
+
 ## Why Async Code Reviews Work Better Than Live Meetings
 
 Traditional code review often involves scheduling meetings, screen sharing, and discussing changes in real-time. While this seems efficient, it actually creates several problems for remote teams. Time zone differences make scheduling difficult, real-time pressure leads to superficial feedback, and the context of code discussions gets lost when team members aren't able to review at their own pace.

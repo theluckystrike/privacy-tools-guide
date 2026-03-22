@@ -40,6 +40,28 @@ Your iPhone's Focus Mode does more than silence notifications—it provides subs
 - **Understanding these features lets**: you use Apple's built-in tools for enhanced digital privacy without additional apps or complicated configurations.
 - **Physical Device Access**: Someone momentarily picks up your unlocked phone and sees sensitive notifications.
 
+## Table of Contents
+
+- [What Is Focus Mode and Why It Matters for Privacy](#what-is-focus-mode-and-why-it-matters-for-privacy)
+- [Key Privacy Features in Focus Mode](#key-privacy-features-in-focus-mode)
+- [Focus Mode and ShareKit Privacy](#focus-mode-and-sharekit-privacy)
+- [Hidden Notifications Protection](#hidden-notifications-protection)
+- [Automation Integration](#automation-integration)
+- [Focus Mode and Screen Time](#focus-mode-and-screen-time)
+- [Comparison with Do Not Disturb](#comparison-with-do-not-disturb)
+- [Best Practices for Privacy](#best-practices-for-privacy)
+- [Troubleshooting Focus Mode Privacy](#troubleshooting-focus-mode-privacy)
+- [Threat Model: What Focus Mode Protects Against](#threat-model-what-focus-mode-protects-against)
+- [Advanced Focus Configuration Examples](#advanced-focus-configuration-examples)
+- [Technical Deep Dive: How Focus Affects iOS Internals](#technical-deep-dive-how-focus-affects-ios-internals)
+- [Shortcuts Automation for Enhanced Privacy](#shortcuts-automation-for-enhanced-privacy)
+- [Focus Status Sharing Implications](#focus-status-sharing-implications)
+- [Common Focus Configuration Mistakes](#common-focus-configuration-mistakes)
+- [Real-World Focus Mode Scenarios](#real-world-focus-mode-scenarios)
+- [Comparison with Similar Privacy Features on Android](#comparison-with-similar-privacy-features-on-android)
+- [Verification: Testing Your Focus Setup](#verification-testing-your-focus-setup)
+- [Related Reading](#related-reading)
+
 ## What Is Focus Mode and Why It Matters for Privacy
 
 Focus Mode, introduced in iOS 15 and significantly enhanced in later versions, creates compartmentalized notification experiences. But beyond convenience, it actively prevents data leakage through several mechanisms.

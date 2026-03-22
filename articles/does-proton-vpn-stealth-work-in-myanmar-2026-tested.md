@@ -40,6 +40,16 @@ Proton VPN Stealth represents one of the more sophisticated attempts at circumve
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Myanmar's Current Internet Restrictions](#myanmars-current-internet-restrictions)
+- [Proton VPN Stealth: Technical Overview](#proton-vpn-stealth-technical-overview)
+- [Testing Methodology and Results](#testing-methodology-and-results)
+- [Configuration for Myanmar](#configuration-for-myanmar)
+- [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
+- [Alternative Solutions](#alternative-solutions)
+- [Security Considerations](#security-considerations)
+
 ## Myanmar's Current Internet Restrictions
 
 The Myanmar military government maintains extensive controls over internet access through the Ministry of Transport and Communications. Major restrictions include:

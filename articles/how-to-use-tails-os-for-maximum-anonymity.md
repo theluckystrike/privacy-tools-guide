@@ -42,6 +42,21 @@ Status**: Connecting to Tor...
 - **Tails OS (The Amnesic**: Incognito Live System) is a security-focused operating system designed for maximum anonymity and privacy.
 - **For journalists/activists keeping research**: files, set up encrypted persistent storage: First time only: 1.
 
+## Table of Contents
+
+- [What Tails OS Actually Does](#what-tails-os-actually-does)
+- [Tails vs Other Privacy Approaches](#tails-vs-other-privacy-approaches)
+- [Installation: Creating a Tails USB](#installation-creating-a-tails-usb)
+- [Core Configuration: Tor, Network, Persistence](#core-configuration-tor-network-persistence)
+- [Practical Use Cases](#practical-use-cases)
+- [Advanced Configuration](#advanced-configuration)
+- [Common Mistakes and How to Avoid Them](#common-mistakes-and-how-to-avoid-them)
+- [Persistence Storage Encryption Commands](#persistence-storage-encryption-commands)
+- [Tools Available in Tails](#tools-available-in-tails)
+- [Operational Security Checklist](#operational-security-checklist)
+- [Exit Tails Safely](#exit-tails-safely)
+- [When to Use Tails vs Other Tools](#when-to-use-tails-vs-other-tools)
+
 ## What Tails OS Actually Does
 
 Tails is a Linux distribution that boots from USB and runs entirely in RAM. Key differences from Windows/macOS:

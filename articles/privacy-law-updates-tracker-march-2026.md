@@ -42,6 +42,26 @@ In March 2026, key privacy law changes include Colorado CPA enforcement of GPC o
 - **Participants must receive plain-language summaries of all data uses before enrollment**: legal boilerplate does not satisfy this requirement.
 - **Add clear notifications wherever**: AI systems process user data.
 
+## Table of Contents
+
+- [US State Privacy Laws](#us-state-privacy-laws)
+- [European Union Updates](#european-union-updates)
+- [International Updates](#international-updates)
+- [Practical Implementation Checklist](#practical-implementation-checklist)
+- [Building Compliance Tools](#building-compliance-tools)
+- [Security and Privacy Design Implications](#security-and-privacy-design-implications)
+- [Staying Updated](#staying-updated)
+- [Related Reading](#related-reading)
+- [Virginia Consumer Data Protection Act (VCDPA) Implementation](#virginia-consumer-data-protection-act-vcdpa-implementation)
+- [UK Online Safety Bill (Duty of Care)](#uk-online-safety-bill-duty-of-care)
+- [Singapore Personal Data Protection Act (PDPA) Updates](#singapore-personal-data-protection-act-pdpa-updates)
+- [Hong Kong Personal Data (Privacy) Ordinance Amendments](#hong-kong-personal-data-privacy-ordinance-amendments)
+- [United Arab Emirates Data Protection Law](#united-arab-emirates-data-protection-law)
+- [South Korea Personal Information Protection Act (PIPA) Updates](#south-korea-personal-information-protection-act-pipa-updates)
+- [Mexico Personal Data Protection Law (LFPDPPP)](#mexico-personal-data-protection-law-lfpdppp)
+- [Building Multi-Jurisdiction Compliance Automation](#building-multi-jurisdiction-compliance-automation)
+- [Calendar-Based Compliance Management](#calendar-based-compliance-management)
+
 ## US State Privacy Laws
 
 ### Colorado Privacy Act Enforcement

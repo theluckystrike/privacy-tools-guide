@@ -32,6 +32,23 @@ This article examines how Briar achieves offline messaging, the technical mechan
 - **Phone C receives all**: 5 messages in 10-15 seconds # 4.
 - **Recording message arrival times"**: # Expected: <5 seconds for 30m, <15 seconds for 60m, <30 seconds for 100m+ # Phase 5: Move phones, test dynamic mesh echo "5.
 
+## Table of Contents
+
+- [Architecture Overview](#architecture-overview)
+- [The Bramble Protocol](#the-bramble-protocol)
+- [Practical Deployment for Protests](#practical-deployment-for-protests)
+- [Security Properties](#security-properties)
+- [Limitations and Threat Model](#limitations-and-threat-model)
+- [Implementation for Developers](#implementation-for-developers)
+- [Deployment Scenarios and Effective Range Analysis](#deployment-scenarios-and-effective-range-analysis)
+- [Network Topology Visualization](#network-topology-visualization)
+- [Testing Briar Coverage Before Deployment](#testing-briar-coverage-before-deployment)
+- [Comparison: Briar vs. Alternative Decentralized Messaging](#comparison-briar-vs-alternative-decentralized-messaging)
+- [Security Considerations for Protest Organizers](#security-considerations-for-protest-organizers)
+- [Limitations for Organizers: When Briar Fails](#limitations-for-organizers-when-briar-fails)
+- [Legal and Ethical Considerations](#legal-and-ethical-considerations)
+- [Legal Notice for Participants](#legal-notice-for-participants)
+
 ## Architecture Overview
 
 Briar differs fundamentally from conventional messaging applications. Where apps like Signal or WhatsApp route all messages through central servers that users must connect to via the internet, Briar has no servers at all. Messages move directly between devices using three transport mechanisms:

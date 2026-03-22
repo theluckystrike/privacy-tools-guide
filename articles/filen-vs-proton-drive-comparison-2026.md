@@ -40,6 +40,19 @@ Choose Proton Drive for integrated email+storage ecosystem and strong UI, Filen 
 - **For developers**: Proton Drive has better API documentation, Filen lacks advanced API features.
 - **Proton's encryption library is**: open-source (OpenPGP.js), allowing verification of the implementation.
 
+## Table of Contents
+
+- [Why Zero-Knowledge Encryption Matters for Storage](#why-zero-knowledge-encryption-matters-for-storage)
+- [Encryption Architecture](#encryption-architecture)
+- [Metadata Privacy](#metadata-privacy)
+- [API Access and Developer Tools](#api-access-and-developer-tools)
+- [CLI Tools and Automation](#cli-tools-and-automation)
+- [Pricing and Value](#pricing-and-value)
+- [Jurisdiction and Legal Considerations](#jurisdiction-and-legal-considerations)
+- [Security Considerations](#security-considerations)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Which to Choose](#which-to-choose)
+
 ## Why Zero-Knowledge Encryption Matters for Storage
 
 Standard cloud storage — Google Drive, Dropbox, OneDrive — encrypts your data at rest and in transit, but the provider holds the encryption keys. This means they can access your files, hand them to law enforcement, and expose them if their key management is compromised. Zero-knowledge storage means the encryption key never leaves your device. The provider receives only ciphertext they cannot read.

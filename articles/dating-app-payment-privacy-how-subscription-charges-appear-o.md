@@ -43,6 +43,16 @@ Dating app charges appear on your statement under company parent names like "MAT
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 - **Discounts of 25-50% are**: common for qualifying organizations.
 
+## Table of Contents
+
+- [How Payment Descriptors Work](#how-payment-descriptors-work)
+- [Merchant Category Codes and What They Reveal](#merchant-category-codes-and-what-they-reveal)
+- [Common Dating App Descriptor Patterns](#common-dating-app-descriptor-patterns)
+- [Privacy Implications for Subscribers](#privacy-implications-for-subscribers)
+- [Identifying Unknown Charges](#identifying-unknown-charges)
+- [Refunds and Chargeback Behavior](#refunds-and-chargeback-behavior)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+
 ## How Payment Descriptors Work
 
 Every credit card transaction includes a merchant descriptor—a short text string that appears on your statement. Payment processors like Stripe, PayPal, or Braintree allow merchants to configure these descriptors, often providing a primary name and a phone number for disputes.

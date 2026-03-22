@@ -40,6 +40,22 @@ IceDrive occupies a specific niche in the encrypted cloud storage market—offer
 - **For occasional use**: consider whether a free alternative covers enough of your needs.
 - **Versioning and file history**: remain limited compared to enterprise-focused competitors.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Client Applications and Cross-Platform Support](#client-applications-and-cross-platform-support)
+- [CLI Access and Automation](#cli-access-and-automation)
+- [Practical Limitations and Considerations](#practical-limitations-and-considerations)
+- [Security Model Analysis](#security-model-analysis)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Getting Started](#getting-started)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Platform-Specific Considerations](#platform-specific-considerations)
+- [Advanced Usage: Encrypted Containers Within IceDrive](#advanced-usage-encrypted-containers-within-icedrive)
+- [Sync Behavior and Bandwidth Optimization](#sync-behavior-and-bandwidth-optimization)
+- [Recovery Procedures](#recovery-procedures)
+- [Compliance and Data Residency](#compliance-and-data-residency)
+
 ## Encryption Architecture
 
 IceDrive implements client-side encryption using AES-256 for file encryption with keys derived from your master password through Argon2id key derivation. This represents modern best practices for password-based key generation, offering resistance against both brute-force and GPU-accelerated attacks.

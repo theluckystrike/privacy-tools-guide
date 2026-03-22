@@ -44,6 +44,25 @@ When building privacy-focused web applications or configuring your browsing envi
 
 It depends on your background.
 
+## Table of Contents
+
+- [What is Decentraleyes?](#what-is-decentraleyes)
+- [Quick Comparison](#quick-comparison)
+- [What is a Local CDN?](#what-is-a-local-cdn)
+- [Performance Comparison](#performance-comparison)
+- [Privacy Analysis](#privacy-analysis)
+- [Maintenance Considerations](#maintenance-considerations)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Combining Both Approaches](#combining-both-approaches)
+- [Library Coverage: What's Actually Cached](#library-coverage-whats-actually-cached)
+- [Implementing Local CDN with Docker](#implementing-local-cdn-with-docker)
+- [Network Traffic Comparison](#network-traffic-comparison)
+- [Size and Storage Analysis](#size-and-storage-analysis)
+- [Advanced Caching Strategy](#advanced-caching-strategy)
+- [Fallback Strategies](#fallback-strategies)
+- [Monitoring and Observability](#monitoring-and-observability)
+- [Migration Path from Decentraleyes](#migration-path-from-decentraleyes)
+
 ## What is Decentraleyes?
 
 Decentraleyes is a browser extension available for Firefox, Chrome, and Edge that intercepts requests to known third-party CDN domains and serves those resources locally from a bundled collection. The extension maps common JavaScript libraries and CSS frameworks to local copies, effectively blocking the tracking that occurs when your browser connects to external CDN servers.

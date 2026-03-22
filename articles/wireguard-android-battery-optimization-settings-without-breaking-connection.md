@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}
@@ -26,6 +27,24 @@ WireGuard is widely recognized for its modern cryptography and minimalist design
 - **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - **The feature is designed**: for security and privacy use cases where constant protection is necessary, and it works most efficiently when combined with appropriate keepalive intervals.
 - **After implementing these recommendations**: monitor your actual battery consumption to determine what works best for your situation.
+
+## Table of Contents
+
+- [Understanding WireGuard Battery Consumption on Android](#understanding-wireguard-battery-consumption-on-android)
+- [Configuring Keepalive Intervals for Battery Efficiency](#configuring-keepalive-intervals-for-battery-efficiency)
+- [Optimizing Android System Settings for VPN Battery Life](#optimizing-android-system-settings-for-vpn-battery-life)
+- [Using On-Demand Rules to Reduce Unnecessary Connections](#using-on-demand-rules-to-reduce-unnecessary-connections)
+- [Selecting Appropriate DNS Servers](#selecting-appropriate-dns-servers)
+- [Managing Always-On VPN Effectively](#managing-always-on-vpn-effectively)
+- [Practical Testing and Optimization](#practical-testing-and-optimization)
+- [Advanced Configuration File Examples](#advanced-configuration-file-examples)
+- [Threat Model: Understanding WireGuard Battery Consumption](#threat-model-understanding-wireguard-battery-consumption)
+- [Detailed Testing Methodology](#detailed-testing-methodology)
+- [Network Condition Detection](#network-condition-detection)
+- [Android Version-Specific Optimizations](#android-version-specific-optimizations)
+- [Troubleshooting Specific Issues](#troubleshooting-specific-issues)
+- [Verification and Monitoring](#verification-and-monitoring)
+- [Getting Started](#getting-started)
 
 ## Understanding WireGuard Battery Consumption on Android
 
@@ -444,11 +463,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Android Battery Optimization Settings Without Brea](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
-- [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
-- [Vpn Mtu Settings Optimization For Faster Connection.](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-guide/)
+- [Wireguard Android Battery Optimization Settings](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
-- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
-
+- [Battery API Fingerprinting How Battery Status Tracks You](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Optimize CalyxOS Battery Life with Privacy Features Enabled](/privacy-tools-guide/how-to-optimize-calyx-os-battery-life-with-privacy-features-/)
+- [How to Reduce VPN Battery Drain on Mobile While Keeping](/privacy-tools-guide/how-to-reduce-vpn-battery-drain-on-mobile-while-keeping-priv/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

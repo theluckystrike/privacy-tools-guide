@@ -42,6 +42,13 @@ To disable Brave's crypto features, go to `brave://settings`, toggle off Brave R
 - **IPFS**: for instance, has legitimate non-crypto uses for decentralized content delivery that can improve resilience against content censorship.
 - **Contact your system administrator**: for access or use policy-based configuration instead.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Method 4: Configure via Policies (Enterprise/IT)](#method-4-configure-via-policies-enterpriseit)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

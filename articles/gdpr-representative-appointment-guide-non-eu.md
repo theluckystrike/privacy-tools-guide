@@ -38,6 +38,27 @@ If your organization processes personal data of EU residents but operates outsid
 - **However**: most commercial operations serving EU customers will need one.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [When Do You Need a GDPR Representative?](#when-do-you-need-a-gdpr-representative)
+- [Choosing Your Representative](#choosing-your-representative)
+- [Practical Implementation Steps](#practical-implementation-steps)
+- [Representative Appointment Agreement (Template)](#representative-appointment-agreement-template)
+- [Maintaining Compliance](#maintaining-compliance)
+- [Consequences of Non-Compliance](#consequences-of-non-compliance)
+- [Quick Reference Checklist](#quick-reference-checklist)
+- [Representative Service Providers and Costs](#representative-service-providers-and-costs)
+- [Documenting Representative Relationship](#documenting-representative-relationship)
+- [Appointment Details](#appointment-details)
+- [Responsibilities](#responsibilities)
+- [Contact Information](#contact-information)
+- [Scope of Processing](#scope-of-processing)
+- [Multi-Market Representative Strategy](#multi-market-representative-strategy)
+- [Data Flows and Representative Involvement](#data-flows-and-representative-involvement)
+- [Annual Review Process](#annual-review-process)
+- [Practical Data Subject Request Handling](#practical-data-subject-request-handling)
+- [Combining Representative with Data Protection Officer](#combining-representative-with-data-protection-officer)
+
 ## When Do You Need a GDPR Representative?
 
 The GDPR applies to organizations outside the EU when they either offer goods or services to individuals in the EU or monitor their behavior. The representative requirement specifically kicks in when you meet both of these conditions:

@@ -40,6 +40,13 @@ Switching from Android to iPhone presents a unique challenge for password manage
 - **Document migration in audit**: log echo "[$(date)] Password manager migration started" >> migration.log # 5.
 - **Switching from Android to**: iPhone presents a unique challenge for password manager users.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations During Migration](#security-considerations-during-migration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Migration Scenarios](#advanced-migration-scenarios)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

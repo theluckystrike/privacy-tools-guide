@@ -41,6 +41,23 @@ Apple markets itself as a privacy-focused company, but like all technology compa
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Apple markets itself as**: a privacy-focused company, but like all technology companies, it collects data from your iPhone.
 
+## Table of Contents
+
+- [Understanding iPhone Analytics Data Collection](#understanding-iphone-analytics-data-collection)
+- [How to View Your Analytics Data](#how-to-view-your-analytics-data)
+- [Methods to Stop iPhone Analytics Collection](#methods-to-stop-iphone-analytics-collection)
+- [Technical Details for Developers](#technical-details-for-developers)
+- [Privacy Considerations and Tradeoffs](#privacy-considerations-and-tradeoffs)
+- [Regular Privacy Auditing](#regular-privacy-auditing)
+- [Detailed Privacy Settings Walkthrough](#detailed-privacy-settings-walkthrough)
+- [Examining What Apple Actually Knows](#examining-what-apple-actually-knows)
+- [Advanced Network Inspection](#advanced-network-inspection)
+- [Privacy Changes by iOS Version](#privacy-changes-by-ios-version)
+- [Backup Privacy Considerations](#backup-privacy-considerations)
+- [Data Minimization on Apple Devices](#data-minimization-on-apple-devices)
+- [Monthly Privacy Maintenance](#monthly-privacy-maintenance)
+- [Testing Privacy Settings](#testing-privacy-settings)
+
 ## Understanding iPhone Analytics Data Collection
 
 When you use an iPhone, various system services transmit data to Apple's servers. This includes analytics data from iOS itself, app-specific data shared by developers using Apple's analytics frameworks, and improvement data that helps Apple identify bugs and optimize performance.

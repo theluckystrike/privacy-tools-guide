@@ -39,6 +39,14 @@ Firefox Multi-Account Containers transform how you manage identity and session i
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Container Management](#advanced-container-management)
+- [Security Considerations](#security-considerations)
+- [Best Practices for Container Organization](#best-practices-for-container-organization)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

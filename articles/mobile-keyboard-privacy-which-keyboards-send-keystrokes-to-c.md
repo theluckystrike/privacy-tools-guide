@@ -26,6 +26,18 @@ GBoard sends keystrokes to Google servers for predictions and emoji suggestions.
 - **Developers can use Xcode's**: Network Instrument or third-party tools like Charles Proxy (requires certificate installation) to observe traffic: 1.
 - **Configure your iOS device**: to use Charles as a proxy 3.
 
+## Table of Contents
+
+- [Understanding Keyboard Data Transmission](#understanding-keyboard-data-transmission)
+- [Major Keyboard Privacy Comparison](#major-keyboard-privacy-comparison)
+- [Verifying Keyboard Network Behavior](#verifying-keyboard-network-behavior)
+- [Practical Recommendations](#practical-recommendations)
+- [Detailed Keyboard Comparison Table](#detailed-keyboard-comparison-table)
+- [Privacy Risk Scoring for Common Keyboards](#privacy-risk-scoring-for-common-keyboards)
+- [Hardware Keyboard Alternative](#hardware-keyboard-alternative)
+- [Testing Keyboard Behavior Yourself](#testing-keyboard-behavior-yourself)
+- [Privacy Scoring Your Current Keyboard](#privacy-scoring-your-current-keyboard)
+
 ## Understanding Keyboard Data Transmission
 
 Mobile keyboards typically collect data for three purposes: improving prediction accuracy, enabling cloud-based features, and gathering analytics. The privacy implications vary significantly depending on whether processing happens locally or remotely.

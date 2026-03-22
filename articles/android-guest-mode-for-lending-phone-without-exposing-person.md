@@ -40,6 +40,18 @@ Use Android Guest Mode to safely lend your phone to others without exposing your
 - **Tap the avatar to**: open the user switcher 4.
 - **Navigate to System →**: Multiple users (or Users & accounts → Users) 3.
 
+## Table of Contents
+
+- [What is Android Guest Mode?](#what-is-android-guest-mode)
+- [How to Activate Guest Mode](#how-to-activate-guest-mode)
+- [Automating Guest Mode with Tasker](#automating-guest-mode-with-tasker)
+- [What Gets Protected in Guest Mode](#what-gets-protected-in-guest-mode)
+- [Developer Considerations](#developer-considerations)
+- [Limitations and Security Notes](#limitations-and-security-notes)
+- [Combining with Other Privacy Features](#combining-with-other-privacy-features)
+- [When to Use Guest Mode vs. Work Profile](#when-to-use-guest-mode-vs-work-profile)
+- [Cleaning Up After Guest Sessions](#cleaning-up-after-guest-sessions)
+
 ## What is Android Guest Mode?
 
 Guest Mode creates a completely isolated user profile on your Android device. When someone accesses your phone in Guest Mode, they see a clean slate with no access to your apps, files, contacts, messages, or settings. The guest user can browse the web, make calls, and use basic apps, but everything they do is separated from your main account.

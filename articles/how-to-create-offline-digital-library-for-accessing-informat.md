@@ -39,6 +39,16 @@ Building an offline digital library ensures you have access to critical informat
 - **Technical documentation for tools**: you use daily deserves high priority.
 - **Ensure you install Kiwix**: and other readers on mobile devices, pre-loading the most critical ZIM files.
 
+## Table of Contents
+
+- [Why Build an Offline Digital Library](#why-build-an-offline-digital-library)
+- [Prerequisites](#prerequisites)
+- [Additional Resources](#additional-resources)
+- [Advanced Downloading Techniques](#advanced-downloading-techniques)
+- [Privacy and Security Considerations](#privacy-and-security-considerations)
+- [Estimating Storage Requirements](#estimating-storage-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Build an Offline Digital Library
 
 Internet shutdowns have become increasingly common worldwide, with governments restricting access during elections, protests, or political crises. When connectivity disappears, having pre-downloaded resources becomes invaluable. An offline library serves multiple purposes: research continuity, emergency reference, language learning materials, and preservation of sensitive information that might otherwise disappear from the web.

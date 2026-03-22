@@ -28,6 +28,14 @@ Chainalysis and Elliptic track cryptocurrency transactions through cluster analy
 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Blockchain Analysis Companies Work](#how-blockchain-analysis-companies-work)
+- [Chainalysis: Enterprise Blockchain Intelligence](#chainalysis-enterprise-blockchain-intelligence)
+- [Elliptic: Blockchain Analytics and Compliance](#elliptic-blockchain-analytics-and-compliance)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [The Reality of On-Chain Tracking](#the-reality-of-on-chain-tracking)
+
 ## How Blockchain Analysis Companies Work
 
 Unlike traditional financial systems where transactions occur within closed networks, public blockchains like Bitcoin and Ethereum operate as distributed ledgers where every transaction remains permanently visible. This transparency creates both opportunities and challenges—anyone can verify transactions, but this same openness allows external parties to analyze on-chain activity.

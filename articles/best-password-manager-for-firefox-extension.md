@@ -42,6 +42,23 @@ Selecting the best password manager for Firefox extension requires evaluating mu
 - **Choose 1Password if you**: prioritize polished UX, advanced security architecture, and team collaboration.
 - **Choose KeePassXC if you**: require local-only storage, complete data sovereignty, or operate in air-gapped environments.
 
+## Table of Contents
+
+- [Why Firefox Extension Choice Matters](#why-firefox-extension-choice-matters)
+- [Bitwarden: Open-Source Excellence](#bitwarden-open-source-excellence)
+- [1Password: Security-First Architecture](#1password-security-first-architecture)
+- [KeePassXC: Local-First Approach](#keepassxc-local-first-approach)
+- [Proton Pass: Privacy-Focused Option](#proton-pass-privacy-focused-option)
+- [Comparative Analysis](#comparative-analysis)
+- [Making Your Decision](#making-your-decision)
+- [Advanced Integration Examples](#advanced-integration-examples)
+- [Password Manager Pricing Breakdown](#password-manager-pricing-breakdown)
+- [Security Considerations: Master Password Strength](#security-considerations-master-password-strength)
+- [Browser Extension Attack Surface](#browser-extension-attack-surface)
+- [Sync Strategies Across Multiple Devices](#sync-strategies-across-multiple-devices)
+- [Emergency Access and Account Recovery](#emergency-access-and-account-recovery)
+- [Final Selection Criteria](#final-selection-criteria)
+
 ## Why Firefox Extension Choice Matters
 
 Firefox provides a sandboxed extension environment with strict Content Security Policy enforcement. The extension you choose must balance accessibility with security—it needs to inject credentials into web forms while protecting those credentials from malicious scripts. For developers, additional considerations include API access, CLI companion tools, and the ability to handle non-standard credential types like API keys, SSH keys, and secure notes.

@@ -42,6 +42,25 @@ Choosing between CryptDrive and ProtonDrive means evaluating two fundamentally d
 - **The API is primarily**: for enterprise integrations and doesn't provide direct personal-use CLI access.
 - **Contact ProtonDrive support to**: determine retention duration for your use case.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Pricing and Plans](#pricing-and-plans)
+- [Features and Functionality](#features-and-functionality)
+- [Privacy and Jurisdiction](#privacy-and-jurisdiction)
+- [Security Considerations](#security-considerations)
+- [Performance](#performance)
+- [Which Should You Choose?](#which-should-you-choose)
+- [CLI and Automation Capabilities](#cli-and-automation-capabilities)
+- [Cost of Ownership Analysis](#cost-of-ownership-analysis)
+- [Implementation Example: Automated Backup](#implementation-example-automated-backup)
+- [Security Audit History](#security-audit-history)
+- [Ransomware Recovery Capabilities](#ransomware-recovery-capabilities)
+- [Integration with Existing Tools](#integration-with-existing-tools)
+- [Recovery and Key Management](#recovery-and-key-management)
+- [Migration Considerations](#migration-considerations)
+- [Choosing Based on Use Case](#choosing-based-on-use-case)
+
 ## Encryption Architecture
 
 ### CryptDrive Encryption

@@ -41,6 +41,14 @@ Dating apps require phone number verification as a standard security measure, bu
 - **Purchase replacement**: Get a new VoIP number immediately (cost: $0-5)
 3.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Cost and Provider Comparison](#cost-and-provider-comparison)
+- [Advanced Privacy Hardening](#advanced-privacy-hardening)
+- [Dating App Specific Requirements](#dating-app-specific-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
