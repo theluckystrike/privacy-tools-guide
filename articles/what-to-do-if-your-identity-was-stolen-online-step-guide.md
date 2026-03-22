@@ -40,7 +40,17 @@ Secure your email account immediately (this is the master key to resetting all o
 - **Use different email addresses**: different password managers if possible, and avoid storing development credentials alongside personal ones.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Immediate Actions: The First Hour
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Immediate Actions: The First Hour
 
 When you suspect identity theft, the first priority is limiting the attacker's access. Assume that any compromised credentials are actively being used against you.
 
@@ -76,7 +86,7 @@ aws iam list-access-keys
 
 Force-sign out of all sessions on compromised accounts. Most major services offer this option in security settings.
 
-## Account Recovery Process
+### Step 2: Account Recovery Process
 
 After securing immediate access, systematically work through each affected account.
 
@@ -105,7 +115,7 @@ echo "2026-03-16 10:45: Revoked OAuth tokens on GitHub" >> log.txt
 
 This documentation helps when filing reports and working with support teams.
 
-## Financial Protection
+### Step 3: Financial Protection
 
 If financial information may be compromised, act immediately to prevent monetary loss.
 
@@ -133,7 +143,7 @@ A fraud alert requires lenders to verify your identity before issuing credit. Fo
 
 Go through every transaction in your banking and credit card apps for the past 30 days. Report any unrecognized charges, no matter how small—attackers often test with small purchases before larger ones.
 
-## Digital Forensics for Developers
+### Step 4: Digital Forensics for Developers
 
 If you're a developer or sysadmin, consider what technical artifacts the attacker may have left behind.
 
@@ -180,7 +190,7 @@ Assume any credential visible on a compromised machine is burned. Rotate:
 - Database credentials
 - Encryption keys (if warranted)
 
-## Establishing Monitoring
+### Step 5: Establishing Monitoring
 
 After recovery, set up ongoing monitoring to detect future compromise.
 
@@ -213,7 +223,7 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
  "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com"
 ```
 
-## Prevention Strategies
+### Step 6: Prevention Strategies
 
 Recovering from identity theft teaches valuable lessons about prevention.
 
@@ -249,6 +259,21 @@ Certain situations warrant police involvement:
 - Death or medical identity theft
 
 File a report at identitytheft.gov to get an official recovery plan and police report number. This documentation helps when disputing fraudulent charges.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

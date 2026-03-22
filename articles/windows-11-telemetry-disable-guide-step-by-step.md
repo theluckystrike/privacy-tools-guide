@@ -40,7 +40,17 @@ Windows 11 collects significant telemetry data by default, sending information a
 - **Corporate users should verify**: their organization's policies before making changes, as some telemetry data supports security updates and compliance requirements.
 - **For advanced network monitoring**: use Wireshark or NetFlow to capture outbound traffic and verify that no connections are being made to Microsoft telemetry endpoints.
 
-## Understanding Windows 11 Telemetry Levels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Windows 11 Telemetry Levels
 
 Windows 11 offers four telemetry levels: Security, Basic, Enhanced, and Full. The Security level sends only data required for Windows security, while Full transmits extensive diagnostic information. Most users default to Enhanced or Full, making privacy-conscious configuration essential.
 
@@ -50,7 +60,7 @@ To check your current telemetry level, open Settings → Privacy & security → 
 Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "TelemetryAllow" -ErrorAction SilentlyContinue
 ```
 
-## Method 1: Using Windows Settings
+### Step 2: Method 1: Using Windows Settings
 
 The simplest approach uses the Settings application. Open Settings → Privacy & security → Windows security → Open Windows Security, then click Settings for Microsoft Defender and scroll to Diagnostic data. Set this to Required diagnostic data only.
 
@@ -58,7 +68,7 @@ For additional reduction, navigate to Settings → Privacy & security → Activi
 
 These settings provide basic reduction but do not eliminate all telemetry. Microsoft still collects essential security data and certain diagnostic information required for Windows updates.
 
-## Method 2: Using Local Group Policy Editor
+### Step 3: Method 2: Using Local Group Policy Editor
 
 The Group Policy Editor provides more granular control. Press Win + R, type `gpedit.msc`, and navigate to Computer Configuration → Administrative Templates → Windows Components → Data Collection and Preview Builds.
 
@@ -71,7 +81,7 @@ For organizations or users requiring complete control, additional policies exist
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\SQMClient\Windows" -Name "CEIPEnable" -Value 0 -PropertyType DWord -Force
 ```
 
-## Method 3: Using Registry Modifications
+### Step 4: Method 3: Using Registry Modifications
 
 For systems without Group Policy Editor (such as Windows 11 Home), direct Registry modifications achieve similar results. Create a backup before making changes, then run Registry Editor (regedit) and navigate to the following keys:
 
@@ -94,7 +104,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\CloudContent" -Name "DisableWindowsSpotlightFeatures" -Value 1 -PropertyType DWord -Force
 ```
 
-## Method 4: Using PowerShell Automation
+### Step 5: Method 4: Using PowerShell Automation
 
 PowerShell provides the most reproducible method for disabling telemetry. Create a script that applies multiple settings simultaneously:
 
@@ -129,7 +139,7 @@ For enterprise deployments, Windows Terminal Services and mobile device manageme
 
 Corporate users should verify their organization's policies before making changes, as some telemetry data supports security updates and compliance requirements.
 
-## Method 6: Disabling Windows Telemetry Services
+### Step 6: Method 6: Disabling Windows Telemetry Services
 
 Beyond Registry and Group Policy, disabling the actual services responsible for telemetry provides additional protection. Use Services Manager (`services.msc`) or PowerShell:
 
@@ -156,7 +166,7 @@ Get-Service | Where-Object {$_.Status -eq "Running"} | Select-Object Name, Displ
 
 After disabling services, restart your computer. Some services will be disabled on reboot, while others may require additional Registry modifications to prevent re-enabling.
 
-## Network-Level Telemetry Blocking
+### Step 7: Network-Level Telemetry Blocking
 
 Some telemetry transmissions occur at the network level. You can block Windows telemetry hosts through your firewall or hosts file. This method supplements Registry changes and service disabling:
 
@@ -184,7 +194,7 @@ New-NetFirewallRule -DisplayName "Block Windows Telemetry" `
  -Enabled True
 ```
 
-## Task Scheduler Telemetry Cleanup
+### Step 8: Task Scheduler Telemetry Cleanup
 
 Windows schedules numerous telemetry tasks through Task Scheduler. Disabling these prevents them from running automatically:
 
@@ -207,7 +217,7 @@ foreach ($task in $telemetryTasks) {
 }
 ```
 
-## Verification and Monitoring
+### Step 9: Verification and Monitoring
 
 After applying your chosen method, verify the configuration:
 
@@ -251,7 +261,7 @@ gpupdate /force
 gpresult /h report.html
 ```
 
-## Understanding What Gets Disabled vs. What Stays
+### Step 10: Understand What Gets Disabled vs. What Stays
 
 Important to note what remains operational after disabling telemetry:
 
@@ -278,7 +288,7 @@ Important to note what remains operational after disabling telemetry:
 - Search indexing for personalization
 - Suggested content
 
-## Persistent Telemetry Issues and Workarounds
+### Step 11: Persistent Telemetry Issues and Workarounds
 
 Despite your best efforts, Windows may re-enable telemetry after major updates. Use these strategies for persistent configuration:
 
@@ -299,7 +309,7 @@ Set-Service -Name "wuauserv" -StartupType Disabled
 
 Create a PowerShell script stored in a protected location and set it to run at startup with elevated privileges. This ensures telemetry settings persist even after Windows Updates attempt to reset them.
 
-## Important Considerations
+### Step 12: Important Considerations
 
 Disabling telemetry may affect certain Windows features. Some applications rely on diagnostic data for functionality, and certain update mechanisms verify system health through telemetry channels. After disabling, test critical functionality including Windows Update, Microsoft Store apps, and any connected services.
 
@@ -308,6 +318,21 @@ Windows Defender and core security features continue functioning regardless of t
 For developers building applications that integrate with Windows telemetry APIs, be aware that reduced telemetry may limit available diagnostic data for your applications. Test thoroughly in environments matching your configured telemetry level.
 
 One important note: Disabling Update Orchestrator Service (`UsoSvc`) can interfere with Windows Updates. If you disable this service, use Windows Update manually through Settings or configure WSUS if managing multiple machines in an organization.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

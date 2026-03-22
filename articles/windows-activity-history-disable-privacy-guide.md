@@ -53,7 +53,17 @@ The feature automatically captures:
 
 While Microsoft positions Activity History as a productivity enhancement, the continuous recording of user behavior raises legitimate privacy concerns, particularly for developers handling sensitive code or security researchers analyzing vulnerable systems.
 
-## Method 1: Disabling Through Windows Settings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Disabling Through Windows Settings
 
 The most straightforward approach uses the native Settings application. Press `Win + I` to open Settings, then navigate to **Privacy & security** → **Activity history**. On this page, uncheck both "Store my activity history on this device" and "Send my activity history to Microsoft."
 
@@ -83,7 +93,7 @@ Enable the policy "Turn off the cloud optimized experience" (sometimes labeled "
 
 Group Policy modifications take effect after running `gpupdate /force` from an elevated Command Prompt or PowerShell session. Rebooting ensures complete policy application.
 
-## Method 3: Registry Modifications (All Windows Editions)
+### Step 2: Method 3: Registry Modifications (All Windows Editions)
 
 Windows Home users lacking Group Policy access can achieve equivalent results through direct Registry edits. This method requires creating a backup before proceeding, as incorrect modifications can affect system stability.
 
@@ -117,7 +127,7 @@ Write-Host "Activity History disabled via Registry"
 
 Save this script as `disable-activity-history.ps1` and execute with administrator privileges. The `-Type DWord` parameter ensures proper registry value creation.
 
-## Method 4: PowerShell Automation Script
+### Step 3: Method 4: PowerShell Automation Script
 
 For developers managing multiple workstations or seeking repeatable deployment methods, a PowerShell script provides the most flexible solution. The following example combines multiple privacy settings:
 
@@ -165,7 +175,7 @@ Disable-ActivityHistory
 
 This script disables collection, prevents cloud sync, and clears existing cached data. Run it from an elevated PowerShell session with `.\disable-activity-history.ps1`.
 
-## Verifying Your Configuration
+### Step 4: Verify Your Configuration
 
 After applying any method, verify that Activity History is properly disabled. Open Settings → Privacy & security → Activity history and confirm:
 
@@ -181,7 +191,7 @@ Get-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\System" -Name 
 
 A value of `0` confirms successful configuration.
 
-## Understanding the Tradeoffs
+### Step 5: Understand the Tradeoffs
 
 Disabling Activity History affects certain Microsoft features. Timeline, which allows resuming browser sessions and documents across devices, requires Activity History to function. Third-party applications integrating with Windows Timeline may also lose functionality. Additionally, some Windows Spotlight features depend on activity data for personalization.
 
@@ -225,7 +235,7 @@ Additional databases containing activity traces exist in:
 
 A cleanup involves removing all these locations. For maximum assurance, use a full-disk wiper after disabling Activity History, as deleted files may remain recoverable through unallocated space analysis.
 
-## Monitoring and Verification at the System Level
+### Step 6: Monitor and Verification at the System Level
 
 Implement continuous monitoring to detect unauthorized Activity History re-enablement by malware or updates:
 
@@ -259,7 +269,7 @@ Monitor-ActivityHistory
 
 Run this as a scheduled task at system startup to maintain persistent monitoring.
 
-## Group Policy Auditing
+### Step 7: Group Policy Auditing
 
 For IT administrators managing multiple systems, audit which systems have Activity History disabled through Group Policy:
 
@@ -290,6 +300,21 @@ foreach ($computer in $computers) {
 
 $results | Export-Csv -Path "ActivityHistoryAudit.csv" -NoTypeInformation
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

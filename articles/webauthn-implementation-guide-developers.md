@@ -39,13 +39,23 @@ tags: [privacy-tools-guide]---
 - **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding WebAuthn Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand WebAuthn Fundamentals
 
 WebAuthn replaces passwords with cryptographic key pairs. When users register, their device generates a public-private key pair. The private key stays on their authenticator (security key, smartphone, or biometric system), while the public key gets stored on your server. During authentication, the server sends a challenge that the user signs with their private key.
 
 The flow involves three main operations: registration, authentication, and credential management. Each operation uses specific JavaScript APIs on the client side and corresponding server endpoints.
 
-## Server-Side Challenge Generation
+### Step 2: Server-Side Challenge Generation
 
 Your server initiates every WebAuthn flow by generating a challenge. This challenge must be cryptographically random and stored temporarily for verification.
 
@@ -61,7 +71,7 @@ def generate_challenge():
 
 Store the challenge in your session or temporary storage with an expiration. The client returns this challenge signed, and you verify the signature matches.
 
-## Registration Implementation
+### Step 3: Registration Implementation
 
 The registration flow has two phases: server prepares options, then client creates the credential.
 
@@ -181,7 +191,7 @@ def verify_registration(user_id, credential_data):
  return True
 ```
 
-## Authentication Implementation
+### Step 4: Authentication Implementation
 
 Authentication (login) follows a similar pattern but verifies rather than creates credentials.
 
@@ -325,7 +335,7 @@ Implement rate limiting on registration and authentication endpoints to prevent 
 
 Store public keys with appropriate access controls. While public keys aren't secret, they should be protected against modification.
 
-## Using py_webauthn for Production Verification
+### Step 5: Use py_webauthn for Production Verification
 
 The verification snippets above show the conceptual flow. For production code, use the `py_webauthn` library rather than implementing CBOR parsing and signature verification yourself:
 
@@ -370,7 +380,7 @@ db.credentials.insert({
 
 The library handles CBOR decoding, attestation verification, and public key parsing. The `sign_count` field in the verification result is important: increment it with each authentication and reject requests where the count does not increase — this detects cloned authenticators.
 
-## Supporting Multiple Authenticators Per User
+### Step 6: Supporting Multiple Authenticators Per User
 
 Users should be able to register multiple devices (laptop, phone, hardware security key) for account recovery. Design your credential storage to support this from the start:
 
@@ -395,7 +405,7 @@ Expose a credential management UI where users can:
 
 When a device is deleted, generate a new challenge immediately on the server side to invalidate any in-progress authentication from that credential.
 
-## Adding WebAuthn to an Existing Password-Based System
+### Step 7: Adding WebAuthn to an Existing Password-Based System
 
 Most teams add WebAuthn as a second factor before removing passwords entirely. The migration path:
 
@@ -423,6 +433,21 @@ async function login(username, password) {
 ```
 
 This progressive approach lets you introduce WebAuthn without requiring all users to migrate simultaneously, reducing support burden during the transition.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

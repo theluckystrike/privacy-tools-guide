@@ -42,7 +42,17 @@ This guide builds a complete WireGuard server from scratch with clients for ever
 - **Choose Ubuntu 22.04 or**: Debian 12 as the OS.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## Choose a VPS
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Choose a VPS
 
 Any low-end VPS with a public IP works. Options under $5/month:
 
@@ -55,7 +65,7 @@ Pick a datacenter location that gives you the exit geography you want. An Amster
 
 Choose Ubuntu 22.04 or Debian 12 as the OS.
 
-## Server Setup
+### Step 2: Server Setup
 
 SSH into your new VPS and update it:
 
@@ -188,7 +198,7 @@ sudo ufw reload
 sudo iptables -A INPUT -p udp --dport 51820 -j ACCEPT
 ```
 
-## Client Configuration
+### Step 3: Client Configuration
 
 Create a config for each client. Replace variables with your actual keys and server IP.
 
@@ -271,7 +281,7 @@ On mobile:
 3. Scan the QR code
 4. Toggle the tunnel on
 
-## Verify the VPN Is Working
+### Step 4: Verify the VPN Is Working
 
 From a connected client:
 
@@ -295,7 +305,7 @@ sudo wg show wg0
 # transfer: 1.23 MiB received, 4.56 MiB sent
 ```
 
-## Add a New Client Without Downtime
+### Step 5: Add a New Client Without Downtime
 
 You can add peers without restarting WireGuard:
 
@@ -309,6 +319,21 @@ sudo wg set wg0 peer <newclient-public-key> allowed-ips 10.0.0.5/32
 # Persist to config file
 echo -e "\n[Peer]\nPublicKey = $(cat /tmp/newclient-public.key)\nAllowedIPs = 10.0.0.5/32" | sudo tee -a /etc/wireguard/wg0.conf
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

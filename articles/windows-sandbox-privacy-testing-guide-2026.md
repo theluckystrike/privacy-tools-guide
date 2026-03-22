@@ -38,7 +38,17 @@ Windows Sandbox (Pro/Enterprise only) creates an isolated, temporary virtual des
 - **For analyzing samples suspected**: of carrying kernel exploits, use a full VM on separate hardware or a dedicated cloud instance you can snapshot and discard.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Enabling Windows Sandbox
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Enable Windows Sandbox
 
 Windows Sandbox requires Windows 10 Pro, Enterprise, or Windows 11 Pro/Enterprise. It uses hardware virtualization (Intel VT-x or AMD-V) with Second Level Address Translation (SLAT). Before enabling, verify your processor supports these features.
 
@@ -189,7 +199,7 @@ host 172.16.x.x
 
 Check for unencrypted HTTP transmissions, DNS lookups to tracking domains, and TLS connections to IP ranges associated with advertising networks (IAB Tech Lab publishes a list of known ad infrastructure IP ranges).
 
-## Interpreting Registry Modifications
+### Step 2: Interpreting Registry Modifications
 
 Process Monitor captures every registry read and write. The volume of events is overwhelming without filters. Use these ProcMon filter presets to focus on privacy-relevant activity:
 
@@ -208,7 +218,7 @@ procmon.exe /Quiet /Minimized /BackingFile C:\logs\analysis.pml
 procmon.exe /OpenLog C:\logs\analysis.pml /SaveAs C:\logs\results.csv
 ```
 
-## Automating Sandbox Tests
+### Step 3: Automate Sandbox Tests
 
 For repeated testing scenarios, automate Sandbox launch and teardown using PowerShell scripts:
 
@@ -273,7 +283,7 @@ For advanced threat analysis, consider additional isolation layers like virtual 
 
 Use Sandbox for routine privacy evaluation of commercial software and browser extensions. Reserve Hyper-V VMs (or VMware Workstation) for analyzing samples you suspect carry privilege escalation or kernel exploits.
 
-## Building a Repeatable Testing Library
+### Step 4: Build a Repeatable Testing Library
 
 Once you have established workflows for common test types, document them as reusable `.wsb` templates. Maintain a library structured by purpose:
 
@@ -299,6 +309,21 @@ Windows Sandbox automatically deletes all data when closed. However, follow thes
 - Review logs on the host system before deleting them
 - Keep Sandbox Windows updated for latest security patches
 - Store your `.wsb` configuration files in version control to track changes to your testing environment over time
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

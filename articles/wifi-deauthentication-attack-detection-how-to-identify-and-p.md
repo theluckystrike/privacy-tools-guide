@@ -40,7 +40,17 @@ WiFi deauthentication attacks represent one of the most common and disruptive la
 - **Tools like Aircrack-ng and**: MDK3 automate this process, allowing attackers to disconnect entire networks with single commands.
 - **While WPA3 introduced Dragonblood**: protocol enhancements, deauthentication frames remain a problem due to backward compatibility modes that fallback to WPA2-style authentication.
 
-## Understanding the Deauthentication Attack Vector
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Deauthentication Attack Vector
 
 The 802.11 protocol requires clients and access points to exchange management frames for association, authentication, and disassociation. These frames are sent in plaintext and require no cryptographic verification, making them trivially easy to forge. An attacker with a WiFi adapter in monitor mode can inject arbitrary deauthentication frames targeting any connected client.
 
@@ -50,7 +60,7 @@ This vulnerability affects both WPA2 and WPA3 networks. While WPA3 introduced Dr
 
 Deauthentication attacks are commonly used as a precursor to more serious attacks. Disconnecting a client forces it to re-authenticate, during which the WPA2 four-way handshake can be captured and subjected to offline dictionary attacks. Attackers also use deauthentication to drive clients toward rogue access points advertising the same SSID, enabling man-in-the-middle interception.
 
-## Putting Your Interface into Monitor Mode
+### Step 2: Putting Your Interface into Monitor Mode
 
 Before running any detection tooling, you need a wireless interface that can capture all 802.11 frames, including management frames not addressed to your device. Not all adapters support monitor mode—chipsets from Atheros, Ralink, and Realtek (specifically RTL8812AU) are widely supported on Linux.
 
@@ -76,7 +86,7 @@ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Res
 
 This captures frames on channel 6. Specify the channel your target network operates on.
 
-## Detecting Deauthentication Attacks with Scapy
+### Step 3: Detecting Deauthentication Attacks with Scapy
 
 Python developers can use Scapy, a powerful packet manipulation library, to build custom detection systems. Install Scapy with pip:
 
@@ -135,7 +145,7 @@ sniff(iface="wlan0mon", prn=packet_handler, store=0)
 
 Run this script with your wireless interface in monitor mode. The detector maintains a sliding window of deauthentication frames and triggers alerts when the threshold is exceeded. Adjust the threshold based on your network's typical disassociation patterns.
 
-## Reading Deauthentication Reason Codes
+### Step 4: Reading Deauthentication Reason Codes
 
 The 802.11 specification defines reason codes that appear in deauthentication frames, indicating why the disconnection occurred. Legitimate disconnections typically carry specific reason codes, while attacks often use reason code 7 (Class 3 frame received from nonassociated station) or reason code 1 (Unspecified reason) because automated tools default to these values.
 
@@ -150,7 +160,7 @@ The 802.11 specification defines reason codes that appear in deauthentication fr
 
 A burst of reason code 7 frames from a source MAC that does not match your access point's BSSID is a strong indicator of a spoofed deauthentication attack.
 
-## Using Bettercap for Real-Time Monitoring
+### Step 5: Use Bettercap for Real-Time Monitoring
 
 Bettercap provides a more attack detection framework with built-in WiFi module support. Install it and run the WiFi reconnaissance:
 
@@ -169,7 +179,7 @@ events.stream on
 
 Bettercap displays deauthentication frames in real-time, distinguishing between normal disconnections and attack patterns. The tool also supports automated deauthentication detection with custom Lua scripts for enterprise deployments.
 
-## Preventing Deauthentication Attacks
+### Step 6: Preventing Deauthentication Attacks
 
 While completely eliminating deauthentication vulnerabilities requires hardware-level changes to the 802.11 protocol, several mitigation strategies reduce attack effectiveness.
 
@@ -228,7 +238,7 @@ This prevents the system from entering power-saving mode that triggers additiona
 
 Additionally, avoid networks with weak pre-shared keys. Even if an attacker successfully captures the four-way handshake triggered by a deauthentication attack, a strong passphrase makes offline dictionary attacks infeasible. WPA2 passphrases should be at least 15 characters with mixed character classes, and WPA3-Personal SAE mode raises the bar further by providing simultaneous authentication of equals with resistance to offline cracking.
 
-## Building Attack Detection into Applications
+### Step 7: Build Attack Detection into Applications
 
 Developers integrating wireless security into applications can use the Aircrack-ng suite programmatically. The following bash script logs deauthentication activity for analysis:
 
@@ -253,7 +263,7 @@ done
 
 Integrate this monitoring with alerting systems like Prometheus or Grafana for real-time dashboard visibility.
 
-## Integrating Detection with SIEM Platforms
+### Step 8: Integrate Detection with SIEM Platforms
 
 For organizations running security information and event management platforms, deauthentication detection events should feed into your central event pipeline. Structured log output makes correlation easier:
 
@@ -277,6 +287,21 @@ def log_deauth_event(src_mac, dst_mac, bssid, reason_code, frame_count):
 ```
 
 SIEM rules can then correlate deauthentication events with subsequent authentication failures or rogue AP appearances on the same channel, providing richer attack context than raw frame counts alone. If you observe a burst of deauthentication frames followed within seconds by a new SSID appearing with the same name as your network, you are almost certainly witnessing a coordinated evil twin attack setup.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

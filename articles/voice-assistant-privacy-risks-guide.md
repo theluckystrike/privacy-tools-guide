@@ -53,7 +53,17 @@ The problem: wake word detection is imperfect. False triggers happen regularly, 
 
 ---
 
-## What the Companies Keep
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What the Companies Keep
 
 ### Amazon Alexa
 
@@ -80,7 +90,7 @@ Apple's model is meaningfully better for privacy, but "better" doesn't mean "pri
 
 ---
 
-## Accidental Activations in Practice
+### Step 2: Accidental Activations in Practice
 
 Research published by Northeastern University found that smart speakers activate accidentally 1.5–19 times per day depending on model and ambient conditions. Common false triggers:
 
@@ -96,7 +106,7 @@ Research published by Northeastern University found that smart speakers activate
 
 ---
 
-## Audit Your Existing Data
+### Step 3: Audit Your Existing Data
 
 ```bash
 # Request your data from each company:
@@ -143,7 +153,7 @@ if __name__ == "__main__":
 
 ---
 
-## Practical Mitigation Steps
+### Step 4: Practical Mitigation Steps
 
 ### Hardware Mute Is the Only Real Mute
 
@@ -202,7 +212,7 @@ You can block voice assistant cloud endpoints at the router level. This breaks f
 
 ---
 
-## Local Voice Assistants
+### Step 5: Local Voice Assistants
 
 If you want voice control without cloud dependency, local alternatives exist:
 
@@ -236,7 +246,7 @@ If you want voice control without cloud dependency, local alternatives exist:
 
 ---
 
-## Voice Assistants and Legal Access to Your Data
+### Step 6: Voice Assistants and Legal Access to Your Data
 
 Law enforcement can and does request voice assistant data. The process differs by company and jurisdiction, but all three major providers have compliance teams that respond to valid legal orders.
 
@@ -250,7 +260,7 @@ The practical implication: if a voice assistant is always on in a space where se
 
 ---
 
-## Children and Voice Assistants
+### Step 7: Children and Voice Assistants
 
 COPPA (the US Children's Online Privacy Protection Act) places restrictions on collecting data from children under 13, but enforcement in the voice assistant space has been inconsistent. The FTC fined Amazon $25 million in 2023 specifically for retaining children's Alexa recordings and location data contrary to parents' deletion requests.
 
@@ -272,7 +282,7 @@ The safest approach: disable voice assistants in children's rooms entirely, or u
 
 ---
 
-## Evaluating Newer Devices: 2025-2026 Models
+### Step 8: Evaluating Newer Devices: 2025-2026 Models
 
 Amazon's Echo devices now offer optional on-device processing for a subset of commands — primarily smart home controls and timers — which do not leave the device. This is marketed as "Ultra privacy mode."
 
@@ -284,7 +294,7 @@ The trend toward on-device processing is positive for privacy, but "on-device fo
 
 ---
 
-## What Disabling a Voice Assistant Actually Does
+### Step 9: What Disabling a Voice Assistant Actually Does
 
 When you say "Hey Alexa, stop listening" or disable a voice assistant via the app, the behavior is not what most people assume:
 
@@ -297,6 +307,21 @@ When you say "Hey Alexa, stop listening" or disable a voice assistant via the ap
 - **Factory reset + no account setup**: If you have an old device and want to ensure no retained data, factory reset it before disposal. Data associated with your account persists on company servers even after device reset unless you explicitly delete it.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

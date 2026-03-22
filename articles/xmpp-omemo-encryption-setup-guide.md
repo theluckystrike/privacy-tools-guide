@@ -41,7 +41,17 @@ To set up OMEMO encryption on XMPP, install an OMEMO-capable client (Gajim on de
 - **Trust your server**: Use servers run by organizations you trust (EFF-endorsed servers, institutional servers)
 2.
 
-## Understanding OMEMO Encryption
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand OMEMO Encryption
 
 OMEMO (Optimized Messaging Key Establishment) builds on the Signal Protocol and provides several security properties that matter for sensitive communications. Each device generates its own identity key pair, meaning your encryption keys remain tied to specific devices rather than just your account.
 
@@ -49,7 +59,7 @@ The protocol offers forward secrecy—even if your long-term keys are compromise
 
 Most modern XMPP clients support OMEMO, including Conversations (Android), Gajim (desktop), Dino (Linux), and Psi+ (cross-platform).
 
-## Client Installation and Basic Setup
+### Step 2: Client Installation and Basic Setup
 
 Before configuring OMEMO, ensure you have an XMPP account with OMEMO support. You can register on servers like `xmpp.jp`, `jabber.de`, or `conversations.im`—all of which support the required XEP-0384 extension.
 
@@ -64,7 +74,7 @@ After launching Gajim, add your XMPP account through the account wizard. Navigat
 
 For Android, install Conversations from F-Droid or the Play Store. After adding your account, tap the shield icon in any chat to enable OMEMO for that conversation.
 
-## Key Generation and First-Time Configuration
+### Step 3: Generate Keys and First-Time Configuration
 
 When you first enable OMEMO, your client generates identity keys. This process creates three key types:
 
@@ -90,7 +100,7 @@ c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9
 
 Take a screenshot or write it down. This verification step is crucial—without it, you cannot be certain you're communicating with the right person.
 
-## Managing Multiple Devices
+### Step 4: Manage Multiple Devices
 
 One of OMEMO's strengths is multi-device support. Your keys sync across devices through PEP (Personal Eventing Protocol), allowing you to read encrypted messages on any device without compromising security.
 
@@ -116,7 +126,7 @@ Several issues frequently arise when first adopting OMEMO:
 
 For advanced debugging, Gajim's plugin manager includes an OMEMO debug console. Access it through **Tools → Plugins → OMEMO → Debug** to view key fingerprints and session states.
 
-## Automating Key Verification
+### Step 5: Automate Key Verification
 
 For power users managing multiple contacts, manual verification becomes tedious. Some approaches help improve the process:
 
@@ -169,7 +179,7 @@ disco info <your-server>
 
 If your server doesn't support PEP (XEP-0163), OMEMO cannot function because identity keys must be published to your account's private PEP storage.
 
-## Building Custom Applications with OMEMO
+### Step 6: Build Custom Applications with OMEMO
 
 Developers integrating OMEMO into custom applications should use the pyomemo or omemo-python libraries:
 
@@ -235,7 +245,7 @@ For maximum security, combine OMEMO with:
 - **Tox tunnels**: Route XMPP over Tor
 - **Persistent master key verification**: Detect accounts being compromised and re-registered
 
-## Server-Side Logging and Metadata
+### Step 7: Server-Side Logging and Metadata
 
 Even with OMEMO encryption, your XMPP server records metadata:
 
@@ -257,7 +267,7 @@ The server knows:
 4. **Audit logs**: Request your server operator's logging policy
 5. **Message expiration**: Configure clients to delete messages after configurable period
 
-## Key Verification Automation
+### Step 8: Key Verification Automation
 
 For organizations managing multiple users, manual fingerprint verification doesn't scale. Several approaches help:
 
@@ -296,7 +306,7 @@ Publish fingerprint lists through authenticated channels:
 
 Distribute this list through authenticated channels. Users can import fingerprints to automate verification.
 
-## Practical Organization Setup
+### Step 9: Practical Organization Setup
 
 For a small organization deploying XMPP + OMEMO:
 
@@ -360,7 +370,7 @@ Common issues and fixes:
 | Decryption fails | Corrupted session | Remove and re-add contact |
 | Slow delivery | Congested server | Wait or switch servers |
 
-## High-Security Setup for Activists
+### Step 10: High-Security Setup for Activists
 
 For journalists, activists, and high-risk users requiring maximum OMEMO security:
 

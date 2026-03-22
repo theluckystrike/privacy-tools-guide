@@ -53,7 +53,7 @@ ykman info
 
 The output should show your YubiKey model, serial number, and firmware version.
 
-## Understanding YubiKey Interfaces
+### Step 1: Understand YubiKey Interfaces
 
 The YubiKey 5 supports multiple independent interfaces on the same device:
 
@@ -65,7 +65,7 @@ The YubiKey 5 supports multiple independent interfaces on the same device:
 
 These interfaces do not interfere with each other. You can use all of them on one key.
 
-## Part 1: SSH Authentication with PIV
+### Step 2: Part 1: SSH Authentication with PIV
 
 Using YubiKey's PIV interface for SSH gives you hardware-backed SSH keys that cannot be extracted from the device.
 
@@ -107,7 +107,7 @@ Host *
 
 When you SSH to a server, you'll be prompted to touch the YubiKey. The private key never leaves the hardware.
 
-## Part 2: GPG Signing with OpenPGP Interface
+### Step 3: Part 2: GPG Signing with OpenPGP Interface
 
 YubiKey stores GPG subkeys in its OpenPGP applet. The master key remains off-device; only signing, encryption, and authentication subkeys live on the YubiKey.
 
@@ -151,7 +151,7 @@ echo "test" | gpg --sign
 # Should prompt for PIN and require physical touch
 ```
 
-## Part 3: TOTP Codes with OATH Interface
+### Step 4: Part 3: TOTP Codes with OATH Interface
 
 The YubiKey can generate TOTP codes (the 6-digit codes used for 2FA) using its OATH applet. This is different from push-based authentication — the codes are generated on the key itself.
 
@@ -177,7 +177,7 @@ The Yubico Authenticator app (available on Windows, macOS, Linux, iOS, Android) 
 sudo apt install yubioath-desktop
 ```
 
-## Part 4: FIDO2 and Passkeys
+### Step 5: Part 4: FIDO2 and Passkeys
 
 FIDO2 is the most modern authentication standard. The YubiKey stores resident credentials (passkeys) in its FIDO2 applet.
 
@@ -197,7 +197,7 @@ ykman fido reset
 
 For websites, FIDO2/passkey registration happens through the browser when you add a security key in an account's security settings. No command-line setup needed — just plug in the YubiKey when prompted.
 
-## Part 5: Password Manager Second Factor
+### Step 6: Part 5: Password Manager Second Factor
 
 For most password managers (Bitwarden, 1Password, etc.), YubiKey functions as a FIDO2 security key. Register it in the security settings of your password manager account.
 
@@ -210,7 +210,7 @@ For Bitwarden specifically:
 
 You can register two or more YubiKeys as backups. This is important — if you lose your only key, you could be locked out.
 
-## Managing Multiple Keys
+### Step 7: Manage Multiple Keys
 
 If you have a backup YubiKey, configure it with the same credentials where possible:
 
@@ -226,7 +226,7 @@ ykman info | grep "Serial number"
 # Label your keys physically and track which serial is which
 ```
 
-## Revoking a Lost YubiKey
+### Step 8: Revoking a Lost YubiKey
 
 If a YubiKey is lost:
 
@@ -246,6 +246,21 @@ gpg --send-keys KEYID  # Publish revocation to keyserver
 ```
 
 This is why having two YubiKeys registered for every service matters — losing one key should not lock you out.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

@@ -45,7 +45,17 @@ Server selection also matters.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Diagnosing the Root Cause
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Diagnosing the Root Cause
 
 Before applying fixes, you need to identify why your VPN connection drops. Common causes include network instability, firewall interference, DNS issues, MTU mismatches, and server-side problems. Each requires a different diagnostic approach.
 
@@ -77,7 +87,7 @@ tail -f ~/Library/Logs/tunnelblick.log
 
 Look for recurring error messages such as `TLS handshake failed`, `connection reset`, or `inactivity timeout`. These patterns reveal whether the issue is authentication-related, network-related, or server-related.
 
-## Firewall and Router Configuration
+### Step 2: Firewall and Router Configuration
 
 Firewalls frequently cause VPN drops by blocking necessary ports or protocols. If you control your firewall, ensure the required ports are open.
 
@@ -103,7 +113,7 @@ sudo iptables -A FORWARD -i wg0 -j ACCEPT
 
 If you are behind a corporate firewall or NAT, consider using TCP tunneling over port 443, which most firewalls allow.
 
-## Fixing DNS Leaks and Resolution Issues
+### Step 3: Fixing DNS Leaks and Resolution Issues
 
 DNS leaks can cause connection instability and expose your traffic. Verify your DNS is properly configured:
 
@@ -123,7 +133,7 @@ echo "dhcp-option DNS 10.8.0.1" | sudo tee -a /etc/openvpn/client.conf
 sudo systemctl restart openvpn
 ```
 
-## Resolving MTU Issues
+### Step 4: Resolving MTU Issues
 
 Maximum Transmission Unit (MTU) mismatches cause fragmentation and dropped packets. A common symptom is the VPN connecting but dropping immediately when transferring data.
 
@@ -150,7 +160,7 @@ For WireGuard, adjust the `MTU` in your configuration:
 MTU = 1400
 ```
 
-## Implementing Auto-Reconnect Scripts
+### Step 5: Implementing Auto-Reconnect Scripts
 
 Rather than manually reconnecting, automate the process with a simple reconnection script:
 
@@ -203,7 +213,7 @@ sudo systemctl enable vpn-watchdog.service
 sudo systemctl start vpn-watchdog.service
 ```
 
-## Selecting Optimal VPN Protocols and Servers
+### Step 6: Select Optimal VPN Protocols and Servers
 
 Protocol choice significantly impacts stability. If WireGuard drops frequently, try OpenVPN in UDP mode. If UDP fails, fallback to TCP:
 
@@ -260,7 +270,7 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive = 25` setting sends a keepalive packet every 25 seconds, preventing NAT translation tables from expiring.
 
-## Quick Reference: VPN Drop Diagnosis
+### Step 7: Quick Reference: VPN Drop Diagnosis
 
 | Symptom | Likely Cause | Fix |
 |---------|-------------|-----|
@@ -277,6 +287,21 @@ For WiFi-specific drops, disable power management:
 sudo iwconfig wlan0 power off
 echo 'wireless-power off' | sudo tee -a /etc/network/interfaces
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

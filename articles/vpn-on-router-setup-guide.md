@@ -50,7 +50,17 @@ Check `openwrt.org/toh` for hardware compatibility before buying.
 
 ---
 
-## Flash OpenWrt (if needed)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Flash OpenWrt (if needed)
 
 ```bash
 # Check your router model at https://openwrt.org/toh
@@ -68,7 +78,7 @@ passwd
 
 ---
 
-## Install WireGuard on OpenWrt
+### Step 2: Install WireGuard on OpenWrt
 
 ```bash
 # SSH into your router
@@ -89,7 +99,7 @@ echo "Public:  $(cat /etc/wireguard/router_public.key)"
 
 ---
 
-## Configure WireGuard Client (Connecting to VPN Provider)
+### Step 3: Configure WireGuard Client (Connecting to VPN Provider)
 
 This example uses Mullvad, but works with any WireGuard VPN provider. Download your provider's WireGuard config file and extract the values.
 
@@ -131,7 +141,7 @@ uci commit network
 
 ---
 
-## Configure Firewall and Routing
+### Step 4: Configure Firewall and Routing
 
 ```bash
 # Add WireGuard interface to WAN firewall zone
@@ -158,7 +168,7 @@ chmod +x /etc/hotplug.d/iface/30-vpn-route
 
 ---
 
-## Verify the VPN Tunnel
+### Step 5: Verify the VPN Tunnel
 
 ```bash
 # Check WireGuard status from the router
@@ -191,7 +201,7 @@ peer: SERVER_PUBLIC_KEY
 
 ---
 
-## Split Tunneling (Exclude Specific Devices)
+### Step 6: Split Tunneling (Exclude Specific Devices)
 
 You may want some devices (like a gaming console) to bypass the VPN:
 
@@ -209,7 +219,7 @@ ip rule add fwmark 1 table main
 
 ---
 
-## OpenVPN Fallback (Older Routers)
+### Step 7: OpenVPN Fallback (Older Routers)
 
 If your router doesn't support WireGuard:
 
@@ -230,7 +240,7 @@ OpenVPN is slower than WireGuard (especially on underpowered routers) — expect
 
 ---
 
-## Kill Switch (Prevent Traffic if VPN Drops)
+### Step 8: Kill Switch (Prevent Traffic if VPN Drops)
 
 ```bash
 # Block all WAN traffic if WireGuard interface goes down
@@ -252,7 +262,7 @@ uci commit firewall
 
 ---
 
-## DNS Leak Prevention
+### Step 9: DNS Leak Prevention
 
 Even with the VPN tunnel active, DNS queries can bypass the tunnel and reveal your browsing activity to your ISP. This is the most common privacy failure in router VPN setups.
 
@@ -289,7 +299,7 @@ uci commit https-dns-proxy
 /etc/init.d/https-dns-proxy restart
 ```
 
-## Choosing a VPN Provider for Router Use
+### Step 10: Choose a VPN Provider for Router Use
 
 Not every VPN provider works well at the router level. Key requirements:
 
@@ -340,7 +350,7 @@ top  # watch CPU usage on the router SSH session
 
 For high-throughput setups, the **PC-based pfSense or OPNsense** approach with an AES-NI capable CPU and WireGuard provides near-wire speeds regardless of ISP bandwidth.
 
-## Maintaining the VPN Configuration
+### Step 11: Maintaining the VPN Configuration
 
 Router VPN configurations require periodic maintenance:
 
@@ -368,6 +378,21 @@ opkg upgrade $(opkg list-upgradable | awk '{print $1}')
 ```
 
 **Test the kill switch after every firmware update.** Firmware updates can reset firewall rules. After any OpenWrt upgrade, verify the kill switch still blocks non-VPN traffic by temporarily disabling the WireGuard interface and confirming that LAN devices lose internet access entirely.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

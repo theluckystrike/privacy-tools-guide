@@ -39,7 +39,17 @@ When you connect to a VPN, your original packets are wrapped in additional proto
 
 The math is straightforward: a typical OpenVPN adds about 50-100 bytes to each packet, while WireGuard adds roughly 60 bytes. If you're connecting through a network with a restricted MTU (common in some corporate networks, mobile connections, or when using PPPoE), understanding MTU becomes critical.
 
-## Common MTU-Related VPN Problems
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common MTU-Related VPN Problems
 
 Before exploring solutions, recognize these symptoms of MTU misconfiguration:
 
@@ -52,7 +62,7 @@ Before exploring solutions, recognize these symptoms of MTU misconfiguration:
 
 If you're experiencing these issues, MTU optimization is likely the solution.
 
-## How to Find the Optimal MTU Value
+### Step 2: How to Find the Optimal MTU Value
 
 ### Method 1: The Ping Test
 
@@ -97,7 +107,7 @@ If testing isn't practical, these values work in most situations:
 | Satellite internet | 576-1500 |
 | Corporate network | 1300-1400 |
 
-## Configuring MTU in Your VPN Client
+### Step 3: Configure MTU in Your VPN Client
 
 ### OpenVPN
 
@@ -181,7 +191,7 @@ if [ "$CURRENT_MTU" != "$TARGET_MTU" ]; then
 fi
 ```
 
-## Testing Your Optimized Settings
+### Step 4: Test Your Optimized Settings
 
 After configuring MTU, verify the improvements:
 
@@ -224,6 +234,21 @@ After configuring MTU, verify the improvements:
 3. **Only changing client settings:** Some issues require server-side MTU configuration as well.
 
 4. **Ignoring the path:** Your MTU needs to work across your entire network path, not just your local connection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

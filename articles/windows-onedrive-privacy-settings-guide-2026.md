@@ -39,25 +39,35 @@ To lock down OneDrive privacy on Windows in 2026, set the `TelemetryLevel` regis
 - **Disable any features you**: do not actively use—particularly those linking OneDrive to other Microsoft services.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding OneDrive Data Collection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand OneDrive Data Collection
 
 OneDrive synchronizes files across devices, but it also transmits usage telemetry, diagnostic data, and file metadata to Microsoft's servers. The application collects information about sync activity, file types, folder structures, and occasionally shares data with other Microsoft services like Cortana and search indexing.
 
 For developers working with sensitive code, proprietary documents, or regulated data, this telemetry represents a privacy concern. While Microsoft has improved transparency in recent years, the default configuration still errs on the side of data collection.
 
-## Accessing OneDrive Settings
+### Step 2: Access OneDrive Settings
 
 The primary interface for OneDrive configuration lives in the system tray. Right-click the OneDrive icon and select Settings to access the main configuration window. However, many privacy-critical options remain hidden or require additional configuration methods.
 
 The Settings window provides basic toggles for startup behavior, sync management, and account selection. For granular control, you need to explore the hidden settings accessible through direct configuration.
 
-## Disabling Telemetry Through Settings
+### Step 3: Disable Telemetry Through Settings
 
 Within the OneDrive Settings dialog, navigate to the Account tab. Here you find options controlling what syncs to the cloud. Disable any features you do not actively use—particularly those linking OneDrive to other Microsoft services.
 
 Under the Network tab, ensure your connection settings align with your network requirements. For developers working with limited bandwidth or air-gapped systems, understanding these settings prevents unexpected data transmission.
 
-## Registry-Based Configuration
+### Step 4: Registry-Based Configuration
 
 Windows stores many OneDrive privacy settings in the registry. Administrators and developers can modify these directly for system-wide control or scripted deployment.
 
@@ -81,7 +91,7 @@ Set-ItemProperty -Path $oneDriveKey -Name "DisableSharePointIntegration" -Value 
 
 These registry modifications require a restart of the OneDrive client to take effect. For enterprise deployments, you can apply these settings through Group Policy or deployment scripts.
 
-## Managing Sync Scope Programmatically
+### Step 5: Manage Sync Scope Programmatically
 
 Developers often need precise control over which folders OneDrive synchronizes. The command-line interface provides granular control beyond the GUI.
 
@@ -102,7 +112,7 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\OneDrive\SyncEngine\Settings" -
 
 This approach lets you exclude sensitive file types from cloud synchronization automatically during system setup or through configuration management tools.
 
-## Blockading File Preview and Thumbnails
+### Step 6: Blockading File Preview and Thumbnails
 
 OneDrive generates thumbnails and previews for documents, images, and other file types. This processing occurs on Microsoft's servers for certain file types, potentially exposing data externally.
 
@@ -114,7 +124,7 @@ To minimize thumbnail generation, adjust the view settings within OneDrive:
 
 For organizations, you can enforce this setting through Group Policy by blocking the thumbnail service at the enterprise level.
 
-## Disabling OneDrive Integration in Windows Explorer
+### Step 7: Disable OneDrive Integration in Windows Explorer
 
 Windows Explorer displays OneDrive status indicators on synced files. While convenient, this integration can expose synchronization status and create additional network activity when browsing files.
 
@@ -133,13 +143,13 @@ Set-ItemProperty -Path $shellKey -Name "SyncProvider" -Value 0
 
 This prevents Windows Explorer from communicating with OneDrive for status updates and file handling.
 
-## Using Local Accounts for Maximum Privacy
+### Step 8: Use Local Accounts for Maximum Privacy
 
 For highest privacy, consider running OneDrive with a local Microsoft account rather than an Azure AD identity. This reduces the association between your file data and organizational identity.
 
 However, note that some enterprise features require Azure AD authentication. If your organization manages your device through Intune or Group Policy, certain privacy settings may be locked or overridden by domain policy.
 
-## Automating Privacy Configuration
+### Step 9: Automate Privacy Configuration
 
 PowerShell scripting enables consistent privacy hardening across multiple machines. Here's a script for applying recommended privacy settings:
 
@@ -180,7 +190,7 @@ Write-Host "OneDrive privacy settings applied. Restart OneDrive to apply changes
 
 Run this script with administrator privileges and restart the OneDrive process afterward. The `-DisableAll` parameter removes all Microsoft service integrations for maximum privacy.
 
-## Verification and Testing
+### Step 10: Verification and Testing
 
 After applying privacy settings, verify the configuration is active. The OneDrive Settings dialog should reflect your changes, and you can check the registry directly to confirm:
 
@@ -192,7 +202,7 @@ Get-ItemProperty -Path $key | Select-Object TelemetryLevel, DisablePersonalizedR
 
 Additionally, monitor network traffic using tools like Wireshark or Windows Performance Monitor to confirm no unexpected connections to Microsoft servers occur during idle periods.
 
-## Windows 11/10 Registry Deep Dive
+### Step 11: Windows 11/10 Registry Deep Dive
 
 Beyond the primary settings, OneDrive configurations lurk throughout the Windows registry. A complete privacy audit requires checking multiple locations:
 
@@ -224,7 +234,7 @@ Get-Item "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Recent" | Sel
 - `DisablePersonalizedRecommendations`: Recommendations based on your usage data
 - `ClientPolicy`: Corporate policy enforcement (if Intune-managed)
 
-## Detecting Intune Management Constraints
+### Step 12: Detecting Intune Management Constraints
 
 Organizations using Intune to manage devices often lock down OneDrive settings to enforce compliance. Check your status:
 
@@ -247,7 +257,7 @@ If your device is Intune-managed, your administrator can:
 
 These policies override user settings. You may not be able to disable OneDrive completely without unenrolling from Intune (which requires admin action).
 
-## OneDrive Diagnostic Collection
+### Step 13: OneDrive Diagnostic Collection
 
 Microsoft collects diagnostic data through OneDrive that goes beyond typical telemetry:
 
@@ -312,7 +322,7 @@ foreach ($key in $policies.Keys) {
 }
 ```
 
-## Third-Party OneDrive Blocking and Alternatives
+### Step 14: Third-Party OneDrive Blocking and Alternatives
 
 For users wanting to completely bypass OneDrive, alternatives exist:
 
@@ -336,7 +346,7 @@ reg delete "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explore
 4. **Proton Drive** — Privacy-focused, end-to-end encrypted
 5. **Local storage + external backup** — No cloud, maximum privacy
 
-## Monitoring OneDrive Network Activity
+### Step 15: Monitor OneDrive Network Activity
 
 Track exactly what OneDrive sends to Microsoft:
 
@@ -370,7 +380,7 @@ Get-DnsClientQueryStatistics | Where-Object { $_.QueryType -eq "A" -and $_.Name 
 - Analytics services (segment, mixpanel) — user behavior tracking
 - Third-party domains — possible data sharing
 
-## File Sharing and Permission Leakage
+### Step 16: File Sharing and Permission Leakage
 
 OneDrive sharing creates extensive metadata about file permissions and sharing:
 
@@ -395,7 +405,7 @@ To prevent permission leakage:
 3. Unshare immediately after task completes
 4. Monitor who has access through Account → Manage access
 
-## CloudSync vs OneDrive Sync Behavior
+### Step 17: CloudSync vs OneDrive Sync Behavior
 
 Windows 11 introduced "CloudSync" — a different sync mechanism than traditional OneDrive:
 
@@ -419,7 +429,7 @@ Stop-Process -Name explorer -Force
 Start-Process explorer
 ```
 
-## Encryption Key Management for Sensitive Files
+### Step 18: Encryption Key Management for Sensitive Files
 
 For files stored in OneDrive that contain sensitive data, layer encryption:
 
@@ -448,7 +458,7 @@ function Encrypt-ForOneDrive {
 # Only sync encrypted containers, never plaintext
 ```
 
-## Post-Sync Cleanup and Activity Hiding
+### Step 19: Post-Sync Cleanup and Activity Hiding
 
 After sensitive syncing, clean OneDrive activity logs:
 
@@ -472,7 +482,7 @@ if (Test-Path $searchPath) {
 }
 ```
 
-## Verification of Privacy Settings
+### Step 20: Verification of Privacy Settings
 
 After applying all above changes, verify the configuration:
 
@@ -500,6 +510,21 @@ Verify-OneDrivePrivacy
 ```
 
 Run this after configuration to confirm all settings applied correctly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

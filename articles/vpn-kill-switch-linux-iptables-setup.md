@@ -40,7 +40,17 @@ Implementing a kill switch at the Linux firewall level gives you control that no
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-## How a Kill Switch Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How a Kill Switch Works
 
 The logic is simple: allow traffic only through the VPN tunnel interface. Block everything else.
 
@@ -60,7 +70,7 @@ ip link show
 ip route show
 ```
 
-## Method 1: iptables Kill Switch
+### Step 2: Method 1: iptables Kill Switch
 
 ### Basic kill switch rules
 
@@ -140,7 +150,7 @@ sudo iptables-save | sudo tee /etc/iptables/rules.v4
 sudo systemctl enable netfilter-persistent
 ```
 
-## Method 2: nftables Kill Switch (Modern Linux Systems)
+### Step 3: Method 2: nftables Kill Switch (Modern Linux Systems)
 
 nftables is the replacement for iptables on modern Linux distributions. Debian 10+, Ubuntu 20.04+, Fedora 32+, and Arch all prefer nftables.
 
@@ -216,7 +226,7 @@ sudo systemctl enable nftables
 sudo cp /etc/nftables-killswitch.conf /etc/nftables.conf
 ```
 
-## Method 3: NetworkManager Kill Switch (for Desktop Users)
+### Step 4: Method 3: NetworkManager Kill Switch (for Desktop Users)
 
 If you use NetworkManager and a VPN that supports it:
 
@@ -250,7 +260,7 @@ esac
 sudo chmod +x /etc/NetworkManager/dispatcher.d/99-vpn-killswitch
 ```
 
-## Testing the Kill Switch
+### Step 5: Test the Kill Switch
 
 ```bash
 # Step 1: Enable kill switch but do NOT connect to VPN
@@ -276,7 +286,7 @@ curl -s --max-time 5 https://api.ipify.org
 # Should fail — kill switch working correctly
 ```
 
-## IPv6 Leak Prevention
+### Step 6: IPv6 Leak Prevention
 
 IPv6 traffic can bypass IPv4 kill switch rules. Block it explicitly:
 
@@ -294,6 +304,21 @@ sudo ip6tables -A OUTPUT -o lo -j ACCEPT
 sudo ip6tables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 # Add VPN IPv6 exceptions if your VPN uses IPv6
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

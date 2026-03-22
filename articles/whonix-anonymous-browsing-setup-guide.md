@@ -48,7 +48,17 @@ This two-VM design is more durable than running Tor Browser directly — if Tor 
 
 ---
 
-## Option 1: VirtualBox (Easiest)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1: VirtualBox (Easiest)
 
 ### Download and Import
 
@@ -101,7 +111,7 @@ VBoxManage startvm "Whonix-Workstation" --type gui
 
 ---
 
-## Option 2: KVM/QEMU (Better Performance, Linux Only)
+### Step 2: Option 2: KVM/QEMU (Better Performance, Linux Only)
 
 ```bash
 # Install KVM and libvirt
@@ -125,7 +135,7 @@ sudo virsh start Whonix-Workstation-XFCE
 
 ---
 
-## First Boot Configuration
+### Step 3: First Boot Configuration
 
 ### Gateway First Boot
 
@@ -167,7 +177,7 @@ curl --socks5-hostname 127.0.0.1:9050 https://check.torproject.org/api/ip
 
 ---
 
-## Verify Anonymity
+### Step 4: Verify Anonymity
 
 ```bash
 # From Workstation terminal — check your apparent IP
@@ -186,7 +196,7 @@ ip route show default
 
 ---
 
-## Using Applications in Whonix
+### Step 5: Use Applications in Whonix
 
 ### Pre-Installed Tools
 
@@ -226,7 +236,7 @@ torsocks curl https://example.com   # Wrapper that routes through Tor
 
 ---
 
-## Bridges for Censored Networks
+### Step 6: Bridges for Censored Networks
 
 If Tor is blocked (China, Russia, Iran):
 
@@ -251,7 +261,7 @@ Choose: obfs4 bridges (automatically fetched) or paste your own
 
 ---
 
-## Security Practices in Whonix
+### Step 7: Security Practices in Whonix
 
 **Do:**
 - Use Tor Browser inside Whonix for the strongest anonymity (layered)
@@ -266,7 +276,7 @@ Choose: obfs4 bridges (automatically fetched) or paste your own
 
 ---
 
-## Taking Snapshots for Clean State
+### Step 8: Taking Snapshots for Clean State
 
 ```bash
 # VirtualBox snapshot (preserve clean state)
@@ -285,7 +295,7 @@ sudo virsh snapshot-revert Whonix-Workstation-XFCE clean-state
 
 ---
 
-## Updating Whonix Safely
+### Step 9: Updating Whonix Safely
 
 Keeping Whonix current is critical — security patches are released regularly. Both VMs must be updated independently.
 
@@ -316,7 +326,7 @@ If `whonixcheck` reports a clock skew of more than a few minutes, do not use Who
 
 ---
 
-## Persistent vs. Non-Persistent Workstation
+### Step 10: Persistent vs. Non-Persistent Workstation
 
 The Workstation can be used in two modes:
 
@@ -336,7 +346,7 @@ For the highest-risk work, use amnesic mode. For everyday anonymous browsing whe
 
 ---
 
-## Whonix vs. Tails: When to Use Which
+### Step 11: Whonix vs. Tails: When to Use Which
 
 Both tools provide anonymity, but they suit different threat models:
 
@@ -352,7 +362,7 @@ If your host OS is untrusted, Tails is the better choice because it runs from US
 
 ---
 
-## Common Mistakes That Break Anonymity
+### Step 12: Common Mistakes That Break Anonymity
 
 **Using Whonix Workstation without the Gateway running.** The Workstation's network interface points to the Gateway's internal IP. If the Gateway is down, network connections will fail — not silently route around Tor. Verify Gateway is running and connected before starting the Workstation.
 
@@ -363,6 +373,21 @@ If your host OS is untrusted, Tails is the better choice because it runs from US
 **Ignoring clock sync warnings.** Tor's anonymity properties degrade when timestamps are wrong. Always resolve clock sync issues before doing sensitive work.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
