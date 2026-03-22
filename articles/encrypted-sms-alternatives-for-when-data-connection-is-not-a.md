@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/
 description: "Learn encrypted sms alternatives for when data connection is not a with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Encrypted SMS Alternatives for When Data Connection Is"
 description: "A technical guide for developers and power users exploring encrypted SMS alternatives that work without active data connectivity. Covers carrier-based"
