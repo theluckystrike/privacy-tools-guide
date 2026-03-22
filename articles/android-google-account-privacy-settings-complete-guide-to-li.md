@@ -9,6 +9,7 @@ permalink: /android-google-account-privacy-settings-complete-guide-to-li/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [privacy-tools-guide, privacy]
 ---
 
 
