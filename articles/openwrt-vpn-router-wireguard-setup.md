@@ -31,6 +31,13 @@ Running a VPN on each individual device means 8 apps to configure, update, and m
 
 This guide configures OpenWrt as a WireGuard VPN client that routes all LAN traffic through a WireGuard server (either a commercial VPN provider or a self-hosted server).
 
+## Key Takeaways
+
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers prerequisites, step 1**: install wireguard on openwrt, step 2: get or create wireguard configuration, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Prerequisites
 
 - A router running OpenWrt (19.07 or later; 21.02+ preferred)
