@@ -31,6 +31,13 @@ tags: [privacy-tools-guide, security]---
 
 Deploy Frigate on a Docker-capable computer (mini-PC, Intel NUC, or Raspberry Pi) to record IP camera streams directly to local storage with no cloud upload, no subscriptions, and no monthly fees. Frigate performs real-time object detection (people, vehicles, animals) locally and integrates with Home Assistant for automation. Set up is straightforward: install Docker, configure your IP cameras' RTSP streams in Frigate's config file, and video records directly to attached storage. Your footage stays fully under your control.
 
+## Key Takeaways
+
+- **For completely local operation**: WireGuard or a similar VPN solution is recommended.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers why**: frigate for local-only security, hardware requirements, installing frigate, with specific setup instructions
+
 ## Why Frigate for Local-Only Security
 
 Frigate is a Docker-based NVR built specifically for Home Assistant but capable of standalone operation. It processes video streams locally using real-time object detection, distinguishing between people, vehicles, animals, and other motion. Unlike cloud services that upload your footage to remote servers, Frigate keeps everything on your network.

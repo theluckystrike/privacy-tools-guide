@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Siri, Apple's voice assistant built into macOS, processes voice commands to provide quick answers, control applications, and automate tasks. However, by default, Siri sends voice recordings to Apple's servers for processing and storage, creating privacy concerns for users who want to minimize data collection. This guide provides technical methods to control Siri's data collection and prevent voice data from reaching Apple servers.
 
+## Key Takeaways
+
+- **For developers building privacy-focused**: applications, consider integrating these libraries instead of relying on Siri or cloud-based speech services.
+- **To check which processing**: your queries use: ```bash # Check Siri analytics settings defaults read com.apple.assistant.support ``` Look for settings indicating local vs.
+- **Use firewall rules to**: block Siri network traffic 5.
+- **However**: by default, Siri sends voice recordings to Apple's servers for processing and storage, creating privacy concerns for users who want to minimize data collection.
+- **Apple processes most voice**: queries on its servers, which means your voice commands travel over the internet to Apple's infrastructure.
+- **Even though Apple states**: it uses differential privacy techniques and on-device processing for some queries, the reality is that voice recordings can be stored and associated with your Apple ID.
+
 ## How Siri Processes Voice Data on macOS
 
 When you activate Siri on macOS—whether through voice activation, keyboard shortcut, or clicking the Siri icon—the audio passes through several stages. Apple processes most voice queries on its servers, which means your voice commands travel over the internet to Apple's infrastructure. Even though Apple states it uses differential privacy techniques and on-device processing for some queries, the reality is that voice recordings can be stored and associated with your Apple ID.

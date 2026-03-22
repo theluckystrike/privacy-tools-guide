@@ -31,6 +31,30 @@ intent-checked: true---
 
 Signal and Matrix are the two leading privacy-focused messaging platforms, but they differ fundamentally in architecture, self-hosting capabilities, and metadata privacy. Signal is simpler and more private for 1:1 messages, but Matrix/Element is better for group communication, federation, and self-hosting requirements. This guide compares both across architecture, features, metadata exposure, self-hosting, cost, and real-world use cases.
 
+## Key Takeaways
+
+- **Group communication (teams**: organizations)
+ - Better than Signal for groups > 20 people
+ - Thread support, topic organization
+ - Integration with bots, automation
+
+2.
+- **Signal is simpler and**: more private for 1:1 messages, but Matrix/Element is better for group communication, federation, and self-hosting requirements.
+- **Create account on your**: homeserver (@user:your-domain.com) # 2.
+- **Message users on other**: Matrix servers (federation) # 4.
+- **Simplicity matters most
+ - Setup**: Download app, enter phone number, done
+ - No account management, no server selection
+ - Friends/family already using Signal
+
+2.
+- **1**: 1 private conversations
+ - Signal's protocol is strongest for pairs
+ - Best-in-class encryption security
+ - Simple verification (scan QR code once)
+
+3.
+
 ## Core Architectural Differences
 
 ### Signal: Centralized, Phone-Number-Based

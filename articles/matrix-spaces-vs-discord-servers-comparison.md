@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Matrix Spaces if you need self-hosting, end-to-end encryption by default, federation across servers, or data sovereignty for compliance requirements. Choose Discord servers if you prioritize polished UX, a mature bot ecosystem, easy onboarding for non-technical users, and built-in voice channels without infrastructure overhead. Below is a technical comparison of federation, encryption, API capabilities, scalability, and community management features between the two platforms.
 
+## Key Takeaways
+
+- **Users on one homeserver**: can join Spaces hosted on different servers, creating an interconnected network without single-point control.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **A user with 50**: power can change room name but not kick (requires 75).
+- **For large communities (1000+**: users) with compliance needs, Matrix self-hosting breaks even in year 2.
+- **Choose Matrix Spaces if**: you need self-hosting, end-to-end encryption by default, federation across servers, or data sovereignty for compliance requirements.
+
 ## Federation and Decentralization
 
 The most significant difference lies in network architecture. Discord operates as a centralized service—all data flows through Discord's servers, and the company controls the entire infrastructure. There is no way to run your own Discord server that connects to the main network. This centralization simplifies moderation tools and feature development but creates a single point of failure and trust dependency.

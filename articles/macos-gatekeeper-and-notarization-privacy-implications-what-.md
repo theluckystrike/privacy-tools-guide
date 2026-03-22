@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 When you distribute macOS applications outside the Mac App Store, Apple requires you to work with two security mechanisms: Gatekeeper and notarization. These systems protect users from malware, but they also create a pipeline of information that flows to Apple's servers. Understanding what Apple learns about your apps helps you make informed decisions about distribution strategies and potential privacy implications.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Create signature file for**: distribution codesign -d --extract-certificates MyApp.app # Users can verify certificate authenticity # 4.
+- **Validate no hardcoded secrets**: strings MyApp.app/Contents/MacOS/MyApp | grep -i "password\|apikey\|secret\|token" # Should return nothing - use environment variables instead # 5.
+- **Verify no personally identifying**: information strings MyApp.app/Contents/MacOS/MyApp | grep -E "user@.*\.com|phone|address" # Remove any personal information from strings # 6.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## How Gatekeeper Works
 
 Gatekeeper is Apple's first line of defense against malicious software. When a user attempts to open an application downloaded from the internet, Gatekeeper checks whether the app is signed with a valid Developer ID certificate issued by Apple. This signature verification ensures the app comes from an identified developer and hasn't been tampered with since signing.
