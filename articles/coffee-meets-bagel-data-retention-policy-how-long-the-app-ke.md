@@ -33,6 +33,17 @@ Coffee Meets Bagel (CMB) operates differently from many mainstream dating platfo
 
 This guide examines CMB's documented data retention practices, explains the technical mechanisms behind profile deletion, and provides practical steps for users who want more control over their digital footprint on the platform.
 
+## Key Takeaways
+
+- **Determine your jurisdiction (most**: restrictive applies) # 2.
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **Submission**: Users request deletion through Settings → Account → Delete Account
+2.
+- **Request deletion**: Use the in-app deletion feature
+3.
+- **Some platforms offer more aggressive deletion policies**: Bumble, for instance, automatically deletes user data after 30 days of account inactivity.
+- **The key differentiator for**: privacy-focused users is typically API availability and data export capabilities, where CMB currently offers limited options compared to some competitors.
+
 ## How Coffee Meets Bagel Stores User Data
 
 Coffee Meets Bagel collects several categories of personal information during account creation and ongoing use:

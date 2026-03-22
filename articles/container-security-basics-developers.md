@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, security]---
 
 Most container security issues come from a handful of avoidable mistakes: running as root, using bloated base images, baking secrets into layers, and leaving default network access open. This guide covers the practical steps developers can take before a security team ever gets involved.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most container security issues**: come from a handful of avoidable mistakes: running as root, using bloated base images, baking secrets into layers, and leaving default network access open.
+- **If your app is exploited**: the attacker has root inside the container and a better chance of escaping.
+
 ## The Basic Threat Model
 
 A container is not a VM. The kernel is shared with the host. If a container process escapes (via a kernel vulnerability or misconfiguration), it can interact with the host or other containers. The goal is to minimize what a compromised container can do.

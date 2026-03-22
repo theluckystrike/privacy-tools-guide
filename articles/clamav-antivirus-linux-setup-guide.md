@@ -21,6 +21,15 @@ ClamAV is the standard open-source antivirus for Linux. It's particularly useful
 This guide covers a complete ClamAV deployment: installation across major distributions, signature update automation, on-demand and on-access scanning, scheduled weekly scans, quarantine management, and mail server integration with Postfix.
 ---
 
+## Key Takeaways
+
+- **`LocalSocketMode 666` is needed**: so non-root users and mail system daemons can communicate with clamd over the Unix socket.
+- **If you're running in**: a more locked-down environment, use `660` and add the appropriate users to the `clamav` group instead.
+- **It's particularly useful for**: mail servers (scanning attachments), shared storage, and systems that handle files from Windows machines.
+- **Use `clamdscan` (which delegates**: to the already-running daemon) for bulk or frequent scans.
+- **The `--remove` flag permanently deletes infected files without confirmation**: use `--move=/path/to/quarantine` if you want to review before destroying.
+- **`OnAccessExcludeUname clamav` and `OnAccessExcludeUname**: root` prevent `clamonacc` from scanning files accessed by the ClamAV process itself or root, which would cause recursive scan loops.
+
 ## Install ClamAV
 
 ```bash

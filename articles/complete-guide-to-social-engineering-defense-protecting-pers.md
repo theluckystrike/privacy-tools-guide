@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Social engineering defense requires recognizing common attack vectors—phishing (fraudulent emails), pretexting (fabricated scenarios), baiting (enticing offers), and tailgating (physical access)—then implementing specific defenses. Use multi-factor authentication, email filtering, verification procedures for sensitive requests, and security training to defeat these attacks. At the code level, implement rate limiting, verify user actions before destructive operations, use strong API authentication, and log sensitive activities. The most effective defense combines technical controls with skeptical skepticism of unexpected requests, whether digital or in-person.
 
+## Key Takeaways
+
+- **Train yourself to pause**: for 60 seconds when you feel urgency.
+- **At the code level**: implement rate limiting, verify user actions before destructive operations, use strong API authentication, and log sensitive activities.
+- **A caller offering "free**: IT support" while harvesting credentials exemplifies this approach.
+- **Most attackers escalate within**: hours of gaining initial access, so speed of response directly limits the damage.
+- **Use multi-factor authentication**: email filtering, verification procedures for sensitive requests, and security training to defeat these attacks.
+- **The most effective defense**: combines technical controls with skeptical skepticism of unexpected requests, whether digital or in-person.
+
 ## Understanding Social Engineering Attack Vectors
 
 Social engineering attacks come in multiple forms, each exploiting different aspects of human behavior:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 The Great Firewall detects VPN traffic through multiple layers: deep packet inspection (DPI) identifies protocol signatures, DNS poisoning blocks forbidden domains, SNI filtering inspects unencrypted domain names during TLS handshakes, and active probing tests suspected servers. Even encrypted traffic reveals metadata through packet size patterns, timing analysis, and connection duration that machine learning classifiers can use to identify circumvention tools. Understanding these detection mechanisms is essential for developers building resilient privacy applications and power users seeking effective evasion strategies.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Even encrypted traffic reveals**: metadata through packet size patterns, timing analysis, and connection duration that machine learning classifiers can use to identify circumvention tools.
+
 ## Core Detection Mechanisms
 
 The GFW operates at multiple network layers, combining several detection techniques to identify and block traffic it deems undesirable.
