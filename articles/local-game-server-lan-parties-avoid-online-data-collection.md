@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /local-game-server-lan-parties-avoid-online-data-collection/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: false
 tags: [privacy-tools-guide]
