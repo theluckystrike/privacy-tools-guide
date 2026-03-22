@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /proton-drive-bridge-desktop-integration-guide/
 description: "Discover the best proton drive bridge desktop integration guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, best-of, integration]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [best-of]
 ---
+
 layout: default
 title: "Proton Drive Bridge Desktop Integration Guide"
 description: "A practical guide for developers and power users integrating Proton Drive Bridge with desktop applications. Covers WebDAV configuration, CLI"

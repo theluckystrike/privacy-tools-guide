@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-financial-advisor-client-portfolio-data-pr/
 description: "Learn privacy setup for financial advisor client portfolio data pr with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup For Financial Advisor Client Portfolio Data"
 description: "A practical guide for developers and power users implementing privacy controls for financial advisor client portfolio data. Includes encryption, access"

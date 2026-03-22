@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-reproductive-healthcare-provider-in-restri/
 description: "Learn privacy setup for reproductive healthcare provider in restri with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup For Reproductive Healthcare Provider"
 description: "A technical guide for developers and power users securing patient data and operational communications in states with restricted reproductive healthcare"

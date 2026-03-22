@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
 description: "Learn privacy setup for immigration activist protecting undocumented with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup for Immigration Activist"
 description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"

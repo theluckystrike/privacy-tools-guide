@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-survivor-of-revenge-porn-removing-images-g/
 description: "Learn privacy setup for survivor of revenge porn removing images g with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"
 description: "A practical technical guide for removing non-consensual intimate images from the internet. Covers content removal requests, image hashing, platform policies"

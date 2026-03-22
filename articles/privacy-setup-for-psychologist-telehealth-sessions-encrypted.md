@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
 description: "Learn privacy setup for psychologist telehealth sessions encrypted with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"
 description: "Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and"

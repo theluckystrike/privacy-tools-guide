@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /private-video-calling-selfhosted-guide/
 description: "Follow this guide to private video calling selfhosted guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Self-Hosted Private Video Calling Setup Guide"
 description: "Set up Jitsi Meet, Matrix Element, and Galene as self-hosted video calling alternatives to Zoom and Google Meet, with E2EE and no third-party data collection"
