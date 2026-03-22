@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/
 description: "Follow this guide to how to tell if your router has been compromised check guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Tell If Your Router Has Been Compromised Check Guide"
 description: "Learn how to identify signs of a compromised router with practical detection methods, command-line tools, and security hardening steps for developers"
