@@ -65,7 +65,17 @@ Your threat model determines which tools and configurations are appropriate. No 
 
 Revisit your threat model before each major action phase. Threats escalate as organizing becomes more visible.
 
-## Core Communication Stack
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Communication Stack
 
 ### Primary Channel: Signal
 
@@ -105,7 +115,7 @@ Briar deployment strategy:
 3. Create dedicated "contact groups" for different organizing functions
 4. Designate runners who can physically carry messages between locations
 
-## Self-Hosted Infrastructure
+### Step 2: Self-Hosted Infrastructure
 
 For organizations wanting greater control, self-hosted options provide infrastructure independence.
 
@@ -177,7 +187,7 @@ services:
 
 Configure lobby mode to require explicit admission for sensitive meetings.
 
-## Choosing Devices for Organizing
+### Step 3: Choose Devices for Organizing
 
 Hardware choices matter as much as software. Where budget allows, use dedicated devices for organizing — phones and laptops that never touch employer-managed accounts, networks, or MDM systems.
 
@@ -195,7 +205,7 @@ Hardware choices matter as much as software. Where budget allows, use dedicated 
 - Configure the firewall to block all inbound connections
 - Use a privacy screen filter in public spaces
 
-## Operational Security Practices
+### Step 4: Operational Security Practices
 
 Technical tools require operational discipline to be effective.
 
@@ -222,7 +232,7 @@ Technical tools require operational discipline to be effective.
 - Assume all non-encrypted communications may be intercepted
 - Delete sensitive messages after action items are completed
 
-## Compartmentalization Strategy
+### Step 5: Compartmentalization Strategy
 
 Not every organizer needs access to every channel. Compartmentalizing information limits damage from infiltration or device seizure.
 
@@ -235,7 +245,7 @@ Not every organizer needs access to every channel. Compartmentalizing informatio
 
 Assign different people as administrators for each tier. If one tier is compromised, the others remain intact.
 
-## Backup and Recovery
+### Step 6: Backup and Recovery
 
 Establish recovery procedures before operational need:
 
@@ -244,7 +254,7 @@ Establish recovery procedures before operational need:
 3. **Session**: Record recovery phrase in secure location
 4. **All**: Designate trusted contacts for emergency access
 
-## Handling Key Management and Credential Handoff
+### Step 7: Handling Key Management and Credential Handoff
 
 Strike organizing requires planning for leadership transitions. If an organizer is removed, resigns, or is unavailable, access to shared channels must transfer smoothly without exposing credentials.
 
@@ -253,6 +263,21 @@ Strike organizing requires planning for leadership transitions. If an organizer 
 **Matrix homeserver**: Store the admin credentials in a shared password manager (Bitwarden or Vaultwarden self-hosted) accessible to two or more trusted organizers with hardware key 2FA.
 
 **Jitsi and other self-hosted services**: Document server credentials and SSH keys in an encrypted file stored offline with a designated backup administrator. Use a break-glass procedure: the backup credentials envelope is opened only when the primary admin is unavailable.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

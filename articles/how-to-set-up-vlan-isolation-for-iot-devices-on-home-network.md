@@ -56,7 +56,7 @@ Before implementing VLAN isolation, ensure you have the appropriate hardware:
 
 If your router doesn't support VLANs natively, you can use a Linux machine as a gateway between your VLANs with iptables or nftables rules controlling inter-VLAN traffic.
 
-## Planning Your VLAN Architecture
+### Step 1: Planning Your VLAN Architecture
 
 Design your network before touching any configuration. A typical home VLAN setup includes three or four segments:
 
@@ -68,7 +68,7 @@ Design your network before touching any configuration. A typical home VLAN setup
 
 Assign each VLAN a distinct subnet. This simplifies firewall rule writing and makes traffic analysis easier. The IoT VLAN should have no route to your trusted VLAN unless you explicitly create one for specific services.
 
-## Configuring VLANs on a Managed Switch
+### Step 2: Configure VLANs on a Managed Switch
 
 Modern managed switches use 802.1Q tagging. Each port gets assigned to one or more VLANs, with one VLAN serving as the "native" untagged VLAN and additional VLANs carried as tagged traffic.
 
@@ -98,7 +98,7 @@ vlan members remove 2-4
 exit
 ```
 
-## Router Configuration for Inter-VLAN Routing
+### Step 3: Router Configuration for Inter-VLAN Routing
 
 Your router must handle traffic between VLANs. On OpenWrt, this involves creating separate bridge interfaces and assigning them to physical ports.
 
@@ -121,7 +121,7 @@ The `.20` suffix creates a VLAN subinterface on physical interface `eth1`. This 
 
 Repeat this configuration for each VLAN, assigning unique IP addresses from each subnet. The router becomes the gateway for each VLAN, meaning all inter-VLAN traffic flows through it.
 
-## Implementing Firewall Rules
+### Step 4: Implementing Firewall Rules
 
 By default, routers route traffic between subnets. You must explicitly block traffic from your IoT VLAN to your trusted VLAN while permitting established connections in the other direction.
 
@@ -172,7 +172,7 @@ config rule
 
 Replace `192.168.20.50` with the static IP address of your camera or device.
 
-## Static IP Assignment for IoT Devices
+### Step 5: Static IP Assignment for IoT Devices
 
 DHCP reservations ensure consistent addressing, making firewall rules reliable. Most routers support static leases through their DHCP configuration. Alternatively, configure static IPs directly on devices that support it:
 
@@ -189,7 +189,7 @@ iface eth0 inet static
 
 Reserve addresses in the lower range (192.168.20.2-192.168.20.50) for static assignments, letting the DHCP server assign the remainder.
 
-## Verifying Your Isolation
+### Step 6: Verify Your Isolation
 
 Test your VLAN configuration from multiple angles:
 
@@ -215,7 +215,7 @@ This command monitors ICMP traffic on the IoT bridge interface. You should see b
 
 **IP conflict**: Ensure no overlapping subnets exist between VLANs. Each VLAN needs its own non-overlapping address space.
 
-## Scaling Beyond Basic VLANs
+### Step 7: Scaling Beyond Basic VLANs
 
 As your network grows, consider additional security layers:
 
@@ -224,6 +224,21 @@ As your network grows, consider additional security layers:
 - **Traffic monitoring**: Zeek or ntopng on a monitoring VLAN provides visibility into network activity
 
 These tools integrate with your VLAN architecture without requiring fundamental changes to your segmentation strategy.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

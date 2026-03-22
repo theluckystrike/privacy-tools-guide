@@ -65,7 +65,7 @@ Before starting, ensure you have:
 
 Download Bridge from the Proton website or install via your system's package manager. The application is available for macOS, Windows, and Linux.
 
-## Installing Proton Mail Bridge
+### Step 1: Install Proton Mail Bridge
 
 On macOS with Homebrew:
 
@@ -82,7 +82,7 @@ sudo dpkg -i ProtonMailBridge-3.0.0.deb
 
 After installation, launch the Bridge application. You'll be prompted to log in with your Proton Mail credentials.
 
-## Configuring Bridge for First Use
+### Step 2: Configure Bridge for First Use
 
 Open Proton Mail Bridge and sign in with your Proton Mail email and password. The application will generate IMAP and SMTP credentials specifically for your email client.
 
@@ -99,7 +99,7 @@ Password: [Bridge-generated password]
 
 These credentials are separate from your Proton Mail password. The Bridge application manages them, and you can regenerate them at any time through the Bridge interface if needed.
 
-## Setting Up Apple Mail
+### Step 3: Set Up Apple Mail
 
 For macOS users preferring Apple Mail over the Proton Mail web interface:
 
@@ -117,7 +117,7 @@ For macOS users preferring Apple Mail over the Proton Mail web interface:
 
 Click **Sign In** and Apple Mail will connect through Bridge to Proton Mail.
 
-## Setting Up Mozilla Thunderbird
+### Step 4: Set Up Mozilla Thunderbird
 
 Thunderbird provides excellent customization options for power users:
 
@@ -135,7 +135,7 @@ Thunderbird provides excellent customization options for power users:
 
 Thunderbird will attempt automatic configuration, but manually entering these values ensures proper connection through Bridge.
 
-## Setting Up Neomutt for Terminal Users
+### Step 5: Set Up Neomutt for Terminal Users
 
 For developers who prefer terminal-based workflows, Neomutt works smoothly with Proton Mail Bridge:
 
@@ -185,7 +185,7 @@ Slave :proton-mail:
 
 Run `mbsync proton` to synchronize your mail locally, then configure Neomutt to read from the local Maildir.
 
-## Enabling Two-Factor Authentication for Bridge
+### Step 6: Enable Two-Factor Authentication for Bridge
 
 For additional security, Bridge supports two-factor authentication through TOTP:
 
@@ -196,7 +196,7 @@ For additional security, Bridge supports two-factor authentication through TOTP:
 
 Your email client will now require both the Bridge password and a current TOTP code to connect.
 
-## Managing Multiple Accounts
+### Step 7: Manage Multiple Accounts
 
 Bridge supports multiple Proton Mail accounts simultaneously. Click the **+** button in the Bridge interface to add additional accounts. Each account receives its own IMAP/SMTP credentials.
 

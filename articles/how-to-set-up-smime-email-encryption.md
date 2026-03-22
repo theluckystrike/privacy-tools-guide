@@ -40,13 +40,23 @@ To set up S/MIME email encryption, generate a certificate with OpenSSL (or obtai
 - **This means you can**: obtain certificates from trusted CAs or generate self-signed certificates for internal use.
 - **Store keys on hardware tokens (YubiKey**: SmartCards) for production use.
 
-## Understanding S/MIME Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand S/MIME Fundamentals
 
 S/MIME relies on X.509 certificates to provide authentication, encryption, and digital signatures. Unlike PGP's web-of-trust model, S/MIME uses a hierarchical Public Key Infrastructure (PKI) with certificate authorities. This means you can obtain certificates from trusted CAs or generate self-signed certificates for internal use.
 
 The protocol supports both encryption (confidentiality) and digital signatures (authenticity and integrity). When you sign an email, recipients can verify that the message originated from you and wasn't modified in transit. When you encrypt an email, only the intended recipient can read its contents.
 
-## Generating Your S/MIME Certificate
+### Step 2: Generate Your S/MIME Certificate
 
 For production use, obtain certificates from a trusted CA like DigiCert, Comodo, or Let's Encrypt (when they offer S/MIME). For testing or internal deployment, generate a self-signed certificate using OpenSSL.
 
@@ -86,7 +96,7 @@ openssl pkcs12 -in smime.p12 -nokeys -out smime-cer.pem
 openssl pkcs12 -in smime.p12 -nocerts -nodes -out smime-key.pem
 ```
 
-## Configuring Thunderbird for S/MIME
+### Step 3: Configure Thunderbird for S/MIME
 
 Mozilla Thunderbird has native S/MIME support with a straightforward configuration interface.
 
@@ -108,7 +118,7 @@ After importing, configure your default encryption behavior:
 
 Thunderbird will automatically attach your public certificate to signed emails, allowing recipients to import it and send encrypted replies.
 
-## Apple Mail Configuration
+### Step 4: Apple Mail Configuration
 
 Apple Mail integrates S/MIME through the macOS Keychain, enabling encryption across Apple devices without additional configuration.
 
@@ -127,7 +137,7 @@ Apple Mail integrates S/MIME through the macOS Keychain, enabling encryption acr
 
 For iOS devices, transfer the certificate via AirDrop or email, then install the profile in Settings → General → VPN & Device Management.
 
-## Configuring Microsoft Outlook
+### Step 5: Configure Microsoft Outlook
 
 Outlook supports S/MIME through Windows Certificate Store or imported certificate files.
 
@@ -144,7 +154,7 @@ For Exchange environments without auto-enrollment:
 1. Go to **File** → **Options** → **Mail** → **Signatures**
 2. Create a new signature and attach your certificate via **Select Certificate**
 
-## Verifying Your Setup
+### Step 6: Verify Your Setup
 
 Test your configuration by sending an encrypted email to yourself or a colleague who also has S/MIME configured.
 
@@ -251,7 +261,7 @@ openssl pkcs12 -in /path/to/smime.p12 -noout -info
 echo -e "\n=== End Diagnostics ==="
 ```
 
-## Distributing Certificates to Team Members
+### Step 7: Distributing Certificates to Team Members
 
 For organization-wide S/MIME deployment, establish a certificate distribution pipeline:
 
@@ -421,7 +431,7 @@ employees = [
 # distributor.bulk_distribute_certificates(employees)
 ```
 
-## Interoperability Testing
+### Step 8: Interoperability Testing
 
 Before rolling out S/MIME org-wide, test interoperability with external recipients:
 

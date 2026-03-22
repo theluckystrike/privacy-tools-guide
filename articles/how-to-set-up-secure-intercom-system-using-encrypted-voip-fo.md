@@ -56,7 +56,17 @@ Traditional VoIP protocols like SIP can be encrypted using TLS for signaling and
 
 Most off-the-shelf intercom systems—brands like Comelit, Aiphone, and 2N—offer some form of IP connectivity, but they often default to unencrypted SIP over port 5060. Even when TLS options exist, the configuration requires manual intervention and many installers skip it. Building your own stack from open-source components gives you verifiable security from the start.
 
-## Architectural Components
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architectural Components
 
 A self-hosted intercom system consists of four main components:
 
@@ -73,7 +83,7 @@ Asterisk is the more widely documented option and has a larger community, making
 
 Kamailio is a third option worth knowing—it functions as a pure SIP proxy/registrar without media handling. Pairing Kamailio with RTPengine for media relay gives you a highly scalable setup, but for a residential or small commercial intercom system, the added complexity is unnecessary.
 
-## Choosing VoIP Protocols and Encryption Standards
+### Step 2: Choose VoIP Protocols and Encryption Standards
 
 ### SIP with TLS Transport
 
@@ -135,7 +145,7 @@ chown asterisk:asterisk /etc/asterisk/asterisk.pem
 
 If using Let's Encrypt, install `certbot` and create a deploy hook that copies the renewed certificate to Asterisk's config directory and restarts the service.
 
-## Setting Up a Lightweight SIP Proxy
+### Step 3: Set Up a Lightweight SIP Proxy
 
 For building intercom applications where full telephony features are unnecessary, a lightweight SIP proxy like **SIP.js** or **Kamailio** provides sufficient functionality with lower resource requirements.
 
@@ -186,7 +196,7 @@ networks:
     driver: bridge
 ```
 
-## Client Implementation Patterns
+### Step 4: Client Implementation Patterns
 
 ### Hardware Intercom Devices
 
@@ -249,7 +259,7 @@ rtpend=10100
 
 Narrowing the range to 10000-10100 limits your firewall exposure while still supporting up to 50 simultaneous calls. Adjust the upper bound based on your expected concurrent call volume—each active call consumes two ports (one for audio, one for RTCP).
 
-## Testing Encryption
+### Step 5: Test Encryption
 
 After deployment, verify that encryption is properly configured. Use tools like `sngrep` to capture SIP traffic and confirm TLS is active:
 
@@ -271,7 +281,7 @@ sudo tcpdump -i eth0 -w /tmp/sip-capture.pcap port 5061 or udp portrange 10000-1
 
 Open the capture in Wireshark and check that the SIP signaling on port 5061 shows as TLS-encrypted (you will not be able to decode the contents without the key, which is a good sign). The UDP media packets should not decode as RTP if SRTP is active correctly.
 
-## Dial Plan Configuration
+### Step 6: Dial Plan Configuration
 
 Configure Asterisk's extensions.conf to route door unit calls to residents:
 
@@ -288,7 +298,7 @@ exten => door_release,n,Hangup()
 
 Many door stations support a relay output that can be triggered by sending a DTMF tone during the call. The Asterisk dial plan above can be extended to detect DTMF tones and invoke a script that calls the door station's HTTP API to release the lock.
 
-## Maintenance and Monitoring
+### Step 7: Perform Maintenance and Monitoring
 
 Regular maintenance ensures continued security:
 
@@ -319,6 +329,21 @@ Set up log rotation so Asterisk logs do not fill the disk:
     endscript
 }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

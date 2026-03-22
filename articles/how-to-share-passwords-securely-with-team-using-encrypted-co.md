@@ -44,7 +44,17 @@ Sharing passwords across a team without proper security measures creates signifi
 
 Email, Slack, Discord, and similar platforms store messages on servers that you don't control. Even if the platform uses TLS for transit, messages often persist in databases, backups, and log files. A compromised employee account, server breach, or legal request can expose credentials that were shared carelessly. The solution is end-to-end encryption combined with ephemeral messaging—ensuring that credentials exist only on the sender's and recipient's devices.
 
-## Using Age for Encrypted Password Sharing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use Age for Encrypted Password Sharing
 
 Age is a modern encryption tool that excels at secure file sharing. Unlike PGP, age has a minimal attack surface and requires no key management infrastructure. Here's how to use it for team password sharing:
 
@@ -94,7 +104,7 @@ age -d -i ~/.config/age/keys.txt api_key.age
 
 For automated pipelines or scripts, set the `AGE_CONFIG_DIR` environment variable and use SSH agent integration.
 
-## Using GPG for Sensitive Credential Sharing
+### Step 2: Use GPG for Sensitive Credential Sharing
 
 GPG remains widely used in enterprise environments. While more complex than age, it offers compatibility with systems that expect PGP-signed messages.
 
@@ -134,7 +144,7 @@ pass
 
 Team members clone the password store repository and use GPG keys to access shared credentials. All passwords remain encrypted at rest—only authorized team members can decrypt them.
 
-## Signal: Ephemeral Password Sharing
+### Step 3: Signal: Ephemeral Password Sharing
 
 For one-off password sharing during conversations, Signal provides disappearing messages with screenshot detection:
 
@@ -145,7 +155,7 @@ For one-off password sharing during conversations, Signal provides disappearing 
 
 Signal's encryption ensures only the recipient reads the message. The disappearing feature removes it from both devices after the timer expires. However, Signal lacks file attachment encryption for large credential databases, making it unsuitable for systematic credential management.
 
-## Practical Workflow: Secure Credential Rotation
+### Step 4: Practical Workflow: Secure Credential Rotation
 
 Here's a workflow combining these tools for regular credential rotation:
 
@@ -184,7 +194,7 @@ Regardless of which encryption tool you choose, follow these principles:
 - **Set expiration policies** — Credentials should have defined lifetimes
 - **Use key revocation lists** — Remove access immediately when team members leave
 
-## Building Credential Sharing Into Team Culture
+### Step 5: Build Credential Sharing Into Team Culture
 
 Technical tools alone don't solve credential sharing—team practices matter equally:
 
@@ -215,7 +225,7 @@ log_credentials_access "$USER" "db_password_prod" "viewed"
 
 **Rotation Discipline**: Establish a credential rotation schedule. Many teams have "credential rotation day" monthly or quarterly where all shared credentials are regenerated. This limits the window where stolen credentials provide access.
 
-## Integrating Credential Sharing Into CI/CD Pipelines
+### Step 6: Integrate Credential Sharing Into CI/CD Pipelines
 
 Developers often need credentials for automated deployment. Implement this safely:
 
@@ -257,7 +267,7 @@ deploy:
 
 These systems mask credential values in logs, preventing accidental exposure in build output.
 
-## Credential Sharing for Contractors and Temporary Access
+### Step 7: Credential Sharing for Contractors and Temporary Access
 
 Temporary team members create special challenges:
 
@@ -298,7 +308,7 @@ def create_contractor_credentials(contractor_email, access_level="readonly"):
     return generate_iam_credentials(contractor_email, permissions)
 ```
 
-## Credential Sharing for Multiple Organizations
+### Step 8: Credential Sharing for Multiple Organizations
 
 Developers working across organizations face credential management complexity:
 
@@ -310,7 +320,7 @@ Developers working across organizations face credential management complexity:
 
 This prevents account enumeration and makes it harder to correlate accounts across organizations.
 
-## Incident Response for Credential Leaks
+### Step 9: Plan Incident Response for Credential Leaks
 
 Despite precautions, credentials sometimes leak. Have a response plan:
 
@@ -328,7 +338,7 @@ Despite precautions, credentials sometimes leak. Have a response plan:
 - Why wasn't it caught earlier?
 - What process improvements prevent recurrence?
 
-## Cost-Benefit Analysis
+### Step 10: Cost-Benefit Analysis
 
 Choosing credential management approaches requires understanding tradeoffs:
 
@@ -353,6 +363,21 @@ Credential sharing affects compliance:
 **PCI-DSS**: Similar to HIPAA, each user needs individual credentials. Shared service accounts violate PCI-DSS requirements.
 
 Document your credential management practices and have legal review them before adopting. Proper documentation during normal operations prevents compliance issues later.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -28,7 +28,17 @@ This guide shows developers how to implement analytics that respects user privac
 - **Privacy-preserving analytics flips this**: approach: you collect aggregate information or anonymized signals that cannot be traced back to users.
 - **Several techniques make this possible**: Differential privacy adds calibrated noise to query results, ensuring that any single user's data cannot significantly influence the output.
 
-## Understanding Privacy-Preserving Analytics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Privacy-Preserving Analytics
 
 Traditional analytics collects user IDs, IP addresses, email addresses, and behavioral data tied to specific individuals. Privacy-preserving analytics flips this approach: you collect aggregate information or anonymized signals that cannot be traced back to users.
 
@@ -42,7 +52,7 @@ Several techniques make this possible:
 
 The key insight: you often don't need individual-level data to make good product decisions. Aggregate trends reveal user behavior patterns without exposing specific users.
 
-## Implementing Server-Side Aggregation
+### Step 2: Implementing Server-Side Aggregation
 
 The simplest approach to privacy-preserving analytics runs on your server, where you process events into aggregates before storage.
 
@@ -124,7 +134,7 @@ class SegmentAnalytics:
 
 This approach lets you analyze behavior across user segments while completely avoiding individual tracking.
 
-## Differential Privacy in Practice
+### Step 3: Differential Privacy in Practice
 
 For stronger privacy guarantees, implement differential privacy in your analytics queries:
 
@@ -162,7 +172,7 @@ class DifferentialPrivacy:
 
 The `min_contributions` threshold prevents queries that could reveal information about small groups or individuals. The Laplace noise ensures that whether any single user contributed to the dataset cannot be determined from the output.
 
-## Client-Side Privacy Techniques
+### Step 4: Client-Side Privacy Techniques
 
 For frontend analytics, collect only what you need at the source:
 
@@ -246,7 +256,7 @@ class PrivacyAnalytics {
 }
 ```
 
-## Building Your Privacy-First Analytics Pipeline
+### Step 5: Build Your Privacy-First Analytics Pipeline
 
 A complete privacy-preserving analytics pipeline processes data through multiple stages:
 
@@ -278,7 +288,7 @@ class PrivacyPipeline:
         return self.apply_thresholds(results)
 ```
 
-## Measuring What Matters Without Compromising Privacy
+### Step 6: Measuring What Matters Without Compromising Privacy
 
 Privacy-preserving analytics requires rethinking what data you collect and how you analyze it. The techniques above let you track key metrics—daily active users by segment, feature usage patterns, conversion funnels—without storing anything that could identify individuals.
 
@@ -286,6 +296,21 @@ Start with server-side aggregation for the simplest implementation. Add differen
 
 The best analytics respect user privacy while still answering the questions that matter for product decisions.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -48,7 +48,17 @@ For maximum privacy:
 - **JavaScript API Consistency**: Modifying the User-Agent string doesn't change what `navigator.platform` or `navigator.appVersion` returns
 3.
 
-## Understanding the User-Agent Header
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the User-Agent Header
 
 The User-Agent header follows a standardized format:
 
@@ -58,7 +68,7 @@ Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like 
 
 This string reveals your browser vendor, version, operating system, and sometimes CPU architecture. Combined with other signals like screen resolution, installed fonts, and JavaScript capabilities, your User-Agent becomes part of a browser fingerprint that can track you even without cookies.
 
-## Browser Extensions for Quick Spoofing
+### Step 2: Browser Extensions for Quick Spoofing
 
 The fastest way to modify your User-Agent without touching code is through browser extensions. Popular options include:
 
@@ -68,7 +78,7 @@ The fastest way to modify your User-Agent without touching code is through brows
 
 After installing an extension, you can select from preset User-Agent strings or create custom ones. This method works well for casual privacy improvements and quick testing, but power users should note that sophisticated trackers can still detect extension-based spoofing through JavaScript API checks.
 
-## Using Browser Developer Tools
+### Step 3: Use Browser Developer Tools
 
 Modern browsers include built-in options to override the User-Agent in their developer tools.
 
@@ -91,7 +101,7 @@ Firefox requires a configuration change:
 
 This sets a persistent User-Agent for all Firefox sessions until you remove the preference.
 
-## Spoofing User-Agent in JavaScript
+### Step 4: Spoofing User-Agent in JavaScript
 
 For web developers testing how their applications handle different User-Agents, JavaScript provides direct control:
 
@@ -107,7 +117,7 @@ console.log(navigator.userAgent);
 
 This JavaScript override affects only the page where you execute the code and doesn't persist across page reloads. For more persistent modifications, you can inject this code through an userscript manager like Tampermonkey or Violentmonkey.
 
-## Programmatic Spoofing with Python
+### Step 5: Implement Programmatic Spoofing with Python
 
 When building web scrapers or automated testing frameworks, Python offers well-maintained libraries for HTTP requests with custom User-Agent headers:
 
@@ -134,7 +144,7 @@ driver = webdriver.Chrome(options=options)
 driver.get('https://example.com')
 ```
 
-## Command-Line Tools for Privacy
+### Step 6: Command-Line Tools for Privacy
 
 Several command-line utilities let you browse or make requests with custom User-Agents:
 
@@ -160,7 +170,7 @@ The modern replacement for curl, `htpx`, offers similar functionality with impro
 htpx https://example.com -H "User-Agent: Mozilla/5.0 (Windows NT 10.0)"
 ```
 
-## Limitations and Counter-Detection
+### Step 7: Limitations and Counter-Detection
 
 While User-Agent spoofing provides basic privacy benefits, be aware of its limitations:
 
@@ -170,13 +180,13 @@ While User-Agent spoofing provides basic privacy benefits, be aware of its limit
 
 For stronger protection, combine User-Agent spoofing with other privacy measures like browser fingerprinting protection, privacy-focused browser extensions, and disabling JavaScript on untrusted sites.
 
-## Practical Recommendations
+### Step 8: Practical Recommendations
 
 For developers testing cross-browser compatibility, use browser developer tools or automated testing frameworks like Playwright with custom User-Agent configurations. This approach provides accurate testing without permanent browser changes.
 
 For privacy-conscious users, browser extensions offer the easiest entry point, though they should be combined with other privacy tools for better protection. Firefox with `privacy.resistFingerprinting` enabled provides solid baseline protection without additional configuration.
 
-## Browser Fingerprinting Defense
+### Step 9: Browser Fingerprinting Defense
 
 User-Agent spoofing addresses only one component of browser fingerprinting. A complete defense strategy requires multiple layers.
 
@@ -259,7 +269,7 @@ function detectInstalledFonts() {
 
 Mitigation involves using privacy-focused browsers that normalize font rendering or disabling web fonts entirely.
 
-## Browser Selection for Privacy
+### Step 10: Browser Selection for Privacy
 
 Different browsers provide different privacy baselines.
 
@@ -314,7 +324,7 @@ Safari provides fingerprinting protection with limited user configuration:
 
 However, Safari's limited customization makes it difficult to implement advanced hardening.
 
-## Real-World Testing of User-Agent Effectiveness
+### Step 11: Real-World Testing of User-Agent Effectiveness
 
 Test your protection by visiting fingerprinting test sites.
 
@@ -341,7 +351,7 @@ Expected uniqueness: 1 in 1 million
 
 Aim for "1 in several thousand" or higher uniqueness. Very low numbers indicate you're easily identifiable.
 
-## User-Agent Randomization Strategies
+### Step 12: User-Agent Randomization Strategies
 
 Rather than static spoofing, randomization improves privacy:
 
@@ -408,7 +418,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 );
 ```
 
-## Practical Recommendations for Different User Types
+### Step 13: Practical Recommendations for Different User Types
 
 ### Web Developers
 
@@ -444,6 +454,21 @@ For organizational deployments:
 2. Avoid relying solely on User-Agent spoofing (use VPN + proxy)
 3. Document expected User-Agents for infrastructure
 4. Don't spoof User-Agent on internal systems (breaks authentication)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

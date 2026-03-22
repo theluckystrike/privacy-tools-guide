@@ -47,13 +47,23 @@ Prepare for the possibility of device seizure:
 
 1.
 
-## Establishing Your Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Establishing Your Threat Model
 
 Before selecting tools, identify what you're protecting against. Labor strike organizers typically face employer surveillance through company devices, subpoena of messaging service records, location tracking via phone metadata, social engineering attacks, and potential device seizure. Your threat model determines which tools provide adequate protection.
 
 For most labor organizing scenarios, the priority is preventing message content exposure if a device is seized or a service provider is compelled to hand over data. End-to-end encryption where the service provider cannot read messages provides essential protection. Additionally, minimizing metadata—who communicated with whom and when—protects the network structure of your organizing committee.
 
-## Recommended Communication Stack
+### Step 2: Recommended Communication Stack
 
 ### Signal for Real-Time Coordination
 
@@ -136,7 +146,7 @@ docker-compose up -d
 
 After deployment, enable end-to-end encryption in Element's security settings and configure your organizing team with verified devices.
 
-## Device Security Fundamentals
+### Step 3: Device Security Fundamentals
 
 Communication security depends on device security. A compromised device exposes all communications regardless of encryption quality.
 
@@ -179,7 +189,7 @@ PersistentKeepalive = 25
 
 Self-hosted WireGuard connections to a server you control provide the best metadata protection. For labor organizing, consider running your own VPN server on a privacy-respecting host.
 
-## Secure File Sharing for Sensitive Documents
+### Step 4: Secure File Sharing for Sensitive Documents
 
 Strike organizing requires sharing sensitive documents: bargaining demands, member lists, strategy documents. These require encrypted file sharing with access controls.
 
@@ -215,7 +225,7 @@ Syncthing provides encrypted, decentralized file synchronization between devices
 # Disable reporting and UPnP
 ```
 
-## Operational Security Practices
+### Step 5: Operational Security Practices
 
 ### Communication Discipline
 
@@ -240,6 +250,21 @@ veracrypt --create --size=500M --volume-type=normal \
   --encryption=AES --hash=SHA-512 --filesystem=FAT \
   /path/to/organizing-container
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ Running a VPN at the router level provides network-wide protection without insta
 - **Consider router hardware upgrades**: or switch to WireGuard for better performance on limited hardware.
 - **Use privacy-focused DNS providers**: like 1.1.1.1 or 9.9.9.9.
 
-## Understanding Router-Level VPN Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Router-Level VPN Architecture
 
 When you configure VPN on the router firmware itself, the router becomes the VPN client. Every device connected to your network—whether wired or wireless—benefits from the encrypted tunnel without individual configuration. This centralized approach offers several advantages for technical users.
 
@@ -48,7 +58,7 @@ The router handles the cryptographic overhead, which means even devices with lim
 
 However, router-level VPN comes with tradeoffs. The router's CPU becomes the bottleneck—older or low-powered routers may experience significant throughput degradation. Furthermore, not all routers support VPN client functionality, requiring custom firmware installation or hardware upgrades.
 
-## Selecting Compatible Router Firmware
+### Step 2: Select Compatible Router Firmware
 
 Several third-party firmware options provide VPN client capabilities. The most popular choices include OpenWrt, DD-WRT, Tomato, and ASUSWRT-Merlin, each with distinct characteristics suited for different use cases.
 
@@ -70,7 +80,7 @@ ASUSWRT-Merlin is a customized version of ASUS firmware, providing the stability
 
 The native VPN client supports OpenVPN with multiple configuration profiles, WireGuard, and PPTP (though PPTP is insecure and should be avoided). The traffic router feature allows split-tunneling based on client IP ranges.
 
-## Configuration Example: OpenWrt with WireGuard
+### Step 3: Configuration Example: OpenWrt with WireGuard
 
 WireGuard provides the best performance on resource-constrained routers due to its minimal codebase and efficient cryptography. This example demonstrates configuring WireGuard on OpenWrt.
 
@@ -97,7 +107,7 @@ In the OpenWrt web interface, navigate to Network → Interfaces and add a new i
 
 Configure the firewall to allow traffic through the WireGuard interface by editing `/etc/config/firewall` or using the LuCI interface. Add a zone for the WireGuard interface allowing forwarding to the WAN zone.
 
-## Configuration Example: DD-WRT with OpenVPN
+### Step 4: Configuration Example: DD-WRT with OpenVPN
 
 DD-WRT includes OpenVPN support without additional packages. This example assumes you have OpenVPN server credentials from your provider.
 
@@ -262,7 +272,7 @@ systemctl enable wg-quick@wg0
 
 For remote access, copy the server's public key and configuration details to your mobile WireGuard client.
 
-## VPN Kill Switch Implementation
+### Step 5: VPN Kill Switch Implementation
 
 Prevent data leakage if your VPN connection drops unexpectedly:
 
@@ -308,7 +318,7 @@ EOF
 
 This prevents unencrypted traffic from leaving your network if the VPN drops.
 
-## DNS Configuration for VPN Privacy
+### Step 6: DNS Configuration for VPN Privacy
 
 Even with a VPN tunnel, DNS leaks can expose browsing history. Configure the router to handle DNS properly:
 
@@ -340,7 +350,7 @@ nslookup google.com
 # Should resolve through your configured DNS server, not ISP
 ```
 
-## Monitoring and Logging
+### Step 7: Monitor and Logging
 
 Enable router-level VPN monitoring to track connection status and data usage:
 
@@ -381,7 +391,7 @@ for i in {1..6}; do
 done
 ```
 
-## Hardware Acceleration for Better Performance
+### Step 8: Hardware Acceleration for Better Performance
 
 Modern routers include hardware encryption acceleration. Enable it for WireGuard:
 

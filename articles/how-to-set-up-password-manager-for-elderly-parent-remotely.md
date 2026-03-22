@@ -41,13 +41,23 @@ Use Bitwarden or 1Password family plans to remotely manage your parent's passwor
 If they use Google for everything, a password manager that integrates with Google Chrome (like Bitwarden) feels familiar.
 - **Use low-pressure video calls**: Record a 3-minute video showing setup steps.
 
-## Understanding the Remote Setup Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Remote Setup Challenge
 
 Setting up a password manager for someone who isn't technically inclined presents unique obstacles. Your parent may struggle with complex interfaces, password generation, or remembering master passwords. The solution must minimize their cognitive load while maximizing security.
 
 Most password managers offer family or team plans that allow shared vaults. This architecture lets you create and manage items on their behalf while granting them independent access. The key is selecting a manager with sharing features and a family plan that fits your budget.
 
-## Selecting the Right Password Manager
+### Step 2: Select the Right Password Manager
 
 For remote setup scenarios, two options stand out: Bitwarden and 1Password. Both offer family plans with shared vaults, but they differ in deployment flexibility.
 
@@ -66,7 +76,7 @@ docker run -d --name bitwarden \
 
 For this guide, I'll focus on Bitwarden because the web vault interface is straightforward, and the CLI enables automation that simplifies remote management.
 
-## Initial Account Creation
+### Step 3: Initial Account Creation
 
 Create the family organization first, then add your parent's account. You'll need to invite them via email, which they must accept to activate their account.
 
@@ -79,7 +89,7 @@ bw login your@email.com
 
 The invitation email contains a link your parent must click. If they struggle with email, you can create the account entirely yourself and set a temporary master password, then guide them through changing it during your first video call.
 
-## Configuring Shared Vaults
+### Step 4: Configure Shared Vaults
 
 Create a dedicated vault for shared credentials—accounts you manage on their behalf, such as banking, healthcare portals, or utility services. This separates items you control from their personal passwords.
 
@@ -95,7 +105,7 @@ In practice, most family plans allow vault creation through the web interface. C
 - **Utilities**: Electric, gas, water, internet
 - **Government**: Social Security, Medicare
 
-## Populating Credentials Remotely
+### Step 5: Populating Credentials Remotely
 
 Once the vault exists, add items programmatically or through the web interface. For banking and healthcare accounts, include the URL, username, and password. Add secure notes with recovery instructions.
 
@@ -114,7 +124,7 @@ bw generate -l 20 -usn
 
 When adding sensitive accounts, record the recovery phone number and security questions in the notes field. This information becomes critical if your parent loses access to their master password.
 
-## Master Password Strategy
+### Step 6: Master Password Strategy
 
 The master password is the weakest point in any password manager setup for elderly users. They must remember it, but it must also be secure. Avoid overly complex passwords that lead to lockouts.
 
@@ -136,7 +146,7 @@ For account recovery, most password managers offer emergency access features. Se
 
 This gives you a last-resort way to access their vault if they're unreachable and you've exhausted other recovery options.
 
-## Installing and Configuring the App
+### Step 7: Install and Configuring the App
 
 Guide your parent through installing the browser extension and mobile app. Use a video call to walk them through the process:
 
@@ -152,7 +162,7 @@ Guide your parent through installing the browser extension and mobile app. Use a
 
 For mobile, the Bitwarden app supports fingerprint unlock, which eliminates the need to type the master password repeatedly. This significantly improves the user experience for elderly parents.
 
-## Establishing a Routine
+### Step 8: Establishing a Routine
 
 Technical setup is only half the battle. Create a routine for password management:
 
@@ -187,7 +197,7 @@ Your parent will inevitably encounter issues. Prepare for these scenarios:
 
 **Sync issues**: Mobile apps must sync after adding items. Ensure they have internet connectivity and explicitly sync if items appear missing.
 
-## Final Setup Checklist
+### Step 9: Final Setup Checklist
 
 Before considering the setup complete, verify:
 
@@ -228,7 +238,7 @@ Choosing between password managers requires balancing security with usability fo
 
 **Avoid LastPass for new elderly setups** because recent security incidents and complexity in their interface make it less suitable for vulnerable users.
 
-## Common Setup Mistakes (and How to Avoid Them)
+### Step 10: Common Setup Mistakes (and How to Avoid Them)
 
 Developers new to setting up password managers for elderly relatives make predictable mistakes. Learning from these errors saves frustration:
 
@@ -274,7 +284,7 @@ Your parent passes away. Their estate includes financial accounts, insurance, di
 
 Update this document quarterly.
 
-## Handling Multiple Accounts Across Platforms
+### Step 11: Handling Multiple Accounts Across Platforms
 
 Your parent probably has accounts scattered across decades of platforms. Some companies shut down, some changed logins, some have outdated recovery options.
 
@@ -304,7 +314,7 @@ Create a three-tier structure in the password manager:
 
 Only actively maintain Critical and Important. Legacy accounts can be cleaned up gradually without urgency.
 
-## Monitoring and Maintenance Schedule
+### Step 12: Monitor and Maintenance Schedule
 
 Set recurring calendar reminders to maintain the system. Neglected password managers become useless:
 
@@ -330,7 +340,7 @@ Set recurring calendar reminders to maintain the system. Neglected password mana
 - Platform changes (Gmail 2FA update): adapt master password setup
 - Device loss: revoke old device access, add new devices
 
-## Assistance for Parents Who Struggle with Technology
+### Step 13: Assistance for Parents Who Struggle with Technology
 
 Some elderly parents resist adopting any new technology. Here's how to bridge that gap:
 
@@ -352,7 +362,7 @@ Record a 3-minute video showing setup steps. They can pause, rewind, and watch m
 **Accept their workflow:**
 If they prefer to keep some passwords written in a notebook—perhaps less frequently used accounts—don't force everything into the manager. Security with adoption beats perfect security that's ignored.
 
-## Special Handling for Accounts Without Recovery Options
+### Step 14: Special Handling for Accounts Without Recovery Options
 
 Some older accounts (created in the 1990s) lack modern recovery mechanisms. No secondary email, no phone number, no security questions set up.
 
@@ -383,7 +393,7 @@ NOTES:
 
 This entry tells you everything needed to recover access if your parent's password is lost.
 
-## Handling Account Sharing Between Spouses
+### Step 15: Handling Account Sharing Between Spouses
 
 If both parents use the same password manager, account access needs clear rules:
 
