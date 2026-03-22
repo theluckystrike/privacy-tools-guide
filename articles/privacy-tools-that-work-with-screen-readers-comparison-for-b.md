@@ -5,7 +5,7 @@ description: "A practical comparison of privacy tools with full accessibility su
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-tools-that-work-with-screen-readers-comparison-for-b/
-categories: [guides, accessibility]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

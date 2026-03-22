@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-reduce-vpn-battery-drain-on-mobile-while-keeping-priv/
 reviewed: true
 score: 8
-categories: [vpn]
+categories: [guides]
 tags: [privacy-tools-guide, vpn]
 ---
 

@@ -5,7 +5,7 @@ description: "Find the best accessible privacy extension for Firefox that works 
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-privacy-extension-for-firefox-that-does-not-/
-categories: [guides, accessibility, security]
+categories: [guides, security]
 reviewed: true
 score: 9
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A technical guide for developers and power users on optimizing Tor
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-tor-browser-speed-without-compromising-anony/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
