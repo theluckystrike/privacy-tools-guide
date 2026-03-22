@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Court records and arrest records occupy a unique position in the data broker ecosystem. Unlike general personal information, these records carry significant stigma and can impact employment, housing, and personal reputation for years after any case resolves. Public search databases aggregate these records from judicial sources, making them easily accessible to landlords, employers, and curious parties. This guide covers the technical and legal pathways for removing or suppressing these records.
 
+## Key Takeaways
+
+- **Third-party aggregators like PublicSearchRecords,**: SearchPeopleFree, and StateRecords collect this data through bulk data requests, public records requests, and direct court electronic interfaces.
+- **For developers, understanding these sources matters because removal requests must target the original source in many cases**: aggregators simply republish what courts make available.
+- **Vacatur**: Sets aside a conviction, often used when procedural errors occurred or to restore rights.
+- **Pardon**: Does not remove the record but prevents most background checks from considering it.
+- **Removal requires a motion**: to seal with demonstrated cause.
+- **Serve prosecutor**: In most jurisdictions, the prosecutor receives notice and may object.
+
 ## Understanding Court Record Aggregation
 
 Public courts generate vast amounts of records that flow through multiple channels. Trial courts maintain original documents, but appellate courts, probation departments, and clerks' offices each maintain separate systems. Third-party aggregators like PublicSearchRecords, SearchPeopleFree, and StateRecords collect this data through bulk data requests, public records requests, and direct court electronic interfaces.

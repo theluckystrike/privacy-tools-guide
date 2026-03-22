@@ -17,6 +17,14 @@ tags: [privacy-tools-guide]---
 
 Protecting children from online predators requires a multi-layered technical approach. While traditional parental controls provide a baseline, developers and power users can implement more safety systems using network-level filtering, device hardening, and privacy enforcement. This guide covers practical implementations for securing children's digital environments.
 
+## Key Takeaways
+
+- **Children as young as**: 6 use tablets and messaging apps.
+- **While traditional parental controls**: provide a baseline, developers and power users can implement more safety systems using network-level filtering, device hardening, and privacy enforcement.
+- **Age-appropriate conversations about online**: safety should start earlier than most parents expect.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Network-Level Content Filtering
 
 The most effective first line of defense operates at the network level. By configuring a custom DNS service or running a local filtering proxy, you can block known malicious domains across all devices simultaneously.

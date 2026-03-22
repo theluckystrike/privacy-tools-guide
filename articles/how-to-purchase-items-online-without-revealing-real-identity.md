@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Online shopping leaves a trail of personal data with every transaction. From your IP address to payment information, each purchase potentially exposes your identity and physical location. For developers and power users seeking to minimize their digital footprint, this guide covers practical techniques for purchasing items online while maintaining privacy.
 
+## Key Takeaways
+
+- **Identity**: Use anonymous email (Proton, Tuta, or alias)
+3.
+- **Shipping**: Use PO Box, General Delivery, or locker
+4.
+- **For developers and power**: users seeking to minimize their digital footprint, this guide covers practical techniques for purchasing items online while maintaining privacy.
+- **For maximum privacy, use an email address that cannot be traced to your real identity**: avoid incorporating your name, birth year, or other identifying information.
+- **Some users employ services**: in privacy-friendly jurisdictions for added protection.
+- **This works best for**: smaller packages that can be retrieved from mail centers.
+
 ## Understanding the Data Trail
 
 Every online purchase generates multiple data points that can be linked back to you:

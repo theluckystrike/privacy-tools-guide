@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Online dating has become the primary way many people meet romantic partners, but the transition from digital conversation to real-world meeting introduces significant privacy risks. When you move from chatting on a platform to meeting someone in person, you expose information that can be weaponized against you. This guide provides actionable technical strategies to minimize your attack surface and protect yourself from doxxing after meeting someone through online dating platforms.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For developers and power users**: this means thinking like an attacker conducting OSINT (Open Source Intelligence) reconnaissance.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Create alerts for your name**: username, email, and phone number
+3.
+- **Report to platforms**: Most social media platforms have doxxing reporting processes
+3.
+- **Use a dedicated device**: (old laptop/phone) # 2.
+
 ## Understanding the Doxxing Threat Model
 
 Doxxing involves gathering and publicly exposing someone's personal information without their consent. In the context of online dating, this typically manifests as someone you met collecting your address, workplace, social media accounts, or other identifying details, then sharing them—often as retaliation after a relationship ends poorly or as use during a dispute.
