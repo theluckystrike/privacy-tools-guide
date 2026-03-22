@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/
+description: "Follow this guide to how to detect if your email address has been sold to marketi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Detect If Your Email Address Has Been Sold"

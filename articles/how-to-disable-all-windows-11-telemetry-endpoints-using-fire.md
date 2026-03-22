@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
+description: "Follow this guide to how to disable all windows 11 telemetry endpoints using fire with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Disable All Windows 11 Telemetry Endpoints"

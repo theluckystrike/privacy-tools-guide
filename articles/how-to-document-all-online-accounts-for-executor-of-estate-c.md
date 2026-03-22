@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-document-all-online-accounts-for-executor-of-estate-c/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]

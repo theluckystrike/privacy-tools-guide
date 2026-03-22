@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
+description: "Follow this guide to how to exercise montana consumer data privacy act rights dat with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How To Exercise Montana Consumer Data Privacy Act Rights"

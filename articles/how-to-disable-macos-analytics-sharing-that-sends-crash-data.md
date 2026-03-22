@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-disable-macos-analytics-sharing-that-sends-crash-data/
+description: "Follow this guide to how to disable macos analytics sharing that sends crash data with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Disable macOS Analytics Sharing That Sends Crash"
