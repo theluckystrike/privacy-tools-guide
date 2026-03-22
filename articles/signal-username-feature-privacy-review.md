@@ -6,7 +6,7 @@ description: "Learn signal username feature privacy review with practical exampl
 tags: [privacy-tools-guide, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
