@@ -40,13 +40,23 @@ Swatting attacks represent one of the most dangerous forms of online harassment,
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For developers and power**: users who maintain a public online presence, understanding swatting attack prevention measures is critical for personal safety.
 
-## Understanding the Swatting Threat Space
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Swatting Threat Space
 
 Swatting attacks have become more sophisticated over the years. Attackers gather personal information through data breaches, social engineering, or OSINT (Open Source Intelligence) techniques, then use VoIP services to spoof emergency calls to local police departments. The goal is to dispatch armed tactical units to your residence based on fabricated hostage situations, bomb threats, or active shooter reports.
 
 Developers are particularly vulnerable because their public profiles often contain enough information to correlate usernames with real-world identities. GitHub profiles, blog comments, conference talks, and social media activity can all serve as starting points for attackers conducting reconnaissance.
 
-## Foundational Swatting Attack Prevention Measures
+### Step 2: Foundational Swatting Attack Prevention Measures
 
 ### 1. Address Privacy and Data Minimization
 
@@ -87,7 +97,7 @@ VoIP-based swatting relies on caller ID spoofing and social engineering of emerg
 
 Many carriers now offer free call protection services that can help identify and block spoofed calls before they reach you.
 
-## Technical Safeguards and Early Warning Systems
+### Step 3: Technical Safeguards and Early Warning Systems
 
 ### 4. Implement Home Monitoring
 
@@ -149,7 +159,7 @@ Proactive outreach to your local police department significantly improves your s
 
 Many police departments now maintain "safe household" or "celebrity safety" registries specifically for individuals at elevated risk of swatting attacks. This allows officers to verify the situation beforeforce entry.
 
-## Response Protocol When Swatted
+### Step 4: Response Protocol When Swatted
 
 Despite precautions, you may still become a target. Having a response protocol in place is essential:
 
@@ -166,7 +176,7 @@ Despite precautions, you may still become a target. Having a response protocol i
 - Follow up with the department's internal affairs or civilian oversight board
 - File reports with the FBI (IC3.gov) and local authorities
 
-## Long-Term Protection Strategies
+### Step 5: Long-Term Protection Strategies
 
 ### 7. Audit Your Digital Footprint
 
@@ -262,7 +272,7 @@ honeypot = SSHHoneypot()
 # Logs indicate who's probing your infrastructure
 ```
 
-## Reputation Monitoring and Incident Intelligence
+### Step 6: Reputation Monitoring and Incident Intelligence
 
 Swatting attacks often follow public incidents or harassment campaigns. Monitor your reputation across technical platforms and public databases:
 
@@ -328,7 +338,7 @@ class ReputationMonitor:
         return recommendations
 ```
 
-## Coordination with ISPs and Hosting Providers
+### Step 7: Coordination with ISPs and Hosting Providers
 
 If you host systems that could be targeted, establish emergency contact procedures with your ISP and hosting provider:
 
@@ -353,7 +363,7 @@ chmod 600 ~/.swatting-emergency-contacts
 # Share with trusted contacts and keep near front door
 ```
 
-## Psychological Resilience and Support Resources
+### Step 8: Psychological Resilience and Support Resources
 
 Swatting targets experience genuine trauma. Psychological support is as critical as technical measures:
 
@@ -361,6 +371,21 @@ Swatting targets experience genuine trauma. Psychological support is as critical
 - **Cyber Civil Rights Initiative**: Resources for online harassment victims
 - **Bug Bounty Programs**: If you work in security, consider managed threat intelligence partnerships
 - **Therapist**: A therapist experienced with technology harassment provides essential support
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

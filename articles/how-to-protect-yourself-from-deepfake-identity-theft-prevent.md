@@ -40,13 +40,23 @@ Deepfake technology has evolved rapidly, making identity theft more sophisticate
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding the Threat Landscape
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Landscape
 
 Deepfake creation now requires as little as 30 seconds of audio or a handful of photos to generate convincing replicas. The accessibility of these tools means anyone can become a target—not just high-profile executives or public figures. Attackers use deepfakes for financial fraud, social engineering, and reputation damage.
 
 The most common attack vectors include voice cloning for phone-based fraud, video manipulation for video conferencing scams, and synthetic identity creation using combined data from multiple sources. Understanding these vectors helps you implement targeted defenses.
 
-## Technical Detection Methods
+### Step 2: Technical Detection Methods
 
 Several open-source tools exist for detecting deepfakes. While no solution is perfect, combining multiple detection methods improves your security posture.
 
@@ -100,7 +110,7 @@ def verify_voice_sample(audio_data, enrolled_voiceprint):
     }
 ```
 
-## Protective Measures for Developers
+### Step 3: Protective Measures for Developers
 
 If you develop applications that handle user identity, implement defense-in-depth strategies.
 
@@ -169,7 +179,7 @@ def embed_watermark(image_path, user_identifier):
 
 This technique allows you to prove ownership of content even if copied and manipulated.
 
-## Personal Protection Strategies
+### Step 4: Personal Protection Strategies
 
 Beyond technical measures, adopt operational security practices.
 
@@ -197,13 +207,13 @@ These procedural defenses catch attacks that technical measures might miss.
 
 Set up Google Alerts for your name and variations. Regularly search for your images using reverse image search tools. Early detection of misuse enables faster response.
 
-## Responding to Deepfake Attacks
+### Step 5: Responding to Deepfake Attacks
 
 If you discover someone has created deepfake content using your identity, act quickly:
 
 Document everything by taking screenshots and recording URLs. Report the content to the platform hosting it—most major platforms have policies against synthetic media. File reports with law enforcement, particularly if financial harm is involved. Consider working with cybersecurity professionals who specialize in digital identity recovery.
 
-## Emerging Defenses
+### Step 6: Emerging Defenses
 
 Several emerging technologies show promise for 2026 and beyond:
 
@@ -213,13 +223,28 @@ Blockchain-based identity systems provide decentralized verification. These syst
 
 Hardware-based authentication tokens continue to improve. Modern FIDO2 tokens support biometric enrollment locally, keeping biometric data on the device rather than transmitted over networks.
 
-## Building Your Defense Strategy
+### Step 7: Build Your Defense Strategy
 
 Protecting against deepfake identity theft requires layered defenses. Combine technical detection tools with operational security practices. Stay informed about emerging threats and defense technologies. The threat market evolves quickly—your protection measures must evolve with it.
 
 Regularly audit your digital presence and remove unnecessary personal information. Implement verification procedures for sensitive communications. Use technical tools like watermarking and multi-factor authentication to create multiple barriers against impersonation.
 
 The reality of deepfake threats means that assuming authenticity based on visual or audio evidence is no longer safe. Building verification into your daily digital interactions protects not just your identity, but your contacts who might otherwise be deceived.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ Court records and arrest records occupy a unique position in the data broker eco
 - **Removal requires a motion**: to seal with demonstrated cause.
 - **Serve prosecutor**: In most jurisdictions, the prosecutor receives notice and may object.
 
-## Understanding Court Record Aggregation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Court Record Aggregation
 
 Public courts generate vast amounts of records that flow through multiple channels. Trial courts maintain original documents, but appellate courts, probation departments, and clerks' offices each maintain separate systems. Third-party aggregators like PublicSearchRecords, SearchPeopleFree, and StateRecords collect this data through bulk data requests, public records requests, and direct court electronic interfaces.
 
@@ -52,7 +62,7 @@ The technical architecture typically involves:
 
 For developers, understanding these sources matters because removal requests must target the original source in many cases—aggregators simply republish what courts make available.
 
-## Immediate Action: Opt-Out Requests
+### Step 2: Immediate Action: Opt-Out Requests
 
 Most people-search sites maintain opt-out mechanisms. While not always effective for court records specifically, these requests prevent re-aggregation after successful source removal.
 
@@ -127,7 +137,7 @@ if __name__ == "__main__":
 
 This script demonstrates the concept but requires verification of current opt-out endpoints—these change frequently as sites attempt to discourage removal requests.
 
-## Source Removal: Court Record Expungement
+### Step 3: Source Removal: Court Record Expungement
 
 Removing records from aggregators succeeds only when the original court record becomes inaccessible. This requires legal action at the source.
 
@@ -162,7 +172,7 @@ async function findJurisdiction(caseNumber, state) {
 }
 ```
 
-## Federal vs. State Records
+### Step 4: Federal vs. State Records
 
 Federal court records (accessible via PACER) operate under different rules than state courts. Key differences:
 
@@ -171,7 +181,7 @@ Federal court records (accessible via PACER) operate under different rules than 
 
 The Interstate Identification Index (III) maintained by the FBI contains criminal history records that flow to background check companies. Removing a federal record requires updating this system, which involves FBI record correction requests.
 
-## Practical Removal Workflow
+### Step 5: Practical Removal Workflow
 
 For most effective removal, follow this sequence:
 
@@ -223,7 +233,7 @@ list_records() {
 }
 ```
 
-## Automation Limitations and Ethical Considerations
+### Step 6: Automation Limitations and Ethical Considerations
 
 Court record removal cannot be fully automated. Each jurisdiction has unique processes, and legal requirements (court hearings, prosecutor notification) inherently require human involvement.
 
@@ -235,7 +245,7 @@ Additionally, certain records cannot be removed:
 
 The systems exist to maintain transparency in criminal justice. Removal processes exist for cases where rehabilitation has been demonstrated—not to help people evade accountability for serious offenses.
 
-## Prevention and Future Protection
+### Step 7: Prevention and Future Protection
 
 For those with sealed or expunged records, prevent re-aggregation through:
 
@@ -244,6 +254,21 @@ For those with sealed or expunged records, prevent re-aggregation through:
 - Data broker exposure reduction: Minimize digital footprint to reduce cross-referencing
 
 Removing court records and arrest records from public search databases requires understanding both the technical aggregation systems and the legal pathways at the source. The process takes time—typically three to twelve months for court-ordered expungement—but succeeds for eligible cases.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

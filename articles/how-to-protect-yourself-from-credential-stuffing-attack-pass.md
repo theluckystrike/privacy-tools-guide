@@ -40,7 +40,17 @@ Credential stuffing remains one of the most effective attack vectors used by mal
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **The success rate typically**: ranges from 0.1% to 2% per site, but when scaled across numerous targets, even a small success rate yields significant results.
 
-## Understanding Credential Stuffing Attacks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Credential Stuffing Attacks
 
 Credential stuffing operates on a simple premise. Attackers obtain username and password pairs from data breaches, which are readily available on underground forums. They then use automated bots to attempt logins across hundreds or thousands of websites simultaneously. The success rate typically ranges from 0.1% to 2% per site, but when scaled across numerous targets, even a small success rate yields significant results.
 
@@ -50,7 +60,7 @@ The attack automation typically involves proxy networks to distribute requests a
 
 The primary reason credential stuffing succeeds is password reuse. Studies consistently show that a substantial percentage of users employ the same password across multiple services. When one service suffers a breach, those credentials become valuable ammunition for attacks on other platforms. Additionally, many applications lack adequate defenses against automated attacks, making the barrier to entry low for attackers.
 
-## Protecting Yourself as a User
+### Step 2: Protecting Yourself as a User
 
 ### Use Unique, Generated Passwords
 
@@ -76,7 +86,7 @@ Regularly reviewing account logs helps identify unauthorized access attempts ear
 
 Passkeys represent the future of authentication, eliminating passwords entirely through cryptographic key pairs. Because passkeys are unique to each service and resistant to phishing, they are immune to credential stuffing. Major platforms including Google, Apple, and Microsoft support passkeys, with adoption accelerating across the industry.
 
-## Protecting Your Applications as a Developer
+### Step 3: Protecting Your Applications as a Developer
 
 If you build applications that accept user credentials, implementing proper defenses reduces the impact of credential stuffing on your users.
 
@@ -220,7 +230,7 @@ ROI: Extremely favorable for attackers
 
 This is why credential stuffing remains endemic—the economics are overwhelmingly favorable.
 
-## Zero-Knowledge Proof Authentication
+### Step 4: Zero-Knowledge Proof Authentication
 
 The future of authentication uses cryptographic proofs instead of passwords:
 
@@ -250,7 +260,7 @@ class ZKPasswordAuth:
         return ZKProof.verify(proof, challenge)
 ```
 
-## Hardware-Based Authentication Security
+### Step 5: Hardware-Based Authentication Security
 
 For highest security, use hardware authenticators:
 
@@ -270,7 +280,7 @@ curl https://webauthn.me
 
 Hardware keys are phishing-resistant because authentication is tied to specific domain names cryptographically.
 
-## Behavioral Biometrics Implementation
+### Step 6: Behavioral Biometrics Implementation
 
 Advanced applications use behavioral analysis for continuous authentication:
 
@@ -318,7 +328,7 @@ document.addEventListener('keydown',
 );
 ```
 
-## Geographic Velocity Analysis
+### Step 7: Geographic Velocity Analysis
 
 Detecting impossible travel patterns:
 
@@ -350,7 +360,7 @@ def detect_impossible_travel(login_events):
             }
 ```
 
-## Credential Rotation Strategies
+### Step 8: Credential Rotation Strategies
 
 Organizations should implement regular credential rotation:
 
@@ -388,7 +398,7 @@ for account in $(list_accounts); do
 done
 ```
 
-## Account Linkage Detection
+### Step 9: Account Linkage Detection
 
 Identify when multiple breaches expose the same person:
 
@@ -421,6 +431,21 @@ def is_same_person(breach1, breach2):
     # Match security answers
     pass
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

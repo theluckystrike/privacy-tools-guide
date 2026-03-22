@@ -42,13 +42,23 @@ This guide covers practical methods to register social media accounts while prot
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This requirement creates privacy**: concerns for developers, security researchers, and users who want to minimize their digital footprint.
 
-## Understanding Phone and Email Verification
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Phone and Email Verification
 
 Platforms implement verification to reduce spam, prevent automated account creation, and comply with regulations. However, this verification links your online identity to personal data that can be sold, leaked, or misused. Phone numbers are particularly sensitive since they connect to SMS-based attacks and SIM swapping vulnerabilities.
 
 The goal is not to evade legitimate security measures but to maintain privacy while respecting platform terms of service. Use these methods responsibly and understand the legal implications in your jurisdiction.
 
-## Temporary Phone Number Services
+### Step 2: Temporary Phone Number Services
 
 Several services provide temporary phone numbers for SMS verification. These numbers receive verification codes without linking to your actual device.
 
@@ -123,7 +133,7 @@ def rent_number(service_api_key, service_id, country='0'):
 
 This pattern allows scripting account creation while maintaining privacy boundaries.
 
-## Disposable Email Addresses
+### Step 3: Disposable Email Addresses
 
 Email verification can also be bypassed using disposable email services. These services generate temporary inboxes that forward messages to your real email or display them in a web interface.
 
@@ -177,7 +187,7 @@ social-github@yourdomain.com -> yourreal@email.com
 
 This approach keeps your real email private while maintaining access to verification emails.
 
-## Virtual Phone Numbers for Long-Term Use
+### Step 4: Virtual Phone Numbers for Long-Term Use
 
 If you need phone verification for ongoing account access, consider persistent virtual numbers:
 
@@ -250,7 +260,7 @@ mullvad connect
 
 **Password management** - Use a dedicated password manager for pseudonymous accounts. Never reuse passwords across accounts with different threat models.
 
-## When These Methods Fail
+### Step 5: When These Methods Fail
 
 Certain platforms have implemented aggressive detection:
 
@@ -261,11 +271,26 @@ Certain platforms have implemented aggressive detection:
 
 For these platforms, legitimate privacy is difficult to achieve without sacrificing functionality. Assess your threat model before investing time in workarounds.
 
-## Ethical Considerations
+### Step 6: Ethical Considerations
 
 The techniques in this guide serve legitimate privacy purposes: protecting personal information from data breaches, maintaining separate professional and personal identities, enabling security research, and protecting whistleblowers. However, these same techniques can be misused for fraud or harassment.
 
 Use these methods responsibly. Respect platform terms of service where legal. Consider the potential impact of your actions on platform communities and other users.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

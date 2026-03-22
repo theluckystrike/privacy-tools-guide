@@ -64,7 +64,17 @@ Data brokers employ several methods to collect LinkedIn information:
 - **Manual entry** - Workers manually input publicly visible profile data
 - **Data sharing agreements** - Some companies legally obtain bulk data through partnerships
 
-## LinkedIn Privacy Settings to Protect Your Profile
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: LinkedIn Privacy Settings to Protect Your Profile
 
 ### Controlling Profile Visibility
 
@@ -83,7 +93,7 @@ Navigate to LinkedIn's Settings & Privacy > Visibility to configure:
 - **Profile discovery by other members** - Control who can find you via name/email
 - **Connection discovery** - Determine if others can see your connections
 
-## Removing Yourself from People Search Sites
+### Step 2: Remove Yourself from People Search Sites
 
 ### Major People Search Sites to Opt-Out
 
@@ -122,7 +132,7 @@ Consider these services for continuous monitoring:
 - **Reputation Defender** - monitoring and removal ($299/year)
 - **OneRep** - Budget-friendly option with decent coverage ($80/year)
 
-## Hardening Your LinkedIn Profile
+### Step 3: Hardening Your LinkedIn Profile
 
 ### Minimum Information Principle
 
@@ -176,7 +186,7 @@ curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/${EMAIL}" \
 # Paste into browser: "Your Name" site:spokeo.com OR site:whitepages.com OR site:beenverified.com
 ```
 
-## Legal Protections and Rights
+### Step 4: Legal Protections and Rights
 
 ### CCPA and State Privacy Laws
 
@@ -196,7 +206,7 @@ EU residents can invoke GDPR protections:
 - Right to erasure ("right to be forgotten")
 - Right to data portability
 
-## What to Do If Your Information Is Misused
+### Step 5: What to Do If Your Information Is Misused
 
 ### Reporting Data Broker Violations
 
@@ -217,7 +227,7 @@ If LinkedIn data is being used to stalk or harass you:
 - Consider restraining orders if applicable
 - Consult with an attorney specializing in privacy law
 
-## Maintaining Long-Term Protection
+### Step 6: Maintaining Long-Term Protection
 
 ### Regular Privacy Audits
 
@@ -236,6 +246,21 @@ Privacy threats evolve constantly:
 - Monitor LinkedIn's privacy policy changes
 - Stay updated on new people search sites
 - Join privacy-focused communities for sharing defense strategies
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

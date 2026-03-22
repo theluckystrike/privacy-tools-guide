@@ -42,7 +42,17 @@ QR codes have become ubiquitous in modern workflows—payments, authentication, 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Quishing Attacks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Quishing Attacks
 
 Quishing combines "QR code" with "phishing." Attackers embed malicious URLs in QR codes that redirect users to credential-harvesting pages, malware download sites, or fake login portals. The attack succeeds because QR codes bypass traditional email filters and appear innocuous when printed on physical materials.
 
@@ -54,7 +64,7 @@ Attack vectors include:
 
 For developers building applications that generate or scan QR codes, understanding these attack surfaces is essential for building secure systems.
 
-## How QR Codes Enable Attacks
+### Step 2: How QR Codes Enable Attacks
 
 A QR code simply encodes text—typically an URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
 
@@ -75,7 +85,7 @@ img.save("qr_code.png")
 
 The URL uses a technique called "typosquatting"—replacing legitimate characters with similar-looking ones to deceive users.
 
-## Detecting Malicious QR Codes
+### Step 3: Detecting Malicious QR Codes
 
 Several techniques help identify potentially dangerous QR codes before scanning:
 
@@ -141,7 +151,7 @@ Physical QR codes often show signs of tampering:
 - Codes in unusual locations (e.g., on parking meters, elevator buttons)
 - Codes that are too large or poorly aligned
 
-## Building QR Security into Applications
+### Step 4: Build QR Security into Applications
 
 For developers creating applications that handle QR codes, implement these defensive measures:
 
@@ -233,7 +243,7 @@ print(f"Actual destination: {final_url}")
 
 This technique reveals shortened URLs but introduces privacy considerations—ensure your implementation complies with applicable privacy regulations and organizational policies.
 
-## Protecting Your Organization
+### Step 5: Protecting Your Organization
 
 Beyond individual awareness, organizations should implement these measures:
 
@@ -245,7 +255,7 @@ Beyond individual awareness, organizations should implement these measures:
 
 **Physical Security**: Regularly audit physical spaces for tampered QR codes. Include QR code inspection in security checklists for offices, retail locations, and public areas.
 
-## Responding to Quishing Incidents
+### Step 6: Responding to Quishing Incidents
 
 If you or your organization encounters a quishing attempt:
 
@@ -254,6 +264,21 @@ If you or your organization encounters a quishing attempt:
 3. **Report to authorities**: File reports with relevantCERT teams (US-CERT, CISA, or local equivalents)
 4. **Notify affected users**: If the QR code reached multiple people, warn potential victims
 5. **Block malicious domains**: Add identified malicious URLs to blocklists
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
