@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /voice-assistant-privacy-risks-guide/
 description: "Follow this guide to voice assistant privacy risks guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Privacy Risks of Voice Assistants Guide"
 description: "What Amazon Alexa, Google Assistant, and Siri collect, how accidental activations work, and practical steps to reduce voice assistant surveillance"

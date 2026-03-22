@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /vehicle-data-privacy-who-owns-the-data-your-connected-car-co/
 description: "Learn vehicle data privacy who owns the data your connected car co with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Vehicle Data Privacy Who Owns The Data Your Connected Car"
 description: "Modern vehicles generate massive amounts of data. Your connected car records where you drive, how fast you accelerate, when you brake hard, and even whether"

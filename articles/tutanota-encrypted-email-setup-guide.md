@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tutanota-encrypted-email-setup-guide/
 description: "Follow this guide to tutanota encrypted email setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Setting Up Encrypted Email with Tutanota"
 description: "Set up Tutanota encrypted email: custom domains, desktop client configuration, and external tool integration for end-to-end encrypted messaging."
@@ -49,7 +57,7 @@ Tutanota (now rebranded as Tuta) encrypts email end-to-end between Tutanota user
 
 ## Create an Account
 
-Tutanota's free plan includes 1GB storage and one email address. Paid plans start at €3/month and add custom domains, aliases, and more storage. The Revolutionary plan at €6/month includes 20 custom domains and up to 100 aliases, which is useful if you want compartmentalized identities for different purposes.
+Tutanota's free plan includes 1GB storage and one email address. Paid plans start at €3/month and add custom domains, aliases, and more storage. The significant plan at €6/month includes 20 custom domains and up to 100 aliases, which is useful if you want compartmentalized identities for different purposes.
 
 1. Go to `tuta.com` → Create free account
 2. Choose your `@tuta.com` or `@tutanota.com` address
