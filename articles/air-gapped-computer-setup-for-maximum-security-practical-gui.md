@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /air-gapped-computer-setup-for-maximum-security-practical-gui/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
