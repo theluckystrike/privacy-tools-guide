@@ -33,6 +33,15 @@ WhatsApp remains blocked in mainland China, and this situation continues into 20
 
 This guide focuses on technical implementation rather than product recommendations. You'll learn which protocols work, how to configure them, and practical methods to verify your setup functions correctly inside China.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **V2Ray builds on this**: concept with additional protocol support and better traffic randomization.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **High latency (>300ms) makes**: voice calls difficult.
+- **- Multi-SIM Devices**: Keep a secondary SIM with a foreign carrier for data-only use while maintaining a Chinese number for local communication.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding the Technical Challenge
 
 The GFW uses multiple layers of filtering. Standard VPN protocols like OpenVPN and IKEv2 are frequently detected and blocked through DPI, which examines packet headers and payload patterns. The blocking is dynamic—new detection methods are deployed regularly, meaning solutions that work today may fail tomorrow.

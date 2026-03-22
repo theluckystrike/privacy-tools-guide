@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Cryptomator and rclone (with AES-256 GCM encryption) are the best tools for encrypting files before uploading to Google Drive, ensuring only you can decrypt them. Google's server-side encryption means Google holds the keys and can technically access your files, so client-side encryption creates an additional privacy layer. Encrypt files locally using Cryptomator (GUI) or rclone (CLI), upload encrypted containers to Google Drive, and decrypt only when needed—preventing Google, government requests, and breaches from exposing your data.
 
+## Key Takeaways
+
+- **Use generated passwords with**: at least 20 characters for encryption keys.
+- **Cryptomator and rclone (with**: AES-256 GCM encryption) are the best tools for encrypting files before uploading to Google Drive, ensuring only you can decrypt them.
+- **Choose `drive` as the**: storage type 4.
+- **Choose a location (you'll**: sync this folder to Google Drive) 3.
+- **Use only when other**: options aren't available.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
 ## Understanding Google Drive's Encryption Limitations
 
 Google Drive encrypts your files at rest using AES-256, but Google holds the encryption keys. This means:
