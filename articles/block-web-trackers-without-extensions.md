@@ -22,23 +22,12 @@ Browser extensions are the standard advice for blocking trackers, but they come 
 This guide covers five layers of tracker blocking — from DNS resolvers and local Pi-hole deployments, to browser-native privacy configuration, advanced Firefox preferences, and verification tools to confirm that blocking is actually working.
 ---
 
-## Table of Contents
+## Key Takeaways
 
-- [Layer 1: DNS-Level Blocking](#layer-1-dns-level-blocking)
-- [Layer 2: System-Wide Hosts File](#layer-2-system-wide-hosts-file)
-- [Layer 3: Browser Native Privacy Settings](#layer-3-browser-native-privacy-settings)
-- [Layer 4: Firefox Advanced Config](#layer-4-firefox-advanced-config)
-- [Layer 5: Verify Tracker Blocking](#layer-5-verify-tracker-blocking)
-- [HTTPS Inspection for Full Visibility](#https-inspection-for-full-visibility)
-- [What This Approach Misses](#what-this-approach-misses)
-- [Putting It Together: Coverage by Layer](#putting-it-together-coverage-by-layer)
-- [Layer 6: Advanced DNS Techniques](#layer-6-advanced-dns-techniques)
-- [Layer 7: Content Security Policy Inspection](#layer-7-content-security-policy-inspection)
-- [Layer 8: Monitoring Your Success](#layer-8-monitoring-your-success)
-- [ISP-Level Visibility You Cannot Block](#isp-level-visibility-you-cannot-block)
-- [Performance Impact of DNS Blocking](#performance-impact-of-dns-blocking)
-- [Bypassing Advanced Tracker Evasion](#bypassing-advanced-tracker-evasion)
-- [Related Reading](#related-reading)
+- **The main limitation is**: lookup performance at scale: a hosts file with 130,000 entries creates a linear search on most systems.
+- **The mitmproxy inspection step**: is optional but recommended at least once to understand what is and is not being blocked on the sites you visit regularly.
+- **Misconfigured blocklists (too many**: rules) can add 50-100ms per query.
+- **DNS-level blocking**: system hosts files, and browser native settings catch most trackers without adding extensions to your browser.
 
 ## Layer 1: DNS-Level Blocking
 
@@ -420,13 +409,15 @@ HTMLCanvasElement.prototype.toDataURL = () => {
 </script>
 ```
 
-## Related Articles
+## Related Reading
 
-- [How to Audit Your Browser Extensions for Privacy](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
-- [How To Detect And Block Hidden Third Party Trackers On](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
-- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
-- [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
-- [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
-- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+- [Android Privacy Dashboard How to Use It](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
+- [Audio Context Fingerprinting How Websites Use Sound API to Track](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Browser Fingerprinting Detection and Prevention Guide](/privacy-tools-guide/browser-fingerprinting-detection/)
+- [DNS Leaks How To Test and Prevent](/privacy-tools-guide/dns-leaks-test-prevent/)
+
+---
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
