@@ -7,11 +7,11 @@ date: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-git-workflow-preventing-accidental-commits/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: false
 voice-checked: false
-tags: [privacy-tools-guide, git, security, workflow]
+tags: [privacy-tools-guide, git, security, workflow, privacy]
 ---
 
 

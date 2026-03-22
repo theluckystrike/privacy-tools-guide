@@ -9,7 +9,7 @@ permalink: /android-guest-mode-for-lending-phone-without-exposing-person/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

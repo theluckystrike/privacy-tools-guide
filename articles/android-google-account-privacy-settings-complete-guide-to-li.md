@@ -7,7 +7,7 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /android-google-account-privacy-settings-complete-guide-to-li/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
