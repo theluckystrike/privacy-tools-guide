@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
+description: "Follow this guide to how to prepare ssh key and server access documentation for t with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Prepare Ssh Key And Server Access Documentation"

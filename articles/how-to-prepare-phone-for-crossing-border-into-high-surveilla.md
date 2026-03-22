@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
+description: "Follow this guide to how to prepare phone for crossing border into high surveilla with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Prepare Phone For Crossing Border Into High Surveilla"

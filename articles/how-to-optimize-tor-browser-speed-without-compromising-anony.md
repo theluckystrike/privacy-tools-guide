@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-optimize-tor-browser-speed-without-compromising-anony/
+description: "Follow this guide to how to optimize tor browser speed without compromising anony with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Optimize Tor Browser Speed Without Compromising"

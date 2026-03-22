@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
+description: "Follow this guide to how to protect elderly parents from online scams setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"

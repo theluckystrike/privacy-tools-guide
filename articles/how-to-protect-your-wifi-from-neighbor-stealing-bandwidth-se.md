@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/
+description: "Follow this guide to how to protect your wifi from neighbor stealing bandwidth se with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth"

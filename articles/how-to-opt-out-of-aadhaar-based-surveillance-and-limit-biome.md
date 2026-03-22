@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
+description: "Follow this guide to how to opt out of aadhaar based surveillance and limit biome with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric"

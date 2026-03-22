@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prevent-cross-device-tracking-between-phone-tablet-an/
+description: "Follow this guide to how to prevent cross device tracking between phone tablet an with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Prevent Cross Device Tracking Between Phone Tablet"

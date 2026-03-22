@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
+description: "Follow this guide to how to prevent expartner from creating fake dating profiles  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Prevent Expartner From Creating Fake Dating Profiles"
