@@ -263,4 +263,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car Co](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

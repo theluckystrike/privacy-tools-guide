@@ -224,4 +224,5 @@ services:
 ```
 
 This configuration ensures all monitoring data remains within your infrastructure while providing powerful observability capabilities.
+```
 {% endraw %}

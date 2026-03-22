@@ -440,4 +440,4 @@ Run this script as your check-in command instead of a raw `curl` call. The conso
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

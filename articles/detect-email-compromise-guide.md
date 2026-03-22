@@ -285,4 +285,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

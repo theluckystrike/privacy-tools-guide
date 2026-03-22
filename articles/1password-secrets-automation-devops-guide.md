@@ -286,4 +286,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Ios Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -21,7 +21,7 @@ intent-checked: true
 tags: ["connected cars", "telematics", "privacy", "vehicle tracking", "data collection"]
 permalink: /privacy-risks-of-connected-cars-telematics-2026/---
 
-{% raw %}
+
 
 # Privacy Risks of Connected Cars & Telematics 2026: What Data Is Being Collected
 
@@ -44,7 +44,7 @@ Tesla telematics is THE MOST extensive. You cannot fully disable it.
 
 Built by theluckystrike — More at zovo.one
 
-{% endraw %}
+
 
 ## What Modern Cars Collect
 
@@ -475,4 +475,4 @@ Settings > Controls > Power Off (full system reset, doesn't disable telematics)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+

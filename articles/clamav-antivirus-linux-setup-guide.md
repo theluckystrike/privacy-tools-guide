@@ -326,4 +326,4 @@ To benchmark scan time, use `time clamdscan -r --no-summary /home/user/` before 
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

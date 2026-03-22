@@ -245,4 +245,4 @@ If you want voice control without cloud dependency, local alternatives exist:
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -412,4 +412,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -366,4 +366,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

@@ -360,4 +360,5 @@ def process_upload(file_bytes: bytes) -> bytes:
 Add this to your upload handler in Django, FastAPI, or any framework before writing to your storage layer. Store the returned bytes, not the original upload.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

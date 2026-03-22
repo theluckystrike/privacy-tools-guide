@@ -261,4 +261,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

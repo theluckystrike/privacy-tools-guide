@@ -263,4 +263,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

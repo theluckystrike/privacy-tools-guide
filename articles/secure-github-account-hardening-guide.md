@@ -263,4 +263,4 @@ gh api /user/personal-access-tokens --jq '.[] | "\(.name) expires:\(.expires_at)
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -315,4 +315,4 @@ Start with a small pilot group of willing early adopters. Let them use it for 2-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
+{% endraw %}

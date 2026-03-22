@@ -478,4 +478,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

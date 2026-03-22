@@ -451,4 +451,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

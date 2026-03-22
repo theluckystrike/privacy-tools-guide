@@ -9,7 +9,9 @@ score: 8
 voice-checked: true
 intent-checked: true
 category: "Privacy Guide"
-tags: ["Data Privacy", "Loyalty Programs", "Consumer Data", "Surveillance", "Data Brokers"]---
+tags: ["Data Privacy", "Loyalty Programs", "Consumer Data", "Surveillance", "Data Brokers"]
+permalink: /privacy-risks-of-grocery-store-loyalty-programs-2026/
+---
 ---
 title: "Privacy Risks of Grocery Store Loyalty Programs in 2026"
 description: "What Kroger, Safeway, Target collect through loyalty programs. Purchase profiling, data broker sales, and practical opt-out methods."

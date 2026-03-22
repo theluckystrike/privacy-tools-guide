@@ -270,4 +270,4 @@ Verify the provider's DPF certification at dataprivacyframework.gov, document th
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -768,5 +768,5 @@ Absolutely. Treat these as starting templates rather than rigid rules. Every tea
 **What is the biggest mistake people make when applying these practices?**
 
 Trying to change everything at once. Pick one or two practices, implement them well, and let the team adjust before adding more. Gradual adoption sticks better than wholesale transformation, which often overwhelms people and gets abandoned.
-
+```
 {% endraw %}

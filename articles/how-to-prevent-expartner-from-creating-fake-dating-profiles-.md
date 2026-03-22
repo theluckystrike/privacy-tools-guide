@@ -341,4 +341,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

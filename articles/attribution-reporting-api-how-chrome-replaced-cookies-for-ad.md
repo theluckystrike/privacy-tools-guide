@@ -545,4 +545,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

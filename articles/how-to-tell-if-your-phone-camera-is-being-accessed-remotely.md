@@ -380,4 +380,4 @@ Contact a professional security firm specializing in forensic analysis (Lookout,
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

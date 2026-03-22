@@ -470,4 +470,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

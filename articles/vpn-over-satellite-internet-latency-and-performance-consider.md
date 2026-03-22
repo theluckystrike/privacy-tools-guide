@@ -31,6 +31,15 @@ voice-checked: true---
 
 VPN over satellite internet adds roughly 15ms of overhead with WireGuard versus 120ms with OpenVPN on top of the satellite link's base latency of 500-800ms, making WireGuard the clear protocol choice for satellite deployments. Key optimizations include setting MTU to 1400-1420 bytes to prevent fragmentation, using UDP-only transport (WireGuard does this by default), enabling split tunneling to route only sensitive traffic through the VPN, and configuring persistent keepalives to maintain connections through weather-related signal interruptions.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **In contrast**: fiber-optic connections typically exhibit latencies of 20-50ms, and cable internet averages 15-30ms.
+- **Satellite links already use**: link-layer compression 2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## How Satellite Internet Differs from Terrestrial Connections
 
 Satellite internet operates by sending data between your dish and a geostationary satellite orbiting approximately 35,786 kilometers above Earth's equator. This distance creates a minimum one-way latency of around 240 milliseconds, though real-world performance typically ranges from 500ms to 800ms due to processing delays, atmospheric interference, and network congestion.
