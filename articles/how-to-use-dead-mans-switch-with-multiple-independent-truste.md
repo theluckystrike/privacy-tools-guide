@@ -40,7 +40,17 @@ Implement a dead man's switch using multiple independent trustees by dividing yo
 - **Wait until you have**: been contacted by at least {threshold} other trustees 2.
 - **Use your share to**: help reconstruct the master key 4.
 
-## Understanding the Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Architecture
 
 The core concept involves distributing cryptographic shares among several trustees, where a threshold number of trustees must cooperate to reconstruct the credential. This threshold cryptography approach, often implemented using Shamir's Secret Sharing, ensures that no single trustee can access your credentials independently.
 
@@ -48,7 +58,7 @@ A typical setup might involve five trustees with a threshold of three. This mean
 
 The "dead man's switch" element adds a time-based check-in mechanism. If you fail to confirm your presence within the designated period, the system triggers the release process to your designated trustees.
 
-## Implementing Shamir's Secret Sharing
+### Step 2: Implementing Shamir's Secret Sharing
 
 Shamir's Secret Sharing divides a secret into multiple shares, where a configurable threshold determines how many shares are required to reconstruct the original secret. Here's a Python implementation using the `ssss` library or `cryptography`:
 
@@ -107,7 +117,7 @@ reconstructed = ssss.combine_shares(shares[:3])
 print(f"Reconstructed: {reconstructed}")
 ```
 
-## Building the Check-In Mechanism
+### Step 3: Build the Check-In Mechanism
 
 The dead man's switch requires a reliable check-in system. This example uses a simple file-based timestamp that you update regularly:
 
@@ -170,7 +180,7 @@ switch = DeadManSwitch()
 switch.checkin()  # Call this regularly (automate with cron)
 ```
 
-## Automating the Check-In
+### Step 4: Automate the Check-In
 
 For a system, automate the check-in process using cron jobs or systemd timers. Create a simple script that runs daily:
 
@@ -194,7 +204,7 @@ Add to your crontab:
 0 9 * * * ~/.deadmanswitch/checkin.sh >> ~/.deadmanswitch/log.txt 2>&1
 ```
 
-## Distributing Shares to Trustees
+### Step 5: Distributing Shares to Trustees
 
 Once you've generated your credential shares, distribute them to your trustees through separate, secure channels. Avoid sending all shares through the same communication channel.
 
@@ -278,6 +288,21 @@ Begin by identifying what credentials need this protection—typically master pa
 Set up your automated check-in system immediately, and test the full flow at least once before relying on it. Document the recovery process somewhere secure (separate from the shares themselves) so trustees know what to do when the time comes.
 
 The peace of mind this system provides comes from knowing that your digital assets remain accessible to your chosen trustees if something happens to you, without creating a single point of failure that could compromise your security.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

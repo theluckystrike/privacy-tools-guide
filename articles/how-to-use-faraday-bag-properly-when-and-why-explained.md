@@ -40,7 +40,17 @@ A Faraday bag blocks cellular, GPS, WiFi, Bluetooth, and NFC signals by surround
 - **They are designed for**: specific frequency ranges, typically from around 800 MHz to 6 GHz, which covers most consumer wireless technologies.
 - **Place your phone inside**: the bag with a running HTTP server, wait 30 seconds, then attempt to reach it from another device on the same network.
 
-## What Faraday Bags Actually Do
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Faraday Bags Actually Do
 
 Faraday bags create a conductive enclosure that distributes external electric fields across the bag's surface, preventing them from reaching devices inside. This blocking works bidirectionally: signals cannot escape from your device, and external signals cannot reach it.
 
@@ -78,7 +88,7 @@ SIM swapping attacks rely on your phone receiving authentication codes. Keeping 
 
 During certain security incidents, you may need to immediately prevent all wireless communications from a device. A Faraday bag provides instant signal isolation without requiring you to power off the device or remove the battery.
 
-## How to Test Your Faraday Bag
+### Step 2: How to Test Your Faraday Bag
 
 Testing is critical. A damaged or low-quality Faraday bag may provide a false sense of security. Here are reliable testing methods.
 
@@ -159,7 +169,7 @@ Faraday bags are not impervious to all attack vectors. They do not protect again
 
 Some products marketed as "signal blocking" are merely RF-blocking sleeves that reduce signal strength without providing true Faraday protection. Always verify the product specifications and test your bags.
 
-## Choosing the Right Faraday Bag
+### Step 3: Choose the Right Faraday Bag
 
 Quality matters significantly. Consider these factors:
 
@@ -171,7 +181,7 @@ Quality matters significantly. Consider these factors:
 
 **Reputation**: Purchase from vendors who provide testing specifications. Many cheap products on the market do not actually provide meaningful RF attenuation.
 
-## Practical Implementation
+### Step 4: Practical Implementation
 
 For developers integrating Faraday bags into security workflows, consider this simple verification script that can run on an Android device:
 
@@ -217,7 +227,7 @@ hackrf_transfer -r wifi_spectrum.bin -f 2400000000 -s 8000000
 
 Real RF analysis confirms whether your Faraday bag blocks across the full frequency range. A properly functioning bag should show signal attenuation of 60+ dB at WiFi and cellular frequencies.
 
-## Faraday Bag Use in High-Risk Environments
+### Step 5: Faraday Bag Use in High-Risk Environments
 
 Specific threat scenarios justify Faraday bag usage:
 
@@ -229,7 +239,7 @@ Specific threat scenarios justify Faraday bag usage:
 
 **Secure Communication**: When conducting sensitive interviews or intelligence gathering, Faraday bags prevent tracking of the interview location by device location services.
 
-## Distinguishing Real Faraday Bags from Marketing Fraud
+### Step 6: Distinguishing Real Faraday Bags from Marketing Fraud
 
 Many products claim signal blocking without actual testing:
 
@@ -254,7 +264,7 @@ Many products claim signal blocking without actual testing:
 
 Cheap eBay Faraday bags frequently provide inadequate shielding. Verify specifications from manufacturers that publish technical data.
 
-## Maintenance and Durability Concerns
+### Step 7: Perform Maintenance and Durability Concerns
 
 Faraday bags degrade over time, affecting performance:
 
@@ -283,7 +293,7 @@ Defense Layers:
 
 Never rely solely on Faraday bags. Use them alongside encrypted storage, strong authentication, and device monitoring.
 
-## Practical Packing Recommendations
+### Step 8: Practical Packing Recommendations
 
 Pack your Faraday bag efficiently:
 
@@ -303,6 +313,21 @@ Avoid:
 ```
 
 Leave at least 1 inch of space around devices to prevent RF coupling with the conductive material.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

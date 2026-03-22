@@ -26,7 +26,17 @@ Generate a GPG key pair with `gpg --gen-key`, export your public key with `gpg -
 - **Keyserver reliability**: Use multiple keyserver sources and implement fallback logic in your verification scripts.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding GPG Email Signatures
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand GPG Email Signatures
 
 When someone signs an email with GPG, they attach a cryptographic signature generated using their private key. The recipient can then verify this signature using the sender's public key. If verification succeeds, you know:
 
@@ -36,7 +46,7 @@ When someone signs an email with GPG, they attach a cryptographic signature gene
 
 GPG supports two types of signatures: clear-signed and detached. Clear-signed messages display the original text with the signature attached inline, while detached signatures are stored in separate files. Most email clients use clear-signed format for automatic verification.
 
-## Setting Up Your GPG Environment
+### Step 2: Set Up Your GPG Environment
 
 Before working with signed emails, ensure you have GPG installed. On macOS, install via Homebrew:
 
@@ -59,7 +69,7 @@ gpg --full-generate-key
 
 Select RSA (2048 or 4096 bits), set an expiration date, and enter your name and email. Choose a strong passphrase to protect your private key.
 
-## Configuring Your Email Client for Signed Emails
+### Step 3: Configure Your Email Client for Signed Emails
 
 Most terminal-based email clients support GPG signing. Here's how to configure a few popular options.
 
@@ -93,7 +103,7 @@ For Emacs users, add to your configuration:
 (setq mm-decrypt-option 'known)
 ```
 
-## Signing an Email Manually
+### Step 4: Signing an Email Manually
 
 For testing or scripting purposes, you can sign emails directly from the command line. Create a simple message and sign it:
 
@@ -120,7 +130,7 @@ To sign a complete email file:
 gpg --clearsign --armor --local-user 0xYOURKEYID --output signed-email.txt original-email.txt
 ```
 
-## Verifying GPG Signatures in Emails
+### Step 5: Verify GPG Signatures in Emails
 
 When you receive a signed email, verify the signature using GPG. First, ensure you have the sender's public key imported:
 
@@ -151,7 +161,7 @@ gpg: Good signature from "Sender Name <sender@example.com>"
 
 The "Good signature" message confirms the message is authentic and untampered.
 
-## Handling Signature Verification Failures
+### Step 6: Handling Signature Verification Failures
 
 When verification fails, GPG provides diagnostic information. Common failure scenarios include:
 
@@ -173,7 +183,7 @@ gpg: Warning: This key has expired!
 ```
 Solution: Request an updated key from the sender or verify through an alternative channel.
 
-## Automating Email Verification in Scripts
+### Step 7: Automate Email Verification in Scripts
 
 For developers building automated systems, integrate GPG verification into your workflow. Here's a Python example using the `gpg` library:
 

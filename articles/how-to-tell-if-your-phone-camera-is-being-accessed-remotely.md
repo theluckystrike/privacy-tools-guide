@@ -25,7 +25,17 @@ iOS shows a green dot when any app accesses the camera; watch for this indicator
 - **iOS shows a green**: dot when any app accesses the camera; watch for this indicator when no apps should use it.
 - **On Android**: check app permissions in Settings → Apps, monitor data usage in Settings → Network for unexpected spikes, and use network monitoring apps to detect outbound video streams.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before looking at detection methods, understand what you're defending against. Remote camera access can occur through several attack surfaces:
 
@@ -37,7 +47,7 @@ Before looking at detection methods, understand what you're defending against. R
 
 Each threat vector requires different detection approaches, and no single method provides complete assurance. Layer multiple verification techniques for stronger confidence.
 
-## Visual Privacy Indicators
+### Step 2: Visual Privacy Indicators
 
 Both Android (since version 12) and iOS (since iOS 14) display visual indicators when apps access the camera. These indicators appear in the status bar and are difficult for malicious apps to suppress since they're rendered at the system level.
 
@@ -72,7 +82,7 @@ To review microphone and camera access on iOS:
 
 iOS 15 and later include a Recording Indicator in Control Center that shows when apps access the microphone or camera in the background.
 
-## System Log Analysis
+### Step 3: System Log Analysis
 
 For more thorough investigation, examine system logs directly. This approach requires either a rooted Android device or using Apple's sysdiagnose on iOS.
 
@@ -127,7 +137,7 @@ func checkCameraStatus() {
 
 This tells you the current permission state but doesn't reveal active usage.
 
-## Network-Level Detection
+### Step 4: Network-Level Detection
 
 Advanced attackers may intercept camera traffic at the network level. Detecting this requires monitoring network connections from your device.
 
@@ -155,7 +165,7 @@ On iOS, network monitoring is more restricted. Use a VPN-based approach to captu
 2. Monitor for unexpected connections to unknown servers
 3. Look for sustained connections to IP addresses not associated with legitimate apps
 
-## Application Behavior Verification
+### Step 5: Application Behavior Verification
 
 Review installed applications for suspicious characteristics:
 
@@ -179,7 +189,7 @@ iOS makes this harder to inspect directly, but you can review app permissions th
 - Apps requesting "Always" camera access when they should only need "While Using"
 - Unknown apps in your installed application list
 
-## Physical Inspection
+### Step 6: Physical Inspection
 
 For high-threat scenarios, physical inspection matters:
 
@@ -187,7 +197,7 @@ For high-threat scenarios, physical inspection matters:
 - **Battery drain**: Unauthorized camera access, especially video streaming, causes noticeable battery drain
 - **Unusual warmth**: Active camera use generates heat; unexplained warmth while the phone is idle warrants investigation
 
-## Mitigation Steps
+### Step 7: Mitigation Steps
 
 If you detect unauthorized camera access:
 
@@ -255,7 +265,7 @@ analyze_camera_entropy([
 
 Regular, predictable camera access indicates automated surveillance rather than app usage.
 
-## Baseband Processor Compromise
+### Step 8: Baseband Processor Compromise
 
 The most sophisticated attacks bypass Android/iOS entirely through baseband attacks:
 
@@ -273,7 +283,7 @@ Detection difficulty: VERY HIGH
 
 For journalists or targets of state-level adversaries, physical phone disassembly and inspection by experts may be necessary.
 
-## RAT (Remote Access Trojan) Behavior Profiles
+### Step 9: RAT (Remote Access Trojan) Behavior Profiles
 
 Different RATs exhibit different camera patterns:
 
@@ -296,7 +306,7 @@ Detection strategy varies by RAT type:
 - Triggered: Requires code-level inspection of applications
 ```
 
-## Mobile Device Hardening Against Camera Hijacking
+### Step 10: Mobile Device Hardening Against Camera Hijacking
 
 Reduce attack surface for camera access:
 
@@ -319,7 +329,7 @@ Both platforms: Use restricted mode that limits app capabilities
 
 These measures don't prevent all attacks but raise the bar significantly.
 
-## Forensic Analysis: Extracting Camera Logs
+### Step 11: Forensic Analysis: Extracting Camera Logs
 
 For users with technical expertise who want deep evidence:
 
@@ -343,6 +353,21 @@ dumpsys permissioncontroller | grep -A 10 "camera"
 ```
 
 Professional forensic tools (proprietary) provide more logs than what standard APIs expose.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -27,7 +27,17 @@ This guide covers age command-line usage, integration with Git, automation, key 
 - **File won't decrypt -**: The key used to encrypt might be different from the key you're using to decrypt.
 - **Use strong passphrases (if**: encrypting keys with a passphrase).
 
-## Age vs GPG
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Age vs GPG
 
 GPG is old and powerful but has UX problems. age is new and intentionally simple.
 
@@ -46,7 +56,7 @@ GPG is old and powerful but has UX problems. age is new and intentionally simple
 
 **age:** Modern simplicity, perfect for file sharing and backups, better UX.
 
-## Installation
+### Step 2: Install ation
 
 ### macOS
 ```bash
@@ -71,7 +81,7 @@ age --version
 # age 1.1.1
 ```
 
-## Key Generation
+### Step 3: Generate Keys
 
 Generate a key pair:
 ```bash
@@ -100,7 +110,7 @@ age-keygen -y ~/.age/key.txt > ~/.age/key.pub.txt
 
 The public key is shareable; distribute it freely (it's on your business card, GitHub profile, team wiki).
 
-## Basic Encryption and Decryption
+### Step 4: Basic Encryption and Decryption
 
 ### Encrypt a file
 ```bash
@@ -135,7 +145,7 @@ age -r age1_alice_pubkey -r age1_bob_pubkey -r age1_carol_pubkey secret.txt > se
 
 All three people can decrypt with their own secret keys. No key server needed.
 
-## Practical Workflow: File Sharing
+### Step 5: Practical Workflow: File Sharing
 
 ### Share with a colleague
 
@@ -204,7 +214,7 @@ git config diff.age.textconv "age -d -i ~/.age/key.txt"
 
 Now, when you commit `secrets.secret.yml`, Git automatically encrypts it. When you check it out, Git automatically decrypts it. The repo only contains encrypted files.
 
-## Age with Armor (ASCII Format)
+### Step 6: Age with Armor (ASCII Format)
 
 By default, age outputs binary. For pasting into text (emails, messages), use armor:
 
@@ -227,7 +237,7 @@ echo "-----BEGIN AGE ENCRYPTED FILE-----
 YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUx..." | age -d -i ~/.age/key.txt
 ```
 
-## Age Encryption with Passphrase (No Keys)
+### Step 7: Age Encryption with Passphrase (No Keys)
 
 age can encrypt with just a passphrase (no public keys needed). Useful for personal backups.
 
@@ -243,7 +253,7 @@ age -d -i - backup.tar.gz.age > backup.tar.gz
 
 The `-p` flag means "use passphrase instead of keys." This is simpler than GPG for backups (no key management), but less secure if the passphrase is weak.
 
-## Integration with Other Tools
+### Step 8: Integration with Other Tools
 
 ### SSH Key Import
 
@@ -315,7 +325,7 @@ git add secret.yaml.age
 age -d -i ~/.age/key.txt secret.yaml.age | kubectl apply -f -
 ```
 
-## Key Rotation and Revocation
+### Step 9: Rotate Keys and Revocation
 
 ### Rotate to a new key
 

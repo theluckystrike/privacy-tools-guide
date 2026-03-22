@@ -50,13 +50,23 @@ networksetup -listallhardwareports
 
 Next, establish your VPN connection through your preferred client.
 
-## Understanding Kill Switch Behavior
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Kill Switch Behavior
 
 Before testing, you need to understand what a kill switch actually does. When your VPN connection drops—whether due to network instability, server issues, or intentional disconnection—the kill switch should immediately block all network traffic or terminate specific applications to prevent data leaks. Most VPN clients offer two modes: a system-level kill switch that blocks all network traffic, and an application-level kill switch that closes specific apps.
 
 The problem is that kill switches can fail silently. Your VPN might show as connected, but the kill switch might not engage when the tunnel breaks. Regular testing ensures your protection is genuine, not illusory.
 
-## Method 1: Manual Connection Drop Testing
+### Step 2: Method 1: Manual Connection Drop Testing
 
 The simplest test involves deliberately dropping your VPN connection and observing whether traffic continues flowing or gets blocked. Here's how to perform this test:
 
@@ -85,7 +95,7 @@ Now, simulate a connection drop. You can do this by:
 
 If your kill switch works, the ping should stop immediately when the VPN connection drops. If you continue receiving replies, your kill switch is not functioning.
 
-## Method 2: Automated Testing with netcat and Scripting
+### Step 3: Method 2: Automated Testing with netcat and Scripting
 
 For more rigorous testing, create a script that monitors your connection state and verifies kill switch behavior. This approach gives you reproducible results and works well for CI/CD validation.
 
@@ -143,7 +153,7 @@ chmod +x killswitch-test.sh
 sudo ./killswitch-test.sh
 ```
 
-## Method 3: Using curl and Web-Based Leak Testing
+### Step 4: Method 3: Using curl and Web-Based Leak Testing
 
 Another approach involves checking for IP leaks through web-based services. While not as thorough as script-based testing, this method is accessible and provides quick verification.
 
@@ -181,7 +191,7 @@ while true; do
 done
 ```
 
-## Method 4: Testing Application-Level Kill Switches
+### Step 5: Method 4: Testing Application-Level Kill Switches
 
 If your VPN offers application-level kill switches, test each configured application individually. For example, if you've set BitTorrent to close when the VPN drops, verify this behavior:
 
@@ -362,7 +372,7 @@ trace_kill_switch() {
 trace_kill_switch $(pgrep -f "curl.*check.torproject")
 ```
 
-## Protocol-Specific Kill Switch Testing
+### Step 6: Protocol-Specific Kill Switch Testing
 
 ### WireGuard Kill Switch Testing
 
@@ -449,7 +459,7 @@ test_openvpn_killswitch() {
 test_openvpn_killswitch
 ```
 
-## Kill Switch Effectiveness Scoring
+### Step 7: Kill Switch Effectiveness Scoring
 
 Create a test report:
 
@@ -539,7 +549,7 @@ results = tester.run_full_test()
 print(tester.report())
 ```
 
-## Continuous Kill Switch Monitoring
+### Step 8: Continuous Kill Switch Monitoring
 
 Set up ongoing monitoring for your VPN kill switch:
 

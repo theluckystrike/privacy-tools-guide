@@ -43,7 +43,17 @@ Smart home assistants like Amazon Alexa and Home Assistant have become central t
  - Service accounts with broad access
 3.
 
-## Signs Your Smart Assistant May Be Compromised
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Signs Your Smart Assistant May Be Compromised
 
 Detecting a compromise early can prevent further intrusion. Here are the most common warning signs:
 
@@ -70,7 +80,7 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
 - **Increased data usage** that cannot be attributed to normal operation
 - **Port scans** or connection attempts from your smart home hub to external addresses
 
-## How to Audit Your Amazon Alexa
+### Step 2: How to Audit Your Amazon Alexa
 
 ### Review Voice History
 
@@ -109,7 +119,7 @@ Detecting a compromise early can prevent further intrusion. Here are the most co
  - Send notifications or emails
  - Interact with third-party services
 
-## How to Audit Your Home Assistant
+### Step 3: How to Audit Your Home Assistant
 
 ### Review the Logbook
 
@@ -162,7 +172,7 @@ If you have network monitoring capabilities:
 3. Remove any integrations you did not intentionally install
 4. Check for unofficial or fake integrations masquerading as legitimate ones
 
-## Securing Your Smart Assistants
+### Step 4: Secure Your Smart Assistants
 
 After auditing, take these steps to harden your devices:
 
@@ -196,7 +206,7 @@ After auditing, take these steps to harden your devices:
 - **Monitor your network traffic** for anomalies
 - **Use a password manager** for all smart home account credentials
 
-## Automated Monitoring Script
+### Step 5: Automated Monitoring Script
 
 For Home Assistant users who want ongoing monitoring, this shell script checks for unexpected automations and logs recent activity:
 
@@ -225,7 +235,7 @@ for a in autos:
 "
 ```
 
-## Responding to a Confirmed Compromise
+### Step 6: Responding to a Confirmed Compromise
 
 If you determine your device was compromised:
 
@@ -239,6 +249,21 @@ If you determine your device was compromised:
 8. **Monitor for future suspicious activity** more closely
 9. **Report the incident** to the device manufacturer
 10. **Consider identity monitoring** if sensitive personal data was exposed
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

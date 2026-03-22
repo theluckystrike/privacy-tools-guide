@@ -39,7 +39,17 @@ Romance scams on dating apps follow predictable patterns: quick declarations of 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Romance Scam Infrastructure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Romance Scam Infrastructure
 
 Modern romance scams operate through carefully orchestrated workflows. Scammers create fake profiles using photos stolen from social media accounts, often employing reverse image search to identify the original sources. They script conversations using large language models or copy-paste templates, adapting their approach based on victim responses.
 
@@ -61,7 +71,7 @@ Dating applications present unique attack surfaces. Scammers exploit the emotion
 - Inconsistent response times suggesting multiple targets
 - Requests for personal information unusual for early-stage relationships
 
-## Technical Verification Methods
+### Step 2: Technical Verification Methods
 
 Developers can implement automated detection systems analyzing multiple data points. The following Python example demonstrates a basic profile risk scoring approach:
 
@@ -126,7 +136,7 @@ class RomanceScamDetector:
 
 This approach provides a foundation. Production systems should incorporate machine learning models trained on verified scam patterns.
 
-## User-Facing Verification Checklist
+### Step 3: User-Facing Verification Checklist
 
 For users developing personal security habits, the following checklist provides systematic verification steps:
 
@@ -172,7 +182,7 @@ function reverse_image_search() {
 
 Additional verification steps include examining profile photo EXIF data for creation timestamps, checking image resolution consistency (scammers often use images with varying quality), and analyzing writing style using readability metrics to detect template-generated content.
 
-## Platform-Level Protections
+### Step 4: Platform-Level Protections
 
 For developers building dating applications, implementing verification requires layered approaches:
 
@@ -207,7 +217,7 @@ function detectSuspiciousVelocity(messages, timeWindowMinutes = 60) {
 }
 ```
 
-## Response Protocols
+### Step 5: Response Protocols
 
 When scam indicators are detected, both users and platforms should follow response procedures:
 
@@ -223,6 +233,21 @@ When scam indicators are detected, both users and platforms should follow respon
 2. Temporarily restrict account capabilities
 3. Cross-reference with known scammer databases
 4. Implement account-level blocks across platform network
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

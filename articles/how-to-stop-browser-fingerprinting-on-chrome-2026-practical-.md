@@ -40,7 +40,17 @@ Enable Chrome's "Privacy Sandbox" experimental features that obfuscate fingerpri
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Browser Fingerprinting
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Browser Fingerprinting
 
 Browser fingerprinting works by collecting various attributes of your browser and system. These attributes combine to create a unique signature that tracks you across websites without storing anything on your device.
 
@@ -59,7 +69,7 @@ The data points collected include:
 
 When combined, these attributes create a highly unique identifier. Research shows that over 90% of users can be uniquely identified using fingerprinting, even when using incognito mode.
 
-## Chrome Settings for Basic Protection
+### Step 2: Chrome Settings for Basic Protection
 
 Chrome provides several built-in settings that reduce fingerprinting surface area.
 
@@ -93,7 +103,7 @@ chrome://flags/#automatic-tab-discarding
 
 However, many sites require JavaScript to function. Consider using extensions like ScriptSafe for per-site control.
 
-## Using Extensions for Fingerprint Protection
+### Step 3: Use Extensions for Fingerprint Protection
 
 Several extensions modify your fingerprint to make it less unique.
 
@@ -202,7 +212,7 @@ Firefox: privacy.resistFingerprinting = true
 
 If you need Chrome-specific solutions, consider running both browsers with different profiles.
 
-## Network-Level Protection
+### Step 4: Network-Level Protection
 
 For protection, consider network-level solutions.
 
@@ -230,7 +240,7 @@ Use encrypted DNS with tracking protection:
 # Select provider: Cloudflare (1.1.1.1) or NextDNS
 ```
 
-## Testing Your Fingerprint
+### Step 5: Test Your Fingerprint
 
 After implementing protections, verify their effectiveness:
 
@@ -240,7 +250,7 @@ After implementing protections, verify their effectiveness:
 
 A well-protected browser should show "your browser has fingerprintable characteristics" rather than "unique among millions tested."
 
-## Building Fingerprint-Resistant Applications
+### Step 6: Build Fingerprint-Resistant Applications
 
 If you're a developer, consider these practices:
 
@@ -261,7 +271,7 @@ const hasWebGL = !!document.createElement('canvas').getContext('webgl');
 // Don't expose specific renderer strings
 ```
 
-## Limitations and Reality Check
+### Step 7: Limitations and Reality Check
 
 Complete fingerprinting prevention is challenging. Some points to consider:
 
@@ -271,6 +281,21 @@ Complete fingerprinting prevention is challenging. Some points to consider:
 - **Browser Diversity**: Using the same browser as others increases your "crowd" protection
 
 The goal is not perfect anonymity but reducing your uniqueness to make tracking economically unfeasible.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

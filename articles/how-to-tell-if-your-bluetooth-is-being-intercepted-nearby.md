@@ -50,7 +50,17 @@ AutoEnable=false
 - **Enable PIN-based or numeric**: comparison pairing - Don't use "Just Works" pairing (no verification) - Use 6-digit numeric comparison when available 3.
 - **Use air-gapped devices for**: sensitive communications 4.
 
-## Understanding the Attack Surface
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Attack Surface
 
 Modern Bluetooth implementations (Bluetooth 4.0+ LE and Bluetooth 5.0+) introduce several attack vectors that differ from classic Bluetooth (2.0+EDR). The most common interception techniques include:
 
@@ -61,7 +71,7 @@ Modern Bluetooth implementations (Bluetooth 4.0+ LE and Bluetooth 5.0+) introduc
 
 Detecting these attacks requires understanding what "normal" Bluetooth behavior looks like on your device, then identifying anomalies.
 
-## Indicator 1: Unexpected Device Pairings and Connections
+### Step 2: Indicator 1: Unexpected Device Pairings and Connections
 
 One of the clearest signs of interception is unknown devices appearing in your paired devices list or attempting to connect without your initiation.
 
@@ -86,7 +96,7 @@ bluetoothctl info <device-address>
 
 If you see MAC addresses you don't recognize, or if devices show active connections you didn't initiate, investigate immediately. Attackers often use randomized or spoofed MAC addresses, but the connection metadata may reveal patterns.
 
-## Indicator 2: Unusual RSSI Fluctuations and Range Anomalies
+### Step 3: Indicator 2: Unusual RSSI Fluctuations and Range Anomalies
 
 Received Signal Strength Indicator (RSSI) measurements can reveal the presence of a man-in-the-middle attack. When an attacker positions themselves between you and your legitimate device, the RSSI patterns become inconsistent.
 
@@ -121,7 +131,7 @@ for _ in range(30):
 
 Sudden drops below -70 dBm or erratic fluctuations (jumping 20+ dBm within seconds) may indicate an interfering device. Legitimate devices typically show stable, gradual changes as you move.
 
-## Indicator 3: Connection Quality Degradation and Latency
+### Step 4: Indicator 3: Connection Quality Degradation and Latency
 
 Interception introduces latency and packet loss because attacker devices must receive, process, and retransmit traffic. Monitor for:
 
@@ -138,7 +148,7 @@ watch -n 1 hcitool lq <target-device-address>
 
 Link quality values below 200 (on a 255 scale) sustained over time suggest interference or active interception. Combined with packet loss statistics from `hciattach` or Bluetooth monitoring tools, this paints a clearer picture.
 
-## Indicator 4: Unexpected Services and UUIDs
+### Step 5: Indicator 4: Unexpected Services and UUIDs
 
 Attackers may attempt to expose additional services on your device or enumerate existing ones. On Linux, scan for services:
 
@@ -148,7 +158,7 @@ sdptool browse <target-address>
 
 Check for unknown service records, especially RFCOMM channels or OBEX Push profiles you never enabled. On macOS, check the Bluetooth preferences pane for any unexpected services marked as "Connected."
 
-## Indicator 5: Firmware and Driver Anomalies
+### Step 6: Indicator 5: Firmware and Driver Anomalies
 
 Advanced attackers may exploit firmware-level vulnerabilities. While difficult to detect, watch for:
 
@@ -164,7 +174,7 @@ dmesg | grep -i bluetooth | tail -50
 
 Look for repeated authentication failures, unrecognized connection requests, or unusual HCI events like `HCI Command: Read Remote Supported Features` from unknown addresses.
 
-## Countermeasures and Hardening
+### Step 7: Countermeasures and Hardening
 
 Detection is only half the solution. Implement these hardening steps:
 
@@ -182,7 +192,7 @@ AutoEnable=false
 
 6. **On macOS**, uncheck "Allow Bluetooth devices to find this computer" in System Preferences > Bluetooth > Options when not needed.
 
-## Tools for Advanced Monitoring
+### Step 8: Tools for Advanced Monitoring
 
 For developers willing to invest time, these tools provide deeper visibility:
 
@@ -204,7 +214,7 @@ If you confirm active interception, the safest response is to:
 
 For enterprise environments, engage professional security auditors with proper authorization.
 
-## Deep-Dive: Bluetooth Protocol Vulnerabilities
+### Step 9: Deep-Dive: Bluetooth Protocol Vulnerabilities
 
 Understanding specific Bluetooth vulnerabilities helps you identify attacks:
 
@@ -274,7 +284,7 @@ audit.check_leap_attack()
 audit.report()
 ```
 
-## Passive Bluetooth Monitoring
+### Step 10: Passive Bluetooth Monitoring
 
 Detect eavesdropping by analyzing traffic patterns:
 
@@ -313,7 +323,7 @@ sudo apt-get install wireshark wireshark-common libwireshark-dev
 ubertooth-one -f 2402 -m -t 2>&1 | tshark -i - -d btbb,hci.pklg_format:0
 ```
 
-## Counter-Eavesdropping Techniques
+### Step 11: Counter-Eavesdropping Techniques
 
 If you suspect active monitoring:
 
@@ -358,7 +368,7 @@ echo "Connect only to air-gapped devices"
    - Removes cached keys that might be compromised
 ```
 
-## Detection Software and Tools
+### Step 12: Detection Software and Tools
 
 Modern security tools can help identify Bluetooth threats:
 
@@ -429,6 +439,21 @@ Prevention:
 3. Use air-gapped devices for sensitive communications
 4. Consider replacing older Bluetooth hardware (pre-5.0)
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
