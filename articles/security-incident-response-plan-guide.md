@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Create a Security Incident Response Plan"
-description: "Build a security incident response plan with detection criteria, escalation paths, containment procedures, and post-incident review templates for technical teams"
+description: "Build a security incident response plan with detection criteria, escalation paths, containment procedures, and post-incident review templates for."
 date: 2026-03-22
 author: theluckystrike
 permalink: /security-incident-response-plan-guide/

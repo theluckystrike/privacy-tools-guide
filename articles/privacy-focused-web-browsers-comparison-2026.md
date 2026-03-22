@@ -73,7 +73,7 @@ Test: DNS leak testing (dnsleaktest.com)
 - Chrome: Leaks to Google DNS and ISP
 - Brave: Uses Brave's DNS (no ISP visibility)
 - Result: Brave = 100% private
-{% endraw %}
+
 
 **Performance Benchmarks:**
 
@@ -117,7 +117,7 @@ Firefox is open-source, non-profit, and transparent about data practices. It's m
 
 **Privacy Features (Default + Recommended Tweaks):**
 
-{% raw %}
+
 Default privacy (Firefox 124+):
 - Standard tracking protection: Blocks most trackers
 - Third-party cookie blocking: Enabled

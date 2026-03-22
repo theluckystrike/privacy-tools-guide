@@ -109,7 +109,7 @@ sudo chmod 600 privatekey publickey
 privatekey: WBn...A0=
 publickey:  5E4...8k=
 ```
-{% endraw %}
+
 
 ### Create Server Configuration
 
@@ -121,7 +121,7 @@ sudo nano /etc/wireguard/wg0.conf
 
 **Paste this configuration:**
 
-{% raw %}
+
 ```ini
 [Interface]
 # VPN server configuration
