@@ -31,6 +31,13 @@ voice-checked: true---
 
 Set up WireGuard P2P by generating public/private key pairs for each peer, defining a private virtual network (e.g., 10.0.0.1/24), and configuring each peer to route traffic through the other. WireGuard eliminates central servers, reduces latency, and provides modern cryptography (Noise protocol, ChaCha20) suitable for sensitive communications. Configure dynamic endpoint discovery if peer IPs change, use AllowedIPs restrictions to prevent tunnel hijacking, and understand that WireGuard handles encryption only—transport-level privacy requires additional Tor or VPN layers.
 
+## Key Takeaways
+
+- **The mobile apps provide**: user-friendly interfaces for managing peer connections.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers understanding**: wireguard for p2p communication, installation, key generation, with specific setup instructions
+
 ## Understanding WireGuard for P2P Communication
 
 Traditional VPN setups route traffic through a central server. Peer-to-peer communication with WireGuard bypasses this requirement—devices connect directly to each other, creating an encrypted tunnel without intermediary servers. This approach reduces latency, eliminates single points of failure, and keeps your communication private.

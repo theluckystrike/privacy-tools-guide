@@ -31,6 +31,20 @@ intent-checked: true---
 
 Installing a VPN doesn't guarantee your traffic is private. Misconfigured VPNs leak your real IP through DNS queries, WebRTC connections, or IPv6 traffic—all while the VPN indicator shows green. Your ISP can still see your browsing, and websites can still fingerprint you. This guide walks through verification tests you can run right now: DNS leak detection (nslookup command), WebRTC leak tests (browser console), IPv6 leak detection (running a local server), and kill switch verification (testing connection drop behavior). Each test reveals whether your VPN is actually working. Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Ping a server to confirm internet works**: ```bash
+ping 8.8.8.8
+# Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
+```
+
+4.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Real tools**: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
+
 ## Why VPN Verification Matters
 
 A "working" VPN means:

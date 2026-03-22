@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 You've sent the opt-out request. You received confirmation email. But does that actually mean your data is gone? This guide provides technical methods to verify whether data brokers have actually deleted your personal information after processing your opt-out request.
 
+## Key Takeaways
+
+- **Search for your information**: using the same details you used in the opt-out request 3.
+- **Search the Broker's Public**: Portal Most major data brokers maintain public search features.
+- **API access**: Can you integrate with your own systems?
+4.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Verification Matters
 
 Data brokers operate under different legal frameworks depending on jurisdiction. CCPA (California Consumer Privacy Act) and GDPR grant you the right to request deletion, but enforcement varies. Some brokers process deletions within days; others may retain data in backups or shared databases indefinitely. Without verification, you have no way to know if your opt-out was effective.

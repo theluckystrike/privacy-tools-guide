@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, vpn, encryption, llm]---
 
 Diffie-Hellman key exchange enables two parties to establish a shared encryption secret over an insecure channel without transmitting the secret itself—by each side computing the same value independently using public parameters and private keys. When you connect to a VPN, this mathematical process happens in seconds and determines whether your traffic remains secure or becomes vulnerable to interception. Understanding DH mechanics helps developers and users evaluate VPN security and make informed choices about protocol selection.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The default configuration often**: uses Diffie-Hellman with 2048-bit or 4096-bit primes.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Understanding DH mechanics helps**: developers and users evaluate VPN security and make informed choices about protocol selection.
+
 ## The Key Distribution Problem
 
 Traditional encryption requires both parties to share a secret key. If Alice wants to send encrypted messages to Bob, they must first agree on a key. The problem: how do they exchange this key without an eavesdropper (Eve) intercepting it?

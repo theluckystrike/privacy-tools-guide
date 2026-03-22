@@ -19,6 +19,19 @@ You pay for a VPN monthly and assume it's protecting your traffic. But VPN compa
 
 This guide walks through eight verification tests you can run right now to confirm your VPN is actually working. No technical background required. All tools are free.
 
+## Key Takeaways
+
+- **- Use VPN kill switch**: If VPN doesn't fully support IPv6, kill switch should block all IPv6 traffic.
+- **A 2016 study found**: 38% of VPNs leaked DNS.
+- **---
+
+## Test 1**: DNS Leak Detection (Most Common)
+
+What it tests: Whether DNS queries go through the VPN or leak to ISP.
+- **On Mac**: System Preferences > Network > IPv6 > Off.
+- **Better alternative (no download)**: 1.
+- **- Use only servers**: where kill switch verified.
+
 ## VPN Security Model: What You're Testing
 
 A VPN tunnels all traffic through an encrypted pipe to a VPN server, which forwards requests to the internet. Your ISP sees encrypted data; your ISP cannot see what sites you visit.

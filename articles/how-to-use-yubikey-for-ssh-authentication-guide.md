@@ -19,6 +19,33 @@ This guide covers configuring YubiKey for SSH authentication using GPG mode and 
 
 {% raw %}
 
+## Key Takeaways
+
+- **---
+
+### YubiKey 5C
+
+Cost**: $55-70
+
+USB-C only (no USB-An adapter needed).
+- **---
+
+### YubiKey 5C NFC
+
+Cost**: $65-80
+
+USB-C with NFC support.
+- **---
+
+### YubiKey 5 Nano
+
+Cost**: $50-65
+
+Same functionality as YubiKey 5, smaller form factor (fits in USB slot without extending beyond laptop edge).
+- **Best For**: Users wanting minimal visual footprint, frequent travel.
+- **--- ## SSH Authentication**: Modes YubiKey supports multiple SSH authentication methods: ### Mode 1: FIDO2 (Recommended for SSH) How it works: 1.
+- **Short Lived Credentials ```bash**: # Use SSH certificates with short validity ssh-keygen -s ca_key -V +8h -n user signing_key.pub # Certificate valid for 8 hours only ``` ### 5.
+
 ## Why Hardware-Based SSH Keys Matter
 
 Traditional SSH keys have vulnerabilities:
