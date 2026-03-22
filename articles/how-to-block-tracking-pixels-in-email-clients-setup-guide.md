@@ -212,6 +212,227 @@ Verify your protection is working:
 
 Many email tracking services offer "campaign previews" to test—sign up for a newsletter and check what data they collect before and after implementing these protections.
 
+## Understanding Tracking Pixel Variants
+
+Modern email tracking goes far beyond simple 1×1 images. Understanding these variants helps you choose appropriate protections:
+
+### Invisible Image Pixels
+
+The traditional tracking pixel is a 1×1 transparent image:
+
+```html
+<img src="https://tracking.example.com/open?id=abc123" width="1" height="1" />
+```
+
+When your email client loads this image, the server logs:
+- Email opened (timestamp)
+- Your IP address
+- User agent (email client type)
+- Device information
+
+**How blocking helps:** Disabling external images prevents this request entirely.
+
+### Hidden Tracking Links
+
+More sophisticated trackers embed unique tracking codes in every link:
+
+```html
+<!-- Normal link:-->
+<a href="https://example.com/article">Read more</a>
+
+<!-- Tracked version (common in marketing emails): -->
+<a href="https://tracking.example.com/click?id=abc123&url=example.com/article">
+  Read more
+</a>
+```
+
+When you click, the tracking service logs:
+- Which link you clicked
+- Timestamp of click
+- Geographic location (from IP)
+- Device information
+
+**Standard defenses don't help here.** Link tracking requires evaluating where links actually point before clicking.
+
+### Sophisticated Behavioral Tracking
+
+Advanced email tracking platforms embed JavaScript (where supported):
+
+```html
+<!-- Embedded JavaScript tracking (rare in emails, but increasingly common): -->
+<script>
+  // Tracks cursor movement, dwell time, scroll depth
+  // Requires email client with JavaScript support (rare)
+  // Blocked by all major email clients by default
+</script>
+```
+
+Most modern email clients disable JavaScript entirely, making this vector less effective. However, being aware of its possibility helps you understand the tracking landscape.
+
+### Metadata Extraction Without Images
+
+Even with images disabled, email servers and your email client reveal metadata:
+
+```
+From: sender@company.com
+Date: Mon, 22 Mar 2026 10:15:00 +0000
+To: your@email.com
+Subject: Check out our latest article
+
+X-Original-IP: 203.0.113.45              ← Your IP at receipt
+X-Originating-IP: [203.0.113.45]
+X-Mailer: MailChimp Version 1.0           ← Service used
+User-Agent: Mozilla/5.0                   ← Device info
+```
+
+Email headers reveal significant information. Headers are difficult to block entirely since they're essential for mail delivery, but reviewing them helps you understand what's being collected.
+
+## Setting Up Network-Level Blocking
+
+For comprehensive protection, combine email client settings with network-level filtering:
+
+### DNS-Level Blocking
+
+Configure your DNS to block known tracking domains:
+
+```bash
+# Using Pi-hole or similar DNS sinkhole
+# Add these to blocklist (partial list of major trackers)
+
+open.track.com
+pixel.mailchimp.com
+*.sendgrid.net
+*.hubspot.com
+bounce.*.pardot.com
+```
+
+This blocks tracking domains at the network level—even if your email client tries to load them, they're blocked before the request leaves your network.
+
+### VPN Integration for Email
+
+Using a VPN while checking email masks your IP address from senders:
+
+```bash
+#!/bin/bash
+# email-check-over-vpn.sh - Ensure email is checked over VPN
+
+# Verify VPN is active
+VPN_STATUS=$(iwctl show)
+if ! echo "$VPN_STATUS" | grep -q "connected"; then
+  echo "VPN not connected. Please connect before checking email."
+  exit 1
+fi
+
+# Your email client starts only after VPN verification
+open /Applications/Thunderbird.app
+```
+
+Even if a tracking pixel loads, it will see your VPN's IP address, not your actual location.
+
+### Firewall Rules for Email Clients
+
+Advanced setup: Configure your OS firewall to restrict what email clients can access:
+
+```bash
+# macOS PF firewall rules for Thunderbird
+# Allows Thunderbird only through VPN interface
+
+pass in on utun0 proto tcp from any to any port 143  # IMAP
+pass in on utun0 proto tcp from any to any port 993  # IMAP over TLS
+pass in on utun0 proto tcp from any to any port 25   # SMTP
+pass in on utun0 proto tcp from any to any port 587  # SMTP submission
+```
+
+This ensures email traffic never leaves your VPN connection.
+
+## Analyzing Your Email Privacy Exposure
+
+Understand your current exposure before and after implementing protections:
+
+### Privacy Audit Script
+
+```python
+#!/usr/bin/env python3
+# audit-email-privacy.py - Analyze email header privacy exposure
+
+import email
+import re
+from pathlib import Path
+from email.parser import BytesParser
+from email import policy
+
+def audit_email_privacy(email_file):
+    """Audit single email for privacy indicators."""
+    with open(email_file, 'rb') as f:
+        msg = BytesParser(policy=policy.default).parse(f)
+
+    findings = {
+        'exposed_ips': [],
+        'tracking_services': [],
+        'html_pixels': [],
+        'suspicious_links': []
+    }
+
+    # Extract IPs from headers
+    for header_name in ['X-Original-IP', 'X-Originating-IP', 'Received']:
+        header_val = msg.get(header_name, '')
+        ips = re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', header_val)
+        findings['exposed_ips'].extend(ips)
+
+    # Identify tracking services in headers
+    tracking_keywords = [
+        'mailchimp', 'sendgrid', 'hubspot', 'marketo',
+        'constantcontact', 'mailgun', 'sendwithus'
+    ]
+    for header_name in msg.keys():
+        header_val = msg[header_name].lower()
+        for keyword in tracking_keywords:
+            if keyword in header_val:
+                findings['tracking_services'].append(keyword)
+
+    # Find tracking pixels in HTML
+    if msg.is_multipart():
+        for part in msg.walk():
+            if part.get_content_type() == 'text/html':
+                html = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                pixels = re.findall(r'<img[^>]*src=["\']([^"\']*)["\']', html)
+                findings['html_pixels'].extend(pixels)
+
+    return findings
+
+# Usage
+if __name__ == '__main__':
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: python3 audit-email-privacy.py <email.eml>")
+        sys.exit(1)
+
+    findings = audit_email_privacy(sys.argv[1])
+    print("=== Email Privacy Audit ===")
+    print(f"\nExposed IPs: {findings['exposed_ips']}")
+    print(f"Tracking Services Detected: {set(findings['tracking_services'])}")
+    print(f"Pixel URLs Found: {len(findings['html_pixels'])}")
+    if findings['html_pixels']:
+        for pixel in findings['html_pixels'][:5]:  # First 5
+            print(f"  - {pixel}")
+```
+
+Run this on sample emails to understand what information is being collected.
+
+## Privacy Philosophy and Trade-offs
+
+No privacy solution is perfect. Understanding the trade-offs helps you choose the right approach:
+
+| Approach | Privacy Gained | Usability Cost | Setup Effort |
+|----------|---------------|----------------|--------------|
+| Disable external images (email setting) | Medium | Low | 5 min |
+| Use privacy-respecting email provider | High | Medium | 2-3 hrs |
+| VPN for all email access | High | Low | 15 min |
+| Self-hosted mail server | Very High | High | 4-8 hrs |
+| Offline email client + local caching | Very High | Medium | 2-3 hrs |
+
+Most people find the best approach combines 2-3 of these layers rather than maximizing any single one.
+
 ## Frequently Asked Questions
 
 **How long does it take to block tracking pixels in email clients: setup guide?**

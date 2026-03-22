@@ -241,5 +241,231 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 
+## Ongoing Monitoring and Maintenance
+
+Security doesn't end with initial setup. Continuous monitoring catches changes:
+
+```bash
+#!/bin/bash
+# security-audit.sh - Weekly monitoring for intrusion indicators
+
+AUDIT_LOG="$HOME/.local/share/security-audit.log"
+
+run_audit() {
+    echo "=== Security Audit $(date) ===" >> "$AUDIT_LOG"
+
+    # Check for unauthorized SSH keys
+    echo "Checking SSH keys..." >> "$AUDIT_LOG"
+    wc -l ~/.ssh/authorized_keys >> "$AUDIT_LOG"
+
+    # Check installed packages for anomalies
+    echo "Checking package integrity..." >> "$AUDIT_LOG"
+    debsums -c 2>&1 | head -10 >> "$AUDIT_LOG"
+
+    # Monitor system load anomalies
+    echo "System load: $(uptime)" >> "$AUDIT_LOG"
+
+    # Check for hidden processes
+    echo "Process count: $(ps aux | wc -l)" >> "$AUDIT_LOG"
+
+    # Verify file integrity
+    echo "Checking critical file timestamps..." >> "$AUDIT_LOG"
+    stat /etc/passwd /etc/shadow /etc/sudo >> "$AUDIT_LOG"
+
+    # Check for unexpected cron jobs
+    crontab -l >> "$AUDIT_LOG" 2>&1
+
+    # Send alert if anomalies detected
+    if grep -q "FAILED\|ERROR" "$AUDIT_LOG"; then
+        # Alert to trusted contact (signal, email, etc)
+        notify_emergency_contact "Security audit detected anomalies"
+    fi
+}
+
+run_audit
+
+# Schedule: Add to crontab for weekly execution
+# 0 3 * * 0 /path/to/security-audit.sh
+```
+
+## Contact Safety Protocols
+
+If safe to do so, establish secure communication with trusted contacts:
+
+```bash
+#!/bin/bash
+# secure-contact-setup.sh
+
+# Create Signal account from safe device (library computer)
+# Never link to old phone number
+
+# Alternative: Temporary contact method
+# 1. Create burner Signal account
+# 2. Share ONLY with completely trusted people
+# 3. Meet in person to exchange contact details
+
+# Setup dead man's switch
+# If you don't check in monthly, alert goes to trusted contact
+
+cat > ~/.local/share/dead-mans-switch.sh << 'EOF'
+#!/bin/bash
+
+CONTACT_EMAIL="trusted-friend@protonmail.com"
+DAYS_SINCE_CHECKIN=30
+CHECKIN_FILE="$HOME/.local/share/last-checkin"
+
+if [ ! -f "$CHECKIN_FILE" ]; then
+    touch "$CHECKIN_FILE"
+fi
+
+LAST_CHECKIN=$(stat -f "%m" "$CHECKIN_FILE" 2>/dev/null || stat -c %Y "$CHECKIN_FILE")
+CURRENT_TIME=$(date +%s)
+DAYS_ELAPSED=$(( (CURRENT_TIME - LAST_CHECKIN) / 86400 ))
+
+if [ $DAYS_ELAPSED -gt $DAYS_SINCE_CHECKIN ]; then
+    echo "ALERT: No check-in for $DAYS_ELAPSED days"
+    # Send encrypted email to contact
+    echo "Security alert: No check-in received" | \
+    gpg --encrypt --recipient "$CONTACT_EMAIL" | \
+    mail -s "Dead man's switch triggered" "$CONTACT_EMAIL"
+fi
+
+# Update check-in time (run after opening email)
+touch "$CHECKIN_FILE"
+EOF
+
+chmod +x ~/.local/share/dead-mans-switch.sh
+
+# Add to weekly cron job
+(crontab -l 2>/dev/null; echo "0 9 * * 0 ~/.local/share/dead-mans-switch.sh") | crontab -
+```
+
+## Emergency Access Recovery
+
+Prepare for worst-case scenarios:
+
+```bash
+# Create recovery codes
+# Store ONE copy in EACH of two secure physical locations
+# (separate safe deposit boxes or trusted people)
+
+gpg --gen-key  # Generate recovery GPG key
+
+# Create recovery mnemonic
+cat > recovery-instructions.txt << 'EOF'
+RECOVERY PROTOCOL - Keep this SECURE
+
+1. If main email is compromised:
+   - Access recovery email (address: _________)
+   - Recovery code: ________________
+   - Backup 2FA codes stored: ______________
+
+2. If all devices compromised:
+   - Go to library with ID
+   - Email password reset from library computer
+   - Change 2FA immediately using recovery codes
+   - Do NOT use home internet
+
+3. Emergency contacts (encrypted):
+   - [Name]: [Signal number/encrypted contact info]
+
+4. Evidence preservation:
+   - Screenshot and save to USB drive
+   - Store in safe location
+   - Can be used for protection order
+
+5. If in immediate physical danger:
+   - Leave all devices
+   - Go directly to domestic violence shelter
+   - Call: 1-800-799-7233
+EOF
+
+# Encrypt recovery file
+gpg --symmetric recovery-instructions.txt
+
+# Print and physically secure
+lp recovery-instructions.txt.gpg
+# Store one copy separate from home
+```
+
+## Recognition of Escalation Signs
+
+Know when technical measures may not be sufficient:
+
+```
+Escalation indicators (require professional intervention):
+- Physical stalking or threats
+- Attempts to contact through social contacts
+- Monitoring your job/workplace
+- Behavior predictive of violence:
+  * Increased aggression
+  * Promises followed by violations
+  * Sudden status changes (losing job, etc)
+
+If escalation occurs:
+1. Document everything (dates, times, incidents)
+2. File police report and keep copy
+3. Seek protective order
+4. Consult with domestic violence advocates
+
+Technical measures are supplementary to physical safety.
+Professional help (DV advocates, law enforcement) is primary.
+```
+
+## Long-Term Resilience
+
+Building sustainable privacy practices for extended security:
+
+```bash
+#!/bin/bash
+# long-term-security-checklist.sh
+
+# Monthly password audit
+echo "=== Monthly Security Review ==="
+
+# 1. Test 2FA still working
+echo "Testing 2FA on critical accounts..."
+# Manually verify each critical account
+
+# 2. Rotate API keys/tokens
+echo "Rotating API credentials..."
+# Update password manager entries
+
+# 3. Review connected apps
+echo "Checking app permissions..."
+# Remove old apps with unnecessary access
+
+# 4. Verify VPN/encryption still active
+echo "Verifying encryption status..."
+sudo lvdisplay | grep -i open  # Check encrypted volumes
+
+# 5. Update security contacts
+echo "Reviewing emergency contacts..."
+# Ensure all contact methods still valid
+
+# 6. Backup critical configs
+echo "Backing up configurations..."
+tar czf ~/.local/share/backup-$(date +%Y%m%d).tar.gz \
+  ~/.ssh ~/.gnupg ~/.config/signal
+
+# 7. Check for service changes
+echo "Reviewing service terms..."
+# Visit privacy pages of critical services
+
+echo "Security review complete"
+```
+
+## Resources for Ongoing Support
+
+Technical measures work best with social support:
+
+- National Domestic Violence Hotline: 1-800-799-7233
+- Online safety planning: National Domestic Violence Hotline website
+- Tech security for survivors: National Network to End Domestic Violence (NNEDV) has tech resources
+- Legal aid: LawHelp.org (US) or equivalent in your country
+
+This guide provides technical defense. Professional advocates provide the comprehensive support needed for actual safety.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}
