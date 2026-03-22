@@ -354,5 +354,18 @@ KeePassXC is for people who don't trust the cloud with anything. Justifiable but
 
 Pick one, set it up today, and stop reusing passwords.
 
+<<<<<<< HEAD
+
+## Related Articles
+
+- [Best Password Managers With Emergency Access Features](/best-password-managers-emergency-access-features-compared/)
+- [Password Manager Death Plan](/password-manager-death-plan-which-managers-have-built-in-eme/)
+- [Privacy Focused Password Sharing for Families Guide](/privacy-focused-password-sharing-for-families-guide/)
+
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+=======
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+>>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}

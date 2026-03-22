@@ -533,5 +533,19 @@ Local encrypted files for: Final sensitive versions
 
 Don't assume cloud docs are private. Assume they're logged, analyzed, and retained.
 
+<<<<<<< HEAD
+
+
+## Related Articles
+
+- [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [Cloud DLP for Google Workspace Guide 2026](/cloud-dlp-for-google-workspace-guide-2026/)
+- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
+
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+=======
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+>>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}
