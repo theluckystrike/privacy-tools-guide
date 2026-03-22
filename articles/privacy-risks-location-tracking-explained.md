@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Privacy Risks of Location Tracking Explained"
 <<<<<<< HEAD
@@ -7,7 +8,7 @@ description: "How apps, carriers, data brokers, Wi-Fi probes, and Bluetooth beac
 description: "How apps, carriers, data brokers, Wi-Fi probes, and Bluetooth beacons track your physical location, who buys that data, and concrete steps to reduce your
 >>>>>>> 900910b9245b9b701f9371a2b27423efb875d01e
 date: 2026-03-22
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /privacy-risks-location-tracking-explained/
 categories: [guides]
 reviewed: true
@@ -16,6 +17,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+
 
 {% raw %}
 # Privacy Risks of Location Tracking Explained

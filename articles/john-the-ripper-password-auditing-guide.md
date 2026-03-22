@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "How to Use John the Ripper for Password Auditing"
 <<<<<<< HEAD
@@ -7,7 +8,7 @@ description: "Audit password security with John the Ripper using wordlist attack
 description: "Audit password security with John the Ripper using wordlist attacks, rule-based mangling, incremental mode, and hash extraction from Linux, Windows, and
 >>>>>>> 900910b9245b9b701f9371a2b27423efb875d01e
 date: 2026-03-22
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /john-the-ripper-password-auditing-guide/
 categories: [guides, security]
 reviewed: true
@@ -16,6 +17,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+
 
 {% raw %}
 # How to Use John the Ripper for Password Auditing
