@@ -46,7 +46,17 @@ Systematically replace your real name with pseudonyms across GitHub, Stack Overf
 
 Every platform linking your real name to your online activity creates a correlation point. When your name appears on social media, forums, e-commerce sites, and developer platforms, anyone can build a profile combining your identity, location, interests, and behavior patterns. For developers, this extends to code repositories, package registries, and developer accounts where your real name may be visible in commit logs, package metadata, or account profiles.
 
-## Strategic Approach
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Strategic Approach
 
 Before modifying accounts, establish a prioritization framework. Focus on high-exposure platforms first—those with public profiles, search engine indexing, or data broker aggregation. Create a spreadsheet or use a script to track your accounts:
 
@@ -77,7 +87,7 @@ done
 
 This baseline helps you systematically work through each account without missing any.
 
-## Platform-Specific Modifications
+### Step 2: Platform-Specific Modifications
 
 ### Developer Platforms
 
@@ -148,7 +158,7 @@ echo "Whitepages | 2026-03-16 | Pending | Identity verification required" >> rem
 
 Many states have laws requiring data broker removal upon request. California's CCPA and Virginia's VCDPA provide legal frameworks for these requests.
 
-## Handling Accounts That Cannot Be Changed
+### Step 3: Handling Accounts That Cannot Be Changed
 
 Some platforms require real-name verification. In these cases, consider:
 
@@ -156,7 +166,7 @@ Some platforms require real-name verification. In these cases, consider:
 2. **Dedicated devices**: Maintain a separate device for accounts requiring real identity
 3. **Legal name changes**: In extreme cases, legal name changes provide a fresh start, though this has significant implications
 
-## Verification and Maintenance
+### Step 4: Verification and Maintenance
 
 After modifying accounts, verify your changes:
 
@@ -172,7 +182,7 @@ curl -s "https://api.github.com/users/YOUR_USERNAME/events" | jq '.[].commits[].
 
 Set calendar reminders quarterly to audit new accounts and verify existing pseudonymity remains intact. New platform signups are the most common source of real-name re-exposure.
 
-## Payment Methods and Transaction History
+### Step 5: Payment Methods and Transaction History
 
 Payment methods often leak real names through transaction records:
 
@@ -199,7 +209,7 @@ Bitcoin transactions are pseudo-anonymous but leave permanent records. If you pu
 # Remember: tumbling services aren't foolproof against advanced analysis
 ```
 
-## Email Address Pseudonymization
+### Step 6: Email Address Pseudonymization
 
 Your email address often reveals identity patterns. Systematically replace email addresses:
 
@@ -235,7 +245,7 @@ twitter-account@mydomain.com → forward to real@email.com
 
 **Cost**: Domain registration ($10-15/year) + hosting ($5-10/month) = minimal cost for full control.
 
-## Data Broker Removal at Scale
+### Step 7: Data Broker Removal at Scale
 
 Removing yourself from hundreds of data brokers requires systematic automation:
 
@@ -294,7 +304,7 @@ for broker in "${BROKERS[@]}"; do
 done
 ```
 
-## Search Engine De-indexing
+### Step 8: Search Engine De-indexing
 
 After removing accounts, request search engine de-indexing:
 
@@ -313,7 +323,7 @@ curl -X DELETE "https://www.google.com/webmasters/tools/url-removal?entry=https:
 # Disallow: /old-profile-page/
 ```
 
-## Document and Track Changes
+### Step 9: Document and Track Changes
 
 Create persistent documentation of your pseudonymization:
 
@@ -324,12 +334,12 @@ Create persistent documentation of your pseudonymization:
 cat > pseudonym-changes.md << 'EOF'
 # Pseudonym Migration Log
 
-## Timeline
+### Step 10: Timeline
 - 2026-03-01: Started systematic pseudonymization
 - 2026-03-15: Completed GitHub migration
 - 2026-03-20: Removed from Spokeo and Whitepages
 
-## Account Status
+### Step 11: Account Status
 
 | Platform | Real Name Status | Pseudonym | Date Changed |
 |----------|-----------------|-----------|--------------|
@@ -338,7 +348,7 @@ cat > pseudonym-changes.md << 'EOF'
 | LinkedIn | ⚠ Required | professional-name | N/A |
 | Data Brokers | ✗ Removed | N/A | 2026-03-20 |
 
-## Ongoing Verification
+### Step 12: Ongoing Verification
 
 - [ ] Monthly search audit for real-name leakage
 - [ ] Quarterly data broker opt-outs
@@ -350,7 +360,7 @@ EOF
 gpg --encrypt --recipient your-key pseudonym-changes.md
 ```
 
-## Handling Account Linking and Login Federations
+### Step 13: Handling Account Linking and Login Federations
 
 Modern accounts often use "Login with Google," "Login with GitHub," etc. These linked services can leak real names:
 
@@ -383,7 +393,7 @@ npm config get email
 docker login --username pseudonym
 ```
 
-## Quarterly Maintenance Schedule
+### Step 14: Quarterly Maintenance Schedule
 
 Pseudonymization isn't one-time—maintain ongoing:
 
@@ -405,6 +415,21 @@ ANNUALLY:
 - Test recovery procedures
 - Update threat model assessment
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

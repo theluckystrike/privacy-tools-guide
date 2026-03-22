@@ -57,7 +57,17 @@ For developers, this means rebuilding features that previously relied on third-p
 
 If your development team claims they "didn't know" about this change, the issue is communication breakdown, not lack of public information. This was a five-year gradual transition, not a surprise.
 
-## Alternative 1: First-Party Cookies with Explicit Consent
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Alternative 1: First-Party Cookies with Explicit Consent
 
 The simplest migration path involves moving functionality to first-party cookies. Since first-party cookies still work across page loads on your domain, you can maintain session state and user preferences without cross-site tracking.
 
@@ -77,7 +87,7 @@ function setConsentCookie(userId, preferences) {
 
 This approach works for session persistence, theme preferences, and logged-in state. The key constraint is that these cookies stay within your domain—you cannot track users across unrelated sites.
 
-## Alternative 2: The Storage Access API
+### Step 2: Alternative 2: The Storage Access API
 
 For sites that genuinely need cross-site functionality (such as embedded content from related properties), the Storage Access API provides a standards-based way to request access to first-party storage on another origin.
 
@@ -100,7 +110,7 @@ async function requestCrossSiteStorage() {
 
 This API requires user interaction (a click or gesture) to trigger the permission request. It works in Safari, Firefox, and Chrome. The user sees a browser prompt deciding whether to grant access.
 
-## Alternative 3: Server-Side Session Management
+### Step 3: Alternative 3: Server-Side Session Management
 
 Moving session management to your server eliminates client-side cookie dependencies entirely. Your server maintains user state, and the client only holds a session identifier.
 
@@ -134,7 +144,7 @@ def login():
 
 Server-side sessions provide more control over data retention and enable exact compliance with privacy regulations. You decide when and how to delete user data.
 
-## Alternative 4: Privacy-Preserving APIs
+### Step 4: Alternative 4: Privacy-Preserving APIs
 
 Several new browser APIs emerged specifically to address post-third-party-cookie use cases while maintaining user privacy.
 
@@ -171,7 +181,7 @@ fetch('/api/register-conversion', {
 
 These APIs require thoughtful implementation and may not suit all use cases, but they represent the direction the web platform is moving.
 
-## Alternative 5: Client-Side Storage APIs
+### Step 5: Alternative 5: Client-Side Storage APIs
 
 Modern browsers offer several client-side storage mechanisms beyond cookies:
 
@@ -206,7 +216,7 @@ Third-party cookie removal triggers important privacy compliance updates:
 
 Consult privacy counsel if handling sensitive data categories (healthcare, financial info, children's data). Third-party cookie removal changes your compliance baseline.
 
-## Choosing the Right Approach
+### Step 6: Choose the Right Approach
 
 The best alternative depends on your specific use case:
 
@@ -220,7 +230,7 @@ The best alternative depends on your specific use case:
 
 Most applications will combine multiple approaches. A typical implementation might use server-side sessions for authentication, localStorage for UI preferences, and the Attribution Reporting API for marketing measurement.
 
-## Implementation Checklist
+### Step 7: Implementation Checklist
 
 1. Audit existing third-party cookie usage in your application
 2. Identify which features require migration versus retirement
@@ -229,7 +239,7 @@ Most applications will combine multiple approaches. A typical implementation mig
 5. Test across target browsers (Safari, Firefox, Chrome)
 6. Update privacy policies to reflect new data practices
 
-## Debugging Third-Party Cookie Removal
+### Step 8: Debugging Third-Party Cookie Removal
 
 When you remove third-party cookie dependencies, expect debugging challenges. Here's how to identify issues:
 
@@ -241,7 +251,7 @@ When you remove third-party cookie dependencies, expect debugging challenges. He
 
 **Cross-Browser Testing**: Test your application in Safari, Firefox, and Chrome. Each browser's privacy implementation differs slightly. Safari's Intelligent Tracking Prevention is more aggressive than Chrome's gradual rollout. A feature working in Chrome may break in Safari.
 
-## Analytics and Tracking Alternatives
+### Step 9: Analytics and Tracking Alternatives
 
 Most third-party cookie removal affects analytics. Here's how to maintain insight without third-party tracking:
 
@@ -266,7 +276,7 @@ Server-side events aren't blocked by browser restrictions and provide better dat
 
 **Aggregate Reporting**: For ad performance measurement, use the Attribution Reporting API to get aggregate conversion data without exposing individual user journeys. This satisfies marketing measurement needs while respecting privacy.
 
-## Real-World Migration Example
+### Step 10: Real-World Migration Example
 
 Here's a concrete example migrating a SaaS application from third-party cookies to alternatives:
 
@@ -283,6 +293,21 @@ Test the migration in stages:
 2. Disable third-party analytics, ensure server-side collection works across all browsers
 3. Update session management to use first-party tokens only
 4. Monitor error logs for 2 weeks to catch edge cases
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

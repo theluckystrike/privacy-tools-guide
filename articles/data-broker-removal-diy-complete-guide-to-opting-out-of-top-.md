@@ -40,13 +40,23 @@ Data broker sites aggregate and sell personal information, creating privacy risk
 - **In states with opt-out**: provisions (California, Colorado), you can request suppression of your voter record from commercial use.
 - **- Property records**: deeds and tax assessor records are public in most jurisdictions and are a primary source for home address data.
 
-## Understanding the Data Broker Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Data Broker Ecosystem
 
 Data brokers collect information from public records, social media, purchase histories, and app usage. They compile detailed profiles sold to advertisers, insurers, employers, and other parties. The largest brokers maintain records on hundreds of millions of individuals.
 
 Major categories include people search sites (Spokeo, Whitepages), background check services (BeenVerified, Instant Checkmate), and marketing data aggregators (Acxiom, Experian). Each category requires different removal strategies.
 
-## Top 50 Data Broker Sites and Opt-Out Methods
+### Step 2: Top 50 Data Broker Sites and Opt-Out Methods
 
 ### People Search Sites
 
@@ -171,7 +181,7 @@ delete-broker-data --email your@email.com --brokers spokeo,whitepages,beenverifi
 delete-broker-data --check-status
 ```
 
-## Verification and Follow-Up
+### Step 3: Verification and Follow-Up
 
 After submitting opt-out requests:
 
@@ -234,7 +244,7 @@ result = service.submit_removal_request(
 print(f"Removal request: {result['request_id']}")
 ```
 
-## Building a Personal Data Removal Pipeline
+### Step 4: Build a Personal Data Removal Pipeline
 
 Integrate data broker removal into your existing privacy workflow:
 
@@ -259,7 +269,7 @@ bash /path/to/verify-removal.sh "$EMAIL" >> "$LOG_FILE" 2>&1
 echo "Opt-out refresh complete" >> "$LOG_FILE"
 ```
 
-## Legal Frameworks Supporting Your Rights
+### Step 5: Legal Frameworks Supporting Your Rights
 
 Several regulations require brokers to honor removal requests:
 
@@ -280,14 +290,14 @@ My email is [your email]. Please confirm receipt and completion within
 45 days as required by law.
 ```
 
-## Common Pitfalls to Avoid
+### Step 6: Common Pitfalls to Avoid
 
 - **Single submission only** - Many brokers require annual renewal
 - **Using work email** - Use a dedicated privacy email
 - **Skipping verification** - Most brokers require email confirmation
 - **Ignoring re-listings** - Check quarterly for re-appeared data
 
-## Tracking Opt-Out Progress in a Local Database
+### Step 7: Tracking Opt-Out Progress in a Local Database
 
 Submitting requests is only half the work. Without a record of what you submitted and when, you will lose track of which brokers have been addressed and which are overdue for a re-check. A SQLite database keeps this organized without requiring any external service:
 
@@ -342,7 +352,7 @@ def mark_verified(conn, broker: str, email: str):
 
 Run `due_for_check()` weekly from a cron job to get a list of brokers that need re-verification. If a broker re-listed your data, call `record_submission()` again to start a new tracking cycle.
 
-## Using a Dedicated Opt-Out Email Address
+### Step 8: Use a Dedicated Opt-Out Email Address
 
 Submitting opt-out requests with your primary email creates a new problem: you are confirming that address to each broker's marketing database when you click the verification link. Use a dedicated address instead:
 
@@ -353,7 +363,7 @@ Submitting opt-out requests with your primary email creates a new problem: you a
 
 For the automated script above, pass this dedicated address as the `email` parameter. The actual personal data you want removed (your real name, home address, phone) goes in the form fields where the broker requires it — the opt-out email address itself does not need to match your real identity.
 
-## What Data Brokers Cannot Remove
+### Step 9: What Data Brokers Cannot Remove
 
 Even after successful opt-outs, some data sources fall outside individual brokers' control:
 
@@ -363,6 +373,21 @@ Even after successful opt-outs, some data sources fall outside individual broker
 - **Social media** — any public posts, profile information, or tagged content remains indexed even after broker opt-outs.
 
 For maximum reduction of your data footprint, combine broker opt-outs with source-level actions: set social profiles to private, use a PO box for any address that enters public records, and register to vote using a privacy address if your state allows it.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

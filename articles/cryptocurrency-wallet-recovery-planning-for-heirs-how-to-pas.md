@@ -28,13 +28,23 @@ This guide covers practical methods for developers and power users to plan walle
 - **Casa ($20/month) provides a**: multi-sig wallet service specifically designed for inheritance planning.
 - **They charge $500 setup**: plus $150/month for ongoing vault monitoring, but provide a sped up process and professional oversight.
 
-## The Core Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Core Problem
 
 A cryptocurrency private key (or seed phrase) provides unrestricted access to funds. If you store your seed phrase in a will or safe deposit box, you create vulnerability—an attacker who obtains that document gains everything. If you leave no instructions, your heirs inherit nothing despite the real value sitting on-chain.
 
 The solution requires separating knowledge of the key from access to the key. Your heirs should be able to recover funds through a process that requires multiple independent pieces of information, none of which alone is sufficient.
 
-## Method 1: Encrypted Seed Phrase with Distributed Decryption
+### Step 2: Method 1: Encrypted Seed Phrase with Distributed Decryption
 
 Encrypt your seed phrase using a key known only to your heirs collectively. This requires multiple family members to cooperate, but prevents any single person from stealing the funds.
 
@@ -49,7 +59,7 @@ gpg --symmetric --cipher-algo AES256 seed-phrase-backup.txt
 
 Distribute the encrypted file and the decryption passphrase through different channels. Your heirs need both to recover access. For additional security, use a secret sharing scheme to split the decryption key.
 
-## Method 2: Shamir Secret Sharing for Seed Phrases
+### Step 3: Method 2: Shamir Secret Sharing for Seed Phrases
 
 Shamir's Secret Sharing (SSS) divides a secret into multiple shares. You can configure a threshold—for example, requiring 3 of 5 shares to reconstruct the seed phrase. This provides flexibility: distribute shares to different family members, a lawyer, and a safe deposit box. No single location compromises the entire wallet.
 
@@ -83,7 +93,7 @@ ssss-combine -t 3
 
 This approach ensures that recovering your wallet requires coordination between multiple parties. A single lost share doesn't prevent recovery, but a single compromised share doesn't grant access.
 
-## Method 3: Multi-Signature Wallets
+### Step 4: Method 3: Multi-Signature Wallets
 
 Multi-sig wallets require multiple private keys to authorize transactions. You can configure a 2-of-3 setup where any two of three designated keys can move funds. This is ideal for inheritance planning: you hold one key, a trusted family member holds another, and a third resides in secure storage.
 
@@ -105,7 +115,7 @@ contract MultiSigWallet {
 
 For Bitcoin, hardware wallet manufacturers like Ledger and Trezor support multi-sig configurations natively. The BitBox02 and Coldcard both offer multi-sig setup workflows that generate multiple seeds stored separately.
 
-## Method 4: Time-Locked Recovery
+### Step 5: Method 4: Time-Locked Recovery
 
 Time-locked recovery adds a temporal element. Your heirs can recover funds immediately with proper authorization, but if recovery is attempted after your death (or after a specified period), the wallet automatically releases control to designated beneficiaries.
 
@@ -118,7 +128,7 @@ Some custody solutions offer this natively. For self-hosted solutions, you can c
 
 The practical implementation requires a trusted third party—a lawyer, a family member, or a professional service—that can verify your status and release the additional authentication component when needed.
 
-## Method 5: Hardware Wallet with Passphrase
+### Step 6: Method 5: Hardware Wallet with Passphrase
 
 Hardware wallets support a passphrase (sometimes called a "25th word") that derives a completely separate wallet from your seed phrase. You can create two wallets:
 
@@ -141,7 +151,7 @@ For users who prefer delegating some responsibility to professionals, several cu
 
 Each service trades off some control for convenience and professional support. Evaluate whether the added security and oversight justifies the recurring costs.
 
-## Testing Your Recovery Plan
+### Step 7: Test Your Recovery Plan
 
 Regardless of which method you choose, document your setup thoroughly but securely. Create a recovery instructions document that your heirs can follow, including:
 
@@ -152,13 +162,13 @@ Regardless of which method you choose, document your setup thoroughly but secure
 
 Store this document separately from the cryptographic components. Consider using a safety deposit box at a bank for physical items (hardware wallets, written seed phrase backups) and encrypted digital storage for documentation.
 
-## Testing Your Recovery Plan
+### Step 8: Test Your Recovery Plan
 
 The most critical step is testing. Create a small test wallet using your intended method, actually recover it using the procedures you've documented, and verify it works. Many estate plans fail because the methodology was never validated.
 
 After testing, drain the test wallet and destroy its keys. Then create your production setup using the same process.
 
-## Security Trade-offs
+### Step 9: Security Trade-offs
 
 Each method involves trade-offs. More complex setups (multi-sig, secret sharing) provide stronger security but increase the chance of recovery failure due to lost components. Simpler approaches (single seed phrase storage) are easier but create single points of failure.
 
@@ -167,7 +177,7 @@ Review your plan annually. Verify that share holders are still appropriate, that
 
 Planning for cryptocurrency inheritance requires thinking differently than traditional estate planning. The cryptographic nature of these assets offers possibilities that don't exist for conventional assets—but those possibilities require deliberate design. By implementing one or more of these methods, you ensure your crypto assets benefit your heirs rather than becoming permanent casualties of poor planning.
 
-## Tax and Legal Considerations
+### Step 10: Tax and Legal Considerations
 
 Inheritance planning for crypto requires coordination with your attorney and tax advisor. Different jurisdictions treat cryptocurrency inheritance differently.
 
@@ -177,7 +187,7 @@ For non-US jurisdictions, consult local tax specialists. Some countries (notably
 
 Your will should explicitly reference crypto holdings and direct your executor to work with the designated recovery contacts. Phrases like "cryptocurrency holdings are documented in the sealed envelope with XYZ family member" provide necessary guidance without exposing sensitive details in a public will.
 
-## Automated Recovery Scripts
+### Step 11: Automated Recovery Scripts
 
 For developers managing significant crypto holdings, automated recovery scripts can reduce operational friction. Here's a basic Python script that validates a multi-sig setup:
 
@@ -227,7 +237,7 @@ def document_recovery_locations(locations):
 
 Store this script in your recovery documentation alongside your shares and passphrase information.
 
-## Hardware Wallet Considerations
+### Step 12: Hardware Wallet Considerations
 
 Different hardware wallets implement inheritance features differently:
 
@@ -239,7 +249,7 @@ Different hardware wallets implement inheritance features differently:
 
 **BitBox02** (Starting at $99): Supports multi-sig configuration with backup and recovery flows designed for inheritance. Their backup tool helps sharing encrypted backups across family members.
 
-## Regulatory and Legal Framework
+### Step 13: Regulatory and Legal Framework
 
 Different jurisdictions treat inherited cryptocurrency differently, which affects your planning:
 
@@ -270,7 +280,7 @@ Different jurisdictions treat inherited cryptocurrency differently, which affect
 
 Without proper documentation and jurisdiction-specific planning, your heirs may face tax penalties or lose access entirely.
 
-## Multi-Generational Planning
+### Step 14: Multi-Generational Planning
 
 For wealth transfer over multiple generations, structure your setup with future updates in mind:
 
@@ -293,7 +303,7 @@ For wealth transfer over multiple generations, structure your setup with future 
 - Upon death: Heirs activate recovery process
 ```
 
-## Exit Strategy: Converting to Fiat
+### Step 15: Exit Strategy: Converting to Fiat
 
 Even with perfect recovery planning, your heirs still need to know how to convert crypto to usable currency:
 
@@ -328,6 +338,21 @@ Step 6: Handle tax reporting
 
 Total process: 1-2 weeks from recovered key to fiat funds
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

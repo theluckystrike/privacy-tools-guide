@@ -27,13 +27,23 @@ To protect physical mail privacy, use a private mailbox service (UPS Store, mail
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding the Address Harvesting Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Address Harvesting Ecosystem
 
 Every piece of mail you receive contains metadata valuable to third parties. Return addresses, postage marks, and even the shape and weight of envelopes provide data points for profiling. Marketing firms maintain sophisticated databases correlating names, addresses, and spending habits. These databases get sold, leaked, and exploited.
 
 The threat model extends beyond commercial interests. Stalkers, identity thieves, and social engineers harvest physical addresses through mail inspection, garbage diving, and social engineering attacks against postal workers. For high-profile individuals, developers handling sensitive data, or anyone valuing privacy, addressing these vectors matters.
 
-## Strategic Address Management
+### Step 2: Strategic Address Management
 
 ### Using Privacy Mail Services
 
@@ -80,7 +90,7 @@ Partial address usage reduces exposure while maintaining mail deliverability. Ma
 
 For situations where you must provide an address but want reduced exposure, consider using a P.O. Box for correspondence while keeping your street address for package delivery from trusted carriers. This separation creates ambiguity about your primary residence.
 
-## Mail Handling Automation
+### Step 3: Mail Handling Automation
 
 Developers can automate mail management through services offering API access. Scanning incoming mail, routing physical correspondence, and managing notifications becomes programmable.
 
@@ -116,7 +126,7 @@ const mailWebhookHandler = async (req, res) => {
 
 This automation approach creates an audit trail of correspondence while enabling automated filtering of unwanted mail.
 
-## Physical Security Measures
+### Step 4: Implement Physical Security Measures
 
 ### Secure Disposal Practices
 
@@ -135,13 +145,13 @@ Official mail forwarding requests through USPS (Form 3575) provide legitimate ad
 
 For short-term needs, many privacy-forward individuals use informed delivery features sparingly and avoid permanent changes to their address of record.
 
-## Institutional Considerations
+### Step 5: Institutional Considerations
 
 When dealing with organizations requiring physical addresses, evaluate their data practices. Financial institutions, government agencies, and healthcare providers maintain regulatory obligations around data protection but may share information with affiliates and service providers.
 
 Request privacy policies regarding address information. Many organizations allow you to opt out of marketing sharing while maintaining required correspondence. Some jurisdictions provide stronger protections—California residents, for example, have rights under the CCPA regarding personal information sharing.
 
-## Building a Privacy Stack
+### Step 6: Build a Privacy Stack
 
 Physical mail privacy works best as part of a layered approach. Combine address management strategies with digital privacy practices:
 
@@ -150,7 +160,7 @@ Physical mail privacy works best as part of a layered approach. Combine address 
 - Maintain encrypted local records of mail history
 - Regularly audit who has your address through data broker removal requests
 
-## Implementation Checklist
+### Step 7: Implementation Checklist
 
 Start with these concrete steps:
 
@@ -163,7 +173,7 @@ Start with these concrete steps:
 
 Address harvesting from physical mail will likely remain a persistent threat. Implementing these strategies now reduces your attack surface while developing habits that scale with future privacy needs. The goal isn't perfect security—it's measurable reduction in address exposure across correspondence channels you control.
 
-## Cost-Benefit Analysis of Mail Privacy Services
+### Step 8: Cost-Benefit Analysis of Mail Privacy Services
 
 Understanding pricing helps prioritize which services deliver real value:
 
@@ -264,7 +274,7 @@ Beyond privacy, evaluate mail forwarding services on security posture:
 
 Services offering encryption and 2FA better protect your mail contents and account access.
 
-## Protecting Mail in Transit
+### Step 9: Protecting Mail in Transit
 
 Between collection and delivery, mail passes through multiple hands. Protection strategies:
 
@@ -286,7 +296,7 @@ Risk mitigation:
 3. **Signature required**: For sensitive documents, request delivery signature
 4. **Registered mail**: Use official tracking for irreplaceable documents
 
-## Regulatory Protections for Address Privacy
+### Step 10: Regulatory Protections for Address Privacy
 
 Depending on your jurisdiction, regulatory frameworks provide address privacy tools:
 
@@ -306,7 +316,7 @@ Depending on your jurisdiction, regulatory frameworks provide address privacy to
 
 Research your jurisdiction's specific protections and take advantage of free options before investing in premium services.
 
-## Long-term Address Privacy Strategy
+### Step 11: Long-term Address Privacy Strategy
 
 Sustainable address privacy requires ongoing maintenance:
 
@@ -329,6 +339,21 @@ Sustainable address privacy requires ongoing maintenance:
 
 Address privacy isn't an one-time setup; it requires consistent attention to remain effective.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

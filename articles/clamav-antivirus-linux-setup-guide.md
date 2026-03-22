@@ -49,7 +49,17 @@ On Debian-based systems, `clamav-daemon` installs the `clamd` background process
 
 ---
 
-## Update Virus Definitions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Update Virus Definitions
 
 ClamAV's detection effectiveness depends entirely on current signatures. The `freshclam` utility handles downloading updates from the ClamAV mirror network.
 
@@ -85,7 +95,7 @@ NotifyClamd /etc/clamav/clamd.conf
 
 ---
 
-## Basic Scanning
+### Step 2: Basic Scanning
 
 ```bash
 # Scan a single file
@@ -113,7 +123,7 @@ The `--infected` flag suppresses output for clean files and shows only detection
 
 ---
 
-## Configure the ClamAV Daemon (clamd)
+### Step 3: Configure the ClamAV Daemon (clamd)
 
 The daemon loads virus definitions into memory and accepts scan requests — much faster than clamscan for each file.
 
@@ -154,7 +164,7 @@ clamdscan -r /home/user/Downloads/
 
 ---
 
-## On-Access Scanning (Real-Time)
+### Step 4: On-Access Scanning (Real-Time)
 
 `clamonacc` provides real-time scanning of files as they're accessed:
 
@@ -197,7 +207,7 @@ tail -f /var/log/clamav/clamonacc.log
 
 ---
 
-## Scheduled Scans
+### Step 5: Scheduled Scans
 
 ```bash
 sudo nano /etc/cron.weekly/clamav-scan
@@ -233,7 +243,7 @@ If your system does not have a mail transport agent configured, replace the `mai
 
 ---
 
-## Quarantine Management
+### Step 6: Quarantine Management
 
 ```bash
 # Create quarantine directory
@@ -249,7 +259,7 @@ Quarantined files retain their original filenames. Before deleting, you may want
 
 ---
 
-## Verify ClamAV Is Working
+### Step 7: Verify ClamAV Is Working
 
 ```bash
 # Test with EICAR test file (harmless detection test string)
@@ -271,7 +281,7 @@ After a production deployment, run this check monthly and pipe the result into y
 
 ---
 
-## Scanning Email Attachments (Postfix Integration)
+### Step 8: Scanning Email Attachments (Postfix Integration)
 
 ```bash
 sudo apt install clamav-milter
@@ -295,7 +305,7 @@ sudo systemctl restart postfix clamav-milter
 
 ---
 
-## Tuning Scan Performance
+### Step 9: Tuning Scan Performance
 
 For systems scanning large file trees, several options reduce ClamAV's resource footprint without sacrificing coverage:
 
@@ -316,6 +326,21 @@ The `node_modules` exclusion matters on developer workstations — a typical Jav
 To benchmark scan time, use `time clamdscan -r --no-summary /home/user/` before and after applying exclusions. On a workstation with a typical developer home directory, the difference is often 45 minutes versus under 5 minutes — with no meaningful reduction in actual threat detection coverage.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

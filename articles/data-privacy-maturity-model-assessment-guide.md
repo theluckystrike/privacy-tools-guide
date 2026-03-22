@@ -24,7 +24,17 @@ A data privacy maturity model assessment evaluates your organization's current p
 - **This guide covers understanding privacy maturity models, the five maturity levels in practice, level 1: initial**: ad-hoc and reactive, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
-## Understanding Privacy Maturity Models
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Privacy Maturity Models
 
 Privacy maturity models provide a structured way to evaluate and improve your organization's data protection capabilities. The most widely adopted frameworks build on the Capability Maturity Model (CMM), defining five maturity levels:
 
@@ -38,7 +48,7 @@ Privacy maturity models provide a structured way to evaluate and improve your or
 
 Higher maturity levels correlate with reduced regulatory risk, fewer data breaches, and greater customer trust. For developers, understanding where your systems fall on this spectrum helps prioritize security investments and identify technical debt in privacy implementation.
 
-## The Five Maturity Levels in Practice
+### Step 2: The Five Maturity Levels in Practice
 
 ### Level 1: Initial — Ad-Hoc and Reactive
 
@@ -303,7 +313,7 @@ class PrivacyOptimizationEngine {
 }
 ```
 
-## Building Your Assessment Framework
+### Step 3: Build Your Assessment Framework
 
 Create a self-assessment tool to evaluate your current maturity level:
 
@@ -370,7 +380,7 @@ class PrivacyMaturityAssessment {
 }
 ```
 
-## Remediation Strategies by Level
+### Step 4: Remediation Strategies by Level
 
 ### Moving from Level 1 to Level 2
 
@@ -439,12 +449,27 @@ const RETENTION_POLICY = {
 4. Create automated policy optimization
 5. Develop privacy-by-design libraries
 
-## Measuring Progress
+### Step 5: Measuring Progress
 
 Track these key metrics to measure your maturity journey:
 
 Track consent rate (percentage of users with valid, current consent), data subject request time (average time to fulfill DSARs), classification coverage (percentage of data fields classified), retention compliance (percentage of data within retention policies), incident response time (mean time to detect and respond to breaches), and training completion (percentage of staff completing privacy training).
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

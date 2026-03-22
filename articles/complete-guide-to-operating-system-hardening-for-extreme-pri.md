@@ -45,7 +45,17 @@ Every operating system ships with defaults optimized for usability rather than s
 
 The techniques in this guide apply primarily to Linux systems, which offer the most granular control. However, key principles transfer to macOS and Windows with appropriate modifications.
 
-## Linux Kernel Hardening with Sysctl
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Linux Kernel Hardening with Sysctl
 
 The Linux kernel exposes runtime configuration through sysctl. These settings control network behavior, memory protection, and process isolation.
 
@@ -96,7 +106,7 @@ kernel.yama.ptrace_scope = 2
 
 The `ptrace_scope` setting restricts process debugging capabilities, preventing one process from inspecting another without permission. This blocks many malware families that use ptrace for credential theft.
 
-## Firewall Configuration with nftables
+### Step 2: Firewall Configuration with nftables
 
 Linux firewalls have evolved from iptables to nftables. Here's a privacy-focused base configuration:
 
@@ -152,7 +162,7 @@ table inet filter {
 
 This strict output policy blocks unexpected network connections. Whitelist only the ports your workflow requires. Audit with `nft monitor` to see connection attempts.
 
-## Service Hardening
+### Step 3: Service Hardening
 
 Disable unnecessary services to reduce attack surface:
 
@@ -172,7 +182,7 @@ sudo systemctl disable cups
 
 On server systems, review listening ports with `ss -tulpn`. Each open port represents potential information leakage or attack vector.
 
-## Application Sandboxing
+### Step 4: Application Sandboxing
 
 Modern Linux desktops support sandboxing through several mechanisms:
 
@@ -220,7 +230,7 @@ flatpak info --show-permissions org.mozilla.firefox
 
 Review permissions before granting additional access. The `--socket=x11`, `--socket=wayland`, and `--device=dri` permissions grant graphical access. Network access uses `--socket=network`.
 
-## File System Hardening
+### Step 5: File System Hardening
 
 Configure file system mount options for additional protection:
 
@@ -237,7 +247,7 @@ proc /proc proc nosuid,noexec,nodev 0 0
 
 The `/tmp` restrictions prevent execution of malicious binaries from temporary storage, a common attack vector.
 
-## macOS Hardening Essentials
+### Step 6: macOS Hardening Essentials
 
 For macOS users, several Terminal commands provide hardening:
 
@@ -257,7 +267,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
 
 Review System Settings > Privacy & Security to disable telemetry options. Disable "Share Mac Analytics" and location services for applications that don't need them.
 
-## Windows Privacy Settings
+### Step 7: Windows Privacy Settings
 
 Windows requires registry modifications for meaningful hardening:
 
@@ -274,7 +284,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo" /v DisabledBy
 
 Use Windows Defender's hardened configuration settings in the Security app. Enable "Folder Access Control" to block ransomware encryption attempts.
 
-## Maintenance and Verification
+### Step 8: Perform Maintenance and Verification
 
 Hardening requires ongoing attention. Create a verification script:
 
@@ -297,6 +307,21 @@ nft list ruleset | grep -c "hook"
 ```
 
 Run this monthly to detect configuration drift. Subscribe to security mailing lists for your distribution to apply kernel and package updates promptly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

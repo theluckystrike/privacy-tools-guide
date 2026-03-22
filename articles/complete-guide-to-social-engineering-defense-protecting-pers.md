@@ -40,7 +40,17 @@ Social engineering defense requires recognizing common attack vectors—phishing
 - **Use multi-factor authentication**: email filtering, verification procedures for sensitive requests, and security training to defeat these attacks.
 - **The most effective defense**: combines technical controls with skeptical skepticism of unexpected requests, whether digital or in-person.
 
-## Understanding Social Engineering Attack Vectors
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Social Engineering Attack Vectors
 
 Social engineering attacks come in multiple forms, each exploiting different aspects of human behavior:
 
@@ -56,7 +66,7 @@ Social engineering attacks come in multiple forms, each exploiting different asp
 
 **SIM swapping** is a targeted attack where the attacker convinces a mobile carrier to transfer your phone number to their SIM card. Once they control your number, they can intercept SMS-based two-factor authentication codes and reset account passwords. Protect yourself by registering a PIN or passphrase with your carrier and switching to app-based or hardware-key 2FA wherever possible.
 
-## Recognizing Psychological Manipulation Tactics
+### Step 2: Recognizing Psychological Manipulation Tactics
 
 Understanding these tactics helps you identify and resist attacks:
 
@@ -72,7 +82,7 @@ Understanding these tactics helps you identify and resist attacks:
 
 6. **Reciprocity**: Attackers offer something helpful first — a useful piece of information, a small favour — to create a sense of obligation. The victim then feels compelled to provide something in return, such as answering a seemingly harmless question that becomes the foothold the attacker needs.
 
-## Practical Defense Strategies for Developers
+### Step 3: Practical Defense Strategies for Developers
 
 ### Email Verification at the Code Level
 
@@ -196,7 +206,7 @@ if not rate_limit(user_id, "password_reset", max_requests=3, window_seconds=3600
 
 Apply rate limiting to password resets, email changes, MFA disabling, API key generation, and bulk data export operations. These are the actions attackers take immediately after gaining access, and unusually high request rates are a reliable detection signal.
 
-## Protecting Personal Information
+### Step 4: Protecting Personal Information
 
 ### Data Minimization Practices
 
@@ -243,7 +253,7 @@ Limit your digital footprint to reduce attack surface:
 
 Social engineering attackers typically begin with open source intelligence (OSINT) gathering. Tools like Maltego, theHarvester, and basic LinkedIn searches can reveal your employer, colleagues, job title, and technical stack within minutes. The more information that is publicly available about you, the more convincing a pretext an attacker can construct. Regularly audit your own public footprint from the perspective of an attacker — search your name, email address, and username combinations to see what a stranger can find about you.
 
-## Building a Security-First Mindset
+### Step 5: Build a Security-First Mindset
 
 Effective social engineering defense requires developing critical skepticism without becoming paranoid:
 
@@ -272,7 +282,7 @@ Individual awareness is necessary but not sufficient. Developers with admin acce
 - Running regular phishing simulations to measure team susceptibility and identify people who need additional training
 - Keeping a shared record of social engineering attempts so the whole team benefits from each individual's experience
 
-## Response Protocol for Suspected Attacks
+### Step 6: Response Protocol for Suspected Attacks
 
 When you suspect a social engineering attempt:
 
@@ -283,6 +293,21 @@ When you suspect a social engineering attempt:
 5. **Alert** colleagues who might be targeted
 
 If you believe you have already been compromised — clicked a link, provided credentials, or downloaded an unexpected file — act immediately. Change your passwords starting with your email account, since email controls password resets for everything else. Revoke active sessions from your account security settings. Enable MFA if not already active. Notify your security team. Most attackers escalate within hours of gaining initial access, so speed of response directly limits the damage.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

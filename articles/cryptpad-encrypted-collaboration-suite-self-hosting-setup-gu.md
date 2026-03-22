@@ -51,7 +51,7 @@ Before starting, ensure you have:
 - A domain pointing to your server (for TLS certificates)
 - Basic familiarity with the command line
 
-## Installing CryptPad with Docker
+### Step 1: Install CryptPad with Docker
 
 The recommended approach uses Docker for isolated deployment and simplified updates. Create a directory for your installation:
 
@@ -117,7 +117,7 @@ cryptpad.yourdomain.com {
 }
 ```
 
-## Understanding CryptPad's Encryption Model
+### Step 2: Understand CryptPad's Encryption Model
 
 CryptPad employs a unique encryption architecture worth understanding before production deployment. Each document generates a random 256-bit key locally. The URL itself contains the encryption key—sharing a document URL grants decryption access. This design means your server stores only encrypted blobs; even with full server access, administrators cannot read user content.
 
@@ -125,7 +125,7 @@ User accounts use a different mechanism. When users create accounts, CryptPad de
 
 Document types in CryptPad include CryptDrive (file manager), Pad (rich text), Code (code editor), Slide (presentations), Sheet (spreadsheets), Kanban, and Form. Each document type shares the same zero-knowledge guarantee. When a user opens a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of an URL in HTTP requests.
 
-## Configuration and Customization
+### Step 3: Configuration and Customization
 
 CryptPad stores configuration in `/var/cryptpad/customize` when using Docker. Key files include:
 
@@ -171,7 +171,7 @@ docker exec cryptpad cp -r /var/cryptpad/customize.dist/. /var/cryptpad/customiz
 
 Then edit `customize/application_config.js` to set your organization name and logo path. The `customize/pages.js` file controls landing page content. These changes survive container updates because the customize directory is mounted as a volume.
 
-## Security Hardening
+### Step 4: Security Hardening
 
 Production deployments require attention to several security areas:
 
@@ -232,7 +232,7 @@ server {
 
 This blocks brute-force login attempts and API abuse without affecting normal use patterns.
 
-## Team User Management
+### Step 5: Team User Management
 
 Self-hosted CryptPad offers several user management strategies:
 
@@ -280,7 +280,7 @@ docker exec cryptpad node bin/admin.js setquota user@domain.com 209715200
 
 CryptPad's Teams functionality lets groups share a common drive with role-based permissions. Create a team from within the web interface by clicking your avatar and selecting "New Team." Teams have separate storage quotas from individual users and support Owner, Admin, Member, and Viewer roles. This makes CryptPad suitable for department-level document management without exposing individual drives.
 
-## Backup and Recovery
+### Step 6: Backup and Recovery
 
 Implement regular backups of the CryptPad data volume:
 
@@ -339,7 +339,7 @@ docker stats cryptpad --no-stream
 
 If CPU usage spikes during peak hours, increase the Node.js worker pool by setting `UV_THREADPOOL_SIZE=16` in your compose environment block. Memory pressure usually indicates too many concurrent document sessions; raising your server to 4GB RAM resolves most scaling issues up to 200 concurrent users.
 
-## Updating CryptPad
+### Step 7: Updating CryptPad
 
 Pull the latest image and restart to apply updates:
 
@@ -355,6 +355,21 @@ docker exec cryptpad node scripts/migrate.js
 ```
 
 Run migrations with the container stopped from serving external traffic to avoid data corruption during schema changes.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

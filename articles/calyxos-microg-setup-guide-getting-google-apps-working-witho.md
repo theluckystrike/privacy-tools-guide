@@ -28,7 +28,17 @@ This guide walks through setting up microG on CalyxOS, configuring signature spo
 - **MicroG bridges this gap**: by implementing a free and open-source replacement for Google's proprietary Play Services, allowing you to run Google-dependent apps while maintaining your privacy.
 - **Install Aurora Store and**: try a few applications you regularly use.
 
-## Understanding the Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Architecture
 
 Before examining the setup, understanding how microG works helps with troubleshooting. Google Play Services consists of several components: GCM (Google Cloud Messaging) for push notifications, the Google Play Store for app distribution, Location Services, and various APIs that apps use to access Google's infrastructure.
 
@@ -36,7 +46,7 @@ MicroG implements these APIs with a different backend approach. It connects to G
 
 The key component enabling this compatibility is signature spoofing. Google Play Services verifies that incoming requests originate from apps signed with Google's official certificate. MicroGspoofs this signature, convincing apps that they're communicating with genuine Play Services.
 
-## Installation Methods
+### Step 2: Install ation Methods
 
 CalyxOS offers two primary approaches for enabling microG: the built-in microG installer and manual installation through F-Droid.
 
@@ -62,7 +72,7 @@ For more control, install microG manually through F-Droid:
 
 This approach gives you version control and the ability to audit the installed packages.
 
-## Configuring Signature Spoofing
+### Step 3: Configure Signature Spoofing
 
 Signature spoofing is essential for apps that verify Google's certificate. CalyxOS includes this functionality, but you must enable it in the microG settings.
 
@@ -75,7 +85,7 @@ adb shell dumpsys package com.google.android.gms | grep -i signature
 
 If signature spoofing shows as "denied" or unavailable, certain apps may fail to initialize properly. Restart your device after enabling it to ensure the changes take effect.
 
-## Setting Up Push Notifications
+### Step 4: Set Up Push Notifications
 
 Push notifications require additional configuration. MicroG supports two notification backends: Google's native FCM (Firebase Cloud Messaging) and UnifiedPush.
 
@@ -103,7 +113,7 @@ UnifiedPush provides a truly Google-free alternative. Install an UnifiedPush-com
 
 Configure your applications to use the UnifiedPush distributor in their settings. This works with many open-source applications and provides real-time notifications without Google infrastructure.
 
-## Installing Google Apps
+### Step 5: Install Google Apps
 
 With microG configured, you can install Google apps through various methods.
 
@@ -130,7 +140,7 @@ adb install /path/to/app.apk
 
 This approach works for apps like Google Maps, YouTube, and other Google-first applications.
 
-## Testing Your Setup
+### Step 6: Test Your Setup
 
 After configuration, verify everything works correctly:
 
