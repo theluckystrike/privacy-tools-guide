@@ -532,7 +532,6 @@ Local encrypted files for: Final sensitive versions
 
 Don't assume cloud docs are private. Assume they're logged, analyzed, and retained.
 
-<<<<<<< HEAD
 
 
 ## Related Articles
@@ -544,7 +543,4 @@ Don't assume cloud docs are private. Assume they're logged, analyzed, and retain
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}

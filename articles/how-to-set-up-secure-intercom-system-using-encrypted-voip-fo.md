@@ -31,6 +31,8 @@ A secure intercom system for residential or commercial buildings must address se
 
 Traditional VoIP protocols like SIP can be encrypted using TLS for signaling and SRTP (Secure Real-time Transport Protocol) for media streams. This combination provides protection against eavesdropping and man-in-the-middle attacks.
 
+Most off-the-shelf intercom systems—brands like Comelit, Aiphone, and 2N—offer some form of IP connectivity, but they often default to unencrypted SIP over port 5060. Even when TLS options exist, the configuration requires manual intervention and many installers skip it. Building your own stack from open-source components gives you verifiable security from the start.
+
 ## Architectural Components
 
 A self-hosted intercom system consists of four main components:
@@ -41,6 +43,12 @@ A self-hosted intercom system consists of four main components:
 4. **Encryption Layer**: TLS for SIP signaling and SRTP for audio streams
 
 For building applications, the most practical approach uses a lightweight SIP proxy combined with encrypted softphones running on low-cost hardware like Raspberry Pi devices equipped with USB microphones and speakers.
+
+### Choosing Between Asterisk and FreeSWITCH
+
+Asterisk is the more widely documented option and has a larger community, making it the better choice if you are starting from scratch. FreeSWITCH handles higher call volumes more efficiently but has a steeper configuration learning curve. For a building intercom system that will serve 5-50 concurrent users, Asterisk running on a Raspberry Pi 4 or a basic VPS is more than sufficient.
+
+Kamailio is a third option worth knowing—it functions as a pure SIP proxy/registrar without media handling. Pairing Kamailio with RTPengine for media relay gives you a highly scalable setup, but for a residential or small commercial intercom system, the added complexity is unnecessary.
 
 ## Choosing VoIP Protocols and Encryption Standards
 
@@ -83,7 +91,26 @@ transport=tls
 encryption=yes
 ```
 
-When configuring client devices, ensure SRTP is set to mandatory rather than optional. This prevents fallback to unencrypted RTP if negotiation fails.
+When configuring client devices, ensure SRTP is set to mandatory rather than optional. This prevents fallback to unencrypted RTP if negotiation fails. Many SIP phones and softphones silently fall back to plaintext RTP when SRTP negotiation fails—mandatory mode causes the call to drop instead, which is the correct behavior for a security-focused setup.
+
+### Generating Certificates for SIP TLS
+
+Use a self-signed certificate for a closed intercom system, or Let's Encrypt if your SIP server has a public hostname:
+
+```bash
+# Generate a self-signed certificate for Asterisk
+openssl req -new -x509 -days 365 -nodes \
+  -out /etc/asterisk/asterisk.pem \
+  -keyout /etc/asterisk/asterisk.pem \
+  -subj "/CN=mail.yourdomain.com"
+
+# Combine cert and key (Asterisk expects them in one file)
+cat asterisk.key >> asterisk.pem
+chmod 640 /etc/asterisk/asterisk.pem
+chown asterisk:asterisk /etc/asterisk/asterisk.pem
+```
+
+If using Let's Encrypt, install `certbot` and create a deploy hook that copies the renewed certificate to Asterisk's config directory and restarts the service.
 
 ## Setting Up a Lightweight SIP Proxy
 
@@ -154,6 +181,8 @@ For physical entry points (building doors, lobby), use IP phones or SIP-enabled 
 </sip>
 ```
 
+The 2N IP Verso and Grandstream GDS3710 are widely used SIP door stations that support TLS/SRTP out of the box. Both offer PoE powering, wide-angle cameras, and card reader inputs—useful if you want to integrate access control with your intercom calls. The Grandstream is substantially cheaper but has a less polished configuration UI.
+
 ### Softphone Clients for Residents
 
 Residents can use softphones on smartphones or computers. Linphone, CSipSimple, and MicroSIP all support TLS and SRTP. Configure profiles for your building's SIP server:
@@ -163,6 +192,8 @@ Residents can use softphones on smartphones or computers. Linphone, CSipSimple, 
 linphonecsh init
 linphonecsh register --host 192.168.1.10 --port 5061 --username resident_101 --transport tls
 ```
+
+On iOS, Linphone and Groundwire both support SRTP. On Android, Linphone is the most actively maintained open-source option. For desktop clients, Zoiper and MicroSIP offer better UI polish than Linphone on Windows, and both support mandatory SRTP.
 
 ## Network Security Considerations
 
@@ -183,6 +214,18 @@ iptables -A INPUT -p tcp --dport 5061 -j DROP
 iptables -A INPUT -p udp --dport 10000:20000 -s 192.168.50.0/24 -j ACCEPT
 ```
 
+### RTP Port Range
+
+RTP media streams use ephemeral UDP ports. In Asterisk, the default range is 10000-20000. Configure this in `/etc/asterisk/rtp.conf`:
+
+```ini
+[general]
+rtpstart=10000
+rtpend=10100
+```
+
+Narrowing the range to 10000-10100 limits your firewall exposure while still supporting up to 50 simultaneous calls. Adjust the upper bound based on your expected concurrent call volume—each active call consumes two ports (one for audio, one for RTCP).
+
 ## Testing Encryption
 
 After deployment, verify that encryption is properly configured. Use tools like `sngrep` to capture SIP traffic and confirm TLS is active:
@@ -194,6 +237,33 @@ sudo sngrep -l
 ```
 
 Look for SIP messages traveling over port 5061 with TLS indicator. For SRTP verification, examine the SDP (Session Description Protocol) offers to confirm `RTP/SAVPF` profile usage, which indicates SRTP is negotiated.
+
+You can also use Wireshark with a TLS decryption key to inspect the full SIP conversation. If you see `a=crypto:` lines in the SDP body and `RTP/SAVP` in the media description, SRTP is active. A call that shows only `RTP/AVP` is falling back to unencrypted media.
+
+For a quick sanity check, run a test call while capturing traffic with `tcpdump`:
+
+```bash
+sudo tcpdump -i eth0 -w /tmp/sip-capture.pcap port 5061 or udp portrange 10000-10100
+```
+
+Open the capture in Wireshark and check that the SIP signaling on port 5061 shows as TLS-encrypted (you will not be able to decode the contents without the key, which is a good sign). The UDP media packets should not decode as RTP if SRTP is active correctly.
+
+## Dial Plan Configuration
+
+Configure Asterisk's extensions.conf to route door unit calls to residents:
+
+```ini
+[intercom-incoming]
+; Door unit calls ring all residents in apartment 101
+exten => door_unit_1,1,Dial(SIP/resident_101,30)
+exten => door_unit_1,n,Hangup()
+
+; Door release tone triggers relay via GPIO or HTTP API
+exten => door_release,1,System(/usr/local/bin/trigger-door-release.sh)
+exten => door_release,n,Hangup()
+```
+
+Many door stations support a relay output that can be triggered by sending a DTMF tone during the call. The Asterisk dial plan above can be extended to detect DTMF tones and invoke a script that calls the door station's HTTP API to release the lock.
 
 ## Maintenance and Monitoring
 
@@ -207,6 +277,24 @@ Regular maintenance ensures continued security:
 ```bash
 # Check Asterisk TLS certificate expiration
 openssl x509 -in /etc/asterisk/asterisk.pem -noout -dates
+```
+
+Monitor the Asterisk security log at `/var/log/asterisk/security` for repeated failed registration attempts. Failed attempts from external IPs indicate that your SIP server is being probed. Fail2Ban can be configured to ban IPs after a threshold of failed SIP registrations—the `fail2ban-jail.conf` package for Asterisk is available in most distributions.
+
+Set up log rotation so Asterisk logs do not fill the disk:
+
+```bash
+# /etc/logrotate.d/asterisk
+/var/log/asterisk/*.log {
+    weekly
+    rotate 4
+    compress
+    missingok
+    notifempty
+    postrotate
+        /usr/sbin/asterisk -rx 'logger reload' > /dev/null 2>&1
+    endscript
+}
 ```
 
 

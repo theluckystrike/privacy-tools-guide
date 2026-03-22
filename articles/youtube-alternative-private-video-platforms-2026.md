@@ -28,6 +28,8 @@ Key requirements for developers typically include:
 - Analytics without third-party data sharing
 - Predictable pricing or self-hosted deployment options
 
+The surveillance reach of YouTube extends beyond what is obvious. Even unauthenticated viewers have their IP addresses, browser fingerprints, and viewing behavior logged. Embedded YouTube players on third-party sites set cookies and report back to Google analytics infrastructure. For organizations handling sensitive internal training content, or developers building products where viewer data must stay private, these are not theoretical concerns—they are compliance and liability issues.
+
 ## Self-Hosted Video Solutions
 
 ### PeerTube
@@ -61,6 +63,10 @@ curl -X POST \
 
 **Considerations:** PeerTube requires significant storage and bandwidth resources. The platform uses P2P video streaming to reduce bandwidth costs, which works well for popular content but may introduce latency for niche videos.
 
+For storage, Hetzner's Storage Box plans attach via S3-compatible APIs and work well as PeerTube's object storage backend. With the `objectStorage` section configured in `production.yaml`, PeerTube offloads video files to the bucket while serving metadata and thumbnails from local disk—keeping your VPS disk requirements minimal even as your video library grows.
+
+PeerTube also supports HLS adaptive bitrate streaming, which means viewers on slower connections get lower-resolution streams automatically. Enable this in the admin panel under Configuration > Transcoding. Transcoding is CPU-intensive; a dedicated transcode queue running on a larger VPS instance is practical if you publish frequently.
+
 ### MediaCMS
 
 MediaCMS offers a modern, Django-based video CMS with an interface familiar to YouTube users. It supports multiple uploaders, advanced moderation tools, and extensibility through plugins.
@@ -87,12 +93,12 @@ import requests
 # Upload video to MediaCMS
 def upload_video(file_path, title, api_url, token):
  with open(file_path, 'rb') as f:
- response = requests.post(
- f"{api_url}/api/videos/",
- headers={"Authorization": f"Token {token}"},
- files={"file": f},
- data={"title": title, "privacy": "private"}
- )
+  response = requests.post(
+   f"{api_url}/api/videos/",
+   headers={"Authorization": f"Token {token}"},
+   files={"file": f},
+   data={"title": title, "privacy": "private"}
+  )
  return response.json()
 
 # Usage
@@ -103,6 +109,20 @@ result = upload_video(
  'your-api-token'
 )
 ```
+
+MediaCMS supports visibility controls per video (public, unlisted, private), which makes it practical for mixed-audience deployments where some content is public-facing and other content is restricted to logged-in users. The unlisted option works the same way as on YouTube—only people with the direct link can watch, without the video appearing in search or channel listings.
+
+### Owncast
+
+Owncast is worth highlighting for live streaming use cases. It is a self-hosted, single-user live video streaming server that works as a privacy-respecting alternative to Twitch or YouTube Live. Deployment is a single binary:
+
+```bash
+# Download and run Owncast
+curl -s https://owncast.online/install.sh | bash
+cd owncast && ./owncast
+```
+
+Owncast accepts RTMP streams from OBS, FFmpeg, or any standard broadcasting software. The admin panel at port 8080 controls stream keys, appearance, and social features. For developers who need to live-stream internal demos, security research presentations, or community events without Twitch's data collection, Owncast is the most turnkey option available.
 
 ### Invidious and Piped (Privacy Frontends)
 
@@ -119,7 +139,9 @@ docker run -d \
  quay.io/invidious/invidious:latest
 ```
 
-These frontends remove YouTube ads, prevent account tracking, and support RSS feeds for subscriptions. However, they access YouTube's infrastructure, so uptime depends on YouTube's API availability.
+These frontends remove YouTube ads, prevent account tracking, and support RSS feeds for subscriptions. However, they access YouTube's infrastructure, so uptime depends on YouTube's API availability. Invidious instances sometimes break after YouTube changes their internal API—public instance lists at invidious.io track which instances are currently working.
+
+Piped is a newer alternative that proxies YouTube through its own servers, meaning the viewer's IP never contacts YouTube directly. For maximum privacy when consuming existing YouTube content, Piped's architecture is stronger than Invidious.
 
 ## Privacy-Focused Commercial Platforms
 
@@ -142,20 +164,37 @@ const client = new vimeo(
 client.upload(
  './video.mp4',
  {
- name: 'Private Team Update',
- privacy: {
- view: 'password',
- embed: 'whitelist',
- download: false
- }
+  name: 'Private Team Update',
+  privacy: {
+   view: 'password',
+   embed: 'whitelist',
+   download: false
+  }
  },
  (uri) => {
- console.log(`Video uploaded: ${uri}`);
+  console.log(`Video uploaded: ${uri}`);
  }
 );
 ```
 
-Vimeo's pricing scales with storage and bandwidth, making it suitable for organizations with predictable usage patterns.
+Vimeo's pricing scales with storage and bandwidth, making it suitable for organizations with predictable usage patterns. The Business tier at $50/month includes advanced analytics, team collaboration features, and priority support—comparable in cost to the infrastructure bill for a self-hosted PeerTube instance once you factor in storage and bandwidth.
+
+Vimeo does collect analytics data, but unlike YouTube it does not sell advertising against your content or use viewer behavior to train recommendation algorithms. For organizations that need a managed service without the YouTube data model, Vimeo hits a practical middle ground.
+
+### Bunny Stream
+
+Bunny.net's Stream product deserves attention as a cost-effective managed alternative. It offers global CDN delivery, adaptive bitrate encoding, and a simple API, without the user tracking embedded in YouTube. Pricing is $0.005/minute of video storage plus CDN egress costs—substantially cheaper than Vimeo for high-volume use cases.
+
+```bash
+# Upload to Bunny Stream via API
+curl -X POST \
+  -H "AccessKey: YOUR_API_KEY" \
+  -H "Content-Type: video/mp4" \
+  --data-binary @video.mp4 \
+  "https://video.bunnycdn.com/library/LIBRARY_ID/videos/VIDEO_GUID"
+```
+
+Bunny is headquartered in Slovenia and processes data under GDPR, which is meaningfully different from US-based providers from a compliance standpoint.
 
 ### BitTubers
 
@@ -194,18 +233,34 @@ import requests
 
 def track_view(page_url, referrer=None):
  requests.post(
- 'https://plausible.io/api/event',
- json={
- 'name': 'pageview',
- 'url': page_url,
- 'referrer': referrer
- },
- headers={
- 'User-Agent': 'VideoPlatform/1.0',
- 'Authorization': f'Bearer {PLAUSIBLE_API_KEY}'
- }
+  'https://plausible.io/api/event',
+  json={
+   'name': 'pageview',
+   'url': page_url,
+   'referrer': referrer
+  },
+  headers={
+   'User-Agent': 'VideoPlatform/1.0',
+   'Authorization': f'Bearer {PLAUSIBLE_API_KEY}'
+  }
  )
 ```
+
+For video metadata management, a simple PostgreSQL database tracking title, duration, upload timestamp, and access controls pairs well with any of the self-hosted platforms. Both PeerTube and MediaCMS expose their own metadata APIs, but building a thin wrapper gives you a portable data model that survives platform changes.
+
+## Infrastructure Cost Estimates
+
+To make informed choices, here are realistic cost estimates for a small team (up to 20 users, 200GB video library):
+
+| Platform | Monthly Cost | Hosting | Control |
+|---|---|---|---|
+| YouTube (free tier) | $0 | Google | None |
+| Vimeo Business | ~$50 | Managed | Partial |
+| Bunny Stream | ~$8-15 | Managed | Partial |
+| PeerTube (Hetzner CX31) | ~$12 | Self-hosted | Full |
+| MediaCMS (DigitalOcean) | ~$18 | Self-hosted | Full |
+
+Self-hosted options have higher ongoing maintenance costs in developer time. Budget approximately one hour per month for updates, certificate renewals, and monitoring review on a stable setup.
 
 ## Choosing the Right Platform
 
@@ -218,6 +273,8 @@ Select based on your specific requirements:
 | Decentralized/federated | PeerTube |
 | Privacy-focused consumption | Invidious/Piped |
 | Crypto monetization | BitTubers |
+| Live streaming only | Owncast |
+| Low-cost managed CDN delivery | Bunny Stream |
 
 For most developers, self-hosted solutions offer the best balance of control and customization. MediaCMS provides the most YouTube-like interface with modern features, while PeerTube offers federation for broader discovery without centralized dependency.
 

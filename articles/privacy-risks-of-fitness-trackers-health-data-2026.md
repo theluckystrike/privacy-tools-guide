@@ -354,7 +354,6 @@ Even if using US companies, if you're in EU:
 - "Research partnerships" (Apple, Fitbit both do this)
 - "Secure storage" without "encrypted" (security ≠ privacy)
 
-<<<<<<< HEAD
 ## Conclusion
 
 Fitness trackers are surveillance devices if you don't understand the risks. Apple and Fitbit collect intimate health data and monetize it (directly or indirectly). Garmin is more transparent, but still syncs to cloud. Withings and Oura Ring minimize data collection.
@@ -376,7 +375,4 @@ The baseline: understand what you're sharing. Your fitness data reveals medical 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}

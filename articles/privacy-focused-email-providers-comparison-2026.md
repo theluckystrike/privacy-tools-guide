@@ -262,7 +262,6 @@ Privacy email providers use:
 
 Start with ProtonMail if you're unsure. Migrate to Posteo or Tutanota if you want stronger encryption. All are better than Gmail on privacy.
 
-<<<<<<< HEAD
 
 
 ## Related Articles
@@ -274,7 +273,4 @@ Start with ProtonMail if you're unsure. Migrate to Posteo or Tutanota if you wan
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}

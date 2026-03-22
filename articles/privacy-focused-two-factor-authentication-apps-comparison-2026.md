@@ -385,7 +385,6 @@ Raivo has built-in importer for Authy backups
 Best practice: Set up new device alongside old, gradually migrate accounts
 ```
 
-<<<<<<< HEAD
 
 
 ## Related Articles
@@ -398,7 +397,3 @@ Best practice: Set up new device alongside old, gradually migrate accounts
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
->>>>>>> b900bdda56765d71068413d810978b9f118b0721

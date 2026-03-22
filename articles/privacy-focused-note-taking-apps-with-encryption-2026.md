@@ -315,7 +315,6 @@ All four apps support export/import:
 
 If budget is no constraint and privacy is paramount: Standard Notes. If you're frugal and technical: Joplin. If you want simplicity and modern design with privacy: Notesnook.
 
-<<<<<<< HEAD
 
 
 ## Related Articles
@@ -327,7 +326,4 @@ If budget is no constraint and privacy is paramount: Standard Notes. If you're f
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}
