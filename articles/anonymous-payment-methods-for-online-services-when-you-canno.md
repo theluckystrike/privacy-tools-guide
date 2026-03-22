@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /anonymous-payment-methods-for-online-services-when-you-canno/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

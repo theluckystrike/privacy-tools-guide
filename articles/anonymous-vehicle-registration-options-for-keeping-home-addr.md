@@ -9,7 +9,7 @@ permalink: /anonymous-vehicle-registration-options-for-keeping-home-addr/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

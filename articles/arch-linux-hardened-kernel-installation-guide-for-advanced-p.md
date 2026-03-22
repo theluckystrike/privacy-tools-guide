@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /arch-linux-hardened-kernel-installation-guide-for-advanced-p/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, advanced]
