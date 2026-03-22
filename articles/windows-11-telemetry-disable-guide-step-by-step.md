@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Windows 11 collects significant telemetry data by default, sending information about your system usage, hardware configuration, and application behavior to Microsoft. For developers and power users who prioritize privacy or need to minimize network traffic, disabling telemetry requires navigating multiple configuration layers. This guide provides practical methods to reduce or eliminate Windows 11 telemetry collection.
 
-## Key Takeaways
-
-- **Most users default to Enhanced or Full**: making privacy-conscious configuration essential.
-- **The Security level sends**: only data required for Windows security, while Full transmits extensive diagnostic information.
-- **Set this to Required**: diagnostic data only.
-- **Restart required for full**: effect." ``` Save this as `disable-telemetry.ps1` and execute with administrator privileges.
-- **Corporate users should verify**: their organization's policies before making changes, as some telemetry data supports security updates and compliance requirements.
-- **For advanced network monitoring**: use Wireshark or NetFlow to capture outbound traffic and verify that no connections are being made to Microsoft telemetry endpoints.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

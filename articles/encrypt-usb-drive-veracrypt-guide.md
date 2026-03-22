@@ -267,14 +267,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
+- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
-- [Cryptomator vs VeraCrypt for Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
-- [Encrypted File Vault Inheritance Using VeraCrypt](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)
-
----
-
+- [How to Encrypt External Hard Drive: Complete Guide 2026](/privacy-tools-guide/how-to-encrypt-external-hard-drive-guide-2026/)
+- [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
+- [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

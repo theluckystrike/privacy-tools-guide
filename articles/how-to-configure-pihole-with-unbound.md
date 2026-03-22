@@ -226,14 +226,13 @@ echo "0 3 1 * * root curl -o /var/lib/unbound/root.hints https://www.internic.ne
   sudo tee /etc/cron.d/update-root-hints
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
-- [Privacy-Focused Weather App Alternatives](/privacy-tools-guide/privacy-focused-weather-app-alternatives/)
-
----
-
+- [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

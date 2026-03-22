@@ -255,14 +255,13 @@ spec:
         medium: Memory  # tmpfs — secrets never written to disk
 ```
 
-## Related Reading
+## Related Articles
 
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
-- [Threat Modeling Basics for Developers](/privacy-tools-guide/threat-modeling-basics-developers/)
-
----
-
+- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
+- [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
+- [Bitwarden Web Vault vs Desktop App Comparison](/privacy-tools-guide/bitwarden-web-vault-vs-desktop-app-comparison/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -274,14 +274,13 @@ docker logs authelia -f | grep -E "(authentication|access_control|banned)"
 docker logs authelia | grep "alice" | tail -20
 ```
 
-## Related Reading
+## Related Articles
 
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-- [How to Set Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-
----
-
+- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
+- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

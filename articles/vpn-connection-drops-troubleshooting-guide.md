@@ -18,11 +18,6 @@ tags: [privacy-tools-guide, vpn]
 
 To fix VPN connection drops, start by checking your network stability with `ping -i 0.2 8.8.8.8`, then examine your VPN logs for recurring errors like `TLS handshake failed` or `inactivity timeout`. The most common causes are firewall interference (open UDP port 1194 or TCP port 443), DNS leak misconfiguration, and MTU mismatches (try setting `tun-mtu 1400` in your OpenVPN config). The sections below walk through each diagnostic step and fix in detail.
 
-## Key Takeaways
-
-- **The most common causes**: are firewall interference (open UDP port 1194 or TCP port 443), DNS leak misconfiguration, and MTU mismatches (try setting `tun-mtu 1400` in your OpenVPN config).
-- **Common causes include network**: instability, firewall interference, DNS issues, MTU mismatches, and server-side problems.
-- **If UDP fails, fallback to TCP**: ```bash
 # Force OpenVPN to use TCP
 sudo openvpn --config client.conf --proto tcp
 ```
@@ -166,12 +161,12 @@ VPN_INTERFACE="tun0"
 CHECK_INTERVAL=10
 
 while true; do
-    if ! ip link show "$VPN_INTERFACE" > /dev/null 2>&1; then
-        echo "$(date): VPN down, reconnecting..."
-        sudo systemctl restart openvpn@client
-        sleep 5
-    fi
-    sleep $CHECK_INTERVAL
+ if ! ip link show "$VPN_INTERFACE" > /dev/null 2>&1; then
+ echo "$(date): VPN down, reconnecting..."
+ sudo systemctl restart openvpn@client
+ sleep 5
+ fi
+ sleep $CHECK_INTERVAL
 done
 ```
 

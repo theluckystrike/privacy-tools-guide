@@ -225,12 +225,13 @@ Get the fingerprint from: `sudo cat /var/lib/tor/fingerprint`
 
 Running a middle relay is the most accessible way to contribute to Tor. You handle only encrypted, unreadable traffic and have no visibility into what passes through your node.
 
-## Related Reading
+## Related Articles
 
-- [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
-- [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-
+- [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
+- [How To Use Tor With Specific Application Routing Only](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -18,10 +18,6 @@ voice-checked: true
 
 Separate your professional and personal identities completely: use dedicated devices, distinct email addresses, separate phone numbers, and different payment methods for work. Enable VPN/Tor for location protection, use data brokers removal services, compartmentalize devices to prevent cross-contamination, and maintain strict operational security to prevent doxxing and physical threats.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Prepaid cards (moderate privacy**: limited use)
 # 4.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Payment methods leave trails**: that can be subpoenaed or exploited: ```bash # Payment method isolation # # Recommended hierarchy (by privacy level): # 1.

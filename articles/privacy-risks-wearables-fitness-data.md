@@ -241,14 +241,13 @@ This is the pattern-of-life analysis used by intelligence agencies — and avail
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [Privacy Risks of Fitness Trackers Health Data 2026](/privacy-tools-guide/privacy-risks-of-fitness-trackers-health-data-2026/)
+- [Privacy Risks of Fitness Trackers and Health Data 2026](/privacy-tools-guide/privacy-risks-of-fitness-trackers-health-data-2026/)
+- [Privacy Risks of Fitness Apps and Health Data Sharing in](/privacy-tools-guide/privacy-risks-of-fitness-apps-health-data-sharing-2026/)
 - [Privacy-Focused Fitness Trackers Comparison 2026](/privacy-tools-guide/privacy-focused-fitness-trackers-comparison-2026/)
-- [Android Background Location Access Which Apps Track You](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-
----
-
+- [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
+- [Privacy Risks of Period Tracking Apps 2026](/privacy-tools-guide/privacy-risks-of-period-tracking-apps-2026/)
 ## Analyzing Your Own Wearable Data
 
 If you've exported your fitness data, analyze what was actually collected:

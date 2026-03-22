@@ -62,7 +62,7 @@ sudo make install && sudo ldconfig
 snort --version
 ```
 
-You should see output beginning with `   ,,_     -*> Snort++ <*-`.
+You should see output beginning with ` ,,_ -*> Snort++ <*-`.
 
 ---
 
@@ -335,13 +335,12 @@ sudo systemctl restart snort
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
-- [How to Detect ARP Spoofing Attacks](/privacy-tools-guide/detect-arp-spoofing-attacks-guide/)
-- [How to Use Zeek for Network Monitoring](/privacy-tools-guide/zeek-network-monitoring-guide/)
-
----
-
+- [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Set Up Mullvad VPN on Linux](/privacy-tools-guide/mullvad-vpn-linux-setup-guide/)
+- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+- [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

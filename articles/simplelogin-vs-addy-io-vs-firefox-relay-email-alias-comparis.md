@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, comparison]
 
 Email alias services have become essential tools for developers and power users who value privacy. Rather than giving out your primary email address to every service, you create aliases that forward emails to your inbox while hiding your real identity. This guide compares three popular options: SimpleLogin, Addy.io, and Firefox Relay — covering API capabilities, self-hosting options, pricing, and the privacy trade-offs each model involves.
 
-## Key Takeaways
-
-- **Pricing starts around $12**: per year for the Lite plan and $36 per year for the Pro plan, which adds unlimited shared domain aliases and higher bandwidth limits.
-- **Firefox Relay is best**: for non-technical users who want simple alias management integrated into their browser with minimal friction.
-- **The premium plan**: priced at around $30 per year, lifts the alias cap, adds custom domains, catch-all addressing, and API access.
-- **Because the codebase is open-source**: security researchers can audit it, and self-hosters get complete ownership over their data.
-- **For users comfortable with**: server administration, this is the most private option available among the three services compared here.
-- **It offers both free and paid tiers**: with premium features including unlimited aliases and custom domains.
-
 ## Table of Contents
 
 - [Why Email Aliases Matter for Privacy](#why-email-aliases-matter-for-privacy)

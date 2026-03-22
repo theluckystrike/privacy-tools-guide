@@ -406,13 +406,12 @@ The patterns shown here follow standard practices, but production deployments ne
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Reading
+## Related Articles
 
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
-- [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
-- [How To Document Privacy Violations For Potential Class Actio](/privacy-tools-guide/how-to-document-privacy-violations-for-potential-class-actio/)
-- [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
-- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
-
+- [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How to Set Up Private DNS on Android for All](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
+- [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
+- [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,14 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 To lock down OneDrive privacy on Windows in 2026, set the `TelemetryLevel` registry value to `1` at `HKCU:\Software\Microsoft\OneDrive`, disable personalized recommendations, and exclude sensitive file types like `.env`, `.pem`, and `.key` from sync. These three changes address the most significant data exposure risks. This guide walks through every privacy setting available through the GUI, registry, and PowerShell automation, with scripts you can deploy across multiple machines.
 
-## Key Takeaways
-
-- **Use expiring links (require**: periodic renewal) 3.
-- **Write-Host "Encrypted $FilePath with**: AES-256" Write-Host "Key: $([System.Convert]::ToBase64String($cipher.Key))" # Store safely!
-- **These three changes address**: the most significant data exposure risks.
-- **Disable any features you**: do not actively use—particularly those linking OneDrive to other Microsoft services.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

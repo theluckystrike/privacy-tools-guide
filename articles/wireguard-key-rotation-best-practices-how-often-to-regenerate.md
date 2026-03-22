@@ -290,14 +290,13 @@ sudo wg show wg0 dump
 
 The output of `wg show` displays the latest handshake timestamp for each peer. A handshake within the last 180 seconds confirms the new key pair is being used successfully. If the handshake timestamp is stale, the server may not have received the new public key—check that the server configuration was updated and restart the server-side interface if necessary.
 
-## Related Reading
+## Related Articles
 
 - [Password Rotation Policy Best Practices 2026](/privacy-tools-guide/password-rotation-policy-best-practices-2026/)
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
+- [How To Configure Wireguard With Obfuscation To Bypass](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

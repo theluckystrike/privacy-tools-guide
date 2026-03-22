@@ -283,14 +283,13 @@ echo "=== Dependencies older than 1 year ==="
 npm outdated --json | jq -r 'to_entries[] | select(.value.current != .value.latest) | "\(.key): \(.value.current) → \(.value.latest)"' | head -20
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-
----
-
+- [VPN Provider Annual Audit Results: Independent Security](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
+- [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
+- [How to Use Lynis for Linux Security Auditing](/privacy-tools-guide/lynis-linux-security-audit-guide/)
+- [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

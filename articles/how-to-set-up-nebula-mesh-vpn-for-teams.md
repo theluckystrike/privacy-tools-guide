@@ -284,14 +284,13 @@ Nebula 1.x does not have a CRL mechanism — to revoke access, you must issue a 
 
 One workaround: use short-lived certificates (e.g., 90-day) and automate renewal with a script that requires re-authentication before issuing a new cert.
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up WireGuard with IPv6](/privacy-tools-guide/how-to-set-up-wireguard-with-ipv6/)
-- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
-- [Secure Code Signing Setup for Developers](/privacy-tools-guide/secure-code-signing-setup-for-developers/)
-
----
-
+- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [Use Mesh Networking for Private Communication](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
+- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How To Set Up Vpn Failover Between Two Providers Automatical](/privacy-tools-guide/how-to-set-up-vpn-failover-between-two-providers-automatical/)
+- [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

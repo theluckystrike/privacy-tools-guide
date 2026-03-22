@@ -151,14 +151,13 @@ tpm2_quote \
 
 The attestation quote can be sent to a remote server that verifies PCR values match the expected baseline before issuing a VPN certificate or access token.
 
-## Related Reading
+## Related Articles
 
-- [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
-
----
-
+- [Secure Boot and TPM Explained for Linux](/privacy-tools-guide/secure-boot-tpm-linux-explained/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
+- [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
+- [How To Set Up Secureboot Plus Encryption On Fedora Linux](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

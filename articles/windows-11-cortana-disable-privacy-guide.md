@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Disable Cortana through Settings (Privacy & security → Search permissions → toggle off Cortana), but this incomplete method still leaves background processes running. Use Group Policy Editor (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → Windows Components → Search and set "Allow Cortana" to Disabled for complete removal. For Home editions without Group Policy, use Registry Editor to set HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search to AllowCortana = 0. These methods stop Cortana from sending voice recordings, search queries, calendar data, and contact information to Microsoft servers, eliminating a significant cloud-connected data collection vector from your system.
 
-## Key Takeaways
-
-- **For Home editions without Group Policy**: use Registry Editor to set HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search to AllowCortana = 0.
-- **Scroll to "Searching Windows"**: and select "Enhanced" or "Classic" instead of "Best" to reduce online search integration This disables the Cortana app and prevents it from appearing in the taskbar.
-- **Use Group Policy Editor**: (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → Windows Components → Search and set "Allow Cortana" to Disabled for complete removal.
-- **Security-conscious users often prefer**: disabling cloud-connected features that operate in the background.
-- **Press `Win + S`**: – search should work without Cortana integration 3.
-- **The primary impact is**: on voice-based interactions, which most developers replace with keyboard shortcuts and terminal commands anyway.
-
 ## Why Disable Cortana from a Privacy Perspective
 
 Cortana operates as a cloud-connected service that sends voice recordings, search queries, and usage patterns to Microsoft servers. Even when you think you're interacting locally, many requests route through Microsoft's infrastructure for natural language processing. The assistant maintains persistent access to your search history, calendar data, location, and contacts if you grant those permissions.

@@ -372,14 +372,13 @@ tor --validate-config -f /etc/tor/torrc
 - Use obfuscated bridges to disguise Tor traffic
 - Contact site operators to request Tor support (many major sites now support it)
 
-## Related Reading
+## Related Articles
 
-- [Privacy-Focused Web Browser Comparison 2026](/privacy-browser-comparison-2026/)
-- [How to Use Tails OS for Maximum Privacy](/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
-- [Wireshark Basics for Privacy Network Analysis](/wireshark-privacy-network-analysis-guide/)
-- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
-- [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
-
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [Tor Browser NoScript Settings Recommended 2026](/privacy-tools-guide/tor-browser-noscript-settings-recommended-2026/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

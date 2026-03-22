@@ -18,15 +18,6 @@ voice-checked: true
 
 The Taproot upgrade, activated in November 2021, introduced three major privacy improvements: Schnorr signatures that hide whether a transaction is single-sig or multi-sig, MAST (Merkelized Abstract Syntax Trees) that hide unused spending conditions, and Bech32m addresses that are indistinguishable from standard payments. These changes fundamentally altered how transactions appear on-chain, making complex contracts blend with simple payments. For developers building privacy-focused applications, understanding these improvements is essential for using Taproot's enhanced anonymity properties in 2026.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **For developers building privacy-focused**: applications, understanding these improvements is essential for using Taproot's enhanced anonymity properties in 2026.
-- **MAST allows complex spending**: conditions to be encoded such that only the conditions actually used are revealed on-chain.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Schnorr Signatures: The Foundation of Privacy
 
 Before Taproot, Bitcoin used ECDSA (Elliptic Curve Digital Signature Algorithm) for transaction authorization. Taproot introduced Schnorr signatures as an alternative, and this change has direct privacy implications.
@@ -395,7 +386,6 @@ The Taproot upgrade demonstrated Bitcoin's ability to evolve while maintaining i
 
 The transaction anonymity space has genuinely shifted—complex transactions now blend with simple payments, and the playing field for on-chain analysis has become noticeably more challenging.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 ---
 

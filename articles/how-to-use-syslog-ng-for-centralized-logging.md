@@ -238,14 +238,13 @@ log {
 }
 ```
 
-## Related Reading
+## Related Articles
 
-- [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
-- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-
----
-
+- [How To Configure Postfix With Mandatory Tls Encryption](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
+- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
+- [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
+- [Tls Fingerprinting How Your Browser Handshake Identifies](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
+- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

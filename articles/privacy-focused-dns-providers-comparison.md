@@ -617,14 +617,13 @@ nslookup google.com
 3. If need parental controls → AdGuard or NextDNS
 4. If need maximum speed → Cloudflare 1.1.1.1
 
-## Related Reading
+## Related Articles
 
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 - [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
-- [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
-- [Voip Phone Number Privacy Risks What Sip Providers Log About](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
-- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
-
+- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How to Set Up Private DNS on Android for All](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

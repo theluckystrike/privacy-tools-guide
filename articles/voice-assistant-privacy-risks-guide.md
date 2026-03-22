@@ -444,13 +444,12 @@ For privacy-conscious users who don't need advanced cloud integrations, this app
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [How to Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
-- [Privacy Risks of Fitness Trackers Health Data 2026](/privacy-tools-guide/privacy-risks-of-fitness-trackers-health-data-2026/)
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
+- [macOS Siri Privacy Controls How To Prevent Voice Data](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
+- [Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [How to Secure Your Smart TV Privacy](/privacy-tools-guide/secure-smart-tv-privacy-guide/)
-
----
-
+- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-tools-guide/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

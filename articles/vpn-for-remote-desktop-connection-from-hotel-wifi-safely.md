@@ -18,15 +18,6 @@ voice-checked: true
 
 Hotel WiFi is vulnerable to packet sniffing, man-in-the-middle attacks, and session hijacking; tunneling RDP or VNC through a VPN encrypts your credentials and session data, preventing attackers on the same network from capturing them. Use WireGuard or OpenVPN over hotel WiFi, ensure the VPN has a kill switch to disconnect RDP if the tunnel drops, and route all traffic through the tunnel (no split tunneling). A self-hosted VPN on your corporate server or cloud provider is better than public VPN services for this use case, because you control the authentication and can audit logs.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **A self-hosted VPN on**: your corporate server or cloud provider is better than public VPN services for this use case, because you control the authentication and can audit logs.
-- **Most hotels provide open**: (unencrypted) WiFi or use weak encryption that can be bypassed with minimal effort.
-- **ping -I $VPN_INTERFACE -c**: 1 $CHECK_HOST &>/dev/null; then echo "[$(date)] VPN connection lost!
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Let them use it for 2-3 weeks**: then gather their honest feedback.
-
 ## Table of Contents
 
 - [The Security Risks of Hotel WiFi](#the-security-risks-of-hotel-wifi)

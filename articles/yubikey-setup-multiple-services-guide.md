@@ -242,12 +242,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [YubiKey vs Titan Security Key Comparison](/yubikey-vs-titan-security-key-comparison/)
-- [How to Use a Password Manager with YubiKey Hardware Key](/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
-- [Best Hardware Security Key Comparison](/best-hardware-security-key-comparison/)
-
+- [How to Use YubiKey for Maximum Security in 2026](/privacy-tools-guide/how-to-use-yubikey-for-maximum-security-2026/)
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
