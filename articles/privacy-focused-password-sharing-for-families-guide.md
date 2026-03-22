@@ -31,6 +31,29 @@ intent-checked: true---
 
 Families inevitably need to share passwords: streaming service logins, WiFi credentials, emergency contact information, bank account details. Sharing passwords via text, email, or note-passing invites account theft and data breaches. Purpose-built password managers solve this by creating encrypted vaults that multiple family members can access without ever seeing cleartext passwords. The three strongest privacy-respecting options are Bitwarden Organizations (cheapest), 1Password Families (most polished), and KeePass with shared file storage (most control).
 
+## Key Takeaways
+
+- **Pricing**: - KeePass: Free forever
+- Cloud storage (Dropbox, OneDrive): $9-12/month optional
+- Or: Store on encrypted USB, update manually
+
+How it works:
+
+1.
+- **After 2 weeks**: Mom gets full access to your account
+
+## KeePass: Best for Complete Control
+
+KeePass is open-source, offline-first, and requires no subscription.
+- Select "Families" plan ($99.99/year)
+3.
+- **Master password**: 20+ characters, mixed case, numbers, symbols
+   Example: "FamilyVault!2024$Trees@Home"
+
+2.
+- **The three strongest privacy-respecting**: options are Bitwarden Organizations (cheapest), 1Password Families (most polished), and KeePass with shared file storage (most control).
+- **It trades some privacy**: (1Password has backup keys) for ease of use and features.
+
 ## The Password Sharing Problem
 
 Family password sharing creates risks:

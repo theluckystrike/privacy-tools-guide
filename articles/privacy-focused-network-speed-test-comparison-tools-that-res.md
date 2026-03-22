@@ -16,6 +16,15 @@ intent-checked: true---
 
 When you run a speed test, your browser sends data to a remote server that measures latency, download speed, and upload speed. Most commercial speed test services collect this data, aggregate it, and often sell it to third parties. For privacy-conscious developers and power users, understanding which tools respect user data becomes essential. This guide examines privacy-focused alternatives and shows you how to implement your own speed test infrastructure.
 
+## Key Takeaways
+
+- **M-Lab tests show ±2%**: variance on stable connections; LibreSpeed shows ±3-5% depending on server load.
+- **Check CCPA compliance (if**: serving California users):" echo " - Are users informed about data collection?" echo " - Can users opt-out?" echo " - Is a privacy policy provided?" echo "" echo "3.
+- **Most commercial speed test**: services collect this data, aggregate it, and often sell it to third parties.
+- **For privacy-conscious developers and**: power users, understanding which tools respect user data becomes essential.
+- **This guide examines privacy-focused**: alternatives and shows you how to implement your own speed test infrastructure.
+- **This information builds detailed**: profiles used for targeted advertising and sold to network analysis companies.
+
 ## Why Standard Speed Tests Collect Your Data
 
 Commercial speed test providers operate on advertising revenue models. Your test results contain valuable metadata: your ISP, location, connection type, and performance metrics. This information builds detailed profiles used for targeted advertising and sold to network analysis companies. Some providers retain this data indefinitely, creating permanent records of your browsing patterns and network behavior.
