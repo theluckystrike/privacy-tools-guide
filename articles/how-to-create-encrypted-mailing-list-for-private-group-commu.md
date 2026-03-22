@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-create-encrypted-mailing-list-for-private-group-commu/
 description: "Follow this guide to how to create encrypted mailing list for private group commu with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Create Encrypted Mailing List For Private Group"
 description: "Running a private group communication channel requires more than just a shared email address. Whether you're coordinating with developers on a sensitive"

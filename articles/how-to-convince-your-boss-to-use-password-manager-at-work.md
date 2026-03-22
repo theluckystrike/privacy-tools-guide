@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/
 description: "Follow this guide to how to convince your boss to use password manager at work with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "How to Convince Your Boss to Use a Password Manager"
 description: "A practical guide for developers and power users on how to convince management to adopt password managers in the workplace. Includes security"

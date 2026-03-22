@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-delete-all-traces-of-your-online-presence-completely/
 description: "Follow this guide to how to delete all traces of your online presence completely with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Delete All Traces of Your Online Presence Completely"
 description: "Removing yourself from the internet requires a systematic approach. Most people believe complete deletion is impossible, but with the right tools and"

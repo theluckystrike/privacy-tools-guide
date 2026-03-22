@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
 description: "Follow this guide to how to create new digital identity after escaping domestic v with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, api]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Create a New Digital Identity After Escaping Domestic"
 description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation"

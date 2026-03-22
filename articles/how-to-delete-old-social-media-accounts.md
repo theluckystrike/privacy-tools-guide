@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-delete-old-social-media-accounts/
 description: "Follow this guide to how to delete old social media accounts with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Delete Old Social Media Accounts"
 description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code"

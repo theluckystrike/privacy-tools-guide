@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 description: "Follow this guide to how to create offline digital library for accessing informat with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Create Offline Digital Library For Accessing Informat"
 description: "Building an offline digital library ensures you have access to critical information when the internet fails or becomes restricted. This guide teaches you how"
