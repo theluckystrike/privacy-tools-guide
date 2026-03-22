@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/
 description: "Follow this guide to how to configure ublock origin for maximum anti tracking pro with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Configure Ublock Origin For Maximum Anti Tracking Pro"
 description: "uBlock Origin remains the gold standard for browser-based ad and tracker blocking. Out of the box, it provides solid protection, but power users can unlock"

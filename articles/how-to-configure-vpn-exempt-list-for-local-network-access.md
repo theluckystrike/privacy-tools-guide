@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
 description: "Follow this guide to how to configure vpn exempt list for local network access with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "How to Configure VPN Exempt List for Local Network"
 description: "Learn how to configure a VPN exempt list to access local network resources like printers, NAS, and smart home devices while your VPN tunnel remains active"

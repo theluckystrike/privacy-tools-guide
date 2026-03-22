@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-configure-openvpn-with-obfuscation-for-censored-netwo/
 description: "Follow this guide to how to configure openvpn with obfuscation for censored netwo with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "Configure Openvpn With Obfuscation For Censored Networks"
 description: "A practical guide to configuring OpenVPN with obfuscation to bypass network censorship. Learn about OpenVPN obfuscation techniques, configuration"
