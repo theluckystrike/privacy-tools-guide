@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-factory-reset-mobile-phone-securely-before-selling-en/
 description: "Follow this guide to how to factory reset mobile phone securely before selling en with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Factory Reset Mobile Phone Securely Before Selling"
 description: "A technical guide for developers and power users on securely wiping Android and iOS devices before resale. Includes verification methods"

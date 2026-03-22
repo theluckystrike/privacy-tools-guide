@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-exercise-right-to-restrict-processing-under-gdpr-limi/
 description: "Follow this guide to how to exercise right to restrict processing under gdpr limi with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Exercise Right To Restrict Processing Under Gdpr"
 description: "Learn how to exercise your right to restrict processing under GDPR. Practical guide for developers and power users on limiting data use with code examples"
