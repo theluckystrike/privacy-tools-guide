@@ -6,7 +6,7 @@ description: "Learn macos privacy settings for remote workers 2026 with practica
 tags: [privacy-tools-guide, privacy, remote-work]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

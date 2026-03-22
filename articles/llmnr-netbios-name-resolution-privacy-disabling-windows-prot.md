@@ -6,7 +6,7 @@ description: "Learn llmnr netbios name resolution privacy disabling windows prot
 tags: [privacy-tools-guide, privacy, llm]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
