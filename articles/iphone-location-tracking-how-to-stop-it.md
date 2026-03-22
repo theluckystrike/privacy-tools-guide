@@ -1,5 +1,7 @@
 ---
 permalink: /iphone-location-tracking-how-to-stop-it/
+description: "Discover the best iphone location tracking how to stop it with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, best-of]
 ---
 layout: default
 title: "iPhone Location Tracking How to Stop It: A Practical Guide"

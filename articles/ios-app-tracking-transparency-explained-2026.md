@@ -1,5 +1,7 @@
 ---
 permalink: /ios-app-tracking-transparency-explained-2026/
+description: "Learn ios app tracking transparency explained 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "iOS App Tracking Transparency Explained 2026"

@@ -1,5 +1,7 @@
 ---
 permalink: /iphone-focus-mode-privacy-features-explained/
+description: "Learn iphone focus mode privacy features explained with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"

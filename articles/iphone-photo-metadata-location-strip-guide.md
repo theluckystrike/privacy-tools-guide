@@ -1,5 +1,7 @@
 ---
 permalink: /iphone-photo-metadata-location-strip-guide/
+description: "Follow this guide to iphone photo metadata location strip guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"

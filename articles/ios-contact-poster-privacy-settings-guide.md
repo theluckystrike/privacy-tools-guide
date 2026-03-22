@@ -1,5 +1,7 @@
 ---
 permalink: /ios-contact-poster-privacy-settings-guide/
+description: "Follow this guide to ios contact poster privacy settings guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "iOS Contact Poster Privacy Settings Guide"
