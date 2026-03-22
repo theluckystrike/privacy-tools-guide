@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-detect-if-smart-home-devices-have-hidden-microphones-/
 description: "Follow this guide to how to detect if smart home devices have hidden microphones  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Detect If Smart Home Devices Have Hidden Microphones"
 description: "A technical guide for developers and power users to identify hidden microphones and cameras in smart home devices. Learn network analysis, firmware"

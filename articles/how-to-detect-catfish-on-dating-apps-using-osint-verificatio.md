@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
 description: "Follow this guide to how to detect catfish on dating apps using osint verificatio with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Detect Catfish On Dating Apps Using Osint Verificatio"
 description: "Catfishing on dating apps is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional"

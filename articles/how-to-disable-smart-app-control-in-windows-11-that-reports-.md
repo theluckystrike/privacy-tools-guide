@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-disable-smart-app-control-in-windows-11-that-reports-/
 description: "Follow this guide to how to disable smart app control in windows 11 that reports  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Disable Smart App Control In Windows 11 That Reports"
 description: "A practical guide for developers and power users to disable Windows 11 Smart App Control through Settings, Group Policy, and Registry modifications"

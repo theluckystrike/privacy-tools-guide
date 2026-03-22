@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/
 description: "Follow this guide to how to detect if your email address has been sold to marketi with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Detect If Your Email Address Has Been Sold"
 description: "Your email address is one of the most valuable pieces of personal data in the advertising ecosystem. Data brokers aggregate, analyze, and sell email addresses"

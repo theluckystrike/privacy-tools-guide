@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-exercise-right-to-rectification-correcting-inaccurate/
 description: "Follow this guide to how to exercise right to rectification correcting inaccurate with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Exercise Right To Rectification Correcting Inaccurate"
 description: "A practical guide for developers and power users on exercising GDPR right to rectification. Learn formal request templates, legal basis, company"
