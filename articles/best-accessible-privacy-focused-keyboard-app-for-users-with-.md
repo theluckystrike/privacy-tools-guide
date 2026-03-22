@@ -7,12 +7,12 @@ author: "Privacy Tools Guide"
 permalink: /best-accessible-privacy-focused-keyboard-app-for-users-with-/
 reviewed: true
 score: 8
-categories: [best-of]
+categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, best-of, privacy]
 intent-checked: true
 ---
-Users with motor impairments face unique challenges when selecting a keyboard app. Privacy concerns add another layer of complexity—you need an input method that respects your data while accommodating accessibility requirements. This guide examines the best options for privacy-conscious users with motor impairments in 2026.
+Users with motor impairments face unique challenges when selecting a keyboard app. Privacy concerns add another layer of complexity — you need an input method that respects your data while accommodating accessibility requirements. The wrong keyboard app can both leak sensitive personal data and create physical barriers that make daily communication exhausting. This guide examines the best options for privacy-conscious users with motor impairments in 2026, with concrete configuration guidance and developer-facing technical details.
 
 ## Understanding the Privacy-Accessibility Intersection
 
@@ -157,15 +157,103 @@ For users with motor impairments, certain configuration patterns maximize both a
 4. **Adjust timing**: Increase long-press and hold durations to match physical capabilities
 5. **Use gesture controls**: Swipe typing reduces precise tap requirements
 
+## Switch Control and Scanning Input
+
+For users with severe motor impairments who cannot use standard touch input at all, switch control is the primary input method. Both Android and iOS support external switch devices that send hardware key signals to the OS.
+
+**On Android**, configure switch access:
+
+```
+Settings → Accessibility → Switch Access → Enable
+Assign switches: Scan forward (Switch 1), Select (Switch 2)
+Scan speed: start at 1.5s per item, adjust to user's reaction time
+Auto-select: disable initially — require deliberate selection
+```
+
+Switch Control works with any keyboard app, but some handle the scanning highlight better than others. AnySoftKeyboard and OpenBoard both respond correctly to accessibility scanning. Gboard and SwiftKey occasionally have scanning highlight inconsistencies due to proprietary accessibility handling.
+
+**On iOS**, AssistiveTouch and Switch Control are built-in:
+
+```
+Settings → Accessibility → Switch Control → Switches → Add New Switch
+Source: External (Bluetooth switch) or Screen (tap anywhere)
+Action: Select Item
+```
+
+The built-in iOS keyboard works well with Switch Control. Third-party iOS keyboards have historically had Switch Control compatibility issues because they run in an extension sandbox — the built-in keyboard remains the most reliable choice for iOS Switch Control users.
+
+## Word Prediction Without Cloud Data
+
+On-device word prediction has improved substantially. For users with motor impairments who rely heavily on word prediction to minimize keystrokes, prediction quality directly impacts communication speed and fatigue.
+
+**AnySoftKeyboard** supports custom prediction dictionaries. You can pre-load domain-specific vocabulary (medical terminology, professional jargon) that the cloud-based keyboards would learn over time from your data:
+
+```bash
+# AnySoftKeyboard dictionary format (tab-separated)
+# word<TAB>frequency<TAB>locale
+medication    100    en
+appointment   90     en
+therapy       85     en
+
+# Import via: AnySoftKeyboard → Settings → Language → Add dictionary
+```
+
+**Presage** is an open-source predictive text library available on Linux that provides next-word prediction using local n-gram models. It integrates with Fcitx5:
+
+```bash
+sudo apt install presage fcitx5-presage
+
+# Train on personal text for domain-specific prediction
+presage_demo < ~/my-documents.txt > custom_corpus.txt
+# Then configure Fcitx5 to use the trained model
+```
+
+For the highest-quality on-device prediction without any cloud dependency, consider using a local language model via **KDE's KWin Accessibility tools** or the emerging **LocalSend-based prediction** integrations being developed for Linux desktop accessibility workflows.
+
+## Configuring iOS Built-In Keyboard for Motor Impairments
+
+While iOS doesn't offer third-party keyboards with the same accessibility depth as Android, the built-in keyboard's accessibility settings are comprehensive.
+
+```
+Settings → Accessibility → Keyboards:
+- Full Keyboard Access: Enable (navigation via hardware keyboard)
+- Key Repeat: Off (prevents unintended repeated keystrokes)
+- Sticky Keys: On (hold modifier keys without simultaneous press)
+- Slow Keys: On, Acceptance Delay: 0.50 seconds (adjust to user)
+```
+
+**Dictation as primary input:** For users who can speak reliably, iOS on-device dictation (Settings → General → Keyboard → Enable Dictation, then verify that "Dictation & Privacy" shows on-device only) provides zero-cloud voice input from iOS 16 onward. The on-device dictation model processes speech locally without contacting Apple's servers.
+
+Android similarly supports on-device speech recognition via `android.speech.RecognitionService` with offline models available for download in Gboard's offline settings — though Gboard has privacy implications. The privacy-respecting alternative is **VOSK**, an offline speech recognition library:
+
+```python
+from vosk import Model, KaldiRecognizer
+import sounddevice as sd
+
+model = Model("vosk-model-en-us-0.22")
+rec = KaldiRecognizer(model, 16000)
+
+# Process audio stream locally - no network required
+with sd.RawInputStream(samplerate=16000, blocksize=8000, dtype='int16',
+                        channels=1) as stream:
+    while True:
+        data, _ = stream.read(4000)
+        if rec.AcceptWaveform(bytes(data)):
+            result = rec.Result()
+            print(result)
+```
+
+VOSK integrates with custom Android IME implementations for fully private voice-to-text input.
+
 ## Future Considerations
 
 The accessibility keyboard ecosystem continues evolving. Emerging technologies include:
 
-- **Neural keyboard prediction**: On-device ML models improving prediction without cloud dependency
-- **Eye-tracking integration**: Gaze-based input becoming viable on consumer devices
-- **Adaptive interfaces**: AI-driven UI adjustments based on detected user patterns
+- **Neural keyboard prediction**: On-device ML models improving prediction without cloud dependency. GGML-based language models running locally can now provide GPT-quality word prediction with zero data transmission.
+- **Eye-tracking integration**: Devices like the Tobii Dynavox are becoming more affordable, and both Windows (Windows 11 Eye Control) and iOS (Eye Tracking, added in iOS 18) now support gaze-based input natively without third-party software.
+- **Adaptive interfaces**: Systems that detect typing patterns and adjust key layout dynamically — moving frequently used keys toward the dominant side of the keyboard to reduce reach distance.
 
-Privacy-focused developers are increasingly adopting local-first architectures, ensuring that accessibility improvements don't require sacrificing data privacy.
+Privacy-focused developers are increasingly adopting local-first architectures, ensuring that accessibility improvements don't require sacrificing data privacy. The separation between on-device processing and cloud connectivity is now a standard feature expectation rather than a premium differentiator.
 
 ## Related Articles
 
