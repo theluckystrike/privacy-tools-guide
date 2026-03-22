@@ -50,7 +50,17 @@ Common retention periods include:
 - Audit logs: 1 to 7 years depending on industry regulations
 - Marketing data: Until consent is withdrawn
 
-## Implementing Automated Retention Policies
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Implementing Automated Retention Policies
 
 Rather than manual processes, automate retention enforcement at the infrastructure level. This ensures consistency and reduces human error.
 
@@ -127,7 +137,7 @@ Schedule this script daily in your crontab:
 0 2 * * * /usr/local/bin/backup-retention.sh
 ```
 
-## Encryption and Access Controls
+### Step 2: Encryption and Access Controls
 
 GDPR requires appropriate technical measures to protect personal data. For backups, this means encryption at rest and in transit.
 
@@ -210,7 +220,7 @@ def create_encrypted_backup(db_config, output_dir, retention_days=30):
     return f"{backup_name}.sql.gz.gpg"
 ```
 
-## Data Subject Rights and Backups
+### Step 3: Data Subject Rights and Backups
 
 GDPR grants individuals rights that affect backup handling. The right to erasure (Article 17) means you must be able to remove personal data from backups when requested.
 
@@ -241,7 +251,7 @@ def delete_data_subject_backup(subject_id, key_id):
 
 **Key rotation** provides another mechanism—rotate the encryption key periodically and only maintain keys for active retention periods.
 
-## Documenting Your Retention Policy
+### Step 4: Documenting Your Retention Policy
 
 Compliance requires documentation. Create a formal retention policy document that includes:
 
@@ -254,7 +264,7 @@ Compliance requires documentation. Create a formal retention policy document tha
 
 Store this document alongside your privacy policy and conduct annual reviews.
 
-## Monitoring and Auditing
+### Step 5: Monitor and Auditing
 
 Implement monitoring to verify retention policies execute correctly:
 
@@ -292,6 +302,21 @@ def audit_backup_retention(bucket_name, retention_days):
 ```
 
 Run this audit weekly and alert on any violations.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

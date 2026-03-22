@@ -29,7 +29,17 @@ Data privacy regulations like GDPR and CCPA require organizations to protect per
 - **Check for uniqueness**: Ensure anonymized values don't create new unique identifiers that could be correlated with external data
 2.
 
-## Understanding Anonymization vs. Pseudonymization
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Anonymization vs. Pseudonymization
 
 Before implementing any data handling strategy, distinguish between these two approaches. Anonymization permanently removes the ability to identify individuals — the data cannot be reversed. Pseudonymization replaces identifying information with artificial identifiers while retaining a mapping somewhere. Pseudonymized data may still qualify as personal data under GDPR, while truly anonymized data does not.
 
@@ -37,7 +47,7 @@ For privacy compliance, your goal is often complete anonymization. However, you 
 
 The legal distinction matters significantly in practice. Under GDPR Article 4(5), pseudonymized data is still personal data and subject to all GDPR obligations including data subject rights, breach notification timelines, and lawful basis requirements. Truly anonymized data falls outside GDPR's scope entirely — meaning you can retain it indefinitely, share it freely, and use it without a legal basis. Courts and data protection authorities have increasingly scrutinized anonymization claims, so your technique must withstand re-identification attempts using auxiliary datasets, not just look anonymized on the surface.
 
-## Core Techniques for Anonymizing Database Data
+### Step 2: Core Techniques for Anonymizing Database Data
 
 ### 1. Direct Masking
 
@@ -95,7 +105,7 @@ ON CONFLICT (original_email) DO NOTHING;
 
 Store the tokenization mapping separately and securely if you need reversible anonymization. For GDPR compliance, the token table itself may need special handling.
 
-## Anonymizing Specific Data Types
+### Step 3: Anonymizing Specific Data Types
 
 ### Names and Personal Identifiers
 
@@ -157,7 +167,7 @@ END;
 ALTER TABLE users DROP COLUMN birthdate;
 ```
 
-## Production-Safe Implementation
+### Step 4: Production-Safe Implementation
 
 ### Always Test on a Copy First
 
@@ -219,7 +229,7 @@ def anonymize_in_batches(batch_size=10000):
     conn.close()
 ```
 
-## Automated Anonymization Pipelines
+### Step 5: Automated Anonymization Pipelines
 
 For teams that regularly extract production data to staging or analytics environments, manual anonymization is error-prone. Automate the process using a dedicated pipeline that runs on every export:
 
@@ -306,6 +316,21 @@ Any group with fewer than 5 members may be re-identifiable through combination. 
 
 Choose based on your specific compliance requirements and whether you need to retain the ability to reverse the process. Pure anonymization provides the strongest legal protection under privacy regulations.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

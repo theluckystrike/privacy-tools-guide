@@ -39,7 +39,17 @@ Canvas fingerprinting is one of the most persistent tracking techniques used by 
 - **Some websites may not**: work correctly with aggressive fingerprinting protection enabled, so maintaining separate profiles for different activities is often the best approach.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Canvas Fingerprinting
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Canvas Fingerprinting
 
 Canvas fingerprinting exploits the HTML5 Canvas API to generate a unique identifier based on how your browser renders graphics. When a website requests a canvas element and draws text or images to it, the resulting pixel data varies depending on your operating system, graphics card, fonts installed, and browser rendering engine.
 
@@ -71,7 +81,7 @@ console.log('Canvas fingerprint:', getCanvasFingerprint());
 
 The resulting data URL produces a unique hash that can identify you across sessions and websites. Marketing analytics platforms, ad networks, and even some authentication systems use this technique to track users who attempt to remain anonymous.
 
-## Browser-Based Blocking Methods
+### Step 2: Browser-Based Blocking Methods
 
 ### Firefox Configuration
 
@@ -132,7 +142,7 @@ try {
 }
 ```
 
-## Extension-Based Solutions
+### Step 3: Extension-Based Solutions
 
 If your preferred browser lacks built-in canvas fingerprinting protection, you can use extensions:
 
@@ -166,7 +176,7 @@ While primarily an ad blocker, uBlock Origin also blocks many canvas fingerprint
 3. Enable "I am an advanced user"
 4. Add custom filter rules for canvas fingerprinting domains
 
-## Developer-Specific Techniques
+### Step 4: Developer-Specific Techniques
 
 If you're developing web applications and need to test fingerprinting resistance, or if you're building privacy-conscious applications, here are additional techniques:
 
@@ -247,7 +257,7 @@ Monitor your site for canvas fingerprinting scripts:
 })();
 ```
 
-## Choosing Your Protection Level
+### Step 5: Choose Your Protection Level
 
 The right level of canvas fingerprinting protection depends on your threat model:
 
@@ -257,6 +267,21 @@ The right level of canvas fingerprinting protection depends on your threat model
 - **Custom needs**: Configure extensions for fine-grained control
 
 Remember that stronger protection sometimes means reduced functionality. Some websites may not work correctly with aggressive fingerprinting protection enabled, so maintaining separate profiles for different activities is often the best approach.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

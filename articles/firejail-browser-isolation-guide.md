@@ -39,7 +39,17 @@ The result: a browser running under Firejail sees a restricted subset of your fi
 
 ---
 
-## Install Firejail
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Firejail
 
 ```bash
 # Debian/Ubuntu
@@ -60,7 +70,7 @@ ls /etc/firejail/*.profile | head -20
 
 ---
 
-## Basic Usage
+### Step 2: Basic Usage
 
 ```bash
 # Run Firefox in a Firejail sandbox
@@ -84,7 +94,7 @@ firejail --status
 
 ---
 
-## Desktop Integration (Launch From App Menu)
+### Step 3: Desktop Integration (Launch From App Menu)
 
 To always launch Firefox sandboxed, create a desktop entry override:
 
@@ -119,7 +129,7 @@ sudo firecfg
 
 ---
 
-## Understanding Default Firefox Profile
+### Step 4: Understand Default Firefox Profile
 
 Examine the default Firejail Firefox profile:
 
@@ -161,7 +171,7 @@ seccomp
 
 ---
 
-## Custom Profile: Hardened Firefox
+### Step 5: Custom Profile: Hardened Firefox
 
 Create a stricter profile for maximum isolation:
 
@@ -203,7 +213,7 @@ private-tmp
 
 ---
 
-## Network Isolation for Sandboxed Apps
+### Step 6: Network Isolation for Sandboxed Apps
 
 Firejail can create a completely separate network namespace:
 
@@ -225,7 +235,7 @@ firejail --net=lo --netfilter firefox
 
 ---
 
-## Sandbox Testing: Verify What's Blocked
+### Step 7: Sandbox Testing: Verify What's Blocked
 
 ```bash
 # Run a test to see what Firejail blocks
@@ -245,7 +255,7 @@ strace -e trace=all ls 2>&1 | head -20
 
 ---
 
-## Firejail for Other Applications
+### Step 8: Firejail for Other Applications
 
 ```bash
 # Sandbox a PDF reader (high-value target for malicious PDFs)
@@ -265,7 +275,7 @@ firejail --net=none --private ./unknown-program
 
 ---
 
-## Audit Firejail's Effectiveness
+### Step 9: Audit Firejail's Effectiveness
 
 ```bash
 # Check what seccomp filters are applied
@@ -325,6 +335,21 @@ For GPU-accelerated applications (browsers, video players), Firejail requires DR
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

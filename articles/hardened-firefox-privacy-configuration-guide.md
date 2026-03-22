@@ -63,7 +63,17 @@ For average user: Steps 1 + 2 + 4 = 80% privacy gain with minimal breakage.
 
 Copy the `user.js` file from the downloaded arkenfox folder into your Firefox profile folder (found in Step 1).
 
-## Privacy Baseline: What Firefox Leaks by Default
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Privacy Baseline: What Firefox Leaks by Default
 
 Test your default Firefox at [browserleaks.com](https://browserleaks.com):
 
@@ -75,7 +85,7 @@ Default Firefox reveals:
 - **Referrer headers**: Sites you came from
 - **Third-party cookies**: Trackers follow you across web
 
-## Part 1: Essential about:config Settings
+### Step 2: Part 1: Essential about:config Settings
 
 Open Firefox. Type `about:config` in address bar. Press Enter.
 
@@ -246,7 +256,7 @@ privacy.clearOnShutdown.cookies = true
 privacy.clearOnShutdown.history = true
 ```
 
-## Part 2: Essential Extensions
+### Step 3: Part 2: Essential Extensions
 
 Firefox extensions are the second layer of privacy hardening.
 
@@ -351,7 +361,7 @@ Tracker domain → Block (never whitelist)
 - **Ghostery**: Corporate tracking company
 - **Avast/AVG extensions**: Privacy-invasive VPN providers
 
-## Part 3: arkenfox user.js
+### Step 4: Part 3: arkenfox user.js
 
 **arkenfox** is a community-maintained user.js file—a hardening profile that applies 100+ privacy and security settings at once.
 
@@ -455,7 +465,7 @@ User-Agent: Standardized (all look identical)
 Timezone: UTC
 ```
 
-## Part 4: DNS Privacy
+### Step 5: Part 4: DNS Privacy
 
 **Default DNS**: Your ISP's DNS server logs all domains you visit.
 
@@ -506,7 +516,7 @@ network.trr.mode = 2
 
 6. Test at [nextdns.io/dash](https://nextdns.io/dash) → see blocked queries
 
-## Part 5: VPN Integration (Optional)
+### Step 6: Part 5: VPN Integration (Optional)
 
 Firefox doesn't have built-in VPN. For IP privacy, use a VPN + Firefox together.
 
@@ -523,7 +533,7 @@ Firefox doesn't have built-in VPN. For IP privacy, use a VPN + Firefox together.
 3. Firefox traffic routes through VPN automatically
 4. Test IP at [ipleak.net](https://ipleak.net) → Should show VPN IP, not real IP
 
-## Part 6: Hardened Profile Checklist
+### Step 7: Part 6: Hardened Profile Checklist
 
 Use this checklist to verify your Firefox is hardened:
 
@@ -566,7 +576,7 @@ Use this checklist to verify your Firefox is hardened:
 - [ ] WebGL: Disabled or randomized
 - [ ] WebRTC leak: None
 
-## Real-World Performance Impact
+### Step 8: Real-World Performance Impact
 
 After hardening, expect:
 
@@ -576,7 +586,7 @@ After hardening, expect:
  - Solution: Whitelist in NoScript
 - **Memory usage**: 10-15% higher (more extensions)
 
-## Maintenance
+### Step 9: Perform Maintenance
 
 **Monthly**:
 
@@ -588,7 +598,7 @@ After hardening, expect:
 - Review [nextdns.io/dash](https://nextdns.io/dash) for blocked domains
 - Adjust if legitimate sites blocked
 
-## Limitations
+### Step 10: Limitations
 
 Firefox hardening prevents *tracking*, but doesn't prevent:
 
@@ -597,7 +607,7 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 - **Account-based tracking**: If logged into Gmail/Facebook, Google/Facebook track you regardless
 - **JavaScript exploits**: JavaScript can still extract information
 
-## Recommendations
+### Step 11: Recommendations
 
 1. **Start small**: Set about:config privacy options first (easiest)
 2. **Add extensions**: Install uBlock + Privacy Badger (no breaking changes)
@@ -608,6 +618,21 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 **For average user**: Steps 1 + 2 + 4 = 80% privacy gain with minimal breakage.
 
 **For privacy-focused user**: All steps = maximum privacy, accept breakage, whitelist sites as needed.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

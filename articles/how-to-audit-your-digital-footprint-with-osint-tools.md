@@ -26,7 +26,17 @@ Your digital footprint is larger than you think. Your email appears in data brea
 - **Removing the most sensitive**: data 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## Understanding Your Digital Footprint
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your Digital Footprint
 
 Your digital footprint consists of:
 - **Intentional data**: Social media profiles, public websites, registrations
@@ -37,7 +47,7 @@ Your digital footprint consists of:
 
 The goal of this audit is to find what's publicly accessible and either delete it or accept the exposure.
 
-## OSINT Tools for Personal Auditing
+### Step 2: OSINT Tools for Personal Auditing
 
 ### Google Alerts
 
@@ -227,7 +237,7 @@ Check GitHub (if you've committed with email)
 
 Once you've found all emails associated with you, run each through HIBP to find breach exposure.
 
-## Building an OSINT Dashboard
+### Step 3: Build an OSINT Dashboard
 
 Create a spreadsheet tracking your digital footprint:
 
@@ -321,7 +331,7 @@ These services:
 - Cost money but save massive time
 ```
 
-## Privacy Response Plan
+### Step 4: Privacy Response Plan
 
 After auditing, develop a response strategy:
 
@@ -344,7 +354,7 @@ Tier 3: Acceptable Exposure (ongoing monitoring)
 - Old Google cached pages → Monitor for new exposure
 ```
 
-## Ongoing Monitoring
+### Step 5: Ongoing Monitoring
 
 Set up monthly audit reminders:
 
@@ -375,7 +385,7 @@ Quarterly (1-2 hours):
 | Wayback Machine | Find old content | Free | 5 min per search |
 | exiftool | Strip metadata | Free | 1 min per file |
 
-## Expectations
+### Step 6: Expectations
 
 Completely removing yourself from the internet is unrealistic. Your goal is:
 1. Knowing what's exposed (this audit)
@@ -384,6 +394,21 @@ Completely removing yourself from the internet is unrealistic. Your goal is:
 4. Monitoring for unauthorized use
 
 You'll never achieve total privacy, but you can significantly reduce your exposure. This audit is the first step.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

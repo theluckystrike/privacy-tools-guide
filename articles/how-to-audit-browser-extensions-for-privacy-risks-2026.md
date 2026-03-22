@@ -44,7 +44,17 @@ This guide shows you how to audit extensions before installing them. You'll lear
 - **Risk score (0-100, lower is better)**: Based on permissions, version history, age, and update frequency.
 - **The problem**: most people install extensions without understanding the risks.
 
-## Understanding Browser Extension Permissions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Browser Extension Permissions
 
 When you install an extension, it asks for permissions. Most users click through without reading. This is a mistake.
 
@@ -66,7 +76,7 @@ Common permissions and what they actually mean:
 
 The key principle: an extension should ask for the minimum permissions to do its job. If an extension asks for more than necessary, that's a red flag. If you can't articulate why an extension needs a permission, don't grant it.
 
-## Using CRXcavator to Analyze Extensions
+### Step 2: Use CRXcavator to Analyze Extensions
 
 CRXcavator is a free tool that analyzes Chrome extensions for suspicious behavior and risky permissions.
 
@@ -86,7 +96,7 @@ Go to crxcavator.io. Search for an extension by name. CRXcavator shows:
 
 A real example: searching for "Google Analytics" extensions on CRXcavator shows risk scores ranging from 30 (low risk) to 95 (very high risk). The high-risk ones request broad permissions like "access all websites" and have vague permission descriptions. The low-risk ones are limited to Google Analytics properties and clearly describe what they do.
 
-## Reading manifest.json for Privacy Risks
+### Step 3: Reading manifest.json for Privacy Risks
 
 The manifest.json file controls what an extension can do. You can view it even if you don't have the extension installed yet.
 
@@ -135,7 +145,7 @@ This extension runs only on Gmail and stores local data. Much more limited.
 
 **"update_url"** - Where the extension gets updates. Most extensions use Google's update service. If this is a custom domain, be cautious (though some legitimate extensions do this).
 
-## Detecting Data Exfiltration
+### Step 4: Detecting Data Exfiltration
 
 How can you tell if an extension is sending your data to external servers? Browser developer tools help.
 
@@ -181,7 +191,7 @@ Look for suspicious stored data:
 
 Legitimate extensions store minimal data. Sketchy extensions store copies of your browsing history, your location, or your search queries.
 
-## Permissions Worth Questioning
+### Step 5: Permissions Worth Questioning
 
 **"All websites" permission**
 
@@ -203,7 +213,7 @@ Allows the extension to modify web requests in flight. Legitimate uses: adblocke
 
 Most extensions need storage to save settings. This is low-risk. But check what they're storing (use the Storage Inspector).
 
-## Red Flags in Extension Behavior
+### Step 6: Red Flags in Extension Behavior
 
 If you install an extension and notice:
 
@@ -219,7 +229,7 @@ If you install an extension and notice:
 
 6. **Downloaded to an unexpected location** - Check your Downloads folder. Some extensions download additional binaries. This is extremely suspicious.
 
-## Comparing Popular Extensions
+### Step 7: Comparing Popular Extensions
 
 ### Gmail Client Extensions
 
@@ -237,7 +247,7 @@ If you install an extension and notice:
 
 **Honey (coupon addon)** - Shows coupon codes while shopping. Requests: All websites, webRequest. Contacts: Honey's affiliate servers, PayPal. Risk score: 70. Privacy concern (tracks your shopping).
 
-## Steps to Audit an Extension Before Installing
+### Step 8: Steps to Audit an Extension Before Installing
 
 **Step 1: Check CRXcavator**
 
@@ -271,7 +281,7 @@ If you decide to install, monitor it. Open Developer Tools once a week and check
 
 Every month, re-check CRXcavator for your installed extensions. Update frequency changes, new permissions might be requested, or the risk score might increase.
 
-## What To Do If You Find a Risky Extension
+### Step 9: What To Do If You Find a Risky Extension
 
 If you discover an extension you installed is privacy-invasive:
 
@@ -286,6 +296,21 @@ If you discover an extension you installed is privacy-invasive:
 5. **Leave a review** - Write a review on the Chrome Web Store warning others about the privacy issue.
 
 6. **Find a safer alternative** - Most extensions have competitors. Use CRXcavator to find a safer option.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

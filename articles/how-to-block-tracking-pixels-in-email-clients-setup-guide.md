@@ -41,7 +41,17 @@ Email tracking pixels are invisible 1×1 images embedded in HTML emails that not
 - **For developers and power**: users who value privacy, blocking these pixels is essential.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Email Tracking Pixels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Email Tracking Pixels
 
 A tracking pixel (also called a web beacon) is a tiny HTML image embedded in email content. When your email client loads the image to display the email, it makes a request to the sender's server, revealing:
 
@@ -53,7 +63,7 @@ A tracking pixel (also called a web beacon) is a tiny HTML image embedded in ema
 
 Marketing platforms like Mailchimp, HubSpot, and SendGrid commonly use these pixels. The technique is surprisingly effective—studies show that over 70% of commercial emails contain some form of tracking.
 
-## Blocking Tracking Pixels in Popular Email Clients
+### Step 2: Blocking Tracking Pixels in Popular Email Clients
 
 ### Apple Mail
 
@@ -83,7 +93,7 @@ Gmail automatically proxies images through Google's servers, which blocks most t
 
 For developers wanting more control, browser extensions like "Uglify" or "PixelBlock" add functionality to visualize and block tracking pixels directly.
 
-## Command-Line Solutions for Developers
+### Step 3: Command-Line Solutions for Developers
 
 For power users who prefer terminal-based workflows, several tools exist.
 
@@ -180,7 +190,7 @@ class TrackingBlocker:
 
 This approach requires more setup but gives you complete visibility into what trackers attempt to collect.
 
-## Email Client Configuration for Developers
+### Step 4: Email Client Configuration for Developers
 
 ### Setting Up a Self-Hosted Email Solution
 
@@ -211,7 +221,7 @@ Beyond blocking tracking pixels, adopt these habits:
 4. **Review email headers** regularly to understand what data you're revealing
 5. **Consider encrypted email** with PGP or S/MIME for sensitive communications
 
-## Testing Your Setup
+### Step 5: Test Your Setup
 
 Verify your protection is working:
 
@@ -222,7 +232,7 @@ Verify your protection is working:
 
 Many email tracking services offer "campaign previews" to test—sign up for a newsletter and check what data they collect before and after implementing these protections.
 
-## Understanding Tracking Pixel Variants
+### Step 6: Understand Tracking Pixel Variants
 
 Modern email tracking goes far beyond simple 1×1 images. Understanding these variants helps you choose appropriate protections:
 
@@ -297,7 +307,7 @@ User-Agent: Mozilla/5.0                   ← Device info
 
 Email headers reveal significant information. Headers are difficult to block entirely since they're essential for mail delivery, but reviewing them helps you understand what's being collected.
 
-## Setting Up Network-Level Blocking
+### Step 7: Set Up Network-Level Blocking
 
 For comprehensive protection, combine email client settings with network-level filtering:
 
@@ -355,7 +365,7 @@ pass in on utun0 proto tcp from any to any port 587  # SMTP submission
 
 This ensures email traffic never leaves your VPN connection.
 
-## Analyzing Your Email Privacy Exposure
+### Step 8: Analyzing Your Email Privacy Exposure
 
 Understand your current exposure before and after implementing protections:
 
@@ -429,7 +439,7 @@ if __name__ == '__main__':
 
 Run this on sample emails to understand what information is being collected.
 
-## Privacy Philosophy and Trade-offs
+### Step 9: Privacy Philosophy and Trade-offs
 
 No privacy solution is perfect. Understanding the trade-offs helps you choose the right approach:
 
@@ -442,6 +452,21 @@ No privacy solution is perfect. Understanding the trade-offs helps you choose th
 | Offline email client + local caching | Very High | Medium | 2-3 hrs |
 
 Most people find the best approach combines 2-3 of these layers rather than maximizing any single one.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

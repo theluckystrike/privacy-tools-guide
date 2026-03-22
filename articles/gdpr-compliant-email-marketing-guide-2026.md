@@ -38,7 +38,17 @@ To build a GDPR-compliant email marketing system in 2026, implement double opt-i
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 - **Practical recommendations**: Specific use-case guidance based on team size and requirements
 
-## The Legal Framework
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Legal Framework
 
 The General Data Protection Regulation (GDPR) applies to any organization processing personal data of EU residents. For email marketing, this translates to specific technical requirements:
 
@@ -49,7 +59,7 @@ The General Data Protection Regulation (GDPR) applies to any organization proces
 
 Non-compliance can result in fines up to €20 million or 4% of annual global turnover.
 
-## Implementing Double Opt-In
+### Step 2: Implementing Double Opt-In
 
 Single opt-in does not satisfy GDPR requirements for most use cases. Double opt-in (confirmed opt-in) provides documented proof of consent. Here's a practical implementation:
 
@@ -125,7 +135,7 @@ GDPR requires consent requests to be "freely given, specific, informed, and unam
 
 Avoid pre-checked boxes. The consent must be an affirmative action.
 
-## Building a Consent Audit Log
+### Step 3: Build a Consent Audit Log
 
 Regulators may request proof of your consent practices. Maintain an audit trail:
 
@@ -160,7 +170,7 @@ class ConsentAuditLog:
         }
 ```
 
-## Handling Data Subject Requests
+### Step 4: Handling Data Subject Requests
 
 GDPR grants users the right to access, correct, delete, and port their data. Automate these responses:
 
@@ -209,7 +219,7 @@ class DataSubjectRequestHandler:
         return data
 ```
 
-## Email List Hygiene and Management
+### Step 5: Email List Hygiene and Management
 
 Maintain compliance through ongoing list management:
 
@@ -229,7 +239,7 @@ def cleanup_inactive_subscribers(db, days_inactive: int = 547):
     return result.rowcount
 ```
 
-## Third-Party Integrations
+### Step 6: Third-Party Integrations
 
 When using email marketing services, ensure they meet GDPR requirements:
 
@@ -244,7 +254,7 @@ Verify your email service provider offers:
 - Automated data subject request handling
 - Audit logging capabilities
 
-## Implementation Checklist
+### Step 7: Implementation Checklist
 
 Before launching your email marketing system, verify:
 
@@ -260,6 +270,21 @@ Before launching your email marketing system, verify:
 - [ ] Data retention policy defined
 
 Proper consent management, audit logging, and automated data subject request handling build systems that satisfy regulators while respecting user privacy. The technical investment upfront prevents costly compliance failures later.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

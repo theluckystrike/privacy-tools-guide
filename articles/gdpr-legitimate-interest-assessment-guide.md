@@ -55,7 +55,17 @@ The key distinction from other lawful bases:
 
 Legitimate interest is the most flexible basis but requires the most documentation. You must prove your interest is legitimate, necessary, and doesn't override individual privacy rights.
 
-## The Three-Part Legitimate Interest Test
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Three-Part Legitimate Interest Test
 
 GDPR doesn't define legitimate interest precisely, but the ICO (Information Commissioner's Office) established a three-part test that courts and regulators recognize:
 
@@ -65,7 +75,7 @@ GDPR doesn't define legitimate interest precisely, but the ICO (Information Comm
 
 Each component is examined below with developer-focused examples.
 
-## Implementing the Assessment in Code
+### Step 2: Implementing the Assessment in Code
 
 Create a structured assessment system that documents your legitimate interest reasoning:
 
@@ -177,7 +187,7 @@ analyticsLIA.addSafeguard({
 });
 ```
 
-## Common Application Scenarios
+### Step 3: Common Application Scenarios
 
 Legitimate interest commonly applies to these development scenarios:
 
@@ -238,7 +248,7 @@ const marketingLIA = {
 };
 ```
 
-## When Legitimate Interest Doesn't Apply
+### Step 4: When Legitimate Interest Doesn't Apply
 
 Certain processing scenarios are problematic under legitimate interest:
 
@@ -276,7 +286,7 @@ function generateLIARecord(assessment) {
 
 Store these records with your data processing agreements. Regulators will request them during audits.
 
-## Building Assessment Into Your Application
+### Step 5: Build Assessment Into Your Application
 
 Integrate legitimate interest assessments into your development workflow:
 
@@ -285,6 +295,21 @@ Create assessment templates for common processing activities, and version them a
 Treating legitimate interest assessments as part of your development process rather than a legal afterthought keeps the flexibility this lawful basis provides intact.
 
 Test your implementation by reviewing the ICO's legitimate interest checklist and ensure your documentation addresses each point before deploying new processing activities.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

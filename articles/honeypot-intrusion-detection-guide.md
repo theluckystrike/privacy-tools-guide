@@ -38,7 +38,17 @@ For most home and small business uses, low-interaction honeypots (Cowrie, OpenCa
 
 ---
 
-## Cowrie: SSH Honeypot
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Cowrie: SSH Honeypot
 
 Cowrie is a medium-to-low interaction SSH/Telnet honeypot that logs all attacker activity — commands run, files uploaded, credentials attempted.
 
@@ -155,7 +165,7 @@ for l in sys.stdin:
 
 ---
 
-## OpenCanary: Multi-Service Honeypot
+### Step 2: OpenCanary: Multi-Service Honeypot
 
 OpenCanary simulates multiple services at once: HTTP, FTP, SSH, MySQL, Redis, SMB, and more. Ideal for detecting internal network reconnaissance.
 
@@ -233,7 +243,7 @@ systemctl enable --now opencanary
 
 ---
 
-## Alert on Honeypot Access
+### Step 3: Alert on Honeypot Access
 
 The real value of a honeypot is alerting — knowing the moment someone accesses it:
 
@@ -303,7 +313,7 @@ if __name__ == "__main__":
 
 ---
 
-## Canary Tokens: File-Based Honeypots
+### Step 4: Canary Tokens: File-Based Honeypots
 
 Canary tokens are files (documents, PDFs, images) that phone home when opened. Drop them in sensitive directories — if someone opens the "Passwords.xlsx" canary token, you get notified.
 
@@ -327,7 +337,7 @@ cp "Passwords-2026.docx" /home/backup/credentials/
 
 ---
 
-## Network Canary: Detect Internal Reconnaissance
+### Step 5: Network Canary: Detect Internal Reconnaissance
 
 Place a canary service on an IP that should never be accessed:
 
@@ -346,6 +356,21 @@ sudo journalctl -f | grep CANARY_HIT
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

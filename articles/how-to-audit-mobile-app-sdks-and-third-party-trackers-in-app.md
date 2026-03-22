@@ -48,7 +48,17 @@ Configure your device or emulator to use the proxy.
 
 Third-party SDKs can transmit sensitive user data to remote servers without clear disclosure. Common data points include device identifiers, location information, installation details, browsing behavior, and contact lists. Some SDKs share data with advertising networks, data brokers, or analytics platforms. By auditing the SDKs embedded in an app, you can identify privacy risks, ensure compliance with regulations like GDPR and CCPA, and make informed decisions about which apps to use or distribute.
 
-## Static Analysis: Examining App Binaries
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Static Analysis: Examining App Binaries
 
 Static analysis involves examining the compiled app without running it. This approach reveals what SDKs are present in the app bundle.
 
@@ -102,7 +112,7 @@ strings Payload/MyApp.app/MyApp | grep -i "appsflyer\|adjust\|branch\|mixpanel"
 
 The `Info.plist` file contains declared permissions and URL schemes that reveal tracker integrations.
 
-## Identifying Common Tracker SDKs
+### Step 2: Identifying Common Tracker SDKs
 
 Several SDKs appear frequently in mobile apps for tracking purposes. Recognizing these helps you understand what data flows where.
 
@@ -133,7 +143,7 @@ grep -r "AdvertisingIdClient" smali/
 otool -L Payload/MyApp.app/MyApp | grep -i "advertising\|identifier"
 ```
 
-## Dynamic Analysis: Runtime Monitoring
+### Step 3: Dynamic Analysis: Runtime Monitoring
 
 Static analysis shows what SDKs exist, but dynamic analysis reveals what they actually do at runtime.
 
@@ -196,7 +206,7 @@ Interceptor.attach(Module.findExportByName("libAdjust.so", "Java_com_adjust_sdk_
 });
 ```
 
-## Code-Level Auditing: Examining SDK Integration
+### Step 4: Code-Level Auditing: Examining SDK Integration
 
 When you have access to the app's source code, examine how SDKs are initialized and used.
 
@@ -255,7 +265,7 @@ ATTrackingManager.requestTrackingAuthorization { status in
 }
 ```
 
-## Building an Audit Checklist
+### Step 5: Build an Audit Checklist
 
 When auditing an app, work through this checklist:
 
@@ -266,7 +276,7 @@ When auditing an app, work through this checklist:
 5. **Check for data sharing** — Identify if data leaves the app or stays local
 6. **Document findings** — Create a report of all trackers and their purposes
 
-## Automating SDK Detection
+### Step 6: Automate SDK Detection
 
 For large-scale analysis, automate SDK detection. The **AppCensus** and **Exodus** projects maintain databases of known trackers:
 
@@ -275,7 +285,7 @@ For large-scale analysis, automate SDK detection. The **AppCensus** and **Exodus
 
 You can also build your own detection using the **Mobile SDK Registry** from the AppCensus project, which maps SDK package names to tracker categories.
 
-## Reducing Tracker Impact
+### Step 7: Reducing Tracker Impact
 
 After identifying trackers, consider mitigation strategies:
 
@@ -291,6 +301,21 @@ Begin by auditing an app you frequently use. Start with static analysis to ident
 The methods in this guide apply to both iOS and Android, though specific tools differ. As you gain experience, you'll recognize tracker signatures quickly and understand what data flows where. This knowledge helps you build more privacy-respecting apps and make informed choices about the software you use.
 
 Regular auditing of mobile apps reveals the constantly evolving tracking ecosystem. New SDKs emerge, and existing ones change their behavior. Staying current requires ongoing analysis, but the fundamentals—examining binaries, monitoring networks, and reviewing code—remain consistent.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -24,7 +24,7 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - **This guide covers guides**: best of, comparisons, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
-## Guides
+### Step 1: Guides
 
 - [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
 - [1Password Masked Email Feature Review: A Developer Guide](/1password-masked-email-feature-review/)
@@ -1289,7 +1289,7 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)
 - [Zoosk Behavioral Matchmaking Privacy How The Platform](/zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/)
 
-## Best Of
+### Step 2: Best Of
 
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/best-anonymous-email-service-2026/)
 - [Best Encrypted Email Service 2026: A Developer Guide](/best-encrypted-email-service-2026/)
@@ -1320,11 +1320,11 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/webauthn-vs-fido2-vs-passkey-differences/)
 - [Wickr vs Signal for Enterprise Use: A Technical Comparison](/wickr-vs-signal-for-enterprise-use/)
 
-## Privacy
+### Step 3: Privacy
 
 - [Best Private Messaging App for Mobile with Disappearing](/best-private-messaging-app-for-mobile-with-disappearing-mess/)
 
-## Security
+### Step 4: Security
 
 - [1Password vs LastPass: Which Survived Their Breaches?](/1password-vs-lastpass-which-survived-breach/)
 - [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)

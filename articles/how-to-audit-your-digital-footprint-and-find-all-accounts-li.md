@@ -47,7 +47,17 @@ Data breaches affect millions of users annually. When attackers obtain email add
 
 Beyond security, privacy concerns drive digital footprint audits. Services you forgot about may continue collecting data, sharing information with third parties, or maintaining records you no longer want retained. An audit provides visibility into your actual online presence.
 
-## Method 1: Using Have I Been Pwned's API
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Using Have I Been Pwned's API
 
 Have I Been Pwned (HIBP) aggregates breach data from numerous sources. While primarily focused on compromised credentials, the service reveals which email addresses have appeared in known data breaches—indicating account existence at specific services.
 
@@ -90,7 +100,7 @@ if email and api_key:
 
 This script identifies services where your email appeared in breaches. However, it won't reveal accounts you created but never had compromised—necessitating additional methods.
 
-## Method 2: Password Manager Export Analysis
+### Step 2: Method 2: Password Manager Export Analysis
 
 If you use a password manager, your vault likely contains entries for most active accounts. Exporting your vault provides a direct list of services you consider worth remembering.
 
@@ -112,7 +122,7 @@ bw export --format json --password $BW_MASTER_PASSWORD | \
 
 Password managers won't capture accounts you forgot or abandoned, but they provide the most accurate list of services you actively use.
 
-## Method 3: Gmail Account Discovery
+### Step 3: Method 3: Gmail Account Discovery
 
 Gmail's built-in tools help identify accounts linked to your Google address. Navigate to **Settings > See all settings > Filters** to review automated sorting rules—these often indicate newsletter subscriptions and service registrations.
 
@@ -140,7 +150,7 @@ formail -s cat ~/Takeout/Mail/all_mail.mbox | \
   sort | uniq -c | sort -rn > email_domains.txt
 ```
 
-## Method 4: Automated Account Discovery Scripts
+### Step 4: Method 4: Automated Account Discovery Scripts
 
 Several open-source tools automate account discovery across services:
 
@@ -213,13 +223,13 @@ async def main():
 asyncio.run(main())
 ```
 
-## Method 5: Manual Verification Through Password Reset
+### Step 5: Method 5: Manual Verification Through Password Reset
 
 For services you suspect exist but can't confirm, use password reset functionality. Enter your email on the service's login page and observe whether it reports "no account found" or sends a reset link.
 
 This method has limitations—some services suppress account existence for security—but works for many platforms. Track results in a spreadsheet with columns: Service Name, URL, Found (Yes/No), Last Verified, Action Required.
 
-## Method 6: Checking Connected Third-Party Apps
+### Step 6: Method 6: Checking Connected Third-Party Apps
 
 Review OAuth permissions across major platforms:
 
@@ -231,7 +241,7 @@ Review OAuth permissions across major platforms:
 
 Revoke access for services you no longer use. Each connection represents potential data sharing you may have forgotten about.
 
-## Method 7: Using Data Broker Removal Services
+### Step 7: Method 7: Using Data Broker Removal Services
 
 Data broker sites aggregate public records and create profiles containing your information. While not directly showing account registrations, these profiles often list services you've used. Services like DeleteMe, Optery, or manual opt-outs can reduce this exposure.
 
@@ -243,7 +253,7 @@ For manual removal, search yourself on:
 
 Each maintains opt-out processes, though they require periodic repeat submissions.
 
-## Building Your Audit Workflow
+### Step 8: Build Your Audit Workflow
 
 Combine these methods into a repeatable process:
 
@@ -255,7 +265,7 @@ Combine these methods into a repeatable process:
 6. **Document findings**: Maintain a spreadsheet tracking discovered accounts
 7. **Take action**: Delete unused accounts, secure active ones, enable 2FA
 
-## Securing Your Discovered Accounts
+### Step 9: Secure Your Discovered Accounts
 
 With a complete inventory, prioritize security improvements:
 
@@ -267,7 +277,7 @@ With a complete inventory, prioritize security improvements:
 
 For accounts you want to keep but rarely use, consider setting calendar reminders to periodically verify security settings.
 
-## Automation: Scheduled Footprint Reviews
+### Step 10: Automation: Scheduled Footprint Reviews
 
 Automate recurring audits with scheduled scripts:
 
@@ -277,6 +287,21 @@ Automate recurring audits with scheduled scripts:
 ```
 
 Regular reviews catch new accounts you create and identify breaches in newly-compromised services.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ Bypassing the Great Firewall of China requires understanding how traffic inspect
 - **Shadowsocks remains a popular**: choice among developers and power users due to its lightweight design and flexibility.
 - **Standard VPN protocols often**: fail because their handshake patterns are distinctive.
 
-## Understanding Traffic Inspection and Obfuscation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Traffic Inspection and Obfuscation
 
 The Great Firewall uses multiple detection methods including deep packet inspection (DPI), TLS fingerprint analysis, and traffic pattern recognition. Standard VPN protocols often fail because their handshake patterns are distinctive. Shadowsocks with obfuscation addresses these detection vectors by making encrypted traffic appear like normal HTTPS connections.
 
@@ -48,7 +58,7 @@ Obfuscation works by wrapping the Shadowsocks protocol inside another layer that
 
 The GFW's active probing is particularly sophisticated. When it detects a suspicious connection, it sends crafted probe packets to your server to determine whether it is running a proxy. Obfuscation plugins like `obfs4` and `v2ray-plugin` are designed to respond to these probes in ways that look indistinguishable from a legitimate web server. Choosing a plugin that resists active probing is just as important as choosing one that prevents passive DPI detection.
 
-## Choosing an Encryption Method
+### Step 2: Choose an Encryption Method
 
 Not all Shadowsocks ciphers are equal. The original `rc4-md5` and `chacha20` ciphers have known weaknesses and should be avoided. Modern deployments should use AEAD (Authenticated Encryption with Associated Data) ciphers:
 
@@ -58,7 +68,7 @@ Not all Shadowsocks ciphers are equal. The original `rc4-md5` and `chacha20` cip
 
 The AEAD ciphers provide both encryption and integrity checking, meaning a modified packet will be detected and dropped rather than silently forwarded. This matters for both security and protocol reliability.
 
-## Server-Side Setup
+### Step 3: Server-Side Setup
 
 Begin by installing shadowsocks-rust on your server (ideally hosted outside China):
 
@@ -113,7 +123,7 @@ which obfs-server
 # Should output: /usr/local/bin/obfs-server
 ```
 
-## Client-Side Configuration
+### Step 4: Client-Side Configuration
 
 For Linux clients, install and configure the client software:
 
@@ -244,7 +254,7 @@ This configuration encapsulates your Shadowsocks traffic inside WebSocket over T
 
 Simple obfuscation plugins like obfs4 mimic HTTP or TLS at the packet level. V2Ray with WebSocket+TLS goes further: it establishes a real TLS session using a genuine certificate, then tunnels traffic inside it as standard WebSocket frames. The GFW sees an ordinary HTTPS connection to a web server. Placed behind nginx with a real website serving content on the same port, this configuration is extremely difficult to distinguish from legitimate traffic.
 
-## Docker Deployment for Quick Setup
+### Step 5: Docker Deployment for Quick Setup
 
 Simplify deployment using Docker:
 
@@ -324,7 +334,7 @@ sysctl net.ipv4.tcp_congestion_control
 
 BBR is particularly effective for connections with significant bandwidth-delay products, reducing the impact of packet loss on throughput.
 
-## Testing Your Setup
+### Step 6: Test Your Setup
 
 Verify that obfuscation is working by checking traffic characteristics:
 
@@ -352,7 +362,7 @@ curl --socks5 127.0.0.1:1080 -o /dev/null https://speed.cloudflare.com/__down?by
 
 A well-tuned setup should deliver 10-50 Mbps for servers in Japan or Singapore from mainland Chinese locations, depending on the time of day and current GFW inspection intensity.
 
-## Deployment Recommendations
+### Step 7: Deploy ment Recommendations
 
 Consider these best practices for production deployments:
 

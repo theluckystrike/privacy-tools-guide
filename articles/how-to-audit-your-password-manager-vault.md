@@ -52,7 +52,17 @@ Password managers simplify credential management, but they can also become repos
 
 An audit helps you identify and remediate these issues before they become problems. Rather than manually reviewing each entry, you can use CLI tools and scripting to automate much of this process.
 
-## Exporting Your Vault Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Exporting Your Vault Data
 
 The first step in any audit is getting your vault data into a format you can analyze. Most password managers support encrypted exports that maintain your data's security during the audit process.
 
@@ -98,7 +108,7 @@ For KeePass databases, you can export directly:
 keepassxc-cli export --format csv database.kdbx -o vault-export.csv
 ```
 
-## Analyzing Password Strength
+### Step 2: Analyzing Password Strength
 
 Once you have your vault data exported, the next step is analyzing password strength. You can write custom scripts or use existing tools to identify weak passwords.
 
@@ -198,7 +208,7 @@ Run this script against your exported vault:
 python3 audit_vault.py ~/vault-export.json
 ```
 
-## Identifying Reused Passwords
+### Step 3: Identifying Reused Passwords
 
 Password reuse is one of the most common security vulnerabilities. A data breach at one service exposes all accounts using the same password.
 
@@ -237,7 +247,7 @@ def find_reused_passwords(vault_data: Dict) -> List[Dict]:
 
 This identifies which passwords appear multiple times in your vault, allowing you to prioritize updating these credentials.
 
-## Checking for Compromised Passwords
+### Step 4: Checking for Compromised Passwords
 
 Beyond analyzing password strength, you should check whether your passwords have appeared in known data breaches. The Have I Been Pwned API provides this functionality through a k-anonymity model that protects your actual passwords.
 
@@ -294,7 +304,7 @@ def audit_compromised(vault_file: str):
 
 Use this carefully—while the k-anonymity model protects your passwords, you're still sending partial hashes to an external service. For maximum security, consider running this check only on an offline machine.
 
-## Creating an Audit Workflow
+### Step 5: Create an Audit Workflow
 
 Rather than performing manual audits, establish a regular workflow using your password manager's built-in features combined with custom scripts.
 
@@ -342,6 +352,21 @@ Beyond passwords, review these vault components:
 **Recovery Options**: Verify your recovery email and phone number are current. Check that backup codes are stored securely.
 
 **Attachments**: Review large files stored in your vault. Consider moving these to dedicated encrypted storage solutions.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

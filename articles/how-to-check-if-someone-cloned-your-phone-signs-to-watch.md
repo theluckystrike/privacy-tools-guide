@@ -24,7 +24,17 @@ Phone cloning copies your IMEI and IMSI to intercept calls and SMS messages, all
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: phone cloning, technical signs your phone may be cloned, 1. unusual battery drain and data usage, with specific setup instructions
 
-## Understanding Phone Cloning
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Phone Cloning
 
 Phone cloning involves copying the unique identifiers from your SIM card or phone memory to another device. The cloned device then appears identical to yours on the cellular network, enabling attackers to:
 
@@ -35,7 +45,7 @@ Phone cloning involves copying the unique identifiers from your SIM card or phon
 
 Traditional cloning targeted GSM networks through SIM card duplication, but modern attacks increasingly focus on over-the-air (OTA) provisioning exploits, IMSI catchers, and malware that steals device identifiers.
 
-## Technical Signs Your Phone May Be Cloned
+### Step 2: Technical Signs Your Phone May Be Cloned
 
 ### 1. Unusual Battery Drain and Data Usage
 
@@ -140,7 +150,7 @@ Check your carrier provisioning status through hidden menus:
 
 Mismatched carrier information or unexpected carrier names may indicate a compromised network connection.
 
-## Protection Strategies
+### Step 3: Protection Strategies
 
 ### Enable SIM Lock
 
@@ -171,7 +181,7 @@ Implement end-to-end encrypted messaging apps and enable TLS for all communicati
 
 Set up alerts for unusual account activity and review login histories regularly. Consider using hardware security keys for critical accounts.
 
-## Response Steps If Cloning Is Detected
+### Step 4: Response Steps If Cloning Is Detected
 
 If you confirm unauthorized access:
 
@@ -198,7 +208,7 @@ adb shell dumpsys telephony.registry | grep "mSimSerialNumber"
 
 If the SIM serial changes without your action, someone has physically replaced your SIM. This is a critical sign of cloning or SIM swap attack.
 
-## Carrier Security Controls
+### Step 5: Carrier Security Controls
 
 Most major carriers offer additional protections against cloning and SIM swaps:
 
@@ -233,7 +243,7 @@ Most major carriers offer additional protections against cloning and SIM swaps:
 # Or access https://www.t-mobile.com/security
 ```
 
-## Detecting Unauthorized Mileage Monitoring
+### Step 6: Detecting Unauthorized Mileage Monitoring
 
 Cloning often includes location tracking. Monitor for unauthorized location access:
 
@@ -269,7 +279,7 @@ def check_location_access():
 check_location_access()
 ```
 
-## Forensic Analysis for Power Users
+### Step 7: Forensic Analysis for Power Users
 
 If you suspect successful cloning, preserve evidence:
 
@@ -292,7 +302,7 @@ adb shell dumpsys package | grep -i "hidden\|shadow\|clone" > suspicious_apps.tx
 
 Document all findings with timestamps and provide to law enforcement if reporting.
 
-## Timeline and Evidence Documentation
+### Step 8: Timeline and Evidence Documentation
 
 Maintain a detailed timeline of events:
 
@@ -334,7 +344,7 @@ Maintain a detailed timeline of events:
 
 This documentation is crucial if you pursue legal action or need to prove the timeline of events.
 
-## Long-Term Monitoring After Incident
+### Step 9: Long-Term Monitoring After Incident
 
 Recovery doesn't end after initial remediation:
 
@@ -354,6 +364,21 @@ Recovery doesn't end after initial remediation:
 
 Cloning victims have experienced delayed fraudulent activity months after the initial incident. Sustained vigilance is essential.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

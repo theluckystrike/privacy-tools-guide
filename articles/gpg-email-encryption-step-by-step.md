@@ -48,7 +48,17 @@ This guide covers the complete workflow: generating a key pair, exchanging keys,
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Install GPG
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install GPG
 
 ```bash
 # Debian/Ubuntu
@@ -70,7 +80,7 @@ Verify:
 gpg --version
 ```
 
-## Generate Your Key Pair
+### Step 2: Generate Your Key Pair
 
 ```bash
 gpg --full-generate-key
@@ -102,7 +112,7 @@ ssb   cv25519/FEDCBA0987654321 2026-03-21 [E]
 
 The long hex string starting with `1A2B...` is your key ID. The 40-character string is your fingerprint.
 
-## Export Your Public Key
+### Step 3: Export Your Public Key
 
 Share this with anyone who wants to send you encrypted email:
 
@@ -116,7 +126,7 @@ cat yourname-public-key.asc
 
 The public key starts with `-----BEGIN PGP PUBLIC KEY BLOCK-----`. This is safe to share publicly — post it on your website, email it to contacts, publish it to a key server.
 
-## Back Up Your Private Key
+### Step 4: Back Up Your Private Key
 
 Your private key is irreplaceable. Back it up to encrypted offline storage:
 
@@ -130,7 +140,7 @@ gpg --gen-revoke you@example.com > yourname-revoke.asc
 
 Store both files on an encrypted USB drive or in an encrypted archive. If you lose the private key, you can't decrypt old messages. If someone else gets it, they can read everything encrypted to you.
 
-## Publish Your Key to a Key Server
+### Step 5: Publish Your Key to a Key Server
 
 Publishing makes it easy for others to find your key by email address:
 
@@ -149,7 +159,7 @@ You can also paste the public key directly on:
 - Your GitHub profile (`https://github.com/yourusername.gpg`)
 - Email signatures
 
-## Import Someone Else's Public Key
+### Step 6: Import Someone Else's Public Key
 
 To send an encrypted message, you need the recipient's public key.
 
@@ -181,7 +191,7 @@ Verify the fingerprint matches what the recipient told you (over a separate chan
 gpg --fingerprint recipient@example.com
 ```
 
-## Encrypt a Message
+### Step 7: Encrypt a Message
 
 ```bash
 # Encrypt a file for a recipient (also sign it with your key)
@@ -207,7 +217,7 @@ gpg --recipient alice@example.com \
 
 The message is encrypted separately for each recipient's key — only Alice or Bob can decrypt it.
 
-## Decrypt a Message
+### Step 8: Decrypt a Message
 
 ```bash
 # Decrypt (will prompt for your passphrase)
@@ -219,7 +229,7 @@ gpg --decrypt --output message.txt message.txt.asc
 
 GPG automatically detects which private key to use based on the recipient field in the encrypted message.
 
-## Set Up Thunderbird with OpenPGP
+### Step 9: Set Up Thunderbird with OpenPGP
 
 Thunderbird 78+ has native OpenPGP support — no Enigmail required.
 
@@ -245,7 +255,7 @@ Thunderbird 78+ has native OpenPGP support — no Enigmail required.
  - Thunderbird decrypts automatically when you open the message
  - Displays "This message was encrypted and signed by..."
 
-## Sign-Only Mode (For Authenticity Without Encryption)
+### Step 10: Sign-Only Mode (For Authenticity Without Encryption)
 
 Signing without encryption lets anyone verify the message came from you, without needing to exchange keys first:
 
@@ -262,7 +272,7 @@ gpg --verify message.txt.asc
 
 This is useful for software releases, announcements, and situations where confidentiality isn't the goal but authenticity is.
 
-## Web of Trust and Key Signing
+### Step 11: Web of Trust and Key Signing
 
 The web of trust is a decentralized way to verify that a key actually belongs to the person it claims to. When you sign someone's key, you're vouching that you've verified the key belongs to them.
 
@@ -276,7 +286,7 @@ gpg --keyserver keys.openpgp.org --send-keys RECIPIENT_KEY_ID
 
 In practice, most people just verify fingerprints out-of-band rather than building formal trust chains.
 
-## Key Management Commands
+### Step 12: Key Management Commands
 
 ```bash
 # List all keys in your keyring
@@ -295,6 +305,21 @@ gpg --edit-key you@example.com
 gpg --import yourname-revoke.asc
 gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

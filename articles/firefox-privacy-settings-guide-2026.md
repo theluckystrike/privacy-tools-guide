@@ -47,13 +47,23 @@ Firefox is not the most private browser by default — that title belongs to har
 
 Mozilla's open-source model also allows external audits of the codebase. Privacy-focused projects like the Arkenfox user.js maintain community-reviewed settings lists that track changes across Firefox versions, giving users a living reference for hardening decisions.
 
-## Accessing Advanced Settings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Access Advanced Settings
 
 The about:config interface exposes Firefox's internal configuration. Type `about:config` in your address bar and press Enter. You will see a warning — accept it to proceed. The search bar at the top makes finding specific preferences straightforward.
 
 Changes made through about:config persist across sessions but can be reset to defaults by right-clicking a preference and selecting "Reset." This makes experimentation low-risk.
 
-## Core Privacy Preferences
+### Step 2: Core Privacy Preferences
 
 Several settings form the foundation of Firefox's privacy posture. Start with these critical preferences:
 
@@ -85,7 +95,7 @@ Hyperlink ping tracking allows sites to notify a third-party URL when you click 
 browser.send_pings = false
 ```
 
-## Network and Connection Settings
+### Step 3: Network and Connection Settings
 
 Network-related settings control how Firefox communicates with servers:
 
@@ -137,7 +147,7 @@ Also disable DNS prefetching:
 network.dns.disablePrefetch = true
 ```
 
-## WebGL and Canvas Protection
+### Step 4: WebGL and Canvas Protection
 
 WebGL and HTML Canvas APIs can leak hardware information:
 
@@ -159,7 +169,7 @@ canvas.privacy.image_cipher = true
 
 Canvas fingerprinting works by rendering an invisible image and reading back the pixel values, which differ slightly based on GPU drivers and rendering engines. Adding noise makes these values less unique.
 
-## Referrer and Header Control
+### Step 5: Referrer and Header Control
 
 Control what information Firefox sends to websites:
 
@@ -189,7 +199,7 @@ privacy.reduceTimerPrecision = true
 
 High-precision timers enable Spectre-class side-channel attacks and allow fingerprinting through performance measurement. Reducing precision degrades these attack vectors without noticeable impact on normal browsing.
 
-## DNS and HTTPS Settings
+### Step 6: DNS and HTTPS Settings
 
 Modern DNS and HTTPS configurations improve privacy:
 
@@ -224,7 +234,7 @@ Enforce minimum TLS version:
 security.tls.version.min = 3  # TLS 1.2 minimum
 ```
 
-## Telemetry and Data Collection
+### Step 7: Telemetry and Data Collection
 
 Firefox collects usage telemetry by default. Disable it:
 
@@ -238,7 +248,7 @@ browser.crashReports.unsubmittedCheck.autoSubmit2 = false
 
 These settings stop Firefox from sending usage data to Mozilla. The `toolkit.telemetry.server` value is set to a data URI to prevent any accidental connections to telemetry endpoints.
 
-## Extension Recommendations
+### Step 8: Extension Recommendations
 
 Beyond about:config, Firefox's extension ecosystem enhances privacy:
 
@@ -257,7 +267,7 @@ Each container has its own cookie jar, local storage, and IndexedDB. A tracker t
 
 **LocalCDN** replaces requests to CDNs (Google Fonts, jQuery CDN, Bootstrap CDN) with locally served copies. This prevents CDN providers from tracking which sites you visit based on resource requests.
 
-## Persisting Settings with user.js
+### Step 9: Persisting Settings with user.js
 
 Settings entered through about:config survive browser restarts but can be overwritten by Firefox updates. A `user.js` file in your profile directory applies settings at every startup:
 
@@ -290,7 +300,7 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
 
 The Arkenfox project maintains an extensively commented `user.js` that covers additional preferences not included here. It is worth reviewing for users who want a community-maintained hardening baseline.
 
-## Automation and Profiles
+### Step 10: Automation and Profiles
 
 Developers often need multiple browser configurations. Firefox profiles solve this:
 
@@ -307,7 +317,7 @@ firefox --ProfileManager
 
 Each profile maintains separate settings, extensions, and cookies. Create dedicated profiles for development (looser privacy settings, DevTools access), general browsing (hardened settings, uBlock Origin), and sensitive browsing (maximum hardening, no extensions that could exfiltrate data).
 
-## Verification and Testing
+### Step 11: Verification and Testing
 
 After configuring settings, verify they work:
 
@@ -324,6 +334,21 @@ media.peerconnection.enabled = false
 ```
 
 Re-enable this setting only for tabs where you actively use video or voice calling.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

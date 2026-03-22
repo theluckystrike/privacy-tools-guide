@@ -29,7 +29,17 @@ When Stripe sends you a payment webhook, it includes customer email addresses, n
 
 A privacy-preserving relay intercepts incoming webhooks, removes or redacts sensitive fields, and forwards only what your system requires. This approach reduces your compliance burden, minimizes data breach exposure, and enforces data minimization principles.
 
-## Architecture Overview
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architecture Overview
 
 The relay operates as middleware between webhook providers and your endpoints. It receives POST requests, applies transformation rules, and forwards the cleaned payload to your destination.
 
@@ -42,7 +52,7 @@ The relay needs three core components:
 - A rule engine to define which fields to strip
 - A forwarding mechanism to send transformed payloads
 
-## Building the Relay in Node.js
+### Step 2: Build the Relay in Node.js
 
 Here's a complete implementation using Express:
 
@@ -106,7 +116,7 @@ app.listen(3000, () => {
 });
 ```
 
-## Configuration Options for Power Users
+### Step 3: Configuration Options for Power Users
 
 The basic implementation works, but you'll want more control. Extend the relay with configurable rules:
 
@@ -166,7 +176,7 @@ function setNestedValue(obj, path, value) {
 }
 ```
 
-## Handling Edge Cases
+### Step 4: Handling Edge Cases
 
 Real-world webhooks have nested structures and arrays. The implementation above handles recursion, but you need to consider a few scenarios.
 
@@ -204,7 +214,7 @@ app.post('/relay', (req, res) => {
 });
 ```
 
-## Deployment Considerations
+### Step 5: Deploy ment Considerations
 
 Run the relay as a separate service with its own authentication. Don't expose it directly to the internet—your webhook providers should send to your relay, which then forwards internally.
 
@@ -235,7 +245,7 @@ app.post('/relay', async (req, res) => {
 });
 ```
 
-## Testing and Monitoring
+### Step 6: Test and Monitoring
 
 Implement testing to ensure the relay works correctly:
 
@@ -366,6 +376,21 @@ app.post('/relay', (req, res) => {
   res.json({ status: 'queued', id: Date.now() });
 });
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

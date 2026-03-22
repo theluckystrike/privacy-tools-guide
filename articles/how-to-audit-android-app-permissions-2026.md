@@ -29,11 +29,11 @@ intent-checked: true---
 
 {% raw %}
 
-## How to Audit Android App Permissions (2026)
+### Step 1: How to Audit Android App Permissions (2026)
 
 Android permissions control what data applications can access: location, contacts, camera, microphone, files, and more. Most users blindly grant permissions during installation, unaware of the privacy implications. This technical guide walks through auditing which permissions apps have, identifying risky configurations, and restricting permissions to minimize data exposure.
 
-## Android Permission Model Overview
+### Step 2: Android Permission Model Overview
 
 Android 6.0+ (API 23+) uses runtime permissions. Apps can't access sensitive data without explicit user consent. Understanding permission categories helps identify privacy risks.
 
@@ -134,7 +134,7 @@ adb devices
 # ABC123XYZ  device
 ```
 
-## Method 1: Using adb to View All Permissions
+### Step 3: Method 1: Using adb to View All Permissions
 
 ### List All Installed Packages
 
@@ -189,7 +189,7 @@ adb shell dumpsys package com.whatsapp | grep -A 50 "Permissions:"
 # - Permissions denied
 ```
 
-## Method 2: Automated Permission Audit Script
+### Step 4: Method 2: Automated Permission Audit Script
 
 Create an audit of all apps and their permissions:
 
@@ -252,7 +252,7 @@ chmod +x audit-permissions.sh
 ./audit-permissions.sh > audit_report.txt
 ```
 
-## Method 3: Using Android Studio
+### Step 5: Method 3: Using Android Studio
 
 For developers, Android Studio provides GUI tools:
 
@@ -261,7 +261,7 @@ For developers, Android Studio provides GUI tools:
 3. Open `com.whatsapp.xml` (or any app)
 4. View permission grants in XML format
 
-## Real-World Examples: Permission Analysis
+### Step 6: Real-World Examples: Permission Analysis
 
 ### Example 1: Messaging App (WhatsApp)
 
@@ -316,7 +316,7 @@ android.permission.ACCESS_BACKGROUND_LOCATION ✓
 
 **Recommendation**: Deny calendar, body sensors, and background location.
 
-## Revoke Permissions via ADB
+### Step 7: Revoke Permissions via ADB
 
 After identifying risky permissions, revoke them.
 
@@ -351,7 +351,7 @@ done
 echo "Done. Verify in Settings > Apps > $PACKAGE > Permissions"
 ```
 
-## Permission Monitoring: Know When Apps Request Permissions
+### Step 8: Permission Monitoring: Know When Apps Request Permissions
 
 Once revoked, monitor when apps try to use revoked permissions.
 
@@ -372,7 +372,7 @@ Some apps repeatedly request permissions you've denied. Using a logcat filter:
 adb logcat | grep "startActivityForResult\|onActivityResult"
 ```
 
-## Complete Audit Checklist
+### Step 9: Complete Audit Checklist
 
 Use this checklist for regular privacy audits:
 
@@ -419,7 +419,7 @@ For each dangerous permission group:
 - [ ] Remove apps with excessive permissions
 - [ ] Document reason for keeping apps with high permissions
 
-## Permission Risk Scoring
+### Step 10: Permission Risk Scoring
 
 Quantify privacy risk by app:
 
@@ -468,7 +468,7 @@ Risk categories:
 9. **Regular audits**: Monthly quick review, quarterly detailed audit
 10. **Document decisions**: Keep notes on why you granted certain permissions
 
-## Recommended Permissions by App Type
+### Step 11: Recommended Permissions by App Type
 
 **Messaging Apps** (WhatsApp, Signal, Telegram):
 - CAMERA ✓
@@ -509,6 +509,21 @@ Risk categories:
 - MICROPHONE ✗ (deny)
 - CONTACTS ✗ (deny)
 - CALENDAR ✗ (deny)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

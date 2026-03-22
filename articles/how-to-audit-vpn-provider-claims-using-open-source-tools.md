@@ -47,7 +47,17 @@ VPN providers have significant financial incentives to make their services appea
 - **DNS leak detection** to ensure your traffic is properly tunneled
 - **WebRTC and IPv6 leak testing** for complete anonymity
 
-## Testing DNS Leak Protection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Test DNS Leak Protection
 
 One of the most critical tests for any VPN is whether it properly routes all DNS requests through its encrypted tunnel. DNS leaks can expose your browsing activity even when connected to a VPN.
 
@@ -80,7 +90,7 @@ Several open source projects provide DNS leak testing:
 - **dns leak** - Available on GitHub with customizable test domains
 - **Python-based testers** - Many developers have created scripts that compare DNS responses across multiple test domains
 
-## Verifying Encryption Standards
+### Step 2: Verify Encryption Standards
 
 VPN providers claim to use "AES-256" or "military-grade encryption," but you should verify the actual protocols and ciphers in use.
 
@@ -110,7 +120,7 @@ sudo wg show wg0 latest-handshakes
 
 The latest-handshakes field shows when the last key exchange occurred. A recent timestamp indicates an active, properly functioning tunnel.
 
-## Testing for IP Leaks
+### Step 3: Test for IP Leaks
 
 Beyond DNS leaks, your real IP address can leak through WebRTC, IPv6, or browser fingerprinting.
 
@@ -140,7 +150,7 @@ Many VPNs focus on IPv4 traffic, leaving IPv6 connections exposed:
 2. Compare the results—if you see your real IPv6 address when connected, you have an IPv6 leak
 3. Some VPNs provide IPv6 tunnel features to address this
 
-## Speed Testing Methodology
+### Step 4: Speed Testing Methodology
 
 Marketing speed test results often come from optimized servers. Test real-world performance yourself:
 
@@ -171,7 +181,7 @@ iperf3 -c <SERVER_IP> -R  # Reverse direction test
 
 Run tests during different times of day and connect to various server locations to get realistic performance data.
 
-## Verifying No-Logs Claims
+### Step 5: Verify No-Logs Claims
 
 The ultimate test of privacy is whether your VPN actually keeps no logs. While you cannot definitively prove a no-logs policy from the outside, you can:
 
@@ -193,7 +203,7 @@ sudo tcpdump -i any port 53
 
 If you see unexpected DNS queries or unusual traffic patterns, your VPN may not be as private as claimed.
 
-## Using VPN Testing Frameworks
+### Step 6: Use VPN Testing Frameworks
 
 Several frameworks exist for testing VPN security:
 
@@ -203,7 +213,7 @@ Several frameworks exist for testing VPN security:
 
 Deploying your own test VPN using these tools provides complete visibility into how the technology works.
 
-## Building Your Audit Toolkit
+### Step 7: Build Your Audit Toolkit
 
 Collect these essential tools for ongoing VPN testing:
 
@@ -216,7 +226,7 @@ Collect these essential tools for ongoing VPN testing:
 | tcpdump | Packet capture | Linux/macOS |
 | Browserleaks.com | Browser leak testing | Web-based |
 
-## Interpreting Your Results
+### Step 8: Interpreting Your Results
 
 After running tests, evaluate your VPN provider honestly:
 
@@ -225,6 +235,21 @@ After running tests, evaluate your VPN provider honestly:
 - **Weak encryption** = Security risk, demand better or leave
 - **Poor speeds** = Acceptable if privacy is prioritized, otherwise find alternatives
 - **Log-keeping incidents** = Proven privacy failures
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
