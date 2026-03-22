@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 Nextcloud Talk provides a self-hosted video conferencing solution that gives you complete control over your communication infrastructure. Unlike cloud-based alternatives, your data stays on your servers, making it an attractive option for privacy-conscious developers and organizations with compliance requirements. This guide walks through the complete setup process, from basic installation to advanced configurations that optimize performance for production environments.
 
+## Key Takeaways
+
+- **For most small to medium deployments**: a single well-configured server handles 50-100 concurrent users effectively.
+- **Document the required ports**: and IP ranges, noting that UDP is preferred but TCP fallback improves compatibility.
+- **For calls with more**: than a few participants, the system uses a Selective Forwarding Unit (SFU) architecture that reduces client-side processing requirements.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Nextcloud Talk Architecture
 
 Nextcloud Talk uses WebRTC for peer-to-peer communication, which means video streams flow directly between participants when possible. However, NAT traversal and firewall configurations often require relay servers to ensure connectivity. The system consists of three main components: the Nextcloud server with the Talk app installed, a signaling server (built into Nextcloud), and TURN/STUN servers for media relay.

@@ -31,6 +31,15 @@ voice-checked: true---
 
 Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app or CLI, then importing into Bitwarden using the web interface or bitwarden CLI tool. Both methods preserve passwords, folders, and custom fields, though some NordPass-specific features require manual remapping.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **The most reliable approach**: for full data transfer uses their desktop application or CLI.
+- **Select the export format**: (CSV recommended for maximum compatibility) 4.
+- **Save the exported file**: to a secure location The CSV export includes most standard fields: site URLs, usernames, passwords, notes, and folder assignments.
+- **Check vault for $(bw**: list items | jq 'length') items" ``` ### Handling Custom Fields NordPass supports custom fields that require special attention during migration.
+- **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
+
 ## Understanding Export Formats
 
 NordPass and Bitwarden use different export mechanisms. NordPass provides encrypted exports that require specific handling, while Bitwarden accepts multiple import formats including CSV and JSON.

@@ -31,6 +31,18 @@ tags: [privacy-tools-guide, encryption]---
 
 End-to-end encryption (E2EE) in Nextcloud ensures that your data remains encrypted on the server and can only be decrypted on your client devices. Unlike server-side encryption, where the server holds the decryption keys, E2EE means even the server administrator cannot access your files. This guide walks through setting up E2EE for self-hosted Nextcloud installations, targeting developers and power users who want maximum privacy control.
 
+## Key Takeaways
+
+- **This guide walks through**: setting up E2EE for self-hosted Nextcloud installations, targeting developers and power users who want maximum privacy control.
+- **Always use the recovery**: key to re-establish E2EE on new devices if the account password changed.
+- **Optimize for performance**: ```bash
+# Use chunked transfers for large files
+# Configure in desktop client settings:
+# - Chunk size: 5-10 MB (balance CPU vs.
+- **Create test folders sudo**: -u www-data php occ end-to-end-encryption:enable-user testuser mkdir -p /tmp/test-e2ee # 2.
+- **Verify encryption on server-side**: # SSH into server and check file storage ls -la /var/www/nextcloud/data/testuser/files_encryption/ # 4.
+- **End-to-end encryption (E2EE) in**: Nextcloud ensures that your data remains encrypted on the server and can only be decrypted on your client devices.
+
 ## Prerequisites and Server Requirements
 
 Before enabling E2EE, ensure your Nextcloud instance meets these requirements:

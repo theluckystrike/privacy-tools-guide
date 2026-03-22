@@ -19,6 +19,16 @@ tags: [privacy-tools-guide]---
 Mullvad is notable for accepting cash and Monero payments, requiring no email to sign up (only an account number), and publishing audit results for their no-logs policy. This guide covers the official Linux app, manual WireGuard setup, kill switch configuration, and leak testing.
 ---
 
+## Key Takeaways
+
+- **Write down your 16-digit account number**: this is your only credential
+3.
+- **For maximum anonymity**: buy with Monero or mail cash
+
+No email, no username, no phone number.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Account Setup
 
 Mullvad doesn't require an email address:

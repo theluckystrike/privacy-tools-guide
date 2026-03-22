@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 Running your own cloud storage service gives you complete control over your data. Nextcloud on a Raspberry Pi provides a cost-effective way to host file sync, calendar, contacts, and collaborative features without relying on third-party services. This guide covers the complete setup process using Docker, including reverse proxy configuration, performance optimizations, and security hardening.
 
+## Key Takeaways
+
+- **A 32GB SD card works for the operating system, but your data should live on external storage**: an USB SSD or HDD provides better performance and reliability than SD cards.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers prerequisites**: installing docker and docker compose, configuring external storage, with specific setup instructions
+
 ## Prerequisites
 
 You need a Raspberry Pi 4 or 5 with at least 4GB of RAM. A 32GB SD card works for the operating system, but your data should live on external storage—an USB SSD or HDD provides better performance and reliability than SD cards.

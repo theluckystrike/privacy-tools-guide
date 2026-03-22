@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This guide covers the complete setup process using Docker, nginx reverse proxy configuration, and security hardening for production deployments.
 
+## Key Takeaways
+
+- **When a user opens**: a document in Nextcloud, the following happens: 1.
+- **The user edits in**: the browser; changes are saved back via WOPI calls to Nextcloud 5.
+- **Enable "Use your own**: server" 4.
+- **The default is 12**: hours; increase it for long editing sessions where users keep documents open all day without reloading.
+- **Generate a strong password**: for the admin user.
+- **By default**: multiple users opening the same document each get independent sessions.
+
 ## Why Collabora Office with Nextcloud
 
 Collabora Online provides a self-hosted alternative to Google Docs or Microsoft 365. When integrated with Nextcloud, you gain full control over your documents without sending data to third-party services. The integration supports real-time collaboration, version history, and the full LibreOffice feature set.
