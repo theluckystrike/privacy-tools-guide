@@ -285,6 +285,95 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+## Detecting and Remediating Secret Sprawl
+
+Before improving your secrets management architecture, you need to understand the current state. Secret sprawl in Kubernetes manifests in three ways: secrets embedded in ConfigMaps, environment variables injected directly from secret values, and secrets in container image layers. A sprawl audit finds all three.
+
+```bash
+# Find all secrets across all namespaces
+kubectl get secrets --all-namespaces -o json | jq -r '
+  .items[] |
+  "\(.metadata.namespace)/\(.metadata.name) [\(.type)] keys: \(.data | keys | join(","))"'
+
+# Find pods using secrets as env vars (check for potential over-exposure)
+kubectl get pods --all-namespaces -o json | jq -r '
+  .items[] | .spec.containers[]? |
+  select(.env != null) |
+  .env[] | select(.valueFrom.secretKeyRef != null) |
+  "\(.name) from \(.valueFrom.secretKeyRef.name)/\(.valueFrom.secretKeyRef.key)"'
+
+# Find ConfigMaps that contain obvious secret patterns (base64 or tokens)
+kubectl get configmaps --all-namespaces -o json | jq -r '
+  .items[] |
+  select(.data != null) |
+  "\(.metadata.namespace)/\(.metadata.name)" as $name |
+  .data | to_entries[] |
+  select(.value | test("password|secret|key|token"; "i")) |
+  "\($name): \(.key)"'
+```
+
+For each secret found, assess whether it should be managed by ESO (pulling from AWS Secrets Manager), Vault Agent (dynamic credentials), or Sealed Secrets (GitOps-committed encrypted values). The decision tree is straightforward:
+
+| Secret type | Recommended approach |
+|-------------|---------------------|
+| Database credentials | Vault dynamic credentials (short-lived) |
+| API keys from third-party services | ESO + AWS Secrets Manager |
+| TLS certificates | cert-manager + Let's Encrypt or private CA |
+| Service-to-service tokens | Vault Agent or workload identity |
+| Config values (non-secret) | ConfigMap, not Secret |
+
+Migration from raw secrets to ESO is non-breaking — ESO creates a standard `Secret` object. Your pods do not need to change; only the secret source changes.
+
+---
+
+## Preventing Secrets in Git History
+
+Even with Sealed Secrets or ESO, developers sometimes accidentally commit raw credentials. Add a pre-commit hook that scans for high-entropy strings and known secret patterns:
+
+```bash
+# Install detect-secrets
+pip install detect-secrets
+
+# Initialize a baseline (commits current state as known)
+detect-secrets scan > .secrets.baseline
+git add .secrets.baseline
+
+# Add pre-commit hook
+cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/bash
+detect-secrets-hook --baseline .secrets.baseline
+EOF
+chmod +x .git/hooks/pre-commit
+```
+
+For team-wide enforcement use pre-commit framework:
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+```
+
+If a secret has already been committed, assume it is compromised and rotate it immediately before removing it from history:
+
+```bash
+# Remove a file from all history (requires force push — coordinate with team)
+git filter-repo --path secrets.yaml --invert-paths
+
+# Or use BFG (faster for large repos)
+bfg --delete-files secrets.yaml
+git reflog expire --expire=now --all && git gc --prune=now
+git push --force
+```
+
+Removing from history does not help if the secret was already exposed — rotate it first, then clean history for hygiene.
+
+---
+
 ## Related Articles
 
 - [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)

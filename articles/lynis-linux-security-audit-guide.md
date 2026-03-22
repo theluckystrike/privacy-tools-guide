@@ -315,6 +315,100 @@ jobs:
           path: /tmp/lynis-report.dat
 ```
 
+## Creating Custom Profiles for Compliance Frameworks
+
+Lynis ships with a default profile but supports custom profiles that enable or disable specific tests. This is useful for mapping your audit to a compliance framework (CIS Benchmarks, PCI DSS, ISO 27001) or for skipping tests that are intentionally out of scope for your environment.
+
+```bash
+# Copy the default profile to create a custom one
+sudo cp /etc/lynis/default.prf /etc/lynis/custom.prf
+
+# Edit to adjust settings
+sudo nano /etc/lynis/custom.prf
+```
+
+Useful profile settings:
+
+```ini
+# /etc/lynis/custom.prf
+
+# Skip specific test IDs (one per line)
+# Example: skip CUPS check if this server has no printing
+skip-test=PRNT-2307
+
+# Skip the SMTP banner disclosure check if you intentionally show hostname
+skip-test=MAIL-8818
+
+# Set minimum score threshold (used for CI enforcement)
+minimum-score=75
+
+# Set report file location
+report-file=/var/log/lynis/lynis-report.dat
+
+# Enable verbose output
+verbose=yes
+
+# Disable colored output (cleaner for log files)
+colors=no
+
+# Log file location
+logfile=/var/log/lynis/lynis.log
+```
+
+Run with the custom profile:
+
+```bash
+sudo lynis audit system --profile /etc/lynis/custom.prf
+```
+
+For CIS Benchmark compliance, Lynis maps many of its test IDs to CIS controls. Check which tests align with your target framework:
+
+```bash
+# View all available tests and their categories
+sudo lynis show tests | grep -E "(AUTH|SSH|KRNL|FILE)" | head -30
+
+# Check details of a specific test
+sudo lynis show details AUTH-9282
+sudo lynis show details KRNL-6000
+
+# List all test categories
+sudo lynis show categories
+```
+
+---
+
+## Interpreting the Lynis Report for Remediation Priority
+
+The Lynis report file is tab-separated and machine-parseable. A score of 80+ is achievable on most servers within a few hours of remediation — but not all suggestions have equal impact on your actual security posture.
+
+Prioritize in this order:
+
+| Priority | Test Type | Examples | Impact |
+|----------|-----------|---------|--------|
+| 1 | Warnings (red) | Open world-readable sensitive files, root SSH enabled | High — active risk |
+| 2 | Authentication tests | Weak password policy, no account lockout | High — attack vector |
+| 3 | SSH hardening | Weak ciphers, forwarding enabled | Medium — reduces attack surface |
+| 4 | Kernel hardening | Missing sysctl settings | Medium — defense in depth |
+| 5 | Suggestions (yellow) | Missing auditing, unused services | Low — incremental improvement |
+
+Track your improvement over time by saving the score after each remediation pass:
+
+```bash
+# Quick score check without running a full audit
+grep "^hardening_index=" /var/log/lynis-report.dat
+
+# Score trend from multiple reports
+for report in /var/log/lynis/report-*.dat; do
+    date=$(basename "$report" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+    score=$(grep "^hardening_index=" "$report" | cut -d= -f2)
+    echo "$date: $score"
+done | sort
+```
+
+A realistic improvement path for a default Ubuntu server: 60 → 72 (SSH hardening + kernel params, 30 min) → 80 (password policy + file permissions, 1 hour) → 85+ (auditd + AppArmor profiles, 2-3 hours).
+
+---
+
 ## Related Articles
 
 - [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
