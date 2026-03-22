@@ -6,7 +6,7 @@ description: "Compare openpgp vs smime email encryption comparison which to choo
 tags: [privacy-tools-guide, comparison, encryption]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
