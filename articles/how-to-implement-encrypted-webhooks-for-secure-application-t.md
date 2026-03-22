@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Webhooks enable real-time communication between applications, but sending sensitive data over HTTP POST requests without protection exposes you to interception, tampering, and replay attacks. Implementing encrypted webhooks ensures that only authorized systems can send and receive messages, protecting your integrations from common attack vectors. This guide walks through practical methods for securing webhook payloads, verifying sender identity, and implementing defense-in-depth for application-to-application communication.
 
+## Key Takeaways
+
+- **Configure your server to**: use TLS 1.2 or higher and disable fallback to older versions.
+- **Beyond basic HTTPS**: implement certificate pinning for high-security integrations where you know the exact certificate the sender uses.
+- **Implementing encrypted webhooks ensures**: that only authorized systems can send and receive messages, protecting your integrations from common attack vectors.
+- **Use event IDs stored**: in a database to detect and skip duplicate deliveries.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Threat Model
 
 When your application receives webhook notifications from external services, you face several security challenges. Without proper protections, an attacker who intercepts a webhook request can read the payload contents, modify the data without detection, or replay valid requests to trigger unintended actions in your system.

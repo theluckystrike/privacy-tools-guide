@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 The GDPR data portability right gives individuals the power to request their personal data in a structured, commonly used, machine-readable format. This right, outlined in Article 20 of the GDPR, enables customers to transfer their data between service providers without losing their information history. For developers building customer-facing applications, implementing this feature requires careful consideration of data modeling, API design, and secure data handling.
 
+## Key Takeaways
+
+- **The GDPR data portability**: right gives individuals the power to request their personal data in a structured, commonly used, machine-readable format.
+- **One export request per**: 24 hours per user represents a reasonable baseline, though your specific requirements may vary.
+- **Identify where personal data lives in your system**: user profiles, transaction histories, content created, preferences, and any derived data.
+- **Initiates an async job**: to compile user data.
+- **JSON represents the most**: versatile choice for web applications, while CSV works well for tabular data like transaction histories.
+- **Many organizations provide both**: formats to accommodate different use cases.
+
 ## Understanding the GDPR Data Portability Requirement
 
 Article 20 of the GDPR establishes that data subjects have the right to receive their personal data in a structured, commonly used, and machine-readable format. They also have the right to transmit those data to another controller without hindrance from the original controller. This applies specifically to personal data that the data subject has provided to a controller, where processing is based on consent or a contract, and where processing is carried out by automated means.

@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 OpenWRT is a Linux-based firmware distribution that replaces the proprietary software on routers, giving you complete control over your network. By flashing OpenWRT, you eliminate vendor backdoors, gain advanced networking features, and significantly improve your privacy posture. This guide walks you through the process for several commonly supported router models.
 
+## Key Takeaways
+
+- **Perform a hard reset**: Hold the reset button for 30 seconds while powered on
+3.
+- **This guide walks you**: through the process for several commonly supported router models.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why OpenWRT Matters for Privacy
 
 Commercial routers typically ship with closed-source firmware that may include telemetry, remote management features, and limited security updates. OpenWRT addresses these concerns by providing:

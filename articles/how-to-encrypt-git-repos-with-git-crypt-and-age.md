@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 git-crypt transparently encrypts files in a Git repository -- they are encrypted at rest and in the remote, but automatically decrypted when you check them out on an unlocked machine. age handles the actual file encryption for workflows where git-crypt is not suitable: secret shares, offline archives, or encrypting entire directories before pushing. Use git-crypt for secrets that live alongside code (API keys, certs, .env files). Use age directly when you need to encrypt artifacts, share secrets outside the repo, or avoid GPG entirely.
 
+## Key Takeaways
+
+- **Remove the departing user's**: key blob from the repository: ```bash # Find their GPG key fingerprint gpg --list-keys departing@example.com # FINGERPRINT: ABCD1234...
+- **Use git-crypt for secrets**: that live alongside code (API keys, certs, .env files).
+- **Use age directly when**: you need to encrypt artifacts, share secrets outside the repo, or avoid GPG entirely.
+- **Day-to-day CI pipelines use**: the shared symmetric git-crypt key, while the YubiKey-secured age identity protects the key export itself.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Install git-crypt
 
 ```bash

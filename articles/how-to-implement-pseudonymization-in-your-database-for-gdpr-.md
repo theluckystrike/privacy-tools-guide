@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Pseudonymize data using deterministic encryption (same input always produces same output) to replace PII with tokens while maintaining relational integrity across tables. Store encryption keys separately from data to prevent re-identification if the database is breached. Under GDPR, pseudonymized data still requires security protections, but you can satisfy Article 32 requirements more easily, and data retention obligations become clearer since you can delete de-pseudonymization keys to permanently erase records.
+
+## Key Takeaways
+
+- **Hash-based approaches work best**: for analytics use cases where you want to count or group by a pseudonymous identifier without ever needing to resolve it back to the original.
+- **Most security frameworks recommend**: rotating encryption keys annually at minimum, with more frequent rotation for highly sensitive data.
+- **This distinction matters because**: pseudonymized data remains subject to GDPR requirements, but the Article 32 security measures become significantly easier to satisfy.
+- **Practically**: this means pseudonymized data is more defensible when used for secondary purposes such as internal analytics, fraud detection model training, or cross-team data sharing.
+- **This approach provides excellent**: security because the token has no mathematical relationship to the original value.
+- **If you need to**: look up a user by their original email (for login, for example), you must either retain the salt and recompute the hash for comparison, or store the token mapping separately.
 
 ## Understanding Pseudonymization Under GDPR
 
