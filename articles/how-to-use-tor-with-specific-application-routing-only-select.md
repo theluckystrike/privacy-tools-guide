@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-tor-with-specific-application-routing-only-select/
+description: "Follow this guide to how to use tor with specific application routing only select with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Tor With Specific Application Routing Only"

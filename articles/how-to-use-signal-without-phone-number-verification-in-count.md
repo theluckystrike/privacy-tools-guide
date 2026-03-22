@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-signal-without-phone-number-verification-in-count/
+description: "Follow this guide to how to use signal without phone number verification in count with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Signal Without Phone Number Verification"

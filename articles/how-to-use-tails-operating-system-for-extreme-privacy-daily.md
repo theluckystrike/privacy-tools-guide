@@ -9,7 +9,7 @@ permalink: /how-to-use-tails-operating-system-for-extreme-privacy-daily/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, security, tails, operating-system]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

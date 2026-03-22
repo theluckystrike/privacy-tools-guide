@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
+description: "Follow this guide to how to use tor safely in country that criminalizes its use with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Use Tor Safely in Country That Criminalizes Its"

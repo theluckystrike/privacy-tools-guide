@@ -5,11 +5,11 @@ author: "Privacy Tools Guide"
 date: "2026-03-22"
 updated: "2026-03-22"
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 category: "Security Tools"
-tags: ["YubiKey", "Two-Factor Authentication", "Hardware Security", "Encryption", "Recovery"]
+tags: [privacy-tools-guide, YubiKey, Two-Factor Authentication, Hardware Security, Encryption, Recovery, security]
 permalink: /how-to-use-yubikey-for-maximum-security-2026/
 ---
 

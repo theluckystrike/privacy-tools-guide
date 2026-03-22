@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-psiphon-to-bypass-censorship-in-countries-with-re/
+description: "Follow this guide to how to use psiphon to bypass censorship in countries with re with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Psiphon To Bypass Censorship In Countries"

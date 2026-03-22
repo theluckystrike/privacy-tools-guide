@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-ssh-tunneling-for-encrypted-communication-between/
+description: "Follow this guide to how to use ssh tunneling for encrypted communication between with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication"

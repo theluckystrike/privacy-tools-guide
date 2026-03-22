@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
+description: "Follow this guide to how to use trojan gfw proxy to disguise traffic as https fro with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https"

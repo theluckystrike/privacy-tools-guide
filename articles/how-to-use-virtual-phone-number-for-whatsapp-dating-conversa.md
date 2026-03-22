@@ -9,7 +9,7 @@ permalink: /how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

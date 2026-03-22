@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-steganography-to-hide-messages-inside-normal-file/
+description: "Follow this guide to how to use steganography to hide messages inside normal file with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Use Steganography to Hide Messages Inside Normal Files"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-safenote-or-privnote-for-one-time-secure-credenti/
+description: "Follow this guide to how to use safenote or privnote for one time secure credenti with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Safenote Or Privnote For One Time Secure Credenti"

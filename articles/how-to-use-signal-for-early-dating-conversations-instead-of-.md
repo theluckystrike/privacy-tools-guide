@@ -6,7 +6,7 @@ date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /how-to-use-signal-for-early-dating-conversations-instead-of-/
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
