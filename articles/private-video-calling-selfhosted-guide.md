@@ -5,7 +5,7 @@ description: "Set up Jitsi Meet, Matrix Element, and Galene as self-hosted video
 date: 2026-03-22
 author: theluckystrike
 permalink: /private-video-calling-selfhosted-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
