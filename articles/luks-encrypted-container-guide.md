@@ -443,5 +443,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
 - [Container Security Basics for Developers](/privacy-tools-guide/container-security-basics-developers)
 - [Magic Wormhole Encrypted File Transfer How To Send Files](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -295,6 +295,7 @@ The backup repository password is now as critical as the data it protects. Apply
 - [Best Accessible Encrypted Cloud Backup With One Button](/privacy-tools-guide/best-accessible-encrypted-cloud-backup-with-one-button-resto/)
 - [Set Up Encrypted Local Backup Of iPhone](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 - [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

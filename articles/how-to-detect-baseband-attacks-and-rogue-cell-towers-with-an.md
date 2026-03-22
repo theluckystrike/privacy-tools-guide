@@ -411,6 +411,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
 - [How to Detect and Remove Hidden Tracking Devices on Your Car](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [How To Detect And Remove Stalkerware From Android Phone Comp](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

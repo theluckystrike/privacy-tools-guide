@@ -271,5 +271,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [1Password Watchtower Feature Review: A Developer's Guide](/privacy-tools-guide/1password-watchtower-feature-review/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -255,6 +255,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 - [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

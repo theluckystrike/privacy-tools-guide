@@ -443,5 +443,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

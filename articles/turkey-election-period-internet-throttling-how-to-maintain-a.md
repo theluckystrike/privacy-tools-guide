@@ -398,5 +398,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Set Up Satellite Internet As Backup During Government](/privacy-tools-guide/how-to-set-up-satellite-internet-as-backup-during-government/)
 - [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 - [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

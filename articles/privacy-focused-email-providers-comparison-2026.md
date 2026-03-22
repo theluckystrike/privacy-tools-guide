@@ -318,6 +318,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/best-encrypted-email-providers-for-privacy-compared-protonma/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/best-privacy-focused-email-aliases-service-comparison-2026/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

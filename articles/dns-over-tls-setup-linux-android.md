@@ -452,6 +452,7 @@ journalctl -u systemd-resolved | grep "query" | \
 - [How to Set Up Encrypted DNS over HTTPS on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ## Related Articles
 

@@ -371,5 +371,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

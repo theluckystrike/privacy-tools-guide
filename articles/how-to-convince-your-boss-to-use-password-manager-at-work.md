@@ -348,5 +348,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [How To Use Password Manager Across Work And Personal](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

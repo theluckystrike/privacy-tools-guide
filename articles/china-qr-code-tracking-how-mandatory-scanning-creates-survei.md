@@ -365,5 +365,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [China Social Credit System Digital Privacy Implications](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
+- [Comparing AI Tools for Generating No-Code Helpdesk](https://theluckystrike.github.io/ai-tools-compared/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

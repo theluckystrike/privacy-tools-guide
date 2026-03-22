@@ -303,5 +303,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

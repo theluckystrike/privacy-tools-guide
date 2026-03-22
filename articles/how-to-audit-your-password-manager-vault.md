@@ -375,5 +375,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

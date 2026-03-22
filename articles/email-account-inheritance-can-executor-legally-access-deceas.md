@@ -328,4 +328,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

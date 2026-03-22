@@ -323,5 +323,6 @@ Network-based location (not GPS), VPN only when on public WiFi, and disabling un
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

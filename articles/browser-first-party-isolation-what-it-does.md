@@ -427,5 +427,6 @@ The performance cost is zero for users, while privacy benefit is substantial.
 - [How Browser Storage Partitioning Works Firefox Chrome](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
 - [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 - [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -326,4 +326,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
 - [How VPN Reconnection Works After Network Switch: Technical](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://theluckystrike.github.io/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

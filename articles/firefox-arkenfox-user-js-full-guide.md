@@ -267,5 +267,6 @@ Arkenfox provides excellent baseline hardening but is most effective combined wi
 - [How to Harden Firefox for Privacy (2026)](/privacy-tools-guide/how-to-harden-firefox-for-privacy-2026/---)
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

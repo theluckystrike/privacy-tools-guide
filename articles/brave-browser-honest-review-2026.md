@@ -375,6 +375,7 @@ Check the export options before committing. Most tools let you export your data,
 - [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
 - [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
 - [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

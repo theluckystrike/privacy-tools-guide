@@ -321,5 +321,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [ProtonMail vs FastMail Comparison 2026: A Technical Guide](/privacy-tools-guide/protonmail-vs-fastmail-comparison-2026/)
 - [ProtonMail vs Gmail Privacy: A Full Technical Breakdown](/privacy-tools-guide/protonmail-vs-gmail-privacy-full-breakdown/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

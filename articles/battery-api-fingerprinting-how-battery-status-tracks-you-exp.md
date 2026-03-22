@@ -275,4 +275,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Wireguard Android Battery Optimization Settings: Breaking](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [Topics API Chrome Replacement For Cookies How It Tracks](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -311,5 +311,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [India Cctv Surveillance Expansion Privacy Implications](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 - [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

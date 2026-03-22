@@ -465,6 +465,7 @@ Recommended only if high threat model justifies it
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 - [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

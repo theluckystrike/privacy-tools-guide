@@ -305,5 +305,6 @@ podman run -v /data/shared:/app:z myimage # :z = shared label (all containers)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 - [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
 - [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

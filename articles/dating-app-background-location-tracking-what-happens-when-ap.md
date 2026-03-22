@@ -273,5 +273,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [Dating App Location Spoofing How To Hide Real Position](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

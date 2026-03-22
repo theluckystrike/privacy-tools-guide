@@ -336,5 +336,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
 - [How to Detect Stalkerware on Your Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-your-phone-2026/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

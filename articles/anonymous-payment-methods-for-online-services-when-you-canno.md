@@ -431,5 +431,6 @@ Choose based on your threat model and acceptance of complexity.
 - [Anonymous Phone Number Services for Verification](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [Anonymous Online Shopping How To Order Physical Goods](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

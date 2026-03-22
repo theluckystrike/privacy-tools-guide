@@ -299,5 +299,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 - [How to Use Tor Safely in Country That Criminalizes Its](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

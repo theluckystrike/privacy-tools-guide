@@ -378,6 +378,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 - [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 - [Does Surfshark Obfuscation Work In China 2026 Mobile Test](/privacy-tools-guide/does-surfshark-obfuscation-work-in-china-2026-mobile-test/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

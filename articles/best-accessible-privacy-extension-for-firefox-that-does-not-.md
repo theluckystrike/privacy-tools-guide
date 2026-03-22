@@ -327,5 +327,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [How to Harden Firefox for Privacy (2026)](/privacy-tools-guide/how-to-harden-firefox-for-privacy-2026/---)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

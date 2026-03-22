@@ -343,5 +343,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](https://theluckystrike.github.io/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -359,5 +359,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 - [Best Password Manager For macOS 2026](/privacy-tools-guide/best-password-manager-for-macos-2026/)
 - [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

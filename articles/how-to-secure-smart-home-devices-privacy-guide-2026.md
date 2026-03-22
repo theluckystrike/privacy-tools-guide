@@ -380,6 +380,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Detect If Smart Home Devices Have Hidden Microphones](/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [How to Secure Your Home Router Firmware](home-router-firmware-security-guide)
+- [Set Up a Secure Home Server for Self-Hosting Privacy Tools](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

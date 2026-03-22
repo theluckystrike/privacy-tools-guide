@@ -490,5 +490,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
 - [Privacy Risks of Fitness Apps and Health Data Sharing in](/privacy-tools-guide/privacy-risks-of-fitness-apps-health-data-sharing-2026/---)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

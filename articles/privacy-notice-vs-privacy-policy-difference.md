@@ -329,5 +329,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Privacy Risks of AI Chatbots: Data Collection (2026)](/privacy-tools-guide/privacy-risks-of-ai-chatbots-data-collection-2026/---)
+- [Claude Max vs Claude Pro Actual Difference](https://theluckystrike.github.io/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -281,4 +281,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Anonymize User Data In Production Database](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

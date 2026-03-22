@@ -271,5 +271,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best VPN for Accessing Peacock Streaming from Outside](/privacy-tools-guide/best-vpn-for-accessing-peacock-streaming-from-outside-us/)
 - [VPN for Accessing US Sports Streaming from Europe 2026](/privacy-tools-guide/vpn-for-accessing-us-sports-streaming-from-europe-2026/)
 - [Best Vpn For Accessing German Streaming From Us 2026](/privacy-tools-guide/best-vpn-for-accessing-german-streaming-from-us-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

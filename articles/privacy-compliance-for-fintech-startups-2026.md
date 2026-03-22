@@ -513,5 +513,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

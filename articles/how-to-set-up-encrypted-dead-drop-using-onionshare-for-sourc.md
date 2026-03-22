@@ -301,4 +301,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [How To Send Large Encrypted Files Without Uploading](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

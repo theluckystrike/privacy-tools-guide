@@ -390,5 +390,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
+- [Adobe Photoshop AI vs Canva Magic Eraser Compared](https://theluckystrike.github.io/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

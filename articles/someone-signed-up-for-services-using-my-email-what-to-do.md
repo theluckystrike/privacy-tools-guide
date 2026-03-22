@@ -358,5 +358,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 - [Use Email Subaddressing Plus Addressing For Tracking Which](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

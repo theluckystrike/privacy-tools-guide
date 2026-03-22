@@ -317,5 +317,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows Local Account Vs Microsoft Account](/privacy-tools-guide/windows-local-account-vs-microsoft-account-privacy/)
 - [LinkedIn Deceased Member Profile Removal How To Report](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
 - [Subscription Service Cancellation After Death](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

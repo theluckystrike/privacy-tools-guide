@@ -269,6 +269,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Firefox Strict Tracking Protection Vs Custom](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)
 - [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

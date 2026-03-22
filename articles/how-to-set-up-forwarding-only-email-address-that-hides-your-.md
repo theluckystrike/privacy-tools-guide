@@ -444,6 +444,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How To Detect If Your Email Address Has Been Sold](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
 - [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
 - [Secure Email Forwarding With Encryption How To Set Up](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

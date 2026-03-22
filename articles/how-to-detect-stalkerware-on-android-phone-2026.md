@@ -519,5 +519,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Detect and Remove Stalkerware From Phone 2026](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-phone-2026/)
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/privacy-tools-guide/how-to-detect-remove-stalkerware-ios-iphone/)
 - [How to Detect Hidden Trackers in Android](/privacy-tools-guide/detect-hidden-trackers-android-apps/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -345,5 +345,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

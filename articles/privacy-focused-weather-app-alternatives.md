@@ -118,6 +118,7 @@ alias weather='curl -s "wttr.in/$(cat ~/.config/weather_city)?format=3"'
 - [How to Remove Metadata from PDF Files](/privacy-tools-guide/how-to-remove-metadata-from-pdf-files/)
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Generating Mobile App Deep Linking](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-generating-mobile-app-deep-linking-configuratio/)
 
 ---
 

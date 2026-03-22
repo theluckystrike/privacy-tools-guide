@@ -382,5 +382,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [China Real Name Registration Requirements How Online](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 - [Privacy Compliance for Fintech Startups 2026](/privacy-tools-guide/privacy-compliance-for-fintech-startups-2026/)
 - [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

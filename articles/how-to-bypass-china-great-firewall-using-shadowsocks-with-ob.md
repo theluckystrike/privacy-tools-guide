@@ -399,5 +399,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Vpn Protocols That Still Work Inside China After Deep](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
 - [How To Configure Wireguard With Obfuscation To Bypass](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

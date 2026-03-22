@@ -233,6 +233,7 @@ echo "0 3 1 * * root curl -o /var/lib/unbound/root.hints https://www.internic.ne
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

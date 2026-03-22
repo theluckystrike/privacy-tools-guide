@@ -358,4 +358,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -325,4 +325,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [First Party Sets Chrome Proposal How It Affects Cross Site](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
 - [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

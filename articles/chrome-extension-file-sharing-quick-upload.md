@@ -445,5 +445,6 @@ If a shared file is accessed by unauthorized parties:
 - [Best Accessible Encrypted File Sharing Tool for Users With](/privacy-tools-guide/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 - [Ai Sentiment Analyzer Chrome Extension](/privacy-tools-guide/ai-sentiment-analyzer-chrome-extension/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [Screen Sharing Chrome Extension](https://theluckystrike.github.io/ai-tools-compared/screen-sharing-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

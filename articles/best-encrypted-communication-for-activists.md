@@ -618,5 +618,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Secure Messaging for Activists Guide 2026: Signal vs](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
 - [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 - [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

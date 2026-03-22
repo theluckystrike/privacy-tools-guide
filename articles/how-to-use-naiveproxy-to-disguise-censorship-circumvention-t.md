@@ -424,5 +424,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [China Golden Shield Project How Censorship Detection Works](/privacy-tools-guide/china-golden-shield-project-how-censorship-detection-works-t/)
 - [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/privacy-tools-guide/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

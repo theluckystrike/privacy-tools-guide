@@ -320,5 +320,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 - [Instagram Memorialization Request Process What Happens](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
 - [How To Submit Subject Access Request To Employer For All](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

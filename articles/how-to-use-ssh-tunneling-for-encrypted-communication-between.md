@@ -350,6 +350,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up a SOCKS5 Proxy with SSH](/privacy-tools-guide/socks5-proxy-ssh-setup-guide/)
 - [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
 - [How To Prepare Ssh Key And Server Access Documentation](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [AI Autocomplete Behavior Differences Between VS Code](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 ```

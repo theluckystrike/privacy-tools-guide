@@ -478,6 +478,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

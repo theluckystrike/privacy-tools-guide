@@ -264,6 +264,7 @@ sudo ufw --dry-run enable
 - [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
 - [How to Set Up AppArmor Profiles on Ubuntu](/privacy-tools-guide/apparmor-profiles-ubuntu-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

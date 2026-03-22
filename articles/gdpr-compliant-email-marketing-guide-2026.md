@@ -295,5 +295,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

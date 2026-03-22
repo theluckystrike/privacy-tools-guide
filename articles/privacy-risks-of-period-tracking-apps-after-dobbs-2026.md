@@ -373,6 +373,7 @@ Period tracking is a form of digital evidence creation. In a jurisdiction where 
 - [Data Subpoena and Law Enforcement Access: What's Discoverable](/privacy-tools-guide/data-subpoena-law-enforcement-discoverable/)
 - [GDPR and Health Data: Your Rights in Europe](/privacy-tools-guide/gdpr-health-data-rights/)
 - [Building Your Privacy Defense Against Digital Evidence Collection](/privacy-tools-guide/privacy-defense-digital-evidence/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

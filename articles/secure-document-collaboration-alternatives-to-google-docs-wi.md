@@ -397,5 +397,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Encrypted Collaboration Tools For Remote Teams That Respect](/privacy-tools-guide/encrypted-collaboration-tools-for-remote-teams-that-respect-/)
 - [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](https://theluckystrike.github.io/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

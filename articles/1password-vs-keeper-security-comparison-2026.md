@@ -280,6 +280,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 - [1Password Families Plan Review 2026: Is It Worth It](/privacy-tools-guide/1password-families-plan-review-2026/)
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ```
 

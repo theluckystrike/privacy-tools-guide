@@ -325,5 +325,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vpn For Remote Workers Connecting To Us Office](/privacy-tools-guide/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+- [Best AI IDE Features for Pair Programming](https://theluckystrike.github.io/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -337,5 +337,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
 - [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

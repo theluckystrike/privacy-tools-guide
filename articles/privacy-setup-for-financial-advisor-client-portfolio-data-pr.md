@@ -447,6 +447,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

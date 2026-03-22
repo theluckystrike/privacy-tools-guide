@@ -439,6 +439,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 - [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

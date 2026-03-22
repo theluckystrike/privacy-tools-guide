@@ -268,6 +268,7 @@ Host *
 - [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
 - [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
 - [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

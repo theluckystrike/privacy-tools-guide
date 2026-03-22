@@ -401,5 +401,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

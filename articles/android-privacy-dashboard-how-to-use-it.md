@@ -282,6 +282,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

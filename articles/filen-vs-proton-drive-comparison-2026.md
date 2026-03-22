@@ -266,5 +266,6 @@ Proton requires more complex OAuth token management, making Filen easier to scri
 - [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

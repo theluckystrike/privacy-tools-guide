@@ -320,6 +320,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [Privacy Implications Of Robot Vacuum Lidar Mapping Selling H](/privacy-tools-guide/privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

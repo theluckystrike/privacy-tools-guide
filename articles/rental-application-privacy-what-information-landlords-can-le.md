@@ -393,6 +393,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

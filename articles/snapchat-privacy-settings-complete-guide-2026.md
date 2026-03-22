@@ -336,5 +336,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 - [How to Configure macOS Privacy Settings 2026](/privacy-tools-guide/how-to-configure-macos-privacy-settings-2026/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -285,6 +285,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Aegis Authenticator vs Google Authenticator](/privacy-tools-guide/aegis-authenticator-vs-google-authenticator/)
 - [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

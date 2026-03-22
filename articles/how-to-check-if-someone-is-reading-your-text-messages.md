@@ -565,5 +565,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Steganography Tools To Hide Encrypted Messages](/privacy-tools-guide/how-to-use-steganography-tools-to-hide-encrypted-messages-in/)
 - [How to Check if Someone Cloned Your Phone: Signs](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [How To Tell If Someone Has Access To Your Apple](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

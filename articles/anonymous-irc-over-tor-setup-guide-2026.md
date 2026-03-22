@@ -361,5 +361,6 @@ Matrix (Element) and XMPP both support Tor routing and offer end-to-end encrypti
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [Secure Browsing Habits With Tor Best Practices](/privacy-tools-guide/secure-browsing-habits-with-tor-best-practices/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

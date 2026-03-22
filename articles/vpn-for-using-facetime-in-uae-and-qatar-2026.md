@@ -407,5 +407,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vpn For Using Twitter X In Countries Where Banned](/privacy-tools-guide/vpn-for-using-twitter-x-in-countries-where-banned/)
 - [Best Vpn For Accessing Bbc Iplayer From Australia 2026](/privacy-tools-guide/best-vpn-for-accessing-bbc-iplayer-from-australia-2026/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

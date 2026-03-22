@@ -269,6 +269,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
 - [How To Configure Openpgp Key Server For Organization Interna](/privacy-tools-guide/how-to-configure-openpgp-key-server-for-organization-interna/)
 - [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

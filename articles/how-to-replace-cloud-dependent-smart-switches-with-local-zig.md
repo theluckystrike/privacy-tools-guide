@@ -256,5 +256,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 - [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 - [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

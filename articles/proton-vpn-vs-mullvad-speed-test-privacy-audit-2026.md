@@ -473,5 +473,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Privacy-Focused Website Speed Test Tool That Does Not Track](/privacy-tools-guide/privacy-focused-website-speed-test-tool-that-does-not-track-/)
 - [Privacy-Focused Network Speed Test Comparison Tools That](/privacy-tools-guide/privacy-focused-network-speed-test-comparison-tools-that-res/)
 - [Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs](/privacy-tools-guide/vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](https://theluckystrike.github.io/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

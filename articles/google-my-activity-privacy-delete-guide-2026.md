@@ -255,6 +255,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 - [GrapheneOS vs Stock Pixel: What Google Collects on.](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

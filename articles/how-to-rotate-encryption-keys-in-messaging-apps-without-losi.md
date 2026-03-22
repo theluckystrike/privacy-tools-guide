@@ -271,5 +271,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Post Quantum Encryption In Messaging Apps Preparing](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

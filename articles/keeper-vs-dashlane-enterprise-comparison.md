@@ -368,5 +368,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Dashlane Vs 1password Comparison 2026](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 - [Wickr vs Signal for Enterprise Use: A Technical Comparison](/privacy-tools-guide/wickr-vs-signal-for-enterprise-use/)
+- [AI Coding Assistant for Rust Developers Compared](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

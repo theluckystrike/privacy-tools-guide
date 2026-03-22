@@ -210,6 +210,7 @@ sudo cat /var/log/openvpn/status.log
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

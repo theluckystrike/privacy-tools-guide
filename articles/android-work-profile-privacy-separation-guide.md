@@ -398,5 +398,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

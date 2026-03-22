@@ -331,5 +331,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Check If Your Dating Profile Photos Are Being Used](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

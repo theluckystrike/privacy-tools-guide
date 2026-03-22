@@ -240,5 +240,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 - [Handle Password Manager on Lost Phone: Immediate](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

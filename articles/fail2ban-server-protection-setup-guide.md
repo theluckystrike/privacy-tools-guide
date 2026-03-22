@@ -381,6 +381,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 - [Setting Up ClamAV Antivirus on Linux](/privacy-tools-guide/clamav-antivirus-linux-setup-guide/)
 - [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

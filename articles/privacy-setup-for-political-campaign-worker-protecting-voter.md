@@ -370,5 +370,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Domestic Abuse Shelter Staff: Protecting](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 - [Privacy Setup For Reproductive Healthcare Provider](/privacy-tools-guide/privacy-setup-for-reproductive-healthcare-provider-in-restri/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -283,5 +283,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Vpn Protocols That Still Work Inside China After Deep](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [Vpn For Using Instagram In China 2026 Working Solution](/privacy-tools-guide/vpn-for-using-instagram-in-china-2026-working-solution/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](https://theluckystrike.github.io/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

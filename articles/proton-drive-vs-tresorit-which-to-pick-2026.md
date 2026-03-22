@@ -263,6 +263,7 @@ This script demonstrates how both platforms can coexist in a data strategy.
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

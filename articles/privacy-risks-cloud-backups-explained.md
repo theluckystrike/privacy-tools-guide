@@ -371,6 +371,7 @@ openssl rand -base64 32
 - [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
 - [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
 - [How to Set Up Encrypted Cloud Storage with Cryptomator 2026](/privacy-tools-guide/how-to-set-up-encrypted-cloud-storage-with-cryptomator-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -335,6 +335,7 @@ Unlock-BitLocker -MountPoint "C:" -RecoveryPassword "Your-Recovery-Key-Here"
 - [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
 - [How To Set Up Secureboot Plus Encryption On Fedora Linux](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 - [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

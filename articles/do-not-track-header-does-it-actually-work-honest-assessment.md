@@ -250,5 +250,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
 - [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
 - [How To Spoof Browser User Agent](/privacy-tools-guide/how-to-spoof-browser-user-agent-privacy/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

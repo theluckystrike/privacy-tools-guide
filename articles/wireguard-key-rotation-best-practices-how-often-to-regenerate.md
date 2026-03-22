@@ -297,6 +297,7 @@ The output of `wg show` displays the latest handshake timestamp for each peer. A
 - [How To Configure Wireguard With Obfuscation To Bypass](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
 - [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

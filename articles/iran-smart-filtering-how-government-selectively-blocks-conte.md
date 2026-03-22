@@ -421,5 +421,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

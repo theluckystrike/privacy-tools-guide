@@ -286,5 +286,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Use Age Encryption for File Sharing 2026](/privacy-tools-guide/how-to-use-age-encryption-for-file-sharing-2026/)
 - [How to Encrypt Files Before Cloud](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
 - [How To Share Passwords Securely With Team Using Encrypted](/privacy-tools-guide/how-to-share-passwords-securely-with-team-using-encrypted-co/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -273,6 +273,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
 - [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -495,6 +495,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
 - [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

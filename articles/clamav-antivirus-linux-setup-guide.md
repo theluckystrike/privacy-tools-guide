@@ -348,5 +348,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Privacy-Focused Antivirus Software: Performance Impact](/privacy-tools-guide/privacy-focused-antivirus-software-performance-impact-compar/)
 - [Setting Up Fail2ban for Server Protection](/privacy-tools-guide/fail2ban-server-protection-setup-guide/)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

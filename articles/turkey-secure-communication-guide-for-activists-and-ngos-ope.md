@@ -326,5 +326,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

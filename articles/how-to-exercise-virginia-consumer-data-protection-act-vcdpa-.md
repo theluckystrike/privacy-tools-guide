@@ -348,4 +348,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [India Data Protection Bill 2026 What It Means For Citizen](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

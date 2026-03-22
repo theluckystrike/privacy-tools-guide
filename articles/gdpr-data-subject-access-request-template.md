@@ -276,5 +276,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

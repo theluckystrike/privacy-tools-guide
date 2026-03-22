@@ -322,5 +322,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Protonmail Vs Tutanota For Daily Email Use Honest Comparison](/privacy-tools-guide/protonmail-vs-tutanota-for-daily-email-use-honest-comparison/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [ProtonMail iOS Android App Review 2026](/privacy-tools-guide/protonmail-ios-android-app-review-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

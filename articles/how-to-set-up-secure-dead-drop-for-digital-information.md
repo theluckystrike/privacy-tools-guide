@@ -320,5 +320,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Turkey Journalist Digital Safety Guide Protecting Sources](/privacy-tools-guide/turkey-journalist-digital-safety-guide-protecting-sources-an/)
 - [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
 - [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

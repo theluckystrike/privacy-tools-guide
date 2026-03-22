@@ -319,6 +319,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Bitwarden Web Vault vs Desktop App Comparison](/privacy-tools-guide/bitwarden-web-vault-vs-desktop-app-comparison/)
 - [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

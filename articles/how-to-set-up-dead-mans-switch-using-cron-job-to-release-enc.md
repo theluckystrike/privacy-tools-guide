@@ -433,5 +433,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Set Up a Dead Man's Switch for Data](/privacy-tools-guide/dead-mans-switch-python-script-guide/)
 - [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [How To Set Up Encrypted Dead Drop Using Onionshare](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

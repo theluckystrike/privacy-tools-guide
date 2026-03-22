@@ -291,5 +291,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

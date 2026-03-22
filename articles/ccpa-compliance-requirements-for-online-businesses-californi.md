@@ -335,6 +335,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 - [Privacy Audit Checklist for Small Businesses](/privacy-tools-guide/small-business-privacy-audit-checklist)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

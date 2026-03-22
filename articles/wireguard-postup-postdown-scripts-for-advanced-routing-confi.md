@@ -239,5 +239,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 - [Wireguard Android Battery Optimization Settings](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -258,5 +258,6 @@ SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
 - [Set Up Catch All Email Domain For Unlimited Private](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

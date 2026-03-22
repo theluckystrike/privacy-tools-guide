@@ -427,5 +427,6 @@ HTMLCanvasElement.prototype.toDataURL = () => {
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
 - [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -271,4 +271,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

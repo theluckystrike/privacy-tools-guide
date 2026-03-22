@@ -302,6 +302,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 - [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

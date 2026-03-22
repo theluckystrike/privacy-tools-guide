@@ -385,6 +385,7 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

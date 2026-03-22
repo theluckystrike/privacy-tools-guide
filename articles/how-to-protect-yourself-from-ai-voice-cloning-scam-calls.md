@@ -262,5 +262,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
 - [Protect Yourself from Doxxing After Meeting Someone](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

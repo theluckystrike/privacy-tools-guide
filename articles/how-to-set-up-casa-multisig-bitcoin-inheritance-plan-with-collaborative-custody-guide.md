@@ -404,5 +404,6 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
 - [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 - [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

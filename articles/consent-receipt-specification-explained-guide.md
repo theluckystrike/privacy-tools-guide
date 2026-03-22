@@ -256,5 +256,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [GDPR Cookie Consent Banner Best Practices for 2026](/privacy-tools-guide/gdpr-cookie-consent-banner-best-practices-2026/)
 - [Cookie Consent Tools Comparison for Developers 2026](/privacy-tools-guide/cookie-consent-tools-comparison-for-developers-2026/)
 - [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

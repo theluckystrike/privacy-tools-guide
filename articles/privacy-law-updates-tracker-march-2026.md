@@ -253,6 +253,7 @@ Adapt your implementations based on your specific user base and data processing 
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
 - [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Virginia Consumer Data Protection Act (VCDPA) Implementation
 
 Virginia's VCDPA (effective Jan 1, 2023, enforcement March 2025) applies to businesses processing data of Virginia residents. The requirements overlap with other states but have distinct features:

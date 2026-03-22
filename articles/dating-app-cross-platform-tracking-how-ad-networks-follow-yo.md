@@ -333,5 +333,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 - [How to Detect Hidden Trackers in Android](/privacy-tools-guide/detect-hidden-trackers-android-apps/)
 - [Bounce Tracking How Redirects Through Tracker Domains](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
+- [AI Tools for Generating Mobile App Deep Linking](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-generating-mobile-app-deep-linking-configuratio/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

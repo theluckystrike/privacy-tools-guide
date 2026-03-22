@@ -256,5 +256,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
 - [GPG Key Management Best Practices](/privacy-tools-guide/gpg-key-management-best-practices/)
 - [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

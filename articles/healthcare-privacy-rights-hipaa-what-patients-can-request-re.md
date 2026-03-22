@@ -485,5 +485,6 @@ Step 4: Private right of action (some violations)
 - [Dentist Patient Records Privacy Hipaa Compliant Digital](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 - [Hotel Guest Privacy Rights What Information Hotels Can](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

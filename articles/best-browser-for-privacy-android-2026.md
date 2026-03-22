@@ -435,5 +435,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-ios-privacy-2026/)
 - [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

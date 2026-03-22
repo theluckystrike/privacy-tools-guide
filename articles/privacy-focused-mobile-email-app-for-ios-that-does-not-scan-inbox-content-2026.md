@@ -327,6 +327,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [Privacy Focused Cloud Email Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-email-comparison-2026/)
 - [Privacy Focused Email Alias Services Comparison 2026](/privacy-tools-guide/privacy-focused-email-alias-services-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

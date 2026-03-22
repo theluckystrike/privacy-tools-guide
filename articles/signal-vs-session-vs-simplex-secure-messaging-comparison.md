@@ -557,5 +557,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 - [Secure Messaging for Activists Guide 2026: Signal vs](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
 - [Wire vs Signal for Business Use: A Technical Comparison](/privacy-tools-guide/wire-vs-signal-for-business-use/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

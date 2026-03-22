@@ -411,5 +411,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [How To Purchase Phone And Sim Card Anonymously Complete](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

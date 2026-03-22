@@ -327,5 +327,6 @@ Yes, adblockers reduce your tracking exposure and improve performance. uBlock Or
 - [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
 - [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
 - [Browser Extension Permissions What](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

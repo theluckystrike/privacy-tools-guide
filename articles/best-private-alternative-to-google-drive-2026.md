@@ -284,5 +284,6 @@ Yes, with proper configuration. Self-hosted solutions eliminate third-party data
 - [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

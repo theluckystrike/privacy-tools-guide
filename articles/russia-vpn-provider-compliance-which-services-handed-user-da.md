@@ -304,6 +304,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
 - [How to Audit VPN Provider Claims Using Open Source Tools](/privacy-tools-guide/how-to-audit-vpn-provider-claims-using-open-source-tools/)
 - [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

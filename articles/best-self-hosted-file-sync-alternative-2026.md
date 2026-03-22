@@ -432,6 +432,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 - [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Self-Hosted Alternative to Tabnine That Runs on Local](https://theluckystrike.github.io/ai-tools-compared/self-hosted-alternative-to-tabnine-that-runs-on-local-hardwa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

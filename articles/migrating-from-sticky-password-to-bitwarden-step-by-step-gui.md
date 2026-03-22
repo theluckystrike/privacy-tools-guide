@@ -255,5 +255,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
 - [Privacy Focused Password Managers Comparison 2026](/privacy-tools-guide/privacy-focused-password-managers-comparison-2026/)
 - [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ](https://theluckystrike.github.io/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

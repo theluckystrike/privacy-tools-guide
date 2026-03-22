@@ -321,6 +321,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
+- [Claude API Connection Reset by Peer Error](https://theluckystrike.github.io/ai-tools-compared/claude-api-connection-reset-by-peer-error-troubleshooting-20/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

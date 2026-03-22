@@ -254,6 +254,7 @@ The Matrix bridge ecosystem supports integration with Signal through various com
 - [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 - [Signal Alternatives That Offer End To End Encryption](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

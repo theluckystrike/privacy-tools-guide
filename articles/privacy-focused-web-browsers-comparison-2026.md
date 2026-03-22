@@ -416,4 +416,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 - [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
 - [Privacy Focused Browser That Works Well With Screen](/privacy-tools-guide/privacy-focused-browser-that-works-well-with-screen-magnific/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

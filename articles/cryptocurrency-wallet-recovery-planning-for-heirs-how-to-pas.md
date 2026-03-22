@@ -375,5 +375,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
 - [Bitcoin Inheritance Planning Using Multisig With Family](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

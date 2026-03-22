@@ -399,6 +399,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
 - [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

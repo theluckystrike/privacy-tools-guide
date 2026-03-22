@@ -350,6 +350,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

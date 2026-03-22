@@ -389,5 +389,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

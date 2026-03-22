@@ -312,5 +312,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 - [Privacy Requirements For Mergers And Acquisitions Due](/privacy-tools-guide/privacy-requirements-for-mergers-and-acquisitions-due-dilige/)
+- [Codeium Pro vs Copilot Individual Features Per Dollar](https://theluckystrike.github.io/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

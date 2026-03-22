@@ -253,5 +253,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 - [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
 - [How To Diagnose Slow Vpn Connection Speeds](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
+- [Claude API Connection Reset by Peer Error](https://theluckystrike.github.io/ai-tools-compared/claude-api-connection-reset-by-peer-error-troubleshooting-20/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

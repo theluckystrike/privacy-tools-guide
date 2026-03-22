@@ -283,4 +283,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Accessing US Sports Streaming from Europe 2026](/privacy-tools-guide/vpn-for-accessing-us-sports-streaming-from-europe-2026/)
 - [Best VPN for South Korea: Accessing Western Streaming](/privacy-tools-guide/best-vpn-for-south-korea-accessing-western-streaming-sites/)
 - [Best VPN for Accessing Peacock Streaming from Outside](/privacy-tools-guide/best-vpn-for-accessing-peacock-streaming-from-outside-us/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

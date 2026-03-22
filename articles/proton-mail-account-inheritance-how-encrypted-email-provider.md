@@ -517,5 +517,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
 - [Best Encrypted Email for Business 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-email-for-business-2026/)
 - [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

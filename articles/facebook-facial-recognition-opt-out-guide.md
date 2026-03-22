@@ -441,5 +441,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
 - [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 - [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

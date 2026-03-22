@@ -343,5 +343,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Encrypted Messaging Metadata Protection: A Developer's Guide](/privacy-tools-guide/encrypted-messaging-metadata-protection/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
 - [Secure Messaging for Activists Guide 2026: Signal vs](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

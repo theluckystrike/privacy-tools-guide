@@ -342,5 +342,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Browser Autofill Privacy Security](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

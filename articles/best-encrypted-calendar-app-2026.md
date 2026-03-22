@@ -327,5 +327,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Privacy-Focused Calendar and Contacts Sync](/privacy-tools-guide/privacy-calendar-contacts-sync-guide/)
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

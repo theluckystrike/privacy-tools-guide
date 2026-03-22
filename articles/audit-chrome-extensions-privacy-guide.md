@@ -260,6 +260,7 @@ Consider using a password manager's breach monitoring feature to watch for compr
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
 - [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

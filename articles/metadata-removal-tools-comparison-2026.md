@@ -507,6 +507,7 @@ Metadata removal is a core privacy practice. The right tool depends on your plat
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 - [Mobile Photo Metadata Exif Location Data How To Strip](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

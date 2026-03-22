@@ -329,5 +329,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Real Estate Agent Client Data Protection Privacy Best](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 - [Tax Preparer Client Financial Data Privacy IRS](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

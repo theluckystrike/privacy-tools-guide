@@ -300,5 +300,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

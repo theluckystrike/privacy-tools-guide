@@ -285,6 +285,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Screen Resolution Fingerprinting Why Changing Display Settin](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
 - [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -500,5 +500,6 @@ Score your priorities and choose accordingly.
 - [Protonmail Vs Tutanota For Daily Email Use Honest Comparison](/privacy-tools-guide/protonmail-vs-tutanota-for-daily-email-use-honest-comparison/)
 - [How To Set Up Proton Mail Bridge With Local Email Client](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Adobe Photoshop AI vs Canva Magic Eraser Compared](https://theluckystrike.github.io/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

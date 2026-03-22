@@ -427,5 +427,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Document Privacy Violations For Potential Class](/privacy-tools-guide/how-to-document-privacy-violations-for-potential-class-actio/)
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 - [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

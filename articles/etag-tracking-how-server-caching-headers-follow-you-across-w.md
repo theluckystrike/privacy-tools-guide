@@ -449,5 +449,6 @@ When deploying assets:
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

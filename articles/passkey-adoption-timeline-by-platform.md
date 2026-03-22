@@ -588,5 +588,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
+- [Best AI-Powered Platform Engineering Tools for Developer](https://theluckystrike.github.io/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

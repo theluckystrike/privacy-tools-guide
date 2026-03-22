@@ -499,5 +499,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [Disable Location Services Before Crossing Border](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

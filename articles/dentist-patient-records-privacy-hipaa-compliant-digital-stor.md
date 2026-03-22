@@ -282,5 +282,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Healthcare Privacy Rights Hipaa What Patients Can Request](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [Teacher Student Data Privacy Ferpa Compliance Digital Tools](/privacy-tools-guide/teacher-student-data-privacy-ferpa-compliance-digital-tools-/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

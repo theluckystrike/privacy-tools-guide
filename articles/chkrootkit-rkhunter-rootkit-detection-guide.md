@@ -268,6 +268,8 @@ Run both. They use different detection methods and catch different things.
 - [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
 - [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
 - [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
+- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

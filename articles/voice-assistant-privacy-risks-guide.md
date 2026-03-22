@@ -451,5 +451,6 @@ For privacy-conscious users who don't need advanced cloud integrations, this app
 - [Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [How to Secure Your Smart TV Privacy](/privacy-tools-guide/secure-smart-tv-privacy-guide/)
 - [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-tools-guide/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -332,6 +332,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [1Password vs LastPass: Which Survived Their Breaches?](/privacy-tools-guide/1password-vs-lastpass-which-survived-breach/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -262,5 +262,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Browser Storage Isolation Explained](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 - [VPN for Online Banking While Traveling Southeast Asia](/privacy-tools-guide/vpn-for-online-banking-while-traveling-southeast-asia-safety/)
 - [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

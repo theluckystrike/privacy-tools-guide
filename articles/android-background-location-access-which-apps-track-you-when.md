@@ -432,5 +432,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [Disable Location Services Before Crossing Border](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

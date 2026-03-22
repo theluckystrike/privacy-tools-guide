@@ -306,6 +306,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 - [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

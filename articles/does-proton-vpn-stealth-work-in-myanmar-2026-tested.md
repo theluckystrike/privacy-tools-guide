@@ -278,5 +278,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vpn For Using Twitter X In Countries Where Banned](/privacy-tools-guide/vpn-for-using-twitter-x-in-countries-where-banned/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

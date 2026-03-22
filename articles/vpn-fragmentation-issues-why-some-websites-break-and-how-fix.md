@@ -376,5 +376,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/privacy-tools-guide/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
 - [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
 - [VPN Warrant Canary: What It Means and Why It Matters](/privacy-tools-guide/vpn-warrant-canary-what-it-means/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

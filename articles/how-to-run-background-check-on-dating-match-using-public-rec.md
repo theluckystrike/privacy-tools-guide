@@ -321,5 +321,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Dating App Background Location Tracking What Happens When](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 - [How To Check If Your Dating Profile Photos Are Being Used](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

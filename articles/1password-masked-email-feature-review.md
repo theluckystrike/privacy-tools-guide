@@ -450,6 +450,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
 - [How to Archive Encrypted Email Securely: A Developer Guide](/privacy-tools-guide/how-to-archive-encrypted-email-securely/)
 - [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -353,4 +353,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Bitcoin Inheritance Planning Using Multisig With Family](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
 - [Digital Power of Attorney: What Authority It Grants Over](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
 - [Gaming Account Inheritance What Happens To Steam Playstation](/privacy-tools-guide/gaming-account-inheritance-what-happens-to-steam-playstation/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

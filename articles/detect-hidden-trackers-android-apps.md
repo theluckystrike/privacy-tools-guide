@@ -263,6 +263,7 @@ For developers shipping Android apps, this detection methodology reflects what s
 - [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
 - [How to Audit Android App Permissions Privacy Guide 2026](/privacy-tools-guide/how-to-audit-android-app-permissions-privacy-guide-2026/)
 - [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

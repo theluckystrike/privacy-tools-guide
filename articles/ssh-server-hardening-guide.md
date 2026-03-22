@@ -278,6 +278,7 @@ A well-hardened server should score an "A" or "A+" on ssh-audit with no flagged 
 - [How To Prepare Ssh Key And Server Access Documentation](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
 - [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
 - [How to Set Up a Password Manager for Home Server SSH](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

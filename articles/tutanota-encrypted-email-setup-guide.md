@@ -415,5 +415,6 @@ Yes, but not automatically. Export emails from ProtonMail as EML files, then imp
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
 - [Best Encrypted Email Service 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-email-service-2026/)
 - [Tutanota Encrypted Calendar And Contacts How End To End](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

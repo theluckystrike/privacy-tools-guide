@@ -516,6 +516,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

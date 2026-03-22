@@ -352,6 +352,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 - [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
 - [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](https://theluckystrike.github.io/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

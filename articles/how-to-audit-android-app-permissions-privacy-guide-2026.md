@@ -444,6 +444,7 @@ A: Yes. Many apps run background services that access permissions while the app 
 - [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 - [How to Audit Android App Permissions (2026)](/privacy-tools-guide/privacy-tools-guide/android-adb-app-permissions-audit/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

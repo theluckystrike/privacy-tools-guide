@@ -342,5 +342,6 @@ Do not trust a bookmark you did not personally create from a verified source. Tr
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

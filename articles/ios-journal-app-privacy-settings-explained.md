@@ -375,5 +375,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
 - [Privacy Focused Mobile Email App For Ios That Does Not Scan](/privacy-tools-guide/privacy-focused-mobile-email-app-for-ios-that-does-not-scan-inbox-content-2026/)
 - [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

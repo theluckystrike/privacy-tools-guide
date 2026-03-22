@@ -308,6 +308,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -288,6 +288,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [Wifi Probe Request Tracking How Your Phone Broadcasts](/privacy-tools-guide/wifi-probe-request-tracking-how-your-phone-broadcasts-identi/)
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

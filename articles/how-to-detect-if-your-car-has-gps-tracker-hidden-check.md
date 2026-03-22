@@ -278,5 +278,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [How To Detect Surveillance Cameras And Microphones In Your](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

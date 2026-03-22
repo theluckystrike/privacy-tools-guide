@@ -556,6 +556,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Restrict Alexa Skills From Accessing Unnecessary Personal](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

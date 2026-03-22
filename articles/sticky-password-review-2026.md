@@ -338,5 +338,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

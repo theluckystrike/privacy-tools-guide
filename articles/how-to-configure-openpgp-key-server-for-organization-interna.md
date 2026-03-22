@@ -528,6 +528,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
+- [Best Way to Configure Claude Code to Understand Your](https://theluckystrike.github.io/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

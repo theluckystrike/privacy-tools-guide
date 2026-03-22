@@ -503,6 +503,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

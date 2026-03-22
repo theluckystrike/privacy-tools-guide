@@ -601,5 +601,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/privacy-tools-guide/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
 - [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

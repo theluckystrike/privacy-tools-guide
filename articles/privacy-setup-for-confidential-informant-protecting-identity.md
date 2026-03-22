@@ -568,5 +568,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Privacy Setup For Abuse Hotline Worker Protecting Caller](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

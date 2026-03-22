@@ -429,5 +429,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
 - [Privacy Risks of AI Chatbots: Data Collection (2026)](/privacy-tools-guide/privacy-risks-of-ai-chatbots-data-collection-2026/---)
 - [How To Detect If Dating App Is Selling Your Data To Third](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

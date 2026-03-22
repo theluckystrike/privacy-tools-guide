@@ -324,5 +324,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
 - [How To Safely Share Location With Date Without Giving](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

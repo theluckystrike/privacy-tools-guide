@@ -245,5 +245,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 - [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

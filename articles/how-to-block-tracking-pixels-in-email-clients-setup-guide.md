@@ -474,5 +474,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
 - [How To Create Untraceable Email Account Using Tor Vpn](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

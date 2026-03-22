@@ -362,6 +362,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

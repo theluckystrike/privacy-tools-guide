@@ -272,6 +272,7 @@ sudo aa-status --json | jq '.processes | to_entries[] | {profile: .key, pids: .v
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 - [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
 - [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

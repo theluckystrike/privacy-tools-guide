@@ -392,5 +392,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

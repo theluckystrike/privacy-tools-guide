@@ -247,6 +247,7 @@ docker pull myimage:latest
 - [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
 - [Firefox Multi Account Containers Guide 2026](/privacy-tools-guide/firefox-multi-account-containers-guide-2026/)
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

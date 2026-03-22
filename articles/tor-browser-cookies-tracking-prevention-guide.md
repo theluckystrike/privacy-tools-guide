@@ -372,6 +372,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
 - [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 - [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

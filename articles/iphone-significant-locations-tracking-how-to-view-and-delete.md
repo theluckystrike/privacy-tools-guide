@@ -371,5 +371,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

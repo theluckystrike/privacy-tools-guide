@@ -355,6 +355,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iOS Contact Poster Privacy Settings Guide](/privacy-tools-guide/ios-contact-poster-privacy-settings-guide/)
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

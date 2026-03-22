@@ -333,5 +333,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

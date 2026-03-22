@@ -378,6 +378,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
 - [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -275,5 +275,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
+- [AI Presentation Maker Chrome Extension](https://theluckystrike.github.io/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

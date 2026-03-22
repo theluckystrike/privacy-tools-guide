@@ -248,6 +248,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)
 - [Best Secure Alternative to Gmail 2026: A Developer Guide](/privacy-tools-guide/best-secure-alternative-to-gmail-2026/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

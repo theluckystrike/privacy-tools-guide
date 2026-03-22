@@ -317,6 +317,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
+- [AI Code Generation for Python FastAPI Endpoints](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

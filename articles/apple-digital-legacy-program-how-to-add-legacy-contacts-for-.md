@@ -397,5 +397,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Configure iPhone To Minimize Data Shared With Apple](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
 - [iOS Advanced Data Protection For Icloud End To End](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
 - [Tutanota Encrypted Calendar And Contacts How End To End](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -459,5 +459,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
 - [Tresorit Vs Proton Drive Comparison 2026](/privacy-tools-guide/tresorit-vs-proton-drive-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

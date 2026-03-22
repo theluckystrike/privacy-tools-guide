@@ -461,5 +461,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [How To Set Up Offline Encrypted Communication Between Two](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
 - [Use Mesh Networking for Private Communication](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

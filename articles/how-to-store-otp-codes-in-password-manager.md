@@ -276,5 +276,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up a Password Manager for Home Server SSH](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
 - [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 - [How To Use Password Manager Across Work And Personal](/privacy-tools-guide/how-to-use-password-manager-across-work-and-personal-devices/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

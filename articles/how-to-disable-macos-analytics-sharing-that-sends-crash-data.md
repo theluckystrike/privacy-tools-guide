@@ -342,6 +342,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 - [Macos Siri Privacy Controls How To Prevent Voice Data From R](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

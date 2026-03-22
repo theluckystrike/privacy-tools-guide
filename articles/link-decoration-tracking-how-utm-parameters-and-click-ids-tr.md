@@ -493,6 +493,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
 - [Bounce Tracking How Redirects Through Tracker Domains Follow](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
 - [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

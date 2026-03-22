@@ -252,5 +252,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Battery API Fingerprinting How Battery Status Tracks You](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
 - [Device Memory API Fingerprinting How Ram Amount Narrows](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [AI Code Generation for Python FastAPI Endpoints](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

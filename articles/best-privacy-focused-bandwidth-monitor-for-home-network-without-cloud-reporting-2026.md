@@ -260,5 +260,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/privacy-tools-guide/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Self-Hosted AI Assistant for Writing Docker Files Without](https://theluckystrike.github.io/ai-tools-compared/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

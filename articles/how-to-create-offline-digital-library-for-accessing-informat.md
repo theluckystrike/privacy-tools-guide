@@ -393,5 +393,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Create a New Digital Identity After Escaping Domestic](/privacy-tools-guide/how-to-create-new-digital-identity-after-escaping-domestic-v/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -419,6 +419,7 @@ Stock Pixel acceptable for:
 - [Android Location History Google Timeline How To Delete](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -275,5 +275,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

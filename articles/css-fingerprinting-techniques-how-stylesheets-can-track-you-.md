@@ -439,4 +439,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Screen Resolution Fingerprinting Why Changing Display](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
 - [How To Stop Browser Fingerprinting On Chrome 2026 Practical](/privacy-tools-guide/how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

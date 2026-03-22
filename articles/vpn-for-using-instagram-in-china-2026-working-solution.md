@@ -541,5 +541,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)
 - [Best Vpn Protocols That Still Work Inside China After Deep](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [AI Code Suggestion Quality When Working With Environment](https://theluckystrike.github.io/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

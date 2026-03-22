@@ -296,5 +296,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [1Password vs Keeper Security Comparison 2026](/privacy-tools-guide/1password-vs-keeper-security-comparison-2026/)
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 - [Sticky Password Review 2026: A Developer's Perspective](/privacy-tools-guide/sticky-password-review-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

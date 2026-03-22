@@ -305,6 +305,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Browser for Online Banking Security 2026](/privacy-tools-guide/best-browser-for-online-banking-security/)
 - [Verify Your Browser is Not Leaking Information](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

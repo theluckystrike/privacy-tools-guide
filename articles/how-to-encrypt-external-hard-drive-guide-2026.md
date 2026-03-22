@@ -524,6 +524,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

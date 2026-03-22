@@ -254,5 +254,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Protonmail Vs Gmail Privacy Comparison](/privacy-tools-guide/protonmail-vs-gmail-privacy-comparison/)
 - [How To Use Pgp Encrypted Email With Protonmail To Non](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
+- [AtScale vs Cube AI Semantic Layer: A Developer Comparison](https://theluckystrike.github.io/ai-tools-compared/atscale-vs-cube-ai-semantic-layer/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -343,5 +343,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
 - [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

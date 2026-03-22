@@ -465,5 +465,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 - [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

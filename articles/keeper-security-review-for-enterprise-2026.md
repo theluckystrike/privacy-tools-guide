@@ -500,6 +500,7 @@ Check the export options before committing. Most tools let you export your data,
 - [Best Enterprise Identity Governance Platform for.](/privacy-tools-guide/best-enterprise-identity-governance-platform-for-managing-team-access-reviews-2026/)
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [Best Zero Knowledge Cloud Storage Enterprise](/privacy-tools-guide/best-zero-knowledge-cloud-storage-enterprise/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

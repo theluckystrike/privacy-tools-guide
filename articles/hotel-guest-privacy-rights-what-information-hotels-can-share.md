@@ -260,4 +260,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Genetic Data Privacy Rights What 23andme Ancestry Can Do](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
 - [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

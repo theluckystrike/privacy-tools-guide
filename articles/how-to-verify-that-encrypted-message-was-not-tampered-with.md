@@ -473,5 +473,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

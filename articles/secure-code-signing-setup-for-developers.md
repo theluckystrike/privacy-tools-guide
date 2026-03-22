@@ -185,6 +185,8 @@ vault kv put secret/cosign-key key=@cosign.key
 - [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
 - [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
 - [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
+- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

@@ -265,6 +265,7 @@ sudo mokutil --import db.crt
 - [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
