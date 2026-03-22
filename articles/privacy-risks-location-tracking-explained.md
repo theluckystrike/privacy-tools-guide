@@ -47,6 +47,7 @@
 
 
 
+
 layout: default
 title: "Privacy Risks of Location Tracking Explained"
 <<<<<<< HEAD
@@ -64,6 +65,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+
 
 
 
