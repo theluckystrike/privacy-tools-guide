@@ -226,6 +226,297 @@ Review each tool's privacy policy, data handling practices, and security certifi
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 
+## Complete Credential Audit Workflow
+
+Regular audits prevent unauthorized access to your music accounts:
+
+```bash
+#!/bin/bash
+# music-account-audit.sh - Comprehensive streaming account audit
+
+echo "=== Streaming Platform Account Audit ==="
+echo "Run quarterly to verify no unauthorized access"
+echo ""
+
+# Define all accounts
+ACCOUNTS=(
+  "distrokid@youremail.com"
+  "tunecore@youremail.com"
+  "bandcamp@youremail.com"
+)
+
+for account in "${ACCOUNTS[@]}"; do
+  echo "Auditing: $account"
+
+  # 1. Check login history (if available)
+  echo "  Recent logins:"
+  # Note: This is pseudo-code; actual implementation
+  # depends on each service's API
+
+  # 2. Check 2FA status
+  echo "  2FA enabled: [CHECK IN ACCOUNT SETTINGS]"
+
+  # 3. Review connected apps/integrations
+  echo "  Connected apps: [CHECK IN ACCOUNT SETTINGS]"
+
+  # 4. Verify stored payment methods
+  echo "  Payment methods: [CHECK FOR UNAUTHORIZED CARDS]"
+
+  # 5. Check email forwarding rules
+  echo "  Email forwards: [VERIFY NONE SET]"
+
+  echo ""
+done
+```
+
+Run this quarterly to catch unauthorized access early.
+
+## Building Multi-Tenant Support
+
+If you manage artists as a label or manager:
+
+```python
+class MusicTeamVault:
+    def __init__(self, manager_name):
+        self.manager = manager_name
+        self.artists = {}
+        self.vaults = {}
+
+    def create_artist_vault(self, artist_name, artists_email):
+        """Create isolated vault for each artist"""
+        vault = {
+            'name': artist_name,
+            'owner_email': artists_email,
+            'created_date': datetime.now(),
+            'access_log': [],
+            'credentials': {}
+        }
+        self.vaults[artist_name] = vault
+
+    def grant_manager_access(self, vault_name, manager_email, access_level='read'):
+        """Share vault with manager (read-only or read-write)"""
+        vault = self.vaults[vault_name]
+
+        if access_level == 'read':
+            # Manager can view but not modify passwords
+            self.vaults[vault_name]['managers'] = {
+                manager_email: 'read-only'
+            }
+        elif access_level == 'read-write':
+            # Manager can view and edit
+            # Requires artist approval
+            pass
+
+    def audit_vault_access(self, vault_name):
+        """Log all access to artist vault"""
+        return {
+            'vault': vault_name,
+            'access_log': self.vaults[vault_name]['access_log'],
+            'last_accessed': max([entry['timestamp'] for entry in self.vaults[vault_name]['access_log']])
+        }
+```
+
+This enables secure team credential management without exposing individual passwords.
+
+## API Integration for Automation
+
+Automate streaming platform interactions:
+
+```python
+import requests
+from password_manager_cli import get_credential
+
+class StreamingPlatformAutomation:
+    def __init__(self, platform_name):
+        self.platform = platform_name
+        self.api_key = get_credential(f"{platform_name}_api_key")
+        self.base_url = self.get_api_endpoint(platform_name)
+
+    def get_api_endpoint(self, platform):
+        endpoints = {
+            'distrokid': 'https://api.distrokid.com',
+            'spotify': 'https://api.spotify.com/v1',
+            'bandcamp': 'https://api.bandcamp.com'
+        }
+        return endpoints.get(platform)
+
+    def fetch_monthly_earnings(self):
+        """Get earnings without logging into dashboard"""
+        headers = {'Authorization': f'Bearer {self.api_key}'}
+        response = requests.get(
+            f'{self.base_url}/earnings/monthly',
+            headers=headers
+        )
+        return response.json()
+
+    def list_releases(self):
+        """Get list of your releases"""
+        headers = {'Authorization': f'Bearer {self.api_key}'}
+        response = requests.get(
+            f'{self.base_url}/releases',
+            headers=headers
+        )
+        return response.json()
+
+    def generate_credentials_report(self):
+        """Export all active credentials"""
+        credentials = self.get_all_platform_credentials()
+        report = {
+            'generated': datetime.now(),
+            'total_accounts': len(credentials),
+            'accounts': [
+                {
+                    'platform': cred['platform'],
+                    'username': cred['username'],
+                    'last_updated': cred['updated_at'],
+                    '2fa_enabled': cred.get('2fa_enabled', False)
+                }
+                for cred in credentials
+            ]
+        }
+        return report
+```
+
+## Disaster Recovery Planning
+
+What happens if you lose access to your password manager:
+
+### Emergency Access Features
+
+```
+Bitwarden Emergency Access:
+- Designate trusted contact
+- Contact receives access after 7-day waiting period
+- Ensures you can't be locked out permanently
+- Setup: Settings > Account > Emergency Access
+
+1Password Emergency Contact:
+- Trusted contact gets recovery access code
+- Can use code to restore full account access
+- Setup: Settings > Account > Emergency Contacts
+```
+
+### Backup Emergency Codes
+
+```bash
+# Generate and store emergency codes
+# For each critical account, store recovery codes:
+
+# Example format:
+# Service: DistroKid
+# Recovery codes (store in secure location):
+# CODE-1A2B-3C4D
+# CODE-2B3C-4D5E
+# CODE-3C4D-5E6F
+
+# Store these codes:
+# Option 1: Encrypted file on USB drive (offline)
+# Option 2: Safe deposit box (physical)
+# Option 3: Share with trusted person (encrypted)
+
+# DO NOT store with regular passwords
+```
+
+## Monitoring for Compromised Credentials
+
+```python
+import requests
+
+class CredentialMonitor:
+    def __init__(self):
+        self.have_i_been_pwned_api = 'https://api.pwnedpasswords.com'
+
+    def check_password_breach(self, password):
+        """Check if password appears in known breaches"""
+        import hashlib
+
+        # Hash password with SHA-1
+        sha1_hash = hashlib.sha1(password.encode()).hexdigest().upper()
+        prefix = sha1_hash[:5]
+        suffix = sha1_hash[5:]
+
+        # Query Have I Been Pwned
+        response = requests.get(
+            f'{self.have_i_been_pwned_api}/range/{prefix}'
+        )
+
+        if suffix in response.text:
+            return {
+                'compromised': True,
+                'action': 'Change this password immediately'
+            }
+        else:
+            return {'compromised': False}
+
+    def monitor_email_breaches(self, email):
+        """Check if email appears in any known breaches"""
+        response = requests.get(
+            f'https://haveibeenpwned.com/api/v3/breachedaccount/{email}',
+            headers={'User-Agent': 'MusicianPasswordMonitor'}
+        )
+
+        if response.status_code == 200:
+            breaches = response.json()
+            return {
+                'breached': True,
+                'affected_services': [b['Name'] for b in breaches],
+                'action': 'Change passwords on breached services'
+            }
+        else:
+            return {'breached': False}
+```
+
+## Industry-Specific Threats for Musicians
+
+Streaming platforms face specific security challenges:
+
+```
+Common attack vectors:
+1. Account takeover
+   - Attacker changes payout email
+   - Revenue redirected to attacker's bank
+   - Recovery: Contact support with proof of identity
+
+2. Playlist manipulation
+   - Attacker uploads fake songs under your name
+   - Damages your artist reputation
+   - Recovery: File DMCA takedown request
+
+3. Royalty theft
+   - Attacker creates lookalike account
+   - Streams redirected to fake account
+   - Recovery: Claim verified artist status
+
+4. Email compromise
+   - Attacker accesses password resets
+   - All connected accounts compromised
+   - Prevention: Use unique password manager for email
+```
+
+## Long-Term Credential Strategy
+
+Planning for music career longevity:
+
+```
+Year 1: Setup
+├─ Choose password manager (Bitwarden/1Password)
+├─ Set up unique passwords for all platforms
+├─ Enable 2FA on everything
+└─ Document recovery procedures
+
+Year 2-5: Maintenance
+├─ Quarterly password rotation (non-critical)
+├─ Annual complete credential audit
+├─ Yearly emergency contact verification
+└─ Update recovery codes if forgotten
+
+Year 5+: Transition Planning
+├─ If selling catalog or retiring: credential transfer
+├─ If passing to heirs: estate planning
+├─ If transferring to manager: access delegation
+└─ Document complete credential handoff process
+```
+
 ## Related Articles
 
 - [Password Manager for Travel Agent Managing Booking Platform](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
