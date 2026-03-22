@@ -49,7 +49,7 @@ C:\Windows\WindowsUpdate\*.exe
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Windows 11 Telemetry
+### Step 1: Understand Windows 11 Telemetry
 
 Windows 11 sends data through multiple channels. The main telemetry endpoints include:
 
@@ -69,7 +69,7 @@ Before implementing firewall rules, ensure you have:
 - Administrator privileges
 - Understanding that some Windows features may require connectivity
 
-## Method 1: Using PowerShell to Create Firewall Rules
+### Step 2: Method 1: Using PowerShell to Create Firewall Rules
 
 The most efficient method uses PowerShell to create outbound firewall rules that block known telemetry endpoints. This approach works across all Windows 11 editions.
 
@@ -149,7 +149,7 @@ foreach ($ipRange in $MicrosoftIPRanges) {
 
 Be cautious with IP range blocking, as it may affect legitimate Microsoft services. The endpoint-based approach provides more precise control.
 
-## Method 2: Using Windows Defender Firewall Advanced Security
+### Step 3: Method 2: Using Windows Defender Firewall Advanced Security
 
 For users who prefer the graphical interface or need more granular control:
 
@@ -170,7 +170,7 @@ C:\Windows\WindowsUpdate\*.exe
 8. Apply to all profiles (Domain, Private, Public)
 9. Name the rule appropriately
 
-## Blocking Specific Telemetry Services
+### Step 4: Blocking Specific Telemetry Services
 
 Windows 11 runs several services that transmit telemetry. While you can disable these services through other means, blocking their network access provides an additional layer:
 
@@ -202,7 +202,7 @@ New-NetFirewallRule -DisplayName "Block-CompatTelRunner" `
     -Profile Any
 ```
 
-## Verifying Your Firewall Rules
+### Step 5: Verify Your Firewall Rules
 
 After implementing the rules, verify they work correctly:
 
@@ -225,7 +225,7 @@ Test-NetConnection -ComputerName "vortex.data.microsoft.com" -Port 443 -WarningA
 
 If the firewall rule is working, you should see `TcpTestSucceeded : False` for blocked endpoints.
 
-## Managing Exceptions
+### Step 6: Manage Exceptions
 
 Some Windows features require telemetry connectivity. Create exceptions for specific scenarios:
 
@@ -240,7 +240,7 @@ $updateRule = New-NetFirewallRule -DisplayName "Allow-WindowsUpdate" `
     -Profile Any
 ```
 
-## Removing Rules
+### Step 7: Remove Rules
 
 To remove all telemetry blocking rules:
 
@@ -254,7 +254,7 @@ Get-NetFirewallRule | Where-Object {
 Write-Host "All telemetry blocking rules removed."
 ```
 
-## Considerations and Trade-offs
+### Step 8: Considerations and Trade-offs
 
 Blocking telemetry at the firewall level has implications:
 
@@ -266,7 +266,7 @@ Blocking telemetry at the firewall level has implications:
 
 For development environments, this level of blocking is often acceptable. For production systems, consider which features your workflow actually requires.
 
-## Automation Script for Complete Setup
+### Step 9: Automation Script for Complete Setup
 
 Here's a consolidated script that combines all methods:
 
@@ -313,6 +313,21 @@ Write-Host "Telemetry blocking rules applied successfully."
 ```
 
 Save this as `Set-TelemetryFirewall.ps1` and run with `-RemoveRules` to revert.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

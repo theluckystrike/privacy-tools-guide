@@ -38,7 +38,17 @@ Google AMP (Accelerated Mobile Pages) was introduced to speed up mobile web brow
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## How Google AMP Tracking Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Google AMP Tracking Works
 
 When you perform a Google Search on mobile or desktop, results often display AMP versions of web pages. Clicking these results sends your request through `google.com/amp` or `google-search` redirects, creating a detailed log of:
 
@@ -49,7 +59,7 @@ When you perform a Google Search on mobile or desktop, results often display AMP
 
 Google's own documentation acknowledges this tracking, stating that AMP cache URLs provide analytics and performance data. Even if you visit a website directly later, the initial AMP click creates a persistent tracking record linked to your Google account.
 
-## Method 1: Disable AMP in Google Search Settings
+### Step 2: Method 1: Disable AMP in Google Search Settings
 
 The simplest approach involves adjusting Google Search preferences:
 
@@ -60,7 +70,7 @@ The simplest approach involves adjusting Google Search preferences:
 
 This method has limitations—Google may not offer this setting in all regions, and the setting can reset after clearing cookies or using incognito mode. Additionally, some search results may still redirect through AMP URLs even with this setting disabled.
 
-## Method 2: Use Alternative Search Engines
+### Step 3: Method 2: Use Alternative Search Engines
 
 Several privacy-focused search engines do not use AMP:
 
@@ -76,7 +86,7 @@ For developers building search interfaces, you can query these engines programma
 curl -s "https://html.duckduckgo.com/html/?q=privacy+tools"
 ```
 
-## Method 3: Browser Extensions for AMP Blocking
+### Step 4: Method 3: Browser Extensions for AMP Blocking
 
 Several browser extensions strip AMP tracking:
 
@@ -120,7 +130,7 @@ Several browser extensions strip AMP tracking:
 ||google.co.*/amp$redirect=noop
 ```
 
-## Method 4: DNS-Level Blocking
+### Step 5: Method 4: DNS-Level Blocking
 
 For network-wide protection, you can block AMP tracking at the DNS level. This approach works for all devices on your network without individual configuration.
 
@@ -149,7 +159,7 @@ dig +short A google.com.amp @9.9.9.9
 
 If these domains resolve to blocked IPs, your DNS provider may already be filtering them.
 
-## Method 5: Browser Configuration
+### Step 6: Method 5: Browser Configuration
 
 Modern browsers offer settings to reduce AMP tracking:
 
@@ -180,7 +190,7 @@ google-chrome --disable-google-top-replacement
 chrome.exe --disable-google-top-replacement
 ```
 
-## Method 6: Developer's Approach - AMP URL Detection
+### Step 7: Method 6: Developer's Approach - AMP URL Detection
 
 For developers building privacy tools, detecting and handling AMP URLs requires understanding their structure:
 
@@ -213,7 +223,7 @@ def extract_canonical_url(amp_url: str) -> str:
     pass  # Implementation depends on specific URL patterns
 ```
 
-## Method 7: Use "NoAMP" Services
+### Step 8: Method 7: Use "NoAMP" Services
 
 Several services provide "NoAMP" redirects:
 
@@ -240,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-## Verifying Your Protection
+### Step 9: Verify Your Protection
 
 After implementing your chosen methods, verify AMP tracking is blocked:
 
@@ -265,6 +275,21 @@ The most effective approach combines multiple methods:
 - Enable browser privacy settings
 
 This layered approach ensures protection even if one method fails. For developers, implementing AMP detection in your own tools helps maintain privacy across all browsing activities.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

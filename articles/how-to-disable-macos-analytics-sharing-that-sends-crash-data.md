@@ -38,7 +38,17 @@ macOS collects and shares various types of diagnostic data with Apple, including
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding macOS Analytics and Diagnostic Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand macOS Analytics and Diagnostic Data
 
 Apple's analytics infrastructure on macOS serves multiple purposes. Crash reports help Apple identify bugs in system components and native applications. Usage analytics inform Apple about feature adoption patterns and system performance across different hardware configurations. While this data theoretically helps improve macOS stability, it also transmits sensitive system information to Apple's servers.
 
@@ -49,7 +59,7 @@ The diagnostic data includes:
 - Usage statistics for Apple services
 - Hardware and software configuration details
 
-## Disabling Analytics via System Preferences
+### Step 2: Disable Analytics via System Preferences
 
 The first layer of control exists in System Preferences (or System Settings on macOS Ventura and later). Navigate to **Privacy & Security**, then scroll to **Analytics & Improvements**. You will find checkboxes for sharing analytics data with Apple and app developers.
 
@@ -60,7 +70,7 @@ Uncheck the following options:
 
 However, system preferences alone may not disable all analytics transmission. Several Terminal commands provide deeper control.
 
-## Terminal Commands for Complete Analytics Disabling
+### Step 3: Terminal Commands for Complete Analytics Disabling
 
 Open Terminal (found in `/Applications/Utilities/`) and execute the following commands to disable various analytics and diagnostic sharing features.
 
@@ -98,7 +108,7 @@ defaults write com.apple.AppleMarketing.BlueTalk-advertisingInfo -bool false
 
 While not directly related to crash data, disabling ad personalization reduces the amount of tracking associated with your Apple ID.
 
-## Managing App Store and Automatic Updates
+### Step 4: Manage App Store and Automatic Updates
 
 The Mac App Store and automatic update mechanisms also transmit data. To minimize this:
 
@@ -110,7 +120,7 @@ sudo softwareupdate --schedule off
 defaults write com.apple.storeagent.plist PersonalizationDisabled -bool true
 ```
 
-## Disabling iCloud Analytics
+### Step 5: Disable iCloud Analytics
 
 If you use iCloud, additional analytics may sync with your account:
 
@@ -121,7 +131,7 @@ defaults write MobileSync.plist DiagnosticMode -bool false
 
 Note that some iCloud-related analytics require signing out of iCloud completely to fully disable.
 
-## Using a LaunchDaemon to Block Analytics Domains
+### Step 6: Use a LaunchDaemon to Block Analytics Domains
 
 For network-level blocking, create a `hosts` file entry or use a firewall to block Apple's analytics endpoints:
 
@@ -140,7 +150,7 @@ sudo dscacheutil -flushcache
 sudo killall -HUP mDNSResponder
 ```
 
-## Verification and Testing
+### Step 7: Verification and Testing
 
 After applying these settings, verify that analytics are disabled:
 
@@ -154,7 +164,7 @@ defaults read com.apple.CrashReporter
 
 You should see that the analytics daemon is either not running or configured with submission disabled. The crash reporter settings should show "None" or disabled states.
 
-## Automating the Process with a Script
+### Step 8: Automate the Process with a Script
 
 For developers managing multiple machines, create an automation script:
 
@@ -192,7 +202,7 @@ echo "Analytics disabled successfully."
 
 Save this script as `disable-macos-analytics.sh`, make it executable with `chmod +x disable-macos-analytics.sh`, and run it with `sudo` when needed.
 
-## What Remains Enabled
+### Step 9: What Remains Enabled
 
 After disabling these features, some Apple services still require certain data transmission. iCloud communications, App Store purchases, and software updates continue functioning normally. System Stability remains intact since crash reports are stored locally even when not sent to Apple. You can still manually submit feedback to Apple through dedicated channels if you encounter issues.
 
@@ -224,7 +234,7 @@ defaults write com.apple.SoftwareUpdate.Checks.plist com.apple.SoftwareUpdate.In
 defaults write com.apple.SoftwareUpdate.Checks.plist LastAttemptSystemVersion -string "99.99.99"
 ```
 
-## Verifying Configuration Persistence
+### Step 10: Verify Configuration Persistence
 
 Changes made through `defaults` commands persist until explicitly modified, but understanding which configurations actually persist is important. Create a verification script to ensure your settings remain applied:
 
@@ -254,7 +264,7 @@ echo "Recent crash reports directory:"
 ls -la ~/Library/Logs/DiagnosticMessages/ 2>/dev/null | head -5 || echo "Directory access denied or not found"
 ```
 
-## Monitoring for Data Leaks
+### Step 11: Monitor for Data Leaks
 
 Even after disabling analytics, verify that data transmission has actually stopped. Use network monitoring tools to ensure no unexpected connections:
 

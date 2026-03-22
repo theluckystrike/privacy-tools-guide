@@ -24,7 +24,17 @@ Mobile devices communicate with cell towers through the baseband processor—a d
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: the threat ecosystem, android app tools for detection, snoopsnitch, with specific setup instructions
 
-## Understanding the Threat ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat ecosystem
 
 The baseband processor runs a real-time operating system (RTOS) with its own firmware, separate from Android. This isolation creates a blind spot: the main operating system has limited visibility into baseband activities. Attackers who compromise the baseband can:
 
@@ -35,7 +45,7 @@ The baseband processor runs a real-time operating system (RTOS) with its own fir
 
 Rogue cell towers exploit this by masquerading as legitimate network equipment. They broadcast stronger signals to attract nearby devices, then perform man-in-the-middle attacks against connected phones.
 
-## Android App Tools for Detection
+### Step 2: Android App Tools for Detection
 
 Several Android applications can help identify suspicious cellular activity. These tools monitor network parameters that change when a device connects to a rogue tower.
 
@@ -63,7 +73,7 @@ The app provides:
 
 Compare the tower ID and location shown in CellMapper against known legitimate towers in your area. Unexpected towers warrant further investigation.
 
-## Technical Detection Methods
+### Step 3: Technical Detection Methods
 
 For developers seeking deeper analysis, several programmatic approaches exist.
 
@@ -128,7 +138,7 @@ For advanced analysis, capture network messages using Android's bugreport featur
 - **Ciphering algorithm changes**: Downgrade attacks often force weaker encryption
 - **Neighboring cell information**: Compare reported neighbors against known networks
 
-## Real-World Threat Scenarios
+### Step 4: Real-World Threat Scenarios
 
 Understanding actual threat scenarios helps prioritize detection efforts.
 
@@ -168,7 +178,7 @@ Law enforcement with warrants may deploy transient IMSI catchers:
 
 **Detection approach**: Maintain historical baseline, notice new towers appearing/disappearing, flag towers active only during specific times.
 
-## Practical Detection Workflow
+### Step 5: Practical Detection Workflow
 
 Implement a systematic detection process:
 
@@ -254,7 +264,7 @@ Some sophisticated actors deploy multiple layers:
 
 Detection requires monitoring both network layer (IMSI catcher) and radio layer (baseband activity).
 
-## Operational Security During Detection Activities
+### Step 6: Operational Security During Detection Activities
 
 If you suspect active targeting, operational discipline prevents counter-intelligence:
 
@@ -271,7 +281,7 @@ If you suspect active targeting, operational discipline prevents counter-intelli
 
 Use write-once media (DVDs, optical media) for archiving analytical findings if extremely high risk is suspected.
 
-## Tool Combination Strategy
+### Step 7: Tool Combination Strategy
 
 No single tool provides complete detection. Effective security combines multiple independent methods:
 
@@ -304,7 +314,7 @@ If you cannot reliably detect IMSI catchers in your environment, consider these 
 - **Communication app switching**: Use Signal or Wire (both with perfect forward secrecy) for all sensitive communications
 - **Hardware-based protection**: Dedicated encrypted phones like Purism Librem 5 or Blackphone offer stronger baseband isolation
 
-## Professional-Grade Detection Equipment
+### Step 8: Professional-Grade Detection Equipment
 
 For high-value targets, commercial IMSI catcher detection equipment exists:
 
@@ -327,7 +337,7 @@ For high-value targets, commercial IMSI catcher detection equipment exists:
 
 Most individuals cannot justify commercial detection equipment. App-based and protocol analysis remain the practical approach.
 
-## Baseband Exploit Indicators
+### Step 9: Baseband Exploit Indicators
 
 Beyond IMSI catchers, sophisticated attackers may exploit the baseband processor itself:
 
@@ -348,7 +358,7 @@ adb shell dumpsys | grep -i "radio"
 
 Baseband exploits remain difficult to detect without deep radio knowledge. If you suspect compromise at this level, consider replacing the device entirely rather than attempting remediation.
 
-## Post-Detection Actions
+### Step 10: Post-Detection Actions
 
 If you detect IMSI catcher activity, follow these steps:
 
@@ -361,6 +371,21 @@ If you detect IMSI catcher activity, follow these steps:
 
 The goal of detection is not necessarily to catch attackers, but to modify behavior in response to likely targeting.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

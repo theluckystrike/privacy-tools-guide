@@ -40,13 +40,23 @@ Smart home devices have become ubiquitous, but transparency about their hardware
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide provides practical**: techniques for developers and power users to identify undisclosed recording hardware.
 
-## Understanding the Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Challenge
 
 Manufacturers are not always forthcoming about all sensors built into their devices. A smart display may include a secondary microphone for noise cancellation that also records ambient audio. A "security camera" might have cloud connectivity that uploads footage without clear disclosure. Some devices have hardware capabilities that remain dormant until a firmware update activates them.
 
 The goal is not paranoia but informed consent. You deserve to know what sensors exist in devices operating in your personal space.
 
-## Physical Inspection Techniques
+### Step 2: Physical Inspection Techniques
 
 Before exploring technical analysis, perform a thorough physical inspection:
 
@@ -61,7 +71,7 @@ Before exploring technical analysis, perform a thorough physical inspection:
 - Check iFixit teardowns for hidden components
 - Review FCC compliance documentation for sensor specifications
 
-## Network Traffic Analysis
+### Step 3: Network Traffic Analysis
 
 One of the most effective methods for detecting data exfiltration involves monitoring network traffic. This approach works regardless of whether the device uses encrypted connections.
 
@@ -131,7 +141,7 @@ tshark -r capture.pcap -Y 'rtp' -T fields -e ip.src -e ip.dst -e rtp.p_type | so
 tshark -r capture.pcap -Y 'rtsp' -T fields -e rtsp.uri -e ip.src | sort | uniq
 ```
 
-## Local Network Scanning and Device Fingerprinting
+### Step 4: Local Network Scanning and Device Fingerprinting
 
 ### Active Port Scanning
 
@@ -164,7 +174,7 @@ avahi-browse -a -r
 avahi-browse -a -r | grep -i "camera\|mic\|audio\|media"
 ```
 
-## Firmware Analysis
+### Step 5: Firmware Analysis
 
 For advanced users, examining firmware can reveal hidden capabilities.
 
@@ -202,7 +212,7 @@ strings firmware.bin | grep -iE "ov[0-9]{4}|imx[0-9]{3}|gc[0-9]{4}"
 find . -name "*.conf" -o -name "*.cfg" | xargs grep -l "sensor\|camera\|mic"
 ```
 
-## Radio Frequency Analysis
+### Step 6: Radio Frequency Analysis
 
 Some devices transmit data wirelessly even when not actively used.
 
@@ -236,7 +246,7 @@ sudo hcitool -i hci0 leinfo <device_mac>
 gatttool -i hpi0 -b <device_mac> --char-desc
 ```
 
-## Practical Detection Workflow
+### Step 7: Practical Detection Workflow
 
 Combine these techniques into a systematic audit process:
 
@@ -246,7 +256,7 @@ Combine these techniques into a systematic audit process:
 4. **Firmware Audit**: Analyze firmware if possible
 5. **Periodic Re-audit**: Repeat after firmware updates
 
-## Hardening Your Setup
+### Step 8: Hardening Your Setup
 
 Once you've identified recording capabilities, take action:
 
@@ -254,6 +264,21 @@ Once you've identified recording capabilities, take action:
 - **Firewall Rules**: Block known cloud endpoints at the router level
 - **Power Control**: Use smart plugs to cut power when not in use
 - **Physical Covers**: Use mechanical shutters for cameras, microphone plugs for audio inputs
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

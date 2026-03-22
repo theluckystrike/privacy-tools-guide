@@ -30,7 +30,17 @@ This guide covers practical approaches for developers and power users to gain vi
 - **Useful for tracking profile**: visibility or listing changes.
 - **Social Media Listening**: Use platform-native alerts for mentions, or employ APIs from services like Brandwatch or Mention for social monitoring.
 
-## Setting Up Google Alerts for Your Personal Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Google Alerts for Your Personal Data
 
 Google Alerts remains one of the simplest methods to track when your name or associated terms appear in indexed content. Configure alerts for your full name, email addresses, phone numbers, and variations thereof.
 
@@ -82,7 +92,7 @@ for query in PERSONAL_INFO:
 
 This approach works for tracking when your information appears in news articles, blog posts, or indexed web pages. Schedule this script to run daily via cron or a CI pipeline.
 
-## Monitoring Data Breaches with Have I Been Pwned
+### Step 2: Monitor Data Breaches with Have I Been Pwned
 
 The Have I Been Pwned (HIBP) API provides programmatic access to breach data. If your email or username appears in known breaches, you receive notifications enabling you to rotate compromised credentials.
 
@@ -126,7 +136,7 @@ for email in emails:
 
 For real-time monitoring, configure the HIBP notification service to send alerts whenever your credentials appear in new breaches.
 
-## Tracking Data Broker Listings
+### Step 3: Tracking Data Broker Listings
 
 Data broker websites aggregate personal information and make it searchable. Removing yourself from these sites requires ongoing effort, but monitoring their listings helps detect when new data appears.
 
@@ -193,7 +203,7 @@ asyncio.run(monitor_brokers("your@email.com", DATA_BROKERS))
 
 Running such checks weekly helps identify when brokers republish your information after removal requests.
 
-## Using OSINT Tools for Personal Reconnaissance
+### Step 4: Use OSINT Tools for Personal Reconnaissance
 
 Open-source intelligence tools enable monitoring of your digital footprint. Tools like Sherlock, Spiderfoot, and recon-ng automate data collection from public sources.
 
@@ -211,7 +221,7 @@ phoneinfoga scan -n "+1234567890" -o results.txt
 
 These tools identify where your information appears publicly, revealing potential exposure points.
 
-## Implementing Custom Web Monitoring
+### Step 5: Implementing Custom Web Monitoring
 
 For advanced control, deploy custom monitoring scripts that check specific sites for your information. Combine headless browser automation with change detection.
 
@@ -322,7 +332,7 @@ Beyond technical monitoring, consider these complementary approaches:
 
 **Public Records Monitoring**: Register with local court systems to receive alerts when your name appears in new filings, which can indicate investigation or legal action.
 
-## Limitations and Privacy Considerations
+### Step 6: Limitations and Privacy Considerations
 
 No method provides complete visibility into every search conducted about you. Search engines do not expose query logs to individuals, and private investigations use tools unavailable to the public. The methods outlined here detect publicly indexed information and known breaches rather than private surveillance.
 
@@ -330,6 +340,21 @@ Additionally, when implementing monitoring scripts, respect website terms of ser
 
 The goal is not absolute detection but reducing uncertainty about how your personal information circulates online. Combined with proactive steps like data broker removal requests and minimizing public information sharing, these monitoring techniques provide valuable situational awareness.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

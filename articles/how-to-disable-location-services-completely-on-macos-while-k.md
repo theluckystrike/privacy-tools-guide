@@ -48,7 +48,17 @@ Apple stores Significant Locations on-device by default, but several system anal
 
 Disabling Location Services eliminates this data collection vector entirely. For journalists, activists, abuse survivors, or anyone who values keeping their physical movements private, this is worth the trade-offs involved.
 
-## Understanding macOS Location Services Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand macOS Location Services Architecture
 
 macOS Location Services operates at multiple system levels. The `locationd` daemon manages location requests, while the System Preferences pane controls global enable/disable toggles. Applications request location through the Core Location framework, which interfaces with Wi-Fi positioning, GPS (on MacBooks), and cell tower data.
 
@@ -61,7 +71,7 @@ The key processes involved are:
 - **com.apple.Maps** — the Maps application with its own location caches
 - **com.apple.CoreLocationAgent** — the agent that prompts users for location permission
 
-## Method 1: Disable Location Services via System Preferences
+### Step 2: Method 1: Disable Location Services via System Preferences
 
 The simplest approach disables location at the system level:
 
@@ -77,7 +87,7 @@ On macOS Ventura and later, the path has moved:
 2. Click **Location Services**
 3. Toggle **Location Services** off at the top
 
-## Method 2: Selective App Blocking with Terminal
+### Step 3: Method 2: Selective App Blocking with Terminal
 
 For granular control, you can disable location per-application while allowing others to function:
 
@@ -97,7 +107,7 @@ After making changes, restart the locationd daemon:
 sudo killall locationd
 ```
 
-## Method 3: Use Privacy Preferences (macOS Monterey and Later)
+### Step 4: Method 3: Use Privacy Preferences (macOS Monterey and Later)
 
 Apple introduced more granular controls in recent macOS versions:
 
@@ -110,7 +120,7 @@ sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db \
     "SELECT service, client, auth_value FROM access WHERE service='kCLAuthorizationStatus'"
 ```
 
-## Method 4: Block Location at the Network Level
+### Step 5: Method 4: Block Location at the Network Level
 
 For advanced users, blocking location requests at the network level provides another protection layer. Many location services rely on specific Apple servers:
 
@@ -129,7 +139,7 @@ sudo dscacheutil -flushcache
 
 **Warning**: This method may break legitimate Apple services requiring location data.
 
-## Method 5: Use a Privacy-Focused DNS or VPN
+### Step 6: Method 5: Use a Privacy-Focused DNS or VPN
 
 Another layer of location privacy comes from masking your IP address, which is used for approximate geolocation even when Location Services is disabled. Apps and websites that cannot access Core Location still often geolocate you based on your IP address.
 
@@ -140,7 +150,7 @@ For maximum IP-based location privacy:
 - Consider Tor Browser for web browsing, which routes through multiple relays making IP geolocation unreliable
 - Use a privacy-respecting DNS resolver (1.1.1.1 with privacy mode, or a self-hosted resolver) so your DNS queries do not reveal which location-related services you are querying
 
-## Keeping Apps Functional Without Location
+### Step 7: Keeping Apps Functional Without Location
 
 After disabling Location Services, implement these alternatives to maintain application functionality:
 
@@ -202,7 +212,7 @@ Some applications function with partial location data. Configure apps to use onl
 tccutil list Services/Location
 ```
 
-## What Breaks When You Disable Location Services
+### Step 8: What Breaks When You Disable Location Services
 
 Before disabling, understand the full impact on your system:
 
@@ -218,7 +228,7 @@ Before disabling, understand the full impact on your system:
 - Photo geotagging — new photos will not have location metadata embedded (which many consider a privacy benefit)
 - Fitness apps — distance and route tracking features stop working
 
-## Verification and Monitoring
+### Step 9: Verification and Monitoring
 
 After implementing these changes, verify your location privacy status:
 
@@ -230,7 +240,7 @@ sudo log stream --predicate 'process == "locationd"' --level debug
 log show --predicate 'eventMessage contains "location"' --last 1h
 ```
 
-## Script for Complete Disabling
+### Step 10: Script for Complete Disabling
 
 For automation, here is a complete script:
 
@@ -253,6 +263,21 @@ echo "Location Services disabled. Please restart your Mac for changes to take ef
 ```
 
 Run with: `chmod +x disable-macos-location.sh && ./disable-macos-location.sh`
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

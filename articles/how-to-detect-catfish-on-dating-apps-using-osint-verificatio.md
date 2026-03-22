@@ -32,7 +32,17 @@ OSINT involves gathering information from publicly available sources to build a 
 
 The key difference between platform verification and OSINT verification is depth. Dating apps might check if a photo matches a government ID, but OSINT can reveal whether that photo belongs to someone else entirely, whether the person has any real social presence, and whether their story holds up under scrutiny.
 
-## Reverse Image Search: Your First Line of Defense
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Reverse Image Search: Your First Line of Defense
 
 The simplest and most effective catfishing detection technique is reverse image search. Most catfish use photos stolen from social media accounts, stock photo libraries, or influencer profiles. Running their photos through reverse image engines often reveals the original source.
 
@@ -90,7 +100,7 @@ reverse-image-search --engine tineye /path/to/profile_photo.jpg
 
 If reverse image searches return matches from unrelated accounts, stock photo sites, or multiple different names, you have a strong indicator of a fake profile.
 
-## Analyzing Profile Metadata
+### Step 2: Analyzing Profile Metadata
 
 Photos contain hidden metadata—EXIF data—that reveals information about when and how the image was captured. Inconsistent metadata can signal manipulation or stolen images.
 
@@ -136,7 +146,7 @@ Red flags include:
 - Multiple photos with wildly different EXIF timestamps (indicating they were taken at different times)
 - Software fields indicating heavy editing or AI generation tools
 
-## Username and Handle Cross-Referencing
+### Step 3: Username and Handle Cross-Referencing
 
 Most users reuse usernames or handles across platforms. A catfish may claim to be "AlexSmith92" but might have used "alex.smith" or "alexsmith_official" on Instagram, Twitter, or other sites.
 
@@ -185,7 +195,7 @@ async def username_investigation(username):
     return found
 ```
 
-## Social Media Timeline Analysis
+### Step 4: Social Media Timeline Analysis
 
 Once you find someone's real social profiles, analyze their timeline for consistency. Look at posting patterns, engagement, and whether their dating profile claims align with their documented life.
 
@@ -197,7 +207,7 @@ Questions to answer:
 
 Catfish accounts often have thin social histories—no posts before the dating app, no tagged photos, minimal engagement, or profiles created recently.
 
-## Behavioral Signals and Communication Analysis
+### Step 5: Behavioral Signals and Communication Analysis
 
 Beyond static profile data, watch for behavioral red flags in conversation:
 
@@ -243,7 +253,7 @@ def analyze_message_authenticity(messages):
     return indicators
 ```
 
-## Building an Automated Verification Pipeline
+### Step 6: Build an Automated Verification Pipeline
 
 For developers wanting to build a complete verification system, here's a conceptual architecture:
 
@@ -285,7 +295,7 @@ class CatfishDetector:
         pass
 ```
 
-## Practical Defense Strategy
+### Step 7: Practical Defense Strategy
 
 Rather than relying on a single test, combine multiple verification layers:
 
@@ -298,6 +308,21 @@ Rather than relying on a single test, combine multiple verification layers:
 
 No single technique guarantees detection, but combining them catches most catfishing attempts. The more verification layers that fail, the higher the confidence that you're dealing with a fake profile.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions
