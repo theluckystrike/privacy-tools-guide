@@ -428,5 +428,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
 - [How To Safely Share Location With Date Without Giving](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
 - [Android Background Location Access Which Apps Track You](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

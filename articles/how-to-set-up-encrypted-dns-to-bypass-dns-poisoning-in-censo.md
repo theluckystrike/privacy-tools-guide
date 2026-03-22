@@ -261,5 +261,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Set Up DNS-Based Ad Blocking on Travel Router GL-Inet for](/privacy-tools-guide/how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/)
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -251,5 +251,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [How To Create Untraceable Email Account Using Tor Vpn](/privacy-tools-guide/how-to-create-untraceable-email-account-using-tor-vpn-and-an/)
 - [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -544,6 +544,7 @@ This hardened Linux desktop now refuses telemetry, limits network exposure, encr
 - [Real Estate Agent Client Data Protection Privacy Best](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

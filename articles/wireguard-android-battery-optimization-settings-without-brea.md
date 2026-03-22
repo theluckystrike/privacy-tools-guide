@@ -399,4 +399,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [WireGuard Performance Tuning for Large File Transfer](/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/)
 - [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

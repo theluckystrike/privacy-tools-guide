@@ -333,4 +333,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
 - [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

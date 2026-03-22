@@ -301,6 +301,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
 - [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [Ios Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](https://theluckystrike.github.io/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

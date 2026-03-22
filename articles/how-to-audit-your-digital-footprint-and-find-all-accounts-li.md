@@ -309,5 +309,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Create Throwaway Email Accounts Safely For One Time](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)
 - [How to Delete Old Accounts You Forgot About 2026](/privacy-tools-guide/how-to-delete-old-accounts-you-forgot-about-2026/)
 - [How To Document All Online Accounts For Executor Of Estate](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

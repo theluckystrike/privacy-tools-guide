@@ -330,5 +330,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
 - [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 - [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](https://theluckystrike.github.io/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

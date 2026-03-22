@@ -365,6 +365,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)
 - [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [AI Coding Assistant for Rust Developers Compared](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

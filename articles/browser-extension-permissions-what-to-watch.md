@@ -303,5 +303,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [How to Audit Browser Extensions for Privacy Risks 2026](/privacy-tools-guide/how-to-audit-browser-extensions-for-privacy-risks-2026/)
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://theluckystrike.github.io/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

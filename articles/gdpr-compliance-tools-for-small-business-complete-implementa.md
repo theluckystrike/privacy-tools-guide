@@ -247,5 +247,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
 - [Ccpa Vs Gdpr Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
 - [Gdpr Representative Appointment Guide Non](/privacy-tools-guide/gdpr-representative-appointment-guide-non-eu/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

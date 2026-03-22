@@ -392,5 +392,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 - [Audio Context Fingerprinting How Websites Use Sound API](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [AI Code Generation for Python FastAPI Endpoints](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -280,5 +280,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Audit Checklist for SaaS Companies](/privacy-tools-guide/privacy-audit-checklist-for-saas-companies--gui/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Privacy Engineering Hiring Guide What Skills To Look](/privacy-tools-guide/privacy-engineering-hiring-guide-what-skills-to-look-for-in-privacy-team/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

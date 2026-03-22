@@ -358,5 +358,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 - [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
 - [How To Set Up Google Voice Number Specifically For Online](/privacy-tools-guide/how-to-set-up-google-voice-number-specifically-for-online-da/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -497,5 +497,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Protect Yourself From Swatting Attack Prevention Measures](/privacy-tools-guide/how-to-protect-yourself-from-swatting-attack-prevention-measures/)
 - [Someone Is Impersonating Me On Social Media Report](/privacy-tools-guide/someone-is-impersonating-me-on-social-media-report-and-removal/)
 - [How To Protect Yourself From Qr Code Phishing Quishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

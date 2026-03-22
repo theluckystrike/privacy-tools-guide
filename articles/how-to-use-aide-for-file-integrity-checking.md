@@ -233,6 +233,7 @@ AIDE provides cryptographic verification that survives system reboots and can be
 - [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)
 - [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

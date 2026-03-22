@@ -260,5 +260,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Windows Sandbox Privacy Testing Guide 2026](/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -327,4 +327,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [India Cctv Surveillance Expansion Privacy Implications](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 - [Data Broker Opt Out Automation Tools That Continuously](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

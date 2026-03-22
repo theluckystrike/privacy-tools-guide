@@ -372,6 +372,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 - [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
 - [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

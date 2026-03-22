@@ -378,5 +378,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Android Guest Mode For Lending Phone Without Exposing](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
 - [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
 - [Best Password Manager With Travel Mode: A Developer Guide](/privacy-tools-guide/best-password-manager-with-travel-mode/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

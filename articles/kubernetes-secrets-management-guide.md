@@ -292,6 +292,7 @@ roleRef:
 - [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

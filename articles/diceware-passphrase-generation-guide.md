@@ -321,6 +321,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
+- [AI Code Generation Quality for Java Spring Security](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -345,5 +345,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
 - [Threat Model For Medical Marijuana Patient In Non Legal](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -328,5 +328,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 - [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 - [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -258,5 +258,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Bumble Location Tracking Precision How Accurately The App](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [How To Safely Share Location With Date Without Giving](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

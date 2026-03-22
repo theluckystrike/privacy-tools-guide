@@ -323,4 +323,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/---)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

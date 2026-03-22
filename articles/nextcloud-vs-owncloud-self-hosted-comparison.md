@@ -248,5 +248,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Self Hosted Cloud Storage Comparison Nextcloud vs](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
 - [Self-Hosted Password Manager Comparison](/privacy-tools-guide/self-hosted-password-manager-comparison)
 - [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -478,6 +478,7 @@ Once working, keep it working:
 - [How VPN Subnet Conflicts Happen and How to Fix Them](/privacy-tools-guide/how-vpn-subnet-conflicts-happen-and-how-to-fix-them/)
 - [Vpn Fragmentation Issues Why Some Websites Break And How Fix](/privacy-tools-guide/vpn-fragmentation-issues-why-some-websites-break-and-how-fix/)
 - [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
+- [ChatGPT Image Upload Not Working Fix (2026)](https://theluckystrike.github.io/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

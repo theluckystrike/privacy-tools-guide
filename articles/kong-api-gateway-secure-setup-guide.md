@@ -326,5 +326,6 @@ Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_
 - [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
 - [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
 - [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

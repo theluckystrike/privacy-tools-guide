@@ -540,5 +540,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

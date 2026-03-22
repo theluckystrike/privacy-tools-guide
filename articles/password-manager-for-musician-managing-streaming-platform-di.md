@@ -534,5 +534,6 @@ Year 5+: Transition Planning
 - [Password Manager For Accountant Managing Client Financial](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
 - [Password Manager For Student Managing University Financial](/privacy-tools-guide/password-manager-for-student-managing-university-financial-a/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

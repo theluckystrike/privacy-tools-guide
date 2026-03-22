@@ -501,4 +501,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

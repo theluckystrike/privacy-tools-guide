@@ -420,5 +420,6 @@ The practical hybrid: use a managed service for the end-user-facing file sharing
 - [Chrome Extension File Sharing Quick](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
 - [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
+- [Best AI Tool for Generating Accessible Cookie Consent](https://theluckystrike.github.io/ai-tools-compared/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

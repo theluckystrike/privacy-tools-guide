@@ -362,5 +362,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

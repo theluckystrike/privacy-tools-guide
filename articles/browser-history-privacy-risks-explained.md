@@ -330,5 +330,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Browser for iOS Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-ios-privacy-2026/)
 - [Best Browser for Streaming Privacy 2026: A Developer Guide](/privacy-tools-guide/best-browser-for-streaming-privacy-2026/)
 - [Tor Browser vs Epic Privacy Browser Comparison](/privacy-tools-guide/tor-browser-vs-epic-privacy-browser-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

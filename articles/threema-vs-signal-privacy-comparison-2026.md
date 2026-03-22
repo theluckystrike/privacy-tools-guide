@@ -415,5 +415,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Wickr vs Signal for Enterprise Use: A Technical Comparison](/privacy-tools-guide/wickr-vs-signal-for-enterprise-use/)
 - [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

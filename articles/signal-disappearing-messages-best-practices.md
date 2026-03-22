@@ -363,6 +363,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
 - [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

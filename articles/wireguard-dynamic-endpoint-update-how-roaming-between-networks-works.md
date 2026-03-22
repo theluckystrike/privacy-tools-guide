@@ -334,5 +334,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [WireGuard Performance Tuning for Large File Transfer](/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/)
 - [How to Set Up WireGuard with IPv6](/privacy-tools-guide/how-to-set-up-wireguard-with-ipv6/)
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [AI Autocomplete Behavior Differences Between VS Code](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

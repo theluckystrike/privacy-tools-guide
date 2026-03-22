@@ -258,5 +258,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 - [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

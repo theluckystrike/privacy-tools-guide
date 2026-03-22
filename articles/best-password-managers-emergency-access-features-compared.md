@@ -365,5 +365,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [How To Create Tiered Access Plan Giving Executor Immediate](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

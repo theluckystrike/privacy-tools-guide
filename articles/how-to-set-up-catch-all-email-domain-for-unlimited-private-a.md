@@ -263,6 +263,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Set Up Private Bitcoin Full Node At Home For Transact](/privacy-tools-guide/how-to-set-up-private-bitcoin-full-node-at-home-for-transact/)
 - [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

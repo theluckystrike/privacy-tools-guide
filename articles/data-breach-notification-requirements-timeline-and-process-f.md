@@ -285,5 +285,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
 - [What Happens When Your Password Appears In Data Breach](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

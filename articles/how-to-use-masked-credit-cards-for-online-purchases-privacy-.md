@@ -355,5 +355,6 @@ Industry movement toward virtual cards continues:
 - [Anonymous Payment Methods For Online Services When You](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
 - [How To Use Abine Blur For Masked Emails Phone Numbers](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

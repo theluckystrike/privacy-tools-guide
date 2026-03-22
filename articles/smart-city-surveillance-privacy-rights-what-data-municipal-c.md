@@ -249,5 +249,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [India Cctv Surveillance Expansion Privacy Implications](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/privacy-tools-guide/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -394,6 +394,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
 - [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
 - [Migrating From Chrome Saved Passwords To Dedicated Manager S](/privacy-tools-guide/migrating-from-chrome-saved-passwords-to-dedicated-manager-s/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

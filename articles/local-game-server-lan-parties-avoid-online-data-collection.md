@@ -246,6 +246,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Android Google Account Privacy Settings: Complete Guide to Limiting Data Collection 2026](/android-google-account-privacy-settings-complete-guide-to-li/)
 - [EA App Origin Replacement Privacy Data Collection Review](/ea-app-origin-replacement-privacy-data-collection-review-ana/)
+- [How to Set Up CrowdSec for Server Security](/privacy-tools-guide/crowdsec-server-security-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

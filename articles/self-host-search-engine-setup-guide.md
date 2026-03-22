@@ -331,6 +331,7 @@ docker stats searxng
 - [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 - [How to Disable Google AMP Tracking in Search Results Guide](/privacy-tools-guide/how-to-disable-google-amp-tracking-in-search-results-guide/)
 - [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

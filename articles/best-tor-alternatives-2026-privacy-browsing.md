@@ -440,6 +440,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [VPN for Safe Browsing on Public WiFi in Airports](/privacy-tools-guide/vpn-for-safe-browsing-on-public-wifi-in-airports/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

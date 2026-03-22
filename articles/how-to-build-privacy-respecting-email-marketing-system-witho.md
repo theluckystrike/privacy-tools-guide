@@ -327,6 +327,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [Mesh Wifi System Privacy Comparison Eero Vs Orbi Vs Deco Dat](/privacy-tools-guide/mesh-wifi-system-privacy-comparison-eero-vs-orbi-vs-deco-dat/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

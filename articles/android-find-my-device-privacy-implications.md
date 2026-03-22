@@ -338,5 +338,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 - [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

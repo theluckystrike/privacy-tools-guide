@@ -375,5 +375,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Compartmentalized Identity For Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/privacy-tools-guide/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

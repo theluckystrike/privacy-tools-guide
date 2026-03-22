@@ -263,5 +263,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Data Protection Officer Role Responsibilities Guide](/privacy-tools-guide/data-protection-officer-role-responsibilities-guide/)
 - [India Data Protection Bill 2026 What It Means For Citizen](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

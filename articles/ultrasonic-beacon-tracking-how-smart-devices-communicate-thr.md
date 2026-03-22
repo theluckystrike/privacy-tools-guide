@@ -475,4 +475,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [Bounce Tracking How Redirects Through Tracker Domains](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
 - [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

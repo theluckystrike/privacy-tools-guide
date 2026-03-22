@@ -456,6 +456,8 @@ upstream_mode: fastest  # Use fastest upstream, not load-balanced
 - [Home Network Privacy: Pi-hole DNS Filtering Guide](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
 - [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

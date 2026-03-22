@@ -249,6 +249,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
 - [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

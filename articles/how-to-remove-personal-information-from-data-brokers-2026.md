@@ -322,6 +322,7 @@ A: File complaint with state AG (US) or data protection authority (EU). DeleteMe
 - [How to remove yourself from data broker sites step by step](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)
 - [Identity Graph What Data Brokers Know About You And How](/privacy-tools-guide/identity-graph-what-data-brokers-know-about-you-and-how-they/)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

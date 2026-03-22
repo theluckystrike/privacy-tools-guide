@@ -312,5 +312,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Tools For Whistle Blower Preparing Disclosure](/privacy-tools-guide/privacy-tools-for-whistle-blower-preparing-disclosure-protec/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

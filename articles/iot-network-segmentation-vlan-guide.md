@@ -320,6 +320,7 @@ for ip in main_lan_ips:
 - [OpenWrt VPN Router WireGuard Setup](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Enterprise AI Coding Tool Network Security Requirements](https://theluckystrike.github.io/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
 
 ---
 

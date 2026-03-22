@@ -343,6 +343,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Firefox Reset And Clean Install Guide Privacy](/privacy-tools-guide/firefox-reset-and-clean-install-guide-privacy/)
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

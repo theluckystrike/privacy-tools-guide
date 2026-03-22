@@ -355,4 +355,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
 - [Setting Up Encrypted Email with Tutanota](/privacy-tools-guide/tutanota-encrypted-email-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -289,5 +289,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
 - [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -458,4 +458,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 - [Vpn That Works In Iran 2026 Tested And Confirmed](/privacy-tools-guide/vpn-that-works-in-iran-2026-tested-and-confirmed/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

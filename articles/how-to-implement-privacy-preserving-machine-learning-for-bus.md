@@ -246,5 +246,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Privacy Preserving Customer Analytics](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

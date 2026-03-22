@@ -484,5 +484,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

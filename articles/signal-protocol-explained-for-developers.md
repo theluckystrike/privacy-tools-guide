@@ -256,6 +256,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
 - [Mls Messaging Layer Security Protocol How It Will Change](/privacy-tools-guide/mls-messaging-layer-security-protocol-how-it-will-change-group-encryption-2026/)
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -524,6 +524,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
 - [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

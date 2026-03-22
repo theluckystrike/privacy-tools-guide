@@ -273,4 +273,5 @@ Check the export options before committing. Most tools let you export your data,
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 - [How To Use Signal For Early Dating Conversations Instead](/privacy-tools-guide/how-to-use-signal-for-early-dating-conversations-instead-of-/)
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

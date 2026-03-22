@@ -473,5 +473,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Passkey User Experience Comparison Across Chrome](/privacy-tools-guide/passkey-user-experience-comparison-across-chrome-safari-firefox-edge-2026/)
 - [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

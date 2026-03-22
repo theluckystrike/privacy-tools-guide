@@ -455,6 +455,7 @@ Check the export options before committing. Most tools let you export your data,
 - [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)
 - [Passkey Support By Website 2026](/privacy-tools-guide/passkey-support-by-website-2026/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

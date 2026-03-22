@@ -240,6 +240,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [How To Set Up Encrypted Dead Drop Using Onionshare For Sourc](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

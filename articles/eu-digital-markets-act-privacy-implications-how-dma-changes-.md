@@ -274,5 +274,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [India Cctv Surveillance Expansion Privacy Implications](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 - [China Social Credit System Digital Privacy Implications](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](https://theluckystrike.github.io/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

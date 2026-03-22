@@ -475,6 +475,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Encrypted Cloud Storage for Small Business 2026](/privacy-tools-guide/encrypted-cloud-storage-for-small-business-2026/)
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
 - [Best Encrypted Chat for iOS Privacy 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-chat-for-ios-privacy-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

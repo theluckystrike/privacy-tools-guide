@@ -442,5 +442,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [GDPR Article 17 Erasure Implementation](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
 - [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

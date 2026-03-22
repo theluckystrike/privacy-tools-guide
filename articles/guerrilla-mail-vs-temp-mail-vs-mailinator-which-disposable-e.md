@@ -242,5 +242,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [iPhone Mail Privacy Protection: How It](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 - [Tuta Mail vs ProtonMail 2026 Review: A Technical Comparison](/privacy-tools-guide/tuta-mail-vs-protonmail-2026-review/)
 - [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

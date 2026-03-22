@@ -156,6 +156,7 @@ Best practice:
 - [Privacy Risks of QR Codes Explained](/privacy-tools-guide/privacy-risks-of-qr-codes-explained/)
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
 - [AI Code Completion for Flutter BLoC Pattern Event and State](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

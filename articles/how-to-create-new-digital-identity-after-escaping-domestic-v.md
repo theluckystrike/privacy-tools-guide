@@ -502,5 +502,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
 - [How To Create Sealed Envelope With Digital Credentials](/privacy-tools-guide/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
+- [How to Create Custom System Prompt for ChatGPT API That](https://theluckystrike.github.io/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

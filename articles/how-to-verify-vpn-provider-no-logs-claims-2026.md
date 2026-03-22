@@ -308,6 +308,7 @@ The cost difference is minimal ($5-8/month). The privacy difference is substanti
 - [What VPN Logs Actually Mean No Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [VPN Provider Annual Audit Results: Independent Security](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
 - [What VPN Logs Actually Mean: No-Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

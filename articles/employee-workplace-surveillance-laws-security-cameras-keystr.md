@@ -373,5 +373,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Detect Surveillance Cameras And Microphones In Your](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
 - [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 - [Employee Email Monitoring Legal Requirements And Privacy](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -394,5 +394,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [Protect Yourself from Doxxing After Meeting Someone](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [Best AI Assistant for Debugging AWS Lambda Cold Start](https://theluckystrike.github.io/ai-tools-compared/ai-assistant-for-debugging-aws-lambda-cold-start-timeout-issues-in-vpc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

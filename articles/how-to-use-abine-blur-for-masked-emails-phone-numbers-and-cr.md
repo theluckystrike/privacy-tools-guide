@@ -407,5 +407,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
 - [Anonymous Phone Number Services for Verification](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

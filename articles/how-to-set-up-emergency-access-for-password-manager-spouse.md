@@ -288,5 +288,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 - [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

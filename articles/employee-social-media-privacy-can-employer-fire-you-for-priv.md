@@ -283,6 +283,7 @@ This documentation becomes evidence if you pursue legal action. Courts heavily w
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [AI Tools for Social Media Analytics: A Practical Guide](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-social-media-analytics/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

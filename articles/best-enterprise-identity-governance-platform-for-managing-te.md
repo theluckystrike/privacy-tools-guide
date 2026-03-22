@@ -399,5 +399,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [Keeper vs Dashlane Enterprise Comparison for Developers](/privacy-tools-guide/keeper-vs-dashlane-enterprise-comparison/)
 - [How To Set Up Emergency Access For Password Manager](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -342,5 +342,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Use Mac Address Randomization On Linux To Prevent](/privacy-tools-guide/how-to-use-mac-address-randomization-on-linux-to-prevent-wif/)
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
 - [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -435,6 +435,7 @@ OPNsense: Automatic monthly updates recommended
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 - [How to Set Up a VPN on Your Router](/privacy-tools-guide/vpn-on-router-setup-guide/)
 - [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

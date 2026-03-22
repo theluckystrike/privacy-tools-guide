@@ -364,5 +364,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Post Quantum Encryption In Messaging Apps Preparing](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
 - [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 - [How To Communicate Securely When All Messaging Apps Are](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
+- [How to Build Voice AI Apps with Claude](https://theluckystrike.github.io/ai-tools-compared/how-to-build-voice-ai-apps-with-claude)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

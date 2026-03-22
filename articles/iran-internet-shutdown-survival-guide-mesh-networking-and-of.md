@@ -266,5 +266,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 - [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

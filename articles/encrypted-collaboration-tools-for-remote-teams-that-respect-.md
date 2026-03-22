@@ -473,5 +473,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Secure Document Collaboration Alternatives to Google](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
 - [Best Secure File Sharing Tools for Teams Handling](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [Privacy Engineer Toolkit: Essential Tools Every Data](/privacy-tools-guide/privacy-engineer-toolkit-essential-tools-every-data-protecti/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -287,6 +287,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Protonmail Vpn Integration How Combining Email And Vpn Impro](/privacy-tools-guide/protonmail-vpn-integration-how-combining-email-and-vpn-impro/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

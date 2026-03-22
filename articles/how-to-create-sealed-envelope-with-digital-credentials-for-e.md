@@ -335,5 +335,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 - [Digital Power of Attorney: What Authority It Grants Over](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
+- [AI Code Completion for Java Record Classes and Sealed](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

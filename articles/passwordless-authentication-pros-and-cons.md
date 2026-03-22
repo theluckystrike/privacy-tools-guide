@@ -395,6 +395,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 - [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 - [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](https://theluckystrike.github.io/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -264,6 +264,7 @@ echo "Scan clean. Proceeding with push."
 - [Privacy-Focused CPU Benchmark Tool That Does Not Send](/privacy-tools-guide/privacy-focused-cpu-benchmark-tool-that-does-not-send-hardwa/)
 - [Setting Up ClamAV Antivirus on Linux](/privacy-tools-guide/clamav-antivirus-linux-setup-guide/)
 - [Best Privacy-Focused Monitoring Tool That Does Not Collect](/privacy-tools-guide/best-privacy-focused-monitoring-tool-that-does-not-collect-s/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -275,5 +275,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
 - [How To Use Age Encryption For Secure File Sharing Command](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

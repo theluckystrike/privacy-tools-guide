@@ -167,6 +167,8 @@ chmod +x passgen.sh
 - [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)
 - [How to Remove Metadata from PDF Files](/privacy-tools-guide/how-to-remove-metadata-from-pdf-files/)
 - [Privacy-Focused Cloud Email Providers Compared](/privacy-tools-guide/privacy-focused-cloud-email-providers-compared/)
+- [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

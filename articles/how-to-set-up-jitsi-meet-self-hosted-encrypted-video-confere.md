@@ -308,5 +308,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
 - [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

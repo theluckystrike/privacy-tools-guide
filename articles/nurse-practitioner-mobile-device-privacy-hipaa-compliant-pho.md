@@ -381,5 +381,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 - [Dentist Patient Records Privacy Hipaa Compliant Digital](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 - [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

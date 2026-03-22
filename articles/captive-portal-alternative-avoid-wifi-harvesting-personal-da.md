@@ -391,5 +391,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 - [Wifi Probe Request Tracking How Your Phone Broadcasts](/privacy-tools-guide/wifi-probe-request-tracking-how-your-phone-broadcasts-identi/)
 - [Password Manager For Insurance Agent Managing Carrier Portal](/privacy-tools-guide/password-manager-for-insurance-agent-managing-carrier-portal/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

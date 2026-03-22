@@ -461,5 +461,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Protect Yourself From Sim Swap Attack Prevention](/privacy-tools-guide/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

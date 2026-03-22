@@ -283,4 +283,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Healthcare Privacy Rights Hipaa What Patients Can Request](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

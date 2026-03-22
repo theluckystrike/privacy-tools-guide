@@ -274,6 +274,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 - [Use Email Subaddressing Plus Addressing For Tracking Which](/privacy-tools-guide/how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/)
 - [Ios Mail Privacy Protection How It Prevents Email Tracking O](/privacy-tools-guide/ios-mail-privacy-protection-how-it-prevents-email-tracking-o/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

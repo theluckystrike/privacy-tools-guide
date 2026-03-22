@@ -246,4 +246,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Anonymous Payment Methods For Online Services When You](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
 - [Anonymous Domain Registration How To Buy Domain](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)
 - [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

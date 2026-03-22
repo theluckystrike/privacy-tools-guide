@@ -448,5 +448,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vpn That Works In Iran 2026 Tested And Confirmed](/privacy-tools-guide/vpn-that-works-in-iran-2026-tested-and-confirmed/)
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
 - [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/privacy-tools-guide/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

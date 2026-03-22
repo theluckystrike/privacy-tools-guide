@@ -290,6 +290,7 @@ npm outdated --json | jq -r 'to_entries[] | select(.value.current != .value.late
 - [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
 - [How to Use Lynis for Linux Security Auditing](/privacy-tools-guide/lynis-linux-security-audit-guide/)
 - [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

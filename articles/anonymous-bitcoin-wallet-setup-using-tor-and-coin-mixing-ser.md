@@ -420,6 +420,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
 - [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 - [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

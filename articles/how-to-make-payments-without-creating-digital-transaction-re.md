@@ -282,4 +282,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 - [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
 - [How To Minimize Digital Footprint Guide 2026](/privacy-tools-guide/how-to-minimize-digital-footprint-guide-2026/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

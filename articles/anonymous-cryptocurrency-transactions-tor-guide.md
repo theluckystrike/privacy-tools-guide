@@ -336,6 +336,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [How to Use Tor Safely in Country That Criminalizes Its](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
 - [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

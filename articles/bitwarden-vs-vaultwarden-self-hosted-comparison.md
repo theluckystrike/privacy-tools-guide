@@ -579,5 +579,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 - [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
 - [How to Set Up Self-Hosted Password Manager Vaultwarden 2026](/privacy-tools-guide/how-to-set-up-self-hosted-password-manager-vaultwarden-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -279,6 +279,7 @@ echo "Password rotated. Restart application to pick up new credentials."
 - [How to Secure NAS Storage for Home Use](/privacy-tools-guide/secure-nas-home-storage-guide/)
 - [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
 - [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

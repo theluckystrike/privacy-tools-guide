@@ -271,6 +271,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
 - [macOS Sequoia Privacy Features Review 2026: Complete Guide](/privacy-tools-guide/macos-sequoia-privacy-features-review-2026/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

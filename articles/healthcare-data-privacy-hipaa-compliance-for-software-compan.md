@@ -321,5 +321,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Insurance Company Data Collection Privacy What Health](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
 - [Privacy Setup For Physical Therapist Patient Exercise Data](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
 - [Privacy Risks of Fitness Trackers and Health Data 2026](/privacy-tools-guide/privacy-risks-of-fitness-trackers-health-data-2026/)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -454,6 +454,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

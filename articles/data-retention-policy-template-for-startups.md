@@ -249,5 +249,6 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 - [Coffee Meets Bagel Data Retention Policy How Long The App](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

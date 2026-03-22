@@ -275,5 +275,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Wireshark Basics for Privacy Network Analysis](/privacy-tools-guide/wireshark-privacy-network-analysis-guide/)
 - [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 - [Vpn For Accessing Crypto Exchanges In Restricted Countries](/privacy-tools-guide/vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

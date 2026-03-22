@@ -376,5 +376,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Encrypted Backup Of Chat History How To Preserve Messages](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
 - [Best Accessible Encrypted Cloud Backup With One Button](/privacy-tools-guide/best-accessible-encrypted-cloud-backup-with-one-button-resto/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

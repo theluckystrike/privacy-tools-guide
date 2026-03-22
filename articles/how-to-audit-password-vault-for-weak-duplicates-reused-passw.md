@@ -337,6 +337,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

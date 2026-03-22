@@ -158,6 +158,7 @@ The attestation quote can be sent to a remote server that verifies PCR values ma
 - [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 - [How To Set Up Secureboot Plus Encryption On Fedora Linux](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
+- [AI Tools for Resolving SSL Certificate Chain Verification](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

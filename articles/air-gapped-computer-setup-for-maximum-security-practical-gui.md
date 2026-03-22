@@ -477,6 +477,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
 - [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
 - [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

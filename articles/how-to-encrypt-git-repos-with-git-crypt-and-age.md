@@ -426,6 +426,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

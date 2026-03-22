@@ -275,5 +275,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Enterprise Privacy Compliance Tool Comparison for GDPR](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 - [How To Revoke Previously Given Consent For Data Processing](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

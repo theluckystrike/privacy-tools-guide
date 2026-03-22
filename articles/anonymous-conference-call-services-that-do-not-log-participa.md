@@ -423,5 +423,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Voip Phone Number Privacy Risks What Sip Providers Log](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
 - [Anonymous Vehicle Registration Options For Keeping Home](/privacy-tools-guide/anonymous-vehicle-registration-options-for-keeping-home-addr/)
 - [Someone Signed Up for Services Using My Email](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
+- [AI Autocomplete Accuracy for Boilerplate Code vs Complex](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

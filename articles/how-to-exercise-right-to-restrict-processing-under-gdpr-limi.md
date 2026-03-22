@@ -247,5 +247,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Revoke Previously Given Consent For Data Processing](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
 - [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

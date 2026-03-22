@@ -248,5 +248,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Emergency Access For Password Manager](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 - [How To Create Tiered Access Plan Giving Executor Immediate](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
 - [Apple Digital Legacy Program How To Add Legacy Contacts](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

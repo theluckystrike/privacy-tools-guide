@@ -334,6 +334,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Wireguard Tunnel For Encrypted Peer To Peer Commu](/privacy-tools-guide/how-to-use-wireguard-tunnel-for-encrypted-peer-to-peer-commu/)
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

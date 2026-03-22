@@ -309,5 +309,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
 - [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

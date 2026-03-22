@@ -574,6 +574,7 @@ Do: Enable 2FA on email, phone carrier account, social media, banking
 - [Smartphone Security for Abuse Survivors](/privacy-tools-guide/smartphone-security-abuse-survivors/)
 - [Secure Messaging Apps for Abuse Survivors](/privacy-tools-guide/secure-messaging-abuse-survivors/)
 - [How to Secure Your Accounts From Partner Surveillance](/privacy-tools-guide/secure-accounts-partner-surveillance/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 {% endraw %}
 

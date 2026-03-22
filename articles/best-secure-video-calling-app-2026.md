@@ -404,6 +404,7 @@ Use hosted solutions if you lack these skills.
 - [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
 - [Best Encrypted SMS App for Android 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-sms-app-android-2026/)
 - [Best Secure Group Chat App 2026](/privacy-tools-guide/best-secure-group-chat-app-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

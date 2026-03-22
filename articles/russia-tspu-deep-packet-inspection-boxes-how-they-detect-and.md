@@ -241,5 +241,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Russia Vpn Ban Which Services Still Work After Roskomnadzor](/privacy-tools-guide/russia-vpn-ban-which-services-still-work-after-roskomnadzor-/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
 - [VPN Traffic Obfuscation Techniques](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compared-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

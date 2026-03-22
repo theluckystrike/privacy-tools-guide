@@ -223,6 +223,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Advanced Sync Architecture and Cryptography
 
 Understanding how password managers sync data securely helps you evaluate whether your setup is truly protecting your credentials.

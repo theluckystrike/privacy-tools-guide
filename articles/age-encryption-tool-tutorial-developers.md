@@ -330,5 +330,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use Age Encryption for File Sharing 2026](/privacy-tools-guide/how-to-use-age-encryption-for-file-sharing-2026/)
 - [How to Encrypt Git Repos with git-crypt and age](/privacy-tools-guide/how-to-encrypt-git-repos-with-git-crypt-and-age/)
 - [How To Implement Customer Data Encryption At Rest](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

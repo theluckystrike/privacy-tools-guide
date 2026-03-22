@@ -459,5 +459,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Battery API Fingerprinting How Battery Status Tracks You](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 - [Optimize CalyxOS Battery Life with Privacy Features Enabled](/privacy-tools-guide/how-to-optimize-calyx-os-battery-life-with-privacy-features-/)
 - [How to Reduce VPN Battery Drain on Mobile While Keeping](/privacy-tools-guide/how-to-reduce-vpn-battery-drain-on-mobile-while-keeping-priv/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

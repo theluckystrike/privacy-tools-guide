@@ -293,6 +293,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs Exp](/privacy-tools-guide/vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/)
 - [How To Create Sealed Envelope With Digital Credentials For E](/privacy-tools-guide/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

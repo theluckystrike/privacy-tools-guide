@@ -296,6 +296,7 @@ If you're choosing a protocol for team communication:
 - [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 - [Signal Protocol Explained for Developers](/privacy-tools-guide/signal-protocol-explained-for-developers/)
 - [Threema vs Signal Privacy Comparison 2026](/privacy-tools-guide/threema-vs-signal-privacy-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

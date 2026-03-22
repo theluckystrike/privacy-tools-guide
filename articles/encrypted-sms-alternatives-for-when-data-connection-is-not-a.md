@@ -303,6 +303,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
 - [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

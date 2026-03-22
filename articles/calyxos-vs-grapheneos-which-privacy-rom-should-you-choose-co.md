@@ -303,5 +303,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -327,5 +327,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows 11 Telemetry Disable Guide](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
 - [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

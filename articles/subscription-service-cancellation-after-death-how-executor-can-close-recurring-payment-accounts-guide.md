@@ -307,6 +307,7 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 - [How To Document All Online Accounts For Executor Of Estate C](/privacy-tools-guide/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 - [Anonymous Payment Methods For Online Services When You Canno](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
 - [India Upi Payment Privacy What Digital Payment Metadata Gove](/privacy-tools-guide/india-upi-payment-privacy-what-digital-payment-metadata-gove/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -323,5 +323,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
 - [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

@@ -282,5 +282,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Remove Personal Information from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-information-from-data-brokers-2026/)
 - [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [Data Broker Opt Out Automation Tools That Continuously](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

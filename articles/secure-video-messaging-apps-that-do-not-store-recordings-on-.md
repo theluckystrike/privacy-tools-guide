@@ -352,5 +352,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Bumble Video Call Privacy What Data Is Transmitted](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
 - [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

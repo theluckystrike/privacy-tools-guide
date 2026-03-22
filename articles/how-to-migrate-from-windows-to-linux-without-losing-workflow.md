@@ -286,5 +286,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Disable All Windows 11 Telemetry Endpoints](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

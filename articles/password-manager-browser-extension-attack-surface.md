@@ -322,5 +322,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Browser Password Manager Vs Dedicated](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 - [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://theluckystrike.github.io/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

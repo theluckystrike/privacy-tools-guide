@@ -284,5 +284,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows Sandbox Privacy Testing Guide 2026](/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/)
 - [Privacy Tools For Whistle Blower Preparing Disclosure](/privacy-tools-guide/privacy-tools-for-whistle-blower-preparing-disclosure-protec/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -293,6 +293,7 @@ Secure file sharing isn't about the strongest encryption—it's about the comple
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
 - [Secure Screen Sharing Tools That Encrypt Video Stream End](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
 - [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -494,5 +494,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -282,6 +282,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Prevent Dating App Photos From Appearing In Google Im](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

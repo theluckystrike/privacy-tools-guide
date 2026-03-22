@@ -391,5 +391,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Does ExpressVPN Work in Oman? 2026 Latest Tested](/privacy-tools-guide/does-expressvpn-work-in-oman-2026-latest-tested-results/)
 - [Does Expressvpn Still Work In Turkey 2026 Latest](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)
 - [How VPN Reconnection Works After Network Switch: Technical](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

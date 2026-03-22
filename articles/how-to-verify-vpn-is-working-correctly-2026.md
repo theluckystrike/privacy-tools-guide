@@ -404,5 +404,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [AI Code Suggestion Quality When Working With Environment](https://theluckystrike.github.io/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

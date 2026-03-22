@@ -291,6 +291,7 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 - [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

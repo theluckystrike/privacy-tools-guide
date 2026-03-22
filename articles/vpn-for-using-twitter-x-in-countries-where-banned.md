@@ -357,5 +357,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Using Snapchat in Countries Where Restricted 2026](/privacy-tools-guide/vpn-for-using-snapchat-in-countries-where-restricted-2026/)
 - [Best VPN for Using WhatsApp in China 2026](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 - [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

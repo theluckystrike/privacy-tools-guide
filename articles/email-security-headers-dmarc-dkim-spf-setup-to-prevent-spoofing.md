@@ -419,5 +419,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Detect Phishing Emails with Headers](/privacy-tools-guide/detect-phishing-emails-headers-guide/)
 - [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
 - [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

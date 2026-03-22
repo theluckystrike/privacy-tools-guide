@@ -400,5 +400,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager Autofill Security](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [Privacy Risks of Browser Autofill and How to Mitigate 2026](/privacy-tools-guide/privacy-tools-guide/privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

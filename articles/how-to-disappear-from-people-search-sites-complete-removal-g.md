@@ -279,5 +279,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [What To Do If Your Personal Data Appears On People](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
 - [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

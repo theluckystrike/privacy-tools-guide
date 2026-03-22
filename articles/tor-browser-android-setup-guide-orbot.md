@@ -294,5 +294,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
 - [How To Use Tor Browser For Creating Anonymous Accounts](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

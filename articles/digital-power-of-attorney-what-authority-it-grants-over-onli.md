@@ -288,5 +288,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Audit Your Digital Footprint And Find All Accounts](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
 - [Digital Business Asset Inheritance How To Transfer Saas](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 - [Dentist Patient Records Privacy Hipaa Compliant Digital](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

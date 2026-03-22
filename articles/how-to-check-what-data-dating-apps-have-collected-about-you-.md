@@ -270,5 +270,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [Privacy Risks of Fitness Apps and Health Data Sharing in](/privacy-tools-guide/privacy-risks-of-fitness-apps-health-data-sharing-2026/---)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -339,5 +339,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Someone Signed Up for Services Using My Email](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
 - [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 - [Set Up Catch All Email Domain For Unlimited Private](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
