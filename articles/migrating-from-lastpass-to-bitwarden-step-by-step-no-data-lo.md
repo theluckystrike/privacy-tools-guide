@@ -1,5 +1,7 @@
 ---
 permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
+description: "Learn migrating from lastpass to bitwarden step by step no data lo with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Migrating from LastPass to Bitwarden No Data Loss"

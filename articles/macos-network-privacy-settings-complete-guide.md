@@ -1,5 +1,7 @@
 ---
 permalink: /macos-network-privacy-settings-complete-guide/
+description: "Follow this guide to macos network privacy settings complete guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "macOS Network Privacy Settings Complete Guide 2026"

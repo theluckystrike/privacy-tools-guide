@@ -1,5 +1,7 @@
 ---
 permalink: /matrix-vs-signal-decentralized-messaging/
+description: "Compare matrix vs signal decentralized messaging with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Matrix Vs Signal Decentralized Messaging"

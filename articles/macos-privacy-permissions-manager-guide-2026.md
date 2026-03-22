@@ -1,5 +1,7 @@
 ---
 permalink: /macos-privacy-permissions-manager-guide-2026/
+description: "Follow this guide to macos privacy permissions manager guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "macOS Privacy Permissions Manager Guide 2026"

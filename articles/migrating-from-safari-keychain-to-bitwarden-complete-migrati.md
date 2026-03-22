@@ -1,5 +1,7 @@
 ---
 permalink: /migrating-from-safari-keychain-to-bitwarden-complete-migrati/
+description: "Learn migrating from safari keychain to bitwarden complete migrati with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Migrating from Safari Keychain to Bitwarden"

@@ -1,5 +1,7 @@
 ---
 permalink: /mastodon-vs-twitter-privacy-comparison-2026/
+description: "Compare mastodon vs twitter privacy comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 layout: default
 title: "Mastodon vs Twitter: Privacy Comparison 2026"

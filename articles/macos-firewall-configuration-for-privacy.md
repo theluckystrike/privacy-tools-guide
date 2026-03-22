@@ -1,5 +1,7 @@
 ---
 permalink: /macos-firewall-configuration-for-privacy/
+description: "Learn macos firewall configuration for privacy with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 
 

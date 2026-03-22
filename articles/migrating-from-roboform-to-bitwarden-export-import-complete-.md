@@ -1,5 +1,7 @@
 ---
 permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
+description: "Learn migrating from roboform to bitwarden export import complete  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Migrating from RoboForm to Bitwarden"

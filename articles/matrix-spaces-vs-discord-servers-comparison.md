@@ -1,5 +1,7 @@
 ---
 permalink: /matrix-spaces-vs-discord-servers-comparison/
+description: "Compare matrix spaces vs discord servers comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"

@@ -1,5 +1,7 @@
 ---
 permalink: /macos-privacy-permissions-explained-which-tcc-database-entri/
+description: "Learn macos privacy permissions explained which tcc database entri with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "macOS Privacy Permissions Explained Which Tcc Database"
