@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]---

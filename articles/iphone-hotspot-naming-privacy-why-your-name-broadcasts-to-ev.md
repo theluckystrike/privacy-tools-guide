@@ -9,7 +9,7 @@ permalink: /iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 6
 intent-checked: true
 voice-checked: true---
 
