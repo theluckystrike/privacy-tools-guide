@@ -1,6 +1,14 @@
 ---
+layout: default
+
 permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-securely/
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "VPN for Accessing Medical Records Abroad While"
 description: "Accessing your medical records while traveling abroad is increasingly important in today's interconnected world. Whether you need to consult with your primary"

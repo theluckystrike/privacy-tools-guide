@@ -1,6 +1,14 @@
 ---
+layout: default
+
 permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "Russia VPN Provider Compliance Which Services Handed"
 description: "Avoid commercial VPN providers operating in Russia—many have handed user data to Roskomnadzor. Instead, use self-hosted Shadowsocks or NaiveProxy servers on"
@@ -438,7 +446,7 @@ If you're detected using prohibited VPN:
 - **Use legal VPNs**: Some providers are registered with Russian authorities and operate legally
 - **Consider Tor**: Tor browser is more legally ambiguous than commercial VPNs
 
-Understand the legal landscape:
+Understand the legal ecosystem:
 
 ```
 Russia VPN Law Status (2026):
