@@ -33,6 +33,15 @@ Mobile app fingerprinting is a sophisticated tracking technique that allows apps
 
 This guide explains how mobile fingerprinting works, what data apps collect, and practical techniques you can use to minimize your digital footprint on iOS and Android devices.
 
+## Key Takeaways
+
+- **Enter a privacy-focused provider**: like `dns.privacy` or `nextdns.io` #### Restrict Background Activity Limit how apps run in the background: 1.
+- **Enable the feature and**: use your apps normally 3.
+- **Review which apps access**: your data most frequently 4.
+- **Use personal profile for**: everyday apps 4.
+- **This guide explains how**: mobile fingerprinting works, what data apps collect, and practical techniques you can use to minimize your digital footprint on iOS and Android devices.
+- **Even if you reset**: your advertising ID or use a VPN, apps can often re-identify your device by matching these fingerprints.
+
 ## What Is Mobile App Fingerprinting?
 
 Mobile app fingerprinting is the process of collecting multiple data points from your device to create a unique identifier that persists across sessions. While traditional tracking relies on cookies or advertising IDs that users can reset, fingerprinting builds a persistent profile using hardware and software characteristics that are difficult or impossible to change.

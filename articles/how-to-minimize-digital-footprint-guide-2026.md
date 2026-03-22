@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Your digital footprint encompasses every data point you leave behind while using the internet—search queries, browsing history, social media activity, device telemetry, and metadata. For developers and power users, minimizing this footprint requires a multi-layered approach combining browser configuration, network-level protection, data hygiene practices, and automation tools. This guide provides actionable techniques you can implement immediately.
 
+## Key Takeaways
+
+- **Operators that offer free VPN access typically monetize through user data collection**: directly contradicting the privacy purpose.
+- **Use a privacy-respecting DNS**: provider like Quad9 (9.9.9.9) or Cloudflare (1.1.1.1) rather than Google DNS.
+- **For developers and power users**: minimizing this footprint requires a multi-layered approach combining browser configuration, network-level protection, data hygiene practices, and automation tools.
+- **Firefox with the arkenfox**: user.js configuration provides strong anti-fingerprinting protections out of the box.
+- **However**: developers testing web applications should use Firefox with its strict tracking protection in "strict" mode, accessible via `about:config`.
+- **iOS 17+ and Android**: 14+ support system-wide DoH without requiring additional apps.
+
 ## Browser Hardening: First Line of Defense
 
 Browser fingerprinting has become sophisticated enough to track users across sessions without cookies. Firefox with the arkenfox user.js configuration provides strong anti-fingerprinting protections out of the box. Install Firefox and apply the arkenfox configuration:

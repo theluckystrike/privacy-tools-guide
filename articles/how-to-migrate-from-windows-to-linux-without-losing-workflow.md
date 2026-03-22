@@ -31,6 +31,15 @@ intent-checked: true---
 
 Migrate from Windows to Linux without losing productivity by maintaining your development environment through Docker, preserving dotfiles in version control, and finding feature-parity replacements for Windows applications. Linux provides better privacy by default—you can audit code, disable telemetry completely, and control exactly what your system transmits. This guide covers tool replacements, data migration strategies, and post-migration privacy hardening.
 
+## Key Takeaways
+
+- **Choose based on your maintenance preferences rather than assuming one distribution provides inherently better privacy**: all major distributions can be hardened effectively.
+- **Popular privacy-focused Linux distributions**: include Fedora (with its tight SELinux integration), Debian (minimal default packages), and Arch Linux (complete manual control).
+- **Linux provides better privacy by default**: you can audit code, disable telemetry completely, and control exactly what your system transmits.
+- **Services like GitHub provide**: free hosting for private repositories.
+- **Consider switching to a privacy-focused browser during migration**: Firefox with arkenfox hardening, Brave with its built-in tracker blocking, or LibreWolf for maximum privacy.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Linux Provides Better Privacy Foundations
 
 Windows collects significant telemetry data by default, including keystroke patterns, application usage, and hardware information. Linux distributions offer transparency—you can audit the code, disable telemetry completely, and control exactly what leaves your system. For developers who handle sensitive code or work with confidential data, this control matters.

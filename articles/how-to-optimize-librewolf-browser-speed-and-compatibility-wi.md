@@ -29,6 +29,16 @@ intent-checked: true---
 
 LibreWolf is a privacy-focused fork of Firefox that strips out telemetry, DRM, and proprietary components while maintaining strong tracking protection. However, the default configuration prioritizes privacy over performance, and aggressive anti-tracking can break certain websites. This guide provides practical optimizations for balancing speed, privacy, and website compatibility.
 
+## Key Takeaways
+
+- **UserAgent and Site Compatibility**: Some sites deny service to browsers they do not recognize.
+- **The container-based approach described**: above is preferable for site-specific compatibility.
+- **Page Load Time**: Use Developer Tools → Network tab
+2.
+- **LibreWolf is a privacy-focused**: fork of Firefox that strips out telemetry, DRM, and proprietary components while maintaining strong tracking protection.
+- **LibreWolf stores its additional**: preferences in a `librewolf.cfg` file and a `policies.json` under the application directory.
+- **Unlike Firefox user.js overrides**: that apply per-profile, these files apply globally to all profiles.
+
 ## Understanding LibreWolf's Default Configuration
 
 LibreWolf ships with several privacy features that differ from vanilla Firefox:

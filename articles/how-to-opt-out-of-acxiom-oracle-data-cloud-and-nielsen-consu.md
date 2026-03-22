@@ -33,6 +33,15 @@ Consumer data brokers compile massive profiles containing your browsing habits, 
 
 This guide provides direct opt-out procedures, practical examples, and considerations for developers building privacy-conscious applications.
 
+## Key Takeaways
+
+- **Their data includes demographic details**: purchasing behavior, lifestyle interests, and predictive scores used by marketers for targeting.
+- **They connect offline purchasing**: behavior with online identifiers, creating consumer profiles used for advertising measurement and targeting.
+- **Nielsen**: best known for television ratings, also maintains consumer panels and behavioral databases.
+- **Their consumer information services**: track shopping habits, media consumption, and demographic profiles used for market research.
+- **For complete coverage**: repeat this process for each browser and device you use.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Data Broker Ecosystem
 
 Acxiom, now part of IPG Mediabrands, maintains one of the largest consumer databases in the world, containing information on over 500 million consumers globally. Their data includes demographic details, purchasing behavior, lifestyle interests, and predictive scores used by marketers for targeting.

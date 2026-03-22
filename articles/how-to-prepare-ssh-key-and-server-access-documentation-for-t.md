@@ -33,6 +33,13 @@ Technical estate inheritance refers to the process of transferring digital infra
 
 This guide walks through creating SSH and server access documentation that makes technical inheritance and secure.
 
+## Key Takeaways
+
+- **Use access control lists**: or group-based permissions.
+- **We recommend quarterly reviews**: for active projects and annual reviews for stable infrastructure.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why Technical Estate Documentation Matters
 
 Every organization has critical infrastructure that only certain individuals can access. When those individuals become unavailable—whether due to role changes, extended leave, or unexpected circumstances—their technical knowledge dies with them. This creates operational risk.

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, artificial-intelligence]---
 
 LinkedIn has increasingly turned to AI training as a way to improve its platform and potentially monetize user data. If you're a developer or power user concerned about your professional information being used to train machine learning models, there are specific steps you can take to opt out. This guide walks you through the available methods, their limitations, and additional privacy measures you can implement.
 
+## Key Takeaways
+
+- **Go to Settings &**: Privacy > Privacy > How LinkedIn uses your data 2.
+- **Remove access for any**: apps you no longer use 4.
+- **LinkedIn has increasingly turned**: to AI training as a way to improve its platform and potentially monetize user data.
+- **If you're a developer**: or power user concerned about your professional information being used to train machine learning models, there are specific steps you can take to opt out.
+- **While the company has**: introduced some opt-out mechanisms, the implementation has been inconsistent, and many users remain unaware that their data may be contributing to AI model training.
+- **Toggle off the option**: to allow LinkedIn to use your data for AI training This setting controls whether your content and data can be used to train LinkedIn's AI models.
+
 ## Understanding LinkedIn's AI Data Usage
 
 LinkedIn's privacy policy outlines several ways the platform uses user data, including for "research and development" purposes. While the company has introduced some opt-out mechanisms, the implementation has been inconsistent, and many users remain unaware that their data may be contributing to AI model training.

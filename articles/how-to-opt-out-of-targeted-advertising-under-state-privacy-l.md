@@ -17,6 +17,13 @@ tags: [privacy-tools-guide, privacy]---
 
 Targeted advertising relies on collecting and processing personal data to deliver customized content. State privacy laws in the United States now provide residents with legal mechanisms to opt out of these practices. This guide covers the technical aspects of exercising your rights under various state privacy laws, with practical examples for developers building privacy-respecting applications.
 
+## Key Takeaways
+
+- **Navigate to Settings >**: Privacy > Ad preferences 2.
+- **Third-party audits - Use**: services that check tracking exposure 4.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## State Privacy Laws Overview
 
 Several states have enacted privacy legislation that includes opt-out rights for targeted advertising:
