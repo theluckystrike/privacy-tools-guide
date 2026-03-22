@@ -286,6 +286,40 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
 
+## Operational Security for Bookmark Review Sessions
+
+Treat bookmark review sessions as sensitive operations, not casual browsing. The moment you open your bookmark manager, you reveal your full list of saved URLs to anyone with physical or screen access. Follow a consistent procedure:
+
+1. Close all unrelated windows before opening the bookmark manager
+2. Conduct reviews only on a clean, trusted machine — never on shared or borrowed hardware
+3. If using a window manager with activity logging enabled, disable it before reviewing sensitive folders
+4. After the review, clear recently accessed files lists in both the OS and Tor Browser
+
+This discipline means that even a brief moment of exposure — a shoulder-surf at a cafe, an unexpected screenshare — does not reveal your complete browsing history.
+
+### Separating Clearnet and Onion Bookmark Collections
+
+Storing clearnet and onion bookmarks together creates a correlation risk. An adversary examining your bookmarks can infer that if you visit a news site on clearnet and a related whistleblower submission platform on an onion service, they might be connected to the same investigation.
+
+The recommended practice is a strict split:
+
+- **Clearnet bookmarks**: Only sites you would be comfortable disclosing publicly. Keep the folder name generic ("News," "Reference")
+- **Onion bookmarks**: Stored in a separate encrypted container, mounted only when needed, with descriptive names replaced by codes or numbers
+
+If your threat model is severe enough to require onion services at all, consider whether clearnet bookmarks belong in the same browser profile at all. Tor Browser's isolation features work best when you treat each session as fully compartmentalized.
+
+## Recognizing Phishing and Spoofed Onion Addresses
+
+Bookmark hygiene protects against a specific and underappreciated threat: bookmark poisoning. If your bookmark file is ever accessed by a third party, they can modify a legitimate onion address by one character — creating a spoofed link that redirects you to a phishing site on future visits.
+
+Verify onion addresses you rely on periodically against the original source. For critical services (SecureDrop instances, financial privacy tools), cross-reference the address against:
+
+- The operator's clearnet site (if any)
+- Trusted third-party directories like dark.fail
+- Your own notes from the first verified visit
+
+Do not trust a bookmark you did not personally create from a verified source. Treat inherited or shared bookmark files as untrusted until each URL is verified.
+
 ## Related Articles
 
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
