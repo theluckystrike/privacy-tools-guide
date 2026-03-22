@@ -246,7 +246,118 @@ iOS will auto-discover calendar and contacts endpoints if your server sends the 
 
 ---
 
-## Backup Your Calendar/Contacts Data
+## Migrating from Google Calendar and Google Contacts
+
+Before you can use your own server, you need to export your existing data. Google provides clean export tools for both services.
+
+**Export Google Calendar:**
+
+```
+Google Calendar → Settings (gear icon) → Settings
+→ Import & export → Export
+Downloads a .zip containing .ics files for each calendar
+```
+
+```bash
+# Extract and inspect the export
+unzip calendar_export.zip -d ~/calendar_export
+ls ~/calendar_export/
+# You'll see files like: personal@gmail.com.ics, birthdays.ics
+
+# Import into Radicale by copying to the collection folder
+cp ~/calendar_export/personal.ics \
+  ~/.local/share/radicale/collection-root/yourname/calendar.ics
+```
+
+**Export Google Contacts:**
+
+```
+Google Contacts → Export → Google CSV or vCard format
+```
+
+```bash
+# Convert Google CSV to vCard if needed
+pip install vobject
+
+python3 << 'EOF'
+import csv, vobject
+
+with open('contacts.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        card = vobject.vCard()
+        card.add('fn').value = row['Name']
+        if row['E-mail 1 - Value']:
+            email = card.add('email')
+            email.value = row['E-mail 1 - Value']
+        print(card.serialize())
+EOF
+```
+
+For most users, exporting as vCard (`.vcf`) directly from Google Contacts is simpler — the file imports directly into Radicale or Nextcloud Contacts without conversion.
+
+## Troubleshooting Common Sync Problems
+
+**DAVx5 shows "Sync error" on Android:**
+
+The most common cause is a self-signed TLS certificate. DAVx5 requires a valid certificate chain. Use Let's Encrypt:
+
+```bash
+# Install certbot and get a certificate
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d cal.yourdomain.com
+# Certbot auto-configures nginx and sets up renewal
+```
+
+If you must use a self-signed certificate (internal network only), add it to Android's trusted certificates via Settings → Security → Install certificates.
+
+**Contacts not appearing after sync:**
+
+DAVx5 stores contacts in a separate account. The Android Contacts app must be configured to display all accounts:
+
+```
+Android Contacts → Menu → Manage contacts → Contacts to display
+→ Select "All contacts" or check the DAVx5 account
+```
+
+**Calendar events disappear after editing on another client:**
+
+This usually indicates a timezone handling mismatch. Set a consistent timezone on your server:
+
+```bash
+# For Radicale, ensure events are stored with explicit TZID
+# Check a problematic event:
+cat ~/.local/share/radicale/collection-root/yourname/calendar/*.ics | grep TZID
+
+# Nextcloud: set server timezone
+docker exec -u www-data nextcloud-app php occ config:system:set logtimezone --value="America/New_York"
+```
+
+**High battery drain from DAVx5:**
+
+Reduce sync frequency for less time-sensitive data:
+
+```
+DAVx5 → Account → Calendar sync interval: 1 hour
+DAVx5 → Account → Contact sync interval: 4 hours
+```
+
+Contacts change rarely — daily or even manual sync is sufficient for most users.
+
+## Privacy Considerations Beyond the Server
+
+Running your own CalDAV/CardDAV server eliminates Google and Apple from seeing your schedule, but other data flows still deserve attention.
+
+**DNS leaks your calendar server address.** When DAVx5 syncs, it queries your DNS provider for `cal.yourdomain.com`. If you use your ISP's DNS or a logging resolver, your sync activity is visible. Use a privacy-respecting resolver:
+
+```bash
+# On Android: Settings → Network → Private DNS
+# Enter: dns.quad9.net or 1dot1dot1dot1.cloudflare-dns.com
+```
+
+**Your VPN provider sees sync traffic timing.** Even over TLS, the timing and size patterns of CalDAV sync can reveal meeting frequency. For high-sensitivity use cases, route sync traffic over a VPN or Tor.
+
+**Email invitations bypass your private server entirely.** Meeting invites sent via `.ics` email attachments come through your email provider. If privacy-of-meetings is critical, use a private email provider alongside your CalDAV server — Tutanota and Proton Mail both support calendar invitations independently of Google.
 
 ```bash
 # Export from Radicale storage (plain vCard/iCal files)
@@ -264,6 +375,37 @@ rsync -av ~/.local/share/radicale/ /backup/radicale-$(date +%Y%m%d)/
 
 ---
 
+## Multi-User Setup on Radicale
+
+Radicale supports multiple users from a single instance. Each user gets their own collection namespace, and access is controlled through htpasswd authentication.
+
+```bash
+# Add a second user to Radicale
+htpasswd -B ~/.config/radicale/users seconduser
+# Enter password when prompted
+
+# Radicale automatically creates a separate namespace:
+# /seconduser/calendar/
+# /seconduser/contacts/
+```
+
+For per-user calendar sharing (allowing one user to read another's calendar), Radicale's rights system handles this through a `rights` config file:
+
+```ini
+# ~/.config/radicale/rights
+[owner-write]
+user: .+
+collection: ^{user}/.*$
+permissions: rw
+
+[shared-read]
+user: alice
+collection: ^bob/shared-calendar/.*$
+permissions: r
+```
+
+This gives `alice` read access to `bob`'s shared-calendar collection. Nextcloud has a web UI for this — useful for households or small teams who want shared family calendars without giving everyone full access.
+
 ## Encryption at Rest
 
 Radicale stores files as plain text. If the server disk is encrypted (LUKS), that covers it. For an extra layer:
@@ -277,7 +419,7 @@ fscrypt encrypt ~/.local/share/radicale/
 encfs /backup/radicale-encrypted ~/.local/share/radicale/
 ```
 
-Nextcloud supports server-side encryption per-file, though it adds overhead.
+Nextcloud supports server-side encryption per-file using AES-256, though it adds CPU overhead and makes backup restoration more complex — only use it if you have a specific threat model requiring it beyond full-disk encryption.
 
 ---
 

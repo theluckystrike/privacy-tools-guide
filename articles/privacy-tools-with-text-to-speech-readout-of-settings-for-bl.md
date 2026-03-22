@@ -237,7 +237,7 @@ class AccessiblePrivacyAnnouncer {
 
 ### Mobile App Accessibility
 
-iOS and Android provide native text-to-speech APIs that privacy apps should leverage:
+iOS and Android provide native text-to-speech APIs that privacy apps should take advantage of:
 
 ```kotlin
 // Android: Announce privacy settings changes
@@ -371,7 +371,7 @@ Building TTS-accessible privacy tools requires organizational commitment:
 Privacy tools with text to speech readout represent an important advancement in accessible security. Password managers like Bitwarden and 1Password, VPN clients using WireGuard protocols, encrypted messaging applications such as Signal, and developer-focused tools like GPG all offer pathways for blind users to independently manage their privacy configurations.
 
 For developers, implementing accessible interfaces follows established web standards—semantic HTML, ARIA landmarks, live regions, and thorough keyboard support. These techniques require minimal additional development effort while dramatically improving usability for blind and visually impaired users.
-For developers, implementing accessible interfaces follows established web standards—semantic HTML, ARIA landmarks, live regions, and comprehensive keyboard support. These techniques require minimal additional development effort while dramatically improving usability for blind and visually impaired users. The additional TTS layer ensures blind users achieve true independence in managing their security configurations.
+For developers, implementing accessible interfaces follows established web standards—semantic HTML, ARIA landmarks, live regions, and detailed keyboard support. These techniques require minimal additional development effort while dramatically improving usability for blind and visually impaired users. The additional TTS layer ensures blind users achieve true independence in managing their security configurations.
 
 The privacy community benefits when security tools remain accessible to all users. By supporting text to speech readout and screen reader compatibility, developers ensure that privacy protection extends to everyone, regardless of visual ability. Accessibility is not charity—it's a fundamental requirement for tools claiming to provide security for all.
 

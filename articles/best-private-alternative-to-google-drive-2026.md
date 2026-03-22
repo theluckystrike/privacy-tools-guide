@@ -148,7 +148,7 @@ docker exec --user www-data nextcloud php occ files:share:link \
 
 ### Accessing Nextcloud via WebDAV
 
-Mount your Nextcloud storage as a local filesystem for seamless Unix tool integration:
+Mount your Nextcloud storage as a local filesystem for simple Unix tool integration:
 
 ```bash
 # Linux (requires davfs2)

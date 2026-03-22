@@ -223,7 +223,7 @@ For most developers, implementing GDPR compliance covers most CCPA requirements.
 
 Build your systems with privacy by design principles: collect less data, retain it for shorter periods, and make it easy to delete. These practices satisfy both regulations and reduce your compliance burden.
 
-The regulatory world continues evolving. Several US states have passed their own privacy laws, and the EU continues to refine GDPR through guidance and Schrems II implications. Stay current with your legal counsel and adjust your implementations as requirements change.
+The regulatory environment continues evolving. Several US states have passed their own privacy laws, and the EU continues to refine GDPR through guidance and Schrems II implications. Stay current with your legal counsel and adjust your implementations as requirements change.
 
 
 

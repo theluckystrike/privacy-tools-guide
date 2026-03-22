@@ -9,7 +9,7 @@ permalink: /how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -260,7 +260,7 @@ while true; do
 done
 ```
 
-A systemd service unit is more robust than a shell loop for production deployments:
+A systemd service unit is more durable than a shell loop for production deployments:
 
 ```ini
 [Unit]

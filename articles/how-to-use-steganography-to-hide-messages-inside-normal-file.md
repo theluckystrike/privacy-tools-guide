@@ -29,7 +29,7 @@ Steganography differs fundamentally from encryption. Encryption scrambles data s
 
 ## Legal and Privacy Context
 
-Before implementing steganography, understand the legal landscape in your jurisdiction. In most countries, steganography itself is entirely legal — it is simply a data encoding technique. However, using it to transmit material that is already illegal remains unlawful regardless of how it is transmitted.
+Before implementing steganography, understand the legal space in your jurisdiction. In most countries, steganography itself is entirely legal — it is simply a data encoding technique. However, using it to transmit material that is already illegal remains unlawful regardless of how it is transmitted.
 
 In some jurisdictions with mandatory decryption laws (such as the UK under RIPA Part III, or Australia under the Assistance and Access Act), authorities can compel disclosure of encryption keys. Steganography adds a layer of plausible deniability — a carrier file containing hidden data may not be recognized as containing any hidden message at all, unlike an obviously encrypted archive.
 
@@ -284,7 +284,7 @@ Most social media platforms recompress uploaded images, which destroys LSB-embed
 Basic LSB embedding in a lossless image stores approximately one bit per color channel per pixel. A 1920x1080 PNG image provides roughly 1920 x 1080 x 3 = ~6.2 million bits (about 750KB) of capacity. In practice, use only 10-20% of theoretical capacity to avoid statistical detection.
 
 **Is steganography the same as watermarking?**
-Related but distinct. Digital watermarking embeds identifying information to prove ownership, and the watermark is designed to survive image modifications. Steganography prioritizes invisibility over robustness. Watermarking tools like OpenStego's watermark mode are optimized differently than its steganography mode.
+Related but distinct. Digital watermarking embeds identifying information to prove ownership, and the watermark is designed to survive image modifications. Steganography prioritizes invisibility over durability. Watermarking tools like OpenStego's watermark mode are optimized differently than its steganography mode.
 
 
 ## Related Articles

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-set-up-incident-response-plan-for-data-breach-busines/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

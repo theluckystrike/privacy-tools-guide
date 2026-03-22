@@ -18,7 +18,7 @@ tags: [privacy-tools-guide, privacy]
 
 Union organizers face unique challenges when protecting member communications. Unlike typical enterprise environments, union communications often involve sensitive discussions about workplace conditions, organizing strategies, and member personal information that could subject participants to retaliation. This guide provides practical privacy tools and implementation strategies specifically tailored for union organizing contexts.
 
-## Understanding the Threat World
+## Understanding the Threat Environment
 
 Before selecting tools, organizers must understand what they are protecting against. Employer surveillance has evolved beyond simple monitoring of company devices. Modern threats include:
 

@@ -382,6 +382,24 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
 
 
+## Managing Shared Links After the Fact
+
+A frequently overlooked part of accessible encrypted file sharing is what happens after a link is created. For users with cognitive impairments, revisiting, revoking, or extending a share is often as cognitively demanding as the original share workflow. A tool that makes link management difficult will cause users to accumulate expired or forgotten shares — eroding security hygiene over time.
+
+**Prefer tools with a clear "My Shares" dashboard.** Tresorit's shared items list displays each share's recipient, creation date, expiration date, and current status in a single scannable table. This reduces the memory load of tracking what you've shared and with whom.
+
+**Revocation must be a single action.** If revoking a share requires navigating multiple confirmation dialogs, users under cognitive load may fail to complete it. Sync.com allows single-click revocation from the share management panel. Test your chosen tool's revocation flow before deploying — if it takes more than two deliberate actions to revoke a link, it will create accessibility failures in real-world use.
+
+**Set defaults that protect users who forget.** Configure the default share expiration to the shortest period that fits your workflow. If files typically need sharing for one week, default to 7 days rather than 30. Users who forget to set expiration benefit from a conservative default; those who need longer can extend it.
+
+## Choosing Between Managed Services and Self-Hosted Solutions
+
+Managed services (Tresorit, Sync.com) handle infrastructure, key management, and client updates automatically. When Tresorit releases a security patch, users receive it through the normal app update — no manual server maintenance required. For users with cognitive impairments who cannot reliably manage infrastructure, managed services are almost always the right choice.
+
+Self-hosted solutions like Cryptomator with Nextcloud give technical administrators full control over data residency. The administrative overhead must stay with IT staff, never with end users who have cognitive impairments.
+
+The practical hybrid: use a managed service for the end-user-facing file sharing workflow, reserve self-hosted solutions for backend archiving where users never interact directly with the storage layer.
+
 ## Related Articles
 
 - [Best Accessible Privacy-Focused Keyboard App for Users with Motor Impairments](/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
