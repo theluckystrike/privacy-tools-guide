@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/
+description: "Learn wireguard dynamic endpoint update how roaming between networks works with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "WireGuard Dynamic Endpoint Update"

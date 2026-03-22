@@ -1,5 +1,7 @@
 ---
 permalink: /whonix-anonymous-browsing-setup-guide/
+description: "Follow this guide to whonix anonymous browsing setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Use Whonix for Anonymous Browsing"

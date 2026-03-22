@@ -1,5 +1,7 @@
 ---
 permalink: /wifi-deauthentication-attack-detection-how-to-identify-and-p/
+description: "Follow this guide to wifi deauthentication attack detection how to identify and p with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Wifi Deauthentication Attack Detection How To Identify"

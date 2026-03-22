@@ -1,5 +1,7 @@
 ---
 permalink: /windows-11-privacy-settings-disable-telemetry/
+description: "Learn windows 11 privacy settings disable telemetry with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Windows 11 Privacy Settings: How to Disable Telemetry"

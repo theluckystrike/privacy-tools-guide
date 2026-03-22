@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-key-rotation-best-practices-how-often-to-regenerate/
+description: "Discover the best wireguard key rotation best practices how often to regenerate with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, best-of]
 ---
 layout: default
 title: "WireGuard Key Rotation Best Practices How Often"

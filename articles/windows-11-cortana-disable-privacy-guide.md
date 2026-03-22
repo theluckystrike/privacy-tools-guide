@@ -1,5 +1,7 @@
 ---
 permalink: /windows-11-cortana-disable-privacy-guide/
+description: "Follow this guide to windows 11 cortana disable privacy guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Windows 11 Cortana Disable Privacy Guide"

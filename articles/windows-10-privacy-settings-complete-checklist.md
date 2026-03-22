@@ -1,5 +1,7 @@
 ---
 permalink: /windows-10-privacy-settings-complete-checklist/
+description: "Learn windows 10 privacy settings complete checklist with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"

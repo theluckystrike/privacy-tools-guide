@@ -1,5 +1,7 @@
 ---
 permalink: /windows-registry-privacy-tweaks-safe-guide/
+description: "Follow this guide to windows registry privacy tweaks safe guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"

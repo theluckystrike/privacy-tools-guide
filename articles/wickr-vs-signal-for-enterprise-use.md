@@ -1,5 +1,7 @@
 ---
 permalink: /wickr-vs-signal-for-enterprise-use/
+description: "Compare wickr vs signal for enterprise use with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Wickr vs Signal for Enterprise Use: A Technical Comparison"

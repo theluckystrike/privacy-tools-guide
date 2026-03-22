@@ -1,5 +1,7 @@
 ---
 permalink: /what-to-do-if-your-password-manager-vault-was-compromised/
+description: "Learn what to do if your password manager vault was compromised with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What to Do If Your Password Manager Vault Was Compromised"

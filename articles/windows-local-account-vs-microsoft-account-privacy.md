@@ -1,5 +1,7 @@
 ---
 permalink: /windows-local-account-vs-microsoft-account-privacy/
+description: "Compare windows local account vs microsoft account privacy with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 layout: default
 title: "Windows Local Account Vs Microsoft Account"

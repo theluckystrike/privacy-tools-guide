@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-container-setup-docker-network-namespace-isolation/
+description: "Learn wireguard container setup docker network namespace isolation with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Wireguard Container Setup Docker Network Namespace Isolation"
