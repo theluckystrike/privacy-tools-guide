@@ -24,6 +24,18 @@ The Great Firewall uses multiple detection methods including deep packet inspect
 
 Obfuscation works by wrapping the Shadowsocks protocol inside another layer that mimics standard web traffic. This approach helps your traffic blend in with the billions of HTTPS connections that pass through Chinese internet gateways daily.
 
+The GFW's active probing is particularly sophisticated. When it detects a suspicious connection, it sends crafted probe packets to your server to determine whether it is running a proxy. Obfuscation plugins like `obfs4` and `v2ray-plugin` are designed to respond to these probes in ways that look indistinguishable from a legitimate web server. Choosing a plugin that resists active probing is just as important as choosing one that prevents passive DPI detection.
+
+## Choosing an Encryption Method
+
+Not all Shadowsocks ciphers are equal. The original `rc4-md5` and `chacha20` ciphers have known weaknesses and should be avoided. Modern deployments should use AEAD (Authenticated Encryption with Associated Data) ciphers:
+
+- **aes-256-gcm** — Strong default, hardware-accelerated on most modern CPUs via AES-NI
+- **aes-128-gcm** — Faster on constrained hardware with adequate security for most use cases
+- **chacha20-ietf-poly1305** — Preferred on mobile or ARM devices without AES-NI hardware support
+
+The AEAD ciphers provide both encryption and integrity checking, meaning a modified packet will be detected and dropped rather than silently forwarded. This matters for both security and protocol reliability.
+
 ## Server-Side Setup
 
 Begin by installing shadowsocks-rust on your server (ideally hosted outside China):
@@ -54,6 +66,30 @@ Create the server configuration file:
 ```
 
 The `obfs=tls` option makes traffic appear as legitimate TLS connections. The failover parameter provides redundancy if the obfuscation server becomes unreachable.
+
+### Installing the obfs Plugin
+
+The simple-obfs plugin must be compiled and installed separately on the server:
+
+```bash
+# Install build dependencies
+sudo apt install -y build-essential autoconf libtool libssl-dev libpcre3-dev libev-dev asciidoc xmlto
+
+# Clone and build simple-obfs
+git clone https://github.com/shadowsocks/simple-obfs.git
+cd simple-obfs
+git submodule update --init --recursive
+./autogen.sh
+./configure && make
+sudo make install
+```
+
+Verify the plugin is accessible:
+
+```bash
+which obfs-server
+# Should output: /usr/local/bin/obfs-server
+```
 
 ## Client-Side Configuration
 
@@ -88,6 +124,47 @@ sslocal -c ~/.config/shadowsocks/config.json -d start
 ```
 
 Configure your system or browser to use the local SOCKS5 proxy at 127.0.0.1:1080. For browser-only usage, consider using a SOCKS5-to-HTTP proxy wrapper like `polipo` or `privoxy`.
+
+### Routing All System Traffic Through the Proxy
+
+For system-wide routing rather than per-application proxy settings, use `redsocks` to transparently forward TCP traffic:
+
+```bash
+sudo apt install redsocks
+
+# /etc/redsocks.conf
+base {
+    log_debug = off;
+    log_info = on;
+    log = "file:/var/log/redsocks.log";
+    daemon = on;
+    redirector = iptables;
+}
+
+redsocks {
+    local_ip = 127.0.0.1;
+    local_port = 12345;
+    ip = 127.0.0.1;
+    port = 1080;
+    type = socks5;
+}
+```
+
+Then add iptables rules to redirect traffic through redsocks, excluding your server's IP:
+
+```bash
+# Create redsocks chain
+sudo iptables -t nat -N REDSOCKS
+
+# Exclude your VPS and local traffic
+sudo iptables -t nat -A REDSOCKS -d your-server-ip/32 -j RETURN
+sudo iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
+sudo iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
+
+# Redirect remaining TCP traffic
+sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
+sudo iptables -t nat -A OUTPUT -p tcp -j REDSOCKS
+```
 
 ## Advanced Obfuscation with V2Ray Integration
 
@@ -140,6 +217,10 @@ For enhanced resistance to traffic analysis, route Shadowsocks through V2Ray usi
 ```
 
 This configuration encapsulates your Shadowsocks traffic inside WebSocket over TLS, making it indistinguishable from connections to legitimate websites using Content Delivery Networks.
+
+### Why WebSocket+TLS Beats Simple Obfuscation
+
+Simple obfuscation plugins like obfs4 mimic HTTP or TLS at the packet level. V2Ray with WebSocket+TLS goes further: it establishes a real TLS session using a genuine certificate, then tunnels traffic inside it as standard WebSocket frames. The GFW sees an ordinary HTTPS connection to a web server. Placed behind nginx with a real website serving content on the same port, this configuration is extremely difficult to distinguish from legitimate traffic.
 
 ## Docker Deployment for Quick Setup
 
@@ -200,6 +281,27 @@ echo 3 > /proc/sys/net/ipv4/tcp_fastopen
 echo 'net.ipv4.tcp_fastopen = 3' >> /etc/sysctl.conf
 ```
 
+### Tuning BBR Congestion Control
+
+Linux's BBR congestion control algorithm significantly improves throughput over high-latency links, which is typical when routing from China through overseas servers:
+
+```bash
+# Check if BBR is available
+modprobe tcp_bbr
+lsmod | grep bbr
+
+# Enable BBR
+echo 'net.core.default_qdisc=fq' >> /etc/sysctl.conf
+echo 'net.ipv4.tcp_congestion_control=bbr' >> /etc/sysctl.conf
+sysctl -p
+
+# Verify
+sysctl net.ipv4.tcp_congestion_control
+# Should output: net.ipv4.tcp_congestion_control = bbr
+```
+
+BBR is particularly effective for connections with significant bandwidth-delay products, reducing the impact of packet loss on throughput.
+
 ## Testing Your Setup
 
 Verify that obfuscation is working by checking traffic characteristics:
@@ -213,6 +315,20 @@ tcpdump -i any -A -c 100 port 443 | grep -i 'http\|https'
 ```
 
 Ensure the traffic captured looks like standard TLS handshakes with proper SNI indicators matching legitimate websites.
+
+### Testing Latency and Throughput
+
+Use these commands to assess real-world performance:
+
+```bash
+# Latency test through proxy
+curl --socks5 127.0.0.1:1080 -o /dev/null -w "Connect: %{time_connect}s  Total: %{time_total}s\n" https://www.google.com
+
+# Speed test through proxy
+curl --socks5 127.0.0.1:1080 -o /dev/null https://speed.cloudflare.com/__down?bytes=10000000 --progress-bar
+```
+
+A well-tuned setup should deliver 10-50 Mbps for servers in Japan or Singapore from mainland Chinese locations, depending on the time of day and current GFW inspection intensity.
 
 ## Deployment Recommendations
 
@@ -239,6 +355,10 @@ When deploying Shadowsocks with obfuscation, keep these security practices in mi
 Connection problems often stem from misconfigured settings. If your client cannot connect, verify that the server firewall allows traffic on your chosen port. Check that the plugin options match exactly between server and client configurations. Ensure your server's system time is accurate, as TLS certificates validate timestamps.
 
 For persistent connectivity issues, try switching from TLS obfuscation to HTTP mode, which uses different traffic patterns. Some networks may block specific ports, so consider using common ports like 80 or 443 that are less likely to be filtered.
+
+**Plugin binary not found**: Both `obfs-server` and `obfs-client` must exist on their respective machines and be in the system PATH. Shadowsocks-rust will silently fail to apply the plugin if the binary is missing. Always test with `ssserver -c config.json` in the foreground first to see error output before daemonizing.
+
+**GFW blocking after days of working**: The GFW uses machine learning models that improve over time. If a server IP gets blocked, rotate to a new VPS IP. Some providers (Vultr, DigitalOcean) allow IP reassignment. Keeping 2-3 configured fallback servers is the most reliable approach to maintaining connectivity.
 
 
 ## Related Articles
