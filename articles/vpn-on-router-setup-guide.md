@@ -5,7 +5,7 @@ description: "Configure WireGuard or OpenVPN on your router with OpenWrt or DD-W
 date: 2026-03-22
 author: theluckystrike
 permalink: /vpn-on-router-setup-guide/
-categories: [guides, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -245,6 +245,123 @@ uci commit firewall
 ```
 
 ---
+
+## DNS Leak Prevention
+
+Even with the VPN tunnel active, DNS queries can bypass the tunnel and reveal your browsing activity to your ISP. This is the most common privacy failure in router VPN setups.
+
+```bash
+# Force all DNS through the VPN tunnel on OpenWrt
+# Set the router's DNS to your VPN provider's DNS
+uci set dhcp.@dnsmasq[0].server="10.64.0.1"  # Mullvad DNS
+uci set dhcp.@dnsmasq[0].noresolv="1"
+uci commit dhcp
+/etc/init.d/dnsmasq restart
+
+# Block DNS queries that try to leave on port 53 via WAN
+iptables -I FORWARD -i br-lan -o wan -p udp --dport 53 -j REJECT
+iptables -I FORWARD -i br-lan -o wan -p tcp --dport 53 -j REJECT
+```
+
+Verify there are no leaks after configuration:
+
+```bash
+# From a device on your LAN, visit https://dnsleaktest.com
+# Or test via command line from a LAN device:
+nslookup whoami.akamai.net
+dig +short myip.opendns.com @resolver1.opendns.com
+
+# All answers should show the VPN server's IP, not your real IP
+```
+
+For providers that support DNS over HTTPS (DoH), configure it at the router level using `https-dns-proxy`:
+
+```bash
+opkg install https-dns-proxy luci-app-https-dns-proxy
+uci set https-dns-proxy.@https-dns-proxy[0].resolver_url="https://dns.mullvad.net/dns-query"
+uci commit https-dns-proxy
+/etc/init.d/https-dns-proxy restart
+```
+
+## Choosing a VPN Provider for Router Use
+
+Not every VPN provider works well at the router level. Key requirements:
+
+| Requirement | Why It Matters |
+|-------------|----------------|
+| WireGuard support | Native performance; OpenVPN is 30-50% slower |
+| Multiple simultaneous connections | Router counts as one device — all LAN devices share it |
+| Port forwarding (optional) | Required for hosting services behind the VPN |
+| Static IP support | Useful for allowlisting the VPN exit IP in services |
+| No-logs policy (audited) | Third-party audits matter more than marketing claims |
+
+**Mullvad** works well for router use: WireGuard config files downloadable per-server, audited no-logs policy, anonymous account numbers (no email required). Download the WireGuard config at `mullvad.net/en/account/wireguard-config`.
+
+**ProtonVPN** provides WireGuard configs for router use and supports Secure Core (routing through Switzerland or Iceland before the VPN exit). The ProtonVPN app cannot be installed on a router, but the raw WireGuard config can.
+
+**IVPN** is another audited option with WireGuard support and multi-hop configurations that route traffic through two VPN servers before exiting.
+
+Avoid providers that only offer proprietary apps without WireGuard config download — those cannot be used on OpenWrt.
+
+## Performance Tuning
+
+Router CPUs are significantly weaker than desktop CPUs. WireGuard's ChaCha20 cipher is hardware-friendly, but you may still see throughput limitations on budget routers.
+
+```bash
+# Check current WireGuard throughput
+wg show wg0 transfer
+
+# Test real-world speeds via the router
+# SSH into router and run:
+wget -O /dev/null https://speedtest.net/  # basic test
+
+# For ARM routers, enable hardware crypto acceleration if available
+opkg install kmod-crypto-hw-tegra kmod-crypto-cbc
+```
+
+Expected throughput on common hardware:
+- **GL.iNet GL-AX1800** (ARM, WiFi 6): ~200 Mbps WireGuard
+- **GL.iNet GL-MT1300** (MIPS): ~50-80 Mbps WireGuard
+- **Raspberry Pi 4 as router**: ~300+ Mbps WireGuard
+
+If your ISP provides more than 200 Mbps and you have a MIPS-based router, the router CPU is your bottleneck. Either upgrade hardware or accept that the VPN limits your throughput.
+
+```bash
+# Monitor router CPU during speed test
+top  # watch CPU usage on the router SSH session
+# If CPU hits 100% during transfer, hardware is the limit
+```
+
+For high-throughput setups, the **PC-based pfSense or OPNsense** approach with an AES-NI capable CPU and WireGuard provides near-wire speeds regardless of ISP bandwidth.
+
+## Maintaining the VPN Configuration
+
+Router VPN configurations require periodic maintenance:
+
+**Rotate WireGuard keys periodically.** Most VPN providers allow generating new keys without changing your account. Generate new keys every 3-6 months:
+
+```bash
+# Generate new key pair
+wg genkey | tee /etc/wireguard/new_private.key | wg pubkey > /etc/wireguard/new_public.key
+
+# Update your VPN account with the new public key
+# Then update the UCI config:
+uci set network.wg0.private_key="$(cat /etc/wireguard/new_private.key)"
+uci commit network
+/etc/init.d/network restart
+```
+
+**Check for OpenWrt security updates:**
+
+```bash
+# Check available package updates
+opkg update && opkg list-upgradable
+
+# Upgrade all packages
+opkg upgrade $(opkg list-upgradable | awk '{print $1}')
+```
+
+**Test the kill switch after every firmware update.** Firmware updates can reset firewall rules. After any OpenWrt upgrade, verify the kill switch still blocks non-VPN traffic by temporarily disabling the WireGuard interface and confirming that LAN devices lose internet access entirely.
 
 ## Related Reading
 
