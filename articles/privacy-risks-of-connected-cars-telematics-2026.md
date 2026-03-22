@@ -8,6 +8,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 tags: ["connected cars", "telematics", "privacy", "vehicle tracking", "data collection"]
+permalink: /privacy-risks-of-connected-cars-telematics-2026/
 ---
 
 {% raw %}
