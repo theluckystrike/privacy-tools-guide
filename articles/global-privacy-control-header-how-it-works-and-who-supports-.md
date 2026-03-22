@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Global Privacy Control Header How It Works And Who Supports"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

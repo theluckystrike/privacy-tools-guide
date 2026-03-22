@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Bypass China Great Firewall Using Shadowsocks"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,14 +41,6 @@ Bypassing the Great Firewall of China requires understanding how traffic inspect
 - **Keeping 2-3 configured fallback**: servers is the most reliable approach to maintaining connectivity.
 - **Shadowsocks remains a popular**: choice among developers and power users due to its lightweight design and flexibility.
 - **Standard VPN protocols often**: fail because their handshake patterns are distinctive.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced Obfuscation with V2Ray Integration](#advanced-obfuscation-with-v2ray-integration)
-- [Performance Optimization](#performance-optimization)
-- [Security Considerations](#security-considerations)
-- [Troubleshooting Common Issues](#troubleshooting-common-issues)
 
 ## Prerequisites
 

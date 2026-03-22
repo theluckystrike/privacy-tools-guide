@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How to Audit Your Password Manager Vault: A Practical Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,13 +41,6 @@ Regularly auditing your password manager vault is essential for maintaining stro
 - **You can write custom**: scripts or use existing tools to identify weak passwords.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
-
-## Table of Contents
-
-- [Why Vault Auditing Matters](#why-vault-auditing-matters)
-- [Prerequisites](#prerequisites)
-- [Additional Audit Areas](#additional-audit-areas)
-- [Troubleshooting](#troubleshooting)
 
 ## Why Vault Auditing Matters
 

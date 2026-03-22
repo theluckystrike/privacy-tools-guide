@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Gdpr Penalties Fines Database Case Examples"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,14 +41,6 @@ The General Data Protection Regulation (GDPR) has transformed how organizations 
 - **Less severe violations carry**: fines up to €10 million or 2% of a company's global annual revenue, whichever is higher.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
-## Table of Contents
-
-- [Understanding GDPR Penalty Structures](#understanding-gdpr-penalty-structures)
-- [Notable GDPR Fine Case Examples](#notable-gdpr-fine-case-examples)
-- [Querying GDPR Enforcement Databases](#querying-gdpr-enforcement-databases)
-- [Practical Implications for Developers](#practical-implications-for-developers)
-- [Building Compliance Into Development Workflows](#building-compliance-into-development-workflows)
 
 ## Understanding GDPR Penalty Structures
 

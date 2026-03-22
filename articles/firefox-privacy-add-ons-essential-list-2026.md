@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Firefox Privacy Add-ons Essential List 2026: Complete Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -39,20 +41,6 @@ Install these seven Firefox privacy add-ons for a hardened browsing setup in 202
 - **Unlike premium alternatives**: uBlock Origin is open-source and does not require payment or account creation.
 - **Privacy Badger Developed by**: the Electronic Frontier Foundation, Privacy Badger uses machine learning to detect and block invisible tracking pixels.
 - **Privacy Badger automatically blocks invisible tracking pixels, needs no configuration for basic use, and uses color-coded indicators**: red for blocked, yellow for partially blocked, green for allowed.
-
-## Table of Contents
-
-- [Why Firefox for Privacy?](#why-firefox-for-privacy)
-- [Essential Privacy Add-ons](#essential-privacy-add-ons)
-- [Setting Up a Privacy-Focused Firefox Profile](#setting-up-a-privacy-focused-firefox-profile)
-- [Performance Considerations](#performance-considerations)
-- [Advanced uBlock Origin Configuration](#advanced-ublock-origin-configuration)
-- [Privacy Extension Interaction Testing](#privacy-extension-interaction-testing)
-- [Fingerprinting Resistance Testing](#fingerprinting-resistance-testing)
-- [Firefox about:config Privacy Settings Deep Dive](#firefox-aboutconfig-privacy-settings-deep-dive)
-- [Managing Extension Updates and Security](#managing-extension-updates-and-security)
-- [Browser Profile Hardening Checklist](#browser-profile-hardening-checklist)
-- [Performance Tuning for Privacy Extensions](#performance-tuning-for-privacy-extensions)
 
 ## Why Firefox for Privacy?
 

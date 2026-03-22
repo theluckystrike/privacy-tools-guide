@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Hotel Guest Privacy Rights What Information Hotels Can"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 
 When you check into a hotel, you surrender more personal information than you might realize. Hotels maintain detailed records of their guests, and these records can become accessible to law enforcement and government agencies under certain circumstances. Understanding your privacy rights and how hotel data systems work helps you make informed decisions about what information you share and how you protect yourself.
@@ -38,16 +40,6 @@ When you check into a hotel, you surrender more personal information than you mi
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The law requires meaningful**: consent for data collection and use, but includes exceptions for law enforcement requests.
-
-## Table of Contents
-
-- [What Hotels Collect: The Data Landscape](#what-hotels-collect-the-data-landscape)
-- [Legal Framework: When Hotels Must Disclose Data](#legal-framework-when-hotels-must-disclose-data)
-- [Types of Legal Requests Hotels Receive](#types-of-legal-requests-hotels-receive)
-- [Practical Privacy Strategies for Guests](#practical-privacy-strategies-for-guests)
-- [What Hotels Cannot Share](#what-hotels-cannot-share)
-- [International Considerations](#international-considerations)
-- [Building Privacy-Respecting Hotel Systems](#building-privacy-respecting-hotel-systems)
 
 ## What Hotels Collect: The Data Landscape
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]---
+tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
+---
 ---
 layout: default
 title: "GrapheneOS Travel Profile Border Crossing Minimal Data 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]---
+tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
+---
 
 {% raw %}
 
@@ -39,22 +41,6 @@ When crossing international borders, your smartphone becomes a potential liabili
 - **Navigate to System →**: Multiple users 3.
 - **Tap "Add user" and**: select "Set up now" 4.
 - **Delete the Travel Profile**: entirely using Settings → System → Multiple Users 3.
-
-## Table of Contents
-
-- [What Is the GrapheneOS Travel Profile](#what-is-the-grapheneos-travel-profile)
-- [Setting Up Your Travel Profile](#setting-up-your-travel-profile)
-- [Minimal Data Principles](#minimal-data-principles)
-- [Network Isolation Strategies](#network-isolation-strategies)
-- [Practical Border Crossing Protocol](#practical-border-crossing-protocol)
-- [Post-Crossing Verification](#post-crossing-verification)
-- [Limitations and Considerations](#limitations-and-considerations)
-- [Advanced Profile Isolation Techniques](#advanced-profile-isolation-techniques)
-- [Real-World Border Crossing Scenarios](#real-world-border-crossing-scenarios)
-- [Threat Model Analysis](#threat-model-analysis)
-- [Technical Verification Commands](#technical-verification-commands)
-- [Post-Travel Profile Cleanup](#post-travel-profile-cleanup)
-- [Legal Considerations by Jurisdiction](#legal-considerations-by-jurisdiction)
 
 ## What Is the GrapheneOS Travel Profile
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Firefox Arkenfox User Js Full Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,13 +41,6 @@ To install Arkenfox user.js, download the latest `user.js` file from the Arkenfo
 - **For most users who**: want strong privacy without the overhead of Tor Browser, Arkenfox with a `user-overrides.js` for site exceptions is the best balance.
 - **Use Firefox Focus or**: the standard Firefox Android with uBlock Origin and strict Enhanced Tracking Protection as the best alternative.
 - **To install Arkenfox user.js**: download the latest `user.js` file from the Arkenfox GitHub repository and place it in your Firefox profile directory (find your profile path at `about:support`).
-
-## Table of Contents
-
-- [What is Arkenfox user.js?](#what-is-arkenfox-userjs)
-- [Prerequisites](#prerequisites)
-- [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Related Reading](#related-reading)
 
 ## What is Arkenfox user.js?
 

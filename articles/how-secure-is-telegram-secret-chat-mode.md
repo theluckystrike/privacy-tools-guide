@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How Secure Is Telegram Secret Chat"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,17 +41,6 @@ Telegram Secret Chat is genuinely end-to-end encrypted with forward secrecy, mea
 - **If message confidentiality is**: your only concern, Secret Chat is solid; if you also need metadata protection or an independently audited protocol, use Signal instead.
 - **The protocol uses a**: combination of RSA-2048 for key exchange, AES-256-IGE for symmetric encryption, and SHA-256 for message integrity.
 - **Use strong device lock**: (PIN/biometric) to prevent physical access to decrypted messages 6.
-
-## Table of Contents
-
-- [Understanding Telegram's MTProto Protocol](#understanding-telegrams-mtproto-protocol)
-- [Security Properties of Secret Chat](#security-properties-of-secret-chat)
-- [What Secret Chat Does NOT Protect](#what-secret-chat-does-not-protect)
-- [Comparing Secret Chat to Alternatives](#comparing-secret-chat-to-alternatives)
-- [Advanced MTProto 2.0 Technical Details](#advanced-mtproto-20-technical-details)
-- [Understanding MTProto Vulnerabilities and Strengths](#understanding-mtproto-vulnerabilities-and-strengths)
-- [Practical Security Considerations](#practical-security-considerations)
-- [Comparing with Signal for High-Security Use Cases](#comparing-with-signal-for-high-security-use-cases)
 
 ## Understanding Telegram's MTProto Protocol
 

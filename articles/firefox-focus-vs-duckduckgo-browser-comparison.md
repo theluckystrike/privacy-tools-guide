@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 ---
 layout: default
 title: "Firefox Focus Vs Duckduckgo Browser Comparison"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 
@@ -39,30 +41,6 @@ When choosing a privacy-focused mobile browser, developers and power users need 
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **When choosing a privacy-focused**: mobile browser, developers and power users need more than marketing claims.
-
-## Table of Contents
-
-- [Architecture and Privacy Foundation](#architecture-and-privacy-foundation)
-- [Developer Testing Methods](#developer-testing-methods)
-- [Extension Ecosystem](#extension-ecosystem)
-- [Data Storage and Privacy](#data-storage-and-privacy)
-- [Search Integration](#search-integration)
-- [Performance Considerations](#performance-considerations)
-- [Use Case Recommendations](#use-case-recommendations)
-- [Detailed Tracker Analysis and Blocking Effectiveness](#detailed-tracker-analysis-and-blocking-effectiveness)
-- [Memory and CPU Profiling](#memory-and-cpu-profiling)
-- [HTTPS Enforcement Testing](#https-enforcement-testing)
-- [Custom Search Engine Configuration](#custom-search-engine-configuration)
-- [Cookie and Storage Handling](#cookie-and-storage-handling)
-- [VPN Integration and Routing](#vpn-integration-and-routing)
-- [JavaScript Execution and XSS Testing](#javascript-execution-and-xss-testing)
-- [DNS Over HTTPS Configuration](#dns-over-https-configuration)
-- [Cache and History Management](#cache-and-history-management)
-- [Extension Ecosystem Deep Dive](#extension-ecosystem-deep-dive)
-- [Fingerprinting Protection Comparison](#fingerprinting-protection-comparison)
-- [Real-World Website Compatibility Testing](#real-world-website-compatibility-testing)
-- [Battery Impact on Mobile Devices](#battery-impact-on-mobile-devices)
-- [Secure Development Workflows](#secure-development-workflows)
 
 ## Architecture and Privacy Foundation
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, sdk]---
+tags: [privacy-tools-guide, sdk]
+---
 ---
 layout: default
 title: "How To Audit Mobile App Sdks And Third Party Trackers"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, sdk]---
+tags: [privacy-tools-guide, sdk]
+---
 
 {% raw %}
 
@@ -43,13 +45,6 @@ Configure your device or emulator to use the proxy.
 - **By auditing the SDKs embedded in an app**: you can identify privacy risks, ensure compliance with regulations like GDPR and CCPA, and make informed decisions about which apps to use or distribute.
 - **Once traffic flows through the proxy**: use the app and examine requests.
 - **Start with static analysis**: to identify obvious trackers, then use network monitoring to confirm data transmission.
-
-## Table of Contents
-
-- [Why SDK Auditing Matters](#why-sdk-auditing-matters)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Troubleshooting](#troubleshooting)
 
 ## Why SDK Auditing Matters
 

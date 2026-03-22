@@ -11,7 +11,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Buy Bitcoin Without Kyc Verification Private Purchase"
@@ -25,7 +26,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,13 +41,6 @@ You can buy Bitcoin without KYC verification through peer-to-peer platforms like
 - **- LocalBitcoins**: One of the oldest P2P marketplaces, though user verification is now required for certain features.
 - **Use escrow services provided**: by the platform 3.
 - **While most DEXs trade ERC-20 tokens**: several allow direct Bitcoin trading through atomic swaps or wrapped tokens.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Privacy Best Practices](#privacy-best-practices)
-- [Advanced Privacy Techniques](#advanced-privacy-techniques)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

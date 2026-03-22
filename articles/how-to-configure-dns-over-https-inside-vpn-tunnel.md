@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 ---
 layout: default
 title: "How to Configure DNS over HTTPS Inside a VPN"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
@@ -47,15 +49,6 @@ When your VPN connects, it may override your DNS settings.
 - **Disable "Use VPN provider's**: DNS" or similar option 4.
 - **dnsleaktest.com**: Run the extended test to check which DNS servers are being used
 2.
-
-## Table of Contents
-
-- [Understanding DNS Leaks and Why DoH Inside VPN Matters](#understanding-dns-leaks-and-why-doh-inside-vpn-matters)
-- [Configuring DoH Inside Different VPN Setups](#configuring-doh-inside-different-vpn-setups)
-- [Verifying Your DoH Inside VPN Configuration](#verifying-your-doh-inside-vpn-configuration)
-- [Troubleshooting Common Issues](#troubleshooting-common-issues)
-- [Advanced: Split DNS with DoH](#advanced-split-dns-with-doh)
-- [Related Reading](#related-reading)
 
 ## Understanding DNS Leaks and Why DoH Inside VPN Matters
 

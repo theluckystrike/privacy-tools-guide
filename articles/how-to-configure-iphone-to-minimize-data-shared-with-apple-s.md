@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Configure iPhone To Minimize Data Shared With Apple"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -43,14 +45,6 @@ These features require your device to broadcast to iCloud, allowing Apple to kno
 - **Security Recommendations**: Review but disable automatic actions
 
 This gives you visibility into what changes between iOS versions before they're applied.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced Configuration](#advanced-configuration)
-- [Practical Examples](#practical-examples)
-- [Advanced: Using MDM for Enterprise Privacy Policy](#advanced-using-mdm-for-enterprise-privacy-policy)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

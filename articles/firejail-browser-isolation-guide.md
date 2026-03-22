@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,15 +26,6 @@ Firejail is a SUID sandbox that restricts what processes can access using Linux 
 - **This guide covers what firejail does**: install firejail, basic usage, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 - **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
-## Table of Contents
-
-- [What Firejail Does](#what-firejail-does)
-- [Prerequisites](#prerequisites)
-- [Combining Firejail with AppArmor](#combining-firejail-with-apparmor)
-- [Performance Impact](#performance-impact)
-- [Troubleshooting](#troubleshooting)
-- [Related Reading](#related-reading)
 
 ## What Firejail Does
 

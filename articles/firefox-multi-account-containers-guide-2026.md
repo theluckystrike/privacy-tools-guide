@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Firefox Multi Account Containers Guide 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -38,14 +40,6 @@ Firefox Multi-Account Containers transform how you manage identity and session i
 4.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced Container Management](#advanced-container-management)
-- [Security Considerations](#security-considerations)
-- [Best Practices for Container Organization](#best-practices-for-container-organization)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

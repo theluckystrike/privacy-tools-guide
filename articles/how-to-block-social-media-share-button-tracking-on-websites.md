@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How to Block Social Media Share Button Tracking on Websites"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,13 +41,6 @@ Social media share buttons appear on nearly every website, from news articles to
 - **Chrome users can use**: the built-in Safe Browsing protection, though it is less than dedicated privacy extensions.
 - **The key is to**: replace automatic script loading with user-initiated loading.
 - **Ensure users can still**: share content through all intended platforms.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Implementation Tools and Best Practices](#implementation-tools-and-best-practices)
-- [Performance Benefits](#performance-benefits)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Firefox Total Cookie Protection How It Isolates Trackers"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,24 +41,6 @@ Cross-site cookie tracking remains one of the most persistent methods advertiser
 - **Total Cookie Protection supersedes**: FPI in terms of tracking prevention effectiveness while maintaining better compatibility with legitimate website features.
 - **User-centric identifiers stored only**: on user devices through localStorage or IndexedDB with explicit user consent.
 - **OAuth 2.0 and OpenID**: Connect protocols work well within cookie isolation constraints because they pass tokens through URL parameters and server-side exchanges rather than cross-site cookie access.
-
-## Table of Contents
-
-- [How Traditional Cookie Tracking Works](#how-traditional-cookie-tracking-works)
-- [What Total Cookie Protection Does Differently](#what-total-cookie-protection-does-differently)
-- [Verification: Testing Cookie Isolation](#verification-testing-cookie-isolation)
-- [Configuration Options for Power Users](#configuration-options-for-power-users)
-- [Interaction with Related Privacy Features](#interaction-with-related-privacy-features)
-- [Practical Implications for Web Developers](#practical-implications-for-web-developers)
-- [Limitations and Considerations](#limitations-and-considerations)
-- [Threat Model: Tracking Scenarios Prevented](#threat-model-tracking-scenarios-prevented)
-- [Hands-On Verification: Testing Cookie Isolation Yourself](#hands-on-verification-testing-cookie-isolation-yourself)
-- [Configuration Deep Dive](#configuration-deep-dive)
-- [Storage Partitioning Beyond Cookies](#storage-partitioning-beyond-cookies)
-- [Interaction with Other Firefox Privacy Features](#interaction-with-other-firefox-privacy-features)
-- [Practical Configuration for Different Use Cases](#practical-configuration-for-different-use-cases)
-- [Common Implementation Mistakes](#common-implementation-mistakes)
-- [Limitations and Complementary Protections](#limitations-and-complementary-protections)
 
 ## How Traditional Cookie Tracking Works
 

@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,13 +26,6 @@ A honeypot is a decoy system that looks valuable but has no legitimate users. An
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers honeypot types**: cowrie: ssh honeypot, install cowrie, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
-
-## Table of Contents
-
-- [Honeypot Types](#honeypot-types)
-- [Prerequisites](#prerequisites)
-- [Troubleshooting](#troubleshooting)
-- [Related Reading](#related-reading)
 
 ## Honeypot Types
 

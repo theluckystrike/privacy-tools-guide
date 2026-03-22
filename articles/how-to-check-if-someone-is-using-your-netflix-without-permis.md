@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Check If Someone Is Using Your Netflix"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,13 +41,6 @@ Netflix accounts get compromised through data breaches, phishing attacks, or sim
 - **Use a password manager**: to generate and store unique passwords for every service.
 - **Consider limiting account sharing**: by creating individual profiles if family members have different viewing preferences.
 - **This guide shows developers**: and power users how to identify unauthorized access using the web interface, mobile app, and programmatic approaches.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced Detection: Network Traffic Analysis](#advanced-detection-network-traffic-analysis)
-- [When to Escalate to Law Enforcement](#when-to-escalate-to-law-enforcement)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
