@@ -19,6 +19,14 @@ Location data represents one of the most critical privacy vulnerabilities for do
 
 This guide provides practical, technical approaches to protecting location privacy. The strategies work whether you're hardening your own devices or architecting systems for an organization serving survivors.
 
+## Key Takeaways
+
+- **Location data represents one**: of the most critical privacy vulnerabilities for domestic abuse survivors.
+- **The most obvious is GPS**: which provides precise coordinates.
+- **Consider enabling "While Using"**: instead of "Always" for most apps.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Location Data Exposure
 
 Modern smartphones collect location data through multiple mechanisms. The most obvious is GPS, which provides precise coordinates. However, several other data sources can reveal location even when GPS is disabled:
