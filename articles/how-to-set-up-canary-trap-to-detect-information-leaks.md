@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-canary-trap-to-detect-information-leaks/
 description: "Follow this guide to how to set up canary trap to detect information leaks with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Set Up a Canary Trap to Detect Information"
 description: "Learn how to implement a canary trap system to identify the source of information leaks. Practical guide for developers and power users with code examples"

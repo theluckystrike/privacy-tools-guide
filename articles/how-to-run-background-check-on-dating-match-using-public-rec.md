@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-run-background-check-on-dating-match-using-public-rec/
 description: "Follow this guide to how to run background check on dating match using public rec with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Run Background Check On Dating Match Using Public"
 description: "A practical guide for developers and power users on verifying dating matches through public records while respecting privacy laws and ethical boundaries"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/
 description: "Follow this guide to how to revoke previously given consent for data processing u with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Revoke Previously Given Consent For Data Processing"
 description: "Learn how to exercise your GDPR right to withdraw consent, including technical implementation for developers and practical steps for users"

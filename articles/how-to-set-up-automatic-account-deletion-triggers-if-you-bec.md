@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
 description: "Follow this guide to how to set up automatic account deletion triggers if you bec with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Automatic Account Deletion Triggers If You"
 description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions"

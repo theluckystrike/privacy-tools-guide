@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-run-concurrent-vpn-connections-for-different-applicat/
 description: "Follow this guide to how to run concurrent vpn connections for different applicat with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "How To Run Concurrent Vpn Connections For Different Applicat"
 description: "A technical guide for developers and power users on running multiple simultaneous VPN connections, routing specific applications through different VPN"
