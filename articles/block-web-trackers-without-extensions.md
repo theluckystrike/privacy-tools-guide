@@ -5,7 +5,7 @@ description: "Use DNS-level blocking, browser settings, and system-wide hosts fi
 date: 2026-03-22
 author: theluckystrike
 permalink: /block-web-trackers-without-extensions/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

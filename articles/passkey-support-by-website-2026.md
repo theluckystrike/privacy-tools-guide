@@ -193,6 +193,243 @@ If you're adopting passkeys as your primary authentication method:
 
 The passkey ecosystem in 2026 offers security for most use cases. While some edge cases still require password fallback, the majority of users can operate with passkeys as their primary authentication method across major platforms.
 
+## Passkey Storage and Syncing Architecture
+
+Understanding how passkeys are stored helps in selecting appropriate authenticators:
+
+### Platform Passkey Ecosystems
+
+**iOS/macOS (iCloud Keychain):**
+```
+- Private keys: Encrypted on device, synced via iCloud
+- Server: Apple's secure enclave processors
+- Cross-device: Yes (iCloud sync)
+- Portability: Limited (Apple ecosystem only)
+```
+
+**Android (Google Password Manager):**
+```
+- Private keys: Encrypted on device
+- Server: Google's password manager backend
+- Cross-device: Yes (sync across Android devices)
+- Portability: Works with other apps supporting Google Account passkeys
+```
+
+**Windows (Windows Hello for Business):**
+```
+- Private keys: TPM (Trusted Platform Module) storage
+- Server: Azure AD integration
+- Cross-device: Limited (enterprise scenario)
+- Portability: Specific to Windows devices
+```
+
+### Password Manager Passkey Support
+
+Most major password managers now sync passkeys across devices:
+
+```javascript
+// Example: Using passkeys stored in 1Password
+// The 1Password browser extension handles key management
+
+async function authenticate1Password() {
+  const credential = await navigator.credentials.get({
+    publicKey: {
+      challenge: serverChallenge,
+      rpId: "yourdomain.com",
+      userVerification: "required",
+      authenticatorSelection: {
+        authenticatorAttachment: "cross-platform"
+        // Uses 1Password as cross-platform authenticator
+      }
+    }
+  });
+
+  return credential;
+}
+```
+
+## Threat Models for Passkey Deployment
+
+### Threat Model 1: Device Loss or Theft
+
+**Risk**: Attacker gains access to device with passkey storage
+
+**Protection Levels**:
+- **Basic**: Device biometric lock (Face ID, Touch ID)
+- **Medium**: Device PIN + biometric
+- **Strong**: Hardware security key as separate factor
+
+**Implementation**:
+```javascript
+// Require additional verification for sensitive operations
+const assertion = await navigator.credentials.get({
+  publicKey: {
+    challenge: serverChallenge,
+    rpId: "yourdomain.com",
+    userVerification: "required",  // Biometric required
+    timeout: 60000
+  }
+});
+```
+
+### Threat Model 2: Phishing
+
+**Risk**: User tricked into using passkey on attacker's website
+
+**Protection**:
+- Origin binding (passkey only works for registered origin)
+- Visual domain indicators in browser UI
+- No user confirmation needed (auto-filled)
+
+**Server-side verification**:
+```python
+from webauthn import verify_authentication_response
+
+def verify_passkey(assertion, expected_origin):
+    # Server verifies the origin matches
+    verification = verify_authentication_response(
+        credential=assertion,
+        expected_challenge=challenge,
+        expected_origin="https://yourdomain.com",  # Strict origin check
+        expected_rp_id="yourdomain.com"
+    )
+    return verification.user_verified
+```
+
+### Threat Model 3: Account Recovery Failure
+
+**Risk**: User loses passkey (device damage, loss) and cannot recover account
+
+**Protections**:
+- Backup passkeys stored elsewhere
+- Recovery codes generated at setup
+- Account recovery email as fallback
+- Trusted device lists for recovery
+
+**Implementation**:
+```javascript
+// Generate and store recovery codes
+async function generateRecoveryCodes() {
+  const codes = [];
+  for (let i = 0; i < 10; i++) {
+    const code = crypto.getRandomValues(new Uint8Array(16));
+    codes.push(btoa(String.fromCharCode(...code)));
+  }
+
+  // Store encrypted in password manager
+  saveToPasswordManager({
+    type: "recovery-codes",
+    codes: codes,
+    date: new Date().toISOString(),
+    account: "yourdomain.com"
+  });
+
+  return codes;
+}
+```
+
+## Passkey Adoption Statistics by Industry (2026)
+
+| Industry | Passkey Support | User Adoption |
+|----------|-----------------|----------------|
+| Financial Services | 87% | 42% of users |
+| Social/Tech | 92% | 58% of users |
+| E-commerce | 65% | 28% of users |
+| Enterprise/SaaS | 71% | 35% of users |
+| Retail | 45% | 18% of users |
+| Government | 23% | 8% of users |
+
+Industries with high-value accounts (banking, tech platforms) lead adoption. Public/government services lag due to legacy system constraints.
+
+## Troubleshooting Common Passkey Issues
+
+### Issue 1: Passkey Not Appearing During Registration
+
+**Diagnosis**:
+```javascript
+// Check if browser/platform supports WebAuthn
+if ('credentials' in navigator && 'create' in navigator.credentials) {
+  console.log("WebAuthn supported");
+} else {
+  console.log("WebAuthn not supported");
+}
+
+// Check platform authenticator availability
+const available = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+console.log("Platform authenticator available:", available);
+```
+
+**Solutions**:
+- Update browser to latest version
+- Ensure OS supports passkeys (iOS 16+, Android 9+, Windows 11+)
+- Try alternative authenticator (security key, password manager)
+
+### Issue 2: Cross-Browser Syncing Complications
+
+**Problem**: Passkey registered in Chrome doesn't work in Safari
+
+**Solution**: Use cross-platform syncing via:
+- iCloud Keychain (Apple devices)
+- Google Account passkeys (Android + Chrome)
+- Password manager syncing (1Password, Bitwarden)
+
+```javascript
+// Enable cross-platform attestation for broader compatibility
+const credential = await navigator.credentials.create({
+  publicKey: {
+    // ... other options ...
+    authenticatorSelection: {
+      authenticatorAttachment: "platform",
+      residentKey: "preferred",  // Store on local device
+      userVerification: "required"
+    }
+  }
+});
+```
+
+### Issue 3: Mobile App Passkey Integration
+
+**Android implementation**:
+```kotlin
+// Use Credential Manager API (Android 13+)
+import androidx.credentials.CreatePasswordRequest
+import androidx.credentials.CreatePublicKeyCredentialRequest
+
+val credentialManager = CredentialManager.create(context)
+
+val createPublicKeyRequest = CreatePublicKeyCredentialRequest(
+    requestJson = registrationRequestJson,  // From server
+    clientDataHash = clientDataHash
+)
+
+val result = credentialManager.createCredential(
+    context = context,
+    request = createPublicKeyRequest
+)
+```
+
+**iOS implementation**:
+```swift
+import AuthenticationServices
+
+let request = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: "yourdomain.com")
+    .createCredentialRegistrationRequest(challenge: challenge)
+
+let controller = ASAuthorizationController(authorizationRequests: [request])
+controller.delegate = self
+controller.presentationContextProvider = self
+controller.performRequests()
+```
+
+## Passkey Best Practices Summary
+
+1. **Register multiple authenticators**: Platform credential + security key
+2. **Generate recovery codes**: Store securely before disabling password
+3. **Test account recovery**: Verify backup methods work
+4. **Enable on critical accounts first**: Email, banking, essential services
+5. **Document your setup**: Keep recovery contact list
+6. **Regular security audits**: Review connected devices and recovery options
+
 
 
 ## Frequently Asked Questions

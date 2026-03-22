@@ -5,7 +5,7 @@ description: "Systematically audit what your cloud storage provider stores, shar
 date: 2026-03-22
 author: theluckystrike
 permalink: /audit-cloud-storage-privacy-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

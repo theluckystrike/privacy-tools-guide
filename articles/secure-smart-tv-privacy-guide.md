@@ -5,7 +5,7 @@ description: "Practical steps to disable ACR tracking, block smart TV telemetry 
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-smart-tv-privacy-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
