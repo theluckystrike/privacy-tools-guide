@@ -52,6 +52,25 @@ Secondary DNS: 208.67.220.123
 
 Access your router's admin panel, navigate to WAN or DNS settings, and replace your ISP's DNS servers with these values. This automatically filters adult content across your entire network.
 
+### Preventing DNS Bypass
+
+Determined children may attempt to bypass DNS-level filtering by manually configuring devices to use alternative resolvers like Google's 8.8.8.8. Prevent this by adding firewall rules that block outbound DNS except through your filtering resolver:
+
+```bash
+# iptables rules to force all DNS traffic through Pi-hole (192.168.1.100)
+iptables -t nat -A PREROUTING -i eth0 -p udp --dport 53 -j DNAT --to 192.168.1.100:53
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 53 -j DNAT --to 192.168.1.100:53
+
+# Block DoH (DNS over HTTPS) to known providers
+iptables -A FORWARD -d 8.8.8.8 -p tcp --dport 443 -j DROP
+iptables -A FORWARD -d 1.1.1.1 -p tcp --dport 443 -j DROP
+
+# Save rules
+iptables-save > /etc/iptables/rules.v4
+```
+
+This ensures that even if a device's DNS is changed manually, all DNS queries are still redirected to your filtering server.
+
 ## Device Hardening for Children's Devices
 
 ### iOS Screen Time Configuration
@@ -216,6 +235,34 @@ brew install exiftool
 exiftool -all= -overwrite_original /path/to/photos/*
 ```
 
+### Blocking VPN Apps on Children's Devices
+
+Children who know about VPNs may attempt to install one to circumvent your network-level filtering. Prevent VPN installation using MDM profiles on iOS:
+
+```xml
+<key>VPNPolicyPayload</key>
+<dict>
+    <key>PayloadType</key>
+    <string>com.apple.vpn.managed</string>
+    <key>DisableVPN</key>
+    <true/>
+</dict>
+```
+
+On Android, use a device policy controller to restrict VPN profile creation through the `DevicePolicyManager.setAlwaysOnVpnPackage` API — setting this to a controlled package prevents any other VPN from being activated.
+
+## Recognizing Warning Signs
+
+Technical controls catch a lot, but understanding behavioral patterns helps identify situations where additional investigation is needed. Review DNS logs and device usage reports when you observe:
+
+- Sudden increases in late-night device usage
+- New apps appearing that were not approved through the family account
+- Secretive behavior when using devices around adults
+- Unexplained gifts, gaming credits, or online accounts
+- Reluctance to discuss online friends or activities
+
+These signals do not guarantee predatory contact is occurring, but they indicate a conversation is warranted. Approach it without accusation — the goal is to understand the context, not to punish.
+
 ## Communication and Education
 
 Technical controls work best alongside open communication. Establish clear rules about:
@@ -227,6 +274,8 @@ Technical controls work best alongside open communication. Establish clear rules
 
 Create a family agreement document that outlines expectations and consequences. Review and update it regularly as children grow and their needs change.
 
+Age-appropriate conversations about online safety should start earlier than most parents expect. Children as young as 6 use tablets and messaging apps. At that age, the focus is simple: "Never talk to strangers online without showing me first." By age 10-12, expand to explaining why some adults seek contact with children and what grooming behavior looks like. Framing these conversations around awareness rather than fear gives children the tools to recognize manipulation without making them afraid of the internet entirely.
+
 ## Ongoing Maintenance
 
 Security requires continuous attention. Schedule regular reviews:
@@ -235,6 +284,13 @@ Security requires continuous attention. Schedule regular reviews:
 - Monthly: Review installed apps and remove unused applications
 - Quarterly: Update router firmware and DNS blocklists
 - Annually: Reassess age-appropriate settings as children mature
+
+Blocklist updates are particularly important — new domains appear constantly. Pi-hole's gravity update (`pihole -g`) pulls fresh blocklist data from all configured sources. Automate this with a weekly cron job:
+
+```bash
+# Run Pi-hole gravity update every Sunday at 3 AM
+0 3 * * 0 pihole -g >> /var/log/pihole-gravity.log 2>&1
+```
 
 By combining network-level filtering, device hardening, active monitoring, and open communication, you create a protection system that adapts to evolving online threats.
 
