@@ -6,7 +6,7 @@ description: "Learn password manager security model explained simply with practi
 tags: [privacy-tools-guide, security]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
