@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Setting Up Encrypted Email with Tutanota"
-description: "How to set up Tutanota encrypted email, configure custom domains, use the desktop client, and integrate with external tools for end-to-end encrypted communication"
+description: "How to set up Tutanota encrypted email, configure custom domains, use the desktop client, and integrate with external tools for end-to-end encrypted"
 date: 2026-03-22
 author: theluckystrike
 permalink: /tutanota-encrypted-email-setup-guide/
@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # Setting Up Encrypted Email with Tutanota
 
 Tutanota (now rebranded as Tuta) encrypts email end-to-end between Tutanota users automatically, and can encrypt to external recipients using a shared password. Unlike ProtonMail, Tutanota also encrypts subject lines — a meaningful privacy detail since subject lines are often more revealing than message bodies.
-
 ---
 
 ## What Tutanota Encrypts
@@ -256,7 +254,7 @@ The Tutanota mobile app (iOS and Android) provides the same E2EE guarantees as t
 # 4. Configure autodiscovery for push notifications
 ```
 
-Mobile E2EE continues even for emails sent outside Tutanota—the mobile app handles password-encrypted external emails seamlessly.
+Mobile E2EE continues even for emails sent outside Tutanota—the mobile app handles password-encrypted external emails .
 
 ## Integration with Standard Email Clients
 
@@ -386,4 +384,3 @@ Yes, but not automatically. Export emails from ProtonMail as EML files, then imp
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

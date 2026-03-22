@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # How to Secure Your Smart TV Privacy
 
 Smart TVs are advertising terminals that also show video. Automatic Content Recognition (ACR) technology watches what you're watching and sends fingerprints to ad servers. Voice remotes with "always-on" mics are common. Telemetry runs constantly. This guide covers what to disable and how to block the rest at the network level.
-
 ---
 
 ## What Smart TVs Collect
@@ -279,7 +277,7 @@ pihole -t | grep -i "192.168.1.55"  # Replace with your TV IP
 # 2026-03-22T10:16:12.445 192.168.1.55 → ntp.ubuntu.com (ALLOWED)
 ```
 
-Record these queries over a week to build a comprehensive blocklist.
+Record these queries over a week to build a blocklist.
 
 ## TCPDump for Deep Packet Inspection
 
@@ -415,4 +413,3 @@ This approach sacrifices convenience for complete privacy.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

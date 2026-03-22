@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy-Focused Website Speed Test Tool That Does Not Track Tested URLs"
-description: "Discover privacy-focused website speed test tools that do not log or share tested URLs. This guide covers self-hosted options, CLI tools, and techniques for developers who need performance data without compromising URL privacy."
+title: "Privacy-Focused Website Speed Test Tool That Does Not Track"
+description: "Discover privacy-focused website speed test tools that do not log or share tested URLs. This guide covers self-hosted options, CLI tools, and techniques"
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-website-speed-test-tool-that-does-not-track-/
@@ -10,7 +10,7 @@ voice-checked: true
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
----
+intent-checked: true---
 
 {% raw %}
 
@@ -81,7 +81,7 @@ curl -o /dev/null -s -w "DNS: %{time_namelookup}s\nConnect: %{time_connect}s\n" 
 
 This method sends no data to external servers—the measurement happens entirely on your machine using your network connection to the target server.
 
-### Chrome DevTools Protocol for Comprehensive Analysis
+### Chrome DevTools Protocol for Analysis
 
 For more detailed performance data, use Puppeteer or Playwright with the Chrome DevTools Protocol:
 
@@ -92,24 +92,24 @@ const puppeteer = require('puppeteer');
 async function measurePerformance(url) {
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
-  
+
   // Enable performance metrics
   await page.setCacheEnabled(false);
-  
+
   const metrics = await page.metrics();
   const navigationTiming = await page.evaluate(() => {
     return JSON.stringify(performance.timing);
   });
-  
+
   const timing = JSON.parse(navigationTiming);
   const loadTime = timing.loadEventEnd - timing.navigationStart;
   const domContent = timing.domContentLoadedEventEnd - timing.navigationStart;
-  
+
   console.log(`URL: ${url}`);
   console.log(`Page Load Time: ${loadTime}ms`);
   console.log(`DOM Content Loaded: ${domContent}ms`);
   console.log(`JS Heap Size: ${metrics.JSHeapUsedSize / 1024 / 1024}MB`);
-  
+
   await browser.close();
 }
 
@@ -155,20 +155,20 @@ from datetime import datetime
 
 def test_url(url, runs=3):
     results = []
-    
+
     for _ in range(runs):
         start = time.perf_counter()
-        
+
         req = urllib.request.Request(url, headers={
             'User-Agent': 'PrivacySpeedTest/1.0'
         })
-        
+
         with urllib.request.urlopen(req) as response:
             _ = response.read()
-        
+
         elapsed = (time.perf_counter() - start) * 1000
         results.append(elapsed)
-    
+
     return {
         'url': url,
         'avg_ms': sum(results) / len(results),
@@ -183,7 +183,7 @@ if __name__ == '__main__':
         'https://example.com',
         'https://your-client-site.com',
     ]
-    
+
     for url in urls:
         result = test_url(url)
         print(f"{result['url']}: {result['avg_ms']:.2f}ms avg")
@@ -310,15 +310,6 @@ When evaluating any speed testing tool, verify its privacy claims:
 
 1. **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
 2. **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
-3. **Test with a unique URL**: Create a URL with a distinctive subdomain, then search for it in public databases to see if it was logged
+3. **Test with a unique URL**: Create an URL with a distinctive subdomain, then search for it in public databases to see if it was logged
 4. **Read the privacy policy**: Look for explicit statements about URL retention and third-party sharing
-
-## Conclusion
-
-Privacy-focused website speed testing requires moving away from public services that log URLs. Self-hosted solutions like WebPageTest, CLI tools using curl or Puppeteer, and custom scripts all provide accurate performance data while keeping your tested URLs private. Choose the approach that matches your technical requirements and infrastructure capabilities.
-
-For teams regularly testing multiple sites, investing in a self-hosted WebPageTest instance or building a custom dashboard pays dividends in both privacy and control over your testing workflow.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

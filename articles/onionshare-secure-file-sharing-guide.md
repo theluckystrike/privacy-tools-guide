@@ -10,8 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -20,7 +19,6 @@ tags: [privacy-tools-guide]
 OnionShare creates a temporary .onion address and runs a local web server behind it. The person you share with visits the .onion address in Tor Browser and downloads the file directly from your machine — no cloud storage intermediary, no account, no IP visible to either party. For receiving files (whistleblower drops, source submissions), it runs in receive mode — an upload form at a private .onion address.
 
 This guide covers installation, every major mode, security considerations, metadata stripping, scripting, and real operational decisions you need to make when using OnionShare for sensitive transfers.
-
 ---
 
 ## Install OnionShare
@@ -335,4 +333,3 @@ For most one-time sensitive file transfers between known parties, OnionShare is 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

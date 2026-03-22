@@ -11,8 +11,21 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]
+tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]---
 ---
+layout: default
+title: "Privacy Risks of Smart Home Voice Assistants 2026"
+description: "Alexa, Google Home, Siri privacy comparison. What they record, data retention, how to disable always-listening, audit options."
+date: 2026-03-22
+last_modified_at: 2026-03-22
+author: "Privacy Tools Guide"
+permalink: /privacy-risks-of-smart-home-voice-assistants-2026/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]---
 
 {% raw %}
 
@@ -100,7 +113,7 @@ Go to myactivity.google.com. You'll see a history of your Google Home interactio
 - **Improving speech recognition**: Google uses voice recordings to improve accuracy. You can disable this.
 - **Ad targeting**: Google's entire business model is advertising. Your Alexa query patterns inform ad serving across Google's properties (Search, YouTube, Gmail).
 - **Training AI models**: Google trains machine learning models on user data to improve products. Your voice is part of the training set.
-- **Cross-device tracking**: Google can correlate your Home interactions with your Google account, phone, and other devices. A comprehensive picture of your life emerges.
+- **Cross-device tracking**: Google can correlate your Home interactions with your Google account, phone, and other devices. A picture of your life emerges.
 
 Google's privacy advantage over Alexa:
 - Shorter default retention (3 months vs. forever)
@@ -133,7 +146,7 @@ Apple's core promise: Siri processing happens on-device as much as possible. Unl
 
 For smart home control, music playback, reminders, and many other tasks, Siri processes your request on the iPhone or HomePod without sending audio to Apple's servers. This is a significant privacy advantage.
 
-For requests that require server processing (weather, translation, dictation), audio is sent to Apple. Apple promises end-to-end encryption, meaning Apple can't read the audio without decryption. The technical implementation is more robust than Google's or Amazon's.
+For requests that require server processing (weather, translation, dictation), audio is sent to Apple. Apple promises end-to-end encryption, meaning Apple can't read the audio without decryption. The technical implementation is more strong than Google's or Amazon's.
 
 **Data Retention**
 

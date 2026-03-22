@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Your Cloud Storage Privacy"
-description: "Systematically audit what your cloud storage provider stores, shares, and exposes — covering access logs, third-party data sharing, encryption gaps, and legal exposure"
+description: "Systematically audit what your cloud storage provider stores, shares, and exposes — covering access logs, third-party data sharing, encryption gaps, and"
 date: 2026-03-22
 author: theluckystrike
 permalink: /audit-cloud-storage-privacy-guide/
@@ -10,8 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -20,7 +19,6 @@ tags: [privacy-tools-guide]
 Most people pick a cloud storage provider based on price and storage size, then forget about it. The provider can read your files (unless zero-knowledge encrypted), scan them for content, share access logs with advertisers, and hand over data to law enforcement. An audit makes this concrete — what does your provider actually know?
 
 This guide covers a systematic six-step audit process: reviewing privacy policies for specific red flags, requesting and analyzing your data export, auditing OAuth grants, verifying encryption claims, finding stale shared links, and reading transparency reports. For each problem found, concrete remediation options are listed.
-
 ---
 
 ## What Cloud Providers Can Access
@@ -414,4 +412,3 @@ Complete this before storing sensitive data.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

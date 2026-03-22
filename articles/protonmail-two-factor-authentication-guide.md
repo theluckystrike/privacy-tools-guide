@@ -11,8 +11,7 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 
 {% raw %}
@@ -238,7 +237,6 @@ No. Once 2FA is enabled, it cannot be disabled without completing a 2FA challeng
 
 **Should I use Authy or Aegis?**
 Aegis is preferred for privacy-conscious users because it is open source, stores secrets locally, and does not require an account. Authy stores encrypted secrets in the cloud, which is convenient for multi-device sync but requires trusting Authy's infrastructure. Use Aegis with a manual encrypted backup for the most secure configuration.
-
 ---
 
 
@@ -251,4 +249,4 @@ Aegis is preferred for privacy-conscious users because it is open source, stores
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

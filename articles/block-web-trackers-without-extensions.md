@@ -10,8 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -20,7 +19,6 @@ tags: [privacy-tools-guide]
 Browser extensions are the standard advice for blocking trackers, but they come with trade-offs: they can see everything you browse, they add attack surface, and some have had vulnerabilities. DNS-level blocking, system hosts files, and browser native settings catch most trackers without adding extensions to your browser.
 
 This guide covers five layers of tracker blocking — from DNS resolvers and local Pi-hole deployments, to browser-native privacy configuration, advanced Firefox preferences, and verification tools to confirm that blocking is actually working.
-
 ---
 
 ## Layer 1: DNS-Level Blocking
@@ -415,4 +413,3 @@ HTMLCanvasElement.prototype.toDataURL = () => {
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

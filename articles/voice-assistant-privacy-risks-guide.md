@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # Privacy Risks of Voice Assistants Guide
 
 Voice assistants listen continuously for wake words. That's the design — there's no other way to respond to "Hey Alexa" without the microphone being on and the audio being analyzed. The question isn't whether they listen, but what happens to what they hear, when they get it wrong, and who else gets access.
-
 ---
 
 ## How Voice Assistants Work
@@ -241,4 +239,3 @@ If you want voice control without cloud dependency, local alternatives exist:
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
