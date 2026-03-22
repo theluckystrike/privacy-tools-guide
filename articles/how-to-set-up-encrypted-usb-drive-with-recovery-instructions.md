@@ -33,6 +33,15 @@ Setting up an encrypted USB drive with clear recovery instructions is one of the
 
 This guide covers the technical implementation of encrypted USB drives with recovery mechanisms designed specifically for estate executor scenarios.
 
+## Key Takeaways
+
+- **Choose "Encrypted file container"**: (for maximum portability) 3.
+- **Choose a strong location**: for the container file 5.
+- **Click "Select File" and**: choose recovery.key 5.
+- **Setting up an encrypted**: USB drive with clear recovery instructions is one of the most practical steps you can take for digital estate planning.
+- **Unlike proprietary solutions**: VeraCrypt is open-source, has undergone extensive security audits, and works on Windows, macOS, and Linux.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Threat Model
 
 Before implementing any solution, you need to understand what you're protecting against and who needs access. For estate executor scenarios, the threat model includes:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Bitcoin inheritance planning remains one of the most overlooked aspects of cryptocurrency ownership. Without proper succession planning, Bitcoin holdings can become permanently inaccessible when something happens to the owner. Casa, a multisig wallet provider, offers a collaborative custody model that enables developers and power users to set up inheritance arrangements. This guide walks through the technical implementation of a Casa-based Bitcoin inheritance plan with collaborative custody.
 
+## Key Takeaways
+
+- **Infrastructure verification [ ]**: Casa uses standard BIP-39/BIP-44 derivation [ ] Wallet is compatible with other multisig tools [ ] You can recover without Casa's servers # 4.
+- **Third-party audit [ ]**: Casa has undergone security audit (check website) [ ] Audit results publicly available [ ] Audit from reputable firm (Coinbase, Least Authority, etc.) # 5.
+- **Bitcoin inheritance planning remains**: one of the most overlooked aspects of cryptocurrency ownership.
+- **Casa**: a multisig wallet provider, offers a collaborative custody model that enables developers and power users to set up inheritance arrangements.
+- **This non-custodial approach means**: users retain full control over their Bitcoin while benefitting from collaborative security.
+- **The setup process guides**: users through generating cryptographic keys that will be distributed to different key holders.
+
 ## Understanding Casa Multisig Architecture
 
 Casa provides multi-signature wallet solutions that require multiple private keys to authorize transactions. Their key strength is separating key custody across different locations and parties, eliminating single points of failure. For inheritance planning, this architecture ensures that Bitcoin transfers can only occur when multiple authorized parties agree.

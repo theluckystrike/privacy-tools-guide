@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Mutual aid networks require secure communication channels that protect participant privacy, maintain operational security during crises, and function reliably when traditional infrastructure becomes unreliable. Whether coordinating disaster relief, community defense, or neighborhood support systems, encrypted communication prevents surveillance, protects vulnerable individuals, and ensures your network remains functional under adversarial conditions.
 
+## Key Takeaways
+
+- **Recovery phrase storage best practices**: 1.
+- **The Signal protocol uses the Double Ratchet algorithm, ensuring perfect forward secrecy**: compromised keys cannot decrypt past messages.
+- **For most mutual aid networks**: Signal serves as the primary coordination channel.
+- **For distributing sensitive documents**: or coordinating across networks with limited direct communication, dead drops provide a valuable fallback.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Mutual Aid Communication Requirements
 
 Mutual aid networks face distinct challenges that differ from typical secure messaging use cases. Your threat model must account for infrastructure disruption during emergencies, potential targeting of community organizers, and the need to communicate with participants who may have varying technical sophistication.

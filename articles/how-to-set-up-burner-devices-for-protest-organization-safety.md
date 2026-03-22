@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Organizing peaceful assemblies requires communication infrastructure that protects participant identities from surveillance, device seizure, and network interception. A properly configured burner device—a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination. This guide covers the technical implementation from hardware selection through secure disposal, with code examples for automation where applicable.
 
+## Key Takeaways
+
+- **Use a local-only account (no Google**: no cloud sync)
+4.
+- **A properly configured burner device**: a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination.
+- **Screen lock**: Use a strong PIN (6+ digits) rather than biometric unlock.
+- **Store isolated**: Keep in Faraday pouch until safe house reached
+3.
+- **Install a privacy-focused custom**: ROM or use the stock OS with extensive hardening.
+- **Use a dedicated mobile**: hotspot or public WiFi with a VPN.
+
 ## Hardware Selection and Initial Acquisition
 
 The goal is hardware with no personal data linkage. Purchase devices with cash from physical retail locations rather than online. Avoid devices tied to your identity through carrier accounts. Recommended options include:

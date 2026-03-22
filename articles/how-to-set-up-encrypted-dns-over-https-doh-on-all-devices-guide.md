@@ -33,6 +33,24 @@ DNS (Domain Name System) queries reveal every website you visit. Without encrypt
 
 This guide covers step-by-step setup for all devices—macOS, Windows, Linux, iOS, Android, and routers. DoH is the most impactful privacy improvement you can make with minimal effort. Implementing it across your devices costs nothing and takes 1-2 hours.
 
+## Key Takeaways
+
+- **HTTPS adds ~10-50ms to**: initial queries (amortized across all browsing because results are cached).
+- **Best for**: Individuals wanting free, fast DoH without account management.
+- **Best for**: Users wanting detailed filtering and analytics.
+- **Verify**: ```bash
+systemctl status systemd-resolved
+resolvectl status
+```
+
+### Method 2: stubby (Dedicated DoH Resolver, Recommended)
+
+Stubby is a dedicated DNS resolver supporting DoH:
+
+1.
+- **Enter provider details Not**: all versions support this directly; iOS 15+ is most reliable.
+- **For DNS-only encryption**: use Method 1 or official app.
+
 ## Understanding DNS Encryption
 
 Standard DNS queries travel unencrypted over UDP port 53. Any device on your network—including your router, ISP infrastructure, or network sniffer—can see every query. Schools, workplaces, and ISPs routinely log DNS queries for monitoring or control purposes.
