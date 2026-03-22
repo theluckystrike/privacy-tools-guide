@@ -19,12 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Entering a witness protection program marks a significant transition in your life, requiring not just physical security but also digital privacy. Your digital footprint can reveal your location, connections, and identity if not properly managed. This guide provides practical steps to secure your digital presence while maintaining the anonymity that witness protection requires.
 
-## Key Takeaways
-
-- **DNS Leak Test**: "
-echo "   Visit: https://www.dnsleaktest.com"
-echo "   Verify VPN DNS servers are used, not ISP DNS"
-
 # Test 3: IPv6 Leak Testing
 echo ""
 echo "3.
@@ -157,8 +151,8 @@ echo "5. Settings > Notifications > Customize to disable revealing message previ
 # Step 1: New email account creation
 echo "Create new email accounts (use Tor Browser for registration if possible)"
 echo "Recommended services:"
-echo "  - ProtonMail: Switzerland-based, encrypted, no tracking"
-echo "  - Tutanota: Germany-based, automatic encryption"
+echo " - ProtonMail: Switzerland-based, encrypted, no tracking"
+echo " - Tutanota: Germany-based, automatic encryption"
 
 # Step 2: Close old accounts
 echo ""
@@ -174,9 +168,9 @@ echo "TikTok: Me > Settings and Privacy > Account Control > Delete Account"
 # Step 3: Monitor old accounts
 echo ""
 echo "After account closure, periodically check:"
-echo "  - Google Takeout for any remaining linked accounts"
-echo "  - Archive.org (Wayback Machine) for cached versions of old profiles"
-echo "  - Google Search for name+old information"
+echo " - Google Takeout for any remaining linked accounts"
+echo " - Archive.org (Wayback Machine) for cached versions of old profiles"
+echo " - Google Search for name+old information"
 ```
 
 ### Phase 3: Network Hardening
@@ -193,7 +187,7 @@ cat > /etc/wireguard/wg0.conf << 'EOF'
 [Interface]
 PrivateKey = <generate-with-wg-genkey>
 Address = 10.0.0.2/32
-DNS = 1.1.1.1  # or use ProtonVPN DNS
+DNS = 1.1.1.1 # or use ProtonVPN DNS
 
 [Peer]
 PublicKey = <server-public-key>
@@ -219,38 +213,38 @@ echo "=== Privacy Verification Checklist ==="
 
 # Test 1: IP Address Verification
 echo "1. IP Address Leaks:"
-echo "   Real IP check: curl https://api.ipify.org"
-echo "   VPN should show different IP"
+echo " Real IP check: curl https://api.ipify.org"
+echo " VPN should show different IP"
 
 # Test 2: DNS Leak Testing
 echo ""
 echo "2. DNS Leak Test:"
-echo "   Visit: https://www.dnsleaktest.com"
-echo "   Verify VPN DNS servers are used, not ISP DNS"
+echo " Visit: https://www.dnsleaktest.com"
+echo " Verify VPN DNS servers are used, not ISP DNS"
 
 # Test 3: IPv6 Leak Testing
 echo ""
 echo "3. IPv6 Leak Test:"
-echo "   Visit: https://test-ipv6.com"
-echo "   Should show no IPv6 address if VPN is active"
+echo " Visit: https://test-ipv6.com"
+echo " Should show no IPv6 address if VPN is active"
 
 # Test 4: WebRTC Leak Testing
 echo ""
 echo "4. WebRTC Leak Test:"
-echo "   Visit: https://browserleaks.com/webrtc"
-echo "   Should show VPN IP only"
+echo " Visit: https://browserleaks.com/webrtc"
+echo " Should show VPN IP only"
 
 # Test 5: Location Verification
 echo ""
 echo "5. Location Verification:"
-echo "   Visit: https://www.iplocation.net"
-echo "   Should show VPN server location, not your actual location"
+echo " Visit: https://www.iplocation.net"
+echo " Should show VPN server location, not your actual location"
 
 # Test 6: Browser Fingerprinting
 echo ""
 echo "6. Browser Fingerprint Test:"
-echo "   Visit: https://coveryourtracks.eff.org"
-echo "   Review what information websites can collect"
+echo " Visit: https://coveryourtracks.eff.org"
+echo " Review what information websites can collect"
 ```
 
 ### Phase 5: Ongoing Maintenance
@@ -269,34 +263,34 @@ echo "Monthly Security Review - $REVIEW_DATE" > "$REVIEW_LOG"
 # Check 1: App permissions
 echo "" >> "$REVIEW_LOG"
 echo "1. App Permissions Review:" >> "$REVIEW_LOG"
-echo "   - Settings > Privacy > Review each app's permissions" >> "$REVIEW_LOG"
-echo "   - Remove access for apps no longer used" >> "$REVIEW_LOG"
+echo " - Settings > Privacy > Review each app's permissions" >> "$REVIEW_LOG"
+echo " - Remove access for apps no longer used" >> "$REVIEW_LOG"
 
 # Check 2: Location history
 echo "" >> "$REVIEW_LOG"
 echo "2. Location History Audit:" >> "$REVIEW_LOG"
-echo "   - Google: https://myactivity.google.com" >> "$REVIEW_LOG"
-echo "   - Apple: Settings > Privacy > Location Services" >> "$REVIEW_LOG"
-echo "   - Clear history if any remains" >> "$REVIEW_LOG"
+echo " - Google: https://myactivity.google.com" >> "$REVIEW_LOG"
+echo " - Apple: Settings > Privacy > Location Services" >> "$REVIEW_LOG"
+echo " - Clear history if any remains" >> "$REVIEW_LOG"
 
 # Check 3: Connected devices
 echo "" >> "$REVIEW_LOG"
 echo "3. Connected Devices Review:" >> "$REVIEW_LOG"
-echo "   - Check Apple ID Sign In & Security" >> "$REVIEW_LOG"
-echo "   - Google Security Checkup: https://myaccount.google.com/security-checkup" >> "$REVIEW_LOG"
-echo "   - Remove unrecognized devices" >> "$REVIEW_LOG"
+echo " - Check Apple ID Sign In & Security" >> "$REVIEW_LOG"
+echo " - Google Security Checkup: https://myaccount.google.com/security-checkup" >> "$REVIEW_LOG"
+echo " - Remove unrecognized devices" >> "$REVIEW_LOG"
 
 # Check 4: App store review
 echo "" >> "$REVIEW_LOG"
 echo "4. App Store Review:" >> "$REVIEW_LOG"
-echo "   - Identify any new apps requesting new permissions" >> "$REVIEW_LOG"
-echo "   - Remove any apps added by others (if shared device)" >> "$REVIEW_LOG"
+echo " - Identify any new apps requesting new permissions" >> "$REVIEW_LOG"
+echo " - Remove any apps added by others (if shared device)" >> "$REVIEW_LOG"
 
 # Check 5: Malware scan
 echo "" >> "$REVIEW_LOG"
 echo "5. Malware Detection:" >> "$REVIEW_LOG"
-echo "   - iOS: Use Find My > Find My iPhone to ensure no tracking" >> "$REVIEW_LOG"
-echo "   - Android: Install Exodus Privacy and review app tracking" >> "$REVIEW_LOG"
+echo " - iOS: Use Find My > Find My iPhone to ensure no tracking" >> "$REVIEW_LOG"
+echo " - Android: Install Exodus Privacy and review app tracking" >> "$REVIEW_LOG"
 
 echo "Security review completed. Details saved to: $REVIEW_LOG"
 ```
@@ -344,12 +338,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [iPhone Mail Privacy Protection: How It](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
-- [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
-- [Privacy Tools For Election Observer Protecting Witness.](/privacy-tools-guide/privacy-tools-for-election-observer-protecting-witness-testimony/)
-- [Researcher Participant Data Privacy Irb Compliance Digital T](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
-- [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
-
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

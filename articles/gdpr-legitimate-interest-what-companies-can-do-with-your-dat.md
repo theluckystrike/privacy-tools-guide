@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 When you visit a website or use an application, you likely see consent banners asking you to accept cookies or agree to data processing. However, companies can process your personal data under GDPR without obtaining your consent—through a legal basis called "legitimate interest." Understanding how this works helps you recognize what data practices are legal and what rights you actually have.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Google - Germany 2022**: Refused to accept "service improvement" as legitimate interest for cross-site tracking.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## What Is Legitimate Interest Under GDPR?
 
 Legitimate interest is one of six lawful bases for processing personal data under GDPR Article 6(1)(f). It allows companies to process your data when they have a "legitimate interest" that is not overridden by your rights and freedoms.

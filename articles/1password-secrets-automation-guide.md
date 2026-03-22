@@ -13,34 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, automation]
 ---
----
-layout: default
-title: "1password Secrets Automation Guide"
-description: "A practical guide to automating secret management with 1Password CLI. Learn how to integrate 1Password into CI/CD pipelines, environment variable"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /1password-secrets-automation-guide/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, automation]
----
 
 {% raw %}
 
 Use the 1Password CLI (`op`) to pull secrets directly into your shell scripts, CI/CD pipelines, and container orchestration workflows -- eliminating hardcoded credentials entirely. Install it with `brew install --cask 1password-cli`, authenticate with `op signin`, and retrieve any secret using `op item get "Item Name" --field password`. This guide walks through environment variable injection, GitHub Actions integration, Kubernetes secrets, and security best practices for automated secret management.
-
-## Key Takeaways
-
-- **Use the 1Password CLI**: (`op`) to pull secrets directly into your shell scripts, CI/CD pipelines, and container orchestration workflows -- eliminating hardcoded credentials entirely.
-- **This guide walks through**: environment variable injection, GitHub Actions integration, Kubernetes secrets, and security best practices for automated secret management.
-- **This follows the principle**: of least privilege: a CI/CD pipeline that only needs production database credentials should not have access to your entire vault.
-- **Most CI platforms support**: injecting environment variables during builds.
-- **Personal Authentication The `op**: signin` flow works well for local development and interactive use, but automated pipelines require a non-interactive authentication method.
-- **Create a service account**: through the 1Password web console under Integrations > Service Accounts.
 
 ## Table of Contents
 

@@ -20,15 +20,6 @@ A VPN kill switch is a firewall rule that blocks all internet traffic when the V
 
 Implementing a kill switch at the Linux firewall level gives you control that no VPN client setting can. This guide covers both iptables and nftables implementations.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Debian 10+**: Ubuntu 20.04+, Fedora 32+, and Arch all prefer nftables.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -18,17 +18,6 @@ voice-checked: true
 
 The iOS Journal app processes all data on-device using Apple's Neural Engine, meaning your entries never leave your iPhone unless you explicitly share them. You control privacy through Settings by toggling suggestions for photos, locations, and workouts, enabling Face ID lock, and managing per-category permissions. This guide breaks down every privacy setting, permission category, and developer-relevant architecture decision in the Journal app.
 
-## Key Takeaways
-
-- **Request only the permissions**: your app genuinely needs and provide clear explanations for each request, since iOS prompts users with meaningful context strings.
-- **Export from old app**: Use app's export function (usually JSON or PDF)
-2.
-- **Import to Journal**: Create new entries manually or use import script
-4.
-- **Unlike many third-party journaling**: applications that transmit user entries to cloud servers for analysis, Apple's implementation performs all machine learning operations locally.
-- **This architectural decision means**: that your journal entries never leave your device unless you explicitly choose to share them.
-- **When you create a journal entry**: the app uses on-device machine learning to generate personalized suggestions.
-
 ## On-Device Processing: The Core Privacy Principle
 
 The iOS Journal app operates on a fundamental principle: **on-device processing**. Unlike many third-party journaling applications that transmit user entries to cloud servers for analysis, Apple's implementation performs all machine learning operations locally. This architectural decision means that your journal entries never leave your device unless you explicitly choose to share them.
@@ -381,11 +370,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-- [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
-- [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
-- [iOS Contact Poster Privacy Settings Guide](/privacy-tools-guide/ios-contact-poster-privacy-settings-guide/)
-- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
-
+- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
+- [Privacy Focused Mobile Email App For Ios That Does Not Scan](/privacy-tools-guide/privacy-focused-mobile-email-app-for-ios-that-does-not-scan-inbox-content-2026/)
+- [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -356,6 +356,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 - [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
-- [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

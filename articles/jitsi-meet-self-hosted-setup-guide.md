@@ -14,17 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Deploy a self-hosted Jitsi Meet instance by running `docker-compose up -d` with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name pointed to your server. You will have a working, private video conferencing server with automatic Let's Encrypt SSL in under 30 minutes. This guide covers the full setup -- Docker Compose configuration, authentication, TURN server configuration, security hardening, and horizontal scaling with additional video bridge instances.
-
-## Key Takeaways
-
-- **Deploy a self-hosted Jitsi**: Meet instance by running `docker-compose up -d` with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name pointed to your server.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers why**: self-host jitsi meet, prerequisites and infrastructure, docker deployment, with specific setup instructions
 
 ## Why Self-Host Jitsi Meet
 
@@ -335,11 +327,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

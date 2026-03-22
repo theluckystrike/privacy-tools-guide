@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 No browser is privacy-neutral out of the box. Every major browser makes different trade-offs between usability, performance, and the amount of data it collects or exposes. This comparison focuses on the browsers most used by privacy-conscious people in 2026, evaluating them on what actually matters: default behavior, fingerprinting resistance, telemetry, and how much work you need to do to make them actually private.
 
-## Key Takeaways
-
-- **Brave ships with telemetry**: disabled by default for most users.
-- **This means better extension**: control (Manifest V2 still supported), independent codebase governance, and no upstream dependency on Google.
-- **Brave's built-in Shields handles**: most blocking, partially compensating for MV3 limitations.
-- **Extensions can no longer**: use `webRequest` API, only the limited `declarativeNetRequest` API which has per-rule caps.
-- **This gives Brave users**: protection equivalent to or better than uBlock Origin, without installing extensions.
-- **Its "privacy-preserving product analytics"**: (called P3A) uses a randomized sampling method and is designed not to identify individuals.
-
 ## Table of Contents
 
 - [The Browsers in This Comparison](#the-browsers-in-this-comparison)

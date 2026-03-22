@@ -314,11 +314,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/guides-hub/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
-
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
+- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

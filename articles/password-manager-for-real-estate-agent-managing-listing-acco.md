@@ -21,16 +21,6 @@ Real estate professionals juggling multiple listing services, property managemen
 
 This guide covers practical implementation strategies for real estate agents who want to organize their credential ecosystem efficiently, focusing on developers and power users who prefer command-line interfaces and programmatic solutions over graphical applications.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Emergency Access**: Designate a trusted individual (assistant, broker, spouse) with legacy access to your vault
-2.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Both Bitwarden and 1Password**: provide command-line interfaces that integrate with scripts and automation.
-
 ## Table of Contents
 
 - [The Real Estate Credential Problem](#the-real-estate-credential-problem)

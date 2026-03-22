@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Kubernetes `Secret` objects are base64 encoded, not encrypted. Anyone with read access to the cluster can decode them. Storing them in Git is even worse — they are permanently visible in history. This guide covers the full stack of Kubernetes secrets management from etcd encryption to GitOps-safe patterns.
 
-## Key Takeaways
-
-- **Storing them in Git is even worse**: they are permanently visible in history.
-- **Topics covered**: the problem with default kubernetes secrets, step 1: encrypt etcd at rest, step 2: sealed secrets for gitops
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## The Problem with Default Kubernetes Secrets
 
 ```bash
@@ -292,14 +285,13 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-## Related Reading
+## Related Articles
 
+- [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
+- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

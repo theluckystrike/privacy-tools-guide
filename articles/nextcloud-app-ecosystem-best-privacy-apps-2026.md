@@ -29,15 +29,6 @@ tags: [privacy-tools-guide, best-of, privacy]
 
 The Nextcloud app ecosystem provides privacy-focused alternatives to mainstream cloud services. For developers and power users seeking data sovereignty, the right combination of apps transforms a standard Nextcloud installation into a privacy platform. This guide covers the essential privacy apps available in 2026, with practical implementation details for each.
 
-## Key Takeaways
-
-- **Use fail2ban to protect**: against brute force attacks 5.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **The Nextcloud app ecosystem**: provides privacy-focused alternatives to mainstream cloud services.
-- **For developers and power**: users seeking data sovereignty, the right combination of apps transforms a standard Nextcloud installation into a privacy platform.
-- **For enhanced privacy**: enable server-side encryption in the admin settings, or use the End-to-End Encryption app for files that even server administrators cannot access.
-- **While video calls currently**: use SRTP encryption, the signaling server handles key exchange.
-
 ## Table of Contents
 
 - [Why Nextcloud for Privacy](#why-nextcloud-for-privacy)

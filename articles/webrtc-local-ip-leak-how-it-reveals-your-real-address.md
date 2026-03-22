@@ -14,19 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 WebRTC (Web Real-Time Communication) is a powerful browser API that enables direct peer-to-peer communication between browsers for audio, video, and data sharing. While WebRTC brings valuable capabilities like video conferencing and file transfer, it harbors a privacy vulnerability that many users remain unaware of: the local IP leak.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **When evaluating VPN services:**: ### Mullvad ($5/month, no account required) Mullvad includes kill switch and WebRTC leak protection as standard features.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Bypassing NAT**: Attackers can use leaked local IPs to perform NAT punching attacks or identify devices behind network address translation.
-- **Alternatively**: use the `media.peerconnection` boolean preference to disable WebRTC entirely.
 
 ## Table of Contents
 

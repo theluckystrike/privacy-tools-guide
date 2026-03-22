@@ -14,21 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Switching password managers doesn't have to mean losing your data. With the right approach, you can transfer every login, secure note, and TOTP code from LastPass to Bitwarden without gaps. This guide covers the technical steps for developers and power users who want full control over their migration.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- Choose LastPass CSV File
-4.
-- **Enable two-factor authentication**: Use YubiKey or TOTP
-3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Prerequisites
 

@@ -14,19 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content. Self-host these platforms on your own infrastructure or use privacy-focused providers that explicitly don't record sessions without explicit patient consent. Enable E2EE encryption, disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history. This guide covers practical setups for HIPAA-compliant telehealth infrastructure with full encryption control.
-
-## Key Takeaways
-
-- **For most use cases**: keeping WebRTC enabled with the E2EE option provides adequate protection while allowing video functionality.
-- **Jitsi Meet provides an**: open-source foundation that supports E2EE through the Matrix protocol.
-- **Use Jitsi Meet or**: Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content.
-- **Enable E2EE encryption**: disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history.
-- **Setting up a basic**: Jitsi deployment requires a VPS with at least 2 CPU cores and 4GB RAM.
-- **Both participants must use compatible browsers**: Chrome, Firefox, and Edge support this natively.
 
 ## Table of Contents
 
@@ -479,11 +469,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
-- [Best Mouse Pad For Wrist Support During Long Coding Sessions](/privacy-tools-guide/best-mouse-pad-for-wrist-support-during-long-coding-sessions/)
-- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup Gu](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
-- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-
+- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
+- [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

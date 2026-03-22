@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 The China Social Credit System (SCS) represents one of the most digital surveillance infrastructures ever deployed at national scale. For developers and power users who care about privacy, understanding what data points the system collects and how behavior monitoring works provides critical insight into the future of digital rights globally.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Here's how data collection**: typically works: ### API Integration with Major Platforms Chinese tech companies are legally required to share user data with government systems.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **The China Social Credit**: System (SCS) represents one of the most digital surveillance infrastructures ever deployed at national scale.
-
 ## What Data Points Are Collected
 
 The SCS aggregates data from multiple government agencies, private companies, and public records. Understanding the data sources helps developers grasp the system's reach:
@@ -336,8 +327,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Insurance Company Data Collection Privacy What Health](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
-- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
-- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

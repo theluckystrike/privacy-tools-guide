@@ -11,35 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Instagram Memorialization Request Process What Happens"
-description: "To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /instagram-memorialization-request-process-what-happens-to-ph/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 To memorialize a deceased Instagram account, submit a request through Instagram's memorial request form with a death certificate or obituary. The account becomes read-only, displays "Remembering" on the profile, disables login, and prevents new posts. You can designate a legacy contact to manage posts after death, or request deletion if the person wanted no digital legacy. Designate your own legacy contact in Settings > Account > Legacy Contact to ensure your family controls your account after you die.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The account becomes read-only**: no new posts can be made, login is disabled, and the profile displays "Remembering" above the username.
-- **Verified legacy contacts -**: Users designated as legacy contacts by the account owner生前 2.
-- **Immediate family members - Spouse**: parent, adult child, or sibling
-3.
 
 ## Table of Contents
 

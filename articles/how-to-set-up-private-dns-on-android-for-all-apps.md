@@ -21,16 +21,6 @@ Private DNS provides a method to encrypt Domain Name System (DNS) queries origin
 
 Android's Private DNS feature, introduced in Android 9 (Pie), implements DNS-over-TLS (DoT) at the system level. This means applications that use standard Android networking APIs automatically benefit from encrypted DNS resolution without any code modifications.
 
-## Key Takeaways
-
-- Choose the Hostname option
-6.
-- **This means applications that**: use standard Android networking APIs automatically benefit from encrypted DNS resolution without any code modifications.
-- **The key advantage for**: developers and power users is that this works at the operating system level.
-- **NextDNS offers customizable blocking**: lists, though some features require a free account.
-- **Several methods exist depending**: on your technical preferences.
-- **Network Switching**: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -339,10 +329,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
-- [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
-- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
-- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
-
+- [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

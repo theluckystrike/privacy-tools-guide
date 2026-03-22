@@ -19,17 +19,6 @@ tags: [privacy-tools-guide]
 
 Protect your location and identity by disabling location permissions for all apps, removing metadata from photos before sharing, avoiding social media check-ins and location tags, using a VPN for all internet access, and using Tor for sensitive online activities. Assume government agencies and data brokers have access to cell tower records and app location data, so minimize your digital footprint and use separate anonymous accounts for sensitive communications. This guide walks through building a practical threat model covering asset identification, adversary capabilities including government surveillance and data broker harvesting, attack surfaces from app permissions and metadata, and actionable mitigations for protecting location and identity.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Each message uses unique**: session key // 4.
-- **Use alternate phone hardware**: Keep a phone used only for sensitive activities, powered off except when in safe locations
-2.
-- **Device discipline**: Agree to use phones only in agreed-safe locations
-4.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Start with a dedicated**: phone used only for sensitive activities, keeping your work and personal devices separate from any activities that could compromise your location.
-
 ## Table of Contents
 
 - [What Is a Threat Model](#what-is-a-threat-model)
@@ -496,11 +485,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
+- [Threat Model For Activist In Authoritarian Country Digital](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
-- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
-- [Threat Model For Transgender Person Protecting Deadname And](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
-- [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

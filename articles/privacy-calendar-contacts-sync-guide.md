@@ -17,11 +17,6 @@ tags: [privacy-tools-guide, privacy]
 Google Calendar and Apple iCloud see everything you schedule — meetings, medical appointments, travel. The CalDAV and CardDAV protocols are open standards that let you self-host sync with any client. This guide walks through running your own calendar/contacts server and connecting it to Android, Linux, and macOS.
 ---
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **---
-
 ## Table of Contents
 
 - [Option 1**: Nextcloud (Full-Featured)](#option-1-nextcloud-full-featured)

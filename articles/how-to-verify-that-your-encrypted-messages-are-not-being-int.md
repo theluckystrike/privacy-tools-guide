@@ -21,15 +21,6 @@ End-to-end encryption protects message content from eavesdroppers, but encryptio
 
 This guide provides practical methods to verify that your encrypted messages remain secure and未被拦截 (not being intercepted). These techniques target developers and power users who handle sensitive data and need assurance that their cryptographic communications actually work.
 
-## Key Takeaways
-
-- **For production communication systems, verify that the server uses TLS 1.2 or higher with strong cipher suites**: avoid older protocols like SSLv3 or TLS 1.0.
-- **Use a different channel**: to share your new public key and fingerprint 4.
-- **These techniques target developers**: and power users who handle sensitive data and need assurance that their cryptographic communications actually work.
-- **Signal Safety Number Verification**: Signal provides the most accessible verification mechanism through safety numbers.
-- **Each conversation generates a**: unique 60-digit number derived from the cryptographic keys exchanged between participants.
-- **In that scenario**: past messages remain secure because the session keys were ephemeral and are no longer available.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

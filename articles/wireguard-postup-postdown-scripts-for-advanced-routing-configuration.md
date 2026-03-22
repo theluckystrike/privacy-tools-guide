@@ -20,15 +20,6 @@ categories: [guides]
 
 WireGuard is renowned for its simplicity and performance, but many users don't realize that its powerful postup and postdown scripting capabilities can transform a basic VPN into a sophisticated network routing solution. These hooks allow you to execute custom commands automatically when the VPN interface comes up or goes down, enabling advanced configurations that would otherwise require complex firewall rules or separate routing daemons.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Use absolute paths in**: your scripts since the environment when WireGuard starts may differ from your interactive shell.
-- **For example**: use `/usr/sbin/iptables` instead of just `iptables`.
-
 ## Understanding WireGuard Postup and Postdown
 
 WireGuard's configuration file (typically located at `/etc/wireguard/wg0.conf`) supports two optional directives: `PostUp` and `PostDown`. These execute commands after the interface is created and before it's destroyed, respectively. This functionality gives you granular control over your network configuration at exactly the right moment in the interface lifecycle.

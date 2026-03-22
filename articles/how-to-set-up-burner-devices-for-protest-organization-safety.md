@@ -18,17 +18,6 @@ tags: [privacy-tools-guide]
 
 Organizing peaceful assemblies requires communication infrastructure that protects participant identities from surveillance, device seizure, and network interception. A properly configured burner device—a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination. This guide covers the technical implementation from hardware selection through secure disposal, with code examples for automation where applicable.
 
-## Key Takeaways
-
-- **Use a local-only account (no Google**: no cloud sync)
-4.
-- **A properly configured burner device**: a secondary phone or tablet used only for sensitive activities—forms the foundation of operational security for protest coordination.
-- **Screen lock**: Use a strong PIN (6+ digits) rather than biometric unlock.
-- **Store isolated**: Keep in Faraday pouch until safe house reached
-3.
-- **Install a privacy-focused custom**: ROM or use the stock OS with extensive hardening.
-- **Use a dedicated mobile**: hotspot or public WiFi with a VPN.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -344,9 +333,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
-- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
-- [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
-- [Smart Device Deregistration After Death How To Remove](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

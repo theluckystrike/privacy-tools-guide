@@ -20,17 +20,6 @@ ISP-provided DNS servers (8.8.8.8, 1.1.1.1 defaults) log your browsing. Even wit
 
 This guide compares five privacy DNS providers: NextDNS, Quad9, Mullvad DNS, AdGuard DNS, and Cloudflare 1.1.1.1. We focus on logging policies, filtering capabilities, configuration options, and real-world setup on routers and devices.
 
-## Key Takeaways
-
-- **Start with Quad9 (zero-log**: free, 80% of users happy)
-2.
-- **Save & Apply Verify**: (from any device on network): $ nslookup google.com Server: 192.168.1.1 ``` iPhone (Manual Profile): ``` 1.
-- **If need analytics/customization →**: NextDNS ($1.99) 3.
-- **Preferred**: 9.9.9.9
-5.
-- **Start VPN (uses DNS**: filtering) 3.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## NextDNS
 
 NextDNS is a DNS filtering service with privacy focus, parental controls, and analytics. All DNS queries are encrypted (DoH/DoT) and logged client-side only (encrypted on their servers).

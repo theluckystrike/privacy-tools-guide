@@ -314,7 +314,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 - [Threat Model For Religious Minority In Persecuting Country](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 - [Threat Model For Union Organizer In Hostile Employer](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

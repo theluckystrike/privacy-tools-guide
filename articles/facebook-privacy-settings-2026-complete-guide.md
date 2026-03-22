@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Control Facebook privacy through Settings > Privacy by restricting "Who can see your posts" to Friends only, disabling platform tracking in Settings > Apps and Websites, using "Clear History" to remove apps' data access, and setting Location Services to "Off." For developers, restrict API access through Facebook Developer settings, requiring user re-authentication before accessing sensitive data. Configure audience defaults to "Friends" instead of "Public," disable facial recognition in privacy settings, and review connected apps monthly to revoke unnecessary data access.
 
-## Key Takeaways
-
-- **Running "Limit past posts"**: takes 30 seconds and blocks all pre-2024 public posts.
-- **Who can post on your timeline?**: Set to "Friends" or "Only me" to prevent unauthorized posts
-2.
-- **This tool is particularly**: useful for reviewing post audience defaults, checking profile visibility, adjusting tagging controls, and reviewing app permissions.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

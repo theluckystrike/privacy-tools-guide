@@ -614,8 +614,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
-- [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
-- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
 - [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

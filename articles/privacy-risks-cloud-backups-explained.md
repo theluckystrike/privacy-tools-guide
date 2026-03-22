@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Cloud backups protect your data from hardware failure. But most backup services can read your files, hand them to law enforcement, and analyze your content for advertising. Understanding the threat model lets you choose when a commercial service is acceptable and when you need client-side encryption.
 
-## Key Takeaways
-
-- **Understanding the threat model**: lets you choose when a commercial service is acceptable and when you need client-side encryption.
-- **But most backup services can read your files**: hand them to law enforcement, and analyze your content for advertising.
-- **It does not protect you from the provider**: because the provider holds the key.
-- **Google Drive**: iCloud (default), Dropbox, OneDrive, and most backup services work this way.
-
 ## Table of Contents
 
 - [The Encryption Spectrum](#the-encryption-spectrum)
@@ -371,14 +364,13 @@ openssl rand -base64 32
 | Storing backup on ISP's server | ISP breach = data exposure | Use commercial provider or self-hosted |
 | Unencrypted backup metadata | Metadata alone reveals patterns | Use full metadata encryption |
 
-## Related Reading
+## Related Articles
 
-- [Privacy-Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
-- [Secure Cloud Storage Encryption with rclone](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
-- [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
-
----
-
+- [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
+- [Privacy Risks of Cloud Gaming Services in 2026](/privacy-tools-guide/privacy-risks-of-cloud-gaming-services-2026/)
+- [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
+- [How to Set Up Encrypted Cloud Storage with Cryptomator 2026](/privacy-tools-guide/how-to-set-up-encrypted-cloud-storage-with-cryptomator-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

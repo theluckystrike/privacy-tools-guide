@@ -22,15 +22,6 @@ Most mainstream note-taking apps (Apple Notes, Microsoft OneNote, Evernote) stor
 
 This guide compares four privacy-focused alternatives: Standard Notes, Joplin, Obsidian, and Notesnook. Each uses end-to-end encryption; each has different trade-offs.
 
-## Key Takeaways
-
-- **--- ## Obsidian (Most**: Powerful; Privacy Optional) Pricing: Free for personal use, Obsidian Sync $8/month (optional), Publish $16/month (optional).
-- **--- ## Standard Notes**: (Best Overall Privacy) Pricing: Free tier (limited), Plus plan $8/month ($96/year), Professional $20/month ($240/year).
-- **--- ## Notesnook (Privacy-First;**: Newer) Pricing: Free tier (limited features), Plus plan $5.99/month ($72/year), Professional $15/month ($180/year).
-- **Joplin (cloud sync)**: $72/year (optional; free without).
-- **Obsidian Sync**: $96/year (optional; free without Sync).
-- **- Cost**: $5/month (Joplin server) or free (Obsidian + git).
-
 ## The Encryption Model: What You Need
 
 **End-to-end encryption (E2E):** Your device encrypts notes before sending to server. Server stores encrypted blobs. Company cannot read your notes.
@@ -405,9 +396,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
-- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-focused-note-taking-apps-comparison/)
-- [Comparison Of Encrypted Note Taking Apps For Sensitive](/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)
-
+- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Comparison Of Encrypted Note Taking Apps For Sensitive](/privacy-tools-guide/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
+- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

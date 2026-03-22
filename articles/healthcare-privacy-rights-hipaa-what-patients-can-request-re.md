@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 The Health Insurance Portability and Accountability Act (HIPAA) grants patients significant rights over their protected health information (PHI). For developers building healthcare applications or power users managing their medical data, understanding these rights is essential for compliance and personal data sovereignty.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Obtain the authorization form**: Most providers use specific forms for record requests.
-- **OCR has imposed significant**: penalties for violations, with fines ranging from $100 to $50,000 per violation.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Understanding HIPAA Patient Rights
 
 HIPAA's Privacy Rule establishes the foundation for patient rights regarding health information. These rights apply to all "covered entities" — healthcare providers, health plans, and healthcare clearinghouses — as well as their "business associates" that handle PHI.
@@ -489,11 +480,10 @@ Step 4: Private right of action (some violations)
 
 ## Related Articles
 
-- [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
-- [Police Body Camera Footage Privacy Rights Who Can Request An](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)
-- [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
-- [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
-- [Privacy Setup For Reproductive Healthcare Provider In Restri](/privacy-tools-guide/privacy-setup-for-reproductive-healthcare-provider-in-restri/)
-
+- [Healthcare Data Privacy Hipaa Compliance For Software](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
+- [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
+- [Dentist Patient Records Privacy Hipaa Compliant Digital](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
+- [Hotel Guest Privacy Rights What Information Hotels Can](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -239,12 +239,11 @@ sudo ausearch -k keylogger-watch --start recent
 
 ## Related Articles
 
-- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
+- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Privacy-Focused Keyboard Apps for Mobile](/privacy-tools-guide/privacy-focused-keyboard-apps-for-mobile/)
-- [How to Detect and Remove Hidden Tracking Devices on Your](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-
+- [How to Detect and Remove Hidden Tracking Devices on Your](/privacy-tools-guide/how-to-detect-and-remove-hidden-tracking-devices-on-your-car/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

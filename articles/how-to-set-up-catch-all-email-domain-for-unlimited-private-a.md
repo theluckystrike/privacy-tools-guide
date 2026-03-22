@@ -19,18 +19,6 @@ tags: [privacy-tools-guide]
 
 If you sign up for services online, your inbox probably receives a steady stream of marketing emails, data breach notifications, and promotional newsletters you never requested. A catch-all email domain lets you create unlimited email aliases on the fly, keeping your primary inbox clean and protecting your identity. This guide walks you through setting up a catch-all email domain from scratch.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Custom SMTP**: Run your own mail server with postfix for full control
-
-For most users, the forwarding-only approach works well.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Simple forwarding only**: You receive emails but reply from your primary address
-2.
-
 ## Table of Contents
 
 - [Understanding Catch-All Email Domains](#understanding-catch-all-email-domains)

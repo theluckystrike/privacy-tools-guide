@@ -342,10 +342,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How To Use Password Manager Totp Authenticator Replace](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
-- [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)
+- [How To Use Password Manager Totp Authenticator Replace](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

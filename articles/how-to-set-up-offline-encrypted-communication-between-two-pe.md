@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 When internet connectivity is unavailable or deliberately avoided, establishing secure communication between two parties requires a different approach. Offline encrypted communication eliminates network-based attack vectors entirely, making it ideal for high-threat environments, air-gapped systems, or situations where digital footprint minimization is critical. This guide covers practical methods for developers and power users to set up encrypted channels without relying on online infrastructure.
 
-## Key Takeaways
-
-- **Use XChaCha20-Poly1305 for authenticated**: encryption of message payloads 3.
-- **This guide covers practical**: methods for developers and power users to set up encrypted channels without relying on online infrastructure.
-- **The core idea is simple**: generate an asymmetric key pair, exchange public keys physically (via USB drive, SD card, or QR code), then use those keys to encrypt messages or files.
-- **However**: you can use the underlying library (libsignal) to build offline-capable applications or adapt backup-based workflows.
-- **While typically used for**: network tunnels, WireGuard can tunnel data through USB serial connections, Bluetooth, or even acoustic modems between air-gapped systems.
-- **Use a dedicated transfer**: device (formatted before and after each use) to move data between air-gapped and online systems.
-
 ## Understanding the Threat Model
 
 Offline communication still faces security challenges. The primary threats include physical device compromise, key interception during exchange, and forensic analysis of storage media. Before implementing a solution, identify your adversaries—state-level actors, corporate surveillance, or opportunistic attackers—because this determines the appropriate encryption strength and operational security procedures.

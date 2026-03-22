@@ -21,10 +21,6 @@ voice-checked: true
 
 System monitoring is essential for developers and power users who need to track performance, diagnose issues, and optimize resources. However, many popular monitoring solutions transmit telemetry data to external servers, creating privacy concerns. This guide examines the best privacy-focused monitoring tools that operate entirely locally without collecting system telemetry.
 
-## Key Takeaways
-
-- **This guide examines the**: best privacy-focused monitoring tools that operate entirely locally without collecting system telemetry.
-- **Local-only configuration**: ```python
 # glances.conf - disable all network features
 [global]
 cpu_use_percent = True
@@ -126,13 +122,13 @@ Prometheus is an open-source monitoring system with a pull-based model. When run
 **Basic prometheus.yml configuration:**
 ```yaml
 global:
-  scrape_interval: 15s
-  evaluation_interval: 15s
+ scrape_interval: 15s
+ evaluation_interval: 15s
 
 scrape_configs:
-  - job_name: 'node_exporter'
-    static_configs:
-      - targets: ['localhost:9100']
+ - job_name: 'node_exporter'
+ static_configs:
+ - targets: ['localhost:9100']
 ```
 
 Prometheus requires running node_exporter on each monitored system:
@@ -151,11 +147,11 @@ Grafana provides visualization and alerting capabilities. When paired with local
 **Local datasource configuration:**
 ```json
 {
-  "name": "Local Prometheus",
-  "type": "prometheus",
-  "url": "http://localhost:9090",
-  "access": "proxy",
-  "isDefault": true
+ "name": "Local Prometheus",
+ "type": "prometheus",
+ "url": "http://localhost:9090",
+ "access": "proxy",
+ "isDefault": true
 }
 ```
 
@@ -189,11 +185,11 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh) --local-only
 ```bash
 # Edit /etc/netdata/netdata.conf
 [global]
-    memory mode = ram
-    update every = 5
+ memory mode = ram
+ update every = 5
 
 [cloud]
-    enabled = false
+ enabled = false
 ```
 
 Netdata's privacy-focused mode ensures all data stays on your machine while providing detailed per-process, per-application metrics.
@@ -222,21 +218,21 @@ Example docker-compose stack for local monitoring:
 ```yaml
 version: '3'
 services:
-  prometheus:
-    image: prom/prometheus:latest
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - "127.0.0.1:9090:9090"
-    command:
-      - '--storage.tsdb.path=/prometheus'
+ prometheus:
+ image: prom/prometheus:latest
+ volumes:
+ - ./prometheus.yml:/etc/prometheus/prometheus.yml
+ ports:
+ - "127.0.0.1:9090:9090"
+ command:
+ - '--storage.tsdb.path=/prometheus'
 
-  grafana:
-    image: grafana/grafana:latest
-    ports:
-      - "127.0.0.1:3000:3000"
-    volumes:
-      - grafana-data:/var/lib/grafana
+ grafana:
+ image: grafana/grafana:latest
+ ports:
+ - "127.0.0.1:3000:3000"
+ volumes:
+ - grafana-data:/var/lib/grafana
 ```
 
 This configuration ensures all monitoring data remains within your infrastructure while providing powerful observability capabilities.

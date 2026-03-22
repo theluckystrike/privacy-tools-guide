@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, security]
 
 Lynis is an open-source security auditing tool for Linux, macOS, and BSD systems. It checks hundreds of security controls — SSH config, kernel parameters, file permissions, installed software, authentication settings — and gives you a hardening index score. It runs locally as the user you specify (usually root), which means it can find misconfigurations that a remote scanner would miss.
 
-## Key Takeaways
-
-- **It runs locally as**: the user you specify (usually root), which means it can find misconfigurations that a remote scanner would miss.
-- **This guide covers installation**: running a full audit, understanding the output, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## Installation
 
 ```bash
@@ -322,14 +315,13 @@ jobs:
           path: /tmp/lynis-report.dat
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up AppArmor Profiles on Ubuntu](/privacy-tools-guide/apparmor-profiles-ubuntu-setup-guide/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-
----
-
+- [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
+- [VPN Provider Annual Audit Results: Independent Security](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

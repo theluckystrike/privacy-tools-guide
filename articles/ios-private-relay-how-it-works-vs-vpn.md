@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose iCloud Private Relay if you primarily use Safari on Apple devices and want automatic IP-masking without configuration. Choose a VPN if you need to protect all application traffic across platforms, bypass geo-restrictions, or require a consistent IP address. Private Relay routes only Safari traffic and DNS queries through a dual-hop relay system, while a VPN encrypts everything through a single tunnel -- making them complementary rather than interchangeable.
 
-## Key Takeaways
-
-- **Traditional VPNs remain the**: better choice for traffic protection, cross-platform consistency, and use cases requiring specific IP address behavior.
-- **Choose a VPN if**: you need to protect all application traffic across platforms, bypass geo-restrictions, or require a consistent IP address.
-- **The second relay knows**: the destination but cannot identify you because it only receives encrypted data from Apple with no user identifiers attached.
-- **For developers building privacy-aware**: applications, understanding both systems allows better testing and compatibility decisions.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-
 ## Table of Contents
 
 - [How iCloud Private Relay Works](#how-icloud-private-relay-works)
@@ -480,10 +471,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 - [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
-- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
-- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [How to Set Up Private DNS on Android for All](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [How to Build a Privacy-Preserving Webhook Relay That Strips](/privacy-tools-guide/how-to-build-privacy-preserving-webhook-relay-that-strips-pi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

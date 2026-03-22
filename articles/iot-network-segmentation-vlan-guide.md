@@ -18,12 +18,6 @@ tags: [privacy-tools-guide]
 Smart bulbs, thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee. Putting them on the same network as your laptops means a compromised smart plug can sniff your banking traffic. VLANs are the standard way to isolate IoT devices — they get internet access but can't reach your main network.
 ---
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **---
-
 ## Table of Contents
 
 - [Step 5**: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
@@ -324,6 +318,8 @@ for ip in main_lan_ips:
 - [How to Set Up a VPN on Your Router](/privacy-tools-guide/vpn-on-router-setup-guide/)
 - [How to Secure Your Smart TV Privacy](/privacy-tools-guide/secure-smart-tv-privacy-guide/)
 - [OpenWrt VPN Router WireGuard Setup](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
@@ -331,10 +327,9 @@ for ip in main_lan_ips:
 
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [Iot Firmware Update Privacy Risks What Data Devices Send](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
-- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

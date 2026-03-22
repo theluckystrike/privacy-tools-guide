@@ -18,17 +18,6 @@ tags: [privacy-tools-guide]
 
 Facebook's facial recognition technology automatically analyzes photos and videos to identify users across the platform. For developers and power users who prioritize privacy, understanding how this system works and how to disable it is essential. This guide covers the technical mechanisms behind Facebook's facial recognition, the opt-out process through both the UI and Graph API, and considerations for maintaining privacy in integrated applications.
 
-## Key Takeaways
-
-- **Note that as of 2024, Facebook restricted direct API access to facial recognition settings for privacy reasons**: users must manually configure these settings through the interface described above.
-- **The Illinois Biometric Information**: Privacy Act (BIPA) resulted in a $650 million settlement requiring Facebook to obtain explicit consent before collecting facial data.
-- **Use Unique Email**: Create dedicated email for Facebook (not reused)
-2.
-- **Connected Apps Audit**: Remove unused integrations quarterly
-7.
-- **Facebook's facial recognition technology**: automatically analyzes photos and videos to identify users across the platform.
-- **For developers and power**: users who prioritize privacy, understanding how this system works and how to disable it is essential.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -447,11 +436,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
-- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
-- [Dating Profile Image Recognition How Ai Can Match Your Face](/privacy-tools-guide/dating-profile-image-recognition-how-ai-can-match-your-face-/)
-- [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
-- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
-
+- [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
+- [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

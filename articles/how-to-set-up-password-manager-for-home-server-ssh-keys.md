@@ -18,14 +18,6 @@ tags: [privacy-tools-guide]
 
 Managing SSH keys for multiple home servers creates a security and organization challenge. Storing private keys in your password manager provides encrypted backup, cross-device access, and a central audit point. This guide covers three practical approaches: Bitwarden, 1Password, and KeePassXC, with CLI workflows suitable for developers who prefer command-line efficiency.
 
-## Key Takeaways
-
-- **This approach works best**: if you already use Bitwarden or prefer open-source solutions.
-- **This guide covers three**: practical approaches: Bitwarden, 1Password, and KeePassXC, with CLI workflows suitable for developers who prefer command-line efficiency.
-- **1Password offers the smoothest**: user experience but requires the desktop app running.
-- **KeePassXC suits users who**: need completely offline key storage.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Store SSH Keys in a Password Manager](#why-store-ssh-keys-in-a-password-manager)
@@ -340,6 +332,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
-- [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

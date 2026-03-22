@@ -17,13 +17,6 @@ tags: [privacy-tools-guide]
 
 UFW (Uncomplicated Firewall) is a front-end for iptables that ships with Ubuntu. It gives you a readable interface for managing packet filtering without writing raw iptables rules. This guide covers practical hardening: default deny, SSH protection, web server rules, and logging.
 
-## Key Takeaways
-
-- **SRC=203.0.113.99 DST=10.0.0.1 \ LEN=44**: TTL=244 ID=54321 DF PROTO=TCP SPT=44231 DPT=3306 FLAGS=S ``` ## Step 9: IPv6 Support Ensure IPv6 rules are also applied.
-- **Topics covered**: prerequisites, check ufw status, step 1: set default policies
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Prerequisites
 
 - Ubuntu 20.04 or later
@@ -269,17 +262,18 @@ sudo ufw --dry-run enable
 - [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
 - [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
 - [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [How to Set Up AppArmor Profiles on Ubuntu](/privacy-tools-guide/apparmor-profiles-ubuntu-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
 ## Related Articles
 
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
 - [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
+- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
 - [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
 - [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

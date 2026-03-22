@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance gives you complete control over your messaging infrastructure, end-to-end encryption keys, and data retention policies. This guide walks through deploying a production-ready Synapse server using Docker, configuring essential security settings, and connecting your first clients.
 
-## Key Takeaways
-
-- **Choose "Advanced" and enter**: your homeserver URL: `https://matrix.yourdomain.com` 3.
-- **For a production deployment**: use a reverse proxy like Caddy or Nginx with automatic SSL certificates.
-- This user has administrator privileges.
-- **For client connections**: you can use Element (formerly Riot.im), the reference Matrix client.
-- **Log in with the**: credentials you created above For mobile users, Element is available on Android via F-Droid (preferred for privacy) and both iOS and Android through their respective app stores.
-- **The SchildiChat client on**: Android provides additional privacy-focused defaults including automatic room key backup and improved notification handling.
-
 ## Prerequisites
 
 Before starting, ensure you have a Linux server with at least 2GB RAM and a domain pointing to your server's IP address. You'll also need Docker and Docker Compose installed:
@@ -391,11 +382,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
-- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
-
+- [How To Configure Element Matrix Client For Maximum Privacy](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
+- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
+- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

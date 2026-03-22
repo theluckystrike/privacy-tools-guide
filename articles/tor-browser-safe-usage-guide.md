@@ -21,15 +21,6 @@ Tor routes your traffic through three relays before it reaches the destination. 
 
 This guide focuses on what actually matters for day-to-day safe Tor usage.
 
-## Key Takeaways
-
-- **Most users should start**: at Safer.
-- **Request bridges (solve CAPTCHA**: or use email request) 2.
-- **If you need to access accounts**: use separate dedicated accounts created anonymously and only accessed over Tor.
-- **Verify .onion domain authenticity**: # Use published lists and PGP verification # 2.
-- **Test download safety echo**: "Download safety scan..." # Use VirusTotal or similar (accessed via Tor) # 5.
-- **This guide focuses on**: what actually matters for day-to-day safe Tor usage.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -509,11 +500,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use Tor Safely in Country That Criminalizes Its Use](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
-- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
-- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
-
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

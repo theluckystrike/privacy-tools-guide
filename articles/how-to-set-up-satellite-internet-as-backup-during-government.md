@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 When governments restrict or completely shut down internet access, maintaining connectivity becomes critical for journalists, activists, developers, and organizations operating in high-risk environments. Satellite internet provides an independent communication channel that bypasses terrestrial infrastructure, making it an effective resilience tool against network blackouts. This guide covers the technical implementation of satellite internet as a backup connectivity solution.
 
-## Key Takeaways
-
-- **For developers and power users**: LEO-based solutions generally provide a better experience when latency matters, while GEO options may serve as cost-effective alternatives for basic connectivity needs.
-- **GEO satellites sit at approximately 35**:786 kilometers above the equator and provide broad coverage but with higher latency (typically 500-700ms).
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Storing sensitive estate planning documents, password vaults, and financial instructions requires AES-256 encryption before they ever touch a cloud repository. This guide shows you how to set up a GitHub repository with encrypted files using age encryption, ensuring that even if your repository is compromised, your most sensitive information remains unreadable. We'll cover three production-ready approaches: age (the modern, Go-based encryption tool favored by the Tor Project), git-crypt (for Git-aware transparent encryption), and SOPS (for YAML/JSON-based secret management used by Mozilla and Discord). Each method has distinct trade-offs in key management, CI/CD integration, and recovery workflows that matter for estate planning where losing access means your heirs cannot recover anything.
 
-## Key Takeaways
-
-- **Encryption at rest in**: your repository ensures that even complete repository access by an attacker yields only useless ciphertext.
-- **It uses X25519 for**: key exchange and ChaCha20-Poly1305 for encryption, meeting modern cryptographic standards while remaining approachable for non-cryptographers.
-- **You can track when**: you added a new bank account, see the history of changes to your funeral preferences, and revert mistakes without physically managing multiple versions of spreadsheets or PDFs.
-- **This provides tamper-resistant storage**: and requires physical presence to use.
-- **Use LUKS (Linux) or**: FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
-- **Consider a time-locked approach**: where keys become accessible after a specified period of inactivity, or use a safe deposit box that your executor can access with proper documentation after your death.
-
 ## Table of Contents
 
 - [Why Encrypt Estate Documents in GitHub?](#why-encrypt-estate-documents-in-github)
@@ -412,12 +403,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
-- [Github Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
-- [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
-- [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-
+- [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
+- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
+- [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
+- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
+- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

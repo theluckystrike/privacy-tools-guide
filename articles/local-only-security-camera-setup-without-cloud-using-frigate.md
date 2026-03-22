@@ -14,17 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
 ---
-
 {% raw %}
 
 Deploy Frigate on a Docker-capable computer (mini-PC, Intel NUC, or Raspberry Pi) to record IP camera streams directly to local storage with no cloud upload, no subscriptions, and no monthly fees. Frigate performs real-time object detection (people, vehicles, animals) locally and integrates with Home Assistant for automation. Set up is straightforward: install Docker, configure your IP cameras' RTSP streams in Frigate's config file, and video records directly to attached storage. Your footage stays fully under your control.
-
-## Key Takeaways
-
-- **For completely local operation**: WireGuard or a similar VPN solution is recommended.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers why**: frigate for local-only security, hardware requirements, installing frigate, with specific setup instructions
 
 ## Table of Contents
 
@@ -303,11 +295,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

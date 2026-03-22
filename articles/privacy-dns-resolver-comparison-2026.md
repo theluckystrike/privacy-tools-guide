@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Your DNS resolver knows every domain you visit — even over HTTPS. Most ISPs log this data for years. Switching to a privacy-focused resolver with encrypted transport hides your queries from your ISP and limits what the resolver itself can log. This guide compares the leading options on the factors that matter for privacy.
 
-## Key Takeaways
-
-- **The resolver requires no account**: you just configure your device to use it.
-- **What encryption protocols does**: it support? (DoH, DoT, DoQ) 5.
-- **Topics covered**: what to evaluate, comparison table, mullvad dns
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## What to Evaluate
 
 Before choosing a resolver, answer these questions:
@@ -251,17 +244,18 @@ done
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)
 - [Privacy-Focused DNS over QUIC Setup](/privacy-tools-guide/dns-over-quic-setup-guide/)
 - [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 ---
 
 ## Related Articles
 
 - [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
+- [How to Configure Pi-hole with Unbound DNS](/privacy-tools-guide/how-to-configure-pihole-with-unbound-dns/)
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-- [Self-Hosted Password Manager Comparison](/privacy-tools-guide/self-hosted-password-manager-comparison)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

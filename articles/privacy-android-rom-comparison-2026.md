@@ -19,14 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Stock Android from Google and most OEM ROMs ship with pre-installed data collection. Privacy-focused ROMs replace that foundation. The four major options are GrapheneOS, CalyxOS, DivestOS, and LineageOS — each making different tradeoffs between security hardening, usability, and hardware support.
 
-## Key Takeaways
-
-- **It uses microG**: an open-source reimplementation of Google Play Services — which means apps that check for Play Services may work, but you are not using Google's actual code.
-- **If your device is**: not supported by GrapheneOS or CalyxOS, DivestOS is the best remaining option.
-- Privacy-focused ROMs replace that foundation.
-- **It is the most**: accessible option but does the least for security.
-- **Banking apps that check**: for rooted devices or modified bootloaders will detect most ROMs except those with proper verified boot (GrapheneOS and CalyxOS on Pixels).
-
 ## Table of Contents
 
 - [Quick Comparison](#quick-comparison)
@@ -234,7 +226,7 @@ GrapheneOS performs best due to aggressive kernel optimizations. CalyxOS is near
 
 ### Battery Life Impact
 
-GrapheneOS and CalyxOS show virtually identical battery life to stock Android when not using aggressive microG syncing. DivestOS may consume slightly more battery on older devices due to less optimized drivers. LineageOS typically matches OEM ROMs in battery consumption.
+GrapheneOS and CalyxOS show nearly identical battery life to stock Android when not using aggressive microG syncing. DivestOS may consume slightly more battery on older devices due to less optimized drivers. LineageOS typically matches OEM ROMs in battery consumption.
 
 ```bash
 # Check battery usage via ADB

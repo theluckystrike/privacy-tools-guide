@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Regular TLS authenticates the server to the client (the client verifies the server's certificate). Mutual TLS (mTLS) adds client authentication — the server also verifies the client's certificate. For microservices, this means only services with a valid certificate from your private CA can call each other, even if an attacker reaches your internal network.
 
-## Key Takeaways
-
-- **Topics covered**: how mtls works, step 1: set up a private certificate authority, step 2: issue service certificates
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## How mTLS Works
 
 ```
@@ -284,14 +277,13 @@ kubectl run mtls-test --image=curlimages/curl --rm -it --restart=Never -- \
   --cacert /path/to/ca.crt https://user-service/health
 ```
 
-## Related Reading
+## Related Articles
 
-- [Threat Modeling Basics for Developers](/privacy-tools-guide/threat-modeling-basics-developers/)
-- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
+- [Mumble Encrypted Voice Chat Server Setup For Private Team](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [iCloud Private Relay: How It Works vs](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

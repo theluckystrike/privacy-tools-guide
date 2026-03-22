@@ -18,16 +18,6 @@ voice-checked: true
 
 Verify your VPN isn't leaking DNS requests using online test tools like dnsleaktest.com—if you see your ISP's servers in results instead of your VPN provider's, your browsing history is exposed. Fix IPv6 leaks, misconfigured split tunneling, and default gateway issues to ensure complete DNS protection.
 
-## Key Takeaways
-
-- **If your device prefers**: IPv6 and your VPN only routes IPv4, your DNS queries for IPv6 addresses can leak outside the tunnel.
-- **Split Tunneling Misconfiguration**: When only certain apps use the VPN while others bypass it, DNS queries from non-VPN apps can leak.
-- **VPN Protocol Weaknesses**: Some VPN protocols have known issues that can cause leaks under certain network conditions.
-- **Configure Your Operating System**: You can force your system to use specific DNS servers: On Windows: 1.
-- **Use system-level DNS over HTTPS (DoH)**: While not a perfect solution, routing DNS through HTTPS can add a layer of protection
-4.
-- **Enable DNS Leak Protection**: in Your VPN Most reputable VPN apps have built-in DNS leak protection.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -271,8 +261,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How to Configure DNS over HTTPS Inside a VPN](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 - [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
-- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

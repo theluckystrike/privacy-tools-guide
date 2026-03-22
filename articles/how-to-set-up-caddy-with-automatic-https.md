@@ -280,12 +280,11 @@ curl -vI https://example.com
 
 ## Related Articles
 
-- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [How to Set Up Mullvad VPN on Linux](/privacy-tools-guide/mullvad-vpn-linux-setup-guide/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
 - [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
 - [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/privacy-tools-guide/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
-
+- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

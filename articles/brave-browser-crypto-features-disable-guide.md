@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 To disable Brave's crypto features, go to `brave://settings`, toggle off Brave Rewards and Brave Wallet, then visit `brave://flags` and set IPFS, Brave Wallet, Native Wallet, and Solana Wallet to "Disabled." For persistent enforcement on managed devices, deploy registry policies (Windows), plist configurations (macOS), or JSON policies (Linux) that set `BraveWalletAllowed` and `BraveRewardsAllowed` to false. This guide covers five methods from simple GUI toggles to custom compiled builds, each with different tradeoffs between ease and permanence.
 
-## Key Takeaways
-
-- **Use policy enforcement (Method**: 4) for persistent configuration or command line arguments (Method 3) for scripted deployments.
-- **Features may reappear after**: browser updates or can be re-enabled by users with access to the settings panel.
-- **The machine-wide configurations take**: precedence over per-user settings and require administrative privileges to modify.
-- **Disabling these features eliminates**: blockchain-related metadata leakage including wallet addresses, transaction patterns, and IPFS content hashes that could be correlated with user activity.
-- **IPFS**: for instance, has legitimate non-crypto uses for decentralized content delivery that can improve resilience against content censorship.
-- **Contact your system administrator**: for access or use policy-based configuration instead.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -254,9 +245,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Brave Browser Honest Review 2026](/privacy-tools-guide/brave-browser-honest-review-2026/)
-- [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
-- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
-- [Brave New Tab Page Privacy Review](/privacy-tools-guide/brave-new-tab-page-privacy-review/)
 - [Brave Browser Ad Blocking vs uBlock](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
+- [Brave New Tab Page Privacy Review](/privacy-tools-guide/brave-new-tab-page-privacy-review/)
+- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
+- [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

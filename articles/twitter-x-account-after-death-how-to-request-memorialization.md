@@ -20,23 +20,6 @@ tags: [privacy-tools-guide]
 
 When a loved one passes away, their digital footprint requires attention just like their physical belongings. Twitter X (formerly Twitter) provides mechanisms for family members and authorized representatives to request either memorialization or complete removal of deceased user accounts. This guide covers the technical and procedural aspects for developers building tools around this process and power users handling these situations directly.
 
-## Key Takeaways
-
-- **Twitter X (formerly Twitter)**: provides mechanisms for family members and authorized representatives to request either memorialization or complete removal of deceased user accounts.
-- **This guide covers the**: technical and procedural aspects for developers building tools around this process and power users handling these situations directly.
-- **For deceased user matters**: you cannot access the account through the API without proper authorization.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
-### Step 1: Understand Twitter X's Deceased User Policies
-
-Twitter X offers two primary options for handling deceased user accounts:
-
-1. **Memorialization**: Converts the account into a memorial state where it remains visible but read-only. The account cannot be logged into, and profile information is preserved for friends and family to view.
-
-2. **Deactivation (Removal)**: Completely removes the account and all associated data from Twitter X's servers.
-
-Neither option provides access to the account's content for family members. If you need to preserve tweets, you must request a data archive before the account is memorialized or deactivated.
-
 ## Prerequisites for Submission
 
 Before submitting a request, gather the following documentation:
@@ -330,11 +313,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Instagram Memorialization Request Process What Happens To Ph](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
-- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-- [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)
-- [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
-
+- [Instagram Memorialization Request Process What Happens](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
+- [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
+- [Windows Local Account Vs Microsoft Account](/privacy-tools-guide/windows-local-account-vs-microsoft-account-privacy/)
+- [LinkedIn Deceased Member Profile Removal How To Report](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
+- [Subscription Service Cancellation After Death](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

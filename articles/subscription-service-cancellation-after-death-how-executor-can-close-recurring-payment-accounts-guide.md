@@ -20,14 +20,6 @@ intent-checked: true
 
 Identify subscription services by checking credit card statements and bank records for recurring charges. Contact each company with a death certificate and request account closure or transfer to a surviving family member. Request refunds for prepaid services. For locked accounts, credit card companies can sometimes help—request the card be canceled so fraudulent charges stop. Document all subscriptions in your will to make executor's job easier, and maintain a shared password manager with emergency access instructions for your family.
 
-## Key Takeaways
-
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-- **Discounts of 25-50% are**: common for qualifying organizations.
-- **Can I change plans**: later without losing my data? Most tools allow plan changes at any time.
-- **Your data and settings**: are preserved across plan changes in most cases, but verify this with the specific tool.
-
 ## Understanding the Challenge
 
 Executors face several obstacles when managing subscription services:

@@ -11,31 +11,11 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Iran Internet Shutdown Survival Guide"
-description: "A technical guide to mesh networking and offline communication tools for maintaining connectivity during internet shutdowns. Includes practical setup"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: "theluckystrike"
-permalink: /iran-internet-shutdown-survival-guide-mesh-networking-and-of/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 
 When internet shutdowns occur in Iran, mesh networking and offline communication tools enable connectivity without relying on centralized infrastructure. Partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy offer the best practical balance, with applications like Briar providing encrypted peer-to-peer messaging that syncs automatically when devices reconnect. For developers and technical users, understanding these decentralized technologies is essential for maintaining communication during network disruptions.
-
-## Key Takeaways
-
-- **For developers and technical users**: understanding these decentralized technologies is essential for maintaining communication during network disruptions.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers understanding**: mesh networking fundamentals, briar: mesh messaging for android, installation and setup, with specific setup instructions
 
 ## Prerequisites
 

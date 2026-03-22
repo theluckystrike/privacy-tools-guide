@@ -29,15 +29,6 @@ tags: [privacy-tools-guide, best-of]
 
 Enable Chrome's "Privacy Sandbox" experimental features that obfuscate fingerprinting signals, use the Fingerprint Shield extension to randomize fingerprint values on each site visit, and install user-agent spoofing extensions to mask browser/OS details. More effective: switch to Brave Browser (built-in fingerprint resistance) or Firefox with Canvas Fingerprinting Detection enabled. No single Chrome setting fully stops fingerprinting—combine multiple techniques for meaningful resistance.
 
-## Key Takeaways
-
-- **Research shows that over**: 90% of users can be uniquely identified using fingerprinting, even when using incognito mode.
-- **Cover Your Tracks (coveryourtracks.eff.org):**: Shows uniqueness of your fingerprint 2.
-- **AmIUnique**: Analyzes your browser fingerprint
-3.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

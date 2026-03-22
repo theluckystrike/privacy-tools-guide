@@ -130,8 +130,8 @@ A vault is an encrypted folder that lives in your cloud storage.
 **Behind the scenes:**
 - Cryptomator creates folder: ~/Dropbox/Cryptomator/Personal Files.cryptomator
 - This folder contains:
-  - masterkey.cryptomator (your encrypted encryption key, protected by password)
-  - d folder (encrypted file storage)
+ - masterkey.cryptomator (your encrypted encryption key, protected by password)
+ - d folder (encrypted file storage)
 
 **Important:** The folder name on cloud storage is random (d/), not "Personal Files". Cloud provider sees no meaningful names.
 
@@ -320,17 +320,17 @@ Alternative: Set auto-lock to 30 minutes instead of 5
 **For Large Vaults (> 50 GB):**
 
 1. **Exclude vault from antivirus scans**
-   - Scanning encrypted files repeatedly is slow
-   - Windows: Defender → Virus & threat protection → Manage exceptions → Add vault path
-   - macOS: System Preferences → Security & Privacy → Antivirus → Exclude path
+ - Scanning encrypted files repeatedly is slow
+ - Windows: Defender → Virus & threat protection → Manage exceptions → Add vault path
+ - macOS: System Preferences → Security & Privacy → Antivirus → Exclude path
 
 2. **Store vault on fastest drive**
-   - Encrypted drives (M.2 SSD > External SSD > HDD)
-   - Example: Vault on internal SSD, cloud sync to Dropbox on external
+ - Encrypted drives (M.2 SSD > External SSD > HDD)
+ - Example: Vault on internal SSD, cloud sync to Dropbox on external
 
 3. **Batch operations**
-   - Don't encrypt 1 file at a time
-   - Instead: Copy all files to vault folder, let Cryptomator encrypt batch
+ - Don't encrypt 1 file at a time
+ - Instead: Copy all files to vault folder, let Cryptomator encrypt batch
 
 ---
 
@@ -386,13 +386,11 @@ A: If you deleted from Dropbox permanently, unencrypted backups are lost. Restor
 
 ## Related Articles
 
-- [Best Privacy Tools for Cloud Storage 2026](/best-privacy-tools-for-cloud-storage-2026/)
-- [Browser Compartmentalization Guide Separating Identities 2026](/browser-compartmentalization-guide-separating-identities-2026/)
-- [How to Use VPN with Cloud Storage 2026](/how-to-use-vpn-with-cloud-storage-2026/)
-- [Complete Guide to File Encryption for Privacy 2026](/complete-guide-to-file-encryption-for-privacy-2026/)
-
----
-
+- [Cryptomator Vs Veracrypt For Cloud Encryption](/privacy-tools-guide/cryptomator-vs-veracrypt-for-cloud-encryption/)
+- [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
+- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
+- [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
+- [Encrypt Cloud Storage with Rclone Before Uploading](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

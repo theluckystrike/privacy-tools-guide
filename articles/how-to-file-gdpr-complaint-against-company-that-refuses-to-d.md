@@ -18,17 +18,6 @@ intent-checked: true
 
 Filing a GDPR complaint with your national Data Protection Authority (e.g., CNIL in France, ICO in UK, Datenschutzbehörde in Germany) requires documented evidence of your erasure request, the company's refusal response with timestamps, proof the company has legitimate basis to retain data, and detailed description of what personal data remains stored. Most DPAs provide online complaint forms; you upload copies of your deletion request email and their response, cite the specific GDPR article (17 for erasure), and describe the personal data categories. DPAs prioritize cases where companies clearly refuse or ignore requests—formal complaints carry significant regulatory weight because violations trigger fines up to 4% of annual revenue. Documentation matters: timestamps from registered emails, screenshots of account data still visible, and your explanation of why their retention justification fails (contract ended, data unrelated to purpose, or no legal basis) transforms "they won't delete me" into enforceable regulatory actions.
 
-## Key Takeaways
-
-- **DPAs prioritize cases where companies clearly refuse or ignore requests**: formal complaints carry significant regulatory weight because violations trigger fines up to 4% of annual revenue.
-- **Violation**: Why you believe GDPR was violated
-
-### Using Official Complaint Portals
-
-Most DPAs now accept online complaints.
-- **Document everything**: escalate formally, and use regulatory channels when companies ignore their obligations.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Understanding Your Rights Under GDPR
 
 Before filing a complaint, ensure your deletion request is valid. GDPR Article 17 applies when:
@@ -448,11 +437,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
-- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
-- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
-- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
-- [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
-
+- [Gdpr Right To Erasure How To Force Companies To Delete All](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [How To File Ftc Complaint For Privacy Violation By Company](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
+- [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [GDPR Article 17 Erasure Implementation](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

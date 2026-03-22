@@ -21,13 +21,6 @@ tags: [privacy-tools-guide]
 A home NAS holding photos, documents, and backups is a high-value target. By default, most NAS systems ship with permissive configurations, outdated security defaults, and services exposed to the local network that don't need to be. This guide covers encryption, access control, network hardening, and monitoring for Synology DSM, QNAP QTS, and TrueNAS.
 ---
 
-## Key Takeaways
-
-- **By default**: most NAS systems ship with permissive configurations, outdated security defaults, and services exposed to the local network that don't need to be.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers the default problem**: section 1: account and authentication, disable the default admin account, with specific setup instructions
-
 ## Table of Contents
 
 - [The Default Problem](#the-default-problem)
@@ -340,14 +333,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Encrypted NAS vs Cloud Storage Comparison](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
-- [Network Segmentation for IoT Devices](/privacy-tools-guide/iot-network-segmentation-vlan-guide/)
-- [How to Set Up a VPN on Your Router](/privacy-tools-guide/vpn-on-router-setup-guide/)
-
----
-
+- [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
+- [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -21,15 +21,6 @@ Crossing an international border with a smartphone requires more preparation tha
 
 This security checklist covers practical steps to harden your device before crossing borders in high-surveillance regions. The focus is on actionable measures—backups, encryption verification, app management, and border-specific configurations—that you can implement immediately.
 
-## Key Takeaways
-
-- **Choose a strong passcode**: at least 6 characters with mixed types—and avoid patterns or simple PINs.
-- **For developers and power**: users who store API keys, encryption tools, or sensitive client data on their phones, a well-executed preparation strategy prevents data exposure and legal complications.
-- **On iOS**: connect to a Mac and use Finder or Xcode to create an encrypted backup.
-- **If you use a password manager**: ensure its database requires authentication at launch rather than auto-unlocking.
-- **For developers who use**: browser-based developer tools or local development servers, shut down all running local services and clear any localhost bindings that might expose internal services.
-- **Use SSH agent forwarding**: from a separate key that you can revoke remotely if needed.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

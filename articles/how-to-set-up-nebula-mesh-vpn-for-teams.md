@@ -17,13 +17,6 @@ tags: [privacy-tools-guide]
 
 Nebula is an open-source overlay network built by Slack's infrastructure team. It creates encrypted mesh tunnels directly between nodes using UDP hole-punching, with a central lighthouse that helps peers find each other without routing all traffic through it. This makes it fast, private, and suitable for distributed teams.
 
-## Key Takeaways
-
-- **One workaround**: use short-lived certificates (e.g., 90-day) and automate renewal with a script that requires re-authentication before issuing a new cert.
-- **Use the `10.42.0.0/16` range**: (or any RFC1918 range you prefer).
-- **Nebula is an open-source**: overlay network built by Slack's infrastructure team.
-- **It creates encrypted mesh**: tunnels directly between nodes using UDP hole-punching, with a central lighthouse that helps peers find each other without routing all traffic through it.
-
 ## What You Need
 
 - One VPS as the lighthouse (a small $5/month instance works)

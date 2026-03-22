@@ -20,16 +20,6 @@ Dropbox, Google Drive, and S3 encrypt your data in transit and at rest — but t
 
 This guide configures rclone with client-side encryption on top of any cloud storage provider.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **File and directory names**: are also encrypted (optional but recommended) 3.
-- **Filename encryption**: `standard` (encrypts and obfuscates names; use `obfuscate` if you want a weaker form that's easier to debug)
-6.
-- **Let them use it for 2-3 weeks**: then gather their honest feedback.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## How rclone crypt Works
 
 rclone crypt is a transparent encryption layer that wraps any rclone remote. When you sync to a crypt remote:
@@ -262,14 +252,13 @@ This provides authenticated encryption — any tampering with the ciphertext is 
 
 The passphrase and optional salt together generate the master encryption key. A strong Diceware passphrase of 6+ words provides sufficient security against offline brute force.
 
-## Related Reading
+## Related Articles
 
-- [Diceware Passphrase Generation Guide](/diceware-passphrase-generation-guide/)
-- [Nextcloud End-to-End Encryption Setup Guide](/nextcloud-end-to-end-encryption-setup-guide/)
-- [Secure File Deletion on SSD Drives](/secure-file-deletion-ssd-drives-guide/)
-- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-
+- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
+- [How to Encrypt Files Before Cloud](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
+- [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
+- [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
+- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

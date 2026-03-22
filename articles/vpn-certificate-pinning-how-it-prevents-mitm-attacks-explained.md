@@ -281,8 +281,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [VPN Authentication Methods Compared Certificate Vs](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
-- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 - [Vpn For Using Twitter X In Countries Where Banned](/privacy-tools-guide/vpn-for-using-twitter-x-in-countries-where-banned/)
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

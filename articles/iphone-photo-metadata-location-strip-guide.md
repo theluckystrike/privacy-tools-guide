@@ -21,20 +21,6 @@ Every photo your iPhone captures contains embedded metadata—Exchangeable Image
 
 This guide covers multiple methods to remove location metadata from iPhone photos, ranging from simple command-line tools to programmatic solutions suitable for automation pipelines.
 
-## Key Takeaways
-
-- **You can also use**: ```bash
-exiftool -a -u photo.jpg | head -50
-```
-
-This shows all metadata including previously unknown tags, confirming removal.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **For developers building apps**: that process user photos, always request `PHAccessLevel.addOnly` rather than full photo library access.
-- **For developers and power**: users handling sensitive photography or building privacy-focused applications, understanding how to strip this location data becomes essential.
-- **Add action**: Remove EXIF Metadata (select GPS only)
-5.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -287,12 +273,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [Mobile Photo Metadata Exif Location Data How To Strip](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
-- [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
-- [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)
-
+- [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 ### Step 9: Preventing Metadata at Capture Time
 
 Stripping metadata after the fact works, but preventing collection at capture time is cleaner. On iOS, disable location access for the Camera app: **Settings** > **Privacy and Security** > **Location Services** > **Camera** > **Never**.

@@ -11,36 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Russia Telegram Compliance What Data Telegram Shares"
-description: "Russia Telegram Compliance: What Data Telegram Shares. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /russia-telegram-compliance-what-data-telegram-shares-with-ru/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 Under Russia's 2026 regulatory framework, Telegram now shares user metadata including IP addresses, phone numbers, and message timestamps with Russian authorities upon request from the FSB via Roskomnadzor. Messaging services with over 100,000 Russian users must maintain local server infrastructure, implement real-time data request systems, and store specific user metadata for 6 months to 3 years. End-to-end encrypted secret chats remain technically protected, but standard cloud chats and group messages are accessible under the new compliance rules.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **The best strategy is risk-aware**: accept that metadata can be obtained, minimize sensitive conversations on Telegram, and use alternatives where possible.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Use MTProto proxy with**: custom encryption # 2.
-- **Use VoIP numbers**: Internet-based phone numbers (TextNow, Google Voice) don't link to your real identity as directly as Russian SIM cards
-2.
-- **Prefer secret chats**: While metadata is exposed, content remains encrypted
-4.
 
 ## Table of Contents
 

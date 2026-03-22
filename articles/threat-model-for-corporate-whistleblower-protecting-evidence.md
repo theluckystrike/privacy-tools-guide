@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 A corporate whistleblower faces a unique security challenge: preserving evidence of wrongdoing while maintaining anonymity against sophisticated adversaries. This threat model approach provides a structured framework for protecting both your evidence and your identity throughout the disclosure process.
 
-## Key Takeaways
-
-- **ProtonMail ($119.88/year**: or free plan with limitations): Encrypted email for external communications.
-- **Whonix ($0, free)**: Virtual machine that forces all traffic through Tor.
-- **SecureDrop ($0, free open-source)**: Turnkey secure submission system for journalists.
-- **KeePass ($0, free, open-source)**: Offline password manager for managing credentials securely.
-- **Signal ($0, free)**: End-to-end encrypted messaging.
-- **VeraCrypt ($0, free, open-source)**: Creates encrypted containers for sensitive evidence.
-
 ## Table of Contents
 
 - [Understanding the Threat Market](#understanding-the-threat-market)
@@ -373,11 +364,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
-- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
-- [Threat Model For Transgender Person Protecting Deadname And](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
-- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-
+- [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
+- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

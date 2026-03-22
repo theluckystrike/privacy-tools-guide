@@ -21,18 +21,6 @@ A strong password is no longer enough. Credential stuffing attacks, phishing cam
 
 This guide covers every common 2FA method, how to set up each one, and how to avoid the traps that leave people locked out of their own accounts.
 
-## Key Takeaways
-
-- **If a service only offers SMS 2FA, it's better than nothing**: but push for TOTP or hardware key support.
-- Choose "Authenticator app"
-3.
-- **They're cryptographic devices**: even if a phishing site captures your password, it can't use the hardware key response because the key only responds to the legitimate domain.
-- **Social media**: impersonation and recovery phone abuse
-
-Check which accounts have 2FA enabled (and which don't) at `https://2fa.directory`.
-- **Not storing backup codes**: Skipping this step is the single most common reason people get locked out of accounts permanently.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

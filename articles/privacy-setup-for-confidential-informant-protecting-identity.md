@@ -19,14 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Protecting your identity as a confidential informant requires a multi-layered approach combining operational security, secure communication channels, and careful digital hygiene. This guide provides practical technical strategies for developers and power users who need privacy setup for confidential informant scenarios.
 
-## Key Takeaways
-
-- **Set hostname to maximum**: entropy # Instead of "tails-user" sudo hostnamectl set-hostname $(openssl rand -hex 4) # 4.
-- **Cron job verification crontab**: -l for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l 2>/dev/null done # Malware often installs cron persistence # 6.
-- **Exfiltration paths**: Know safe houses and communication backups
-3.
-- **Pick obscure but accessible**: location # 2.
-- **Use signal items (chalk mark**: stone placement) to indicate new message
 # 3.
 - **Communication verification - Out-of-band**: key verification performed - Safety numbers verified in person - Challenge-response authentication used 5.
 
@@ -572,11 +564,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
-- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
-- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
-- [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-
+- [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/privacy-tools-guide/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Privacy Setup For Abuse Hotline Worker Protecting Caller](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

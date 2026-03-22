@@ -19,18 +19,6 @@ tags: [privacy-tools-guide, vpn]
 
 When evaluating VPN providers, you'll encounter claims like "no-log policy" or "zero-logging VPN" prominently displayed on marketing pages. But these terms lack standardization across the industry, and understanding what actually gets logged requires examining the technical details. This guide breaks down the different log types, explains what each means for your privacy, and shows you how to verify provider claims.
 
-## Key Takeaways
-
-- **Free providers often log**: extensively because they monetize user data.
-- **Prefer RAM-only server infrastructure**: This makes persistent logging physically impossible
-3.
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **Choose providers with verified no-log policies**: Look for court-proven cases or independent audits
-2.
-- **Use multi-hop configurations**: Route through multiple jurisdictions for additional protection
-4.
-- **Understanding the variations helps**: you make better choices.
-
 ## Table of Contents
 
 - [Understanding VPN Log Types](#understanding-vpn-log-types)

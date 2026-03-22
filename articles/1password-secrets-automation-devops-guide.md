@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, automation]
 
 To automate secrets with 1Password in DevOps, create a dedicated vault, set up a service account with scoped permissions, then use the 1Password CLI (`op`) or Connect server to inject credentials into Terraform, Ansible, Kubernetes, or your CI/CD pipeline at runtime. This eliminates hardcoded credentials from repos and environment files while providing audit trails and access controls. Below are production-ready examples for each integration pattern.
 
-## Key Takeaways
-
-- **Service accounts support granular permissions**: grant only the specific vault access needed for each automation use case.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Service accounts differ from user accounts**: they provide API access without requiring human authentication, making them ideal for CI/CD runners and infrastructure scripts.
-- **Note the service account**: token upon creation; you'll use this in environment variables and secrets management systems.
-- **Several approaches exist for**: integrating 1Password with Kubernetes.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

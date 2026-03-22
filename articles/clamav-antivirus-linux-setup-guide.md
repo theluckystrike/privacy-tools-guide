@@ -22,15 +22,6 @@ ClamAV is the standard open-source antivirus for Linux. It's particularly useful
 This guide covers a complete ClamAV deployment: installation across major distributions, signature update automation, on-demand and on-access scanning, scheduled weekly scans, quarantine management, and mail server integration with Postfix.
 ---
 
-## Key Takeaways
-
-- **`LocalSocketMode 666` is needed**: so non-root users and mail system daemons can communicate with clamd over the Unix socket.
-- **If you're running in**: a more locked-down environment, use `660` and add the appropriate users to the `clamav` group instead.
-- **It's particularly useful for**: mail servers (scanning attachments), shared storage, and systems that handle files from Windows machines.
-- **Use `clamdscan` (which delegates**: to the already-running daemon) for bulk or frequent scans.
-- **The `--remove` flag permanently deletes infected files without confirmation**: use `--move=/path/to/quarantine` if you want to review before destroying.
-- **`OnAccessExcludeUname clamav` and `OnAccessExcludeUname**: root` prevent `clamonacc` from scanning files accessed by the ClamAV process itself or root, which would cause recursive scan loops.
-
 ## Table of Contents
 
 - [Install ClamAV](#install-clamav)
@@ -350,13 +341,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
+- [How to Set Up Mullvad VPN on Linux](/privacy-tools-guide/mullvad-vpn-linux-setup-guide/)
+- [How To Migrate From Windows To Linux Without Losing Workflow](/privacy-tools-guide/how-to-migrate-from-windows-to-linux-without-losing-workflow/)
+- [Privacy-Focused Antivirus Software: Performance Impact](/privacy-tools-guide/privacy-focused-antivirus-software-performance-impact-compar/)
 - [Setting Up Fail2ban for Server Protection](/privacy-tools-guide/fail2ban-server-protection-setup-guide/)
-- [How to Set Up a Honeypot for Intrusion Detection](/privacy-tools-guide/honeypot-intrusion-detection-guide/)
-- [Securing Redis and MongoDB for Production](/privacy-tools-guide/securing-redis-mongodb-production-guide/)
-
----
-
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

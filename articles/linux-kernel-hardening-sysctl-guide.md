@@ -14,21 +14,11 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 The Linux kernel exposes hundreds of tunable parameters via `/proc/sys/`. Many defaults exist for broad compatibility, not security. Hardening these settings closes off attack paths that local and remote attackers use to escalate privileges, enumerate systems, and exploit the network stack.
 
 This guide covers the most impactful settings with an explanation of what each one does.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Hardening these settings closes**: off attack paths that local and remote attackers use to escalate privileges, enumerate systems, and exploit the network stack.
 
 ## Prerequisites
 
@@ -364,11 +354,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
-- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
-
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [Complete Guide To Operating System Hardening For Extreme](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

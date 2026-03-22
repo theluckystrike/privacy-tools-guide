@@ -19,19 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Setting up a panic button on your phone enables rapid data destruction when you face an emergency situation. Whether you're a journalist protecting sources, a developer handling sensitive credentials, or a power user prioritizing privacy, an emergency privacy wipe mechanism provides a critical safety net. This guide covers practical implementations for both Android and iOS, with automation scripts and code examples for developers.
 
-## Key Takeaways
-
-- **Variable Set**: %WIPE_ENABLED to "1"
-2.
-- **Variable Set**: %CONFIRM to %WIPE_ENABLED
-4.
-- **If**: %CONFIRM = "1"
-5.
-- **Run Shell**: cmd appops set --user 0 com.android.browser RESET_ALL
-6.
-- **Whether you're a journalist**: protecting sources, a developer handling sensitive credentials, or a power user prioritizing privacy, an emergency privacy wipe mechanism provides a critical safety net.
-- **Unlike standard factory resets**: a well-configured privacy wipe selectively targets the data that matters most: credentials, contacts, messages, photos, and application data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

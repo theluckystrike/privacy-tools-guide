@@ -21,11 +21,6 @@ Most teams share passwords via Slack messages, shared spreadsheets, or email thr
 
 This guide covers tools and workflows for teams ranging from 2 people to 50.
 
-## Key Takeaways
-
-- **The Teams plan (~$3/user/month)**: supports unlimited users with advanced sharing and audit logs.
-- **No plaintext over chat**: zero credentials sent via Slack, email, or SMS
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

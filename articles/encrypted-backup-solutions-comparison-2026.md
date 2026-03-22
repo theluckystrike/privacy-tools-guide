@@ -18,24 +18,6 @@ intent-checked: true
 
 Regular backups protect against ransomware, hardware failure, and accidental deletion. Encrypted backups additionally protect your privacy: even if a backup is stolen, the data remains unreadable without the encryption key. This guide compares five encrypted backup solutions with different architectures, use cases, and pricing models.
 
-## Key Takeaways
-
-- **Choose destination**: - Amazon S3
-   - Backblaze B2 (often $0.01/GB/month)
-   - Google Cloud Storage
-   - Dropbox, Box, OneDrive, etc
-4.
-- **Cheap cloud storage ($0.006/GB/month**: at Wasabi).
-- **Choose destination (local drive**: S3, Backblaze B2, Google Drive, etc)
-4.
-- **Choose schedule (daily**: weekly, monthly)
-7.
-- **Folders to backup**: - /home/user/Documents
-   - /home/user/Pictures
-   - /home/user/Desktop
-6.
-- **Linux server (1TB+)**: Use Borg or Restic.
-
 ## Table of Contents
 
 - [Why Encrypted Backups Matter](#why-encrypted-backups-matter)
@@ -634,9 +616,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
-- [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 - [Best Accessible Encrypted Cloud Backup With One Button](/privacy-tools-guide/best-accessible-encrypted-cloud-backup-with-one-button-resto/)
 - [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
+- [Set Up Encrypted Local Backup Of iPhone](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

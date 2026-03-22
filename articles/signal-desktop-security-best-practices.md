@@ -30,15 +30,6 @@ Signal Desktop is a convenient way to use Signal on a computer, but it introduce
 
 These settings and practices close those gaps.
 
-## Key Takeaways
-
-- **Review disappearing message settings**: on frequently-used conversations 6.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Signal Desktop is a**: convenient way to use Signal on a computer, but it introduces security considerations that don't exist on mobile.
-- **Your desktop is more**: likely to be physically accessible to others, shared by multiple users, or compromised through software.
-- **On Linux**: Signal's screen lock uses your system's D-Bus authentication.
-- **Anyone who had access to your phone at any point could have linked an additional device**: including Signal Desktop installations you no longer use.
-
 ## Table of Contents
 
 - [Step 1: Enable Screen Lock in Signal Desktop](#step-1-enable-screen-lock-in-signal-desktop)

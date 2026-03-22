@@ -23,15 +23,6 @@ OnionShare creates a temporary .onion address and runs a local web server behind
 This guide covers installation, every major mode, security considerations, metadata stripping, scripting, and real operational decisions you need to make when using OnionShare for sensitive transfers.
 ---
 
-## Key Takeaways
-
-- **On first launch it**: connects to the Tor network and establishes a circuit before generating any .onion address, which takes 30–90 seconds depending on network conditions.
-- **This is useful for publishing documents**: manifestos, or whistleblower contact pages where even the fact that a website exists should be difficult to attribute.
-- **Back it up encrypted**: (use `gpg --symmetric dropbox-key.json`) and store on an offline drive.
-- **Use at random times**: not immediately after receiving a request.
-- **For high-risk situations, use OnionShare from a Tails OS live session**: Tails routes all traffic through Tor and leaves no trace on the host machine.
-- **OnionShare is better for**: individuals and one-off transfers.
-
 ## Table of Contents
 
 - [Install OnionShare](#install-onionshare)

@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, comparison]
 
 When choosing a messaging protocol for privacy-focused applications, developers face a fundamental trade-off: the convenience of centralized services versus the architectural control of decentralized networks. Matrix and Signal represent two distinct approaches to encrypted communication, each with strengths that serve different use cases. This guide provides a technical comparison for developers evaluating these protocols.
 
-## Key Takeaways
-
-- **Neither requires any commercial cloud services**: a $5/month VPS can host a homeserver for a small team.
-- **A room with 500**: users spread across 50 homeservers means your server receives and replicates every message to maintain the shared event graph.
-- **Developers can also use**: Application Services to build custom moderation bots, notification systems, or workflow automation tools that integrate directly into encrypted Matrix rooms.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Matrix and Signal represent**: two distinct approaches to encrypted communication, each with strengths that serve different use cases.
-
 ## Table of Contents
 
 - [Architectural Fundamentals](#architectural-fundamentals)

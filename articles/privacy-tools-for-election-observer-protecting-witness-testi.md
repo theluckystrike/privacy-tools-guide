@@ -18,15 +18,6 @@ voice-checked: true
 
 Protect election observer witness testimony using Signal for encrypted communications, exiftool to strip GPS from photos, encrypted storage containers (VeraCrypt) for case notes, and Tor for communications. Never store unencrypted witness identities with evidence, and use separate devices for different operations to compartmentalize data.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use a PIN longer**: than 6 digits 3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Never store unencrypted witness**: identities with evidence, and use separate devices for different operations to compartmentalize data.
-
 ## Table of Contents
 
 - [Understanding the Threat Model](#understanding-the-threat-model)
@@ -340,10 +331,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)
-- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
-- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
-- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
-
+- [Privacy Tools For Whistle Blower Preparing Disclosure](/privacy-tools-guide/privacy-tools-for-whistle-blower-preparing-disclosure-protec/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
+- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Privacy Tools For Private Investigator Protecting Case File](/privacy-tools-guide/privacy-tools-for-private-investigator-protecting-case-file-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

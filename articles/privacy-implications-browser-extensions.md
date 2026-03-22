@@ -20,16 +20,6 @@ Browser extensions are the most dangerous attack surface in everyday web browsin
 
 Understanding what extensions actually can do, and have done, changes how you evaluate them.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Marketplaces offering 1**:000 five-star Chrome extension reviews for under $100 exist.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Developer publishes a legitimate**: useful extension
-2.
-- **Extension gains users over**: months or years 3.
-- **Existing users auto-update and**: receive the malicious version This pattern has played out repeatedly: Web of Trust (WOT), 2016: 140 million users.
-
 ## Table of Contents
 
 - [What a Browser Extension Can Do Technically](#what-a-browser-extension-can-do-technically)

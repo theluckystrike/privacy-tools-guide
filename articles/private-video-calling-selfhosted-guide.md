@@ -21,10 +21,6 @@ tags: [privacy-tools-guide]
 Zoom sends meeting metadata to Amazon, Google Meet processes video through Google's infrastructure, and Microsoft Teams is tied to a Microsoft account. Self-hosted video calling gives you control over who has access to call data, recordings, and participant information. This guide covers three options: Jitsi Meet (easiest to deploy), Matrix + Element (federated, persistent rooms), and Galene (minimal, for small groups).
 ---
 
-## Key Takeaways
-
-- **Galene requires almost no maintenance after setup**: the binary has no external dependencies and uses minimal server resources.
-- **---
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -423,13 +419,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Best Secure Video Calling App 2026](/privacy-tools-guide/best-secure-video-calling-app-2026/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
+- [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
-- [Privacy Calendar and Contacts Sync Guide](/privacy-tools-guide/privacy-calendar-contacts-sync-guide/)
-
----
-
+- [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

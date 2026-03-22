@@ -29,15 +29,6 @@ tags: [privacy-tools-guide, best-of]
 
 The California Consumer Privacy Act (CCPA) and its successor, the California Privacy Rights Act (CPRA), give California residents powerful rights over their personal information. Among the most important is the right to opt out of the sale of your personal data. If you've ever wondered how to actually exercise this right effectively—especially as a developer or power user who wants to automate the process—this guide provides practical steps, template scripts, and technical details for making your opt-out requests stick.
 
-## Key Takeaways
-
-- **The AG can impose penalties of up to $2**:500 per unintentional violation and $7,500 per intentional violation.
-- **Once you opt out**: the company cannot sell or share your data for at least 12 months before asking again.
-- **Among the most important**: is the right to opt out of the sale of your personal data.
-- **If you require additional**: information to verify my identity, please contact me at {user_info['email']}.
-- **Global Privacy Control (GPC)**: a browser signal you can enable, automatically transmits opt-out preferences to websites.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -316,11 +307,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
-- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
-- [Insurance Company Data Collection Privacy What Health.](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
-- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
-- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
-
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [What To Do If Your Personal Data Appears On People](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
+- [Real Estate Agent Client Data Protection Privacy Best](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -20,15 +20,6 @@ GitHub and GitLab are convenient but they hold your code. GitHub (owned by Micro
 
 Gitea is a lightweight, fast git service written in Go. It runs on minimal hardware — a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
 
-## Key Takeaways
-
-- **It runs on minimal hardware**: a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use them to kick**: off deployments or notify external services without exposing your code: 1.
-- **Choose application/json as the**: content type 5.
-- **Invite members by email**: or username This model keeps sensitive repositories invisible to contractors while sharing only the repositories they need.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

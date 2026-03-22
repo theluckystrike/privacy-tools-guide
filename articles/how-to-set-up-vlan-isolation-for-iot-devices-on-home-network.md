@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Your smart thermostat, doorbell camera, and wireless bulbs all connect to the same network as your laptop and phone. When any of these IoT devices gets compromised, attackers gain immediate access to everything else on your network. Setting up VLAN isolation creates logical separation between your trusted devices and the growing collection of internet-connected gadgets in your home. This guide walks through the technical implementation using managed switches and routers, with practical examples you can apply today.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **- Router with VLAN support**: Most consumer routers with custom firmware (OpenWrt, DD-WRT) support VLANs.
-- **If your router doesn't**: support VLANs natively, you can use a Linux machine as a gateway between your VLANs with iptables or nftables rules controlling inter-VLAN traffic.
-- **Most routers support static**: leases through their DHCP configuration.
-
 ## Table of Contents
 
 - [Why VLAN Isolation Matters for Home Networks](#why-vlan-isolation-matters-for-home-networks)
@@ -259,11 +250,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
-- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Network Segmentation for IoT Devices](/privacy-tools-guide/iot-network-segmentation-vlan-guide/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
-
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. For a technical deep explore Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
 
-## Key Takeaways
-
-- **You can specify whether**: Briar uses internet transport automatically, on-demand, or only when Wi-Fi is available.
-- **The app will automatically**: discover and connect to nearby Briar users when Bluetooth is active.
-- **Briar uses a store-and-forward**: mechanism where each device stores messages until it can forward them to another connected device.
-- **If you move through**: an area with Briar users, your device will sync with theirs, picking up any messages transmitted while you were out of range.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -356,11 +347,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
-- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [How To Create Offline Digital Library For Accessing Informat](/privacy-tools-guide/how-to-create-offline-digital-library-for-accessing-informat/)
-- [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
-
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

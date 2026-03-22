@@ -19,18 +19,6 @@ intent-checked: true
 
 China's mandatory QR code system creates surveillance trails of citizens' movements through centralized tracking of venue check-ins, payment transactions, and location registrations. Each scan generates permanent records linking identity to location, timestamp, and even GPS coordinates in integrated government databases. For developers and power users in China, understanding this architecture is critical for assessing privacy risks and implementing effective countermeasures.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Purpose limitation**: Restrict use to stated purposes only
-3.
-- **This action**: appearing innocuous to most users, transmits your identity to a server.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Identity linking is standard**: Most systems require real-name authentication
-3.
-- **Client sends**: {user_id, merchant_id, timestamp, amount}
-3.
-
 ## Table of Contents
 
 - [The Architecture of QR Code Surveillance](#the-architecture-of-qr-code-surveillance)
@@ -373,11 +361,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
-- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
-- [Async Code Review Process Without Zoom Calls Step By Step](/privacy-tools-guide/async-code-review-process-without-zoom-calls-step-by-step/)
-- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-- [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
-
+- [Bounce Tracking How Redirects Through Tracker Domains](/privacy-tools-guide/bounce-tracking-how-redirects-through-tracker-domains-follow/)
+- [China Real Name Registration Requirements How Online](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
+- [China Social Credit System Digital Privacy Implications](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
+- [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

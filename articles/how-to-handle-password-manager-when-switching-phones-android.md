@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Switching from Android to iPhone presents a unique challenge for password manager users. Unlike moving between devices of the same platform, cross-platform migration requires careful attention to export formats, encryption, and compatibility. This guide provides practical methods for power users and developers who want full control over their credential transfer.
 
-## Key Takeaways
-
-- **Backup original vault before**: any export cp ~/.password-manager/vault.db vault-backup-$(date +%s).db gpg --symmetric vault-backup-*.db # 2.
-- **If you already use 1Password**: Bitwarden, or similar services with cross-platform support, simply install the iOS app and sign in.
-- **For developers**: cloud sync provides the most reliable experience because it handles encryption consistently across platforms.
-- **Most password managers accept**: CSV with columns like `url`, `username`, `password`, `totp`, `note`, and `name`.
-- **Document migration in audit**: log echo "[$(date)] Password manager migration started" >> migration.log # 5.
-- **Switching from Android to**: iPhone presents a unique challenge for password manager users.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -456,11 +447,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
-- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
-
+- [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
+- [Handle Password Manager on Lost Phone: Immediate](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
+- [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -25,19 +25,9 @@ tags: [privacy-tools-guide, comparison, vpn]
 | Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
 
 
-
 {% raw %}
 
 When you connect to a VPN, one of the most critical configuration decisions involves how your network traffic is routed. The distinction between **tunnel interface routing** and **full tunnel routing** fundamentally affects your privacy, security, connection speed, and overall VPN experience. Understanding these differences helps you make informed decisions about your VPN configuration and troubleshoot connectivity issues more effectively.
-
-## Key Takeaways
-
-- **Full tunnel routing typically**: adds 20-100ms of latency because your traffic must travel to the VPN server first, even for local services.
-- **Similarly**: video conferencing applications work better with direct connections because they already encrypt their traffic and don't need the additional VPN layer.
-- **Full tunnel mode is**: the default configuration for most VPN providers because it offers the strongest privacy guarantees.
-- **There's no possibility of DNS leaks**: WebRTC leaks, or IPv6 leaks exposing your real IP address because all traffic must pass through the VPN's encrypted channel.
-- **When you connect to a VPN**: one of the most critical configuration decisions involves how your network traffic is routed.
-- **Full tunnel routing is**: simply one specific configuration of that interface where all traffic must use the pipe.
 
 ## Table of Contents
 

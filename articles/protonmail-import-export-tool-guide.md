@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (`brew install --cask proton-mail-bridge`) for continuous desktop client sync, or the Proton Mail API for automated developer integrations. For imports, upload MBOX files through the web interface or push messages via IMAP. This guide covers step-by-step configuration for each method, including Python automation scripts and cron-based backup scheduling.
 
-## Key Takeaways
-
-- **The export generates a**: MBOX file that works with most email clients.
-- **To use the API**: you need to create an app in your Proton Mail account settings and obtain OAuth credentials.
-- **Note that Proton's API uses a custom authentication flow**: standard OAuth libraries need adaptation.
-- **However**: for automated or bulk imports, IMAP remains the most practical approach.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -332,11 +323,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
-- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
-- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
-- [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
-
+- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [How To Set Up Proton Mail Bridge With Local Email Client](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
+- [ProtonMail vs Skiff Mail Comparison: A Developer Guide](/privacy-tools-guide/protonmail-vs-skiff-mail-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

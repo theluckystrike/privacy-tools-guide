@@ -19,17 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Aadhaar collects ten fingerprints, two iris scans, face photos, and demographic data for over 1.4 billion Indians. The UIDAI (Unique Identification Authority of India) stores this biometric data in centralized servers with documented security breaches. Developers integrating Aadhaar APIs should use minimal e-KYC verification, never store raw biometric data, and users should monitor whether their Aadhaar has been leaked through dark web monitoring. Understand your legal rights to access or delete your Aadhaar data under India's emerging data protection laws.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **2019 Tribune investigation**: Reporters purchased complete Aadhaar data for $8
-3.
-- **Use official APIs only**: Third-party Aadhaar verification services may be illegal
-3.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Developers integrating Aadhaar APIs**: should use minimal e-KYC verification, never store raw biometric data, and users should monitor whether their Aadhaar has been leaked through dark web monitoring.
-
 ## What Biometric Data Aadhaar Collects
 
 During enrollment, Aadhaar captures several types of biometric data beyond just your photograph:

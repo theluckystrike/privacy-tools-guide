@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Link Decoration Tracking How Utm Parameters And Click Ids"
-description: "Link decoration is a tracking technique where query parameters like utmsource, fbclid, gclid, and ga are appended to URLs to carry user identity and campaign"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /link-decoration-tracking-how-utm-parameters-and-click-ids-tr/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 Link decoration is a tracking technique where query parameters like `utm_source`, `fbclid`, `gclid`, and `_ga` are appended to URLs to carry user identity and campaign data across sites, bypassing cookie restrictions. These parameters serve no functional purpose for the destination page — they exist solely to enable cross-site tracking by connecting your click origin to your on-site behavior. Browser extensions like ClearURLs strip these automatically, and Firefox's Enhanced Tracking Protection now blocks known tracking parameters by default. This guide explains the technical mechanism and provides detection and mitigation strategies.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use Tracking-Free Alternatives**: When sharing links, use services that strip parameters automatically (e.g., `nitter.net` for Twitter, `vxtwitter.com` for X).
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Most modern analytics platforms**: support this.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Table of Contents
 

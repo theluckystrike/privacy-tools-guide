@@ -18,17 +18,6 @@ voice-checked: true
 
 Qubes OS implements security through compartmentalization: run every application (browser, email, document editing) in a separate virtual machine (qube) so one compromised app cannot access others' data or your entire system. Create domain-specific qubes: personal (browsing), work (confidential documents), banking (air-gapped payments), untrusted (opening suspicious files). Use disposable qubes for one-time tasks. Configure split-GPG to keep private keys isolated in a dedicated qube. Integrate USB devices into specific qubes to prevent cross-qube data leaks. Qubes demands higher hardware (16GB+ RAM, fast SSD) and patience with complexity, but provides defense-in-depth against malware, credential theft, and data exfiltration unmatched by traditional operating systems.
 
-## Key Takeaways
-
-- **User opens file or**: runs application 3.
-- User closes all windows
-4.
-- **User approves in gpg-vault**: # 4.
-- **For untrusted dependencies**: use disposable VMs to test
-7.
-- **Use disposable qubes for**: one-time tasks.
-- **Memory is the most**: precious resource in Qubes.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -649,7 +638,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Qubes OS Compartmentalized Workflow Guide](/privacy-tools-guide/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
 - [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Browser Compartmentalization Guide Separating Identities 2026](/privacy-tools-guide/browser-compartmentalization-guide-separating-identities-2026/)
 - [How To Use Multiple Identities Online Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

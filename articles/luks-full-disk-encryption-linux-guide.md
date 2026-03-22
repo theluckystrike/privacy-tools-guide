@@ -17,26 +17,6 @@ tags: [privacy-tools-guide, encryption]
 
 LUKS (Linux Unified Key Setup) is the standard for disk encryption on Linux. It wraps block devices in an encrypted container, protecting all data on the drive if it is physically stolen or accessed without authorization. This guide walks through setting up LUKS2 encryption on a new installation and on an existing secondary drive.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use a strong passphrase**: at least 6 random words from a wordlist.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system**: the installer handles partition layout and bootloader integration automatically.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
-### Step 1: LUKS2 vs LUKS1
-
-LUKS2 is the current standard. Key improvements over LUKS1:
-
-- **Argon2id key derivation function** — significantly stronger than LUKS1's PBKDF2 against brute force
-- **Resilient header** with backup area — protects against header corruption
-- **Larger metadata area** — supports multiple keyslots, tokens, and future features
-- **JSON header** — machine-readable and extensible
-
-Use LUKS2 for all new setups. Specify it explicitly since some tools still default to LUKS1.
-
 ## Prerequisites
 
 ```bash
@@ -240,15 +220,15 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ## Related Articles
 
 - [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
 - [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
+- [How To Set Up Secureboot Plus Encryption On Fedora Linux](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 - [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
-- [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

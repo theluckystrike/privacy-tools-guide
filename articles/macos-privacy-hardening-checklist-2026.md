@@ -19,15 +19,6 @@ macOS collects more data than most users realize. Apple telemetry, Siri voice pr
 
 Work through each section. Many of these settings are buried in submenus that most people never see.
 
-## Key Takeaways
-
-- **macOS collects more data**: than most users realize.
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **Many of these settings**: are buried in submenus that most people never see.
-- **This expands end-to-end encryption**: to cover iCloud Backup, Photos, Notes, and most other iCloud data.
-- **Prompt**: "won't this phone home?" — yes, but running outdated software with known vulnerabilities is a worse trade-off.
-- **Choose "Create a recovery key and do not use my iCloud account" for the recovery option**: this keeps the recovery key local rather than escrowed with Apple.
-
 ## Table of Contents
 
 - [System Settings: Privacy and Security](#system-settings-privacy-and-security)
@@ -236,15 +227,15 @@ This shows every app that has requested any system permission and whether it was
 - [Two-Factor Authentication Setup 2026](/two-factor-authentication-setup-2026/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ## Related Articles
 
 - [How to Configure macOS Privacy Settings 2026](/privacy-tools-guide/how-to-configure-macos-privacy-settings-2026/)
-- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
-- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

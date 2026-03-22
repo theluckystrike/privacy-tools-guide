@@ -19,14 +19,6 @@ tags: [privacy-tools-guide]
 
 Running WireGuard inside Docker provides process isolation while preserving the VPN protocol's performance benefits. This guide covers network namespace isolation, DNS leak prevention, kill switch implementation, and ensuring only designated containers route through the tunnel.
 
-## Key Takeaways
-
-- **What is the performance overhead of running WireGuard in Docker?
-Container overhead is minimal**: typically under 1% throughput reduction compared to a native WireGuard install.
-- **This approach separates the**: WireGuard interface from the host's default network namespace, giving you precise control over which processes use the VPN tunnel.
-- **The `DNS` field tells**: WireGuard to configure the container's resolver to use the VPN server's DNS, preventing queries from leaking to your ISP.
-- **Use the container network**: sharing approach to route different applications through different tunnels.
-
 ## Table of Contents
 
 - [Why Run WireGuard in Docker?](#why-run-wireguard-in-docker)
@@ -326,11 +318,12 @@ From inside the protected container, run `curl ifconfig.me` and compare the retu
 **What is the performance overhead of running WireGuard in Docker?**
 Container overhead is minimal — typically under 1% throughput reduction compared to a native WireGuard install. The dominant factor is WireGuard's cryptographic overhead (ChaCha20-Poly1305), which is the same whether containerized or native.
 
-## Related Reading
+## Related Articles
 
-- [WireGuard Key Rotation Best Practices](/privacy-tools-guide/wireguard-key-rotation-best-practices-how-often-to-regenerate/)
-- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-- [How to Set Up VLAN Isolation for IoT Devices on Home Network](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
-
+- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
+- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

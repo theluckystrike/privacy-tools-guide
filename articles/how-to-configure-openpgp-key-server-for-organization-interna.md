@@ -18,24 +18,6 @@ tags: [privacy-tools-guide]
 
 Managing PGP keys across an organization presents unique challenges. Public key servers like keys.openpgp.org serve the global community well, but many organizations require private key infrastructure for internal communications, code signing, and secure document exchange. This guide walks through configuring an internal OpenPGP key server tailored for organizational use.
 
-## Key Takeaways
-
-- **Upload to $INTERNAL_KEYSERVER**: gpg --keyserver $INTERNAL_KEYSERVER --send-keys [NEW_KEY_ID]
-3.
-- **Add peers to your configuration**: ```toml
-[sks]
-peers = [
-    "keys2.internal.yourcompany.com",
-    "keys.backup.yourcompany.com"
-]
-```
-
-Synchronization uses port 11370 by default.
-- **Verify both servers use**: compatible versions.
-- **Update team wiki with**: new key ID Timeline: Complete rotation at least 7 days before expiration.
-- **This guide walks through**: configuring an internal OpenPGP key server tailored for organizational use.
-- **Developed by the same**: team behind the GnuPG project, SKS pioneered the mesh synchronization model that public servers use.
-
 ## Table of Contents
 
 - [Why Run an Internal Key Server](#why-run-an-internal-key-server)
@@ -541,11 +523,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
 - [How to Check If Your Email Server Has Been Blacklisted](/privacy-tools-guide/how-to-check-if-your-email-server-has-been-blacklisted/)
 - [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
-- [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
-- [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

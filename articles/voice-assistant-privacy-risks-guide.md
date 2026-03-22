@@ -21,13 +21,6 @@ tags: [privacy-tools-guide]
 Voice assistants listen continuously for wake words. That's the design — there's no other way to respond to "Hey Alexa" without the microphone being on and the audio being analyzed. The question isn't whether they listen, but what happens to what they hear, when they get it wrong, and who else gets access.
 ---
 
-## Key Takeaways
-
-- **Since iOS 13.2**: audio is processed on-device by default for most requests.
-- **Third-party Alexa Skills receive**: your voice data if you use them.
-- **Amazon uses recordings to train models**: you can opt out, but it requires manual action.
-- **This guide covers how**: voice assistants work, what the companies keep, amazon alexa, with specific setup instructions
-
 ## Table of Contents
 
 - [How Voice Assistants Work](#how-voice-assistants-work)

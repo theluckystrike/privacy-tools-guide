@@ -345,11 +345,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
-- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
+- [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
 - [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
-- [Threat Model For Transgender Person Protecting Deadname And](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
-- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
-
+- [Threat Model For Medical Marijuana Patient In Non Legal](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

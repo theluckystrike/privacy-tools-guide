@@ -21,15 +21,6 @@ WhatsApp voice and video calls have become essential communication tools for mil
 
 This guide covers the technical implementation of VPN solutions specifically optimized for WhatsApp calls in Saudi Arabia, with practical configuration examples you can deploy immediately.
 
-## Key Takeaways
-
-- **For WireGuard**: a value of 25 seconds works well in most restrictive networks.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **For developers and power**: users who need reliable communication, understanding how to properly configure a VPN to bypass these restrictions is a valuable technical skill.
-- **DNS Leak Prevention**: Configure your VPN to use its own DNS servers exclusively.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Understanding the Technical Challenge
 
 Saudi Arabia's network infrastructure implements deep packet inspection (DPI) that can identify and block WhatsApp traffic. The application uses specific ports and protocols that make it relatively straightforward to filter. When you attempt a WhatsApp call without a VPN, your connection either fails completely or drops immediately after initiation.

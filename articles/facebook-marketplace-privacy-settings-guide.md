@@ -13,34 +13,10 @@ score: 9
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Facebook Marketplace Privacy Settings Guide"
-description: "A guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /facebook-marketplace-privacy-settings-guide/
-categories: [guides, security]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 
 Facebook Marketplace exposes your name, profile photo, location (city-level minimum), friend network, and activity history directly to buyers. Minimize exposure by creating a separate Facebook account for Marketplace (no real name/photo), using a generic profile picture, disabling location services during listings, and limiting marketplace access to "Friends" or "Friends of friends" if possible. Use a private mailbox service instead of your home address, communicate through Marketplace messages only, and never provide real phone numbers or email addresses for casual sales.
-
-## Key Takeaways
-
-- **Use a private mailbox**: service instead of your home address, communicate through Marketplace messages only, and never provide real phone numbers or email addresses for casual sales.
-- **Enable two-factor authentication (preferably**: hardware key) # 2.
-- **Use a dedicated email**: address # 3.
-- **Mitigation**: Use Marketplace's integrated shipping, not third-party services.
-- **Use a Dedicated Email**: Consider using a separate email address for your Marketplace account distinct from your primary Facebook account.
-- **Phone Number Privacy**: Use a secondary phone number for Marketplace communications.
 
 ## Table of Contents
 
@@ -410,10 +386,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
-- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
-- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [How To Make Facebook Profile Private 2026](/privacy-tools-guide/how-to-make-facebook-profile-private-2026/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
-- [Feeld Privacy Settings For Couples And Alternative Dating Pr](/privacy-tools-guide/feeld-privacy-settings-for-couples-and-alternative-dating-pr/)
-
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

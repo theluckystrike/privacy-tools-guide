@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Modern vehicles generate massive amounts of data. Your connected car records where you drive, how fast you accelerate, when you brake hard, and even whether you buckle your seatbelt. Understanding who owns this data—and who can access it—matters for developers building automotive applications and for privacy-conscious drivers. This guide breaks down vehicle data ownership, the technical mechanisms behind data collection, and practical steps you can take to control your driving data.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use minimal infotainment features**: - Avoid smartphone integration (CarPlay, Android Auto) if privacy is critical - These duplicate smartphone location tracking 3.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Opt out of data**: collection programs - Manufacturer websites have data sharing preferences - Requires account login; policies are often buried 4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [How Connected Cars Collect Data](#how-connected-cars-collect-data)

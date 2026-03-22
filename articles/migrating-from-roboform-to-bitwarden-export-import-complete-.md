@@ -14,19 +14,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 To migrate from RoboForm to Bitwarden, export your RoboForm vault as CSV from File > Export Data, then import it into Bitwarden using the web vault or CLI. Bitwarden offers open-source code, self-hosting, CLI automation, and full API access that RoboForm cannot match. This guide provides step-by-step instructions with scripts to handle field mapping, duplicate detection, and common migration pitfalls.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Free tier users lose folder hierarchy**: entries import without folder assignment.
-- **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Select "All Items" or**: choose specific folders 4.
-- **Choose CSV format (avoid**: the encrypted RoboForm format for migration) 5.
 
 ## Table of Contents
 
@@ -300,10 +290,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
-- [Migrating From Icloud Keychain To Bitwarden Complete Transfe](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
-- [Migrating from Safari Keychain to Bitwarden](/privacy-tools-guide/migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/)
-- [ProtonMail Import Export Tool Guide](/privacy-tools-guide/protonmail-import-export-tool-guide/)
-- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-
+- [Migrating from LastPass to Bitwarden No Data Loss](/privacy-tools-guide/migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/)
+- [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
+- [Migrating From Icloud Keychain To Bitwarden Complete](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

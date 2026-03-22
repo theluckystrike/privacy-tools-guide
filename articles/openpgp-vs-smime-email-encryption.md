@@ -20,17 +20,6 @@ tags: [privacy-tools-guide, comparison, encryption]
 
 Choose OpenPGP if you need decentralized key management, cross-organizational communication, or full control over your cryptographic identity -- it uses a web-of-trust model with user-managed keypairs. Choose S/MIME if your organization provides X.509 certificates and you need integration with Outlook, Exchange, or Apple Mail. Many power users run both: OpenPGP for personal and cross-org email, S/MIME for enterprise environments. Below is a technical comparison of key management, client support, encryption standards, and implementation steps.
 
-## Key Takeaways
-
-- **For personal use**: you can purchase certificates from Sectigo, DigiCert, or use free certificates from sources like Actalis (limited validation).
-- **Choose S/MIME if your**: organization provides X.509 certificates and you need integration with Outlook, Exchange, or Apple Mail.
-- **Configuring your email client**: to use S/MIME 4.
-- **For enterprise deployment**: working with IT to integrate with your CA
-
-The enterprise path often means less manual work for users—certificates may be pushed via group policy.
-- **Use current algorithm recommendations**: RSA 2048+ or ECC (Curve25519/Ed25519), AES-256 for symmetric encryption.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Protocol Foundations](#protocol-foundations)

@@ -53,8 +53,8 @@ sudo sysctl -p
 For the WireGuard tunnel network:
 - IPv4: `10.100.0.0/24` (server at `10.100.0.1`, clients at `10.100.0.2+`)
 - IPv6: `fd42:dead:beef::/64` (ULA — Unique Local Address, globally unique but not publicly routed)
-  - Server: `fd42:dead:beef::1`
-  - Clients: `fd42:dead:beef::2`, `fd42:dead:beef::3`, etc.
+ - Server: `fd42:dead:beef::1`
+ - Clients: `fd42:dead:beef::2`, `fd42:dead:beef::3`, etc.
 
 The ULA range (`fd00::/8`) is analogous to RFC1918 for IPv6. Use it for WireGuard tunnel addresses.
 
@@ -230,17 +230,18 @@ If `curl -6 https://ifconfig.me` returns your home IPv6, the tunnel is not captu
 - [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
 - [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
 ## Related Articles
 
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 - [How to Set Up WireGuard VPN on VPS 2026](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-vps-2026/)
-
+- [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

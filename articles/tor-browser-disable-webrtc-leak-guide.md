@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Disable WebRTC Leaks in Tor Browser"
-description: "Learn how to identify and mitigate WebRTC IP address leaks in Tor Browser. Practical techniques for developers and power users concerned about privacy"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-browser-disable-webrtc-leak-guide/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 Disable WebRTC in Tor Browser by navigating to `about:config` and setting `media.peerconnection.enabled` to `false`, or create a `user.js` file in your profile directory to apply the setting automatically on each launch. While Tor Browser's default protections handle casual privacy needs, power users and developers facing targeted threats can add WebRTC blocking to prevent IP address leaks—though this changes your browser fingerprint and breaks features like video calling. This guide explains the threat model and implementation methods.
-
-## Key Takeaways
-
-- **For most users**: the default Tor Browser settings provide adequate protection against casual WebRTC exploitation.
-- **The development team made this decision because completely blocking WebRTC would make users more identifiable**: the absence of WebRTC support becomes a fingerprinting vector.
-- **Tor Browser's anti-fingerprinting measures**: attempt to make all users appear identical, but adding extensions or modifying settings can make your browser configuration unique.
-- **Use netstat to monitor**: for suspicious connections # Monitor for STUN server connections (typically port 3478, 5349) sudo lsof -i | grep -E "3478|5349|stun" # 4.
-- **To establish these connections, WebRTC must discover the user's IP addresses**: including those not exposed through the standard VPN or Tor circuit.
-- **This occurs regardless of**: the Tor network's proxy settings, creating a potential information leak that can de-anonymize users.
 
 ## Table of Contents
 
@@ -438,11 +416,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
-- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
-- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
-- [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-
+- [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

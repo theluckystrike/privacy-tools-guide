@@ -21,15 +21,6 @@ Smart speakers are surveillance devices that happen to play music. They record a
 
 This guide explains what smart speakers actually collect, how to audit them, and what privacy-respecting alternatives exist.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Create Separate Amazon Account**: - Use a separate Amazon account for Alexa (not your main one) - Don't link your shopping/financial account - Limits cross-profile tracking 7.
-- **Restrict Smart Home Access**: - Similar to Alexa: delete unused devices 5.
-- **Disable skills and smart**: home integration you don't actively use 4.
-- **Buy Home Assistant +**: Raspberry Pi setup (~$300) instead 2.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-
 ## What Smart Speakers Collect
 
 ### Audio and Transcripts

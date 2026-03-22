@@ -18,15 +18,6 @@ intent-checked: true
 
 Every photo you take contains metadata invisible to the human eye. The camera records GPS coordinates of where you were standing, the exact time the photo was taken, sometimes your face through embedded thumbnails. Share a photo on social media or send it to a client, and that metadata follows silently along. Journalists, security researchers, and abuse victims have learned this lesson the hard way—metadata revealing location, time, and device information has led to physical harm. EXIF data (Exchangeable Image File Format) is the standard container for this information. Removing it before sharing is straightforward with the right tools: exiftool for bulk processing, GUI applications for individual photos, and mobile workflows for photos taken on your phone. This guide covers everything from command-line automation to privacy-focused mobile apps.
 
-## Key Takeaways
-
-- **Free tier**: 25 conversions/day.
-- **Journalists, security researchers, and abuse victims have learned this lesson the hard way**: metadata revealing location, time, and device information has led to physical harm.
-- **This guide covers everything**: from command-line automation to privacy-focused mobile apps.
-- **Government uses metadata to**: identify participants.
-- **Most people are unaware**: their photos leak this information.
-- **Most sharing platforms (Facebook**: Instagram, Twitter) strip EXIF automatically before display.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -497,7 +488,6 @@ For truly sensitive situations (abuse, activist work, journalism in hostile envi
 
 EXIF removal is automatic hygiene, like locking your door. Do it always. But don't assume it's total security without other precautions.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 ---
 
@@ -541,10 +531,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Mobile Photo Metadata Exif Location Data How To Strip](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps D](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
-- [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
-- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
-
+- [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
+- [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2](/privacy-tools-guide/metadata-removal-tools-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

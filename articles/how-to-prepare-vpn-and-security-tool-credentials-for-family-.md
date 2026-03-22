@@ -19,9 +19,6 @@ intent-checked: true
 
 You can transfer access to VPNs, password managers, 2FA systems, and self-hosted security tools by documenting credentials, enabling emergency access features, provisioning SSH keys, and creating management runbooks for family members. This guide covers technical steps for preparing WireGuard configurations, Bitwarden/1Password/KeePassXC vaults, TOTP seeds, YubiKey backup registration, and self-hosted infrastructure access—ensuring continuity and security when family members need to take over.
 
-## Key Takeaways
-
-- **Set the waiting period (recommended**: 3-7 days)
 # 4.
 - **When transferring 2FA access**: you have several options depending on the authenticator app used.
 - **This is the single**: most important security tool to prepare for transfer.

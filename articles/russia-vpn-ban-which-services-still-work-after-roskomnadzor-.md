@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, vpn]
 
 As of 2026, standard VPN protocols (OpenVPN, WireGuard) no longer work in Russia due to DPI blocking. Use instead NaiveProxy (disguises as HTTPS), Shadowsocks with obfuscation, or custom proxy solutions that don't announce themselves as VPNs. Self-hosted solutions on foreign VPS providers are more reliable than commercial VPN apps. Pre-position credentials before entering Russia, use multi-hop routing through neighboring countries, and maintain offline copies of circumvention tool setup instructions.
 
-## Key Takeaways
-
-- **Staying informed about new protocols**: configuration techniques, and community recommendations provides the best long-term strategy for maintaining internet freedom.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Use instead NaiveProxy (disguises as HTTPS)**: Shadowsocks with obfuscation, or custom proxy solutions that don't announce themselves as VPNs.
-- **Pre-position credentials before entering**: Russia, use multi-hop routing through neighboring countries, and maintain offline copies of circumvention tool setup instructions.
-
 ## How Roskomnadzor's DPI System Works
 
 Roskomnadzor operates TSPU (Technical Means for Countering Threats) equipment installed at ISP level across Russian networks. Every major ISP is required by law to route traffic through this hardware, which performs deep packet inspection in real time. The system identifies VPN traffic through several methods:

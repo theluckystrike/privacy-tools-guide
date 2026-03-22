@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, privacy, api]
 
 Protect patient exercise data through full encryption at rest and in transit, role-based access controls limiting therapist viewing to only their patients, automatic audit logging of all data access, and secure deletion procedures that comply with HIPAA retention rules. Implement data minimization by collecting only exercise details without sensitive medical history, use separate databases for billing and clinical data, and conduct regular security audits. This guide provides strategies for securing patient exercise data in physical therapy practices while maintaining usability for clinical workflows and HIPAA compliance.
 
-## Key Takeaways
-
-- **Implement data minimization by**: collecting only exercise details without sensitive medical history, use separate databases for billing and clinical data, and conduct regular security audits.
-- **Staff training**: Ensure all users understand privacy obligations
-
-Building privacy-respecting systems for physical therapy practices requires balancing security with clinical usability.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

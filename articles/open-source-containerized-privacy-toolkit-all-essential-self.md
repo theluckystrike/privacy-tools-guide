@@ -16,15 +16,6 @@ intent-checked: true
 
 Running your own privacy-focused services gives you control over your data without relying on third-party providers. A containerized approach using Docker simplifies deployment, makes updates straightforward, and lets you run multiple services on a single host. This guide covers essential self-hosted tools that form a complete privacy toolkit.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The official Bitwarden image is resource-heavy, so many self-hosters prefer Vaultwarden**: a Rust implementation that's significantly lighter and fully compatible with Bitwarden clients.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Running your own privacy-focused**: services gives you control over your data without relying on third-party providers.
-
 ## Table of Contents
 
 - [Why Containerize Your Privacy Stack?](#why-containerize-your-privacy-stack)
@@ -400,9 +391,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best Self-Hosted File Sync Alternatives in 2026](/best-self-hosted-file-sync-alternative-2026/)
-- [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-
+- [Privacy Engineer Toolkit: Essential Tools Every Data](/privacy-tools-guide/privacy-engineer-toolkit-essential-tools-every-data-protecti/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

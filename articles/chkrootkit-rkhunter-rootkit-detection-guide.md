@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 chkrootkit and rkhunter are command-line rootkit scanners for Linux. They check for known rootkit signatures, suspicious file permissions, hidden processes, and system binary modifications. Neither tool is perfect — rootkits can evade them — but they catch common infections and are worth running regularly as part of a defense-in-depth strategy.
 
-## Key Takeaways
-
-- **They use different detection**: methods and catch different things.
-- **Topics covered**: installing both tools, running chkrootkit, interpreting chkrootkit output
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Installing Both Tools
 
 ```bash
@@ -280,12 +273,11 @@ Run both. They use different detection methods and catch different things.
 
 ## Related Articles
 
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 - [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
 - [How to Use Lynis for Linux Security Auditing](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
 - [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-
+- [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

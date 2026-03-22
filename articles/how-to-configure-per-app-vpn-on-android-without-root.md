@@ -21,17 +21,6 @@ When you use a VPN on Android, you typically route all your device traffic throu
 
 The good news is that Android has built-in support for per-app VPN configuration without requiring root access. This guide walks you through setting up selective VPN routing on your Android device in 2026.
 
-## Key Takeaways
-
-- **Tap "Add app" to**: select which apps should use the VPN 4.
-- **Kill switch**: Use a VPN app with kill switch to block traffic if VPN disconnects
-3.
-- **Split tunneling risks**: Be careful about which apps you exclude—banking apps should typically use VPN
-4.
-- **When you use a VPN on Android**: you typically route all your device traffic through the encrypted tunnel.
-- **This is great for privacy**: but it can slow down streaming apps, cause issues with local network devices, or waste bandwidth on apps that don't need protection.
-- **Per-app VPN solves this**: problem by letting you choose which apps use the VPN and which connect directly to the internet.
-
 ## Table of Contents
 
 - [Understanding Per App VPN on Android](#understanding-per-app-vpn-on-android)

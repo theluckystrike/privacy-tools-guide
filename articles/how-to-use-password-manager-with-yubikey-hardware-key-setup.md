@@ -18,19 +18,6 @@ tags: [privacy-tools-guide]
 
 Configure YubiKey as a second authentication factor in Bitwarden or 1Password settings using the FIDO2/WebAuthn protocol: during login, after entering your master password, the system prompts you to physically touch your YubiKey. This creates cryptographic proof of presence that cannot be phished or reused. Buy two YubiKeys (keep one as backup), register both to your account, and store the backup in a secure location. This combination—master password plus hardware key—provides near-unbreakable protection even if your master password is compromised.
 
-## Key Takeaways
-
-- **Prioritize fixing reused passwords on financial and email accounts first**: those provide the most pivot opportunity for attackers.
-- **For Linux users**: ensure FIDO middleware is installed: `sudo apt install libfido2-1`
-
-### Browser Permission Issues
-
-Some browsers block WebAuthn requests by default.
-- **Firefox users should check `about**: config` for `webauthn.enableU2FApi` settings.
-- **This creates cryptographic proof**: of presence that cannot be phished or reused.
-- **Password managers support YubiKey**: through the FIDO2/WebAuthn standard.
-- **This means your YubiKey**: becomes a second authentication factor that cannot be intercepted or reused on fraudulent websites.
-
 ## Table of Contents
 
 - [Understanding YubiKey and Password Manager Integration](#understanding-yubikey-and-password-manager-integration)
@@ -260,9 +247,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
+- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [How to Use YubiKey for Maximum Security in 2026](/privacy-tools-guide/how-to-use-yubikey-for-maximum-security-2026/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

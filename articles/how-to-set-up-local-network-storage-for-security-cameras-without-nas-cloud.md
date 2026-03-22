@@ -19,14 +19,6 @@ tags: [privacy-tools-guide, security]
 
 Set up a dedicated Linux PC or Raspberry Pi with large external drives running Frigate or MotionEye to record directly from IP cameras over your local network—no cloud required, no subscriptions. Alternatively, configure your router to attach external storage and set up Samba network shares where cameras record directly. Both methods cost $50-200 in hardware for a complete system that stores months of footage locally while avoiding cloud vendor dependence.
 
-## Key Takeaways
-
-- **Both methods cost $50-200**: in hardware for a complete system that stores months of footage locally while avoiding cloud vendor dependence.
-- **Consider these factors when**: planning your storage: - Resolution and frame rate: 4K cameras use substantially more storage than 720p - **Motion detection vs.
-- **Most modern IP cameras**: support writing directly to network shares via SMB/CIFS protocol.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Understanding Your Storage Requirements
 
 Before implementing a solution, calculate your storage needs. Security cameras generate significant data volumes. A single 1080p camera recording continuously at medium quality produces approximately 30GB per day. Higher resolutions or multiple cameras multiply this requirement quickly.
@@ -357,11 +349,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
+- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
+- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

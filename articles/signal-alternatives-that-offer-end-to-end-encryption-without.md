@@ -250,7 +250,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 - [Secure Messaging for Activists Guide 2026: Signal vs](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
-- [How To Use Signal Without Phone Number Verification](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

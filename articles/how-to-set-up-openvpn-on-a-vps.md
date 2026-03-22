@@ -1,0 +1,216 @@
+---
+layout: default
+title: "How to Set Up OpenVPN on a VPS"
+description: "Deploy a personal OpenVPN server on a VPS with certificate-based authentication, TLS hardening, and split tunneling configuration"
+date: 2026-03-22
+author: theluckystrike
+permalink: /how-to-set-up-openvpn-on-a-vps/
+categories: [guides, security]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]
+---
+
+{% raw %}
+
+Running your own OpenVPN server on a VPS gives you a private VPN that no commercial provider can log. This guide uses Easy-RSA for certificate management, TLS authentication to block port scans, and modern cipher selection.
+
+## Prerequisites
+
+- Ubuntu 22.04 VPS with root access
+- A public IPv4 address
+- UDP port 1194 open
+- Clients with OpenVPN client software
+
+## Step 1: Install OpenVPN and Easy-RSA
+
+```bash
+sudo apt update && sudo apt install openvpn easy-rsa
+openvpn --version | head -1
+```
+
+## Step 2: Set Up the Certificate Authority
+
+```bash
+mkdir -p ~/openvpn-ca
+cp -r /usr/share/easy-rsa/* ~/openvpn-ca/
+cd ~/openvpn-ca
+
+./easyrsa init-pki
+./easyrsa build-ca nopass
+# Enter "OpenVPN-CA" as Common Name
+```
+
+## Step 3: Generate Server Certificate and Keys
+
+```bash
+cd ~/openvpn-ca
+
+./easyrsa gen-req server nopass
+./easyrsa sign-req server server
+
+# DH parameters
+./easyrsa gen-dh
+
+# TLS auth key
+openvpn --genkey secret ta.key
+
+# Copy to OpenVPN directory
+sudo cp pki/ca.crt pki/issued/server.crt pki/private/server.key \
+  pki/dh.pem ta.key /etc/openvpn/server/
+sudo chmod 600 /etc/openvpn/server/*.key /etc/openvpn/server/*.pem
+```
+
+## Step 4: Generate Client Certificate
+
+```bash
+cd ~/openvpn-ca
+./easyrsa gen-req alice nopass
+./easyrsa sign-req client alice
+# Client needs: ca.crt, alice.crt, alice.key, ta.key
+```
+
+## Step 5: Server Configuration
+
+Create `/etc/openvpn/server/server.conf`:
+
+```conf
+port 1194
+proto udp
+dev tun
+
+ca /etc/openvpn/server/ca.crt
+cert /etc/openvpn/server/server.crt
+key /etc/openvpn/server/server.key
+dh /etc/openvpn/server/dh.pem
+
+tls-auth /etc/openvpn/server/ta.key 0
+tls-version-min 1.2
+tls-cipher TLS-ECDHE-ECDSA-WITH-AES-256-GCM-SHA384:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384
+
+cipher AES-256-GCM
+ncp-ciphers AES-256-GCM:AES-128-GCM
+
+server 10.8.0.0 255.255.255.0
+
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS 1.1.1.1"
+push "dhcp-option DNS 1.0.0.1"
+
+keepalive 10 120
+
+user nobody
+group nogroup
+persist-key
+persist-tun
+
+status /var/log/openvpn/status.log 30
+log-append /var/log/openvpn/openvpn.log
+verb 3
+
+# Compression disabled (VORACLE vulnerability)
+compress
+```
+
+## Step 6: Enable IP Forwarding and NAT
+
+```bash
+echo "net.ipv4.ip_forward = 1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+# Get your public interface name
+ip route get 8.8.8.8 | grep dev | awk '{print $5}'
+
+# Add NAT rule (replace eth0 with your interface)
+sudo iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+
+sudo apt install iptables-persistent
+sudo netfilter-persistent save
+```
+
+## Step 7: Start OpenVPN
+
+```bash
+sudo mkdir -p /var/log/openvpn
+sudo systemctl enable --now openvpn-server@server
+sudo systemctl status openvpn-server@server
+sudo journalctl -u openvpn-server@server -f
+```
+
+## Step 8: Create Client Configuration File
+
+```bash
+#!/bin/bash
+# generate-client.sh
+CLIENT="alice"
+CA_DIR="$HOME/openvpn-ca"
+SERVER_IP="YOUR_VPS_IP"
+
+cat > ${CLIENT}.ovpn <<EOF
+client
+dev tun
+proto udp
+remote ${SERVER_IP} 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+remote-cert-tls server
+tls-version-min 1.2
+cipher AES-256-GCM
+verb 3
+
+<ca>
+$(cat ${CA_DIR}/pki/ca.crt)
+</ca>
+
+<cert>
+$(cat ${CA_DIR}/pki/issued/${CLIENT}.crt)
+</cert>
+
+<key>
+$(cat ${CA_DIR}/pki/private/${CLIENT}.key)
+</key>
+
+<tls-auth>
+$(cat ${CA_DIR}/ta.key)
+</tls-auth>
+key-direction 1
+EOF
+
+echo "Client config written to ${CLIENT}.ovpn"
+```
+
+## Step 9: Revoking a Client
+
+```bash
+cd ~/openvpn-ca
+./easyrsa revoke alice
+./easyrsa gen-crl
+
+sudo cp pki/crl.pem /etc/openvpn/server/
+# Add to server.conf: crl-verify /etc/openvpn/server/crl.pem
+sudo systemctl restart openvpn-server@server
+```
+
+## Verify
+
+```bash
+ip addr show tun0
+sudo cat /var/log/openvpn/status.log
+# From client: curl https://ifconfig.me (should show VPS IP)
+```
+
+## Related Reading
+
+- [How to Set Up WireGuard with IPv6](/privacy-tools-guide/how-to-set-up-wireguard-with-ipv6/)
+- [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}

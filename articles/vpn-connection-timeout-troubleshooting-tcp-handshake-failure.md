@@ -261,6 +261,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [Vpn Fragmentation Issues Why Some Websites Break And How](/privacy-tools-guide/vpn-fragmentation-issues-why-some-websites-break-and-how-fix/)
 - [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 - [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
-- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [How To Diagnose Slow Vpn Connection Speeds](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

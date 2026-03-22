@@ -16,20 +16,6 @@ tags: [privacy-tools-guide, privacy]
 
 Google Docs, Notion, and Microsoft Office365 dominate collaborative editing. They're convenient. They're also data collection platforms. Here's what you're actually trading for that convenience.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **--- ## What Privacy**: Alternatives Exist? ### CryptPad (Best Overall) CryptPad is open-source, end-to-end encrypted Google Docs alternative.
-- **Can use for docs**: via integration 5.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Pricing**: - Free: Basic notes
-- Plus: €2.99/month, advanced features
-
-### Etherpad (Self-Hosted)
-
-Open-source collaborative editor you can host.
-
 ## What Google Docs Collects
 
 ### Direct Metadata
@@ -582,9 +568,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
-- [Cloud DLP for Google Workspace Guide 2026](/cloud-dlp-for-google-workspace-guide-2026/)
-- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
-
+- [Secure Document Collaboration Alternatives to Google](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [Android Google Account Privacy Settings: Complete Guide to](/privacy-tools-guide/android-google-account-privacy-settings-complete-guide-to-li/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

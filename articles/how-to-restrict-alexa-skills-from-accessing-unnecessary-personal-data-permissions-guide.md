@@ -21,15 +21,6 @@ When you enable an Alexa skill, you grant it permission to access specific data 
 
 This guide walks through practical methods to control Alexa skill permissions, from reviewing existing skill access to implementing permission management strategies in your own Alexa skill development.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Restrict enabled skills to**: only those actively used.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Understanding how to audit**: restrict, and manage these permissions protects your personal information while still enjoying useful voice assistant functionality.
-- **Choose the skill you**: want to manage 4.
-- **Use progressive permission requests**: ask for additional access only when the user triggers a feature that requires it.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -358,12 +349,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 - [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
-- [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
-- [How To Remove Personal Data From Chatgpt Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
-- [How to Remove Personal Data from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/)
-
+- [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
+- [Stop Alexa From Recording Conversations and Sending Audio](/privacy-tools-guide/how-to-stop-alexa-from-recording-conversations-and-sending-a/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

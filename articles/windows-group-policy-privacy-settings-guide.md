@@ -306,8 +306,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

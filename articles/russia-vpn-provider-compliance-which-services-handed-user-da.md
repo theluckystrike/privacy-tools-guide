@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, vpn]
 
 Understanding VPN provider compliance with governmental data requests is critical for developers and power users who depend on privacy tools. Russia's regulatory environment presents unique challenges: VPN services operating in the country must either comply with Roskomnadzor (the Russian communications regulator) demands or exit the market entirely. This creates a tiered system where some providers maintain strong no-log policies while others have disclosed user information under legal pressure.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **However**: Russian legal requirements often mandate at least temporary connection logging, creating a technical contradiction with true no-log policies.
-- Organizations must choose one strategy.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **When evaluating a VPN**: service for production use, the corporate structure determines what data might be accessible to authorities.
-
 ## Table of Contents
 
 - [The Russian Legal Framework for VPN Services](#the-russian-legal-framework-for-vpn-services)

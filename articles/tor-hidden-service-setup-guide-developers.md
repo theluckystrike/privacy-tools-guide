@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Tor hidden services (.onion addresses) allow you to host websites or APIs that are accessible only through the Tor network, with both your server location and users' identities hidden from passive observers because traffic routes through multiple relays in both directions. This guide shows you how to configure the Tor service with HiddenServicePort settings, generate your .onion address, harden security with network isolation, and integrate hidden services into your development workflow.
 
-## Key Takeaways
-
-- **Open this file with**: your preferred text editor: ```bash sudo nano /etc/tor/torrc ``` Scroll down to the section labeled `## This section is for onion services`.
-- **Share this address with**: users who have Tor Browser installed.
-- **Configure your web server**: to listen only on localhost (127.0.0.1) to prevent accidental exposure of your content outside the Tor network.
-- **Users must configure this**: in their `torrc`: ```conf ClientOnionAuthDir /var/lib/tor/authdir ``` Place the authentication file in the specified directory with the format `hostname:port=key`.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, ensure you have access to a Linux server (Debian, Ubuntu, or Fedora are all well-supported) and the Tor software. You will need root or sudo access to configure the service. This guide assumes you are comfortable working from the command line and understand basic networking concepts.
@@ -256,11 +247,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
-- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
-- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
-- [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
-
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
+- [How To Set Up Onion Routing For Email Using Tor Hidden](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
+- [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

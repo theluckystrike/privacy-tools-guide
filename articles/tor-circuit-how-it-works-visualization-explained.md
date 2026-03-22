@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Tor circuits route your traffic through exactly three relays—the guard node (knows your IP but not destination), middle node (knows neither origin nor destination), and exit node (knows destination but not origin)—such that no single relay sees your complete path. This three-hop design encrypts traffic at each layer and balances anonymity with performance, making it computationally infeasible for passive adversaries to trace your connection from origin to destination even if they control some network infrastructure.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Three hops keep latency**: manageable (typically 100-500ms additional delay).
-- **Cell Structure Tor uses**: fixed-size cells (512 bytes) for all communications.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [The Three-Hop Tor Circuit](#the-three-hop-tor-circuit)
@@ -293,11 +284,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
-- [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
-- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
 - [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
-
+- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

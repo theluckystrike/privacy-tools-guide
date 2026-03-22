@@ -19,10 +19,6 @@ tags: [privacy-tools-guide]
 
 Privacy regulations like GDPR and CCPA have given users powerful rights over their personal data. As a developer or power user, understanding how to exercise these rights—and automate the process—provides significant value. This guide covers data request mechanisms across major social platforms, with practical code examples for automating your data downloads.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Never commit tokens to version control**: {% highlight bash %}
 # Use .env files with dotenv
 export FACEBOOK_TOKEN="your_token_here"
 export TWITTER_BEARER="your_bearer_token"

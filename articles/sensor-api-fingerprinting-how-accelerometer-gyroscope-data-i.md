@@ -298,8 +298,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Android Sensor Permissions How Accelerometer Gyroscope Can](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
 - [Device Memory API Fingerprinting How Ram Amount Narrows](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
-- [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
-- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

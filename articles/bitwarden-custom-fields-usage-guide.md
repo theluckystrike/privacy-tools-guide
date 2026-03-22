@@ -13,33 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Bitwarden Custom Fields Usage Guide"
-description: "To use Bitwarden custom fields, open any vault item, scroll to the 'Custom Fields' section, and click 'Add Item' to create Text (visible metadata), Hidden"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /bitwarden-custom-fields-usage-guide/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 To use Bitwarden custom fields, open any vault item, scroll to the "Custom Fields" section, and click "Add Item" to create Text (visible metadata), Hidden (masked values like API keys), or Protected (extra-secure, non-searchable) fields. Custom fields let you store API keys, database connection strings, SSH configurations, and environment tags alongside your login credentials, and you can retrieve them programmatically via the Bitwarden CLI with `bw get item "name" | jq '.fields[]'`.
-
-## Key Takeaways
-
-- **Use only for non-sensitive**: metadata like server hostnames or documentation URLs.
-- **Use these for URLs**: server hostnames, or any non-sensitive metadata you want to associate with an entry.
-- **Best for recovery codes**: encryption keys, or emergency credentials.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Table of Contents
 
@@ -381,11 +358,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/privacy-tools-guide/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)
-- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
-- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
-- [Firefox Strict Tracking Protection Vs Custom](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)
-- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-
+- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
+- [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
+- [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
+- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

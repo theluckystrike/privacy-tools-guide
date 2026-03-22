@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 OSSEC is a host-based intrusion detection system (HIDS) that monitors your server in real time. It watches log files for suspicious patterns, checks file integrity against known-good baselines, runs rootkit detection scans, and sends alerts when something changes. Unlike network IDS (which monitors traffic), OSSEC runs on the host and sees inside the system.
 
-## Key Takeaways
-
-- **Topics covered**: what ossec monitors, installation, configuration overview
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## What OSSEC Monitors
 
 - **File Integrity Monitoring (FIM):** Alerts when a monitored file is added, modified, or deleted
@@ -281,14 +274,13 @@ OSSEC logs grow fast:
 }
 ```
 
-## Related Reading
+## Related Articles
 
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
+- [How to Set Up a Honeypot for Intrusion Detection](/privacy-tools-guide/honeypot-intrusion-detection-guide/)
 - [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [How to Use chkrootkit and rkhunter](/privacy-tools-guide/chkrootkit-rkhunter-rootkit-detection-guide/)
-
----
-
+- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
+- [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
+- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

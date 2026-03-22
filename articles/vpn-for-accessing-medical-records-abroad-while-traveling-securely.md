@@ -19,16 +19,6 @@ voice-checked: true
 
 Accessing your medical records while traveling abroad is increasingly important in today's interconnected world. Whether you need to consult with your primary physician, access prescription information, or share your health history with a foreign healthcare provider, a VPN provides a secure tunnel for protecting your sensitive medical data. This guide covers not just the how, but the why — including the legal environment, real risks, and the privacy tradeoffs involved in accessing health data across borders.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Free VPNs are particularly problematic**: they often fund themselves by selling user data, which would directly expose your medical browsing activity to third parties.
-- **Split tunneling**: Allows you to route only medical portal traffic through VPN while keeping other traffic on local connection for better performance
-5.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Common patient portals include**: MyChart (used by hundreds of US health systems), Epic's patient portal, Cerner's HealtheLife, and Apple Health Records integration.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why Medical Records Require Extra Protection While Traveling](#why-medical-records-require-extra-protection-while-traveling)

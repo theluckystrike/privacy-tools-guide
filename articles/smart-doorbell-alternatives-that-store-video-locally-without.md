@@ -19,17 +19,6 @@ tags: [privacy-tools-guide]
 
 Most mainstream smart doorbells force you into recurring cloud subscription plans to access recorded footage, motion alerts, and basic features. For privacy-conscious developers and power users, this model presents problems: vendor lock-in, ongoing costs, third-party data handling, and limited control over your own footage. Fortunately, alternatives exist that store video locally and work without any cloud dependency.
 
-## Key Takeaways
-
-- **For privacy-conscious developers and**: power users, this model presents problems: vendor lock-in, ongoing costs, third-party data handling, and limited control over your own footage.
-- **What about video doorbell**: features like two-way audio? Most ONVIF-compatible cameras support two-way audio.
-- **Most mainstream smart doorbells**: force you into recurring cloud subscription plans to access recorded footage, motion alerts, and basic features.
-- **Ring (owned by Amazon)**: has faced significant scrutiny for its historical practice of sharing footage with law enforcement without a warrant or user consent.
-- **On-device SD card storage**: Simplest implementation, limited by card capacity and reliability
-2.
-- **Network Attached Storage (NAS) integration**: Professional-grade solution using existing home server infrastructure
-3.
-
 ## Table of Contents
 
 - [Why Local Storage Matters](#why-local-storage-matters)

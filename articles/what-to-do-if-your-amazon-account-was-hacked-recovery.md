@@ -19,17 +19,6 @@ tags: [privacy-tools-guide]
 
 If your Amazon account is compromised, immediately reset your password at amazon.com/gp/forgot-password, review your Login & Security page for unauthorized email addresses or devices, and contact Amazon support (phone is faster than email for account recovery). Check your order history for fraudulent purchases, review payment methods and address changes, and monitor your Alexa voice purchase history. Enable two-factor authentication once you regain control, place a fraud alert with credit bureaus if your personal information was changed, and check linked accounts (Prime, Audible, Twitch) for cross-account compromises since attackers often exploit connected services.
 
-## Key Takeaways
-
-- **For maximum security**: use a hardware security key (like YubiKey) or a TOTP authenticator app rather than SMS:
-
-1.
-- **Choose Set up two-step**: verification 3.
-- **If you use a**: password manager (which you should), verify your master password was not compromised.
-- **Revoke access to any**: applications you do not recognize or no longer use ### Remove Stale Payment Methods Delete any payment methods added by the attacker.
-- **Email address on file**: (should be YOUR email only) 2.
-- **Phone number (should be**: YOUR number only) 3.
-
 ## Table of Contents
 
 - [Recognizing the Signs of Compromise](#recognizing-the-signs-of-compromise)
@@ -515,11 +504,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Tell If Your Email Account Was Hacked Right Now](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
-- [Best VPN for Accessing Amazon Prime Video Different Regions](/privacy-tools-guide/best-vpn-for-accessing-amazon-prime-video-different-regions/)
-- [How To Protect Cryptocurrency Wallet From Being Hacked Secur](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
-- [How to Tell If Your Webcam Has Been Hacked: Indicator Signs](/privacy-tools-guide/how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/)
-- [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
-
+- [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
+- [Windows Local Account Vs Microsoft Account](/privacy-tools-guide/windows-local-account-vs-microsoft-account-privacy/)
+- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [What to Do If Your Cloud Storage Account Was Breached](/privacy-tools-guide/what-to-do-if-your-cloud-storage-account-was-breached/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

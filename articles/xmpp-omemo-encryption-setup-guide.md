@@ -19,16 +19,6 @@ tags: [privacy-tools-guide, encryption]
 
 To set up OMEMO encryption on XMPP, install an OMEMO-capable client (Gajim on desktop: `sudo apt install gajim gajim-omemo`, or Conversations on Android), enable the OMEMO plugin in your account settings, then verify your contact's fingerprint through a separate trusted channel. Once enabled, your client automatically generates identity keys and handles per-message encryption with forward secrecy -- the detailed steps for each client, key management, and troubleshooting follow below.
 
-## Key Takeaways
-
-- **Use onion-only XMPP servers**: if available # Example: xmpp5u7z6zzq3x5r.onion (Conversations' server over Tor) # 3.
-- **The protocol offers forward**: secrecy—even if your long-term keys are compromised, past conversations remain secure because each message uses an unique session key.
-- **Most modern XMPP clients support OMEMO**: including Conversations (Android), Gajim (desktop), Dino (Linux), and Psi+ (cross-platform).
-- **You can register on servers like `xmpp.jp`**: `jabber.de`, or `conversations.im`—all of which support the required XEP-0384 extension.
-- **Most clients handle this automatically**: but periodic manual verification of critical contacts remains good practice.
-- **Trust your server**: Use servers run by organizations you trust (EFF-endorsed servers, institutional servers)
-2.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -425,10 +415,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
-- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
-- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
-- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
-
+- [How To Implement Customer Data Encryption At Rest](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
+- [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

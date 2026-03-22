@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Whistleblowers should use Signal for encrypted communications, SecureDrop or Globaleaks for anonymous document submission to journalists, Tails Linux for all evidence gathering, and GPG encryption for sensitive documents before transmission. Use a separate device and dedicated phone number for all organizing, remove metadata from documents using ExifTool or Mat2, separate your whistleblower identity completely from personal accounts, and never use personal or work devices for sensitive communications. This guide covers practical tools and techniques for preparing disclosures while maintaining operational security, including threat modeling based on your adversary type.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Your threat model determines**: which tools and practices matter most.
-- **For sensitive document sharing**: use SecureDrop or Globaleaks.
-
 ## Table of Contents
 
 - [Understanding the Threat Model](#understanding-the-threat-model)

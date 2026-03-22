@@ -20,33 +20,6 @@ This guide covers configuring YubiKey for SSH authentication using GPG mode and 
 
 {% raw %}
 
-## Key Takeaways
-
-- **---
-
-### YubiKey 5C
-
-Cost**: $55-70
-
-USB-C only (no USB-An adapter needed).
-- **---
-
-### YubiKey 5C NFC
-
-Cost**: $65-80
-
-USB-C with NFC support.
-- **---
-
-### YubiKey 5 Nano
-
-Cost**: $50-65
-
-Same functionality as YubiKey 5, smaller form factor (fits in USB slot without extending beyond laptop edge).
-- **Best For**: Users wanting minimal visual footprint, frequent travel.
-- **--- ## SSH Authentication**: Modes YubiKey supports multiple SSH authentication methods: ### Mode 1: FIDO2 (Recommended for SSH) How it works: 1.
-- **Short Lived Credentials ```bash**: # Use SSH certificates with short validity ssh-keygen -s ca_key -V +8h -n user signing_key.pub # Certificate valid for 8 hours only ``` ### 5.
-
 ## Why Hardware-Based SSH Keys Matter
 
 Traditional SSH keys have vulnerabilities:
@@ -609,16 +582,13 @@ grep "Accepted publickey" /var/log/auth.log | \
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [SSH Hardening Best Practices](https://guides.zovo.one/ssh-hardening)
-- [GPG and Email Encryption Guide](https://guides.zovo.one/gpg-encryption)
-- [Hardware Security Keys Comparison](https://guides.zovo.one/hardware-security-keys)
-- [Secrets Management for DevOps](https://guides.zovo.one/secrets-management)
-- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-
----
-
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
+- [How to Use YubiKey for Maximum Security in 2026](/privacy-tools-guide/how-to-use-yubikey-for-maximum-security-2026/)
+- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

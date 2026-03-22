@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Restic encrypts every backup with AES-256-CTR before it leaves your machine. Even if your backup storage is compromised, the attacker gets ciphertext. This guide covers installation, initializing repositories on local storage, S3-compatible buckets, and Backblaze B2, plus automating backups with systemd or cron.
 
-## Key Takeaways
-
-- **A lighter approach for large repositories**: use `--read-data-subset=5%` to sample 5% of pack files on each run.
-- **For comparison**: rsync, Duplicati in default mode, and most cloud backup clients upload plaintext or use server-side encryption (which the server controls).
-- **It requires FUSE on**: Linux (`fuse` package) and macOS (`macFUSE`).
-- **This guide covers installation**: initializing repositories on local storage, S3-compatible buckets, and Backblaze B2, plus automating backups with systemd or cron.
-- **This matters because storage providers**: hosting companies, and cloud services have access to the data you store with them.
-- **`.git/` histories are better**: managed with git bundles separately.
-
 ## Why Restic for Privacy-Focused Backups
 
 Most backup tools treat encryption as an afterthought — an option you enable after the fact. Restic treats it as mandatory. There is no unencrypted restic repository; you cannot accidentally create one. Every pack file written to disk, every blob transferred over the network, is encrypted before it leaves your machine.
@@ -415,11 +406,10 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
-- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
-- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-
+- [Best Accessible Encrypted Cloud Backup With One Button](/privacy-tools-guide/best-accessible-encrypted-cloud-backup-with-one-button-resto/)
+- [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

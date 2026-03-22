@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Obsidian Vault for offline-first note storage with client-side encryption, or select Notion with encryption layers if you need cloud collaboration. For highest security with minimal dependencies, use plaintext files encrypted with GPG or age. Each approach trades convenience for control—evaluate your threat model, access patterns, and deployment requirements against each tool's encryption guarantees to select the best fit.
 
-## Key Takeaways
-
-- **Paid plans ($99/year) include**: unlimited storage, password-protected documents, and collaborative folders.
-- **Paid plans start at**: $99/year for extended functionality.
-- **Obsidian**: One-time $50 purchase includes sync and publish features.
-- **It uses AES-256-GCM for note encryption**: with keys derived from your master password using Argon2id.
-- **Cryptee**: Free tier offers 100MB storage.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Evaluation Criteria](#evaluation-criteria)
@@ -361,10 +352,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Privacy Focused Note Taking Apps with Encryption 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-with-encryption-2026/)
 - [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
-- [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
+- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 - [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
+- [Best Encrypted Cloud Storage Free Tier 2026](/privacy-tools-guide/best-encrypted-cloud-storage-free-tier-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

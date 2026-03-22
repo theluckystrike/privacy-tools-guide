@@ -19,22 +19,6 @@ tags: [privacy-tools-guide]
 
 Labor strike organizing requires communication infrastructure that resists employer surveillance, protects activist identities, and maintains operational reliability under pressure. Unlike standard workplace communication, strike organizing faces adversaries with legal resources, corporate monitoring tools, and potentially sophisticated surveillance capabilities. This guide provides practical implementation strategies for developers and power users building secure communication systems for labor organizing.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use a separate device**: from your work and personal phones 2.
-- **Install a privacy-focused operating**: system (GrapheneOS, CalyxOS, or standard iOS with minimal apps) 3.
-- **Use code words**: Establish harmless code words for sensitive topics (e.g., "pizza party" for strike vote)
-2.
-- **Verify identities**: Use in-person key verification for core committee members
-
-### Device Seizure Preparation
-
-Prepare for the possibility of device seizure:
-
-1.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -279,10 +263,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
-- [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
-- [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
-
+- [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
+- [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Set Up a Burner Phone for Protests"
-description: "Practical guide to setting up a burner phone for protests. Covers phone selection, communication tools, digital evidence protection, and operational security."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-a-burner-phone-for-protests/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 A burner phone for protests provides separation between your protest participation and your primary identity, reducing law enforcement tracking risk and protecting contacts. This guide covers selecting appropriate hardware, configuring secure messaging, protecting evidence of police conduct, and operational security practices that minimize law enforcement surveillance during demonstrations.
-
-## Key Takeaways
-
-- **Use encryption on entire**: phone filesystem (SlimRoms, Graphene OS on supported models) Better approach: Don't store sensitive evidence on the phone long-term.
-- **Activate minimal data plan**: ($5-10/month prepaid) Note: US carriers are increasingly requiring ID verification for activation.
-- **Target older models (2-3**: years old) because they're cheaper used and less likely to have biometric authentication that law enforcement could force you to unlock.
-- **Use a generic name**: if system requires one ("John Smith" with birth date 01/01/1950) 4.
-- **Use default camera app**: (minimal metadata leakage) 2.
-- **Install VeraCrypt (open source**: disk encryption) 2.
 
 ## Table of Contents
 
@@ -340,11 +318,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
-- [How to Set Up Panic Button on Phone: Emergency Privacy Wipe](/privacy-tools-guide/how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/)
-- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
-- [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
-- [Android Guest Mode For Lending Phone Without Exposing Person](/privacy-tools-guide/android-guest-mode-for-lending-phone-without-exposing-person/)
-
+- [How to Set Up Burner Devices for Protest Organization](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
+- [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
+- [How To Purchase Phone And Sim Card Anonymously Complete](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
+- [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

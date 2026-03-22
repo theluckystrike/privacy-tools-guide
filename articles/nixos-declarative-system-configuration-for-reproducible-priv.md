@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 NixOS enables privacy-hardened, reproducible Linux systems through declarative configuration in a single file that defines all packages, services, and security settings. Unlike traditional imperative package managers, NixOS stores each package in isolated paths based on dependencies, eliminating version conflicts and allowing instant rollbacks if something breaks. This approach provides atomic updates, reproducible system states across machines, and the ability to enforce security settings by default—making it ideal for security-critical configurations. This guide shows how to set up and maintain a privacy-focused NixOS system with practical examples.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **This guide shows how**: to set up and maintain a privacy-focused NixOS system with practical examples.
-- **Because Nix pins exact versions**: moving this file to another machine produces identical results.
-
 ## Table of Contents
 
 - [What Makes NixOS Different](#what-makes-nixos-different)

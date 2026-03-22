@@ -19,16 +19,6 @@ tags: [privacy-tools-guide]
 
 At U.S. borders, CBP/ICE can search your devices without a warrant, warrant, probable cause, or reasonable suspicion under the "border search exception"—this applies to basic device searches. More intensive searches theoretically require suspicion but enforcement is inconsistent. They can view files, copy data, and retain information you have. Protections: encrypt sensitive files with tools CBP cannot easily access, consider leaving sensitive devices at home and using a travel phone, know your right to consult an attorney upon return, and keep travel logs documenting what devices you carried.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Scenario 3**: Encryption and Privacy Tools
-You use encryption software like VeraCrypt or FileVault.
-- **Consider whether traveling with**: a fully populated password manager is advisable, or use a travel-specific instance with only essential credentials.
-- **Restrict devices to minimal credentials**: use VPN connections rather than stored auth tokens, and separate work/personal data across devices.
-
 ## Table of Contents
 
 - [The Legal Framework: Border Search Exception](#the-legal-framework-border-search-exception)
@@ -297,10 +287,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-- [Privacy Setup for Immigration Activist](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocumented/)
-- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [Best Privacy-Focused Search Engines Comparison 2026](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
-
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
+- [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

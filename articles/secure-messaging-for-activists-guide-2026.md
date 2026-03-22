@@ -20,16 +20,6 @@ intent-checked: true
 Activist communication faces unique threats: state surveillance, device seizure, network monitoring. This guide covers four secure messaging platforms—Signal, Briar, Session, and Cwtch—each designed for different threat models. No messaging app is perfect; this guide helps you choose based on your specific risks.
 
 
-## Key Takeaways
-
-- **Or use biometric unlock**: that can't be forced (in some jurisdictions) --- ### Step 3: Session Session is a fork of Signal that removes the phone number requirement.
-- **Use disappearing messages. Signal**: supports disappearing messages (24 hours default).
-- **Use weak password (so**: "I forgot it" is plausible) 2.
-- **Download Cwtch (currently beta**: limited mobile support)
-2.
-- **Use trusted contacts only**: (mutual OG relationships) Before Arrest (Briar): 1.
-- **Use strong password (but**: memorizable) 2.
-
 ## Threat Model Spectrum
 
 Before choosing a tool, understand your risks:
@@ -515,14 +505,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
+- [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
-- [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
-- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
-- [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
-
+- [Signal Alternatives That Offer End To End Encryption](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
+- [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
+- [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

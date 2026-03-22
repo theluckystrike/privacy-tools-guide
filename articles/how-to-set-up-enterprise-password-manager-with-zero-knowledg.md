@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Deploy Vaultwarden (self-hosted Bitwarden) for enterprise zero-knowledge password management: it encrypts all credentials client-side using your master password, which is never transmitted to servers; the service provider only stores encrypted blobs. Alternatively, use self-hosted Bitwarden for full control, or 1Password Enterprise if preferring managed services. Each approach ensures your organization controls encryption keys while preventing the provider from accessing plaintext credentials.
 
-## Key Takeaways
-
-- **Alternatively**: use self-hosted Bitwarden for full control, or 1Password Enterprise if preferring managed services.
-- **Store this securely**: anyone with this token can manage users and organizations.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

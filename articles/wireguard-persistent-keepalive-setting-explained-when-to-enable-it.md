@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 The WireGuard persistent keepalive setting is one of those configuration options that sits quietly in your `wg0.conf` file, often overlooked until connection issues arise. Understanding when to enable this feature can mean the difference between a reliable VPN tunnel and one that drops unexpectedly. This guide covers the technical details developers and power users need to make informed decisions about persistent keepalive in their WireGuard configurations.
 
-## Key Takeaways
-
-- **Most deployments use values**: between 20 and 30 seconds, which provides a comfortable safety margin below typical NAT timeout values while not generating excessive traffic.
-- **For most client use cases behind NAT**: a keepalive interval of 25 seconds provides reliable connectivity without significant overhead.
-- **Sending packets every 25**: seconds will cause more frequent wake cycles on sleeping devices.
-- **Values up to 60**: seconds work in most environments, though this increases latency in re-establishing dropped connections.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
-
 ## Table of Contents
 
 - [What Persistent Keepalive Does](#what-persistent-keepalive-does)

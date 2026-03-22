@@ -19,16 +19,6 @@ tags: [privacy-tools-guide, comparison]
 
 When selecting a backup solution for sensitive data, encryption becomes the deciding factor. Restic and Borg are both open-source, deduplicating backup programs, but their encryption approaches differ significantly. This comparison examines how each tool handles encryption, performance, and usability from a developer's perspective.
 
-## Key Takeaways
-
-- **Both use Argon2id for**: key derivation with configurable memory and iteration parameters.
-- **Never store passwords in shell history**: use environment variables or a secret manager
-2.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Restic and Borg are both open-source**: deduplicating backup programs, but their encryption approaches differ significantly.
-- **Supported backends include local filesystem**: SFTP, REST server, Amazon S3, Backblaze B2, Microsoft Azure Blob Storage, and Google Cloud Storage.
-
 ## Table of Contents
 
 - [Encryption Architecture](#encryption-architecture)
@@ -389,11 +379,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
-- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-
+- [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
+- [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
+- [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,16 +18,6 @@ tags: [privacy-tools-guide]
 
 Create a threat model by assessing your adversaries' capabilities (state surveillance, ISP monitoring, physical targeting), identifying attack vectors (device seizure, source compromise, metadata exposure), and implementing layered defenses: separate reporting device with clean OS, Tor for communications, encrypted storage with plausible deniability, and operational security protocols (regular pattern-breaking, location variation). Document your threat model, update it as conditions change, and maintain emergency exfiltration plans with trusted international contacts.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Burner device**: Cheap phone with prepaid SIM, used only for travel
-3.
-- **Document time and indicators**: echo "$(date): Emergency activation - suspicious network activity" >> ~/.emergency_log # 4.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Understanding the Threat ecosystem](#understanding-the-threat-ecosystem)
@@ -331,10 +321,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Union Organizer In Hostile Employer Environ](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
-- [Threat Model For Source Communicating With Journalist Anonym](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
-- [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
-- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
-- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
-
+- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Threat Model For Union Organizer In Hostile Employer](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Religious Minority In Persecuting Country](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

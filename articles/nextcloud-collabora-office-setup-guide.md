@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This guide covers the complete setup process using Docker, nginx reverse proxy configuration, and security hardening for production deployments.
 
-## Key Takeaways
-
-- **When a user opens**: a document in Nextcloud, the following happens: 1.
-- **The user edits in**: the browser; changes are saved back via WOPI calls to Nextcloud 5.
-- **Enable "Use your own**: server" 4.
-- **The default is 12**: hours; increase it for long editing sessions where users keep documents open all day without reloading.
-- **Generate a strong password**: for the admin user.
-- **By default**: multiple users opening the same document each get independent sessions.
-
 ## Table of Contents
 
 - [Why Collabora Office with Nextcloud](#why-collabora-office-with-nextcloud)
@@ -403,11 +394,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
-- [How To Use State Attorney General Office To Enforce Privacy](/privacy-tools-guide/how-to-use-state-attorney-general-office-to-enforce-privacy-/)
-
+- [Nextcloud vs Synology Drive Comparison 2026](/privacy-tools-guide/nextcloud-vs-synology-drive-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

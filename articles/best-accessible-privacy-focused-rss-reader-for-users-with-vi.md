@@ -26,15 +26,6 @@ Users with visual impairments require RSS readers that work with screen readers 
 | Tails OS | Accessibility screen reader | Maximum (amnesic) | USB boot | Free |
 
 
-## Key Takeaways
-
-- **Miniflux (Self-Hosted) Miniflux stands**: as the most capable self-hosted option for visually impaired users.
-- **Users with visual impairments**: require RSS readers that work with screen readers like NVDA, JAWS, and VoiceOver while maintaining strict privacy controls.
-- **For users in restrictive environments**: journalists, activists, or individuals in countries with surveillance infrastructure — these logs can have serious consequences.
-- **Many mainstream RSS clients prioritize cloud features and data collection over user privacy**: a problematic approach for anyone relying on assistive technology.
-- **Privacy-focused RSS readers minimize**: attack surface by processing everything locally, avoiding cloud dependencies, and providing clear data export controls.
-- **The ideal solution combines**: three properties: local-first architecture, open-source transparency, and keyboard accessibility.
-
 ## Table of Contents
 
 - [Why Privacy Matters for Accessibility Tooling](#why-privacy-matters-for-accessibility-tooling)
@@ -345,5 +336,13 @@ Users with partial vision often benefit from additional organizational strategie
 **Reading view consistency**: Enable reader mode or article extraction when available. Raw feed content often includes poorly structured HTML that creates erratic screen reader behavior. Tools like Miniflux can be configured to fetch and clean full article content rather than displaying feed excerpts.
 
 **Font and spacing adjustments**: For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
+
+## Related Articles
+
+- [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
+- [Privacy Tools That Work with Screen Readers: Comparison for](/privacy-tools-guide/privacy-tools-that-work-with-screen-readers-comparison-for-b/)
+- [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

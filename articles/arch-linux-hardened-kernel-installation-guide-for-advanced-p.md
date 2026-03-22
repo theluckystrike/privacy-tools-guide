@@ -13,38 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, advanced]
 ---
----
-layout: default
-title: "Arch Linux Hardened Kernel Installation Guide For Advanced"
-description: "A guide to installing and configuring the Linux hardened kernel on Arch Linux for enhanced security and privacy. Includes practical examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /arch-linux-hardened-kernel-installation-guide-for-advanced-p/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, advanced]
----
 
 {% raw %}
 
 The Arch Linux hardened kernel provides enhanced security features for users who prioritize privacy and system integrity. This guide covers the complete installation process, from understanding the hardened kernel variants to configuring boot parameters for maximum protection. The hardened kernel builds upon the standard Linux kernel with additional security patches from the Linux Hardening Project and grsecurity, though many grsecurity features now require paid subscriptions.
-
-## Key Takeaways
-
-- **If you experience stability issues**: you may need to use the open-source nouveau driver instead.
-- **Benchmark your typical workloads**: ```bash
-hyperfine --warmup 3 'your-workload-command'
-```
-
-Typical performance impact ranges from 1-5% for compute-heavy workloads.
-- **The Arch Linux hardened**: kernel provides enhanced security features for users who prioritize privacy and system integrity.
-- **The kernel includes features**: like kernel page table isolation (KPTI), randomize kernel memory offsets, and hardened user copy operations.
-- **The hardened kernel provides**: substantial security improvements for privacy-conscious users.
-- **Combined with proper system**: configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
 
 ## Table of Contents
 

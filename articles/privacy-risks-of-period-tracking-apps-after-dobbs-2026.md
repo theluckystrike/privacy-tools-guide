@@ -18,10 +18,6 @@ tags: [privacy-tools-guide, period-tracking, data-privacy, reproductive-health, 
 
 Period tracking apps are surveillance tools collecting intimate reproductive data with minimal protection. Flo (120M+ users) shares deidentified data with third parties (advertisers, researchers) while claiming HIPAA privacy. Clue (12M+ users) retains browsing history and metadata indefinitely. Natural Cycles (1.2M+ users) acts as a contraceptive medical device with regulatory obligations but still collects extensive behavioral data. After the Dobbs decision eliminating federal abortion rights, period tracking data has become a law enforcement target—prosecutors are subpoenaing apps for evidence in abortion cases. Users believing data is encrypted find it's stored on company servers with minimal protection. Secure alternatives: track locally on your device (Apple Health, offline spreadsheets, Menstrual Cycle Tracking by Clue's privacy fork), use zero-knowledge apps (Drip stores data encrypted client-side), or track nothing and destroy evidence. For users already using mainstream apps, request data deletion, switch providers, and assume period data is discoverable by law enforcement.
 
-## Key Takeaways
-
-- **Limitation**: Loss of health tracking benefits; no data for your own medical decision-making
-
 ## Table of Contents
 
 - [Checking Your Current Privacy Exposure](#checking-your-current-privacy-exposure)
@@ -198,29 +194,29 @@ Limitation: Loss of health tracking benefits; no data for your own medical decis
 If you use Flo, Clue, or Natural Cycles:
 
 1. Review privacy policy and data deletion options
-   - Flo, Clue, Natural Cycles all allow account deletion
-   - Deletion request: Usually takes 30-90 days
-   - Warning: Deletion may not remove data already shared with third parties
+ - Flo, Clue, Natural Cycles all allow account deletion
+ - Deletion request: Usually takes 30-90 days
+ - Warning: Deletion may not remove data already shared with third parties
 
 2. Download your data (data portability right under GDPR/CCPA)
-   - Request data export from app settings
-   - See exactly what the company retained
-   - Assess sensitivity of data retained
+ - Request data export from app settings
+ - See exactly what the company retained
+ - Assess sensitivity of data retained
 
 3. Enable maximum privacy settings
-   - Disable data sharing with third parties (if option exists)
-   - Disable analytics tracking
-   - Disable location sharing
-   - Disable offline backup to cloud
+ - Disable data sharing with third parties (if option exists)
+ - Disable analytics tracking
+ - Disable location sharing
+ - Disable offline backup to cloud
 
 4. Assess state legal risk
-   - If you live in a state criminalizing abortion, evaluate whether continuing to use the app poses legal risk
-   - Consult an attorney if you've used period tracking app in past and concerned about legal exposure
+ - If you live in a state criminalizing abortion, evaluate whether continuing to use the app poses legal risk
+ - Consult an attorney if you've used period tracking app in past and concerned about legal exposure
 
 5. Switch to local tracking
-   - Delete cloud-based app
-   - Start tracking with local-only app (Apple Health, Drip, or spreadsheet)
-   - Never restore previous data to new app (breaks the chain of evidence)
+ - Delete cloud-based app
+ - Start tracking with local-only app (Apple Health, Drip, or spreadsheet)
+ - Never restore previous data to new app (breaks the chain of evidence)
 
 Sample risk assessment:
 
@@ -306,7 +302,7 @@ Threat model 1: Not pregnant, no abortion risk, just want period tracking
 - Data risk: Low (no incriminating data exists)
 
 Threat model 2: Live in abortion-restrictive state, might need abortion access
-- Motivation: Comprehensive health tracking, potential pregnancy tracking, contraceptive monitoring
+- Motivation: health tracking, potential pregnancy tracking, contraceptive monitoring
 - Solution: Use zero-knowledge app (Drip) or no tracking
 - Encryption: Client-side encryption mandatory (company cannot decrypt)
 - Data risk: Medium (partial data created; encrypted backup safer than no backup)
@@ -324,37 +320,37 @@ If you fall in threat model 3, consult an attorney immediately. Data deletion is
 If you decide to leave an app:
 
 1. Request full data export (CCPA/GDPR right)
-   - Apps must provide all data held in portable format
-   - Download to verify what was retained
-   - Store export somewhere safe (might need for attorney)
+ - Apps must provide all data held in portable format
+ - Download to verify what was retained
+ - Store export somewhere safe (might need for attorney)
 
 2. Delete account and request permanent deletion
-   - Delete account in app settings
-   - Request "right to erasure" (GDPR/CCPA)
-   - Confirm deletion within 30 days
-   - Keep confirmation email
+ - Delete account in app settings
+ - Request "right to erasure" (GDPR/CCPA)
+ - Confirm deletion within 30 days
+ - Keep confirmation email
 
 3. Clear device backups
-   - iCloud backup may include old app data
-   - Android backup may include old app data
-   - Clear old backups from cloud, keep only current
-   - Create new backup after deletion
+ - iCloud backup may include old app data
+ - Android backup may include old app data
+ - Clear old backups from cloud, keep only current
+ - Create new backup after deletion
 
 4. Check cloud storage and account sync
-   - Some apps sync to Google Drive, iCloud
-   - Remove shared data from cloud storage manually
-   - Check account sync settings (Google Fit, Apple Health)
-   - Disable further sync before deleting app
+ - Some apps sync to Google Drive, iCloud
+ - Remove shared data from cloud storage manually
+ - Check account sync settings (Google Fit, Apple Health)
+ - Disable further sync before deleting app
 
 5. Verify deletion across devices
-   - Delete app from all devices (phone, tablet, iPad)
-   - Check iCloud, Google Drive, other cloud services
-   - Ensure no remnants remain in any sync destination
+ - Delete app from all devices (phone, tablet, iPad)
+ - Check iCloud, Google Drive, other cloud services
+ - Ensure no remnants remain in any sync destination
 
 6. Document deletion for legal purposes
-   - Keep screenshots of deletion confirmation
-   - Note date and time of deletion request
-   - Store documentation for attorney if needed
+ - Keep screenshots of deletion confirmation
+ - Note date and time of deletion request
+ - Store documentation for attorney if needed
 
 Why this matters: Prosecutors can demand data from cloud providers, email backups, and old device backups. Thorough deletion reduces likelihood of recovery.
 

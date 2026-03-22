@@ -11,36 +11,14 @@ tags: [privacy-tools-guide, account-management, data-minimization]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Delete Old Accounts You Forgot About 2026"
-description: "Step-by-step guide to finding and deleting dormant online accounts using email search, password managers, and account discovery tools"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-delete-old-accounts-you-forgot-about-2026/
-categories: [guides]
-tags: [privacy-tools-guide, account-management, data-minimization]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 You've signed up for dozens of services over the years. Geocities, FourSquare, Vine, Quora, Medium, dev.to, Substack, Reddit, Twitter, Mastodon... the list keeps growing. Most you don't use. Most you can't remember. Those dormant accounts are sitting somewhere, storing your data, at risk if the service gets breached.
 
 This guide walks you through finding and deleting forgotten accounts systematically.
-
-## Key Takeaways
-
-- **Cost**: Free version shows results; paid tier ($99/year) automates removal.
-- **Sort by "Least recently**: used" 4.
-- **Anything from 2018 or**: earlier is probably dormant LastPass: Use the LastPass generator history (if you generated a password when signing up).
-- **Settings & privacy >**: Account preferences 2.
-- **Wait 6 months before**: account is fully deleted ### Services With No Obvious Deletion Page Quora, Wix, Weebly, old services: Use JustDeleteMe or: 1.
-- **Use password manager notes.**: When signing up, add a note: "Using for X, delete after 1 year if not active." Review these notes quarterly.
 
 ## Table of Contents
 

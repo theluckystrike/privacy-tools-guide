@@ -154,6 +154,8 @@ Best practice:
 - [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
 - [Privacy-Focused Password Generator Tools](/privacy-tools-guide/privacy-focused-password-generator-tools/)
 - [Privacy Risks of QR Codes Explained](/privacy-tools-guide/privacy-risks-of-qr-codes-explained/)
+- [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 
 ---
 
@@ -163,8 +165,7 @@ Best practice:
 - [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
 - [How to Prevent Mobile Apps From Fingerprinting Your](/privacy-tools-guide/how-to-prevent-mobile-apps-from-fingerprinting-your-device/)
-- [Mobile App Store Privacy Labels How To Read And Compare](/privacy-tools-guide/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
-
+- [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -29,15 +29,6 @@ tags: [privacy-tools-guide, best-of]
 
 Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for low-sensitivity ongoing conversations. Enable the feature in any conversation by tapping the contact name and selecting "Disappearing messages." Both participants must have the feature enabled -- the recipient's device performs the actual deletion via cryptographic key erasure, not simple file deletion. This guide covers timer strategy, programmatic configuration via Signal CLI, the cryptographic deletion mechanism, and enterprise deployment patterns.
 
-## Key Takeaways
-
-- **Consider these practical scenarios**: High-security channels (30 seconds to 5 minutes): Use for sharing credentials, API keys, or temporary access tokens.
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **Use usernames instead of**: phone numbers where supported 4.
-- **Set Signal disappearing messages**: to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for low-sensitivity ongoing conversations.
-- **Signal provides six preset intervals**: 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks.
-- **Signal's approach provides stronger**: guarantees because: 1.
-
 ## Table of Contents
 
 - [Timer Selection Strategy](#timer-selection-strategy)

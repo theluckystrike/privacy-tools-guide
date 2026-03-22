@@ -21,15 +21,6 @@ Screen sharing has become essential for remote work, code reviews, technical sup
 
 This guide covers secure screen sharing tools that encrypt video streams end-to-end, with practical implementation details for developers and power users who need verifiable security.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **The security guarantee breaks down if any participant lacks E2EE support**: ensure all viewers in your session use compatible clients.
-- **Prefer open-source solutions with**: independent audits, reproducible builds, and transparent cryptographic design.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The server helping the connection acts only as a relay**: it cannot decrypt your screen content because it never possesses the keys.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding End-to-End Encryption in Screen Sharing](#understanding-end-to-end-encryption-in-screen-sharing)

@@ -19,16 +19,6 @@ tags: [privacy-tools-guide]
 
 In Signal, open a conversation with your contact, tap their name, and select "View Safety Number" to see a 60-digit code or QR code. Verify this in person or through a trusted video call against their device's displayed safety number—they see the same code. If the numbers match, your encryption keys are authentic and no MITM attack is occurring. You can scan each other's QR codes in the app to mark verification as complete, which sends a notification showing others in the chat that you've verified each other's identities.
 
-## Key Takeaways
-
-- **Check for legitimate causes**: Did they get a new phone? Reinstall Signal?
-3.
-- **This provides the highest**: security because the attacker would need to be physically present.
-- **Another encrypted messenger**: Use a different end-to-end encrypted platform to exchange safety numbers.
-- **Replicating this precisely requires**: studying Signal's open-source implementation.
-- Use an independent channel.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Understanding Safety Numbers](#understanding-safety-numbers)

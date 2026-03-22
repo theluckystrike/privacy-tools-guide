@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Under GDPR Article 7(3), you have the right to withdraw consent at any time, and organizations must stop processing your data for that purpose immediately upon withdrawal. The withdrawal must be as easy as giving consent—you can typically do this by finding the consent settings in a service's privacy dashboard, using opt-out links in marketing emails, or contacting the organization's data controller directly. This guide covers both the legal requirements and practical methods for revoking consent from major companies.
 
-## Key Takeaways
-
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers the legal foundation**: gdpr article 7(3), how to withdraw your consent: practical steps, 1. identify where you gave consent, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

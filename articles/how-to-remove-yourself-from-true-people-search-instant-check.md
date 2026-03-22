@@ -21,14 +21,6 @@ Data broker websites like TruePeopleSearch, Instant Checkmate, and Radaris aggre
 
 This guide covers the manual opt-out processes for major people search sites and provides automation strategies to improve the removal of your data across multiple databases.
 
-## Key Takeaways
-
-- **Use the search function**: to locate your profile 3.
-- **For developers and power**: users concerned about privacy, removing your data from these platforms is a critical step in reclaiming your digital footprint.
-- **Confirm the deletion request**: via email Radaris also offers a batch removal process for multiple records, which is useful if your information appears under several variations.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
