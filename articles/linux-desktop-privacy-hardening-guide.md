@@ -27,6 +27,16 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Linux desktops run on trust—you control the OS, applications, and permissions. But default installations leak data: Ubuntu's Amazon search suggestions, Fedora's automatic analytics, Firefox's default telemetry, and browser fingerprinting. This guide hardens a Linux desktop against data leaks with practical CLI commands and configuration changes. Expect 2-3 hours for a complete hardening. The result: a system that collects no data about you and refuses unauthorized network connections.

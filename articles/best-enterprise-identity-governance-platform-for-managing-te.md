@@ -13,6 +13,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, identity-governance, access-reviews, enterprise-security, best-of]---
 
+
+| Platform | Governance Features | SSO Support | Compliance | Pricing |
+|---|---|---|---|---|
+| Okta | Lifecycle management, access reviews | SAML, OIDC, WS-Fed | SOC 2, FedRAMP | Custom pricing |
+| SailPoint | AI-driven access certification | All major protocols | SOC 2, ISO 27001 | Custom pricing |
+| CyberArk | Privileged access management | SAML, OIDC | SOC 2, HIPAA | Custom pricing |
+| Microsoft Entra ID | Conditional access, PIM | SAML, OIDC, WS-Fed | SOC 2, ISO 27001 | $6-$9/user/month |
+| OneLogin | Real-time directory sync | SAML, OIDC | SOC 2, ISO 27001 | $4-$8/user/month |
+
+
 {% raw %}
 
 Managing team access reviews at scale represents one of the most challenging aspects of enterprise security. As organizations grow, the number of applications, permissions, and user accounts explodes, making manual access certification impractical and risky. Enterprise identity governance platforms automate this process, ensuring that the right people have access to the right resources at the right time.

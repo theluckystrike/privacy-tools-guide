@@ -14,6 +14,16 @@ voice-checked: true
 tags: [privacy-tools-guide, comparison, vpn]---
 
 
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
+
 {% raw %}
 
 When you connect to a VPN, one of the most critical configuration decisions involves how your network traffic is routed. The distinction between **tunnel interface routing** and **full tunnel routing** fundamentally affects your privacy, security, connection speed, and overall VPN experience. Understanding these differences helps you make informed decisions about your VPN configuration and troubleshoot connectivity issues more effectively.

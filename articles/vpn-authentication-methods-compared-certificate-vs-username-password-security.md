@@ -13,6 +13,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, security, vpn]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Certificate-based authentication provides stronger security against password attacks because it uses PKI (public key infrastructure) where the server validates your digital certificate—immune to dictionary attacks and credential theft—while username/password is faster to deploy but vulnerable to brute force and phishing. Choose certificates for high-security environments (military, finance) where one compromised password cascades into full system access, and username/password for ease-of-management in less hostile threat models where multi-factor authentication can supplement weak passwords.

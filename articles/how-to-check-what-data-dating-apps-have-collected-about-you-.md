@@ -13,6 +13,8 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 ---
+
+
 layout: default
 title: "How to Check What Data Dating Apps Have Collected About You"
 description: "Learn how to request your data from dating apps using GDPR, CCPA, and other privacy regulations. Practical guide with code examples for developers"
@@ -28,6 +30,13 @@ voice-checked: true
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
+## Key Takeaways
+
+- Response required within 30 days.
+- **Regardless of your location**: many US-based apps extend these rights globally as a best practice or to comply with GDPR for European users.
+- **Use Separate Identities**: Create dedicated email addresses and phone numbers for dating apps to isolate this data from your primary digital identity.
+- **Topics covered**: why your dating app data matters, prerequisites, step 1: what data dating apps typically collect
 
 ## Why Your Dating App Data Matters
 

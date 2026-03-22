@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Tor remains one of the most effective tools for anonymous communication on the internet. Unlike standard browsing, Tor routes your traffic through a volunteer-operated network of relays, encrypting your traffic at each hop. This makes it significantly harder for anyone—including your ISP, websites, or sophisticated adversaries—to trace your activity back to you. However, achieving genuine anonymity requires more than simply installing the Tor Browser. This guide covers practical habits and configurations that help developers and power users maximize their privacy while using Tor.

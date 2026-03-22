@@ -264,6 +264,16 @@ Avoid bookmarking login pages — any such bookmark reveals your account existen
 
 By treating bookmarks as persistent metadata rather than transient browser state, you maintain better operational security. These practices align with defense-in-depth principles—each layer adds friction against correlation attacks. Adapt these scripts to your threat model, and remember that bookmark hygiene is one component of a broader Tor Browser usage strategy.
 
+
+| Browser | Tor Integration | Anonymity Level | Speed | Usability |
+|---|---|---|---|---|
+| Tor Browser | Native (bundled Tor) | Maximum | Slow (3-hop routing) | Moderate |
+| Brave (Tor Window) | Built-in Tor mode | High (single-hop option) | Faster than Tor Browser | Easy |
+| Firefox + Tor Proxy | Manual SOCKS proxy setup | High (custom config) | Depends on config | Technical |
+| Whonix Browser | VM-isolated Tor routing | Maximum (Gateway VM) | Slow | Complex setup |
+| Tails Browser | Boot-level Tor enforcement | Maximum (all traffic) | Slow | Moderate |
+
+
 ## Frequently Asked Questions
 
 **Are free AI tools good enough for practices?**

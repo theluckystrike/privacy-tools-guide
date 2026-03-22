@@ -27,6 +27,16 @@ score: 9
 intent-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing between foreground and background access, implementing alternatives like geofencing when full precision isn't needed, and providing clear privacy notices to users. The fundamental requirement is to request only the minimum location precision your app needs and make background location requests separately from foreground requests, ensuring users understand the privacy implications.

@@ -28,6 +28,16 @@ voice-checked: true
 tags: [privacy-tools-guide, comparison]---
 
 
+| Standard | Protocol Layer | User Interaction | Device Requirement | Cross-Device |
+|---|---|---|---|---|
+| WebAuthn | Browser API specification | Browser-mediated auth | Any authenticator | Via API calls |
+| FIDO2 | Full framework (WebAuthn + CTAP) | Hardware key tap/biometric | FIDO2 security key | Via roaming keys |
+| Passkey | FIDO2 with cloud sync | Biometric or PIN | Phone/laptop built-in | Cloud-synced across devices |
+| FIDO U2F (legacy) | Second-factor only | Key tap after password | U2F security key | Physical key only |
+| TOTP | Time-based codes | Manual code entry | Authenticator app | Via app sync/backup |
+
+
+
 WebAuthn is the browser API for passwordless login, FIDO2 is the full protocol suite (WebAuthn plus the CTAP standard for communicating with hardware authenticators), and passkeys are the consumer-facing product built on FIDO2 that adds cross-device sync through iCloud Keychain, Google Password Manager, or Windows Hello. If you are a developer implementing passwordless auth, you work with the WebAuthn API; FIDO2 defines the underlying cryptographic protocol; and passkeys are what your end users actually interact with.
 
 ## Key Takeaways

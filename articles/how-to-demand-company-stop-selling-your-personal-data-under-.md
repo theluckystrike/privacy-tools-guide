@@ -27,6 +27,16 @@ reviewed: true
 score: 8
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 The California Consumer Privacy Act (CCPA) and its successor, the California Privacy Rights Act (CPRA), give California residents powerful rights over their personal information. Among the most important is the right to opt out of the sale of your personal data. If you've ever wondered how to actually exercise this right effectively—especially as a developer or power user who wants to automate the process—this guide provides practical steps, template scripts, and technical details for making your opt-out requests stick.

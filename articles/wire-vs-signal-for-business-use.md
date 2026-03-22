@@ -27,6 +27,19 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]---
 
+
+| Feature | Wire | Signal |
+|---|---|---|
+| Encryption | End-to-end (Proteus protocol) | End-to-end (Signal Protocol) |
+| Business Features | Team management, guest rooms | No business tier |
+| Multi-Device | Up to 8 devices | Phone + 5 linked devices |
+| Registration | Email or phone | Phone number required |
+| Data Jurisdiction | Swiss/EU servers | US-based |
+| File Sharing | Up to 25MB | Up to 100MB |
+| Video Calls | Group calls (25 participants) | Group calls (40 participants) |
+| Best For | Business encrypted comms | Personal private messaging |
+
+
 {% raw %}
 
 When selecting an encrypted messaging platform for business communications, developers and power users face a choice between Wire and Signal. Both provide end-to-end encryption, but their architectures, feature sets, and extensibility differ significantly. This guide examines the technical details that matter for teams building secure workflows.

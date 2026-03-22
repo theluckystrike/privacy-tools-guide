@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | CLI Interface | Encryption | Open Source | Scripting Support |
+|---|---|---|---|---|
+| pass | Unix philosophy, GPG-based | GPG encryption | Yes (GPLv2) | Full shell scripting |
+| Bitwarden CLI (bw) | Full vault management | AES-256 | Yes | JSON output, scriptable |
+| 1Password CLI (op) | Complete vault operations | AES-256-GCM | No (CLI is proprietary) | JSON output, --format flags |
+| KeePassXC CLI | Database operations | AES-256 / ChaCha20 | Yes (GPLv3) | Basic scripting |
+| gopass | Team-friendly pass extension | GPG encryption | Yes (MIT) | Git-based team sharing |
+
+
 {% raw %}
 
 Bitwarden CLI is the best overall password manager CLI tool for most developers, offering a free tier with full vault management, scripting support, and cross-platform sync. For local-only GPG-encrypted storage, use `pass` (the standard Unix password manager). Choose 1Password CLI for polished team workflows, gopass for multi-store organization, or HashiCorp Vault for enterprise secrets management. Below are installation steps, usage examples, and integration patterns for each tool.

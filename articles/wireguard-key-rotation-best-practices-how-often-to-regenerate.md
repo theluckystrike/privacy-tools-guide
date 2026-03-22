@@ -13,6 +13,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Rotate WireGuard keys every 3-6 months for personal use and every 1-3 months for business/enterprise environments to limit exposure from potential key compromise and ensure forward secrecy if a session key is stolen. Use the wg genkey command to generate new key pairs and wg set to update them on live interfaces without disrupting the tunnel; automate with cron jobs to regenerate keys on a schedule. WireGuard's Curve25519 elliptic curve cryptography provides excellent security, but long-term key exposure, device theft, and compliance requirements make periodic rotation essential—even though WireGuard uses forward secrecy on individual packets, rotating master keys limits the damage if a device is lost or compromised.

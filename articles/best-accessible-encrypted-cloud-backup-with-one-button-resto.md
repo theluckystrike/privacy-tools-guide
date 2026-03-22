@@ -13,6 +13,16 @@ intent-checked: true
 voice-checked: true---
 
 
+| Service | Encryption Type | Storage | Max File Size | Price |
+|---|---|---|---|---|
+| Tresorit | End-to-end (zero-knowledge) | 1TB+ | No limit | $10.42/month |
+| Proton Drive | End-to-end (zero-access) | Up to 3TB | 4GB (free), larger paid | Free / $3.99/month |
+| Nextcloud + E2EE | Server-side + optional E2EE | Self-hosted (unlimited) | Server limit | Free (self-hosted) |
+| Cryptomator | Client-side vault encryption | Any cloud provider | Provider limit | Free / $14.99 mobile |
+| SpiderOak ONE | Zero-knowledge encryption | 2TB | No limit | $6/month |
+
+
+
 {% raw %}
 
 When your development machine fails or you accidentally delete critical project files, the difference between a five-minute recovery and a multi-day disaster hinges on having the right backup strategy. For developers and power users who value both security and simplicity, encrypted cloud backup with one-button restore capabilities provides the ideal balance between strong protection and effortless recovery.

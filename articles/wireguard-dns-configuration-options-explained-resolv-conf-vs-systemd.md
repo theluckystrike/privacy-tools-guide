@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Configuring DNS properly with WireGuard is essential for privacy and functionality. When your VPN tunnel routes all traffic through WireGuard, you need to ensure DNS queries also go through the tunnel—otherwise your DNS requests could leak outside the encrypted connection, undermining your privacy. This guide covers the primary DNS configuration methods, comparing the traditional `/etc/resolv.conf` approach with the more modern `systemd-resolved` integration.

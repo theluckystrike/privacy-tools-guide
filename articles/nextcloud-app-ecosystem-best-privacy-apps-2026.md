@@ -27,6 +27,16 @@ reviewed: true
 score: 9
 tags: [privacy-tools-guide, best-of, privacy]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 The Nextcloud app ecosystem provides privacy-focused alternatives to mainstream cloud services. For developers and power users seeking data sovereignty, the right combination of apps transforms a standard Nextcloud installation into a privacy platform. This guide covers the essential privacy apps available in 2026, with practical implementation details for each.

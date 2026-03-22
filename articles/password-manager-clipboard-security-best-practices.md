@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, security]---
 
+
+| Tool | CLI Interface | Encryption | Open Source | Scripting Support |
+|---|---|---|---|---|
+| pass | Unix philosophy, GPG-based | GPG encryption | Yes (GPLv2) | Full shell scripting |
+| Bitwarden CLI (bw) | Full vault management | AES-256 | Yes | JSON output, scriptable |
+| 1Password CLI (op) | Complete vault operations | AES-256-GCM | No (CLI is proprietary) | JSON output, --format flags |
+| KeePassXC CLI | Database operations | AES-256 / ChaCha20 | Yes (GPLv3) | Basic scripting |
+| gopass | Team-friendly pass extension | GPG encryption | Yes (MIT) | Git-based team sharing |
+
+
 {% raw %}
 
 Clipboard security represents one of the most overlooked attack vectors in password management. When you copy a password from your vault, that sensitive data resides in the system clipboard—accessible to any application running on your machine—for potentially minutes or even hours. Understanding these risks and implementing appropriate safeguards significantly reduces your exposure to credential theft.

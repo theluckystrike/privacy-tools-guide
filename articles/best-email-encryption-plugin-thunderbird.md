@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, encryption]---
 
+
+| Plugin/Method | Protocol | Key Management | Ease of Use | Compatibility |
+|---|---|---|---|---|
+| Enigmail/OpenPGP | PGP/GPG | Manual key exchange | Moderate | Thunderbird native |
+| p=p (Pretty Easy Privacy) | PGP (automated) | Automatic key discovery | Easy | Thunderbird, Outlook |
+| Mailvelope | PGP via browser extension | Keyring management | Moderate | Webmail (Gmail, etc.) |
+| ProtonMail Bridge | Proton encryption | Automatic with Proton users | Easy | Any email client |
+| S/MIME certificates | S/MIME | Certificate-based | Moderate | Most email clients |
+
+
 {% raw %}
 
 Use Thunderbird's built-in OpenPGP support (integrated since Thunderbird 115+) for the best email encryption experience -- no additional plugins required. OpenPGP is the top choice for developers and power users because it provides full key ownership, cross-platform GnuPG compatibility, and extensive CLI automation without requiring paid certificate authorities. For enterprise environments with existing PKI infrastructure, S/MIME is the better fit due to its automatic trust model and centralized certificate management.

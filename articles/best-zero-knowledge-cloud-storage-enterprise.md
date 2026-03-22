@@ -247,6 +247,16 @@ When evaluating compliance claims, always request the actual audit reports rathe
 ---
 
 
+
+
+| Service | Encryption Model | Compliance | Max Storage | Price |
+|---|---|---|---|---|
+| Tresorit | Client-side E2EE | GDPR, HIPAA, SOC 2 | 1TB+ | $10.42/month |
+| SpiderOak ONE | Zero-knowledge design | HIPAA-eligible | 2TB | $6/month |
+| Proton Drive | End-to-end, zero-access | GDPR (Swiss) | 3TB | $3.99/month |
+| Boxcryptor (legacy) | Client-side encryption | GDPR | Cloud provider limit | Discontinued (acquired) |
+| Nextcloud + E2EE | Optional E2EE module | Self-hosted compliance | Unlimited | Free (self-hosted) |
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**
