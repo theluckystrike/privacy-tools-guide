@@ -239,5 +239,4 @@ Implementing the right to be forgotten requires careful attention to data archit
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

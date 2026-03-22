@@ -251,5 +251,4 @@ For most use cases, age provides the best balance of security and simplicity. If
 - [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

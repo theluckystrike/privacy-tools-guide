@@ -201,5 +201,4 @@ Regardless of your choice, regularly test your browser's privacy protections. St
 - [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -9,7 +9,7 @@ permalink: /how-to-set-up-emergency-access-for-password-manager-spouse/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -87,7 +87,7 @@ VERIFICATION_CODE_EMERGENCY=your-shared-code-here
 ### Family Vault Sharing Configuration
 
 1. **Create a Family Vault**: In 1Password, create a dedicated vault for emergency access items:
-   ```
+ ```
    1Password → Vaults → Add Vault → Name: "Emergency Access"
    ```
 
@@ -218,7 +218,7 @@ If you suspect your emergency contact has become unreliable or untrustworthy, re
 
 ## Emergency Access for Aging Parents and End-of-Life Planning
 
-As parents age, considering their digital assets becomes part of comprehensive end-of-life planning. Discuss emergency access with aging parents and help them set up appropriate designations. Adult children frequently become executors for aging parents—formal emergency access configurations simplify the process when parental incapacity occurs.
+As parents age, considering their digital assets becomes part of end-of-life planning. Discuss emergency access with aging parents and help them set up appropriate designations. Adult children frequently become executors for aging parents—formal emergency access configurations simplify the process when parental incapacity occurs.
 
 Some families prefer a tiered approach: adult children receive emergency access to critical accounts (banking, medical records, insurance), while a separate designated person (family lawyer, trusted friend) receives access to personal or sensitive accounts.
 

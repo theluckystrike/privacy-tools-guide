@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Sensor Api Fingerprinting How Accelerometer Gyroscope Data"
+title: "Sensor API Fingerprinting How Accelerometer Gyroscope Data"
 description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -217,5 +217,4 @@ Chrome, Firefox, and Safari have implemented varying levels of sensor protection
 - [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

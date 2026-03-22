@@ -314,27 +314,27 @@ VerifyMyIdentity is more expensive but offers additional services.
 ### For Users Wanting DIY Control (3-4 hours work)
 
 1. **List your data (30 minutes)**
-   - Search your name on Spokeo, WhitePages, BeenVerified
-   - Note which brokers have your profile
-   - Create a spreadsheet: Broker | Found | Status | Date
+ - Search your name on Spokeo, WhitePages, BeenVerified
+ - Note which brokers have your profile
+ - Create a spreadsheet: Broker | Found | Status | Date
 
 2. **Submit removal requests to Tier 1 sites (30 minutes)**
-   - Spokeo, WhitePages, PeopleFinder
-   - These are fast and have clear processes
+ - Spokeo, WhitePages, PeopleFinder
+ - These are fast and have clear processes
 
 3. **Submit removal requests to Tier 2 sites (60 minutes)**
-   - BeenVerified, TruthFinder, Intelius
-   - Prepare ID scan beforehand
-   - Submit and wait for processing
+ - BeenVerified, TruthFinder, Intelius
+ - Prepare ID scan beforehand
+ - Submit and wait for processing
 
 4. **Track follow-ups (30 minutes, weekly)**
-   - Search yourself weekly for 4 weeks
-   - Note which removals stuck
-   - Re-submit for sites that re-list
+ - Search yourself weekly for 4 weeks
+ - Note which removals stuck
+ - Re-submit for sites that re-list
 
 5. **Send CCPA/GDPR requests (60 minutes)**
-   - For Tier 3 sites and any that re-list
-   - Use template email (provided below)
+ - For Tier 3 sites and any that re-list
+ - Use template email (provided below)
 
 ### For Users Wanting Automated Solution
 
@@ -480,5 +480,4 @@ Once removed, reduce future re-collection:
 - [How To Remove Personal Photos From Google Images And Reverse](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

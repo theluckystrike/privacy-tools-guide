@@ -260,5 +260,4 @@ The goal is not perfect anonymity but reducing your uniqueness to make tracking 
 - [Browser Connection Pooling Fingerprinting How Http2 Connecti](/privacy-tools-guide/browser-connection-pooling-fingerprinting-how-http2-connecti/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

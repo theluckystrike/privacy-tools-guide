@@ -352,6 +352,7 @@ Consider these tools to improve documentation and reduce manual effort:
 - **UptimeRobot**: Simple uptime monitoring with SSL checks
 - **Checkmk**: Open-source monitoring with SSL checks
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

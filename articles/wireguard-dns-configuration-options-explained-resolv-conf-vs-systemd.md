@@ -229,5 +229,4 @@ Proper DNS configuration completes your WireGuard privacy setup. Whether you cho
 - [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

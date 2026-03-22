@@ -367,5 +367,4 @@ The goal of detection is not necessarily to catch attackers, but to modify behav
 - [How To Detect And Remove Stalkerware From Android Phone Comp](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

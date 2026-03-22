@@ -268,5 +268,4 @@ testing ensures your data portability feature works correctly and securely.
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

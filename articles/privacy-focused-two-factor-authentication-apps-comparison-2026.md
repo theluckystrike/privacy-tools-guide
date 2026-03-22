@@ -69,7 +69,7 @@ Save backup immediately:
 Aegis offers several backup options:
 
 1. **Encrypted vault backup** (strongly recommended):
-   ```
+ ```
    Menu → More → Export vault as encrypted archive
    Password-protect the vault file (separate password from Aegis master password)
    Save to: external drive, USB stick, or separate cloud account
@@ -77,16 +77,16 @@ Aegis offers several backup options:
    ```
 
 2. **Plaintext export** (not recommended):
-   ```
+ ```
    Menu → More → Export vault (plaintext JSON)
    Contains all secrets in readable format; extremely sensitive
    Only export for transition to another device
    ```
 
 3. **Biometric recovery codes**:
-   Some services (GitHub, Google, 1Password) give recovery codes when enabling 2FA.
-   Store these separately from Aegis (printed, in password manager).
-   These bypass 2FA entirely if you lose your authenticator.
+Some services (GitHub, Google, 1Password) give recovery codes when enabling 2FA.
+Store these separately from Aegis (printed, in password manager).
+These bypass 2FA entirely if you lose your authenticator.
 
 **Strengths:**
 - Open-source: anyone can audit the code (github.com/beemdevelopment/Aegis)
@@ -385,4 +385,5 @@ Raivo has built-in importer for Authy backups
 Best practice: Set up new device alongside old, gradually migrate accounts
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

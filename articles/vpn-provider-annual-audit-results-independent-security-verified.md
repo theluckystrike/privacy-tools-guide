@@ -237,7 +237,7 @@ If an auditor finds a critical vulnerability and the report shows no fix timelin
 
 **Very old audits:** Any audit older than 18 months needs follow-up. Security threats evolve rapidly.
 
-**Conflicting findings:** If multiple audits identify the same issue, that provider has a systemic problem, not a one-time oversight.
+**Conflicting findings:** If multiple audits identify the same issue, that provider has a systemic problem, not an one-time oversight.
 
 **No remediation evidence:** Quality providers publish follow-ups showing how they fixed audit findings.
 

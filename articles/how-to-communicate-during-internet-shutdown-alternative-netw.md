@@ -251,5 +251,4 @@ Test these systems regularly. An untested solution fails when needed most.
 - [Ultrasonic Beacon Tracking How Smart Devices Communicate Thr](/privacy-tools-guide/ultrasonic-beacon-tracking-how-smart-devices-communicate-thr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -406,5 +406,4 @@ The manifest returned by this function is your audit trail. Store it in a separa
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

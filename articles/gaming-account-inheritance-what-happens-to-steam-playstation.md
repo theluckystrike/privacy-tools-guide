@@ -198,7 +198,7 @@ For developers and power users invested in digital game libraries, several proac
 
 1. **Document everything comprehensively**: Maintain current records of all gaming accounts, games, and credentials. Include purchase prices and estimated current value.
 2. **Use password manager inheritance features**: Set up emergency access with trusted contacts. Bitwarden, 1Password, and LastPass all offer death notification procedures.
-3. **Enable Family Sharing**: Provide temporary access mechanisms while alive. This is the most robust strategy available on Steam.
+3. **Enable Family Sharing**: Provide temporary access mechanisms while alive. This is the most strong strategy available on Steam.
 4. **Store 2FA recovery codes**: Ensure executors can access accounts if platform support allows it. Print these and store in a secure location with your will.
 5. **Consider physical collections**: Where possible, prioritize physical media for truly transferable assets. GOG (Good Old Games) offers some DRM-free titles that feel more like ownership.
 6. **Review platform policies regularly**: Terms of service change; stay informed about current inheritance options. Check annually.
@@ -224,7 +224,7 @@ For significant digital asset portfolios, these services provide peace of mind t
 
 ## The Long Game: Advocating for Better Inheritance Policies
 
-Individual users have limited leverage with major platforms, but collective advocacy matters. If enough users request inheritance features, platforms eventually respond.
+Individual users have limited use with major platforms, but collective advocacy matters. If enough users request inheritance features, platforms eventually respond.
 
 Document that you care about this issue. In surveys or feedback opportunities with gaming platforms, mention digital inheritance and account succession. If you're a developer or product manager at a gaming company, advocate internally for inheritance policies. If you're in a legal or compliance role, raise the business risk of not having inheritance options.
 
@@ -284,5 +284,4 @@ Modern estate planning increasingly includes a digital asset inventory. It's not
 - [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

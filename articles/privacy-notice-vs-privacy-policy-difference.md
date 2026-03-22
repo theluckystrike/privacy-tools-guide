@@ -310,5 +310,4 @@ Track these as pull requests with legal review before deployment, maintaining ve
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

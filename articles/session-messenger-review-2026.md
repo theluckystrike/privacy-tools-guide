@@ -327,5 +327,4 @@ Session represents a balance point between privacy and usability for decentraliz
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

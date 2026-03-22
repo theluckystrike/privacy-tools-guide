@@ -263,5 +263,4 @@ The removal process requires persistence. Content may reappear on different plat
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

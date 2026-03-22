@@ -309,4 +309,13 @@ Expected outcome: Start with 50-100 forgotten accounts. Delete 80-90% within a m
 
 Start today. Delete one account. Then another. It's boring work, but it's worth it for your privacy.
 
+
+
+## Related Articles
+
+- [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
+- [How to Check What Data Dating Apps Have Collected About You](/how-to-check-what-data-dating-apps-have-collected-about-you-/)
+- [Identity Graph What Data Brokers Know About You And How](/identity-graph-what-data-brokers-know-about-you-and-how-they/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

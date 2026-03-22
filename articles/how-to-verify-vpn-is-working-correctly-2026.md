@@ -42,13 +42,13 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 **How to test:**
 
 1. **Before VPN:** Visit ipleak.net in browser (VPN disabled).
-   - Note the "Your DNS servers" entries (typically ISP addresses like 1.1.1.1, 8.8.8.8).
+ - Note the "Your DNS servers" entries (typically ISP addresses like 1.1.1.1, 8.8.8.8).
 
 2. **Connect VPN:** Turn on your VPN, choose a server location.
 
 3. **After VPN:** Revisit ipleak.net.
-   - DNS servers should change to VPN provider's servers.
-   - If DNS servers are still ISP addresses, **you have a DNS leak**.
+ - DNS servers should change to VPN provider's servers.
+ - If DNS servers are still ISP addresses, **you have a DNS leak**.
 
 **Example:**
 - Before VPN: DNS = 71.252.0.0 (Comcast ISP)
@@ -71,13 +71,13 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 **How to test:**
 
 1. **Before VPN:** Visit ipleak.net/webrtc (VPN disabled).
-   - Note the "Your IP addresses" listed (your real IP).
+ - Note the "Your IP addresses" listed (your real IP).
 
 2. **Connect VPN.**
 
 3. **After VPN:** Revisit ipleak.net/webrtc.
-   - "Your IP addresses" should only show VPN server IP.
-   - If your real IP appears, **you have a WebRTC leak**.
+ - "Your IP addresses" should only show VPN server IP.
+ - If your real IP appears, **you have a WebRTC leak**.
 
 **Example:**
 - Before VPN: IP = 203.0.113.45 (your real address)
@@ -101,14 +101,14 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 **How to test:**
 
 1. **Disable VPN.** Visit ipleak.net/ipv6.
-   - Note if an IPv6 address is displayed.
-   - If no IPv6 is shown, your network doesn't support IPv6; skip this test.
+ - Note if an IPv6 address is displayed.
+ - If no IPv6 is shown, your network doesn't support IPv6; skip this test.
 
 2. **Enable VPN.**
 
 3. **Revisit ipleak.net/ipv6.**
-   - If an IPv6 address is shown, **you have an IPv6 leak**.
-   - IPv6 should be blocked or routed through VPN.
+ - If an IPv6 address is shown, **you have an IPv6 leak**.
+ - IPv6 should be blocked or routed through VPN.
 
 **Example:**
 - Before VPN: IPv6 = 2001:db8::1 (your real IPv6)
@@ -117,8 +117,8 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 
 **If you see a leak:**
 - Most VPNs don't properly route IPv6. Solutions:
-  - **Disable IPv6 on your system** (simplest). On Windows: Device Manager > Network adapters > IPv6 > disable. On Mac: System Preferences > Network > IPv6 > Off. On Linux: `echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6`.
-  - **Use VPN kill switch:** If VPN doesn't fully support IPv6, kill switch should block all IPv6 traffic.
+ - **Disable IPv6 on your system** (simplest). On Windows: Device Manager > Network adapters > IPv6 > disable. On Mac: System Preferences > Network > IPv6 > Off. On Linux: `echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6`.
+ - **Use VPN kill switch:** If VPN doesn't fully support IPv6, kill switch should block all IPv6 traffic.
 
 ---
 
@@ -129,14 +129,14 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 **How to test:**
 
 1. **Disable VPN.** Visit ipify.org or whatismyipaddress.com.
-   - Note your IP address and city/country.
+ - Note your IP address and city/country.
 
 2. **Connect VPN to a server in a different country** (e.g., if you're in US, choose Japan server).
 
 3. **Revisit the site.**
-   - IP should change to VPN server IP.
-   - City/country should match VPN server location.
-   - If your real IP or location is visible, **you have a leak**.
+ - IP should change to VPN server IP.
+ - City/country should match VPN server location.
+ - If your real IP or location is visible, **you have a leak**.
 
 **Example:**
 - Before VPN: IP = 203.0.113.45 (Los Angeles, USA)
@@ -163,8 +163,8 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 2. **Connect VPN.**
 3. **Let download start.** Confirm VPN is connected.
 4. **Disconnect VPN manually** or unplug network cable.
-   - If kill switch works: Download stops immediately; internet goes dark.
-   - If kill switch fails: Download continues on real IP; **major security breach**.
+ - If kill switch works: Download stops immediately; internet goes dark.
+ - If kill switch fails: Download continues on real IP; **major security breach**.
 
 **Better alternative (no download):**
 
@@ -172,8 +172,8 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 2. **Start streaming video** on ipleak.net or run continuous ping in terminal.
 3. **Unplug VPN network interface** (if on separate device/VM).
 4. **Observe:**
-   - Kill switch ON: Video stops, ping fails. Good.
-   - Kill switch OFF: Video continues or ping resumes on real IP. Bad.
+ - Kill switch ON: Video stops, ping fails. Good.
+ - Kill switch OFF: Video continues or ping resumes on real IP. Bad.
 
 **macOS Command-Line Test:**
 ```bash
@@ -203,8 +203,8 @@ ping 8.8.8.8
 2. **Open ipleak.net in browser.**
 3. **Force disconnect VPN** (unplug network, turn off WiFi, or kill VPN app).
 4. **Refresh ipleak.net page.**
-   - If kill switch works, page won't load (internet is blocked).
-   - If kill switch fails, page loads and shows your real IP. **Leak.**
+ - If kill switch works, page won't load (internet is blocked).
+ - If kill switch fails, page loads and shows your real IP. **Leak.**
 
 **Alternative:** Use BrowserLeaks.com for leak testing. It tests:
 - IP address
@@ -241,8 +241,8 @@ dig @8.8.8.8 google.com
 ```
 
 4. **Observe response times.**
-   - Consistent fast response: Likely going through VPN DNS cache.
-   - Intermittent slow response: Possible fallback to ISP DNS.
+ - Consistent fast response: Likely going through VPN DNS cache.
+ - Intermittent slow response: Possible fallback to ISP DNS.
 
 **Advanced:** Use Wireshark (packet sniffer) to monitor DNS traffic. If you see DNS queries to non-VPN addresses, you have a leak. Requires technical knowledge; ipleak.net is simpler.
 
@@ -336,4 +336,5 @@ Run these tests monthly. More often if you change VPN providers or update your O
 
 A VPN is only as good as its actual implementation. Test it.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

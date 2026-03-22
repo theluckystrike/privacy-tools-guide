@@ -254,5 +254,4 @@ If you determine your webcam has been compromised:
 - [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

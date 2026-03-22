@@ -306,5 +306,4 @@ The key lesson: **infrastructure independence is powerful**. When you remove dep
 - [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

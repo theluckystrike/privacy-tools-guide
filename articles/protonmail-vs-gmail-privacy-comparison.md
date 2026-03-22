@@ -237,5 +237,4 @@ This hybrid approach uses Gmail's API infrastructure while adding an encryption 
 - [How To Use Pgp Encrypted Email With Protonmail To Non Proton](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -211,4 +211,5 @@ Look for these characteristics when selecting games for private LAN parties:
 
 The open-source game community provides excellent alternatives to most commercial titles, often with better mod support and completely free of data collection concerns.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

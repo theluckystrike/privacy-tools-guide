@@ -282,9 +282,9 @@ listen_addresses:
 3. Click "Edit" next to DNS servers
 4. Select "Encrypted (DoH)"
 5. Choose provider:
-   - Cloudflare (1.1.1.1)
-   - Quad9
-   - NextDNS
+ - Cloudflare (1.1.1.1)
+ - Quad9
+ - NextDNS
 
 6. Click Save
 
@@ -401,9 +401,9 @@ dig @127.0.0.1 google.com
 1. Settings > VPN & Device Management
 2. DNS Settings > Encrypted DNS
 3. Choose provider:
-   - Cloudflare: `https://1.1.1.1/dns-query`
-   - Quad9: `https://dns.quad9.net/dns-query`
-   - NextDNS: `https://dns.nextdns.io` (requires account)
+ - Cloudflare: `https://1.1.1.1/dns-query`
+ - Quad9: `https://dns.quad9.net/dns-query`
+ - NextDNS: `https://dns.nextdns.io` (requires account)
 
 4. Install configuration profile > Allow
 
@@ -584,4 +584,13 @@ Resolve-DnsName -Name google.com
 - [ ] Share provider address with family members (group setup)
 - [ ] Optional: Add fallback DNS (Quad9 as backup to Cloudflare)
 
+
+
+## Related Articles
+
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted](/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

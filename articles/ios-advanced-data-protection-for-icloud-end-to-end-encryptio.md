@@ -215,5 +215,4 @@ For high-risk users—journalists, activists, researchers handling sensitive dat
 - [Data Protection Officer Role Responsibilities When Your.](/privacy-tools-guide/data-protection-officer-role-responsibilities-when-your-business-needs-one-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

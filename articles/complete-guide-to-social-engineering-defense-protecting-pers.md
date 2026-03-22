@@ -214,5 +214,4 @@ When you suspect a social engineering attempt:
 - [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

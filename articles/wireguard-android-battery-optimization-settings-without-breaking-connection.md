@@ -423,5 +423,4 @@ The goal is finding the configuration that provides reliable protection while mi
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

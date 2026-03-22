@@ -192,7 +192,7 @@ While GDPR provides the foundation for DPA requirements globally, other jurisdic
 
 **Singapore**: Singapore's Personal Data Protection Act requires processor agreements for data transfers outside Singapore. The requirements are generally less strict than GDPR but still mandatory.
 
-If your organization processes data from multiple jurisdictions, you may need multiple versions of your DPA or one comprehensive agreement covering all requirements. The strictest jurisdiction's requirements typically form the baseline.
+If your organization processes data from multiple jurisdictions, you may need multiple versions of your DPA or one agreement covering all requirements. The strictest jurisdiction's requirements typically form the baseline.
 
 ## Practical DPA Negotiation Tips
 
@@ -220,7 +220,7 @@ Treating the DPA as a checkbox exercise rather than a living document creates pr
 
 ## Real-World DPA Negotiation Scenarios
 
-Most vendors provide template DPAs heavily favoring their interests. Negotiating these agreements requires understanding your leverage points and realistic expectations.
+Most vendors provide template DPAs heavily favoring their interests. Negotiating these agreements requires understanding your use points and realistic expectations.
 
 Common negotiation points include:
 
@@ -249,7 +249,7 @@ Schedule annual DPA reviews, especially around contract renewal. Regulatory requ
 
 Organize your vendor DPA documentation for audit or regulatory inquiries. Regulators examining your compliance practices will request DPA copies and approval processes. Organizations with well-documented vendor management demonstrate compliance sophistication that regulators view favorably.
 
-Finally, remember that a DPA represents mutual protection. While it ensures your vendor follows your processing instructions, it also protects the vendor by documenting they're processing data only as instructed. Neither party benefits from ambiguity or missing obligations. Investing time in clear, comprehensive DPAs prevents future disputes and regulatory problems.
+Finally, remember that a DPA represents mutual protection. While it ensures your vendor follows your processing instructions, it also protects the vendor by documenting they're processing data only as instructed. Neither party benefits from ambiguity or missing obligations. Investing time in clear, DPAs prevents future disputes and regulatory problems.
 
 ## Special Cases: SaaS, Cloud Providers, and Processors of Processors
 

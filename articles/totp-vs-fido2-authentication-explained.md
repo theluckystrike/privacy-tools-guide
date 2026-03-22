@@ -306,5 +306,4 @@ Both are superior to SMS (telecom sees all authentication), push notifications (
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

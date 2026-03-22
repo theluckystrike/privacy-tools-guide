@@ -282,5 +282,4 @@ Train all team members on a three-step response to device seizure risk:
 - [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

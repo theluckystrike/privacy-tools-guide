@@ -266,5 +266,4 @@ For technical teams in 2026, Nextcloud remains the more capable platform for sel
 - [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -278,5 +278,4 @@ When selecting a privacy-respecting analytics alternative, evaluate these factor
 - [How to Disable Google AMP Tracking in Search Results Guide](/privacy-tools-guide/how-to-disable-google-amp-tracking-in-search-results-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

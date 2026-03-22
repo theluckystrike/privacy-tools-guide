@@ -276,5 +276,4 @@ The encrypted voice landscape continues evolving. MLS (Messaging Layer Security)
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

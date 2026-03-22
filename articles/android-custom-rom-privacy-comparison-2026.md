@@ -239,5 +239,4 @@ GrapheneOS has the most conservative defaults. CalyxOS's microG, even when enabl
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -358,5 +358,4 @@ The configuration in this guide provides a foundation. As you become familiar wi
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

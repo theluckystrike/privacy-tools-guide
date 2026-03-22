@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ios App Tracking Transparency Explained 2026"
+title: "iOS App Tracking Transparency Explained 2026"
 description: "iOS App Tracking Transparency Explained 2026: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
 last_modified_at: 2026-03-15

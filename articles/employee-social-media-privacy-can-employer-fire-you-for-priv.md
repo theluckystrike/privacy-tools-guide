@@ -286,7 +286,5 @@ This documentation becomes evidence if you pursue legal action. Courts heavily w
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

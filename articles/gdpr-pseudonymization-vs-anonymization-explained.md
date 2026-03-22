@@ -323,5 +323,4 @@ Document your technique choice for GDPR Article 30 records of processing:
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

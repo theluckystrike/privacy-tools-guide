@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Remove Personal Data From Chatgpt Bing Ai And Google"
+title: "How To Remove Personal Data From ChatGPT Bing Ai And Google"
 description: "A practical developer guide to removing your personal data from AI training models, including OpenAI, Microsoft Copilot, and Google Gemini. Includes"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -306,5 +306,4 @@ The most effective strategy remains prevention: avoid entering sensitive persona
 - [Intelius Opt-Out Guide: Remove Personal Information in 2026](/privacy-tools-guide/intelius-opt-out-guide-remove-personal-information-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

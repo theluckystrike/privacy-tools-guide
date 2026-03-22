@@ -274,6 +274,7 @@ echo "Windows: Wireshark with filter: ip.dst == 203.0.113.0/24 || ip.dst == 10.0
 
 When manually configuring routes, always verify your configuration by checking which IP addresses your applications are connecting from and testing for DNS leaks. Tools like `curl ifconfig.me` and DNS leak test websites help confirm that your routing is working as expected.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

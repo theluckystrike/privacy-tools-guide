@@ -410,5 +410,4 @@ jobs:
 - [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

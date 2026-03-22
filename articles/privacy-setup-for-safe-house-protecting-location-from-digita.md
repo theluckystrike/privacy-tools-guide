@@ -454,5 +454,4 @@ Customize protection based on threat model:
 - [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

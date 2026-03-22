@@ -290,5 +290,4 @@ Consider your specific use case:
 - [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

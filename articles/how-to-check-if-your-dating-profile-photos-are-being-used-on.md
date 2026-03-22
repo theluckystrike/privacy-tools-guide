@@ -231,7 +231,7 @@ Legal action requires consulting with attorneys experienced in internet harassme
 
 ## Preventing Future Theft
 
-Use different photos on different dating platforms. Scammers doing reverse image searches will find legitimate platforms more easily than fake ones, so varying your photos reduces the chances of comprehensive profile theft.
+Use different photos on different dating platforms. Scammers doing reverse image searches will find legitimate platforms more easily than fake ones, so varying your photos reduces the chances of profile theft.
 
 Watermark photos with your username or a unique identifier if the platform allows it. While watermarks can be removed by sophisticated attackers, they discourage casual photo theft by casual scammers.
 
@@ -249,5 +249,4 @@ Regularly audit your own dating profiles for activity changes, profile informati
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

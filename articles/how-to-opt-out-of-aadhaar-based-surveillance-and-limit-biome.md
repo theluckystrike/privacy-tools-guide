@@ -287,5 +287,3 @@ Supporting these organizations amplifies your individual efforts and contributes
 - [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-

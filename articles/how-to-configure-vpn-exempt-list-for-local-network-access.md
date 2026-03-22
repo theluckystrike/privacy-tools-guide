@@ -238,5 +238,4 @@ For maximum security, exempt only the specific hosts you need, not entire subnet
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

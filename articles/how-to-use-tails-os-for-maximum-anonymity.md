@@ -116,8 +116,8 @@ diskutil ejectDisk /dev/disk2
 1. Shut down your computer completely
 2. Insert Tails USB
 3. Power on and hold the boot menu key:
-   - Mac: Hold Option/Alt during startup
-   - Windows PC: Usually F12 or Del (varies by manufacturer)
+ - Mac: Hold Option/Alt during startup
+ - Windows PC: Usually F12 or Del (varies by manufacturer)
 4. Select USB drive
 5. Tails boots to a "Welcome" screen (takes 2-3 minutes)
 
@@ -504,6 +504,7 @@ This takes 10-15 seconds. Wait for complete shutdown.
 | Government resistance | Tails | No forensic traces |
 | Whistleblowing | Tails + ProtonMail | Complete isolation |
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

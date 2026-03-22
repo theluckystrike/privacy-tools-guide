@@ -339,5 +339,4 @@ scp root@192.168.1.1:/tmp/backup.tar.gz ./
 - [Nixos Declarative System Configuration For Reproducible Priv](/privacy-tools-guide/nixos-declarative-system-configuration-for-reproducible-priv/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -174,7 +174,7 @@ After removing the registry entry and restarting, Windows will restore SAC to it
 - [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Deep Dive: What Smart App Control Actually Sends to Microsoft
 
@@ -393,4 +393,6 @@ Create a decision matrix for your organization:
 | Privacy-sensitive org | Unacceptable | Required |
 
 Your choice depends on your threat model versus privacy requirements.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

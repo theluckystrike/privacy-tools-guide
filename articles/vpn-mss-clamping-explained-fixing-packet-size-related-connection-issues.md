@@ -369,5 +369,4 @@ Each application has different tolerance for packet loss and latency.
 - [VPN Connection Drops Troubleshooting Guide](/privacy-tools-guide/vpn-connection-drops-troubleshooting-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -298,24 +298,24 @@ The premium reflects that privacy engineers are rare—companies compete fiercel
 Privacy engineers rarely post their credentials on generic job boards. Targeted sourcing:
 
 1. **Universities with strong security/privacy programs:**
-   - Carnegie Mellon (CyLab), UC Berkeley (EECS), MIT CSAIL
-   - Contact graduate programs directly; many thesis advisors can recommend candidates
+ - Carnegie Mellon (CyLab), UC Berkeley (EECS), MIT CSAIL
+ - Contact graduate programs directly; many thesis advisors can recommend candidates
 
 2. **Privacy-focused conferences:**
-   - USENIX Security, CCS, NDSS
-   - These conferences attract researchers transitioning to industry
+ - USENIX Security, CCS, NDSS
+ - These conferences attract researchers transitioning to industry
 
 3. **IAPP certification holders:**
-   - International Association of Privacy Professionals maintains member directory
-   - CIPP/CIPM certifications indicate serious commitment to privacy
+ - International Association of Privacy Professionals maintains member directory
+ - CIPP/CIPM certifications indicate serious commitment to privacy
 
 4. **Open-source privacy projects:**
-   - Contributors to Signal, Tor, CryptPad, or privacy-preserving ML projects
-   - These candidates have proven commitment beyond employment
+ - Contributors to Signal, Tor, CryptPad, or privacy-preserving ML projects
+ - These candidates have proven commitment beyond employment
 
 5. **Current employees from regulated industries:**
-   - Healthcare, finance, insurance employees often have compliance mindset
-   - May be ready to apply expertise in tech sector
+ - Healthcare, finance, insurance employees often have compliance mindset
+ - May be ready to apply expertise in tech sector
 
 ## Privacy Engineering at Scale
 
@@ -347,25 +347,25 @@ As teams grow, you need different structures:
 Many companies fail to hire good privacy engineers because they:
 
 1. **Treating privacy as security's responsibility**
-   - Privacy and security overlap but are distinct
-   - Security: "Ensure authorized users only access approved data"
-   - Privacy: "Minimize what data we collect and how long we keep it"
-   - You need both perspectives
+ - Privacy and security overlap but are distinct
+ - Security: "Ensure authorized users only access approved data"
+ - Privacy: "Minimize what data we collect and how long we keep it"
+ - You need both perspectives
 
 2. **Overweighting certifications**
-   - CIPP/CISSP are valuable but not sufficient
-   - Someone can have all certifications and still lack practical implementation skills
-   - Look for shipped products, not just paper credentials
+ - CIPP/CISSP are valuable but not sufficient
+ - Someone can have all certifications and still lack practical implementation skills
+ - Look for shipped products, not just paper credentials
 
 3. **Asking trivia questions**
-   - "What's the maximum key length for AES-256?" (Wrong—AES-256 is the maximum)
-   - Candidates can Google these answers
-   - Ask about trade-offs and decisions instead
+ - "What's the maximum key length for AES-256?" (Wrong—AES-256 is the maximum)
+ - Candidates can Google these answers
+ - Ask about trade-offs and decisions instead
 
 4. **Assuming privacy = legal compliance**
-   - Compliance is the floor, not the ceiling
-   - Privacy engineers build systems where privacy is comfortable, not just legal
-   - Look for engineers who think about user experience alongside regulations
+ - Compliance is the floor, not the ceiling
+ - Privacy engineers build systems where privacy is comfortable, not just legal
+ - Look for engineers who think about user experience alongside regulations
 
 ## Evaluating Team Fit
 
@@ -411,5 +411,4 @@ Hire for shared values, not just skills. Privacy engineering requires ethical co
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -216,12 +216,12 @@ A more accessible approach: dark web exposure can sometimes be identified indire
 Detection is only half the battle. Implement these preventive measures:
 
 1. **Remove metadata before sharing**: Strip EXIF data using tools like `exiftool`:
-   ```bash
+ ```bash
    exiftool -all= image.jpg
    ```
 
 2. **Use steganography detection**: Check if your images contain hidden data:
-   ```bash
+ ```bash
    pip install stegano
    from stegano import lsb
    secret = lsb.reveal("image.png")

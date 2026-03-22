@@ -265,5 +265,4 @@ Regular reviews catch new accounts you create and identify breaches in newly-com
 - [Domain Name Inheritance How To Transfer Registrar Accounts A](/privacy-tools-guide/domain-name-inheritance-how-to-transfer-registrar-accounts-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

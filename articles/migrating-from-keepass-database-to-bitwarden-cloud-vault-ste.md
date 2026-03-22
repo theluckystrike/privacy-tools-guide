@@ -303,5 +303,4 @@ Bitwarden's zero-knowledge architecture means even their servers cannot read you
 - [Migrating from Safari Keychain to Bitwarden](/privacy-tools-guide/migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

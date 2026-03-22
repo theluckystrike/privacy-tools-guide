@@ -386,6 +386,7 @@ tailscale set --derp-region=sfo
 sudo tcpdump -i any 'udp port 3478 or udp port 5349' -n
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

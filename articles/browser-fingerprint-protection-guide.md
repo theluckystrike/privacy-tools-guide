@@ -278,5 +278,4 @@ Combining good browser choice with a VPN or Tor removes the network-layer correl
 - [Css Fingerprinting Techniques How Stylesheets Can Track You](/privacy-tools-guide/css-fingerprinting-techniques-how-stylesheets-can-track-you-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

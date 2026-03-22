@@ -304,5 +304,4 @@ Contact relevant authorities if necessary, such as the FBI's Internet Crime Comp
 - [What To Do If Ransomware Locks Your Computer Immediate Steps](/privacy-tools-guide/what-to-do-if-ransomware-locks-your-computer-immediate-steps/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

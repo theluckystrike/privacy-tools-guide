@@ -279,5 +279,4 @@ $results | Export-Csv -Path "ActivityHistoryAudit.csv" -NoTypeInformation
 - [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

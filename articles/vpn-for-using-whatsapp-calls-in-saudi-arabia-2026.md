@@ -540,5 +540,4 @@ This technical setup enables WhatsApp calling in Saudi Arabia for most users, bu
 - [Iran Whatsapp Restrictions How Government Monitors And Limit](/privacy-tools-guide/iran-whatsapp-restrictions-how-government-monitors-and-limit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

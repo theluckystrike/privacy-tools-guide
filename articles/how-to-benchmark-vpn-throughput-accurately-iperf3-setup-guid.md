@@ -451,5 +451,4 @@ tail -30 "$RESULTS_FILE" | awk -F',' '{sum+=$3; count++} END {print sum/count " 
 - [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -213,5 +213,4 @@ If your connection fails, check these common problems:
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

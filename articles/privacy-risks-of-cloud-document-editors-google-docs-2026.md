@@ -119,7 +119,7 @@ Office365 is more transparent than Google/Notion but still aggressive.
 - **Version history**: Unlimited restore points
 - **Commenting/tracking**: All collaboration tracked
 - **AI-powered features**: Documents analyzed for "smart" suggestions
-  - Requires Microsoft to process content through ML models
+ - Requires Microsoft to process content through ML models
 
 ### Microsoft's AI Training
 
@@ -525,37 +525,6 @@ Reality: Enterprise administrators can prevent any deletion.
 
 ---
 
-## Conclusion
-
-Cloud document editors (Google/Notion/Office365) are:
-- **Convenient**: Real-time collaboration, any device
-- **Observable**: They log everything
-- **Shared**: Metadata/content shared with third parties
-- **Persistent**: Deletion doesn't mean destruction
-
-Trade-off:
-- Productivity + convenience
-- vs. Privacy + control
-
-**Recommendation matrix:**
-
-Use Google Docs/Notion/Office365 for:
-- Team planning
-- Meeting notes
-- Public/non-sensitive projects
-- When convenience > privacy
-
-Switch to CryptPad for:
-- Sensitive personal docs
-- Confidential work
-- When privacy > convenience
-
-Self-host Etherpad for:
-- Enterprise security requirements
-- Maximum control
-- Tech-savvy teams
-
-Hybrid approach works best:
 ```
 Google Docs for: Team collaborations, public projects
 CryptPad for: Sensitive content, before finalization
@@ -564,4 +533,5 @@ Local encrypted files for: Final sensitive versions
 
 Don't assume cloud docs are private. Assume they're logged, analyzed, and retained.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

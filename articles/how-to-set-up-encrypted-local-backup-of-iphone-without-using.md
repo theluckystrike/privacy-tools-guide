@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Set Up Encrypted Local Backup Of Iphone"
+title: "Set Up Encrypted Local Backup Of iPhone"
 description: "If you value privacy and want full control over your iPhone backups, skipping iCloud is a smart move. Local backups give you ownership of your data, eliminate"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -357,5 +357,4 @@ Create a documented disaster recovery plan:
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

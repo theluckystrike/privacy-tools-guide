@@ -342,5 +342,4 @@ Preventing future data collection requires proactive measures:
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

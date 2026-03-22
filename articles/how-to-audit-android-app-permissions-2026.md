@@ -31,44 +31,44 @@ Android groups related permissions. Granting one permission in a group may provi
 **Dangerous Permission Groups** (require explicit consent):
 
 1. **CALENDAR**
-   - READ_CALENDAR: View events
-   - WRITE_CALENDAR: Create/modify events
+ - READ_CALENDAR: View events
+ - WRITE_CALENDAR: Create/modify events
 
 2. **CAMERA**
-   - CAMERA: Access camera hardware
+ - CAMERA: Access camera hardware
 
 3. **CONTACTS**
-   - READ_CONTACTS: View all contacts
-   - WRITE_CONTACTS: Modify contacts
-   - GET_ACCOUNTS: View account list
+ - READ_CONTACTS: View all contacts
+ - WRITE_CONTACTS: Modify contacts
+ - GET_ACCOUNTS: View account list
 
 4. **LOCATION**
-   - ACCESS_FINE_LOCATION: GPS (precise, ~5-10 meter accuracy)
-   - ACCESS_COARSE_LOCATION: Network location (approximate, ~100-1000 meter accuracy)
-   - ACCESS_BACKGROUND_LOCATION: Location access when app not active
+ - ACCESS_FINE_LOCATION: GPS (precise, ~5-10 meter accuracy)
+ - ACCESS_COARSE_LOCATION: Network location (approximate, ~100-1000 meter accuracy)
+ - ACCESS_BACKGROUND_LOCATION: Location access when app not active
 
 5. **MICROPHONE**
-   - RECORD_AUDIO: Record audio
+ - RECORD_AUDIO: Record audio
 
 6. **PHONE**
-   - CALL_PHONE: Make calls
-   - READ_CALL_LOG: View call history
-   - WRITE_CALL_LOG: Modify call history
-   - USE_SIP: Make SIP calls
-   - PROCESS_OUTGOING_CALLS: Monitor outgoing calls
+ - CALL_PHONE: Make calls
+ - READ_CALL_LOG: View call history
+ - WRITE_CALL_LOG: Modify call history
+ - USE_SIP: Make SIP calls
+ - PROCESS_OUTGOING_CALLS: Monitor outgoing calls
 
 7. **SMS**
-   - SEND_SMS: Send text messages
-   - RECEIVE_SMS: Receive text messages
-   - READ_SMS: View text messages
-   - RECEIVE_WAP_PUSH: Receive WAP push messages
+ - SEND_SMS: Send text messages
+ - RECEIVE_SMS: Receive text messages
+ - READ_SMS: View text messages
+ - RECEIVE_WAP_PUSH: Receive WAP push messages
 
 8. **STORAGE**
-   - READ_EXTERNAL_STORAGE: Read files on device
-   - WRITE_EXTERNAL_STORAGE: Write files to device
+ - READ_EXTERNAL_STORAGE: Read files on device
+ - WRITE_EXTERNAL_STORAGE: Write files to device
 
 9. **SENSORS**
-   - BODY_SENSORS: Access accelerometer, gyroscope, etc.
+ - BODY_SENSORS: Access accelerometer, gyroscope, etc.
 
 **Normal Permissions** (auto-granted, less privacy risk):
 - INTERNET
@@ -506,5 +506,4 @@ Risk categories:
 - [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

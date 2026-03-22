@@ -422,5 +422,4 @@ For most applications, the migration path is:
 - [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

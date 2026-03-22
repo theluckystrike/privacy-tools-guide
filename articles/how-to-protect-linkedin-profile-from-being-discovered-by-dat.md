@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Protect Linkedin Profile From Being Discovered"
+title: "How To Protect LinkedIn Profile From Being Discovered"
 description: "LinkedIn is one of the most publicly available professional databases, containing your employment history, skills, connections, and often personal details that"
 date: 2026-03-19
 last_modified_at: 2026-03-19
@@ -216,6 +216,7 @@ Privacy threats evolve constantly:
 - Stay updated on new people search sites
 - Join privacy-focused communities for sharing defense strategies
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

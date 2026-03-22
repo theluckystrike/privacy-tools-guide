@@ -212,5 +212,4 @@ For developers building real estate platforms, these patterns integrate with mod
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -212,5 +212,4 @@ You should see MQTT traffic only on your local network, with no external connect
 - [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

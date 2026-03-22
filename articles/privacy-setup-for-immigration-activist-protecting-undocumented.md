@@ -235,5 +235,4 @@ Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can iden
 - [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

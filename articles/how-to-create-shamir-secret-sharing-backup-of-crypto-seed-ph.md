@@ -207,5 +207,4 @@ Legal frameworks vary by jurisdiction. Consult with an estate planning attorney 
 - [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -239,5 +239,4 @@ Document the date of your last successful test. If circumstances change signific
 - [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

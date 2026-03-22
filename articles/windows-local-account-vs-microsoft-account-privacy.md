@@ -326,5 +326,4 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

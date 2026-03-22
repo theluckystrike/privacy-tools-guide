@@ -237,5 +237,4 @@ GPG signing adds friction to email communication, but the authenticity guarantee
 - [Someone Signed Up for Services Using My Email — What to Do](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

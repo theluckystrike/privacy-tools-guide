@@ -243,7 +243,7 @@ mullvad status --verbose
 
 Mullvad's bridge mode adds an additional obfuscation layer, useful in networks with DPI (Deep Packet Inspection).
 
-## Leak Testing Comprehensive Protocol
+## Leak Testing Protocol
 
 Before relying on either VPN, thorough testing is essential:
 
@@ -278,7 +278,7 @@ ping -c 100 google.com | tee ping.log
 # Standard deviation should indicate consistent routing
 ```
 
-Leaks are sometimes subtle. Run comprehensive tests from multiple networks (home, coffee shop, mobile hotspot) to detect location-dependent issues.
+Leaks are sometimes subtle. Run tests from multiple networks (home, coffee shop, mobile hotspot) to detect location-dependent issues.
 
 ## Account Security and Anonymity
 

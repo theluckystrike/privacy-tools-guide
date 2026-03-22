@@ -265,7 +265,5 @@ The $50-150 investment in a quality mouse pad typically costs less than a single
 - [Passkey Support By Website 2026](/privacy-tools-guide/passkey-support-by-website-2026/)
 - [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

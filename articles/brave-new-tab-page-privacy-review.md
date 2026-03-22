@@ -334,6 +334,7 @@ brave://components
 - Disable news: Settings → New Tab Page → News → Off
 - Disable metrics: Settings → Privacy → Help improve Brave → Off
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

@@ -283,5 +283,4 @@ For high-threat environments, combine relay calls with additional measures:
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -223,5 +223,4 @@ The choice ultimately depends on threat model. For sensitive communications wher
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

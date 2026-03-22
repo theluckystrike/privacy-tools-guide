@@ -266,5 +266,4 @@ Understanding these technical mechanisms allows developers to build more resilie
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

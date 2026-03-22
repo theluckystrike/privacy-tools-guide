@@ -234,5 +234,4 @@ tshark -r capture.pcapng -Y "http.request.method == POST" -V | grep -A5 "Host:"
 - [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

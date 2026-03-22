@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Macos Gatekeeper And Notarization Privacy Implications What"
+title: "macOS Gatekeeper And Notarization Privacy Implications What"
 description: "Discover what Apple knows about your applications when you use Gatekeeper and notarization. A developer guide to macOS security mechanisms and privacy"
 date: 2026-03-16
 last_modified_at: 2026-03-16

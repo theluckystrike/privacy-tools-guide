@@ -221,5 +221,4 @@ EOF
 - [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

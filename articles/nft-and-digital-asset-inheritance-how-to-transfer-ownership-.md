@@ -247,5 +247,4 @@ The optimal solution depends on your technical comfort level, the value of asset
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -324,5 +324,4 @@ Your digital privacy is not about paranoia—it is about maintaining control ove
 - [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

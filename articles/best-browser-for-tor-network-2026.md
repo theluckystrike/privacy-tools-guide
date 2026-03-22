@@ -268,6 +268,7 @@ These habits apply whether you are using Tor Browser directly or routing another
 
 Additionally, when building production applications that interact with Tor, implement proper error handling for network failures, timeouts, and circuit breaks. Log suspicious activity without capturing user-identifying information to maintain operational security while debugging issues.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

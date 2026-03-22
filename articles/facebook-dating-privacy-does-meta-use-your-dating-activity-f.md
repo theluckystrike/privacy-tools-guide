@@ -339,5 +339,4 @@ curl -X DELETE "https://graph.instagram.com/me/media" \
 - [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

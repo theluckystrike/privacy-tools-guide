@@ -284,6 +284,7 @@ tcpdump -i tun0 -n  # Monitor VPN interface traffic
 tcpdump -i eth0 -n port 1194 or port 51820  # Monitor VPN server communication
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

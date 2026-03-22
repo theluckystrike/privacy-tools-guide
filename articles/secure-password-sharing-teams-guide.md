@@ -248,5 +248,4 @@ Write these into a team security policy document:
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

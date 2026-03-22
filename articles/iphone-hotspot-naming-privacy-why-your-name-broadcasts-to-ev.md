@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Hotspot Naming Privacy Why Your Name Broadcasts"
+title: "iPhone Hotspot Naming Privacy Why Your Name Broadcasts"
 description: "Technical analysis of iPhone personal hotspot naming behavior. Learn how your device broadcasts your name to nearby users and how to change it for privacy"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -108,7 +108,7 @@ To modify the name your iPhone broadcasts:
 3. Enter your preferred name
 4. Tap **Done**
 
-Choose a generic name that doesn't identify you: "iPhone", "iPhone 15", or a random string like "Device-4821" all work well. Avoid anything that includes your real name, a username you use elsewhere, or other personally identifying terms.
+Choose a generic name that doesn't identify you: "iPhone", "iPhone 15", or a random string like "Device-4821" all work well. Avoid anything that includes your real name, an username you use elsewhere, or other personally identifying terms.
 
 ### Method 2: Via Finder/iTunes (More Control)
 
@@ -240,5 +240,4 @@ By understanding how iPhone personal hotspot naming works at a technical level, 
 - [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -292,5 +292,4 @@ Reduce the risk of unauthorized jailbreaking:
 - [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

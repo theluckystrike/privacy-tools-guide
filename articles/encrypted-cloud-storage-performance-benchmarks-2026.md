@@ -247,6 +247,5 @@ Identify your bottleneck to choose the right service:
 - [Encrypted Cloud Storage for Small Business 2026](/privacy-tools-guide/encrypted-cloud-storage-for-small-business-2026/)
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)*
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

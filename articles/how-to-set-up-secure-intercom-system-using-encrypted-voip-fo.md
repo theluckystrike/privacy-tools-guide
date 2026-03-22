@@ -219,5 +219,4 @@ openssl x509 -in /etc/asterisk/asterisk.pem -noout -dates
 - [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

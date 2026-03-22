@@ -243,5 +243,4 @@ For most developers in 2026, Matrix provides the best balance of control, integr
 - [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

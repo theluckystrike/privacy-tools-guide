@@ -428,5 +428,4 @@ Store these completed reviews in version control alongside your FERPA compliance
 - [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

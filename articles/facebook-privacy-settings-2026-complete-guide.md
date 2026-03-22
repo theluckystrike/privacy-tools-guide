@@ -457,5 +457,4 @@ Run this checklist once per year:
 - [Ios Privacy Settings Complete Walkthrough Every Toggle.](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

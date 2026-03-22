@@ -300,5 +300,4 @@ The fundamental tension remains: HSTS is necessary for security, but its persist
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

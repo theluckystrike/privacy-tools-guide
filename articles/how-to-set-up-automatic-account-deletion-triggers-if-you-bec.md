@@ -224,5 +224,4 @@ Create a clear document for your emergency contact or executor:
 - [Secure File Deletion on SSD Drives](/privacy-tools-guide/secure-file-deletion-ssd-drives-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

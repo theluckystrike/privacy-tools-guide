@@ -423,6 +423,7 @@ For developers building authentication systems, design with SIM swap vulnerabili
 
 Protecting yourself from SIM swap attacks demands awareness, proactive configuration, and commitment to stronger authentication methods. The effort required is minimal compared to the potential loss from a successful attack.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

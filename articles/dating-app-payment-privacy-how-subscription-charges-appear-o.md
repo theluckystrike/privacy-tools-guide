@@ -216,5 +216,4 @@ Stripe's API allows descriptor updates through the dashboard or API, with limita
 - [Dating App Api Vulnerabilities How Security Researchers Have](/privacy-tools-guide/dating-app-api-vulnerabilities-how-security-researchers-have/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

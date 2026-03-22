@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Opt Out Of Linkedin Data Being Used For Ai Training"
+title: "How To Opt Out Of LinkedIn Data Being Used For Ai Training"
 description: "A practical guide for developers and power users on how to prevent LinkedIn from using your professional data for AI training and machine learning"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -210,5 +210,4 @@ LinkedIn's privacy policy specifies a designated privacy officer for such reques
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

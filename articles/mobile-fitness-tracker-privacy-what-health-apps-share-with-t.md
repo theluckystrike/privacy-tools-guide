@@ -238,5 +238,4 @@ Gadgetbridge replaces proprietary companion apps for Amazfit, Xiaomi Mi Band, an
 - [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

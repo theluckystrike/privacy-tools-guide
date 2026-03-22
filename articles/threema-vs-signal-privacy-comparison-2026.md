@@ -212,5 +212,4 @@ Both provide genuine end-to-end encryption—a meaningful improvement over conve
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

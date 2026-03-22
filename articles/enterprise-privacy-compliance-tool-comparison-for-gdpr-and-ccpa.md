@@ -282,5 +282,4 @@ One practical evaluation approach: run a pilot DSAR fulfillment exercise against
 - [Gdpr Compliance Tools For Small Business Complete Implementa](/privacy-tools-guide/gdpr-compliance-tools-for-small-business-complete-implementa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

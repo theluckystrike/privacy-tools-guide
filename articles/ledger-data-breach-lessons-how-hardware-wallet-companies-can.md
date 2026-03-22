@@ -227,5 +227,4 @@ The best hardware wallet is one that the manufacturer cannot link to you.
 - [Data Breach Notification Requirements Timeline And Process F](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

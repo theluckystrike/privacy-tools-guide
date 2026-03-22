@@ -235,5 +235,4 @@ If you want to reduce the data footprint:
 - [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -452,5 +452,4 @@ To manage conflicts, configure Privacy Badger to operate in "learning" mode only
 - [Iran Smart Filtering How Government Selectively Blocks Conte](/privacy-tools-guide/iran-smart-filtering-how-government-selectively-blocks-conte/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

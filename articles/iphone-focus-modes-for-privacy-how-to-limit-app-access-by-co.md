@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Focus Modes For Privacy How To Limit App Access"
+title: "iPhone Focus Modes For Privacy How To Limit App Access"
 description: "Learn how to use iPhone Focus Modes to enhance your privacy by limiting app access based on your current context. A guide for developers and power"
 date: 2026-03-16
 last_modified_at: 2026-03-16

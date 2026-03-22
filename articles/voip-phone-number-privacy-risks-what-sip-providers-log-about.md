@@ -226,5 +226,4 @@ The reality is that SIP was designed for functionality, not privacy. Understandi
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

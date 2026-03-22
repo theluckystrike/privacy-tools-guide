@@ -247,5 +247,4 @@ The FTC has the authority to impose civil penalties for COPPA violations. Recent
 - [Privacy Requirements For Mergers And Acquisitions Due Dilige](/privacy-tools-guide/privacy-requirements-for-mergers-and-acquisitions-due-dilige/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

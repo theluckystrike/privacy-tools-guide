@@ -352,5 +352,4 @@ Premium doesn't inherently provide better privacy, just more visibility control.
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

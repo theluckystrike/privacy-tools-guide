@@ -298,5 +298,4 @@ echo -e "\n[Peer]\nPublicKey = $(cat /tmp/newclient-public.key)\nAllowedIPs = 10
 - [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

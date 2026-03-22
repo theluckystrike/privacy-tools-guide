@@ -220,5 +220,4 @@ Technical measures fail without physical security discipline:
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

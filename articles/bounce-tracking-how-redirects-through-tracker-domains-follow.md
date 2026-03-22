@@ -304,5 +304,4 @@ Some data protection authorities have begun examining redirect-based tracking mo
 - [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

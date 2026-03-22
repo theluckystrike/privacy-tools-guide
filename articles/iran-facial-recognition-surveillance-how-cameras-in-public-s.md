@@ -280,5 +280,4 @@ echo "Checking for photo tagging patterns that indicate recognition"
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

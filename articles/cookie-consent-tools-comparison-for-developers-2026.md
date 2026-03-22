@@ -215,5 +215,4 @@ The right choice depends on your specific constraints. Test any implementation t
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

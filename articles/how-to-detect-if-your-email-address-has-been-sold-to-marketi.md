@@ -424,5 +424,4 @@ curl -X POST "https://www.truthfinder.com/optout" \
 - [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

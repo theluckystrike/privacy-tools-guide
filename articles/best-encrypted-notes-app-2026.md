@@ -314,5 +314,4 @@ gocryptfs ~/research-encrypted ~/research-vault
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

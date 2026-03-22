@@ -357,5 +357,4 @@ Having encryption in place reduces GDPR notification requirements since encrypte
 - [Encrypted Cloud Storage Migration Guide Switching](/privacy-tools-guide/encrypted-cloud-storage-migration-guide-switching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

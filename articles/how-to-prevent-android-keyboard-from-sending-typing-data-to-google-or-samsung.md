@@ -238,5 +238,4 @@ adb shell tcpdump -i any -c 50 host google.com and port 443
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

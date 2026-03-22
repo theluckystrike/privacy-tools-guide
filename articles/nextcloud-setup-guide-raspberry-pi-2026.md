@@ -407,5 +407,4 @@ docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

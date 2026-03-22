@@ -215,5 +215,4 @@ For most mobile VPN scenarios in 2026, WireGuard provides superior performance. 
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

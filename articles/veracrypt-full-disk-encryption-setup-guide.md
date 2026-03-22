@@ -282,5 +282,4 @@ This is rarely used outside high-risk scenarios (journalists, activists) due to 
 - [Encrypted File Vault Inheritance Using Veracrypt With Split](/privacy-tools-guide/encrypted-file-vault-inheritance-using-veracrypt-with-split-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

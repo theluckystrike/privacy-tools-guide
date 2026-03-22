@@ -282,5 +282,4 @@ For activists, journalists, and others facing adversarial conditions, Signal Gro
 - [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

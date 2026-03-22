@@ -120,7 +120,7 @@ If the deceased used cPanel hosting, you have several transfer options:
 **Partial transfer (for simpler needs):**
 1. Use FTP/SFTP to download public_html contents
 2. Export databases via phpMyAdmin or command line:
-   ```bash
+ ```bash
    mysqldump -u username -p database_name > backup.sql
    ```
 3. Upload to new hosting and reimport databases
@@ -140,7 +140,7 @@ For developers using AWS, Google Cloud, or similar providers:
 SSL certificates are tied to specific domains and may include the organization name. When transferring:
 
 1. Export the private key and certificate from the old server:
-   ```bash
+ ```bash
    # Apache
    cat /etc/ssl/certs/domain.crt /etc/ssl/private/domain.key
 
@@ -150,7 +150,7 @@ SSL certificates are tied to specific domains and may include the organization n
 
 2. Install the certificate on the new server, or
 3. Generate a new certificate using Let's Encrypt (free) on the new host:
-   ```bash
+ ```bash
    certbot certonly --webroot -w /var/www/html -d example.com
    ```
 
@@ -237,7 +237,7 @@ Post-Transfer:
 Transferring a domain can disrupt email and DNS resolution if done incorrectly. To prevent service interruption:
 
 1. **Before transfer**: Export current DNS records from the old registrar
-   ```bash
+ ```bash
    # If you have access to APIs or DNS manager:
    dig @ns1.old-registrar.com domain.com ANY
    ```
@@ -245,14 +245,14 @@ Transferring a domain can disrupt email and DNS resolution if done incorrectly. 
 2. **During transfer**: Keep the domain locked at the old registrar until transfer initiates at the new registrar
 
 3. **After transfer**: Immediately import DNS records at the new registrar
-   ```
+ ```
    Option A: Use zone file import if available
    Option B: Manually recreate each DNS record
    Option C: Point nameservers to original provider (keeps DNS intact)
    ```
 
 4. **Verification**: Test DNS resolution
-   ```bash
+ ```bash
    nslookup domain.com
    dig domain.com MX # Check mail records
    dig domain.com TXT # Check verification records
@@ -307,5 +307,4 @@ Store this inventory with other critical documents (will, financial accounts) or
 - [How To Use Domain Fronting To Access Blocked Services From C](/privacy-tools-guide/how-to-use-domain-fronting-to-access-blocked-services-from-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

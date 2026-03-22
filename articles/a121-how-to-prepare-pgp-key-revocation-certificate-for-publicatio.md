@@ -432,5 +432,4 @@ A PGP key revocation certificate is not optional. It is a fundamental part of ke
 - [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}
