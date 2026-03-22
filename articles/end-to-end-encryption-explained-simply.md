@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 ---
 layout: default
 title: "End-to-End Encryption Explained Simply: A Developer's Guide"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 

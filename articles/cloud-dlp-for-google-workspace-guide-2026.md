@@ -11,7 +11,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Cloud DLP for Google Workspace Guide 2026"
@@ -25,7 +26,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

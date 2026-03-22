@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 ---
 layout: default
 title: "Does IVPN Work in Belarus? 2026 Latest Confirmed"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

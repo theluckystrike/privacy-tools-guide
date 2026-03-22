@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 ---
 layout: default
 title: "Data Broker Opt Out Automation Tools That Continuously"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 
 {% raw %}
 

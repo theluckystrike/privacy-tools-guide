@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 ---
 layout: default
 title: "Data Subject Rights Automation Tools 2026: A Practical Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 
 {% raw %}
 

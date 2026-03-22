@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]---
+tags: [privacy-tools-guide, comparison, encryption]
+---
 ---
 layout: default
 title: "Cryptomator Vs Veracrypt For Cloud Encryption"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]---
+tags: [privacy-tools-guide, comparison, encryption]
+---
 
 {% raw %}
 

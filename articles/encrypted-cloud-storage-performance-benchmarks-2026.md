@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Encrypted Cloud Storage Performance Benchmarks 2026"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

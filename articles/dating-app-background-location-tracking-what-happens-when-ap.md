@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Dating App Background Location Tracking What Happens When"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

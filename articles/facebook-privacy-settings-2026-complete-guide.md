@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
