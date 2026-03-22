@@ -27,7 +27,18 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies bootloader signatures before execution, while TPM2 integration allows automatic decryption without compromising security. This guide covers key enrollment, kernel signing, automatic signing via hooks, and recovery planning for production Linux systems.
+
+## Key Takeaways
+
+- Choose "Custom" partitioning
+# 2.
+- **SecureBoot verifies bootloader signatures**: before execution, while TPM2 integration allows automatic decryption without compromising security.
+- **If any component is modified**: firmware, bootloader, or kernel—PCR values change and the TPM refuses to release the decryption key, keeping the drive locked against unauthorized boot paths.
+- **Selecting the wrong PCRs**: either weakens security or causes constant unlock failures after routine updates.
+- **Test your recovery procedure**: at least once per year by booting from a live USB and restoring access using the backup passphrase.
+- **An untested recovery plan is not a recovery plan**: discovering the backup is wrong during an actual incident causes permanent data loss.
 
 ## Prerequisites
 

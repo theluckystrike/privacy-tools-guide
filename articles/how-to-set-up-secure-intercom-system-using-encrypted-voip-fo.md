@@ -33,6 +33,16 @@ Traditional building intercom systems operate over analog lines or unencrypted d
 
 This guide covers the architectural components, protocol choices, and implementation steps for building a secure VoIP-based intercom system.
 
+## Key Takeaways
+
+- **On Android**: Linphone is the most actively maintained open-source option.
+- **Most off-the-shelf intercom systems**: brands like Comelit, Aiphone, and 2N—offer some form of IP connectivity, but they often default to unencrypted SIP over port 5060.
+- **VoIP Server**: Handles call routing, authentication, and registration (e.g., Asterisk, FreeSWITCH, or a lightweight SIP proxy)
+2.
+- **For a building intercom**: system that will serve 5-50 concurrent users, Asterisk running on a Raspberry Pi 4 or a basic VPS is more than sufficient.
+- **Both offer PoE powering, wide-angle cameras, and card reader inputs**: useful if you want to integrate access control with your intercom calls.
+- **For desktop clients**: Zoiper and MicroSIP offer better UI polish than Linphone on Windows, and both support mandatory SRTP.
+
 ## Understanding the Security Requirements
 
 A secure intercom system for residential or commercial buildings must address several core security properties:

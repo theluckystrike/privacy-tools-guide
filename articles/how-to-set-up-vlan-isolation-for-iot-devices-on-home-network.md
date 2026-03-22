@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Your smart thermostat, doorbell camera, and wireless bulbs all connect to the same network as your laptop and phone. When any of these IoT devices gets compromised, attackers gain immediate access to everything else on your network. Setting up VLAN isolation creates logical separation between your trusted devices and the growing collection of internet-connected gadgets in your home. This guide walks through the technical implementation using managed switches and routers, with practical examples you can apply today.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **- Router with VLAN support**: Most consumer routers with custom firmware (OpenWrt, DD-WRT) support VLANs.
+- **If your router doesn't**: support VLANs natively, you can use a Linux machine as a gateway between your VLANs with iptables or nftables rules controlling inter-VLAN traffic.
+- **Most routers support static**: leases through their DHCP configuration.
+
 ## Why VLAN Isolation Matters for Home Networks
 
 IoT devices consistently rank among the weakest links in home network security. Manufacturers often ship devices with default credentials, limited firmware update cycles, and cloud-dependent architectures that phone home continuously. A compromised smart plug can serve as a pivot point to attack your NAS, workstations, and anything else on your network.

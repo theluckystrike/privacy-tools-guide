@@ -28,9 +28,19 @@ voice-checked: true
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
 V2Ray is a powerful network proxy tool that supports multiple protocols, including VMess. VMess is a protocol designed for secure, encrypted communications that masks traffic patterns. This makes it effective for accessing websites that are blocked or restricted in certain regions, including China.
 
 This guide walks through setting up V2Ray with VMess from scratch. You'll learn how to configure both the server and client components, test the connection, and optimize settings for performance and security.
+
+## Key Takeaways
+
+- **A value between 4**: and 16 offers a good balance for most use cases.
+- **Enable firewall rules on**: your server to restrict access: ```bash sudo ufw allow 10086/tcp sudo ufw enable ``` Only allow connections on the specific port V2Ray uses.
+- **The VMess protocol uses**: UUID-based authentication and supports dynamic port allocation.
+- **Each user has a**: unique UUID that identifies them to the server.
+- **Values between 4 and**: 16 work well for most connections.
+- **V2Ray is a powerful**: network proxy tool that supports multiple protocols, including VMess.
 
 ## Understanding the Architecture
 

@@ -31,6 +31,17 @@ intent-checked: true---
 
 To set up a Tor Snowflake bridge, install the snowflake-proxy binary on a Linux server, configure it with a rendezvous point, and register it with the Tor Project. Snowflake disguises Tor traffic as WebRTC connections, making it invisible to censors using deep packet inspection. You can run a bridge on a personal computer or VPS, and it requires minimal bandwidth, making it one of the most accessible ways for developers to support users circumventing internet censorship.
 
+## Key Takeaways
+
+- **You can run a**: bridge on a personal computer or VPS, and it requires minimal bandwidth, making it one of the most accessible ways for developers to support users circumventing internet censorship.
+- **However**: some best practices improve your deployment:
+
+Run the proxy as a non-privileged user.
+- **The Snowflake project maintains**: a list of public proxies at snowflake.torproject.org, but running your own ensures dedicated capacity for users who need it most.
+- **The container exposes both**: ports 443 and 8080, covering most network configurations.
+- **The proxy uses Interactive**: Connectivity Establishment (ICE) protocols to establish WebRTC connections, ensuring maximum compatibility with different network setups.
+- **The proxy only relays encrypted traffic between users and the Tor network**: it cannot decrypt traffic or identify users.
+
 ## Understanding How Snowflake Works
 
 Snowflake operates on a simple but effective principle: volunteers run small proxy servers called "Snowflakes" that bridge users behind censoring firewalls to the Tor network. The technology uses WebRTC, a protocol designed for peer-to-peer communication in web browsers, which makes the traffic appear identical to legitimate video conferencing or VoIP calls.
