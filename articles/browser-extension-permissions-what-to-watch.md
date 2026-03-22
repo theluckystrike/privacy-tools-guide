@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Browser Extension Permissions What"
-description: "Learn which browser extension permissions pose security risks and how to evaluate them. Practical guide for developers and power users on"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /browser-extension-permissions-what-to-watch/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 The most dangerous browser extension permissions to watch are `<all_urls>` host access (grants read/write to every site you visit), `webRequestBlocking` (can intercept and modify all network traffic), and `debugger` (gives full DevTools-level control over your tabs). Before installing any extension, check whether its requested permissions actually match its stated functionality. This guide explains each permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This follows the principle of least privilege**: granting access only when needed.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **This guide explains each**: permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
 
 ## Table of Contents
 

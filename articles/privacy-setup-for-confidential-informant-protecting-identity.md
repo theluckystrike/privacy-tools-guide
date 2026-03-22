@@ -11,34 +11,13 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Setup for Confidential Informant"
-description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /privacy-setup-for-confidential-informant-protecting-identity/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Protecting your identity as a confidential informant requires a multi-layered approach combining operational security, secure communication channels, and careful digital hygiene. This guide provides practical technical strategies for developers and power users who need privacy setup for confidential informant scenarios.
 
-## Key Takeaways
-
-- **Set hostname to maximum**: entropy # Instead of "tails-user" sudo hostnamectl set-hostname $(openssl rand -hex 4) # 4.
-- **Cron job verification crontab**: -l for user in $(cut -f1 -d: /etc/passwd); do crontab -u $user -l 2>/dev/null done # Malware often installs cron persistence # 6.
-- **Exfiltration paths**: Know safe houses and communication backups
-3.
-- **Pick obscure but accessible**: location # 2.
-- **Use signal items (chalk mark**: stone placement) to indicate new message
 # 3.
 - **Communication verification - Out-of-band**: key verification performed - Safety numbers verified in person - Challenge-response authentication used 5.
 

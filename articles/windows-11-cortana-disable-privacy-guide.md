@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Windows 11 Cortana Disable Privacy Guide"
-description: "A practical guide for developers and power users to disable Cortana in Windows 11, covering Settings, Group Policy, Registry, and PowerShell methods"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /windows-11-cortana-disable-privacy-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 

@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Managing cryptocurrency inheritance remains one of the most challenging problems in Web3. Unlike traditional bank accounts with clear legal frameworks, Ethereum wallets lack built-in mechanisms for transferring assets to heirs upon death. This guide explores how social recovery smart contracts solve this problem, enabling secure heir access after the wallet owner's passing.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Managing cryptocurrency inheritance remains**: one of the most challenging problems in Web3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Families lose millions in**: unclaimed crypto each year precisely because no recovery mechanism exists.
-
 ## The Inheritance Problem in Self-Custody Wallets
 
 Self-custody Ethereum wallets provide users with complete control over their funds through private keys. While this eliminates dependency on centralized institutions, it creates a critical vulnerability: if the owner dies or becomes incapacitated without sharing access credentials, those funds become permanently inaccessible.

@@ -20,15 +20,6 @@ When privacy matters, choosing the right messaging app requires understanding wh
 
 The stakes of choosing wrong are significant. A poorly chosen messaging app could expose your conversations to the company operating it, to government requests, or to attackers exploiting weaknesses in the encryption implementation. More subtly, weak metadata protection reveals your social relationships, communication frequency, and patterns even if message contents remain hidden.
 
-## Key Takeaways
-
-- **Use Threema Gateway for**: secure business communications Threema's paid model removes advertising incentives that plague free messaging apps.
-- **Enable disappearing messages by**: tapping the conversation name, selecting "Disappearing messages," and choosing your preferred duration 5.
-- **Choose "Create Account" without**: providing phone number, email, or any identifying information 3.
-- **The protocol uses multiple**: relay servers, each knowing only the previous and next hop.
-- **Purchase Threema from the**: official website or app store (it is not free) 2.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-
 ## Table of Contents
 
 - [Understanding the Privacy Features That Matter](#understanding-the-privacy-features-that-matter)

@@ -13,36 +13,10 @@ intent-checked: true
 categories: [guides]
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Apple Digital Legacy Program How To Add Legacy Contacts"
-description: "Learn how to set up Apple Digital Legacy contacts to ensure your iCloud data is transferred to trusted individuals. A technical guide for power users"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /apple-digital-legacy-program-how-to-add-legacy-contacts-for-/
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-categories: [guides]
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 The Apple Digital Legacy Program allows you to designate trusted contacts who can access your iCloud data after your death or incapacitation through a recovery key and death certificate verification. Available on iOS 15+ and macOS 12.1+, this feature enables secure data transfer—including Photos, iCloud Drive, and Keychain entries—while maintaining end-to-end encryption. Setting up legacy contacts takes just 15 minutes and involves selecting trusted individuals and storing a recovery key in a secure location.
-
-## Key Takeaways
-
-- **When you designate a legacy contact**: Apple generates an unique access key that your contact can use to decrypt your data.
-- **Consider multiple contacts**: Designate at least two legacy contacts to prevent single-point-of-failure
-
-5.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **A Recovery Key or**: Legacy Contact Access Key stored securely Your legacy contact receives an access key they must retain (preferably in a secure location like a password manager).
-- **Choose to select from**: Contacts or create a message Select someone from your contacts or enter their details manually.
-- **User should update or**: designate new contact.
 
 ## Table of Contents
 

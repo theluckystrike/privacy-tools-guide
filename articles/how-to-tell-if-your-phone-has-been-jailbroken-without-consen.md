@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 For iOS, check for Cydia, Sileo, or Zebra apps (jailbreak package managers) in Settings → General → iPhone Storage. Look for suspicious ssh keys or rock.json files using a computer. For Android, use the "Verify Root" app or check for Magisk/SuperSU in Settings → Applications. Review system apps in Settings → Apps for unknown entries. The definitive test: if you can read system partition files without adb root access (Linux/Mac), or if you see warning messages when attempting security checks, your device is likely jailbroken/rooted.
 
-## Key Takeaways
-
-- **For Android**: use the "Verify Root" app or check for Magisk/SuperSU in Settings → Applications.
-- **On a non-jailbroken device**: these package managers cannot exist because the sandbox prevents their installation.
-- **Detection requires checking for**: root binaries and Superuser apps.
-- **Backup essential data carefully**: Only trust data that predates the compromise
-3.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Why Unauthorized Jailbreaks Matter
 
 When someone gains root or jailbreak access to your device, they can:

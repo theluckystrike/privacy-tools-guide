@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Migrating from RoboForm to Bitwarden"
-description: "A technical guide for developers and power users migrating password data from RoboForm to Bitwarden, covering export methods, CSV parsing, and import scripts"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 To migrate from RoboForm to Bitwarden, export your RoboForm vault as CSV from File > Export Data, then import it into Bitwarden using the web vault or CLI. Bitwarden offers open-source code, self-hosting, CLI automation, and full API access that RoboForm cannot match. This guide provides step-by-step instructions with scripts to handle field mapping, duplicate detection, and common migration pitfalls.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Free tier users lose folder hierarchy**: entries import without folder assignment.
-- **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Select "All Items" or**: choose specific folders 4.
-- **Choose CSV format (avoid**: the encrypted RoboForm format for migration) 5.
 
 ## Table of Contents
 

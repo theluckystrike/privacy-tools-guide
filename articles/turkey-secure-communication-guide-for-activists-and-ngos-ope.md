@@ -11,23 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-
-
-layout: default
-title: "Turkey Secure Communication Guide For Activists And Ngos"
-description: "A practical technical guide to implementing secure communication channels for activists and NGOs in Turkey. Covers E2EE protocols, Tor, mesh networks"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /turkey-secure-communication-guide-for-activists-and-ngos-ope/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 

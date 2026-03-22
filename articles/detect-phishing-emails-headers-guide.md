@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Email headers contain a full audit trail — every server the message passed through, authentication results, and the actual sender identity. Most email clients hide them by default, but a 30-second header analysis can confirm whether a suspicious message is legitimate or a spoof.
 
-## Key Takeaways
-
-- **Most email clients hide them by default**: but a 30-second header analysis can confirm whether a suspicious message is legitimate or a spoof.
-- **This guide covers how**: to access email headers, the key fields to check, 1. from vs. return-path vs. reply-to, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## Table of Contents
 
 - [How to Access Email Headers](#how-to-access-email-headers)

@@ -516,3 +516,5 @@ Technical tools are most effective when supported by organizational practices an
 3. Root cause analysis within 24 hours
 4. Process improvement implementation within 1 week
 ```
+
+{% endraw %}

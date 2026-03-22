@@ -11,23 +11,12 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 6
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
 Your iPhone hotspot broadcasts your personal device name (e.g., "John's iPhone") through Wi-Fi probe requests and Bonjour/mDNS announcements to nearby devices, revealing personal information. Change your device name in Settings > General > About to use a generic name like "iPhone" or remove identifying information.
-
-## Key Takeaways
-
-- Enter your preferred name
-4.
-- **Tap Done Choose a**: generic name that doesn't identify you: "iPhone", "iPhone 15", or a random string like "Device-4821" all work well.
-- **The serial number substitution**: makes each device uniquely identifiable to IT staff while preventing external identification of the specific human user.
-- **This takes about 30**: seconds and requires no technical expertise.
-- **Use generic naming**: "iPhone" or a random alphanumeric string works well
-3.
-- **Disable hotspot when not in use**: Reduces exposure window to zero
-4.
 
 ## Table of Contents
 
@@ -289,7 +278,7 @@ After changing your device name, these tools should show only your new generic n
 
 ### Network Sniffer Verification
 
-For comprehensive verification, capture packets while hotspot is active:
+For verification, capture packets while hotspot is active:
 
 ```bash
 # Capture Wi-Fi probe requests
@@ -360,7 +349,7 @@ Using serial number last digits ensures uniqueness for IT staff while preventing
 
 ## Long-Term Privacy Hygiene
 
-Device naming represents one layer of a comprehensive privacy approach. Consistent naming hygiene across all your devices prevents inadvertent identification:
+Device naming represents one layer of a privacy approach. Consistent naming hygiene across all your devices prevents inadvertent identification:
 
 - **Mac names**: Use generic names (MacBook, MacBook-Work)
 - **Android devices**: Disable "Show this device as…" personalization

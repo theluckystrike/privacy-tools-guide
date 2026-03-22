@@ -20,15 +20,6 @@ A digital dead drop functions like its physical counterpart—a secure location 
 
 This guide covers three approaches to building secure dead drops: GPG-based encrypted file drops, Tor onion service implementations, and custom server configurations.
 
-## Key Takeaways
-
-- **A digital dead drop functions like its physical counterpart**: a secure location where information can be left for later pickup without both parties being present simultaneously.
-- **For developers and power**: users seeking secure communication channels, understanding how to set up dead drops provides valuable tools for privacy-conscious information exchange.
-- **Legitimate use cases include**: secure tip lines, investigative journalism communications, incident response coordination, and any scenario where metadata minimization matters.
-- **Even with onion services**: use HTTPS/TLS for any web interface.
-- Let's Encrypt provides free certificates.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

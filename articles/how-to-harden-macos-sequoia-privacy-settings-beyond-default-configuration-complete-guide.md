@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 macOS Sequoia introduces several privacy enhancements, but the default configuration leaves significant room for improvement. Power users and developers who handle sensitive data need to go beyond the basic toggles in System Settings. This guide covers advanced hardening techniques that address telemetry, application permissions, network privacy, and system-level controls that Apple does not expose through the graphical interface.
 
-## Key Takeaways
-
-- **For a free alternative**: configure your router to use a DoH-compatible DNS resolver like Cloudflare's 1.1.1.1 or Quad9's 9.9.9.9.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **At $69 for a lifetime license**: it is a worthwhile investment for any developer handling sensitive data.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Many telemetry daemons cache**: their settings and only read preferences on boot.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -81,7 +72,7 @@ After applying these commands, restart your Mac. Many telemetry daemons cache th
 
 ### Step 3: Deep Explore TCC Permissions
 
-The Transparency, Consent, and Control (TCC) database governs application access to sensitive resources. Sequoia stores TCC data in an SQLite database that requires elevated privileges to query:
+The Transparency, Consent, and Control (TCC) database governs application access to sensitive resources. Sequoia stores TCC data in a SQLite database that requires elevated privileges to query:
 
 ```bash
 # View current TCC permissions

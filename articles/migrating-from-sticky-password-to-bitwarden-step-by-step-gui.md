@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Moving your password manager is a significant decision that requires careful execution. If you have been using Sticky Password and are considering Bitwarden for its open-source nature, stronger encryption options, or self-hosting capabilities, this guide walks through the entire migration process with practical examples and automation tips suitable for developers and power users.
 
-## Key Takeaways
-
-- **Sticky Password also supports**: exporting to KDBX format, which provides better compatibility with password managers that support Keepass databases.
-- **Unlike some competitors**: Bitwarden provides multiple import pathways that accommodate different use cases.
-- **Choose "Export to CSV"**: format The exported CSV contains columns for website URLs, usernames, passwords, notes, and other metadata.
-- **This format preserves more**: metadata and is generally the preferred approach for advanced users.
-- **You can use either the web interface**: desktop application, or CLI.
-- **For developers who prefer**: command-line workflows, the Bitwarden CLI provides efficient batch import capabilities.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

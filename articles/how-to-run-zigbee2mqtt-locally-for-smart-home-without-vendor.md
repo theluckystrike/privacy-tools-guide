@@ -18,16 +18,6 @@ tags: [privacy-tools-guide]
 
 Running Zigbee2MQTT locally eliminates vendor cloud accounts and gives you complete control over your smart home devices. This guide walks through setting up Zigbee2MQTT on a Raspberry Pi or dedicated Linux machine, configuring it for local-only operation, and integrating it with your home automation workflows.
 
-## Key Takeaways
-
-- **WiFi routers in particular**: cause substantial 2.4GHz interference; keep at least 1 meter of separation between the coordinator and any WiFi hardware.
-- **If the device is absent**: ensure the user running Docker has permission to access serial devices (`sudo usermod -aG dialout $USER`).
-- **Avoid the older CC2531 USB dongle**: it uses the deprecated Z-Stack 1.x firmware, supports far fewer devices, and causes instability in larger networks.
-- **Restrict network access**: Bind MQTT to localhost or use firewall rules to limit which hosts can reach port 1883
-3.
-- **This guide walks through**: setting up Zigbee2MQTT on a Raspberry Pi or dedicated Linux machine, configuring it for local-only operation, and integrating it with your home automation workflows.
-- **Zigbee channels 15**: 20, 25, and 26 avoid overlap with the most common WiFi channels (1, 6, 11).
-
 ## Table of Contents
 
 - [Why Run Zigbee2MQTT Locally?](#why-run-zigbee2mqtt-locally)

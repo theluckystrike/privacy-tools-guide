@@ -20,13 +20,6 @@ When traditional communication networks fail—whether through infrastructure sh
 
 This article examines how Briar achieves offline messaging, the technical mechanisms behind its peer-to-peer communication, and practical considerations for developers and power users evaluating it for high-risk scenarios.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Each conversation has unique**: encryption keys that are never reused, providing forward secrecy even if long-term keys are compromised.
-- **Total latency**: 2-5 seconds with active movement
-
 # If Phone C is out of range initially but person carrying it walks into range:
 # 1.
 - **Phone C receives all**: 5 messages in 10-15 seconds # 4.

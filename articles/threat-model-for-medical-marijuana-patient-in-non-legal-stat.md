@@ -11,21 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Threat Model For Medical Marijuana Patient In Non Legal"
-description: "A security and privacy guide for medical marijuana patients in states where cannabis remains illegal. Learn how to protect your digital"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /threat-model-for-medical-marijuana-patient-in-non-legal-stat/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Protect medical marijuana use in non-legal states by separating identities (different email, phone, payment methods), disabling location sharing, stripping GPS from photos, using encrypted messaging, and limiting dispensary communications. Store documentation separately from your main identity, and understand that legal protections may not apply even with out-of-state recommendations.
