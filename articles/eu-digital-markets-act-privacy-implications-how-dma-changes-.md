@@ -219,6 +219,28 @@ To take advantage of DMA protections, review your account settings on major plat
 DMA enforcement continues to evolve. The EU has signaled additional compliance deadlines for emerging technologies, and several court cases will clarify the boundaries of data processing rights. Developers should monitor the European Commission's DMA implementation guidance and prepare for potential expansions to the gatekeeper list.
 
 The practical takeaway is clear: privacy-respecting defaults are no longer optional for major platforms. For developers, this means building with consent-first architectures. For users, it means demanding the privacy controls DMA guarantees.
+
+## DMA Enforcement Actions: What Has Actually Been Penalized
+
+Understanding which violations regulators have pursued helps developers prioritize compliance work. As of early 2026, the European Commission has investigated or issued preliminary findings against gatekeepers in several areas:
+
+**Consent screen dark patterns**: The Commission found that several gatekeepers presented consent denial as more difficult than consent acceptance — using smaller buttons, more steps, or requiring users to navigate multiple screens to decline tracking. The DMA requires that rejecting consent is no harder than accepting it.
+
+**Data combination across services**: Meta's initial implementation of separate consent screens was found insufficient because the "accept all" option was presented more prominently than granular controls. The Commission required redesigns that gave equal visual weight to accept and reject options.
+
+**Self-preferencing in search and app stores**: While not purely a privacy issue, self-preferencing enforcement has privacy implications. Gatekeepers using their platforms to favor their own data collection services over third-party alternatives is a DMA violation.
+
+For developers building consent flows, these enforcement patterns provide practical guidance. If your UI makes it harder to say no than yes, it is at risk under DMA. Test your consent flows with users who are trying to opt out and measure how many steps they require.
+
+## Preparing Your Applications for DMA-Derived Privacy Controls
+
+If you serve EU users or integrate with gatekeeper platforms, your application architecture should accommodate DMA-driven changes that are still rolling out through 2026.
+
+**Messaging interoperability**: WhatsApp's interoperability API is now live for third-party messaging clients. If you are building a messaging application and want to serve EU users who have contacts on WhatsApp, you can now request API access. This also means your messaging application may receive connection requests from WhatsApp users, which has implications for your own privacy architecture and data handling.
+
+**App store sideloading on iOS**: Apple is required under DMA to allow alternative app distribution in the EU. If you distribute iOS applications, you may be able to reach EU users through alternative channels that have different data collection requirements than the App Store. Review the privacy policy requirements for each distribution channel you use.
+
+**Data portability automation**: Users increasingly expect one-click data exports as DMA normalizes this capability. Building robust export functionality into your applications now — before it is required — positions you ahead of regulatory requirements and reduces the engineering cost of compliance when it becomes mandatory in your jurisdiction.
 ---
 
 
