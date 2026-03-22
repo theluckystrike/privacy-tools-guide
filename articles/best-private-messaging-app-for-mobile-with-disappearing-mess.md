@@ -6,7 +6,7 @@ date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-private-messaging-app-for-mobile-with-disappearing-mess/
-categories: [privacy, security, messaging]
+categories: [guides, security]
 reviewed: true
 score: 9
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Discover the most accessible encrypted file sharing tools designed
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-encrypted-file-sharing-tool-for-users-with-c/
-categories: [guides, accessibility]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A comprehensive guide to Apple's Lockdown Mode on iOS—what it bl
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /ios-lockdown-mode-explained-what-it-blocks-and-who-should-en/
-categories: [security, privacy, guides]
+categories: [security, guides]
 reviewed: true
 score: 9
 intent-checked: true
