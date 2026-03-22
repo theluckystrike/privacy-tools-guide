@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 reviewed: true
 score: 8
 date: 2026-03-15
-categories: [browser-privacy]
+categories: [guides]
 ---
 
 
