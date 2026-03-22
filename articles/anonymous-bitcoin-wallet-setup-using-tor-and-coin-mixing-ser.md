@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Achieving genuine financial privacy with Bitcoin requires more than just using a wallet—you need to obscure the connection between your identity and your transactions. This guide covers the technical implementation of an anonymous Bitcoin wallet setup using Tor for network-level privacy and coin mixing services for transaction obfuscation. We'll focus on practical, actionable steps that developers and power users can implement immediately.
 
+## Key Takeaways
+
+- **Configure Wasabi to use**: Tor in Settings 3.
+- **We'll focus on practical**: actionable steps that developers and power users can implement immediately.
+- **Hardware wallets combined with**: software interfaces offer the best security-to-privacy ratio.
+- **Many privacy-focused operators run**: Electrum servers as Tor hidden services, providing an additional layer of anonymity.
+- **The protocol uses a**: coordinator running as a Tor hidden service, ensuring no network-level information leaks during mixing.
+- **Bitcoin mixing is legal**: in most developed countries, but this may change.
+
 ## Why Tor and Coin Mixing Matter
 
 Bitcoin's blockchain is inherently transparent. Every transaction links to previous transactions, creating a traceable history that can reveal identities through exchange KYC data, IP addresses, and spending patterns. While Bitcoin addresses don't contain personal information by default, blockchain analysis firms have developed sophisticated techniques to de-anonymize users through pattern recognition and metadata correlation.

@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Mobile devices present unique challenges for anonymous browsing. Unlike desktop environments, you deal with constant network handoffs, persistent identifiers embedded in mobile operating systems, and aggressive tracking by app ecosystems. This guide provides actionable techniques for developers building privacy-focused mobile applications and power users seeking stronger anonymity on iOS and Android.
 
+## Key Takeaways
+
+- **Mobile browsers are particularly**: vulnerable because hardware specifications are limited.
+- **Settings > Location**: Disable location history and activity logs
+
+For Android developers, use the privacy indicators introduced in Android 12.
+- **Browser Use a privacy-hardened**: browser with fingerprinting protection 3.
+- **This guide provides actionable**: techniques for developers building privacy-focused mobile applications and power users seeking stronger anonymity on iOS and Android.
+- **Your IP address remains**: the most immediate identifier, and routing traffic through an intermediary obscures your origin.
+- **The Onion Browser project**: uses a custom URL scheme and handles Tor internally.
+
 ## Network-Layer Anonymity
 
 The foundation of anonymous browsing starts at the network level. Your IP address remains the most immediate identifier, and routing traffic through an intermediary obscures your origin.

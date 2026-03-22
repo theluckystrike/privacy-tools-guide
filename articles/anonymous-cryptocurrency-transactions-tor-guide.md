@@ -17,6 +17,19 @@ tags: [privacy-tools-guide]---
 
 Achieving genuine anonymity in cryptocurrency transactions requires understanding how blockchain surveillance works and implementing multiple layers of defense. This guide focuses on practical implementation of Tor network integration for cryptocurrency operations, targeting developers and power users who need actionable techniques rather than theoretical concepts.
 
+## Key Takeaways
+
+- **Before using any wallet**: review its network code or use open-source implementations where you can verify no telemetry exists.
+- **Generate Fresh Address ```bash**: # Generate new address bitcoin-cli getnewaddress "anonymous-receive" # Don't reuse this address ``` 3.
+- **Receive Funds via Monero**: Atomic Swap (if available) ```bash # Atomic swap Bitcoin to Monero # Using tools like XMR-Monero-Atomic-Swap for better privacy ``` 4.
+- **Use Monero for final**: transactions if privacy requirements are extreme 3.
+- **Use Tails or Whonix**: as your operating system 5.
+- **Verify your node is using Tor**: ```bash
+bitcoin-cli getnetworkinfo | grep -A 5 "addr"
+```
+
+Look for `.onion` addresses in the local addresses list, confirming Tor-only connectivity.
+
 ## Understanding the Threat Model
 
 Cryptocurrency transactions are not inherently anonymous. Public blockchains record every transaction with wallet addresses, amounts, and timestamps. Blockchain analysis firms track the flow of funds by clustering addresses, analyzing timing patterns, and correlating on-chain data with external information like IP addresses, exchange KYC data, and social media activity.

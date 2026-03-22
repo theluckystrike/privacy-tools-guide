@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Running email over Tor provides strong protection against network surveillance and traffic analysis. This guide covers the technical steps for configuring your email client to route traffic through the Tor network, connecting to email providers via onion services where available, and maintaining operational security throughout.
 
+## Key Takeaways
+
+- **For developers building privacy-focused**: applications or researchers requiring network anonymity, Tor provides a proven layer of protection.
+- **The latter approach provides**: stronger anonymity because your traffic never exits to the clearnet.
+- **This example uses a Proton Mail account**: but the configuration applies to any IMAP/SMTP provider.
+- **For testing**: temporarily disable certificate verification in your mail client, then re-enable it for production use.
+- **Generate an app password**: from your email provider's security settings and use that in your client configuration.
+- **Send a test email**: to yourself with a unique subject line 2.
+
 ## Why Route Email Through Tor?
 
 Tor encrypts your traffic through multiple relays, masking your IP address from email servers and network observers. This prevents ISPs, network administrators, and potentially adversarial servers from correlating your online activity with your physical location. For developers building privacy-focused applications or researchers requiring network anonymity, Tor provides a proven layer of protection.
