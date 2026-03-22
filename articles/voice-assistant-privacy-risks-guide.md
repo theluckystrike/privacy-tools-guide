@@ -1,5 +1,7 @@
 ---
 permalink: /voice-assistant-privacy-risks-guide/
+description: "Follow this guide to voice assistant privacy risks guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Risks of Voice Assistants Guide"

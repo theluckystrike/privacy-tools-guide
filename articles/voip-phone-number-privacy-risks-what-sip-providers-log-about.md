@@ -1,5 +1,7 @@
 ---
 permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
+description: "Learn voip phone number privacy risks what sip providers log about with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Voip Phone Number Privacy Risks What Sip Providers Log"

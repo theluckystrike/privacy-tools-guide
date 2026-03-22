@@ -1,5 +1,7 @@
 ---
 permalink: /twitter-x-account-after-death-how-to-request-memorialization/
+description: "Follow this guide to twitter x account after death how to request memorialization with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Twitter X Account After Death: How to Request"

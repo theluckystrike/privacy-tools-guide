@@ -1,5 +1,7 @@
 ---
 permalink: /tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/
+description: "Learn tutanota encrypted calendar and contacts how end to end encr with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tutanota Encrypted Calendar And Contacts How End To End"
