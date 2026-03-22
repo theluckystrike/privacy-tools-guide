@@ -323,9 +323,6 @@ async def stream_hotstar():
 
 This approach requires careful header management and realistic geolocation spoofing.
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

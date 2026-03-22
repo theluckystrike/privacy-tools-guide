@@ -5,7 +5,7 @@ description: "What Fitbit, Garmin, Apple Watch, and Oura Ring collect, who gets 
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-wearables-fitness-data/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

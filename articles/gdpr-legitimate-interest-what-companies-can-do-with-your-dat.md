@@ -349,9 +349,6 @@ Several authorities have ruled against companies' legitimate interest claims:
 
 These decisions show regulators skeptical of broad "improvement" and "analytics" justifications. Companies must prove necessity, not just convenience.
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

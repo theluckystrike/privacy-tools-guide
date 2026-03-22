@@ -227,6 +227,65 @@ This combination provides defense in depth while maintaining screen reader compa
 
 Test this full stack against your own web applications using axe-core or pa11y before deploying to users who depend on assistive technologies.
 
+## Advanced Configuration for Power Users
+
+For developers who need maximum control, combine extensions with Firefox preferences:
+
+```javascript
+// about:config settings for maximum privacy with accessibility
+privacy.trackingprotection.enabled: true
+privacy.trackingprotection.fingerprinting.enabled: true
+privacy.resistFingerprinting: true
+network.http.referer.XOriginPolicy: 2  // only send same-origin referers
+dom.event.clipboardevents.enabled: false  // prevent clipboard tracking
+dom.disable_before_unload: true
+```
+
+## Integration with Development Workflows
+
+For developers integrating privacy extensions into testing:
+
+```javascript
+// Verify privacy extensions don't break accessibility
+// Add to your test suite
+test('privacy extensions preserve focus management', async () => {
+  const page = await browser.newPage();
+
+  // Verify focused element remains focused after navigation
+  await page.focus('[tabindex="0"]');
+  const initialFocus = await page.evaluate(() => document.activeElement.id);
+
+  await page.goto('https://test-site.com');
+  const finalFocus = await page.evaluate(() => document.activeElement.id);
+
+  expect(finalFocus).toBeDefined(); // Focus should be managed
+});
+
+// Test ARIA live regions work with privacy extensions
+test('ARIA live regions announce with privacy extensions', async () => {
+  const liveRegion = await page.$('[aria-live="polite"]');
+  const content = await page.evaluate(el => el.textContent, liveRegion);
+
+  expect(content).toContain('Expected announcement');
+});
+```
+
+## Performance Monitoring
+
+Privacy extensions can impact performance, especially on resource-constrained machines. Monitor these metrics:
+
+```bash
+# Firefox Developer Tools Network tab shows blocked requests count
+# High count (>100 per page) indicates aggressive blocking
+
+# Monitor memory usage
+# about:memory shows extension memory consumption
+# Compare with and without extensions enabled
+
+# Page load timing
+# Should not increase by more than 10-15% with privacy extensions
+```
+
 
 ## Frequently Asked Questions
 

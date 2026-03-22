@@ -180,6 +180,67 @@ Beyond browser selection, implement these practices for improved streaming priva
 - **Clear data regularly** - Configure automatic clearing of cookies, cache, and local storage after streaming sessions
 - **Test before streaming** - Run privacy tests before accessing streaming services to verify your configuration works
 
+## Advanced Streaming Configuration
+
+### Firefox Hardening for Streaming
+
+For maximum privacy while streaming on Firefox:
+
+```javascript
+// about:config settings specifically for streaming
+privacy.firstparty.isolate: true  // isolate cookies by domain
+privacy.resistFingerprinting: true
+privacy.trackingprotection.enabled: true
+geo.enabled: false  // disable geolocation
+geo.provider.use_corelocation: false
+dom.disable_beforeunload: true
+network.http.keep-alive.timeout: 300
+media.hardwaremediakeys.enabled: false
+```
+
+### VPN + Browser Combination
+
+Streaming + VPN requires careful configuration:
+
+```bash
+# Example: Mullvad VPN + Firefox configuration
+# Mullvad handles network layer, Firefox handles browser layer
+
+# 1. Install Mullvad
+brew install mullvad
+
+# 2. Start Mullvad
+mullvad connect
+
+# 3. Configure Firefox to use Mullvad's SOCKS proxy (optional for additional security)
+# Settings > Network > Proxy Settings > SOCKS Host: 127.0.0.1:5400
+```
+
+### Testing Actual Streaming Behavior
+
+```javascript
+// Script to monitor data collection during streaming
+const trackingMetrics = {
+  xhrRequests: [],
+  fetchRequests: [],
+  imagePixels: [],
+  scriptSources: []
+};
+
+// Intercept XHR for analytics tracking
+const originalXHR = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function(method, url) {
+  trackingMetrics.xhrRequests.push({url, method, timestamp: Date.now()});
+  return originalXHR.apply(this, arguments);
+};
+
+// Log results after streaming for 5 minutes
+setTimeout(() => {
+  console.log('Analytics XHR calls:', trackingMetrics.xhrRequests.length);
+  trackingMetrics.xhrRequests.forEach(req => console.log(req.url));
+}, 300000);
+```
+
 ## Making Your Choice
 
 The best browser for streaming privacy in 2026 depends on your specific needs:
@@ -189,7 +250,28 @@ The best browser for streaming privacy in 2026 depends on your specific needs:
 - **Ungoogled Chromium** suits users who need Chrome extension compatibility without Google integration
 - **Tor Browser** is essential when maximum anonymity is required, despite streaming performance limitations
 
+### Quick Decision Matrix
+
+| Need | Best Choice | Why |
+|------|-----------|-----|
+| Privacy + Full HD streaming | Firefox + uBlock Origin | Best performance/privacy balance |
+| Minimal configuration needed | Brave | Works well out of the box |
+| Chrome extensions required | Ungoogled Chromium | Maintains extension ecosystem |
+| Maximum anonymity | Tor Browser | Routes through Tor network |
+| Gaming/4K streaming | Brave | Lowest overhead |
+
 Regardless of your choice, regularly test your browser's privacy protections. Streaming services continuously develop new tracking techniques, and browser developers respond with new countermeasures. Stay informed about updates to maintain effective privacy protection while streaming.
+
+## Monitoring Your Streaming Privacy
+
+After choosing your browser and configuring privacy settings:
+
+1. **Monthly**: Re-run privacy tests (Canvas, WebRTC, fingerprinting)
+2. **After browser updates**: Verify privacy settings persist
+3. **When accessing new services**: Check if your fingerprint changes
+4. **Quarterly**: Review browser extensions for abandoned ones
+
+A healthy streaming privacy setup should pass fingerprinting tests with "good" or "fair" uniqueness scores (not "highly unique").
 
 
 

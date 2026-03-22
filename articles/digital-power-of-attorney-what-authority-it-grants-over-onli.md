@@ -184,6 +184,64 @@ Configure this with a waiting period (typically 30 days) to prevent abuse. Your 
 - **Notarization**: Many platforms require notarized documents
 - **Revocability**: You can typically revoke a DPOA at any time while competent
 
+## Implementation Tools and Templates
+
+For developers and technical users, use these approaches for digital asset documentation:
+
+### Encrypted Asset Inventory System
+
+```python
+#!/usr/bin/env python3
+# Digital asset inventory with encryption
+
+import json
+from cryptography.fernet import Fernet
+
+class DigitalAssetInventory:
+    def __init__(self, password: str):
+        # Derive encryption key from password
+        key = self._derive_key(password)
+        self.cipher = Fernet(key)
+        self.inventory = {}
+
+    def _derive_key(self, password: str):
+        """Derive Fernet key from password"""
+        from cryptography.hazmat.primitives import hashes
+        from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2
+        from cryptography.hazmat.backends import default_backend
+        import os
+        import base64
+
+        salt = b'fixed_salt_for_this_app'
+        kdf = PBKDF2(
+            algorithm=hashes.SHA256(),
+            length=32,
+            salt=salt,
+            iterations=100000,
+            backend=default_backend()
+        )
+        key = base64.urlsafe_b64encode(kdf.derive(password.encode()))
+        return key
+
+    def add_asset(self, category: str, name: str, details: dict):
+        """Add a digital asset to inventory"""
+        if category not in self.inventory:
+            self.inventory[category] = []
+
+        self.inventory[category].append({
+            'name': name,
+            'details': details
+        })
+
+    def save_encrypted(self, filepath: str):
+        """Save encrypted inventory to file"""
+        plaintext = json.dumps(self.inventory)
+        encrypted = self.cipher.encrypt(plaintext.encode())
+
+        with open(filepath, 'wb') as f:
+            f.write(encrypted)
+```
+
 ## Best Practices for Implementation
 
 1. **Regular updates**: Review and update your DPOA annually or after major life changes
@@ -191,8 +249,8 @@ Configure this with a waiting period (typically 30 days) to prevent abuse. Your 
 3. **Test access**: Ensure your agents can actually access what they've been granted
 4. **Coordinate with platforms**: Some services have their own legacy/transfer features
 5. **Educate your agents**: Ensure they understand your digital ecosystem
-
-
+6. **Store securely**: Keep the DPOA document with your will in a safe deposit box
+7. **Distribute copies**: Give your agents copies with signed notarization
 
 ## Frequently Asked Questions
 

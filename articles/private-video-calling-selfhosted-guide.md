@@ -5,7 +5,7 @@ description: "Set up Jitsi Meet, Matrix Element, and Galene as self-hosted video
 date: 2026-03-22
 author: theluckystrike
 permalink: /private-video-calling-selfhosted-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -313,6 +313,78 @@ config.p2p.stunServers = [
 ```
 
 ---
+
+## Monitoring Server Health and Call Quality
+
+After deploying a self-hosted video calling server, ongoing monitoring ensures call quality stays acceptable and the server doesn't silently degrade. Video traffic is resource-intensive, and a server that looked adequate at setup may struggle under concurrent meetings.
+
+**CPU and memory monitoring for Jitsi**: The Jitsi Video Bridge (JVB) process is the most CPU-intensive component. Set up a simple monitoring script that alerts you when resources are constrained:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/jitsi-health.sh — run via cron every 5 minutes
+
+JVB_CPU=$(ps aux | awk '/jitsi-videobridge/ && !/awk/ {print $3}')
+JVB_MEM=$(ps aux | awk '/jitsi-videobridge/ && !/awk/ {print $4}')
+LOAD=$(uptime | awk -F'load average:' '{print $2}' | cut -d, -f1 | tr -d ' ')
+
+LOG="/var/log/jitsi-health.log"
+TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+
+echo "$TIMESTAMP CPU=${JVB_CPU}% MEM=${JVB_MEM}% LOAD=${LOAD}" >> "$LOG"
+
+# Alert if CPU exceeds 80%
+if [ "$(echo "$JVB_CPU > 80" | bc -l)" -eq 1 ]; then
+    curl -s -d "Jitsi JVB CPU at ${JVB_CPU}% — check active meetings" \
+        https://ntfy.sh/your-jitsi-alerts
+fi
+```
+
+**Call quality testing**: Use `mtr` to check the path quality to your server from clients' locations before hosting important meetings:
+
+```bash
+# Test UDP packet loss to your Jitsi server (port 10000 is JVB media)
+sudo mtr --udp --port 10000 meet.yourdomain.com --report --report-cycles 20
+```
+
+More than 1-2% packet loss consistently will cause visible video artifacts. If you see packet loss, check whether your VPS provider has network issues, or whether a TURN relay is needed for specific clients.
+
+**Log rotation**: Jitsi produces significant log output. Without rotation, logs fill disk over weeks:
+
+```bash
+# /etc/logrotate.d/jitsi
+/var/log/jitsi/*.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        systemctl reload jitsi-videobridge2 >/dev/null 2>&1 || true
+    endscript
+}
+```
+
+## Choosing Between Jitsi, Matrix, and Galene
+
+Each option in this guide serves different use cases. Choosing the wrong tool for your situation creates maintenance overhead without proportional privacy benefit.
+
+**Choose Jitsi Meet when**: You need quick meeting links you can share with external participants who have no accounts. Jitsi is the closest drop-in replacement for Zoom—send a URL, participants join from the browser, meetings end and leave no persistent state.
+
+**Choose Matrix + Element when**: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers. Matrix has significantly higher setup complexity than Jitsi, but the result is a complete communication platform rather than just a video solution. If your team currently uses Slack and Zoom together, Matrix + Element can replace both.
+
+**Choose Galene when**: You need a minimal, low-overhead solution for small trusted groups (your immediate team, family, or close collaborators). Galene requires almost no maintenance after setup—the binary has no external dependencies and uses minimal server resources. It is not suitable for meetings with external participants unfamiliar with the URL format.
+
+Resource requirements comparison:
+
+| Platform | Min RAM | CPU | Concurrent Users | Maintenance Load |
+|----------|---------|-----|------------------|-----------------|
+| Jitsi Meet | 4GB | 2 cores | 50+ | Medium |
+| Matrix Synapse | 2GB | 1 core | Team-sized | High |
+| Galene | 512MB | 1 core | ~20 | Low |
+
+For most privacy-focused individuals or small teams, Jitsi on a $20/month VPS handles needs well. Teams with ongoing communication requirements that currently pay for Slack will find Matrix's total cost of ownership competitive after the initial setup investment.
 
 ## Related Reading
 

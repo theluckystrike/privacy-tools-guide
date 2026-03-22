@@ -347,9 +347,6 @@ class LegalRiskMitigation:
         return challenge_strategy
 ```
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

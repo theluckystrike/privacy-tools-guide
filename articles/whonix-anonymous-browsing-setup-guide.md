@@ -5,7 +5,7 @@ description: "Set up Whonix Gateway and Workstation on VirtualBox or KVM, config
 date: 2026-03-22
 author: theluckystrike
 permalink: /whonix-anonymous-browsing-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
