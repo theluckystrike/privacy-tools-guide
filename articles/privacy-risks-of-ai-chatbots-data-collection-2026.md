@@ -10,6 +10,7 @@ voice-checked: true
 intent-checked: true
 slug: privacy-risks-of-ai-chatbots-data-collection-2026
 tags: ["ai-privacy", "data-collection", "chatgpt", "claude", "gemini", "security"]
+permalink: /privacy-risks-of-ai-chatbots-data-collection-2026/
 ---
 
 {% raw %}

@@ -10,6 +10,7 @@ voice-checked: true
 intent-checked: true
 slug: how-to-harden-firefox-for-privacy-2026
 tags: ["firefox", "privacy", "security", "browser-hardening", "tracking"]
+permalink: /how-to-harden-firefox-for-privacy-2026/
 ---
 
 {% raw %}
