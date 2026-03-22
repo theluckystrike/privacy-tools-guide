@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /threat-model-for-sex-worker-protecting-real-identity-and-loc/
 description: "Learn threat model for sex worker protecting real identity and loc with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Threat Model For Sex Worker Protecting Real Identity"
 description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers"

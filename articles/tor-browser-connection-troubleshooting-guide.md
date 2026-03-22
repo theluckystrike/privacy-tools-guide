@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-connection-troubleshooting-guide/
 description: "Fix tor browser connection troubleshooting guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"
 description: "A guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge"

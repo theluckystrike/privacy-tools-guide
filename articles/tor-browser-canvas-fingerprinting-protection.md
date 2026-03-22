@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-canvas-fingerprinting-protection/
 description: "Learn tor browser canvas fingerprinting protection with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser Canvas Fingerprinting Protection"
 description: "A guide to understanding how Tor Browser protects against canvas fingerprinting. Learn about Tor's built-in protections, configuration settings, and best"
