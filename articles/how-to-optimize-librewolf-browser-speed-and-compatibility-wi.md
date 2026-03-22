@@ -29,6 +29,8 @@ LibreWolf ships with several privacy features that differ from vanilla Firefox:
 
 These defaults create a solid privacy baseline but may cause compatibility issues with streaming services, banking websites, and some web applications.
 
+LibreWolf stores its additional preferences in a `librewolf.cfg` file and a `policies.json` under the application directory. Unlike Firefox user.js overrides that apply per-profile, these files apply globally to all profiles. Understanding this distinction matters when you want to make changes that persist across profile resets.
+
 ## Performance Optimization Strategies
 
 ### 1. Network and Connection Settings
@@ -89,6 +91,16 @@ network.dnsDOT = true
 network.dnsOverHTTPS = true
 ```
 
+Alternatively, point LibreWolf at a self-hosted DNS resolver like Unbound or Pi-hole for network-level blocking without relying on any third-party DoH provider:
+
+```javascript
+network.trr.mode = 2
+network.trr.uri = https://192.168.1.10/dns-query
+network.trr.bootstrapAddress = 192.168.1.10
+```
+
+This keeps all DNS resolution within your local network and avoids leaking query metadata to Cloudflare or NextDNS.
+
 ## Compatibility Tuning
 
 ### 1. Managing Tracking Protection
@@ -101,9 +113,11 @@ The strict tracking protection blocks many third-party scripts. For sites that b
 
 ```javascript
 // Add sites to tracking protection exceptions
-urlclassifier.trackingAnnotationWhitelist = 
+urlclassifier.trackingAnnotationWhitelist =
 privacy.trackingprotection.enabled = false  // Alternative: disable globally (not recommended)
 ```
+
+A more surgical approach is to add per-site exceptions using Firefox's built-in container exception system. Install "Firefox Multi-Account Containers" and assign banking or streaming sites to their own containers, then relax tracking protection only within those containers. This preserves strict protection everywhere else while eliminating breakage on the handful of sites that require it.
 
 ### 2. Fingerprinting Resistance Adjustments
 
@@ -128,6 +142,16 @@ security.ssl.allow_unrestricted_fetch_for_non_security_policies = true
 security.enterprise_roots.enabled = true  // Use system certificate store
 ```
 
+### 4. UserAgent and Site Compatibility
+
+Some sites deny service to browsers they do not recognize. LibreWolf ships with a modified user agent that may trigger these blocks. You can override it per-site using the "User-Agent Switcher and Manager" extension, or globally in about:config:
+
+```javascript
+general.useragent.override = Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0
+```
+
+Use this only as a last resort since it weakens fingerprinting resistance. The container-based approach described above is preferable for site-specific compatibility.
+
 ## Essential Extensions for Power Users
 
 While LibreWolf includes strong built-in protection, these extensions enhance functionality:
@@ -144,6 +168,10 @@ LibreWolf includes uBlock Origin with enhanced blocking lists. Customize filter 
 ! Allow specific tracking for functional sites
 @@||analytics.google.com^$domain=yourbank.com
 ```
+
+### LocalCDN
+
+LocalCDN intercepts requests to popular CDNs (Cloudflare, Google Fonts, jsDelivr) and serves the libraries from local storage instead. This eliminates cross-site tracking through CDN fingerprinting and improves load times for sites that depend on common JavaScript libraries. Install it from the Firefox Add-ons store; it requires no configuration and works immediately.
 
 ### Container Extensions
 
@@ -172,6 +200,15 @@ gfx.canvas.accelerated = 1
 gfx.xrender.enabled = true
 ```
 
+On Linux with an AMD GPU, verify that hardware video decoding is active by checking `about:support` and looking for "HW_DECODE" in the Media section. If it shows "Not supported," install the `libva-mesa-driver` package and set:
+
+```javascript
+media.ffmpeg.vaapi.enabled = true
+media.hardware-video-decoding.force-enabled = true
+```
+
+This is particularly impactful for video-heavy workflows, reducing CPU usage by 40-60% compared to software decoding.
+
 ## Managing Memory Usage
 
 For systems with limited RAM, tune memory management:
@@ -186,6 +223,8 @@ memory.low_memory_threshold_ws = 1048576  // Lower threshold in bytes
 memory.vacuum.level = 2  // More aggressive memory cleanup
 ```
 
+The "Auto Tab Discard" extension complements these settings by suspending inactive tabs after a configurable interval. Set the discard timeout to 15 minutes for tabs in the background and exclude pinned tabs from automatic suspension.
+
 ## Troubleshooting Common Issues
 
 ### Streaming Services Not Working
@@ -194,7 +233,7 @@ Many streaming services check for browser fingerprinting. For temporary compatib
 
 ```javascript
 // Create site-specific exception in about:config
-// Right-click → New → String → 
+// Right-click → New → String →
 // Name: privacy.resistFingerprinting.exceptions
 // Value: example.com,netflix.com,hulu.com
 ```
@@ -219,6 +258,15 @@ media.peerconnection.enabled = true
 media.peerconnection.ice.default_addresses_only = true
 ```
 
+### Font Rendering Problems
+
+Some enterprise applications rely on system fonts that LibreWolf's sandboxing blocks. If text renders as boxes or falls back to a generic font, check:
+
+```javascript
+gfx.font_rendering.fontconfig.max_generic_substitutions = 127
+browser.display.use_document_fonts = 1
+```
+
 ## Performance Benchmarking
 
 To measure the impact of your changes, use these testing approaches:
@@ -232,6 +280,8 @@ To measure the impact of your changes, use these testing approaches:
 browser.performance.logPrerendering = true
 browser.performance.max-resource-entries = 1000
 ```
+
+Speedometer 3.0 (accessible at browserbench.org) provides a consistent JavaScript performance benchmark. Run it before and after configuration changes to quantify the impact of your tweaks.
 
 ## Recommended Configuration Preset
 
