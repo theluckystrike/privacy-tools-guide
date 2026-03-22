@@ -216,7 +216,176 @@ When implementing circumvention strategies, consider these technical constraints
 4. **Network observability**: Even with encrypted traffic, metadata such as connection timing, packet sizes, and traffic volume can reveal communication patterns.
 
 Understanding Iran's smart filtering infrastructure is the first step toward building systems that can operate in restrictive network environments. The techniques described here represent current approaches, but filtering technology continues to evolve. Developers should stay informed about both detection and evasion methods to maintain operational security in changing conditions.
----
+
+## ISP-Level Monitoring and Metadata
+
+Beyond DNS and DPI, Iran's filtering system monitors aggregate traffic patterns. Even encrypted connections leak metadata revealing behavior.
+
+### Timing and Flow Analysis
+
+Sophisticated monitoring systems can identify VPN usage through traffic signatures:
+
+```python
+import numpy as np
+from scipy import stats
+
+def analyze_traffic_patterns(packet_log):
+    """
+    Detect potential VPN traffic through anomalous patterns
+    """
+
+    # Measure inter-arrival times between packets
+    timestamps = [p['timestamp'] for p in packet_log]
+    intervals = np.diff(timestamps)
+
+    # Normal HTTPS has bursty patterns
+    # VPN traffic is more uniform due to tunneling overhead
+    variance = np.var(intervals)
+
+    # Detect unusual packet sizes (VPN encapsulation adds headers)
+    sizes = [p['size'] for p in packet_log]
+    mean_size = np.mean(sizes)
+
+    # VPN packets typically align to MTU sizes
+    # This creates detectable distribution patterns
+    size_dist = stats.describe(sizes)
+
+    return {
+        'timing_variance': variance,
+        'mean_packet_size': mean_size,
+        'size_distribution': size_dist,
+        'likely_vpn': variance < 0.01 or mean_size > 1400
+    }
+```
+
+While metadata analysis alone cannot decrypt your content, it reveals behavior patterns that identify VPN usage.
+
+## Bridge Selection and Server Rotation
+
+Tor bridges and proxy services face constant blocking. Maintain multiple bridges and rotate regularly:
+
+```bash
+#!/bin/bash
+# Tor bridge rotation script
+
+BRIDGES=(
+  "obfs4 [82.94.251.207]:443 ..."
+  "obfs4 [195.154.7.177]:40081 ..."
+  "meek-azure [AzureInfo]"
+)
+
+# Rotate every 6 hours
+while true; do
+    BRIDGE=${BRIDGES[$((RANDOM % ${#BRIDGES[@]}))]}
+
+    # Update torrc
+    echo "Bridge $BRIDGE" > ~/.tor/torrc
+
+    # Restart Tor
+    systemctl restart tor
+
+    echo "Rotated to: $BRIDGE"
+    sleep 21600
+done
+```
+
+Staying ahead of blocking requires proactive bridge management rather than relying on a single connection method.
+
+## Building Fault-Tolerant Applications
+
+Applications designed for censored networks must handle frequent disconnections and slow connections gracefully.
+
+### Connection State Management
+
+```python
+import asyncio
+from enum import Enum
+
+class ConnectionState(Enum):
+    CONNECTED = 1
+    DEGRADED = 2
+    BLOCKED = 3
+    RECONNECTING = 4
+
+class ResilientConnection:
+    def __init__(self, config):
+        self.state = ConnectionState.CONNECTING
+        self.config = config
+        self.retry_count = 0
+        self.max_retries = 5
+
+    async def maintain_connection(self):
+        while True:
+            try:
+                if self.state in [ConnectionState.BLOCKED, ConnectionState.DEGRADED]:
+                    await self.attempt_reconnect()
+
+                # Test connectivity
+                response_time = await self.test_endpoint()
+
+                if response_time > 5000:  # > 5 seconds
+                    self.state = ConnectionState.DEGRADED
+                else:
+                    self.state = ConnectionState.CONNECTED
+                    self.retry_count = 0
+
+            except ConnectionError:
+                self.state = ConnectionState.BLOCKED
+                await self.attempt_reconnect()
+
+            await asyncio.sleep(30)
+
+    async def attempt_reconnect(self):
+        """Switch to alternate connection method"""
+        self.retry_count += 1
+
+        if self.retry_count > self.max_retries:
+            # Try completely different approach
+            await self.switch_connection_method()
+            self.retry_count = 0
+```
+
+Applications that adapt to network conditions survive blocking longer than applications that fail on first disconnection.
+
+## Ethical and Legal Considerations
+
+Circumvention tools operate in complex legal territory. Understanding the context matters:
+
+### Legitimate Use Cases
+
+- Accessing blocked news and information
+- Communicating with family across borders
+- Academic research and publishing
+- Business operations necessary for employment
+
+### Legal Risks
+
+Using circumvention tools may violate local laws. Users should understand:
+
+- Your jurisdiction's specific regulations
+- Potential consequences (fines, imprisonment)
+- Whether your use case has legal protection
+- Ongoing political changes that may affect legal status
+
+This article provides technical information for educational purposes. Users must evaluate legal implications in their specific jurisdiction before using these tools.
+
+## Monitoring Policy Changes
+
+Internet censorship policy evolves. Stay informed:
+
+```bash
+# Monitor policy announcements
+curl -s "https://github.com/search?q=iran+filtering+policy" | grep -i policy
+
+# Track known blocked domains
+curl -s "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" | wc -l
+
+# Join privacy and security mailing lists for updates
+```
+
+Recent policy changes (lifting restrictions on specific platforms) can rapidly change what circumvention methods remain necessary.
+
+Understanding Iran's smart filtering infrastructure is the first step toward building systems that can operate in restrictive network environments. The techniques described here represent current approaches, but filtering technology continues to evolve. Developers should stay informed about both detection and evasion methods to maintain operational security in changing conditions.
 
 
 ## Frequently Asked Questions
