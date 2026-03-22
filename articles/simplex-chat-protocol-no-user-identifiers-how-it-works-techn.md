@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /simplex-chat-protocol-no-user-identifiers-how-it-works-techn/
 description: "Learn simplex chat protocol no user identifiers how it works techn with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Simplex Chat Protocol No User Identifiers How It Works"
 description: "A technical deep dive into how SimpleX Chat achieves privacy through absence of user identifiers. Learn the queue-based architecture, DH key exchange"

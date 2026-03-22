@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
 description: "Learn smart doorbell alternatives that store video locally without with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally"
 description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /smart-plug-energy-monitoring-privacy-what-data-manufacturers/
 description: "Learn smart plug energy monitoring privacy what data manufacturers with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Smart Plug Energy Monitoring Privacy What Data Manufacturers"
 description: "A technical guide for developers and power users exploring what data smart plugs collect, how manufacturers use appliance usage patterns, and privacy"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /signal-username-feature-privacy-review/
 description: "Learn signal username feature privacy review with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [reviews]
 ---
+
 layout: default
 title: "Signal Username Feature Privacy Review"
 description: "Signal Username Feature Privacy Review — privacy guide covering tools, techniques, and best practices to protect your data and digital identity in 2026"

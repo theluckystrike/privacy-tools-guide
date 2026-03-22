@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /signal-relay-calls-privacy-feature/
 description: "Learn signal relay calls privacy feature with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Signal Relay Calls Privacy Feature"
 description: "Signal's relay calls feature represents a significant advancement in protecting user privacy during voice and video communications. When enabled, this feature"
