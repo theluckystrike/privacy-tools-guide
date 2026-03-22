@@ -225,6 +225,79 @@ const observer = new IntersectionObserver((entries) => {
 images.forEach(img => observer.observe(img));
 ```
 
+## Advanced Measurement Techniques
+
+### Using Activity Monitor on macOS
+
+Activity Monitor provides detailed per-process energy consumption metrics accessible without root privileges:
+
+```bash
+# Export battery status to CSV for long-term tracking
+system_profiler SPPowerDataType | grep "Condition"
+
+# Monitor top CPU consumers
+top -n 10 -o %CPU | grep -E "Chrome|Brave"
+```
+
+Open Activity Monitor, navigate to the Energy tab, and sort by "Avg Energy Impact" to see which processes consume power. Run your same browsing tasks in both browsers and compare the sustained energy impact columns.
+
+### JavaScript Execution and Battery Life
+
+The relationship between JavaScript execution and battery drain is fundamental. Brave's ad blocker prevents the execution of tracking scripts, reducing CPU cycles:
+
+```javascript
+// Performance monitoring script to measure JS execution impact
+const perfObserver = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    if (entry.duration > 100) {
+      console.log(`Long task: ${entry.name} - ${entry.duration}ms`);
+    }
+  }
+});
+
+perfObserver.observe({ entryTypes: ['longtask'] });
+```
+
+Heavy JavaScript frameworks (React, Vue, Angular) consume more battery than vanilla JavaScript due to runtime interpretation. Brave's isolation of scripts reduces the cumulative load compared to Chrome's more permissive execution model.
+
+## Real-World Scenarios
+
+### Streaming Video Impact
+
+Video playback represents a consistent workload. Test on identical websites:
+
+- YouTube: Stream same video for 30 minutes in both browsers
+- Netflix: Watch identical content, measure battery drain
+- Twitch: Stream for consistent time period
+
+Expected results: Brave typically sees 10-15% less drain during video playback because ad/tracker blocking prevents overlay ads and embedded tracking pixels from consuming resources.
+
+### Remote Work Sessions
+
+For developers and professionals using web applications:
+
+- Google Workspace (Docs, Sheets, Meet)
+- Zoom or WebEx
+- Slack web client
+- VS Code Web (code-server)
+
+The difference in battery consumption becomes pronounced during 8-hour work sessions. Brave can extend battery life by 1-2 additional hours compared to Chrome in typical office workload scenarios.
+
+### Tab Management Strategies
+
+Modern browsers optimize for multiple tabs differently:
+
+```javascript
+// Check number of background tabs and their impact
+const tabCount = window.open().length;
+console.log(`Number of open tabs: ${tabCount}`);
+
+// Monitor memory usage per tab
+performance.memory.usedJSHeapSize / 1048576 // Convert to MB
+```
+
+Chrome's background tab throttling in recent versions has improved, but Brave still maintains lower overhead due to tracker blocking.
+
 ## Frequently Asked Questions
 
 **Can I use the first tool and the second tool together?**

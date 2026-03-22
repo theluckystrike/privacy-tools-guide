@@ -223,6 +223,266 @@ Create a documented timeline for your digital succession plan:
 - **Upon diagnosis of serious illness**: Notify selected trusted parties, distribute recovery information according to predetermined process
 - **Upon death**: Executor accesses documented procedures and pre-distributed keys/shares
 
+## Implementing Shamir Shares in Practice
+
+### Python Implementation Using Shark
+
+Here's a production-ready example using the `shark` library (Shamir's Secret Sharing):
+
+```python
+#!/usr/bin/env python3
+"""Split Proton Mail password using Shamir's Secret Sharing."""
+
+import os
+import sys
+from shark import generate_shares, reconstruct_secret
+
+def split_proton_password(password: str, threshold: int = 2, shares: int = 3) -> list:
+    """
+    Split a Proton Mail password into Shamir shares.
+
+    Args:
+        password: The secret password to split
+        threshold: Minimum shares needed to reconstruct (typically 2-3)
+        shares: Total number of shares to generate (typically 3-5)
+
+    Returns:
+        List of shares to distribute
+    """
+    # Convert password to bytes
+    secret_bytes = password.encode('utf-8')
+
+    # Generate shares
+    share_list = generate_shares(secret_bytes, threshold, shares)
+
+    return share_list
+
+def recover_proton_password(share_list: list) -> str:
+    """Reconstruct password from Shamir shares."""
+    secret_bytes = reconstruct_secret(share_list)
+    return secret_bytes.decode('utf-8')
+
+def print_distribution_instructions(shares: list):
+    """Generate instructions for distributing shares."""
+    instructions = """
+IMPORTANT: Distribution Instructions for Shares
+
+Share 1 (Attorney):
+  - Store in attorney's safe
+  - Label: "Estate Planning - Share 1 of 3"
+  - Do NOT store with other shares
+
+Share 2 (Family Member):
+  - Give to trusted family member
+  - Label: "Estate Planning - Share 2 of 3"
+  - Store in secure location (safe deposit box, etc.)
+  - Inform them that any 2 of 3 shares can reconstruct the password
+
+Share 3 (Backup Location):
+  - Store in your physical safe or safety deposit box
+  - Keep physically separate from shares 1 and 2
+  - Update executor about location
+
+To reconstruct the password, any 2 of these 3 shares are sufficient.
+No single person has enough information to access the account.
+    """
+    print(instructions)
+
+    for i, share in enumerate(shares, 1):
+        # Convert share to readable format (base64 or hex)
+        share_hex = share.hex()
+        print(f"\n--- SHARE {i} (copy exactly) ---")
+        print(share_hex)
+        print(f"--- END SHARE {i} ---\n")
+
+# Usage
+if __name__ == "__main__":
+    proton_password = "your-proton-password-here"
+
+    # Generate shares
+    shares = split_proton_password(proton_password, threshold=2, shares=3)
+
+    # Print distribution instructions
+    print_distribution_instructions(shares)
+
+    # Verify reconstruction works (test purposes only)
+    reconstructed = recover_proton_password(shares[:2])
+    assert reconstructed == proton_password
+    print("✓ Reconstruction verified - process complete")
+```
+
+### Offline Share Storage
+
+Create encrypted USB drives for each share:
+
+```bash
+#!/bin/bash
+# Create encrypted backup USB for Shamir share
+
+# Identify USB device (e.g., /dev/sdb)
+lsblk
+
+# Create partition
+sudo fdisk /dev/sdb
+# Command: n (new partition), p (primary), 1 (partition 1), enter (default start), enter (default end), w (write)
+
+# Encrypt with LUKS
+sudo cryptsetup luksFormat /dev/sdb1
+# Enter passphrase (different from password being split)
+
+# Open encrypted partition
+sudo cryptsetup luksOpen /dev/sdb1 share1
+sudo mkfs.ext4 /dev/mapper/share1
+sudo mkdir /mnt/share1
+sudo mount /dev/mapper/share1 /mnt/share1
+
+# Copy share file to encrypted USB
+echo "SHARE_HEX_VALUE_HERE" | sudo tee /mnt/share1/proton_share.txt
+
+# Create README
+sudo tee /mnt/share1/README.txt << 'EOF'
+This USB contains Shamir Share #1 for Proton Mail account inheritance.
+See estate planning documents for instructions on how to use this share.
+Passphrase: [provide securely to intended recipient]
+EOF
+
+# Unmount and close
+sudo umount /mnt/share1
+sudo cryptsetup luksClose share1
+
+# Securely label the USB
+sudo eject /dev/sdb  # Eject USB
+# Physical label: "Proton Mail Recovery Share 1 of 3"
+```
+
+## Advanced Digital Estate Documentation
+
+### Creating an Encrypted Estate File
+
+Consolidate all critical information in a single encrypted file:
+
+```python
+#!/usr/bin/env python3
+"""Create encrypted estate planning document."""
+
+import json
+from cryptography.fernet import Fernet
+from pathlib import Path
+
+def create_estate_document():
+    """Generate comprehensive digital estate file."""
+
+    estate_info = {
+        "proton_mail": {
+            "email": "your-proton-email@proton.me",
+            "account_id": "user123456",
+            "recovery_email": "recovery@example.com",
+            "recovery_phone": "+1234567890",
+            "two_factor_backup_codes": [
+                "XXXX-XXXX-XXXX",
+                "XXXX-XXXX-XXXX"
+            ],
+            "shamir_share_locations": {
+                "share_1": "Safe deposit box, Bank Name, Box #123",
+                "share_2": "Attorney name and address",
+                "share_3": "Family member name and contact"
+            }
+        },
+        "other_email_services": {
+            "gmail": {
+                "email": "backup@gmail.com",
+                "recovery_phone": "+1234567890"
+            }
+        },
+        "password_manager": {
+            "service": "1Password",
+            "account_email": "password-manager@example.com",
+            "emergency_contact_set_up": True,
+            "vault_access_instructions": "See separate document"
+        },
+        "beneficiaries": {
+            "executor": {
+                "name": "John Doe",
+                "email": "john@example.com",
+                "phone": "+1234567890",
+                "relationship": "Attorney"
+            },
+            "family_member": {
+                "name": "Jane Doe",
+                "email": "jane@example.com",
+                "phone": "+1234567890",
+                "relationship": "Spouse"
+            }
+        },
+        "instructions": """
+Upon my death or permanent incapacity:
+
+1. Executor should gather all three Shamir shares from their locations
+2. Any two shares can be combined to reconstruct my Proton Mail password
+3. Use recovered password to log in and export remaining emails
+4. Delete account to prevent unauthorized access
+5. Provide emails to family members as needed
+        """
+    }
+
+    # Encrypt document
+    key = Fernet.generate_key()
+    cipher = Fernet(key)
+
+    json_data = json.dumps(estate_info, indent=2)
+    encrypted_data = cipher.encrypt(json_data.encode())
+
+    # Save encrypted file
+    with open("estate_information.enc", "wb") as f:
+        f.write(encrypted_data)
+
+    # Save key separately
+    with open("estate_key.key", "wb") as f:
+        f.write(key)
+
+    print("✓ Encrypted estate file created: estate_information.enc")
+    print("✓ Encryption key saved: estate_key.key")
+    print("WARNING: Store estate_key.key separately from estate_information.enc")
+
+# Usage
+create_estate_document()
+```
+
+## Legal Considerations by Jurisdiction
+
+### US State-by-State Summary
+
+| State | UFADAA Adopted | Key Provision | Encrypted Account Handling |
+|-------|---|---|---|
+| California | Yes | Full support for digital assets | Requires credentials to access |
+| New York | Yes | Comprehensive fiduciary access | Balanced with privacy expectations |
+| Texas | Yes | Broad fiduciary authority | Limited by encryption |
+| Florida | Yes | Covers social media, email | E2EE limits practical enforcement |
+| Massachusetts | Yes | Privacy-protective | Encrypted accounts may be unrecoverable |
+
+## Timeline-Based Planning
+
+### Immediate Actions (This Month)
+
+- [ ] Set up recovery email address on Proton Mail
+- [ ] Enable two-factor authentication
+- [ ] Download backup codes and store securely
+- [ ] Create Shamir shares of recovery information
+
+### This Year
+
+- [ ] Set up emergency access contact in Proton settings
+- [ ] Create estate planning documents with digital asset inventory
+- [ ] Brief your executor on procedures
+- [ ] Test recovery process (can you reconstruct with any 2 shares?)
+
+### Ongoing (Annually)
+
+- [ ] Verify recovery contacts still valid
+- [ ] Update beneficiary information if circumstances change
+- [ ] Check that Shamir shares remain accessible
+- [ ] Review whether new Proton features affect your strategy
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

@@ -224,6 +224,177 @@ For users with high privacy requirements, avoiding EA's platform entirely means 
 
 The EA app represents the broader trend of always-connected gaming platforms. As a developer or power user, you have tools to understand and limit what these applications expose. Regular network monitoring, firewall configuration, and periodic data requests help maintain awareness of your digital footprint.
 
+## Practical Mitigation Strategies for Power Users
+
+### Creating Firewall Rules
+
+Power users can implement OS-level firewall restrictions to limit EA app network communication:
+
+**Windows Defender Firewall Advanced Rules:**
+
+```powershell
+# Create inbound rule blocking EA background service
+New-NetFirewallRule -DisplayName "Block EA Background Service" `
+    -Direction Inbound `
+    -Program "C:\Program Files\Electronic Arts\EA App\EABackgroundService.exe" `
+    -Action Block `
+    -Profile Domain, Private, Public
+```
+
+**macOS pf (Packet Filter):**
+
+```bash
+# Create rules file for EA app domain blocking
+sudo tee /etc/pf.ea-block.conf << 'EOF'
+pass out proto tcp to any # Allow all traffic first
+block out from any to 155.178.0.0/16 # Block EA ASN
+EOF
+
+# Load rules
+sudo pfctl -f /etc/pf.ea-block.conf
+```
+
+### Network Traffic Inspection Setup
+
+For developers wanting deeper visibility into EA app communications:
+
+```bash
+# Create a local proxy using mitmproxy
+mitmproxy -p 8080 --mode reverse --upstream-cert=always \
+    -s "grep_script.py"
+
+# grep_script.py content:
+# Intercept and log EA requests
+from mitmproxy import http
+
+def request(flow: http.HTTPFlow) -> None:
+    if 'ea.com' in flow.request.host:
+        print(f"EA Request: {flow.request.host}{flow.request.path}")
+```
+
+### DNS Blocking Approach
+
+Combine OS-level and router-level DNS blocking:
+
+```bash
+# On macOS, create /etc/hosts entries
+echo "127.0.0.1 accounts.ea.com" | sudo tee -a /etc/hosts
+echo "127.0.0.1 gateway.ea.com" | sudo tee -a /etc/hosts
+echo "127.0.0.1 privacy-api.ea.com" | sudo tee -a /etc/hosts
+
+# Flush DNS cache
+sudo dscacheutil -flushcache
+```
+
+## Understanding EA App Alternatives
+
+### Platform Comparison
+
+| Aspect | EA App | Steam | GOG | Epic Games |
+|--------|--------|-------|-----|-----------|
+| Telemetry | Moderate-High | Moderate | Low | High |
+| Background Processes | Always running | Optional | Minimal | Always running |
+| Library Access | Online required | Offline play supported | Full offline | Online required |
+| DRM | Always active | Varies per game | Minimal/none | Proprietary |
+| Data Sharing | Third-party | Limited | Minimal | Third-party |
+
+For privacy-conscious gamers, GOG offers DRM-free games with minimal telemetry, though you lose access to EA's exclusive titles like Star Wars Jedi, Dragon Age, and The Sims franchises.
+
+### Self-Hosted Game Streaming
+
+Advanced users can run games through streaming services that isolate the EA app:
+
+```bash
+# Example: Running EA app in a virtual machine
+# Configure VM network to route through proxy
+qemu-system-x86_64 -m 8192 -enable-kvm \
+    -netdev user,id=net0 -device e1000,netdev=net0 \
+    # Forward port 8080 to local proxy
+    -net user,hostfwd=tcp:8080-:8080 \
+    windows-image.qcow2
+```
+
+## Data Access Rights
+
+### Submitting GDPR Data Requests
+
+EU residents can request their complete data profile from EA:
+
+1. Visit EA's privacy center
+2. Submit a "Data Access Request"
+3. Verify your identity with phone number or email
+4. Wait 30-45 days for download link
+5. Analyze exported files to see what was collected
+
+**Common data categories found in exports:**
+
+- Hardware inventory (GPU model, driver version, CPU specs)
+- Geographic location based on IP addresses
+- Session timestamps and duration
+- Payment history (anonymized)
+- Friend lists and social connections
+- Achievement progress and gameplay statistics
+- Account creation and modification dates
+
+### Requesting Data Deletion
+
+Under GDPR Article 17, you can request deletion if:
+
+- The data is no longer necessary for its original purpose
+- You withdraw consent for non-contractual processing
+- The EA account is no longer active
+
+EA must respond within 30 days with either deletion confirmation or explanation of why deletion cannot occur.
+
+## Compliance and Monitoring
+
+### Building Audit Logs
+
+For developers managing EA app usage across organizations:
+
+```python
+#!/usr/bin/env python3
+"""Monitor EA app compliance and data collection."""
+
+import json
+import subprocess
+import datetime
+from pathlib import Path
+
+def audit_ea_app():
+    """Generate audit report of EA app activity."""
+    report = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "running_processes": [],
+        "network_connections": [],
+        "registry_entries": []
+    }
+
+    # Check running processes
+    result = subprocess.run(
+        ['tasklist', '/FI', 'IMAGENAME eq EA*'],
+        capture_output=True, text=True
+    )
+    report["running_processes"] = result.stdout.split('\n')
+
+    # Check network connections
+    result = subprocess.run(
+        ['netstat', '-ano'],
+        capture_output=True, text=True
+    )
+    for line in result.stdout.split('\n'):
+        if 'ea.com' in line or '155.178' in line:
+            report["network_connections"].append(line)
+
+    return report
+
+if __name__ == "__main__":
+    audit = audit_ea_app()
+    print(json.dumps(audit, indent=2))
+```
+
+Run this script on a schedule to maintain compliance logs and catch unexpected EA app behavior.
+
 ## Frequently Asked Questions
 
 **Is this product worth the price?**

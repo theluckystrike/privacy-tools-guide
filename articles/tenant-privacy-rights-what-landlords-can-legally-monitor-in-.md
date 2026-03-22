@@ -223,6 +223,239 @@ For quick reference, here are key thresholds across major states:
 **Mandatory Disclosure States (monitoring devices):**
 - California, Washington, Colorado, Nevada
 
+## Practical Evidence Collection Toolkit
+
+### Photo Documentation Standards
+
+When photographing evidence of landlord surveillance, follow this protocol:
+
+```bash
+#!/bin/bash
+# Evidence documentation script
+
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+LOCATION=$1
+DESCRIPTION=$2
+
+# Create evidence folder
+mkdir -p "surveillance_evidence/${TIMESTAMP}"
+
+# Capture metadata
+cat > "surveillance_evidence/${TIMESTAMP}/metadata.txt" << EOF
+Date: $(date)
+Time: $(date +%H:%M:%S)
+Location: $LOCATION
+Description: $DESCRIPTION
+Device: $(uname -a)
+Camera: $(identify --version | head -1)
+EOF
+
+# Take photo with embedded timestamp
+convert -pointsize 20 -fill black -annotate +30+30 "$(date)" \
+    /dev/stdin "surveillance_evidence/${TIMESTAMP}/photo_${TIMESTAMP}.jpg"
+
+# Generate hash for evidence integrity
+sha256sum "surveillance_evidence/${TIMESTAMP}/photo_${TIMESTAMP}.jpg" >> \
+    "surveillance_evidence/${TIMESTAMP}/integrity.txt"
+
+echo "Evidence documented with hash verification"
+```
+
+### Video Evidence Capture
+
+For security camera or surveillance device documentation:
+
+```python
+#!/usr/bin/env python3
+"""Document surveillance devices with video evidence."""
+
+import cv2
+import hashlib
+from datetime import datetime
+from pathlib import Path
+
+def document_surveillance_device(device_description: str):
+    """Capture and hash video evidence of surveillance."""
+
+    # Create evidence directory
+    evidence_dir = Path(f"surveillance_evidence/{datetime.now().strftime('%Y%m%d_%H%M%S')}")
+    evidence_dir.mkdir(parents=True, exist_ok=True)
+
+    # Create metadata file
+    metadata = {
+        "timestamp": datetime.now().isoformat(),
+        "location": input("Location of device: "),
+        "description": device_description,
+        "angle": input("Estimated camera angle (e.g., 'facing doorway'): "),
+        "coverage_area": input("What area does this camera cover: ")
+    }
+
+    with open(evidence_dir / "metadata.json", "w") as f:
+        import json
+        json.dump(metadata, f, indent=2)
+
+    # Capture screenshot if available
+    try:
+        cap = cv2.VideoCapture(0)
+        ret, frame = cap.read()
+        if ret:
+            # Add timestamp to frame
+            cv2.putText(frame, datetime.now().isoformat(), (10, 30),
+                       cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+
+            photo_path = evidence_dir / "device_photo.jpg"
+            cv2.imwrite(str(photo_path), frame)
+
+            # Hash for integrity verification
+            with open(photo_path, "rb") as f:
+                file_hash = hashlib.sha256(f.read()).hexdigest()
+
+            with open(evidence_dir / "integrity.txt", "w") as f:
+                f.write(f"File: device_photo.jpg\n")
+                f.write(f"SHA256: {file_hash}\n")
+                f.write(f"Captured: {datetime.now().isoformat()}\n")
+
+        cap.release()
+    except Exception as e:
+        print(f"Could not capture video: {e}")
+
+    print(f"✓ Evidence documented in {evidence_dir}")
+
+# Usage
+document_surveillance_device("Security camera in hallway pointing toward apartment door")
+```
+
+## State-Specific Tenant Protections
+
+### California (Strictest Protection)
+
+**Pre-Entry Inspection Rights:**
+- 48-hour written notice required
+- Tenant can refuse entry without proper notice
+- Emergency entry only for fire, earthquake, structural hazard
+- Privacy violation liability: $100-$500 per violation
+
+**Surveillance Rights:**
+- Landlord must disclose all monitoring devices
+- Cameras inside unit prohibited
+- Common area cameras permitted with disclosure
+- Smart thermostat data collection must be disclosed
+
+**Tenant Action If Violated:**
+
+```python
+# California-specific violation reporting
+def file_ca_violation_report():
+    """Generate California rental violation complaint."""
+
+    violations = {
+        "entry_without_notice": {
+            "statute": "CA Civil Code 1954",
+            "penalty": "$100-$500 per violation",
+            "reporting_agency": "Local housing authority or court"
+        },
+        "undisclosed_cameras": {
+            "statute": "CA Civil Code 1708.8",
+            "penalty": "Punitive damages + exemplary damages",
+            "reporting_agency": "Local police + civil court"
+        },
+        "smart_device_data": {
+            "statute": "CA Consumer Privacy Act (CCPA)",
+            "penalty": "$100-$750 per consumer per incident",
+            "reporting_agency": "California Attorney General"
+        }
+    }
+
+    return violations
+
+# File complaint with California Attorney General
+print(file_ca_violation_report())
+```
+
+### New York (Strong Protection)
+
+**Key Rules:**
+- 24 hours notice (48 in NYC) required
+- Valid reasons: repairs, inspection, showing
+- Tenant can be present during entry
+- Recording tenant without consent prohibited
+
+### Texas (Weaker Protection)
+
+**Limited Requirements:**
+- "Reasonable" notice (undefined)
+- Can enter with minimal restrictions
+- Surveillance with disclosure acceptable
+- Few statutory penalties
+
+## Monitoring Devices Identification Guide
+
+### Common Landlord Monitoring Technologies
+
+| Device | Detection Method | Privacy Risk | Legal Status |
+|--------|---|---|---|
+| Acoustic monitoring | Wiretap detection tools | Very High | Illegal in most states |
+| Smart thermostat | Network scanning, firmware inspection | Medium | Requires disclosure CA/CO |
+| Motion sensor | Visible inspection | Low-Medium | Generally legal with notice |
+| Smart lock with logging | Technical inspection | Medium | Disclosure required in some states |
+| Hallway camera | Visible inspection | Low-Medium | Legal with notice in most states |
+| Hidden camera | Infrared detection | Very High | Illegal |
+
+### Network Device Discovery
+
+Identify connected monitoring devices on your network:
+
+```bash
+#!/bin/bash
+# Discover monitoring devices on network
+
+# Scan network for connected devices
+nmap -sn 192.168.1.0/24 | grep -E "Nmap scan report"
+
+# Identify smart home devices
+arp-scan -l | grep -E "Amazon|Google|Wyze|Nest|Ring|Arlo"
+
+# Monitor network traffic to suspicious IPs
+tcpdump -n 'dst 155.178.0.0/16 or dst 35.184.0.0/13' -w suspicious.pcap
+
+# Analyze with Wireshark
+wireshark suspicious.pcap
+```
+
+## Legal Documentation and Reporting
+
+### Creating an Evidence Dossier
+
+```markdown
+# Landlord Surveillance Violation Documentation
+
+## Incident 1: Undisclosed Camera Installation
+- **Date**: [YYYY-MM-DD]
+- **Time**: [HH:MM]
+- **Location**: [Specific location in unit]
+- **Evidence**:
+  - Photo: [hash value for integrity]
+  - Video: [hash value for integrity]
+  - Witness: [Name of person who observed]
+- **Actions Taken**:
+  1. Photographed device with timestamp
+  2. Identified model number
+  3. Cross-referenced with camera manuals
+  4. Confirmed recording capability
+- **Lease Violation**: Yes - Undisclosed monitoring device
+- **Relevant Law**: [Cite state statute]
+
+## Incident 2: Unauthorized Entry Without Notice
+- **Date**: [YYYY-MM-DD]
+- **Time**: [HH:MM]
+- **Evidence**:
+  - Email notification: [Date and time received]
+  - Notice period: [X hours before entry]
+  - Statutory requirement: [X hours required]
+  - Witness testimony available: Yes
+- **Follow-up Action**: [What you did - contacted landlord, sent certified letter, etc.]
+```
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

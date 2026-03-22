@@ -192,6 +192,79 @@ curl ifconfig.me
 
 The displayed IP should now be your VPS IP, confirming your traffic routes through the VPN.
 
+## Multi-Device Setup and Management
+
+For most power users, a single VPN server needs to serve multiple devices. Here's how to scale from one client to many:
+
+### Adding Additional Clients
+
+For each new device (laptop, phone, tablet), generate unique keys:
+
+```bash
+# On your local machine for each new device
+umask 077  # Ensure secure permissions
+wg genkey | tee device2_private.key | wg pubkey > device2_public.key
+
+# On the server, add the new peer
+wg set wg0 peer DEVICE2_PUBLIC_KEY allowed-ips 10.0.0.3/32
+```
+
+Assign sequential IPs: 10.0.0.2 (device 1), 10.0.0.3 (device 2), etc. This makes it easy to identify which device is connected.
+
+### Persisting Client Configurations
+
+WireGuard writes active configurations to `/etc/wireguard/wg0.conf` but you can preserve a backup:
+
+```bash
+# On server: backup configuration
+cp /etc/wireguard/wg0.conf /etc/wireguard/wg0.conf.bak
+
+# To view current active config after modifications:
+wg show wg0
+```
+
+### Managing 10+ Clients
+
+For teams or families sharing a VPN server, managing dozens of clients becomes tedious. Automate with a script:
+
+```bash
+#!/bin/bash
+# add_wireguard_peer.sh - Streamline adding new WireGuard clients
+
+PEER_NAME=$1
+PEER_IP=$2
+CONFIG_DIR="/etc/wireguard"
+
+if [ $# -ne 2 ]; then
+    echo "Usage: ./add_wireguard_peer.sh <name> <10.0.0.X>"
+    exit 1
+fi
+
+# Generate keys
+PRIVATE_KEY=$(wg genkey)
+PUBLIC_KEY=$(echo $PRIVATE_KEY | wg pubkey)
+
+# Add to server config
+wg set wg0 peer $PUBLIC_KEY allowed-ips $PEER_IP/32
+
+# Generate client config
+cat > ${PEER_NAME}-client.conf << EOF
+[Interface]
+PrivateKey = $PRIVATE_KEY
+Address = $PEER_IP/24
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = $(wg show wg0 public-key)
+Endpoint = your-vps-ip:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+EOF
+
+echo "Client config saved to ${PEER_NAME}-client.conf"
+wg show wg0
+```
+
 ### Step 4: Manage Persistent Connections
 
 To ensure your VPN reconnects automatically after reboots, enable the service on the client:
@@ -207,6 +280,52 @@ sudo apt install qrencode -y
 qrencode -t ansiutf8 < ~/wg0.conf
 ```
 
+## Performance Optimization
+
+WireGuard is fast, but configuration choices affect throughput. For personal use, defaults are fine. For heavy use:
+
+### UDP Buffer Tuning
+
+```bash
+# Increase socket buffers for higher throughput
+sysctl -w net.core.rmem_max=134217728
+sysctl -w net.core.wmem_max=134217728
+sysctl -w net.core.rmem_default=134217728
+sysctl -w net.core.wmem_default=134217728
+
+# Make persistent in /etc/sysctl.d/99-wireguard-perf.conf
+echo "net.core.rmem_max=134217728" >> /etc/sysctl.d/99-wireguard-perf.conf
+sysctl -p /etc/sysctl.d/99-wireguard-perf.conf
+```
+
+### MTU Configuration
+
+WireGuard adds overhead. Test your optimal MTU:
+
+```bash
+# Standard Ethernet MTU is 1500; WireGuard needs ~80 bytes overhead
+# Try 1420 for balance between throughput and compatibility
+
+wg set wg0 mtu 1420
+
+# Verify in client config
+ip link show wg0
+```
+
+### Bandwidth Testing
+
+After setup, verify actual throughput:
+
+```bash
+# On server: iperf3 server
+iperf3 -s
+
+# On client (through VPN)
+iperf3 -c your-vps-ip -P 4 -t 30
+```
+
+Most personal VPN servers see 100-500 Mbps depending on hardware and network. This is sufficient for browsing, video calling, and streaming.
+
 ## Security Considerations
 
 When running your own VPN server, keep these practices in mind:
@@ -215,6 +334,64 @@ When running your own VPN server, keep these practices in mind:
 - **Regular Updates**: Keep your server packages updated for security patches
 - **Key Management**: Never share your private keys; rotate them periodically
 - **Fail2ban**: Consider installing fail2ban to protect against brute force attacks
+
+### Advanced Security Hardening
+
+For maximum security, implement layered defenses:
+
+```bash
+# 1. Set up UFW (Uncomplicated Firewall)
+apt install ufw -y
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 22/tcp  # SSH access
+ufw allow 51820/udp  # WireGuard
+ufw enable
+
+# 2. Disable IPv6 if not needed (reduces attack surface)
+echo "net.ipv6.conf.all.disable_ipv6=1" >> /etc/sysctl.conf
+sysctl -p
+
+# 3. Implement rate limiting on WireGuard port
+iptables -A INPUT -p udp --dport 51820 -m limit --limit 5/s --limit-burst 10 -j ACCEPT
+iptables -A INPUT -p udp --dport 51820 -j DROP
+
+# 4. Install fail2ban for SSH brute-force protection
+apt install fail2ban -y
+systemctl enable fail2ban
+```
+
+### Certificate Rotation Strategy
+
+WireGuard uses symmetric keys, not certificates, but key rotation is still important:
+
+```bash
+# Monthly key rotation (example cron job)
+# Create ~/rotate-wireguard-keys.sh:
+
+#!/bin/bash
+TIMESTAMP=$(date +%Y%m%d)
+BACKUP_DIR="/var/backups/wireguard"
+mkdir -p $BACKUP_DIR
+
+# Backup current keys
+cp /etc/wireguard/wg0.conf $BACKUP_DIR/wg0-$TIMESTAMP.conf
+
+# Rotate server keys
+NEW_PRIVKEY=$(wg genkey)
+NEW_PUBKEY=$(echo $NEW_PRIVKEY | wg pubkey)
+
+# Update config
+sed -i "s/^PrivateKey = .*/PrivateKey = $NEW_PRIVKEY/" /etc/wireguard/wg0.conf
+
+# Restart interface
+wg-quick down wg0
+wg-quick up wg0
+
+echo "Keys rotated on $TIMESTAMP"
+```
+
+Then add to crontab: `0 0 1 * * /root/rotate-wireguard-keys.sh`
 
 ## Troubleshooting Common Issues
 
