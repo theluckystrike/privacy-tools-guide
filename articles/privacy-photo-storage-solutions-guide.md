@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # Privacy-Focused Photo Storage Solutions
 
 Google Photos and Apple iCloud analyze every photo you upload — detecting faces, locations, objects, and content. This analysis powers their search features, but also creates detailed behavioral profiles. Alternatives range from self-hosted solutions you run yourself to zero-knowledge cloud options where the provider can't read your photos.
-
 ---
 
 ## What Photo Services Analyze
@@ -334,4 +332,3 @@ For most users starting from scratch: Ente Photos is the quickest path to meanin
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

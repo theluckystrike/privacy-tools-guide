@@ -10,8 +10,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -20,7 +19,6 @@ tags: [privacy-tools-guide]
 LUKS full-disk encryption protects everything on a disk. But sometimes you need a portable, specific encrypted container — a single file that acts like an encrypted vault you can move around, back up, or mount on any Linux system. This is done using a loop device: LUKS on a regular file.
 
 This guide walks through creating a LUKS2 container from scratch, including choosing the right cipher and key derivation function, managing keyslots, backing up the header, resizing the container, and using convenience scripts for daily use.
-
 ---
 
 ## Why a Container File vs Full Disk Encryption
@@ -247,7 +245,7 @@ Shrinking a LUKS container is more complex and risky — you must shrink the fil
 ## Portable Use
 
 The `vault.luks` file can be:
-- Copied to a USB drive and opened on any Linux system
+- Copied to an USB drive and opened on any Linux system
 - Backed up to encrypted cloud storage
 - Transferred via OnionShare
 
@@ -416,4 +414,3 @@ Automated container backups should use locked (unmounted) containers only.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

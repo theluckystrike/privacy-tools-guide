@@ -11,8 +11,21 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]
+tags: [privacy-tools-guide, privacy]---
 ---
+layout: default
+title: "macOS Spotlight Privacy Settings Disable Tracking"
+description: "Learn how to configure macOS Spotlight privacy settings to minimize tracking, prevent data leakage, and control what information is indexed and shared"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: theluckystrike
+permalink: /macos-spotlight-privacy-settings-disable-tracking/
+categories: [guides, security]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -194,8 +207,6 @@ Beyond Spotlight configuration, consider these complementary measures:
 
 macOS provides detailed privacy controls, but they require intentional configuration. By understanding how Spotlight indexes and exposes your data, you can make informed decisions about what remains searchable and what stays private.
 
-
-
 ## Performance Impact of Disabling Spotlight
 
 System-wide Spotlight disablement affects search speed across macOS:
@@ -346,7 +357,6 @@ No. Even with exclusions, Spotlight indexes files you might forget to exclude. F
 Initial impact: 30+ minutes of background indexing stops.
 Ongoing impact: Spotlight and Siri become slower (5-30 second searches instead of instant).
 RAM/disk impact: Saves ~5GB of index data.
-
 
 ## Related Articles
 

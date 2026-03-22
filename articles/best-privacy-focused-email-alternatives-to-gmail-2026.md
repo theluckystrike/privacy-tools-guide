@@ -11,8 +11,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, best-of, privacy]
----
+tags: [privacy-tools-guide, best-of, privacy]---
 
 {% raw %}
 
@@ -285,11 +284,11 @@ Script to track progress:
 ```
 Update Tracking Sheet:
 
-Account | Old Email | New Email | Updated | 2FA Enabled
---------|-----------|-----------|---------|-------------
-Bank    | old@gmail.com | me@protonmail.com | ✓ | ✓
-Amazon  | old@gmail.com | me@protonmail.com | ✓ | ✓
-GitHub  | old@gmail.com | me@protonmail.com | ✓ | ✗
+Account | Old Email | New Email | Updated | 2FA Enabled---
+-----|-----------|-----------|---------|-------------
+Bank | old@gmail.com | me@protonmail.com | ✓ | ✓
+Amazon | old@gmail.com | me@protonmail.com | ✓ | ✓
+GitHub | old@gmail.com | me@protonmail.com | ✓ | ✗
 ...
 ```
 
@@ -326,17 +325,17 @@ Before leaving Gmail, export everything:
 Two strategies:
 
 1. Keep Gmail alive:
-   - Use it only for password recovery
-   - Don't check it regularly
-   - Keep password strong and 2FA enabled
-   - Eventually it becomes dead account holding old data
+ - Use it only for password recovery
+ - Don't check it regularly
+ - Keep password strong and 2FA enabled
+ - Eventually it becomes dead account holding old data
 
 2. Delete it:
-   - 6-12 months after migrating main accounts
-   - Download all data first (Takeout)
-   - Delete everything
-   - Then delete the account itself
-   - Nuclear option: most thorough privacy protection
+ - 6-12 months after migrating main accounts
+ - Download all data first (Takeout)
+ - Delete everything
+ - Then delete the account itself
+ - Nuclear option: most thorough privacy protection
 ```
 
 ## Comparison Matrix
@@ -357,34 +356,34 @@ Two strategies:
 
 ```
 1. Don't expose it everywhere
-   - Your privacy email should be private
-   - Use aliases/forwarding for services
-   - Don't publish it in profiles or websites
+ - Your privacy email should be private
+ - Use aliases/forwarding for services
+ - Don't publish it in profiles or websites
 
 2. Enable two-factor authentication
-   - Email is the recovery key to everything
-   - 2FA makes it fortress-like
+ - Email is the recovery key to everything
+ - 2FA makes it fortress-like
 
 3. Use strong, unique password
-   - Consider password manager (Bitwarden, 1Password, ProtonPass)
-   - Generate 20+ character passwords
-   - Store in password manager encrypted vault
+ - Consider password manager (Bitwarden, 1Password, ProtonPass)
+ - Generate 20+ character passwords
+ - Store in password manager encrypted vault
 
 4. Backup your recovery codes
-   - When enabling 2FA, save recovery codes
-   - Print and store in safe location
-   - Never share with anyone
+ - When enabling 2FA, save recovery codes
+ - Print and store in safe location
+ - Never share with anyone
 
 5. Create aliases for different purposes
-   - Personal: you@protonmail.com
-   - Shopping: shopping@protonmail.com
-   - Services: services@protonmail.com
-   - This limits exposure if one alias is breached
+ - Personal: you@protonmail.com
+ - Shopping: shopping@protonmail.com
+ - Services: services@protonmail.com
+ - This limits exposure if one alias is breached
 
 6. Regularly review security
-   - Check account recovery settings monthly
-   - Review connected apps/devices
-   - Revoke access from unused devices
+ - Check account recovery settings monthly
+ - Review connected apps/devices
+ - Revoke access from unused devices
 ```
 
 ## When Privacy Email Isn't Enough
@@ -420,35 +419,27 @@ For maximum privacy: **Choose Tutanota** (€4/month)
 
 The best email provider is the one you'll actually use consistently. Privacy is only valuable if you maintain it.
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Are there free alternatives available?**
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 
@@ -459,4 +450,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

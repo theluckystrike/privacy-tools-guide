@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Messaging for Journalists Guide"
-description: "Choose and configure Signal, Briar, and SecureDrop for journalist-source communication, including metadata protection, device hygiene, and air-gap considerations"
+description: "Choose and configure Signal, Briar, and SecureDrop for journalist-source communication, including metadata protection, device hygiene, and air-gap"
 date: 2026-03-22
 author: theluckystrike
 permalink: /encrypted-messaging-for-journalists-guide/
@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # Encrypted Messaging for Journalists Guide
 
 Journalist-source communication faces a specific threat model: state actors, corporate investigators, and law enforcement who may have access to carrier metadata, subpoena powers, and device seizure capabilities. Encrypting the message content is the minimum. Protecting metadata — who messaged whom, when, how often — often matters more.
-
 ---
 
 ## Threat Model for Journalists
@@ -273,4 +271,3 @@ Practical implications:
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

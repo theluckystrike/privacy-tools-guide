@@ -10,8 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -20,7 +19,6 @@ tags: [privacy-tools-guide]
 ClamAV is the standard open-source antivirus for Linux. It's particularly useful for mail servers (scanning attachments), shared storage, and systems that handle files from Windows machines. On a Linux desktop, the main threat model is files you receive from others — email attachments, downloaded archives, USB drives from other people.
 
 This guide covers a complete ClamAV deployment: installation across major distributions, signature update automation, on-demand and on-access scanning, scheduled weekly scans, quarantine management, and mail server integration with Postfix.
-
 ---
 
 ## Install ClamAV
@@ -304,7 +302,7 @@ ExcludePath /home/.*/\.git/
 ExcludePath /home/.*/node_modules/
 ```
 
-The `node_modules` exclusion matters on developer workstations — a typical JavaScript project contains tens of thousands of small files that would take hours to scan and have essentially zero malware risk. The `.git` directory exclusion similarly prevents scanning object blobs that contain historical file contents, which can trigger false positives on files that historically contained known-bad strings.
+The `node_modules` exclusion matters on developer workstations — a typical JavaScript project contains tens of thousands of small files that would take hours to scan and have zero malware risk. The `.git` directory exclusion similarly prevents scanning object blobs that contain historical file contents, which can trigger false positives on files that historically contained known-bad strings.
 
 To benchmark scan time, use `time clamdscan -r --no-summary /home/user/` before and after applying exclusions. On a workstation with a typical developer home directory, the difference is often 45 minutes versus under 5 minutes — with no meaningful reduction in actual threat detection coverage.
 
@@ -320,4 +318,3 @@ To benchmark scan time, use `time clamdscan -r --no-summary /home/user/` before 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

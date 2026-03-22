@@ -11,8 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]
----
+tags: [privacy-tools-guide, security]---
 
 {% raw %}
 
@@ -147,17 +146,16 @@ metadata:
   name: db-credentials
 type: Opaque
 data:
-  password: <base64-encoded-password>
----
+  password: <base64-encoded-password>---
 spec:
-  containers:
-  - name: myapp
-    env:
-    - name: DB_PASSWORD
-      valueFrom:
-        secretKeyRef:
-          name: db-credentials
-          key: password
+ containers:
+ - name: myapp
+ env:
+ - name: DB_PASSWORD
+ valueFrom:
+ secretKeyRef:
+ name: db-credentials
+ key: password
 ```
 
 For production, use a proper secrets manager (HashiCorp Vault, AWS Secrets Manager) rather than Kubernetes Secrets, which are only base64-encoded by default.
@@ -184,13 +182,13 @@ Integrate into a GitHub Actions workflow:
 
 ```yaml
 - name: Scan image with Trivy
-  uses: aquasecurity/trivy-action@master
-  with:
-    image-ref: myapp:${{ github.sha }}
-    format: sarif
-    output: trivy-results.sarif
-    severity: HIGH,CRITICAL
-    exit-code: 1
+ uses: aquasecurity/trivy-action@master
+ with:
+ image-ref: myapp:${{ github.sha }}
+ format: sarif
+ output: trivy-results.sarif
+ severity: HIGH,CRITICAL
+ exit-code: 1
 ```
 
 ## Restrict Container Capabilities
@@ -203,11 +201,11 @@ docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE myapp
 
 # Or in docker-compose.yml
 services:
-  myapp:
-    cap_drop:
-      - ALL
-    cap_add:
-      - NET_BIND_SERVICE
+ myapp:
+ cap_drop:
+ - ALL
+ cap_add:
+ - NET_BIND_SERVICE
 ```
 
 Common capabilities you almost never need:
@@ -223,23 +221,23 @@ Make the container filesystem read-only and mount writable volumes only where ne
 
 ```bash
 docker run --read-only \
-  --tmpfs /tmp \
-  --tmpfs /var/run \
-  -v /data/app-uploads:/app/uploads \
-  myapp
+ --tmpfs /tmp \
+ --tmpfs /var/run \
+ -v /data/app-uploads:/app/uploads \
+ myapp
 ```
 
 In docker-compose:
 
 ```yaml
 services:
-  myapp:
-    read_only: true
-    tmpfs:
-      - /tmp
-      - /var/run
-    volumes:
-      - app-uploads:/app/uploads
+ myapp:
+ read_only: true
+ tmpfs:
+ - /tmp
+ - /var/run
+ volumes:
+ - app-uploads:/app/uploads
 ```
 
 A read-only root filesystem prevents attackers from writing backdoors, modifying binaries, or installing tools.
@@ -250,23 +248,23 @@ By default, all containers on a Docker network can talk to each other. Use expli
 
 ```yaml
 services:
-  web:
-    networks:
-      - frontend
-      - backend
+ web:
+ networks:
+ - frontend
+ - backend
 
-  api:
-    networks:
-      - backend
+ api:
+ networks:
+ - backend
 
-  db:
-    networks:
-      - backend
+ db:
+ networks:
+ - backend
 
 networks:
-  frontend:
-  backend:
-    internal: true   # No internet access
+ frontend:
+ backend:
+ internal: true # No internet access
 ```
 
 In Kubernetes, use NetworkPolicies:
@@ -275,28 +273,28 @@ In Kubernetes, use NetworkPolicies:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: deny-all-ingress
+ name: deny-all-ingress
 spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
-  - Egress
+ podSelector: {}
+ policyTypes:
+ - Ingress
+ - Egress
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-api-to-db
+ name: allow-api-to-db
 spec:
-  podSelector:
-    matchLabels:
-      app: database
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: api
-    ports:
-    - port: 5432
+ podSelector:
+ matchLabels:
+ app: database
+ ingress:
+ - from:
+ - podSelector:
+ matchLabels:
+ app: api
+ ports:
+ - port: 5432
 ```
 
 ## Runtime Security Monitoring
@@ -329,35 +327,27 @@ Falco detects events like:
 - [ ] Health checks defined
 - [ ] Container logs shipped to centralized logging
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Are there free alternatives available?**
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 
@@ -368,4 +358,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

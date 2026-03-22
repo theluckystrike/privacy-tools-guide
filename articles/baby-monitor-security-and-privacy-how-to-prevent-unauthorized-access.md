@@ -11,9 +11,7 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, security, privacy]
-
----
+tags: [privacy-tools-guide, security, privacy]---
 
 {% raw %}
 
@@ -108,7 +106,6 @@ sudo nmap -sn 192.168.1.0/24 | grep -E '(Nmap scan|MAC Address|report for)'
 sudo tcpdump -i eth0 host 192.168.1.50 -n 2>/dev/null | head -40
 ```
 
-
 ### Firewall Rules
 
 Configure your router's firewall to block incoming connections to your baby monitor except from your authorized devices.
@@ -130,7 +127,6 @@ sudo apt install wireguard
 wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /etc/wireguard/server_public.key
 # Enable: sudo systemctl enable --now wg-quick@wg0
 ```
-
 
 ## Physical Security Measures
 
@@ -284,35 +280,27 @@ Tailor your security approach to your actual threat:
 - Professional security audit of entire network
 - Consult security researchers before selecting specific monitor
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to prevent?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

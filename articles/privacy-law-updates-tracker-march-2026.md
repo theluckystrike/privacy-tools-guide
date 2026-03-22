@@ -11,8 +11,21 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
+layout: default
+title: "Privacy Law Updates Tracker March 2026"
+description: "A tracker of privacy law updates affecting developers and power users in March 2026. Stay compliant with the latest regulatory changes"
+date: 2026-03-15
+last_modified_at: 2026-03-22
+author: theluckystrike
+permalink: /privacy-law-updates-tracker-march-2026/
+categories: [guides]
+tags: [privacy-tools-guide, tools, privacy]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true---
 
 {% raw %}
 
@@ -207,7 +220,7 @@ Treat consent management as a first-class feature. Regulations increasingly rewa
 Generally, no. GPC and US state privacy laws primarily cover consumer data — data collected about individuals acting in a personal capacity. Business contact information is a gray area; consult legal counsel for your specific situation.
 
 **When does the EU AI Act's transparency requirement take effect for non-EU companies?**
-The AI Act applies when your system is accessible to EU residents, regardless of where your company is based. Article 50a applies to systems placed on the EU market or put into service in the EU.
+The AI Act applies when your system is accessible to EU residents, regardless of where your company is based. Article 50an applies to systems placed on the EU market or put into service in the EU.
 
 **How long must consent records be retained?**
 Under GDPR, retain consent records for as long as you rely on that consent as a legal basis, plus a reasonable period to defend against potential claims. Texas and Colorado have not specified retention periods but require that you can produce records during an investigation.
@@ -553,7 +566,6 @@ EOF
 ```
 
 Import into your project management tool and set weekly reviews.
-
 
 - [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [GDPR Compliance Tools for Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)

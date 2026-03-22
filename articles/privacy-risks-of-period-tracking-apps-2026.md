@@ -11,16 +11,27 @@ tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security, pri
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
+layout: default
+title: "Privacy Risks of Period Tracking Apps 2026"
+description: "Data collection by Flo, Clue, Natural Cycles. Legal risks post-Dobbs, privacy-preserving alternatives, data deletion guides."
+date: 2026-03-21
+last_modified_at: 2026-03-21
+author: "Privacy Tools Guide"
+permalink: /privacy-risks-of-period-tracking-apps-2026/
+categories: [guides]
+tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security, privacy]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true---
 
 {% raw %}
 
 Period tracking apps (Flo, Clue, Natural Cycles) collect intimate health data—menstrual cycle timing, flow, symptoms, sexual activity, contraceptive use—and share it with advertisers, data brokers, and third-party analytics. Post-Dobbs decision, this data is legally exploitable by law enforcement in states criminalizing abortion. Flo has admitted sharing data without consent; Clue recently encrypted data by default but collects anyway; Natural Cycles' failure to protect users resulted in lawsuits. For privacy, use open-source tools (Gnome Calendar with local tracking, Drip, or Periodica), offline-first apps, or simple calendar notation. Understand each app's data practices before use. Delete accounts and request data erasure from companies. Consider periodic in-app anonymization: use aliases, track minimal data, avoid sharing with apps and platforms.
 
-
 ## Why Period Tracking Data Is Sensitive
-
 
 Period tracking apps record:
 - Exact menstrual cycle dates (when you menstruate)
@@ -43,12 +54,9 @@ In the context of post-Dobbs America, where abortion is criminalized in multiple
 
 The legal environment is evolving: 14 states have explicit protections for reproductive health data, but most states lack protection. Federal protections are limited. App providers' privacy policies can change at any time.
 
-
 ## Major App Platforms and Their Data Practices
 
-
 ### Flo: Data Sharing Admitted
-
 
 Flo (owned by Knowwomen) is the largest period tracking app with 20+ million users. In 2021, Flo admitted sharing user data with third parties—including Facebook, Google, Amazon—without explicit consent.
 
@@ -71,7 +79,6 @@ Flo (owned by Knowwomen) is the largest period tracking app with 20+ million use
 **Assessment**: Flo is among the worst offenders. Avoid unless you have strong technical controls (VPN, burner phone, minimal data entry).
 
 ### Clue: Encryption as PR Stunt?
-
 
 Clue is marketed as privacy-first. In 2022, Clue announced end-to-end encryption for user data. However, Clue still collects extensive usage data.
 
@@ -96,7 +103,6 @@ Clue is marketed as privacy-first. In 2022, Clue announced end-to-end encryption
 
 ### Natural Cycles: Contraceptive Failure and Data Misuse
 
-
 Natural Cycles is marketed as an FDA-cleared contraceptive. In 2018, Swedish regulators found Natural Cycles' security was inadequate and contraceptive efficacy claims were overstated. Users became pregnant despite using the app correctly.
 
 **Data practices**:
@@ -113,7 +119,6 @@ Natural Cycles is marketed as an FDA-cleared contraceptive. In 2018, Swedish reg
 **Assessment**: Natural Cycles combines inadequate security with health claims they cannot meet. Avoid entirely if seeking reliable birth control; consider only if using as tracking tool with backup contraception.
 
 ### Periodica: Privacy-Respecting Alternative
-
 
 Periodica (open-source, built by Privacy Guides) is designed as a privacy-respecting period tracker.
 
@@ -133,7 +138,6 @@ Periodica (open-source, built by Privacy Guides) is designed as a privacy-respec
 
 ### Drip: Privacy-First Open-Source
 
-
 Drip is another privacy-focused period tracker (open-source, Android app).
 
 **Data practices**:
@@ -149,9 +153,7 @@ Drip is another privacy-focused period tracker (open-source, Android app).
 
 **Assessment**: Best privacy choice for technical users willing to maintain infrastructure.
 
-
 ## Legal Risks Post-Dobbs
-
 
 Post-Dobbs decision (June 2022), reproductive health data became legally vulnerable in ways it wasn't before.
 
@@ -187,7 +189,6 @@ Data brokers aggregate data and sell to law enforcement:
 - Your location history + period tracking = identifiable reproductive behavior
 
 ## Safe Tracking Practices
-
 
 If you choose to track your period, minimize data exposure:
 
@@ -284,7 +285,6 @@ Individual privacy practices matter but are insufficient. Systemic change requir
 
 ## Recommendations Summary
 
-
 **Best privacy**: Use open-source, offline-first tracker (Periodica, Drip) on device without internet connectivity.
 
 **Good privacy**: Use Clue (improved encryption) on device with strong authentication, disable app permissions (location, contacts), no cloud sync.
@@ -301,34 +301,27 @@ Individual privacy practices matter but are insufficient. Systemic change requir
 5. Check data brokers and request removal
 6. Advocate for legal protections in your state
 
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Are there free alternatives available?**
 
 Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 

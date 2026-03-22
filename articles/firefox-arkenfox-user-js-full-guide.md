@@ -11,8 +11,21 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide]---
 ---
+layout: default
+title: "Firefox Arkenfox User Js Full Guide"
+description: "A guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: theluckystrike
+permalink: /firefox-arkenfox-user-js-full-guide/
+categories: [guides, security]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]---
 
 {% raw %}
 

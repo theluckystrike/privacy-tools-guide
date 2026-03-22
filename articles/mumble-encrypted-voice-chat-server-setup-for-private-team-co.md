@@ -11,8 +11,7 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -247,54 +246,53 @@ data:
     bandwidth=128000
     maxusers=200
     sslCert=/etc/mumble-certs/cert.pem
-    sslKey=/etc/mumble-certs/key.pem
----
+    sslKey=/etc/mumble-certs/key.pem---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mumble-server
+ name: mumble-server
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: mumble
-  template:
-    metadata:
-      labels:
-        app: mumble
-    spec:
-      containers:
-      - name: murmur
-        image: golang/murmur:latest
-        ports:
-        - containerPort: 64738
-          protocol: TCP
-        - containerPort: 64738
-          protocol: UDP
-        volumeMounts:
-        - name: config
-          mountPath: /etc/mumble
-        - name: certs
-          mountPath: /etc/mumble-certs
-        - name: data
-          mountPath: /var/lib/murmur
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "500m"
-          limits:
-            memory: "512Mi"
-            cpu: "1000m"
-      volumes:
-      - name: config
-        configMap:
-          name: mumble-config
-      - name: certs
-        secret:
-          secretName: mumble-certs
-      - name: data
-        persistentVolumeClaim:
-          claimName: mumble-data
+ replicas: 1
+ selector:
+ matchLabels:
+ app: mumble
+ template:
+ metadata:
+ labels:
+ app: mumble
+ spec:
+ containers:
+ - name: murmur
+ image: golang/murmur:latest
+ ports:
+ - containerPort: 64738
+ protocol: TCP
+ - containerPort: 64738
+ protocol: UDP
+ volumeMounts:
+ - name: config
+ mountPath: /etc/mumble
+ - name: certs
+ mountPath: /etc/mumble-certs
+ - name: data
+ mountPath: /var/lib/murmur
+ resources:
+ requests:
+ memory: "256Mi"
+ cpu: "500m"
+ limits:
+ memory: "512Mi"
+ cpu: "1000m"
+ volumes:
+ - name: config
+ configMap:
+ name: mumble-config
+ - name: certs
+ secret:
+ secretName: mumble-certs
+ - name: data
+ persistentVolumeClaim:
+ claimName: mumble-data
 ```
 
 ## Monitoring and Security Auditing
@@ -354,52 +352,52 @@ import os
 import json
 
 class MumbleClientHardener:
-    def __init__(self, config_dir):
-        self.config_dir = config_dir
-        self.config_file = os.path.join(config_dir, 'mumble.ini')
+ def __init__(self, config_dir):
+ self.config_dir = config_dir
+ self.config_file = os.path.join(config_dir, 'mumble.ini')
 
-    def harden_settings(self):
-        """Apply security hardening to client configuration."""
-        settings = {
-            # Audio settings
-            'audio/input_mictype': 0,  # Push-to-talk
-            'audio/input_micboost': 0,  # No microphone boost
-            'audio/mute_when_away': True,
-            'audio/output_maximumvolume': 100,
+ def harden_settings(self):
+ """Apply security hardening to client configuration."""
+ settings = {
+ # Audio settings
+ 'audio/input_mictype': 0, # Push-to-talk
+ 'audio/input_micboost': 0, # No microphone boost
+ 'audio/mute_when_away': True,
+ 'audio/output_maximumvolume': 100,
 
-            # Security settings
-            'security/tls_min_version': 'TLSv1.2',
-            'security/verify_certificate': True,
-            'security/force_https': True,
+ # Security settings
+ 'security/tls_min_version': 'TLSv1.2',
+ 'security/verify_certificate': True,
+ 'security/force_https': True,
 
-            # Privacy settings
-            'privacy/allow_html': False,
-            'privacy/allow_external_links': False,
-            'privacy/certificate_required': True,
+ # Privacy settings
+ 'privacy/allow_html': False,
+ 'privacy/allow_external_links': False,
+ 'privacy/certificate_required': True,
 
-            # Network settings
-            'network/protocol': 'TCP',  # Force TCP over UDP if on restricted network
-            'network/keepalive': 30,
+ # Network settings
+ 'network/protocol': 'TCP', # Force TCP over UDP if on restricted network
+ 'network/keepalive': 30,
 
-            # UI settings
-            'ui/always_enable_push_to_talk': True,
-            'ui/hide_frames': True,  # Hide window frames when minimized
-        }
+ # UI settings
+ 'ui/always_enable_push_to_talk': True,
+ 'ui/hide_frames': True, # Hide window frames when minimized
+ }
 
-        return settings
+ return settings
 
-    def generate_config(self):
-        """Generate hardened configuration."""
-        settings = self.harden_settings()
+ def generate_config(self):
+ """Generate hardened configuration."""
+ settings = self.harden_settings()
 
-        config_content = "[General]\n"
-        for key, value in settings.items():
-            config_content += f"{key}={value}\n"
+ config_content = "[General]\n"
+ for key, value in settings.items():
+ config_content += f"{key}={value}\n"
 
-        with open(self.config_file, 'w') as f:
-            f.write(config_content)
+ with open(self.config_file, 'w') as f:
+ f.write(config_content)
 
-        print(f"Hardened config written to {self.config_file}")
+ print(f"Hardened config written to {self.config_file}")
 
 # Usage
 hardener = MumbleClientHardener(os.path.expanduser('~/.config/Mumble'))
@@ -430,7 +428,7 @@ gzip "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite"
 
 # Encrypt backup (optional)
 openssl enc -aes-256-cbc -in "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz" \
-    -out "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc" -pass pass:backup_password
+ -out "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc" -pass pass:backup_password
 
 # Remove unencrypted backup
 rm "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz"
@@ -442,7 +440,7 @@ echo "Backup completed: $BACKUP_DIR"
 
 # Verify backup integrity
 if [ -f "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc" ]; then
-    ls -lh "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc"
+ ls -lh "$BACKUP_DIR/murmur_$TIMESTAMP.sqlite.gz.enc"
 fi
 ```
 
@@ -472,34 +470,27 @@ maxconcurrentconnections=500
 timeout=30
 ```
 
-
 ## Frequently Asked Questions
-
 
 **How long does it take to private team?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 
@@ -510,4 +501,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

@@ -11,8 +11,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -250,7 +249,6 @@ No. Transfer regulations apply based on where data originates and where it is pr
 **How do I document transfers to US cloud providers under DPF?**
 
 Verify the provider's DPF certification at dataprivacyframework.gov, document the certification date and scope in your RoPA, and retain a copy of the certification. If the provider loses certification (as happened with thousands of companies under Privacy Shield), you must have SCCs ready to implement immediately.
-
 ---
 
 
@@ -263,4 +261,4 @@ Verify the provider's DPF certification at dataprivacyframework.gov, document th
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
