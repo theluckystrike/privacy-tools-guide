@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Enable two-factor authentication on your Apple ID, review Settings → [Your Name] → Password & Security → Active Sessions to see all connected devices and sign out untrusted ones, then set up strong authentication requirements for recovery options. Use an app-specific password instead of your main password for third-party apps, regularly audit trusted phone numbers in recovery settings, and enable Sign in with Apple for additional control. Change your Apple ID password immediately if you suspect unauthorized access.

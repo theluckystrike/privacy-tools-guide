@@ -25,6 +25,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, accessibility, privacy]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Maintaining digital privacy is essential for all users, including blind and visually impaired individuals who rely on screen readers. This guide evaluates privacy tools based on actual screen reader compatibility, keyboard accessibility, and the ability to operate entirely through audio feedback. The tools selected work with popular screen readers including NVDA, JAWS, VoiceOver, and Orca.
