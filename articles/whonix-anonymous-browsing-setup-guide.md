@@ -275,6 +275,85 @@ sudo virsh snapshot-revert Whonix-Workstation-XFCE clean-state
 
 ---
 
+## Updating Whonix Safely
+
+Keeping Whonix current is critical — security patches are released regularly. Both VMs must be updated independently.
+
+```bash
+# On the Gateway (run first)
+sudo apt update && sudo apt full-upgrade -y
+
+# On the Workstation (run after Gateway is updated and running)
+sudo apt update && sudo apt full-upgrade -y
+```
+
+Whonix routes all apt traffic through Tor automatically, so updates are private by design. Never update the Gateway while the Workstation is doing sensitive work — a restart of the Gateway drops the Tor circuit.
+
+### Verifying Whonix Integrity After Updates
+
+```bash
+# Run Whonix's built-in health check after updates
+whonixcheck
+
+# This verifies:
+# - Tor is connected
+# - Clock is synchronized (critical for Tor anonymity)
+# - System packages are at current versions
+# - No obvious configuration errors
+```
+
+If `whonixcheck` reports a clock skew of more than a few minutes, do not use Whonix for anonymous work until it resolves — Tor circuits can be correlated when timestamps are off.
+
+---
+
+## Persistent vs. Non-Persistent Workstation
+
+The Workstation can be used in two modes:
+
+**Persistent mode** (default): Files and settings survive reboots. Useful for ongoing projects, but any malware or compromise also persists.
+
+**Amnesic mode** (snapshot-based): Take a clean snapshot after initial setup, then revert to it after each session. This is the closest Whonix gets to Tails-style amnesic operation.
+
+```bash
+# VirtualBox: revert to clean snapshot after each session
+VBoxManage snapshot "Whonix-Workstation" restore "clean-2026-03-22"
+
+# KVM: revert to named snapshot
+sudo virsh snapshot-revert Whonix-Workstation-XFCE clean-state --running
+```
+
+For the highest-risk work, use amnesic mode. For everyday anonymous browsing where session continuity matters, persistent mode with careful OPSEC is acceptable.
+
+---
+
+## Whonix vs. Tails: When to Use Which
+
+Both tools provide anonymity, but they suit different threat models:
+
+| Scenario | Use Whonix | Use Tails |
+|----------|-----------|-----------|
+| Long-running research project | Yes — persistence is useful | No — everything is lost on reboot |
+| Anonymous one-off task | Either works | Yes — leaves no trace on host |
+| Compromised host OS | No — host compromise affects VMs | Yes — runs independently of host OS |
+| Offline document work | Yes | Yes |
+| Requires custom software | Yes — persistent install | No — re-install each session |
+
+If your host OS is untrusted, Tails is the better choice because it runs from USB without touching the host drive. If you need a persistent, customized anonymous environment, Whonix is better.
+
+---
+
+## Common Mistakes That Break Anonymity
+
+**Using Whonix Workstation without the Gateway running.** The Workstation's network interface points to the Gateway's internal IP. If the Gateway is down, network connections will fail — not silently route around Tor. Verify Gateway is running and connected before starting the Workstation.
+
+**Logging into personal accounts.** If you log into Gmail, Facebook, or any account linked to your real identity, you have deanonymized yourself regardless of what Tor circuit you're on. Keep Whonix identities completely separate from real identities.
+
+**Copying files from host to Workstation via shared folders.** Shared folders create a path between host and VM. Use a one-way file-drop approach if you must transfer files, and be aware that file metadata can carry identifying information.
+
+**Ignoring clock sync warnings.** Tor's anonymity properties degrade when timestamps are wrong. Always resolve clock sync issues before doing sensitive work.
+
+---
+
 ## Related Reading
 
 - [Whonix vs Tails for Anonymous Browsing 2026](/privacy-tools-guide/whonix-vs-tails-for-anonymous-browsing-2026/)
