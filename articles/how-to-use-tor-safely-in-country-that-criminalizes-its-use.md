@@ -298,7 +298,7 @@ Some argue running Tor over a VPN adds a layer of obfuscation. However, this has
 # - May evade DPI that looks for Tor signatures
 
 # RECOMMENDATION: Only if your threat model includes ISP monitoring
-# but not comprehensive government surveillance
+# but not thorough government surveillance
 ```
 
 This is controversial because it introduces a new choke point. Only use this if your ISP blocking is the primary threat and you trust your VPN provider more than your ISP.
@@ -430,6 +430,35 @@ Supplement Tor with:
 - Strict site isolation browser setting
 - Clearnet account never accessed from Tor
 - Tor account never accessed from clearnet
+
+
+
+## Frequently Asked Questions
+
+
+**How long does it take to use tor safely in country that criminalizes its?**
+
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+
+
+**What are the most common mistakes to avoid?**
+
+The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+
+
+**Do I need prior experience to follow this guide?**
+
+Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+
+
+**Is this approach secure enough for production?**
+
+The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
+
+
+**Where can I get help if I run into issues?**
+
+Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 
 ## Related Articles

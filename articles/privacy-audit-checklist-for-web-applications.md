@@ -387,7 +387,7 @@ Modern applications use a range of tracking technologies beyond traditional cook
 
 The EU's ePrivacy Directive (often called the "Cookie Law") and GDPR together require consent before setting non-essential cookies. Strictly necessary cookies (session management, security tokens) are exempt. Everything else—analytics, personalization, marketing—requires explicit user consent before placement.
 
-Audit your cookie landscape programmatically:
+Audit your cookie space programmatically:
 
 ```javascript
 // List all cookies set by your domain
@@ -504,6 +504,35 @@ Document the breach notification workflow:
 Verify you have the actual contact details for your relevant supervisory authority. In the EU, this is the data protection authority in your establishment's member state. These contact details change; an audit should confirm they are current.
 
 Run a tabletop exercise once per year: present the team with a breach scenario and walk through the response process. This surfaces gaps between your documented procedure and your team's actual readiness. Common failures include not knowing which vendor to contact first, missing the 72-hour window due to unclear ownership, and lacking a pre-drafted notification template.
+
+
+
+## Frequently Asked Questions
+
+
+**How do I prioritize which recommendations to implement first?**
+
+Start with changes that require the least effort but deliver the most impact. Quick wins build momentum and demonstrate value to stakeholders. Save larger structural changes for after you have established a baseline and can measure improvement.
+
+
+**Do these recommendations work for small teams?**
+
+Yes, most practices scale down well. Small teams can often implement changes faster because there are fewer people to coordinate. Adapt the specifics to your team size—a 5-person team does not need the same formal processes as a 50-person organization.
+
+
+**How do I measure whether these changes are working?**
+
+Define 2-3 measurable outcomes before you start. Track them weekly for at least a month to see trends. Common metrics include response time, completion rate, team satisfaction scores, and error frequency. Avoid measuring too many things at once.
+
+
+**Can I customize these recommendations for my specific situation?**
+
+Absolutely. Treat these as starting templates rather than rigid rules. Every team and project has unique constraints. Test each recommendation on a small scale, observe results, and adjust the approach based on what actually works in your context.
+
+
+**What is the biggest mistake people make when applying these practices?**
+
+Trying to change everything at once. Pick one or two practices, implement them well, and let the team adjust before adding more. Gradual adoption sticks better than wholesale transformation, which often overwhelms people and gets abandoned.
 
 
 ## Related Articles
