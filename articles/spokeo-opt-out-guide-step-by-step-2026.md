@@ -1,5 +1,7 @@
 ---
 permalink: /spokeo-opt-out-guide-step-by-step-2026/
+description: "Follow this guide to spokeo opt out guide step by step 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Spokeo Opt Out Guide: Step by Step 2026"

@@ -1,5 +1,7 @@
 ---
 permalink: /someone-is-impersonating-me-on-social-media-report-and-remov/
+description: "Learn someone is impersonating me on social media report and remov with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Someone Is Impersonating Me On Social Media Report"

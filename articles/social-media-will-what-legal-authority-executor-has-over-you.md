@@ -1,5 +1,7 @@
 ---
 permalink: /social-media-will-what-legal-authority-executor-has-over-you/
+description: "Learn social media will what legal authority executor has over you with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Social Media Will What Legal Authority Executor Has Over"

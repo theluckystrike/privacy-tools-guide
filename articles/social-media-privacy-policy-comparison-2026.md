@@ -1,5 +1,7 @@
 ---
 permalink: /social-media-privacy-policy-comparison-2026/
+description: "Learn social media privacy policy comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Social Media Privacy Policy Comparison 2026"

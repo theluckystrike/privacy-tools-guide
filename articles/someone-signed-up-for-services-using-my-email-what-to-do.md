@@ -1,5 +1,7 @@
 ---
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
+description: "Learn someone signed up for services using my email what to do with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Someone Signed Up for Services Using My Email"

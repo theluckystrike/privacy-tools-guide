@@ -1,5 +1,7 @@
 ---
 permalink: /tahoe-lafs-distributed-encrypted-storage-guide/
+description: "Follow this guide to tahoe lafs distributed encrypted storage guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tahoe LAFS Distributed Encrypted Storage Guide"

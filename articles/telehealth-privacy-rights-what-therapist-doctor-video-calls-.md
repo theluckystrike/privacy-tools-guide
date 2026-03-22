@@ -1,5 +1,7 @@
 ---
 permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/
+description: "Learn telehealth privacy rights what therapist doctor video calls  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy, api]
 ---
 layout: default
 title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"

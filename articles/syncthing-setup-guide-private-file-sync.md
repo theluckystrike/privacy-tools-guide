@@ -1,5 +1,7 @@
 ---
 permalink: /syncthing-setup-guide-private-file-sync/
+description: "Follow this guide to syncthing setup guide private file sync with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Syncthing Setup Guide for Private File Sync"

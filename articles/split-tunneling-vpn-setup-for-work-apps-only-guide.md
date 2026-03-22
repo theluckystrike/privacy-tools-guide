@@ -9,7 +9,7 @@ permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/
 categories: [guides]
 tags: [privacy-tools-guide, vpn, security, privacy, networking]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

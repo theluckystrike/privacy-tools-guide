@@ -1,5 +1,7 @@
 ---
 permalink: /telegram-vs-signal-which-is-actually-safer/
+description: "Compare telegram vs signal which is actually safer with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Telegram Vs Signal Which Is Actually Safer"
