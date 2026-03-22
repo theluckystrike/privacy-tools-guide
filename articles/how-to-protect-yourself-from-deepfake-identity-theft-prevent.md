@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-yourself-from-deepfake-identity-theft-prevent/
+description: "Follow this guide to how to protect yourself from deepfake identity theft prevent with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Protect Yourself from Deepfake Identity Theft"

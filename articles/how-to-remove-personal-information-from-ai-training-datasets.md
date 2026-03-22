@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-remove-personal-information-from-ai-training-datasets/
+description: "Follow this guide to how to remove personal information from ai training datasets with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, artificial-intelligence]
 ---
 layout: default
 title: "How To Remove Personal Information From Ai Training Datasets"

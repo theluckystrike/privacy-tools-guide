@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-yourself-from-swatting-attack-prevention-meas/
+description: "Follow this guide to how to protect yourself from swatting attack prevention meas with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Protect Yourself From Swatting Attack Prevention Measures"

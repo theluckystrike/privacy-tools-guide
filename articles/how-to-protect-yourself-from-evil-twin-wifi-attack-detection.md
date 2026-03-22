@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-yourself-from-evil-twin-wifi-attack-detection/
+description: "Follow this guide to how to protect yourself from evil twin wifi attack detection with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Protect Yourself from Evil Twin WiFi Attack Detection"

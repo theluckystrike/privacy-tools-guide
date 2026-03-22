@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-request-algorithmic-transparency-from-companies-makin/
+description: "Follow this guide to how to request algorithmic transparency from companies makin with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Request Algorithmic Transparency From Companies"
