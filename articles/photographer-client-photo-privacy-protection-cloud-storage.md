@@ -4,7 +4,6 @@
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -20,16 +19,12 @@
 
 
 
-<<<<<<< HEAD
 
 
 
 
 
 
-<<<<<<< HEAD
-=======
->>>>>>> 0cc3b0a805ca9343d2e0dd9b7d017d73fadc798e
 
 
 
@@ -619,7 +614,6 @@ author: "Privacy Tools Guide"
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -633,16 +627,12 @@ author: "Privacy Tools Guide"
 
 
 
-<<<<<<< HEAD
 
 
 
 
 
 
-<<<<<<< HEAD
-=======
->>>>>>> 0cc3b0a805ca9343d2e0dd9b7d017d73fadc798e
 
 
 
