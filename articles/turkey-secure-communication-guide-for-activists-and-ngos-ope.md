@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /turkey-secure-communication-guide-for-activists-and-ngos-ope/
 description: "Follow this guide to turkey secure communication guide for activists and ngos ope with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 
 
 layout: default

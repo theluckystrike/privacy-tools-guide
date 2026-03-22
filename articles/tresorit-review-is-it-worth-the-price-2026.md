@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tresorit-review-is-it-worth-the-price-2026/
 description: "Learn tresorit review is it worth the price 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [reviews]
 ---
+
 layout: default
 title: "Tresorit Review Is It Worth The Price 2026"
 description: "Tresorit Review 2026: Is It Worth the Price for. — privacy guide covering tools, techniques, and best practices to protect your data and digital"

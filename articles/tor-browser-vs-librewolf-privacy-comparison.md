@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-vs-librewolf-privacy-comparison/
 description: "Compare tor browser vs librewolf privacy comparison with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser vs LibreWolf Privacy Comparison"
 description: "A technical comparison of Tor Browser and LibreWolf for developers and power users. Understand the privacy mechanisms, fingerprint resistance, and use"

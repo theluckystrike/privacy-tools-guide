@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-font-fingerprinting-protection/
 description: "Learn tor browser font fingerprinting protection with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser Font Fingerprinting Protection"
 description: "Learn how Tor Browser protects against font fingerprinting, the techniques used, and how to configure settings for maximum privacy"
@@ -382,7 +390,7 @@ Subscribe to:
 - EFF privacy technology updates
 - Academic papers on browser fingerprinting
 
-The threat landscape continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
+The threat ecosystem continuously evolves. New JavaScript APIs (like Font Metrics API) may introduce new vectors requiring Tor Project updates.
 
 ## Frequently Asked Questions
 

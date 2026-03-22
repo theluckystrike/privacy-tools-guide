@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-noscript-settings-recommended-2026/
 description: "Learn tor browser noscript settings recommended 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser NoScript Settings Recommended 2026"
 description: "Learn the recommended NoScript settings for Tor Browser in 2026. This guide covers configuration options, security tradeoffs, and practical tips for developers"

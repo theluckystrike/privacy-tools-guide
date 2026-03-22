@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-security-settings-guide/
 description: "Follow this guide to tor browser security settings guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, security]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Tor Browser Security Settings Configuration Guide"
 description: "How to configure Tor Browser's security levels, circuit controls, JavaScript settings, and anti-fingerprinting features for different threat scenarios"

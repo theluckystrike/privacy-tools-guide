@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /totp-backup-codes-best-practices/
 description: "Discover the best totp backup codes best practices with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, best-of]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [best-of]
 ---
+
 layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on"
