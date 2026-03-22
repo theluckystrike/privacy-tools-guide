@@ -40,7 +40,17 @@ Disable all iOS tracking by turning off the advertising identifier (IDFA), locat
 - **Disable Listen for "Hey**: Siri" if not used 3.
 - **This is meaningfully different from simply denying individual app requests**: apps cannot even prompt the user for permission, which removes the possibility that users will accidentally grant it.
 
-## System-Wide Tracking Disables
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: System-Wide Tracking Disables
 
 ### Apple Advertising Identifier
 
@@ -92,7 +102,7 @@ Background App Refresh allows apps to update content when you're not using them 
 
 Social media apps are the most aggressive users of background refresh for analytics purposes. Disabling refresh for apps like Instagram or TikTok prevents passive profile-building while your phone sits idle.
 
-## Safari and Web Tracking
+### Step 2: Safari and Web Tracking
 
 ### Intelligent Tracking Prevention
 
@@ -130,7 +140,7 @@ iOS 17 introduced **Link Tracking Protection**, which strips tracking parameters
 
 Common tracking parameters removed include `fbclid`, `gclid`, `utm_source`, `utm_medium`, `utm_campaign`, and `msclkid`. These parameters allow advertisers to correlate your clicks across sessions. With Link Tracking Protection active, URLs shared between apps lose this correlation data before they are opened.
 
-## App Privacy Labels and Data Collection
+### Step 3: App Privacy Labels and Data Collection
 
 ### Analyzing App Data Collection
 
@@ -167,7 +177,7 @@ For developers, monitor which domains your apps contact:
 # 3. Configure device to use Charles as HTTP proxy
 ```
 
-## iCloud and Apple Services Tracking
+### Step 4: iCloud and Apple Services Tracking
 
 ### Disable iCloud Analytics
 
@@ -216,7 +226,7 @@ Automation:
 # and clears cached location data
 ```
 
-## Universal Links and URL Scheme Protection
+### Step 5: Universal Links and URL Scheme Protection
 
 For developers implementing deep links, understand tracking vectors:
 
@@ -258,7 +268,7 @@ If you face targeted surveillance rather than passive data collection, iOS inclu
 
 Lockdown Mode severely restricts the attack surface: it blocks most message attachment types, disables wired connections to computers when the phone is locked, blocks link previews in Messages, disables certain web technologies (WebAssembly, JIT compilation), and prevents configuration profiles from being installed. It is designed for journalists, activists, and human rights workers under active threat — not for everyday privacy hardening. The tradeoffs in usability are significant, but so is the reduction in exploitable surface area.
 
-## Quick Reference: Privacy Settings Checklist
+### Step 6: Quick Reference: Privacy Settings Checklist
 
 | Category | Setting | Recommended State |
 |----------|---------|-------------------|
@@ -274,6 +284,21 @@ Lockdown Mode severely restricts the attack surface: it blocks most message atta
 | iCloud | Share iCloud Analytics | OFF |
 | Siri | Listen for "Hey Siri" | OFF (optional) |
 | Siri | Suggestions in Search | OFF |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

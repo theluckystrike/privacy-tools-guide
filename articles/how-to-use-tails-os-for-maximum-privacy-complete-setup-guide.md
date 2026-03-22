@@ -43,7 +43,17 @@ Tails OS is a live operating system that routes all internet traffic through Tor
 5.
 - **Create or import a**: GPG key (used for encryption) Sending encrypted email: 1.
 
-## What Tails OS Actually Does
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Tails OS Actually Does
 
 Tails is a Debian-based Linux distribution with three core features:
 
@@ -73,7 +83,7 @@ Tails works on most laptops and desktops. Older Macs (2012 and earlier) have com
 **Why specs matter:**
 Tails with Tor routing can feel slow, especially on older hardware. With 4GB RAM and 2+ year old processor, browsing feels laggy. With 8GB+ RAM and modern processor, it's acceptable. Performance improves significantly with SSD boot vs. mechanical USB drives.
 
-## Creating Tails USB: Step by Step
+### Step 2: Create Tails USB: Step by Step
 
 You need:
 1. Computer with USB port (the computer you'll use to create the USB, not the computer you'll use Tails on)
@@ -128,7 +138,7 @@ diskutil eject /dev/diskN
 
 **Important:** Using the wrong device in dd can destroy your entire hard drive. Triple-check the device name before running the command.
 
-## Booting Into Tails
+### Step 3: Booting Into Tails
 
 1. **Insert USB drive into the computer where you want to run Tails**
 2. **Restart the computer**
@@ -165,7 +175,7 @@ When Tails boots for the first time, you'll see the Greeter (welcome screen):
 
 After clicking "Start Tails", the system boots into the desktop (~30-60 seconds more).
 
-## Tor Network Connection
+### Step 4: Tor Network Connection
 
 Tails connects to Tor automatically on boot. The connection process:
 
@@ -181,7 +191,7 @@ Tails connects to Tor automatically on boot. The connection process:
 **Understanding exit nodes:**
 Every website you visit sees you connecting from a Tor exit node (an IP address that isn't yours). This IP rotates, and other Tor users share the same exit node. This anonymity is the core of Tor protection.
 
-## Persistent Storage: Saving Files
+### Step 5: Persistent Storage: Saving Files
 
 By default, Tails doesn't save anything. Shutdown and restart, everything is gone. This is by design—it prevents data leaks. However, you often want to keep certain files (GPG keys, documents, bookmarks).
 
@@ -219,7 +229,7 @@ Location: `/home/amnesia/Persistent/`
 
 **Best practice:** Store sensitive files only in Persistent, download temporary files to Downloads (which is wiped on shutdown unless you made Downloads persistent).
 
-## Common Workflows
+### Step 6: Common Workflows
 
 ### Workflow 1: Secure Anonymous Browsing
 
@@ -284,7 +294,7 @@ Or manually:
 shred -vfz -n 35 filename.pdf
 ```
 
-## Bridges: Accessing Tor in Censored Networks
+### Step 7: Bridges: Accessing Tor in Censored Networks
 
 Some networks (China, Iran, corporate) block known Tor entry points. Bridges are relays that hide the fact that you're connecting to Tor.
 
@@ -374,7 +384,7 @@ Fix:
 - Enter your persistent storage passphrase
 - Files now accessible
 
-## Practical Use Cases
+### Step 8: Practical Use Cases
 
 **For journalists:**
 - Research sensitive sources anonymously
@@ -396,7 +406,7 @@ Fix:
 - Communicate with security community anonymously
 - Research malware in sandboxed Tails
 
-## Getting Help and Updates
+### Step 9: Getting Help and Updates
 
 - **Official site:** https://tails.boum.org/
 - **Support:** https://tails.boum.org/support/

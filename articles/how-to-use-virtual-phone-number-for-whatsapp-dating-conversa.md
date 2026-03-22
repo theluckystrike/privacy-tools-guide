@@ -39,7 +39,17 @@ Use an eSIM-based virtual number like Google Fi or Airalo (not VoIP, which Whats
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding Virtual Phone Numbers for WhatsApp
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Virtual Phone Numbers for WhatsApp
 
 WhatsApp requires phone number verification during account creation, but it does not mandate that this number must be your primary personal line. Virtual phone numbers function identically to regular phone numbers for WhatsApp verification purposes, yet they operate independently from your real identity.
 
@@ -53,7 +63,7 @@ Several categories of virtual phone numbers exist, each with distinct characteri
 
 **eSIM-based numbers** use mobile network operator profiles downloaded to compatible devices. These numbers appear as genuine cellular numbers to WhatsApp and often bypass verification issues that affect VoIP numbers.
 
-## Technical Implementation Methods
+### Step 2: Technical Implementation Methods
 
 ### Method 1: VoIP Service Integration
 
@@ -124,7 +134,7 @@ eSIM technology allows users to download multiple cellular network profiles to a
 
 This method provides the highest success rate for WhatsApp verification because the number operates on actual cellular networks, making it indistinguishable from traditional SIM card numbers.
 
-## Verification Challenges and Solutions
+### Step 3: Verification Challenges and Solutions
 
 WhatsApp actively works to prevent VoIP numbers from completing verification. The platform maintains databases of known VoIP number ranges and may block verification attempts from these numbers. Several strategies improve verification success rates:
 
@@ -136,7 +146,7 @@ WhatsApp actively works to prevent VoIP numbers from completing verification. Th
 
 **Different numbers have different histories.** Numbers that previously failed WhatsApp verification remain flagged. Fresh numbers with no prior verification attempts succeed more readily.
 
-## Privacy Architecture Design
+### Step 4: Privacy Architecture Design
 
 Building a complete privacy architecture for dating conversations requires considering multiple attack vectors:
 
@@ -209,7 +219,7 @@ Virtual phone numbers introduce security considerations that developers must add
 
 **Recovery vulnerabilities.** If you lose access to your virtual number, account recovery becomes difficult. Maintain backup verification methods and consider registering multiple virtual numbers for critical accounts.
 
-## Disposal and Number Rotation
+### Step 5: Disposal and Number Rotation
 
 Periodically rotating virtual phone numbers enhances long-term privacy:
 
@@ -218,6 +228,21 @@ Periodically rotating virtual phone numbers enhances long-term privacy:
 3. Contact the virtual number provider to release the number
 4. Obtain a new virtual number for continued use
 5. Update your dating app profiles with the new WhatsApp number
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -304,7 +329,7 @@ class WhatsAppVerificationDebugger:
 - Free/cheap but WhatsApp actively blocks known VoIP ranges
 - Use only if you need a temporary number for short-term dating
 
-## Complete Architecture: Isolated Dating Identity
+### Step 6: Complete Architecture: Isolated Dating Identity
 
 Build a complete privacy infrastructure for dating communication:
 
@@ -336,7 +361,7 @@ Benefits:
 
 Cost: ~$60 one-time, provides maximum isolation.
 
-## WhatsApp Business API Alternative
+### Step 7: WhatsApp Business API Alternative
 
 For developers building services with WhatsApp integration, the Business API provides distinct infrastructure:
 
@@ -358,7 +383,7 @@ This gives you:
 
 For dating applications, using the Business API for communication could improve reliability over personal VoIP-based solutions.
 
-## Operational Security Checklist
+### Step 8: Operational Security Checklist
 
 Before starting WhatsApp dating conversations:
 
@@ -374,7 +399,7 @@ Before starting WhatsApp dating conversations:
 - [ ] Read receipts disabled
 - [ ] Backup created (if paranoid about account loss)
 
-## Number Rotation Schedule
+### Step 9: Number Rotation Schedule
 
 For users maintaining dating profiles over extended periods:
 
@@ -388,7 +413,7 @@ Month 2: Refresh to new virtual number (old matches won't reach you)
 
 This rotation prevents dating platforms and matches from building long-term profiles of your dating behavior.
 
-## Recovery Planning
+### Step 10: Recovery Planning
 
 If you lose access to your virtual WhatsApp number:
 

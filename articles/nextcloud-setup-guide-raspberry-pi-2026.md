@@ -56,7 +56,7 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 ```
 
-## Installing Docker and Docker Compose
+### Step 1: Install Docker and Docker Compose
 
 Docker simplifies Nextcloud installation by isolating dependencies and enabling straightforward updates. Install Docker using the convenience script:
 
@@ -81,7 +81,7 @@ docker --version
 docker-compose --version
 ```
 
-## Configuring External Storage
+### Step 2: Configure External Storage
 
 Nextcloud needs persistent storage for data and the database. Mount your external drive and set proper permissions:
 
@@ -110,7 +110,7 @@ sudo nano /etc/fstab
 # Add: UUID=your-uuid-here /mnt/nextcloud-data ext4 defaults,nofail 0 2
 ```
 
-## Docker Compose Configuration
+### Step 3: Docker Compose Configuration
 
 Create a directory for Nextcloud and write your compose file:
 
@@ -186,7 +186,7 @@ docker-compose ps
 docker-compose logs -f app
 ```
 
-## Completing Nextcloud Setup
+### Step 4: Completing Nextcloud Setup
 
 Access Nextcloud through your browser at `http://192.168.1.100:8080` (replace with your Pi's IP). Create an admin account with a strong password. The initial setup takes a few minutes.
 
@@ -196,7 +196,7 @@ After installation, install essential apps from the app store:
 - **Onlyoffice** or **Collabora** — document editing
 - **Tasks** — todo management
 
-## Reverse Proxy with Nginx
+### Step 5: Reverse Proxy with Nginx
 
 Running Nextcloud behind a reverse proxy enables HTTPS and handles multiple services. Install Nginx:
 
@@ -319,7 +319,7 @@ docker exec --user www-data nextcloud_app php occ db:convert-filecache-bigint
 docker exec --user www-data nextcloud_app php occ maintenance:repair
 ```
 
-## Security Hardening
+### Step 6: Security Hardening
 
 Protect your Nextcloud instance with these measures:
 
@@ -390,7 +390,7 @@ crontab -e
 # Add: 0 2 * * * /path/to/backup.sh
 ```
 
-## Updating Nextcloud
+### Step 7: Updating Nextcloud
 
 Regular updates patch security vulnerabilities. Before updating, create a backup:
 
@@ -416,6 +416,21 @@ docker exec --user www-data nextcloud_app php occ maintenance:mode --on
 docker exec --user www-data nextcloud_app php occ upgrade
 docker exec --user www-data nextcloud_app php occ maintenance:mode --off
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

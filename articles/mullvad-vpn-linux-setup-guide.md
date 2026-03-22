@@ -42,7 +42,17 @@ No email, no username, no phone number. If you lose the account number, there's 
 
 ---
 
-## Install the Mullvad App
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install the Mullvad App
 
 **Debian/Ubuntu:**
 
@@ -74,7 +84,7 @@ yay -S mullvad-vpn-bin
 
 ---
 
-## CLI Setup and Connect
+### Step 2: CLI Setup and Connect
 
 Mullvad's CLI tool is `mullvad`:
 
@@ -99,7 +109,7 @@ curl -s https://am.i.mullvad.net/json | python3 -m json.tool
 
 ---
 
-## Server Selection
+### Step 3: Server Selection
 
 ```bash
 # List available servers
@@ -124,7 +134,7 @@ mullvad reconnect
 
 ---
 
-## Enable the Kill Switch
+### Step 4: Enable the Kill Switch
 
 The kill switch blocks all internet traffic if the VPN connection drops:
 
@@ -147,7 +157,7 @@ mullvad connect          # Reconnect to restore access
 
 ---
 
-## DNS Configuration
+### Step 5: DNS Configuration
 
 ```bash
 # View current DNS servers (Mullvad's by default)
@@ -165,7 +175,7 @@ curl -s https://am.i.mullvad.net/json | python3 -c "import json,sys; d=json.load
 
 ---
 
-## Split Tunneling
+### Step 6: Split Tunneling
 
 Split tunneling sends specific apps outside the VPN tunnel while others go through it:
 
@@ -189,7 +199,7 @@ mullvad split-tunnel app remove /usr/bin/firefox
 
 ---
 
-## Manual WireGuard Setup (Without the App)
+### Step 7: Manual WireGuard Setup (Without the App)
 
 For servers, minimal installs, or when you prefer to manage the connection directly:
 
@@ -236,7 +246,7 @@ sudo wg-quick down mullvad-se
 
 ---
 
-## DAITA (Defense Against AI-Guided Traffic Analysis)
+### Step 8: DAITA (Defense Against AI-Guided Traffic Analysis)
 
 Mullvad's DAITA feature adds random padding and artificial traffic to your connection to frustrate machine learning-based traffic fingerprinting:
 
@@ -252,7 +262,7 @@ DAITA adds bandwidth overhead (roughly 15-30%) but provides meaningful protectio
 
 ---
 
-## Verify No Leaks
+### Step 9: Verify No Leaks
 
 ```bash
 # Full leak test
@@ -279,7 +289,7 @@ mullvad tunnel wireguard set ipv6 disable
 
 ---
 
-## Autostart on Boot
+### Step 10: Autostart on Boot
 
 ```bash
 # Enable Mullvad to connect automatically at startup
@@ -295,7 +305,7 @@ sudo systemctl enable wg-quick@mullvad-se
 
 ---
 
-## Multihop (Double VPN) Configuration
+### Step 11: Multihop (Double VPN) Configuration
 
 Mullvad supports multihop routing, where your traffic enters one server and exits through a different server in another country. This adds a layer of separation — the entry server knows your IP but not your destination, while the exit server knows your destination but not your real IP.
 
@@ -317,7 +327,7 @@ Multihop increases latency by 20–60ms depending on geographic distance between
 
 ---
 
-## Configuring Mullvad with a Firewall (nftables)
+### Step 12: Configure Mullvad with a Firewall (nftables)
 
 On headless servers running Mullvad's manual WireGuard setup, you may want explicit firewall rules rather than relying solely on the `wg-quick` AllowedIPs mechanism. The following nftables configuration enforces that all outbound traffic routes through the WireGuard interface:
 

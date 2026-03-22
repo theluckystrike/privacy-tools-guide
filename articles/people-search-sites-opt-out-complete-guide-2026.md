@@ -42,7 +42,17 @@ This guide covers the opt-out process for major people search sites, automated a
 - **Limit social media exposure**: to reduce new data collection 5.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding People Search Sites
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand People Search Sites
 
 People search sites operate by scraping public records, purchasing data from brokers, and monitoring social media platforms. The resulting profiles are monetized through advertising and premium background check services. Common examples include:
 
@@ -57,7 +67,7 @@ People search sites operate by scraping public records, purchasing data from bro
 
 These sites often make opt-out processes intentionally cumbersome, requiring multiple steps, form submissions, or even physical mail requests. Developers can automate much of this process, while power users can use systematic approaches to achieve removal.
 
-## Manual Opt-Out Process
+### Step 2: Manual Opt-Out Process
 
 For individual opt-outs, each site has a specific removal mechanism. Below are direct opt-out URLs and procedures for major platforms.
 
@@ -101,7 +111,7 @@ https://www.spokeo.com/removal
 
 Submit your removal request through their web form, then confirm via email.
 
-## Automated Opt-Out with Scripts
+### Step 3: Automated Opt-Out with Scripts
 
 For developers managing opt-outs across multiple sites, scripting the process saves significant time. The following Python example demonstrates a basic framework for automating removal requests:
 
@@ -155,7 +165,7 @@ if __name__ == "__main__":
 
 This script provides a foundation. Real-world implementation requires handling site-specific form submissions, CAPTCHA solving (often requiring services like 2Captcha), and session management.
 
-## Using Opt-Out Aggregation Services
+### Step 4: Use Opt-Out Aggregation Services
 
 Several services automate the opt-out process across multiple people search sites. These services maintain relationships with data brokers and handle the submission process on your behalf.
 
@@ -171,7 +181,7 @@ DeleteMe offers similar services with quarterly or annual subscription plans. Re
 
 Optery provides both free and paid tiers, offering automated opt-out with dashboard visibility into removal progress.
 
-## Checking Your Digital Footprint
+### Step 5: Checking Your Digital Footprint
 
 Before beginning opt-out procedures, understand what information exists. Use these commands to query multiple sites simultaneously:
 
@@ -197,7 +207,7 @@ for site in "${sites[@]}"; do
 done
 ```
 
-## Legal Opt-Out Rights
+### Step 6: Legal Opt-Out Rights
 
 Under the California Consumer Privacy Act (CCPA) and similar state laws, consumers have the right to request deletion of personal information. Thirty-seven states have enacted some form of data privacy legislation as of 2026.
 
@@ -209,7 +219,7 @@ https://oag.ca.gov/contact/consumer-complaint-against-business-or-company
 
 This legal route provides stronger enforcement mechanisms than standard opt-out forms.
 
-## Maintaining Privacy Over Time
+### Step 7: Maintaining Privacy Over Time
 
 Opt-out is not an one-time action. Data brokers continuously refresh their databases from new public records. Consider these ongoing strategies:
 
@@ -219,7 +229,7 @@ Opt-out is not an one-time action. Data brokers continuously refresh their datab
 4. **Limit social media exposure** to reduce new data collection
 5. **Consider data removal services** for automated ongoing monitoring
 
-## Monitoring for Re-Listing
+### Step 8: Monitor for Re-Listing
 
 Data brokers frequently re-add your information. Set up automated monitoring:
 
@@ -268,6 +278,21 @@ Run this monthly and act immediately on any re-listings.
 | DIY (this guide) | Unlimited | $0 | Manual | Varies |
 
 DeleteMe offers the best balance of coverage and cost for most users.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

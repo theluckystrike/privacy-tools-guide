@@ -42,7 +42,17 @@ Qubes OS implements security through compartmentalization: run every application
 - **Use disposable qubes for**: one-time tasks.
 - **Memory is the most**: precious resource in Qubes.
 
-## Security Model: Compartmentalization Over Antivirus
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Security Model: Compartmentalization Over Antivirus
 
 Traditional security relies on detecting malware: antivirus scans for known signatures, sandbox tools detect suspicious behavior. This fails when malware is novel or when a legitimate app is compromised (browser zero-day leaking your passwords).
 
@@ -58,7 +68,7 @@ This requires discipline: assign qubes to specific purposes, never mix contexts.
 
 **Supported computers**: ThinkPad X1/X390, Dell Latitude, System76 laptops, and others. Check https://qubes-os.org/hcl/ before purchasing.
 
-## Installation and Initial Setup
+### Step 2: Install ation and Initial Setup
 
 ### Installation Process
 
@@ -104,7 +114,7 @@ sudo apt update && sudo apt dist-upgrade  # Debian-based
 sudo dnf upgrade  # Fedora-based
 ```
 
-## Creating and Managing Qubes
+### Step 3: Create and Managing Qubes
 
 ### Qube Templates
 
@@ -185,7 +195,7 @@ qvm-prefs untrusted memory 512
 
 Adjust based on available RAM and qube purpose. Memory is the most precious resource in Qubes.
 
-## Networking and Firewalling
+### Step 4: Networking and Firewalling
 
 ### Network Isolation
 
@@ -251,7 +261,7 @@ sudo dnf install tor
 # Configure Tor as DNS resolver via dnsmasq
 ```
 
-## USB Device Handling and Isolation
+### Step 5: USB Device Handling and Isolation
 
 ### sys-usb Qube
 
@@ -298,7 +308,7 @@ qvm-prefs banking devices '[("sys-usb", "1-1")]' --persistent=False
 qvm-prefs work devices '[("sys-usb", "1-2-KINGSTON:0000:0000")]'
 ```
 
-## Disposable VMs (Disposables)
+### Step 6: Disposable VMs (Disposables)
 
 Disposables are temporary qubes created on-demand, used once, then destroyed. Ideal for opening suspicious files, testing software, or one-time tasks.
 
@@ -352,7 +362,7 @@ Use disposables for:
 - Temporary development environments
 - File conversions or format inspection
 
-## Split-GPG: Isolated Cryptographic Operations
+### Step 7: Split-GPG: Isolated Cryptographic Operations
 
 GPG private keys are the crown jewels of cryptography—if compromised, an attacker can forge your signature, decrypt your messages, and impersonate you.
 
@@ -437,7 +447,7 @@ git commit -S -m "Add security hardening"
 
 Private key never enters work qube. Attacker compromising work qube cannot extract GPG key.
 
-## Inter-Qube File Transfer
+### Step 8: Inter-Qube File Transfer
 
 Transfer files between qubes securely:
 
@@ -485,7 +495,7 @@ qvm-mount work files:/root/shared /mnt/shared
 
 Be cautious with shared directories—they bypass some isolation protections.
 
-## Qubes Manager GUI
+### Step 9: Qubes Manager GUI
 
 Most operations can be performed via Qubes Manager (graphical interface):
 
@@ -508,7 +518,7 @@ Right-click on qube:
 
 For most users, Qubes Manager suffices. Advanced users use command-line tools (qvm-*) for automation and scripting.
 
-## Common Workflows
+### Step 10: Common Workflows
 
 ### Secure Email Workflow
 
@@ -591,7 +601,7 @@ Use minimal templates for less powerful systems:
 qvm-clone fedora-39-minimal tpl-lightweight
 ```
 
-## Backup Strategy
+### Step 11: Backup Strategy
 
 Qubes stores everything in `/var/lib/qubes/` including all qube filesystems. Regular backups are critical:
 
@@ -610,6 +620,21 @@ gpg --symmetric ~/qubes-backup-*.tar.gz
 ```
 
 Store backups on external encrypted drive, stored physically separately from computer.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

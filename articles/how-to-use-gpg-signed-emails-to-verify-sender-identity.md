@@ -71,7 +71,7 @@ Verify the installation:
 gpg --version
 ```
 
-## Generating Your GPG Key Pair
+### Step 1: Generate Your GPG Key Pair
 
 If you don't already have a GPG key, generate one specifically for email use:
 
@@ -89,7 +89,7 @@ gpg --list-secret-keys
 
 Note the key ID (the hexadecimal string after `sec rsa4096/`). You'll need this for configuration.
 
-## Configuring Your Email Client
+### Step 2: Configure Your Email Client
 
 ### Thunderbird
 
@@ -115,7 +115,7 @@ Replace `0xYOURKEYID` with your actual key ID (without the `0x` prefix).
 
 Apple Mail requires the GPG Suite plugin. After installation, enable signing in Preferences → GPG Suite. You can also set default behavior to always sign.
 
-## Signing Outgoing Emails
+### Step 3: Signing Outgoing Emails
 
 Once configured, signing happens automatically for outgoing messages. You can also sign manually in clients that support it.
 
@@ -128,7 +128,7 @@ echo "Your message content here" | gpg --clearsign --local-user 0xYOURKEYID > si
 
 For actual email sending, most clients handle the signing transparently after initial configuration.
 
-## Verifying Incoming Signed Emails
+### Step 4: Verify Incoming Signed Emails
 
 Verification is where GPG provides real value. When you receive a signed email, your client checks the signature against the sender's public key.
 
@@ -169,7 +169,7 @@ Many developers publish their keys on their websites or include them in email si
 
 Thunderbird displays a verification icon next to signed messages. A green checkmark indicates a valid signature. Clicking the icon shows signature details, including the key used and any warnings.
 
-## Handling Signature Failures
+### Step 5: Handling Signature Failures
 
 When verification fails, investigate the cause:
 
@@ -187,7 +187,7 @@ gpg --fingerprint sender@example.com
 
 Confirm the fingerprint via a different communication channel (phone, in-person) before marking the key as trusted.
 
-## Automating Verification in Scripts
+### Step 6: Automate Verification in Scripts
 
 For automated workflows, verify PGP signatures in shell scripts:
 
@@ -232,7 +232,7 @@ gpg --gen-revoke 0xYOURKEYID > revocation_cert.asc
 
 Store this securely. If you lose access to your key, the revocation certificate notifies others not to trust messages signed with that key.
 
-## Integrating with Git
+### Step 7: Integrate with Git
 
 Many developers use the same GPG key for Git commits. Configure Git to use your signing key:
 
@@ -248,6 +248,21 @@ This provides verified commit provenance, complementary to signed emails.
 Start by generating a GPG key if you don't have one. Configure your primary email client to sign outgoing messages by default. Import keys from frequent correspondents, and verify signatures on all signed messages you receive. Over time, building this habit creates a web of cryptographic trust.
 
 GPG signing adds friction to email communication, but the authenticity guarantees are valuable for technical collaboration. Start with low-stakes communications to build familiarity before relying on signatures for sensitive matters.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

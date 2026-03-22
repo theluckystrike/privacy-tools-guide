@@ -40,7 +40,17 @@ Use end-to-end encrypted messaging (Signal), Proton Mail for encrypted email, or
 - **Establish clear written agreements**: with clients confirming use of specific secure channels.
 - **Once you introduce a**: third party or use insecure channels, privilege may be waived.
 
-## Understanding Attorney-Client Privilege in Digital Contexts
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Attorney-Client Privilege in Digital Contexts
 
 Attorney-client privilege extends to digital communications, but only when certain conditions are met. The communication must be confidential, made between an attorney and client, and intended for seeking or providing legal advice. Once you introduce a third party or use insecure channels, privilege may be waived.
 
@@ -48,7 +58,7 @@ Courts have consistently held that email providers, cloud storage services, and 
 
 The solution involves implementing end-to-end encryption where the service provider itself cannot decrypt messages. Additionally, you must control access to encryption keys and ensure no intermediaries can intercept communications.
 
-## Essential Components of a Secure Communication Setup
+### Step 2: Essential Components of a Secure Communication Setup
 
 A proper lawyer-client privilege digital communication setup requires several technical components working together:
 
@@ -58,7 +68,7 @@ A proper lawyer-client privilege digital communication setup requires several te
 4. **Authentication mechanisms** — Verify identities to prevent impersonation attacks
 5. **Audit trails** — Maintain logs of communications without compromising content privacy
 
-## Secure Messaging Platforms
+### Step 3: Secure Messaging Platforms
 
 For real-time communication, Signal remains the gold standard for secure messaging. It provides end-to-end encryption using the Signal Protocol, which has undergone extensive cryptographic review. Unlike consumer messaging apps, Signal's encryption ensures that even Signal itself cannot access message contents.
 
@@ -75,7 +85,7 @@ sudo apt update && sudo apt install signal-desktop
 
 Configure Signal with a dedicated phone number used only for legal communications. Enable disappearing messages to automatically delete communications after a set period, reducing the risk of later disclosure.
 
-## Encrypted Email with PGP or S/MIME
+### Step 4: Encrypted Email with PGP or S/MIME
 
 Email remains essential for formal communications and document sharing. Implementing PGP (Pretty Good Privacy) encryption provides end-to-end protection for email content. While PGP has usability challenges, it remains the most transparent encryption method available.
 
@@ -103,7 +113,7 @@ When communicating with clients, exchange public keys through a secure initial c
 
 For organizations, S/MIME certificates provide a more manageable approach, integrating with major email clients and supporting enterprise key management.
 
-## Secure File Transfer Solutions
+### Step 5: Secure File Transfer Solutions
 
 Legal work involves sharing sensitive documents that require protection during transfer and storage. Several solutions provide secure file transfer while maintaining accessibility:
 
@@ -123,7 +133,7 @@ Legal work involves sharing sensitive documents that require protection during t
 
 For one-time file transfers, consider **OnetimeSecret** or similar services that generate time-limited, view-once links. Combine these with password-protected archives for additional security.
 
-## Implementation Strategy for Law Firms
+### Step 6: Implementation Strategy for Law Firms
 
 Deploying secure communication requires a phased approach. Begin with the highest-risk communications—those involving sensitive litigation strategy or confidential business information—then expand to routine communications.
 
@@ -148,7 +158,7 @@ Deploying secure communication requires a phased approach. Begin with the highes
 - Create incident response plans for potential breaches
 - Regular security audits of communication channels
 
-## Code Example: Encrypted Note-Taking System
+### Step 7: Code Example: Encrypted Note-Taking System
 
 For attorneys who maintain case notes, consider a simple encrypted note system using GPG and a flat-file approach:
 
@@ -188,7 +198,7 @@ esac
 
 This system ensures that case notes are encrypted at rest, accessible only to authorized attorneys with the corresponding private key.
 
-## Verification and Maintenance
+### Step 8: Verification and Maintenance
 
 Regularly verify your security setup to ensure continued protection:
 
@@ -288,7 +298,7 @@ Organizations with litigation hold obligations face unique challenges:
 
 This approach satisfies legal hold requirements while minimizing metadata exposure.
 
-## Practical Deployment Scenarios
+### Step 9: Practical Deployment Scenarios
 
 Real-world legal communications require adapting these tools to actual workflows.
 
@@ -353,7 +363,7 @@ Solo practitioners should keep setup simple. Complexity introduces vulnerabiliti
 
 Dedicated portals handle scale better than point-to-point encryption.
 
-## Specific Use Cases and Solutions
+### Step 10: Specific Use Cases and Solutions
 
 ### Trade Secret Communications
 
@@ -424,7 +434,7 @@ Communications crossing national borders face unique legal challenges:
 
 International clients require jurisdiction-specific security approaches.
 
-## Testing and Validation
+### Step 11: Test and Validation
 
 Before deploying secure communications for real client work, thorough testing is essential:
 
@@ -445,7 +455,7 @@ Before deploying secure communications for real client work, thorough testing is
 
 Thorough testing prevents embarrassing failures with real clients.
 
-## Ongoing Maintenance
+### Step 12: Ongoing Maintenance
 
 Secure communication systems require continuous maintenance:
 
@@ -475,6 +485,21 @@ Secure communication systems require continuous maintenance:
 ```
 
 Ongoing maintenance prevents security drift and maintains compliance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

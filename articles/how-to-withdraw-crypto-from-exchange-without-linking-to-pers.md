@@ -40,13 +40,23 @@ Many cryptocurrency holders want to move funds off exchanges without creating a 
 - **Understanding these trade-offs helps**: you select the most appropriate path for your use case.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
-## Understanding the Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem
 
 Centralized exchanges typically require identity verification (KYC) before allowing fiat withdrawals. This creates a permanent record linking your identity to your transaction history. While regulatory compliance explains this requirement, it also means your financial data lives on exchange servers—a concern for privacy-conscious users.
 
 The goal is exiting the exchange ecosystem into self-custody or peer-to-peer channels that don't require banking intermediaries. Several viable paths exist, each with distinct trade-offs around convenience, limits, fees, and privacy guarantees.
 
-## Method 1: Peer-to-Peer (P2P) Trading
+### Step 2: Method 1: Peer-to-Peer (P2P) Trading
 
 P2P platforms connect buyers and sellers directly, settling transactions without the exchange holding funds during the transfer. Most major exchanges operate P2P marketplaces, but independent platforms like Bisq, HodlHodl, and LocalBitcoins offer greater privacy.
 
@@ -78,7 +88,7 @@ The platform supports various payment methods including cash deposits, gift card
 | LocalBitcoins | Optional | Extensive | Medium |
 | Binance P2P | Required | Bank transfer, PayPal | Low |
 
-## Method 2: Crypto ATMs
+### Step 3: Method 2: Crypto ATMs
 
 Bitcoin ATMs allow purchasing cryptocurrency with cash or selling for cash without bank involvement. Unlike online exchanges, many Bitcoin ATM operators require minimal or no identification, especially for smaller transactions.
 
@@ -110,7 +120,7 @@ Security practices for ATM usage:
 - Verify the receiving address on your device before scanning
 - Consider using a dedicated hardware wallet for ATM transactions
 
-## Method 3: Prepaid Cards and Gift Cards
+### Step 4: Method 3: Prepaid Cards and Gift Cards
 
 Several services allow converting cryptocurrency to prepaid cards or gift cards that can be used like regular debit cards or converted to cash at ATMs.
 
@@ -128,7 +138,7 @@ Selling gift cards for cryptocurrency provides another exit path:
 
 This method works well for converting cash to crypto without bank involvement, though the exchange rate typically includes a premium.
 
-## Method 4: Decentralized Exchanges (DEX)
+### Step 5: Method 4: Decentralized Exchanges (DEX)
 
 Decentralized exchanges allow swapping cryptocurrency without centralized KYC. While most DEXs handle crypto-to-crypto swaps, you can use them to:
 
@@ -176,7 +186,7 @@ async function swapETHForPrivacyToken(privacyTokenAddress, amountIn) {
 
 This approach converts your exchange withdrawals into privacy-oriented tokens or prepares funds for other exit methods.
 
-## Method 5: Over-the-Counter (OTC) Desks
+### Step 6: Method 5: Over-the-Counter (OTC) Desks
 
 For larger transactions, OTC desks help peer-to-peer trades outside public order books. Many OTC brokers operate with minimal KYC requirements and accept various payment methods including cash.
 
@@ -225,7 +235,7 @@ listen=1
 bind=127.0.0.1
 ```
 
-## Choosing the Right Method
+### Step 7: Choose the Right Method
 
 The optimal approach depends on your specific situation:
 
@@ -235,6 +245,21 @@ The optimal approach depends on your specific situation:
 - **Technical users**: DEX swaps with privacy tokens
 
 Each method involves trade-offs between convenience, fees, limits, and privacy. Understanding these trade-offs helps you select the most appropriate path for your use case.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

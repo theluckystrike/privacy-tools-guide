@@ -44,7 +44,17 @@ Before choosing a tool, understand your risks:
 
 ---
 
-## Signal
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Signal
 
 Signal is the most-used secure messenger. It's backed by Signal Foundation (non-profit), uses Double Ratchet encryption, and has been audited multiple times.
 
@@ -92,7 +102,7 @@ Use a Google Voice number (USA) or Twilio number (BYOD), but Signal may suspend 
 
 ---
 
-## Briar
+### Step 2: Briar
 
 Briar is a decentralized peer-to-peer messenger. It works over Tor and offline (via Bluetooth/WiFi direct). No server required.
 
@@ -145,7 +155,7 @@ If arrested with Briar:
 
 ---
 
-## Session
+### Step 3: Session
 
 Session is a fork of Signal that removes the phone number requirement. It uses Tor-based onion routing (Session Open Group Server network) instead of a central server.
 
@@ -195,7 +205,7 @@ If Session Foundation is compromised or forced to log metadata, Session users ar
 
 ---
 
-## Cwtch
+### Step 4: Cwtch
 
 Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixnets (sender ambiguity) and onion routing for extreme privacy.
 
@@ -289,7 +299,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Device Seizure Preparation
+### Step 5: Device Seizure Preparation
 
 **Before Arrest (Signal):**
 1. Disable "Send Read Receipts" (Settings → Privacy)
@@ -331,7 +341,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Real-World Scenarios
+### Step 6: Real-World Scenarios
 
 **Journalist Covering Protests:**
 - Primary: Signal (easy, wide user base)
@@ -359,7 +369,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Operational Security (OPSEC) Tips
+### Step 7: Operational Security (OPSEC) Tips
 
 1. **Don't mix identities.** Don't use Signal with your real phone number + Briar anonymously on same device. Use separate devices or virtualized profiles.
 
@@ -379,7 +389,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Backup and Recovery
+### Step 8: Backup and Recovery
 
 **Signal:**
 - DON'T backup to Google Drive (breaks encryption)
@@ -403,7 +413,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Integration with Other Tools
+### Step 9: Integration with Other Tools
 
 **Signal + Dead Drops:**
 - Use Signal for real-time coordination
@@ -422,7 +432,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## When NOT to Use These Tools
+### Step 10: When NOT to Use These Tools
 
 **Don't use any encrypted messenger if:**
 - You're being actively monitored by military-grade adversaries (assume compromise)
@@ -437,7 +447,7 @@ Cwtch (Welsh for "hug") is a decentralized messenger built on Tor. It uses mixne
 
 ---
 
-## Bottom Line
+### Step 11: Bottom Line
 
 **For general activism/organizing:** Signal. Easiest to use, largest user base, sufficient security for most scenarios.
 
@@ -469,6 +479,21 @@ signal-cli -u +1234567890 listIdentities
 # For maximum operational security: run Signal on a dedicated device
 # with no other apps, a burner number, and Wi-Fi only (no SIM)
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

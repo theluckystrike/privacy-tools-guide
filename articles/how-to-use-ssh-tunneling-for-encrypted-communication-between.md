@@ -60,13 +60,23 @@ Firefox has built-in SOCKS proxy settings in Preferences.
 - **This is useful when**: the destination service exists on the remote network but isn't directly accessible to you.
 - **A practical use case**: running a webhook receiver locally during development.
 
-## Understanding SSH Tunnels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand SSH Tunnels
 
 An SSH tunnel forwards network traffic through an encrypted SSH connection. The SSH protocol already encrypts your terminal session—tunneling extends that encryption to arbitrary ports and services. This means any service using TCP can be secured without modifying its configuration.
 
 The machine running the SSH client initiates the tunnel. The SSH server acts as the middleman, forwarding traffic between your client and the destination service. Both ends need SSH access, but the destination service itself doesn't require any changes.
 
-## Local Port Forwarding
+### Step 2: Local Port Forwarding
 
 Local port forwarding binds a port on your local machine that, when connected to, forwards traffic through the SSH server to a destination. This is useful when the destination service exists on the remote network but isn't directly accessible to you.
 
@@ -92,7 +102,7 @@ ssh -L 8080:10.0.0.50:80 user@jump-server
 
 Access the internal webapp at `http://localhost:8080`. This pattern works with any TCP service—Redis, PostgreSQL, custom APIs.
 
-## Remote Port Forwarding
+### Step 3: Remote Port Forwarding
 
 Remote port forwarding does the opposite: it makes a local service accessible through the SSH server. This is valuable when you need someone else to access a service on your machine, or when your local machine can't receive incoming connections but can initiate outbound SSH.
 
@@ -118,7 +128,7 @@ ssh -R 80:localhost:3000 user@tunnel-server
 
 Now configure your webhook URL to point to your tunnel server. Traffic arrives at your local development environment.
 
-## Dynamic Port Forwarding
+### Step 4: Dynamic Port Forwarding
 
 Dynamic port forwarding turns your SSH client into a SOCKS proxy. Unlike local forwarding, which targets a single destination, dynamic forwarding lets you route traffic to any destination through the SSH server. This functions like a minimal VPN.
 
@@ -143,7 +153,7 @@ export ALL_PROXY="socks5://localhost:1080"
 curl https://example.com
 ```
 
-## Persisting Tunnels
+### Step 5: Persisting Tunnels
 
 SSH tunnels close when the SSH session ends. For persistent tunnels, use autossh or systemd:
 
@@ -273,7 +283,7 @@ SSH tunneling provides encryption but has limitations:
 
 For high-security scenarios, use VPN or tor instead. For standard privacy protection, SSH tunneling to a trusted server works well.
 
-## Production-Ready SSH Tunnel Wrapper
+### Step 6: Production-Ready SSH Tunnel Wrapper
 
 For real deployments, wrap SSH tunneling in a management script:
 
@@ -335,7 +345,7 @@ Usage:
 ./ssh-tunnel-manager.sh stop
 ```
 
-## Quick Reference
+### Step 7: Quick Reference
 
 | Tunnel Type | Use Case | Command |
 |-------------|----------|---------|

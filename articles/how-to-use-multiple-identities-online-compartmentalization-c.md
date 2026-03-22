@@ -31,13 +31,23 @@ Basic compartmentalization works for most users.
 - **This guide covers practical**: strategies for developers and power users to implement effective identity separation.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Identity Compartmentalization
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Identity Compartmentalization
 
 The core principle is simple: different contexts should not know about each other. Your work email should not be linked to your personal social media. Your development environment should not share cookies with your banking sessions. Each identity operates in its own silo, limiting cross-referencing and reducing exposure if one identity is compromised.
 
 For developers, compartmentalization also means isolating test environments, development tooling, and production credentials. The techniques below apply to both personal privacy and professional security.
 
-## Browser-Level Isolation
+### Step 2: Browser-Level Isolation
 
 The browser is your primary interface with the web, making it the most critical isolation point.
 
@@ -109,7 +119,7 @@ case "$PROFILE" in
 esac
 ```
 
-## Email Aliasing Strategies
+### Step 3: Email Aliasing Strategies
 
 Email is the foundation of online identity. Using aliases separates your contact information across contexts.
 
@@ -151,7 +161,7 @@ op item get "github" --field=email
 
 This routes emails through the provider's relay service, hiding your real address.
 
-## Container-Based Network Isolation
+### Step 4: Container-Based Network Isolation
 
 Beyond browser isolation, consider network-level separation.
 
@@ -197,7 +207,7 @@ AllowedIPs = 0.0.0.0/0, ::/0  # Everything else
 
 For simpler use cases, use browser-specific VPN extensions or separate VPN connections on different network interfaces.
 
-## Code Development Isolation
+### Step 5: Code Development Isolation
 
 Developers need to separate development, testing, and production contexts.
 
@@ -249,7 +259,7 @@ Or use includeIf in your global gitconfig:
     path = ~/.gitconfig-personal
 ```
 
-## Implementation Workflow
+### Step 6: Implementation Workflow
 
 Start implementing compartmentalization incrementally:
 
@@ -273,6 +283,21 @@ Options include dedicated physical machines, virtualization with QubesOS, or air
 ---
 
 Effective identity compartmentalization reduces your attack surface and limits data correlation. Start with browser profiles and email aliases, then add network-level isolation as needed. The effort scales with your threat model—most users benefit from basic separation, while high-risk users need more rigorous boundaries.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

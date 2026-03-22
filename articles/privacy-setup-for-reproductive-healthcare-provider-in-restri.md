@@ -24,7 +24,17 @@ Reproductive healthcare providers in restricted states must encrypt patient data
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## The Regulatory Environment
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Regulatory Environment
 
 States with restricted reproductive healthcare access have introduced laws that criminalize certain procedures, impose reporting requirements, and create civil liability for providers. These laws create new data risks:
 
@@ -35,7 +45,7 @@ States with restricted reproductive healthcare access have introduced laws that 
 
 The technical response involves encryption at rest and in transit, data minimization, compartmentalization, and access controls.
 
-## Patient Data Protection
+### Step 2: Patient Data Protection
 
 ### Database Encryption
 
@@ -82,7 +92,7 @@ const patientRecord = {
 
 Consider implementing a two-tier system: minimal identifying information for scheduling and billing, with clinical data stored separately under stricter access controls.
 
-## Secure Communications
+### Step 3: Secure Communications
 
 ### Patient Messaging
 
@@ -128,7 +138,7 @@ Separate staff communication channels from patient-facing systems. Use encrypted
 
 Avoid cloud-based workplace tools that do not support end-to-end encryption. If you must use them, implement additional encryption layer using tools like Cryptomator.
 
-## Device Security for Providers
+### Step 4: Device Security for Providers
 
 ### Mobile Device Management
 
@@ -160,7 +170,7 @@ The most secure approach separates personal and work identities entirely. Consid
 
 If separation is impractical, at minimum use Android Work Profile or iOS Managed Apps to sandbox work data.
 
-## Incident Response Preparation
+### Step 5: Plan Incident Response Preparation
 
 Prepare for the possibility of device seizure or data demands:
 
@@ -192,7 +202,7 @@ Balance data destruction capabilities with legal hold obligations. Document rete
 3. Provide audit trails for deletion events
 4. Define escalation procedures for legal threats
 
-## Network Security
+### Step 6: Secure the Network
 
 ### DNS Configuration
 
@@ -237,7 +247,7 @@ cipher AES-256-GCM
 auth SHA512
 ```
 
-## Operational Security Habits
+### Step 7: Operational Security Habits
 
 Technical tools require consistent operational practices:
 
@@ -249,6 +259,21 @@ Technical tools require consistent operational practices:
 
 No single implementation provides complete protection. The goal is raising the cost of data access beyond what most adversaries can sustain while maintaining the ability to provide essential healthcare services.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

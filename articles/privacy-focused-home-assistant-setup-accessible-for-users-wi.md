@@ -44,7 +44,17 @@ Traditional smart home solutions often route data through cloud services, creati
 
 A self-hosted Home Assistant instance solves both issues. You retain ownership of your data, and the system remains functional regardless of external service availability. The key lies in configuring it correctly from the start.
 
-## Core Installation with Privacy in Mind
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Installation with Privacy in Mind
 
 Begin with a local-only installation. The Home Assistant Operating System running on dedicated hardware provides the best foundation. Avoid cloud-connected setups that default to external data processing.
 
@@ -58,7 +68,7 @@ Begin with a local-only installation. The Home Assistant Operating System runnin
 
 During initial configuration, select "Local" as your preferred connection method for all integrations. Home Assistant will prompt you to choose between local and cloud options—always choose local when available.
 
-## Essential Privacy Configuration
+### Step 2: Essential Privacy Configuration
 
 The configuration file serves as your privacy command center. Add these settings to your `configuration.yaml` to minimize data leakage:
 
@@ -87,7 +97,7 @@ cloud:
 
 These settings ensure your instance operates entirely within your local network. The analytics disablement stops data transmission to Home Assistant's servers, while the cloud disabling prevents voice commands from being processed externally.
 
-## Accessibility Layer: Making Home Assistant Usable
+### Step 3: Accessibility Layer: Making Home Assistant Usable
 
 For users with mobility limitations, standard touchscreen interfaces often present barriers. Implementing alternative control methods transforms Home Assistant into an accessible platform.
 
@@ -164,7 +174,7 @@ automation:
 
 Users can trigger complex automations by tapping a phone or NFC card against a strategically placed tag, eliminating the need to navigate on-screen menus.
 
-## Network Isolation for Enhanced Privacy
+### Step 4: Network Isolation for Enhanced Privacy
 
 Create a dedicated network segment for your smart home devices. VLAN separation ensures that even if a device gets compromised, it cannot access your personal computers or data:
 
@@ -177,7 +187,7 @@ Create a dedicated network segment for your smart home devices. VLAN separation 
 
 This isolation approach protects privacy by containing potential data leaks while also preventing compromised devices from accessing sensitive information on your main network.
 
-## Automations That Respect Privacy While Enabling Independence
+### Step 5: Automations That Respect Privacy While Enabling Independence
 
 Design automations that provide independence without sacrificing privacy. The following example creates a morning routine that operates entirely locally:
 
@@ -213,7 +223,7 @@ automation:
 
 This automation activates at a scheduled time without requiring voice commands or physical interaction, providing automatic environmental control that preserves user autonomy.
 
-## Monitoring and Maintaining Privacy
+### Step 6: Monitor and Maintaining Privacy
 
 Regularly audit your system to ensure privacy settings remain intact:
 
@@ -311,7 +321,7 @@ Choose hardware that prioritizes local processing:
 
 For users with accessibility needs, the Intel NUC or used laptop offers the best balance of processing power and local control.
 
-## Data Isolation: Network Segregation Details
+### Step 7: Data Isolation: Network Segregation Details
 
 Implement strict network isolation to prevent smart devices from accessing sensitive data:
 
@@ -335,7 +345,7 @@ nmap -sU -p 22 10.0.1.1  # Should be blocked
 
 This ensures compromised smart home devices cannot reach your Home Assistant server or personal computers.
 
-## Backup and Disaster Recovery
+### Step 8: Backup and Disaster Recovery
 
 Maintain local backups of all Home Assistant configuration:
 
@@ -369,7 +379,7 @@ find "$BACKUP_DIR" -name "ha_config_*.tar.gz" -mtime +30 -delete
 
 Schedule daily via cron to maintain consistent recovery capability.
 
-## Testing Accessibility Features
+### Step 9: Test Accessibility Features
 
 Verify accessibility features work independently of internet:
 
@@ -412,7 +422,7 @@ shell_command:
   verify_isolation: 'ping -c 1 8.8.8.8 && echo "ERROR: Internet accessible" || echo "OK: Isolated"'
 ```
 
-## User Scenarios: Real-World Configuration
+### Step 10: User Scenarios: Real-World Configuration
 
 Example setup for a user with limited upper body mobility:
 

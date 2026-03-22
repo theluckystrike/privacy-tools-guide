@@ -42,7 +42,17 @@ Protecting your identity as a confidential informant requires a multi-layered ap
 # 3.
 - **Communication verification - Out-of-band**: key verification performed - Safety numbers verified in person - Challenge-response authentication used 5.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing any privacy setup, you must understand what you're protecting against. Adversaries range from local surveillance to sophisticated state-level actors with access to ISP records, device exploits, and metadata analysis capabilities. Your threat model determines which tools and techniques are necessary.
 
@@ -52,7 +62,7 @@ Key threats include:
 - **Social engineering**: Reconnaissance through your digital footprint
 - **Traffic analysis**: Pattern recognition on network traffic
 
-## Device Isolation and Air-Gapping
+### Step 2: Device Isolation and Air-Gapping
 
 The foundation of any privacy setup for confidential informant protection is separating your sensitive activities from your daily driver devices. Air-gapping means keeping a dedicated device offline for any work involving identifying information.
 
@@ -69,7 +79,7 @@ sudo systemctl mask wpa_supplicant.service
 
 This device never connects to any network. Transfer files using encrypted USB drives with fresh formatting between uses. Label these devices ambiguously to avoid attracting attention during travel.
 
-## Secure Operating System Configuration
+### Step 3: Secure Operating System Configuration
 
 For devices that must remain online, use a privacy-focused distribution with hardened defaults. Qubes OS provides strong isolation through its Xen-based virtualization, allowing you to run separate domains for different activities.
 
@@ -92,7 +102,7 @@ echo -e "[Resolve]\nDNSOverTLS=opportunistic" | sudo tee /etc/systemd/resolved.c
 sudo systemctl restart systemd-resolved
 ```
 
-## Encrypted Communications
+### Step 4: Encrypted Communications
 
 When communicating with handlers or contacts, use end-to-end encrypted platforms with forward secrecy. Signal remains the gold standard for secure messaging, but verify registration keys through a separate channel.
 
@@ -120,7 +130,7 @@ pre_key_bundle = {
 
 Implement disappearing messages with short timers, and verify session fingerprints out-of-band.
 
-## Metadata Protection
+### Step 5: Metadata Protection
 
 Metadata often reveals more than content. Your phone routinely logs cell tower connections, WiFi networks, and GPS coordinates. Disable these features:
 
@@ -147,7 +157,7 @@ git config --global http.proxy socks5h://localhost:9050
 git config --global https.proxy socks5h://localhost:9050
 ```
 
-## Digital Footprint Management
+### Step 6: Digital Footprint Management
 
 Your existing digital presence can compromise your privacy setup. Conduct an audit:
 
@@ -165,7 +175,7 @@ find ./photos -type f -exec exiftool -all= {} \;
 
 Create completely separate identities with no linked information. Use distinct email addresses, phone numbers (burner SIMs), and payment methods. Never cross-contaminate these identities.
 
-## Operational Security Habits
+### Step 7: Operational Security Habits
 
 Technical tools fail without consistent operational practices:
 
@@ -181,7 +191,7 @@ echo 3 | sudo tee /proc/sys/vm/drop_caches
 sudo cryptsetup luksClose encrypted_volume
 ```
 
-## Incident Response Plan
+### Step 8: Plan Incident Response Plan
 
 Despite precautions, compromise may occur. Prepare:
 
@@ -253,7 +263,7 @@ threat = model.assess_threat_level("federal_agency")
 print(f"Mitigations: {threat['mitigation']}")
 ```
 
-## Multi-Device Isolation Strategy
+### Step 9: Multi-Device Isolation Strategy
 
 Implement strict compartmentalization:
 
@@ -331,7 +341,7 @@ sudo systemctl disable cups
 sudo systemctl disable avahi-daemon
 ```
 
-## Dead Drop Communication Protocols
+### Step 10: Dead Drop Communication Protocols
 
 Implement truly offline communication channels:
 
@@ -365,7 +375,7 @@ Implement truly offline communication channels:
 # Review drafts, delete after reading
 ```
 
-## Counter-Surveillance Awareness
+### Step 11: Counter-Surveillance Awareness
 
 Operational security extends beyond technology:
 
@@ -402,7 +412,7 @@ Operational security extends beyond technology:
 - [ ] Maintain separate bank account for handler payments (if applicable)
 ```
 
-## Evidence Preservation and Legal Protection
+### Step 12: Evidence Preservation and Legal Protection
 
 Document your security practices for legal proceedings:
 
@@ -449,7 +459,7 @@ shred -vfz -n 10 ~/ci-security-practices.txt
 chmod 600 ~/ci-security-practices.txt.gpg
 ```
 
-## Malware Detection and Response
+### Step 13: Malware Detection and Response
 
 Identify if your systems have been compromised:
 
@@ -492,7 +502,7 @@ sudo cat /etc/sudoers.d/*
 # - Notify handler through alternative channel
 ```
 
-## Recovery and Continuity Planning
+### Step 14: Recovery and Continuity Planning
 
 Prepare for worst-case scenarios:
 
@@ -527,6 +537,21 @@ Prepare for worst-case scenarios:
 ```
 
 The CI protection setup must be continuously updated as threats evolve and new vulnerabilities are discovered. Regular security audits and threat reassessments are non-negotiable for maintaining protection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

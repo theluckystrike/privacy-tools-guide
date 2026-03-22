@@ -41,7 +41,17 @@ Use Tor when: accessing clearnet sites anonymously, .onion services.
 
 ---
 
-## Install I2P
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install I2P
 
 **Option A: Java I2P (reference implementation)**
 
@@ -93,7 +103,7 @@ The I2P project distributes a Firefox-based browser pre-configured for I2P:
 
 ---
 
-## Initial Configuration (Java I2P)
+### Step 2: Initial Configuration (Java I2P)
 
 After starting, open the router console at `http://127.0.0.1:7657`:
 
@@ -120,7 +130,7 @@ Router Console → Config → Bandwidth
 
 ---
 
-## Configure Your Browser for I2P
+### Step 3: Configure Your Browser for I2P
 
 The Java I2P router runs an HTTP proxy on port 4444:
 
@@ -145,7 +155,7 @@ These take 30-90 seconds to load on first visit while the router builds tunnels 
 
 ---
 
-## SOCKS Proxy for Other Applications
+### Step 4: SOCKS Proxy for Other Applications
 
 I2P also provides a SOCKS5 proxy on port 4447:
 
@@ -159,7 +169,7 @@ curl --socks5-hostname 127.0.0.1:4447 http://i2p-projekt.i2p/
 
 ---
 
-## Host an Eepsite (.i2p Hidden Service)
+### Step 5: Host an Eepsite (.i2p Hidden Service)
 
 Eepsites are websites hosted within the I2P network, accessible only to I2P users.
 
@@ -188,7 +198,7 @@ Register at stats.i2p for a human-readable .i2p alias
 
 ---
 
-## I2P-Bote: Encrypted Anonymous Email
+### Step 6: I2P-Bote: Encrypted Anonymous Email
 
 I2P-Bote is a serverless, encrypted email system built for I2P. Messages are stored in a distributed hash table with no central server.
 
@@ -208,7 +218,7 @@ Router Console → I2P Apps → I2P-Bote
 
 ---
 
-## i2pd Configuration (Lightweight Option)
+### Step 7: i2pd Configuration (Lightweight Option)
 
 ```ini
 # /etc/i2pd/i2pd.conf
@@ -255,7 +265,7 @@ sudo systemctl restart i2pd
 
 ---
 
-## Anonymity Considerations
+### Step 8: Anonymity Considerations
 
 I2P provides anonymity within its own network, but:
 
@@ -265,6 +275,21 @@ I2P provides anonymity within its own network, but:
 - **Clearnet access via I2P** (outproxies) is limited and less anonymous than using Tor exit nodes
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

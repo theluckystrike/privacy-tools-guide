@@ -40,7 +40,17 @@ Implement privacy by design by applying these seven principles during developmen
 - **Users should be able**: to verify that privacy promises are kept.
 - **Respect for User Privacy**: Keep user interests paramount.
 
-## The Seven Foundational Principles
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Seven Foundational Principles
 
 ### 1. Proactive, Not Reactive
 
@@ -251,7 +261,7 @@ class PrivacyControlPanel {
 }
 ```
 
-## Implementing Privacy by Design
+### Step 2: Implementing Privacy by Design
 
 Start by documenting what data your application collects and why. Create a data flow diagram showing how information moves through your system. For each data point, ask: do we need this? How long do we keep it? Who can access it?
 
@@ -274,7 +284,7 @@ HAVING DATEDIFF(NOW(), latest_record) > 90;
 openssl s_client -connect your-database:5432 -showcerts
 ```
 
-## Building Privacy into Your CI/CD
+### Step 3: Build Privacy into Your CI/CD
 
 Automate privacy checks as part of your deployment pipeline:
 
@@ -313,7 +323,7 @@ Privacy by design requires scrutiny of every feature, every data point, and ever
 The proactive principle means running a brief privacy threat model before any feature that touches personal data ships. A structured five-minute review at design time prevents hours of remediation later:
 
 ```markdown
-## Privacy Threat Model — [Feature Name]
+### Step 4: Privacy Threat Model — [Feature Name]
 
 ### Data Collected
 - What personal data does this feature collect?
@@ -338,7 +348,7 @@ The proactive principle means running a brief privacy threat model before any fe
 
 Add this template to your pull request description for any feature that introduces new data collection. A reviewer who can fill in the blanks means the feature is ready to ship. Blanks that cannot be filled are blockers.
 
-## Documenting Data Flows in Code
+### Step 5: Documenting Data Flows in Code
 
 Privacy by design degrades quickly when the documentation lives in a wiki that no one reads. Keeping data flow annotations close to the code makes them visible during review:
 
@@ -369,7 +379,7 @@ class UserEventLog:
 
 These inline data classification comments become visible in code review and in IDE tooltips. They also give a single place to update when a field is added, removed, or reclassified — rather than chasing documentation spread across Notion pages.
 
-## Handling Right-to-Erasure Requests in Practice
+### Step 6: Handling Right-to-Erasure Requests in Practice
 
 Principle 7 (respect for user privacy) requires that deletion actually work. Many systems have soft-delete patterns (`is_deleted = true`) that leave personal data in place. Implement verifiable deletion:
 
@@ -417,6 +427,21 @@ def execute_erasure_request(user_id: str, db) -> Dict:
 ```
 
 The manifest returned by this function is your audit trail. Store it in a separate compliance log (which does not contain personal data — just deletion records) so you can demonstrate compliance if a regulator asks.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -42,7 +42,17 @@ macOS ships with reasonable defaults for home users, but anyone handling sensiti
 - **If you no longer use a VPN service, verify that its extension is fully removed**: uninstalling the app does not always remove the extension.
 - **AirDrop uses Bluetooth and**: WiFi to make you discoverable.
 
-## Understanding macOS Network Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand macOS Network Architecture
 
 macOS provides multiple layers of network privacy controls:
 
@@ -52,7 +62,7 @@ macOS provides multiple layers of network privacy controls:
 - **Network Extensions** — VPN clients, content filters, and DNS proxies installed by apps
 - **System services** — location, Bonjour, AirDrop, and diagnostic uploads
 
-## Built-in Firewall Configuration
+### Step 2: Built-in Firewall Configuration
 
 ### Application Firewall
 
@@ -91,7 +101,7 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
 
 This blocks everything except basic internet browsing (outbound connections you initiate). Essential services like file sharing and remote login will not work, making it ideal for coffee shop or airport WiFi sessions.
 
-## DNS Configuration for Privacy
+### Step 3: DNS Configuration for Privacy
 
 ### Why Default DNS Is a Privacy Problem
 
@@ -133,7 +143,7 @@ DNS encryption encrypts your DNS queries, preventing network observers from seei
 
 NextDNS gives you detailed control over DNS logging, retention, and custom blocklists. Its free tier supports up to 300,000 queries per month. Configure it via the macOS app or by installing their signed configuration profile.
 
-## Network Extensions and Privacy
+### Step 4: Network Extensions and Privacy
 
 ### Managing Extensions
 
@@ -194,7 +204,7 @@ pass in proto tcp from 192.168.1.0/24 to any port 22
 
 Always test pf rules carefully. Use a second terminal session or recovery plan before applying restrictive inbound rules.
 
-## Monitoring Network Activity
+### Step 5: Monitor Network Activity
 
 ### Using Little Snitch or Lulu
 
@@ -222,7 +232,7 @@ log show --predicate 'subsystem == "com.apple.network"' --last 1h
 
 Use `netstat -rn` to inspect your routing table and confirm VPN traffic is properly routed through the tunnel interface.
 
-## WiFi Privacy Considerations
+### Step 6: WiFi Privacy Considerations
 
 ### Preventing Auto-Joining Networks
 
@@ -242,7 +252,7 @@ macOS supports Private WiFi Address (MAC randomization) per network since macOS 
 
 Rotating mode changes your MAC address on a schedule, further reducing the ability of network operators to track your device across sessions.
 
-## System Services Network Access
+### Step 7: System Services Network Access
 
 ### Location Services and Networking
 
@@ -268,7 +278,7 @@ These settings limit the amount of usage data, crash reports, and behavioral tel
 launchctl list | grep diagnostic
 ```
 
-## Comparing Third-Party Firewall Tools
+### Step 8: Comparing Third-Party Firewall Tools
 
 | Tool | Price | Outbound Control | Logging | Open Source |
 |------|-------|-----------------|---------|-------------|

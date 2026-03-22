@@ -41,7 +41,17 @@ Create baseline snapshots of running processes, installed packages, open network
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Use integrity checkers like**: `aide` or `tripwire` to alert on unauthorized file modifications to system binaries.
 
-## Starting Point: Document Your Baseline
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Starting Point: Document Your Baseline
 
 Before detecting anomalies, establish what "normal" looks like for your system. Create a baseline snapshot during a known-clean state:
 
@@ -59,7 +69,7 @@ ls /Applications > ~/baseline_apps_$(date +%Y%m%d).txt
 
 Store these baselines securely—preferably offline or in encrypted storage. Compare current system state against these snapshots during audits.
 
-## Process Analysis
+### Step 2: Process Analysis
 
 Unfamiliar processes often indicate compromise. Start by listing all running processes and checking for suspicious entries.
 
@@ -107,7 +117,7 @@ Get-Service | Where-Object {$_.Status -eq 'Running'}
 Get-Process | Where-Object {$_.Name -match 'cryptominer|coinhive|minerd'}
 ```
 
-## Network Connection Audit
+### Step 3: Network Connection Audit
 
 Compromised devices often maintain unauthorized network connections for command-and-control (C2) communication or data exfiltration.
 
@@ -146,7 +156,7 @@ Get-NetTCPConnection | Select-Object OwningProcess, LocalAddress, RemoteAddress 
 }
 ```
 
-## System Integrity Verification
+### Step 4: System Integrity Verification
 
 Verify that critical system files remain unmodified. Rootkits and malware often replace core system binaries.
 
@@ -190,7 +200,7 @@ sudo codesign -vvv /System/Library/Extensions/*.kext
 log show --predicate 'eventMessage contains "code signature"' --last 1h
 ```
 
-## Authentication and Access Review
+### Step 5: Authentication and Access Review
 
 Compromised credentials enable unauthorized access. Audit user accounts and authentication logs.
 
@@ -234,7 +244,7 @@ defaults read com.apple.HIToolbox | grep -i "keyboard"
 ls -la ~/Library/Application\ Support/com.apple.backgroundtaskmanagementagent/
 ```
 
-## Log Analysis
+### Step 6: Log Analysis
 
 System and application logs reveal historical anomalies. Focus on authentication, privilege escalation, and error events.
 
@@ -264,7 +274,7 @@ log show --predicate 'eventMessage contains "firewall"' --last 24h
 log show --predicate 'eventMessage contains "install"' --last 7d | grep -i "pkg\|app"
 ```
 
-## Storage and Persistence Check
+### Step 7: Storage and Persistence Check
 
 Malware often establishes persistence through startup items, cron jobs, or scheduled tasks.
 
@@ -312,7 +322,7 @@ Get-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run'
 Get-Service | Select-Object Name, Status, StartType
 ```
 
-## Practical Audit Workflow
+### Step 8: Practical Audit Workflow
 
 Execute a systematic audit using this sequence:
 
@@ -336,11 +346,26 @@ Some findings require immediate escalation beyond personal investigation:
 
 In these cases, isolate the affected system from the network, preserve forensic evidence, and consider engaging security professionals.
 
-## Building Audit Habits
+### Step 9: Build Audit Habits
 
 Perform device audits regularly—monthly for development machines handling sensitive work, quarterly for general systems. Automate baseline comparisons using tools like AIDE or OSSEC for continuous monitoring. Document your expected network topology and compare actual connections against it during each audit.
 
 The goal is not paranoia but disciplined verification. Regular audits catch compromises early, limiting damage and enabling faster recovery.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

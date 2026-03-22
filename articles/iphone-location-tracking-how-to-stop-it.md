@@ -45,13 +45,23 @@ HomeKit**: Uses location for automation triggers:
 - **For developers and power**: users seeking true privacy control, understanding each vector matters.
 - **Apple stores this data**: locally on your device, but the mere existence of this behavioral profiling concerns privacy-conscious users.
 
-## Understanding iPhone Location Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand iPhone Location Data
 
 iOS maintains location data at three distinct levels: the system-wide location toggle, individual app permissions, and hidden system services. Each operates independently, meaning disabling one does not affect others.
 
 The Significant Locations feature deserves particular attention. This service learns your movement patterns and predicts destinations. Apple stores this data locally on your device, but the mere existence of this behavioral profiling concerns privacy-conscious users.
 
-## Disabling System-Wide Location
+### Step 2: Disable System-Wide Location
 
 The first layer involves the master location switch:
 
@@ -60,7 +70,7 @@ The first layer involves the master location switch:
 
 This disables all location access across every app and service. However, certain features become unavailable—Maps navigation, Find My, location-based reminders. For most users, a more granular approach works better.
 
-## Per-App Location Controls
+### Step 3: Per-App Location Controls
 
 iOS provides four location permission levels for each app:
 
@@ -80,7 +90,7 @@ To configure per-app settings:
 
 For each app, navigate to **Settings** → **Privacy & Security** → **Location Services** → [App Name] and select **Never** or **While Using** based on necessity. Review apps that currently have **Always** access—they can track you continuously.
 
-## System Services Location Tracking
+### Step 4: System Services Location Tracking
 
 Apple embeds location functionality deep within system services. These operate independently of third-party apps:
 
@@ -116,7 +126,7 @@ Navigate to **Settings** → **Privacy & Security** → **Location Services** �
 
 Note that **Emergency Calls** and **Emergency SOS** require location to function properly. These should remain enabled for safety reasons.
 
-## Developer Automation with Shortcuts
+### Step 5: Developer Automation with Shortcuts
 
 For power users, Shortcuts provides programmatic control. Create automations that adjust location settings based on context:
 
@@ -168,7 +178,7 @@ func checkLocationPermission(for app: String) {
 }
 ```
 
-## Network-Level Location Blocking
+### Step 6: Network-Level Location Blocking
 
 For developers running local networks, blocking location API calls at the DNS level adds protection:
 
@@ -192,7 +202,7 @@ sudo pihole -g
 
 Note that blocking these domains may affect Find My, iCloud sync, and emergency services.
 
-## Safari and Web Location Requests
+### Step 7: Safari and Web Location Requests
 
 Safari respects system location permissions. Additionally:
 
@@ -202,7 +212,7 @@ Safari respects system location permissions. Additionally:
 
 Websites cannot request location without permission prompts—ensure Safari settings prevent persistent permissions.
 
-## Verifying Your Configuration
+### Step 8: Verify Your Configuration
 
 After implementing changes, verify your location isolation:
 
@@ -221,7 +231,7 @@ After implementing changes, verify your location isolation:
 # 4. Run "Find My" and verify it still works (if needed)
 ```
 
-## Practical Recommendations
+### Step 9: Practical Recommendations
 
 For maximum privacy without breaking functionality:
 
@@ -230,6 +240,21 @@ For maximum privacy without breaking functionality:
 3. **Review System Services quarterly** — Apple adds new location features regularly
 4. **Use automation reminders** — Create Shortcuts that prompt location review
 5. **Consider MDM profiles for enterprise** — Mobile Device Management allows forced location restrictions on managed devices
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

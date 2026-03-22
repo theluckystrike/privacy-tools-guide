@@ -42,7 +42,17 @@ This guide provides practical solutions that reduce the mental overhead of maint
 - **Privacy fatigue hits developers**: and power users hard.
 - **Yet implementing every privacy**: best practice feels exhausting.
 
-## Understanding Privacy Fatigue
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Privacy Fatigue
 
 Privacy fatigue manifests as decision paralysis. You encounter yet another service requesting your data, and you either click "accept" out of habit or spend precious mental energy researching alternatives. The cumulative effect of these small decisions drains your capacity for more important tasks.
 
@@ -50,7 +60,7 @@ For developers, this fatigue compounds. You must secure your own projects, manag
 
 The solution is not willpower. It's building systems that automate privacy-preserving behaviors so you don't have to make conscious decisions repeatedly.
 
-## Automate Your Privacy Tooling
+### Step 2: Automate Your Privacy Tooling
 
 The most effective strategy against privacy fatigue is automation. Once you configure your tools correctly, they handle privacy decisions without requiring your attention.
 
@@ -102,7 +112,7 @@ services:
 
 After setup, add your preferred blocklists and the system handles tracker blocking automatically.
 
-## Centralize Your Identity Management
+### Step 3: Centralize Your Identity Management
 
 Managing separate accounts across services creates cognitive overhead. Single Sign-On (SSO) providers that respect privacy reduce this burden while maintaining security.
 
@@ -152,7 +162,7 @@ export API_KEY=$(op item get "Production API Key" --field password)
 
 This approach means you remember one master password (or use biometric authentication), and your secrets manager handles the rest.
 
-## Build Privacy-Preserving Habits
+### Step 4: Build Privacy-Preserving Habits
 
 Automation handles much of the heavy lifting, but intentional habits provide additional protection without significant effort.
 
@@ -183,40 +193,40 @@ git secrets --add 'password\s*=\s*.*'
 git secrets --add 'api[_-]?key\s*=\s*.*'
 ```
 
-## Choose Multi-Purpose Tools
+### Step 5: Choose Multi-Purpose Tools
 
 Rather than managing dozens of specialized tools, prefer tools that serve multiple privacy functions. A well-configured browser with appropriate extensions handles most web browsing privacy. A single password manager with notes functionality stores more than just passwords. A local-first note-taking app with encryption keeps your thoughts private without requiring a separate encrypted vault.
 
 This consolidation reduces the surface area you must monitor and maintain.
 
-## Document Your Setup
+### Step 6: Document Your Setup
 
 Write down your privacy configuration. A simple markdown file in your dotfiles repository serves as documentation:
 
 ```markdown
 # Privacy Setup Documentation
 
-## DNS
+### Step 7: DNS
 - Pi-hole at 192.168.1.100
 - Blocklists: StevenBlack, AdGuard Default
 
-## Password Manager
+### Step 8: Password Manager
 - 1Password, primary vault
 - CLI authentication: biometric
 
-## Browser
+### Step 9: Browser
 - Firefox with uBlock Origin, Privacy Badger
 - Default search: DuckDuckGo
 - Cookies: reject third-party
 
-## Email
+### Step 10: Email
 - Forwarding: use email aliases
 - Provider: ProtonMail
 ```
 
 Documentation eliminates the need to remember configuration details. When something breaks or you need to rebuild your setup, the documentation guides you through it.
 
-## Use Email Aliases to Reduce Exposure
+### Step 11: Use Email Aliases to Reduce Exposure
 
 One of the highest-use changes you can make is adopting email aliasing for every service you sign up for. Tools like SimpleLogin, AnonAddy, and Apple Hide My Email generate a unique alias per service. When one gets compromised or sold to spammers, you disable that alias rather than changing your real email address everywhere.
 
@@ -235,7 +245,7 @@ docker run -d \
 
 This keeps your aliasing infrastructure entirely under your control.
 
-## Reduce Browser Fingerprinting Fatigue
+### Step 12: Reduce Browser Fingerprinting Fatigue
 
 Browser fingerprinting is one of the hardest privacy problems because it requires no cookies or storage. Sites identify you through the combination of your screen size, fonts, hardware, and browser configuration. Managing this manually is exhausting.
 
@@ -254,7 +264,7 @@ Once applied, the profile resists most fingerprinting techniques without requiri
 
 For lower-friction browsing where fingerprinting is less of a concern, a standard Firefox profile with uBlock Origin handles the majority of tracker blocking. Save the hardened profile for financial, medical, and political research.
 
-## Contain App Permissions Proactively
+### Step 13: Contain App Permissions Proactively
 
 Mobile apps are persistent privacy drains. Many request permissions far beyond what their functionality requires. The fatigue comes from evaluating each request individually.
 
@@ -272,13 +282,28 @@ firejail --profile=/etc/firejail/generic.profile application-name
 
 The `--private` flag gives the app a clean home directory. `--net=none` cuts network access entirely. Once configured, the sandbox runs transparently — you click the app icon and it launches in a contained environment without any conscious effort.
 
-## Batch Your Privacy Decisions
+### Step 14: Batch Your Privacy Decisions
 
 One underappreciated cause of privacy fatigue is the distribution of decisions across time. You encounter a cookie banner at 9am, a permissions request at 11am, a suspicious privacy policy at 2pm. Each interruption fragments your focus.
 
 Batch these decisions. Install the uBlock Origin extension with the "I am an advanced user" mode enabled, and configure it to block third-party scripts by default. Most cookie banners become irrelevant because the tracking infrastructure they guard is already blocked. Sites that require JavaScript to function will prompt you to allow specific scripts — you make one decision per site rather than one decision per banner.
 
 Similarly, batch your account creation. If you need to sign up for several services in a research session, do it in one sitting using your aliasing tool and password manager. Create all the aliases, generate all the passwords, and store everything before moving on. Context switching between privacy tasks and productive work is where the fatigue accumulates.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

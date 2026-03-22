@@ -25,13 +25,23 @@ Digital asset inheritance remains one of the most underexplored areas in blockch
 - **Use hardware wallets with**: recovery seeds. Write down recovery phrases and store them in safe deposit boxes or with attorneys.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Inheritance Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Inheritance Challenge
 
 When someone holds cryptocurrency or NFTs, the private keys control the assets. Without access to those keys—whether due to death, incapacity, or simply losing them—the assets become permanently inaccessible. Unlike bank accounts with beneficiary designations, blockchain transactions require cryptographic signatures from the living owner.
 
 The solution involves designing systems that authorize transfers without requiring the original owner's direct participation. Several approaches exist, each with trade-offs between security, simplicity, and trust.
 
-## Smart Contract-Based Beneficiaries
+### Step 2: Smart Contract-Based Beneficiaries
 
 The most decentralized approach uses smart contracts that hold assets and release them to designated beneficiaries after specific conditions are met. Here's a basic implementation pattern:
 
@@ -106,7 +116,7 @@ contract DigitalAssetInheritance {
 
 This contract requires the owner to designate beneficiaries with percentage allocations and set an inactivity period. Beneficiaries can claim funds only after the specified time passes without owner activity.
 
-## Multi-Signature Wallet Approach
+### Step 3: Multi-Signature Wallet Approach
 
 For users who prefer not to write custom contracts, multi-signature wallets provide a practical alternative. Gnosis Safe and similar solutions require multiple approvals for transactions, allowing you to add a trusted party who can authorize transfers if you're unavailable.
 
@@ -138,7 +148,7 @@ console.log('Safe address:', safe.getAddress());
 
 The threshold of 2 means any two of the three owners can authorize a transaction. Include clear legal documentation specifying when the estate planner should participate.
 
-## Time-Locked Recovery Scripts
+### Step 4: Time-Locked Recovery Scripts
 
 A simpler approach for developers comfortable with command-line tools involves time-locked scripts that beneficiaries can run:
 
@@ -218,7 +228,7 @@ if __name__ == '__main__':
 
 This script requires the private key to be stored securely—ideally in an encrypted hardware wallet or time-released vault that beneficiaries access after the delay period.
 
-## Legal Considerations
+### Step 5: Legal Considerations
 
 Technical solutions alone don't resolve the legal ambiguity surrounding digital asset inheritance. Consider these practical steps:
 
@@ -230,7 +240,7 @@ Technical solutions alone don't resolve the legal ambiguity surrounding digital 
 
 **Consult legal professionals.** Estate law varies by jurisdiction. A qualified attorney can ensure your digital asset instructions align with local requirements.
 
-## Practical Recommendations
+### Step 6: Practical Recommendations
 
 For most developers and power users, a layered approach works best:
 
@@ -242,6 +252,21 @@ For most developers and power users, a layered approach works best:
 
 The optimal solution depends on your technical comfort level, the value of assets, and your trust relationships. Start with simple measures—documenting your holdings and securing recovery seeds—and layer additional complexity as needed.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

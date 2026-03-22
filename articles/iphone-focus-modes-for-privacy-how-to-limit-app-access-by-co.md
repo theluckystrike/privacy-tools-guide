@@ -40,7 +40,17 @@ Use iPhone Focus Modes to limit app notifications and access by context—create
 - **Respecting Focus preferences in**: your app's notification delivery 3.
 - **Use "Only While Using"**: instead of "Always" for location access.
 
-## Understanding Focus Mode Privacy Controls
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Focus Mode Privacy Controls
 
 Focus Modes operate at the system level on iOS, allowing you to create custom modes that filter notifications and restrict app functionality. Each Focus Mode can be configured to:
 
@@ -51,7 +61,7 @@ Focus Modes operate at the system level on iOS, allowing you to create custom mo
 
 For privacy-conscious users, the ability to create context-specific restrictions means you can prevent sensitive apps from alerting you in public or work environments while maintaining full functionality when you're in a private setting.
 
-## Creating Privacy-Focused Focus Modes
+### Step 2: Create Privacy-Focused Focus Modes
 
 The native Settings app provides the interface for creating Focus Modes, but power users can use Shortcuts automation to create more sophisticated rules. Here's how to set up a basic privacy-focused Focus Mode:
 
@@ -61,7 +71,7 @@ The native Settings app provides the interface for creating Focus Modes, but pow
 4. Configure allowed apps and contacts
 5. Enable Lock Screen dimming to hide sensitive content
 
-## Automating Focus Mode Switching
+### Step 3: Automate Focus Mode Switching
 
 For developers who want programmatic control, Shortcuts provides automation capabilities. You can create automation rules that switch Focus Modes based on:
 
@@ -96,7 +106,7 @@ Else
 End
 ```
 
-## Focus Mode and Notification Privacy
+### Step 4: Focus Mode and Notification Privacy
 
 The most powerful privacy feature in Focus Modes is notification filtering. When properly configured, a Focus Mode can:
 
@@ -107,7 +117,7 @@ The most powerful privacy feature in Focus Modes is notification filtering. When
 
 This is particularly useful when working on sensitive projects or when you need to maintain privacy in shared spaces.
 
-## Implementing Context-Aware Notifications
+### Step 5: Implementing Context-Aware Notifications
 
 For developers building iOS apps, respecting Focus Mode settings is built into the system. However, you can enhance your app's privacy behavior by:
 
@@ -175,7 +185,7 @@ Create sophisticated privacy scenarios using multiple modes:
 - Prevents Siri from accessing health data
 - Helps avoid targeted ads based on location patterns
 
-## Shortcuts Automation Advanced Patterns
+### Step 6: Shortcuts Automation Advanced Patterns
 
 Create sophisticated automation using Shortcuts. This example monitors Focus Mode changes and logs them for verification:
 
@@ -209,7 +219,7 @@ When [User opens [RestrictedApp]]
 End When
 ```
 
-## Using Focus Filters for Application-Level Control
+### Step 7: Use Focus Filters for Application-Level Control
 
 iOS 16+ includes Focus Filters, which allow apps to adapt their behavior within a specific Focus Mode. Developers can implement:
 
@@ -250,7 +260,7 @@ func adaptUIForFocus(focusName: String?) {
 }
 ```
 
-## Limitations and Workarounds
+### Step 8: Limitations and Workarounds
 
 **Limitation 1: Background App Refresh**
 Focus Modes don't stop background app refresh. Apps continue syncing data and uploading information even in restricted modes.
@@ -267,7 +277,7 @@ Location services continue running even in Focus Modes that should prevent locat
 
 *Workaround*: Combine Focus Modes with location app permission settings. Use "Only While Using" instead of "Always" for location access.
 
-## Privacy Dashboard Integration
+### Step 9: Privacy Dashboard Integration
 
 Monitor what apps are accessing in real time using iOS Privacy Dashboard:
 
@@ -283,7 +293,7 @@ The Privacy Dashboard shows:
 
 Use this to refine your Focus Mode configurations. If an app frequently accesses location despite your Focus Mode, that's a signal to tighten its permissions.
 
-## Testing Your Focus Mode Configuration
+### Step 10: Test Your Focus Mode Configuration
 
 Verify your privacy configuration works correctly:
 

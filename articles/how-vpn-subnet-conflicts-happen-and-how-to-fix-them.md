@@ -46,7 +46,17 @@ A subnet conflict occurs when two or more networks assign the same IP address ra
 
 Consider this scenario: Your home network uses `192.168.1.0/24`, your corporate VPN uses `192.168.1.0/24`, and your split-tunnel VPN also uses `192.168.1.0/24`. All three claim the same address space. Your machine simply cannot distinguish between them.
 
-## How VPN Subnet Conflicts Happen
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How VPN Subnet Conflicts Happen
 
 ### 1. Multiple Simultaneous VPN Connections
 
@@ -64,7 +74,7 @@ VPN providers configure their server pools with specific subnets. Many providers
 
 Your home router likely uses `192.168.1.0/24` or `192.168.0.0/24`. Many VPN clients default to the same ranges for their virtual interfaces. The result: your VPN tunnel claims the same addresses your local network already uses.
 
-## Detecting Subnet Conflicts
+### Step 2: Detecting Subnet Conflicts
 
 First, identify the conflict. On Linux or macOS, check your routing table:
 
@@ -93,7 +103,7 @@ route print
 
 Check for identical destination networks under "IPv4 Route Table."
 
-## Practical Solutions
+### Step 3: Practical Solutions
 
 ### Solution 1: Use Split Tunneling
 
@@ -194,7 +204,7 @@ iptables -A OUTPUT -o eth0 -d 10.0.0.0/8 -j REJECT
 
 This ensures only properly routed traffic escapes, preventing leaks that cause conflicts.
 
-## Preventing Future Conflicts
+### Step 4: Preventing Future Conflicts
 
 - **Document your networks**: Keep a record of every subnet you use—home, office, every VPN you connect to.
 - **Audit regularly**: Periodically review `ip route show` or `netstat -nr` to catch new conflicts early.
@@ -202,7 +212,7 @@ This ensures only properly routed traffic escapes, preventing leaks that cause c
 - **Prefer WireGuard**: WireGuard's simple design makes configuration clearer and conflicts easier to spot.
 - **Avoid 0.0.0.0/0 routes**: Unless necessary, use split tunneling to avoid overriding your entire routing table.
 
-## Diagnosing Conflicts with Advanced Tools
+### Step 5: Diagnosing Conflicts with Advanced Tools
 
 When basic route inspection shows conflicts, use specialized tools:
 
@@ -274,7 +284,7 @@ def parse_routing_table():
 parse_routing_table()
 ```
 
-## Dynamic Conflict Resolution
+### Step 6: Dynamic Conflict Resolution
 
 Create a script that automatically detects and fixes conflicts:
 
@@ -327,7 +337,7 @@ check_conflicts
 resolve_conflicts
 ```
 
-## Windows-Specific Subnet Conflict Resolution
+### Step 7: Windows-Specific Subnet Conflict Resolution
 
 Windows handles routing differently than Linux. Use these Windows-specific commands:
 
@@ -349,7 +359,7 @@ netsh int ipv4 add route 10.0.0.0/8 1.2.3.4 metric=1
 route print | find "10.0.0.0"
 ```
 
-## Multi-VPN Management Framework
+### Step 8: Multi-VPN Management Framework
 
 For users connecting to multiple VPNs simultaneously (corporate + privacy VPN):
 
@@ -434,7 +444,7 @@ manager.assign_non_overlapping_subnets()
 manager.generate_config()
 ```
 
-## Testing Subnet Conflict Fixes
+### Step 9: Test Subnet Conflict Fixes
 
 After implementing fixes, verify connectivity:
 
@@ -469,6 +479,21 @@ echo ""
 echo "Checking default route:"
 ip route show | grep "^default"
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

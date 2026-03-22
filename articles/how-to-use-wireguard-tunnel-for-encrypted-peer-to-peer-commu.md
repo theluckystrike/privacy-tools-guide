@@ -38,13 +38,23 @@ Set up WireGuard P2P by generating public/private key pairs for each peer, defin
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: wireguard for p2p communication, installation, key generation, with specific setup instructions
 
-## Understanding WireGuard for P2P Communication
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand WireGuard for P2P Communication
 
 Traditional VPN setups route traffic through a central server. Peer-to-peer communication with WireGuard bypasses this requirement—devices connect directly to each other, creating an encrypted tunnel without intermediary servers. This approach reduces latency, eliminates single points of failure, and keeps your communication private.
 
 WireGuard operates using public/private key pairs. Each device generates its own keys, and peers authorize each other by exchanging public keys. The tunnel establishment happens in milliseconds, and the connection remains persistent with minimal overhead.
 
-## Installation
+### Step 2: Install ation
 
 Install WireGuard on your target platforms. Most Linux distributions include it in their default repositories:
 
@@ -64,7 +74,7 @@ brew install wireguard-tools
 
 For mobile devices, install the official WireGuard apps from the App Store or Google Play Store. The mobile apps provide user-friendly interfaces for managing peer connections.
 
-## Key Generation
+### Step 3: Generate Keys
 
 Generate the required key pairs for each device participating in the tunnel:
 
@@ -83,7 +93,7 @@ mkdir -p ~/.wireguard
 chmod 700 ~/.wireguard
 ```
 
-## Configuring a Point-to-Point Tunnel
+### Step 4: Configure a Point-to-Point Tunnel
 
 The simplest WireGuard setup connects two devices directly. This example demonstrates connecting a laptop to a desktop machine for encrypted file transfers or remote access.
 
@@ -133,7 +143,7 @@ Verify the connection:
 sudo wg show
 ```
 
-## Connecting Through NAT
+### Step 5: Connecting Through NAT
 
 Direct peer connection fails when one device resides behind NAT (common with home routers). Several approaches solve this limitation.
 
@@ -198,7 +208,7 @@ AllowedIPs = 10.0.0.3/32
 
 Repeat similar configurations on devices B and C. For larger meshes, consider using `wg-mesh` or similar automation tools that handle key distribution and route updates.
 
-## Use Cases
+### Step 6: Use Cases
 
 ### Secure File Transfer
 

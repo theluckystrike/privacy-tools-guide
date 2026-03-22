@@ -41,7 +41,17 @@ Create a master password with at least 80 bits of entropy: use a random 6-8 word
 - **Seven words is the**: recommended minimum when passphrases are your only factor.
 - **Configure with at least 64MB memory**: 3 iterations, and 4 parallelism.
 
-## Understanding Master Password Entropy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Master Password Entropy
 
 Entropy measures the randomness of your password in bits. Higher entropy means more possible combinations an attacker must enumerate. For master passwords, target at least 80 bits of entropy—this provides sufficient security against offline attacks even if your password database is compromised.
 
@@ -85,7 +95,7 @@ password = "Tr0ub4dor&3HorseBattery"
 print(f"Entropy: {calculate_entropy(password):.1f} bits")
 ```
 
-## Passphrases: The Practical Approach
+### Step 2: Set Up Passphrase s: The Practical Approach
 
 Random words from a dictionary (EFF wordlists are popular) provide better usability than character jumbles while maintaining security. A 6-word passphrase typically achieves 70-80 bits of entropy—suitable when paired with a strong key derivation function.
 
@@ -128,7 +138,7 @@ print(f"Word count: 7 | Entropy: ~90.5 bits")
 EOF
 ```
 
-## Key Derivation Functions: Why They Matter
+### Step 3: Key Derivation Functions: Why They Matter
 
 Password managers don't store your master password directly. Instead, they derive an encryption key using a key derivation function (KDF). This process is intentionally slow to hinder brute-force attacks.
 
@@ -195,7 +205,7 @@ This means a 70-bit entropy passphrase would take:
 
 The memory-hardness of Argon2id matters because GPU-based attacks depend on parallelism. Requiring 64MB per hash attempt limits the number of simultaneous attacks a GPU can run, degrading GPU advantage dramatically.
 
-## What Makes a Master Password Vulnerable
+### Step 4: What Makes a Master Password Vulnerable
 
 Even with high entropy, certain patterns weaken master passwords:
 
@@ -240,7 +250,7 @@ print(estimate_crack_time("Tr0ub4dor&3", 1000))  # With Argon2
 print(estimate_crack_time("Tr0ub4dor&3", 100e9))  # With fast hash
 ```
 
-## Memorization Strategies for Strong Passwords
+### Step 5: Memorization Strategies for Strong Passwords
 
 A common objection to long random passphrases is memorability. Structured memorization techniques make 7-word passphrases reliable:
 
@@ -252,7 +262,7 @@ A common objection to long random passphrases is memorability. Structured memori
 
 For character-based passwords, consider storing a hint (not the password itself) in your vault: a cryptic clue that helps you reconstruct the pattern without exposing the actual credential to someone who reads the hint.
 
-## Password Manager Security Architecture
+### Step 6: Password Manager Security Architecture
 
 Understanding how your password manager processes your master password clarifies what you're protecting against.
 
@@ -269,7 +279,7 @@ This architecture means that even a complete server breach exposes only encrypte
 
 Bitwarden's open-source implementation demonstrates this pattern and can be self-audited. LastPass's 2022 breach illustrated what happens when this architecture fails—their key derivation used insufficient iterations (PBKDF2 at 100,001 iterations client-side, with some accounts at much lower values), allowing attackers to crack vaults offline.
 
-## Practical Recommendations
+### Step 7: Practical Recommendations
 
 For developers implementing password manager features:
 
@@ -288,6 +298,21 @@ For users managing their vault:
 5. Test your master password strength using the calculation methods above
 6. Verify your password manager uses Argon2id—check their security whitepaper or open-source code
 7. Set up an emergency access contact so vault recovery doesn't require bypassing security controls
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

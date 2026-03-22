@@ -41,7 +41,17 @@ Each of these is a potential entry point.
 
 ---
 
-## Section 1: Account and Authentication
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Section 1: Account and Authentication
 
 ### Disable the Default Admin Account
 
@@ -86,7 +96,7 @@ QNAP: Control Panel → Security → Password Policy
 
 ---
 
-## Section 2: Enable Disk Encryption
+### Step 2: Section 2: Enable Disk Encryption
 
 Disk encryption protects data if the NAS is physically stolen. Without it, drives pulled from the chassis are fully readable.
 
@@ -138,7 +148,7 @@ zfs mount pool/encrypted-dataset
 
 ---
 
-## Section 3: Network Hardening
+### Step 3: Section 3: Network Hardening
 
 ### Firewall Rules
 
@@ -188,7 +198,7 @@ Router: Admin interface → disable UPnP (varies by router)
 
 ---
 
-## Section 4: Disable Cloud Relay Features
+### Step 4: Section 4: Disable Cloud Relay Features
 
 QuickConnect (Synology) and myQNAPcloud create persistent tunnels to manufacturer servers, making your NAS reachable from the internet through their relay. Disable unless you specifically need remote access.
 
@@ -207,7 +217,7 @@ TrueNAS: Services → OpenVPN/WireGuard → configure
 
 ---
 
-## Section 5: Enable Audit Logging
+### Step 5: Section 5: Enable Audit Logging
 
 ```
 Synology DSM:
@@ -242,7 +252,7 @@ Control Panel → Security → IP Access Protection
 
 ---
 
-## Section 6: Backup and Snapshots
+### Step 6: Section 6: Backup and Snapshots
 
 A compromised or ransomware-hit NAS is only recoverable if you have backups it can't reach:
 
@@ -265,7 +275,7 @@ A compromised or ransomware-hit NAS is only recoverable if you have backups it c
 
 ---
 
-## Section 7: Keep Firmware Updated
+### Step 7: Section 7: Keep Firmware Updated
 
 ```bash
 # Synology: Control Panel → Update & Restore → Check for updates
@@ -284,7 +294,7 @@ A compromised or ransomware-hit NAS is only recoverable if you have backups it c
 
 ---
 
-## Verify Your Hardening
+### Step 8: Verify Your Hardening
 
 ```bash
 # From an external machine on your LAN, port scan your NAS
@@ -305,6 +315,21 @@ nmap -sV your.public.ip.address
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

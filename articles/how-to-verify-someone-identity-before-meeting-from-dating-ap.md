@@ -52,7 +52,17 @@ The risks break down into three categories:
 - **Partial misrepresentation**: Real photos, but misleading details — a separated person presenting as single, someone much older using younger photos, a different city claimed for proximity.
 - **Predatory intent**: Real identity, dangerous intent. Verification helps with the first two categories but not the third — which is why physical safety practices matter regardless of identity confidence.
 
-## Reverse Image Search as Your First Line of Defense
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Reverse Image Search as Your First Line of Defense
 
 The simplest verification technique involves checking whether profile photos actually belong to the person using them. Most catfishing cases use stolen images from social media accounts, stock photo sites, or influencer profiles.
 
@@ -89,7 +99,7 @@ This script takes an image URL as input and returns potential matches across the
 
 A match on a stock photo site or another person's social media profile is a strong red flag. A match on the person's own public accounts (Instagram, LinkedIn) is confirming. No match at all is neutral — the person may just have limited public photos. Evaluate results in context rather than treating any outcome as definitive.
 
-## Validating Social Media Presence
+### Step 2: Validating Social Media Presence
 
 Legitimate dating profiles typically link to active social media accounts. Requesting social media verification is a standard practice that most genuine users understand.
 
@@ -138,7 +148,7 @@ result = verify_social_account('actualusername')
 print(f"Account exists: {result['exists']}")
 ```
 
-## Phone Number Verification Techniques
+### Step 3: Phone Number Verification Techniques
 
 Phone number verification adds another layer of identity confirmation. Services like Google Voice can help, but more importantly, you can use free lookup services to check number validity.
 
@@ -183,7 +193,7 @@ validatePhoneNumber('+1234567890')
 
 Ask the person to respond to a text message that includes a randomly generated word or phrase you specify. This confirms they control the number in real time, not that they copied someone else's number. Combine with a video call for stronger confirmation.
 
-## Video Call Verification
+### Step 4: Video Call Verification
 
 The most reliable verification method is a live video call. This confirms the person matches their photos and can observe body language cues that indicate authenticity.
 
@@ -199,7 +209,7 @@ The most reliable verification method is a live video call. This confirms the pe
 
 If the person has sent voice messages on the app, compare vocal qualities during the video call. Voice is much harder to fake than video in real time. Significant differences in accent, cadence, or vocal register are worth noting.
 
-## Building Your Own Verification Tool
+### Step 5: Build Your Own Verification Tool
 
 For developers interested in creating a verification system, here's a conceptual framework:
 
@@ -246,7 +256,7 @@ result = verifier.verify(profile)
 print(f"Verification score: {result['overall_score']}%")
 ```
 
-## Red Flags That Override Positive Verification
+### Step 6: Red Flags That Override Positive Verification
 
 Even if most checks pass, certain behaviors should stop the process entirely:
 
@@ -258,7 +268,7 @@ Even if most checks pass, certain behaviors should stop the process entirely:
 
 Treat these as hard stops. No amount of "but they seem so real" overcomes them.
 
-## Privacy Considerations While Verifying
+### Step 7: Privacy Considerations While Verifying
 
 Verification works both ways. Protect your own information while conducting checks:
 
@@ -276,6 +286,21 @@ Once you've verified identity, take these additional precautions before your fir
 - **Separate transportation**: Don't rely on your date for transportation
 - **Keep personal information private**: Don't share your home address
 - **Trust your instincts**: If something feels off, leave
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

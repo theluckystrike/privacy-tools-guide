@@ -23,11 +23,21 @@ tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
-## The Autofill Privacy Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Autofill Privacy Problem
 
 Browser autofill (for passwords, credit cards, addresses) is convenient but dangerous. Malicious websites can trick your browser into auto-filling sensitive data into invisible form fields, leaking your information without clicking submit. This guide explains the risks and how to disable risky autofill features.
 
-## How Autofill Attacks Work
+### Step 2: How Autofill Attacks Work
 
 **Scenario: Email harvesting attack**
 
@@ -77,7 +87,7 @@ setTimeout(() => {
 
 Your credit card details leak to the attacker without you interacting.
 
-## Attack Variations
+### Step 3: Attack Variations
 
 **Invisible input fields:**
 ```html
@@ -110,7 +120,7 @@ setTimeout(() => {
 
 Browsers often auto-fill the login password for saved accounts. This attack captures it.
 
-## Which Data is at Risk?
+### Step 4: Which Data is at Risk?
 
 **High Risk (disable autofill):**
 - Passwords
@@ -132,7 +142,7 @@ Browsers often auto-fill the login password for saved accounts. This attack capt
 - Postal code (alone, not with other data)
 - Website URL
 
-## Browser Autofill Settings
+### Step 5: Browser Autofill Settings
 
 ### Chrome/Chromium
 
@@ -220,7 +230,7 @@ Note: iCloud Keychain syncs passwords across Apple devices, creating additional 
 3. Settings → Autofill → Manage autofill settings
 4. "Passwords", "Payment info", "Addresses" — All **OFF**
 
-## Use Password Manager Instead
+### Step 6: Use Password Manager Instead
 
 Browser autofill is convenient but insecure. Use a dedicated password manager instead:
 
@@ -250,7 +260,7 @@ Browser autofill is convenient but insecure. Use a dedicated password manager in
 
 Bitwarden is safer than browser autofill because it requires explicit user action (click the icon) rather than auto-filling silently.
 
-## Prevent Autofill Abuse (For Website Developers)
+### Step 7: Prevent Autofill Abuse (For Website Developers)
 
 If you own a website, prevent autofill abuse:
 
@@ -291,7 +301,7 @@ Modern browsers respect `autocomplete="off"` for legitimate privacy reasons.
 
 This prevents attackers from running JavaScript that steals form data.
 
-## Disable JavaScript to Prevent Attacks
+### Step 8: Disable JavaScript to Prevent Attacks
 
 The nuclear option: disable JavaScript on untrusted websites.
 
@@ -308,7 +318,7 @@ Example uBlock Origin filter:
 
 This blocks all scripts from attacker.com.
 
-## Form Field Inspection
+### Step 9: Form Field Inspection
 
 Check if a website has hidden form fields:
 
@@ -346,7 +356,7 @@ Hidden field found: {name: "tracking_id", type: "hidden", value: "[VALUE PRESENT
 
 If you find hidden fields with values, the website is likely harvesting data.
 
-## Check Saved Passwords
+### Step 10: Check Saved Passwords
 
 Regularly audit what the browser has saved:
 
@@ -365,7 +375,7 @@ Look for:
 - Multiple passwords for the same site (old ones should be deleted)
 - Phishing sites that saved your real password
 
-## Mobile Considerations
+### Step 11: Mobile Considerations
 
 **iOS Autofill Risks:**
 
@@ -392,7 +402,7 @@ Android Autofill Provider can be exploited:
 
 1Password requires explicit taps to autofill, preventing silent harvesting.
 
-## Website Hardening Checklist
+### Step 12: Website Hardening Checklist
 
 If building a web app, implement:
 
@@ -427,7 +437,7 @@ This prevents:
 - External scripts (limits attack surface)
 - Forms submitting to other domains (no data exfiltration)
 
-## Monitoring Your Autofill
+### Step 13: Monitor Your Autofill
 
 Track what data browsers are saving:
 
@@ -466,7 +476,7 @@ Track what data browsers are saving:
 
 Open this on your own computer. If autofill populates sensitive fields, disable it.
 
-## Final Recommendations
+### Step 14: Final Recommendations
 
 **Immediate Actions:**
 1. Disable browser autofill (password + payment methods)
@@ -493,6 +503,21 @@ Open this on your own computer. If autofill populates sensitive fields, disable 
 3. Accept that you'll type passwords a few more times
 
 Browser autofill is convenient but creates privacy risk. Password managers offer 95% of the convenience with 99% less risk.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

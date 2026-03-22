@@ -55,7 +55,17 @@ Apple's differentiation is that most AI analysis happens on-device rather than i
 
 ---
 
-## Option 1: Self-Hosted — Immich
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1: Self-Hosted — Immich
 
 Immich is the most actively developed self-hosted Google Photos alternative. Face recognition, map view, timeline, mobile backup — feature parity with Google Photos without the surveillance. The project has grown from a side project to a dedicated team with over 40,000 GitHub stars as of 2026.
 
@@ -136,7 +146,7 @@ If you don't want a public DNS record, run Immich over Tailscale — assign a Ta
 
 ---
 
-## Option 2: Self-Hosted — PhotoPrism
+### Step 2: Option 2: Self-Hosted — PhotoPrism
 
 PhotoPrism is more privacy-conservative in its AI features — you control which analysis runs. It's optimized for browsing large libraries and works well as a read-heavy archive viewer rather than a live backup target.
 
@@ -176,7 +186,7 @@ PhotoPrism requires a MariaDB or SQLite database for its index. For large librar
 
 ---
 
-## Option 3: Ente Photos (Zero-Knowledge Cloud)
+### Step 3: Option 3: Ente Photos (Zero-Knowledge Cloud)
 
 Ente Photos is a cloud service with zero-knowledge encryption — your photos are encrypted on your device before upload. Ente cannot see your photos, and this is verifiable because the client is open source (`github.com/ente-io/ente`).
 
@@ -214,7 +224,7 @@ Ente also offers an open-source self-hosted backend (`ente-server`) with your ow
 
 ---
 
-## Option 4: Encrypted Sync with Cryptomator
+### Step 4: Option 4: Encrypted Sync with Cryptomator
 
 Keep photos in any cloud provider (Dropbox, S3, Backblaze) but encrypt them first:
 
@@ -241,7 +251,7 @@ The main limitation is browsing: you can only view photos while the vault is mou
 
 ---
 
-## Strip EXIF Metadata Before Sharing
+### Step 5: Strip EXIF Metadata Before Sharing
 
 Photos contain metadata that reveals: GPS location, camera model, date/time, sometimes even software used. Before sharing photos publicly or with services that might retain metadata, strip it.
 
@@ -278,7 +288,7 @@ mat2 --inplace photo.jpg   # overwrite original
 
 ---
 
-## Backup Strategy for Self-Hosted Photos
+### Step 6: Backup Strategy for Self-Hosted Photos
 
 Self-hosted photos require a separate backup strategy — the server itself can fail.
 
@@ -330,6 +340,21 @@ This gives you encrypted off-site copies that Backblaze cannot read, even though
 For most users starting from scratch: Ente Photos is the quickest path to meaningful privacy improvement — install the app, pay $2/month, and your photos are encrypted before they leave your device. For developers with a home server: Immich combined with rclone/Backblaze B2 offsite backup delivers Google Photos parity with full control.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

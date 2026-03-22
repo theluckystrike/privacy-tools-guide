@@ -55,7 +55,17 @@ For a basic Frigate setup, you'll need:
 
 For the NVR itself, a mid-range mini-PC with an Intel processor provides hardware acceleration for video decoding, allowing handling of multiple camera streams simultaneously.
 
-## Installing Frigate
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Frigate
 
 The easiest way to run Frigate is using Docker Compose. Create a directory for Frigate and add the following to your `docker-compose.yml`:
 
@@ -90,7 +100,7 @@ docker compose up -d
 
 Access the Frigate web interface at `http://your-server-ip:5000`.
 
-## Configuring Your Cameras
+### Step 2: Configure Your Cameras
 
 In the Frigate configuration file (`config/config.yml`), define your cameras. Here's an example for two cameras:
 
@@ -143,7 +153,7 @@ cameras:
 
 Replace the camera IP addresses and credentials with your actual camera information. The RTSP path varies by camera manufacturer—consult your camera's documentation for the correct format.
 
-## Setting Up Object Detection
+### Step 3: Set Up Object Detection
 
 Frigate uses OpenCV and TensorFlow for local object detection. The default configuration detects people, cats, dogs, and cars. Add detection zones to reduce false alerts:
 
@@ -165,7 +175,7 @@ cameras:
 
 This configuration focuses on person detection while filtering out small movements or distant objects that might trigger unnecessary recordings.
 
-## Integrating with Home Assistant
+### Step 4: Integrate with Home Assistant
 
 For integration, add the Frigate integration in Home Assistant by adding this to your `configuration.yaml`:
 
@@ -177,7 +187,7 @@ frigate:
 
 After restarting Home Assistant, you'll have access to Frigate camera entities, motion sensors, and can create automations based on detected objects.
 
-## Storage and Retention
+### Step 5: Storage and Retention
 
 Configure retention policies based on your storage capacity and needs:
 
@@ -197,7 +207,7 @@ snapshots:
 
 Consider setting up a separate storage mount for long-term archives if you need to retain footage beyond the default retention period.
 
-## Remote Access Without Cloud
+### Step 6: Remote Access Without Cloud
 
 To access your cameras remotely without cloud services, set up a VPN connection to your home network. WireGuard provides a lightweight, secure option that works well for remote camera viewing. Install WireGuard on your phone and home router, then connect to your network when you need to view live footage or review recordings.
 
@@ -212,7 +222,7 @@ If you experience performance issues with multiple cameras, consider these adjus
 - Limit the number of detection zones and object types
 - Use motion-based recording instead of continuous recording to save resources
 
-## Camera Selection Guide
+### Step 7: Camera Selection Guide
 
 Not all cameras work equally well with Frigate:
 
@@ -226,7 +236,7 @@ Not all cameras work equally well with Frigate:
 
 Avoid cameras that require cloud connectivity. Ring, Nest, and Arlo depend on cloud services and may stop working without internet access.
 
-## Network Isolation for Camera Security
+### Step 8: Network Isolation for Camera Security
 
 Place your cameras on a separate VLAN to prevent them from reaching the internet:
 
@@ -239,7 +249,7 @@ iptables -A FORWARD -i br-cameras -d 192.168.1.100 -p tcp --dport 5000 -j ACCEPT
 
 This prevents compromised cameras from phoning home or being used as entry points into your network.
 
-## Backup Strategy for Recorded Footage
+### Step 9: Backup Strategy for Recorded Footage
 
 Configure automated backups of critical footage:
 
@@ -257,6 +267,21 @@ find "$BACKUP_DRIVE" -name "*.mp4" -mtime +30 -delete
 ```
 
 Run this script nightly to maintain an independent backup without duplicating continuous footage.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

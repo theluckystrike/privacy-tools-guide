@@ -60,7 +60,7 @@ brew services start tor
 
 Windows users can download the Tor Browser bundle, which includes the Tor daemon needed for OnionShare to function.
 
-## Installing OnionShare
+### Step 1: Install OnionShare
 
 OnionShare provides both GUI and CLI versions. For server environments and automation, install the CLI version:
 
@@ -80,7 +80,7 @@ wget $(curl -s https://api.github.com/repos/micahflee/onionshare/releases/latest
 chmod +x OnionShare-*.AppImage
 ```
 
-## Understanding the Tor Network Connection
+### Step 2: Understand the Tor Network Connection
 
 OnionShare operates by creating a temporary Tor hidden service that points to files or directories on your local machine. When you start a sharing session, the tool generates a unique `.onion` URL valid only for that transfer. The recipient connects through the Tor network, establishing an end-to-end encrypted tunnel directly to your machine.
 
@@ -91,7 +91,7 @@ This architecture provides several security advantages over traditional file sha
 - The transfer metadata is protected by Tor's circuit architecture
 - Files transfer directly between endpoints
 
-## Basic File Sharing Workflow
+### Step 3: Basic File Sharing Workflow
 
 Start a simple file share using the CLI:
 
@@ -108,7 +108,7 @@ onionshare-cli --verbose /path/to/folder/
 
 The CLI outputs a unique URL similar to `http://abcd1234567890.onion/`. Share this URL with your recipient through a secure channel (Signal, encrypted email, or面对面传递). The connection remains active until either the recipient completes the download or you terminate the process.
 
-## Command-Line Options for Power Users
+### Step 4: Command-Line Options for Power Users
 
 OnionShare CLI offers numerous options for controlling transfer behavior:
 
@@ -134,7 +134,7 @@ onionshare-cli --receive /path/to/upload/directory
 
 The `--receive` mode is particularly useful for secure document collection. Recipients upload files directly to your machine through Tor, eliminating the need for third-party file upload services.
 
-## Automating OnionShare in Scripts
+### Step 5: Automate OnionShare in Scripts
 
 For regular file sharing workflows, integrate OnionShare into shell scripts:
 

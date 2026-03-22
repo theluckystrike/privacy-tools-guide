@@ -44,7 +44,17 @@ Built by theluckystrike — More at zovo.one
 - **- Use unique**: randomly generated passwords for every service.
 - **Use a separate business**: account 3.
 
-## Understanding Cross-Device Synchronization
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Cross-Device Synchronization
 
 Most modern password managers sync your vault across all devices where you install the application. This synchronization typically works through cloud-based infrastructure that encrypts your data before transmitting it. When you add a password on your work laptop, it appears on your personal phone within seconds.
 
@@ -52,7 +62,7 @@ The synchronization process involves several layers. First, your local vault enc
 
 For developers working across multiple machines, understanding this flow helps troubleshoot sync issues. If a password isn't appearing on a specific device, checking network connectivity and ensuring the vault unlocked successfully usually resolves the problem.
 
-## Implementing Vault Separation Strategies
+### Step 2: Implementing Vault Separation Strategies
 
 Keeping work and personal credentials separate requires deliberate architecture. There are three primary approaches to achieve this separation while maintaining convenience.
 
@@ -110,7 +120,7 @@ op item create --vault "Production API Keys" \
 
 Team vaults ensure that when someone leaves the organization, administrators can remove their access without affecting personal accounts.
 
-## Automating Credential Access
+### Step 3: Automate Credential Access
 
 Power users benefit from CLI integration that improves workflow. Rather than switching between applications, you can pipe credentials directly into other tools.
 
@@ -148,7 +158,7 @@ export DB_PASSWORD=$(bw get password production-db)
 docker-compose up -d
 ```
 
-## Managing Device-Specific Access
+### Step 4: Manage Device-Specific Access
 
 Different devices have different security characteristics. A desktop workstation might warrant always-available vault access, while a mobile device requires additional verification.
 
@@ -183,11 +193,26 @@ bw lock
 export BW_SESSION_TIMEOUT=600  # Lock after 10 minutes
 ```
 
-## Choosing the Right Approach
+### Step 5: Choose the Right Approach
 
 Your specific situation determines the best strategy. Freelancers with single-person operations often prefer a single vault with organized folders. Corporate employees should respect their organization's security policies and use provided tools for work credentials. Developers managing both personal projects and client work benefit from multiple accounts or collections.
 
 The key principle remains consistent: maintain clear boundaries between contexts while using the password manager's synchronization to reduce friction. When configured thoughtfully, you get the security benefits of unique passwords without the burden of manual memorization or cross-device frustration.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -326,7 +351,7 @@ Instead of uploading your entire vault on every change, modern managers use delt
 
 This reduces bandwidth and speeds up sync, especially on mobile networks.
 
-## Device-Specific Configuration Patterns
+### Step 6: Device-Specific Configuration Patterns
 
 ### Enterprise Device with MDM
 
@@ -365,7 +390,7 @@ if [ "$WIFI_SSID" != "HomeNetwork" ]; then
 fi
 ```
 
-## Building Custom Sync Infrastructure
+### Step 7: Build Custom Sync Infrastructure
 
 For teams that cannot use commercial password managers, self-hosted solutions allow custom sync logic:
 
@@ -412,7 +437,7 @@ class CustomVaultSync:
         return response.json()
 ```
 
-## Access Control Patterns for Shared Credentials
+### Step 8: Access Control Patterns for Shared Credentials
 
 When multiple team members need access to shared passwords, implement role-based access:
 
@@ -457,7 +482,7 @@ class CredentialSharePolicy:
         self.rotate_credential()
 ```
 
-## Handling Master Password Recovery
+### Step 9: Handling Master Password Recovery
 
 The strongest master password protection also means greatest recovery difficulty. Plan for recovery scenarios:
 

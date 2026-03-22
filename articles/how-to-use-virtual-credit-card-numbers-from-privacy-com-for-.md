@@ -40,7 +40,17 @@ Use Privacy.com to generate unique virtual card numbers for each merchant: sign 
 - **The card becomes useless**: after one transaction, meaning even if the merchant database is compromised, there's nothing valuable to steal.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## What Privacy.com Virtual Cards Offer
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Privacy.com Virtual Cards Offer
 
 Privacy.com creates card numbers that function like regular debit cards but with crucial differences:
 
@@ -51,7 +61,7 @@ Privacy.com creates card numbers that function like regular debit cards but with
 
 Unlike traditional credit cards, these virtual numbers don't contain your actual account details. When a merchant experiences a breach, your real bank account remains protected.
 
-## Setting Up Your Account
+### Step 2: Set Up Your Account
 
 To use Privacy.com, you need an US bank account—currently the service only supports US-based financial institutions. The setup process:
 
@@ -62,7 +72,7 @@ To use Privacy.com, you need an US bank account—currently the service only sup
 
 Once verified, you can create unlimited virtual cards through their web dashboard or mobile app.
 
-## Creating Cards Through the Dashboard
+### Step 3: Create Cards Through the Dashboard
 
 The web interface offers straightforward card creation:
 
@@ -74,7 +84,7 @@ The web interface offers straightforward card creation:
 
 For anonymous purchases, single-use cards with no merchant lock provide the strongest privacy guarantee. The card becomes useless after one transaction, meaning even if the merchant database is compromised, there's nothing valuable to steal.
 
-## Developer Integration: The Privacy.com API
+### Step 4: Developer Integration: The Privacy.com API
 
 For power users and developers, Privacy.com offers API access that enables programmatic card generation. This proves valuable for:
 
@@ -246,7 +256,7 @@ await manager.provisionCard('vercel-pro', 20000);      // $200 limit
 
 This approach gives you granular control over every subscription, easy cancellation if prices increase, and protection if any service is compromised.
 
-## When Virtual Cards Make Sense
+### Step 5: When Virtual Cards Make Sense
 
 Virtual cards excel in these scenarios:
 
@@ -256,6 +266,21 @@ Virtual cards excel in these scenarios:
 - **Data breach protection**: Limit exposure if any merchant is hacked
 
 They add friction for subscription management but reduce long-term risk significantly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

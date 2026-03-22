@@ -51,7 +51,17 @@ Every online activity leaves traces that can be correlated to build a profile of
 - **Professional boundary**: Personal activities don't affect your professional reputation
 - **Privacy from data brokers**: Information across compartments cannot be easily combined
 
-## Core Compartmentalization Strategies
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Compartmentalization Strategies
 
 ### 1. Email Identity Separation
 
@@ -154,7 +164,7 @@ DNSPort 5353
 
 Configure VPN kill switches per identity to prevent traffic leaks.
 
-## Implementing Progressive Compartmentalization
+### Step 2: Implementing Progressive Compartmentalization
 
 Start with basic separation and increase isolation based on your threat model:
 
@@ -177,7 +187,7 @@ Start with basic separation and increase isolation based on your threat model:
 
 The right level depends on your actual risk. A freelancer protecting their privacy from data brokers needs Level 1. A journalist communicating with confidential sources needs Level 3 and possibly additional operational security measures beyond what any software tool can provide. Be honest about your threat model — over-engineering your setup leads to mistakes caused by friction, which introduce the very vulnerabilities you were trying to avoid.
 
-## Managing Identity Transitions
+### Step 3: Manage Identity Transitions
 
 When moving between identities:
 
@@ -197,7 +207,7 @@ wg show            # For WireGuard
 
 A practical habit: before starting any sensitive session, open a new private window, navigate to a neutral IP-check service, and verify you're connecting through the expected network. This thirty-second check catches configuration mistakes before you expose your identity.
 
-## Common Compartmentalization Mistakes
+### Step 4: Common Compartmentalization Mistakes
 
 ### Avoiding Cross-Contamination
 
@@ -227,7 +237,7 @@ prepaid_card      # High-risk merchants
 cryptocurrency    # Sensitive purchases
 ```
 
-## Username and Username Pattern Discipline
+### Step 5: Username and Username Pattern Discipline
 
 A compartment is only as strong as its weakest identifier. If you use the same username pattern across compartments — say, "mike_k_1985" for personal and "mike_k_dev" for professional — a data broker or determined researcher can link them through the shared pattern. Use genuinely distinct usernames for each compartment, generated without reference to your real name or any other compartment.
 
@@ -235,7 +245,7 @@ Password managers can help here too. Generate a random memorable phrase as your 
 
 Profile photos are another cross-compartment linkage risk. Using the same profile photo (or similar photos) across compartments makes visual correlation trivial. Use distinct, AI-generated avatars for compartments where a profile photo is required but your real face is not appropriate.
 
-## Recovery Planning
+### Step 6: Recovery Planning
 
 Each identity should have independent recovery paths:
 
@@ -260,7 +270,7 @@ finance:
 
 Store these recovery documents in encrypted storage that is itself compartmentalized — your personal identity's recovery document should not be accessible from your financial compartment's device.
 
-## Tools for Managing Multiple Identities
+### Step 7: Tools for Managing Multiple Identities
 
 | Tool | Purpose | Compartmentalization Use |
 |------|---------|--------------------------|
@@ -271,6 +281,21 @@ Store these recovery documents in encrypted storage that is itself compartmental
 | YubiKey | Hardware authentication | High-security identities |
 | SimpleLogin | Email aliasing | Per-service unique addresses |
 | Privacy.com | Virtual cards | Per-merchant payment isolation |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

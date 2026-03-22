@@ -40,7 +40,17 @@ Before implementing controls, identify what you're protecting against. Accountan
 
 Your goal is implementing defense-in-depth: multiple layers of protection where no single failure compromises client data.
 
-## Encrypted Storage Configuration
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Encrypted Storage Configuration
 
 All client data must rest on encrypted storage. Full-disk encryption protects against physical theft, while file-level encryption secures individual documents.
 
@@ -85,7 +95,7 @@ veracrypt --create --size=500M --password=your_secure_password \
 
 Always use containers rather than encrypting entire drives—this reduces the attack surface and makes backup management simpler.
 
-## Password Manager Configuration for Client Access
+### Step 2: Password Manager Configuration for Client Access
 
 Client financial accounts require rigorous credential management. Use a dedicated password manager with organization features designed for multi-client workflows.
 
@@ -123,7 +133,7 @@ bw get item "client-acme-bank-portal" | jq '.notes'
 
 Implement a rotation schedule enforced through calendar reminders. Never share service account passwords through email, Slack, or unencrypted messaging.
 
-## Secure Communication Channels
+### Step 3: Secure Communication Channels
 
 Client communication frequently involves sensitive data. Email is inherently insecure—SMTP transmits messages in plaintext between servers. Implement encrypted alternatives.
 
@@ -166,7 +176,7 @@ const shareLink = await protonDrive.createShareLink({
 });
 ```
 
-## Network Security and VPN Usage
+### Step 4: Secure the Network and VPN Usage
 
 When working from client sites, coffee shops, or remote locations, network traffic requires protection.
 
@@ -206,7 +216,7 @@ FallbackDNS=9.9.9.9
 
 This ensures DNS queries—the websites you visit—travel encrypted rather than in plaintext.
 
-## Browser Isolation for Financial Portals
+### Step 5: Browser Isolation for Financial Portals
 
 Dedicate browser profiles or containers exclusively for client financial portals to prevent cross-site tracking and credential leakage.
 
@@ -240,7 +250,7 @@ user_pref("privacy.trackingprotection.enabled", true);
 
 Test that financial portals remain functional after enabling these settings—some may require exceptions.
 
-## Audit Logging and Access Monitoring
+### Step 6: Audit Logging and Access Monitoring
 
 Maintain logs of who accessed what data and when. This supports both security monitoring and compliance requirements.
 
@@ -266,7 +276,7 @@ Configure Bitwarden to log vault access:
 
 Review access logs weekly to identify unusual patterns—multiple failed attempts, access from unfamiliar IP addresses, or after-hours activity.
 
-## Implementation Checklist
+### Step 7: Implementation Checklist
 
 Complete these steps to establish your accountant privacy setup:
 
@@ -281,6 +291,21 @@ Complete these steps to establish your accountant privacy setup:
 
 This setup balances security with usability. The goal isn't perfect security—it's making your client data significantly harder to compromise than alternatives, while maintaining the workflow efficiency your practice requires.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

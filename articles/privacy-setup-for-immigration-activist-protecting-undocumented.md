@@ -50,7 +50,17 @@ Before deploying any tool, map your threat model. Immigration work involves at l
 
 A tool that works for lawyers may be unusable for community members. A communication channel safe for outreach workers may be inadequate for attorneys handling privileged case files. Document these tiers and select tools accordingly rather than applying a single solution across all roles.
 
-## Secure Communication Channels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Secure Communication Channels
 
 End-to-end encrypted messaging forms the foundation of your communication stack. Signal remains the gold standard for secure mobile communication, but developers should consider additional layers for sensitive operations.
 
@@ -84,7 +94,7 @@ Community members who cannot safely register Signal with their personal phone nu
 
 Alternatively, **Session** requires no phone number at all. It uses the Signal protocol over an onion routing network. The tradeoff is that Session's network is smaller and message delivery can be slower. For community members who need a secure channel but cannot risk linking a phone number, Session is the safer choice. See the [self-hosted Matrix Synapse server guide](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for an organization-controlled messaging alternative.
 
-## Encrypted Storage and Document Management
+### Step 2: Set Up Encrypted Storage and Document Management
 
 Undocumented community members often need to store sensitive documents securely. Implement a zero-knowledge encryption system using Cryptomator or similar tools that encrypt files before they touch any cloud service.
 
@@ -121,7 +131,7 @@ veracrypt --create /path/to/container.vc \
 
 The wizard prompts for both the outer (decoy) and hidden volume passphrases separately. Keep the outer volume populated with genuine-looking but non-sensitive content — empty outer volumes are a tell.
 
-## Network Security and VPN Infrastructure
+### Step 3: Secure the Network and VPN Infrastructure
 
 Protecting network traffic is critical when organizing in spaces with surveillance. Deploy your own VPN server using WireGuard for minimal overhead and maximum security:
 
@@ -145,7 +155,7 @@ Configure client devices to route all traffic through the VPN by default. This p
 
 Host your WireGuard server in a jurisdiction with strong privacy laws (Switzerland, Iceland, or the Netherlands are common choices) and pay for the VPS with cryptocurrency or a privacy-respecting payment method. Avoid US-based hosting providers for an organization actively working against federal enforcement actions — servers hosted in the US are subject to National Security Letters, which prohibit the provider from notifying you that access has been requested.
 
-## Device Hardening for Field Work
+### Step 4: Device Hardening for Field Work
 
 When meeting community members in the field, your devices become high-value targets. Implement these hardening measures:
 
@@ -172,7 +182,7 @@ pmset -a displaysleep 0
 
 For Android devices used in field work, **GrapheneOS** is the strongest option. It removes Google Play Services entirely, implements hardened memory allocation, and supports a secondary "duress PIN" that wipes the device or opens a clean profile when entered. Purchase Android hardware with cash when possible and activate it over a VPN, never over a SIM that identifies you.
 
-## Metadata Protection
+### Step 5: Metadata Protection
 
 Metadata can reveal sensitive information even when content is encrypted. Address these vectors:
 
@@ -209,7 +219,7 @@ smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
 
 ProtonMail strips originating IP addresses from outbound emails and is end-to-end encrypted between ProtonMail accounts. For outbound email to non-ProtonMail recipients, the message content is encrypted in transit via TLS but not end-to-end — use PGP attachments for truly sensitive case information sent to external contacts.
 
-## Operational Security Practices
+### Step 6: Operational Security Practices
 
 Technical tools work only within a framework of consistent operational security:
 
@@ -233,7 +243,7 @@ Technical tools work only within a framework of consistent operational security:
 
 If your organization is engaged in litigation or anticipates legal proceedings, coordinate with legal counsel before implementing aggressive data deletion policies. Deleting records subject to a legal hold can constitute obstruction. The correct approach is to work with your attorney to identify which categories of records fall under hold requirements, then apply aggressive deletion only to communications not covered by the hold. Compartmentalization between case files and operational communications helps keep these categories clean.
 
-## Secure Meeting Practices
+### Step 7: Secure Meeting Practices
 
 When meeting undocumented community members, create physical security:
 
@@ -243,6 +253,21 @@ When meeting undocumented community members, create physical security:
 - Establish escape routes and meeting points
 
 Faraday bags prevent passive IMSI catcher surveillance (stingrays) that can identify all phones in an area even without active interception. A basic Faraday bag costs under $20 and is effective when the phone is fully powered down or in airplane mode with the bag sealed. Test your Faraday bag by placing a phone inside, sealing it, and attempting to call — no ring confirms the bag is working.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

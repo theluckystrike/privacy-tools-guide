@@ -26,13 +26,23 @@ Building privacy-respecting systems for physical therapy practices requires bala
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Patient Exercise Data Sensitivity
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Patient Exercise Data Sensitivity
 
 Patient exercise data falls under protected health information (PHI) in jurisdictions like the United States, where HIPAA regulations establish strict handling requirements. This data reveals medical conditions, physical capabilities, treatment progress, and personal health goals. Unauthorized access or data breaches can lead to identity theft, discrimination, and serious privacy violations.
 
 When building systems for physical therapy practices, you must treat exercise data with the same rigor as medical records. The technical implementation matters as much as the organizational policies surrounding data access.
 
-## Data Classification and Minimization
+### Step 2: Data Classification and Minimization
 
 Start by classifying your data to understand what requires protection. Patient exercise data typically includes:
 
@@ -43,7 +53,7 @@ Start by classifying your data to understand what requires protection. Patient e
 
 Apply the principle of data minimization: collect only what you need, retain it only as long as necessary, and anonymize data whenever possible for analytics or research purposes.
 
-## Encryption Implementation
+### Step 3: Encryption Implementation
 
 ### Encryption at Rest
 
@@ -106,7 +116,7 @@ server {
 }
 ```
 
-## Access Control Architecture
+### Step 4: Access Control Architecture
 
 Implement role-based access control (RBAC) to ensure appropriate data access levels:
 
@@ -149,7 +159,7 @@ def check_access(role: Role, permission: Permission) -> bool:
 
 Multi-factor authentication (MFA) should be mandatory for all staff accessing patient data. Consider hardware security keys for administrative accounts.
 
-## Audit Logging
+### Step 5: Audit Logging
 
 audit logging enables you to detect and investigate unauthorized access:
 
@@ -204,7 +214,7 @@ def get_patient_exercise(therapist_id: str, patient_id: str, ip: str):
 
 Store audit logs separately from application data, with immutable storage and retention policies matching regulatory requirements.
 
-## Data Retention and Disposal
+### Step 6: Data Retention and Disposal
 
 Establish clear retention policies. Patient exercise data should typically be retained for the period required by law—often 7-10 years after last treatment. Implement automated purging:
 
@@ -235,7 +245,7 @@ def purge_old_patient_data(db_connection, retention_years=7):
 
 When disposing of media (videos, images), use secure deletion tools that overwrite storage sectors.
 
-## Network Segmentation and Monitoring
+### Step 7: Network Segmentation and Monitoring
 
 Isolate systems handling patient data on separate network segments:
 
@@ -259,7 +269,7 @@ networks:
 
 Deploy intrusion detection systems to monitor for anomalous access patterns. Set up alerts for unusual data export volumes or access from unexpected locations.
 
-## Practical Deployment Checklist
+### Step 8: Practical Deployment Checklist
 
 Before launching any physical therapy data system, verify:
 
@@ -273,6 +283,21 @@ Before launching any physical therapy data system, verify:
 
 Building privacy-respecting systems for physical therapy practices requires balancing security with clinical usability. The strategies outlined here provide a foundation for protecting patient exercise data while enabling effective treatment delivery.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

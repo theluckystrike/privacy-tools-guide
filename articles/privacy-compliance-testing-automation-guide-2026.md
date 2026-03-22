@@ -37,7 +37,17 @@ Manual approaches leave inconsistent coverage because human testers cannot check
 
 Automation addresses these challenges by providing consistent, repeatable validation that runs with every code change. Automated tests catch regressions before they reach production — a critical capability given that a single code change can inadvertently expose PII in logs, bypass consent checks, or break deletion workflows.
 
-## Regulatory Context: What You Are Testing Against
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Regulatory Context: What You Are Testing Against
 
 Understanding the specific requirements driving your tests shapes what you build. The three most relevant frameworks in 2026 are:
 
@@ -61,7 +71,7 @@ Before implementing automation, understand the fundamental areas to test:
 6. **Privacy notices**: Verify disclosures are present and accurate
 7. **Third-party data sharing**: Confirm data is not sent to unauthorized processors
 
-## Implementing Automated Tests
+### Step 2: Implementing Automated Tests
 
 ### Testing Data Collection
 
@@ -186,7 +196,7 @@ def test_error_response_no_pii():
     assert not violations, f"PII detected in error response: {violations}"
 ```
 
-## Integration with CI/CD Pipelines
+### Step 3: Integration with CI/CD Pipelines
 
 Automate privacy tests within your continuous integration workflow:
 
@@ -232,7 +242,7 @@ def test_data_deletion_right():
 
 This tagging allows you to generate reports showing which regulatory requirements have automated test coverage and which do not.
 
-## Data Flow Mapping and Validation
+### Step 4: Data Flow Mapping and Validation
 
 Automated data flow mapping helps identify privacy risks:
 
@@ -305,7 +315,7 @@ def generate_coverage_report():
 6. **Test deletion cascades**: Verify that deletions propagate to all downstream systems
 7. **Include timing tests**: GDPR and CCPA impose response time requirements — test that your deletion and export pipelines complete within required windows
 
-## Common Pitfalls to Avoid
+### Step 5: Common Pitfalls to Avoid
 
 - **False positives**: Overly strict tests that fail on legitimate data
 - **Incomplete coverage**: Testing only obvious data fields, missing metadata
@@ -316,6 +326,21 @@ def generate_coverage_report():
 
 Start with the highest-risk areas—data collection and user rights—and expand coverage as your automation matures.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

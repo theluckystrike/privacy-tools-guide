@@ -41,13 +41,23 @@ This guide covers the Intelius opt-out process, verification techniques, and aut
 - **Use manual verification or**: official removal verification tools when available.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## What Intelius Actually Shows About You
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Intelius Actually Shows About You
 
 Before opting out, it helps to understand the scope of data Intelius holds. A typical Intelius profile includes full legal name and known aliases, current and historical home addresses going back 10 or more years, phone numbers (landline and mobile), email addresses, relatives' names and contact information, estimated age and birth year, employment and educational history, and in some cases court records and property ownership data.
 
 For developers, the relative detail is concerning: Intelius cross-references records to infer social graphs. Your relatives listed in your profile are often shown links to their own profiles, which means opting out of your own record does not automatically remove your name from a sibling's or parent's record. Plan your opt-out strategy to cover both your direct record and associated family records.
 
-## How Intelius Collects and Uses Your Data
+### Step 2: How Intelius Collects and Uses Your Data
 
 Intelius obtains personal information from multiple sources, including:
 
@@ -58,7 +68,7 @@ Intelius obtains personal information from multiple sources, including:
 
 Once your information is in their database, it becomes available through Intelius's people search, background check, and reverse phone lookup services. Removing your data requires submitting an opt-out request and verifying your identity.
 
-## Manual Intelius Opt-Out Process
+### Step 3: Manual Intelius Opt-Out Process
 
 The standard method to remove your information from Intelius involves their online opt-out form.
 
@@ -90,7 +100,7 @@ Several issues routinely trip up people attempting to opt out of Intelius:
 
 **Record reappears after removal:** Intelius sources data from multiple upstream aggregators. When those aggregators re-send updated records, your profile can regenerate. Repeat the opt-out every 3-6 months.
 
-## Automating Opt-Out Requests
+### Step 4: Automate Opt-Out Requests
 
 For developers managing opt-outs across multiple data brokers, scripting the process saves significant time. Below is a Python example demonstrating how to track opt-out requests.
 
@@ -133,7 +143,7 @@ print(f"Created request: {intelius_request.platform} on {intelius_request.reques
 
 This tracker helps maintain a record of all opt-out requests, including confirmation codes and status updates.
 
-## Batch Processing Multiple Data Brokers
+### Step 5: Batch Processing Multiple Data Brokers
 
 Removing your data from a single platform provides limited protection. A privacy strategy requires targeting multiple data brokers. Here's a shell script template for managing multiple opt-out processes.
 
@@ -165,7 +175,7 @@ echo "Opt-out requests logged to $LOG_FILE"
 
 This script provides a foundation for tracking opt-out requests across multiple platforms. Extend it with platform-specific automation where the data broker permits automated submissions.
 
-## Verifying Your Data Removal
+### Step 6: Verify Your Data Removal
 
 After submitting an opt-out request, verify that your information has been removed by searching for yourself on Intelius and related platforms.
 
@@ -202,7 +212,7 @@ print(f"Intelius record found: {verification.get('intelius_found', 'Unknown')}")
 
 Note that automated scraping may violate terms of service. Use manual verification or official removal verification tools when available.
 
-## Understanding Your Legal Rights
+### Step 7: Understand Your Legal Rights
 
 Depending on your state of residence, you may have stronger legal tools than the voluntary opt-out process:
 
@@ -214,7 +224,7 @@ Depending on your state of residence, you may have stronger legal tools than the
 
 If Intelius does not honor your opt-out within the stated timeframe, file a complaint with your state attorney general's office. For California, file with the California Privacy Protection Agency (CPPA). These complaints create accountability and often prompt faster removal than repeated opt-out form submissions.
 
-## Ongoing Data Protection
+### Step 8: Ongoing Data Protection
 
 Data broker databases continuously refresh with new information. A single opt-out request does not guarantee permanent removal. Consider these ongoing strategies:
 
@@ -223,7 +233,7 @@ Data broker databases continuously refresh with new information. A single opt-ou
 - **Use privacy tools** like data removal services for automated monitoring
 - **Limit public data sharing** on social media and public directories
 
-## Data Brokers Related to Intelius
+### Step 9: Data Brokers Related to Intelius
 
 Intelius is owned by PeopleConnect, which also operates Spokeo, Classmates.com, and other people-search properties. Removing data from Intelius alone does not remove it from sibling platforms. Submit separate opt-out requests to each:
 
@@ -246,6 +256,21 @@ Several organizations provide data broker removal services:
 - **FTC Consumer Information**: Provides complaint resources for unresponsive brokers
 - **EFF's Surveillance Self-Defense**: Guidance on reducing your digital footprint beyond data broker removal
 - **State privacy laws**: California, Virginia, and Colorado residents have additional privacy rights under state laws that go beyond voluntary opt-out
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
