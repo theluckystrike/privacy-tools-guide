@@ -14,7 +14,19 @@ voice-checked: true
 intent-checked: true---
 
 {% raw %}
+
 Controllers determine the purposes and means of data processing and bear primary legal responsibility for GDPR compliance, while processors handle data only on controllers' instructions and must use Data Processing Agreements that specify their limited liability. When you build an application collecting user data, you're the controller; when you use a third-party email service, that service is the processor handling data per your instructions. Understanding this distinction matters because controllers must implement data protection by design, conduct impact assessments, and respond to user rights requests, while processors can only follow controller directions—meaning your choice of processor significantly limits your compliance obligations. As a user interacting with services, identifying the controller lets you exercise rights (deletion, access, portability) against the correct entity, while recognizing processor limitations explains why requests to SaaS vendors sometimes redirect you to customer businesses.
+
+## Key Takeaways
+
+- **The distinction matters because**: controllers bear primary legal responsibility for compliance, while processors have specific contractual obligations and limited direct liability.
+- **Processor scenario**: You use AWS S3 to store user-uploaded files, Stripe for payments, or SendGrid for emails.
+- **Judicial remedy**: Courts can order compliance and award compensation
+
+Fines for controller non-compliance reach €20 million or 4% of global annual revenue.
+- **Processor fines can reach**: €10 million or 2%.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 ## The Fundamental Distinction
 

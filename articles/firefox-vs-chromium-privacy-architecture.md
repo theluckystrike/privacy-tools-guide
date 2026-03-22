@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison, privacy]---
 
 When selecting a browser for privacy-sensitive development work or daily browsing, understanding the underlying architectural differences between Firefox and Chromium reveals why these choices matter. Both browsers share fundamental web standards, but their privacy implementations diverge significantly at the engine level.
 
+## Key Takeaways
+
+- **Chromium's advantage lies in its ubiquity**: testing in Chrome ensures compatibility with the browser most users employ.
+- **For daily use with good privacy**: LibreWolf (based on Firefox) or Brave (based on Chromium) offer better balances.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **The `privacy.firstparty.isolate` preference provides**: additional first-party isolation, treating each top-level domain as a distinct security context.
+
 ## Process Architecture and Site Isolation
 
 Chromium's multi-process architecture treats each tab, extension, and renderer as separate processes with IPC (Inter-Process Communication) boundaries. This design provides process-level isolation between sites, preventing a crash in one tab from affecting others. The browser maintains a broker process that mediates all renderer-to-system interactions.

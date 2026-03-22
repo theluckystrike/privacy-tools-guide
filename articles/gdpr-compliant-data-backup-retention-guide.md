@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 The General Data Protection Regulation imposes specific obligations on how you handle personal data, including backups. This guide covers retention periods, technical safeguards, and implementation patterns that keep your backup systems compliant.
 
+## Key Takeaways
+
+- **Instead**: Article 5(1)(e) requires that personal data be kept only for as long as necessary for the purposes for which it was collected.
+- **This means you must**: determine appropriate retention periods based on your specific use cases and legal obligations.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding GDPR Retention Requirements
 
 GDPR does not prescribe fixed retention periods for all data. Instead, Article 5(1)(e) requires that personal data be kept only for as long as necessary for the purposes for which it was collected. This means you must determine appropriate retention periods based on your specific use cases and legal obligations.

@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 To build a GDPR-compliant email marketing system in 2026, implement double opt-in for consent proof, maintain an immutable audit log of all consent events, and automate data subject request handling for erasure and access rights. This guide provides working Python code for each of these requirements—from creating pending subscriptions with hashed email storage, to enforcing list hygiene and integrating third-party DPAs.
 
+## Key Takeaways
+
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers the legal framework**: implementing double opt-in, consent text requirements, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+- **Practical recommendations**: Specific use-case guidance based on team size and requirements
+
 ## The Legal Framework
 
 The General Data Protection Regulation (GDPR) applies to any organization processing personal data of EU residents. For email marketing, this translates to specific technical requirements:
