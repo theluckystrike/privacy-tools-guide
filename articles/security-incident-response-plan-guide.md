@@ -303,6 +303,98 @@ What allowed it to occur? (e.g., no patch management process, no secret rotation
 | Add anomaly detection for auth | Engineering | +30 days | Medium |
 ```
 
+## Communication Templates During an Active Incident
+
+How you communicate during an incident is as important as the technical response. Poor communication leads to duplicate work, contradictory decisions, and customer trust damage. Use these templates to standardize communication at each phase.
+
+**Initial internal alert (Slack/email — send within 15 minutes of P1/P2 detection):**
+
+```
+INCIDENT DECLARED — P[1/2] — [brief title]
+
+Status: ACTIVE INVESTIGATION
+Incident Commander: [name]
+Bridge/War Room: [Zoom/Meet link]
+Slack channel: #incident-[date]-[short-name]
+
+What we know:
+- [1-3 bullet points: what happened, when detected, initial scope]
+
+What we are doing:
+- [current containment/investigation actions]
+
+Next update: [time, ~30 min]
+```
+
+**External status page update (keep vague but honest):**
+
+```
+[Service Name] — Investigating Elevated Error Rates
+We are investigating reports of [service disruption].
+Our team has identified the issue and is working on a resolution.
+Next update in 30 minutes.
+Posted: [time UTC]
+```
+
+**When the incident is resolved:**
+
+```
+INCIDENT RESOLVED — P[severity] — [title]
+
+Duration: [start time] to [end time] — [X hours Y minutes]
+Scope: [which systems/users affected]
+Root cause (preliminary): [1 sentence]
+Customer impact: [describe what users experienced]
+
+Post-incident review scheduled: [date, within 5 business days]
+Full RCA will be published in: [internal wiki location]
+```
+
+Keep an incident Slack channel open for 48 hours after resolution for follow-up questions. Pin the final status message at the top.
+
+---
+
+## Tabletop Exercise Templates
+
+An IRP that has never been practiced fails under pressure. Tabletop exercises rehearse the response without touching production systems. Run one per quarter for each severity tier.
+
+**30-minute tabletop structure:**
+
+```
+1. Scenario briefing (5 min)
+   — Facilitator reads the scenario. No solutions yet.
+
+2. Initial response round (10 min)
+   — Each role states what they would do in the first 15 minutes
+   — Who declares the incident? Who is notified?
+
+3. Escalation decision (5 min)
+   — Does this escalate to P1? Who makes that call?
+   — Is legal/compliance notification required?
+
+4. Containment discussion (5 min)
+   — What gets isolated? Can the business continue during containment?
+   — Who authorizes taking down a production system?
+
+5. Debrief (5 min)
+   — What gaps did the scenario reveal?
+   — What needs to be added to the IRP?
+```
+
+**Example scenarios to practice:**
+
+| Scenario | Key Questions |
+|----------|--------------|
+| Attacker has valid admin credentials | How do you invalidate all sessions without locking out everyone? |
+| Ransomware on 3 of 10 servers | Isolate vs. restore from backup vs. pay? What is the decision authority? |
+| Developer accidentally commits AWS root keys to public GitHub | How fast can you rotate? Who owns that? |
+| DDoS taking down public API | Do you rate-limit aggressively or scale horizontally? At what cost threshold? |
+| Insider threat — employee exfiltrating customer data | How do you preserve evidence without tipping off the subject? |
+
+After each tabletop, update the IRP with any gaps discovered. The exercise is only useful if it changes the plan.
+
+---
+
 ## Related Articles
 
 - [How To Set Up Incident Response Plan For Data Breach](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)

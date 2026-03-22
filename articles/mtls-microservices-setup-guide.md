@@ -277,6 +277,106 @@ kubectl run mtls-test --image=curlimages/curl --rm -it --restart=Never -- \
   --cacert /path/to/ca.crt https://user-service/health
 ```
 
+## Istio Service Mesh mTLS (Zero-Config Option)
+
+Running cert-manager and manually configuring nginx mTLS for every service is manageable at 5 services, painful at 50. Istio automates mTLS across your entire mesh with a single policy — every pod gets a sidecar that handles certificates without any application code changes.
+
+```bash
+# Install Istio with strict mTLS mode
+istioctl install --set profile=default -y
+
+# Enable strict mTLS for the production namespace
+kubectl apply -f - <<'EOF'
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: production
+spec:
+  mtls:
+    mode: STRICT
+EOF
+```
+
+In STRICT mode, any pod without a valid Istio-issued certificate is rejected at the network level before the request reaches your application. To verify:
+
+```bash
+# Check the mTLS mode for a service
+istioctl x describe service user-service.production
+
+# Inspect the certificate Istio issued to a pod
+istioctl proxy-config secret deploy/user-service -n production
+
+# Test from inside the mesh (should succeed)
+kubectl exec -it debug-pod -n production -- \
+  curl -s http://user-service/health
+
+# Test from outside the mesh (should fail with 503 or connection reset)
+kubectl exec -it debug-pod -n default -- \
+  curl -s http://user-service.production/health
+```
+
+For mixed environments where you are migrating services gradually, set `mode: PERMISSIVE` first (accepts both mTLS and plaintext), then switch to STRICT once all sidecars are deployed.
+
+---
+
+## Certificate Renewal Automation Without Downtime
+
+Short-lived certificates (90 days or less) reduce the blast radius of a key compromise, but manual renewal causes outages. The correct pattern uses overlapping validity windows and pre-rotation.
+
+With cert-manager's `renewBefore` field set to 15 days, the certificate rotates well before expiry. Your nginx or app server must reload the new certificate file without dropping connections:
+
+```bash
+# nginx: reload config without connection drops
+sudo nginx -t && sudo nginx -s reload
+
+# For Go services — watch for file changes and reload the tls.Certificate
+# Use fsnotify to trigger a reload of the TLS config in the HTTP server
+```
+
+For services that embed certificates in memory at startup, add a SIGHUP handler:
+
+```go
+// main.go — reload TLS cert on SIGHUP
+sigChan := make(chan os.Signal, 1)
+signal.Notify(sigChan, syscall.SIGHUP)
+go func() {
+    for range sigChan {
+        newCert, err := tls.LoadX509KeyPair(certFile, keyFile)
+        if err != nil {
+            log.Printf("cert reload error: %v", err)
+            continue
+        }
+        certMu.Lock()
+        currentCert = &newCert
+        certMu.Unlock()
+        log.Println("TLS certificate reloaded")
+    }
+}()
+```
+
+Monitor expiry across all services proactively:
+
+```bash
+#!/bin/bash
+# check-cert-expiry.sh — alert on certs expiring within 14 days
+for service in user-service order-service payment-service; do
+    expiry=$(openssl x509 \
+        -in /etc/mtls-certs/${service}/${service}.crt \
+        -noout -enddate 2>/dev/null | cut -d= -f2)
+    expiry_epoch=$(date -d "$expiry" +%s 2>/dev/null || date -j -f "%b %d %H:%M:%S %Y %Z" "$expiry" +%s)
+    now_epoch=$(date +%s)
+    days_left=$(( (expiry_epoch - now_epoch) / 86400 ))
+    if [[ $days_left -lt 14 ]]; then
+        echo "WARNING: ${service} cert expires in ${days_left} days (${expiry})"
+    else
+        echo "OK: ${service} cert expires in ${days_left} days"
+    fi
+done
+```
+
+---
+
 ## Related Articles
 
 - [Mumble Encrypted Voice Chat Server Setup For Private Team](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)

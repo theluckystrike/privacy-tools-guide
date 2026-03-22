@@ -261,6 +261,102 @@ Host *
     ControlPersist 10m
 ```
 
+## SSH Jump Hosts and Bastion Configuration
+
+For teams that access production servers from different networks, a bastion (jump host) is cleaner than opening SSH to the world on every server. Only the bastion has port 2222 open; production servers accept SSH only from the bastion's IP.
+
+```bash
+# On production servers — allow SSH only from bastion
+sudo ufw allow from BASTION_IP to any port 2222 proto tcp
+sudo ufw deny 2222/tcp  # deny all other sources
+sudo ufw enable
+```
+
+Configure your client `~/.ssh/config` to tunnel through the bastion transparently:
+
+```conf
+# ~/.ssh/config
+
+Host bastion
+    HostName bastion.example.com
+    User admin
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    ServerAliveInterval 60
+
+Host prod-*
+    User deploy
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    ProxyJump bastion
+    # ProxyCommand alternative for older OpenSSH:
+    # ProxyCommand ssh -W %h:%p bastion
+
+Host prod-web-01
+    HostName 10.0.1.10
+
+Host prod-db-01
+    HostName 10.0.2.10
+```
+
+With this config, `ssh prod-web-01` connects to 10.0.1.10 through the bastion without any manual tunneling. The bastion itself should be hardened identically to production servers — it is a high-value target.
+
+Restrict the bastion's `sshd_config` further to prevent it from being used as a pivot:
+
+```conf
+# Additional bastion-specific sshd_config settings
+AllowTcpForwarding local    # allow local port forwarding, not remote
+GatewayPorts no             # no remote port forwarding
+AllowStreamLocalForwarding no
+PermitTTY yes               # bastion users need a shell
+ForceCommand /usr/bin/bastion-shell  # optional: restrict to a menu script
+```
+
+---
+
+## Detecting SSH Brute Force Attempts
+
+fail2ban blocks IPs after repeated failures, but reviewing the raw attack pattern helps tune your configuration. Check auth.log for attack signatures:
+
+```bash
+# Count failed SSH attempts by IP (last 24 hours)
+grep "Failed password\|Invalid user" /var/log/auth.log \
+  | awk '{print $(NF-3)}' \
+  | sort | uniq -c | sort -rn | head -20
+
+# Show currently banned IPs with unban time
+sudo fail2ban-client status sshd
+
+# Watch live attack attempts
+sudo tail -f /var/log/auth.log | grep -E "Failed|Invalid|Accepted"
+
+# Count valid logins vs failed attempts
+echo "Successful logins:"
+grep "Accepted" /var/log/auth.log | wc -l
+echo "Failed attempts:"
+grep "Failed password" /var/log/auth.log | wc -l
+```
+
+For high-volume servers, consider `sshguard` as an alternative — it monitors multiple log formats (sshd, nginx, postfix) and uses exponential backoff:
+
+```bash
+sudo apt install sshguard
+
+# sshguard integrates directly with nftables on newer systems
+# Check blocked hosts:
+sudo sshguard -l /var/log/auth.log
+sudo nft list set inet sshguard attackers
+```
+
+Set `LoginGraceTime 10` in sshd_config to close unauthenticated connections faster — this helps when scanners hold connections open to occupy your MaxStartups slots:
+
+```conf
+MaxStartups 10:30:60  # start throttling at 10, drop at 60 unauthenticated connections
+LoginGraceTime 10     # close unauthenticated connection after 10 seconds
+```
+
+---
+
 ## Related Articles
 
 - [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
