@@ -8,6 +8,7 @@ permalink: /best-accessible-privacy-focused-keyboard-app-for-users-with-/
 reviewed: true
 score: 8
 categories: [best-of]
+voice-checked: true
 tags: [privacy-tools-guide, best-of, privacy]
 ---
 

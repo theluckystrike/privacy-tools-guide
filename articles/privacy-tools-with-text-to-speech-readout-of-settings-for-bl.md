@@ -9,6 +9,7 @@ permalink: /privacy-tools-with-text-to-speech-readout-of-settings-for-bl/
 reviewed: true
 score: 8
 categories: [guides]
+voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
 
