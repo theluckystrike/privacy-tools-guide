@@ -191,6 +191,119 @@ if __name__ == '__main__':
 
 This script runs entirely locally with no external services involved. Extend it to store results in your own database or generate automated reports.
 
+## Comparing Public Speed Test Privacy Policies
+
+Not all public speed testing services are equally invasive. Understanding what different services actually log helps you make informed choices when self-hosting is not practical.
+
+**GTmetrix** retains test results and associated URLs for up to 90 days by default on free accounts. Logged-in users can delete individual tests, but the data is retained server-side during that window. GTmetrix's parent company also uses aggregate data for benchmarking reports.
+
+**Pingdom** stores test data including origin URLs and result sets. Their privacy policy permits sharing aggregated data with partners, though individual URLs are not publicly broadcast. Account-based usage links your identity to every tested URL.
+
+**PageSpeed Insights (Google)** sends URLs to Google's infrastructure for testing. Google's privacy policy applies broadly, and URLs tested through PageSpeed Insights may inform Google's understanding of your web properties. For confidential projects, this is a meaningful concern.
+
+**WebPageTest (public instance)** stores results publicly by default, including the full tested URL, waterfall charts, and connection details. Anyone with the result link can see what you tested. The private option requires an account and extends retention to 13 months.
+
+By contrast, tools running entirely on your hardware — Lighthouse CLI, curl, Puppeteer scripts — leave no external footprint beyond the actual HTTP requests to the target server.
+
+## Integrating Speed Testing Into CI/CD Pipelines
+
+For development teams, integrating performance checks into automated pipelines provides continuous visibility without manual testing. This approach keeps all data internal to your infrastructure.
+
+### GitHub Actions with Lighthouse
+
+Run Lighthouse audits as part of your pull request workflow:
+
+```yaml
+name: Performance Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse
+
+      - name: Run performance audit
+        run: |
+          lighthouse ${{ secrets.STAGING_URL }} \
+            --only-categories=performance \
+            --output=json \
+            --output-path=./lighthouse-report.json \
+            --chrome-flags="--headless --no-sandbox"
+
+      - name: Parse performance score
+        run: |
+          SCORE=$(cat lighthouse-report.json | python3 -c "import sys,json; d=json.load(sys.stdin); print(int(d['categories']['performance']['score']*100))")
+          echo "Performance score: $SCORE"
+          if [ "$SCORE" -lt 80 ]; then
+            echo "Performance below threshold"
+            exit 1
+          fi
+```
+
+The staging URL comes from a repository secret, keeping it out of logs. Lighthouse runs locally within the GitHub Actions runner — no URLs are sent to external speed-testing services.
+
+### Storing Historical Performance Data
+
+Track performance trends over time with a simple SQLite store:
+
+```python
+#!/usr/bin/env python3
+# perf_tracker.py
+
+import sqlite3
+import subprocess
+import json
+import sys
+from datetime import datetime
+
+DB_PATH = "/var/lib/perf_tracker/metrics.db"
+
+def init_db(conn):
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS measurements (
+            id INTEGER PRIMARY KEY,
+            url TEXT NOT NULL,
+            load_time_ms REAL,
+            ttfb_ms REAL,
+            score INTEGER,
+            measured_at TEXT
+        )
+    """)
+    conn.commit()
+
+def record_measurement(conn, url, load_ms, ttfb_ms, score):
+    conn.execute(
+        "INSERT INTO measurements (url, load_time_ms, ttfb_ms, score, measured_at) VALUES (?, ?, ?, ?, ?)",
+        (url, load_ms, ttfb_ms, score, datetime.utcnow().isoformat())
+    )
+    conn.commit()
+
+def trend_report(conn, url, days=30):
+    rows = conn.execute(
+        """SELECT measured_at, load_time_ms, score FROM measurements
+           WHERE url = ? AND measured_at > datetime('now', ?)
+           ORDER BY measured_at ASC""",
+        (url, f'-{days} days')
+    ).fetchall()
+
+    if not rows:
+        print(f"No data for {url}")
+        return
+
+    avg_load = sum(r[1] for r in rows) / len(rows)
+    avg_score = sum(r[2] for r in rows) / len(rows)
+    print(f"URL: {url} | 30-day avg load: {avg_load:.0f}ms | avg score: {avg_score:.0f}")
+```
+
+This keeps all performance history on your own server with no external dependencies.
+
 ## Privacy Verification Tips
 
 When evaluating any speed testing tool, verify its privacy claims:
