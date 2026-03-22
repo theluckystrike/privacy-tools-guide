@@ -228,6 +228,69 @@ sudo ufw allow from 192.168.1.0/24 to any port 12201/udp
 sudo ufw reload
 ```
 
+## Step 11 — Content Packs
+
+Content packs are pre-configured collections of inputs, streams, dashboards, and alerts. Install community packs to get useful dashboards immediately:
+
+In the Graylog UI: **System → Content Packs → Browse**
+
+Useful packs available for download from the Graylog Marketplace:
+- **Linux Syslog** — Streams for auth.log, SSH events, sudo usage, and system errors
+- **Nginx Access Logs** — Traffic dashboards, 4xx/5xx tracking, top URIs
+- **Apache Combined** — Request rate, error rate, bandwidth dashboards
+- **Docker Metrics** — Container event streams
+
+For custom content, export your configuration as a content pack to replicate it across environments:
+
+```bash
+# Export content pack via Graylog API
+curl -u admin:yourpassword \
+  "https://graylog.yourcompany.com/api/system/content_packs" \
+  -H "X-Requested-By: cli" \
+  | python3 -m json.tool > graylog-content-pack.json
+```
+
+---
+
+## Step 12 — Long-Term Log Archiving
+
+Graylog Enterprise supports archiving to S3. For the open-source version, schedule periodic exports to compressed files:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/archive-graylog-logs.sh
+# Exports yesterday's logs via Graylog API and compresses to S3-compatible storage
+
+DATE=$(date -d "yesterday" +%Y-%m-%d)
+GRAYLOG_URL="http://localhost:9000"
+CREDS="admin:yourpassword"
+OUTPUT_DIR="/var/archive/graylog"
+
+mkdir -p "$OUTPUT_DIR"
+
+# Export via Graylog search API (limited to 10,000 messages per call — paginate for large volumes)
+curl -s -u "$CREDS" \
+  -H "Accept: text/csv" \
+  "${GRAYLOG_URL}/api/views/search/messages?q=*&timerange.type=absolute&timerange.from=${DATE}T00:00:00Z&timerange.to=${DATE}T23:59:59Z&fields=timestamp,source,message,level&limit=10000" \
+  | gzip > "${OUTPUT_DIR}/graylog-${DATE}.csv.gz"
+
+# Sync to object storage (requires rclone configured)
+rclone copy "${OUTPUT_DIR}/graylog-${DATE}.csv.gz" backblaze:logs/graylog/
+
+# Retain locally for 30 days
+find "$OUTPUT_DIR" -name "*.csv.gz" -mtime +30 -delete
+
+echo "Archive complete for $DATE"
+```
+
+Add to cron:
+```bash
+echo "5 2 * * * root /usr/local/bin/archive-graylog-logs.sh >> /var/log/graylog-archive.log 2>&1" | \
+  sudo tee /etc/cron.d/graylog-archive
+```
+
+---
+
 ## Related Reading
 
 - [How to Set Up ntopng for Network Analytics](/privacy-tools-guide/ntopng-network-analytics-setup-guide/)

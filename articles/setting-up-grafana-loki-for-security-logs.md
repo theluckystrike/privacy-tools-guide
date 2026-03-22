@@ -285,6 +285,101 @@ clients:
       password: your-promtail-password
 ```
 
+## Step 7: Log Retention and Storage Management
+
+Loki's compactor handles retention automatically if configured. Check current storage usage:
+
+```bash
+# Check how much disk Loki is using
+du -sh /opt/loki/data/loki/chunks/
+du -sh /opt/loki/data/loki/
+
+# Check Loki's internal stats via API
+curl -s http://localhost:3100/loki/api/v1/status/buildinfo | jq .
+curl -s http://localhost:3100/metrics | grep loki_ingester_chunks_stored_total
+```
+
+To adjust retention without redeploying, update `loki-config.yml` and restart:
+
+```yaml
+limits_config:
+  retention_period: 90d   # Change from 30d to 90d
+  max_query_lookback: 90d # Must match retention_period
+```
+
+For production systems generating high log volumes, enable chunk compression:
+
+```yaml
+common:
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+  compactor:
+    working_directory: /loki/compactor
+    compaction_interval: 10m
+    retention_enabled: true
+    retention_delete_delay: 2h
+    retention_delete_worker_count: 150
+
+chunk_store_config:
+  chunk_cache_config:
+    embedded_cache:
+      enabled: true
+      max_size_mb: 500
+```
+
+---
+
+## Step 8: High-Value Security Dashboards
+
+Import or build these dashboards in Grafana to make the security data actionable:
+
+**SSH Brute Force Dashboard panels:**
+
+```logql
+# Panel 1: Failed SSH attempts per minute (rate graph)
+sum(rate({job="auth"} |= "Failed password" [1m])) by (host)
+
+# Panel 2: Top attacking IPs (table)
+topk(20,
+  sum by (src_ip) (
+    count_over_time(
+      {job="auth"} |= "Failed password"
+      | regexp "from (?P<src_ip>[\\d.]+)"
+      [24h]
+    )
+  )
+)
+
+# Panel 3: Successful logins after failures (potential compromise indicator)
+{job="auth"} |= "Accepted" | line_format "{{.message}}"
+```
+
+**Web Application Attack Dashboard panels:**
+
+```logql
+# HTTP 400-499 rate (client errors including scanner noise)
+sum(rate({job="nginx", status=~"4.."}[5m])) by (host)
+
+# Top paths receiving 404s (scanner enumeration detection)
+topk(10,
+  sum by (path) (
+    count_over_time({job="nginx", status="404"}[1h])
+  )
+)
+
+# POST requests with 200 response to unusual paths
+{job="nginx", method="POST", status="200"}
+| line_format "{{.path}}"
+| regexp "^(?!.*(login|api|upload|submit))(?P<suspicious_path>.+)"
+```
+
+To import a dashboard JSON:
+1. Grafana → Dashboards → Import
+2. Paste a dashboard JSON or enter a Grafana.com dashboard ID (e.g., 15141 for Loki logs overview)
+
+---
+
 ## Related Reading
 
 - [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)

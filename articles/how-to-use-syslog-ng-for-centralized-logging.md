@@ -323,6 +323,92 @@ Then scrape `localhost:8080/metrics` with your Prometheus instance. Key metrics 
 - `syslogng_output_events_dropped_total` rising (destination overloaded or offline)
 - `syslogng_connections` for the TLS source dropping to zero (network partition or cert expiry)
 
+## Rate Limiting and Throttling Incoming Logs
+
+High-volume log sources can overwhelm your central server. syslog-ng has built-in throttling at the source level:
+
+```conf
+# Limit a single TCP source to 1000 messages per second
+source s_tls_clients {
+    syslog(
+        transport("tls")
+        port(6514)
+        tls(
+            key-file("/etc/syslog-ng/tls/server.key")
+            cert-file("/etc/syslog-ng/tls/server.crt")
+            ca-dir("/etc/syslog-ng/tls/")
+            peer-verify(required-trusted)
+        )
+        log-msg-size(65536)
+        so-rcvbuf(1048576)
+    );
+};
+
+# Throttle in a log path — drop excess messages rather than queue
+log {
+    source(s_tls_clients);
+    throttle(value(1000));  # messages per second
+    destination(d_remote_host);
+    flags(flow-control);    # apply backpressure to sender
+};
+```
+
+For destinations that are slower than the source (e.g., writing to a slow NFS mount), enable disk buffering to prevent message loss:
+
+```conf
+destination d_remote_host_buffered {
+    file(
+        "/var/log/remote/${HOST}/${YEAR}-${MONTH}-${DAY}.log"
+        disk-buffer(
+            mem-buf-size(64Mi)
+            disk-buf-size(2Gi)
+            reliable(yes)
+            dir("/var/spool/syslog-ng")
+        )
+    );
+};
+```
+
+The disk buffer persists to `/var/spool/syslog-ng` so no messages are lost if the destination stalls.
+
+---
+
+## TLS Certificate Rotation Without Downtime
+
+When TLS certificates near expiration, rotate them without interrupting log collection:
+
+```bash
+# Generate new server certificate (keep the CA the same)
+cd /etc/syslog-ng/tls
+
+openssl req -new -nodes \
+  -keyout server-new.key -out server-new.csr \
+  -subj "/CN=logserver.example.com"
+
+openssl x509 -req -days 1825 \
+  -in server-new.csr -CA ca.crt -CAkey ca.key -CAcreateserial \
+  -out server-new.crt
+
+# Verify the new cert before deploying
+openssl verify -CAfile ca.crt server-new.crt
+openssl x509 -noout -dates -in server-new.crt
+
+# Swap atomically
+mv server.key server-old.key && mv server.crt server-old.crt
+mv server-new.key server.key && mv server-new.crt server.crt
+
+# Reload syslog-ng (no restart needed — reload re-reads TLS config)
+systemctl reload syslog-ng
+
+# Verify new cert is in use
+echo | openssl s_client -connect logserver.example.com:6514 2>/dev/null | \
+  openssl x509 -noout -dates
+```
+
+Client certificates can be rotated independently — the CA validates them, so as long as the CA cert does not change, each client can get a new cert without touching the server.
+
+---
+
 ## Related Articles
 
 - [How To Configure Postfix With Mandatory Tls Encryption](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)

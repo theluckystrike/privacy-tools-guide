@@ -226,6 +226,82 @@ echo "0 3 1 * * root curl -o /var/lib/unbound/root.hints https://www.internic.ne
   sudo tee /etc/cron.d/update-root-hints
 ```
 
+## Allowlisting and Troubleshooting Blocked Domains
+
+Pi-hole will occasionally block domains that legitimate services need. The query log makes it easy to identify and fix these:
+
+```bash
+# Tail the Pi-hole query log to see what's being blocked in real time
+pihole -t | grep "blocked"
+
+# Check if a specific domain is blocked
+pihole -q ads.example.com
+# Output: Match found in blockList: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+
+# Allowlist a domain and its subdomains
+pihole -w example.com
+pihole -w sub.example.com
+
+# List all allowlisted domains
+pihole -w -l
+
+# Remove from allowlist
+pihole -w -d example.com
+```
+
+For domains that block in regex lists, check which list is responsible:
+
+```bash
+# Query the Pi-hole FTL database directly
+sqlite3 /etc/pihole/pihole-FTL.db \
+  "SELECT domain, type, date_added FROM domainlist WHERE enabled=1 ORDER BY date_added DESC LIMIT 20;"
+```
+
+---
+
+## DNS-Over-HTTPS Fallback with Unbound
+
+For situations where your ISP or network filters port 53 UDP traffic, configure Unbound to use DNS-over-HTTPS (DoH) for its upstream lookups while still presenting a standard DNS interface to Pi-hole:
+
+```bash
+sudo apt install stubby
+
+# Configure stubby as a DoH proxy on port 8053
+sudo tee /etc/stubby/stubby.yml > /dev/null << 'EOF'
+resolution_type: GETDNS_RESOLUTION_STUB
+dns_transport_list:
+  - GETDNS_TRANSPORT_HTTPS
+tls_authentication: GETDNS_AUTHENTICATION_REQUIRED
+tls_query_padding_blocksize: 128
+listen_addresses:
+  - 127.0.0.1@8053
+round_robin_upstreams: 1
+upstream_recursive_servers:
+  - address_data: 1.1.1.1
+    tls_port: 853
+    tls_auth_name: "cloudflare-dns.com"
+  - address_data: 9.9.9.9
+    tls_port: 853
+    tls_auth_name: "dns.quad9.net"
+EOF
+
+sudo systemctl enable --now stubby
+```
+
+Then configure Unbound to forward to stubby instead of root servers when DoH is needed:
+
+```conf
+# Add to /etc/unbound/unbound.conf.d/pi-hole.conf
+forward-zone:
+  name: "."
+  forward-addr: 127.0.0.1@8053  # stubby's DoH proxy
+  forward-no-cache: no
+```
+
+Note: Using a forwarder (stubby) means Unbound no longer does full recursive resolution. Disable this and use the root hints configuration whenever your network allows direct recursive DNS.
+
+---
+
 ## Related Articles
 
 - [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)

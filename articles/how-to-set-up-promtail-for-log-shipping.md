@@ -278,6 +278,93 @@ curl http://localhost:9080/metrics | grep promtail_
 curl http://localhost:9080/targets
 ```
 
+## Kubernetes Log Collection
+
+Promtail is the standard log collector for Kubernetes clusters feeding logs to Loki. Deploy it as a DaemonSet so every node runs an agent:
+
+```yaml
+# promtail-daemonset.yml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: promtail
+  namespace: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: promtail
+  template:
+    metadata:
+      labels:
+        app: promtail
+    spec:
+      serviceAccountName: promtail
+      tolerations:
+        - operator: Exists  # Run on all nodes including control plane
+      containers:
+        - name: promtail
+          image: grafana/promtail:2.9.8
+          args:
+            - -config.file=/etc/promtail/config.yml
+          volumeMounts:
+            - name: config
+              mountPath: /etc/promtail
+            - name: varlog
+              mountPath: /var/log
+              readOnly: true
+            - name: varlibdockercontainers
+              mountPath: /var/lib/docker/containers
+              readOnly: true
+            - name: positions
+              mountPath: /run/promtail
+      volumes:
+        - name: config
+          configMap:
+            name: promtail-config
+        - name: varlog
+          hostPath:
+            path: /var/log
+        - name: varlibdockercontainers
+          hostPath:
+            path: /var/lib/docker/containers
+        - name: positions
+          emptyDir: {}
+```
+
+Kubernetes Promtail config with pod metadata enrichment:
+
+```yaml
+# ConfigMap for Kubernetes scrape
+scrape_configs:
+  - job_name: kubernetes-pods
+    kubernetes_sd_configs:
+      - role: pod
+    pipeline_stages:
+      - cri: {}  # Parse CRI-O/containerd log format
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_name]
+        target_label: pod
+      - source_labels: [__meta_kubernetes_namespace]
+        target_label: namespace
+      - source_labels: [__meta_kubernetes_pod_container_name]
+        target_label: container
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        target_label: app
+      # Only collect from pods that opt in
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: "true"
+```
+
+Pods opt in to log collection by adding an annotation:
+```yaml
+metadata:
+  annotations:
+    prometheus.io/scrape: "true"
+```
+
+---
+
 ## Debugging Missing Logs
 
 ```bash

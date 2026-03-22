@@ -274,6 +274,119 @@ OSSEC logs grow fast:
 }
 ```
 
+## Agent Mode: Monitoring Multiple Servers
+
+For infrastructure with multiple servers, run OSSEC in manager/agent mode. The manager receives all alerts centrally; agents run on each monitored host.
+
+**On the manager server:**
+
+```bash
+# Install OSSEC as manager
+sudo ./install.sh
+# Choose: server
+
+# Add an agent
+sudo /var/ossec/bin/manage_agents
+# (A)dd agent → name: web01 → IP: 10.0.1.10
+# Extract key for the agent (copy this)
+
+# Start OSSEC
+sudo /var/ossec/bin/ossec-control start
+```
+
+**On each agent host:**
+
+```bash
+# Install OSSEC as agent
+sudo ./install.sh
+# Choose: agent
+# Manager IP: 10.0.0.5 (your manager's IP)
+
+# Import the agent key
+sudo /var/ossec/bin/manage_agents
+# (I)mport key → paste the key from the manager
+
+sudo /var/ossec/bin/ossec-control start
+
+# Verify the agent connected
+# On the manager:
+sudo /var/ossec/bin/agent_control -l
+# ID: 001, Name: web01, IP: 10.0.1.10, Status: Active
+```
+
+Firewall rule needed on the manager:
+```bash
+sudo ufw allow from 10.0.1.0/24 to any port 1514/udp  # OSSEC agent comms
+sudo ufw allow from 10.0.1.0/24 to any port 1515/tcp  # Key registration
+```
+
+All alerts from agents appear centralized in `/var/ossec/logs/alerts/alerts.log` on the manager.
+
+---
+
+## Exporting OSSEC Alerts to a SIEM
+
+Forward OSSEC alerts to a centralized SIEM (Elastic, Splunk, or Graylog) in real time using syslog output:
+
+```xml
+<!-- In /var/ossec/etc/ossec.conf on the manager -->
+<syslog_output>
+  <server>192.168.1.50</server>
+  <port>5140</port>
+  <format>cef</format>
+  <!-- CEF format works with Splunk, Elastic, and most SIEMs -->
+  <level>7</level>  <!-- Only forward level 7+ alerts -->
+</syslog_output>
+```
+
+Restart OSSEC after config changes:
+```bash
+sudo /var/ossec/bin/ossec-control restart
+```
+
+For JSON output suitable for Elasticsearch/Graylog GELF:
+
+```bash
+# OSSEC does not natively output JSON, but you can parse alerts.log with a script
+# and forward via HTTP to Graylog
+
+python3 << 'EOF'
+import re, json, requests, time
+from datetime import datetime
+
+def parse_alert(block: str) -> dict | None:
+    level_match = re.search(r'Rule: \d+ \(level (\d+)\)', block)
+    desc_match = re.search(r'Rule: \d+ .+\n.+?\'(.+?)\'', block)
+    if not level_match or int(level_match.group(1)) < 7:
+        return None
+    return {
+        "version": "1.1",
+        "host": "ossec-manager",
+        "short_message": desc_match.group(1) if desc_match else "OSSEC Alert",
+        "level": int(level_match.group(1)),
+        "timestamp": time.time(),
+    }
+
+# Tail alerts.log and forward to Graylog GELF HTTP
+with open('/var/ossec/logs/alerts/alerts.log') as f:
+    f.seek(0, 2)  # seek to end
+    block = ""
+    while True:
+        line = f.readline()
+        if not line:
+            time.sleep(0.5)
+            continue
+        block += line
+        if line.strip() == "":
+            alert = parse_alert(block)
+            if alert:
+                requests.post('http://graylog:12201/gelf', json=alert)
+            block = ""
+EOF
+```
+
+---
+
 ## Related Articles
 
 - [How to Set Up a Honeypot for Intrusion Detection](/privacy-tools-guide/honeypot-intrusion-detection-guide/)

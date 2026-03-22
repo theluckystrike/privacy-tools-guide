@@ -251,6 +251,65 @@ trivy image registry:2
 trivy image goharbor/harbor-core:v2.11.0
 ```
 
+## Integrating Harbor with CI/CD Pipelines
+
+Configure your CI pipeline to push images to Harbor after every successful build and enforce scanning before deployment:
+
+```yaml
+# .github/workflows/build-and-push.yml
+name: Build, Push, and Scan
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to Harbor
+        uses: docker/login-action@v3
+        with:
+          registry: registry.yourdomain.com
+          username: ${{ secrets.HARBOR_USERNAME }}
+          password: ${{ secrets.HARBOR_PASSWORD }}
+
+      - name: Build and push
+        id: push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: registry.yourdomain.com/myproject/myapp:${{ github.sha }}
+
+      - name: Wait for Harbor vulnerability scan
+        run: |
+          # Harbor scans on push — poll until scan completes
+          MAX_RETRIES=20
+          for i in $(seq 1 $MAX_RETRIES); do
+            STATUS=$(curl -s -u "${{ secrets.HARBOR_USERNAME }}:${{ secrets.HARBOR_PASSWORD }}" \
+              "https://registry.yourdomain.com/api/v2.0/projects/myproject/repositories/myapp/artifacts/${{ github.sha }}" \
+              | jq -r '.scan_overview."application/vnd.security.vulnerability.report; version=1.1".scan_status // "not_started"')
+            echo "Scan status: $STATUS (attempt $i/$MAX_RETRIES)"
+            [ "$STATUS" = "Success" ] && break
+            [ "$i" = "$MAX_RETRIES" ] && echo "Scan timed out" && exit 1
+            sleep 15
+          done
+
+      - name: Check for critical vulnerabilities
+        run: |
+          CRITICAL=$(curl -s -u "${{ secrets.HARBOR_USERNAME }}:${{ secrets.HARBOR_PASSWORD }}" \
+            "https://registry.yourdomain.com/api/v2.0/projects/myproject/repositories/myapp/artifacts/${{ github.sha }}/additions/vulnerabilities" \
+            | jq '[.["application/vnd.security.vulnerability.report; version=1.1"].vulnerabilities[] | select(.severity == "Critical")] | length')
+
+          echo "Critical vulnerabilities: $CRITICAL"
+          [ "$CRITICAL" -gt 0 ] && echo "Build failed: critical CVEs found" && exit 1
+          echo "No critical vulnerabilities — safe to deploy"
+```
+
+---
+
 ## Related Reading
 
 - [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)

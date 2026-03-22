@@ -218,6 +218,78 @@ curl -H "Authorization: Bearer YOUR_API_TOKEN" \
   jq '.results[] | {user: .user.username, ip: .client_ip, timestamp: .created}'
 ```
 
+## Step 8: LDAP Outpost for Legacy Applications
+
+Some applications (Nextcloud, Gitea, older enterprise apps) do not support OIDC or SAML — they only speak LDAP. Authentik's LDAP outpost acts as an LDAP server backed by Authentik's user store, so legacy apps can authenticate against it without a separate LDAP server.
+
+```bash
+# Deploy the LDAP outpost
+docker run -d \
+  -e AUTHENTIK_HOST=https://auth.example.com \
+  -e AUTHENTIK_INSECURE=false \
+  -e AUTHENTIK_TOKEN=your-outpost-token \
+  -p 389:3389 \   # map standard LDAP port to outpost's port
+  -p 636:6636 \   # LDAPS
+  ghcr.io/goauthentik/ldap:latest
+```
+
+In Authentik admin, create an LDAP provider:
+1. **Applications → Providers → Create → LDAP Provider**
+2. Base DN: `dc=ldap,dc=example,dc=com`
+3. Bind Flow: `default-authentication-flow`
+4. Search group: pick an Authentik group whose members can read the LDAP tree
+
+Configure Nextcloud to use Authentik LDAP:
+```
+LDAP Host: your-server-ip
+LDAP Port: 389
+Base DN: dc=ldap,dc=example,dc=com
+User DN: cn=ldapservice,ou=users,dc=ldap,dc=example,dc=com
+Bind password: the-ldap-bind-password-from-authentik
+User filter: (objectClass=user)
+Login attribute: cn
+```
+
+---
+
+## Step 9: Backup and Restore Authentik
+
+Authentik stores everything in PostgreSQL. Back it up with `pg_dump`:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/backup-authentik.sh
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_DIR="/backups/authentik"
+mkdir -p "$BACKUP_DIR"
+
+# Dump PostgreSQL from the authentik-postgresql container
+docker exec authentik-postgresql-1 pg_dump -U authentik authentik \
+  | gzip > "${BACKUP_DIR}/authentik-db-${DATE}.sql.gz"
+
+# Also backup the media directory (profile pictures, certificates)
+tar czf "${BACKUP_DIR}/authentik-media-${DATE}.tar.gz" \
+  /opt/authentik/media/ 2>/dev/null || true
+
+# Retain last 30 backups
+find "$BACKUP_DIR" -name "*.sql.gz" -o -name "*.tar.gz" | sort | head -n -30 | xargs rm -f
+
+echo "Authentik backup complete: ${BACKUP_DIR}/authentik-db-${DATE}.sql.gz"
+```
+
+Restore:
+```bash
+# Stop Authentik, restore the DB, restart
+docker compose -f /opt/authentik/docker-compose.yml stop server worker
+
+gunzip -c /backups/authentik/authentik-db-20260322_120000.sql.gz | \
+  docker exec -i authentik-postgresql-1 psql -U authentik authentik
+
+docker compose -f /opt/authentik/docker-compose.yml start server worker
+```
+
+---
+
 ## Related Reading
 
 - [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
