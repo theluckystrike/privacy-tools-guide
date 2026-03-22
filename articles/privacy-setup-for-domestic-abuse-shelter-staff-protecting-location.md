@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/
 description: "Learn privacy setup for domestic abuse shelter staff protecting location with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup For Domestic Abuse Shelter Staff: Protecting"
 description: "Location data represents one of the most critical privacy vulnerabilities for domestic abuse survivors. When a survivor accesses support services, their device"

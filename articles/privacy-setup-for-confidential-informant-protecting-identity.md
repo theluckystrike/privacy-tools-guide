@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-setup-for-confidential-informant-protecting-identity/
 description: "Learn privacy setup for confidential informant protecting identity with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Privacy Setup for Confidential Informant"
 description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity"

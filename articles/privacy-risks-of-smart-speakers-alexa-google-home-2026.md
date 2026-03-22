@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-risks-of-smart-speakers-alexa-google-home-2026/
 description: "Learn privacy risks of smart speakers alexa google home 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Privacy Risks of Smart Speakers Alexa Google Home 2026"
 description: "What data they collect, network traffic analysis, mute hardware vs software, privacy-hardened configs, and privacy-respecting alternatives."
