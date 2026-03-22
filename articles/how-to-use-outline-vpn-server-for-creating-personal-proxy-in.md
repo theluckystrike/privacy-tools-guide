@@ -40,13 +40,23 @@ Outline VPN provides an effective solution for developers and power users who ne
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Outline Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Outline Architecture
 
 Outline consists of two main components: the Shadowbox server manager running on your VPS, and client applications that connect to it. The server uses the Shadowsocks protocol, which was specifically designed to be difficult to detect and block compared to conventional VPN protocols.
 
 The architecture separates the management API from the proxy traffic, allowing you to host the management interface on a different port than your proxy connections. This separation provides flexibility when deploying in environments with strict port restrictions.
 
-## Server-Side Installation
+### Step 2: Server-Side Installation
 
 First, you need a VPS running a Linux distribution. Ubuntu 20.04 or later works reliably. Install the Outline server manager using Docker:
 
@@ -74,7 +84,7 @@ docker logs outline | grep -A5 "API"
 
 This outputs your API URL and secret key. Access the management interface by entering your server IP followed by port 53829 in a browser. You'll see a dashboard where you can generate access keys for clients.
 
-## Creating Access Keys
+### Step 3: Create Access Keys
 
 Within the management interface, click "Add Key" to generate a new access key. Each key generates a configuration string that clients use to connect. The format looks like:
 
@@ -96,7 +106,7 @@ curl -X POST \
 
 The API returns the key ID, public key, and the full Shadowsocks connection string. Store these credentials securely—they grant access to your proxy server.
 
-## Client Configuration
+### Step 4: Client Configuration
 
 Install the Outline client for your operating system from the official website. The client supports Windows, macOS, Linux, iOS, and Android.
 
@@ -138,7 +148,7 @@ proxychains4 npm install express
 
 This approach works with any network application, making it invaluable for developers working in restricted environments.
 
-## Port Customization and Firewall Configuration
+### Step 5: Port Customization and Firewall Configuration
 
 If port 443 gets blocked in your region, change the Outline server port through the management interface or API:
 
@@ -161,7 +171,7 @@ sudo ufw reload
 
 Clients must regenerate their access keys after port changes.
 
-## Traffic Obfuscation Techniques
+### Step 6: Traffic Obfuscation Techniques
 
 Outline includes built-in traffic obfuscation through the outline-plugin, which wraps Shadowsocks traffic in additional encryption. For enhanced stealth in heavily censored networks, consider combining Outline with domain fronting through a CDN like Cloudflare:
 

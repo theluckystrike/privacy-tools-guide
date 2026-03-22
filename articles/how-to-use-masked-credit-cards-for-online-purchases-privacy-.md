@@ -76,7 +76,17 @@ Masked cards provide several privacy advantages:
 
 For developers building privacy-conscious applications, integrating virtual card generation adds a layer of financial privacy for users.
 
-## Programmatic Virtual Card Generation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Implement Programmatic Virtual Card Generation
 
 Several providers offer APIs for generating masked cards programmatically. This enables developers to build applications that create disposable cards on demand.
 
@@ -145,7 +155,7 @@ async function createVirtualCard() {
 
 The Stripe approach works well for applications managing multiple virtual cards for different purposes.
 
-## Practical Privacy Strategies
+### Step 2: Practical Privacy Strategies
 
 Beyond basic generation, strategic use of masked cards significantly reduces your financial fingerprint.
 
@@ -208,7 +218,7 @@ Masked cards improve privacy but have constraints:
 
 Evaluate your threat model. For most users, virtual cards provide substantial privacy improvements over using raw card numbers everywhere.
 
-## Implementation Checklist
+### Step 3: Implementation Checklist
 
 Before deploying masked cards in your workflow:
 
@@ -221,6 +231,21 @@ Before deploying masked cards in your workflow:
 For developers building privacy-focused applications, integrating virtual card APIs provides users with meaningful financial privacy without requiring complete cash-only lifestyles.
 
 The next time you enter credit card details on a shopping site, consider whether a masked alternative would serve the same purpose with better privacy protection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -244,7 +269,7 @@ The patterns shown here follow standard practices, but production deployments ne
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Comparing Virtual Card Providers: Decision Table
+### Step 4: Comparing Virtual Card Providers: Decision Table
 
 | Provider | API Access | Per-Transaction Limits | Monthly Limits | Merchant Locking | Cost |
 |----------|-----------|----------------------|-----------------|------------------|------|
@@ -254,7 +279,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 | Stripe Issuing | Yes | Yes | Yes | Yes | Custom Pricing |
 | Bank Native | Varies | Some | Varies | Some | Included |
 
-## Case Study: Preventing Data Breach Exposure
+### Step 5: Case Study: Preventing Data Breach Exposure
 
 Consider a real scenario: A user shops at 50 different e-commerce sites monthly. Rather than exposing their real card to 50 potential data breaches, they use masked cards:
 
@@ -331,7 +356,7 @@ Masked cards are not a complete anonymity solution. Evaluate your specific needs
 
 The optimal strategy for most users combines masked cards (for merchant isolation) with other tools (VPN for ISP hiding, cryptocurrency for provider independence, or cash for true anonymity).
 
-## Future of Virtual Cards: Emerging Trends
+### Step 6: Future of Virtual Cards: Emerging Trends
 
 Industry movement toward virtual cards continues:
 

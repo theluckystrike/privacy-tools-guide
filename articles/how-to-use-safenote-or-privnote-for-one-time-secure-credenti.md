@@ -38,13 +38,23 @@ Share credentials securely using SafeNote or PrivNote: paste your API key or pas
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: one-time secure notes, safenote: open-source self-hosting option, setting up safenote, with specific setup instructions
 
-## Understanding One-Time Secure Notes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand One-Time Secure Notes
 
 One-time note services work on a simple but powerful principle: the secret is stored, a unique link is generated, and after the link is visited once, the content is permanently deleted from the server. This eliminates the risk of the credential lingering in inboxes, chat logs, or server logs where it could be discovered later.
 
 For developers working with executors, CI/CD pipelines, or automated deployment systems, these tools provide a secure way to pass sensitive values without hardcoding them or storing them in configuration files that might be committed to version control.
 
-## SafeNote: Open-Source Self-Hosting Option
+### Step 2: SafeNote: Open-Source Self-Hosting Option
 
 SafeNote offers an open-source alternative that you can self-host, giving you complete control over where your sensitive data resides. This makes it particularly attractive for organizations with strict data sovereignty requirements.
 
@@ -126,7 +136,7 @@ secret = retrieve_and_burn_note(note_url)
 # Use the secret for your task, then it's gone forever
 ```
 
-## PrivNote: Quick Web-Based Solution
+### Step 3: PrivNote: Quick Web-Based Solution
 
 PrivNote provides a hosted service that requires no setup. You visit the website, create a note, and share the generated link. It's ideal for quick, ad-hoc credential sharing without any infrastructure overhead.
 
@@ -226,7 +236,7 @@ link = create_verified_note_link("https://your-safenote-instance.com", "API_KEY=
 
 This layered approach ensures that even if someone intercepts the note link, they cannot access the content without the separate verification code delivered through a different channel.
 
-## Comparing SafeNote vs PrivNote
+### Step 4: Comparing SafeNote vs PrivNote
 
 For developers and power users, the choice depends on your requirements:
 
@@ -239,6 +249,21 @@ For developers and power users, the choice depends on your requirements:
 | Cost | Server costs | Free tier / Premium |
 
 Self-hosting SafeNote gives you transparency over how your data is handled, while PrivNote offers convenience for quick, ad-hoc sharing without infrastructure management.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

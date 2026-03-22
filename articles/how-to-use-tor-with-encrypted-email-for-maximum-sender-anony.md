@@ -40,7 +40,17 @@ When your threat model requires hiding both the content and the identity of emai
 - **This guide covers the**: technical implementation for developers and power users who need strong sender anonymity beyond what standard encrypted email provides.
 - **Configure your email client**: to use this proxy for outgoing mail connections.
 
-## Understanding the Anonymity Stack
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Anonymity Stack
 
 Email sender anonymity involves hiding multiple identifiers: your IP address, your email provider account, and any links between your identity and the message. Tor masks your IP address by routing traffic through three or more relays, but metadata still reveals information to email providers and observers.
 
@@ -48,7 +58,7 @@ End-to-end encryption with PGP protects message content but does not hide sender
 
 The critical insight is that you need both layers. Using encrypted email without Tor still reveals your IP address to mail servers. Using Tor without encryption allows observers to read message content at exit nodes.
 
-## Setting Up Tor for Email Traffic
+### Step 2: Set Up Tor for Email Traffic
 
 You have two primary options for routing email through Tor: the Tor Browser's built-in SOCKS proxy or the Tor daemon with a SOCKS port.
 
@@ -87,7 +97,7 @@ tor &
 
 The daemon exposes a SOCKS proxy on `127.0.0.1:9050`. Configure your system or application to route mail traffic through this proxy.
 
-## Connecting to Email Providers via Onion Services
+### Step 3: Connecting to Email Providers via Onion Services
 
 Onion services provide direct encrypted connections to email servers without exiting to the clearnet. This eliminates the risk of traffic analysis at Tor exit nodes.
 
@@ -126,7 +136,7 @@ sudo cat /var/lib/tor/mail_onion/hostname
 
 This generates a `.onion` address that accepts connections only from the Tor network.
 
-## Implementing PGP Encryption
+### Step 4: Implementing PGP Encryption
 
 With Tor hiding your network identity, add PGP encryption to protect message content from end-to-end.
 
@@ -203,7 +213,7 @@ Create completely separate environments for anonymous communications:
 - PGP key generated in that environment only
 - Access only through Tor
 
-## Verifying Your Setup
+### Step 5: Verify Your Setup
 
 Test that your configuration actually provides the anonymity you expect:
 
@@ -222,7 +232,7 @@ STARTTLS
 
 4. **Metadata Inspection**: Check email headers of sent messages to ensure no revealing information leaks through.
 
-## Common Pitfalls to Avoid
+### Step 6: Common Pitfalls to Avoid
 
 Several mistakes undermine the anonymity these tools provide:
 
@@ -231,6 +241,21 @@ Several mistakes undermine the anonymity these tools provide:
 - **Including personal information in initial anonymous contact** — Start with minimal information and build trust gradually
 - **Relying on webmail over Tor** — Browser fingerprinting and JavaScript can compromise anonymity
 - **Forgetting to disable HTML email** — Remote images and tracking pixels leak information
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

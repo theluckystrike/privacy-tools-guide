@@ -30,7 +30,17 @@ Privacy-focused email services: Services like ProtonMail don't require phone ver
 - **Use separate browser profiles**: or completely different browsers for anonymous activities.
 - **Use system-wide proxy settings**: or Whonix for complete network isolation.
 
-## Understanding the Tor Browser Advantage
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Tor Browser Advantage
 
 Tor Browser routes your internet traffic through a volunteer-run network of relays, encrypting your traffic multiple times and bouncing it through at least three nodes before reaching its destination. This approach masks your real IP address and prevents website fingerprinting based on your network characteristics.
 
@@ -40,7 +50,7 @@ For account creation, the key benefits include:
 - **Traffic correlation prevention**: Tor's multi-hop architecture prevents observers from tracing your connection back to its origin
 - **Automatic cookie isolation**: Each new identity creates fresh browser state, preventing tracking cookies from persisting
 
-## Installation and Initial Configuration
+### Step 2: Install ation and Initial Configuration
 
 Download Tor Browser directly from the official project at torproject.org. Verify the GPG signature before installation to ensure integrity:
 
@@ -65,7 +75,7 @@ network.cookie.cookieBehavior: 1 (reject third-party cookies)
 network.dns.disablePrefetch: true
 ```
 
-## Creating New Identities for Account Creation
+### Step 3: Create New Identities for Account Creation
 
 A "New Identity" in Tor Browser closes all tabs and windows, clears browser state, and establishes a new Tor circuit with a fresh IP address. This is the foundation of using Tor for anonymous account creation.
 
@@ -107,7 +117,7 @@ def signal_new_circuit(control_port=9051):
 
 This programmatic approach allows integration into automated account creation workflows while maintaining anonymity.
 
-## Email Handling for Anonymous Accounts
+### Step 4: Email Handling for Anonymous Accounts
 
 Creating an account without phone verification still requires an email address. For anonymous account creation, consider these approaches:
 
@@ -126,7 +136,7 @@ torify curl -X POST https://api.simplelogin.io/api/v3/alias/new \
 
 **Self-hosted solutions**: For maximum privacy, run your own mail server with postfix and configure it to accept mail for your anonymous domains. This approach requires technical expertise but provides complete control.
 
-## Workflow for Creating Anonymous Accounts
+### Step 5: Workflow for Creating Anonymous Accounts
 
 Follow this systematic approach for each anonymous account:
 
@@ -269,7 +279,7 @@ Additional steps reduce fingerprinting risk:
 # gfx.downloadable_fonts.enabled = false
 ```
 
-## Handling Service-Specific Obstacles
+### Step 6: Handling Service-Specific Obstacles
 
 Different services present different obstacles to anonymous account creation.
 
@@ -309,7 +319,7 @@ After creating accounts, configure 2FA securely:
 # Prefer backup codes stored encrypted offline
 ```
 
-## Maintaining Account Security Long-Term
+### Step 7: Maintaining Account Security Long-Term
 
 Anonymous accounts require ongoing security attention:
 
@@ -319,6 +329,21 @@ Anonymous accounts require ongoing security attention:
 - Store credentials in encrypted password manager
 - Enable audit logs if available to detect unauthorized access
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -44,11 +44,21 @@ Access Home Assistant remotely without port forwarding by using Tailscale's mesh
 
 Opening ports on your router directly exposes services to the internet. Even with strong passwords, port scans and automated attacks target known vulnerabilities. Home Assistant running on your local network should remain private—Tailscale creates an encrypted tunnel that keeps your smart home infrastructure invisible to the public internet while remaining accessible to authorized devices.
 
-## Understanding the Tailscale Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Tailscale Architecture
 
 Tailscale operates as a mesh VPN, creating direct encrypted connections between devices. Unlike traditional VPNs that route all traffic through a central server, Tailscale establishes peer-to-peer connections when possible, minimizing latency. Each device gets a unique Tailscale IP address (in the 100.x.x.x range), and your Home Assistant instance becomes reachable at that private IP from any device logged into your Tailscale network.
 
-## Installing Tailscale on Home Assistant
+### Step 2: Install Tailscale on Home Assistant
 
 The easiest method uses the Home Assistant Operating System with the Tailscale add-on. Access your Home Assistant instance, navigate to Settings → Add-ons, and search for "Tailscale." Install the official add-on and configure it with your Tailscale authentication key.
 
@@ -64,7 +74,7 @@ Configuration requires minimal settings:
 
 After starting the add-on, note the Tailscale IP address assigned to your Home Assistant instance—you'll use this for connections.
 
-## Alternative: Tailscale on a Raspberry Pi or Docker
+### Step 3: Alternative: Tailscale on a Raspberry Pi or Docker
 
 For Home Assistant installations running on generic Linux, install Tailscale directly. On Debian/Ubuntu systems:
 
@@ -87,19 +97,19 @@ docker run -d \
   tailscale up --accept-routes
 ```
 
-## Setting Up Client Devices
+### Step 4: Set Up Client Devices
 
 Install Tailscale on devices you want to use for remote access—phones, laptops, tablets. The Tailscale client is available for macOS, Windows, Linux, iOS, and Android. Log in using the same Tailscale account that authenticated your Home Assistant device.
 
 Your Tailscale network now contains your Home Assistant instance and all your client devices. Each device receives a private IP address visible only within your Tailscale network.
 
-## Accessing Home Assistant
+### Step 5: Access Home Assistant
 
 With Tailscale running on both your Home Assistant server and client device, accessing your smart home is straightforward. Instead of your public IP address or domain name, use the Tailscale IP assigned to your Home Assistant instance.
 
 The connection uses the format `http://[tailscale-ip]:8123`. For example, if your Home Assistant Tailscale IP is `100.64.123.456`, access it at `http://100.64.123.456:8123` from any device on your Tailscale network.
 
-## Configuring Home Assistant for Tailscale
+### Step 6: Configure Home Assistant for Tailscale
 
 For optimal experience, configure Home Assistant to recognize Tailscale connections properly. Update your `configuration.yaml` to ensure proper hostname handling:
 
@@ -112,7 +122,7 @@ http:
 
 This allows Home Assistant to correctly identify client devices behind the Tailscale VPN, enabling proper IP-based automation triggers and logging.
 
-## Using Tailscale DNS for Convenience
+### Step 7: Use Tailscale DNS for Convenience
 
 Tailscale includes a DNS feature that assigns hostnames to devices. By default, your Home Assistant instance becomes accessible at `homeassistant.tail-scale.tset.hot` (your specific subdomain appears in the Tailscale admin console). Access Home Assistant at `http://homeassistant.tail-scale.tset.hot:8123`—much easier than memorizing IP addresses.
 
@@ -184,7 +194,7 @@ tailscale set --accept-dns=true --accept-routes=true
 | Inside adversary | LOW-MEDIUM | Encrypted traffic | Network segmentation |
 | ISP surveillance | LOW | Hidden traffic patterns | Additional VPN layer optional |
 
-## Configuring Access Control Lists (ACLs)
+### Step 8: Configure Access Control Lists (ACLs)
 
 Tailor network access with granular policies:
 
@@ -262,7 +272,7 @@ ping -c 4 $(tailscale status --json | jq -r '.Self.Relay')
 tailscale up --accept-routes --mangle-default-route=false
 ```
 
-## Automated Home Assistant Monitoring via Tailscale
+### Step 9: Automated Home Assistant Monitoring via Tailscale
 
 Create a monitoring script that uses Tailscale to check Home Assistant remotely:
 
@@ -323,7 +333,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## Integration with Home Assistant Automations
+### Step 10: Integration with Home Assistant Automations
 
 Create automations that use Tailscale connectivity:
 
@@ -361,7 +371,7 @@ Create automations that use Tailscale connectivity:
       entity_id: "input_boolean.away_mode"
 ```
 
-## Database-Level Logging
+### Step 11: Database-Level Logging
 
 Store Tailscale connection logs in Home Assistant for forensics:
 

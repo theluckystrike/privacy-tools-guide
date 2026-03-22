@@ -52,7 +52,17 @@ Your phone number is a persistent identifier that links across multiple database
 
 Signal addresses these concerns through its username system, which debuted in 2024. The key advantage is that your Signal username acts as a public identifier that can be changed or revoked without affecting your phone number's privacy.
 
-## Setting Up Signal Username
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Signal Username
 
 Before using Signal for dating conversations, configure your username properly:
 
@@ -75,7 +85,7 @@ https://signal.me/#YOUR_USERNAME_CODE
 
 The `#` parameter contains an encrypted code that Signal servers use to route the contact request without permanently associating your username with your phone number in lookup directories.
 
-## Sharing Your Signal Identity Safely
+### Step 2: Sharing Your Signal Identity Safely
 
 For early dating conversations, follow these privacy-conscious sharing practices:
 
@@ -107,7 +117,7 @@ For in-person meetings or as a creative icebreaker:
 
 This method works completely offline and doesn't transmit any data through online channels during the exchange.
 
-## Verification and Safety Numbers
+### Step 3: Verification and Safety Numbers
 
 Once you start chatting, verify your safety numbers to ensure you're communicating with who you think you are:
 
@@ -139,7 +149,7 @@ def compute_safety_number(identity_key, session_id):
     return format_fingerprint(hash_output, groups=5)
 ```
 
-## Privacy Settings for Dating Use
+### Step 4: Privacy Settings for Dating Use
 
 Configure Signal's privacy settings to match your comfort level:
 
@@ -171,7 +181,7 @@ Enable screen security to prevent screenshots in the recent apps view:
 - Android: Settings → Privacy → Screen Lock → "Screen security"
 - iOS: Settings → Privacy → Screen Recording → Exclude Signal
 
-## Transitioning from Signal to Other Platforms
+### Step 5: Transitioning from Signal to Other Platforms
 
 Eventually, you may want to move communication to another platform or exchange phone numbers after establishing trust. Here's a secure transition process:
 
@@ -239,7 +249,7 @@ The patterns shown here follow standard practices, but production deployments ne
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Signal vs Dating App Native Messaging
+### Step 6: Signal vs Dating App Native Messaging
 
 | Feature | Signal | App Messaging (Bumble/Hinge) |
 |---------|--------|---------------------------|
@@ -250,7 +260,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 | Export Conversations | Manual | Limited options |
 | Contact Isolation | Complete | Linked to app profile |
 
-## Practical Privacy Scenarios
+### Step 7: Practical Privacy Scenarios
 
 ### Scenario 1: First Date Before Phone Exchange
 
@@ -308,7 +318,7 @@ Keep Signal Web open only on secure computers:
 - Use it to archive conversations before deleting from phone
 - Maintain deniability on the device you use for dating apps
 
-## Counterarguments and Limitations
+### Step 8: Counterarguments and Limitations
 
 Not everyone uses Signal. Some dating matches will be frustrated by needing another app. Common objections and responses:
 
@@ -320,7 +330,7 @@ Not everyone uses Signal. Some dating matches will be frustrated by needing anot
 
 **"This is inconvenient"**: For you, setup is 5 minutes. For matches, it's installing Signal (1-2 minutes). Many will appreciate the privacy-consciousness.
 
-## Signal Protocol Technical Details for Developers
+### Step 9: Signal Protocol Technical Details for Developers
 
 If you're building dating or messaging applications, understanding Signal's encryption model is essential:
 
@@ -349,7 +359,7 @@ The Double Ratchet algorithm (Signal's core) ensures:
 
 This is why Signal is cryptographically more strong than platform-native encryption on most dating apps.
 
-## Handling Conversation Export
+### Step 10: Handling Conversation Export
 
 Before transitioning from Signal to a different platform:
 
@@ -364,7 +374,7 @@ Before transitioning from Signal to a different platform:
 # Creates encrypted backup of all conversations
 ```
 
-## Data Minimization Strategy
+### Step 11: Data Minimization Strategy
 
 Keep your Signal dating profile minimal:
 

@@ -41,13 +41,23 @@ Dating apps require phone number verification as a standard security measure, bu
 - **Purchase replacement**: Get a new VoIP number immediately (cost: $0-5)
 3.
 
-## The Privacy Problem with Dating App Verification
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Privacy Problem with Dating App Verification
 
 When you verify a dating app with your primary phone number, you create an irreversible link between your dating profile and your real identity. Data brokers compile phone number records alongside addresses, property ownership, and family connections. Anyone with your phone number can purchase a profile containing your full name, home address, and background information.
 
 Beyond data broker risks, dating app phone numbers face additional threats. Ex-partners, harasses, or malicious actors can use your number to perform SIM swap attacks, hijack your accounts, or conduct social engineering campaigns. The consequences extend beyond the dating context—your professional reputation, family safety, and financial security all depend on controlling who accesses your primary contact information.
 
-## Solution Categories for Separate Dating App Numbers
+### Step 2: Solution Categories for Separate Dating App Numbers
 
 Three primary approaches provide effective separation between your dating app presence and your real phone number. Each offers different trade-offs regarding cost, convenience, and sustainability.
 
@@ -94,7 +104,7 @@ Modern smartphones support multiple eSIM profiles, enabling you to maintain sepa
 
 This approach provides the most separation because eSIM numbers operate independently from your primary carrier account. Even if someone obtains your primary phone number, they cannot easily correlate it with your dating app number.
 
-## Implementation Strategies
+### Step 3: Implementation Strategies
 
 ### Strategy 1: Complete Isolation with New VoIP Number
 
@@ -142,7 +152,7 @@ async function configureCallForwarding(voipmsNumber, forwardToNumber) {
 }
 ```
 
-## Practical Considerations
+### Step 4: Practical Considerations
 
 ### Number Portability and Recovery
 
@@ -170,7 +180,7 @@ Understanding the pricing models of different approaches helps you choose the ri
 
 The most cost-effective approach for casual dating app users is Google Voice (free if you already have a Google account). For maximum privacy and separation, Airalo or a prepaid SIM provides genuine independence from your primary carrier relationship.
 
-## Practical Setup Walkthrough
+### Step 5: Practical Setup Walkthrough
 
 ### Google Voice Setup (Fastest Method)
 
@@ -257,7 +267,7 @@ nslookup whatismyipaddress.com # Should return VPN IP
 
 IVPN ($6/month) and Mullvad ($5/month or pay-what-you-want) both provide strong kill switches and no-logging policies suitable for sensitive activities.
 
-## Real-World Threat Scenarios and Responses
+### Step 6: Real-World Threat Scenarios and Responses
 
 ### Scenario: SIM Swap Attack on Your Dating App Number
 
@@ -292,7 +302,7 @@ Different platforms have varying verification strictness:
 
 Tinder is the most aggressive about blocking VOIP services; if you encounter a block, try purchasing a physical prepaid SIM instead. Hinge and Bumble are generally more permissive.
 
-## Long-Term Sustainability Planning
+### Step 7: Long-Term Sustainability Planning
 
 If you plan to use dating apps continuously over months or years:
 
@@ -307,7 +317,7 @@ Example annual budget for complete dating app privacy:
 - VPN service: $60/year (Mullvad/IVPN)
 - **Total: ~$84/year for complete separation**
 
-## Security Hardening Beyond Phone Numbers
+### Step 8: Security Hardening Beyond Phone Numbers
 
 Phone number separation forms one layer of a dating privacy strategy. Supplement this with:
 
@@ -318,6 +328,21 @@ Phone number separation forms one layer of a dating privacy strategy. Supplement
 - Regular password rotation (every 90 days for active accounts)
 - Disable location sharing in app permissions
 - Use Signal or another encrypted messenger, not in-app chat for sensitive conversations
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

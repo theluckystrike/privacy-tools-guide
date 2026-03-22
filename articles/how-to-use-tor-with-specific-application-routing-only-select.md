@@ -40,7 +40,17 @@ This guide covers multiple methods to achieve per-application Tor routing on Lin
 - **Tor supports IPv6 but**: many applications handle it poorly.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Selective Tor Routing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Selective Tor Routing
 
 The Tor network routes your traffic through at least three relays, encrypting each hop. While this provides strong anonymity, it introduces latency that makes some activities impractical. Selective routing solves this by applying Tor only where you need it.
 
@@ -51,7 +61,7 @@ Several approaches enable application-specific Tor routing:
 - **ProxyChains**: Force any application through proxies
 - **Virtual machines**: Route specific VMs through Tor
 
-## Method 1: Using Tor's SOCKS Proxy Directly
+### Step 2: Method 1: Using Tor's SOCKS Proxy Directly
 
 Tor provides a SOCKS proxy on localhost port 9050 by default. Many applications support SOCKS proxy configuration natively.
 
@@ -106,7 +116,7 @@ For Git over Tor hidden services, use:
 git clone socks5://localhost:9050/[onion-address]/repo.git
 ```
 
-## Method 2: Linux Network Namespaces
+### Step 3: Method 2: Linux Network Namespaces
 
 Network namespaces provide stronger isolation by giving applications their own network stack. This method completely separates Tor traffic from your main network.
 
@@ -157,7 +167,7 @@ sudo ip netns exec tor-net python3 script.py
 
 This approach ensures complete network isolation—no DNS leaks, no IPv6 escapes, nothing leaves the namespace except through Tor.
 
-## Method 3: ProxyChains
+### Step 4: Method 3: ProxyChains
 
 ProxyChains forces any application through SOCKS proxies without application-level configuration.
 
@@ -189,7 +199,7 @@ proxychains4 python3 requests.py
 
 ProxyChains works with most TCP-based applications but has limitations with applications that perform their own socket handling.
 
-## Method 4: Docker Container Isolation
+### Step 5: Method 4: Docker Container Isolation
 
 Docker provides another isolation layer for Tor-routed applications.
 
@@ -218,7 +228,7 @@ docker build -t tor-app .
 docker run -it tor-app curl --socks5 localhost:9050 https://check.torproject.org/api/ip
 ```
 
-## Verifying Your Setup
+### Step 6: Verify Your Setup
 
 Always verify that traffic actually routes through Tor:
 
@@ -254,7 +264,7 @@ Disable IPv6 entirely or ensure your application only makes IPv4 connections. To
 
 Tor adds significant latency. Increase connection timeouts in your applications. Some services may block Tor exit nodes entirely.
 
-## Use Cases
+### Step 7: Use Cases
 
 Selective Tor routing serves several practical purposes:
 
@@ -264,6 +274,21 @@ Selective Tor routing serves several practical purposes:
 - **Compartmentalization**: Separate sensitive browsing from regular activities
 
 This setup gives you granular control over which applications receive Tor's anonymity properties while maintaining normal performance for everything else.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

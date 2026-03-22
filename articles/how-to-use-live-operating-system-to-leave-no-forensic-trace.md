@@ -73,7 +73,17 @@ When you boot a live operating system, several protections prevent forensic reco
 
 5. **MAC address randomization**: Many live OSes spoof network card addresses, breaking hardware fingerprinting.
 
-## Popular Live Operating Systems for Privacy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Popular Live Operating Systems for Privacy
 
 ### Tails (The Amnesic Incognito Live System)
 
@@ -162,7 +172,7 @@ curl -s https://check.torproject.org | grep -i "congratulations"
 # Configure from: Applications > Tails > Configure persistent volume
 ```
 
-## Practical Use Cases
+### Step 2: Practical Use Cases
 
 ### Using a Library Computer
 
@@ -243,7 +253,7 @@ Known forensic artifacts:
 
 Use computers where you have physical access to clear CMOS if concerned about boot order logs.
 
-## Limitations of Live Systems
+### Step 3: Limitations of Live Systems
 
 Live operating systems aren't foolproof:
 
@@ -258,6 +268,21 @@ For maximum security, combine live OS use with:
 - Hardware security keys
 - Encrypted persistent volumes
 - Multiple hops before accessing sensitive services
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

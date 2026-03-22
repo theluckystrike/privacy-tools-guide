@@ -42,13 +42,23 @@ NaiveProxy disguises censorship circumvention traffic as legitimate HTTPS traffi
 - **Consider running NaiveProxy on port 443**: which is almost always open since it's required for normal web browsing.
 - **Use port 443 (standard**: HTTPS) # 2.
 
-## What Makes NaiveProxy Different
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Makes NaiveProxy Different
 
 NaiveProxy uses a forward proxy architecture built on top of the standard HTTP CONNECT method. Unlike VPNs that create dedicated tunnels with identifiable protocols, NaiveProxy forwards traffic through a proxy server while the entire connection appears as standard HTTPS traffic to network observers.
 
 The key advantage is that your traffic looks exactly like any other HTTPS connection to a web server. The proxy server decrypts, then re-encrypts and forwards your requests to their actual destinations. This creates a layer of obfuscation that resists pattern recognition and protocol fingerprinting.
 
-## Setting Up Your Own NaiveProxy Server
+### Step 2: Set Up Your Own NaiveProxy Server
 
 You will need a server outside your censored region. Any standard VPS running Linux will work.
 
@@ -85,7 +95,7 @@ bash get-naiveproxy.sh
 
 The server will automatically obtain TLS certificates from Let's Encrypt.
 
-## Configuring the Client
+### Step 3: Configure the Client
 
 On your local machine, install the NaiveProxy client. The client is available for Windows, macOS, and Linux.
 
@@ -120,7 +130,7 @@ EOF
 
 The `pad` option adds random padding to requests, making traffic analysis more difficult. Enable this for additional privacy in hostile network environments.
 
-## Integrating with Your Browser
+### Step 4: Integrate with Your Browser
 
 After starting the client, configure your browser to use the SOCKS5 proxy at `127.0.0.1:1080`.
 
@@ -182,7 +192,7 @@ If connections fail or performance is poor, check these common problems:
 
 **Client-server version mismatch:** Ensure your client and server versions are compatible. Outdated versions may have protocol incompatibilities.
 
-## Alternative Use Cases
+### Step 5: Alternative Use Cases
 
 Beyond censorship circumvention, NaiveProxy serves other legitimate purposes:
 
@@ -192,7 +202,7 @@ Beyond censorship circumvention, NaiveProxy serves other legitimate purposes:
 
 **IoT device routing:** Route traffic from devices that lack VPN support through a local proxy client.
 
-## Comparing with Other Solutions
+### Step 6: Comparing with Other Solutions
 
 NaiveProxy occupies a specific niche between VPNs and Tor. Unlike VPNs, it resists protocol fingerprinting. Unlike Tor, it typically offers lower latency and simpler server infrastructure. The trade-off is that you trust a single server rather than the Tor network's distributed trust model.
 
@@ -257,7 +267,7 @@ server {
 
 Load balancing distributes traffic across multiple servers, preventing any single server from becoming a bottleneck.
 
-## Detecting and Evading Detection
+### Step 7: Detecting and Evading Detection
 
 While NaiveProxy is difficult to detect, understanding potential detection vectors helps improve your deployment.
 
@@ -301,7 +311,7 @@ Some ISPs implement port-based blocking, preventing connections to non-standard 
 # But SNI/Host header points to blocked site
 ```
 
-## Operational Security Practices
+### Step 8: Operational Security Practices
 
 Secure deployment requires careful operational management:
 
@@ -357,7 +367,7 @@ for cert in /etc/letsencrypt/live/*/cert.pem; do
 done
 ```
 
-## Testing and Validation
+### Step 9: Test and Validation
 
 Proper testing ensures your NaiveProxy deployment actually provides the promised protection:
 
