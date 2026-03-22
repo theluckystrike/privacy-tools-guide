@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

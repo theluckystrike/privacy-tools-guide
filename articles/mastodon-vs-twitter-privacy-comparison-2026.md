@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /mastodon-vs-twitter-privacy-comparison-2026/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, privacy]
