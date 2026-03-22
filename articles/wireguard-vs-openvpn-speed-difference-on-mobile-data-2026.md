@@ -233,6 +233,197 @@ Both tools release updates regularly, often monthly or more frequently. Feature 
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Benchmarking on Your Actual Connection
+
+Real performance varies dramatically by device and network. Test yourself:
+
+```bash
+#!/bin/bash
+# vpn-benchmark.sh - Compare WireGuard and OpenVPN on mobile connection
+
+VPN_SERVERS=(
+  "wg.example.com:51820"
+  "openvpn.example.com:1194"
+)
+
+DURATION=60  # seconds
+PACKET_SIZE=1024
+
+echo "=== VPN Performance Benchmark ==="
+echo "Testing on actual mobile connection"
+echo "Duration: ${DURATION}s per test"
+echo
+
+for server in "${VPN_SERVERS[@]}"; do
+  echo "Testing: $server"
+
+  # Measure latency (ping)
+  ping_result=$(ping -c 10 -W 5000 ${server%:*} | tail -1 | awk '{print $4}' | cut -d'/' -f2)
+  echo "  Latency: ${ping_result}ms"
+
+  # Measure throughput (iperf3)
+  # Note: requires iperf3 server running on VPN endpoint
+  iperf_result=$(iperf3 -c ${server%:*} -u -t $DURATION -b 100M -R 2>/dev/null | grep "sender" | awk '{print $7,$8}')
+  echo "  Throughput: ${iperf_result}"
+
+  echo
+done
+
+# Compare battery drain
+echo "=== Battery Impact Test ==="
+echo "Run VPN for 1 hour and measure battery drain"
+echo "Before: $(upower -e | grep percentage)"
+# ... run VPN for 1 hour ...
+echo "After:  $(upower -e | grep percentage)"
+```
+
+## Real Device Battery Tests
+
+Using Android as example (iOS similar):
+
+```bash
+# Install adb and connect phone
+adb shell
+
+# WireGuard battery test
+adb shell pm disable com.android.gms  # Disable Google Play Services interference
+adb shell "while true; do wg-quick up wg0; sleep 3600; wg-quick down wg0; done" &
+
+# Monitor battery drain via adb
+adb shell dumpsys battery | grep level
+
+# Expected: 12-15% drain per 8 hours with active VPN
+# Compare to OpenVPN: 22-28% drain per 8 hours
+```
+
+## Choosing Protocol for Specific Scenarios
+
+| Scenario | Protocol | Config | Reason |
+|----------|----------|--------|--------|
+| 4G LTE, good signal | WireGuard | UDP, PersistentKeepalive=25 | Fastest, minimal overhead |
+| Weak 3G signal | OpenVPN | UDP, fragment 1400 | Better error recovery |
+| WiFi + mobile switch | WireGuard | UDP, key rotation | Fast reconnection |
+| Hotel WiFi (blocking) | OpenVPN | TCP port 443 | Looks like HTTPS |
+| Data-limited plan | WireGuard | Any | 200-500MB saved over month |
+| Latency-sensitive app | WireGuard | UDP, PersistentKeepalive=15 | Sub-second overhead |
+| App requires specific IP | OpenVPN | UDP, static IP | Better IP stability |
+
+## Advanced Tuning for Mobile Optimization
+
+WireGuard configuration for maximum mobile performance:
+
+```ini
+# /etc/wireguard/wg-mobile.conf
+[Interface]
+PrivateKey = <your-private-key>
+Address = 10.0.0.2/32
+DNS = 1.1.1.1, 1.0.0.1
+MTU = 1420
+# Prefer IPv6 if available (slightly faster)
+PreUp = echo 1 > /proc/sys/net/ipv6/conf/all/forwarding
+
+[Peer]
+PublicKey = <server-public-key>
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = vpn.example.com:51820
+PersistentKeepalive = 25
+# Connection migration: seamless network switching
+```
+
+OpenVPN configuration for mobile reliability:
+
+```conf
+# mobile-optimized.conf
+client
+dev tun
+proto udp
+remote vpn.example.com 1194
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+auth SHA256
+cipher AES-256-GCM
+
+# Mobile optimizations
+mtu-test
+fragment 1400
+mssfix 1400
+tun-mtu 1400
+tun-mtu-extra 32
+
+# Keep connection alive across network changes
+keepalive 10 60
+
+# Reduce handshake overhead
+handshake-window 60
+
+# Optimize for mobile: reduce CPU usage
+fast-io
+push "fast-io"
+
+<ca>
+# CA cert
+</ca>
+<cert>
+# client cert
+</cert>
+<key>
+# client key
+</key>
+```
+
+## Diagnosing Speed Issues
+
+When VPN is slower than expected:
+
+```bash
+#!/bin/bash
+# vpn-diagnostics.sh - Find bottlenecks
+
+echo "=== VPN Speed Diagnosis ==="
+
+# 1. Check baseline speed (no VPN)
+echo "1. Baseline speed (no VPN):"
+speedtest-cli --simple
+
+# 2. Connect to VPN
+vpn-connect
+
+# 3. Check VPN speed
+echo "2. Speed through VPN:"
+speedtest-cli --simple
+
+# 4. Check latency to VPN server
+echo "3. Latency to VPN endpoint:"
+ping -c 5 vpn.example.com | grep "avg"
+
+# 5. Check MTU issues
+echo "4. Testing packet fragmentation:"
+ping -M do -s 1472 vpn.example.com
+# If fails, MTU is too large
+
+# 6. Check DNS speed (impacts streaming perceived speed)
+echo "5. DNS resolution time:"
+time nslookup netflix.com
+time nslookup netflix.com  # Second attempt should be cached
+
+# 7. Check for packet loss
+echo "6. Packet loss:"
+ping -c 100 vpn.example.com | grep "packet loss"
+
+# 8. Monitor CPU usage
+echo "7. VPN process CPU usage:"
+top -p $(pgrep -f wg-quick) -n 1 | grep wg
+
+echo
+echo "Expected values:"
+echo "  Speed: 80-95% of baseline (5-15% overhead normal)"
+echo "  Latency: +10-30ms (depending on server distance)"
+echo "  Packet loss: <1%"
+echo "  CPU: <5% for WireGuard, <15% for OpenVPN"
+```
+
 ## Related Articles
 
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)

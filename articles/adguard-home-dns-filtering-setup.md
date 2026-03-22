@@ -234,6 +234,209 @@ curl http://localhost:3000/control/stats \
   }'
 ```
 
+## Advanced Filtering Rules and Regex
+
+Beyond simple blocklists, create powerful custom rules:
+
+```
+# AdGuard Home custom filtering rules - Filters tab
+
+# Block all analytics services
+||analytics.google.com^
+||segment.com^
+||amplitude.com^
+||mixpanel.com^
+
+# Block all third-party tracking pixels
+||doubleclick.net^
+||ads.yahoo.com^
+||tracking.kenshoo.com^
+
+# Advanced: Block using regex (treat domain as regex)
+/.+\.facebook\.com^
+
+# Allow specific domain that's overly blocked
+@@||cdn.example-legitimate-site.com^
+
+# Block IP ranges (blocking ads from specific networks)
+|185.93.187.0/24
+
+# DNS rewrite (map fake domain to localhost for testing)
+||test.internal^ 127.0.0.1
+
+# Case-sensitive matching
+||MyService.com^
+
+# Exact match only (don't match subdomains)
+|exact.domain.com^
+
+# Comments (start with #)
+# This blocks all Adobe analytics
+||adobe.analytics.com^
+```
+
+## Detecting Over-Blocking Issues
+
+Identify which blocklist is causing false positives:
+
+```bash
+#!/bin/bash
+# Debug script to find problematic blocklist
+
+BROKEN_DOMAIN="service-that-should-work.com"
+CURL_TIMEOUT=5
+
+echo "Testing: $BROKEN_DOMAIN"
+curl -s --max-time $CURL_TIMEOUT $BROKEN_DOMAIN
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Connection failed or timed out"
+  echo "Checking which blocklist is blocking this..."
+
+  # Query AdGuard Home debug API
+  curl -s "http://localhost:3000/control/filtering/check?name=$BROKEN_DOMAIN" \
+    -H "Authorization: Basic $(echo -n 'admin:password' | base64)" | jq '.rules'
+
+  # Output will show which filter(s) are blocking
+fi
+```
+
+## Multi-Device Client Rules Setup
+
+Configure different filtering for different device types:
+
+```
+# Kids devices - strict filtering
+Client: Tablet-Kids
+  Identifier: 192.168.1.45
+  Extra blocklists:
+    - https://raw.githubusercontent.com/nicehash/NiceHash/master/lists/adult-blocklist.txt
+  SafeSearch: Enabled (all search engines)
+  Safe Browsing: Enabled
+  Blocked services: [Gaming, Social Media, YouTube]
+  Parental control labels: Safe content only
+
+# Work device - minimal filtering
+Client: Work-Laptop
+  Identifier: 192.168.1.10
+  Blocklists: Disabled (or minimal)
+  Upstream DNS: https://dns.cloudflare.com/dns-query
+  Block: Disabled
+  Purpose: All filtering would interfere with business tools
+
+# Guest network - moderate filtering
+Client: Guest-WiFi
+  Identifier: 192.168.1.200/24 (subnet for all guests)
+  Blocklists: Standard (ads/malware only)
+  Safe Search: Enabled
+  Rate limiting: Enabled (prevent abuse)
+
+# IoT devices - strict to prevent data exfiltration
+Client: Smart-Home
+  Identifier: 192.168.1.50-60 (all IoT devices)
+  Blocklists: EasyPrivacy + HaGeZi + OISD (aggressive tracking blocking)
+  Upstream DNS: Quad9 (malware filtering)
+  Custom rules: Block all outbound except to approved IPs
+```
+
+## Monitoring Query Patterns
+
+Analyze what's being blocked to optimize filtering:
+
+```bash
+#!/bin/bash
+# analyze-queries.sh - Find patterns in DNS blocking
+
+# Top blocked domains
+echo "=== Top 20 Blocked Domains ==="
+jq -r 'select(.Result.IsFiltered == true) | .QH' /opt/AdGuardHome/data/querylog.json \
+  | sort | uniq -c | sort -rn | head -20
+
+# Percentage of queries blocked
+echo "=== Blocking Statistics ==="
+TOTAL=$(jq 'length' /opt/AdGuardHome/data/querylog.json)
+BLOCKED=$(jq 'select(.Result.IsFiltered == true) | .QH' /opt/AdGuardHome/data/querylog.json | wc -l)
+PERCENTAGE=$((BLOCKED * 100 / TOTAL))
+echo "Blocked: $BLOCKED out of $TOTAL ($PERCENTAGE%)"
+
+# Queries by client (who's being filtered most)
+echo "=== Top Clients by Query Count ==="
+jq -r '.IP' /opt/AdGuardHome/data/querylog.json \
+  | sort | uniq -c | sort -rn | head -10
+
+# Failed/timed out queries (potential issues)
+echo "=== Failed Queries ==="
+jq -r 'select(.Result.Reason == "NotFiltered" or .Result.Reason == "Blocked") | .QH' /opt/AdGuardHome/data/querylog.json \
+  | sort | uniq -c | sort -rn | head -10
+```
+
+## Backup and Restore Strategy
+
+Regular backups protect against accidental misconfiguration:
+
+```bash
+#!/bin/bash
+# backup-adguard.sh - Regular AdGuard Home backup
+
+BACKUP_DIR="/backup/adguard"
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+
+mkdir -p "$BACKUP_DIR"
+
+# Backup configuration
+cp -r /opt/AdGuardHome/data "$BACKUP_DIR/data-$TIMESTAMP"
+
+# Backup database
+cp /opt/AdGuardHome/AdGuardHome.db "$BACKUP_DIR/AdGuardHome-$TIMESTAMP.db"
+
+# Export settings as JSON via API
+curl -s http://localhost:3000/control/config \
+  -H "Authorization: Basic $(echo -n 'admin:password' | base64)" \
+  > "$BACKUP_DIR/config-$TIMESTAMP.json"
+
+# Keep only last 30 days of backups
+find "$BACKUP_DIR" -name "data-*" -mtime +30 -exec rm -rf {} \;
+find "$BACKUP_DIR" -name "*.db" -mtime +30 -exec rm {} \;
+
+# Encrypt backups
+tar czf - "$BACKUP_DIR" | openssl enc -aes-256-cbc -out "$BACKUP_DIR/backup-$TIMESTAMP.tar.gz.enc"
+
+echo "Backup complete: $BACKUP_DIR/backup-$TIMESTAMP.tar.gz.enc"
+```
+
+## Performance Tuning
+
+Optimize AdGuard Home for high traffic:
+
+```yaml
+# /opt/AdGuardHome/AdGuardHome.yaml
+
+# Increase query cache for faster responses
+cache:
+  size: 100000  # From default 10000
+  ttl_min: 60   # Minimum cache time
+
+# Connection pooling
+upstream_dns_pool:
+  size: 8       # Parallel upstream connections
+
+# Rate limiting to prevent abuse
+ratelimit:
+  enabled: true
+  clients_limit: 1000    # Max clients
+  whitelisted: []        # Whitelist trusted IPs
+
+# Query log size (balance between detail and disk usage)
+querylog:
+  enabled: true
+  file_size: 100  # MB before rotation
+  interval: 24h   # Rotation interval
+  anonymize_client_ip: true  # Privacy
+
+# Performance tweaking
+upstream_mode: fastest  # Use fastest upstream, not load-balanced
+```
+
 ## Related Reading
 
 - [Home Network Privacy: Pi-hole DNS Filtering Guide](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)

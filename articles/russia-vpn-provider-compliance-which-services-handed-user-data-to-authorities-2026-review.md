@@ -214,6 +214,237 @@ For developers building applications that may be used in Russia, understanding t
 
 **
 
+## Setting Up Tor for Russia
+
+For maximum privacy and to bypass Roskomnadzor blocking entirely:
+
+```bash
+# Install Tor
+apt-get install tor torbrowser-launcher
+
+# Configure Tor for obfuscated bridges (harder to detect)
+cat > /etc/tor/torrc << 'EOF'
+# Socks port for applications to connect to
+SocksPort 9050
+
+# Bridge obfuscation (connect via bridges instead of direct)
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+
+# Bridges - get from https://bridges.torproject.org
+# Use "Advanced" option for obfuscated bridges
+Bridge obfs4 IP:PORT [FINGERPRINT]
+Bridge obfs4 IP:PORT [FINGERPRINT]
+
+# Restrict to Russian exit nodes if needed
+ExitNodes {ru}
+StrictNodes 1
+EOF
+
+# Start Tor
+systemctl start tor
+
+# Configure applications to use Tor
+# Firefox: about:preferences → Network → Settings
+# Proxy: 127.0.0.1 port 9050 (SOCKS5)
+```
+
+Connection verification in Tor:
+
+```bash
+# Verify Tor is working and exit node location
+curl --socks5-hostname 127.0.0.1:9050 https://check.torproject.org
+
+# Should show: "Your browser is configured to use Tor"
+# Exit IP will be non-Russian
+
+# For higher anonymity, chain multiple proxies:
+# Tor → VPS in Estonia → Shadowsocks server in Singapore
+# Makes traffic analysis extremely difficult
+```
+
+## Testing VPN Against Sophisticated DPI
+
+Russian authorities use DPI (Deep Packet Inspection) to detect VPN traffic:
+
+```bash
+#!/bin/bash
+# dpi-detection-test.sh - Test if DPI can detect your VPN
+
+# 1. Identify DPI signatures
+# Common VPN signatures DPI detects:
+# - TLS handshake patterns (port 443 with specific ciphers)
+# - OpenVPN key exchange pattern
+# - WireGuard packet size/timing patterns
+# - DNS over HTTPS patterns
+
+# 2. Test obfuscation effectiveness
+# Shadowsocks: Encrypts entire packet, harder to detect
+# NaiveProxy: Looks exactly like HTTPS, nearly impossible to detect
+# V2Ray: VMESS protocol, highly obfuscated
+# Trojan: Uses TLS wrapper, very stealthy
+
+# 3. Perform live detection test
+# Connect VPN from within Russia, check connectivity
+# If blocks immediately: DPI detected
+# If works: Obfuscation effective (for now)
+
+# 4. Monitor TCP/UDP patterns
+tcpdump -i any 'port 51820 or port 443' -A
+# WireGuard: Regular-sized packets every ~25 seconds (keepalive)
+# Trojan: Randomized timing, variable sizes
+# V2Ray: Mixed packet sizes, irregular patterns
+```
+
+## Provider Audit Tools
+
+Determine if a VPN provider is compromised:
+
+```bash
+#!/bin/bash
+# vpn-provider-audit.sh - Verify provider integrity
+
+VPN_PROVIDER="example-vpn.com"
+
+echo "=== VPN Provider Audit ==="
+
+# 1. Check domain registration (watch for Russian ownership transfer)
+whois $VPN_PROVIDER | grep -i "registrar\|registrant"
+
+# 2. Verify SSL certificate
+# Check certificate issuer and validity
+openssl s_client -connect $VPN_PROVIDER:443 -showcerts 2>/dev/null | openssl x509 -text
+
+# Red flags:
+# - Certificate issued in Russia
+# - Recently registered domain
+# - Registrant in Russia
+# - Frequent certificate changes
+
+# 3. Check IP geolocation
+# Verify claimed servers are actually located where stated
+dig $VPN_PROVIDER
+# Then check IP: geoiplookup <ip>
+
+# 4. Review transparency reports
+# Download and verify authenticity of any published reports
+curl $VPN_PROVIDER/transparency-report.pdf
+
+# 5. Community feedback
+# Check VPN review sites, Reddit, Twitter
+# Look for recent complaints about data requests
+```
+
+## Practical Multi-Layer Setup
+
+For users in Russia requiring maximum security:
+
+```bash
+#!/bin/bash
+# multi-layer-vpn-setup.sh - Chained proxies for maximum security
+
+# Layer 1: Device → Shadowsocks (runs on your device or home network)
+# Layer 2: Shadowsocks → VPS in Estonia (rented from European provider)
+# Layer 3: Estonia VPS → NaiveProxy server in Singapore
+# Layer 4: Singapore → Final destination
+
+# Step 1: Install and configure local Shadowsocks
+# See earlier section
+
+# Step 2: Create VPS in Estonia (uses European jurisdiction)
+# Provider: DigitalOcean (Frankfurt), Hetzner (Germany), or Linode (EU)
+# Do NOT use providers with Russian presence
+
+ssh root@vps-estonia.com
+
+# Step 3: Install Shadowsocks server on VPS
+apt-get update && apt-get install shadowsocks-libev
+
+# Create config (same as earlier in article)
+
+# Step 4: Configure local Shadowsocks client to connect to Estonia VPS
+# Then have NaiveProxy run locally, using Shadowsocks as upstream
+
+# Step 5: Connect browser/apps to NaiveProxy (localhost:8443)
+
+# Result:
+# Traffic path: Device → Shadowsocks (encrypted)
+#               Shadowsocks → Estonia VPS (encrypted + different ISP)
+#               VPS → NaiveProxy server (encrypted + different country)
+#               NaiveProxy → Internet (looks like HTTPS)
+
+# Authorities would need to:
+# 1. Detect Shadowsocks (difficult)
+# 2. Compromise Estonia VPS (requires Estonia cooperation)
+# 3. Monitor Singapore server (requires Singapore cooperation)
+# 4. Decrypt all layers simultaneously (cryptographically infeasible)
+
+# This setup provides protection against even sophisticated DPI
+```
+
+## Detecting Roskomnadzor Interference
+
+Monitor your connection for signs of ISP-level blocking:
+
+```bash
+#!/bin/bash
+# roskomnadzor-detection.sh
+
+echo "=== Checking for Roskomnadzor Blocking ==="
+
+# 1. DNS blocking (easiest to detect)
+echo "1. Testing DNS resolution:"
+nslookup blocked-domain.com 8.8.8.8  # Google DNS
+nslookup blocked-domain.com 1.1.1.1  # Cloudflare DNS
+# If returns ISP-controlled address (e.g., 195.208.x.x): DNS blocked
+
+# 2. IP blocking
+echo "2. Testing IP connectivity:"
+timeout 3 bash -c "cat < /dev/null > /dev/tcp/blocked-server.com/443"
+# If timeout: IP blocked by Russian ISP
+
+# 3. DPI blocking (hardest to detect)
+echo "3. Testing for packet inspection:"
+curl -v --http1.1 blocked-site.com 2>&1 | grep -i reset
+# If "Connection reset": DPI detected and blocked
+
+# 4. Check for ISP injection (MITM)
+echo "4. Checking for ISP MITM:"
+curl https://blocked-site.com -I 2>&1 | grep -i "x-forwarded-for"
+# If header present: ISP is proxying traffic
+
+# 5. Monitor routing to blocked domains
+echo "5. Tracing route to blocked domain:"
+traceroute blocked-site.com
+# Stops at ISP gateway: IP blocking confirmed
+```
+
+## Recovery If Caught
+
+If you're detected using prohibited VPN:
+
+- **Do not continue**: Stopping immediately shows you did not deliberately evade
+- **Delete evidence**: Clear browser history, VPN logs, config files
+- **Legal consultation**: Understand local regulations and potential penalties
+- **Use legal VPNs**: Some providers are registered with Russian authorities and operate legally
+- **Consider Tor**: Tor browser is more legally ambiguous than commercial VPNs
+
+Understand the legal landscape:
+
+```
+Russia VPN Law Status (2026):
+- Personal use of VPN: Not explicitly illegal, but discouraged
+- VPN provider operation: Requires registration with Roskomnadzor
+- Accessing banned content: Illegal, regardless of method
+- Using VPN to bypass blocking: Legal gray area
+- Penalties: Fines up to 100,000 RUB for organizations, warnings for individuals
+
+Users' realistic risk:
+- Individual users: Low enforcement risk
+- Organizations: Moderate risk if caught
+- Activists/journalists: High risk of targeting
+```
+
 ## Related Reading
 
 - [Russia Vpn Provider Compliance Which Services Handed User Da](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)

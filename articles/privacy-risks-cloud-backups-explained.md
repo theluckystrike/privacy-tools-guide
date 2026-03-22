@@ -209,6 +209,152 @@ Before choosing a backup approach, decide:
 
 4. **What happens if you lose the passphrase?** With zero-knowledge encryption, there is no password reset. Your data is gone.
 
+## Testing Your Backup Strategy
+
+Before disaster strikes, verify your backup actually restores:
+
+```bash
+#!/bin/bash
+# backup-test.sh - Test backup recovery capability
+
+BACKUP_LOCATION="s3:my-backup-bucket"
+TEST_FILE="/tmp/backup-test-$(date +%s).txt"
+TEST_DATA="Critical data: $(openssl rand -hex 32)"
+
+echo "$TEST_DATA" > "$TEST_FILE"
+
+# Test 1: Can you encrypt and back up?
+echo "Testing backup encryption..."
+restic -r "$BACKUP_LOCATION" --password-file ~/.restic-password \
+  backup "$TEST_FILE"
+
+if [ $? -ne 0 ]; then
+    echo "ERROR: Backup failed"
+    exit 1
+fi
+
+# Test 2: Can you restore?
+RESTORE_DIR="/tmp/restore-test-$(date +%s)"
+mkdir "$RESTORE_DIR"
+
+echo "Testing restoration..."
+restic -r "$BACKUP_LOCATION" --password-file ~/.restic-password \
+  restore latest --target "$RESTORE_DIR"
+
+if [ $? -ne 0 ]; then
+    echo "ERROR: Restore failed"
+    exit 1
+fi
+
+# Test 3: Is the data intact?
+RESTORED_FILE=$(find "$RESTORE_DIR" -name "backup-test-*" | head -1)
+RESTORED_DATA=$(cat "$RESTORED_FILE")
+
+if [ "$TEST_DATA" == "$RESTORED_DATA" ]; then
+    echo "SUCCESS: Backup and restore working correctly"
+else
+    echo "ERROR: Restored data does not match original"
+    exit 1
+fi
+
+# Cleanup
+rm -rf "$RESTORE_DIR" "$TEST_FILE"
+```
+
+Run this test monthly. A backup you cannot restore is not a backup.
+
+## Encryption Strength Analysis
+
+With zero-knowledge encryption, the provider cannot help you even if they wanted to:
+
+```bash
+# Example: Restic with S3 backend
+# The passphrase NEVER leaves your machine
+# The provider sees only encrypted blobs
+
+# Attacker with S3 access sees:
+# - Encrypted data (useless without passphrase)
+# - Backup timestamps
+# - Approximate backup sizes
+# Cannot see: filenames, content, directory structure
+
+# Even if AWS is breached:
+# - Your encrypted backups remain secure
+# - Attacker cannot read any data without your passphrase
+# - AWS cryptographic keys are irrelevant to your data
+```
+
+## Comparing Services Side by Side
+
+| Service | Encryption Type | Metadata Protection | Zero-Knowledge | Cost (per TB/mo) |
+|---------|-----------------|------------------|-----------------|-----------------|
+| Tresorit | E2E | Full filename encryption | Yes | $12-20 |
+| ProtonDrive | E2E | Full encryption | Yes | $5-20 |
+| Cryptomator + Dropbox | E2E | Partial (filenames hidden) | Yes | $12+ |
+| Restic + S3 | E2E | Full encryption | Yes | $0.023 |
+| Borg + self-hosted | E2E | Full encryption | Yes | Server cost |
+| Google Drive | Server-side | None | No | $2-10 |
+| iCloud (default) | Server-side | None | No | $1-7 |
+| Dropbox | Server-side | None | No | $10-20 |
+
+## Migrating From Cloud Provider to Self-Hosted
+
+If you currently use Google Drive or iCloud and want to switch to encrypted backup:
+
+```bash
+# Step 1: Export from Google Drive
+# Use Google Takeout (takeout.google.com)
+# Downloads all data as encrypted backup file
+
+# Step 2: Transfer to Restic
+tar -xzf takeout.tar.gz
+restic -r s3:my-secure-bucket \
+  --password-file ~/.restic-password \
+  backup ~/Downloads/Takeout/
+
+# Step 3: Verify
+restic -r s3:my-secure-bucket \
+  --password-file ~/.restic-password \
+  restore latest --target /tmp/verify-restore
+
+# Step 4: Delete from cloud provider (optional)
+# Settings → Manage your Google Account → Data & Privacy → Delete...
+```
+
+## Passphrase Security
+
+Your backup is only as secure as your encryption passphrase:
+
+```bash
+# Generate a strong passphrase using cryptography-grade randomness
+openssl rand -base64 32
+# Output: aB3xY9kL2mN5oP8qR1sT4uV7wX0yZ
+
+# Or use diceware method (human-memorable, cryptographically strong)
+# Download diceware word list and roll dice
+# Example: correct-horse-battery-staple
+# This is actually very strong (entropy comparable to random string)
+
+# Store securely:
+# 1. Password manager (encrypted, backed up)
+# 2. Physical safe (separate location from backups)
+# 3. Never in plaintext on your computer
+
+# Test that you can remember or retrieve it
+# Losing the passphrase = losing all backups permanently
+```
+
+## Avoiding Common Mistakes
+
+| Mistake | Impact | Fix |
+|--------|--------|-----|
+| Backup encrypted on same device as data | Single point of failure | Store backups on separate hardware |
+| Same passphrase for all backups | One compromise = all loss | Use unique passphrase per backup |
+| Storing passphrase in email or cloud | Trivial to compromise | Physical safe or airgapped password manager |
+| Never testing restore | Discover failure only when needed | Test monthly |
+| Storing backup on ISP's server | ISP breach = data exposure | Use commercial provider or self-hosted |
+| Unencrypted backup metadata | Metadata alone reveals patterns | Use full metadata encryption |
+
 ## Related Reading
 
 - [Privacy-Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)

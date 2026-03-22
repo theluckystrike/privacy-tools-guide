@@ -239,6 +239,155 @@ Run the command with `sudo` for system-level operations, or check that your user
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
+## Advanced Techniques for High-Profile Individuals
+
+**Decoy addresses and burner domains.** Create multiple addresses associated with your name that aren't your real home:
+
+```
+Primary residence: [secured through LLC]
+Decoy address 1: PO Box in major city (links to your name)
+Decoy address 2: Family business address (diverts inquiries)
+Decoy address 3: Old address (creates data confusion)
+```
+
+When someone searches your name, they find three addresses, none of which is home. Data brokers and public records now contain conflicting information that makes the real address harder to identify.
+
+**Domain privacy and business use.** Separate your personal domain from professional presence:
+
+```
+Personal: first-last-name.com (WHOIS private)
+Public: firstname-lastname-media.com (professional, searchable)
+Business: businessname.com (LLC registered, privacy registered)
+```
+
+Never use your personal domain for professional purposes. A single leaked email or business contact can expose your personal identity on that domain.
+
+**Trust establishment for communications.** For interviews, media inquiries, or business dealings, create a dedicated contact channel:
+
+```bash
+# Setup secure contact system
+Contact email: [random-handle]@protonmail.com (not tied to name)
+Signal number: Dedicated phone (never tied to personal number)
+Personal assistant: Use their contact info instead of yours
+```
+
+When interviews need your location or personal information, have your management company handle that through secure channels that verify their identity before sharing anything.
+
+**Financial account hardening.** Bank accounts, investment accounts, and credit card applications are vectors for address exposure:
+
+- Credit card statements go to a PO Box, not home address
+- Bank statements use business address or PO Box
+- Account emergency contacts use professional phone, not personal
+- Financial advisor has business address for all correspondence
+
+This prevents a single breach (Equifax-style) from exposing your residential address.
+
+**Travel and logistics privacy.** High-profile individuals traveling frequently creates exposure:
+
+```
+Flights: Book through travel agency (business name)
+Hotels: Register under business name with business email
+Rental cars: Same approach
+Deliveries: Route through mailbox service
+```
+
+Every interaction is an opportunity for address exposure. Using business identities for logistics prevents personal location tracking across travel patterns.
+
+## Incident Response: If Your Address Is Exposed
+
+If your private address becomes public despite precautions:
+
+**Immediate (first 24 hours):**
+1. Contact local police non-emergency line to file a report
+2. Request increased patrols in your neighborhood
+3. Alert home security company to heightened monitoring
+4. Notify immediate family of potential exposure
+5. Consider temporary relocation to alternate location
+
+**Short-term (week 1-2):**
+1. File a police report for any suspicious activity
+2. Contact data brokers and request removal using the exposed address
+3. Update all accounts to alternate addresses
+4. Check credit reports for unauthorized inquiries or accounts
+5. Request law enforcement contact for any concerning lead
+
+**Medium-term (weeks 2-8):**
+1. Install security cameras with continuous recording
+2. Upgrade door locks and window security
+3. File for address suppression with county if available
+4. Work with attorney on privacy-focused relocation
+5. Consider relocation to secured community
+
+**Long-term (months 2+):**
+1. Move to new property (ideally through LLC)
+2. Establish new identity separation (new email, phone)
+3. Monitor for repeated exposure patterns
+4. Consider professional security evaluation
+5. Review all data broker removals quarterly
+
+## Working with Security Professionals
+
+For individuals with serious threats (stalking, credible threats, organized harassment), professional security evaluation provides value that self-help cannot:
+
+- Physical security audit (identifying vulnerable entry points)
+- Digital security assessment (finding account vulnerabilities)
+- Threat analysis (assessing actual vs. perceived risk)
+- Response planning (what to do if incident occurs)
+
+Organizations like the National Center for Victims of Crime (NCVC) and various private security firms specialize in this work. Cost ranges from $2,000-5,000 for initial evaluation to ongoing monthly monitoring.
+
+## Ongoing Monitoring Systems
+
+Once you've removed your data from brokers and secured accounts, establish a monitoring routine:
+
+```python
+#!/usr/bin/env python3
+# Monthly address exposure check
+
+import requests
+from datetime import datetime
+
+brokers_to_check = [
+    "spokeo.com",
+    "whitepages.com",
+    "beenverified.com",
+    "zillow.com",  # Property records
+]
+
+def check_brokers(name, address):
+    """Check if address still appears on major brokers"""
+    results = {}
+    for broker in brokers_to_check:
+        # Build search URL (varies by broker)
+        # Log results with timestamp
+        results[broker] = "found" or "not found"
+
+    # Log to file for trend analysis
+    with open("address_exposure_log.txt", "a") as f:
+        f.write(f"{datetime.now()}: {results}\n")
+
+    return results
+
+# Run monthly
+if __name__ == "__main__":
+    results = check_brokers("Your Name", "Your Address")
+    print(results)
+```
+
+Run this monthly check manually or via scheduled task. Track whether your address reappears on brokers (it will, eventually) and quickly request removal when detected.
+
+## Balancing Privacy with Necessary Exposure
+
+Complete privacy is impossible if you're public-facing. Media appearances, social media, interviews—all create some exposure. The goal isn't zero exposure but controlled exposure:
+
+```
+Unknown to public: Your home address, family location, daily routines
+Known to vetted people: Your management, security, closest family
+Occasionally public: Professional achievements, business addresses
+Never public: Children's information, vulnerabilities, habits
+```
+
+This segmentation lets you maintain public presence while protecting genuine security needs. A public figure can do interviews and maintain social media without exposing home location.
 
 ## Frequently Asked Questions
 
