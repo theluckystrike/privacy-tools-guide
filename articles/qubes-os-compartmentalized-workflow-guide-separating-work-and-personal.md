@@ -6,7 +6,7 @@ description: "Follow this guide to qubes os compartmentalized workflow guide sep
 tags: [privacy-tools-guide, workflow]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

@@ -6,7 +6,7 @@ description: "Learn protonmail security model explained with practical examples,
 tags: [privacy-tools-guide, security]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
