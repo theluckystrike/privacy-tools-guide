@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-implications-browser-extensions/
+description: "Learn privacy implications browser extensions with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Implications of Browser Extensions"

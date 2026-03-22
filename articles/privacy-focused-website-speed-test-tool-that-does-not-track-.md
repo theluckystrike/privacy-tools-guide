@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-focused-website-speed-test-tool-that-does-not-track-/
+description: "Learn privacy focused website speed test tool that does not track  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy-Focused Website Speed Test Tool That Does Not Track"
