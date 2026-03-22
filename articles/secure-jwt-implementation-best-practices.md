@@ -261,6 +261,7 @@ def jwks():
 - [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
 - [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

@@ -187,6 +187,7 @@ vault kv put secret/cosign-key key=@cosign.key
 - [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
 - [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
 - [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [AI Code Generation Quality for Java Spring Security](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 
 ---
 

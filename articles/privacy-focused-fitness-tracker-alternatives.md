@@ -123,6 +123,7 @@ PineTime is fully open hardware with open-source firmware — the most privacy-r
 - [Privacy-Focused Weather App Alternatives](/privacy-tools-guide/privacy-focused-weather-app-alternatives/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 
 ---
 

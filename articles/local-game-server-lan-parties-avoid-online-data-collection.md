@@ -248,6 +248,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [EA App Origin Replacement Privacy Data Collection Review](/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 - [How to Set Up CrowdSec for Server Security](/privacy-tools-guide/crowdsec-server-security-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

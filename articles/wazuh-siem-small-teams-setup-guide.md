@@ -292,6 +292,7 @@ sudo apt upgrade wazuh-manager wazuh-indexer wazuh-dashboard
 - [How to Set Up OpenSCAP for Compliance Scanning](/privacy-tools-guide/openscap-compliance-scanning-setup-guide/)
 - [How to Set Up age Encryption for Teams](/privacy-tools-guide/age-encryption-team-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
