@@ -6,6 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-website-speed-test-tool-that-does-not-track-/
 categories: [guides]
+voice-checked: true
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
