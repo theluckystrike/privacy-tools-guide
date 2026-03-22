@@ -25,15 +25,22 @@ Proton Mail provides several pathways for exporting data, each with different ca
 
 The web interface allows you to export individual folders or your entire mailbox as MBOX format. This works well for one-time migrations but becomes tedious if you need regular automated backups. For developers building integration tools, the Proton Mail API provides programmatic access to emails, contacts, and calendar events.
 
+A fourth option worth mentioning is the Proton Mail Import-Export app, a standalone desktop application available for Windows, macOS, and Linux. Unlike the web interface, the Import-Export app can handle large mailboxes more reliably by processing messages in batches and resuming interrupted exports. Download it from proton.me/mail/bridge.
+
 ## Exporting via Proton Mail Web Interface
 
 The most straightforward export method uses the Proton Mail web application. Navigate to Settings → Download my data → Export. You can select specific folders or export everything including emails, contacts, and calendar entries.
 
-The export generates a MBOX file that works with most email clients. For large mailboxes, expect the process to take several hours since Proton processes exports asynchronously for security reasons.
+The export generates a MBOX file that works with most email clients. For large mailboxes, expect the process to take several hours since Proton processes exports asynchronously for security reasons. Once complete, Proton sends an email notification with a secure download link. This link expires after 4 days, so download the file promptly.
+
+**Supported export formats:**
+- Emails: MBOX (compatible with Thunderbird, Apple Mail, mutt)
+- Contacts: VCF (vCard format, compatible with most address books)
+- Calendar: ICS (iCalendar format, compatible with Google Calendar, Apple Calendar)
 
 ## Using Proton Mail IMAP Bridge
 
-For continuous synchronization with desktop email clients, Proton Mail offers the IMAP Bridge application. This tool enables you to connect Thunderbird, Apple Mail, or any IMAP-compatible client to your Proton Mail account.
+For continuous synchronization with desktop email clients, Proton Mail offers the IMAP Bridge application. This tool enables you to connect Thunderbird, Apple Mail, or any IMAP-compatible client to your Proton Mail account. The bridge runs locally and decrypts messages on-device before passing them to your email client, maintaining end-to-end encryption integrity.
 
 ### Installing and Configuring IMAP Bridge
 
@@ -43,16 +50,27 @@ brew install --cask proton-mail-bridge
 
 # Debian/Ubuntu
 sudo apt install protonmail-bridge
+
+# Fedora/RHEL
+sudo rpm -i protonmail-bridge-*.rpm
 ```
 
-After installation, launch the bridge and authenticate with your Proton Mail credentials. The bridge provides separate IMAP and SMTP credentials specifically for external client connections. Configure your email client using these credentials:
+After installation, launch the bridge and authenticate with your Proton Mail credentials. The bridge provides separate IMAP and SMTP credentials specifically for external client connections. These are bridge-specific app passwords — not your main Proton Mail password. Configure your email client using these credentials:
 
 ```
 IMAP Server: 127.0.0.1
 IMAP Port: 1143
 SMTP Server: 127.0.0.1
 SMTP Port: 1025
+Security: None (bridge handles encryption locally)
 ```
+
+**Configuring Thunderbird with IMAP Bridge:**
+
+1. Open Thunderbird → Account Settings → Account Actions → Add Mail Account
+2. Enter your Proton Mail address and the bridge app password (not your main password)
+3. Manually set the server settings to 127.0.0.1 with ports 1143 (IMAP) and 1025 (SMTP)
+4. Set security to None — bridge encrypts internally
 
 ### Exporting via IMAP with Python
 
@@ -91,9 +109,29 @@ export_folder_to_mbox(mail, 'Inbox', 'inbox_backup.mbox')
 mail.logout()
 ```
 
+### Listing Available Folders
+
+Before exporting, list all folders to get exact folder names (Proton Mail uses internal names that differ from display names):
+
+```python
+def list_folders(mail):
+    """List all available IMAP folders"""
+    typ, folder_list = mail.list()
+    for folder in folder_list:
+        print(folder.decode())
+
+mail = connect_imap_bridge()
+list_folders(mail)
+# Output example:
+# (\HasNoChildren) "/" "INBOX"
+# (\HasNoChildren) "/" "Sent"
+# (\HasNoChildren) "/" "Drafts"
+# (\HasNoChildren) "/" "Spam"
+```
+
 ## API-Based Export for Developers
 
-Proton Mail's API offers the most flexibility for custom integrations. To use the API, you need to create an app in your Proton Mail account settings and obtain OAuth credentials.
+Proton Mail's API offers the most flexibility for custom integrations. To use the API, you need to create an app in your Proton Mail account settings and obtain OAuth credentials. Note that Proton's API uses a custom authentication flow — standard OAuth libraries need adaptation.
 
 ### Setting Up API Access
 
@@ -174,7 +212,9 @@ def export_emails_to_json(access_token, output_file='emails.json'):
 
 ## Importing Emails into Proton Mail
 
-For importing emails, the MBOX format works best. Proton Mail's import tool accepts MBOX files directly through the web interface. However, for automated or bulk imports, IMAP remains the most practical approach.
+For importing emails, the MBOX format works best. Proton Mail's import tool accepts MBOX files directly through the web interface under Settings → Import via IMAP/MBOX. However, for automated or bulk imports, IMAP remains the most practical approach.
+
+The standalone Import-Export app handles large migrations more reliably than the web interface. It supports importing from Gmail, Outlook, Yahoo Mail, and any IMAP server, with folder mapping and duplicate detection built in.
 
 ### Importing via IMAP
 
@@ -212,6 +252,8 @@ For regular automated backups, combine these scripts with cron jobs:
 0 3 * * * find /path/to/backups -mtime +7 -delete
 ```
 
+For macOS, use launchd instead of cron for more reliable scheduling. Create a plist at `~/Library/LaunchAgents/com.protonbackup.plist` with an interval key set to 86400 (seconds) for daily execution.
+
 ## Security Considerations
 
 When handling Proton Mail exports, treat the data as sensitive. MBOX files contain plaintext email content, and API tokens provide full account access. Store exports encrypted using GPG or a dedicated encryption tool:
@@ -223,6 +265,14 @@ gpg --symmetric --cipher-algo AES256 inbox_backup.mbox
 # Decrypt when needed
 gpg --decrypt inbox_backup.mbox.gpg > inbox_backup.mbox
 ```
+
+**Additional security recommendations:**
+
+- Store bridge app passwords in a password manager like Bitwarden or 1Password, not in plaintext config files
+- Use environment variables for API credentials in scripts rather than hardcoding them
+- Rotate bridge app passwords quarterly — revoke old ones through Proton Mail account settings
+- For team environments, use dedicated Proton Mail accounts for automated export jobs rather than personal accounts
+- Consider storing MBOX backups on an encrypted volume (VeraCrypt or LUKS) rather than unencrypted cloud storage
 
 
 
