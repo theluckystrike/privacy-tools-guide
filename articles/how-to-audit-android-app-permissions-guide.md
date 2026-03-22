@@ -9,7 +9,7 @@ permalink: /how-to-audit-android-app-permissions-guide/
 categories: [guides]
 tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
