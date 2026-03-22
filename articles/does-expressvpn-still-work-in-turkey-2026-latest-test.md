@@ -193,6 +193,41 @@ Connection speeds vary based on server distance and current network conditions. 
 
 Latency remained acceptable for most development tasks, though video streaming or large file transfers may experience buffering.
 
+## Understanding Turkey's DPI Infrastructure
+
+Turkey's blocking approach relies on deep packet inspection deployed by major ISPs under coordination from the Information Technologies and Communications Authority (BTK). Understanding how DPI works helps explain why some protocols succeed and others fail.
+
+DPI appliances analyze packet headers and payload patterns to identify protocol signatures. Standard OpenVPN over UDP has a distinctive handshake pattern that many DPI systems recognize and throttle or reset. Lightway and OpenVPN on port 443 are harder to block because their traffic patterns more closely resemble standard TLS connections used for HTTPS.
+
+What changes over time is the specificity of DPI rules. When a VPN provider becomes popular in a restricted region, authorities often update their DPI signatures to target that provider's known server IP ranges and certificate fingerprints. This is why ExpressVPN rotates server IPs and updates its obfuscation regularly — static infrastructure becomes a liability in high-restriction environments.
+
+### Testing for DPI Interference vs. IP Blocking
+
+You can distinguish between DPI-based throttling and simple IP blocking with a few commands:
+
+```bash
+# Test if the VPN server IP is reachable at all (ICMP)
+ping -c 4 vpn-server-ip
+
+# Test if TCP port is open (IP is reachable but port may be blocked)
+nc -zv vpn-server-ip 443
+
+# Test if a full TLS handshake completes (DPI may reset after handshake inspection)
+openssl s_client -connect vpn-server-ip:443 -brief 2>&1 | head -5
+```
+
+If `ping` succeeds but the OpenVPN connection resets during handshake, DPI interference is the likely cause rather than IP-level blocking. This distinction informs which solution to try: switching protocols addresses DPI patterns, while switching server IPs addresses block-list targeting.
+
+## Fallback Options When ExpressVPN Fails
+
+Even with the best configuration, no VPN works 100% of the time in restricted environments. Having documented fallback options reduces downtime when connections degrade:
+
+**Tor Browser** — For low-bandwidth tasks like reading documentation or accessing blocked websites, Tor's obfuscated bridges (obfs4, snowflake) are often effective even when commercial VPNs struggle. Bridges are available at bridges.torproject.org.
+
+**Shadowsocks** — A proxy protocol originally developed to circumvent Chinese DPI, Shadowsocks uses symmetric encryption that is difficult to fingerprint. Self-hosting a Shadowsocks server outside Turkey and connecting through it provides an alternative to commercial VPNs. Open-source clients exist for all major platforms.
+
+**V2Ray/Xray** — More sophisticated obfuscation frameworks that can tunnel traffic through WebSocket over TLS (VLESS+WS+TLS), making VPN traffic indistinguishable from standard HTTPS. These require more technical setup but are among the most censorship-resistant options available in 2026.
+
 ## Recommendations for Developers
 
 For developers and power users requiring consistent VPN access in Turkey:
@@ -202,6 +237,7 @@ For developers and power users requiring consistent VPN access in Turkey:
 3. **Test during off-peak hours** — Connection success rates improve outside business hours
 4. **Keep client software updated** — ExpressVPN regularly updates its obfuscation techniques
 5. **Consider WireGuard for speed** — When it connects, it's significantly faster
+6. **Document working configurations** — When a protocol/server combination works reliably, record it for teammates
 
 
 
