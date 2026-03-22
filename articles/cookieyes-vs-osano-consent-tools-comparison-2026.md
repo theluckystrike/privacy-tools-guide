@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison]
 ---
+{% raw %}
 
 
 ## Frequently Asked Questions
@@ -283,4 +284,5 @@ For 10+ domains: CookieYes easier to manage
 - [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}

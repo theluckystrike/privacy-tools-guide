@@ -5,7 +5,7 @@ description: "Understand how QR codes enable tracking, phishing, and identity ex
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-of-qr-codes-explained/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

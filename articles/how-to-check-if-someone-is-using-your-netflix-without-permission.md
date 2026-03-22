@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+{% raw %}
 
 
 ## Troubleshooting
@@ -61,4 +62,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Stop Someone From Accessing Your Icloud Without Permi](/privacy-tools-guide/how-to-stop-someone-from-accessing-your-icloud-without-permi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}

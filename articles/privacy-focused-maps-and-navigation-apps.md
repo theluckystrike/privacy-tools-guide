@@ -5,7 +5,7 @@ description: "Replace Google Maps with open-source navigation apps that store no
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-maps-and-navigation-apps/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
