@@ -189,6 +189,154 @@ For most users in 2026, WireGuard provides the best balance of speed, security, 
 
 ---
 
+## Real-World Bandwidth Impact Analysis
+
+The overhead percentages translate to tangible speed differences. For a user on a 50 Mbps connection:
+
+| Protocol | Expected Throughput | Data for 1GB Download |
+|----------|---------------------|------------------------|
+| WireGuard | 47-48 Mbps | 1.04-1.07 GB transferred |
+| IKEv2/IPSec | 45-47 Mbps | 1.08-1.11 GB transferred |
+| OpenVPN UDP | 42-45 Mbps | 1.15-1.20 GB transferred |
+| OpenVPN TCP | 35-40 Mbps | 1.28-1.38 GB transferred |
+
+For mobile users on metered plans, this overhead matters directly. A user with 100GB monthly limit would experience:
+- WireGuard: 107GB actual usage per 100GB downloaded
+- OpenVPN UDP: 120GB actual usage per 100GB downloaded
+- OpenVPN TCP: 138GB actual usage per 100GB downloaded
+
+## Obfuscation Protocols and Their Overhead Trade-offs
+
+When network filtering requires obfuscation, overhead increases significantly:
+
+### Shadowsocks with Obfuscation
+
+```bash
+# Shadowsocks configuration with obfuscation
+{
+  "server": "vpn.example.com",
+  "server_port": 443,
+  "local_port": 1080,
+  "password": "your-password",
+  "method": "chacha20-ietf-poly1305",
+  "obfs": "tls",
+  "obfs_host": "example.com"
+}
+```
+
+Obfuscated Shadowsocks adds 5-10% overhead beyond base protocol overhead, but in restrictive networks it's essential rather than optional.
+
+### NaiveProxy Architecture
+
+NaiveProxy disguises VPN traffic as regular HTTPS:
+
+```bash
+# NaiveProxy server configuration
+listen = http://[::]:8080
+
+[[routes]]
+hosts = [example.com]
+action = forward
+args = [example.com:443]
+
+[[routes]]
+hosts = [*]
+action = block
+```
+
+NaiveProxy adds minimal overhead (2-5%) because it leverages existing HTTP/HTTPS infrastructure, but works best for censorship resistance rather than pure speed.
+
+## Latency Considerations Beyond Bandwidth
+
+While bandwidth overhead is measurable, latency impacts real-world experience equally:
+
+### Handshake Latency
+
+- **WireGuard**: 1.5 round-trip handshake = ~75ms (optimal network)
+- **IKEv2**: 2 round-trip handshake = ~100ms
+- **OpenVPN**: 6+ round-trip handshake = ~300ms+
+
+Connection establishment latency compounds when:
+- Network experiences packet loss (retransmissions add delays)
+- VPN server is geographically distant
+- Mobile networks with higher baseline latency
+
+### Per-Packet Processing Latency
+
+Modern cryptography (ChaCha20, AES-NI) has minimal per-packet overhead. The difference between protocols becomes negligible for individual packet processing—the advantage goes to protocols with smaller handshake requirements.
+
+## Protocol Selection Decision Tree
+
+```
+Do you need undetectable operation?
+├─ YES: Use obfuscated Shadowsocks or NaiveProxy
+│       (bandwidth penalty: 5-15%)
+└─ NO: Continue below
+
+Is WireGuard supported on your network?
+├─ YES: Use WireGuard
+│       (best overall performance)
+└─ NO: Continue below
+
+Do you have Linux administrator expertise?
+├─ YES: Use OpenVPN with UDP on port 443
+│       (good compatibility, 15-20% overhead)
+└─ NO: Continue below
+
+Use IKEv2 from built-in OS support
+(10-15% overhead, good mobile roaming)
+```
+
+## Measuring Protocol Overhead in Your Environment
+
+Accurate overhead measurement requires controlled testing:
+
+```bash
+#!/bin/bash
+# Comprehensive protocol overhead testing script
+
+test_protocol() {
+  local protocol=$1
+  local server=$2
+
+  echo "Testing $protocol..."
+
+  # Establish connection (protocol-specific)
+  case $protocol in
+    wireguard)
+      wg-quick up wg0
+      sleep 2
+      ;;
+    openvpn)
+      openvpn --config client.ovpn --daemon
+      sleep 5
+      ;;
+  esac
+
+  # Measure throughput (multiple iterations)
+  for i in {1..3}; do
+    bytes_down=$(curl -o /dev/null -s -w "%{speed_download}" \
+      https://speed.example.com/100MB.bin)
+    echo "$protocol iteration $i: $bytes_down bytes/sec"
+  done
+
+  # Cleanup
+  case $protocol in
+    wireguard) wg-quick down wg0 ;;
+    openvpn) killall openvpn ;;
+  esac
+}
+
+# Test each protocol against same server
+test_protocol "wireguard" "vpn.example.com"
+test_protocol "openvpn" "vpn.example.com"
+test_protocol "ikev2" "vpn.example.com"
+```
+
+Run this in controlled environments (same time of day, same network conditions) to get meaningful comparisons.
+
+---
+
 **
 
 

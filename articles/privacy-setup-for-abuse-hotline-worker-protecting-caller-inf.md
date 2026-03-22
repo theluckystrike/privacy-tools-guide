@@ -193,6 +193,290 @@ Technical measures fail without proper procedures. Develop documentation coverin
 
 Regular training ensures all workers understand both the threats and mitigations. Conduct tabletop exercises simulating device confiscation or data breach scenarios.
 
+## Secure Case Note Management System
+
+For hotline organizations handling high call volumes:
+
+### Encrypted Database with Anonymization
+
+```sql
+-- Database schema with privacy-first design
+CREATE TABLE case_notes (
+    id UUID PRIMARY KEY,
+    session_id VARCHAR(32) NOT NULL,  -- No caller ID linkage
+    call_timestamp TIMESTAMP NOT NULL,
+    encrypted_notes BYTEA NOT NULL,
+    encryption_key_id INTEGER NOT NULL,
+    worker_id HASH NOT NULL,  -- Hashed, not stored plaintext
+    PRIMARY KEY (id),
+    INDEX(session_id),
+    INDEX(call_timestamp)
+);
+
+-- Sensitive fields stored separately
+CREATE TABLE sensitive_data_audit (
+    id UUID PRIMARY KEY,
+    access_time TIMESTAMP,
+    accessed_by HASH,  -- Hashed worker ID
+    action VARCHAR(50),  -- 'view', 'edit', 'export'
+    status ENUM('success', 'blocked')
+);
+
+-- Never store this directly
+-- address VARCHAR(255),  -- DON'T store
+-- phone_number VARCHAR(20),  -- DON'T store
+-- email VARCHAR(255),  -- DON'T store
+```
+
+All sensitive caller data should be stored separately from searchable fields and accessible only through decryption requiring additional authentication.
+
+## Physical Device Security for Hotline Workers
+
+Devices handling caller information require hardened security:
+
+### Mobile Device Hardening for iOS
+
+```
+Settings hardening:
+1. Settings > Face ID & Passcode
+   - Enable Face ID + Passcode requirement
+   - Disable USB Restricted Mode (requires reboot per connection)
+
+2. Settings > Privacy > Microphone
+   - Only Signal app and approved hotline systems
+   - Deny all other apps
+
+3. Settings > Privacy > Camera
+   - Disable for all apps (unless video counseling used)
+
+4. Settings > Privacy > Location
+   - Never share location
+   - Disable location-based reminders
+
+5. Settings > Bluetooth
+   - Disable (prevents device pairing)
+   - Re-enable only for authorized headsets
+
+6. Settings > WiFi
+   - Disable WiFi Calling (prevents location leakage)
+   - Connect only to organization networks
+
+7. Settings > General > About
+   - Turn OFF Wi-Fi Calling
+   - Turn OFF Bluetooth Shared Audio
+```
+
+### Mobile Device Hardening for Android
+
+```
+Settings hardening:
+1. Settings > Security > Advanced
+   - Enable "Unknown sources blocking"
+   - Enable "Verified boot"
+
+2. Settings > Apps & notifications > Special app access
+   - Disable "Device admin" for non-essential apps
+   - Review which apps can change system settings
+
+3. Settings > Location
+   - Set mode to "Device only" (no network/Bluetooth location)
+   - Disable "Google Location Accuracy"
+
+4. Settings > Google > Manage your Google Account > Security
+   - Disable "Less secure app access" (if not needed)
+   - Review connected devices and remove unknown devices
+
+5. Settings > Developer Options
+   - Enable "USB Debugging" (for security updates only)
+   - Disable "Portable hotspot" broadcasting
+
+6. Settings > Accounts
+   - Use organization account, disable auto-sync of contacts
+   - Never sync personal social media accounts
+```
+
+## Call Recording and Retention Policies
+
+Many jurisdictions require explicit consent for call recording. Implement legal compliance:
+
+### Explicit Call Recording Notice
+
+```
+"This call may be recorded for quality assurance and safety purposes.
+By continuing, you consent to recording. If you do not consent,
+please call back later or use our online chat service."
+
+[Automated notice, then human agent confirmation]
+```
+
+### Recording Storage and Deletion
+
+```bash
+#!/bin/bash
+# Automatic recording purge script
+# Comply with data minimization and retention policies
+
+RETENTION_DAYS=7
+RECORDING_DIR="/secure/call-recordings"
+
+# Delete recordings older than retention period
+find "$RECORDING_DIR" -name "*.wav" -mtime +$RETENTION_DAYS -delete
+
+# Log deletion for audit trail
+echo "$(date): Deleted recordings older than $RETENTION_DAYS days" >> \
+  /secure/audit.log
+
+# Encrypt any recent recordings
+for file in "$RECORDING_DIR"/*.wav; do
+  if [ ! -f "$file.gpg" ]; then
+    gpg --batch --symmetric --cipher-algo AES256 \
+        --output "$file.gpg" "$file"
+    shred -vfz -n 3 "$file"  # Securely delete original
+  fi
+done
+```
+
+Recordings should be encrypted immediately after conclusion, then automatically deleted after retention period expires.
+
+## Multi-Factor Authentication for Hotline Systems
+
+Require multiple factors for access to caller databases:
+
+```bash
+# Setup Google Authenticator + YubiKey for hotline system access
+
+# Step 1: Employee device (password + biometric)
+# Step 2: Organization network or VPN
+# Step 3: TOTP code from Google Authenticator
+# Step 4: Hardware YubiKey (optional for super-users)
+
+# No single factor compromise exposes caller data
+```
+
+### SSH Key + TOTP Implementation
+
+```bash
+# ~/.ssh/config for hotline system access
+Host hotline-db
+    HostName 10.0.1.50
+    User hotline_worker
+    IdentityFile ~/.ssh/hotline_key.pem
+    PreferredAuthentications publickey,keyboard-interactive
+    # Prompts for TOTP after SSH key verification
+```
+
+## Incident Response Procedures
+
+Prepare for device compromise or unauthorized access:
+
+### Immediate Response (0-30 minutes)
+
+```bash
+#!/bin/bash
+# Hotline incident response script
+
+# 1. Alert supervisor
+alert_supervisor() {
+    mail -s "URGENT: Hotline Security Incident" supervisor@hotline.org
+}
+
+# 2. Disable compromised account
+disable_account() {
+    sudo usermod -L $USER  # Lock account
+    sudo killall -u $USER  # Kill all user processes
+}
+
+# 3. Revoke API tokens
+revoke_tokens() {
+    curl -X POST https://api.hotline.org/auth/revoke \
+        -H "Authorization: Bearer $API_TOKEN" \
+        -d "revoke_all=true"
+}
+
+# 4. Document timeline
+log_incident() {
+    cat > /var/log/incident_$(date +%s).txt <<EOF
+Time: $(date)
+Type: Potential device compromise
+Actions taken:
+- Account disabled
+- API tokens revoked
+- This log created
+EOF
+}
+
+alert_supervisor && disable_account && revoke_tokens && log_incident
+```
+
+### Extended Response (30 minutes - 24 hours)
+
+1. **Forensic Analysis**: Engage security team for device analysis
+2. **Notification**: Determine if caller data was exposed (legal requirement)
+3. **Remediation**: Provide exposed callers with support resources
+4. **System Hardening**: Implement changes preventing recurrence
+
+## Threat Model for High-Risk Callers
+
+Some callers face extreme danger. Additional protections may be warranted:
+
+### High-Risk Call Handling
+
+```
+For callers at immediate risk of harm:
+
+1. Transfer to secure video call (encrypted Jitsi)
+2. Avoid storing any identifying information
+3. Provide resources via encrypted email only
+4. Use temporary communication IDs (not caller name/number)
+5. Follow local law enforcement protocols for imminent danger
+
+Never assume hotline infrastructure can protect caller identity
+if there is imminent physical threat. Prioritize safety.
+```
+
+## Testing Security Controls
+
+Regular security testing ensures controls remain effective:
+
+```bash
+#!/bin/bash
+# Monthly security control testing
+
+test_encryption() {
+  # Attempt to read unencrypted case notes
+  if [ -f "/secure/notes/unencrypted.txt" ]; then
+    echo "FAIL: Unencrypted notes found"
+    return 1
+  fi
+  echo "PASS: No unencrypted notes"
+}
+
+test_access_controls() {
+  # Verify non-workers cannot access database
+  as_random_user=$(su - randomuser -c "curl -s https://db.hotline.org")
+  if [ -z "$as_random_user" ]; then
+    echo "PASS: Unauthorized access blocked"
+  else
+    echo "FAIL: Unauthorized access succeeded"
+  fi
+}
+
+test_device_policies() {
+  # Verify phones cannot access personal email
+  if [ -f "/etc/hosts" ]; then
+    grep "gmail.com" /etc/hosts > /dev/null
+    if [ $? -eq 0 ]; then
+      echo "PASS: Personal email access blocked"
+    fi
+  fi
+}
+
+# Run monthly
+test_encryption && test_access_controls && test_device_policies
+```
+
+Regular testing validates that security measures work and identifies configuration drift.
+
 
 
 ## Frequently Asked Questions
