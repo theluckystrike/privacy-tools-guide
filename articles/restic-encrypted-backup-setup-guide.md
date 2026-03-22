@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Restic encrypts every backup with AES-256-CTR before it leaves your machine. Even if your backup storage is compromised, the attacker gets ciphertext. This guide covers installation, initializing repositories on local storage, S3-compatible buckets, and Backblaze B2, plus automating backups with systemd or cron.
 
+## Key Takeaways
+
+- **A lighter approach for large repositories**: use `--read-data-subset=5%` to sample 5% of pack files on each run.
+- **For comparison**: rsync, Duplicati in default mode, and most cloud backup clients upload plaintext or use server-side encryption (which the server controls).
+- **It requires FUSE on**: Linux (`fuse` package) and macOS (`macFUSE`).
+- **This guide covers installation**: initializing repositories on local storage, S3-compatible buckets, and Backblaze B2, plus automating backups with systemd or cron.
+- **This matters because storage providers**: hosting companies, and cloud services have access to the data you store with them.
+- **`.git/` histories are better**: managed with git bundles separately.
+
 ## Why Restic for Privacy-Focused Backups
 
 Most backup tools treat encryption as an afterthought — an option you enable after the fact. Restic treats it as mandatory. There is no unencrypted restic repository; you cannot accidentally create one. Every pack file written to disk, every blob transferred over the network, is encrypted before it leaves your machine.
