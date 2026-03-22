@@ -9,7 +9,7 @@ permalink: /browser-connection-pooling-fingerprinting-how-http2-connecti/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
