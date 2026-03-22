@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/
+description: "Follow this guide to how to configure ublock origin for maximum anti tracking pro with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Configure Ublock Origin For Maximum Anti Tracking Pro"
