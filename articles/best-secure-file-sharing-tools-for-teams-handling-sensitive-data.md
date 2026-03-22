@@ -6,7 +6,7 @@ description: "Discover the best best secure file sharing tools for teams handlin
 tags: [privacy-tools-guide, best-of]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [best-of]
 ---
