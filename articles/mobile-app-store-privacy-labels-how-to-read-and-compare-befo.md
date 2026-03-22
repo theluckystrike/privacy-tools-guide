@@ -40,7 +40,17 @@ Mobile app store privacy labels have become the first line of defense for inform
 - **Consider open-source alternatives -**: F-Droid hosts apps with verifiable code 6.
 - **This might include usage data**: location information, or browsing history associated with a user profile.
 
-## Understanding the Privacy Label Framework
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Privacy Label Framework
 
 Both Apple and Google require developers to disclose what data their apps collect, how that data is used, and whether it is shared with third parties. However, the presentation and terminology differ between platforms.
 
@@ -63,7 +73,7 @@ Google Play takes a slightly different approach, organizing disclosures by data 
 - **Security practices** (encryption, whether data is encrypted in transit)
 - **Delete options** (whether you can request data deletion)
 
-## Reading the Labels Effectively
+### Step 2: Reading the Labels Effectively
 
 When evaluating an app's privacy practices, focus on these critical areas:
 
@@ -115,7 +125,7 @@ Consider comparing two hypothetical messaging apps:
 
 The privacy labels immediately reveal that App An operates as an advertising business with your data, while App B focuses on communication privacy. This distinction becomes clear without reading any privacy policy.
 
-## What Privacy Labels Don't Tell You
+### Step 3: What Privacy Labels Don't Tell You
 
 Despite their usefulness, privacy labels have significant limitations:
 
@@ -140,7 +150,7 @@ Developers may not fully understand what data third-party SDKs collect. A seemin
 
 Apps may collect different data based on jurisdiction. Data practices for EU users under GDPR may differ significantly from US users due to different regulatory requirements.
 
-## For Developers: Generating Accurate Labels
+### Step 4: For Developers: Generating Accurate Labels
 
 If you're building apps, accuracy in privacy labels is both a legal requirement and a trust factor. Here's a minimal example of how to audit your data collection:
 
@@ -249,7 +259,7 @@ scorer.assess_third_party_sharing(1)  # -8
 print(f"Score: {scorer.score}/100 ({scorer.get_rating()})")  # 77/100 (Good Privacy)
 ```
 
-## Detecting Label Inconsistencies
+### Step 5: Detecting Label Inconsistencies
 
 Developers sometimes misrepresent their data practices in labels. Here's how to detect likely inaccuracies:
 
@@ -265,7 +275,7 @@ When an app claims analytics collection but provides no details about what is an
 
 An app that collects behavioral data but claims "deleted after use" is likely inaccurate. Legitimate behavioral analytics require periods of retention to analyze patterns. Apps claiming zero retention are either not analyzing data (defeating the collection purpose) or misrepresenting practices.
 
-## Privacy Labels as Legal Liability
+### Step 6: Privacy Labels as Legal Liability
 
 For developers, understand that false privacy labels create legal exposure:
 
@@ -282,7 +292,7 @@ grep -r "import.*Analytics\|import.*Facebook\|import.*Adjust" ios/*.swift
 # 5. Submit for external privacy audit before app store submission
 ```
 
-## Making Informed Decisions
+### Step 7: Making Informed Decisions
 
 Use this systematic approach when evaluating apps:
 
@@ -292,6 +302,21 @@ Use this systematic approach when evaluating apps:
 4. **Look for privacy-friendly defaults** - some apps offer privacy-focused configurations
 5. **Consider open-source alternatives** - F-Droid hosts apps with verifiable code
 6. **Test before committing** - use the app briefly to evaluate functionality before trusting it with sensitive data
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -38,13 +38,23 @@ Magic Wormhole provides a secure, terminal-based method for transferring files b
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## How Magic Wormhole Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Magic Wormhole Works
 
 Magic Wormhole implements the SPAKE2 algorithm to establish an encrypted channel between two parties. When you initiate a transfer, the tool generates a short, human-readable code (such as `7-abc-def`). The recipient enters this code on their end, and the Wormhole protocol handles key exchange, encryption, and file transfer automatically.
 
 The encryption ensures that only the intended recipient can decrypt the files. Even if someone intercepts the wormhole code, they cannot access the transferred data without also having access to the receiving machine.
 
-## Installation
+### Step 2: Install ation
 
 Magic Wormhole requires Python 3.7 or later. Install it using pip:
 
@@ -64,7 +74,7 @@ Verify the installation by checking the version:
 wormhole --version
 ```
 
-## Sending Files
+### Step 3: Sending Files
 
 The basic syntax for sending a file involves the `wormhole send` command followed by the file path:
 
@@ -82,7 +92,7 @@ On the other computer, please run: wormhole receive 7-abc-def
 
 Share this code with the recipient through a separate channel (ideally not the same network or method you're using for the transfer).
 
-## Receiving Files
+### Step 4: Receiving Files
 
 On the receiving end, the recipient runs:
 
@@ -100,7 +110,7 @@ Received file written to: file.txt
 
 The file transfers automatically once both parties have entered the correct code.
 
-## Transferring Directories
+### Step 5: Transferring Directories
 
 Magic Wormhole handles directories by packaging them into a tar archive automatically. Send a directory with the same command used for files:
 
@@ -110,7 +120,7 @@ wormhole send /path/to/project-folder/
 
 The receiving party receives the contents as a folder with the same name.
 
-## Text Transfer
+### Step 6: Text Transfer
 
 For quick text snippets, use the `--text` flag to transfer content without creating a file:
 
@@ -193,7 +203,7 @@ wormhole receive --timeout 300
 python3 --version
 ```
 
-## Integration Examples
+### Step 7: Integration Examples
 
 ### Scripted Transfers
 
@@ -227,6 +237,21 @@ Magic Wormhole excels in these scenarios:
 For permanent file sharing or collaboration, consider combining Magic Wormhole with persistent storage solutions. The tool is designed for one-time transfers, not ongoing file synchronization.
 
 Magic Wormhole provides a practical, terminal-native solution for secure file transfer without the complexity of setting up encrypted channels manually. The short code exchange model makes it accessible while maintaining strong encryption guarantees.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

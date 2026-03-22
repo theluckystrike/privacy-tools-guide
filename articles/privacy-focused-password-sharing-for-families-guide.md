@@ -42,7 +42,17 @@ How it works:
 1.
 - **After 2 weeks**: Mom gets full access to your account
 
-## KeePass: Best for Complete Control
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: KeePass: Best for Complete Control
 
 KeePass is open-source, offline-first, and requires no subscription.
 - Select "Families" plan ($99.99/year)
@@ -54,7 +64,7 @@ KeePass is open-source, offline-first, and requires no subscription.
 - **The three strongest privacy-respecting**: options are Bitwarden Organizations (cheapest), 1Password Families (most polished), and KeePass with shared file storage (most control).
 - **It trades some privacy**: (1Password has backup keys) for ease of use and features.
 
-## The Password Sharing Problem
+### Step 2: The Password Sharing Problem
 
 Family password sharing creates risks:
 
@@ -75,7 +85,7 @@ Family password sharing creates risks:
 - A family member can reset password and lock everyone else out
 - No way to revoke access without changing password for all users
 
-## Bitwarden Organizations: Best for Privacy + Affordability
+### Step 3: Bitwarden Organizations: Best for Privacy + Affordability
 
 Bitwarden is an open-source password manager with family-friendly organizational features. For privacy-conscious families under budget constraints, it's the strongest choice.
 
@@ -203,7 +213,7 @@ If a family member forgets their master password:
 - Store in safe/lockbox
 - Family member keeps copy in wallet (encrypted in phone if lost)
 
-## 1Password Families: Best for Ease and Features
+### Step 4: 1Password Families: Best for Ease and Features
 
 1Password Families is the most polished family password sharing solution. It trades some privacy (1Password has backup keys) for ease of use and features.
 
@@ -332,7 +342,7 @@ If you're in accident/hospitalized:
 2. Waits 2 weeks (time for you to cancel if you wake up)
 3. After 2 weeks, Mom gets full access to your account
 
-## KeePass: Best for Complete Control
+### Step 5: KeePass: Best for Complete Control
 
 KeePass is open-source, offline-first, and requires no subscription. For families who want maximum control and don't mind more setup, KeePass with shared file storage (Dropbox, OneDrive) works well.
 
@@ -458,7 +468,7 @@ passwords.kdbx
 | Family Members | 6 | 5 | Unlimited |
 | Best For | Privacy + Budget | Ease of Use | Control + Free |
 
-## Practical Scenarios: Which Tool to Choose
+### Step 6: Practical Scenarios: Which Tool to Choose
 
 **Scenario 1: Tech-savvy family, privacy-first**
 → Use Bitwarden Organizations
@@ -488,7 +498,7 @@ passwords.kdbx
 - Emergency access means if parent incapacitated, adult child can access financial info
 - "Watchtower" alerts if passwords compromised (automatic)
 
-## Setup Checklist by Age Group
+### Step 7: Set Up Checklist by Age Group
 
 ### For College-Age Kids
 ```
@@ -527,7 +537,7 @@ Their passwords: Personal vault they manage
 Training: Brief explanation (15 min max)
 ```
 
-## Emergency Access Setup: Worst-Case Scenarios
+### Step 8: Emergency Access Setup: Worst-Case Scenarios
 
 **Scenario A: Parent Hospitalized**
 
@@ -566,7 +576,7 @@ Tell adult child: "In my lockbox at home, the passwords file is on Dropbox"
 - [ ] Who has emergency access
 - [ ] Instructions: "Open [tool], go to Emergency section"
 
-## Common Setup Mistakes
+### Step 9: Common Setup Mistakes
 
 ### Mistake 1: Not Backing Up Master Password or Recovery Key
 
@@ -642,7 +652,7 @@ No way to revoke their access
 - Remove their account immediately
 - Don't rely on "remove from collection"
 
-## Operational Security for Family Passwords
+### Step 10: Operational Security for Family Passwords
 
 **Best practices:**
 
@@ -667,7 +677,7 @@ No way to revoke their access
    - Never email passwords or backup codes
 ```
 
-## Migration Guide: Switching Between Tools
+### Step 11: Migration Guide: Switching Between Tools
 
 **From shared spreadsheet to Bitwarden (1 hour):**
 ```bash
@@ -697,7 +707,7 @@ No way to revoke their access
 6. Delete KeePass file once confirmed all data imported
 ```
 
-## Annual Maintenance Calendar
+### Step 12: Annual Maintenance Calendar
 
 **January:**
 - [ ] Review family members with access (removed anyone?)
@@ -726,6 +736,21 @@ No way to revoke their access
 - [ ] Holiday gift: New family member added? Invite to vault
 
 {% endraw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

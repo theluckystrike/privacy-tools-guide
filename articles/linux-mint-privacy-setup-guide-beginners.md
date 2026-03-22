@@ -46,7 +46,17 @@ Linux Mint derives from Ubuntu's repositories, meaning it receives timely securi
 
 Compared to distributions like Tails or Whonix, Linux Mint does not route traffic through Tor by default and has no amnesic mode. It trades maximum anonymity for an usable daily-driver experience. For threat models that require a persistent, privacy-hardened desktop rather than an ephemeral anonymity environment, Mint is a practical choice.
 
-## First Steps: System Updates and Repository Configuration
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: First Steps: System Updates and Repository Configuration
 
 Before applying privacy changes, ensure your system runs current packages:
 
@@ -67,7 +77,7 @@ sudo apt remove --purge thunderbird transmission-gtk
 sudo apt autoremove
 ```
 
-## Firewall Configuration with UFW
+### Step 2: Firewall Configuration with UFW
 
 Linux Mint includes UFW (Uncomplicated Firewall) but does not enable it by default. Activate it with sensible defaults:
 
@@ -102,7 +112,7 @@ sudo apt install gufw
 
 GUFW provides the same UFW rules through a point-and-click interface, useful for users less comfortable with the command line.
 
-## Disk Encryption with LUKS
+### Step 3: Disk Encryption with LUKS
 
 Full disk encryption protects data if your machine is lost or stolen. During installation, Linux Mint offers LUKS encryption — select it if performing a fresh install. For existing installations, encrypting home directories provides a practical alternative:
 
@@ -135,7 +145,7 @@ lsblk -f
 
 If swap sits outside the encrypted volume, disable it temporarily or redirect it to an encrypted location.
 
-## Firefox Privacy Hardening
+### Step 4: Firefox Privacy Hardening
 
 Firefox ships with telemetry enabled. Disable it through `about:config` and preferences:
 
@@ -171,7 +181,7 @@ xdg-open "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
 
 Consider also installing the Multi-Account Containers extension, which isolates cookies and storage by domain category. This prevents advertisers from tracking your activity across sites even when you have a shared browsing session.
 
-## AppArmor for Application Sandboxing
+### Step 5: AppArmor for Application Sandboxing
 
 AppArmor restricts applications to specified resources. Linux Mint includes AppArmor profiles but loads them in complain mode (logging violations without blocking). Enforce stricter profiles for sensitive applications:
 
@@ -212,7 +222,7 @@ sudo journalctl -f | grep apparmor
 
 Denied operations that break legitimate application behavior need corresponding rule additions. Complain mode gives you a record of what a profile would block before you enforce it.
 
-## Network Privacy: DNS and SSH Hardening
+### Step 6: Network Privacy: DNS and SSH Hardening
 
 Replace your ISP's DNS with privacy-respecting alternatives:
 
@@ -257,7 +267,7 @@ ssh-keygen -t ed25519 -C "your@email.com"
 ssh-copy-id -i ~/.ssh/id_ed25519.pub user@server
 ```
 
-## Package Management Security
+### Step 7: Package Management Security
 
 Verify package integrity using apt's signature verification:
 
@@ -278,7 +288,7 @@ sudo debsums -ca
 
 This detects any modified system files — a useful check after installing software from untrusted sources.
 
-## Reducing Telemetry and Data Collection
+### Step 8: Reducing Telemetry and Data Collection
 
 Linux Mint is not a significant telemetry sender by default, but a few services still reach out to external hosts:
 
@@ -294,7 +304,7 @@ sudo systemctl restart systemd-timesyncd
 
 The Update Manager checks for updates by pinging Mint servers. This behavior is expected and benign, but users with strict network privacy requirements can proxy this traffic through a local caching proxy or VPN.
 
-## VPN Integration
+### Step 9: VPN Integration
 
 A VPN tunnels your traffic through a remote server, masking your IP address from the websites you visit and your internet activity from your ISP. Linux Mint supports VPN configurations through NetworkManager:
 
@@ -319,7 +329,7 @@ sudo systemctl enable wg-quick@wg0
 
 A VPN does not replace other hardening steps. It shifts trust from your ISP to your VPN provider. Combine it with DNS-over-HTTPS, tracker blocking, and application sandboxing for layered protection.
 
-## Verifying Your Configuration
+### Step 10: Verify Your Configuration
 
 After completing the hardening steps, verify they took effect:
 
@@ -338,6 +348,21 @@ resolvectl status
 ```
 
 Running these checks after each reboot catches any services that failed to start or configurations that did not persist.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

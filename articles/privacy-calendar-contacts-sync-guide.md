@@ -44,7 +44,17 @@ Your data stays on your server. No vendor lock-in.
 
 ---
 
-## Option 1: Nextcloud (Full-Featured)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1: Nextcloud (Full-Featured)
 
 Nextcloud includes CalDAV/CardDAV support with a web UI, sharing, and multi-user management. Best if you want more than just calendar/contacts.
 
@@ -92,7 +102,7 @@ https://yourdomain.com/remote.php/dav/principals/users/USERNAME/
 
 ---
 
-## Option 2: Radicale (Lightweight, Single-User)
+### Step 2: Option 2: Radicale (Lightweight, Single-User)
 
 Radicale is a minimal CalDAV/CardDAV server — one Python process, no database, files stored as-is. Good for personal use on a Raspberry Pi or VPS.
 
@@ -169,7 +179,7 @@ server {
 
 ---
 
-## Connect Android with DAVx5
+### Step 3: Connect Android with DAVx5
 
 DAVx5 is the standard open-source CalDAV/CardDAV client for Android, available on F-Droid (no Google tracking) and Play Store.
 
@@ -197,7 +207,7 @@ Contact group method: Groups are per-contact categories (vCard)
 
 ---
 
-## Connect Linux Clients
+### Step 4: Connect Linux Clients
 
 ### GNOME (Evolution Data Server)
 
@@ -229,7 +239,7 @@ URL: https://cal.yourdomain.com/USERNAME/contacts/
 
 ---
 
-## Connect macOS/iOS (Built-In)
+### Step 5: Connect macOS/iOS (Built-In)
 
 **macOS:**
 
@@ -354,7 +364,7 @@ DAVx5 → Account → Contact sync interval: 4 hours
 
 Contacts change rarely — daily or even manual sync is sufficient for most users.
 
-## Privacy Considerations Beyond the Server
+### Step 6: Privacy Considerations Beyond the Server
 
 Running your own CalDAV/CardDAV server eliminates Google and Apple from seeing your schedule, but other data flows still deserve attention.
 
@@ -385,7 +395,7 @@ rsync -av ~/.local/share/radicale/ /backup/radicale-$(date +%Y%m%d)/
 
 ---
 
-## Multi-User Setup on Radicale
+### Step 7: Multi-User Setup on Radicale
 
 Radicale supports multiple users from a single instance. Each user gets their own collection namespace, and access is controlled through htpasswd authentication.
 
@@ -416,7 +426,7 @@ permissions: r
 
 This gives `alice` read access to `bob`'s shared-calendar collection. Nextcloud has a web UI for this — useful for households or small teams who want shared family calendars without giving everyone full access.
 
-## Encryption at Rest
+### Step 8: Encryption at Rest
 
 Radicale stores files as plain text. If the server disk is encrypted (LUKS), that covers it. For an extra layer:
 

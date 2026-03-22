@@ -44,7 +44,17 @@ The container file approach is what VeraCrypt calls an "outer volume." The diffe
 
 ---
 
-## Create a Container File
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Create a Container File
 
 ```bash
 # Create a 2GB container file filled with random data
@@ -63,7 +73,7 @@ To monitor the `dd` progress with the `status=progress` flag, you will see throu
 
 ---
 
-## Initialize LUKS on the Container
+### Step 2: Initialize LUKS on the Container
 
 ```bash
 # Set up LUKS2 on the container file
@@ -95,7 +105,7 @@ The `--key-size 512` gives you AES-256 in XTS mode (XTS splits the 512-bit key i
 
 ---
 
-## Open and Format the Container
+### Step 3: Open and Format the Container
 
 ```bash
 # Map the container to a device name
@@ -128,7 +138,7 @@ The label appears in `lsblk -o NAME,LABEL,SIZE` output, making it easy to confir
 
 ---
 
-## Close the Container
+### Step 4: Close the Container
 
 ```bash
 # Unmount the filesystem first
@@ -142,7 +152,7 @@ After `luksClose`, the `/dev/mapper/myvault` device disappears. The `vault.luks`
 
 ---
 
-## Convenience Scripts
+### Step 5: Convenience Scripts
 
 ```bash
 # /usr/local/bin/vault-open
@@ -186,7 +196,7 @@ your_username ALL=(root) NOPASSWD: /usr/bin/cryptsetup, /usr/bin/mount, /usr/bin
 
 ---
 
-## Add Additional Passphrases (Keyslots)
+### Step 6: Add Additional Passphrases (Keyslots)
 
 LUKS2 supports up to 32 keyslots. You can add a second passphrase for backup:
 
@@ -208,7 +218,7 @@ Store a printed copy of the second passphrase in a physically secure location, s
 
 ---
 
-## Backup the LUKS Header
+### Step 7: Backup the LUKS Header
 
 The LUKS header is at the beginning of the container file. If corrupted, all data is permanently lost.
 
@@ -230,7 +240,7 @@ After any `luksAddKey` or `luksChangeKey` operation, re-export the header backup
 
 ---
 
-## Resize the Container
+### Step 8: Resize the Container
 
 ```bash
 # To grow the container:
@@ -251,7 +261,7 @@ Shrinking a LUKS container is more complex and risky — you must shrink the fil
 
 ---
 
-## Portable Use
+### Step 9: Portable Use
 
 The `vault.luks` file can be:
 - Copied to an USB drive and opened on any Linux system
@@ -287,7 +297,7 @@ dd if=/mnt/vault/largefile of=/dev/null bs=1M status=progress
 
 Modern CPUs with AES-NI hardware acceleration make LUKS2 nearly transparent. Legacy hardware shows measurable slowdown.
 
-## Cross-Platform Container Portability
+### Step 10: Cross-Platform Container Portability
 
 LUKS containers work across Linux distributions but struggle on non-Linux systems:
 
@@ -307,7 +317,7 @@ sudo cryptsetup luksDump /home/user/vault.luks  # Export header
 
 True cross-platform encrypted containers require VeraCrypt or cloud-based solutions like Cryptomator.
 
-## Automating Container Mounting at Boot
+### Step 11: Automate Container Mounting at Boot
 
 For systems that should auto-mount encrypted containers:
 
@@ -331,7 +341,7 @@ sudo mount -a  # Test mount without reboot
 
 Note: This makes the passphrase available to the boot process. For maximum security, don't auto-mount—decrypt manually when needed.
 
-## Security Hardening of LUKS Containers
+### Step 12: Security Hardening of LUKS Containers
 
 Advanced hardening techniques for threat models beyond casual attacks:
 
@@ -354,7 +364,7 @@ sudo cryptsetup luksFormat --type luks2 --pbkdf argon2id \
 
 Trade security parameters against unlock speed.
 
-## Disaster Recovery: Corrupted Containers
+### Step 13: Disaster Recovery: Corrupted Containers
 
 If a container becomes corrupted:
 
@@ -376,7 +386,7 @@ sudo cryptsetup luksHeaderRestore /home/user/vault.luks \
 
 Having backup headers makes recovery possible.
 
-## Comparing LUKS to Alternatives
+### Step 14: Comparing LUKS to Alternatives
 
 | Feature | LUKS | VeraCrypt | BitLocker | FileVault |
 |---------|------|-----------|-----------|-----------|
@@ -390,7 +400,7 @@ Having backup headers makes recovery possible.
 
 LUKS excels in Linux; VeraCrypt for cross-platform; native OS encryption (BitLocker, FileVault) for OS integration.
 
-## Automated Backup of Encrypted Containers
+### Step 15: Automated Backup of Encrypted Containers
 
 Backing up an encrypted container file:
 
@@ -410,6 +420,21 @@ scp vault.luks.gpg remote-server:/backup/
 ```
 
 Automated container backups should use locked (unmounted) containers only.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
