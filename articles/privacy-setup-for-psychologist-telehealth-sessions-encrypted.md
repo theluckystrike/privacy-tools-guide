@@ -193,6 +193,232 @@ While this guide focuses on technical privacy implementation, remember that HIPA
 Self-hosted solutions give you control but transfer compliance responsibility entirely to your infrastructure. Document your technical setup and conduct regular security audits if handling sensitive patient information.
 
 
+## Session Recording and Data Retention
+
+Many psychologists record sessions for documentation or clinical review. E2EE changes how recording works.
+
+With E2EE enabled, recording happens on the client device, not the server. This means:
+
+```javascript
+// E2EE recording workflow
+const recordingWorkflow = {
+  steps: [
+    "1. Client initiates E2EE session",
+    "2. Both parties agree to recording (documented consent)",
+    "3. Recording encrypts locally on each device before transmission",
+    "4. Encrypted recording stored on secure server or local device",
+    "5. Only participants can decrypt the recording"
+  ],
+  key_difference: "Unlike Zoom, the server sees a blank encrypted stream and cannot store a decrypted copy"
+};
+```
+
+**Important distinction for HIPAA**: Recording with E2EE is more compliant than server-side recording because the service provider (Jitsi, Nextcloud) cannot access the content. However, you still need:
+
+1. **Written consent** from the patient before recording (required by law, not just policy)
+2. **Secure storage** of the recording file (encryption at rest, access control)
+3. **Retention policy** (e.g., delete recordings after 7 years per state law)
+4. **Breach notification** procedures if the encrypted file is compromised
+
+```python
+# Recording management system for psychologist
+class SessionRecordingManager:
+    def __init__(self, encryption_key, retention_days=2555):  # ~7 years
+        self.key = encryption_key
+        self.retention_days = retention_days
+
+    def save_recording(self, session_id, encrypted_file_path, patient_id):
+        # Store with metadata
+        recording = {
+            'session_id': session_id,
+            'patient_id': patient_id,
+            'file_path': encrypted_file_path,
+            'created_at': datetime.now(),
+            'expires_at': datetime.now() + timedelta(days=self.retention_days),
+            'access_log': []
+        }
+        self.db.insert('recordings', recording)
+
+    def retrieve_recording(self, session_id, requesting_user_id):
+        # Log every access for audit
+        recording = self.db.query('recordings', session_id=session_id).one()
+
+        recording['access_log'].append({
+            'user_id': requesting_user_id,
+            'access_time': datetime.now(),
+            'purpose': 'clinical_review'  # or 'patient_request', 'legal_discovery'
+        })
+
+        self.db.update('recordings', recording)
+        return recording
+
+    def auto_delete_expired(self):
+        # Run daily
+        expired = self.db.query('recordings', expires_at__lt=datetime.now())
+        for recording in expired:
+            os.remove(recording['file_path'])
+            self.db.delete('recordings', id=recording['id'])
+```
+
+This system maintains a clear audit trail of who accessed session recordings when and why—a HIPAA requirement.
+
+
+## Patient-Facing Privacy Documentation
+
+Patients need clear, non-technical language about privacy. A one-pager reduces confusion:
+
+```markdown
+# Your Telehealth Privacy Policy
+
+## How We Protect Your Session
+- Your video and audio are encrypted end-to-end, meaning only you and Dr. [Name] can see/hear the session
+- [Provider name] (the video service) cannot see your session content
+- Your session is NOT recorded unless you and Dr. [Name] agree in writing
+
+## What We Collect
+- Your name and contact information (needed for appointment scheduling)
+- Session notes (kept in encrypted storage)
+- Billing information (if paying by credit card)
+- Technical logs (IP address, connection time) - kept for 30 days for security
+
+## What We Don't Collect
+- Your browsing history
+- Location data beyond what your IP shows
+- Biometric data
+- Session recordings (unless you consent in writing)
+
+## Your Rights
+- You can request a copy of your records at any time
+- You can request we delete your data (with exceptions per law)
+- You can report privacy concerns to [contact]
+- You can file a complaint with HHS if you believe your privacy was violated
+
+## Security Measures
+- All data stored on encrypted servers
+- Only Dr. [Name] and you can access your session notes
+- Passwords are protected with 2FA
+- Our servers are in [location] and subject to [jurisdiction] law
+```
+
+This transparency builds patient trust and legally documents consent.
+
+
+## Backup and Disaster Recovery
+
+E2EE creates a backup problem: if you lose your encryption keys, you cannot decrypt old sessions. Plan for this:
+
+```bash
+#!/bin/bash
+# Encrypted backup system for psychotherapy practice
+
+# Store backup encryption key in HSM (Hardware Security Module)
+# Not in software, not in cloud, physically secure
+
+BACKUP_SCHEDULE="daily"  # Every 24 hours
+RETENTION_YEARS=7
+
+# Backup sources
+# 1. Nextcloud database (encrypted at rest)
+# 2. Session notes
+# 3. Patient metadata (NOT raw session recordings unless encrypted)
+# 4. Encryption keys (only the master key, separately from data)
+
+# Backup destination
+BACKUP_DEST="/secure-nas/psychotherapy-backups"
+
+# Encryption for backups
+gpg --symmetric --cipher-algo AES256 \
+    --batch --passphrase-file /secure/backup-passphrase \
+    $DATABASE_FILE
+
+# Test restore quarterly
+restore_test_date=$(date -d "3 months ago" +%Y-%m-%d)
+gpg --decrypt --quiet --passphrase-file /secure/backup-passphrase \
+    $BACKUP_DEST/backup-$restore_test_date.tar.gpg | tar -xzf - -C /tmp/restore-test
+
+# Alert if restore fails
+if [ $? -ne 0 ]; then
+    mail -s "BACKUP RESTORE FAILED - IMMEDIATE ACTION REQUIRED" admin@psychotherapy-practice.com
+fi
+```
+
+**Critical**: Separation of duties. The person with the backup encryption key should not have admin access to the video server. This prevents one compromised account from exposing both live systems and backups.
+
+
+## Security Incident Response for Therapists
+
+If you suspect a breach (unauthorized access, data loss, ransomware):
+
+```yaml
+# Incident response checklist
+hour_0:
+  - Disconnect affected server from network immediately
+  - Log the incident: date, time, what was compromised, who discovered it
+  - Call your security consultant and lawyer
+
+hour_1:
+  - Assess scope: which patient records accessed, which sessions?
+  - Check access logs for unauthorized activity
+  - Preserve evidence (don't touch affected files, image hard drive)
+
+hour_2_4:
+  - Notify affected patients: "We detected unauthorized access to [specific data]. Here's what happened, what we're doing"
+  - File breach notification with HHS if required (>500 patients or likely harm)
+  - Notify your malpractice insurance
+
+hour_4_24:
+  - Full forensic investigation (hire third party)
+  - Implement interim measures (move to backup Jitsi instance, migrate data)
+  - Review what allowed the breach and fix it
+
+day_2_30:
+  - Offer free credit monitoring if financial data compromised
+  - Document all actions taken for regulatory file
+  - Resume operations on hardened infrastructure
+```
+
+The sooner you act, the less harm. Delaying breach notification or investigation can violate HIPAA and state law, resulting in fines 10x the cost of incident response.
+
+
+## Telehealth with VPN for Patients Outside US
+
+Psychologists with international patients face additional complexity. If your patient is in Australia but you're in the US, what privacy law applies?
+
+```python
+# Jurisdiction-aware privacy controls
+def apply_jurisdiction_rules(patient_location, therapist_location):
+    """
+    Apply strictest privacy rule based on jurisdictions involved
+    """
+    jurisdictions = {
+        'AU': {'name': 'Australia', 'retention_years': 7, 'encryption_required': True},
+        'CA': {'name': 'Canada PIPEDA', 'retention_years': 3, 'encryption_required': True},
+        'DE': {'name': 'Germany GDPR', 'retention_years': 1, 'encryption_required': True, 'right_to_delete': True},
+        'US': {'name': 'US HIPAA', 'retention_years': 3, 'encryption_required': False}
+    }
+
+    patient_rules = jurisdictions[patient_location]
+    therapist_rules = jurisdictions[therapist_location]
+
+    # Apply strictest rule
+    combined_rules = {
+        'retention_years': max(patient_rules['retention_years'], therapist_rules['retention_years']),
+        'encryption_required': patient_rules['encryption_required'] or therapist_rules['encryption_required'],
+        'right_to_delete': patient_rules.get('right_to_delete', False) or therapist_rules.get('right_to_delete', False)
+    }
+
+    return combined_rules
+```
+
+For international patients, use GDPR as your baseline (most restrictive). This includes:
+- Explicit consent before processing any data
+- Right to data portability (patient can request all data in machine-readable format)
+- Right to deletion (patient can request erasure)
+- Data Protection Impact Assessments for any processing
+
+It's harder than US-only telehealth, but treating all patients as GDPR-protected is a safe choice.
+
+
 
 ## Frequently Asked Questions
 

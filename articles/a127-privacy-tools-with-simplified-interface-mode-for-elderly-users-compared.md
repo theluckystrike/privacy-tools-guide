@@ -166,6 +166,43 @@ cryptomator decrypt /encrypted/backup --output /restored
 | Signal | 9/10 | Very Easy | Free |
 | Cryptomator | 7/10 | Easy | Free/$5 |
 
+## Setting Up Privacy Tools: A Family Guide
+
+For family members helping seniors with privacy tools, follow this approach:
+
+### Phase 1: Communication (Week 1)
+1. Install Signal on both devices
+2. Add each other as contacts
+3. Send 2-3 test messages to confirm it works
+4. Enable disappearing messages (1 week timer)
+5. Show the lock icon that indicates encryption
+
+### Phase 2: Browsing (Week 2)
+1. Install Proton VPN
+2. Create account together (use a memorable, simple password)
+3. Test the one-click connect feature
+4. Add a bookmark for the connect button
+5. Test with a known website to show data protection
+
+### Phase 3: Passwords (Week 3-4)
+1. Install Bitwarden
+2. Start with 3-5 critical accounts (banking, email, healthcare)
+3. Set a master password that's easy to remember
+4. Enable biometric unlock to reduce password entry
+5. Show how to use the password generator
+
+### Phase 4: Browsing Protection (Week 4)
+1. Install Privacy Badger
+2. Demonstrate that sites load normally
+3. Show that it blocks trackers automatically
+4. No configuration needed—just works
+
+### Phase 5: File Protection (Optional, Week 5)
+1. Introduce Cryptomator only if file protection is needed
+2. Create a vault for sensitive documents
+3. Show drag-and-drop encryption
+4. Test decryption to confirm it works
+
 ## Recommendations for Elderly Users
 
 For seniors new to privacy tools, the best approach starts with one tool at a time:
@@ -177,6 +214,30 @@ For seniors new to privacy tools, the best approach starts with one tool at a ti
 **Use Privacy Badger** on existing browsers to block trackers automatically without any configuration or ongoing attention.
 
 **Migrate to Bitwarden** gradually as comfort with password managers grows—start with just a few critical accounts before moving everything.
+
+## Remote Support for Elderly Users
+
+If helping a senior remotely:
+
+**TeamViewer or AnyDesk**: Allow screen sharing so you can see what's happening. This helps troubleshooting significantly.
+
+**Phone call + screen share**: Talk through steps while watching the screen. This is slower but provides better security oversight than email support.
+
+**Written instructions with screenshots**: Create step-by-step guides with large screenshots showing exactly where to click.
+
+**Video walkthrough**: Record a 3-5 minute video showing the complete setup process. Seniors can watch and follow along at their own pace.
+
+## Warning Signs That Help is Needed
+
+If an elderly user experiences these issues, they may need additional support:
+
+- Confusion about which app to use for communication
+- Forgetting passwords (master password especially)
+- Difficulty with biometric setup
+- Clicking OK on every dialog without understanding
+- Fear that privacy tools will break their email or browsing
+
+These are all normal and addressable with additional training or simplified tools.
 
 ## Security vs. Simplicity Trade-offs
 

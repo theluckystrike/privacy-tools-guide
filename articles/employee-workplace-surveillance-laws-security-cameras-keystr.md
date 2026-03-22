@@ -184,11 +184,152 @@ For developers and power users building monitoring systems:
 4. **Minimize data collection** - Only collect what your business purpose requires
 5. **Secure collected data** - Encryption and access controls matter for legal compliance
 
+## Consent and Disclosure Best Practices
+
+When implementing employee monitoring, documentation is critical for legal protection:
+
+```javascript
+// Employee consent workflow for monitoring
+class EmployeeMonitoringConsent {
+  constructor(employeeId, state) {
+    this.employeeId = employeeId;
+    this.state = state;
+    this.consentRecord = {};
+  }
+
+  requestConsent(monitoringTypes) {
+    /*
+    Consent must be:
+    1. Written (not verbal)
+    2. Specific (list each monitoring type)
+    3. Timely (before monitoring begins)
+    4. Informed (employee understands what's monitored)
+    */
+
+    const disclosureText = this.generateDisclosure(monitoringTypes);
+
+    return {
+      disclosure: disclosureText,
+      consentForm: this.createConsentForm(monitoringTypes),
+      acknowledgment: {
+        signature: '[Employee Signs]',
+        date: new Date(),
+        understanding: '[Employee confirms understanding]'
+      }
+    };
+  }
+
+  generateDisclosure(monitoringTypes) {
+    const stateRequirements = {
+      'CA': 'California requires explicit disclosure of location tracking',
+      'NY': 'New York requires notice of keystroke monitoring in employee handbook',
+      'CT': 'Connecticut requires written notice of keystroke monitoring',
+      'TX': 'Texas requires notice of GPS tracking on company vehicles'
+    };
+
+    return `
+    EMPLOYEE MONITORING DISCLOSURE
+
+    This document outlines the monitoring practices that may apply to you:
+
+    Monitoring Types:
+    ${monitoringTypes.map(t => `- ${t}`).join('\n')}
+
+    State-Specific Requirements:
+    ${stateRequirements[this.state] || 'No additional state requirements identified'}
+
+    Your Rights:
+    - You may object to certain monitoring practices
+    - You have the right to know what data is collected
+    - You have the right to request deletion of collected data
+    - Monitoring applies only to work-related activities
+
+    By signing below, you acknowledge understanding this disclosure.
+    `;
+  }
+
+  createConsentForm(monitoringTypes) {
+    return {
+      monitoringTypes,
+      consentDate: new Date(),
+      effectiveDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days notice
+      revokeDate: null, // Employee can revoke at any time
+      documentedBy: '[HR Representative]'
+    };
+  }
+}
+```
+
+### Creating Audit Trails
+
+```python
+# Comprehensive audit trail for monitoring compliance
+import json
+from datetime import datetime
+
+class MonitoringAuditTrail:
+    def __init__(self, storage_engine):
+        self.storage = storage_engine
+
+    def log_disclosure_sent(self, employee_id, disclosure_type):
+        """Log when disclosure was provided to employee"""
+        self.storage.save({
+            'event_type': 'disclosure_sent',
+            'employee_id': employee_id,
+            'disclosure_type': disclosure_type,
+            'timestamp': datetime.now().isoformat(),
+            'evidence': 'delivery_receipt'  # Email open confirmation, etc
+        })
+
+    def log_consent_obtained(self, employee_id, consent_types, signature_proof):
+        """Log employee consent with proof"""
+        self.storage.save({
+            'event_type': 'consent_obtained',
+            'employee_id': employee_id,
+            'consent_types': consent_types,
+            'timestamp': datetime.now().isoformat(),
+            'signature_proof': signature_proof,
+            'witness': '[HR Rep Name]'
+        })
+
+    def log_monitoring_activated(self, employee_id, monitoring_type):
+        """Log when monitoring actually begins"""
+        self.storage.save({
+            'event_type': 'monitoring_activated',
+            'employee_id': employee_id,
+            'monitoring_type': monitoring_type,
+            'timestamp': datetime.now().isoformat(),
+            'consent_verified': True
+        })
+
+    def get_compliance_report(self, employee_id):
+        """Generate proof of proper disclosure/consent"""
+        events = self.storage.query({
+            'employee_id': employee_id,
+            'event_type': ['disclosure_sent', 'consent_obtained']
+        })
+
+        return {
+            'employee_id': employee_id,
+            'disclosures': [e for e in events if e['event_type'] == 'disclosure_sent'],
+            'consents': [e for e in events if e['event_type'] == 'consent_obtained'],
+            'compliant': len(events) >= 2  # Should have disclosure + consent
+        }
+```
+
 ## Future Considerations
 
 State legislatures continue introducing employee surveillance bills. The trend favors increased disclosure requirements and employee consent mechanisms. Organizations operating across multiple states should implement the strictest applicable standard or build configurable policies that can adapt to different jurisdictions.
 
 For developers building enterprise monitoring tools, prioritize consent workflows and audit logging as foundational features. These capabilities will become increasingly important as the regulatory ecosystem evolves.
+
+### Emerging Regulations to Watch
+
+Several states are proposing new restrictions:
+- **Biometric monitoring**: Colorado and New Hampshire considering restrictions
+- **Emotion AI**: Some states considering bans on facial recognition for monitoring
+- **Wearable tracking**: California considering restrictions on mandatory wearable tracking
+- **Off-duty monitoring**: Some states proposing protections for off-duty activity
 
 ---
 

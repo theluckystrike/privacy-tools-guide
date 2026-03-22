@@ -124,11 +124,44 @@ Canary operates on a freemium model, with premium features available through sub
 | Hey Email | USA | No | Never | Optional |
 | Canary Mail | USA | Yes | Never | Optional |
 
+## Additional Privacy-Focused Options
+
+### FairEmail
+
+FairEmail is an open-source Android email client that prioritizes privacy without requiring a proprietary email service. It works with any standard IMAP email provider while adding privacy features. The app includes:
+- No analytics or tracking
+- No permission requests beyond what's necessary
+- Support for OpenPGP encryption
+- Encrypted storage of account credentials
+
+For users who want to maintain existing email addresses with enhanced privacy, FairEmail offers a lightweight alternative to full email migration.
+
+### Desktop Considerations
+
+For developers and power users who need email on multiple devices, consider:
+
+**Thunderbird with Enigmail**: Thunderbird is open source and works with any IMAP provider. The Enigmail extension adds OpenPGP encryption, allowing encrypted communication with any OpenPGP-compatible recipient.
+
+**Evolution (GNOME)**: Open source GNOME email client with native OpenPGP support and no built-in tracking.
+
 ## Making Your Choice
 
 Choosing the right privacy-focused email app depends on your specific needs and threat model. For maximum privacy without compromise, Proton Mail or Tutanota offer the strongest protections. Their zero-access encryption architectures make content scanning technically impossible, and their business models don't depend on advertising revenue.
 
 If you need to maintain an existing email address while adding privacy protections, Canary Mail provides flexibility. For users who want a premium email experience with privacy commitments, Hey offers a compelling middle ground.
+
+For Android users, FairEmail provides open-source privacy protection with any IMAP provider, making it valuable for those unwilling to switch email services entirely.
+
+### Technical Architecture Comparison
+
+| Feature | Zero-Access Encryption | Open Source | Works with Existing Email | Client-Side Only |
+|---------|----------------------|------------|---------------------------|-----------------|
+| Proton Mail | Yes | Partial | No | Yes |
+| Tutanota | Yes | Partial | No | Yes |
+| Hey | No | No | No | No |
+| Canary Mail | Optional | No | Yes | Optional |
+| FairEmail | Optional | Yes | Yes | Optional |
+| Thunderbird+Enigmail | Optional | Yes | Yes | Yes |
 
 Regardless of which app you choose, making the switch represents a significant step toward reclaiming your email privacy. These applications prove that you don't have to sacrifice usability or features to keep your communications private.
 
@@ -143,6 +176,113 @@ When switching to a privacy-focused email app, consider these practical steps:
 5. **Enable two-factor authentication** - Add extra security to your new accounts
 
 Making the transition takes time, but the privacy benefits are well worth the effort. Your inbox contains some of your most sensitive information—protecting it should be a priority, and these apps make it possible without sacrificing the convenience of mobile email access.
+
+## Technical Deep Dive: Zero-Access Encryption Architecture
+
+For developers and power users understanding how zero-access encryption actually works:
+
+### How Proton Mail's Zero-Access Model Operates
+
+```javascript
+// Simplified pseudocode showing zero-access principle
+class ProtonMailEncryption {
+  // User creates account with password
+  setupAccount(password) {
+    // 1. Generate private key client-side
+    const {privateKey, publicKey} = generateRSAKeyPair();
+
+    // 2. Encrypt private key with password
+    const encryptedPrivateKey = encryptWithPassword(privateKey, password);
+
+    // 3. Send ONLY encrypted private key to server
+    // Private key never leaves device in plaintext
+    this.sendToServer({
+      publicKey,
+      encryptedPrivateKey
+    });
+  }
+
+  // User sends email to another Proton user
+  sendEmail(recipient, message) {
+    // 1. Fetch recipient's public key from server
+    const recipientPublicKey = this.getPublicKey(recipient);
+
+    // 2. Encrypt message with recipient's public key
+    const encryptedMessage = encryptWithPublicKey(message, recipientPublicKey);
+
+    // 3. Send encrypted message to server
+    // Even Proton server cannot read it
+    this.sendToServer({
+      to: recipient,
+      body: encryptedMessage
+    });
+  }
+
+  // User reads email
+  readEmail(emailId) {
+    // 1. Download encrypted email from server
+    const encryptedEmail = this.downloadEmail(emailId);
+
+    // 2. Decrypt private key using password
+    const privateKey = decryptWithPassword(
+      this.encryptedPrivateKey,
+      userPassword
+    );
+
+    // 3. Decrypt email using private key
+    const plaintext = decryptWithPrivateKey(encryptedEmail, privateKey);
+
+    return plaintext;
+  }
+}
+```
+
+### Why This Matters for Privacy
+
+The zero-access model means:
+- **Proton cannot read your emails** even if they wanted to
+- **Law enforcement cannot compel Proton** to produce readable emails
+- **Data breaches don't expose your content** because it's encrypted on servers
+- **Server administrator cannot access your data** even with full database access
+
+This is fundamentally different from traditional email providers where encryption exists only in transit.
+
+## Email Metadata Privacy Considerations
+
+Even with zero-access encryption, metadata remains visible:
+
+```
+Visible metadata (encrypted to/from):
+- Email headers (timestamps, sender IP in some cases)
+- Subject lines (in some implementations)
+- Attachment names
+- Read/unread status
+- Folder organization
+
+Invisible metadata (encrypted end-to-end):
+- Message content
+- Attachment contents
+- Search keywords
+
+Users concerned about metadata should:
+1. Avoid revealing information in subject lines
+2. Use pseudonyms when creating accounts
+3. Be aware that "to/from" relationships still appear in logs
+4. Consider whether metadata alone compromises security
+```
+
+## Migration Checklist
+
+When switching from mainstream email to privacy-focused:
+
+- [ ] Create new email account with privacy-focused provider
+- [ ] Verify account encryption settings are enabled
+- [ ] Update critical services (banking, healthcare, recovery emails)
+- [ ] Set up forwarding from old account to new address
+- [ ] Monitor for service notifications at old address for 6 months
+- [ ] Archive all emails from old account before deletion
+- [ ] Delete old account after confirming all services migrated
+- [ ] Test encrypted email to another Proton/Tutanota user
 
 
 

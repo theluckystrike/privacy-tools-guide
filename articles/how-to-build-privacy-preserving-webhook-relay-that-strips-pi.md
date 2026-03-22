@@ -226,6 +226,138 @@ app.post('/relay', async (req, res) => {
 });
 ```
 
+## Testing and Monitoring
+
+Implement comprehensive testing to ensure the relay works correctly:
+
+```javascript
+// Test suite for privacy-preserving relay
+const chai = require('chai');
+const expect = chai.expect;
+
+describe('PII Stripping Relay', () => {
+  it('should redact email addresses', () => {
+    const payload = {
+      user: {
+        name: 'John Doe',
+        email: 'john@example.com'
+      }
+    };
+
+    const stripped = stripPII(payload);
+    expect(stripped.user.email).to.equal('[REDACTED]');
+    expect(stripped.user.name).to.equal('John Doe');
+  });
+
+  it('should handle nested arrays', () => {
+    const payload = {
+      users: [
+        { id: 1, email: 'user1@example.com' },
+        { id: 2, email: 'user2@example.com' }
+      ]
+    };
+
+    const stripped = stripPII(payload);
+    expect(stripped.users[0].email).to.equal('[REDACTED]');
+    expect(stripped.users[1].email).to.equal('[REDACTED]');
+  });
+
+  it('should preserve non-PII fields', () => {
+    const payload = {
+      transaction_id: 'txn_12345',
+      amount: 99.99,
+      currency: 'USD'
+    };
+
+    const stripped = stripPII(payload);
+    expect(stripped.transaction_id).to.equal('txn_12345');
+    expect(stripped.amount).to.equal(99.99);
+  });
+});
+```
+
+## Compliance and Auditing
+
+For regulated industries (finance, healthcare), add audit trails:
+
+```javascript
+// Compliance logging for regulated relay
+class ComplianceLogger {
+  constructor(auditDb) {
+    this.auditDb = auditDb;
+  }
+
+  logWebhookReceived(provider, payloadHash, destination) {
+    this.auditDb.insert({
+      timestamp: new Date(),
+      event: 'webhook_received',
+      provider,
+      payloadHash,  // Never store actual payload
+      destination,
+      status: 'pending'
+    });
+  }
+
+  logPIIStripped(provider, fieldsRedacted) {
+    this.auditDb.insert({
+      timestamp: new Date(),
+      event: 'pii_stripped',
+      provider,
+      fieldCount: fieldsRedacted.length,
+      status: 'success'
+    });
+  }
+
+  logForwardingSuccess(destination) {
+    this.auditDb.insert({
+      timestamp: new Date(),
+      event: 'forwarding_success',
+      destination,
+      statusCode: 200
+    });
+  }
+}
+```
+
+## Performance Optimization
+
+For high-volume webhook processing:
+
+```javascript
+// Batch processing for efficiency
+const batchQueue = [];
+const BATCH_SIZE = 100;
+const BATCH_TIMEOUT = 5000; // 5 seconds
+
+async function processBatch() {
+  if (batchQueue.length === 0) return;
+
+  const batch = batchQueue.splice(0, BATCH_SIZE);
+  const sanitized = batch.map(item => ({
+    ...item,
+    payload: stripPII(item.payload)
+  }));
+
+  // Forward all at once
+  await Promise.all(
+    sanitized.map(item =>
+      axios.post(item.destination, item.payload)
+    )
+  );
+}
+
+// Process batches periodically
+setInterval(processBatch, BATCH_TIMEOUT);
+
+app.post('/relay', (req, res) => {
+  const { destination, payload } = req.body;
+  batchQueue.push({ destination, payload });
+
+  // Immediate response (processing happens async)
+  res.json({ status: 'queued', id: Date.now() });
+});
+```
+
 ## Summary
 
 A privacy-preserving webhook relay gives you granular control over the data flowing through your systems. By stripping PII before delivery, you reduce compliance requirements, minimize breach risk, and follow data minimization principles.
