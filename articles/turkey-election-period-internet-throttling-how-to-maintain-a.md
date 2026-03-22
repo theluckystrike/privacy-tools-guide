@@ -40,7 +40,17 @@ Turkey has a documented history of internet throttling and censorship during ele
 - **Ports 443 and 80**: are the last ports ISPs will block, since blocking them breaks ordinary web browsing for all users.
 - **Use dedicated devices that**: are never linked to personal accounts, and configure all encrypted communication channels before restrictions activate.
 
-## How Turkey Implements Election-Period Internet Restrictions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Turkey Implements Election-Period Internet Restrictions
 
 The Turkish government uses several technical mechanisms to throttle and restrict internet access during sensitive periods:
 
@@ -52,7 +62,7 @@ The Turkish government uses several technical mechanisms to throttle and restric
 
 During the 2023 elections, reports indicated increased DPI activity targeting加密 protocols and VPN ports. The Blocking mechanisms often target specific protocols (OpenVPN on port 1194, WireGuard on port 51820) while leaving others functional.
 
-## Preparing Your Infrastructure
+### Step 2: Preparing Your Infrastructure
 
 ### DNS Configuration
 
@@ -132,7 +142,7 @@ The persistent keepalive option helps maintain connections through stateful fire
 }
 ```
 
-## Network-Level Solutions
+### Step 3: Network-Level Solutions
 
 ### Router Configuration for Automatic Failover
 
@@ -169,7 +179,7 @@ ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 
 The `iat-mode=2` parameter enables randomized padding that makes traffic analysis more difficult.
 
-## Application-Level Defenses
+### Step 4: Application-Level Defenses
 
 ### Browser Configuration
 
@@ -207,7 +217,7 @@ docker run -d \
   signalfx/signaling-proxy
 ```
 
-## Monitoring Connection Quality
+### Step 5: Monitor Connection Quality
 
 Implement basic monitoring to detect throttling:
 
@@ -240,7 +250,7 @@ print(f"Baseline: {statistics.median(baseline)}ms")
 print(f"Jitter: {statistics.stdev(baseline) if len(baseline) > 1 else 0}")
 ```
 
-## Emergency Preparedness Checklist
+### Step 6: Emergency Preparedness Checklist
 
 Before election periods, verify these items:
 
@@ -252,7 +262,7 @@ Before election periods, verify these items:
 6. **Proxy lists**: Maintain working proxy server list
 7. **Critical contacts**: Establish out-of-band communication methods
 
-## Detecting Active Throttling vs Complete Blocking
+### Step 7: Detecting Active Throttling vs Complete Blocking
 
 Understanding whether you are facing bandwidth throttling or outright blocking determines which countermeasure to apply. Throttling slows connections while keeping them functional; blocking drops packets entirely.
 
@@ -326,7 +336,7 @@ Psiphon is specifically designed for circumvention in high-censorship environmen
 
 Download from `psiphon3.com` or request a copy via `get@psiphon3.com` — email distribution is designed for situations where the website is blocked. Psiphon needs no configuration: install, launch, connect.
 
-## Preparing a Resilience Kit Before Election Periods
+### Step 8: Preparing a Resilience Kit Before Election Periods
 
 Turkey's restrictions historically activate within hours of polls closing. Preparation must happen before filtering starts — you may not be able to download tools once blocking is active.
 
@@ -360,11 +370,26 @@ Endpoint = sg1.yourvpn.com:80
 
 Test all profiles before the election period. Ports 443 and 80 are the last ports ISPs will block, since blocking them breaks ordinary web browsing for all users.
 
-## Legal and Safety Considerations
+### Step 9: Legal and Safety Considerations
 
 VPN usage in Turkey is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship — OONI Probe exports, speed test logs, screenshots — is valuable to advocacy organizations like Freedom House and Article 19.
 
 For higher-risk users (journalists, activists, election observers), the threat model must include device seizure and account compromise. Use dedicated devices that are never linked to personal accounts, and configure all encrypted communication channels before restrictions activate.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

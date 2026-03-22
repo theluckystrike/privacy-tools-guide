@@ -42,7 +42,17 @@ Syncthing is an open-source, decentralized file sync tool that transfers data di
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Installing Syncthing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Syncthing
 
 Syncthing runs on Windows, macOS, Linux, and several other platforms. The installation methods vary depending on your operating system.
 
@@ -82,7 +92,7 @@ Download the Windows installer from the official website or use the portable ver
 
 Verify your installation by accessing the web UI at `http://localhost:8384` after starting Syncthing.
 
-## Initial Configuration
+### Step 2: Initial Configuration
 
 When you first run Syncthing, it generates a unique device ID and configuration files in your home directory. On Linux and macOS, these are stored in `~/.config/syncthing/`.
 
@@ -109,7 +119,7 @@ The folder path must exist on your system before Syncthing can sync it. Create t
 mkdir -p ~/Sync/Documents
 ```
 
-## Connecting Devices
+### Step 3: Connecting Devices
 
 Syncthing identifies devices by their unique Device ID, a long string of characters generated during first startup. To connect two devices:
 
@@ -211,7 +221,7 @@ Projects/mobile
 Documents/Important
 ```
 
-## Automating Syncthing Startup
+### Step 4: Automate Syncthing Startup
 
 ### Systemd Service (Linux)
 

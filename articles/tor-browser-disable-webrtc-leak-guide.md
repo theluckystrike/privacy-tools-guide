@@ -40,7 +40,17 @@ Disable WebRTC in Tor Browser by navigating to `about:config` and setting `media
 - **To establish these connections, WebRTC must discover the user's IP addresses**: including those not exposed through the standard VPN or Tor circuit.
 - **This occurs regardless of**: the Tor network's proxy settings, creating a potential information leak that can de-anonymize users.
 
-## Understanding WebRTC Leaks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand WebRTC Leaks
 
 WebRTC allows browsers to establish direct connections between peers for features like video calling, file sharing, and live streaming. To establish these connections, WebRTC must discover the user's IP addresses—including those not exposed through the standard VPN or Tor circuit.
 
@@ -48,7 +58,7 @@ When WebRTC is enabled, the browser responds to STUN (Session Traversal Utilitie
 
 The issue is particularly concerning because WebRTC operates at a lower level than typical browser APIs. Even when using Tor Browser's built-in protections, the STUN requests can bypass the standard proxy configuration, exposing real IP addresses to websites that know how to query the WebRTC API.
 
-## Identifying WebRTC Leaks
+### Step 2: Identifying WebRTC Leaks
 
 Before implementing fixes, verify whether your browser is vulnerable. Several online tools can test for WebRTC leaks, but for developers, creating a simple test provides more control over the verification process.
 
@@ -80,7 +90,7 @@ function findIP() {
 
 This JavaScript snippet attempts to gather IP addresses through WebRTC ICE candidates. If it returns any IP addresses, your browser has a WebRTC leak.
 
-## Methods to Disable WebRTC in Tor Browser
+### Step 3: Methods to Disable WebRTC in Tor Browser
 
 Tor Browser does not provide a simple checkbox to disable WebRTC. The development team made this decision because completely blocking WebRTC would make users more identifiable—the absence of WebRTC support becomes a fingerprinting vector. However, for users who need additional protection, several approaches exist.
 
@@ -117,7 +127,7 @@ For developers building privacy-focused applications, blocking WebRTC at the con
 
 This CSP header prevents WebRTC from establishing connections entirely. However, this method only works if you control the web application and won't protect against leaks on third-party websites.
 
-## Trade-offs and Considerations
+### Step 4: Trade-offs and Considerations
 
 Disabling WebRTC has consequences beyond breaking video calling features. Some websites use WebRTC for legitimate purposes like file transfer, collaborative editing, and real-time updates. After disabling WebRTC, these features will not function.
 
@@ -173,7 +183,7 @@ user_pref("privacy.trackingprotection.pbmode.enabled", true);
 
 Place this file in your Tor Browser profile directory and Tor Browser will apply these settings automatically on each startup.
 
-## Verification Commands for Linux and macOS
+### Step 5: Verification Commands for Linux and macOS
 
 testing ensures your WebRTC configuration is effective:
 
@@ -201,7 +211,7 @@ curl -s https://api.ipleak.net/json
 # No XHR or WebSocket calls to STUN servers should appear
 ```
 
-## Platform-Specific Implementation
+### Step 6: Platform-Specific Implementation
 
 ### Windows Installation (NSIS Setup)
 
@@ -240,7 +250,7 @@ find ~/Library -name "profile.default" -path "*/Tor Browser*"
 ~/Library/Application\ Support/Tor\ Browser/Browser/profile.default
 ```
 
-## Testing WebRTC Leaks Programmatically
+### Step 7: Test WebRTC Leaks Programmatically
 
 Create a test suite to verify protection:
 
@@ -305,7 +315,7 @@ async function testWebRTCLeaks() {
 testWebRTCLeaks();
 ```
 
-## Monitoring WebRTC Status After Updates
+### Step 8: Monitor WebRTC Status After Updates
 
 Tor Browser updates may reset some user.js settings. Create a verification script:
 
@@ -362,7 +372,7 @@ VBoxManage modifyvm "tor-webrtc-test" \
 tcpdump -i vboxnet0 "port 3478 or port 5349" -n
 ```
 
-## Verifying Your Protection
+### Step 9: Verify Your Protection
 
 After implementing any of these methods, verify that WebRTC is properly disabled. Use multiple testing approaches:
 
@@ -370,7 +380,7 @@ First, check that `media.peerconnection.enabled` shows as false in about:config.
 
 Use the test script provided above to verify across all browsers. Regular verification is important because browser updates can reset some settings. Maintain a checklist of your privacy configurations and review them after each Tor Browser update.
 
-## Disabling WebRTC Across the Browser Ecosystem
+### Step 10: Disable WebRTC Across the Browser Ecosystem
 
 If you use multiple browsers, WebRTC disabling strategies vary:
 
@@ -380,6 +390,21 @@ If you use multiple browsers, WebRTC disabling strategies vary:
 | Firefox ESR | Enabled | about:config flag | Developer Tools |
 | Chromium/Chrome | Enabled | chrome://flags or extensions | DevTools → Network |
 | Brave | Protected by default | Settings → Privacy | Network inspection |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

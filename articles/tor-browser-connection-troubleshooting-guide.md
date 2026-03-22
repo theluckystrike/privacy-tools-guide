@@ -25,7 +25,17 @@ Tor Browser is a powerful tool for private browsing, but connection issues can a
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Tor Connection Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Tor Connection Basics
 
 Before troubleshooting, it's essential to understand how Tor establishes connections. Tor routes your traffic through a network of relays, each with specific roles:
 
@@ -35,7 +45,7 @@ Before troubleshooting, it's essential to understand how Tor establishes connect
 
 When Tor Browser fails to connect, the issue typically lies in one of these areas: network restrictions, firewall interference, incorrect system clock, or bridge configuration problems.
 
-## Common Connection Error Messages
+### Step 2: Common Connection Error Messages
 
 ### "Tor Browser could not connect to the Tor network"
 
@@ -63,7 +73,7 @@ nc -zv 127.0.0.1 9051
 
 The default SOCKS port is 9050, and the control port uses 9051. If these are blocked, you'll need to configure bridges or use obfs4 proxies.
 
-## Configuring Tor Bridges
+### Step 3: Configure Tor Bridges
 
 When direct connections fail—common in censored regions or corporate networks—Tor bridges provide alternative entry points.
 
@@ -89,7 +99,7 @@ UseBridges 1
 Bridge obfs4 1.2.3.4:443 cert=EXAMPLE fingerprint=ABC123 iat-mode=2
 ```
 
-## Firewall and Port Configuration
+### Step 4: Firewall and Port Configuration
 
 ### Identifying Blocked Ports
 
@@ -151,7 +161,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 Tor Browser includes IPv6 disabling in its security settings under "Security Level".
 
-## Debug Mode and Logging
+### Step 5: Debug Mode and Logging
 
 ### Enabling Detailed Logging
 
@@ -193,7 +203,7 @@ def get_tor_status(control_port=9051, password=None):
 get_tor_status()
 ```
 
-## Solving Specific Scenarios
+### Step 6: Solving Specific Scenarios
 
 ### "Proxy Server Refusing Connection"
 

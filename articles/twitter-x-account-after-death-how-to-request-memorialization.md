@@ -25,7 +25,7 @@ When a loved one passes away, their digital footprint requires attention just li
 - **For deceased user matters**: you cannot access the account through the API without proper authorization.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Twitter X's Deceased User Policies
+### Step 1: Understand Twitter X's Deceased User Policies
 
 Twitter X offers two primary options for handling deceased user accounts:
 
@@ -44,7 +44,7 @@ Before submitting a request, gather the following documentation:
 - The deceased user's account handle or profile URL
 - Documentation showing your relationship to the deceased (if not an immediate family member)
 
-## Submitting the Request
+### Step 2: Submitting the Request
 
 Navigate to Twitter X's Help Center and locate the deceased user account form. The process differs slightly depending on whether you're requesting memorialization or deactivation.
 
@@ -61,7 +61,7 @@ For complete removal, submit through the deceased user deactivation form. Provid
 
 Memorialization keeps the account visible but prevents modifications. The profile name gains "(Memorial)" suffix, and the account is locked from login. Submit through the memorialization request form with similar documentation.
 
-## Programmatic Verification for Developers
+### Step 3: Implement Programmatic Verification for Developers
 
 If you're building an application that tracks account status or automates documentation, you can verify account states through the Twitter API:
 
@@ -112,7 +112,7 @@ async function getAccountStatus(username) {
 
 Note that API access requires approval through the Twitter Developer Portal. For deceased user matters, you cannot access the account through the API without proper authorization.
 
-## Preserving Account Data Before Deactivation
+### Step 4: Preserving Account Data Before Deactivation
 
 If you need to preserve the deceased user's tweets, you must act quickly. Here's how to document the content:
 
@@ -212,7 +212,7 @@ class TwitterArchiver:
 
 This script respects Twitter's API rate limits and produces a portable JSON archive that can be stored indefinitely.
 
-## Handling Multiple Accounts
+### Step 5: Handling Multiple Accounts
 
 If you're managing digital estate matters for multiple deceased users, consider building a tracking system:
 
@@ -269,7 +269,7 @@ class DeceasedAccountTracker {
 }
 ```
 
-## What Twitter X Cannot Provide
+### Step 6: What Twitter X Cannot Provide
 
 It's important to understand the limitations of the deceased user process:
 
@@ -278,7 +278,7 @@ It's important to understand the limitations of the deceased user process:
 - **No retroactive changes**: Once an account is deactivated, it cannot be recovered
 - **Limited response times**: Twitter X processes these requests manually, which can take several weeks
 
-## Alternative Considerations
+### Step 7: Alternative Considerations
 
 For developers building digital estate tools, consider integrating with multiple platforms:
 
@@ -288,6 +288,21 @@ For developers building digital estate tools, consider integrating with multiple
 - LinkedIn: Family member request process
 
 Each platform has its own policies and timelines. Building an unified tracking system helps manage multiple requests across services.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

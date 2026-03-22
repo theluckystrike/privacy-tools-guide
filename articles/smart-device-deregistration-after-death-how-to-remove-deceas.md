@@ -47,7 +47,17 @@ Apple provides a specific process for deceased users:
 - **Contact Apple Support with**: case reference 3.
 - **Delete any Alexa routines**: associated with that account ### Smart Thermostats (Nest, Ecobee, Honeywell) These devices often maintain cloud connections after local logout.
 
-## Understanding the Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Challenge
 
 Smart devices store authentication credentials, personal data, and cloud connections that persist after someone passes away. Unlike traditional devices, IoT gadgets often link to cloud services, making local deletion insufficient. The primary challenges include:
 
@@ -56,7 +66,7 @@ Smart devices store authentication credentials, personal data, and cloud connect
 - **Legacy access tokens**: API keys and OAuth tokens may still grant access
 - **Family sharing configurations**: Apple's Family Sharing, Google Family Library, and similar services need proper decommissioning
 
-## Platform-Specific Removal Methods
+### Step 2: Platform-Specific Removal Methods
 
 ### Google/Android Devices
 
@@ -201,7 +211,7 @@ curl -X DELETE \
 3. Choose "Remove This Account"
 4. Sign out of iCloud if applicable
 
-## Automated Bulk Removal Script
+### Step 3: Automated Bulk Removal Script
 
 For power users managing multiple devices, here's a Python script that handles multiple platforms:
 
@@ -293,7 +303,7 @@ Before proceeding with account removal, ensure you have:
 
 Most platforms require 1-4 weeks to process death-related account closures. Keep documentation for all requests submitted.
 
-## Prevention Strategies
+### Step 4: Prevention Strategies
 
 For your own digital estate planning:
 
@@ -302,6 +312,21 @@ For your own digital estate planning:
 3. Set up platform-specific inactive account managers
 4. Include smart home devices in your digital estate plan
 5. Create runbooks for your trusted contacts
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -26,7 +26,17 @@ To enable disappearing messages in Signal, open any conversation, tap the contac
 - **Wait 30 seconds after**: recipient opens the message 5.
 - **Choose timer duration (affects**: all future messages) 5.
 
-## Understanding Disappearing Messages Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Disappearing Messages Architecture
 
 Signal implements disappearing messages through an encryption key rotation system. When you enable disappearing messages in a conversation, Signal generates a unique key for each message. Once the timer expires, the cryptographic key is deleted from the recipient's device, rendering the ciphertext unrecoverable.
 
@@ -34,7 +44,7 @@ The key architectural points to understand:
 
 Messages persist locally until the timer expires; Signal does not delete messages from your device automatically, and the recipient's app removes the message after the timer completes. This means both sender and recipient must have disappearing messages enabled for the full effect. Signal offers predefined intervals — 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks — with no custom timer support in the standard UI. Each conversation maintains its own timer state, so disabling disappearing messages in one conversation does not affect others.
 
-## Configuring Disappearing Messages
+### Step 2: Configure Disappearing Messages
 
 ### Mobile Application
 
@@ -74,7 +84,7 @@ signal-cli -u +1234567890 setExpiration +0987654321 3600
 
 This requires a registered Signal account linked to your CLI instance. The command triggers the same end-to-end encrypted protocol as the official clients.
 
-## Storage Mechanics and Recovery Limitations
+### Step 3: Storage Mechanics and Recovery Limitations
 
 Understanding what actually disappears matters for threat modeling.
 
@@ -86,7 +96,7 @@ Understanding what actually disappears matters for threat modeling.
 
 **Backup implications** — iCloud Backup and Google Backup include Signal data. If you restore from a backup, disappearing message timers reset. The messages themselves may reappear if the backup predates their deletion. Use airplane mode during sensitive conversations to prevent backup sync.
 
-## Implementation Patterns for Organizations
+### Step 4: Implementation Patterns for Organizations
 
 Development teams and organizations using Signal for internal communication can implement disappearing messages strategically.
 
@@ -169,7 +179,7 @@ def set_custom_expiration(sender, recipient, seconds):
 
 Custom timers may not sync properly with official clients that only recognize the preset values. Use standard durations for cross-client compatibility.
 
-## Verification and Testing
+### Step 5: Verification and Testing
 
 Verify disappearing messages work correctly before relying on them for sensitive communication:
 
@@ -182,7 +192,7 @@ Verify disappearing messages work correctly before relying on them for sensitive
 
 Perform this test on each device type you use, as deletion behavior varies slightly between platforms.
 
-## Disappearing Messages with Signal Groups
+### Step 6: Disappearing Messages with Signal Groups
 
 Group conversations have different disappearing message behavior than one-on-one chats:
 
@@ -207,7 +217,7 @@ For truly sensitive group communications, combine disappearing messages with oth
 - For sensitive discussions, use one-on-one conversations instead
 - Assume any group member could theoretically capture messages
 
-## Interoperability and Multi-Device Synchronization
+### Step 7: Interoperability and Multi-Device Synchronization
 
 Signal's end-to-end encrypted sync mechanism maintains disappearing message state across devices:
 
@@ -229,7 +239,7 @@ To protect against this:
 2. Manually delete sensitive conversation backups
 3. Enable airplane mode during sensitive conversations to prevent backup sync
 
-## Using Signal for Team Communication
+### Step 8: Use Signal for Team Communication
 
 Organizations using Signal for team communication can establish disappearing message policies:
 
@@ -238,7 +248,7 @@ Organizations using Signal for team communication can establish disappearing mes
 ```bash
 # TEAM SIGNAL GUIDELINES
 
-## Disappearing Message Policy
+### Step 9: Disappearing Message Policy
 
 Confidentiality Level | Timer Duration---
 -----------------|----------------
@@ -248,7 +258,7 @@ Personnel matters | 1 day
 Security incidents | 1 hour
 Financial/legal | 30 minutes
 
-## Implementation
+### Step 10: Implementation
 
 1. All team members should know these guidelines
 2. Respect the timer duration for each conversation type
@@ -278,7 +288,7 @@ If your team sends thousands of messages daily:
 - 1-hour or 1-day timers balance privacy and performance
 - Avoid 30-second timers at scale (deletion process stresses device)
 
-## Signal's Threat Model Assumptions
+### Step 11: Signal's Threat Model Assumptions
 
 Understanding what disappearing messages do and don't protect:
 
@@ -299,6 +309,21 @@ For maximum privacy, combine disappearing messages with:
 - V-call or Signal phone calls (encrypted, no recording on servers)
 - Closed groups with trusted members only
 - Short session windows (finite time, not continuous exposure)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

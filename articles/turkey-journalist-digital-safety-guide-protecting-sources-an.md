@@ -41,7 +41,17 @@ Turkish journalists must protect against DPI surveillance and mandatory data ret
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Turkish authorities employ deep packet inspection (DPI), mandatory data retention laws, and periodic social media restrictions. Internet service providers (ISPs) collaborate with government requests, and journalists have been prosecuted based on communication metadata. Your threat model must account for:
 
@@ -51,7 +61,7 @@ Turkish authorities employ deep packet inspection (DPI), mandatory data retentio
 - Social media platform subpoenas and account takeovers
 - Phishing campaigns targeting journalists
 
-## Secure Communications Architecture
+### Step 2: Secure Communications Architecture
 
 ### End-to-End Encrypted Messaging
 
@@ -92,7 +102,7 @@ gpg --encrypt --recipient source@secure-email.com --armor sensitive-document.asc
 
 Sources should generate their own GPG keys. Never store private keys on devices that could be seized—use YubiKey or similar hardware security modules.
 
-## Network-Level Protection
+### Step 3: Network-Level Protection
 
 ### Tor and Obfs4 Bridges
 
@@ -134,7 +144,7 @@ sudo systemctl restart systemd-resolved
 
 For mobile devices, use private DNS (DoH) with a provider like Quad9 or Cloudflare's 1.1.1.1.
 
-## Device Security and Seizure Protection
+### Step 4: Device Security and Seizure Protection
 
 ### Full Disk Encryption
 
@@ -159,7 +169,7 @@ Store highly sensitive documents on air-gapped machines:
 3. Transfer documents via encrypted USB using LUKS
 4. Wipe the USB after transfer using `shred -v /dev/sdX`
 
-## Metadata Stripping and Verification
+### Step 5: Metadata Stripping and Verification
 
 ### Document Sanitization
 
@@ -193,7 +203,7 @@ sha256sum screenshot.png > screenshot.sha256
 sha256sum -c screenshot.sha256
 ```
 
-## Operational Security Habits
+### Step 6: Operational Security Habits
 
 ### Separation of Identities
 
@@ -232,7 +242,7 @@ Implement monthly security reviews:
 4. Review and revoke unnecessary OAuth permissions
 5. Update all software to latest versions
 
-## Emergency Protocols
+### Step 7: Emergency Protocols
 
 Prepare for potential device seizure:
 
@@ -240,6 +250,21 @@ Prepare for potential device seizure:
 2. **Dead man's switch**: Use a timed encrypted message service that releases information if you don't check in
 3. **Source contact schedule**: Establish regular check-in times with sources
 4. **Legal contacts**: Have digital rights lawyer contact information readily available
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

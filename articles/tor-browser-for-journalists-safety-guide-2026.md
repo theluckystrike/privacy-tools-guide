@@ -40,13 +40,23 @@ Journalists operating in adversarial environments face sophisticated surveillanc
 - **Set `browser.download.useDownloadDir` to `false`**: to always prompt for save location 2.
 - **Create isolated user for**: sensitive work sudo useradd -m -s /bin/bash journalist # 2.
 
-## Understanding Tor's Security Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Tor's Security Model
 
 Tor routes your traffic through at least three relays, each with its own encryption layer. The entry node knows your IP address but not what you're accessing. The middle relay sees neither. The exit node sees the destination but not who you are. This layered approach provides strong anonymity against network-level observers.
 
 However, Tor Browser adds critical protections beyond the network layer. It prevents fingerprinting—techniques that identify users based on browser characteristics, screen resolution, installed fonts, and timing behaviors. The difference between a hardened Tor Browser configuration and a default installation can be substantial.
 
-## Installation and Initial Configuration
+### Step 2: Install ation and Initial Configuration
 
 Always verify signatures before installing Tor Browser. The project publishes signatures for every release:
 
@@ -66,7 +76,7 @@ On macOS, use the official `.dmg` package and verify the Apple code signature:
 codesign -dv --verbose=4 /Applications/Tor\ Browser.app
 ```
 
-## Security Level Configuration
+### Step 3: Security Level Configuration
 
 Tor Browser includes a Security Level slider accessible via the shield icon. For journalist work, understand what each level disables:
 
@@ -85,7 +95,7 @@ network.cookie.cookieBehavior = 1 // Block third-party cookies
 network.cookie.thirdparty.sessionOnly = true
 ```
 
-## Bridge Configuration for High-Risk Environments
+### Step 4: Bridge Configuration for High-Risk Environments
 
 In countries with active Tor censorship, default bridges may be blocked. The Tor Project provides multiple bridge types:
 
@@ -101,7 +111,7 @@ Configure bridges in Tor Browser by navigating to `about:preferences#tor` and en
 Bridge obfs4 192.0.2.1:443 fingerprint=ABCD1234 cert=xyz...
 ```
 
-## New Identity Practices
+### Step 5: New Identity Practices
 
 Tor Browser's "New Identity" feature closes all tabs, clears cookies and site data, and establishes fresh Tor circuits. However, effective usage requires understanding its limitations:
 
@@ -131,7 +141,7 @@ sleep 2
 ~/tor-browser/Browser/start-tor-browser --new-instance &
 ```
 
-## Network Isolation Strategies
+### Step 6: Network Isolation Strategies
 
 For investigative journalism requiring source protection, consider these advanced configurations:
 
@@ -150,7 +160,7 @@ For investigative journalism requiring source protection, consider these advance
   --tor-control-port 9053
 ```
 
-## HTTP vs HTTPS Considerations
+### Step 7: HTTP vs HTTPS Considerations
 
 Tor Browser forces HTTPS by default—a critical security feature. Never accept HTTP connections when accessing sensitive sites. The browser's HTTPS-Only Mode can be configured in `about:preferences#privacy`:
 
@@ -177,7 +187,7 @@ server {
 }
 ```
 
-## Handling Downloads Safely
+### Step 8: Handling Downloads Safely
 
 Downloads present significant risks in Tor Browser. Configure the browser to handle downloads safely:
 
@@ -256,7 +266,7 @@ analyzer.analyze_circuits()
 analyzer.new_circuit_for_identity()
 ```
 
-## Hardened Configuration for Critical Work
+### Step 9: Hardened Configuration for Critical Work
 
 For high-stakes journalism in adversarial environments:
 
@@ -294,7 +304,7 @@ sudo ufw allow out to 9.9.9.9  # Only allow Tor
 echo "Hardening complete"
 ```
 
-## Secure Communication with Sources Over Tor
+### Step 10: Secure Communication with Sources Over Tor
 
 Establish confidential channels for source communications:
 
@@ -337,7 +347,7 @@ server {
 }
 ```
 
-## Automated Tor Browser Security Updates
+### Step 11: Automated Tor Browser Security Updates
 
 Stay current with security patches:
 
@@ -379,7 +389,7 @@ download_and_verify() {
 check_for_updates
 ```
 
-## Detection Evasion vs. True Anonymity
+### Step 12: Detection Evasion vs. True Anonymity
 
 Understand the distinction:
 
@@ -389,7 +399,7 @@ Understand the distinction:
 
 For journalists, prioritize true anonymity. If censorship is not a concern, use Tor Browser without bridges to avoid detection overhead.
 
-## Source Protection Document Verification
+### Step 13: Source Protection Document Verification
 
 Establish cryptographic verification for source communications:
 
@@ -418,7 +428,7 @@ verify_source() {
 verify_source
 ```
 
-## Handling Threats During Investigation
+### Step 14: Handling Threats During Investigation
 
 If compromise is suspected:
 
@@ -450,7 +460,7 @@ nmcli networking on
 echo "Emergency protocol complete. Assess situation before proceeding."
 ```
 
-## Maintaining Operational Security Over Time
+### Step 15: Maintaining Operational Security Over Time
 
 Long-term OPSEC practices:
 
@@ -459,6 +469,21 @@ Long-term OPSEC practices:
 - **Verify contacts**: Periodically re-verify source PGP keys
 - **Compartmentalize**: Never mix personal and professional Tor usage
 - **Document nothing**: Keep investigation notes only in encrypted volumes
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

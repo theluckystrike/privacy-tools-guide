@@ -42,13 +42,23 @@ This guide covers practical methods for accessing hidden services safely, with c
 - **The connection uses TLS**: with ephemeral keys, providing forward secrecy.
 - **Use dedicated Tor instances**: For development work, consider running a separate Tor daemon instance rather than using the same Tor connection for sensitive browsing and development.
 
-## Understanding Tor Hidden Services
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Tor Hidden Services
 
 A hidden service is a service accessible only through the Tor network. Instead of using a traditional IP address, hidden services use a unique onion address—a 56-character base32 string ending in `.onion` (for version 3) or a 16-character base32 string ending in `.onion` (for version 2, which is deprecated).
 
 When you access a hidden service, your traffic takes a path through at least three Tor relays, and the service itself is also accessed through Tor relays. Neither party learns the other's IP address. The connection uses TLS with ephemeral keys, providing forward secrecy.
 
-## Installing and Configuring Tor
+### Step 2: Install and Configuring Tor
 
 First, install the Tor daemon. On macOS, use Homebrew:
 
@@ -86,7 +96,7 @@ brew services start tor
 sudo systemctl start tor
 ```
 
-## Accessing Hidden Services with Tor Browser
+### Step 3: Access Hidden Services with Tor Browser
 
 The simplest method to access hidden services is using Tor Browser, available at torproject.org. Tor Browser is a modified Firefox that routes all traffic through the Tor network automatically.
 
@@ -100,7 +110,7 @@ Tor Browser includes several privacy features:
 - HTTPS Everywhere for encrypted connections
 - New identity feature to clear cookies and tabs
 
-## Programmatic Access Using Stem
+### Step 4: Implement Programmatic Access Using Stem
 
 For developers building applications that interact with hidden services, the Stem library provides Python bindings for Tor control. Install it with:
 
@@ -146,7 +156,7 @@ if __name__ == "__main__":
     result = access_hidden_service("3g2upl4pq6kufc4m.onion")
 ```
 
-## Using curl with Tor
+### Step 5: Use curl with Tor
 
 For command-line access, you can use curl with the Tor SOCKS proxy. This is useful for scripting and automation:
 
@@ -164,7 +174,7 @@ For HTTPS enforcement (recommended):
 curl --socks5 localhost:9050 -H "Host: 3g2upl4pq6kufc4m.onion" https://3g2upl4pq6kufc4m.onion
 ```
 
-## Verifying Connection Security
+### Step 6: Verify Connection Security
 
 Before accessing any hidden service, verify that your Tor circuit is working correctly. Check your IP address through the Tor network:
 

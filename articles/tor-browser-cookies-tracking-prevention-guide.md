@@ -39,13 +39,23 @@ Tor Browser implements multiple layers of cookie isolation designed to prevent c
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## How Cookies Become Tracking Tools
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Cookies Become Tracking Tools
 
 Cookies were originally designed as a simple mechanism to maintain login sessions and store user preferences. However, trackers have weaponized them through third-party cookie sharing, supercookie regeneration, and cross-site tracking scripts. When you visit a website, it can set cookies that persist across sessions, and through advertising networks, these same cookies can follow you across hundreds of unrelated sites.
 
 Tor Browser addresses this threat through a combination of built-in protections and configuration defaults that fundamentally change how cookies behave.
 
-## First-Party Isolation: The Core Protection
+### Step 2: First-Party Isolation: The Core Protection
 
 Tor Browser enables First-Party Isolation (FPI) by default, a critical security feature that prevents websites from tracking you across different domains. When FPI is active, cookies set by a website are only accessible to that specific domain and its subdomains.
 
@@ -59,7 +69,7 @@ browser.thirdparty.sessionOnlyByDefault = true
 
 This setting ensures that cookies expire when the browser session ends, providing an additional layer of protection against persistent tracking.
 
-## The New Identity Feature
+### Step 3: The New Identity Feature
 
 Tor Browser includes a "New Identity" button that clears all session state at once. When activated, this feature:
 
@@ -73,7 +83,7 @@ You can access this feature through the Tor button (the onion icon) in the toolb
 
 For developers testing applications, this feature proves invaluable for verifying that your authentication flows work correctly from a fresh session without manual cookie clearing.
 
-## Managing Cookies Through about:config
+### Step 4: Manage Cookies Through about:config
 
 Tor Browser's `about:config` interface provides granular control over cookie behavior. Here are the key settings for preventing tracking:
 
@@ -112,7 +122,7 @@ Before implementing restrictions, you can audit which cookies sites are setting.
 
 This visibility helps you understand what data sites attempt to store and adjust your blocking rules accordingly.
 
-## The Circuit Isolation System
+### Step 5: The Circuit Isolation System
 
 Tor Browser's circuit isolation works alongside cookie protections to provide privacy. Each website you visit uses a separate Tor circuit, meaning:
 
@@ -124,7 +134,7 @@ This isolation extends to the Tor network level, ensuring that even your exit no
 
 For power users who need to verify circuit behavior, the Tor Browser extension displays the current circuit for each tab. You can examine this by clicking the Tor button and viewing the circuit details.
 
-## JavaScript and Script Blocking
+### Step 6: JavaScript and Script Blocking
 
 While Tor Browser allows JavaScript by default (for web compatibility), you can enhance tracking prevention through script restrictions. The NoScript extension comes pre-installed and provides:
 
@@ -154,7 +164,7 @@ For developers building privacy-conscious applications or testing anti-tracking 
 
 You can test your application's cookie handling by monitoring network requests and verifying that cookies are properly isolated per-domain.
 
-## Supercookie Prevention Mechanisms
+### Step 7: Supercookie Prevention Mechanisms
 
 Beyond traditional cookies, Tor Browser blocks supercookie technologies that persist across sessions using non-standard storage:
 
@@ -187,7 +197,7 @@ localStorage.setItem(testKey, 'test_value');
 - Tor Browser clears cache between identities
 - The "New Identity" feature ensures cache doesn't leak across sessions
 
-## Configuring Security Levels in Tor Browser
+### Step 8: Configure Security Levels in Tor Browser
 
 Tor Browser offers multiple security levels that affect JavaScript, plugins, and other execution contexts:
 
@@ -219,7 +229,7 @@ dom.event.clipboardevents.enabled = false
 
 Switch levels through Tor Browser settings menu → Privacy & Security → Security Settings.
 
-## Cookie Behavior Testing Framework
+### Step 9: Configure Cookie Behavior Testing Framework
 
 For developers who need to verify cookie isolation and tracking prevention:
 
@@ -273,7 +283,7 @@ class CookieIsolationTest {
 }
 ```
 
-## Debugging Cookie Issues in Applications
+### Step 10: Debugging Cookie Issues in Applications
 
 When testing applications in Tor Browser, use these debugging techniques:
 
@@ -317,7 +327,7 @@ Tor Browser's cookie protections work well, but sites designed around tracking m
 
 These alternatives respect Tor Browser's privacy model without breaking functionality.
 
-## Integration with Tor for Maximum Privacy
+### Step 11: Integration with Tor for Maximum Privacy
 
 Tor Browser's cookie isolation combines with the Tor network's circuit isolation for protection:
 
@@ -329,6 +339,21 @@ Result: Behavior cannot be correlated across sites or time
 ```
 
 For users combining Tor Browser with Tor network, no single observer can correlate your browsing activities across different identities or sites.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

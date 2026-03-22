@@ -34,7 +34,17 @@ Signal uses the Signal Protocol, which provides forward secrecy and deniability 
 
 Journalists face specific threats that generic messaging applications do not adequately address. Sources may be at risk if their contact information becomes known, and message content itself may expose sensitive relationships or information. Signal addresses these concerns through phone number privacy features, sealed sender capabilities, and message expiration controls.
 
-## Initial Setup and Phone Number Privacy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Initial Setup and Phone Number Privacy
 
 The first security consideration involves phone number visibility. By default, Signal links your account to your phone number, which creates an immediate identification vector. While complete phone number removal requires SMS verification during registration, several privacy settings mitigate exposure.
 
@@ -53,7 +63,7 @@ For Android users, the Signal fingerprint verification provides cryptographic as
 # However, Signal does support backup export for migration purposes
 ```
 
-## Disappearing Messages Configuration
+### Step 2: Disappearing Messages Configuration
 
 Disappearing messages represent a foundational source protection mechanism. When enabled, messages automatically delete from both devices after a configurable duration, reducing the evidence surface if a device is compromised or seized.
 
@@ -67,7 +77,7 @@ Configure disappearing messages per-conversation by tapping the conversation hea
 
 Important: Disappearing messages only affect new messages after activation. Existing messages remain visible unless manually deleted from both devices. Develop a protocol for source contacts to delete historical conversations before enabling disappearing messages.
 
-## Registration Lock and Account Security
+### Step 3: Registration Lock and Account Security
 
 Signal's registration lock feature prevents unauthorized account transfers. When enabled, any attempt to register your number on a new device requires your registration lock PIN, a 6-20 digit number you set during activation.
 
@@ -90,13 +100,13 @@ For high-risk scenarios, consider maintaining a secondary device specifically fo
 # Ensure full disk encryption is enabled before handling sensitive conversations
 ```
 
-## Screen Security and Screenshot Prevention
+### Step 4: Screen Security and Screenshot Prevention
 
 Signal includes screen security features that prevent screenshots and screen recording on Android. Enable this in Settings > Privacy > Screen Security. This prevents malware on your device from capturing conversation content and blocks unauthorized screen recording.
 
 iOS users should note that screen security is more limited. While Signal attempts to prevent screenshots, the operating system permits screen recording in certain scenarios. Disable screen recording permissions for Signal in iOS Settings > Signal > Screen Recording.
 
-## Managing Contact Discovery
+### Step 5: Manage Contact Discovery
 
 Signal's sync process can inadvertently expose your contacts to Signal's servers. During initial setup, Signal queries your contact list to identify other Signal users. This creates a mapping between phone numbers and Signal accounts that persists on Signal's infrastructure.
 
@@ -108,7 +118,7 @@ To minimize this exposure:
 
 For sources using Signal, recommend they create accounts with dedicated phone numbers that are not publicly associated with their identity. Voice-over-IP numbers from services like Google Voice or dedicated VoIP providers can serve this purpose, though consider that some jurisdictions may require ID verification for VoIP registration.
 
-## Verification and Key Fingerprints
+### Step 6: Verification and Key Fingerprints
 
 Establishing verification for source communications requires comparing Signal safety numbers. These numbers derive from the cryptographic keys exchanged during the initial conversation, providing cryptographic proof that you communicate with the intended party.
 
@@ -135,7 +145,7 @@ Signal's Note to Self feature provides an encrypted scratchpad accessible only f
 
 The Note to Self conversation supports all Signal features including disappearing messages, file attachments, and voice messages. Use this for temporary storage of sensitive information that you would rather not store in cloud-synced notes applications.
 
-## Device Hygiene and Operational Security
+### Step 7: Device Hygiene and Operational Security
 
 Technical configuration alone does not guarantee security. Operational practices complement Signal's encryption:
 
@@ -182,7 +192,7 @@ Signal: Registered, configured, kept offline
 
 Store backup phone in a safe deposit box or secure location inaccessible to people who might seize devices.
 
-## Jurisdictional Considerations
+### Step 8: Jurisdictional Considerations
 
 Different regions apply different laws to encrypted communications:
 
@@ -205,7 +215,7 @@ Different regions apply different laws to encrypted communications:
 
 Research your jurisdiction's laws before handling sensitive sources. Consult with a lawyer familiar with press freedom in your region.
 
-## Technical Verification Against Compromise
+### Step 9: Technical Verification Against Compromise
 
 If you suspect your device is compromised:
 
@@ -232,7 +242,7 @@ Settings > Apps > [Signal]
 
 If you detect compromise, physically destroy the device rather than attempting cleanup. Sophisticated malware is resistant to removal.
 
-## Documentation and Evidence Preservation
+### Step 10: Documentation and Evidence Preservation
 
 Maintain secure documentation of your security practices:
 
@@ -253,7 +263,7 @@ Document:
 
 If questioned by law enforcement or courts about source protection, documentation of your security practices supports attorney-client and source-journalist privilege claims.
 
-## Source Onboarding Process
+### Step 11: Source Onboarding Process
 
 When bringing a new source onto Signal:
 
@@ -284,7 +294,7 @@ Step 5: Establish communication protocols
 
 This process takes 30-45 minutes but provides strong verification that you're actually communicating with your intended source.
 
-## Signal vs Alternatives for Journalists
+### Step 12: Signal vs Alternatives for Journalists
 
 | Messenger | Encryption | Metadata | Logging | Best For |
 |-----------|-----------|----------|---------|----------|
@@ -295,7 +305,7 @@ This process takes 30-45 minutes but provides strong verification that you're ac
 
 Signal remains the best balance for journalists. Session provides stronger anonymity if phone number registration is unacceptable risk.
 
-## Red Flags for Source Safety
+### Step 13: Red Flags for Source Safety
 
 During Signal communication, watch for:
 
@@ -307,7 +317,7 @@ During Signal communication, watch for:
 
 These patterns suggest potential law enforcement manipulation or coordinated source attack. Consult with your news organization's legal and security teams before proceeding.
 
-## Creating a Journalist Security Policy
+### Step 14: Create a Journalist Security Policy
 
 Organizations should establish written policies:
 
@@ -326,18 +336,33 @@ Organizations should establish written policies:
 - No jailbreak/root allowed for journalists
 - Biometric unlock required
 
-## Verification Process
+### Step 15: Verification Process
 - All new sources: In-person safety number verification
 - Existing sources: Re-verify quarterly
 - Documentation stored in secure vault
 
-## Incident Response
+### Step 16: Plan Incident Response
 - Suspected compromise: Immediately notify security team
 - Device theft: Remote wipe via Find My / Find My Device
 - Law enforcement approach: Refer to legal team
 ```
 
 Distribute this policy during newsroom onboarding. Regular security training reinforces these practices.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -51,7 +51,17 @@ When you use a full VPN tunnel, all your network traffic routes through the VPN 
 
 Split tunneling solves these problems by letting you choose which applications use the VPN tunnel and which connect directly to the internet.
 
-## Understanding Split Tunneling Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Split Tunneling Basics
 
 Split tunneling operates at the application or routing level. You have several approaches:
 
@@ -67,7 +77,7 @@ Advanced users can configure routing tables to direct specific IP ranges through
 
 Corporate environments often use domain-based rules to route traffic based on domain names or internal hostnames.
 
-## Setting Up Split Tunneling
+### Step 2: Set Up Split Tunneling
 
 ### WireGuard Configuration
 
@@ -128,7 +138,7 @@ $route = New-NetRoute -DestinationPrefix "10.0.0.0/24" `
     -NextHop "10.0.0.1"
 ```
 
-## Configuring Application-Specific Routing
+### Step 3: Configure Application-Specific Routing
 
 For precise control over which applications use the VPN, you can use network namespaces on Linux or application-specific firewall rules.
 
@@ -183,7 +193,7 @@ New-NetRoute -DestinationPrefix "10.0.0.0/24" `
 # This requires creating a filter with specific application ID
 ```
 
-## Common Split Tunneling Scenarios
+### Step 4: Common Split Tunneling Scenarios
 
 ### Remote Work Setup
 
@@ -311,7 +321,7 @@ sudo ip6tables -A OUTPUT ! -o wg0 -j DROP
 
 This prevents any traffic when the VPN is down.
 
-## Measuring Split Tunneling Effectiveness
+### Step 5: Measuring Split Tunneling Effectiveness
 
 Test your configuration to ensure it's working as expected:
 
