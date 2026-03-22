@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Stop screen sharing immediately using platform shortcuts (Cmd+Shift+E in Zoom, Ctrl+Shift+E in Teams), notify participants that sensitive data was exposed, and rotate any credentials visible (API keys, passwords, tokens). If recording was active, check whether the sensitive content was captured and edit the recording to remove compromised segments. Most platforms allow 15-30 minutes before recordings are finalized; act quickly. For code repositories, API keys, or database credentials exposed, treat as immediate security incidents: revoke credentials, reset passwords, audit access logs, and deploy updated keys to production systems.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use the "pause sharing"**: feature strategically. Most platforms let you pause sharing without ending the entire session.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most platforms allow 15-30**: minutes before recordings are finalized; act quickly.
+- **For local recordings**: open the file and either delete it or use video editing software to remove the sensitive portion
+4.
+
 ## Immediate Actions: The First 60 Seconds
 
 When you realize sensitive information is visible to others, act immediately. The goal is to minimize exposure time and prevent recording or caching of the content.

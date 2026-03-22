@@ -17,6 +17,18 @@ tags: [privacy-tools-guide, vpn]---
 
 When VPN providers claim "no-log" policies, users expect complete privacy—yet the reality is more nuanced. Understanding what VPN logs actually contain, how they're used, and the technical differences between logging types is essential for making informed privacy decisions. This guide breaks down the technical details of VPN logging practices.
 
+## Key Takeaways
+
+- **Use RAM-only servers**: Check provider infrastructure
+3.
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **Choose audited providers**: NordVPN, ExpressVPN, ProtonVPN, Mullvad
+2.
+- **Use own DNS**: Avoid VPN-provided DNS to prevent logging
+5.
+- **Swiss VPNs often best**: for privacy.
+- **Small teams can often**: implement changes faster because there are fewer people to coordinate.
+
 ## Types of VPN Logs Explained
 
 VPN services categorize data collection into distinct log types, each with different privacy implications:
