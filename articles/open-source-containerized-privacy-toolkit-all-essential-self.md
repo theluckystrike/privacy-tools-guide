@@ -6,6 +6,7 @@ date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /open-source-containerized-privacy-toolkit-all-essential-self/
 categories: [guides]
+voice-checked: true
 tags: [privacy-tools-guide, self-hosted, docker, containerization, privacy]
 reviewed: true
 score: 8
