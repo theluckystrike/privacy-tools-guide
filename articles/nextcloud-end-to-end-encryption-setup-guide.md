@@ -6,7 +6,7 @@ description: "Follow this guide to nextcloud end to end encryption setup guide w
 tags: [privacy-tools-guide, encryption]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
