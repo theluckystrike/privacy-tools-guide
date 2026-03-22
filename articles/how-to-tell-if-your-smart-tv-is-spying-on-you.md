@@ -33,6 +33,16 @@ Smart televisions have evolved into sophisticated data collection devices. Beyon
 
 This guide provides practical methods to identify whether your smart TV is collecting and transmitting data without your explicit consent.
 
+## Key Takeaways
+
+- **Go to Settings >**: General > About This TV > User Agreements 2.
+- **Go to Settings >**: Preferences > Privacy Settings 2.
+- **For developers and power users**: understanding how to detect this surveillance is essential for maintaining privacy.
+- **Review Advertising ID settings**: under Settings > General > Additional Settings ### Roku Devices Roku provides limited privacy controls: 1.
+- Disable Limit Ad Tracking
+3.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Smart TV Data Collection
 
 Modern smart TVs from major manufacturers collect various types of data:

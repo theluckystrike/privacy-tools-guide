@@ -31,6 +31,18 @@ tags: [privacy-tools-guide]---
 
 Detect DNS hijacking by running `nslookup` or `dig` to verify which DNS server is resolving your queries—compare results against your configured DNS settings. Check for unexpected website redirects, SSL certificate errors on previously-working sites, and access blocks to security websites. Use online DNS checkers (DNS Leak Test) to confirm your ISP's DNS or a hijacking attempt. If suspected, change your router's DNS settings to Cloudflare (1.1.1.1), Quad9 (9.9.9.9), or OpenDNS, and clear your browser's DNS cache.
 
+## Key Takeaways
+
+- **Test DNS from multiple**: resolvers for resolver in 8.8.8.8 1.1.1.1 9.9.9.9; do echo "Testing $resolver:" dig @$resolver google.com +short done # 3.
+- **The methods outlined here**: work without special equipment, using tools already available on most systems.
+- **All devices on network**: use malicious DNS Detection: - Your configured DNS != what router shows - nslookup will route through attacker's server ``` ### 3.
+- **From CLEAN NETWORK**: change critical passwords
+# Use phone hotspot or public WiFi, NOT your compromised network
+
+# 2.
+- **Use online DNS checkers**: (DNS Leak Test) to confirm your ISP's DNS or a hijacking attempt.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Common Symptoms of DNS Hijacking
 
 Recognizing DNS hijacking early prevents further compromise. Watch for these indicators:

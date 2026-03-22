@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Enable two-factor authentication on your Apple ID, review Settings → [Your Name] → Password & Security → Active Sessions to see all connected devices and sign out untrusted ones, then set up strong authentication requirements for recovery options. Use an app-specific password instead of your main password for third-party apps, regularly audit trusted phone numbers in recovery settings, and enable Sign in with Apple for additional control. Change your Apple ID password immediately if you suspect unauthorized access.
 
+## Key Takeaways
+
+- **Audit third-party app access**: - Settings > [Your Name] > Apps & Websites - Review "Apps and Websites that use your Apple ID" - Revoke access for apps you don't recognize 7.
+- **Go to icloud.com or**: use Find My app on another Apple device 2.
+- **Choose the stolen device**: from your device list 4.
+- **Use an app-specific password**: instead of your main password for third-party apps, regularly audit trusted phone numbers in recovery settings, and enable Sign in with Apple for additional control.
+- **Choose to generate a**: recovery key Important: Store this recovery key in a secure location, preferably in a password manager or physical safe.
+- **Check your passwords**: Use haveibeenpwned.com to see if your email appears in known breaches.
+
 ## Understanding iCloud Access Vectors
 
 Before implementing security measures, understanding how iCloud can be accessed is essential. Apple provides multiple access points to your iCloud data:

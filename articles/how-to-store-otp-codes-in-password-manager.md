@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Managing multiple authenticator apps across devices creates friction. Developers and power users often prefer consolidating OTP (One-Time Password) codes within their password manager for unified access, easier backups, and cross-device synchronization. This guide explores practical methods for storing TOTP codes in password managers, with emphasis on CLI tools and programmatic approaches.
 
+## Key Takeaways
+
+- **Developers and power users**: often prefer consolidating OTP (One-Time Password) codes within their password manager for unified access, easier backups, and cross-device synchronization.
+- **When adding entries**: use "Add entry" → "Advanced" → "Additional Attributes"
+
+The TOTP appears in the entry and auto-fills like standard credentials.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding TOTP Storage Mechanisms
 
 TOTP (Time-based One-Time Password) codes rely on a shared secret key—the base32-encoded seed that both your authenticator app and the service generate codes from. When you store this secret in your password manager, you generate the same codes any authenticator would produce.

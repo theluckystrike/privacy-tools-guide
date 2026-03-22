@@ -31,6 +31,18 @@ tags: [privacy-tools-guide]---
 
 Smart home assistants like Amazon Alexa and Home Assistant have become central to our digital lives, controlling lights, locks, thermostats, and accessing sensitive information. Knowing how to detect if these devices have been compromised is essential for maintaining your privacy and security. This guide covers the key indicators of compromise, how to audit your devices, and practical steps to secure them.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Disable skills you no**: longer use ### Check for Unrecognized Routines 1.
+- **Review the automation trace**: history for unexpected triggers ### Audit Users and Permissions 1.
+- **Navigate to Configuration >**: Users 2.
+- **Review all users, paying attention to**: - Unknown or newly added users
+ - Users with administrator privileges you did not create
+ - Service accounts with broad access
+3.
+
 ## Signs Your Smart Assistant May Be Compromised
 
 Detecting a compromise early can prevent further intrusion. Here are the most common warning signs:

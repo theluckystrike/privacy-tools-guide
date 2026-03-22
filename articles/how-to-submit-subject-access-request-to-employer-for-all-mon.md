@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Employee monitoring has become increasingly sophisticated, with employers tracking keystrokes, screen activity, communication metadata, location data, and more. Privacy regulations like GDPR (in Europe), CCPA (in California), and similar laws worldwide give you the right to access this data. This guide walks through submitting a Subject Access Request (SAR) to obtain all monitoring information your employer holds about you.
 
+## Key Takeaways
+
+- **You can also request**: a copy of this data in a commonly used electronic format.
+- **All analytics or reports**: generated about my activity Please provide this data in a commonly used electronic format (such as CSV, JSON, or PDF).
+- **Map which applications and**: websites received the most recording attention 5.
+- **Identify the most egregious**: or unnecessary monitoring practices 2.
+- **Document the monitoring tools**: you know your employer uses.
+- **Check your company's privacy policy**: employee handbook, or acceptable use policy.
+
 ## Understanding Your Right to Access Employee Monitoring Data
 
 The General Data Protection Regulation grants data subjects—including employees—the right to obtain confirmation whether their personal data is being processed, where, and for what purpose. You can also request a copy of this data in a commonly used electronic format. This right extends to all information employers collect through workplace monitoring tools.

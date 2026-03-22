@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 A botnet is a network of compromised computers that attackers control remotely to perform malicious activities—sending spam, launching DDoS attacks, stealing data, or mining cryptocurrency. Your computer can become part of a botnet without you noticing, making botnet detection critical for your digital security. This guide walks you through the warning signs, diagnostic steps, and removal procedures to determine if your system has been recruited into a botnet.
 
+## Key Takeaways
+
+- **Check for new admin**: accounts Get-LocalUser | Where-Object {$_.Enabled} # 2.
+- **Check scheduled tasks for**: suspicious entries Get-ScheduledTask | Where-Object {$_.State -eq 'Ready'} | Measure-Object # 3.
+- **Change passwords from a**: clean device after cleaning your system ### Cleaning and Recovery The most reliable way to remove botnet malware is to: 1.
+- **Use specialized anti-malware tools**: like Malwarebytes or HitmanPro 4.
+- **Use endpoint protection**: Maintain antivirus with real-time scanning
+3.
+- **User training**: Recognize phishing and avoid suspicious downloads
+6.
+
 ## What Is a Botnet and Why Should You Care?
 
 Botnets are created when malware infects a vulnerable computer, allowing the attacker to remotely command that machine alongside thousands of others. The infected computer becomes a "bot" or "zombie" that follows instructions from a command-and-control (C2) server. According to cybersecurity research, botnets account for a significant portion of internet traffic, and many infected machines remain undetected for months or years.

@@ -31,6 +31,25 @@ tags: [privacy-tools-guide, vpn]---
 
 A VPN kill switch is a critical security feature that prevents your real IP address from leaking when the VPN connection drops unexpectedly. However, many users assume their kill switch works without actually verifying it. This guide provides practical methods to test whether your VPN kill switch functions correctly, using command-line tools and scripts that developers and power users can implement.
 
+## Key Takeaways
+
+- **Connect to VPN first."**: kill $PING_PID 2>/dev/null exit 1 fi echo "VPN interface detected.
+- **However**: many users assume their kill switch works without actually verifying it.
+- **ip link show |**: grep -q "$VPN_INTERFACE"; then echo "VPN interface not found.
+- **This guide provides practical**: methods to test whether your VPN kill switch functions correctly, using command-line tools and scripts that developers and power users can implement.
+- **Most VPN clients offer two modes**: a system-level kill switch that blocks all network traffic, and an application-level kill switch that closes specific apps.
+- **On Linux, use**: ```bash
+ip link show
+```
+
+On macOS, run:
+
+```bash
+networksetup -listallhardwareports
+```
+
+Next, establish your VPN connection through your preferred client.
+
 ## Understanding Kill Switch Behavior
 
 Before testing, you need to understand what a kill switch actually does. When your VPN connection drops—whether due to network instability, server issues, or intentional disconnection—the kill switch should immediately block all network traffic or terminate specific applications to prevent data leaks. Most VPN clients offer two modes: a system-level kill switch that blocks all network traffic, and an application-level kill switch that closes specific apps.

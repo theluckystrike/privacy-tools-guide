@@ -33,6 +33,23 @@ Bluetooth interception—also known as Bluetooth eavesdropping or BlueBorne-styl
 
 This guide covers practical methods to detect whether your Bluetooth traffic is being intercepted or your device is being targeted.
 
+## Key Takeaways
+
+- **Use Bluetooth 5.0+ devices**: with Secure Connections - Older Bluetooth 2.0 and 3.0 are vulnerable - Bluetooth 4.0+ LE is better but still needs careful config 2.
+- **Use air-gapped Bluetooth devices**: # Only connect Bluetooth devices in isolated VMs or separate machines # 3.
+- **Use Bluetooth 5.0+ devices**: with Secure Connections pairing (LE Secure Connections).
+- **On Linux**: disable unused Bluetooth protocols:
+
+```bash
+# Edit /etc/bluetooth/main.conf
+[Policy]
+AutoEnable=false
+```
+
+6.
+- **Enable PIN-based or numeric**: comparison pairing - Don't use "Just Works" pairing (no verification) - Use 6-digit numeric comparison when available 3.
+- **Use air-gapped devices for**: sensitive communications 4.
+
 ## Understanding the Attack Surface
 
 Modern Bluetooth implementations (Bluetooth 4.0+ LE and Bluetooth 5.0+) introduce several attack vectors that differ from classic Bluetooth (2.0+EDR). The most common interception techniques include:
