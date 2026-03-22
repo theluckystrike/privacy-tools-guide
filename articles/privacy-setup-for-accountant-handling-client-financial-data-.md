@@ -17,6 +17,15 @@ voice-checked: true---
 
 Secure client financial data with full-disk encryption (FileVault, LUKS), use password managers with audit trails, and restrict network access to known secure servers. Implement segregated networks, disable USB ports, set automatic screen lock (5 minutes), use encrypted email (PGP), and establish clear data retention/deletion policies to comply with GLBA and state laws.
 
+## Key Takeaways
+
+- **Secure client financial data**: with full-disk encryption (FileVault, LUKS), use password managers with audit trails, and restrict network access to known secure servers.
+- **The encryption key derives from your login password**: use a strong passphrase and enable automatic login lock (5 minutes or less).
+- **Enable two-factor authentication (U2F**: hardware key preferred) 3.
+- **Use a dedicated password**: manager with organization features designed for multi-client workflows.
+- **Avoid free VPNs**: they often monetize through data collection.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Threat Model for Accountants
 
 Before implementing controls, identify what you're protecting against. Accountants typically face:

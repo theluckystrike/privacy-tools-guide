@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content. Self-host these platforms on your own infrastructure or use privacy-focused providers that explicitly don't record sessions without explicit patient consent. Enable E2EE encryption, disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history. This guide covers practical setups for HIPAA-compliant telehealth infrastructure with full encryption control.
 
+## Key Takeaways
+
+- **For most use cases**: keeping WebRTC enabled with the E2EE option provides adequate protection while allowing video functionality.
+- **Jitsi Meet provides an**: open-source foundation that supports E2EE through the Matrix protocol.
+- **Use Jitsi Meet or**: Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content.
+- **Enable E2EE encryption**: disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history.
+- **Setting up a basic**: Jitsi deployment requires a VPS with at least 2 CPU cores and 4GB RAM.
+- **Both participants must use compatible browsers**: Chrome, Firefox, and Edge support this natively.
+
 ## Understanding the Encryption Requirements
 
 Psychotherapy sessions require protection at multiple layers. End-to-end encryption (E2EE) ensures that only the participants can decrypt and view the video streams—not the service provider, not intermediaries, not anyone with server access. This differs from transport-layer encryption (TLS), which protects data only while moving between clients and servers, leaving server operators with access to decrypted content.

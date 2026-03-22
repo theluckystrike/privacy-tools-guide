@@ -35,6 +35,25 @@ The core privacy question: what do these companies record, how long do they keep
 
 This guide compares Alexa, Google Home, and Siri on privacy practices, data retention, and what you can actually control.
 
+## Key Takeaways
+
+- **Option 3**: Use a Privacy-Focused Alternative
+
+Several privacy-focused voice assistant projects exist:
+
+Mycroft (now Selene OS) - Open-source voice assistant you can run locally.
+- **Option 2**: Use Siri Only
+
+If you're in the Apple ecosystem, Siri is the privacy-friendly option.
+- **Step 3**: Limit Always-Listening Devices
+
+If you use Alexa or Google Home, consider limiting how many devices you have.
+- **Step 7**: Use Wake Word Alternatives
+
+Some devices support multiple wake words.
+- **There's no competitive advantage**: so significant that it justifies the privacy trade-off for most users.
+- **Set auto-delete to 3**: months (the most privacy-friendly option).
+
 ## How Voice Assistants Work (And What Gets Recorded)
 
 **Wake Word Detection (Local)**
