@@ -31,6 +31,14 @@ intent-checked: true---
 
 You can detect hidden surveillance cameras and microphones in your home using network scanning (nmap, arp-scan), RF analysis (gqrx, RTL-SDR), acoustic noise floor analysis, and thermal imaging. This guide covers practical methods for discovering covert surveillance equipment using command-line utilities, software-defined radio, audio analysis, and physical inspection techniques.
 
+## Key Takeaways
+
+- **Consumer devices like the**: JMDHKK RF detector or the SZBOB Non-Linear Junction Detector range from $30 to $200.
+- **Document thoroughly before acting.**: Use your phone to photograph the device in situ, including reference shots showing its position relative to the room layout.
+- **In most jurisdictions**: installing covert recording devices without consent in a space where privacy is expected is a criminal offense.
+- **The device's MAC address**: and any traffic captured are useful to investigators.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Network Discovery for Camera Detection
 
 Modern IP cameras and smart devices frequently broadcast on your local network. Scanning your network reveals connected devices that may include hidden cameras.

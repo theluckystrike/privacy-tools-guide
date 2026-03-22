@@ -19,6 +19,19 @@ Stalkerware (spyware designed to monitor someone without consent) is increasingl
 
 This guide shows you how to detect stalkerware on Android using technical methods and recommended tools, then safely remove it.
 
+## Key Takeaways
+
+- **For typical domestic abuse situations**: the ADB methods and scanning tools in this guide catch 95% of active stalkerware.
+- **Runs in background, minimal CPU use**: Visible in task manager as nothing unusual
+2.
+- **Uses Android's accessibility services**: Legitimate-looking permissions
+5.
+- **Enable scanning ## If**: You Suspect Ongoing Abuse If stalkerware was found, or you believe you're being monitored: 1.
+- **Do not confront the abuser**: This may escalate violence
+
+2.
+- **Seek professional help -**: National Domestic Violence Hotline: 1-800-799-7233 - Text START to 88788 - They can advise on safe phone use and digital security 3.
+
 ## Why Stalkerware is Hard to Detect
 
 Stalkerware operates with these design principles:

@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Catfishing on dating apps is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional manipulation. Dating platforms' built-in verification isn't enough to catch sophisticated catfish. This guide teaches you OSINT verification techniques—reverse image search, EXIF metadata analysis, username enumeration, and social media timeline analysis—that reliably detect fake profiles before you invest time or trust in someone who isn't real.
 
+## Key Takeaways
+
+- **Most catfish use photos**: stolen from social media accounts, stock photo libraries, or influencer profiles.
+- **A catfish may claim**: to be "AlexSmith92" but might have used "alex.smith" or "alexsmith_official" on Instagram, Twitter, or other sites.
+- **Search for the username**: across social platforms 4.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **Catfishing on dating apps**: is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional manipulation.
+- **When applied to dating apps**: it means analyzing photos, usernames, bio text, and behavioral patterns to identify inconsistencies that signal a fake account.
+
 ## Why OSINT Matters for Dating App Verification
 
 OSINT involves gathering information from publicly available sources to build a profile of someone. When applied to dating apps, it means analyzing photos, usernames, bio text, and behavioral patterns to identify inconsistencies that signal a fake account. The techniques here don't require special access or tools—everything uses data that's already public.

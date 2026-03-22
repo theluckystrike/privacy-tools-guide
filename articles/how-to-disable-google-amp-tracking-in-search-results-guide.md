@@ -27,7 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Google AMP (Accelerated Mobile Pages) was introduced to speed up mobile web browsing, but it also creates significant privacy concerns. When you click an AMP result in Google Search, your request routes through Google's servers, allowing Google to track your browsing activity across websites that would otherwise be independent. This guide covers practical methods to disable Google AMP tracking for developers and power users.
+
+## Key Takeaways
+
+- **Click a result (preferably**: one with an AMP indicator) 3.
+- **This guide covers practical**: methods to disable Google AMP tracking for developers and power users.
+- **Redirect AMP to HTML**: - an userscript that converts AMP URLs to their canonical versions.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
 
 ## How Google AMP Tracking Works
 
