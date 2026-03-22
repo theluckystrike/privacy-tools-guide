@@ -9,7 +9,7 @@ permalink: /how-to-set-up-emergency-access-for-password-manager-spouse/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
