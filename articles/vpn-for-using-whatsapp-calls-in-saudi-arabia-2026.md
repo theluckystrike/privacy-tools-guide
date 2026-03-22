@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-using-whatsapp-calls-in-saudi-arabia-2026/
 ---
 layout: default
 title: "VPN for Using WhatsApp Calls in Saudi Arabia 2026"

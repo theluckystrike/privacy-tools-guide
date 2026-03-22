@@ -1,4 +1,5 @@
 ---
+permalink: /linux-kernel-hardening-sysctl-guide/
 ---
 layout: default
 title: "Linux Kernel Hardening with sysctl"

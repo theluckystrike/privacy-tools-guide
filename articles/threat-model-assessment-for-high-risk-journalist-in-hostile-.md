@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
 ---
 layout: default
 title: "Threat Model Assessment For High Risk Journalist In Hostile"

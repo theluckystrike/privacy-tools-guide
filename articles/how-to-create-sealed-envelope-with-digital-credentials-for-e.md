@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-sealed-envelope-with-digital-credentials-for-e/
 ---
 layout: default
 title: "How To Create Sealed Envelope With Digital Credentials"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-webcam-has-been-hacked-indicator-signs/
 ---
 layout: default
 title: "How to Tell If Your Webcam Has Been Hacked: Indicator"

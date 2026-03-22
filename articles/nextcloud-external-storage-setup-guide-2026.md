@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-external-storage-setup-guide-2026/
 ---
 layout: default
 title: "Nextcloud External Storage Setup Guide 2026"

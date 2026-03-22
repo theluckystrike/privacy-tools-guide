@@ -1,4 +1,5 @@
 ---
+permalink: /whatsapp-privacy-settings-best-configuration-2026/
 ---
 layout: default
 title: "WhatsApp Privacy Settings Best Configuration 2026"

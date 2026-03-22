@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
 ---
 layout: default
 title: "How To Set Up Self Hosted Matrix Synapse Server For Private"

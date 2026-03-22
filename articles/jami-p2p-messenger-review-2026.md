@@ -1,4 +1,5 @@
 ---
+permalink: /jami-p2p-messenger-review-2026/
 ---
 layout: default
 title: "Jami P2p Messenger Review 2026"

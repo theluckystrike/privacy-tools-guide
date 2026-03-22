@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
 ---
 layout: default
 title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https"

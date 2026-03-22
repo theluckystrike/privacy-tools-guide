@@ -1,4 +1,5 @@
 ---
+permalink: /linux-apparmor-vs-selinux-which-mandatory-access-control-pro/
 ---
 layout: default
 title: "Linux Apparmor Vs Selinux Which Mandatory Access Control Pro"

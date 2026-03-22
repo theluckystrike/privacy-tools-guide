@@ -1,4 +1,5 @@
 ---
+permalink: /best-accessible-encrypted-cloud-backup-with-one-button-resto/
 ---
 
 layout: default

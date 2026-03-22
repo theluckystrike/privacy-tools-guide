@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/
 ---
 layout: default
 title: "How to Set up Local Network Storage for Security"

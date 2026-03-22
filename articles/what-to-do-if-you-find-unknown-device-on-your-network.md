@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
 ---
 layout: default
 title: "What to Do If You Find an Unknown Device on Your"

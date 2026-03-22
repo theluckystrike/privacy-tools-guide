@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-provider-annual-audit-results-independent-security-verified/
 ---
 layout: default
 title: "VPN Provider Annual Audit Results: Independent Security"

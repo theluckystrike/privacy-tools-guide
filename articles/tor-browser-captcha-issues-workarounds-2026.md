@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-captcha-issues-workarounds-2026/
 ---
 layout: default
 title: "Tor Browser Captcha Issues Workarounds 2026"

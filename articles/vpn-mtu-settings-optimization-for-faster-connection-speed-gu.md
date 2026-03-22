@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-mtu-settings-optimization-for-faster-connection-speed-gu/
 ---
 layout: default
 title: "VPN MTU Settings Optimization for Faster Connection Speed"

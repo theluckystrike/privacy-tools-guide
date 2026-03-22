@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/
 ---
 layout: default
 title: "Verify Your VPN Is Actually Bypassing Censorship (Not"

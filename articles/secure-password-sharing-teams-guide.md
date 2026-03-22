@@ -1,4 +1,5 @@
 ---
+permalink: /secure-password-sharing-teams-guide/
 ---
 layout: default
 title: "Secure Password Sharing for Teams"

@@ -1,4 +1,5 @@
 ---
+permalink: /whonix-anonymous-browsing-setup-guide/
 ---
 layout: default
 title: "How to Use Whonix for Anonymous Browsing"

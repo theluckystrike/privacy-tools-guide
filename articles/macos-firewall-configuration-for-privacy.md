@@ -1,4 +1,5 @@
 ---
+permalink: /macos-firewall-configuration-for-privacy/
 ---
 
 

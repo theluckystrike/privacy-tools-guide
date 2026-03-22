@@ -1,4 +1,5 @@
 ---
+permalink: /migrating-from-chrome-saved-passwords-to-dedicated-manager-s/
 ---
 layout: default
 title: "Migrating From Chrome Saved Passwords To Dedicated Manager"

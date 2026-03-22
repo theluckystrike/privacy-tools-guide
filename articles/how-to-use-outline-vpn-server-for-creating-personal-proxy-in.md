@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-outline-vpn-server-for-creating-personal-proxy-in/
 ---
 layout: default
 title: "How To Use Outline Vpn Server For Creating Personal Proxy"

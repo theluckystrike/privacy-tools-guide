@@ -1,4 +1,5 @@
 ---
+permalink: /ios-app-tracking-transparency-explained-2026/
 ---
 layout: default
 title: "iOS App Tracking Transparency Explained 2026"

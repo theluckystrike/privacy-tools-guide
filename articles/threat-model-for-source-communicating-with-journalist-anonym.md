@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-for-source-communicating-with-journalist-anonym/
 ---
 layout: default
 title: "Threat Model For Source Communicating With Journalist"

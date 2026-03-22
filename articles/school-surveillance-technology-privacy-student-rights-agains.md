@@ -1,4 +1,5 @@
 ---
+permalink: /school-surveillance-technology-privacy-student-rights-agains/
 ---
 layout: default
 title: "School Surveillance Technology Privacy"

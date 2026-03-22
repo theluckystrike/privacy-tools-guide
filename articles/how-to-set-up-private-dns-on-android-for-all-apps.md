@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-private-dns-on-android-for-all-apps/
 ---
 layout: default
 title: "How to Set Up Private DNS on Android for All"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-opt-out-of-targeted-advertising-under-state-privacy-l/
 ---
 layout: default
 title: "How To Opt Out Of Targeted Advertising Under State Privacy"

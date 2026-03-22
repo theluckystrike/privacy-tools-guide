@@ -1,4 +1,5 @@
 ---
+permalink: /macos-privacy-settings-for-remote-workers-2026/
 ---
 layout: default
 title: "macOS Privacy Settings For Remote Workers 2026"

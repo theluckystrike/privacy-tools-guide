@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-browser-extension-attack-surface/
 ---
 layout: default
 title: "Password Manager Browser Extension Attack"

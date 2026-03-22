@@ -1,4 +1,5 @@
 ---
+permalink: /best-password-managers-emergency-access-features-compared/
 ---
 layout: default
 title: "Best Password Managers With Emergency Access Features"

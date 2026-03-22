@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
 ---
 layout: default
 title: "What To Do If Your Personal Data Appears On People"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-untraceable-email-for-anonymous-tips-to-report/
 ---
 layout: default
 title: "How To Create Untraceable Email For Anonymous Tips"

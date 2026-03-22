@@ -1,4 +1,5 @@
 ---
+permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
 ---
 layout: default
 title: "Signal Messenger Setup Guide for Journalists: Source"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
 ---
 layout: default
 title: "How to Configure VPN Exempt List for Local Network"

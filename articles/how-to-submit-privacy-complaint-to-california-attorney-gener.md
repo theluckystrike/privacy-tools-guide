@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-submit-privacy-complaint-to-california-attorney-gener/
 ---
 layout: default
 title: "Submit a Privacy Complaint to California Attorney General"

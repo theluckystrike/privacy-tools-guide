@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-vs-librewolf-privacy-comparison/
 ---
 layout: default
 title: "Tor Browser vs LibreWolf Privacy Comparison"

@@ -1,4 +1,5 @@
 ---
+permalink: /private-git-server-gitea-setup-guide/
 ---
 layout: default
 title: "Self-Hosted Private Git Server with Gitea"

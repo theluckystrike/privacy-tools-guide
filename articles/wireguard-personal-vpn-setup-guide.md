@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-personal-vpn-setup-guide/
 ---
 layout: default
 title: "Set Up a Personal VPN with WireGuard"

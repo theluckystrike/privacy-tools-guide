@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-bridge-setup-for-desktop-email-clients-privacy-co/
 ---
 layout: default
 title: "Protonmail Bridge Setup For Desktop Email Clients Privacy"

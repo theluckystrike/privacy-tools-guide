@@ -1,4 +1,5 @@
 ---
+permalink: /windows-local-account-vs-microsoft-account-privacy/
 ---
 layout: default
 title: "Windows Local Account Vs Microsoft Account"

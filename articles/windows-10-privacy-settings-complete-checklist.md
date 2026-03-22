@@ -1,4 +1,5 @@
 ---
+permalink: /windows-10-privacy-settings-complete-checklist/
 ---
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"

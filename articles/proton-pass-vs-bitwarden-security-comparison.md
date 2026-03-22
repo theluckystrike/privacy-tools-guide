@@ -1,4 +1,5 @@
 ---
+permalink: /proton-pass-vs-bitwarden-security-comparison/
 ---
 layout: default
 title: "Proton Pass vs Bitwarden Security Comparison for Developers"

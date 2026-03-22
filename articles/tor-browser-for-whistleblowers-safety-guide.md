@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-for-whistleblowers-safety-guide/
 ---
 layout: default
 title: "Tor Browser for Whistleblowers Safety Guide"

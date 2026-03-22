@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-compartmentalized-identity-for-online-dating/
 ---
 layout: default
 title: "Use Compartmentalized Identity for Online Dating"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-multiple-identities-online-compartmentalization-c/
 ---
 layout: default
 title: "How To Use Multiple Identities Online Compartmentalization"

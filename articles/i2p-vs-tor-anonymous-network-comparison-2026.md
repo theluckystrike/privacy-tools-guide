@@ -1,4 +1,5 @@
 ---
+permalink: /i2p-vs-tor-anonymous-network-comparison-2026/
 ---
 layout: default
 title: "I2P vs Tor: Anonymous Network Comparison 2026"

@@ -1,4 +1,5 @@
 ---
+permalink: /navigator-plugins-fingerprinting-how-browser-plugins-betray-/
 ---
 layout: default
 title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"

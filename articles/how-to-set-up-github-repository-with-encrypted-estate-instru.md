@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
 ---
 layout: default
 title: "How To Set Up GitHub Repository With Encrypted Estate"

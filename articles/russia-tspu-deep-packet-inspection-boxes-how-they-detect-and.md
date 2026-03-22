@@ -1,4 +1,5 @@
 ---
+permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/
 ---
 layout: default
 title: "Russia Tspu Deep Packet Inspection Boxes How They Detect"

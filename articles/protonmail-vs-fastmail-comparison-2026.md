@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-vs-fastmail-comparison-2026/
 ---
 layout: default
 title: "ProtonMail vs FastMail Comparison 2026: A Technical Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-briar-messenger-during-iran-internet-blackout-pee/
 ---
 layout: default
 title: "How To Use Briar Messenger During Iran Internet Blackout"

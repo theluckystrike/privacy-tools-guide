@@ -1,4 +1,5 @@
 ---
+permalink: /signal-relay-calls-privacy-feature/
 ---
 layout: default
 title: "Signal Relay Calls Privacy Feature"

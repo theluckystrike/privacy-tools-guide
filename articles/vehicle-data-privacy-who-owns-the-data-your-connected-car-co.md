@@ -1,4 +1,5 @@
 ---
+permalink: /vehicle-data-privacy-who-owns-the-data-your-connected-car-co/
 ---
 layout: default
 title: "Vehicle Data Privacy Who Owns The Data Your Connected Car"

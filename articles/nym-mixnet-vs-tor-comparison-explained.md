@@ -1,4 +1,5 @@
 ---
+permalink: /nym-mixnet-vs-tor-comparison-explained/
 ---
 layout: default
 title: "Nym Mixnet vs Tor Comparison Explained: A Technical Guide"

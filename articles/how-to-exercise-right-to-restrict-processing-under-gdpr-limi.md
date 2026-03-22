@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-exercise-right-to-restrict-processing-under-gdpr-limi/
 ---
 layout: default
 title: "How To Exercise Right To Restrict Processing Under Gdpr"

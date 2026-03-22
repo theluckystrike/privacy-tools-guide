@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-little-snitch-on-macos-to-block-all-unneces/
 ---
 layout: default
 title: "Configure Little Snitch On macOS To Block All Unnecessary"

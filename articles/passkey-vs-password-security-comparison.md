@@ -1,4 +1,5 @@
 ---
+permalink: /passkey-vs-password-security-comparison/
 ---
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"

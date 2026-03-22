@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-baseband-attacks-and-rogue-cell-towers-with-an/
 ---
 layout: default
 title: "How To Detect Baseband Attacks And Rogue Cell Towers"

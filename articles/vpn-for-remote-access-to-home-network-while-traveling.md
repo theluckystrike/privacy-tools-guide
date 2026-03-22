@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-remote-access-to-home-network-while-traveling/
 ---
 layout: default
 title: "Vpn For Remote Access To Home Network While Traveling"

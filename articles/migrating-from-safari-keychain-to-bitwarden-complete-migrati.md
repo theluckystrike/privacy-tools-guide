@@ -1,4 +1,5 @@
 ---
+permalink: /migrating-from-safari-keychain-to-bitwarden-complete-migrati/
 ---
 layout: default
 title: "Migrating from Safari Keychain to Bitwarden"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-focused-website-speed-test-tool-that-does-not-track-/
 ---
 layout: default
 title: "Privacy-Focused Website Speed Test Tool That Does Not Track"

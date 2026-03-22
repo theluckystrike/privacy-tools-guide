@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
 ---
 layout: default
 title: "How to Destroy Data on Device Before Border Crossing Guide"

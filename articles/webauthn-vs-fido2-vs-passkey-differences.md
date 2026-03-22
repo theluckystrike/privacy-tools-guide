@@ -1,4 +1,5 @@
 ---
+permalink: /webauthn-vs-fido2-vs-passkey-differences/
 ---
 layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"

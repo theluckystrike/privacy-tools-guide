@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-encrypted-usb-drive-with-recovery-instructions/
 ---
 layout: default
 title: "How To Set Up Encrypted Usb Drive With Recovery Instructions"

@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-death-plan-which-managers-have-built-in-eme/
 ---
 layout: default
 title: "Password Manager Death Plan"

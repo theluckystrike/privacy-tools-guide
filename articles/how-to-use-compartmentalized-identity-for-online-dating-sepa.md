@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-compartmentalized-identity-for-online-dating-sepa/
 ---
 layout: default
 title: "How To Use Compartmentalized Identity For Online Dating"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-password-manager-for-new-employee-onboarding/
 ---
 layout: default
 title: "How to Set Up Password Manager for New Employee Onboarding"

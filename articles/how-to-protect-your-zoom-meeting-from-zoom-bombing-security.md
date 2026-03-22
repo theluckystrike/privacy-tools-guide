@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-your-zoom-meeting-from-zoom-bombing-security/
 ---
 layout: default
 title: "How To Protect Your Zoom Meeting From Zoom Bombing Security"

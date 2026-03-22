@@ -1,4 +1,5 @@
 ---
+permalink: /tenant-privacy-rights-what-landlords-can-legally-monitor-in-/
 ---
 layout: default
 title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-catfish-on-dating-apps-using-osint-verificatio/
 ---
 layout: default
 title: "How To Detect Catfish On Dating Apps Using Osint Verificatio"

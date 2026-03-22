@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-end-to-end-encryption-setup-guide/
 ---
 layout: default
 title: "Nextcloud End to End Encryption Setup Guide"

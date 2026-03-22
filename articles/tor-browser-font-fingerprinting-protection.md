@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-font-fingerprinting-protection/
 ---
 layout: default
 title: "Tor Browser Font Fingerprinting Protection"

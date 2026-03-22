@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-vs-skiff-mail-comparison/
 ---
 layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"

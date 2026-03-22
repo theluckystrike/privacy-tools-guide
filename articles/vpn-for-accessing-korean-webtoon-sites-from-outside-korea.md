@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-korean-webtoon-sites-from-outside-korea/
 ---
 layout: default
 title: "VPN for Accessing Korean Webtoon Sites from Outside"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-tor-safely-in-country-that-criminalizes-its-use/
 ---
 layout: default
 title: "How to Use Tor Safely in Country That Criminalizes Its"

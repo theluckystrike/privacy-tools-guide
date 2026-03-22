@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-warrant-canary-what-it-means/
 ---
 layout: default
 title: "VPN Warrant Canary: What It Means and Why It Matters"

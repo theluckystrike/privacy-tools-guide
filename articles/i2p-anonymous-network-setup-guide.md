@@ -1,4 +1,5 @@
 ---
+permalink: /i2p-anonymous-network-setup-guide/
 ---
 layout: default
 title: "How to Use the I2P Anonymous Network"

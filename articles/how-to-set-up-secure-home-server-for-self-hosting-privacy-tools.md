@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
 ---
 layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"

@@ -1,4 +1,5 @@
 ---
+permalink: /best-secure-file-sharing-tools-for-teams-handling-sensitive-data/
 ---
 layout: default
 title: "Best Secure File Sharing Tools for Teams Handling"

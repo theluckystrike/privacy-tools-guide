@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/
 ---
 layout: default
 title: "VPN IPv6 Leak Explained: Why Most VPNs Still Fail"

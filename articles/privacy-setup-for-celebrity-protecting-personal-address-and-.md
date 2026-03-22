@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-celebrity-protecting-personal-address-and-/
 ---
 layout: default
 title: "Privacy Setup for Celebrity: Protecting Personal Address"

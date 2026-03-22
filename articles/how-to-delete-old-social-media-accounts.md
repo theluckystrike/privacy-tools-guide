@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-delete-old-social-media-accounts/
 ---
 layout: default
 title: "How To Delete Old Social Media Accounts"

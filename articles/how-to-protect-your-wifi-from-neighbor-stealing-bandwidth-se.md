@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/
 ---
 layout: default
 title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth"

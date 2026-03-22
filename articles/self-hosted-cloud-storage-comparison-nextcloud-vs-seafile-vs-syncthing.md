@@ -1,4 +1,5 @@
 ---
+permalink: /self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/
 ---
 layout: default
 title: "Self Hosted Cloud Storage Comparison Nextcloud vs"

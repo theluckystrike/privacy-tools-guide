@@ -1,4 +1,5 @@
 ---
+permalink: /sticky-password-review-2026/
 ---
 layout: default
 title: "Sticky Password Review 2026: A Developer's Perspective"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-fatigue-solutions-how-to-make-privacy-easier-guide/
 ---
 layout: default
 title: "Privacy Fatigue Solutions: How to Make Privacy Easier Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-focused-dns-providers-comparison-2026/
 ---
 title: "Privacy-Focused DNS Providers Comparison 2026"
 slug: privacy-focused-dns-providers-comparison-2026

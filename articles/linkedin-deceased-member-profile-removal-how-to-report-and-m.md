@@ -1,4 +1,5 @@
 ---
+permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
 ---
 layout: default
 title: "LinkedIn Deceased Member Profile Removal How To Report"

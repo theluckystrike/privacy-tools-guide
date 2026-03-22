@@ -1,4 +1,5 @@
 ---
+permalink: /how-vpn-reconnection-works-after-network-switch-mobile-hando/
 ---
 layout: default
 title: "How VPN Reconnection Works After Network Switch: Technical"

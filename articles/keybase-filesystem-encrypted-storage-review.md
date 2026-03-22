@@ -1,4 +1,5 @@
 ---
+permalink: /keybase-filesystem-encrypted-storage-review/
 ---
 layout: default
 title: "Keybase Filesystem (KBFS) Review"

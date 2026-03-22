@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
 ---
 layout: default
 title: "How to Set Up Secure File Sharing for Sensitive Documents"

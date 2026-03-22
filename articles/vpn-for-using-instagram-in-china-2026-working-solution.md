@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-using-instagram-in-china-2026-working-solution/
 ---
 layout: default
 title: "Vpn For Using Instagram In China 2026 Working Solution"

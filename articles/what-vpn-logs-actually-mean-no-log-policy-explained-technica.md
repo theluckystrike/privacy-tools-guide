@@ -1,4 +1,5 @@
 ---
+permalink: /what-vpn-logs-actually-mean-no-log-policy-explained-technica/
 ---
 layout: default
 title: "What VPN Logs Actually Mean: No-Log Policy Explained"

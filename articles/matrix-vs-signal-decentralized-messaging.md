@@ -1,4 +1,5 @@
 ---
+permalink: /matrix-vs-signal-decentralized-messaging/
 ---
 layout: default
 title: "Matrix Vs Signal Decentralized Messaging"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/
 ---
 layout: default
 title: "How To Set Up Pgp Encrypted Email In Thunderbird Step"

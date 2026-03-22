@@ -1,4 +1,5 @@
 ---
+permalink: /macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/
 ---
 layout: default
 title: "macOS Siri Privacy Controls How To Prevent Voice Data"

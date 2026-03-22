@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-policy-generator-tools-comparison/
 ---
 layout: default
 title: "Privacy Policy Generator Tools Comparison: A Developer Guide"

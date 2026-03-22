@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-canary-trap-to-detect-information-leaks/
 ---
 layout: default
 title: "How to Set Up a Canary Trap to Detect Information"

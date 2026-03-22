@@ -1,4 +1,5 @@
 ---
+permalink: /india-upi-payment-privacy-what-digital-payment-metadata-gove/
 ---
 layout: default
 title: "India Upi Payment Privacy What Digital Payment Metadata"

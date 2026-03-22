@@ -1,4 +1,5 @@
 ---
+permalink: /securing-redis-mongodb-production-guide/
 ---
 layout: default
 title: "Securing Redis and MongoDB for Production"

@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
 ---
 layout: default
 title: "WireGuard Persistent Keepalive Setting Explained"

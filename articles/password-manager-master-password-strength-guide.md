@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-master-password-strength-guide/
 ---
 layout: default
 title: "Password Manager Master Password Strength Guide"

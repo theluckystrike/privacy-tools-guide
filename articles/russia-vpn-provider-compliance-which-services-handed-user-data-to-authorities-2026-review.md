@@ -1,4 +1,5 @@
 ---
+permalink: /russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/
 ---
 layout: default
 title: "Russia VPN Provider Compliance Which Services Handed"

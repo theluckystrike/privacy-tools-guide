@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-steganography-to-hide-messages-inside-normal-file/
 ---
 layout: default
 title: "Use Steganography to Hide Messages Inside Normal Files"

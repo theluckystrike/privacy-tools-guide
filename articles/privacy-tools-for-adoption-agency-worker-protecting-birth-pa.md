@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-tools-for-adoption-agency-worker-protecting-birth-pa/
 ---
 layout: default
 title: "Privacy Tools For Adoption Agency Worker Protecting Birth"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
 ---
 layout: default
 title: "How To Create Anonymous GitHub Account For Open Source"

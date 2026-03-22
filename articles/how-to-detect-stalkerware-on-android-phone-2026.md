@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-stalkerware-on-android-phone-2026/
 ---
 layout: default
 title: "How to Detect Stalkerware on Android Phone 2026"

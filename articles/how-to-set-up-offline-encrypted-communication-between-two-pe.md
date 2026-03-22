@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/
 ---
 layout: default
 title: "How To Set Up Offline Encrypted Communication Between Two"

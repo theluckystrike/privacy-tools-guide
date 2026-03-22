@@ -1,4 +1,5 @@
 ---
+permalink: /smart-device-terms-of-service-privacy-traps-what-you-agree-t/
 ---
 layout: default
 title: "Smart Device Terms of Service Privacy Traps"

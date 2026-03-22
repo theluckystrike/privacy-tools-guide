@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-make-instagram-story-viewers-list-private-controlling/
 ---
 layout: default
 title: "How To Make Instagram Story Viewers List Private Controlling"

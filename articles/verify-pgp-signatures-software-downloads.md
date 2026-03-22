@@ -1,4 +1,5 @@
 ---
+permalink: /verify-pgp-signatures-software-downloads/
 ---
 layout: default
 title: "How to Verify PGP Signatures on Software Downloads"

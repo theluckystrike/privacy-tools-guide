@@ -1,4 +1,5 @@
 ---
+permalink: /insurance-company-data-collection-privacy-what-health-life-auto/
 ---
 layout: default
 title: "Insurance Company Data Collection Privacy What Health"

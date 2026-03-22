@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-for-travel-agent-managing-booking-platform-/
 ---
 layout: default
 title: "Password Manager for Travel Agent Managing Booking Platform"

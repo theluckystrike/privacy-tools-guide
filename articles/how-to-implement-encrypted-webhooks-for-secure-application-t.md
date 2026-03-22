@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-implement-encrypted-webhooks-for-secure-application-t/
 ---
 layout: default
 title: "How To Implement Encrypted Webhooks For Secure Application"

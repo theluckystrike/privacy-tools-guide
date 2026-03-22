@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-by-design-principles-practical-guide/
 ---
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"

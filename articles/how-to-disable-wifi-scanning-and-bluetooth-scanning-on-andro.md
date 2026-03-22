@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/
 ---
 layout: default
 title: "How To Disable Wifi Scanning And Bluetooth Scanning On"

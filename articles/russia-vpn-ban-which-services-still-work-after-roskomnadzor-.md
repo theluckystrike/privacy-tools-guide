@@ -1,4 +1,5 @@
 ---
+permalink: /russia-vpn-ban-which-services-still-work-after-roskomnadzor-/
 ---
 layout: default
 title: "Russia Vpn Ban Which Services Still Work After Roskomnadzor"

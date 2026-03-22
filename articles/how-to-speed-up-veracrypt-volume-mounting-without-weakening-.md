@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-speed-up-veracrypt-volume-mounting-without-weakening-/
 ---
 layout: default
 title: "How to Speed Up VeraCrypt Volume Mounting Without Weakening"

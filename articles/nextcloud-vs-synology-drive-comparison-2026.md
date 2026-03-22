@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-vs-synology-drive-comparison-2026/
 ---
 layout: default
 title: "Nextcloud vs Synology Drive Comparison 2026"

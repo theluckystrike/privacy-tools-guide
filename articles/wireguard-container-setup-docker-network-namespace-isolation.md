@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-container-setup-docker-network-namespace-isolation/
 ---
 layout: default
 title: "Wireguard Container Setup Docker Network Namespace Isolation"

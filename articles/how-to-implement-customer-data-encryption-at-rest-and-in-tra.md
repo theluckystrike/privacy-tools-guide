@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
 ---
 layout: default
 title: "How To Implement Customer Data Encryption At Rest"

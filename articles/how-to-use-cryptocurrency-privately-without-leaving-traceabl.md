@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-cryptocurrency-privately-without-leaving-traceabl/
 ---
 layout: default
 title: "How To Use Cryptocurrency Privately Without Leaving Traceabl"

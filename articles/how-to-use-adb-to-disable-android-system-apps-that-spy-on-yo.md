@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/
 ---
 layout: default
 title: "How To Use Adb To Disable Android System Apps That Spy On"

@@ -1,4 +1,5 @@
 ---
+permalink: /threema-vs-signal-privacy-comparison-2026/
 ---
 layout: default
 title: "Threema vs Signal Privacy Comparison 2026"

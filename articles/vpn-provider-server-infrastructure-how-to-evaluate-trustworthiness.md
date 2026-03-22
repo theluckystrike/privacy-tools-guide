@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/
 ---
 layout: default
 title: "VPN Provider Server Infrastructure How To Evaluate"

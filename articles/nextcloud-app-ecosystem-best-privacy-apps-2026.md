@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-app-ecosystem-best-privacy-apps-2026/
 ---
 layout: default
 title: "Nextcloud App Ecosystem: Best Privacy Apps for 2026"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-mesh-networking-for-private-communication-without/
 ---
 layout: default
 title: "Use Mesh Networking for Private Communication"

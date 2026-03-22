@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-remove-yourself-from-true-people-search-instant-check/
 ---
 layout: default
 title: "How To Remove Yourself From True People Search Instant"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-build-privacy-preserving-webhook-relay-that-strips-pi/
 ---
 layout: default
 title: "How to Build a Privacy-Preserving Webhook Relay That Strips"

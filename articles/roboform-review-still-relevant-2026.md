@@ -1,4 +1,5 @@
 ---
+permalink: /roboform-review-still-relevant-2026/
 ---
 layout: default
 title: "RoboForm Review: Still Relevant in 2026 for Power Users?"

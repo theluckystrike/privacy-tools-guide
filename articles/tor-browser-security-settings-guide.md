@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-security-settings-guide/
 ---
 layout: default
 title: "Tor Browser Security Settings Configuration Guide"

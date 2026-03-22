@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-encrypt-git-repos-with-git-crypt-and-age/
 ---
 layout: default
 title: "How to Encrypt Git Repos with git-crypt and age"

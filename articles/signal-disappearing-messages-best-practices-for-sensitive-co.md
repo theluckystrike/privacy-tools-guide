@@ -1,4 +1,5 @@
 ---
+permalink: /signal-disappearing-messages-best-practices-for-sensitive-co/
 ---
 layout: default
 title: "Signal Disappearing Messages Best Practices: Sensitive"

@@ -1,4 +1,5 @@
 ---
+permalink: /iphone-significant-locations-history-what-apple-tracks-how-t/
 ---
 layout: default
 title: "iPhone Significant Locations History What Apple Tracks How"

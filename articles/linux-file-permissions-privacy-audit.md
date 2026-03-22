@@ -1,4 +1,5 @@
 ---
+permalink: /linux-file-permissions-privacy-audit/
 ---
 layout: default
 title: "Linux File Permissions Privacy"

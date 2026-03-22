@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
 ---
 layout: default
 title: "Create a New Digital Identity After Escaping Domestic"

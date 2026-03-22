@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-encrypted-mailing-list-for-private-group-commu/
 ---
 layout: default
 title: "How To Create Encrypted Mailing List For Private Group"

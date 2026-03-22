@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-port-selection-which-ports-bypass-most-firewall-restrictions/
 ---
 layout: default
 title: "VPN Port Selection Which Ports Bypass Most Firewall"

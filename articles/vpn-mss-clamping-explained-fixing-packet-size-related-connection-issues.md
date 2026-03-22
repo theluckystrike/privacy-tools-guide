@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/
 ---
 layout: default
 title: "VPN MSS Clamping Explained: Fixing Packet Size Related"

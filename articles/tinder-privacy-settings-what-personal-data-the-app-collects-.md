@@ -1,4 +1,5 @@
 ---
+permalink: /tinder-privacy-settings-what-personal-data-the-app-collects-/
 ---
 layout: default
 title: "Tinder Privacy Settings What Personal Data The App Collects"

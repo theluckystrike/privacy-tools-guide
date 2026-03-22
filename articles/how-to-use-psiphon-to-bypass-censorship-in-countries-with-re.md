@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-psiphon-to-bypass-censorship-in-countries-with-re/
 ---
 layout: default
 title: "How To Use Psiphon To Bypass Censorship In Countries"

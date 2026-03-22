@@ -1,4 +1,5 @@
 ---
+permalink: /india-internet-shutdown-tracker-which-states-restrict-access/
 ---
 layout: default
 title: "India Internet Shutdown Tracker Which States Restrict"

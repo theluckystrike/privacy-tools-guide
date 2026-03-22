@@ -1,4 +1,5 @@
 ---
+permalink: /researcher-participant-data-privacy-irb-compliance-digital-t/
 ---
 layout: default
 title: "Researcher Participant Data Privacy Irb Compliance Digital"

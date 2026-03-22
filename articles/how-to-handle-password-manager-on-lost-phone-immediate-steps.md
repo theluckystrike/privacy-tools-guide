@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-handle-password-manager-on-lost-phone-immediate-steps/
 ---
 layout: default
 title: "Handle Password Manager on Lost Phone: Immediate"

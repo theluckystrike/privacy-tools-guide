@@ -1,4 +1,5 @@
 ---
+permalink: /iphone-location-tracking-how-to-stop-it/
 ---
 layout: default
 title: "iPhone Location Tracking How to Stop It: A Practical Guide"

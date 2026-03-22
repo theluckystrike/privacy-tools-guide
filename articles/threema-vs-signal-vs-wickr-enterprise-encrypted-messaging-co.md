@@ -1,4 +1,5 @@
 ---
+permalink: /threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/
 ---
 layout: default
 title: "Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging"

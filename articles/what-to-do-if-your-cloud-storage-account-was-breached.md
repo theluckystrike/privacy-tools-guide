@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-cloud-storage-account-was-breached/
 ---
 layout: default
 title: "What to Do If Your Cloud Storage Account Was Breached"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-analytics-alternatives-google/
 ---
 layout: default
 title: "Privacy-Focused Alternatives to Google Analytics"

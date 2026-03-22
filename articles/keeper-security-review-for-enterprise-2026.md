@@ -1,4 +1,5 @@
 ---
+permalink: /keeper-security-review-for-enterprise-2026/
 ---
 layout: default
 title: "Keeper Security Review For Enterprise 2026"

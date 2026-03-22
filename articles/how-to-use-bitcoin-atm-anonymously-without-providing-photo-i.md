@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/
 ---
 layout: default
 title: "How To Use Bitcoin Atm Anonymously Without Providing Photo"

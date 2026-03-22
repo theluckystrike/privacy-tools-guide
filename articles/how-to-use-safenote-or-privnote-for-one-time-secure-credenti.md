@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-safenote-or-privnote-for-one-time-secure-credenti/
 ---
 layout: default
 title: "How To Use Safenote Or Privnote For One Time Secure Credenti"

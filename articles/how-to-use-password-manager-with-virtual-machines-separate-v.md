@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-password-manager-with-virtual-machines-separate-v/
 ---
 layout: default
 title: "Use a Password Manager with Virtual Machines"

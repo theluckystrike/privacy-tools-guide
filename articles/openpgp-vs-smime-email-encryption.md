@@ -1,4 +1,5 @@
 ---
+permalink: /openpgp-vs-smime-email-encryption/
 ---
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison"

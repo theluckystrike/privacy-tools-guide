@@ -1,4 +1,5 @@
 ---
+permalink: /smart-device-deregistration-after-death-how-to-remove-deceas/
 ---
 layout: default
 title: "Smart Device Deregistration After Death How To Remove"

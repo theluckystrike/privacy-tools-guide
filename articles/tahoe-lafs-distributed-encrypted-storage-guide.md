@@ -1,4 +1,5 @@
 ---
+permalink: /tahoe-lafs-distributed-encrypted-storage-guide/
 ---
 layout: default
 title: "Tahoe LAFS Distributed Encrypted Storage Guide"

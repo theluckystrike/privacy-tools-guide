@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
 ---
 layout: default
 title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric"

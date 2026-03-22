@@ -1,4 +1,5 @@
 ---
+permalink: /real-estate-agent-client-data-protection-privacy-best-practi/
 ---
 layout: default
 title: "Real Estate Agent Client Data Protection Privacy Best"

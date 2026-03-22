@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
 ---
 layout: default
 title: "How To Set Up Jitsi Meet Self Hosted Encrypted Video"

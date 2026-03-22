@@ -1,4 +1,5 @@
 ---
+permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/
 ---
 layout: default
 title: "Hsts Supercookie Tracking How Https Settings Create Persiste"

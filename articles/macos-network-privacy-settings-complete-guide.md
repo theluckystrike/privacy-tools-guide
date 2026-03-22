@@ -1,4 +1,5 @@
 ---
+permalink: /macos-network-privacy-settings-complete-guide/
 ---
 layout: default
 title: "macOS Network Privacy Settings Complete Guide 2026"

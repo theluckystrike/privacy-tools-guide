@@ -1,4 +1,5 @@
 ---
+permalink: /ios-advanced-data-protection-for-icloud-end-to-end-encryptio/
 ---
 layout: default
 title: "iOS Advanced Data Protection For Icloud End To End"

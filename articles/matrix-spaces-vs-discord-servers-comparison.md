@@ -1,4 +1,5 @@
 ---
+permalink: /matrix-spaces-vs-discord-servers-comparison/
 ---
 layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"

@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-using-viber-in-countries-where-voip-blocked/
 ---
 layout: default
 title: "Vpn For Using Viber In Countries Where Voip Blocked"

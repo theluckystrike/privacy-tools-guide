@@ -1,4 +1,5 @@
 ---
+permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
 ---
 layout: default
 title: "Migrating from LastPass to Bitwarden No Data Loss"

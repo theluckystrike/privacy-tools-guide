@@ -1,4 +1,5 @@
 ---
+permalink: /small-business-privacy-audit-checklist/
 ---
 layout: default
 title: "Privacy Audit Checklist for Small Businesses"

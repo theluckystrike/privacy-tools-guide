@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-android-without-google-play-services-alternative-/
 ---
 layout: default
 title: "Use Android Without Google Play Services"

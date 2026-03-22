@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
 ---
 layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered"

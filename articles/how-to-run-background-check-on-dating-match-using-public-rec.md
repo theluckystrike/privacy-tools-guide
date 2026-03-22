@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-run-background-check-on-dating-match-using-public-rec/
 ---
 layout: default
 title: "How To Run Background Check On Dating Match Using Public"

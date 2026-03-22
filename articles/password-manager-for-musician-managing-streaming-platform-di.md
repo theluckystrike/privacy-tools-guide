@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-for-musician-managing-streaming-platform-di/
 ---
 layout: default
 title: "Password Manager For Musician Managing Streaming Platform"

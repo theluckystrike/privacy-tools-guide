@@ -1,4 +1,5 @@
 ---
+permalink: /onionshare-secure-file-sharing-guide/
 ---
 layout: default
 title: "Secure File Sharing with OnionShare"

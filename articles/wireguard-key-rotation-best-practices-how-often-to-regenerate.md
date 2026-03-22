@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-key-rotation-best-practices-how-often-to-regenerate/
 ---
 layout: default
 title: "WireGuard Key Rotation Best Practices How Often"

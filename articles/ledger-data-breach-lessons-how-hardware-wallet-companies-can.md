@@ -1,4 +1,5 @@
 ---
+permalink: /ledger-data-breach-lessons-how-hardware-wallet-companies-can/
 ---
 layout: default
 title: "Ledger Data Breach Lessons How Hardware Wallet Companies"

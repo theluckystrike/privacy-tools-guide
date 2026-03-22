@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-share-passwords-securely-with-team-using-encrypted-co/
 ---
 layout: default
 title: "How To Share Passwords Securely With Team Using Encrypted"

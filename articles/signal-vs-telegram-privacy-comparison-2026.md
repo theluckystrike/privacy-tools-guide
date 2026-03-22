@@ -1,4 +1,5 @@
 ---
+permalink: /signal-vs-telegram-privacy-comparison-2026/
 ---
 layout: default
 title: "Signal vs Telegram: Privacy Comparison 2026"

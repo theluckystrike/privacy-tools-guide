@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-performance-tuning-large-file-transfer-optimizatio/
 ---
 layout: default
 title: "WireGuard Performance Tuning for Large File Transfer"

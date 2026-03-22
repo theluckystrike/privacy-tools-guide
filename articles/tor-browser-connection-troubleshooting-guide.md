@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-connection-troubleshooting-guide/
 ---
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"

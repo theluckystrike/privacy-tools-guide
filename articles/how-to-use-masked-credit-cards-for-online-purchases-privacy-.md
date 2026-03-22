@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/
 ---
 layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"

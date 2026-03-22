@@ -1,4 +1,5 @@
 ---
+permalink: /how-vpn-affects-gaming-latency-actual-measurements-and-explanation/
 ---
 layout: default
 title: "How VPN Affects Gaming Latency Actual Measurements"

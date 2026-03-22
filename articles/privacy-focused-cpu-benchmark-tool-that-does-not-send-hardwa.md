@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-focused-cpu-benchmark-tool-that-does-not-send-hardwa/
 ---
 layout: default
 title: "Privacy-Focused CPU Benchmark Tool That Does Not Send"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-tor-with-specific-application-routing-only-select/
 ---
 layout: default
 title: "How To Use Tor With Specific Application Routing Only"

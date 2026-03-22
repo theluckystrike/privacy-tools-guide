@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
 ---
 layout: default
 title: "Threat Model for Undocumented Immigrant Protecting"

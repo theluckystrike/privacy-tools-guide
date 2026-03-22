@@ -1,4 +1,5 @@
 ---
+permalink: /tresorit-vs-proton-drive-comparison-2026/
 ---
 layout: default
 title: "Tresorit Vs Proton Drive Comparison 2026"

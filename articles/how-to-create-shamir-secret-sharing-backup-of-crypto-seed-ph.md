@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-shamir-secret-sharing-backup-of-crypto-seed-ph/
 ---
 layout: default
 title: "How To Create Shamir Secret Sharing Backup Of Crypto Seed"

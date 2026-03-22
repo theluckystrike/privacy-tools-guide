@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-vpn-on-router-firmware-level-guide/
 ---
 layout: default
 title: "How to Set Up VPN on Router Firmware: Complete Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-router-has-been-compromised-check-guide/
 ---
 layout: default
 title: "How To Tell If Your Router Has Been Compromised Check Guide"

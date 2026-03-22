@@ -1,4 +1,5 @@
 ---
+permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
 ---
 layout: default
 title: "Secure Email Forwarding With Encryption How To Set Up"

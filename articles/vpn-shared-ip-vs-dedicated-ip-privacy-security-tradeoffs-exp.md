@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-shared-ip-vs-dedicated-ip-privacy-security-tradeoffs-exp/
 ---
 layout: default
 title: "Vpn Shared Ip Vs Dedicated Ip Privacy Security Tradeoffs"

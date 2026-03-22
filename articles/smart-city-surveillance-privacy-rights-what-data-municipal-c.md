@@ -1,4 +1,5 @@
 ---
+permalink: /smart-city-surveillance-privacy-rights-what-data-municipal-c/
 ---
 layout: default
 title: "Smart City Surveillance: What Data Municipal Cameras"

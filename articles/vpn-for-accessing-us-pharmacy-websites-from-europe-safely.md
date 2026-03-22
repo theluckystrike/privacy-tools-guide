@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-us-pharmacy-websites-from-europe-safely/
 ---
 layout: default
 title: "VPN for Accessing US Pharmacy Websites from Europe Safely"

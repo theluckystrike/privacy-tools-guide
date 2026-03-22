@@ -1,4 +1,5 @@
 ---
+permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/
 ---
 layout: default
 title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"

@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-server-load-balancing-how-providers-distribute-users-across-servers/
 ---
 layout: default
 title: "VPN Server Load Balancing How Providers Distribute Users"

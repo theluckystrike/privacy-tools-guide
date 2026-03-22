@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-safely-exchange-social-media-handles-with-dating-matc/
 ---
 layout: default
 title: "How To Safely Exchange Social Media Handles With Dating"

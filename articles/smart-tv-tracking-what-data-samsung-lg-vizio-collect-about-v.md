@@ -1,4 +1,5 @@
 ---
+permalink: /smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/
 ---
 layout: default
 title: "Smart Tv Tracking What Data Samsung Lg Vizio Collect About"

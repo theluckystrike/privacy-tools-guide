@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-password-manager-for-elderly-parent-remotely/
 ---
 layout: default
 title: "How to Set Up Password Manager for Elderly Parent Remotely"

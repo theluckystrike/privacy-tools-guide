@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-convince-your-boss-to-use-password-manager-at-work/
 ---
 layout: default
 title: "How to Convince Your Boss to Use a Password Manager"

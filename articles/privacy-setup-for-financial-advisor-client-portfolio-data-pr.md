@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-financial-advisor-client-portfolio-data-pr/
 ---
 layout: default
 title: "Privacy Setup For Financial Advisor Client Portfolio Data"

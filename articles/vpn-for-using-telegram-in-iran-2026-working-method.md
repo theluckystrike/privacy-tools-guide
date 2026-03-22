@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-using-telegram-in-iran-2026-working-method/
 ---
 
 

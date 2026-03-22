@@ -1,4 +1,5 @@
 ---
+permalink: /mls-messaging-layer-security-protocol-how-it-will-change-gro/
 ---
 layout: default
 title: "Mls Messaging Layer Security Protocol How It Will Change"

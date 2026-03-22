@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-exercise-montana-consumer-data-privacy-act-rights-dat/
 ---
 layout: default
 title: "How To Exercise Montana Consumer Data Privacy Act Rights"

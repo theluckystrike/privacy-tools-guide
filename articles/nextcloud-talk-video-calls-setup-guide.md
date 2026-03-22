@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-talk-video-calls-setup-guide/
 ---
 layout: default
 title: "Nextcloud Talk Video Calls Setup Guide"

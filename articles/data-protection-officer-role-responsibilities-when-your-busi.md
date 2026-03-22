@@ -1,4 +1,5 @@
 ---
+permalink: /data-protection-officer-role-responsibilities-when-your-busi/
 ---
 layout: default
 title: "Data Protection Officer Role Responsibilities When Your"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-yourself-from-ai-voice-cloning-scam-calls/
 ---
 layout: default
 title: "How To Protect Yourself From Ai Voice Cloning Scam"

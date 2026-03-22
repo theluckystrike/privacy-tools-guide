@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-amazon-account-was-hacked-recovery/
 ---
 layout: default
 title: "What to Do If Your Amazon Account Was Hacked: Recovery Guide"

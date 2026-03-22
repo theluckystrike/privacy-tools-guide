@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
 ---
 layout: default
 title: "WireGuard PostUp/PostDown Scripts for Advanced Routing"

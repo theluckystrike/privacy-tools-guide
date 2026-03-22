@@ -1,4 +1,5 @@
 ---
+permalink: /tor-hidden-services-how-to-access-safely/
 ---
 layout: default
 title: "Tor Hidden Services: How to Access Safely"

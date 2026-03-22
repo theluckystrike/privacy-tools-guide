@@ -1,4 +1,5 @@
 ---
+permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
 ---
 
 layout: default

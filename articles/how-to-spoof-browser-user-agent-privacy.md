@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-spoof-browser-user-agent-privacy/
 ---
 layout: default
 title: "How To Spoof Browser User Agent"

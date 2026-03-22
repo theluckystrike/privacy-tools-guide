@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-faraday-bag-properly-when-and-why-explained/
 ---
 layout: default
 title: "How to Use Faraday Bag Properly: When and Why Explained"

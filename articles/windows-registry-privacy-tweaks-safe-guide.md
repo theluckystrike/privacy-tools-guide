@@ -1,4 +1,5 @@
 ---
+permalink: /windows-registry-privacy-tweaks-safe-guide/
 ---
 layout: default
 title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"

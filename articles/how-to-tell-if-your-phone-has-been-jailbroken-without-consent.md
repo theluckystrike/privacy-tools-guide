@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consent/
 ---
 layout: default
 title: "Tell If Your Phone Has Been Jailbroken Without Consent"

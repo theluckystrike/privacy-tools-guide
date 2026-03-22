@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-common-mistakes-to-avoid-2026/
 ---
 layout: default
 title: "Tor Browser Common Mistakes to Avoid in 2026"

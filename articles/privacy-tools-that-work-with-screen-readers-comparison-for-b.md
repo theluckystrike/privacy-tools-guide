@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-tools-that-work-with-screen-readers-comparison-for-b/
 ---
 layout: default
 title: "Privacy Tools That Work with Screen Readers: Comparison for"

@@ -1,4 +1,5 @@
 ---
+permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
 ---
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real"

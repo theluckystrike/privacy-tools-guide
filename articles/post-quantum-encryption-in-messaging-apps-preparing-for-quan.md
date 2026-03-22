@@ -1,4 +1,5 @@
 ---
+permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
 ---
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing"

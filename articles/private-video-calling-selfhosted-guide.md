@@ -1,4 +1,5 @@
 ---
+permalink: /private-video-calling-selfhosted-guide/
 ---
 layout: default
 title: "Self-Hosted Private Video Calling Setup Guide"

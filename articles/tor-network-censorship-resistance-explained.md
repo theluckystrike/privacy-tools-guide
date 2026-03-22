@@ -1,4 +1,5 @@
 ---
+permalink: /tor-network-censorship-resistance-explained/
 ---
 layout: default
 title: "Tor Network Censorship Resistance Explained"

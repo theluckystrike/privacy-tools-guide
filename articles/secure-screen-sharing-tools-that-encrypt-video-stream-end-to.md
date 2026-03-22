@@ -1,4 +1,5 @@
 ---
+permalink: /secure-screen-sharing-tools-that-encrypt-video-stream-end-to/
 ---
 layout: default
 title: "Secure Screen Sharing Tools That Encrypt Video Stream End"

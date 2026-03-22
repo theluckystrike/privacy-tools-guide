@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-kill-switch-linux-iptables-setup/
 ---
 layout: default
 title: "VPN Kill Switch Configuration on Linux with iptables"

@@ -1,4 +1,5 @@
 ---
+permalink: /voip-phone-number-privacy-risks-what-sip-providers-log-about/
 ---
 layout: default
 title: "Voip Phone Number Privacy Risks What Sip Providers Log"

@@ -1,4 +1,5 @@
 ---
+permalink: /windows-activity-history-disable-privacy-guide/
 ---
 layout: default
 title: "Windows Activity History Disable Privacy Guide"

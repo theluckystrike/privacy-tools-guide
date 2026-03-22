@@ -1,4 +1,5 @@
 ---
+permalink: /tor-circuit-how-it-works-visualization-explained/
 ---
 layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"

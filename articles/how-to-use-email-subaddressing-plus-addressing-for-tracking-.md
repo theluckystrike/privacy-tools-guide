@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-/
 ---
 layout: default
 title: "Use Email Subaddressing Plus Addressing For Tracking Which"

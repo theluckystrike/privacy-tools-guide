@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
 ---
 layout: default
 title: "What to Do If You Received Sextortion Email: Is It Real?"

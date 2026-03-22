@@ -1,4 +1,5 @@
 ---
+permalink: /mastodon-vs-twitter-privacy-comparison-2026/
 ---
 layout: default
 title: "Mastodon vs Twitter: Privacy Comparison 2026"

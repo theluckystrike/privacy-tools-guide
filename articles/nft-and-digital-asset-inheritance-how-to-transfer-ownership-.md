@@ -1,4 +1,5 @@
 ---
+permalink: /nft-and-digital-asset-inheritance-how-to-transfer-ownership-/
 ---
 layout: default
 title: "Nft And Digital Asset Inheritance How To Transfer Ownership"

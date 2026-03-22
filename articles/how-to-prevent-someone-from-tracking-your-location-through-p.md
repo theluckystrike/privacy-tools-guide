@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-someone-from-tracking-your-location-through-p/
 ---
 layout: default
 title: "How To Prevent Someone From Tracking Your Location"

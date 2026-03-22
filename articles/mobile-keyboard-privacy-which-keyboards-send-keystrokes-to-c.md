@@ -1,4 +1,5 @@
 ---
+permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
 ---
 layout: default
 title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes"

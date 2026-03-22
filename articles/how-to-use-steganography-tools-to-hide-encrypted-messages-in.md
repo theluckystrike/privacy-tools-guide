@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-steganography-tools-to-hide-encrypted-messages-in/
 ---
 layout: default
 title: "How To Use Steganography Tools To Hide Encrypted Messages"

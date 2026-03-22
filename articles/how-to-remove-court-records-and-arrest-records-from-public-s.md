@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-remove-court-records-and-arrest-records-from-public-s/
 ---
 layout: default
 title: "How To Remove Court Records And Arrest Records From Public"

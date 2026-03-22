@@ -1,4 +1,5 @@
 ---
+permalink: /iphone-photo-metadata-location-strip-guide/
 ---
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"

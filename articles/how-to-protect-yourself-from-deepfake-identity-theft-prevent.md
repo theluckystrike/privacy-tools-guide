@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-yourself-from-deepfake-identity-theft-prevent/
 ---
 layout: default
 title: "Protect Yourself from Deepfake Identity Theft"

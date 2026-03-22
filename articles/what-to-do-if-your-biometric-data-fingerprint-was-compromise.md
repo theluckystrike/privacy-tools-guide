@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-biometric-data-fingerprint-was-compromise/
 ---
 layout: default
 title: "What To Do If Your Biometric Data Fingerprint Was Compromise"

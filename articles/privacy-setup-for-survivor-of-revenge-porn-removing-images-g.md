@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-survivor-of-revenge-porn-removing-images-g/
 ---
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"

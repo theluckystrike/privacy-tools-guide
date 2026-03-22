@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-stop-alexa-from-recording-conversations-and-sending-a/
 ---
 layout: default
 title: "Stop Alexa From Recording Conversations and Sending Audio"

@@ -1,4 +1,5 @@
 ---
+permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
 ---
 layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"

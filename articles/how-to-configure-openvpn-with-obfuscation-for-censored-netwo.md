@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-openvpn-with-obfuscation-for-censored-netwo/
 ---
 layout: default
 title: "Configure Openvpn With Obfuscation For Censored Networks"

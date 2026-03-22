@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-private-bitcoin-full-node-at-home-for-transact/
 ---
 layout: default
 title: "How To Set Up Private Bitcoin Full Node At Home For Transact"

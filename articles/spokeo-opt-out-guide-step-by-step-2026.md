@@ -1,4 +1,5 @@
 ---
+permalink: /spokeo-opt-out-guide-step-by-step-2026/
 ---
 layout: default
 title: "Spokeo Opt Out Guide: Step by Step 2026"

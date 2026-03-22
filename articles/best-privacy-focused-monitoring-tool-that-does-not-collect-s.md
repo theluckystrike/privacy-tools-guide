@@ -1,4 +1,5 @@
 ---
+permalink: /best-privacy-focused-monitoring-tool-that-does-not-collect-s/
 ---
 
 layout: default

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-your-devices-are-not-compromised-complete-audi/
 ---
 layout: default
 title: "Verify Your Devices Are Not Compromised"

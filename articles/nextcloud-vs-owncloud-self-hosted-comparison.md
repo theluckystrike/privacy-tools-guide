@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-vs-owncloud-self-hosted-comparison/
 ---
 layout: default
 title: "Nextcloud vs OwnCloud Self-Hosted Comparison"

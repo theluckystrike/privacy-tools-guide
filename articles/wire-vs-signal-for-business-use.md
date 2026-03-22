@@ -1,4 +1,5 @@
 ---
+permalink: /wire-vs-signal-for-business-use/
 ---
 layout: default
 title: "Wire vs Signal for Business Use: A Technical Comparison"

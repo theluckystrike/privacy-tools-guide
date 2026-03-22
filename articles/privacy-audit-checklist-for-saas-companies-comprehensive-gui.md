@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-audit-checklist-for-saas-companies-comprehensive-gui/
 ---
 layout: default
 title: "Privacy Audit Checklist for SaaS Companies"

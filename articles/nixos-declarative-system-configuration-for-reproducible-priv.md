@@ -1,4 +1,5 @@
 ---
+permalink: /nixos-declarative-system-configuration-for-reproducible-priv/
 ---
 layout: default
 title: "Nixos Declarative System Configuration For Reproducible"

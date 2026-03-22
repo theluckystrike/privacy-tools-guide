@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-focused-network-speed-test-comparison-tools-that-res/
 ---
 layout: default
 title: "Privacy-Focused Network Speed Test Comparison Tools That"

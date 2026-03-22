@@ -1,4 +1,5 @@
 ---
+permalink: /people-search-sites-opt-out-complete-guide-2026/
 ---
 layout: default
 title: "People Search Sites Opt Out Complete Guide 2026"

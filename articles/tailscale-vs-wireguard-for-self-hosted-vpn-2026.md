@@ -1,4 +1,5 @@
 ---
+permalink: /tailscale-vs-wireguard-for-self-hosted-vpn-2026/
 ---
 layout: default
 title: "Tailscale vs WireGuard for Self-Hosted VPN 2026"

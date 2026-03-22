@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
 ---
 layout: default
 title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"

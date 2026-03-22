@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
 ---
 layout: default
 title: "Privacy Setup For Someone Leaving Abusive Relationship"

@@ -1,4 +1,5 @@
 ---
+permalink: /two-factor-authentication-setup-2026/
 ---
 layout: default
 title: "Two-Factor Authentication Setup Guide 2026"

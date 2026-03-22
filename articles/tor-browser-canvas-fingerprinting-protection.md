@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-canvas-fingerprinting-protection/
 ---
 layout: default
 title: "Tor Browser Canvas Fingerprinting Protection"

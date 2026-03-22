@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/
 ---
 layout: default
 title: "VPN TLS Fingerprinting: How Censors Identify VPN Protocols"

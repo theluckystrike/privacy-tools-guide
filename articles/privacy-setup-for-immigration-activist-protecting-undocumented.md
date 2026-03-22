@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
 ---
 layout: default
 title: "Privacy Setup for Immigration Activist"

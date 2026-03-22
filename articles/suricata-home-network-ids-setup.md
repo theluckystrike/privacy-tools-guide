@@ -1,4 +1,5 @@
 ---
+permalink: /suricata-home-network-ids-setup/
 ---
 layout: default
 title: "Suricata Home Network IDS Setup Guide"

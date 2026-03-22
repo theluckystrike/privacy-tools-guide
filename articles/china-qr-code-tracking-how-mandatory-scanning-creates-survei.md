@@ -1,4 +1,5 @@
 ---
+permalink: /china-qr-code-tracking-how-mandatory-scanning-creates-survei/
 ---
 layout: default
 title: "China Qr Code Tracking How Mandatory Scanning Creates"

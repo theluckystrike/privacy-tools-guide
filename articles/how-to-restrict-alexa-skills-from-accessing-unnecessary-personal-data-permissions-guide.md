@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
 ---
 layout: default
 title: "Restrict Alexa Skills From Accessing Unnecessary Personal"

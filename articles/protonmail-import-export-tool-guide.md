@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-import-export-tool-guide/
 ---
 layout: default
 title: "ProtonMail Import Export Tool Guide"

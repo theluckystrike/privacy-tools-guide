@@ -1,4 +1,5 @@
 ---
+permalink: /signal-app-disappearing-messages-guide/
 ---
 layout: default
 title: "Signal App Disappearing Messages Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-implications-browser-extensions/
 ---
 layout: default
 title: "Privacy Implications of Browser Extensions"

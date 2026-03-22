@@ -1,4 +1,5 @@
 ---
+permalink: /local-game-server-lan-parties-avoid-online-data-collection/
 ---
 
 layout: default

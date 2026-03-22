@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-wireguard-with-obfuscation-to-bypass-russia/
 ---
 layout: default
 title: "How To Configure Wireguard With Obfuscation To Bypass"

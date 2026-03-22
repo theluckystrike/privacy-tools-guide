@@ -1,4 +1,5 @@
 ---
+permalink: /zero-knowledge-proof-messaging-how-future-protocols-will-pro/
 ---
 layout: default
 title: "Zero Knowledge Proof Messaging How Future Protocols Will Pro"

@@ -1,4 +1,5 @@
 ---
+permalink: /voice-assistant-privacy-risks-guide/
 ---
 layout: default
 title: "Privacy Risks of Voice Assistants Guide"

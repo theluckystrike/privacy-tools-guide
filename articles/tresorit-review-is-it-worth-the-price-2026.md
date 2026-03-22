@@ -1,4 +1,5 @@
 ---
+permalink: /tresorit-review-is-it-worth-the-price-2026/
 ---
 layout: default
 title: "Tresorit Review Is It Worth The Price 2026"

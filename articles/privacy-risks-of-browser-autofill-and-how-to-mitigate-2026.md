@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/
 ---
 
 

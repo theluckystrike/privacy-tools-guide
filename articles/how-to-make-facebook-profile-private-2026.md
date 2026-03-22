@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-make-facebook-profile-private-2026/
 ---
 layout: default
 title: "How To Make Facebook Profile Private 2026"

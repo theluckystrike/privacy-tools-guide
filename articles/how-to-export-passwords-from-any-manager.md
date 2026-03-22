@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-export-passwords-from-any-manager/
 ---
 layout: default
 title: "How to Export Passwords from Any Manager"

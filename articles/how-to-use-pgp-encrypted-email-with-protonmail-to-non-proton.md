@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/
 ---
 layout: default
 title: "How To Use Pgp Encrypted Email With Protonmail To Non"

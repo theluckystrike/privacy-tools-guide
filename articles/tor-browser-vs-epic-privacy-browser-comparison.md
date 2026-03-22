@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-vs-epic-privacy-browser-comparison/
 ---
 layout: default
 title: "Tor Browser vs Epic Privacy Browser Comparison"

@@ -1,4 +1,5 @@
 ---
+permalink: /russia-vpn-provider-compliance-which-services-handed-user-da/
 ---
 layout: default
 title: "Russia Vpn Provider Compliance Which Services Handed User"

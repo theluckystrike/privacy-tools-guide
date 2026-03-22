@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
 ---
 layout: default
 title: "Threat Model For Corporate Whistleblower Protecting Evidence"

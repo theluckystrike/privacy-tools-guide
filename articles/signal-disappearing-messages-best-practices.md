@@ -1,4 +1,5 @@
 ---
+permalink: /signal-disappearing-messages-best-practices/
 ---
 layout: default
 title: "Signal Disappearing Messages Best Practices"

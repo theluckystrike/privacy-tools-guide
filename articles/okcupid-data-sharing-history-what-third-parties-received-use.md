@@ -1,4 +1,5 @@
 ---
+permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
 ---
 layout: default
 title: "Okcupid Data Sharing History What Third Parties Received"

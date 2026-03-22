@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-password-manager-across-work-and-personal-devices/
 ---
 layout: default
 title: "How To Use Password Manager Across Work And Personal"

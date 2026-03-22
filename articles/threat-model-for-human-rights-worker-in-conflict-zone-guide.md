@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
 ---
 layout: default
 title: "Threat Model For Human Rights Worker In Conflict Zone Guide"

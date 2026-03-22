@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-safe-usage-guide/
 ---
 layout: default
 title: "How to Use Tor Browser Safely"

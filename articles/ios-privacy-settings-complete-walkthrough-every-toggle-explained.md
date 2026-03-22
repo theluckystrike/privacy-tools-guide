@@ -1,4 +1,5 @@
 ---
+permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/
 ---
 layout: default
 title: "iOS Privacy Settings Complete Walkthrough Every Toggle"

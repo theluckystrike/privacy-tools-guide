@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
 ---
 layout: default
 title: "How To Prepare Phone For Crossing Border Into High Surveilla"

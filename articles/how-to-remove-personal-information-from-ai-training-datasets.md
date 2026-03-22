@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-remove-personal-information-from-ai-training-datasets/
 ---
 layout: default
 title: "How To Remove Personal Information From Ai Training Datasets"

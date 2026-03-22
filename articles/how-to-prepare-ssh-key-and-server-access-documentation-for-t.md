@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
 ---
 layout: default
 title: "How To Prepare Ssh Key And Server Access Documentation"

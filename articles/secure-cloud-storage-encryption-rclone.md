@@ -1,4 +1,5 @@
 ---
+permalink: /secure-cloud-storage-encryption-rclone/
 ---
 layout: default
 title: "Encrypt Cloud Storage with Rclone Before Uploading"

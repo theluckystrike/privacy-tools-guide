@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-satellite-internet-as-backup-during-government/
 ---
 layout: default
 title: "How To Set Up Satellite Internet As Backup During Government"

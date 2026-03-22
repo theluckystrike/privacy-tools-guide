@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/
 ---
 layout: default
 title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted"

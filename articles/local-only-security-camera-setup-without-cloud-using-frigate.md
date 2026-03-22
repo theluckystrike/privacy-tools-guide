@@ -1,4 +1,5 @@
 ---
+permalink: /local-only-security-camera-setup-without-cloud-using-frigate/
 ---
 layout: default
 title: "Local-Only Security Camera Setup Without Cloud Using Frigate"

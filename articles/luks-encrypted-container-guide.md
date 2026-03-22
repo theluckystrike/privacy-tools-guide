@@ -1,4 +1,5 @@
 ---
+permalink: /luks-encrypted-container-guide/
 ---
 layout: default
 title: "How to Create an Encrypted Container with LUKS"

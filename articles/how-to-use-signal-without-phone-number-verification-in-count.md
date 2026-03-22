@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-signal-without-phone-number-verification-in-count/
 ---
 layout: default
 title: "How To Use Signal Without Phone Number Verification"

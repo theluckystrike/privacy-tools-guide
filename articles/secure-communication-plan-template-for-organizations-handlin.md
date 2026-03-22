@@ -1,4 +1,5 @@
 ---
+permalink: /secure-communication-plan-template-for-organizations-handlin/
 ---
 layout: default
 title: "Secure Communication Plan Template for Organizations"

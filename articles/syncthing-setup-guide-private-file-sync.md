@@ -1,4 +1,5 @@
 ---
+permalink: /syncthing-setup-guide-private-file-sync/
 ---
 layout: default
 title: "Syncthing Setup Guide for Private File Sync"

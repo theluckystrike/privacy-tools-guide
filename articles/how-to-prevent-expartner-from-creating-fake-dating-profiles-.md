@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
 ---
 layout: default
 title: "How To Prevent Expartner From Creating Fake Dating Profiles"

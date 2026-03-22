@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-throwaway-email-accounts-safely-for-one-time-s/
 ---
 layout: default
 title: "How To Create Throwaway Email Accounts Safely For One Time"

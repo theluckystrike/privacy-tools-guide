@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/
 ---
 layout: default
 title: "How To Protect Cryptocurrency Wallet From Being Hacked"

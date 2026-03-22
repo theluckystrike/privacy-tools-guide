@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-register-social-media-accounts-without-providing-real/
 ---
 layout: default
 title: "Register Social Media Accounts Without Providing Real Phone"

@@ -1,4 +1,5 @@
 ---
+permalink: /proton-drive-bridge-desktop-integration-guide/
 ---
 layout: default
 title: "Proton Drive Bridge Desktop Integration Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-fingerprinting-protection-how-it-makes-everyone-/
 ---
 layout: default
 title: "Tor Browser Fingerprinting Protection How It Makes Everyone"

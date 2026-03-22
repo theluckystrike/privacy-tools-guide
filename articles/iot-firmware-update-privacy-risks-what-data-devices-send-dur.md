@@ -1,4 +1,5 @@
 ---
+permalink: /iot-firmware-update-privacy-risks-what-data-devices-send-dur/
 ---
 layout: default
 title: "Iot Firmware Update Privacy Risks What Data Devices Send"

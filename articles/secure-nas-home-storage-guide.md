@@ -1,4 +1,5 @@
 ---
+permalink: /secure-nas-home-storage-guide/
 ---
 layout: default
 title: "How to Secure NAS Storage for Home Use"

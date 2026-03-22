@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-kill-switch-how-it-works-which-vpns-have-real-ones/
 ---
 layout: default
 title: "VPN Kill Switch: How It Works and Which VPNs Have Real"

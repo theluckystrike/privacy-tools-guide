@@ -1,4 +1,5 @@
 ---
+permalink: /subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/
 ---
 layout: default
 title: "Subscription Service Cancellation After Death"

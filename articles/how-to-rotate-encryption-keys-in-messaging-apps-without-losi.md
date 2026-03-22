@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
 ---
 layout: default
 title: "How To Rotate Encryption Keys In Messaging Apps"

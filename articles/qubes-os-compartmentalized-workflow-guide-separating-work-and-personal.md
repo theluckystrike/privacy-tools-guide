@@ -1,4 +1,5 @@
 ---
+permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
 ---
 layout: default
 title: "Qubes OS Compartmentalized Workflow Guide"

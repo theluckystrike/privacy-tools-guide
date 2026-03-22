@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-security-model-explained/
 ---
 layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"

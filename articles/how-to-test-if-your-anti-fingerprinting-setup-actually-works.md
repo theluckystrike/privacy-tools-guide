@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-test-if-your-anti-fingerprinting-setup-actually-works/
 ---
 layout: default
 title: "How to Test if Your Anti-Fingerprinting Setup Actually"

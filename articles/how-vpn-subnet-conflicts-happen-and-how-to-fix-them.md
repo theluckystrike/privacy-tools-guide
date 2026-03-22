@@ -1,4 +1,5 @@
 ---
+permalink: /how-vpn-subnet-conflicts-happen-and-how-to-fix-them/
 ---
 layout: default
 title: "How VPN Subnet Conflicts Happen and How to Fix"

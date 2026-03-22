@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-for-couple-sharing-streaming-accounts-secur/
 ---
 layout: default
 title: "Password Manager For Couple Sharing Streaming Accounts"

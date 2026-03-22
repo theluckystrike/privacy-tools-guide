@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-trezor-hardware-wallet-for-maximum-transact/
 ---
 
 

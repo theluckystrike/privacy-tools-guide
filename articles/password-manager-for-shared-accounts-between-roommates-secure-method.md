@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-for-shared-accounts-between-roommates-secure-method/
 ---
 layout: default
 title: "Password Manager For Shared Accounts Between Roommates"

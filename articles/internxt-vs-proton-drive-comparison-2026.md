@@ -1,4 +1,5 @@
 ---
+permalink: /internxt-vs-proton-drive-comparison-2026/
 ---
 layout: default
 title: "Internxt Vs Proton Drive Comparison 2026"

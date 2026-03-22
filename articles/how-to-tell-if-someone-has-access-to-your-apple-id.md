@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/
 ---
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple"

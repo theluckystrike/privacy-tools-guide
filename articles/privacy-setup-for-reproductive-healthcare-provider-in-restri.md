@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-reproductive-healthcare-provider-in-restri/
 ---
 layout: default
 title: "Privacy Setup For Reproductive Healthcare Provider"

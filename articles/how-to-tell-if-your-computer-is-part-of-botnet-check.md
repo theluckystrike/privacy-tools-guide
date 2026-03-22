@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
 ---
 layout: default
 title: "How To Tell If Your Computer Is Part Of Botnet"

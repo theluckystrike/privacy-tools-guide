@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-handle-password-manager-when-switching-phones-android/
 ---
 layout: default
 title: "How To Handle Password Manager When Switching Phones"

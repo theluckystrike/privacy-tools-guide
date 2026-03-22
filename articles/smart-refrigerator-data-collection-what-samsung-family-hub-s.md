@@ -1,4 +1,5 @@
 ---
+permalink: /smart-refrigerator-data-collection-what-samsung-family-hub-s/
 ---
 layout: default
 title: "Smart Refrigerator Data Collection What Samsung Family Hub"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-linkedin-profile-from-being-discovered-by-dat/
 ---
 layout: default
 title: "How To Protect LinkedIn Profile From Being Discovered"

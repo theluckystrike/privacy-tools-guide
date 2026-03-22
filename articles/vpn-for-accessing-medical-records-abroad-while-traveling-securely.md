@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-medical-records-abroad-while-traveling-securely/
 ---
 layout: default
 title: "VPN for Accessing Medical Records Abroad While"

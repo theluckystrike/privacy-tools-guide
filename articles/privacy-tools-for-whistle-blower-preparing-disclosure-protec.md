@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
 ---
 layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure"

@@ -1,4 +1,5 @@
 ---
+permalink: /proton-drive-vs-tresorit-which-to-pick-2026/
 ---
 layout: default
 title: "Proton Drive vs Tresorit: Which to Pick in 2026"

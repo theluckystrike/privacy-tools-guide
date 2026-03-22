@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-and-block-hidden-third-party-trackers-on-websi/
 ---
 layout: default
 title: "How To Detect And Block Hidden Third Party Trackers On"

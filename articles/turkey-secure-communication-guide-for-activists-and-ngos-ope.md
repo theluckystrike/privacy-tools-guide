@@ -1,4 +1,5 @@
 ---
+permalink: /turkey-secure-communication-guide-for-activists-and-ngos-ope/
 ---
 
 

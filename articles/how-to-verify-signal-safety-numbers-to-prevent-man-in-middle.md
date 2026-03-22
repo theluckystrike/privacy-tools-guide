@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/
 ---
 layout: default
 title: "How To Verify Signal Safety Numbers To Prevent Man"

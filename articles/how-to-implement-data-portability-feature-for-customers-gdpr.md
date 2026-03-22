@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-implement-data-portability-feature-for-customers-gdpr/
 ---
 layout: default
 title: "Implement Data Portability Feature For Customers Gdpr Right"

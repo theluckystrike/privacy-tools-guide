@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
 ---
 layout: default
 title: "How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen"

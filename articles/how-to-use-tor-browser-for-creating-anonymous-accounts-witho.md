@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-tor-browser-for-creating-anonymous-accounts-witho/
 ---
 layout: default
 title: "How To Use Tor Browser For Creating Anonymous Accounts"

@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-for-real-estate-agent-managing-listing-acco/
 ---
 layout: default
 title: "Password Manager For Real Estate Agent Managing Listing"

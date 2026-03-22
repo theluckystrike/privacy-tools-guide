@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/
 ---
 layout: default
 title: "Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile"

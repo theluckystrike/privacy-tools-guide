@@ -1,4 +1,5 @@
 ---
+permalink: /windows-sandbox-privacy-testing-guide-2026/
 ---
 layout: default
 title: "Windows Sandbox Privacy Testing Guide 2026"

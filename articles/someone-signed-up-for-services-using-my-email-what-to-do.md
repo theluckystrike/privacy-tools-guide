@@ -1,4 +1,5 @@
 ---
+permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
 ---
 layout: default
 title: "Someone Signed Up for Services Using My Email"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-mac-address-randomization-on-linux-to-prevent-wif/
 ---
 layout: default
 title: "How To Use Mac Address Randomization On Linux To Prevent"

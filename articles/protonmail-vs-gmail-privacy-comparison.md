@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-vs-gmail-privacy-comparison/
 ---
 layout: default
 title: "Protonmail Vs Gmail Privacy Comparison"

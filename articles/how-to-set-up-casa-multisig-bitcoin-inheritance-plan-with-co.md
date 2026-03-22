@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/
 ---
 layout: default
 title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan"

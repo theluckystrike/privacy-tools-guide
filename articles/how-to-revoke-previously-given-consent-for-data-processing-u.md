@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/
 ---
 layout: default
 title: "How To Revoke Previously Given Consent For Data Processing"

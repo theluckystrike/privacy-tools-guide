@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-remote-workers-connecting-to-us-office-from-asia/
 ---
 layout: default
 title: "Vpn For Remote Workers Connecting To Us Office"

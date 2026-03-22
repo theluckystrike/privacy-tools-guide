@@ -1,4 +1,5 @@
 ---
+permalink: /tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/
 ---
 layout: default
 title: "Tutanota Encrypted Calendar And Contacts How End To End"

@@ -1,4 +1,5 @@
 ---
+permalink: /plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/
 ---
 layout: default
 title: "Plausible Vs Matomo Vs Fathom Privacy Focused Analytics"

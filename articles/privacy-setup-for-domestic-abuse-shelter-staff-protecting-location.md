@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/
 ---
 layout: default
 title: "Privacy Setup For Domestic Abuse Shelter Staff: Protecting"

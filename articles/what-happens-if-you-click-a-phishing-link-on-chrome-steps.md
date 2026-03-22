@@ -1,4 +1,5 @@
 ---
+permalink: /what-happens-if-you-click-a-phishing-link-on-chrome-steps/
 ---
 layout: default
 title: "What Happens If You Click A Phishing Link On Chrome"

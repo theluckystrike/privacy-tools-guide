@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
 ---
 layout: default
 title: "How To Send Large Encrypted Files Without Uploading"

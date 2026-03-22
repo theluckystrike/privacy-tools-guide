@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-factory-reset-mobile-phone-securely-before-selling-en/
 ---
 layout: default
 title: "How To Factory Reset Mobile Phone Securely Before Selling"

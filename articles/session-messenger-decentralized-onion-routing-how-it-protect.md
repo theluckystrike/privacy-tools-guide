@@ -1,4 +1,5 @@
 ---
+permalink: /session-messenger-decentralized-onion-routing-how-it-protect/
 ---
 layout: default
 title: "Session Messenger Decentralized Onion Routing How It"

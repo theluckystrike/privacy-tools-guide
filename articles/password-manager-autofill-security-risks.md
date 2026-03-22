@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-autofill-security-risks/
 ---
 layout: default
 title: "Password Manager Autofill Security"

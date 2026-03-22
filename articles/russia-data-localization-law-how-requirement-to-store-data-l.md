@@ -1,4 +1,5 @@
 ---
+permalink: /russia-data-localization-law-how-requirement-to-store-data-l/
 ---
 layout: default
 title: "Russia Data Localization Law: How Requirement to Store"

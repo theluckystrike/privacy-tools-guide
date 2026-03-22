@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-purchase-items-online-without-revealing-real-identity/
 ---
 layout: default
 title: "How To Purchase Items Online Without Revealing Real Identity"

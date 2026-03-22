@@ -1,4 +1,5 @@
 ---
+permalink: /intelius-opt-out-guide-remove-personal-information-2026/
 ---
 layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"

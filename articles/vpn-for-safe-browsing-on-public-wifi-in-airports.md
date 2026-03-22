@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-safe-browsing-on-public-wifi-in-airports/
 ---
 layout: default
 title: "VPN for Safe Browsing on Public WiFi in Airports"

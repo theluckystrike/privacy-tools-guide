@@ -1,4 +1,5 @@
 ---
+permalink: /tinder-passport-feature-privacy-implications-what-location-d/
 ---
 layout: default
 title: "Tinder Passport Feature Privacy Implications What Location"

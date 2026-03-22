@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/
 ---
 layout: default
 title: "Privacy Setup for Political Campaign Worker"

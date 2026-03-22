@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/
 ---
 layout: default
 title: "How To Spot Romance Scam Red Flags On Dating Apps Comprehens"

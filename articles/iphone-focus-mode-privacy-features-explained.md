@@ -1,4 +1,5 @@
 ---
+permalink: /iphone-focus-mode-privacy-features-explained/
 ---
 layout: default
 title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"

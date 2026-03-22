@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/
 ---
 layout: default
 title: "How To Configure Ublock Origin For Maximum Anti Tracking Pro"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-vpn-encryption-key-exchange-works-diffie-hellman-explain/
 ---
 layout: default
 title: "How VPN Encryption Key Exchange Works Diffie Hellman"

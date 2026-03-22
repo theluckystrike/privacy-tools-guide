@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-cookies-tracking-prevention-guide/
 ---
 layout: default
 title: "Tor Browser Cookies Tracking Prevention Guide"

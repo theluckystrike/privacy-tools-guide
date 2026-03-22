@@ -1,4 +1,5 @@
 ---
+permalink: /xmpp-omemo-encryption-setup-guide/
 ---
 layout: default
 title: "Xmpp Omemo Encryption Setup Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
 ---
 layout: default
 title: "Privacy Setup For Physical Therapist Patient Exercise Data"

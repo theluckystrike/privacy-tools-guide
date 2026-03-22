@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
 ---
 layout: default
 title: "How To Tell If Your Phone Camera Is Being Accessed Remotely"

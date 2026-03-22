@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-stop-browser-fingerprinting-on-chrome-2026-practical-/
 ---
 layout: default
 title: "How To Stop Browser Fingerprinting On Chrome 2026 Practical"

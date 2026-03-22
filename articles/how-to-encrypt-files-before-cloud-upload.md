@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-encrypt-files-before-cloud-upload/
 ---
 layout: default
 title: "How to Encrypt Files Before Cloud"

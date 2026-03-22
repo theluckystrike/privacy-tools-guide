@@ -1,4 +1,5 @@
 ---
+permalink: /onionshare-secure-file-sharing-over-tor-network-setup-and-us/
 ---
 layout: default
 title: "Onionshare Secure File Sharing Over Tor Network Setup"

@@ -1,4 +1,5 @@
 ---
+permalink: /restic-encrypted-backup-setup-guide/
 ---
 layout: default
 title: "Restic Encrypted Backup Setup Guide"

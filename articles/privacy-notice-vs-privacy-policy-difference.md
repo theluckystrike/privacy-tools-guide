@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-notice-vs-privacy-policy-difference/
 ---
 layout: default
 title: "Privacy Notice Vs Privacy Policy Difference"

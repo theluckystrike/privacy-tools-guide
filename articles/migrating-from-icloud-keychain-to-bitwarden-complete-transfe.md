@@ -1,4 +1,5 @@
 ---
+permalink: /migrating-from-icloud-keychain-to-bitwarden-complete-transfe/
 ---
 layout: default
 title: "Migrating From Icloud Keychain To Bitwarden Complete"

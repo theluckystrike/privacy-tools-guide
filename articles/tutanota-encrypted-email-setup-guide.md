@@ -1,4 +1,5 @@
 ---
+permalink: /tutanota-encrypted-email-setup-guide/
 ---
 layout: default
 title: "Setting Up Encrypted Email with Tutanota"

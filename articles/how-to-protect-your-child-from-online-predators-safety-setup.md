@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-your-child-from-online-predators-safety-setup/
 ---
 layout: default
 title: "How To Protect Your Child From Online Predators Safety Setup"

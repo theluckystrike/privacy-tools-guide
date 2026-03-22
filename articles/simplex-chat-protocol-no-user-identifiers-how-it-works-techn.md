@@ -1,4 +1,5 @@
 ---
+permalink: /simplex-chat-protocol-no-user-identifiers-how-it-works-techn/
 ---
 layout: default
 title: "Simplex Chat Protocol No User Identifiers How It Works"

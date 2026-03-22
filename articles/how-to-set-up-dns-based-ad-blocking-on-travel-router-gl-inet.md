@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
 ---
 layout: default
 title: "Set Up DNS-Based Ad Blocking on Travel Router GL-Inet"

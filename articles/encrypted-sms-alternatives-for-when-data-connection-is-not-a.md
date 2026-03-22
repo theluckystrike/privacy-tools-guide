@@ -1,4 +1,5 @@
 ---
+permalink: /encrypted-sms-alternatives-for-when-data-connection-is-not-a/
 ---
 layout: default
 title: "Encrypted SMS Alternatives for When Data Connection Is"

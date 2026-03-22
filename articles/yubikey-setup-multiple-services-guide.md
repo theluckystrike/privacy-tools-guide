@@ -1,4 +1,5 @@
 ---
+permalink: /yubikey-setup-multiple-services-guide/
 ---
 layout: default
 title: "YubiKey Setup for Multiple Services Guide"

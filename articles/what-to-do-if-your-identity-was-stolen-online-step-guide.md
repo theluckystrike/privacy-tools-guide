@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
 ---
 layout: default
 title: "What To Do If Your Identity Was Stolen Online Step Guide"

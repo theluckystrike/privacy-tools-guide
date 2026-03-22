@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-preserving-logging-guide-for-developers-2026/
 ---
 layout: default
 title: "Privacy Preserving Logging Guide for Developers 2026"

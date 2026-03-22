@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-test-vpn-kill-switch-actually-works-properly-guide/
 ---
 layout: default
 title: "How To Test Vpn Kill Switch Actually Works Properly Guide"

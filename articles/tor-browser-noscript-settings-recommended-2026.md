@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-noscript-settings-recommended-2026/
 ---
 layout: default
 title: "Tor Browser NoScript Settings Recommended 2026"

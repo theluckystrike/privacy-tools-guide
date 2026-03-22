@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-purchase-phone-and-sim-card-anonymously-complete-guid/
 ---
 layout: default
 title: "How To Purchase Phone And Sim Card Anonymously Complete"

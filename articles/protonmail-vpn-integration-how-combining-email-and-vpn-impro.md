@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-vpn-integration-how-combining-email-and-vpn-impro/
 ---
 layout: default
 title: "Protonmail Vpn Integration How Combining Email And Vpn"

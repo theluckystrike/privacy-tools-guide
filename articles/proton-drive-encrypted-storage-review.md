@@ -1,4 +1,5 @@
 ---
+permalink: /proton-drive-encrypted-storage-review/
 ---
 layout: default
 title: "Proton Drive Encrypted Storage Review"

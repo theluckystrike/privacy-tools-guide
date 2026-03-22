@@ -1,4 +1,5 @@
 ---
+permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
 ---
 layout: default
 title: "Linux Secure Boot Setup with Custom Keys for Preventing"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
 ---
 layout: default
 title: "Set Up Google Inactive Account Manager for Automatic Data"

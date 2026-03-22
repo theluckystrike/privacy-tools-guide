@@ -1,4 +1,5 @@
 ---
+permalink: /keeper-vs-dashlane-enterprise-comparison/
 ---
 layout: default
 title: "Keeper vs Dashlane Enterprise Comparison for Developers"

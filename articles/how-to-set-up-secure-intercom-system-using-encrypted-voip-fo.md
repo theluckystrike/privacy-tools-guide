@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-secure-intercom-system-using-encrypted-voip-fo/
 ---
 layout: default
 title: "How To Set Up Secure Intercom System Using Encrypted Voip"

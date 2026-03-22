@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/
 ---
 layout: default
 title: "How To Detect If Dating App Is Selling Your Data To Third"

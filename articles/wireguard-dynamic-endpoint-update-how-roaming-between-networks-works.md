@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/
 ---
 layout: default
 title: "WireGuard Dynamic Endpoint Update"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-demand-company-stop-selling-your-personal-data-under-/
 ---
 layout: default
 title: "How To Demand Company Stop Selling Your Personal Data Under"

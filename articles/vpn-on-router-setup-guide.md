@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-on-router-setup-guide/
 ---
 layout: default
 title: "How to Set Up a VPN on Your Router"

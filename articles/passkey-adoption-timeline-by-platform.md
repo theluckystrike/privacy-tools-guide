@@ -1,4 +1,5 @@
 ---
+permalink: /passkey-adoption-timeline-by-platform/
 ---
 layout: default
 title: "Passkey Adoption Timeline by Platform: A Developer Guide"

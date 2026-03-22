@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
 ---
 layout: default
 title: "How To Use Naiveproxy To Disguise Censorship Circumvention"

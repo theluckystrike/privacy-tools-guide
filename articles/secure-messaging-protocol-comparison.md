@@ -1,4 +1,5 @@
 ---
+permalink: /secure-messaging-protocol-comparison/
 ---
 layout: default
 title: "Secure Messaging Protocol Comparison"

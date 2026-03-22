@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-v2ray-vmess-for-accessing-blocked-websites-fro/
 ---
 layout: default
 title: "How To Set Up V2ray Vmess For Accessing Blocked Websites"

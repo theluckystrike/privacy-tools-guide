@@ -1,4 +1,5 @@
 ---
+permalink: /youtube-alternative-private-video-platforms-2026/
 ---
 layout: default
 title: "Youtube Alternative Private Video Platforms 2026"

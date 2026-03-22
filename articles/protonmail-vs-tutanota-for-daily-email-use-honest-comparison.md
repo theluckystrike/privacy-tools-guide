@@ -1,4 +1,5 @@
 ---
+permalink: /protonmail-vs-tutanota-for-daily-email-use-honest-comparison/
 ---
 layout: default
 title: "Protonmail Vs Tutanota For Daily Email Use Honest Comparison"

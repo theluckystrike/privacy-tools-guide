@@ -1,4 +1,5 @@
 ---
+permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
 ---
 layout: default
 title: "Immigration Checkpoint Device Search Rights What Ice Cbp"

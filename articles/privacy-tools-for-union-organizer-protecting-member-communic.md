@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-tools-for-union-organizer-protecting-member-communic/
 ---
 layout: default
 title: "Privacy Tools For Union Organizer Protecting Member Communic"

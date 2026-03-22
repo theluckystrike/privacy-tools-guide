@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/
 ---
 layout: default
 title: "WireGuard DNS Configuration Options Explained"

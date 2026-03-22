@@ -1,4 +1,5 @@
 ---
+permalink: /temporary-phone-number-for-receiving-sms-verification-codes-/
 ---
 layout: default
 title: "Temporary Phone Number For Receiving Sms Verification Codes"

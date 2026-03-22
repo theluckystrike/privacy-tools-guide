@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-if-data-broker-actually-deleted-your-personal-/
 ---
 layout: default
 title: "How To Verify If Data Broker Actually Deleted Your Personal"

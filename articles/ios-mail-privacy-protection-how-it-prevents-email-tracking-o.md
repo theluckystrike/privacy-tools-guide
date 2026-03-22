@@ -1,4 +1,5 @@
 ---
+permalink: /ios-mail-privacy-protection-how-it-prevents-email-tracking-o/
 ---
 layout: default
 title: "iOS Mail Privacy Protection How It Prevents Email Tracking"

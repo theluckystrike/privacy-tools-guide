@@ -1,4 +1,5 @@
 ---
+permalink: /iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/
 ---
 layout: default
 title: "iPhone Hotspot Naming Privacy Why Your Name Broadcasts"

@@ -1,4 +1,5 @@
 ---
+permalink: /proton-drive-review-honest-assessment-2026/
 ---
 layout: default
 title: "Proton Drive Review: Honest Assessment 2026"

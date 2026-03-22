@@ -1,4 +1,5 @@
 ---
+permalink: /threat-modeling-basics-developers/
 ---
 layout: default
 title: "Threat Modeling Basics for Developers"

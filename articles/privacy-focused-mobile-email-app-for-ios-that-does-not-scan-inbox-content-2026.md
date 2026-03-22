@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-focused-mobile-email-app-for-ios-that-does-not-scan-inbox-content-2026/
 ---
 
 layout: default

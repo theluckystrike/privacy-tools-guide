@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-file-ftc-complaint-for-privacy-violation-by-company-d/
 ---
 layout: default
 title: "How To File Ftc Complaint For Privacy Violation By Company"

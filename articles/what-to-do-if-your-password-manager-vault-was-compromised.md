@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-your-password-manager-vault-was-compromised/
 ---
 layout: default
 title: "What to Do If Your Password Manager Vault Was Compromised"

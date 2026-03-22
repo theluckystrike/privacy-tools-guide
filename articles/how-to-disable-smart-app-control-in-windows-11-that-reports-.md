@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-disable-smart-app-control-in-windows-11-that-reports-/
 ---
 layout: default
 title: "How To Disable Smart App Control In Windows 11 That Reports"

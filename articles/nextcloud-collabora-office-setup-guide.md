@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-collabora-office-setup-guide/
 ---
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"

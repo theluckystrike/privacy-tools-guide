@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-test-vpn-for-webrtc-leaks-comprehensive-testing-guide/
 ---
 layout: default
 title: "How To Test Vpn For Webrtc Leaks Testing Guide"

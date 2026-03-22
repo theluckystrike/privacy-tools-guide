@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
 ---
 layout: default
 title: "Tell If Your Home Assistant or Alexa Was Compromised"

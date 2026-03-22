@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-safely-share-location-with-date-without-giving-perman/
 ---
 layout: default
 title: "How To Safely Share Location With Date Without Giving"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-disable-macos-analytics-sharing-that-sends-crash-data/
 ---
 layout: default
 title: "How To Disable macOS Analytics Sharing That Sends Crash"

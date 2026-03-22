@@ -1,4 +1,5 @@
 ---
+permalink: /identity-compartmentalization-strategy-separating-real-name-/
 ---
 layout: default
 title: "Identity Compartmentalization Strategy Separating Real Name"

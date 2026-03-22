@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/
 ---
 layout: default
 title: "Pay For Vpn Subscription Anonymously Using Cryptocurrency"

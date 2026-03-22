@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
 ---
 layout: default
 title: "Set Up Secure Communication For Labor Strike: Practical"

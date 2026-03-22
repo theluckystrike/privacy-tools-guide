@@ -1,4 +1,5 @@
 ---
+permalink: /windows-11-cortana-disable-privacy-guide/
 ---
 layout: default
 title: "Windows 11 Cortana Disable Privacy Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/
 ---
 layout: default
 title: "How To Use Tcpdump To Verify Vpn Traffic Is Encrypted"

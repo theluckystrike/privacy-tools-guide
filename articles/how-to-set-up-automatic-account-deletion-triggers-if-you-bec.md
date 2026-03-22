@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
 ---
 layout: default
 title: "How To Set Up Automatic Account Deletion Triggers If You"

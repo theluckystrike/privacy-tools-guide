@@ -1,4 +1,5 @@
 ---
+permalink: /signal-desktop-security-best-practices/
 ---
 layout: default
 title: "Signal Desktop Security Best Practices"

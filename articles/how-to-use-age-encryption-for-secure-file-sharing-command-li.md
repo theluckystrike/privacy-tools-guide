@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-age-encryption-for-secure-file-sharing-command-li/
 ---
 layout: default
 title: "How To Use Age Encryption For Secure File Sharing Command"

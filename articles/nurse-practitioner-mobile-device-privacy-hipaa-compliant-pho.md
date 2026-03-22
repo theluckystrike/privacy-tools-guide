@@ -1,4 +1,5 @@
 ---
+permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/
 ---
 layout: default
 title: "Nurse Practitioner Mobile Device Privacy Hipaa Compliant"

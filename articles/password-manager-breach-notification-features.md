@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-breach-notification-features/
 ---
 layout: default
 title: "Password Manager Breach Notification Features"

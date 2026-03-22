@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-confidential-informant-protecting-identity/
 ---
 layout: default
 title: "Privacy Setup for Confidential Informant"

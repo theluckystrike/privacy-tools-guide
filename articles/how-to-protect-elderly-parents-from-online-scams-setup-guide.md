@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
 ---
 layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /signal-username-feature-privacy-review/
 ---
 layout: default
 title: "Signal Username Feature Privacy Review"

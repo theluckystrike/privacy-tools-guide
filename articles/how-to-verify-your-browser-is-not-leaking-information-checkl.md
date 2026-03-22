@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-your-browser-is-not-leaking-information-checkl/
 ---
 layout: default
 title: "Verify Your Browser is Not Leaking Information"

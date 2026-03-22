@@ -1,4 +1,5 @@
 ---
+permalink: /workplace-drug-testing-privacy-rights-what-employers-can-and/
 ---
 layout: default
 title: "Workplace Drug Testing Privacy Rights"

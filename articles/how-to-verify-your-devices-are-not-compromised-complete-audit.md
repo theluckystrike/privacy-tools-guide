@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-your-devices-are-not-compromised-complete-audit/
 ---
 layout: default
 title: "Verify Your Devices Are Not Compromised: A Complete"

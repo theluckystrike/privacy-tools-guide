@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
 ---
 layout: default
 title: "How To Set Up Mobile Device Management Profile For Personal"

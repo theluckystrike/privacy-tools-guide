@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-hulu-from-canada-current-working-servers/
 ---
 layout: default
 title: "VPN for Accessing Hulu from Canada: Current Working Servers"

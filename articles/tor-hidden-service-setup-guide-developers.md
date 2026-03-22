@@ -1,4 +1,5 @@
 ---
+permalink: /tor-hidden-service-setup-guide-developers/
 ---
 layout: default
 title: "Tor Hidden Service Setup Guide Developers"

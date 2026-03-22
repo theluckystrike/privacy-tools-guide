@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-someone-installed-spyware-on-your-iphone/
 ---
 layout: default
 title: "How To Tell If Someone Installed Spyware On Your"

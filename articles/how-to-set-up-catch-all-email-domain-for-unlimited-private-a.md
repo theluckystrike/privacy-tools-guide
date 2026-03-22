@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-catch-all-email-domain-for-unlimited-private-a/
 ---
 layout: default
 title: "Set Up Catch All Email Domain For Unlimited Private"

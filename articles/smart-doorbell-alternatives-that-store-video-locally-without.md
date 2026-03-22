@@ -1,4 +1,5 @@
 ---
+permalink: /smart-doorbell-alternatives-that-store-video-locally-without/
 ---
 layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally"

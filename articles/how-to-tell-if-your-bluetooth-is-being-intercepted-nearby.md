@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/
 ---
 layout: default
 title: "How to Tell if Your Bluetooth Is Being Intercepted"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-cross-device-tracking-between-phone-tablet-an/
 ---
 layout: default
 title: "How To Prevent Cross Device Tracking Between Phone Tablet"

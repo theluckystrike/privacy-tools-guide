@@ -1,4 +1,5 @@
 ---
+permalink: /magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/
 ---
 layout: default
 title: "Magic Wormhole Encrypted File Transfer How To Send Files"

@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-portable-usb-setup-guide/
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"

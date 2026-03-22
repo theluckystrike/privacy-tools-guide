@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/
 ---
 layout: default
 title: "Privacy Implications Of Robot Vacuum Lidar Mapping Selling"

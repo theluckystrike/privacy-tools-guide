@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-briar-messenger-offline-guide/
 ---
 layout: default
 title: "How to Use Briar Messenger Offline: A Developer's Guide"

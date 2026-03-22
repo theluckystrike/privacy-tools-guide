@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-european-banking-apps-from-united-states/
 ---
 layout: default
 title: "VPN for Accessing European Banking Apps from United"

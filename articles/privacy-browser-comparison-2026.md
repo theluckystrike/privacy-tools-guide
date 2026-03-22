@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-browser-comparison-2026/
 ---
 layout: default
 title: "Privacy-Focused Web Browser Comparison 2026"

@@ -1,4 +1,5 @@
 ---
+permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
 ---
 layout: default
 title: "India Data Protection Bill 2026 What It Means For Citizen"

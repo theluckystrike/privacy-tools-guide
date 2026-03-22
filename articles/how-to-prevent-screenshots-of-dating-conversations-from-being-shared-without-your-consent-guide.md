@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/
 ---
 layout: default
 title: "Prevent Screenshots of Dating Conversations from Being"

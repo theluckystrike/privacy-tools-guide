@@ -1,4 +1,5 @@
 ---
+permalink: /nextcloud-setup-guide-raspberry-pi-2026/
 ---
 layout: default
 title: "Nextcloud Setup Guide Raspberry Pi 2026"

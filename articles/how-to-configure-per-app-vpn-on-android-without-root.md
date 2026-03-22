@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-per-app-vpn-on-android-without-root/
 ---
 layout: default
 title: "How To Configure Per App Vpn On Android"

@@ -1,4 +1,5 @@
 ---
+permalink: /social-media-privacy-policy-comparison-2026/
 ---
 layout: default
 title: "Social Media Privacy Policy Comparison 2026"

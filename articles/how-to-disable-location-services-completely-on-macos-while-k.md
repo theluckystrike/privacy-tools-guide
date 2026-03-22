@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-disable-location-services-completely-on-macos-while-k/
 ---
 layout: default
 title: "Disable Location Services Completely On macOS While Keeping"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-replace-cloud-dependent-smart-switches-with-local-zig/
 ---
 layout: default
 title: "How To Replace Cloud Dependent Smart Switches With Local"

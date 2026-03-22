@@ -1,4 +1,5 @@
 ---
+permalink: /password-manager-security-model-explained-simply/
 ---
 layout: default
 title: "Password Manager Security Model Explained Simply"

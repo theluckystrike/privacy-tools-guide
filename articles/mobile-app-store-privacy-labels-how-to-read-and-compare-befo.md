@@ -1,4 +1,5 @@
 ---
+permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/
 ---
 layout: default
 title: "Mobile App Store Privacy Labels How To Read And Compare"

@@ -1,4 +1,5 @@
 ---
+permalink: /secure-video-messaging-apps-that-do-not-store-recordings-on-/
 ---
 layout: default
 title: "Secure Video Messaging Apps That Do Not Store Recordings On"

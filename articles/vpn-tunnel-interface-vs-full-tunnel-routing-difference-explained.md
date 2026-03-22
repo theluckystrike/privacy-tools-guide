@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
 ---
 layout: default
 title: "VPN Tunnel Interface Vs Full Tunnel Routing Difference"

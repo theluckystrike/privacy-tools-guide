@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-and-remove-stalkerware-from-android-phone-comp/
 ---
 layout: default
 title: "How To Detect And Remove Stalkerware From Android Phone"

@@ -1,4 +1,5 @@
 ---
+permalink: /wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/
 ---
 layout: default
 title: "Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction"

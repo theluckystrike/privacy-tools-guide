@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-document-dns-and-ssl-certificate-renewal-procedures/
 ---
 layout: default
 title: "How to Document DNS and SSL Certificate Renewal Procedures"

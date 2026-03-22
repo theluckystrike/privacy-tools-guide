@@ -1,4 +1,5 @@
 ---
+permalink: /legitimate-interest-assessment-template-for-processing-perso/
 ---
 layout: default
 title: "Legitimate Interest Assessment Template For Processing"

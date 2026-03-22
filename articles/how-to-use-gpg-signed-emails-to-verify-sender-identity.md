@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-gpg-signed-emails-to-verify-sender-identity/
 ---
 layout: default
 title: "Use GPG Signed Emails to Verify Sender Identity"

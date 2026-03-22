@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-threat-model-explained-developers/
 ---
 layout: default
 title: "Tor Browser Threat Model Explained for Developers"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/
 ---
 layout: default
 title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"

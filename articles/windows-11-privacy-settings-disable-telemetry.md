@@ -1,4 +1,5 @@
 ---
+permalink: /windows-11-privacy-settings-disable-telemetry/
 ---
 layout: default
 title: "Windows 11 Privacy Settings: How to Disable Telemetry"

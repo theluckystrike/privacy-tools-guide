@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
 ---
 layout: default
 title: "How To Set Up Onion Routing For Email Using Tor Hidden"

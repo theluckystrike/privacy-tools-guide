@@ -1,4 +1,5 @@
 ---
+permalink: /totp-backup-codes-best-practices/
 ---
 layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"

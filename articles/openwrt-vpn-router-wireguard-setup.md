@@ -1,4 +1,5 @@
 ---
+permalink: /openwrt-vpn-router-wireguard-setup/
 ---
 layout: default
 title: "OpenWrt VPN Router Setup with WireGuard"

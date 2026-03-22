@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-stop-someone-from-accessing-your-icloud-without-permi/
 ---
 layout: default
 title: "How To Stop Someone From Accessing Your Icloud"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-exercise-right-to-rectification-correcting-inaccurate/
 ---
 layout: default
 title: "How To Exercise Right To Rectification Correcting Inaccurate"

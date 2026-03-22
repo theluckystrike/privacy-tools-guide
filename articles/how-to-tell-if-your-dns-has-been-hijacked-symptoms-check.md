@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
 ---
 layout: default
 title: "How To Tell If Your Dns Has Been Hijacked Symptoms"

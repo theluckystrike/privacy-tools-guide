@@ -1,4 +1,5 @@
 ---
+permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
 ---
 layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display"

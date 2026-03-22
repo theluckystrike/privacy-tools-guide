@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-yourself-from-swatting-attack-prevention-meas/
 ---
 layout: default
 title: "Protect Yourself From Swatting Attack Prevention Measures"

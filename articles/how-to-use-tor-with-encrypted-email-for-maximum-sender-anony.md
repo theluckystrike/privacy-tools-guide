@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-tor-with-encrypted-email-for-maximum-sender-anony/
 ---
 layout: default
 title: "Use Tor With Encrypted Email for Maximum Sender Anonymity"

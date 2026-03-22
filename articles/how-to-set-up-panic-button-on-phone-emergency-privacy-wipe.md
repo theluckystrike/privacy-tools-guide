@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/
 ---
 layout: default
 title: "How to Set Up Panic Button on Phone: Emergency Privacy"

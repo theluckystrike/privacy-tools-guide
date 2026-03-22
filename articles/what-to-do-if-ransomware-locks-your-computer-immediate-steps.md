@@ -1,4 +1,5 @@
 ---
+permalink: /what-to-do-if-ransomware-locks-your-computer-immediate-steps/
 ---
 layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate"

@@ -1,4 +1,5 @@
 ---
+permalink: /ios-contact-poster-privacy-settings-guide/
 ---
 layout: default
 title: "iOS Contact Poster Privacy Settings Guide"

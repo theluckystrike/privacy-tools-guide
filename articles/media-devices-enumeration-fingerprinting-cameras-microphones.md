@@ -1,4 +1,5 @@
 ---
+permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
 ---
 layout: default
 title: "Media Devices Enumeration Fingerprinting Cameras Microphones"

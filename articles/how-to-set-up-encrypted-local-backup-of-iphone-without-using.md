@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-encrypted-local-backup-of-iphone-without-using/
 ---
 layout: default
 title: "Set Up Encrypted Local Backup Of iPhone"

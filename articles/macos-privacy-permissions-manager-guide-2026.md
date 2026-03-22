@@ -1,4 +1,5 @@
 ---
+permalink: /macos-privacy-permissions-manager-guide-2026/
 ---
 layout: default
 title: "macOS Privacy Permissions Manager Guide 2026"

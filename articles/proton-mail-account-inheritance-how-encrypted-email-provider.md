@@ -1,4 +1,5 @@
 ---
+permalink: /proton-mail-account-inheritance-how-encrypted-email-provider/
 ---
 layout: default
 title: "Proton Mail Account Inheritance How Encrypted Email Provider"

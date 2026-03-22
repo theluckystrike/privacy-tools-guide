@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-withdraw-crypto-from-exchange-without-linking-to-pers/
 ---
 layout: default
 title: "Withdraw Crypto from Exchange Without Linking to Personal"

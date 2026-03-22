@@ -1,4 +1,5 @@
 ---
+permalink: /icedrive-review-encrypted-cloud-storage-2026/
 ---
 layout: default
 title: "IceDrive Review: Encrypted Cloud Storage for 2026"

@@ -1,4 +1,5 @@
 ---
+permalink: /india-cctv-surveillance-expansion-privacy-implications-of-sm/
 ---
 layout: default
 title: "India Cctv Surveillance Expansion Privacy Implications"

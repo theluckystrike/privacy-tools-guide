@@ -1,4 +1,5 @@
 ---
+permalink: /remove-exif-data-photos-automated/
 ---
 layout: default
 title: "Remove EXIF Data from Photos Automatically"

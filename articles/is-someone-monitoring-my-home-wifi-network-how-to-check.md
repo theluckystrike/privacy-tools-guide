@@ -1,4 +1,5 @@
 ---
+permalink: /is-someone-monitoring-my-home-wifi-network-how-to-check/
 ---
 layout: default
 title: "Is Someone Monitoring My Home WiFi Network? How"

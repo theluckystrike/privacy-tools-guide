@@ -1,4 +1,5 @@
 ---
+permalink: /smart-blinds-and-shades-privacy-do-motorized-window-covers-r/
 ---
 layout: default
 title: "Smart Blinds And Shades Privacy Do Motorized Window Covers"

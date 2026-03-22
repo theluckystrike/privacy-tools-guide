@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-run-concurrent-vpn-connections-for-different-applicat/
 ---
 layout: default
 title: "How To Run Concurrent Vpn Connections For Different Applicat"

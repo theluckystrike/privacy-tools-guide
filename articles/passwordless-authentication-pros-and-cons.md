@@ -1,4 +1,5 @@
 ---
+permalink: /passwordless-authentication-pros-and-cons/
 ---
 layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"

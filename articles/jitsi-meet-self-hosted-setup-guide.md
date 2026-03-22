@@ -1,4 +1,5 @@
 ---
+permalink: /jitsi-meet-self-hosted-setup-guide/
 ---
 layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"

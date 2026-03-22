@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-home-assistant-esphome-for-completely-local-sm/
 ---
 layout: default
 title: "How To Set Up Home Assistant Esphome For Completely Local"

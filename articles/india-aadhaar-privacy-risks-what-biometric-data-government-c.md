@@ -1,4 +1,5 @@
 ---
+permalink: /india-aadhaar-privacy-risks-what-biometric-data-government-c/
 ---
 layout: default
 title: "India Aadhaar Privacy Risks What Biometric Data Government"

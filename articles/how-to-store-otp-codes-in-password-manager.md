@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-store-otp-codes-in-password-manager/
 ---
 layout: default
 title: "How To Store Otp Codes In Password Manager"

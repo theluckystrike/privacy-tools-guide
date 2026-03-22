@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-vendor-privacy-scorecard-for-evaluating-saas-t/
 ---
 layout: default
 title: "How To Create Vendor Privacy Scorecard For Evaluating Saas"

@@ -1,4 +1,5 @@
 ---
+permalink: /signal-protocol-explained-for-developers/
 ---
 layout: default
 title: "Signal Protocol Explained for Developers"

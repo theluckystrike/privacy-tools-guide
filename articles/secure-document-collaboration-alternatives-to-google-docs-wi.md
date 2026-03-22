@@ -1,4 +1,5 @@
 ---
+permalink: /secure-document-collaboration-alternatives-to-google-docs-wi/
 ---
 layout: default
 title: "Secure Document Collaboration Alternatives to Google"

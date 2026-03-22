@@ -1,4 +1,5 @@
 ---
+permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/
 ---
 layout: default
 title: "Mimblewimble Protocol Privacy Features How Grin And Beam Pro"

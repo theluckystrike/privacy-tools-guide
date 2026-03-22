@@ -1,4 +1,5 @@
 ---
+permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
 ---
 layout: default
 title: "Russia Sovereign Internet Law What It Means For Vpn Users"

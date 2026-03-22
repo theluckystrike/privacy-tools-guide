@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-risks-of-smart-speakers-alexa-google-home-2026/
 ---
 layout: default
 title: "Privacy Risks of Smart Speakers Alexa Google Home 2026"

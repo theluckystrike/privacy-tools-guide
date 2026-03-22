@@ -1,4 +1,5 @@
 ---
+permalink: /telegram-vs-signal-which-is-actually-safer/
 ---
 layout: default
 title: "Telegram Vs Signal Which Is Actually Safer"

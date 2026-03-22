@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-android-setup-guide-orbot/
 ---
 layout: default
 title: "Tor Browser Android Setup Guide"

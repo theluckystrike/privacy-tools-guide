@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
 ---
 layout: default
 title: "Set Up a Dead Man's Switch Email That Sends Credentials If"

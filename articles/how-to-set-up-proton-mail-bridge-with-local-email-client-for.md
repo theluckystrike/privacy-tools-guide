@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-proton-mail-bridge-with-local-email-client-for/
 ---
 layout: default
 title: "How To Set Up Proton Mail Bridge With Local Email Client"

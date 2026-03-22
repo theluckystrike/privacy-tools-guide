@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-delete-all-traces-of-your-online-presence-completely/
 ---
 layout: default
 title: "How to Delete All Traces of Your Online Presence Completely"

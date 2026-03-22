@@ -1,4 +1,5 @@
 ---
+permalink: /secure-audio-messaging-apps-that-encrypt-voice-messages-end-/
 ---
 layout: default
 title: "Secure Audio Messaging Apps That Encrypt Voice Messages End"

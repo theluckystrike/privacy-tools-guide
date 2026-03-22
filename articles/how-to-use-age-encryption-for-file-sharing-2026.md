@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-age-encryption-for-file-sharing-2026/
 ---
 title: "How to Use Age Encryption for File Sharing 2026"
 slug: how-to-use-age-encryption-for-file-sharing-2026

@@ -1,4 +1,5 @@
 ---
+permalink: /what-happens-when-your-password-appears-in-data-breach-steps/
 ---
 layout: default
 title: "What Happens When Your Password Appears In Data Breach"

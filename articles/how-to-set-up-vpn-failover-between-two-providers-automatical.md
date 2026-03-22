@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-vpn-failover-between-two-providers-automatical/
 ---
 layout: default
 title: "How To Set Up Vpn Failover Between Two Providers Automatical"

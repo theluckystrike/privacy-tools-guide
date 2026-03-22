@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/
 ---
 layout: default
 title: "How To Implement Right To Be Forgotten In Your Application"

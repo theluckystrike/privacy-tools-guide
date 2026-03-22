@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-that-your-encrypted-messages-are-not-being-int/
 ---
 layout: default
 title: "How To Verify That Your Encrypted Messages Are Not Being"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/
 ---
 layout: default
 title: "Prevent Android Keyboard From Sending Typing Data To Google"

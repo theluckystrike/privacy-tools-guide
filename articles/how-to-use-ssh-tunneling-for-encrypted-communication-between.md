@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-ssh-tunneling-for-encrypted-communication-between/
 ---
 layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication"

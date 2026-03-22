@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-disable-all-windows-11-telemetry-endpoints-using-fire/
 ---
 layout: default
 title: "How To Disable All Windows 11 Telemetry Endpoints"

@@ -1,4 +1,5 @@
 ---
+permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/
 ---
 layout: default
 title: "Login Fingerprinting How Websites Detect Which Accounts You"

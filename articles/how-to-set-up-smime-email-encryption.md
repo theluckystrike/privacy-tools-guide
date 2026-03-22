@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-smime-email-encryption/
 ---
 layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"

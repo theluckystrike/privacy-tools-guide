@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-setup-for-underground-railroad-modern-equivalent-pro/
 ---
 layout: default
 title: "Privacy Setup For Underground Railroad Modern Equivalent Pro"

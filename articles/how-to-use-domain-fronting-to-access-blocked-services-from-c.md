@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-domain-fronting-to-access-blocked-services-from-c/
 ---
 layout: default
 title: "How To Use Domain Fronting To Access Blocked Services"

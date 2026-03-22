@@ -1,4 +1,5 @@
 ---
+permalink: /wifi-deauthentication-attack-detection-how-to-identify-and-p/
 ---
 layout: default
 title: "Wifi Deauthentication Attack Detection How To Identify"

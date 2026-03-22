@@ -1,4 +1,5 @@
 ---
+permalink: /threat-model-for-sex-worker-protecting-real-identity-and-loc/
 ---
 layout: default
 title: "Threat Model For Sex Worker Protecting Real Identity"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/
 ---
 layout: default
 title: "Set Up VLAN Isolation for IoT Devices on Home Network 2026"

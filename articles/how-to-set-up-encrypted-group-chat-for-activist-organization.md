@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-encrypted-group-chat-for-activist-organization/
 ---
 layout: default
 title: "How To Set Up Encrypted Group Chat For Activist Organization"

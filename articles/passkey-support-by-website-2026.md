@@ -1,4 +1,5 @@
 ---
+permalink: /passkey-support-by-website-2026/
 ---
 layout: default
 title: "Passkey Support By Website 2026"

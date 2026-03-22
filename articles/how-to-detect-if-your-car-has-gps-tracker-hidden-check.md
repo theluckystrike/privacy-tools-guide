@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-if-your-car-has-gps-tracker-hidden-check/
 ---
 layout: default
 title: "How to Detect if Your Car Has GPS Tracker Hidden"

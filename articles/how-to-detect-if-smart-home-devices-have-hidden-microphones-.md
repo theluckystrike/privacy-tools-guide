@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-if-smart-home-devices-have-hidden-microphones-/
 ---
 layout: default
 title: "Detect If Smart Home Devices Have Hidden Microphones"

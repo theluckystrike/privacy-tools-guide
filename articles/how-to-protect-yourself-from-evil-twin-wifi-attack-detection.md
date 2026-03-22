@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-yourself-from-evil-twin-wifi-attack-detection/
 ---
 layout: default
 title: "How to Protect Yourself from Evil Twin WiFi Attack Detection"

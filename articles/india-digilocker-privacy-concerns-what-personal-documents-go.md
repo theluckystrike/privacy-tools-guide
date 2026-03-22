@@ -1,4 +1,5 @@
 ---
+permalink: /india-digilocker-privacy-concerns-what-personal-documents-go/
 ---
 layout: default
 title: "India Digilocker Privacy Concerns What Personal Documents"

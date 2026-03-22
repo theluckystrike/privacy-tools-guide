@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/
 ---
 layout: default
 title: "How To Set Up Dedicated Hardware Wallet For Each Crypto"

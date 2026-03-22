@@ -1,4 +1,5 @@
 ---
+permalink: /windows-privacy-tools-open-source-2026/
 ---
 layout: default
 title: "Windows Privacy Tools Open Source 2026: A Developer Guide"

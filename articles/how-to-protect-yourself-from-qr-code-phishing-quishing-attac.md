@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attac/
 ---
 layout: default
 title: "How To Protect Yourself From Qr Code Phishing Quishing"

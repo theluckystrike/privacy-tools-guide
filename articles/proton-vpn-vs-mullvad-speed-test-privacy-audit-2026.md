@@ -1,4 +1,5 @@
 ---
+permalink: /proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/
 ---
 layout: default
 title: "Proton VPN vs Mullvad Speed Test and Privacy Audit 2026"

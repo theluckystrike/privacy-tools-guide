@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
 ---
 layout: default
 title: "How To Opt Out Of LinkedIn Data Being Used For Ai Training"

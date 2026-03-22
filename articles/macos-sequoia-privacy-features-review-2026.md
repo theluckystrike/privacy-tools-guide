@@ -1,4 +1,5 @@
 ---
+permalink: /macos-sequoia-privacy-features-review-2026/
 ---
 layout: default
 title: "macOS Sequoia Privacy Features Review 2026: Complete Guide"

@@ -1,4 +1,5 @@
 ---
+permalink: /secure-github-account-hardening-guide/
 ---
 layout: default
 title: "How to Secure Your GitHub Account"

@@ -1,4 +1,5 @@
 ---
+permalink: /webauthn-implementation-guide-developers/
 ---
 layout: default
 title: "WebAuthn Implementation Guide for Developers"

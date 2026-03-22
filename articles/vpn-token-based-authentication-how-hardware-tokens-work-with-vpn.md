@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-token-based-authentication-how-hardware-tokens-work-with-vpn/
 ---
 layout: default
 title: "VPN Token-Based Authentication"

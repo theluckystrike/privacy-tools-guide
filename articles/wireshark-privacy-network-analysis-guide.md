@@ -1,4 +1,5 @@
 ---
+permalink: /wireshark-privacy-network-analysis-guide/
 ---
 layout: default
 title: "Wireshark Basics for Privacy Network Analysis"

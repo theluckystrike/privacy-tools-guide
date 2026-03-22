@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-if-your-email-address-has-been-sold-to-marketi/
 ---
 layout: default
 title: "How To Detect If Your Email Address Has Been Sold"

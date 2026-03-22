@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-request-algorithmic-transparency-from-companies-makin/
 ---
 layout: default
 title: "How To Request Algorithmic Transparency From Companies"

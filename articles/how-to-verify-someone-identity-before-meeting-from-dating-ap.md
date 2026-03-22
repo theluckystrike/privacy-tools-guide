@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
 ---
 layout: default
 title: "Verify Someone's Identity Before Meeting from a Dating App"

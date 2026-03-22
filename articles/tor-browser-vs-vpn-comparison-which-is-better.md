@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-vs-vpn-comparison-which-is-better/
 ---
 layout: default
 title: "Tor Browser vs VPN Comparison: Which Is Better for Privacy?"

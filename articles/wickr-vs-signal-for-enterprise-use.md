@@ -1,4 +1,5 @@
 ---
+permalink: /wickr-vs-signal-for-enterprise-use/
 ---
 layout: default
 title: "Wickr vs Signal for Enterprise Use: A Technical Comparison"

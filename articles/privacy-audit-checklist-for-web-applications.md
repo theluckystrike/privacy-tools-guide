@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-audit-checklist-for-web-applications/
 ---
 layout: default
 title: "Privacy Audit Checklist for Web Applications: A Developer"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
 ---
 layout: default
 title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"

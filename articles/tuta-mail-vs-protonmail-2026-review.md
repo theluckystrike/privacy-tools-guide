@@ -1,4 +1,5 @@
 ---
+permalink: /tuta-mail-vs-protonmail-2026-review/
 ---
 layout: default
 title: "Tuta Mail vs ProtonMail 2026 Review: A Technical Comparison"

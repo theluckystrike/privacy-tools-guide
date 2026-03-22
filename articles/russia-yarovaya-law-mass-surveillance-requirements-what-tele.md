@@ -1,4 +1,5 @@
 ---
+permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
 ---
 layout: default
 title: "Russia Yarovaya Law Mass Surveillance Requirements What"

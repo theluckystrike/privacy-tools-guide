@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/
 ---
 layout: default
 title: "How to Flash OpenWRT on Common Routers for Privacy Beginners"

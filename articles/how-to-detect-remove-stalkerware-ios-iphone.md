@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-remove-stalkerware-ios-iphone/
 ---
 layout: default
 title: "Detect and Remove Stalkerware From Your iPhone and iPad"

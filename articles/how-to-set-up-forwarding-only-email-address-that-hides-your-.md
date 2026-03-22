@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-forwarding-only-email-address-that-hides-your-/
 ---
 layout: default
 title: "How To Set Up Forwarding Only Email Address That Hides Your"

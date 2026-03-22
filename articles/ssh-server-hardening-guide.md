@@ -1,4 +1,5 @@
 ---
+permalink: /ssh-server-hardening-guide/
 ---
 layout: default
 title: "SSH Server Hardening Guide"

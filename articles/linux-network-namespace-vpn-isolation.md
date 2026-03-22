@@ -1,4 +1,5 @@
 ---
+permalink: /linux-network-namespace-vpn-isolation/
 ---
 layout: default
 title: "Linux Network Namespaces for VPN Isolation"

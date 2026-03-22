@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-tools-for-election-observer-protecting-witness-testi/
 ---
 layout: default
 title: "Privacy Tools For Election Observer Protecting Witness"

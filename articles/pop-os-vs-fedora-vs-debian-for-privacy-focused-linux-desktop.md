@@ -1,4 +1,5 @@
 ---
+permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
 ---
 layout: default
 title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux"

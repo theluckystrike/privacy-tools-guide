@@ -1,4 +1,5 @@
 ---
+permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
 ---
 layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources"

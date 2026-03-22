@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-create-offline-digital-library-for-accessing-informat/
 ---
 layout: default
 title: "How To Create Offline Digital Library For Accessing Informat"

@@ -1,4 +1,5 @@
 ---
+permalink: /social-media-data-request-download-guide-2026/
 ---
 layout: default
 title: "Using curl for LinkedIn API"

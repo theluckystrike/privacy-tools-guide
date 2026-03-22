@@ -1,4 +1,5 @@
 ---
+permalink: /migrating-from-roboform-to-bitwarden-export-import-complete-/
 ---
 layout: default
 title: "Migrating from RoboForm to Bitwarden"

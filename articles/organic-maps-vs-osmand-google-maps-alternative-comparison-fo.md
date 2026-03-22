@@ -1,4 +1,5 @@
 ---
+permalink: /organic-maps-vs-osmand-google-maps-alternative-comparison-fo/
 ---
 layout: default
 title: "Organic Maps Vs Osmand Google Maps Alternative Comparison"

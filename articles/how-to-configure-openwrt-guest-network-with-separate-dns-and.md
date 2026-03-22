@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-configure-openwrt-guest-network-with-separate-dns-and/
 ---
 layout: default
 title: "How To Configure Openwrt Guest Network With Separate Dns"

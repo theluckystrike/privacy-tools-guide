@@ -1,4 +1,5 @@
 ---
+permalink: /what-happens-if-password-manager-company-closes/
 ---
 layout: default
 title: "What Happens If Password Manager Company"

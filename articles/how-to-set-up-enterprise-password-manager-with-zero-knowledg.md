@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-enterprise-password-manager-with-zero-knowledg/
 ---
 layout: default
 title: "How To Set Up Enterprise Password Manager With Zero Knowledg"

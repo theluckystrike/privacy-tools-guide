@@ -1,4 +1,5 @@
 ---
+permalink: /privacy-engineer-toolkit-essential-tools-every-data-protecti/
 ---
 layout: default
 title: "Privacy Engineer Toolkit: Essential Tools Every Data"

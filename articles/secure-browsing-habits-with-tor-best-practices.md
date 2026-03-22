@@ -1,4 +1,5 @@
 ---
+permalink: /secure-browsing-habits-with-tor-best-practices/
 ---
 layout: default
 title: "Secure Browsing Habits With Tor Best Practices"

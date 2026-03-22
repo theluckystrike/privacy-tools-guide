@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-secure-home-router-for-privacy-2026/
 ---
 layout: default
 title: "How to Secure Your Home Router for Privacy in 2026"

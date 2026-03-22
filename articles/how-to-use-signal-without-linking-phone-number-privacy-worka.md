@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-signal-without-linking-phone-number-privacy-worka/
 ---
 layout: default
 title: "How To Use Signal Without Linking Phone Number Privacy"

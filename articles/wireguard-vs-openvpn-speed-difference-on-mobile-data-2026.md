@@ -1,4 +1,5 @@
 ---
+permalink: /wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/
 ---
 layout: default
 title: "WireGuard vs OpenVPN Speed Difference on Mobile Data"

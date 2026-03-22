@@ -1,4 +1,5 @@
 ---
+permalink: /restic-vs-borg-backup-encrypted-comparison/
 ---
 layout: default
 title: "Restic vs Borg Backup: Encrypted Comparison for Developers"

@@ -1,4 +1,5 @@
 ---
+permalink: /smart-plug-energy-monitoring-privacy-what-data-manufacturers/
 ---
 layout: default
 title: "Smart Plug Energy Monitoring Privacy What Data Manufacturers"

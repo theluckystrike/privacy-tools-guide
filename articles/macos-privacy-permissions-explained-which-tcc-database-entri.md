@@ -1,4 +1,5 @@
 ---
+permalink: /macos-privacy-permissions-explained-which-tcc-database-entri/
 ---
 layout: default
 title: "macOS Privacy Permissions Explained Which Tcc Database"

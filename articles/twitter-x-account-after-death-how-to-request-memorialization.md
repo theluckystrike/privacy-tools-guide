@@ -1,4 +1,5 @@
 ---
+permalink: /twitter-x-account-after-death-how-to-request-memorialization/
 ---
 layout: default
 title: "Twitter X Account After Death: How to Request"

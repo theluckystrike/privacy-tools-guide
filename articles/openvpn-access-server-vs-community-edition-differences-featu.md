@@ -1,4 +1,5 @@
 ---
+permalink: /openvpn-access-server-vs-community-edition-differences-featu/
 ---
 layout: default
 title: "OpenVPN Access Server vs Community Edition"

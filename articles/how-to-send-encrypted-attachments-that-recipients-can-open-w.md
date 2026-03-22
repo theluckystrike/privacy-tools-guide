@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
 ---
 layout: default
 title: "How To Send Encrypted Attachments That Recipients Can Open"

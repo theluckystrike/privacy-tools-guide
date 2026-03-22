@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
 ---
 layout: default
 title: "Use Dead Man's Switch with Multiple Independent Trustees"

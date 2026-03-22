@@ -1,4 +1,5 @@
 ---
+permalink: /mumble-encrypted-voice-chat-server-setup-for-private-team-co/
 ---
 layout: default
 title: "Mumble Encrypted Voice Chat Server Setup For Private Team"

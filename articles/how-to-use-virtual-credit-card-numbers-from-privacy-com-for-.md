@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/
 ---
 layout: default
 title: "How To Use Virtual Credit Card Numbers From Privacy Com"

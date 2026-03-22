@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-tor-relay-node/
 ---
 layout: default
 title: "How to Set Up a Tor Relay"

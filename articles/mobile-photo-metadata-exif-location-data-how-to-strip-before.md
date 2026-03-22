@@ -1,4 +1,5 @@
 ---
+permalink: /mobile-photo-metadata-exif-location-data-how-to-strip-before/
 ---
 layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip"

@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-detect-and-remove-hidden-tracking-devices-on-your-car/
 ---
 layout: default
 title: "How to Detect and Remove Hidden Tracking Devices on Your"

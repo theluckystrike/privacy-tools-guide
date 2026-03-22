@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
 ---
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
 date: 2026-03-21

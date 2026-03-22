@@ -1,4 +1,5 @@
 ---
+permalink: /zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/
 ---
 layout: default
 title: "Zoosk Behavioral Matchmaking Privacy How The Platform"

@@ -1,4 +1,5 @@
 ---
+permalink: /tor-browser-for-journalists-safety-guide-2026/
 ---
 layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"

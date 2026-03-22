@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-optimize-tor-browser-speed-without-compromising-anony/
 ---
 layout: default
 title: "How to Optimize Tor Browser Speed Without Compromising"

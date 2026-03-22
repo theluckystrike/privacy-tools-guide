@@ -1,4 +1,5 @@
 ---
+permalink: /library-patron-privacy-rights-what-information-libraries-can/
 ---
 layout: default
 title: "Library Patron Privacy Rights What Information Libraries"

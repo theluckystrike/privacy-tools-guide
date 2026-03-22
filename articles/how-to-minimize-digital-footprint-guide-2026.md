@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-minimize-digital-footprint-guide-2026/
 ---
 layout: default
 title: "How To Minimize Digital Footprint Guide 2026"

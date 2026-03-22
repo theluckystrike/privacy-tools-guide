@@ -1,4 +1,5 @@
 ---
+permalink: /lawyer-client-privilege-digital-communication-secure-setup-c/
 ---
 layout: default
 title: "Lawyer Client Privilege Digital Communication Secure Setup"

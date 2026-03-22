@@ -1,4 +1,5 @@
 ---
+permalink: /tails-persistent-storage-setup-guide-what-to-save-and-what-s/
 ---
 layout: default
 title: "Tails Persistent Storage Setup Guide What To Save And What"

@@ -1,4 +1,5 @@
 ---
+permalink: /bumble-private-detector-ai-scanning-privacy-how-uploaded-pho/
 ---
 layout: default
 title: "Bumble Private Detector AI Scanning Privacy How Uploaded"

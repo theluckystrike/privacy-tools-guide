@@ -1,4 +1,5 @@
 ---
+permalink: /macos-gatekeeper-and-notarization-privacy-implications-what-/
 ---
 layout: default
 title: "macOS Gatekeeper And Notarization Privacy Implications What"

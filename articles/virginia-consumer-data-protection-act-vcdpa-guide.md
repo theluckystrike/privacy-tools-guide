@@ -1,4 +1,5 @@
 ---
+permalink: /virginia-consumer-data-protection-act-vcdpa-guide/
 ---
 layout: default
 title: "Virginia Consumer Data Protection Act Vcdpa Guide"

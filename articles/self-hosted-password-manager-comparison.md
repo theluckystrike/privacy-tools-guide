@@ -1,4 +1,5 @@
 ---
+permalink: /self-hosted-password-manager-comparison/
 ---
 layout: default
 title: "Self-Hosted Password Manager Comparison"

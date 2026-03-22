@@ -1,4 +1,5 @@
 ---
+permalink: /vpn-for-accessing-us-netflix-from-germany-current-servers/
 ---
 layout: default
 title: "VPN for Accessing US Netflix from Germany"

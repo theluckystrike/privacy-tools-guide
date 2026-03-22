@@ -1,4 +1,5 @@
 ---
+permalink: /how-to-prevent-mobile-apps-from-fingerprinting-your-device/
 ---
 layout: default
 title: "How to Prevent Mobile Apps From Fingerprinting Your"
