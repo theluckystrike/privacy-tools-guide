@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Logging is essential for debugging, monitoring, and security analysis. However, traditional logging often captures sensitive user data unintentionally, creating privacy compliance headaches and security vulnerabilities. This guide covers practical strategies for implementing privacy-preserving logging in your applications, with code examples you can apply today.
 
+## Key Takeaways
+
+- **Development**: Use DEBUG freely, but never copy production logs containing real user data to development environments.
+- **This preserves enough information**: for geographic analysis and rough rate limiting without pinpointing individual users.
+- **Review the default logging**: configuration for every library that touches user data 2.
+- **However**: traditional logging often captures sensitive user data unintentionally, creating privacy compliance headaches and security vulnerabilities.
+- **Truncation**: Log only the first three octets of an IPv4 address.
+- **Encrypt logs at rest**: Use filesystem encryption or database encryption for log storage.
+
 ## Why Privacy-Preserving Logging Matters
 
 Application logs frequently contain more information than developers realize. IP addresses, email addresses, session tokens, and even payment data can end up in log files. When a breach occurs or when you're auditing for GDPR, CCPA, or SOC2 compliance, these logs become liabilities.

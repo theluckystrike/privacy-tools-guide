@@ -31,6 +31,17 @@ intent-checked: true---
 
 Most note-taking apps (Evernote, OneNote, Notion) sync your notes to cloud servers where they can be accessed by the company, law enforcement, or attackers. Privacy-focused note apps use end-to-end encryption (E2E) to ensure only you can read your notes. This guide compares the leading privacy note apps with encryption details, pricing, sync mechanisms, and export options.
 
+## Key Takeaways
+
+- **Privacy-focused note apps use**: end-to-end encryption (E2E) to ensure only you can read your notes.
+- Enable Obsidian Sync ($10.99/month)
+3.
+- **It uses industry-standard E2E**: encryption and has a thorough security model.
+- **Choose sync method (Dropbox**: NextCloud, etc.)
+4.
+- **Download app or use**: web version 4.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Understanding End-to-End Encryption for Notes
 
 Before comparing apps, understand the encryption model that protects your notes:

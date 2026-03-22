@@ -19,6 +19,20 @@ Smart home devices spy on you by default. Alexa records audio, Google Home liste
 
 This guide shows how to build a fully local smart home using Home Assistant, local wireless protocols, and network isolation.
 
+## Key Takeaways
+
+- **(DIY) | $60 |**: Open source | Requires soldering | | ConBee III | $50 | Well-supported | Expensive | Best Choice: Sonoff ZBDongle-P ($35) + external antenna extension ($5).
+- **Reset the Zigbee device**: (varies by device) - Most: Hold button 3 seconds - Aqara: Hold button 5 seconds - IKEA: Hold button 5 seconds 3.
+- **Energy monitoring - Add**: smart plugs to measure consumption - Track which devices use most power 4.
+- **In Home Assistant Settings**: → Devices & Services → Zigbee Home Automation Click "ZHA" integration Button: "Permit joining" Duration: 240 seconds (4 minutes) 2.
+- **Device appears in ZHA**: Devices list ``` ### Example: Pair Aqara Motion Sensor ``` Device: Aqara RTCGQ11LM (Motion Sensor) Price: $15 Steps: 1.
+- **In Home Assistant**: Settings → Devices & Services → ZHA
+   Click the ZHA integration card
+   Click "Permit joining"
+   Set timer to 240 seconds
+
+2.
+
 ## Quick Overview
 
 **The Privacy Problem:**

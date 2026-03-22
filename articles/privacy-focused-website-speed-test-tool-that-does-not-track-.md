@@ -16,6 +16,17 @@ intent-checked: true---
 
 Most mainstream website speed test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics. For developers and power users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks. This guide covers privacy-focused alternatives that measure website performance without tracking or logging tested URLs.
 
+## Key Takeaways
+
+- **GTmetrix retains test results**: and associated URLs for up to 90 days by default on free accounts.
+- **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
+2.
+- **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
+3.
+- **Most mainstream website speed**: test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics.
+- **For developers and power**: users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks.
+- **This guide covers privacy-focused**: alternatives that measure website performance without tracking or logging tested URLs.
+
 ## Why URL Tracking Matters in Speed Testing
 
 When you run a speed test on a client website or internal application through a public service, that URL enters someone else's database. Popular speed testing platforms may retain these records indefinitely, creating several concerns:

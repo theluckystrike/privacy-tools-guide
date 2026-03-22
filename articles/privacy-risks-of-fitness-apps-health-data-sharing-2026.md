@@ -25,6 +25,15 @@ permalink: /privacy-risks-of-fitness-apps-health-data-sharing-2026/---
 
 Your fitness app knows your heart rate, location, sleep patterns, and workout intensity. This data is valuable — to insurers, employers, data brokers, and advertisers. Most fitness apps share this data with third parties. This guide reveals what's being tracked, who's buying it, and how to protect yourself.
 
+## Key Takeaways
+
+- **With 100 million users**: that's $1-5 billion in annual data sales.
+- **Limit Activity Types -**: Don't track sensitive health data (medication, symptoms) - Use only for basic activity tracking 2.
+- **Most users don't realize**: their workout locations are publicly visible by default.
+- **Limit App Permissions -**: Disconnect third-party apps requesting location/health data - Settings → Connected Apps → Review & disconnect unused apps 5.
+- **Limit Profile Data -**: Don't fill in weight, body metrics, or health conditions - Use pseudonym instead of real name (if allowed) 3.
+- **Example**: A Strava user runs from their home at 7 AM daily.
+
 ## The Fitness Data Economy
 
 Fitness data is monetized in ways most users never realize:

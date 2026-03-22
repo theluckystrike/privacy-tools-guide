@@ -31,6 +31,21 @@ intent-checked: true---
 
 Google processes 8.5 billion searches daily and builds profiles on users through search history, location data, and behavioral tracking. Google's primary business—selling targeted advertising—requires detailed user profiling. Privacy-focused search engines replace this surveillance model with no-tracking alternatives. The market in 2026 includes mature options (DuckDuckGo, Startpage), emerging competitors (Brave Search, Kagi), and self-hosted solutions (SearXNG). Each trades off convenience, search quality, and business model differently. This guide compares their privacy claims, actual implementation, search quality, and whether the business model aligns with privacy claims.
 
+## Key Takeaways
+
+- **Premium subscription**: $5/month for ad-free search (optional)
+3.
+- **Advertising (context-based**: not behavioral): Ads based on search keyword, not user profile (~60% of revenue)
+3.
+- **Search ads**: Keyword-based ads, not user-profile-based (~70% of revenue)
+2.
+- **Subscriptions**: $10/month for unlimited searches ($5 for limited monthly searches)
+2.
+- **Premium services**: Email forwarding protection ($1/month)
+
+Alignment with privacy claims: Good.
+- **Google processes 8.5 billion**: searches daily and builds profiles on users through search history, location data, and behavioral tracking.
+
 ## Google's Privacy Model vs. Alternatives
 
 **Google Search tracking:**
