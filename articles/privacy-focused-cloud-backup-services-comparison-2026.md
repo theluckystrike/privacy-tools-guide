@@ -14,7 +14,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-{% raw %}
+
 
 ## Overview
 
@@ -542,7 +542,7 @@ sha256sum ~/backup_location/test_file.zip
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+
 =======
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -14,7 +14,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-{% raw %}
+
 
 Use Aegis Authenticator if you want maximum privacy (open-source, zero cloud, local backups only) and don't mind manual backups to a vault or desktop drive. Use 2FAS if you want privacy-first with optional encrypted cloud backup ($0-8/year) and offline-first operation. Use Raivo if you're on iOS and need a smooth interface with encrypted cloud backup. Use Authy only if your workplace requires it or you need desktop app sync; Authy is less private (Twilio collects device metadata). This guide compares these four apps across privacy, backup recovery options, open-source transparency, and ease of use.
 
@@ -397,7 +397,7 @@ Best practice: Set up new device alongside old, gradually migrate accounts
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+
 =======
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
