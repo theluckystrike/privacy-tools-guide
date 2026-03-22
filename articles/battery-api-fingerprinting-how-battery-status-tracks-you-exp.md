@@ -54,7 +54,7 @@ This API was designed with legitimate use cases in mind. A video streaming servi
 
 ## How Battery API Enables Fingerprinting
 
-Fingerprinting works by collecting enough unique attributes to identify an user without relying on cookies or login credentials. The Battery API contributes several high-entropy signals to this process:
+Fingerprinting works by collecting enough unique attributes to identify a user without relying on cookies or login credentials. The Battery API contributes several high-entropy signals to this process:
 
 Precise Battery Level: When combined with charging status and timestamps, the exact battery percentage creates a short-term identifier. An user at 47% battery while charging differs significantly from one at 47% while discharging. Tracking scripts can poll this value repeatedly, creating a fingerprint that may persist across browsing sessions.
 

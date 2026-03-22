@@ -71,7 +71,7 @@ Proton Calendar provides end-to-end encryption for events, including titles, loc
 
 The interface works through Proton's web application and mobile apps. Events support standard calendar fields: title, location, description, attendees, reminders, and recurrence rules. Sharing works through Proton's encrypted sharing system, allowing recipients to view events without Proton accounts if needed.
 
-Proton Calendar integrates with Proton Mail and Proton Drive, providing an unified privacy-focused ecosystem. The trade-off involves Proton's proprietary nature—you cannot self-host or audit the encryption implementation independently.
+Proton Calendar integrates with Proton Mail and Proton Drive, providing a unified privacy-focused ecosystem. The trade-off involves Proton's proprietary nature—you cannot self-host or audit the encryption implementation independently.
 
 For developers, Proton provides API access through Proton Mail API, though programmatic calendar management requires more work compared to open protocols. The lack of CalDAV support means integration with third-party calendar clients requires Proton's official applications.
 

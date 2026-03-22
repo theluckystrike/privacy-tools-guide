@@ -188,7 +188,7 @@ Work Profile isn't a perfect solution. Be aware of these constraints:
 - **Battery drain**: Running two profiles increases memory and battery consumption (typically 10-15% extra drain)
 - **Limited isolation**: Some system APIs remain accessible across profiles; Work Profile doesn't protect against all attack vectors
 - **Not a replacement for vetting**: Always review app permissions before installation, even within Work Profile
-- **Enterprise MDM complications**: If your workplace provides an MDM profile, it may conflict with manual Work Profile setup
+- **Enterprise MDM complications**: If your workplace provides a MDM profile, it may conflict with manual Work Profile setup
 
 ## Performance Impact Assessment
 

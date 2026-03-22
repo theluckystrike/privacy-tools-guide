@@ -81,7 +81,7 @@ KeePassXC provides a desktop-first experience that some elderly users prefer ove
 
 ### Proton VPN
 
-Proton VPN offers an one-click connect feature that elderly users appreciate. The interface displays a large, clear on/off button rather than technical server lists or protocol options. The free tier provides adequate protection for basic browsing without requiring payment information.
+Proton VPN offers a one-click connect feature that elderly users appreciate. The interface displays a large, clear on/off button rather than technical server lists or protocol options. The free tier provides adequate protection for basic browsing without requiring payment information.
 
 **Senior-friendly features:**
 - One-click connect with clear visual feedback

@@ -202,7 +202,7 @@ After applying these methods, verify your protections work:
 3. Check if matches reveal your identity
 4. If matches appear with identifiable information, the photo isn't safe for dating use
 
-This testing should be an ongoing practice, not an one-time check. Search engine indexing and matching capabilities evolve constantly.
+This testing should be an ongoing practice, not a one-time check. Search engine indexing and matching capabilities evolve constantly.
 
 ## Advanced: Perceptual Hash Resistance Testing
 

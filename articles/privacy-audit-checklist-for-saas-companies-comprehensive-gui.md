@@ -282,7 +282,7 @@ Maintain evidence of compliance efforts.
 
 ## 8. Regular Review Cadence
 
-Privacy compliance is not an one-time effort.
+Privacy compliance is not a one-time effort.
 
 ### Audit Calendar
 

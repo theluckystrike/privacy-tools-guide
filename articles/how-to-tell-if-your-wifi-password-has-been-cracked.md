@@ -295,7 +295,7 @@ grep -i "auth.*fail" /var/log/router.log | \
 # Many failures from same MAC = dictionary attack in progress
 ```
 
-If a single MAC address shows 50+ failed authentications in an hour, someone is actively attacking your network with a dictionary.
+If a single MAC address shows 50+ failed authentications in a hour, someone is actively attacking your network with a dictionary.
 
 ### Brute Force Attack Signatures
 

@@ -21,7 +21,7 @@ Shipping a Docker image without scanning it is like deploying code without testi
 
 | Tool | Database | Best For |
 |------|----------|----------|
-| Trivy | GHSA, NVD, OS advisories | Fast, comprehensive, CI integration |
+| Trivy | GHSA, NVD, OS advisories | Fast,, CI integration |
 | Grype | Anchore's vulnerability DB | SBOM integration |
 | Docker Scout | Docker's advisory DB | Native Docker tooling |
 

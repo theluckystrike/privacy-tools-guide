@@ -440,7 +440,7 @@ The frontend should adapt its language to match the applicable regulation. CCPA 
 
 ### Step 9: Monitor and Alerting for Privacy Events
 
-Privacy incidents often go undetected because they don't trigger conventional application errors. A user downloading their own data generates no error. But a single IP downloading data for 500 different users in an hour is a likely breach. Build monitoring specifically for privacy-relevant access patterns.
+Privacy incidents often go undetected because they don't trigger conventional application errors. A user downloading their own data generates no error. But a single IP downloading data for 500 different users in a hour is a likely breach. Build monitoring specifically for privacy-relevant access patterns.
 
 Instrument your privacy endpoints to emit structured events:
 

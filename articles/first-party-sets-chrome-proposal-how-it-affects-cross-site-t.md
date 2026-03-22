@@ -100,7 +100,7 @@ With FPS, cross-site tracking becomes more **explicit and controllable**. Site o
 
 FPS doesn't eliminate all cross-site tracking capabilities. Several vectors remain:
 
-- **First-party analytics with FPS**: If you own both `blog.example.com` and `docs.example.com`, declaring them in a set lets you track users across these properties as an unified first party
+- **First-party analytics with FPS**: If you own both `blog.example.com` and `docs.example.com`, declaring them in a set lets you track users across these properties as a unified first party
 - **Server-side tracking**: Moving analytics to your own servers (as first parties) bypasses browser restrictions entirely
 - **Fingerprinting techniques**: While cookies are restricted, browser fingerprinting remains technically possible (though increasingly detected and blocked)
 - **User-logged-in state**: Authenticated sessions on your domains remain fully functional
@@ -132,7 +132,7 @@ if (window. attributionReporting) {
 }
 ```
 
-Or alternatively, using server-side analytics within an FPS:
+Or alternatively, using server-side analytics within a FPS:
 
 ```javascript
 // Server-side first-party tracking within FPS

@@ -79,7 +79,7 @@ For users with technical expertise, self-hosted solutions provide complete contr
 
 OwnTracks is an open-source location tracking app that stores data on your own MQTT broker or HTTP endpoint. To implement temporary sharing:
 
-1. Deploy an MQTT broker (Mosquitto) on a private server
+1. Deploy a MQTT broker (Mosquitto) on a private server
 2. Configure OwnTracks to publish location data to your broker
 3. Create temporary access credentials that expire automatically
 

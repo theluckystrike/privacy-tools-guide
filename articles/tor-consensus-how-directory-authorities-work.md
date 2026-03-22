@@ -38,7 +38,7 @@ Directory authorities (DAs) are specially designated servers that form the backb
 These authorities perform three critical functions:
 
 1. **Relay voting** — Each authority collects relay descriptors from all published relays
-2. **Consensus generation** — Authorities vote on the network state and produce an unified document
+2. **Consensus generation** — Authorities vote on the network state and produce a unified document
 3. **Document signing** — The consensus is signed by a majority of authorities, creating a verifiable snapshot
 
 The current list of directory authorities includes well-known nodes like `moria1`, `tor26`, `dizum`, and others. You can retrieve this list from any Tor relay's descriptor or from the Tor project directly.

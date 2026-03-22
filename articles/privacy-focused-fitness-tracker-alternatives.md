@@ -246,9 +246,9 @@ OpenTracks exports to GPX, which can be imported to your self-hosted server for 
 **If you own Fitbit/Apple Watch/Samsung Galaxy Watch**:
 - Cloud sync is mandatory
 - Choose the lesser evil:
-  - Apple Watch (on-device storage + optional iCloud)
-  - Fitbit (accept Google access)
-  - Samsung (accept Samsung access)
+ - Apple Watch (on-device storage + optional iCloud)
+ - Fitbit (accept Google access)
+ - Samsung (accept Samsung access)
 - Do not use commercial fitness apps with these
 
 **If buying a new device**:

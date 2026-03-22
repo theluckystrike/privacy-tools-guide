@@ -199,7 +199,7 @@ PermitRootLogin no
 Restart the SSH service after making changes. Before restarting, verify your public key is in `/home/admin/.ssh/authorized_keys`—locking yourself out of SSH on a remote server requires a console rescue session through your VPS provider's dashboard.
 
 ### Set Up Backup
-Mail-in-a-Box includes automated backup to external storage. Configure S3-compatible storage in the admin panel under System > Backup. Backblaze B2 works as an S3-compatible target and costs a fraction of Amazon S3 for small volumes. The backup process encrypts archives with a passphrase you set—store this passphrase in a password manager, not on the server itself.
+Mail-in-a-Box includes automated backup to external storage. Configure S3-compatible storage in the admin panel under System > Backup. Backblaze B2 works as a S3-compatible target and costs a fraction of Amazon S3 for small volumes. The backup process encrypts archives with a passphrase you set—store this passphrase in a password manager, not on the server itself.
 
 ### Firewall Review
 

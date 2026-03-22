@@ -140,7 +140,7 @@ BACKUP_LOCATION=s3://your-bucket-name
 BACKUP_ENCRYPTION=your-encryption-key
 ```
 
-Consider backing up to a location separate from your primary server—for example, an S3-compatible storage service or another VPS in a different location.
+Consider backing up to a location separate from your primary server—for example, a S3-compatible storage service or another VPS in a different location.
 
 ### Step 5: Access Your Email
 

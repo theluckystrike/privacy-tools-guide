@@ -62,7 +62,7 @@ Use a mirror on an extension handle to inspect areas you cannot see directly. Lo
 
 For more detection, employ RF (radio frequency) scanning and protocol analysis.
 
-### Using an RF Detector
+### Using a RF Detector
 
 A basic RF detector can identify active cellular transmitters. Here's a practical approach using common detection equipment:
 

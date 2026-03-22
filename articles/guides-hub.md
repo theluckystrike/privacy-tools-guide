@@ -515,7 +515,7 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [How To Document All Online Accounts For Executor Of Estate](/how-to-document-all-online-accounts-for-executor-of-estate-c/)
 - [How to Document DNS and SSL Certificate Renewal Procedures](/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
 - [How To Document Privacy Violations For Potential Class](/how-to-document-privacy-violations-for-potential-class-actio/)
-- [How to Encrypt a USB Drive with VeraCrypt](/encrypt-usb-drive-veracrypt-guide/)
+- [How to Encrypt an USB Drive with VeraCrypt](/encrypt-usb-drive-veracrypt-guide/)
 - [How to Encrypt Files Before Cloud](/how-to-encrypt-files-before-cloud-upload/)
 - [How to Encrypt Git Repos with git-crypt and age](/how-to-encrypt-git-repos-with-git-crypt-and-age/)
 - [How to Evaluate Privacy Tool Claims](/evaluate-privacy-tool-claims-red-flags-marketing-versus-protection/)

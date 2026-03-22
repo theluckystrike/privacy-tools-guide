@@ -72,7 +72,7 @@ Visit the site and click the "Test Your Browser" button. The results show your e
 
 ### AmIUnique Project
 
-[AmIUnique](https://amiunique.org/) is a European research project that collects fingerprint data to study tracking. Their tool compares your fingerprint against their database of millions of collected fingerprints.
+[AmIUnique](https://amiunique.org/) is an European research project that collects fingerprint data to study tracking. Their tool compares your fingerprint against their database of millions of collected fingerprints.
 
 The service provides:
 - Detailed breakdown of each fingerprinting attribute

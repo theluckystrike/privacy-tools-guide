@@ -243,7 +243,7 @@ If this returns an IP address that differs from your VPN's IP, you have a WebRTC
 
 While building your own tests provides the deepest understanding, several established tools audit browser fingerprinting:
 
-Panopticlick (EFF Cover Your Tracks) tests how unique your browser is based on exposed attributes—higher uniqueness means easier tracking. AmIUnique is a European project that analyzes fingerprint data and provides a detailed breakdown of identifying attributes. BrowserLeaks covers canvas, WebGL, audio, and WebRTC fingerprinting vectors.
+Panopticlick (EFF Cover Your Tracks) tests how unique your browser is based on exposed attributes—higher uniqueness means easier tracking. AmIUnique is an European project that analyzes fingerprint data and provides a detailed breakdown of identifying attributes. BrowserLeaks covers canvas, WebGL, audio, and WebRTC fingerprinting vectors.
 
 These tools compare your fingerprint against a database to calculate your uniqueness score.
 

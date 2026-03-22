@@ -29,7 +29,7 @@ This guide walks through locking down `sshd_config` to a minimal, defensible sta
 
 **Do not lock yourself out.** Before making changes, open a second terminal session and keep it connected until you verify the new config works.
 
-### Step 1: Generate an SSH Key Pair
+### Step 1: Generate a SSH Key Pair
 
 If you don't have a key pair:
 

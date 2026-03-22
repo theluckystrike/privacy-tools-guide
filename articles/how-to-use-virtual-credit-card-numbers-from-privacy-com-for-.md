@@ -50,7 +50,7 @@ Unlike traditional credit cards, these virtual numbers don't contain your actual
 
 ### Step 2: Set Up Your Account
 
-To use Privacy.com, you need an US bank account—currently the service only supports US-based financial institutions. The setup process:
+To use Privacy.com, you need a US bank account—currently the service only supports US-based financial institutions. The setup process:
 
 1. Create an account at privacy.com
 2. Connect your bank account via Plaid (secure bank linking)

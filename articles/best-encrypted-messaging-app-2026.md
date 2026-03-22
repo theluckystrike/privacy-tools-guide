@@ -158,7 +158,7 @@ For developers, Session's API is more limited than Matrix. The focus remains on 
 
 Swiss jurisdiction provides strong legal protections for user data, and Threema publishes regular security audits. For users with moderate threat models who prefer simplicity over extensibility, Threema offers a polished experience with solid cryptographic foundations.
 
-Threema Work provides organizational management features—useful for companies requiring compliant messaging without enterprise complexity. The pricing model (an one-time purchase rather than subscription) appeals to users resistant to ongoing costs.
+Threema Work provides organizational management features—useful for companies requiring compliant messaging without enterprise complexity. The pricing model (a one-time purchase rather than subscription) appeals to users resistant to ongoing costs.
 
 ## SimpleX: Zero-Knowledge Architecture
 

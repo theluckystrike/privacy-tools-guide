@@ -156,7 +156,7 @@ If you're currently storing financial aid credentials in browser autofill or a t
 6. Set up encrypted backup of your vault
 7. Document recovery procedures somewhere secure offline
 
-This migration typically takes under an hour but dramatically reduces your attack surface.
+This migration typically takes under a hour but dramatically reduces your attack surface.
 
 ## Understanding Financial Aid Systems
 

@@ -156,7 +156,7 @@ services:
 
 ## Orchestrating Your Stack
 
-Create an unified `docker-compose.yml` that includes all services:
+Create a unified `docker-compose.yml` that includes all services:
 
 ```yaml
 version: '3.8'

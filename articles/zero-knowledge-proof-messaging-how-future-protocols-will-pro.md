@@ -268,7 +268,7 @@ For messaging to remain responsive, proof generation must complete in under 1 se
 
 ### Trusted Setup Ceremonies
 
-Many ZKP systems require "trusted setup"—an one-time ceremony where cryptographic parameters are generated. This ceremony must be done correctly and verifiably, requiring community participation:
+Many ZKP systems require "trusted setup"—a one-time ceremony where cryptographic parameters are generated. This ceremony must be done correctly and verifiably, requiring community participation:
 
 ```python
 # Trusted Setup Process

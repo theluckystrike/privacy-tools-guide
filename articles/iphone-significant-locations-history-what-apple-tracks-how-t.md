@@ -249,7 +249,7 @@ This export does not include on-device Significant Locations data but provides i
 
 ## Long-Term Privacy Strategy
 
-Managing location privacy is not an one-time task but an ongoing practice. Quarterly reviews of location permissions, annual reset of location history during security maintenance, and staying informed about new iOS privacy features all contribute to a privacy-respecting lifestyle.
+Managing location privacy is not a one-time task but an ongoing practice. Quarterly reviews of location permissions, annual reset of location history during security maintenance, and staying informed about new iOS privacy features all contribute to a privacy-respecting lifestyle.
 
 As iOS evolves, Apple introduces more granular controls. iOS 17 introduced the ability to limit location precision per app, and future versions may offer additional privacy options. Stay updated on iOS privacy features by reviewing release notes for new iOS versions.
 

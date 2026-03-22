@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Protect Privacy When Selling Old Phone 2026"
-description: "Complete guide to wiping personal data from Android and iOS devices before selling including factory reset verification, account deauthorization, and SIM removal"
+description: "Complete guide to wiping personal data from Android and iOS devices before selling including factory reset verification, account deauthorization, and SIM
 date: 2026-03-22
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

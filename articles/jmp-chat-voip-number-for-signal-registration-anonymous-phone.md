@@ -68,7 +68,7 @@ Username: your_username@jmp.chat
 
 ### Step 2: XMPP Client Configuration
 
-For receiving SMS codes, you need an XMPP client that handles JMP Chat's SMS-to-XMPP bridging. Several options work well:
+For receiving SMS codes, you need a XMPP client that handles JMP Chat's SMS-to-XMPP bridging. Several options work well:
 
 **Conversations (Android)** provides native JMP Chat support with straightforward setup. Add your JMP Chat account through account settings, enable SMS forwarding, and configure message notifications.
 

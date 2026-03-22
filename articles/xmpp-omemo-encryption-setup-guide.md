@@ -42,13 +42,13 @@ Before you begin, make sure you have the following ready:
 
 OMEMO (Optimized Messaging Key Establishment) builds on the Signal Protocol and provides several security properties that matter for sensitive communications. Each device generates its own identity key pair, meaning your encryption keys remain tied to specific devices rather than just your account.
 
-The protocol offers forward secrecy—even if your long-term keys are compromised, past conversations remain secure because each message uses an unique session key. It also provides deniable authentication, allowing recipients to verify messages came from you without being able to prove it to third parties.
+The protocol offers forward secrecy—even if your long-term keys are compromised, past conversations remain secure because each message uses a unique session key. It also provides deniable authentication, allowing recipients to verify messages came from you without being able to prove it to third parties.
 
 Most modern XMPP clients support OMEMO, including Conversations (Android), Gajim (desktop), Dino (Linux), and Psi+ (cross-platform).
 
 ### Step 2: Client Installation and Basic Setup
 
-Before configuring OMEMO, ensure you have an XMPP account with OMEMO support. You can register on servers like `xmpp.jp`, `jabber.de`, or `conversations.im`—all of which support the required XEP-0384 extension.
+Before configuring OMEMO, ensure you have a XMPP account with OMEMO support. You can register on servers like `xmpp.jp`, `jabber.de`, or `conversations.im`—all of which support the required XEP-0384 extension.
 
 For desktop users, Gajim provides a straightforward installation process. On Ubuntu:
 
@@ -154,7 +154,7 @@ Not all XMPP servers support OMEMO equally. Before setting up, verify your serve
 | XEP-0191 | Blocking Command | Recommended |
 | XEP-0198 | Stream Management | Recommended |
 
-To check server support, use an XMPP client that displays capabilities:
+To check server support, use a XMPP client that displays capabilities:
 
 ```bash
 # Using xmpp-console (if installed)

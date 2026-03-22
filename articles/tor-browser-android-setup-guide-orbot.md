@@ -56,7 +56,7 @@ After installation, grant the necessary permissions. Orbot requires network acce
 
 ### Step 3: Configure Orbot for Tor Network Access
 
-Launch Orbot and complete the initial configuration. The app provides an one-tap connect option, but power users should access advanced settings for optimal configuration.
+Launch Orbot and complete the initial configuration. The app provides a one-tap connect option, but power users should access advanced settings for optimal configuration.
 
 ### Basic Orbot Settings
 

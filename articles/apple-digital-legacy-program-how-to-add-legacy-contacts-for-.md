@@ -38,7 +38,7 @@ Before you begin, make sure you have the following ready:
 
 ### Step 1: Understand Apple's Digital Legacy Architecture
 
-Apple's approach to digital inheritance differs fundamentally from simple password sharing. When you designate a legacy contact, Apple generates an unique access key that your contact can use to decrypt your data. This maintains end-to-end encryption while providing a legal mechanism for data transfer.
+Apple's approach to digital inheritance differs fundamentally from simple password sharing. When you designate a legacy contact, Apple generates a unique access key that your contact can use to decrypt your data. This maintains end-to-end encryption while providing a legal mechanism for data transfer.
 
 The system requires two components:
 1. A **Legacy Contact** added through your Apple ID

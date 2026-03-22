@@ -43,7 +43,7 @@ For developers building applications that generate or scan QR codes, understandi
 
 ### Step 2: How QR Codes Enable Attacks
 
-A QR code simply encodes text—typically an URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
+A QR code simply encodes text—typically a URL. When scanned, the phone's camera or a dedicated app interprets this text and acts on it. The critical security gap: users cannot determine a QR code's destination without scanning it first.
 
 Consider this example of a QR code that appears legitimate but leads to a malicious site:
 

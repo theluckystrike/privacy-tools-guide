@@ -270,12 +270,12 @@ Moving from Gmail to privacy-focused email:
 1. **Create new account** on target provider (Proton/Tuta)
 2. **Update important accounts** — banking, SSO, password managers
 3. **Create email forwarding rule** on Gmail:
-   - Settings → Forwarding and POP/IMAP → Forward all emails to new address
-   - Keep Gmail active for 6 months to catch forgotten subscriptions
+ - Settings → Forwarding and POP/IMAP → Forward all emails to new address
+ - Keep Gmail active for 6 months to catch forgotten subscriptions
 4. **Update contacts gradually** — no rush to tell everyone your new email
 5. **Set up subaddressing** on new provider (if supported):
-   - Proton: `yourname+service@protonmail.com` for service-specific addresses
-   - Tuta: Similar feature available
+ - Proton: `yourname+service@protonmail.com` for service-specific addresses
+ - Tuta: Similar feature available
 6. **Archive Gmail after 1 year** — keep it read-only for reference
 
 ## Related Reading

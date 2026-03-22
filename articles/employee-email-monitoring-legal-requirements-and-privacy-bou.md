@@ -239,7 +239,7 @@ The legal space continues to evolve as legislatures address new monitoring techn
 
 ## Remote Work and Cross-Border Monitoring Complexity
 
-The rise of permanent remote work has amplified cross-border monitoring challenges significantly. An employee physically located in Germany working for a U.S. company raises immediate questions: does German labor law apply, U.S. federal law, or both? In most cases, the answer hinges on where the employment contract is governed and where the employee performs the work.
+The rise of permanent remote work has amplified cross-border monitoring challenges significantly. An employee physically located in Germany working for an U.S. company raises immediate questions: does German labor law apply, U.S. federal law, or both? In most cases, the answer hinges on where the employment contract is governed and where the employee performs the work.
 
 **Key cross-border principles:**
 

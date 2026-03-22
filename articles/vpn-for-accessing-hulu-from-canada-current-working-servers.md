@@ -179,7 +179,7 @@ dig hulu.com
 ```
 
 Expected results:
-- IP address should show an US location
+- IP address should show a US location
 - DNS requests should resolve to US-based servers
 - WebRTC should not expose your real IP
 - DNS leak test should show consistent server locations

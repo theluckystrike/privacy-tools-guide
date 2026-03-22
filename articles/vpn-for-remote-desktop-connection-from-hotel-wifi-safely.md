@@ -186,7 +186,7 @@ Windows RDP automatically attempts reconnection, but consider enabling **reconne
 
 ## Alternative: SSH Jump Host
 
-For developers comfortable with the command line, an SSH jump host provides a lightweight alternative to a full VPN:
+For developers comfortable with the command line, a SSH jump host provides a lightweight alternative to a full VPN:
 
 ```bash
 # Connect to remote desktop via SSH tunnel

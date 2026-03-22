@@ -40,7 +40,7 @@ The digital advertising industry faces a fundamental shift as third-party cookie
 
 The Attribution Reporting API, developed as part of the Privacy Sandbox initiative, enables measurement of conversion events (like purchases or sign-ups) attributed to ad interactions without exposing individual user data. Unlike traditional cookie-based tracking that follows users across websites, this API uses browser-level aggregation to report only summarized data.
 
-The core concept involves three key entities: the site where users see ads (publisher), the site where conversions happen (advertiser), and the browser that coordinates reporting. When an user clicks or views an ad, the browser registers an attribution source. Later, when the user completes a conversion on the advertiser's site, the browser matches the conversion to the source and generates an aggregate report.
+The core concept involves three key entities: the site where users see ads (publisher), the site where conversions happen (advertiser), and the browser that coordinates reporting. When a user clicks or views an ad, the browser registers an attribution source. Later, when the user completes a conversion on the advertiser's site, the browser matches the conversion to the source and generates an aggregate report.
 
 ## How the API Differs from Cookie-Based Tracking
 

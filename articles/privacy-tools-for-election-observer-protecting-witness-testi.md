@@ -301,7 +301,7 @@ This creates legal-grade proof that the testimony document existed at a specific
 
 Election observers frequently operate across jurisdictions with conflicting data laws. A document collected in one country may need to be transmitted to a team in a country with different legal obligations for data retention, disclosure, or encryption. Several practical considerations apply:
 
-**Know the jurisdiction's encryption laws before entering**: Some countries restrict strong encryption or require key disclosure to border agents. If you enter a country with encrypted devices, you may be legally compelled to provide decryption keys. Research the local laws before travel. Tails OS on a USB drive that you can destroy is preferable to a laptop with persistent storage.
+**Know the jurisdiction's encryption laws before entering**: Some countries restrict strong encryption or require key disclosure to border agents. If you enter a country with encrypted devices, you may be legally compelled to provide decryption keys. Research the local laws before travel. Tails OS on an USB drive that you can destroy is preferable to a laptop with persistent storage.
 
 **Use end-to-end encrypted channels for cross-border transmission**: Sending testimony across borders via unencrypted email or commercial cloud services creates exposure to interception under national intelligence laws in transit countries. Signal, OnionShare, and GPG-encrypted email all provide end-to-end protection that limits this exposure.
 

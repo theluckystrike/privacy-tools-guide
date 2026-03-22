@@ -377,7 +377,7 @@ Anonymity comes from Tails + careful operational security, not Tails alone.
 
 ### Mistake 3: Forgetting Physical Security
 
-**Scenario:** You boot Tails, someone sees your screen over your shoulder and reads an URL.
+**Scenario:** You boot Tails, someone sees your screen over your shoulder and reads a URL.
 
 **Prevention:**
 - Privacy screen protector on laptop

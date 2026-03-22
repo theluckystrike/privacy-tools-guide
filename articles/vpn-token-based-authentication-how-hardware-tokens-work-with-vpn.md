@@ -248,7 +248,7 @@ ca ca.crt
 
 ## Hardware Token Management at Scale
 
-Large organizations need robust token lifecycle management:
+Large organizations need strong token lifecycle management:
 
 ```python
 # Token lifecycle management system

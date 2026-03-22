@@ -134,7 +134,7 @@ Telegram's open-source client code enables security audits, but the closed-sourc
 For users wanting self-hosted or federated options, XMPP with OMEMO provides an open standard approach. OMEMO builds on the Signal Protocol but operates over the XMPP federated network.
 
 **Architecture benefits:**
-- Federated network: anyone can run an XMPP server
+- Federated network: anyone can run a XMPP server
 - OMEMO provides Signal-like encryption properties
 - Multiple device support through device identity keys
 - Standardized: XEP-0384 defines OMEMO encryption

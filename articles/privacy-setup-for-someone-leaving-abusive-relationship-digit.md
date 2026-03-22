@@ -241,7 +241,7 @@ Review all cloud storage for sensitive data:
 
 ### Step 7: Ongoing Maintenance
 
-Security isn't an one-time configuration. Establish regular review habits:
+Security isn't a one-time configuration. Establish regular review habits:
 
 - Weekly: Check for unknown devices on accounts
 - Monthly: Review privacy settings on social media

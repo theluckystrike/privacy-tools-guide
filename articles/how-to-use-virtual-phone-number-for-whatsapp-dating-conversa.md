@@ -91,7 +91,7 @@ def process_incoming_sms(data):
 
 For users requiring maximum control, self-hosted SIP (Session Initiation Protocol) infrastructure provides granular control over call routing and message handling. This approach requires:
 
-- A VPS (Virtual Private Server) running an SIP server like Asterisk or FreeSWITCH
+- A VPS (Virtual Private Server) running a SIP server like Asterisk or FreeSWITCH
 - A SIP trunk provider connecting to the public telephone network
 - Proper firewall configuration for SIP ports
 

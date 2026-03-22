@@ -128,7 +128,7 @@ Most smartphones have GPS that can be tested with navigation apps. Place your ph
 
 ### RF Detector Test
 
-For more rigorous verification, an RF detector or spectrum analyzer can confirm signal blocking across frequency ranges. Place the detector probe near the bag while a phone inside attempts to make a call or transmit data. Any detected signals indicate leakage.
+For more rigorous verification, a RF detector or spectrum analyzer can confirm signal blocking across frequency ranges. Place the detector probe near the bag while a phone inside attempts to make a call or transmit data. Any detected signals indicate leakage.
 
 ## Common Mistakes to Avoid
 

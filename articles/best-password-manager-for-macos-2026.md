@@ -123,7 +123,7 @@ For developers managing SSH keys, dedicated SSH agents remain necessary regardle
 
 Proton Pass offers end-to-end encryption with open-source transparency. The CLI is newer but functional for basic operations.
 
-The advantage lies in privacy-first architecture. Proton operates under Swiss jurisdiction with strong data protection laws. If you already use ProtonMail or Proton VPN, the integration provides an unified privacy ecosystem.
+The advantage lies in privacy-first architecture. Proton operates under Swiss jurisdiction with strong data protection laws. If you already use ProtonMail or Proton VPN, the integration provides a unified privacy ecosystem.
 
 CLI installation and basic usage:
 

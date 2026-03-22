@@ -133,7 +133,7 @@ ping -c 3 -M do -s 1400 8.8.8.8
 ping -c 3 -M do -s 1472 8.8.8.8
 ```
 
-If smaller packets work but larger ones fail, you likely have an MTU issue.
+If smaller packets work but larger ones fail, you likely have a MTU issue.
 
 ## Fixing VPN Fragmentation Issues
 

@@ -388,7 +388,7 @@ More than 1-2% packet loss consistently will cause visible video artifacts. If y
 
 Each option in this guide serves different use cases. Choosing the wrong tool for your situation creates maintenance overhead without proportional privacy benefit.
 
-**Choose Jitsi Meet when**: You need quick meeting links you can share with external participants who have no accounts. Jitsi is the closest drop-in replacement for Zoom—send an URL, participants join from the browser, meetings end and leave no persistent state.
+**Choose Jitsi Meet when**: You need quick meeting links you can share with external participants who have no accounts. Jitsi is the closest drop-in replacement for Zoom—send a URL, participants join from the browser, meetings end and leave no persistent state.
 
 **Choose Matrix + Element when**: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers. Matrix has significantly higher setup complexity than Jitsi, but the result is a complete communication platform rather than just a video solution. If your team currently uses Slack and Zoom together, Matrix + Element can replace both.
 

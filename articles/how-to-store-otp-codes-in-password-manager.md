@@ -41,7 +41,7 @@ Before you begin, make sure you have the following ready:
 TOTP (Time-based One-Time Password) codes rely on a shared secret key—the base32-encoded seed that both your authenticator app and the service generate codes from. When you store this secret in your password manager, you generate the same codes any authenticator would produce.
 
 The secret typically arrives in two formats when setting up 2FA:
-- **otpauth:// URI** — an URL containing the secret and parameters
+- **otpauth:// URI** — a URL containing the secret and parameters
 - **Manual entry** — The base32 secret string alone
 
 Password managers like Bitwarden and 1Password capture these automatically during 2FA setup, but you can also manually add them for existing accounts.
