@@ -17,6 +17,18 @@ voice-checked: true---
 
 Your iPhone hotspot broadcasts your personal device name (e.g., "John's iPhone") through Wi-Fi probe requests and Bonjour/mDNS announcements to nearby devices, revealing personal information. Change your device name in Settings > General > About to use a generic name like "iPhone" or remove identifying information.
 
+## Key Takeaways
+
+- Enter your preferred name
+4.
+- **Tap Done Choose a**: generic name that doesn't identify you: "iPhone", "iPhone 15", or a random string like "Device-4821" all work well.
+- **The serial number substitution**: makes each device uniquely identifiable to IT staff while preventing external identification of the specific human user.
+- **This takes about 30**: seconds and requires no technical expertise.
+- **Use generic naming**: "iPhone" or a random alphanumeric string works well
+3.
+- **Disable hotspot when not in use**: Reduces exposure window to zero
+4.
+
 ## How iPhone Hotspot Naming Works
 
 Every iOS device has a system-wide name that appears in several contexts: AirDrop, AirPlay, personal hotspot, and Bluetooth device listings. By default, Apple sets this name based on your iPhone model or a name you entered during setup — often something like "John's iPhone" or your actual name if you customized it.

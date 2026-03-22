@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Your iPhone's Focus Mode does more than silence notifications—it provides substantial privacy protections that most users overlook. Understanding these features lets you use Apple's built-in tools for enhanced digital privacy without additional apps or complicated configurations.
 
+## Key Takeaways
+
+- **Your iPhone's Focus Mode does more than silence notifications**: it provides substantial privacy protections that most users overlook.
+- **Notification filtering UNNotificationRequest -**: filtered by Focus allow-list // Only notifications from allowed apps/contacts reach user // 2.
+- **Tap Apps to choose**: permitted applications 4.
+- **Use Focus Status to**: communicate availability without revealing specifics 4.
+- **Understanding these features lets**: you use Apple's built-in tools for enhanced digital privacy without additional apps or complicated configurations.
+- **Physical Device Access**: Someone momentarily picks up your unlocked phone and sees sensitive notifications.
+
 ## What Is Focus Mode and Why It Matters for Privacy
 
 Focus Mode, introduced in iOS 15 and significantly enhanced in later versions, creates compartmentalized notification experiences. But beyond convenience, it actively prevents data leakage through several mechanisms.

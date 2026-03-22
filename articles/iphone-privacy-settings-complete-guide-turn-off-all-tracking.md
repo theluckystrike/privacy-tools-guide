@@ -31,6 +31,15 @@ voice-checked: true---
 
 Disable all iOS tracking by turning off the advertising identifier (IDFA), location services, Siri analytics, significant locations, and cross-site cookie tracking in Safari. Use Settings > Privacy & Security to methodically restrict each tracking vector: disable apps' location access, turn off location-based suggestions and alerts, and clear significant location history.
 
+## Key Takeaways
+
+- **Set the top toggle**: to OFF to disable for all apps, or review each app individually Social media apps are the most aggressive users of background refresh for analytics purposes.
+- **Use Settings > Privacy**: & Security to methodically restrict each tracking vector: disable apps' location access, turn off location-based suggestions and alerts, and clear significant location history.
+- **Enable the feature and**: use apps normally for 24 hours 3.
+- **Configure device to use**: Charles as HTTP proxy ``` ## iCloud and Apple Services Tracking ### Disable iCloud Analytics Apple collects usage data from iCloud: 1.
+- **Disable Listen for "Hey**: Siri" if not used 3.
+- **This is meaningfully different from simply denying individual app requests**: apps cannot even prompt the user for permission, which removes the possibility that users will accidentally grant it.
+
 ## System-Wide Tracking Disables
 
 ### Apple Advertising Identifier
