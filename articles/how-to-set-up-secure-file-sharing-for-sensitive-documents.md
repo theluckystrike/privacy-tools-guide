@@ -1,6 +1,6 @@
 ---
 permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
-description: "Follow this guide to how to set up secure file sharing for sensitive documents with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up secure file sharing for sensitive documents with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide]
 ---
 layout: default

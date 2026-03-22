@@ -1,6 +1,6 @@
 ---
 permalink: /how-to-set-up-private-dns-on-android-for-all-apps/
-description: "Follow this guide to how to set up private dns on android for all apps with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up private dns on android for all apps with practical examples, tips, and step-by-step instructions for getting the..."
 tags: [privacy-tools-guide]
 ---
 layout: default

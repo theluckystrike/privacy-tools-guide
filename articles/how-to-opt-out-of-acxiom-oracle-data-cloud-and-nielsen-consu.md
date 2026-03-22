@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
-description: "Follow this guide to how to opt out of acxiom oracle data cloud and nielsen consu with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to opt out of acxiom oracle data cloud and nielsen consu with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

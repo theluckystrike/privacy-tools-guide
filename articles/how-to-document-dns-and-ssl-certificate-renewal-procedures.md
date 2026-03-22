@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-document-dns-and-ssl-certificate-renewal-procedures/
-description: "Follow this guide to how to document dns and ssl certificate renewal procedures with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to document dns and ssl certificate renewal procedures with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
@@ -245,7 +245,6 @@ Transform your documentation into actionable runbooks that anyone can follow dur
 
 ```
 DNS/SSL EMERGENCY RENEWAL RUNBOOK
-=================================
 
 Incident Type: [ ] Certificate Expired [ ] DNS Failure [ ] Both
 
@@ -288,7 +287,6 @@ For scheduled renewals, use this checklist:
 
 ```
 DNS/SSL SCHEDULED RENEWAL CHECKLIST
-===================================
 
 Certificate: [domain name]
 Current Expiry: [date]

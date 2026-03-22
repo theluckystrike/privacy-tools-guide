@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-revoke-previously-given-consent-for-data-processing-u/
-description: "Follow this guide to how to revoke previously given consent for data processing u with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to revoke previously given consent for data processing u with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

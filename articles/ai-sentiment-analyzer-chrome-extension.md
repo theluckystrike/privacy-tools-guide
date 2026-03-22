@@ -285,4 +285,13 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [Chrome Extension File Sharing Quick](/chrome-extension-file-sharing-quick-upload/)
+- [What Happens If You Click A Phishing Link On Chrome](/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)
+- [Topics API Chrome Replacement For Cookies How It Tracks](/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

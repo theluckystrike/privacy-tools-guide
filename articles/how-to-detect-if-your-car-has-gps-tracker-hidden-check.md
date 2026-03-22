@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-detect-if-your-car-has-gps-tracker-hidden-check/
-description: "Follow this guide to how to detect if your car has gps tracker hidden check with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to detect if your car has gps tracker hidden check with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

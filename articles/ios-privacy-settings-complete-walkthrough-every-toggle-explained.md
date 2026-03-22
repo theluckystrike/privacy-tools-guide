@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/
-description: "Learn ios privacy settings complete walkthrough every toggle explained with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Learn ios privacy settings complete walkthrough every toggle explained with practical examples, tips, and step-by-step instructions for getting the..."
 tags: [privacy-tools-guide, privacy]
 author: "Privacy Tools Guide"
 reviewed: true

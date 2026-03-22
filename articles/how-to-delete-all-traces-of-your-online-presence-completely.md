@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-delete-all-traces-of-your-online-presence-completely/
-description: "Follow this guide to how to delete all traces of your online presence completely with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to delete all traces of your online presence completely with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

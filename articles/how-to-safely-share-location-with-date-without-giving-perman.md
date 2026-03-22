@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-safely-share-location-with-date-without-giving-perman/
-description: "Follow this guide to how to safely share location with date without giving perman with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to safely share location with date without giving perman with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
-description: "Follow this guide to how to set up jitsi meet self hosted encrypted video confere with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up jitsi meet self hosted encrypted video confere with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

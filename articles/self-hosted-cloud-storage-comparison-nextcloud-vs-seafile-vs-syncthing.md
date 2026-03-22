@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/
-description: "Compare self hosted cloud storage comparison nextcloud vs seafile vs syncthing with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Compare self hosted cloud storage comparison nextcloud vs seafile vs syncthing with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, comparison]
 author: "Privacy Tools Guide"
 reviewed: true

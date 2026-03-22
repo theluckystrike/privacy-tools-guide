@@ -501,4 +501,13 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+
+## Related Reading
+
+- [Secure Kubernetes Secrets Management Guide](/kubernetes-secrets-management-guide/)
+- [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/1password-secrets-automation-devops-guide/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

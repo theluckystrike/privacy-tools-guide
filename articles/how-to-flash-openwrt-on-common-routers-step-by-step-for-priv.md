@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/
-description: "Follow this guide to how to flash openwrt on common routers step by step for priv with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to flash openwrt on common routers step by step for priv with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/
-description: "Follow this guide to how to set up dedicated hardware wallet for each crypto spen with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up dedicated hardware wallet for each crypto spen with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
@@ -292,7 +292,6 @@ Create a written disaster recovery guide:
 
 ```
 Multi-Wallet Disaster Recovery Procedure
-========================================
 
 Step 1: Assess situation
 - Device lost/damaged/compromised?

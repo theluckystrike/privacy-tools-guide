@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
-description: "Follow this guide to how to protect yourself from doxxing after meeting someone t with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to protect yourself from doxxing after meeting someone t with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

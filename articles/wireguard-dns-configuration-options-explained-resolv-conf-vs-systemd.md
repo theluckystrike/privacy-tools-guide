@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/
-description: "Compare wireguard dns configuration options explained resolv conf vs systemd with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Compare wireguard dns configuration options explained resolv conf vs systemd with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, comparison]
 author: "Privacy Tools Guide"
 reviewed: true

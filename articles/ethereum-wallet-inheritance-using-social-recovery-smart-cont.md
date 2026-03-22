@@ -312,7 +312,6 @@ Cryptocurrency inheritance has complex legal and tax consequences:
 
 ```
 Tax Considerations:
-==================
 
 1. Estate Tax
    - Crypto is treated as property with fair market value at death
@@ -374,7 +373,6 @@ Several projects provide turnkey inheritance solutions:
 
 ```
 Established Services:
-====================
 
 1. Argent
    - Mobile wallet with built-in social recovery

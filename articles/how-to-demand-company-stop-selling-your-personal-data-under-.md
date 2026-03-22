@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-demand-company-stop-selling-your-personal-data-under-/
-description: "Discover the best how to demand company stop selling your personal data under  with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Discover the best how to demand company stop selling your personal data under  with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, best-of]
 author: "Privacy Tools Guide"
 reviewed: true

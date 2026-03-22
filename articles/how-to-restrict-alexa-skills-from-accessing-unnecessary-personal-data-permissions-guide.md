@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
-description: "Follow this guide to how to restrict alexa skills from accessing unnecessary personal data permissions guide with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to restrict alexa skills from accessing unnecessary personal data permissions guide with practical examples, tips, and..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

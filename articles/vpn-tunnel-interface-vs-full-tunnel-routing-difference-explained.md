@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
-description: "Compare vpn tunnel interface vs full tunnel routing difference explained with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Compare vpn tunnel interface vs full tunnel routing difference explained with practical examples, tips, and step-by-step instructions for getting the..."
 tags: [privacy-tools-guide, comparison, vpn]
 author: "Privacy Tools Guide"
 reviewed: true

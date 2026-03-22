@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-configure-vpn-exempt-list-for-local-network-access/
-description: "Follow this guide to how to configure vpn exempt list for local network access with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to configure vpn exempt list for local network access with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, vpn]
 author: "Privacy Tools Guide"
 reviewed: true
