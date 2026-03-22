@@ -1,5 +1,7 @@
 ---
 permalink: /passkey-vs-password-security-comparison/
+description: "Compare passkey vs password security comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, security]
 ---
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"

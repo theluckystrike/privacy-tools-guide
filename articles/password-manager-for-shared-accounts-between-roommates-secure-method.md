@@ -1,5 +1,7 @@
 ---
 permalink: /password-manager-for-shared-accounts-between-roommates-secure-method/
+description: "Learn password manager for shared accounts between roommates secure method with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Password Manager For Shared Accounts Between Roommates"

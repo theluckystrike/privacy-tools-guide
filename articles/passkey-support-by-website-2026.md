@@ -1,5 +1,7 @@
 ---
 permalink: /passkey-support-by-website-2026/
+description: "Learn passkey support by website 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Passkey Support By Website 2026"

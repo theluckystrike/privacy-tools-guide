@@ -1,5 +1,7 @@
 ---
 permalink: /openvpn-access-server-vs-community-edition-differences-featu/
+description: "Compare openvpn access server vs community edition differences featu with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, vpn]
 ---
 layout: default
 title: "OpenVPN Access Server vs Community Edition"

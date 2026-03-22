@@ -1,5 +1,7 @@
 ---
 permalink: /password-manager-autofill-security-risks/
+description: "Learn password manager autofill security risks with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, security]
 ---
 layout: default
 title: "Password Manager Autofill Security"
