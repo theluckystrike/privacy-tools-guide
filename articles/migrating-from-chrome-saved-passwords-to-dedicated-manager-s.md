@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /migrating-from-chrome-saved-passwords-to-dedicated-manager-s/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

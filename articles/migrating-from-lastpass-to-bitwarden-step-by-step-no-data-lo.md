@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /migrating-from-lastpass-to-bitwarden-step-by-step-no-data-lo/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
