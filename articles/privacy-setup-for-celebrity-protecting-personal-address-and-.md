@@ -19,7 +19,7 @@ voice-checked: true
 
 Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerified) using automated services or manual opt-outs, then prevent future exposure by using business addresses for public accounts, securing property records, and monitoring data broker sites regularly. Use alternative shipping addresses, private WHOIS registration, and VPNs to reduce physical location exposure.
 
-## Understanding the Threat World
+## Understanding the Threat Environment
 
 Public personal information accumulates across dozens of data broker sites, social media platforms, public records databases, and leaked breach datasets. A single search can reveal home addresses, family member names, phone numbers, and even property ownership details. For celebrities, this creates physical security risks including stalking, swatting, and unwanted contact.
 

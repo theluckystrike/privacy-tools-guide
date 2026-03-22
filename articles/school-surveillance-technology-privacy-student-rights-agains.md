@@ -111,7 +111,7 @@ However, these laws vary significantly in their application to schools, and many
 
 Students have limited Fourth Amendment protections in schools. The Supreme Court's decision in *Jersey v. T.L.O.* established that students have reduced expectations of privacy on school grounds. Courts have generally upheld school surveillance when administrators demonstrate legitimate educational interests.
 
-This creates an uneven legal world where students may face extensive monitoring with limited legal recourse.
+This creates an uneven legal environment where students may face extensive monitoring with limited legal recourse.
 
 ## Privacy Risks for Students
 

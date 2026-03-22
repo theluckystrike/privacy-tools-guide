@@ -20,7 +20,7 @@ uBlock Origin remains the gold standard for browser-based ad and tracker blockin
 
 ## Why uBlock Origin vs. Other Blockers
 
-Before diving into configuration, it's worth understanding why uBlock Origin stands out from alternatives like Adblock Plus, Privacy Badger, and Brave's built-in shields:
+Before looking at configuration, it's worth understanding why uBlock Origin stands out from alternatives like Adblock Plus, Privacy Badger, and Brave's built-in shields:
 
 - **Memory efficiency**: uBlock Origin typically uses 4-6x less RAM than Adblock Plus because it does not maintain a large exception list for paid advertisers (Adblock Plus operates an "Acceptable Ads" program).
 - **No filter list monetization**: uBlock Origin's creator, Raymond Hill, accepts no payments from advertisers. Every domain on the block list stays blocked.

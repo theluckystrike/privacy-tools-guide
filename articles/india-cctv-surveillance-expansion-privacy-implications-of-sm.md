@@ -344,7 +344,7 @@ As technology evolves, expect:
 
 **Behavioral Analysis**: Recognition will move beyond faces to gait recognition (how you walk), clothing patterns, and vehicle identification.
 
-**Integration Across States**: As IUDR and similar systems improve, surveillance data will become more seamlessly shared across India, eliminating jurisdictional safe havens.
+**Integration Across States**: As IUDR and similar systems improve, surveillance data will become more smoothly shared across India, eliminating jurisdictional safe havens.
 
 For developers and privacy advocates, this evolution requires more sophisticated countermeasures and a stronger focus on privacy-by-design in applications.
 

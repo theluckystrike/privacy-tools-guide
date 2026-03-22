@@ -229,7 +229,7 @@ The difference is whether the data preserves identity. Personal identifiers (nam
 
 Data brokers employ sophisticated collection methods:
 
-**Append Services**: Brokers buy email addresses from one source and append phone numbers, home addresses, and other attributes from different sources. This creates comprehensive profiles.
+**Append Services**: Brokers buy email addresses from one source and append phone numbers, home addresses, and other attributes from different sources. This creates full profiles.
 
 **Inference Services**: Brokers use machine learning to infer sensitive attributes (income level, political affiliation, health conditions) from observed behavior.
 
@@ -239,7 +239,7 @@ If a dating app sells your email to brokers, expect your complete profile across
 
 ## Building a Personal Data Audit Trail
 
-For power users wanting comprehensive visibility:
+For power users wanting thorough visibility:
 
 ```bash
 #!/bin/bash

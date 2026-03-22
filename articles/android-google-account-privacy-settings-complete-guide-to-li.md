@@ -170,7 +170,7 @@ Beyond your Google account, your Android device has additional privacy controls:
 
 ## Web and Cross-Device Activity
 
-Google links your Android device to your web browsing across all Google accounts and devices. This unified tracking creates a comprehensive profile spanning your phone, desktop, and any other logged-in devices.
+Google links your Android device to your web browsing across all Google accounts and devices. This unified tracking creates a complete profile spanning your phone, desktop, and any other logged-in devices.
 
 **To control cross-device tracking:**
 

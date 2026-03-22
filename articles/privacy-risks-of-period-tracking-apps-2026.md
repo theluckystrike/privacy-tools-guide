@@ -41,7 +41,7 @@ This is deeply personal medical information. Individually, dates and symptoms se
 
 In the context of post-Dobbs America, where abortion is criminalized in multiple states, this data is legally dangerous. Law enforcement can subpoena app providers for users' location, device information, and cycle data to prosecute women seeking abortions. Data brokers can sell this information. Insurance companies can use it to deny coverage.
 
-The legal world is evolving: 14 states have explicit protections for reproductive health data, but most states lack protection. Federal protections are limited. App providers' privacy policies can change at any time.
+The legal environment is evolving: 14 states have explicit protections for reproductive health data, but most states lack protection. Federal protections are limited. App providers' privacy policies can change at any time.
 
 
 ## Major App Platforms and Their Data Practices

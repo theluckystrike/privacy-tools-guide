@@ -260,7 +260,7 @@ while true; do
 done
 ```
 
-A systemd service unit is more robust than a shell loop for production deployments:
+A systemd service unit is more durable than a shell loop for production deployments:
 
 ```ini
 [Unit]

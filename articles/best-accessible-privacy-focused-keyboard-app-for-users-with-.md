@@ -412,8 +412,8 @@ Privacy-focused development is increasingly enabling these features locally rath
 
 ## Conclusion
 
-For users with motor impairments seeking privacy-respecting keyboard solutions, several strong options exist across platforms. OpenBoard and AnySoftKeyboard provide excellent Android choices with comprehensive accessibility features. Linux users benefit from Fcitx5's open architecture and customization potential, while hardware solutions offer maximum privacy control.
+For users with motor impairments seeking privacy-respecting keyboard solutions, several strong options exist across platforms. OpenBoard and AnySoftKeyboard provide excellent Android choices with detailed accessibility features. Linux users benefit from Fcitx5's open architecture and customization potential, while hardware solutions offer maximum privacy control.
 
-The key is prioritizing on-device processing, configurable timing parameters, and robust customization options. Test multiple options with your specific motor impairment considerations—every user's needs differ, and the best keyboard is the one that balances privacy requirements with accessible input capabilities. Remember that the most secure keyboard provides no value if tremors make it unusable; accessibility must be the foundation, not an afterthought.
+The key is prioritizing on-device processing, configurable timing parameters, and solid customization options. Test multiple options with your specific motor impairment considerations—every user's needs differ, and the best keyboard is the one that balances privacy requirements with accessible input capabilities. Remember that the most secure keyboard provides no value if tremors make it unusable; accessibility must be the foundation, not an afterthought.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

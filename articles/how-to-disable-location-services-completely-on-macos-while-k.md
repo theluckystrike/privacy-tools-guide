@@ -20,7 +20,7 @@ Location Services on macOS provides precise location data to applications throug
 
 ## Why Disabling Location Services Matters for Privacy
 
-Before diving into technical methods, it helps to understand exactly what macOS Location Services collects and shares. The system uses a combination of GPS (on newer MacBooks with Apple Silicon), Wi-Fi network scanning, Bluetooth beacon detection, and IP address-based geolocation to determine your position. This data is not just used by apps you explicitly authorize — it also feeds into system services like Significant Locations, which Apple uses to build a history of where you spend time.
+Before examining technical methods, it helps to understand exactly what macOS Location Services collects and shares. The system uses a combination of GPS (on newer MacBooks with Apple Silicon), Wi-Fi network scanning, Bluetooth beacon detection, and IP address-based geolocation to determine your position. This data is not just used by apps you explicitly authorize — it also feeds into system services like Significant Locations, which Apple uses to build a history of where you spend time.
 
 Apple stores Significant Locations on-device by default, but several system analytics processes can transmit location-derived data to Apple servers. If you use iCloud, your location history can sync across your devices. Even apps you trust may share location data with advertising partners or analytics services embedded in their code.
 

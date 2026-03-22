@@ -38,7 +38,7 @@ The company can use your genetic data for internal research and development, inc
 
 ### Law Enforcement Requests
 
-Both 23andMe and AncestryDNA can respond to valid legal requests from law enforcement. This includes subpoenas, court orders, and search warrants. In 2019, investigators used GEDmatch (a different platform) to identify the Golden State Killer, demonstrating how genetic databases can be used for criminal investigations. While 23andMe has stated they require a warrant for criminal investigations, the legal world continues to evolve.
+Both 23andMe and AncestryDNA can respond to valid legal requests from law enforcement. This includes subpoenas, court orders, and search warrants. In 2019, investigators used GEDmatch (a different platform) to identify the Golden State Killer, demonstrating how genetic databases can be used for criminal investigations. While 23andMe has stated they require a warrant for criminal investigations, the legal environment continues to evolve.
 
 ### Data Breaches
 
