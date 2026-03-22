@@ -1,5 +1,7 @@
 ---
 permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
+description: "Learn russia sovereign internet law what it means for vpn users an with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "Russia Sovereign Internet Law What It Means For Vpn Users"

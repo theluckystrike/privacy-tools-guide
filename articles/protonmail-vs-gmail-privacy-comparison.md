@@ -1,5 +1,7 @@
 ---
 permalink: /protonmail-vs-gmail-privacy-comparison/
+description: "Compare protonmail vs gmail privacy comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 layout: default
 title: "Protonmail Vs Gmail Privacy Comparison"

@@ -9,7 +9,7 @@ permalink: /researcher-data-ethics-guide-2026/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, data-ethics, research, compliance]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

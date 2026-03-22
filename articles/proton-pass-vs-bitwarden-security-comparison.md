@@ -1,5 +1,7 @@
 ---
 permalink: /proton-pass-vs-bitwarden-security-comparison/
+description: "Compare proton pass vs bitwarden security comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, security]
 ---
 layout: default
 title: "Proton Pass vs Bitwarden Security Comparison for Developers"

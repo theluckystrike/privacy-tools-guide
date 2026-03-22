@@ -1,5 +1,7 @@
 ---
 permalink: /protonmail-security-model-explained/
+description: "Learn protonmail security model explained with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, security]
 ---
 layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"

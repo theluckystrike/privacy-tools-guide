@@ -1,5 +1,7 @@
 ---
 permalink: /restic-encrypted-backup-setup-guide/
+description: "Follow this guide to restic encrypted backup setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Restic Encrypted Backup Setup Guide"

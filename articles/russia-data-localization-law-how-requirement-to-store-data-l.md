@@ -1,5 +1,7 @@
 ---
 permalink: /russia-data-localization-law-how-requirement-to-store-data-l/
+description: "Learn russia data localization law how requirement to store data l with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Russia Data Localization Law: How Requirement to Store"

@@ -1,5 +1,7 @@
 ---
 permalink: /remove-exif-data-photos-automated/
+description: "Learn remove exif data photos automated with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Remove EXIF Data from Photos Automatically"

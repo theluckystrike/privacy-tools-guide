@@ -1,5 +1,7 @@
 ---
 permalink: /protonmail-import-export-tool-guide/
+description: "Follow this guide to protonmail import export tool guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "ProtonMail Import Export Tool Guide"

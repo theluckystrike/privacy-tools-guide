@@ -1,5 +1,7 @@
 ---
 permalink: /restic-vs-borg-backup-encrypted-comparison/
+description: "Compare restic vs borg backup encrypted comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Restic vs Borg Backup: Encrypted Comparison for Developers"

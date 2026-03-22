@@ -1,5 +1,7 @@
 ---
 permalink: /protonmail-vs-skiff-mail-comparison/
+description: "Compare protonmail vs skiff mail comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"
