@@ -10,7 +10,7 @@ categories: [guides, security]
 voice-checked: true
 tags: [privacy-tools-guide, browser, accessibility, screen-reader, magnification, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 ---
 

@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-focused-dns-providers-comparison-2026/
+description: "Learn privacy focused dns providers comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 title: "Privacy-Focused DNS Providers Comparison 2026"
 slug: privacy-focused-dns-providers-comparison-2026

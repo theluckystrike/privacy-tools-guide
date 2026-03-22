@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-focused-cpu-benchmark-tool-that-does-not-send-hardwa/
+description: "Learn privacy focused cpu benchmark tool that does not send hardwa with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy-Focused CPU Benchmark Tool That Does Not Send"

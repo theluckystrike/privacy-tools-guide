@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /privacy-focused-keyboard-apps-for-mobile/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
