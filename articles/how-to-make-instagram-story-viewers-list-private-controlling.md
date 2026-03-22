@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-make-instagram-story-viewers-list-private-controlling/
+description: "Follow this guide to how to make instagram story viewers list private controlling with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Make Instagram Story Viewers List Private Controlling"

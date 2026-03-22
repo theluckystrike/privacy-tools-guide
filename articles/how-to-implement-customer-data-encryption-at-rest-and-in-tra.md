@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
+description: "Follow this guide to how to implement customer data encryption at rest and in tra with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "How To Implement Customer Data Encryption At Rest"

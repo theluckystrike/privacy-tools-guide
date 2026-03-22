@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-handle-password-manager-when-switching-phones-android/
+description: "Follow this guide to how to handle password manager when switching phones android with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Handle Password Manager When Switching Phones"
