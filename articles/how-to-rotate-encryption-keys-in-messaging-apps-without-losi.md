@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
+description: "Follow this guide to how to rotate encryption keys in messaging apps without losi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "How To Rotate Encryption Keys In Messaging Apps"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/
+description: "Follow this guide to how to set up casa multisig bitcoin inheritance plan with co with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan"

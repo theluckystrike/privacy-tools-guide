@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
+description: "Follow this guide to how to send encrypted attachments that recipients can open w with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Send Encrypted Attachments That Recipients Can Open"

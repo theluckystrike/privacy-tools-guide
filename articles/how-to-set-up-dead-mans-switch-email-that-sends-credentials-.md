@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-dead-mans-switch-email-that-sends-credentials-/
+description: "Follow this guide to how to set up dead mans switch email that sends credentials  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Set Up a Dead Man's Switch Email That Sends Credentials If"

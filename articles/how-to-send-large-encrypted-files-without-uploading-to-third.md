@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
+description: "Follow this guide to how to send large encrypted files without uploading to third with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Send Large Encrypted Files Without Uploading"

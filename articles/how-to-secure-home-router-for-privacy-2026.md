@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-secure-home-router-for-privacy-2026/
+description: "Follow this guide to how to secure home router for privacy 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How to Secure Your Home Router for Privacy in 2026"
