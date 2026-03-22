@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, comparison]
 
 Email alias services have become essential tools for developers and power users who value privacy. Rather than giving out your primary email address to every service, you create aliases that forward emails to your inbox while hiding your real identity. This guide compares three popular options: SimpleLogin, Addy.io, and Firefox Relay — covering API capabilities, self-hosting options, pricing, and the privacy trade-offs each model involves.
 
+## Key Takeaways
+
+- **Pricing starts around $12**: per year for the Lite plan and $36 per year for the Pro plan, which adds unlimited shared domain aliases and higher bandwidth limits.
+- **Firefox Relay is best**: for non-technical users who want simple alias management integrated into their browser with minimal friction.
+- **The premium plan**: priced at around $30 per year, lifts the alias cap, adds custom domains, catch-all addressing, and API access.
+- **Because the codebase is open-source**: security researchers can audit it, and self-hosters get complete ownership over their data.
+- **For users comfortable with**: server administration, this is the most private option available among the three services compared here.
+- **It offers both free and paid tiers**: with premium features including unlimited aliases and custom domains.
+
 ## Table of Contents
 
 - [Why Email Aliases Matter for Privacy](#why-email-aliases-matter-for-privacy)
@@ -256,7 +265,7 @@ SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy
 - [Privacy Focused Email Alias Services Comparison 2026](/privacy-tools-guide/privacy-focused-email-alias-services-comparison-2026/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)
-- [Secure Email Forwarding With Encryption How To Set Up](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
+- [Set Up Catch All Email Domain For Unlimited Private](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, privacy]
 
 Your Lightning channel partners can see your channel balance, inbound/outbound capacity, and can infer transaction amounts and timing from failed/successful payments. They cannot see your on-chain identity unless you link it through address reuse. To minimize exposure: create channels through different nodes to avoid balance correlations, use unpublished private channels, route payments through unrelated intermediary nodes, and avoid linking your node's IP address to your identity. Monero offers better transaction privacy than Lightning if financial anonymity is critical.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For users requiring strong**: financial privacy, combining Lightning with on-chain privacy tools (CoinJoin, PayJoin) and running your own Lightning node provides the best protection.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **On-chain wallet address (used**: for funding) # 2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Table of Contents
 
 - [Understanding Lightning Network Channel Architecture](#understanding-lightning-network-channel-architecture)
@@ -408,9 +417,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [Wireshark Basics for Privacy Network Analysis](/privacy-tools-guide/wireshark-privacy-network-analysis-guide/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
-- [Wireshark Basics for Privacy Network Analysis](/privacy-tools-guide/wireshark-privacy-network-analysis-guide/)
-- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

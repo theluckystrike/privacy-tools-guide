@@ -18,6 +18,13 @@ tags: [privacy-tools-guide]
 
 Onion Share is an open-source tool that creates temporary .onion services allowing you to share files anonymously through Tor without exposing your IP address, recipient IP, or any metadata about the transfer. Install via Homebrew on macOS or your package manager on Linux, then use the simple GUI or CLI to select files, start sharing, and distribute the unique .onion URL to recipients. This guide covers installation, command-line workflows, persistent sharing, and practical integration patterns for developers and journalists.
 
+## Key Takeaways
+
+- **Install via Homebrew on**: macOS or your package manager on Linux, then use the simple GUI or CLI to select files, start sharing, and distribute the unique .onion URL to recipients.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers installing**: onion share, understanding how onion share works, basic file sharing, with specific setup instructions
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -272,8 +279,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Secure File Sharing with OnionShare](/privacy-tools-guide/onionshare-secure-file-sharing-guide/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
 - [How To Use Age Encryption For Secure File Sharing Command](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

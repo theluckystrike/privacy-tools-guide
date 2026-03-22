@@ -19,6 +19,24 @@ tags: [privacy-tools-guide, privacy]
 This guide assumes you have access to a trusted computer and can install software. If you are in immediate danger, skip to the emergency section at the end. The technical measures here complement—not replace—professional support and safety planning.
 Immediately enable full-disk encryption (FileVault on macOS, BitLocker on Windows, LUKS on Linux), create a new anonymous email account from a safe device, use a password manager to generate strong unique passwords for all accounts, remove all location-sharing features and check for hidden tracking apps, and use Tor for any sensitive communications. Change all recovery methods and security questions, remove the abuser's access to shared accounts, and establish emergency contacts outside the abuser's network. This guide provides immediate and long-term actionable technical steps with code examples for securing your digital safety when leaving an abusive relationship.
 
+## Key Takeaways
+
+- **Backup critical configs echo**: "Backing up configurations..." tar czf ~/.local/share/backup-$(date +%Y%m%d).tar.gz \ ~/.ssh ~/.gnupg ~/.config/signal # 7.
+- **Use a library computer**: or borrowed device to change critical passwords 4.
+- **If all devices compromised**: - Go to library with ID
+   - Email password reset from library computer
+   - Change 2FA immediately using recovery codes
+   - Do NOT use home internet
+
+3.
+- **Evidence preservation**: - Screenshot and save to USB drive
+   - Store in safe location
+   - Can be used for protection order
+
+5.
+- **Change all recovery methods**: and security questions, remove the abuser's access to shared accounts, and establish emergency contacts outside the abuser's network.
+- **Every recommendation below addresses**: these specific risks.
+
 ## Threat Model
 
 When fleeing an abusive ex who possesses technical knowledge, your threat model includes someone who may have installed spyware, has credentials to shared accounts, understands your digital habits, and could use social engineering against your contacts. Every recommendation below addresses these specific risks.
@@ -250,7 +268,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Stalking Victim Digital](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
 - [How To Set Up Emergency Access For Password Manager](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
-- [How To Stop Someone From Accessing Your Icloud](/privacy-tools-guide/how-to-stop-someone-from-accessing-your-icloud-without-permi/)
+- [Password Manager For Shared Accounts Between Roommates](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 ### Step 6: Ongoing Monitoring and Maintenance
 
@@ -475,7 +493,7 @@ Technical measures work best with social support:
 - Tech security for survivors: National Network to End Domestic Violence (NNEDV) has tech resources
 - Legal aid: LawHelp.org (US) or equivalent in your country
 
-This guide provides technical defense. Professional advocates provide the support needed for actual safety.
+This guide provides technical defense. Professional advocates provide the comprehensive support needed for actual safety.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

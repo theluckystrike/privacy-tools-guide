@@ -18,6 +18,17 @@ tags: [privacy-tools-guide]
 
 Check your router's connected devices list (usually at 192.168.1.1 or 192.168.0.1) and compare against known devices—unknown MAC addresses indicate unauthorized access. Monitor your internet speed and bandwidth usage; unauthorized users downloading large files will cause noticeable slowdowns. Enable router logging to track connection attempts and failed authentications. If you find unknown devices, change your WiFi password to a strong, randomly-generated one and use WPA3 encryption instead of WPA2 if supported.
 
+## Key Takeaways
+
+- **If you find unknown devices**: change your WiFi password to a strong, randomly-generated one and use WPA3 encryption instead of WPA2 if supported.
+- **Use strong passwords**: Minimum 16 characters with random characters, or use your password manager's generator
+2.
+- **Change WPA2/WPA3 password -**: do NOT reuse your previous password 3.
+- **Monitor your internet speed**: and bandwidth usage; unauthorized users downloading large files will cause noticeable slowdowns.
+- **Tools like Wireshark or**: `tcpdump` on a monitoring interface can reveal patterns indicating unauthorized use.
+- **Enable WPA3**: If your hardware supports it, WPA3 provides protection against offline dictionary attacks
+3.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -438,9 +449,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
-- [How To Protect Your Wifi From Neighbor Stealing Bandwidth](/privacy-tools-guide/how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/)
-- [Dashlane Vs 1password Comparison 2026](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
-- [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
+- [1Password vs LastPass: Which Survived Their Breaches?](/privacy-tools-guide/1password-vs-lastpass-which-survived-breach/)
+- [How To Protect Your Wifi From Neighbor Stealing Bandwidth](/privacy-tools-guide/how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/)
+- [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

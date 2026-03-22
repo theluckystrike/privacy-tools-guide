@@ -20,6 +20,15 @@ Smart home devices present a significant attack surface. Every thermostat, camer
 
 This guide covers three practical approaches to network isolation: VLAN-based segmentation using managed switches or routers, firewall-rule segmentation on Linux gateways, and IoT-specific subnetting with DNS-based filtering. Each method scales differently, so choose based on your existing hardware and technical comfort level.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For most users**: blocking IoT-to-trusted traffic while allowing trusted-to-IoT traffic provides the right balance.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most consumer routers support**: "guest networks" or multiple DHCP pools.
+- **MTU mismatches can also cause throughput issues**: test with different MTU values (1500, 1492, 1480).
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -375,10 +384,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -17,6 +17,17 @@ voice-checked: true
 
 Standard push notifications expose sender information and message metadata to Google (FCM) and Apple (APNs), who can read this data during delivery. Signal solves this problem by sending encrypted payloads through FCM/APNs that contain only minimal unencrypted wake-up signals, keeping message content and sender identity hidden from platform operators. This architecture provides end-to-end privacy while maintaining the real-time notification experience users expect.
 
+## Key Takeaways
+
+- **However**: Wire's paid model ($5/month for premium features) creates complexity in comparing free services.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Signal offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Device token correlation**: If a device receives many notifications, pattern analysis could potentially identify users
+3.
+- **Fallback mechanisms**: When Sealed Sender isn't available (first message from new contact, offline devices), traditional notifications are used
+4.
+
 ## Table of Contents
 
 - [The Privacy Problem With Traditional Push Notifications](#the-privacy-problem-with-traditional-push-notifications)
@@ -331,6 +342,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
 - [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
-- [Signal Desktop Security Best Practices](/privacy-tools-guide/signal-desktop-security-best-practices/)
-- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -18,6 +18,16 @@ tags: [privacy-tools-guide]
 
 The Tor network relies on a decentralized system of relays to provide anonymity, but clients need a reliable way to discover which relays exist and which ones to trust. This is where the **consensus** mechanism and **directory authorities** come into play. Understanding this infrastructure is essential for developers building Tor-integrated applications, security researchers auditing network integrity, or power users who want to verify their connection's reliability.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Step 4**: Distribution
+The final consensus document is signed by at least 5 of 9 authorities (a quorum requirement).
+- **Expired consensus**: If your client hasn't downloaded a fresh consensus (older than 24 hours), it will refuse to use it.
+- **The Tor network's security**: model depends on having at least 5 honest authorities.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Table of Contents
 
 - [What Are Directory Authorities](#what-are-directory-authorities)
@@ -201,9 +211,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
-- [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
-- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 ## Directory Authority Network Architecture
 
 The nine Tor directory authorities are geographically distributed to prevent coordinated attacks. Each authority maintains independently:

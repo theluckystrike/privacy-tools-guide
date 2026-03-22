@@ -20,6 +20,16 @@ When you meet someone through online dating apps, the typical next step involves
 
 This guide walks through setting up Google Voice specifically for online dating conversations, with configuration choices that maximize your privacy while maintaining usability.
 
+## Key Takeaways
+
+- **Google Voice app only**: Some users prefer receiving all communication through the app only
+3.
+- **Here's my number -**: feel free to text me there # if you prefer.
+- **Google Voice is available**: in most countries, though some regions have limited features.
+- **Take your time**: once you choose a number, changing it later is possible but requires additional steps.
+- **This proves useful if**: you ever need documentation of conversations for safety reasons.
+- **This prevents someone from transferring your forwarding number to another carrier**: a technique used in SIM swapping attacks.
+
 ## Table of Contents
 
 - [Why Use Google Voice for Dating Apps](#why-use-google-voice-for-dating-apps)
@@ -372,8 +382,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
+- [How To Use Compartmentalized Identity For Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/privacy-tools-guide/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)
-- [Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

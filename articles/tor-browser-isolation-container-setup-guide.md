@@ -18,6 +18,13 @@ tags: [privacy-tools-guide]
 
 Containerizing Tor Browser in Docker, Firejail, or Linux network namespaces limits the damage from browser exploits by isolating processes from the host filesystem, restricting network access, and starting each session fresh without persistent tracking data. This guide shows you three practical implementations: Docker for maximum flexibility, Firejail for quick sandboxing without container overhead, and network namespaces for granular Linux-level control, each providing defense-in-depth beyond Tor's IP-masking protections.
 
+## Key Takeaways
+
+- **You must configure Tor**: to use a SOCKS proxy on the host or bridge to an external Tor instance.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers why**: containerize tor browser?, docker-based tor browser isolation, firejail sandbox configuration, with specific setup instructions
+
 ## Table of Contents
 
 - [Why Containerize Tor Browser?](#why-containerize-tor-browser)
@@ -261,9 +268,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 - [Tor Browser Android Setup Guide](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 - [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
-- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

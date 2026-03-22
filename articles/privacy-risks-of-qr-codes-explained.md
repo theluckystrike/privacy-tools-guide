@@ -5,7 +5,7 @@ description: "Understand how QR codes enable tracking, phishing, and identity ex
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-of-qr-codes-explained/
-categories: [guides]
+categories: [guides, privacy]
 reviewed: true
 score: 8
 intent-checked: true
@@ -169,17 +169,18 @@ Do not use URL shorteners (they add a tracking layer), UTM parameters (tell your
 - [Privacy-Focused Weather App Alternatives](/privacy-tools-guide/privacy-focused-weather-app-alternatives/)
 - [How to Remove Metadata from PDF Files](/privacy-tools-guide/how-to-remove-metadata-from-pdf-files/)
 - [Privacy-Focused Maps and Navigation Apps](/privacy-tools-guide/privacy-focused-maps-and-navigation-apps/)
+- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
 ## Related Articles
 
 - [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
-- [How To Protect Yourself From Qr Code Phishing Quishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
 - [China Qr Code Tracking How Mandatory Scanning Creates](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
+- [How To Protect Yourself From Qr Code Phishing Quishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
-- [Privacy Risks of Period Tracking Apps After Dobbs 2026](/privacy-tools-guide/privacy-risks-of-period-tracking-apps-after-dobbs-2026/)
-
+- [Privacy Risks of Period Tracking Apps 2026](/privacy-tools-guide/privacy-risks-of-period-tracking-apps-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

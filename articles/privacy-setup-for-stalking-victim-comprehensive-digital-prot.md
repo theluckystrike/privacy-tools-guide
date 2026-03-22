@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, privacy]
 
 Protect yourself from digital stalking by enabling full-disk encryption, using a separate device and phone number for communications, disabling location sharing on all devices, removing metadata from photos, using Signal and Tor for sensitive communications, and implementing strong unique passwords with two-factor authentication on all accounts. Monitor for account compromises regularly and physically inspect devices for tracking apps or hidden hardware. This guide provides a systematic approach to securing your digital life including threat model assessment, device hardening, account security, communications protection, and monitoring strategies.
 
+## Key Takeaways
+
+- **Avoid free VPNs**: which often monetize user data.
+- **Delete unused social media**: accounts 3.
+- **Use a strong alphanumeric passcode rather than biometrics alone**: biometrics can be coerced or circumvented.
+- **Do not reuse usernames**: or email addresses from compromised accounts.
+- **Most services offer notification**: options in security settings.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Table of Contents
 
 - [Threat Model Assessment](#threat-model-assessment)
@@ -291,10 +300,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Witness Protection Program Participant](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
+- [Encrypt Your Entire Digital Life: A Checklist](/privacy-tools-guide/encrypt-entire-digital-life--checklist/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

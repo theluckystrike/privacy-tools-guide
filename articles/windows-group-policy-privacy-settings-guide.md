@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, privacy]
 
 Windows Group Policy provides granular control over system behavior, including privacy-related settings that affect data collection and telemetry. For developers and power users, understanding these settings is essential for building privacy-respecting systems or hardening workstations against unnecessary data exfiltration.
 
+## Key Takeaways
+
+- **What telemetry level 0 actually stops**: Required diagnostic data (crash reports, device compatibility data, error reports) continues even at level 0 on some editions.
+- **Use this on machines**: where you are confident the hardware is not needed by any app.
+- **Most privacy settings reside**: under Administrative Templates within each section.
+- **Only Enterprise and Education**: editions can fully disable required telemetry.
+- **If you do not use Timeline**: disabling this has no functional cost.
+- **Microsoft has a history**: of resetting user preferences on major updates.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -297,8 +306,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

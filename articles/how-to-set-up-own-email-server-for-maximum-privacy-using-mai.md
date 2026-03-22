@@ -22,6 +22,15 @@ Running your own email server remains one of the most effective ways to reclaim 
 
 This guide walks through setting up Mail-in-a-Box specifically for privacy-conscious users who want maximum data sovereignty without sacrificing email functionality.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Budget approximately $10-15 monthly**: for a suitable VPS.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Propagation may take up to 48 hours**: though most changes complete within hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -238,9 +247,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
-- [Email Header Analysis What Metadata Reveals About Your](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
+- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
+- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

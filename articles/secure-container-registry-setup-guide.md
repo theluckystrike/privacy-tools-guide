@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 Running your own container registry keeps images off Docker Hub (where they are public by default), eliminates vendor lock-in, and lets you enforce image scanning and signature verification before anything gets deployed. This guide covers both the lightweight `registry:2` option and the more full-featured Harbor.
 
+## Key Takeaways
+
+- **Topics covered**: option 1: docker registry (registry:2), option 2: harbor (full-featured), enabling vulnerability scanning (harbor)
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+- **Trade-off analysis**: Strengths and limitations of each option discussed
+
 ## Option 1: Docker Registry (registry:2)
 
 `registry:2` is the official, minimal registry. It stores images and handles auth. It does not include a vulnerability scanner or web UI.
@@ -256,6 +263,8 @@ trivy image goharbor/harbor-core:v2.11.0
 - [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
 - [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
 - [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
+- [Secure WebSocket Connections Setup Guide](/privacy-tools-guide/secure-websocket-connections-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
@@ -263,10 +272,9 @@ trivy image goharbor/harbor-core:v2.11.0
 
 - [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
 - [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
-- [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
 - [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
 - [Container Security Basics for Developers](/privacy-tools-guide/container-security-basics-developers)
-
+- [How to Set Up Authelia for SSO](/privacy-tools-guide/authelia-sso-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

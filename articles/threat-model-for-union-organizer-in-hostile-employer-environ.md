@@ -18,6 +18,15 @@ tags: [privacy-tools-guide]
 
 Union organizers in hostile employer environments need a threat model that accounts for corporate surveillance capabilities—email monitoring, badge swipes, video surveillance, and potential infiltration—while remaining practical for organizing work. This guide uses the STRIDE framework adapted for union contexts, showing you how to identify your assets (communication metadata, membership lists, meeting locations), map adversary capabilities, and implement concrete countermeasures that developers and power users can deploy immediately.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a strong passphrase**: - Minimum 20 characters, stored in password manager 3.
+- **Use a separate device**: - Dedicated phone and laptop for organizing work 5.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Table of Contents
 
 - [Understanding Your Adversary](#understanding-your-adversary)
@@ -605,8 +614,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
 - [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
-- [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
-- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
 - [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

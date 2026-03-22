@@ -18,6 +18,17 @@ tags: [privacy-tools-guide, comparison]
 
 For the strongest phishing protection, choose 1Password for its TLS certificate chain verification and curated phishing domain blocklist, Bitwarden for auditable open-source domain matching you can inspect yourself, or Dashlane for real-time novel phishing site detection (at the cost of sending URL data to their servers). All three use domain-aware autofill that refuses to fill credentials on mismatched domains, but implementation differences significantly affect what each catches. Here is a technical breakdown of how each works and where the gaps remain.
 
+## Key Takeaways
+
+- **The most fundamental is**: domain-aware autofill, where the manager only fills credentials when the current page domain matches the stored login's domain.
+- **The implementation uses exact**: domain matching with support for subdomain wildcards in premium accounts.
+- **Copied passwords clear from**: clipboard after 90 seconds.
+- **Enable aggressive autofill settings**: Configure your manager to require explicit user action before filling
+2.
+- **Use hardware security keys**: For high-value accounts, combine password managers with WebAuthn/FIDO2 authentication
+3.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Table of Contents
 
 - [How Password Managers Detect Phishing Attempts](#how-password-managers-detect-phishing-attempts)
@@ -387,8 +398,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
-- [What Happens If Password Manager Company](/privacy-tools-guide/what-happens-if-password-manager-company-closes/)
+- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

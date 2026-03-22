@@ -17,6 +17,15 @@ voice-checked: true
 
 Migrate from Google Authenticator to password manager TOTP by adding TOTP secrets during account setup instead of using Google's proprietary format. Password managers like Bitwarden, 1Password, and KeePass generate TOTP codes directly from stored secrets, provide automatic backups, and work across devices. This is more convenient than Google Authenticator (no manual entry needed) and more secure (tied to encrypted password vault rather than unencrypted device) while maintaining the same industry-standard TOTP algorithm.
 
+## Key Takeaways
+
+- **Use a long**: unique phrase with entropy exceeding 60 bits.
+- **The algorithm follows RFC**: 6238 and produces 6-digit codes that expire every 30 seconds.
+- **Enable Biometric Unlock**: Most password managers support fingerprint or Face ID for quick access without compromising security.
+- **Display secret in Base32**: and QR code for user to scan 3.
+- **Require test token before**: enabling (user provides one generated token to verify) 4.
+- **Use Hardware Security Keys**: for Critical Accounts: For high-value accounts (cryptocurrency, primary email), consider hardware keys like YubiKey over TOTP.
+
 ## Table of Contents
 
 - [Understanding TOTP Mechanics](#understanding-totp-mechanics)
@@ -401,6 +410,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
 - [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
+- [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -17,6 +17,16 @@ tags: [privacy-tools-guide]
 
 Traditional phone calls route through carrier infrastructure, exposing metadata including call duration, phone numbers, and often recording capabilities. For developers and power users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative. This guide walks through building a private VoIP system that operates entirely independent of telecom carriers while maintaining strong encryption and privacy properties.
 
+## Key Takeaways
+
+- **The coturn project provides**: a free implementation: ```bash apt-get install coturn ``` Configure it in `/etc/turnserver.conf` and point your Asterisk to use it.
+- **Register your client with**: your server using username/password 2.
+- **Dial the other user's SIP URI**: `sip:bob@your-server.example.com`
+3.
+- **For developers and power**: users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative.
+- **Users can register using arbitrary identifiers**: usernames, email-style addresses, or cryptographic keys—rather than government-issued phone numbers.
+- **This provides significant privacy**: benefits for users in adversarial situations.
+
 ## Why Go Carrier-Free?
 
 Carrier-based phone systems collect extensive metadata. Your mobile carrier knows every number you call, when you called, how long you talked, and often retains these records for years. Law enforcement routinely requests this data without requiring a warrant in many jurisdictions. By running your own VoIP infrastructure, you eliminate this metadata exposure while gaining full control over call recording policies, encryption implementation, and network architecture.
@@ -283,8 +293,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [Voip Phone Number Privacy Risks What Sip Providers Log](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
 - [Best Voip App With Encryption 2026](/privacy-tools-guide/best-voip-app-with-encryption-2026/)
 - [How to Check if Someone Cloned Your Phone: Signs](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
-- [Voip Phone Number Privacy Risks What Sip Providers Log](/privacy-tools-guide/voip-phone-number-privacy-risks-what-sip-providers-log-about/)
-- [Anonymous Phone Number Services for Verification](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [How To Set Up Secure Intercom System Using Encrypted Voip](/privacy-tools-guide/how-to-set-up-secure-intercom-system-using-encrypted-voip-fo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -18,6 +18,15 @@ tags: [privacy-tools-guide]
 
 You can memorialization social media accounts on Facebook, Instagram, LinkedIn, Google, Twitter/X, Reddit, and Discord by submitting death certificate documentation and designating legacy contacts. Each platform provides different preservation features—from account freezing to data transfer to complete deletion—requiring proactive planning and documentation. This guide provides a checklist for memorializing accounts across major platforms and automating digital estate inventory.
 
+## Key Takeaways
+
+- **Most major platforms offer**: memorialization features that freeze accounts in a read-only state, preserving content while preventing modifications.
+- **Fill in your account**: details below" >> "$ACCOUNTS_FILE" echo "2.
+- **Store this file in**: a secure location" >> "$ACCOUNTS_FILE" echo "3.
+- **Share with your legacy**: contact" >> "$ACCOUNTS_FILE" echo "4.
+- **Use the Reddit API**: to archive content before deletion 3.
+- **Each platform provides different preservation features**: from account freezing to data transfer to complete deletion—requiring proactive planning and documentation.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

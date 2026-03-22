@@ -305,11 +305,10 @@ curl "http://loki-server:3100/loki/api/v1/query?query=%7Bjob%3D%22nginx%22%7D&li
 ## Related Articles
 
 - [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
-- [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
 - [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [How to Use syslog-ng for Centralized Logging](/privacy-tools-guide/how-to-use-syslog-ng-for-centralized-logging/)
 - [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-
+- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
+- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
