@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/
 description: "Follow this guide to how to use adb to disable android system apps that spy on yo with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Use Adb To Disable Android System Apps That Spy On"
 description: "Enable Developer Mode on your Android device, connect it to a computer via USB with ADB tools installed, then run adb shell pm disable-user [package.name] for"
