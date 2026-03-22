@@ -6,7 +6,7 @@ description: "Follow this guide to is someone monitoring my home wifi network ho
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
