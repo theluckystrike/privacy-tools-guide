@@ -24,6 +24,12 @@ Proton Drive offers client-side encryption, meaning your files are encrypted bef
 
 The client supports standard file operations through your file manager and provides a command-line interface for automation scripts. This dual approach appeals to developers who need programmatic access to encrypted storage.
 
+### How the Encryption Works
+
+Proton Drive uses a hybrid cryptography model. Each file is encrypted with a randomly generated symmetric key using AES-256. That file key is then encrypted with your account's public key (using OpenPGP / RSA-4096 or ECC Curve25519) and stored alongside the file. Only your private key — which never leaves your device — can decrypt the file key, which then decrypts the file itself.
+
+This means even if Proton's servers were fully compromised, attackers would get only encrypted blobs with no way to recover the plaintext content. The folder and file names are also encrypted, so directory listings on the server reveal no metadata about what you are storing.
+
 ## Installation Methods
 
 Proton Drive provides multiple installation formats. Choose the method matching your distribution.
@@ -65,6 +71,23 @@ After installation, verify the client is available:
 proton-drive --version
 ```
 
+### Installing via Flatpak
+
+Flatpak is an increasingly common distribution method for Linux desktop apps, and it provides sandboxed access with explicit permissions:
+
+```bash
+# Add the Flathub remote if not already present
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Install Proton Drive
+flatpak install flathub me.proton.Drive
+
+# Run
+flatpak run me.proton.Drive
+```
+
+The Flatpak sandbox limits what the app can access on your system. You can review and restrict permissions with Flatseal if you want to further lock down which directories the app can read.
+
 ## Authentication and Initial Setup
 
 Launch the client to begin authentication:
@@ -82,6 +105,20 @@ proton-drive auth --token-file /path/to/token.txt
 ```
 
 Generate tokens from your Proton Drive account settings if you need persistent server access.
+
+### Protecting Stored Credentials
+
+The token file grants full access to your Drive. Restrict its permissions and consider storing it on an encrypted filesystem:
+
+```bash
+# Restrict to owner read-only
+chmod 600 /path/to/token.txt
+
+# Optionally place it inside an encrypted directory (gocryptfs example)
+gocryptfs /encrypted/vault /mnt/decrypted
+mv /path/to/token.txt /mnt/decrypted/proton-token.txt
+# Update your scripts to reference /mnt/decrypted/proton-token.txt
+```
 
 ## Mounting Your Drive
 
@@ -111,6 +148,36 @@ Or use the client command:
 ```bash
 proton-drive unmount ~/ProtonDrive
 ```
+
+### Auto-Mount on Login
+
+To mount Proton Drive automatically when you log in, add a systemd user service:
+
+```bash
+mkdir -p ~/.config/systemd/user
+
+cat > ~/.config/systemd/user/proton-drive.service << 'EOF'
+[Unit]
+Description=Proton Drive FUSE Mount
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/mkdir -p %h/ProtonDrive
+ExecStart=/usr/bin/proton-drive mount %h/ProtonDrive
+ExecStop=/bin/fusermount -u %h/ProtonDrive
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+EOF
+
+systemctl --user daemon-reload
+systemctl --user enable --now proton-drive
+```
+
+Check status with `systemctl --user status proton-drive`. Logs are available via `journalctl --user -u proton-drive`.
 
 ## Command-Line Operations
 
@@ -237,6 +304,18 @@ proton-drive ls / | grep -i conflict
 
 Review and merge manually, then remove the conflict copies.
 
+### FUSE Not Available in Container Environments
+
+If you are running the client inside a Docker container or LXC, FUSE requires the `fuse` device to be available. For Docker:
+
+```bash
+docker run --device /dev/fuse --cap-add SYS_ADMIN \
+  -v /host/mount:/mnt/ProtonDrive \
+  your-image proton-drive mount /mnt/ProtonDrive
+```
+
+In LXC, add `lxc.mount.entry = /dev/fuse dev/fuse none bind,create=file 0 0` to the container config and ensure the `fuse` module is loaded on the host.
+
 ## Automation Examples
 
 ### Automated Backups
@@ -265,6 +344,66 @@ proton-drive download /work-notes ~/OfflineNotes/
 ```
 
 This approach saves local storage while maintaining access to your full drive.
+
+### Verifying Backup Integrity
+
+After uploading, verify the remote copy matches your local source using checksums:
+
+```bash
+#!/bin/bash
+# Compare local and remote file counts
+LOCAL_COUNT=$(find "$SOURCE_DIR" -type f | wc -l)
+REMOTE_COUNT=$(proton-drive ls -r "$DEST_DIR" | grep -c '^-')
+
+if [ "$LOCAL_COUNT" -ne "$REMOTE_COUNT" ]; then
+  echo "WARNING: File count mismatch. Local: $LOCAL_COUNT, Remote: $REMOTE_COUNT"
+  exit 1
+fi
+echo "Backup verified: $LOCAL_COUNT files uploaded."
+```
+
+Running this check after each backup catches partial upload failures before you need to restore.
+
+## Integrating with Development Workflows
+
+Developers can integrate Proton Drive into their existing toolchains to get encrypted cloud backups of code, databases, and configuration files without changing their workflow significantly.
+
+### Pre-commit Hook for Automatic Config Backup
+
+Add a git pre-commit hook that copies sensitive configuration files to Proton Drive before each commit:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+CONFIG_FILES=(
+    "$HOME/.ssh/config"
+    "$HOME/.gnupg/pubring.kbx"
+    "/etc/hosts"
+)
+
+BACKUP_DIR="/configs/$(hostname)/$(date +%Y-%m-%d)"
+proton-drive mkdir "$BACKUP_DIR" 2>/dev/null || true
+
+for FILE in "${CONFIG_FILES[@]}"; do
+    if [ -f "$FILE" ]; then
+        proton-drive upload "$FILE" "$BACKUP_DIR/"
+    fi
+done
+```
+
+Make it executable with `chmod +x .git/hooks/pre-commit`. This pattern ensures your configuration files are backed up every time you commit code, without any extra steps.
+
+### Using Proton Drive as a Shared Secret Store for Teams
+
+Small teams can use a shared Proton Drive folder as a secure way to distribute secrets like API keys, TLS certificates, or `.env` files. Because the folder is end-to-end encrypted and access is controlled by Proton account credentials, only people with the shared folder link and the corresponding decryption key can access the contents.
+
+The workflow is:
+1. Create a shared folder in Proton Drive web UI
+2. Generate a folder sharing link with password protection enabled
+3. Distribute the link and password through a secure channel (Signal, PGP-encrypted email)
+4. Team members download files using `proton-drive download /shared-folder/secret.env ./`
+
+This is not a replacement for a dedicated secrets manager like HashiCorp Vault for large teams, but it is a practical low-overhead option for teams of fewer than five people.
 
 ## Security Considerations
 

@@ -22,6 +22,8 @@ Mail-in-a-Box turns a fresh Ubuntu server into a fully functional email host in 
 
 Commercial email providers scan your messages for advertising purposes. Running your own Mail-in-a-Box instance gives you end-to-end control over your data, custom domain email addresses, and zero algorithmic profiling. For developers managing multiple projects or businesses requiring professional email presence, self-hosting eliminates monthly per-mailbox fees while providing unlimited accounts.
 
+Beyond cost savings, self-hosting puts you squarely in control of retention policies. Gmail keeps deleted messages in trash for 30 days before permanent deletion—your own server purges on whatever schedule you define. You also control spam filtering thresholds, which matters for developers who regularly receive transactional email that commercial providers sometimes misclassify. And when regulators or law enforcement serve a data request to Google or Microsoft, your server receives no such request because you are not on their infrastructure.
+
 ## Prerequisites
 
 Before beginning the installation, ensure you have:
@@ -31,7 +33,9 @@ Before beginning the installation, ensure you have:
 - A static IP address or reverse DNS configured
 - SSH access with root privileges
 
-DigitalOcean, Linode, and Hetzner all offer suitable VPS plans starting at $5/month. For email deliverability, choose a provider with a positive sending reputation.
+DigitalOcean, Linode, and Hetzner all offer suitable VPS plans starting at $5/month. For email deliverability, choose a provider with a positive sending reputation. Hetzner's Falkenstein datacenter is popular among privacy-focused users for its European jurisdiction and competitive pricing, but their new accounts sometimes need to request port 25 unlocking via their support ticket system—do that before starting installation.
+
+One critical prerequisite that trips up most first-time setup attempts: confirm your VPS provider allows outbound port 25. Many providers block port 25 on new accounts to prevent spam. Submit a support ticket before you begin, describing your intent to host personal email. Most providers approve this within a few hours.
 
 ## Initial Server Setup
 
@@ -46,6 +50,14 @@ Set your server hostname to your domain name:
 
 ```bash
 hostnamectl set-hostname mail.yourdomain.com
+```
+
+Edit `/etc/hosts` to reflect the same hostname:
+
+```bash
+nano /etc/hosts
+# Ensure this line exists:
+# your-server-ip  mail.yourdomain.com  mail
 ```
 
 Create a non-root user with sudo privileges for daily operations:
@@ -74,7 +86,9 @@ The installation takes 10-15 minutes and automatically configures:
 - Roundcube webmail interface
 - SpamAssassin filtering
 - OpenDKIM for email authentication
-- Let’s Encrypt SSL certificates
+- Let's Encrypt SSL certificates
+
+If the install script exits with an error about the hostname, verify that your `/etc/hosts` entry matches the hostname you set. Mail-in-a-Box is strict about this: the hostname must be a fully qualified domain name that resolves to the server's IP.
 
 ## DNS Configuration
 
@@ -118,7 +132,11 @@ Host: _dmarc
 Value: v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com
 ```
 
-Allow 24-48 hours for DNS propagation before testing email delivery.
+Allow 24-48 hours for DNS propagation before testing email delivery. You can verify propagation with `dig MX yourdomain.com` from any machine, or use the web-based tool mxtoolbox.com to inspect all records at once. Mail-in-a-Box's admin panel also runs a self-check that flags any missing or misconfigured DNS records—run it from System > Status Checks.
+
+### PTR / Reverse DNS
+
+One record that belongs on your VPS provider's side rather than your registrar: the PTR record (reverse DNS). Many mail servers reject messages from IPs without a matching PTR record. In DigitalOcean, set it under Networking > Droplets > your droplet > rename the droplet to `mail.yourdomain.com`. On Hetzner, it is under Servers > your server > Networking > IPv4 > set PTR.
 
 ## Accessing Your Email Server
 
@@ -148,17 +166,28 @@ Encryption: STARTTLS
 Authentication: Normal password
 ```
 
-Thunderbird, Apple Mail, and Microsoft Outlook all connect using these settings.
+Thunderbird, Apple Mail, and Microsoft Outlook all connect using these settings. Thunderbird's auto-discovery sometimes picks up the wrong ports—if auto-discovery fails, enter the settings manually. On mobile, FairEmail on Android is an excellent privacy-respecting client that supports IMAP IDLE for push-like notifications without polling.
 
 ## Hardening Your Mail Server
 
 After basic setup, implement these security improvements:
 
 ### Enable Two-Factor Authentication
-Access the admin panel, navigate to Users, and enable 2FA for each mailbox using the TOTP standard.
+Access the admin panel, navigate to Users, and enable 2FA for each mailbox using the TOTP standard. Use any authenticator app—Aegis on Android and Raivo on iOS are privacy-respecting options that avoid cloud backup by default.
 
 ### Configure Fail2Ban
-Mail-in-a-Box includes Fail2Ban by default, which blocks brute force attempts against SMTP and IMAP login forms.
+Mail-in-a-Box includes Fail2Ban by default, which blocks brute force attempts against SMTP and IMAP login forms. Verify it is active:
+
+```bash
+sudo fail2ban-client status
+sudo fail2ban-client status postfix
+```
+
+You should see active jails for postfix and dovecot. If a jail shows zero active filters, restart fail2ban:
+
+```bash
+sudo systemctl restart fail2ban
+```
 
 ### Restrict SSH Access
 Modify `/etc/ssh/sshd_config` to disable password authentication and permit only key-based login:
@@ -168,15 +197,25 @@ PasswordAuthentication no
 PermitRootLogin no
 ```
 
-Restart the SSH service after making changes.
+Restart the SSH service after making changes. Before restarting, verify your public key is in `/home/admin/.ssh/authorized_keys`—locking yourself out of SSH on a remote server requires a console rescue session through your VPS provider's dashboard.
 
 ### Set Up Backup
-Mail-in-a-Box includes automated backup to external storage. Configure S3-compatible storage in the admin panel under System > Backup.
+Mail-in-a-Box includes automated backup to external storage. Configure S3-compatible storage in the admin panel under System > Backup. Backblaze B2 works as an S3-compatible target and costs a fraction of Amazon S3 for small volumes. The backup process encrypts archives with a passphrase you set—store this passphrase in a password manager, not on the server itself.
+
+### Firewall Review
+
+Check the UFW firewall rules Mail-in-a-Box configured:
+
+```bash
+sudo ufw status verbose
+```
+
+Ports 25 (SMTP), 587 (submission), 993 (IMAPS), 80 (HTTP for Let's Encrypt), and 443 (HTTPS for webmail/admin) should be open. Close any other ports that appear in the list.
 
 ## Troubleshooting Common Issues
 
 ### Email Not Delivering to Gmail or Outlook
-Check your sender reputation at mail-tester.com. Ensure SPF, DKIM, and DMARC all pass. Gmail requires postmaster@yourdomain.com to exist—create this alias in the admin panel.
+Check your sender reputation at mail-tester.com. Ensure SPF, DKIM, and DMARC all pass. Gmail requires postmaster@yourdomain.com to exist—create this alias in the admin panel. Use mail-tester.com by sending a test message to their generated address and reviewing the score. A score of 9/10 or above indicates good deliverability.
 
 ### SSL Certificate Errors
 Force certificate renewal:
@@ -191,6 +230,9 @@ Verify your firewall allows ports 993 and 587:
 ```bash
 sudo ufw status
 ```
+
+### Low Spam Score or Deliverability Problems
+Register your domain with Google Postmaster Tools (postmaster.google.com) and Microsoft SNDS (sendersupport.olc.protection.outlook.com). Both services show reputation metrics specific to Gmail and Outlook delivery—invaluable for diagnosing why messages land in spam at those destinations.
 
 ## Adding Secondary Domains
 
@@ -207,7 +249,7 @@ curl -X POST https://mail.yourdomain.com/admin/mail/users \
   -d '{"email": "newuser@yourdomain.com", "password": "secure-password"}'
 ```
 
-Use this for provisioning accounts in scripts or integrating with user management systems.
+Use this for provisioning accounts in scripts or integrating with user management systems. The API also supports listing users, deleting accounts, and managing aliases—making it practical for headless administration pipelines.
 
 ## Maintenance and Updates
 
@@ -218,7 +260,14 @@ sudo mailinabox version
 sudo mailinabox update
 ```
 
-Monitor disk space and memory usage regularly—email servers with active mailboxes consume resources quickly.
+Monitor disk space and memory usage regularly—email servers with active mailboxes consume resources quickly. A server hosting five active mailboxes with normal usage will accumulate several gigabytes of stored mail within a few months. Set up disk usage alerts via your VPS provider's monitoring, or use a simple cron job:
+
+```bash
+# Alert if disk usage exceeds 80%
+0 8 * * * df / | awk 'NR==2 {if ($5+0 > 80) print "Disk at "$5}' | mail -s "Disk Warning" admin@yourdomain.com
+```
+
+Review the Let's Encrypt certificate renewal logs monthly. Mail-in-a-Box renews automatically, but the renewal can fail silently if port 80 becomes blocked after a firewall rule change. The admin panel's Status Checks page surfaces certificate expiry warnings before they become outages.
 
 Running your own email server requires ongoing attention but provides unmatched privacy and control. Mail-in-a-Box reduces the complexity significantly while remaining fully customizable for advanced use cases.
 
