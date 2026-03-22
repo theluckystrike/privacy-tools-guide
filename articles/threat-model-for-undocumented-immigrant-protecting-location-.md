@@ -17,6 +17,17 @@ tags: [privacy-tools-guide]---
 
 Protect your location and identity by disabling location permissions for all apps, removing metadata from photos before sharing, avoiding social media check-ins and location tags, using a VPN for all internet access, and using Tor for sensitive online activities. Assume government agencies and data brokers have access to cell tower records and app location data, so minimize your digital footprint and use separate anonymous accounts for sensitive communications. This guide walks through building a practical threat model covering asset identification, adversary capabilities including government surveillance and data broker harvesting, attack surfaces from app permissions and metadata, and actionable mitigations for protecting location and identity.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Each message uses unique**: session key // 4.
+- **Use alternate phone hardware**: Keep a phone used only for sensitive activities, powered off except when in safe locations
+2.
+- **Device discipline**: Agree to use phones only in agreed-safe locations
+4.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Start with a dedicated**: phone used only for sensitive activities, keeping your work and personal devices separate from any activities that could compromise your location.
+
 ## What Is a Threat Model
 
 A threat model is a structured analysis of what you need to protect, who might try to expose or harm you, and which attack vectors are most likely. For someone protecting their location and identity, the model typically includes three core components: assets (what matters), adversaries (who poses a threat), and attack surfaces (how adversaries might reach you).

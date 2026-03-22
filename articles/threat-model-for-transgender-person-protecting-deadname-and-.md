@@ -31,6 +31,15 @@ voice-checked: true---
 
 Protect your deadname by auditing breaches (Have I Been Pwned), removing yourself from data brokers, deleting old accounts, requesting name changes on social platforms, and monitoring for new leaks. Use privacy-focused email providers, delete archived content, update professional profiles (LinkedIn, GitHub), and separate old identity data from new online presence to prevent accidental re-association.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Prioritize accounts linked to breaches**: as these are most likely to be searched by adversaries.
+- **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
+
 ## Understanding Your Threat Space
 
 Before implementing any protective measures, you need to map your exposure. Your deadname likely exists across multiple data points:

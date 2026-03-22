@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 A corporate whistleblower faces a unique security challenge: preserving evidence of wrongdoing while maintaining anonymity against sophisticated adversaries. This threat model approach provides a structured framework for protecting both your evidence and your identity throughout the disclosure process.
 
+## Key Takeaways
+
+- **ProtonMail ($119.88/year**: or free plan with limitations): Encrypted email for external communications.
+- **Whonix ($0, free)**: Virtual machine that forces all traffic through Tor.
+- **SecureDrop ($0, free open-source)**: Turnkey secure submission system for journalists.
+- **KeePass ($0, free, open-source)**: Offline password manager for managing credentials securely.
+- **Signal ($0, free)**: End-to-end encrypted messaging.
+- **VeraCrypt ($0, free, open-source)**: Creates encrypted containers for sensitive evidence.
+
 ## Understanding the Threat Market
 
 Corporate whistleblowers typically face three distinct threat categories. Legal threats involve NDA violations, defamation claims, or criminal allegations. Technical threats include device compromise, communication interception, and digital forensics. Social threats encompass reputation damage, professional retaliation, and physical surveillance.

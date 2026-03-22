@@ -31,6 +31,15 @@ voice-checked: true---
 
 Protect protest medic patient data by documenting encounters without storing identifiers (encrypted case numbers only), using encrypted messaging (Signal) for coordination, never storing names/locations together, and destroying paper notes securely. Anticipate law enforcement subpoenas and device seizure by keeping encrypted offline storage separate from operational devices.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Create NEW group for**: each event (don't reuse) 2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most medics inadvertently store**: patient information across multiple platforms, creating a fragmented attack surface.
+
 ## Who Wants Your Data
 
 Before implementing protections, identify the adversaries. Protest medic data faces several threat actors:

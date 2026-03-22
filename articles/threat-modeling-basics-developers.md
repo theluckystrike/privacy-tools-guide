@@ -20,6 +20,13 @@ Threat modeling is the practice of identifying what could go wrong with a system
 
 This guide uses STRIDE as the primary framework with practical examples you can apply to a web API, a CI/CD pipeline, and a data store.
 
+## Key Takeaways
+
+- **This guide uses STRIDE**: as the primary framework with practical examples you can apply to a web API, a CI/CD pipeline, and a data store.
+- **Use a spreadsheet or**: a simple text file.
+- **Be specific**: "use authentication" is useless, "enforce JWT validation on every route using middleware at the gateway level" is actionable.
+- **This guide covers the stride framework**: step 1: draw a data flow diagram, step 2: enumerate threats systematically, with specific setup instructions
+
 ## The STRIDE Framework
 
 STRIDE maps threat categories to security properties:
