@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 When choosing a VPN protocol for mobile devices, battery consumption often ranks as a critical factor alongside security and speed. This guide examines the real-world battery impact of WireGuard versus IPSec IKEv2, providing measurements and practical configuration tips for developers and power users who need reliable VPN connectivity without rapid battery depletion.
 
+## Key Takeaways
+
+- **Values below 10 seconds**: cause unnecessary wake cycles; values above 60 seconds may cause connection issues through some NAT gateways.
+- **Setting keepalive to 25**: seconds ensures compatibility with all carriers while minimizing unnecessary wake events.
+- **During active data transfer**: at 10 Mbps sustained throughput over a cellular connection, devices running WireGuard show approximately 15-25% lower battery consumption compared to IPSec IKEv2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **IPSec IKEv2**: while mature and widely supported, involves a more complex handshake process.
+
 ## Protocol Architecture Differences
 
 WireGuard represents a modern approach to VPN design. It operates with approximately 4,000 lines of code compared to IPSec IKEv2's 400,000+ lines. This simplicity translates directly to reduced CPU overhead during packet processing. WireGuard uses ChaCha20-Poly1305 for encryption—a symmetric key algorithm optimized for efficient computation on mobile processors without requiring specialized cryptographic hardware.
