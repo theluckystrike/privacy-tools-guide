@@ -27,7 +27,17 @@ You can transfer access to VPNs, password managers, 2FA systems, and self-hosted
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Documenting VPN Access
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Documenting VPN Access
 
 When preparing VPN credentials for transfer, you need to consider whether you're using a commercial VPN service or a self-hosted solution like WireGuard, OpenVPN, or Outline.
 
@@ -72,7 +82,7 @@ PersistentKeepalive = 25
 
 Store this configuration securely—preferably in a password manager or encrypted storage that your family member can access.
 
-## Password Manager Emergency Access
+### Step 2: Password Manager Emergency Access
 
 Most password managers have built-in emergency access or vault inheritance features. This is the single most important security tool to prepare for transfer.
 
@@ -110,7 +120,7 @@ For KeePassXC users, the database file itself needs to be transferred along with
 - Optional: Children can have restricted access
 ```
 
-## Two-Factor Authentication Backup Transfer
+### Step 3: Two-Factor Authentication Backup Transfer
 
 2FA is critical for security, but it creates a single point of failure if not properly documented. When transferring 2FA access, you have several options depending on the authenticator app used.
 
@@ -155,7 +165,7 @@ If you use hardware security keys like YubiKeys for 2FA, you need to register a 
 
 Register a backup YubiKey to your important accounts and document its location separately from your primary key.
 
-## Self-Hosted Security Tools
+### Step 4: Self-Hosted Security Tools
 
 If you run security tools on your own infrastructure—Pi-hole for DNS filtering, a self-hosted VPN, or a firewall configuration—document the administrative access thoroughly.
 
@@ -202,7 +212,7 @@ sudo journalctl -u wg-quick@wg0 -n 50 --no-pager
 
 Store this runbook alongside your other documentation, and walk your family member through the basics before they need to use it.
 
-## Structured Credential Handoff
+### Step 5: Structured Credential Handoff
 
 Rather than scattering credentials across password managers, text files, and USB drives, create a structured handoff document. Use age-encryption or GPG to encrypt the document, then store it in a location your family member can access:
 
@@ -228,7 +238,7 @@ Server Access:
 EOF
 ```
 
-## Testing the Handoff
+### Step 6: Test the Handoff
 
 Before you need the transfer to work, test it. Have your family member attempt to:
 
@@ -239,6 +249,21 @@ Before you need the transfer to work, test it. Have your family member attempt t
 
 Document any friction points and refine your documentation accordingly. The goal is a smooth transition when it becomes necessary.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

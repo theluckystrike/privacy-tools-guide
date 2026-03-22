@@ -40,7 +40,17 @@ Modern Android keyboards collect and transmit typing data to their developers—
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## How Android Keyboards Transmit Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Android Keyboards Transmit Data
 
 Android keyboards operate with extensive system permissions. When you install Gboard or Samsung Keyboard, these apps request permission to read what you type, which fields you're filling, and sometimes even what you're about to type before you finish. This capability, called "predictive text" or "personalized suggestions," requires sending data to remote servers.
 
@@ -53,7 +63,7 @@ Google's Gboard collects typing patterns to improve Google Search suggestions, a
 
 For developers building privacy-conscious applications, understanding this data flow is essential. Users increasingly demand control over their typing data, and offering keyboard-aware privacy options can differentiate your app.
 
-## Disabling Data Collection in Gboard
+### Step 2: Disable Data Collection in Gboard
 
 Google's Gboard provides several settings to limit data collection, though some remain tied to your Google account.
 
@@ -89,7 +99,7 @@ For maximum privacy, use a firewall app to block Gboard's network access entirel
 
 Note that blocking network access may break some features like emoji suggestions and translation within Gboard.
 
-## Disabling Data Collection in Samsung Keyboard
+### Step 3: Disable Data Collection in Samsung Keyboard
 
 Samsung Keyboard (Samsung IME) collects data primarily for Samsung's ecosystem integration. Here's how to minimize collection:
 
@@ -118,7 +128,7 @@ adb shell pm revoke com.samsung.android.lool android.permission.INTERNET
 
 Be aware that some Samsung-specific features—like Samsung Pass integration—may stop working.
 
-## Privacy-Focused Keyboard Alternatives
+### Step 4: Privacy-Focused Keyboard Alternatives
 
 Several keyboards prioritize privacy by design, storing all data locally:
 
@@ -153,7 +163,7 @@ FlorisBoard is a modern, privacy-focused keyboard written in Kotlin:
 
 FlorisBoard supports emoji, GIF search (local-only), and clipboards without network communication.
 
-## For Developers: Implementing Privacy-Aware Input
+### Step 5: For Developers: Implementing Privacy-Aware Input
 
 When building applications that handle sensitive data, consider these approaches:
 
@@ -237,7 +247,7 @@ gboard-sync.googleapis.com
 
 Some VPN providers offer malware and tracker blocking. Route all traffic through such a VPN to catch any keyboard data attempts.
 
-## Verifying Your Configuration
+### Step 6: Verify Your Configuration
 
 After implementing changes, verify data transmission is blocked:
 
@@ -249,6 +259,21 @@ After implementing changes, verify data transmission is blocked:
 # Monitor Gboard connections
 adb shell tcpdump -i any -c 50 host google.com and port 443
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

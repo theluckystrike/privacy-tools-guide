@@ -48,7 +48,17 @@ Online credit card skimming represents one of the most insidious threats in e-co
 
 3.
 
-## Understanding Online Card Skimming
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Online Card Skimming
 
 When you enter your credit card information on a checkout page, that data passes through multiple stages: from your browser to the merchant's server, then to payment processors like Stripe or PayPal, and finally to the card networks. Skimmers intercept this data at the earliest possible point—typically within the merchant's website itself.
 
@@ -58,7 +68,7 @@ Image Skimmers represent a more sophisticated variant. These scripts take screen
 
 Recent analysis by security researchers discovered that formjacking attacks increased 38% in 2024-2025, with attackers focusing on small-to-medium e-commerce sites that lack sophisticated fraud detection. High-value targets include jewelry retailers, electronics stores, and niche products where checkout pages are rarely audited. One major breach in early 2025 compromised a widely-used shopping cart plugin affecting over 3,000 sites simultaneously.
 
-## Detecting Malicious Scripts on Checkout Pages
+### Step 2: Detecting Malicious Scripts on Checkout Pages
 
 Power users can inspect checkout pages to identify suspicious activity. Open your browser's developer tools (F12 or Cmd+Option+I) and examine the Network tab during checkout. Look for requests to unfamiliar domains, especially those registered recently or hosted on suspicious IP ranges.
 
@@ -102,7 +112,7 @@ observer.observe(document.body, {
 
 This approach catches scripts attempting to add hidden form fields or iframes that might capture card data without user awareness.
 
-## Using Browser Extensions for Protection
+### Step 3: Use Browser Extensions for Protection
 
 Several browser extensions actively detect and block known skimming scripts. Privacy Badger, developed by the Electronic Frontier Foundation, learns to block tracking scripts including potential skimmers. uBlock Origin provides blocking of malicious domains and known skimming infrastructure.
 
@@ -119,7 +129,7 @@ When choosing extensions, verify they operate locally without sending your payme
 
 **Critical consideration**: Security extensions themselves can be compromised. In 2024, a popular payment protection extension was acquired by a data harvesting firm and subsequently modified to collect user browsing data. Stick with well-established tools from non-profit organizations (EFF, Mozilla) or companies with transparent security audits.
 
-## Virtual and Ephemeral Cards
+### Step 4: Virtual and Ephemeral Cards
 
 Virtual card numbers provide a powerful layer of protection against skimming. Services like privacy.com (in the US), Revolut, and some banking apps generate temporary card numbers linked to your actual account. These virtual cards can have spending limits, single-use restrictions, or expiration dates you control.
 
@@ -142,7 +152,7 @@ console.log(`Expires: ${virtualCard.expiry}`);
 
 Developers can integrate virtual card APIs into applications requiring payment functionality, providing users with enhanced privacy without compromising checkout convenience.
 
-## Setting Up Transaction Alerts
+### Step 5: Set Up Transaction Alerts
 
 Real-time transaction alerts serve as your final line of defense. Most banks and credit card issuers offer SMS, push notification, or email alerts for purchases exceeding configurable thresholds. Enable low-dollar alerts—even purchases under $1 can indicate testing of compromised card data.
 
@@ -173,7 +183,7 @@ app.post('/webhook/transaction', async (req, res) => {
 });
 ```
 
-## Developer Protections: CSP and Subresource Integrity
+### Step 6: Developer Protections: CSP and Subresource Integrity
 
 For developers building e-commerce platforms, implementing Content Security Policy (CSP) headers significantly reduces skimming risk. CSP allows you to define exactly which domains can execute scripts on your payment pages.
 
@@ -213,7 +223,7 @@ chromium --profile-directory="PaymentOnly" https://your-shopping-destination.com
 # Limiting cross-site tracking infrastructure accumulation
 ```
 
-## Fraud Detection and Recovery
+### Step 7: Fraud Detection and Recovery
 
 Even with perfect protection, breaches happen. Establish a recovery workflow:
 
@@ -234,7 +244,7 @@ Even with perfect protection, breaches happen. Establish a recovery workflow:
 
 The Fair Credit Billing Act (FCBA) protects consumers for unauthorized charges up to $50, and most card issuers waive even this amount. Recovery typically takes 1-2 billing cycles, but documentation speeds the process.
 
-## Payment Method Alternatives to Credit Cards
+### Step 8: Payment Method Alternatives to Credit Cards
 
 Consider shifting to payment methods with stronger skimming resilience:
 
@@ -250,7 +260,7 @@ Consider shifting to payment methods with stronger skimming resilience:
 
 Layering multiple payment methods—credit card for established retailers, virtual cards for new merchants, digital wallets for verification-enabled sites—distributes risk across different fraud mechanisms.
 
-## Checking for Data Breaches Across Merchants
+### Step 9: Checking for Data Breaches Across Merchants
 
 If your card was compromised, the merchant's site may have been breached. Verify your exposure:
 
@@ -266,7 +276,7 @@ curl -s "https://haveibeenpwned.com/api/v3/breachedaccount/your@email.com" \
 
 Websites like Have I Been Pwned aggregate known breach data. Regular checking helps you understand whether card compromise came from a specific merchant breach or broader infrastructure attack.
 
-## Technical Deep Dive: Preventing Skimming in E-Commerce
+### Step 10: Technical Deep Dive: Preventing Skimming in E-Commerce
 
 For developers implementing checkout flows, formjacking prevention requires layered defense:
 
@@ -292,7 +302,7 @@ For developers implementing checkout flows, formjacking prevention requires laye
 
 The principle: minimize the attack surface by never handling raw card data, validating all external dependencies, and monitoring for unauthorized modifications.
 
-## Merchant Security Hygiene as a Consumer Signal
+### Step 11: Merchant Security Hygiene as a Consumer Signal
 
 When evaluating merchants, their security practices reveal trustworthiness:
 
@@ -303,6 +313,21 @@ When evaluating merchants, their security practices reveal trustworthiness:
 - **Regular security audits**: Ask merchants about third-party security assessments
 
 Merchants demonstrating security awareness correlate with lower skimming risk. Conversely, merchants showing poor basic security (no HTTPS, ancient certificates, obvious vulnerabilities) represent elevated risk.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

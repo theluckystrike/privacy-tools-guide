@@ -40,13 +40,23 @@ You can memorialization social media accounts on Facebook, Instagram, LinkedIn, 
 - **Use the Reddit API**: to archive content before deletion 3.
 - **Each platform provides different preservation features**: from account freezing to data transfer to complete deletion—requiring proactive planning and documentation.
 
-## Understanding Account Memorialization
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Account Memorialization
 
 When a social media account holder passes away, their accounts become vulnerable to several risks: unauthorized access by malicious actors, identity theft, and the potential loss of valuable digital memories. Most major platforms offer memorialization features that freeze accounts in a read-only state, preserving content while preventing modifications.
 
 The memorialization process varies significantly between platforms, and not all services provide official memorialization options. Understanding these differences helps you create a digital estate plan.
 
-## Facebook Memorialization
+### Step 2: Facebook Memorialization
 
 Facebook provides one of the most established memorialization processes. To request memorialization, you need to:
 
@@ -68,7 +78,7 @@ After memorialization, the account:
 - Allows approved friends to post tributes
 - Removes sensitive information from search results
 
-## Instagram Memorialization
+### Step 3: Instagram Memorialization
 
 Instagram, owned by Meta, follows similar memorialization procedures. The process requires:
 
@@ -82,7 +92,7 @@ Instagram memorialization results in:
 - Prevention of new login attempts
 - Preservation of all posts and stories
 
-## Twitter/X Account Handling
+### Step 4: Twitter/X Account Handling
 
 Twitter (now X) does not have a formal memorialization process as of 2026. However, you can take several protective measures:
 
@@ -118,7 +128,7 @@ def archive_user_tweets(consumer_key, consumer_secret, access_token, access_secr
     return len(tweets)
 ```
 
-## LinkedIn Profile Management
+### Step 5: LinkedIn Profile Management
 
 LinkedIn offers a dedicated process for removing deceased members' profiles:
 
@@ -128,7 +138,7 @@ LinkedIn offers a dedicated process for removing deceased members' profiles:
 
 LinkedIn also allows you to designate a connection as a legacy contact through account settings, though this feature is limited compared to other platforms.
 
-## Google Account Inactive Account Manager
+### Step 6: Google Account Inactive Account Manager
 
 Google provides a powerful Inactive Account Manager that automatically transfers account data to a designated contact after a period of inactivity:
 
@@ -159,21 +169,21 @@ async function configureInactiveAccountManager(auth, config) {
 }
 ```
 
-## Reddit Account Options
+### Step 7: Reddit Account Options
 
 Reddit does not offer formal memorialization. However, you can:
 1. Request account deletion through Reddit Support
 2. Use the Reddit API to archive content before deletion
 3. Designate a legacy contact with account credentials
 
-## Discord Account Handling
+### Step 8: Discord Account Handling
 
 Discord requires direct contact with their support team for memorialization requests. Provide:
 - Death certificate or obituary
 - Discord ID of the account
 - Your relationship to the deceased
 
-## General Checklist for All Platforms
+### Step 9: General Checklist for All Platforms
 
 Use this checklist when preparing accounts for memorialization:
 
@@ -188,7 +198,7 @@ Use this checklist when preparing accounts for memorialization:
 - [ ] Document the memorialization process for each platform
 - [ ] Inform trusted individuals about account wishes
 
-## Automating Documentation
+### Step 10: Automate Documentation
 
 For power users managing numerous accounts, create a documentation script:
 
@@ -232,6 +242,21 @@ Notes:
 
 EOF
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

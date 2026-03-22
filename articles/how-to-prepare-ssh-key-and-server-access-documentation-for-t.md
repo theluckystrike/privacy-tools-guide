@@ -46,7 +46,17 @@ Every organization has critical infrastructure that only certain individuals can
 
 Good documentation serves multiple purposes. It enables continuity during personnel changes. It supports compliance requirements for access auditing. It reduces the time required to onboard new technical staff. And it provides a clear inventory of what exists in your technical environment.
 
-## Inventorying SSH Keys and Access Points
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Inventorying SSH Keys and Access Points
 
 Before you can document anything, you need to know what exists. Start by creating a complete inventory of every system that requires SSH access.
 
@@ -93,7 +103,7 @@ server:
 
 Create a master spreadsheet or YAML file that tracks all servers, their purpose, who has access, and the authentication method used.
 
-## Documenting Authentication Methods
+### Step 2: Documenting Authentication Methods
 
 SSH access typically relies on several authentication mechanisms. Document each one thoroughly.
 
@@ -132,7 +142,7 @@ If any systems use password authentication (which we recommend avoiding), docume
 
 Never store actual passwords in plain text. Instead, reference your password manager and document the vault structure.
 
-## Creating Access Runbooks
+### Step 3: Create Access Runbooks
 
 Documentation is only useful if others can understand it. Create clear runbooks for common access scenarios.
 
@@ -188,7 +198,7 @@ Document what to do when normal access fails. Include:
 - Procedure for requesting new SSH keys
 - Recovery options if SSH config is broken
 
-## Secure Storage and Access Control
+### Step 4: Secure Storage and Access Control
 
 Your documentation itself becomes a high-value target. Protect it accordingly.
 
@@ -220,7 +230,7 @@ documentation_meta:
   maintained_by: platform-team@example.com
 ```
 
-## Transition Checklist
+### Step 5: Transition Checklist
 
 When actual handover occurs, use this checklist to ensure nothing is missed:
 
@@ -234,6 +244,21 @@ When actual handover occurs, use this checklist to ensure nothing is missed:
 - [ ] Emergency contacts updated
 - [ ] Previous access revoked (where applicable)
 - [ ] Sign-off from both parties
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -38,13 +38,23 @@ Tor Browser remains the gold standard for anonymous web browsing, but its multi-
 - **The DNS cache reduction**: prevents stale entries while maintaining privacy because Tor handles DNS resolution through its exit nodes anyway.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Tor Network Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Tor Network Architecture
 
 Before optimizing, understand what you're optimizing. Tor routes your traffic through at least three relays: entry guard, middle relay, and exit node. Each hop adds encryption overhead and network latency. The default configuration prioritizes anonymity over speed, which means accepting slower connections as a trade-off.
 
 However, several configuration changes can improve performance while maintaining the Tor Project's security guarantees. The key is distinguishing between optimizations that strengthen anonymity and those that compromise it.
 
-## Bridge Configuration and Circuit Building
+### Step 2: Bridge Configuration and Circuit Building
 
 One of the most effective optimizations involves configuring your bridge relays. Bridges are unlisted relays that help users in censored regions connect to the Tor network, but they can also reduce congestion on popular relay paths.
 
@@ -75,7 +85,7 @@ Bridge obfs4 <bridge-ip>:<port> <fingerprint> cert=<certificate> iat-mode=2
 
 The `iat-mode=2` setting enables improved padding that makes traffic analysis more difficult while maintaining reasonable performance.
 
-## Browser Configuration Optimizations
+### Step 3: Browser Configuration Optimizations
 
 Within Tor Browser, several about:config changes can improve page load times:
 
@@ -94,7 +104,7 @@ security.tls.enableFalseStart true
 
 These settings work with Tor's SOCKS5 proxy architecture to pipeline HTTP requests more efficiently. The DNS cache reduction prevents stale entries while maintaining privacy because Tor handles DNS resolution through its exit nodes anyway.
 
-## Using New Identity Strategically
+### Step 4: Use New Identity Strategically
 
 The "New Identity" feature in Tor Browser closes all tabs, clears browser state, and establishes new Tor circuits. Strategic use of this feature balances performance and anonymity:
 
@@ -106,7 +116,7 @@ The "New Identity" feature in Tor Browser closes all tabs, clears browser state,
 
 Rather than clicking "New Identity" after every page load— which destroys circuit performance—wait until you notice slowdowns or visit sites that feel "sticky" with tracking cookies.
 
-## Content Blocking and Request Reduction
+### Step 5: Content Blocking and Request Reduction
 
 Every request Tor must process adds latency. Reducing unnecessary requests directly improves speed:
 
@@ -140,7 +150,7 @@ trustedSites: "about: Tor circuits: extensions"
 
 JavaScript execution is computationally expensive in Tor Browser because each script must be processed through the Tor network. Disabling it by default significantly improves page load times.
 
-## Network-Level Optimizations
+### Step 6: Network-Level Optimizations
 
 ### Using Tor with a Local Proxy
 
@@ -165,7 +175,7 @@ network.trr.uri https://dns.quad9.net:5053/dns-query
 
 Setting TRR mode to 3 uses DoH as a fallback, which provides redundancy without compromising the Tor DNS pipeline.
 
-## Monitoring Tor Performance
+### Step 7: Monitor Tor Performance
 
 Track circuit performance to identify slow relays:
 
@@ -232,6 +242,21 @@ while True:
 ```
 
 This script monitors circuit health and can trigger new identity requests when performance degrades.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
