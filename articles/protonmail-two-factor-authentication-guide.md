@@ -3,7 +3,7 @@ layout: default
 title: "ProtonMail Two-Factor Authentication Guide"
 description: "A guide to setting up and using two-factor authentication with ProtonMail for enhanced email security"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /protonmail-two-factor-authentication-guide/
 reviewed: true
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# ProtonMail Two-Factor Authentication Guide
 
 To enable two-factor authentication on ProtonMail, go to Settings, then Security, click "Enable 2FA," scan the QR code with an authenticator app like Aegis or Authy, and enter the 6-digit code to confirm. ProtonMail supports both TOTP (authenticator app codes) and WebAuthn/FIDO2 (hardware security keys like YubiKey)--TOTP is the fastest to set up, while WebAuthn provides stronger phishing resistance. This guide walks through both methods along with recovery strategies and developer integration patterns.
 

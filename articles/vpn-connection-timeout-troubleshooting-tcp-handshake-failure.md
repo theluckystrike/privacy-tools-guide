@@ -3,7 +3,7 @@ layout: default
 title: "VPN Connection Timeout Troubleshooting"
 description: "A technical guide for developers and power users to diagnose and fix VPN connection timeouts caused by TCP handshake failures. Includes command-line"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /vpn-connection-timeout-troubleshooting-tcp-handshake-failure/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# VPN Connection Timeout Troubleshooting: TCP Handshake Failure Guide
 
 To fix a VPN TCP handshake timeout, start by testing basic reachability (`ping` and `nc -zv` to the VPN port), then check for firewall blocks (try connecting from a different network or switching to port 443), and finally verify TLS compatibility (`openssl s_client -connect`). The three most common causes are firewall rules blocking the VPN port, MTU/fragmentation mismatches dropping oversized packets, and TLS version or cipher incompatibilities between client and server. This guide provides the exact diagnostic commands and configuration fixes for each scenario.
 

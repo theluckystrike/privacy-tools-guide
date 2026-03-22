@@ -3,7 +3,7 @@ layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /totp-backup-codes-best-practices/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-# TOTP Backup Codes Best Practices: A Developer's Guide
 
 Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on paper in a physically secure location like a safe or locked drawer. Never store backup codes in plain text files, unencrypted notes apps, or email. Test at least one code during setup to confirm it works before you need it in an emergency. This guide covers secure generation, encrypted and physical storage strategies, developer implementation patterns with hashed code validation, and multi-account management workflows.
 

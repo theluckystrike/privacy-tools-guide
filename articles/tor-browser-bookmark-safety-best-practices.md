@@ -3,7 +3,7 @@ layout: default
 title: "Tor Browser Bookmark Safety Best Practices"
 description: "Learn essential bookmark security practices for Tor Browser to protect your privacy and avoid metadata leaks"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /tor-browser-bookmark-safety-best-practices/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# Tor Browser Bookmark Safety Best Practices
 
 Secure your Tor Browser bookmarks by disabling automatic backup, using generic folder names instead of revealing context, and storing sensitive bookmarks in encrypted containers. Avoid syncing bookmarks to external services, export bookmarks locally with sanitized metadata, and conduct monthly audits to delete defunct or suspicious links. This guide covers threat modeling and practical automation scripts for maintaining bookmark hygiene.
 

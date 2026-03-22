@@ -3,7 +3,7 @@ layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication"
 description: "SSH tunneling creates encrypted pathways between devices, securing data that would otherwise travel in plaintext. Whether you're accessing a database on a"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-ssh-tunneling-for-encrypted-communication-between/
 categories: [guides]
@@ -314,3 +314,4 @@ SSH tunneling provides encrypted paths between devices without the overhead of f
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
+```

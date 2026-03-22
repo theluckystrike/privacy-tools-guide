@@ -3,7 +3,7 @@ layout: default
 title: "Create Separate Network Segment for Smart Home Isolating"
 description: "A practical guide for developers and power users on creating isolated network segments to separate smart home devices from personal computers and phones"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-create-separate-network-segment-for-smart-home-isolat/
 categories: [guides, security]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Create Separate Network Segment for Smart Home Isolating From Personal Devices
 
 Smart home devices present a significant attack surface. Every thermostat, camera, bulb, and voice assistant ships with varying levels of security, and many cannot be updated once shipped. Rather than trusting each manufacturer to secure their firmware, you can isolate these devices on a separate network segment. This approach limits lateral movement if a device is compromised while keeping your personal devices—laptops, phones, and workstations—on a distinct network with stricter access controls.
 

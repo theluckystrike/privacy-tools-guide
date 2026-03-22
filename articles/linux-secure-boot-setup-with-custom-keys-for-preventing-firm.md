@@ -3,7 +3,7 @@ layout: default
 title: "Linux Secure Boot Setup with Custom Keys for Preventing"
 description: "Learn how to set up Secure Boot on Linux with custom keys to protect against firmware-level attacks and ensure boot integrity"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
 categories: [guides]
@@ -16,7 +16,6 @@ intent-checked: true
 ---
 
 {% raw %}
-# Linux Secure Boot Setup with Custom Keys for Preventing Firmware Level Tampering
 
 Replace manufacturer Secure Boot keys with your own custom keys to gain complete authority over boot trust chains. Generate a three-tier key hierarchy (Platform Key, Key Exchange Key, and Signature Database key) using OpenSSL, enroll them in UEFI firmware, then sign all bootloaders and kernels. This approach prevents firmware-level tampering and ensures only your signed code executes at boot time.
 

@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Data Subject Access Request Template"
 description: "Learn how to create and process GDPR data subject access requests. Includes practical templates, code examples, and automation strategies for developers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gdpr-data-subject-access-request-template/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# GDPR Data Subject Access Request Template
 
 Use the DSAR response template below to handle GDPR Article 15 data subject access requests within the required one-month deadline. It includes a ready-to-copy markdown response template, a Python handler class that automates data collection and response generation, an Express.js route for accepting requests via API, and a data inventory schema for discovering all user data across your systems. Adapt these components to your stack to build a compliant, automated DSAR workflow.
 

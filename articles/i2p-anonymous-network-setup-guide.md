@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Use the I2P Anonymous Network
 
 I2P (Invisible Internet Project) is a garlic-routing network designed for internal anonymous communication — hidden services, encrypted email, file sharing, and messaging within the I2P network itself. Unlike Tor, I2P isn't primarily designed for accessing the clearnet anonymously. Each peer routes traffic for others, making every participant a relay by default.
 

@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up a VPN on Your Router
 
 Running a VPN on each device individually means constant maintenance. A router-level VPN tunnels every device on your network — phones, smart TVs, consoles, IoT gadgets — through the VPN without installing anything on them.
 

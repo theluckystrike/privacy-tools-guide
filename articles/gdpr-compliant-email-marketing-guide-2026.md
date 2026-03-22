@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Compliant Email Marketing Guide 2026: A Developer"
 description: "A technical guide to building GDPR-compliant email marketing systems in 2026. Covers consent management, double opt-in implementation, and practical"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gdpr-compliant-email-marketing-guide-2026/
 categories: [guides]
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# GDPR Compliant Email Marketing Guide 2026: A Developer
 
 To build a GDPR-compliant email marketing system in 2026, implement double opt-in for consent proof, maintain an immutable audit log of all consent events, and automate data subject request handling for erasure and access rights. This guide provides working Python code for each of these requirements—from creating pending subscriptions with hashed email storage, to enforcing list hygiene and integrating third-party DPAs.
 

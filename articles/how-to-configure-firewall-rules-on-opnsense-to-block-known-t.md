@@ -3,7 +3,7 @@ layout: default
 title: "Configure Firewall Rules on OPNsense to Block Known"
 description: "A practical guide for developers and power users to configure OPNsense firewall rules that block known tracking domains at the IP level, providing"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-configure-firewall-rules-on-opnsense-to-block-known-t/
 categories: [guides]
@@ -14,7 +14,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-# How to Configure Firewall Rules on OPNsense to Block Known Tracking Domains at IP Level
 
 OPNsense, an open-source firewall and routing platform based on FreeBSD, provides powerful tools for network-level privacy control. By configuring firewall rules to block known tracking domains at the IP level, you can protect all devices on your network without relying on browser extensions or individual app configurations. This approach works transparently for every connected device, including IoT gadgets, smart TVs, and guest devices that cannot run tracker-blocking software.
 

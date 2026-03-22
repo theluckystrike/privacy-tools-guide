@@ -13,7 +13,6 @@ tags: [privacy-tools-guide, vpn]
 
 {% raw %}
 
-# How to Set Up WireGuard VPN on VPS 2026
 
 WireGuard is the fastest, simplest VPN protocol available. Unlike OpenVPN (500+ lines of config), WireGuard is 4,000 lines of code and readable. Here's how to deploy your own VPN server on a cheap VPS.
 

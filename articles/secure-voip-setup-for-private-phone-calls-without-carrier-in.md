@@ -3,7 +3,7 @@ layout: default
 title: "Secure VoIP Setup for Private Phone Calls Without Carrier"
 description: "Learn how to set up self-hosted VoIP infrastructure using Asterisk, WebRTC, and encrypted protocols to make private phone calls without relying on"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /secure-voip-setup-for-private-phone-calls-without-carrier-in/
 categories: [guides]
@@ -14,7 +14,6 @@ score: 8
 tags: [privacy-tools-guide]
 ---
 
-# Secure VoIP Setup for Private Phone Calls Without Carrier Involvement: A Developer's Guide
 
 Traditional phone calls route through carrier infrastructure, exposing metadata including call duration, phone numbers, and often recording capabilities. For developers and power users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative. This guide walks through building a private VoIP system that operates entirely independent of telecom carriers while maintaining strong encryption and privacy properties.
 
