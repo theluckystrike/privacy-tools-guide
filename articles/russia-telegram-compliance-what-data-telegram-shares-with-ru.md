@@ -9,7 +9,7 @@ permalink: /russia-telegram-compliance-what-data-telegram-shares-with-ru/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

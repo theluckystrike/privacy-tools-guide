@@ -1,5 +1,7 @@
 ---
 permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
+description: "Learn screen resolution fingerprinting why changing display settin with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display"

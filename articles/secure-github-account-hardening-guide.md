@@ -1,5 +1,7 @@
 ---
 permalink: /secure-github-account-hardening-guide/
+description: "Follow this guide to secure github account hardening guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Secure Your GitHub Account"

@@ -1,5 +1,7 @@
 ---
 permalink: /school-surveillance-technology-privacy-student-rights-agains/
+description: "Learn school surveillance technology privacy student rights agains with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "School Surveillance Technology Privacy"

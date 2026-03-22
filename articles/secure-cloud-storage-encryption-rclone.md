@@ -1,5 +1,7 @@
 ---
 permalink: /secure-cloud-storage-encryption-rclone/
+description: "Learn secure cloud storage encryption rclone with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "Encrypt Cloud Storage with Rclone Before Uploading"
