@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Implement mTLS Between Microservices"
-description: "Configure mutual TLS between services using cert-manager, Vault PKI, and Istio to enforce service identity, prevent lateral movement, and automate
+description: "Configure mutual TLS between services using cert-manager, Vault PKI, and Istio to enforce service identity, prevent lateral movement, and automate"
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-microservice-communication-mtls-guide/

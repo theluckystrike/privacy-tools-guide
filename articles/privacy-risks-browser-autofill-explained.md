@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Risks of Browser Autofill Explained"
-description: "How browser autofill leaks passwords, addresses, and credit cards through hidden form fields, CSS tricks, and cross-origin requests — and how to configure
+description: "How browser autofill leaks passwords, addresses, and credit cards through hidden form fields, CSS tricks, and cross-origin requests — and how to configure"
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-browser-autofill-explained/
