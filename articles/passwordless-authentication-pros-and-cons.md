@@ -1,5 +1,7 @@
 ---
 permalink: /passwordless-authentication-pros-and-cons/
+description: "Learn passwordless authentication pros and cons with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"

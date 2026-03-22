@@ -1,5 +1,7 @@
 ---
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
+description: "Learn post quantum encryption in messaging apps preparing for quan with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing"

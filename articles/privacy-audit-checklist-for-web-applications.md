@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-audit-checklist-for-web-applications/
+description: "Learn privacy audit checklist for web applications with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Audit Checklist for Web Applications: A Developer"

@@ -679,7 +679,7 @@ related_articles:
  - how-to-check-if-your-private-photos-were-leaked-online
 permalink: /photographer-client-photo-privacy-protection-cloud-storage/
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 author: "Privacy Tools Guide"

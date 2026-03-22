@@ -1,5 +1,7 @@
 ---
 permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
+description: "Compare pop os vs fedora vs debian for privacy focused linux desktop with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 layout: default
 title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux"

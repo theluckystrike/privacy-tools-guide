@@ -1,5 +1,7 @@
 ---
 permalink: /password-manager-master-password-strength-guide/
+description: "Follow this guide to password manager master password strength guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Password Manager Master Password Strength Guide"

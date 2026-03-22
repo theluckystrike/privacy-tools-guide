@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-by-design-principles-practical-guide/
+description: "Follow this guide to privacy by design principles practical guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"

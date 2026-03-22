@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /password-rotation-policy-best-practices-2026/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
