@@ -37,7 +37,17 @@ When your personal photos appear online without consent, the violation is deeply
 - **Instead**: you need automated approaches that use existing tools and services designed for this purpose.
 - **High-risk destinations include image**: hosting boards like Imgur, adult content aggregators, Telegram channels focused on leaked content, dark web paste sites, and Discord servers.
 
-## Understanding the Problem Space
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem Space
 
 Private photo leaks typically occur through several vectors: account breaches at cloud storage services, social media platform vulnerabilities, device compromises, or social engineering attacks. Once images are online, they can be indexed by search engines, shared on image boards, or appear in data breach compilations.
 
@@ -45,7 +55,7 @@ The challenge lies in detection—you cannot monitor every platform manually. In
 
 Understanding where leaks commonly surface helps prioritize your search. High-risk destinations include image hosting boards like Imgur, adult content aggregators, Telegram channels focused on leaked content, dark web paste sites, and Discord servers. Each requires a different detection approach since not all are indexed by mainstream search engines.
 
-## Reverse Image Search Methods
+### Step 2: Reverse Image Search Methods
 
 ### Using Google Images
 
@@ -104,7 +114,7 @@ Do not overlook Bing Visual Search and Yandex Images—both maintain separate in
 
 To use Yandex reverse image search: navigate to yandex.com/images, click the camera icon, and upload your file. The results page groups visually similar images and shows pages that contain them. For systematic checking, you can integrate multiple search engines into a single workflow rather than relying on Google alone.
 
-## HaveIBeenPwned and Data Breach Monitoring
+### Step 3: HaveIBeenPwned and Data Breach Monitoring
 
 While HaveIBeenPwned focuses on email addresses and passwords, its API can help identify if your accounts were compromised—often the vector for photo leaks.
 
@@ -135,7 +145,7 @@ Beyond HIBP, several specialized services track image-specific breaches. StopNCI
 
 The Cyber Civil Rights Initiative (CCRI) also maintains a resource list of removal services specific to non-consensual intimate image sharing, which goes beyond general data breach monitoring.
 
-## Building Your Own Monitoring System
+### Step 4: Build Your Own Monitoring System
 
 For continuous monitoring, you can build a system that periodically checks for your images:
 
@@ -191,7 +201,7 @@ def images_are_similar(hash1, hash2, threshold=10):
 
 Store hashes for all your sensitive photos locally, then compare against hashes extracted from suspected matches. A difference score below 10 typically indicates the same image, while scores under 20 suggest a modified version.
 
-## Platform-Specific Detection
+### Step 5: Platform-Specific Detection
 
 ### Social Media Monitoring
 
@@ -229,7 +239,7 @@ Standard search engines do not index Telegram channels or dark web sites. For Te
 
 A more accessible approach: dark web exposure can sometimes be identified indirectly by monitoring whether your personal identifiers (username, phone number, email) appear in breach data dumps posted to paste sites. Tools like Dehashed aggregate this data and allow email or username searches across leaked databases.
 
-## Prevention Strategies
+### Step 6: Prevention Strategies
 
 Detection is only half the battle. Implement these preventive measures:
 
@@ -251,7 +261,7 @@ Detection is only half the battle. Implement these preventive measures:
 
 5. **Watermark sensitive images invisibly**: Invisible watermarking embeds a unique identifier that survives basic editing. If a leak is detected, the watermark identifies which copy was distributed, helping narrow down the source of the breach.
 
-## Taking Action
+### Step 7: Taking Action
 
 If you discover leaked photos:
 
@@ -272,6 +282,21 @@ Perceptual hashing improves on exact matching but still fails against heavy filt
 
 For professional-grade protection, consider commercial services that specialize in digital footprint monitoring—they aggregate data from multiple sources and provide more coverage than individual tools.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

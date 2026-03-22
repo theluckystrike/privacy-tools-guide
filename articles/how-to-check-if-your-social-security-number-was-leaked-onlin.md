@@ -40,7 +40,17 @@ Your Social Security number is one of the most valuable pieces of personal ident
 - **Freeze your credit**: A credit freeze is stronger than a fraud alert.
 - **It prevents any new**: credit from being opened until you lift the freeze.
 
-## How SSN Leaks Happen
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How SSN Leaks Happen
 
 Understanding the attack surface helps you know where to look. SSN exposure typically occurs through several vectors:
 
@@ -52,7 +62,7 @@ Understanding the attack surface helps you know where to look. SSN exposure typi
 
 **Phishing and social engineering** — Attackers trick employees into revealing databases containing employee or customer SSNs.
 
-## Direct Monitoring Services
+### Step 2: Direct Monitoring Services
 
 ### Have I Been Pwned
 
@@ -77,7 +87,7 @@ The three major credit bureaus — Equifax, Experian, and TransUnion — each of
 
 Equifax's myEquifax portal allows you to place a free fraud alert and offers complimentary identity theft protection enrollment following major breaches.
 
-## Dark Web Monitoring Tools
+### Step 3: Dark Web Monitoring Tools
 
 ### Have I Been Pwned's Dark Web Monitoring
 
@@ -111,7 +121,7 @@ curl -X POST "https://api.identityservice.com/scan" \
   -d '{"ssn": "123-45-6789", "notification_email": "you@example.com"}'
 ```
 
-## Building Your Own Monitoring Script
+### Step 4: Build Your Own Monitoring Script
 
 For developers who want custom monitoring, you can combine multiple data sources:
 
@@ -175,7 +185,7 @@ result = monitor.check_hibp_breaches("your-email@example.com")
 print(json.dumps(result, indent=2))
 ```
 
-## What To Do If Your SSN Is Found
+### Step 5: What To Do If Your SSN Is Found
 
 If monitoring reveals your SSN has been compromised, act immediately:
 
@@ -191,7 +201,7 @@ If monitoring reveals your SSN has been compromised, act immediately:
 
 6. **Document everything** — Keep records of all communications, police reports, and correspondence related to the identity theft.
 
-## Prevention Strategies
+### Step 6: Prevention Strategies
 
 While you can't prevent breaches at companies you do business with, you can reduce your exposure:
 
@@ -298,7 +308,7 @@ monitor = EmailBreachMonitor(
 monitor.run_check()
 ```
 
-## Credit Bureau Direct Monitoring
+### Step 7: Credit Bureau Direct Monitoring
 
 Access raw credit bureau data to detect fraudulent accounts:
 
@@ -356,7 +366,7 @@ def analyze_credit_report(credit_report_json):
     return alerts
 ```
 
-## Social Security Account Security
+### Step 8: Social Security Account Security
 
 Prevent attackers from taking over your Social Security account:
 
@@ -376,20 +386,20 @@ Prevent attackers from taking over your Social Security account:
 # Report discrepancies to SSA immediately
 ```
 
-## Recovery Plan Preparation
+### Step 9: Recovery Plan Preparation
 
 Prepare before you need it:
 
 ```markdown
 # Identity Theft Recovery Plan
 
-## Pre-Incident Preparation
+### Step 10: Pre-Incident Preparation
 - Store recovery phone numbers: Equifax, Experian, TransUnion
 - Keep copies of government IDs in secure location
 - Document all current accounts and passwords in manager
 - Prepare template identity theft report
 
-## Post-Incident Response Timeline
+### Step 11: Post-Incident Response Timeline
 - **Immediately (0-24 hours)**:
   - Contact credit bureaus
   - Place fraud alert
@@ -415,10 +425,10 @@ Prepare before you need it:
   - Maintain identity theft file
   - Monitor credit reports quarterly
 
-## Documentation Template
+### Step 12: Documentation Template
 ```
 
-## Legal Resources for Identity Theft
+### Step 13: Legal Resources for Identity Theft
 
 If identity theft occurs, know your rights:
 
@@ -438,7 +448,7 @@ If identity theft occurs, know your rights:
 # Contact FTC or consider consulting attorney
 ```
 
-## Long-Term Monitoring After Breach
+### Step 14: Long-Term Monitoring After Breach
 
 After discovering SSN exposure, maintain vigilance:
 
@@ -463,6 +473,21 @@ curl https://ssa.gov/myaccount -u "$SSA_USERNAME:$SSA_PASSWORD" | grep -i "earni
 # Continue for 3-7 years
 # Stolen SSNs can be misused years after breach
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

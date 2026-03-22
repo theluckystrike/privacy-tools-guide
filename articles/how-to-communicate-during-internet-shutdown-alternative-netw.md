@@ -39,7 +39,17 @@ When the internet goes down due to shutdowns, disasters, or infrastructure failu
 - **An untested solution fails**: when needed most.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Problem Space
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem Space
 
 Internet shutdowns typically affect connectivity at the ISP level, disrupting DNS resolution, blocking traffic at network borders, or completely severing physical links. However, local network infrastructure often remains functional. This creates opportunities for alternative communication methods that operate independently of wide-area networks.
 
@@ -56,7 +66,7 @@ The key distinction in alternative networking is between **infrastructure-depend
 | Pricing | See current pricing | See current pricing |
 | Ease of Use | Moderate learning curve | Moderate learning curve |
 
-## Mesh Networking with IBSS/MANET
+### Step 2: Mesh Networking with IBSS/MANET
 
 One of the most solutions involves creating ad-hoc networks between devices using IBSS (Independent Basic Service Set) or MANET (Mobile Ad-hoc Networking) protocols. Linux supports this natively through iw and wpa_supplicant.
 
@@ -91,7 +101,7 @@ sudo ip link set bat0 up
 
 B.A.T.M.A.N. handles packet routing automatically, allowing nodes to enter and leave the mesh dynamically. This scales well for neighborhood-sized deployments where devices can reach each other through multi-hop paths.
 
-## Offline Messaging Applications
+### Step 3: Offline Messaging Applications
 
 Several applications provide store-and-forward messaging without internet connectivity. These typically use Bluetooth, Wi-Fi Direct, or local network scanning to discover nearby devices.
 
@@ -156,7 +166,7 @@ class OfflineMessageServer:
 
 This serves as a starting point. Production implementations should include encryption (consider using the `cryptography` library with X25519 key exchange), message persistence, and automatic peer discovery via UDP broadcast on port 45678.
 
-## Packet Radio and LoRa Communication
+### Step 4: Packet Radio and LoRa Communication
 
 For longer-range scenarios where Wi-Fi reach is insufficient, amateur radio techniques and LoRa (Long Range) modules provide viable alternatives.
 
@@ -201,7 +211,7 @@ interface.close()
 
 These settings maximize range at the expense of data rate—appropriate for short text messages but not suitable for file transfers.
 
-## Satellite-Based Emergency Communication
+### Step 5: Satellite-Based Emergency Communication
 
 When local infrastructure fails completely, satellite-based solutions provide global connectivity independent of terrestrial networks.
 
@@ -250,7 +260,7 @@ iridium.send_message("STATUS: All clear, using backup communication")
 
 This approach works anywhere with sky visibility but carries associated hardware and service costs.
 
-## Building a Redundant Communication Strategy
+### Step 6: Build a Redundant Communication Strategy
 
 For developers responsible maintaining communication capabilities, implement defense in depth:
 
@@ -260,6 +270,21 @@ For developers responsible maintaining communication capabilities, implement def
 4. **Emergency layer**: Satellite communication for external connectivity
 
 Test these systems regularly. An untested solution fails when needed most.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

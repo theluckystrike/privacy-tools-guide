@@ -39,13 +39,23 @@ Phone number spoofing occurs when a caller deliberately falsifies the caller ID 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Phone Number Spoofing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Phone Number Spoofing
 
 Spoofing works because the traditional telephone network was built on trust. The Caller ID system (CNAM) relies on the calling party to provide accurate information, and there's no built-in verification in legacy SS7 protocols. Modern VoIP systems make it trivial to forge the originating number.
 
 The consequences of having your number spoofed include unwanted calls appearing to come from your number, potential reputation damage with carriers, and in severe cases, your number being blocked by spam filters or call protection services.
 
-## Method 1: Monitor Incoming Call Patterns
+### Step 2: Method 1: Monitor Incoming Call Patterns
 
 The first indicator of spoofing is unusual activity on your number. If you receive calls or text messages asking "Why did you call me?" when you didn't, your number may have been cloned.
 
@@ -72,7 +82,7 @@ if __name__ == "__main__":
 
 While this won't prevent spoofing, it helps establish a baseline. If you suddenly receive大量 callbacks or SMS replies to calls you never made, that's a red flag.
 
-## Method 2: Use Carrier Lookup APIs
+### Step 3: Method 2: Use Carrier Lookup APIs
 
 Several services provide phone number validation and reputation data. These APIs can help detect if your number has been flagged as a source of spam or spoofed calls.
 
@@ -113,7 +123,7 @@ location = geocoder.description_for_number(phone_number, "en")
 print(f"Location: {location}")
 ```
 
-## Method 3: Check STIR/SHAKEN Authentication
+### Step 4: Method 3: Check STIR/SHAKEN Authentication
 
 STIR (Secure Telephony Identity Revisited) and SHAKEN (Signature-based Handling of Asserted information using toKENs) are protocols designed to combat spoofing by verifying caller identity. While not yet universal, major carriers have implemented these standards.
 
@@ -122,7 +132,7 @@ Contact your carrier to ask:
 - Whether any failed authentication events have been logged for your number
 - Whether your number has been flagged in their spam database
 
-## Method 4: Monitor Call Detail Records
+### Step 5: Method 4: Monitor Call Detail Records
 
 Request your call detail records (CDR) from your carrier. Look for:
 - Calls you didn't make, especially to premium rate numbers
@@ -145,7 +155,7 @@ def analyze_cdr(cdr_data):
     return suspicious
 ```
 
-## Method 5: Set Up Number Monitoring Services
+### Step 6: Method 5: Set Up Number Monitoring Services
 
 Several services can alert you when your number appears in suspicious contexts:
 
@@ -158,7 +168,7 @@ Apps like Truecaller, Hiya, and Nomorobo maintain databases of reported spoofed 
 ### CNAM Lookup
 The Caller ID Name database can show what name displays when your number is called. Inconsistent CNAM information may indicate spoofing issues.
 
-## Prevention and Mitigation
+### Step 7: Prevention and Mitigation
 
 Once you've confirmed spoofing, take these steps:
 
@@ -168,7 +178,7 @@ Once you've confirmed spoofing, take these steps:
 4. **Document everything** - Keep logs of suspicious calls for potential law enforcement reports
 5. **Register on Do Not Call list** - The National Do Not Call Registry won't stop spoofers but may reduce legitimate telemarketing
 
-## For Developers: Building Spoof-Resistant Systems
+### Step 8: For Developers: Building Spoof-Resistant Systems
 
 If you're building applications that rely on phone verification:
 
@@ -192,7 +202,7 @@ def verify_call_signature(timestamp, caller_number, signature, shared_secret):
 
 Implement proper phone number validation, require multi-factor authentication for phone-based operations, and log all verification attempts for fraud analysis.
 
-## Investigating Caller ID Spoofing: Technical Deep Dive
+### Step 9: Investigating Caller ID Spoofing: Technical Deep Dive
 
 Phone spoofing works at the protocol level. Understanding the mechanics helps identify when it's happening:
 
@@ -313,7 +323,7 @@ for pattern in suspicious:
 
 These patterns, combined with CDR data, strongly indicate active spoofing.
 
-## SIM Swapping vs Number Spoofing
+### Step 10: SIM Swapping vs Number Spoofing
 
 Important distinction: SIM swapping is different from spoofing:
 
@@ -338,7 +348,7 @@ SIM Swap: Contact carrier immediately, file police report, change ALL passwords,
 
 SIM swapping is much more serious and requires immediate carrier intervention.
 
-## Carrier Cooperation and Reporting
+### Step 11: Carrier Cooperation and Reporting
 
 Your carrier has tools to investigate spoofing:
 
@@ -367,7 +377,7 @@ Your carrier has tools to investigate spoofing:
 
 These steps give carriers ability to protect your number.
 
-## Personal Network Notification Protocol
+### Step 12: Personal Network Notification Protocol
 
 If your number is being spoofed, notify your contacts:
 
@@ -479,6 +489,21 @@ class PhoneVerificationSystem:
 ```
 
 This implementation provides rate limiting and secure code verification.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -48,7 +48,17 @@ Every browser exposes dozens of attributes when visiting websites. These include
 
 Your uniqueness score represents how rare your browser configuration is compared to other users. A higher uniqueness score means you're easier to identify and track across websites—even without cookies or login accounts. Scores above 99% indicate your browser is extremely identifiable.
 
-## Key Fingerprinting Vectors
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Key Fingerprinting Vectors
 
 Before testing, understand which attributes contribute most to your fingerprint:
 
@@ -69,7 +79,7 @@ Before testing, understand which attributes contribute most to your fingerprint:
 - Timezone and language settings
 - Canvas and WebGL rendering differences
 
-## Using Online Fingerprinting Tools
+### Step 2: Use Online Fingerprinting Tools
 
 ### EFF Cover Your Tracks
 
@@ -95,7 +105,7 @@ The service provides:
 
 [BrowserLeaks](https://browserleaks.com/) offers testing across multiple fingerprinting vectors including canvas, WebGL, audio context, and WebGL2. This tool is particularly useful for developers because it shows exactly what each API reveals.
 
-## Building a Custom Fingerprint Tester
+### Step 3: Build a Custom Fingerprint Tester
 
 For developers who want deeper control, build your own fingerprint collector:
 
@@ -203,7 +213,7 @@ collector.collect().then(fingerprint => {
 
 This collector gathers the most significant fingerprinting vectors and generates a hash you can use for comparison.
 
-## Calculating Your Uniqueness Score
+### Step 4: Calculating Your Uniqueness Score
 
 To calculate an uniqueness score, you need a reference dataset. The simplest approach compares your fingerprint against a sample population:
 
@@ -227,7 +237,7 @@ function calculateUniquenessScore(yourFingerprint, referenceDataset) {
 
 In practice, reference datasets from projects like AmIUnique contain millions of fingerprints. For accurate scores, use their online tools rather than building your own comparison database.
 
-## Interpreting Your Results
+### Step 5: Interpreting Your Results
 
 After testing, you'll receive an uniqueness score. Here's how to interpret the results:
 
@@ -241,7 +251,7 @@ After testing, you'll receive an uniqueness score. Here's how to interpret the r
 
 **Above 99%**: Extremely unique. You can be fingerprinted and tracked reliably without any cookies.
 
-## Hardening Your Browser
+### Step 6: Hardening Your Browser
 
 Once you know your score, take steps to reduce your uniqueness:
 
@@ -258,6 +268,21 @@ Set `privacy.resistFingerprinting = true` in about:config to normalize many expo
 **Use common screen resolutions** rather than maximizing windows on unusual monitor sizes.
 
 **Limit installed extensions** as they add to your fingerprint.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

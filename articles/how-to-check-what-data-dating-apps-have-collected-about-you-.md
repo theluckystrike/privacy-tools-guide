@@ -33,7 +33,17 @@ tags: [privacy-tools-guide]---
 
 Dating apps collect extensive personal information beyond what you explicitly share in your profile. Understanding what these platforms know about you is the first step in reclaiming your digital privacy. Data access requests, also known as subject access requests, give you the legal right to obtain a copy of your personal data.
 
-## What Data Dating Apps Typically Collect
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Data Dating Apps Typically Collect
 
 Dating platforms aggregate multiple categories of information:
 
@@ -51,7 +61,7 @@ Dating platforms aggregate multiple categories of information:
 
 **Third-Party Data**: Information from linked social media accounts, Facebook integration, or data brokers.
 
-## Legal Framework for Data Access Requests
+### Step 2: Legal Framework for Data Access Requests
 
 Several privacy regulations grant you the right to access your data:
 
@@ -65,7 +75,7 @@ Several privacy regulations grant you the right to access your data:
 
 Regardless of your location, many US-based apps extend these rights globally as a best practice or to comply with GDPR for European users.
 
-## How to Submit a Data Access Request
+### Step 3: How to Submit a Data Access Request
 
 ### Method 1: In-App Privacy Settings
 
@@ -144,7 +154,7 @@ Some companies use dedicated privacy portals:
 - **Bumble**: Submit requests at bumble.com/en/privacy/data-request
 - **eHarmony**: Privacy dashboard in account settings
 
-## What to Expect After Submitting
+### Step 4: What to Expect After Submitting
 
 Response timelines vary by regulation and company:
 
@@ -163,7 +173,7 @@ The data package typically includes:
 - Marketing preferences
 - Third-party data shares
 
-## Verifying and Analyzing Your Data
+### Step 5: Verify and Analyzing Your Data
 
 After receiving your data, examine it carefully:
 
@@ -192,7 +202,7 @@ Look for information you didn't provide:
 ### Identify Data Sharing
 Examine the "third_parties" or "partners" section to see who receives your data.
 
-## Deleting Unwanted Data
+### Step 6: Delete Unwanted Data
 
 After reviewing your data, submit deletion requests for information you want removed:
 
@@ -215,7 +225,7 @@ def send_deletion_request(app_name, privacy_email, user_email, reason="General p
     # Send via SMTP (same method as access request)
 ```
 
-## Practical Privacy Strategies
+### Step 7: Practical Privacy Strategies
 
 Beyond requesting your data, implement ongoing privacy practices:
 
@@ -228,6 +238,21 @@ Beyond requesting your data, implement ongoing privacy practices:
 **Regular Data Downloads**: Periodically request your data to track changes in collection practices.
 
 **Consider Privacy Alternatives**: Apps like Hinge and Bumble have stronger privacy policies than others. Research platforms before creating accounts.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -56,7 +56,17 @@ Only ISP sees encrypted traffic (can't identify sites)
 Only DoH provider sees domain queries (under their privacy policy)
 ```
 
-## Cloudflare (1.1.1.1) — Best for Speed and Simplicity
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Cloudflare (1.1.1.1) — Best for Speed and Simplicity
 
 Cloudflare's 1.1.1.1 is the fastest public DoH resolver with strong privacy commitments.
 
@@ -173,7 +183,7 @@ dig @1.1.1.1 example.com +short
 
 **Verify:** Open app → Status should show "Connected" with Green checkmark.
 
-## NextDNS — Best for Customization and Control
+### Step 2: NextDNS — Best for Customization and Control
 
 NextDNS offers granular filtering: block ads, malware, adult content, specific domains, or entire categories.
 
@@ -245,7 +255,7 @@ Result: DNS queries for blocked domains return NXDOMAIN (site unreachable), effe
 - Pro: $2/month (unlimited, advanced features, device management)
 - Typical home user: 100k-200k queries/month (1 free tier sufficient)
 
-## Quad9 — Best for Security-Focused Users
+### Step 3: Quad9 — Best for Security-Focused Users
 
 Quad9 emphasizes malware and phishing protection. Specifically designed for security rather than just privacy.
 
@@ -274,7 +284,7 @@ Visit https://www.quad9.net/setup and follow device-specific instructions.
 - Optional DNSSEC validation (strict mode)
 - Works worldwide with 200+ POPs
 
-## Mullvad — Best for Extreme Privacy
+### Step 4: Mullvad — Best for Extreme Privacy
 
 Mullvad runs the DoH resolver as part of their privacy-first operation. Maximum privacy.
 
@@ -311,7 +321,7 @@ Alternate: 2a07:e340::2
 | Quad9 | Yes | Fast | None | Excellent (malware) | Excellent | Low |
 | Mullvad | Yes | Good | None | Limited | Excellent | Medium |
 
-## Verify DoH is Working
+### Step 5: Verify DoH is Working
 
 **Method 1: DNS Query Tool**
 
@@ -350,7 +360,7 @@ DoH adds minimal overhead (~1-5ms per query) but:
 
 **Real-world impact:** Unnoticeable for daily browsing. Page loads nearly identical.
 
-## Privacy Risks Still Remaining
+### Step 6: Privacy Risks Still Remaining
 
 DoH solves ISP tracking, but consider:
 
@@ -379,7 +389,7 @@ DoH solves ISP tracking, but consider:
 **Problem: DoH conflicts with corporate network**
 - Solution: Use Cloudflare (corporate-friendly) or ask IT for exceptions
 
-## Recommended Configuration for Most Users
+### Step 7: Recommended Configuration for Most Users
 
 ```
 Primary DNS: Cloudflare 1.1.1.1 (speed and simplicity)
