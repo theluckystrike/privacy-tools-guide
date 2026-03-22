@@ -294,6 +294,109 @@ gcloud kms keyrings list --location global >> compliance-report.md
 
 Package and timestamp these reports for each audit cycle. Retention periods vary by regulation—default to 7 years minimum.
 
+## Phase 7: Third-Party Vendor Risk Assessment
+
+Multi-cloud deployments inevitably involve third-party tools layered on top of native cloud services. Each vendor integration is a potential data exposure path. Formalize vendor assessment before onboarding any privacy tool into production.
+
+### 7.1 Vendor Data Processing Agreements
+
+For operations subject to GDPR, every vendor who processes personal data on your behalf must sign a Data Processing Agreement (DPA). Maintain a live register:
+
+```yaml
+# vendor-dpa-register.yml
+vendors:
+  - name: "DataDog"
+    dpa_signed: "2025-11-01"
+    dpa_expiry: "2027-11-01"
+    data_categories: ["logs", "metrics", "traces"]
+    sub_processors_listed: true
+    storage_regions: ["us-east-1", "eu-west-1"]
+
+  - name: "Snowflake"
+    dpa_signed: "2025-09-15"
+    dpa_expiry: "2027-09-15"
+    data_categories: ["analytics", "pii-pseudonymized"]
+    sub_processors_listed: true
+    storage_regions: ["us-east-1"]
+```
+
+Review this register quarterly. Vendors frequently update their sub-processor lists without proactive notification. Subscribe to vendor change notification mailing lists and configure alerts via tools like OneTrust or TrustArc when DPA terms change.
+
+### 7.2 Egress Traffic Auditing
+
+Many privacy tools exfiltrate more data than their documentation describes. Deploy egress filtering to establish a baseline of expected outbound connections:
+
+```bash
+# AWS: Use VPC Flow Logs with Athena queries to detect unexpected egress
+aws logs create-log-group --log-group-name /aws/vpc/flowlogs
+
+# Query for unexpected destinations
+SELECT destination_address, COUNT(*) as connections
+FROM vpc_flow_logs
+WHERE action = 'ACCEPT'
+  AND destination_port NOT IN (443, 80, 53)
+GROUP BY destination_address
+ORDER BY connections DESC
+LIMIT 50;
+```
+
+Any destination that does not appear in your vendor's published IP allowlist warrants investigation before the tool goes live with production data.
+
+## Phase 8: Cross-Cloud Data Sovereignty Controls
+
+### 8.1 Residency Enforcement
+
+Regulators in Germany, France, and Brazil require that data about their citizens stay within national borders. Enforce this at the infrastructure level rather than relying solely on application-layer controls.
+
+In AWS, use Service Control Policies (SCPs) to prevent data writes to non-compliant regions:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyNonEURegions",
+      "Effect": "Deny",
+      "Action": ["s3:PutObject", "rds:CreateDBInstance"],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestedRegion": ["eu-west-1", "eu-central-1"]
+        }
+      }
+    }
+  ]
+}
+```
+
+Apply equivalent policies in Azure via Azure Policy and in GCP via Organization Policy constraints. Test enforcement by attempting to create a resource in a blocked region from a service account that should be restricted.
+
+### 8.2 Cross-Border Transfer Mapping
+
+Before deploying any privacy tool that replicates or syncs data across cloud regions, document the data flow:
+
+1. Map every pipeline that moves data across regional or national boundaries
+2. Identify the legal basis for each transfer (Standard Contractual Clauses, adequacy decision, or binding corporate rules)
+3. Run a Transfer Impact Assessment (TIA) for any transfer to a country without an adequacy decision
+4. Store the TIA documentation alongside your DPA register
+
+Tools like Privacera, BigID, and Securiti.ai can automate data flow discovery across multi-cloud environments, surfacing cross-border transfers that manual mapping would miss.
+
+## Deployment Go/No-Go Checklist
+
+Before any privacy tool reaches production, confirm each item below. Assign ownership and require explicit sign-off:
+
+- [ ] IdP federation configured for all three cloud providers
+- [ ] CMK keys created with rotation schedules documented
+- [ ] All storage resources verified encrypted at rest
+- [ ] Private endpoints deployed; no unnecessary public exposure
+- [ ] Data classification pipeline running on write triggers
+- [ ] Incident playbook tested within the last 90 days
+- [ ] OPA policy-as-code scanning running in CI/CD
+- [ ] Vendor DPA register reviewed in last 90 days
+- [ ] Egress baseline established for the new tool
+- [ ] Cross-border transfer documentation complete
+
 
 
 ## Frequently Asked Questions
