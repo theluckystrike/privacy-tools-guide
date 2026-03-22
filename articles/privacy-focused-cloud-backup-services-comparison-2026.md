@@ -530,7 +530,6 @@ sha256sum ~/backup_location/test_file.zip
 # Should match: Backup integrity confirmed
 ```
 
-<<<<<<< HEAD
 
 
 ## Related Articles
@@ -543,7 +542,3 @@ sha256sum ~/backup_location/test_file.zip
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
->>>>>>> b900bdda56765d71068413d810978b9f118b0721

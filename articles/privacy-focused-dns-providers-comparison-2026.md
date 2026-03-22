@@ -408,7 +408,6 @@ If your ISP appears in the results, your DNS is leaking. Solution:
 - Verify configuration (System Preferences, Settings, etc.).
 - Clear DNS cache: `sudo dscacheutil -flushcache` (macOS).
 
-<<<<<<< HEAD
 ## Conclusion
 
 Switching to a privacy-focused DNS provider is the easiest privacy win. Pick one based on your needs:
@@ -430,7 +429,4 @@ Setup takes 5 minutes, costs $0-20/year, and immediately hides your browsing fro
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-=======
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}
