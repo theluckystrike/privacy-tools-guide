@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Cwtch stands as a unique entrant in the privacy-focused messaging space. Built on the Tor network, it offers decentralized, metadata-resistant communication without requiring phone numbers or centralized servers. This review examines Cwtch from a developer's perspective, evaluating its architecture, security properties, and practical deployment options.
 
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **Cwtch stands as a**: unique entrant in the privacy-focused messaging space.
+- **One user creates a**: "group profile" 2.
+- **Free and basic plans**: typically get community forum support and documentation.
+- **Each user runs a**: Cwtch client that functions as both a message sender and relay node.
+- **Share this address with contacts**: no username or phone number required.
+
 ## Understanding Cwtch's Design Philosophy
 
 Cwtch ( Welsh for " cuddle" or "privacy") emerged from the open-source community as an answer to fundamental weaknesses in conventional messaging apps. Unlike Signal or Telegram, Cwtch operates without any central infrastructure. Messages route through the Tor network, using onion routing to obscure both message content and metadata.

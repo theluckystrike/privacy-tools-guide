@@ -27,7 +27,18 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Use iPhone Focus Modes to limit app notifications and access by context—create custom modes that allow only specific apps to alert you during work, home, or public settings. Automate Focus Mode switching by location or time to prevent sensitive apps from revealing information in inappropriate contexts.
+
+## Key Takeaways
+
+- **Use iPhone Focus Modes to limit app notifications and access by context**: create custom modes that allow only specific apps to alert you during work, home, or public settings.
+- **Here's how to set**: up a basic privacy-focused Focus Mode: 1.
+- **Choose a template or**: create custom 4.
+- Checking `UNUserNotificationCenter.current().isNotificationEnabled`
+2.
+- **Respecting Focus preferences in**: your app's notification delivery 3.
+- **Use "Only While Using"**: instead of "Always" for location access.
 
 ## Understanding Focus Mode Privacy Controls
 

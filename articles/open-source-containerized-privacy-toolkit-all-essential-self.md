@@ -16,6 +16,15 @@ intent-checked: true
 
 Running your own privacy-focused services gives you control over your data without relying on third-party providers. A containerized approach using Docker simplifies deployment, makes updates straightforward, and lets you run multiple services on a single host. This guide covers essential self-hosted tools that form a complete privacy toolkit.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The official Bitwarden image is resource-heavy, so many self-hosters prefer Vaultwarden**: a Rust implementation that's significantly lighter and fully compatible with Bitwarden clients.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Running your own privacy-focused**: services gives you control over your data without relying on third-party providers.
+
 ## Why Containerize Your Privacy Stack?
 
 Containerization provides consistent environments across development and production. Each service runs in an isolated container, meaning dependencies don't conflict and you can update individual services without affecting others. Docker Compose orchestrates multi-container setups, letting you define your entire stack in a single configuration file.

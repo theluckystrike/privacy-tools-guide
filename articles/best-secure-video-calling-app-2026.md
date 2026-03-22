@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Jitsi Meet is the best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality. For maximum privacy with zero infrastructure overhead, Signal provides the strongest end-to-end encryption available out of the box. If you need federation across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol. Below, we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
 
+## Key Takeaways
+
+- **Jitsi Meet is the**: best secure video calling app in 2026 for developers who want a self-hosted, open-source solution with an embeddable iframe API and solid call quality.
+- **Below**: we compare each option with deployment configs and integration code so you can pick the right fit for your threat model.
+- **Google Meet free tier**: has no E2EE.
+- **If you need federation**: across servers and tight integration with encrypted chat, Matrix video rooms offer E2EE calls built on the MLS protocol.
+- **It offers a complete**: stack that you can self-host or use via public instances.
+- **Call streams use MLS**: encryption by default.
+
 ## What Secure Video Calling Actually Requires
 
 True secure video calling goes beyond TLS encryption. You need to understand what you're actually protecting:

@@ -35,6 +35,20 @@ Before requesting your data, it's helpful to understand what Instagram actually 
 
 Instagram collects the content you create (photos, videos, stories, reels, and captions), all direct message conversations, your in-app search history, login activity by device and location, ad interactions, profile information, your follower and following lists, and usage data such as time spent and features accessed.
 
+## Key Takeaways
+
+- **Here's how to use it**: ### Step-by-Step Data Download Process
+
+1.
+- **Choose the date range**: Last 30 days, Last 3 months, Last year, or All time
+6.
+- **Choose a reason for**: leaving 5.
+- **Click "Delete [username]" After**: clicking delete, your account enters a 30-day grace period.
+- **Use two-factor authentication**: Protect your account from unauthorized access
+4.
+- **Block Meta Pixel**: Use browser extensions to block Meta tracking across websites
+8.
+
 ## Downloading Your Instagram Data
 
 Instagram provides a built-in tool to download all your data. Here's how to use it:

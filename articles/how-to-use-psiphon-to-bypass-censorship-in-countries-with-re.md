@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Psiphon is an open-source circumvention tool designed to help users in censored regions access the open internet. Originally developed by the University of Toronto's Citizen Lab, Psiphon uses a combination of VPN, SSH, and HTTP proxy technologies to tunnel traffic through restricted networks. For developers and power users, understanding how Psiphon works under the hood provides valuable insights into building resilient systems that operate in adversarial network environments.
 
+## Key Takeaways
+
+- **Psiphon is an open-source**: circumvention tool designed to help users in censored regions access the open internet.
+- **Its open-source nature**: multiple transport options, and active development make it suitable for both individual users and organizations requiring reliable access to the global internet.
+- **Use organizational cover**: NGOs operating in restricted countries may have legal protection journalists lack
+4.
+- **Originally developed by the**: University of Toronto's Citizen Lab, Psiphon uses a combination of VPN, SSH, and HTTP proxy technologies to tunnel traffic through restricted networks.
+- **Test all protocols monthly**: Ensure at least one protocol works in your network
+4.
+- **For developers and power users**: understanding how Psiphon works under the hood provides valuable insights into building resilient systems that operate in adversarial network environments.
+
 ## Understanding Psiphon's Architecture
 
 Psiphon operates on a client-server model with three primary components: the client, the server, and the tunnel. The Psiphon server runs on machines outside censored regions and acts as the gateway to the unrestricted internet. The client, which can be installed on various platforms including Windows, Android, and iOS, establishes encrypted connections to these servers.

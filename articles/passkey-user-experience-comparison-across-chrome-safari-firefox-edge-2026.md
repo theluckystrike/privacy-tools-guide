@@ -48,7 +48,21 @@ author: "Privacy Tools Guide"
 intent-checked: true---
 
 {% raw %}
+
 Passkeys represent the biggest shift in digital authentication since the password was invented. Instead of remembering complex strings, users can authenticate using biometric data (fingerprint, face recognition) or device PINs. This guide compares the passkey user experience across Chrome, Safari, Firefox, and Edge as of 2026.
+
+## Key Takeaways
+
+- **This guide compares the**: passkey user experience across Chrome, Safari, Firefox, and Edge as of 2026.
+- **Choose between**: - Device screen lock: Uses your computer's PIN/biometric
+ - External security key: For hardware token users
+4.
+- **On desktop Chrome**: select "Use passkey from another device"
+2.
+- **Passkey is now available**: on desktop ## Safari Passkey Experience Safari provides excellent passkey support through iCloud Keychain, making it the choice for Apple ecosystem users.
+- **User authenticates with Touch**: ID or Face ID 4.
+- Choose device authentication method
+4.
 
 ## What Are Passkeys?
 

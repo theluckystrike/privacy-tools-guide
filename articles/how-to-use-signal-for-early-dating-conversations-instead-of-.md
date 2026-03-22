@@ -31,6 +31,16 @@ intent-checked: true---
 
 Use Signal's username feature to chat with dating matches without sharing your phone number. Create a Signal username (Settings > Profile > Username), share it on your dating profile, and enable requests to limit who can contact you. Your match can message you directly via Signal without you revealing your real number, phone carrier information, or identity to reverse phone lookup services. This prevents unwanted calls, SMS spam, and doxxing attempts.
 
+## Key Takeaways
+
+- **Generate or enter your**: preferred username The username must be unique and between 3-25 characters.
+- **Create a Signal username**: (Settings > Profile > Username), share it on your dating profile, and enable requests to limit who can contact you.
+- **In Signal**: go to Settings → Profile → Username
+2.
+- **Generate a QR code**: from your Signal username 2.
+- **Use Signal's note-to-self to**: send yourself credentials before copying elsewhere 3.
+- **Generate a Signal username**: in your profile bio 2.
+
 ## Why Signal Beats Phone Numbers for Early Dating
 
 Your phone number is a persistent identifier that links across multiple databases. When you give it to a dating match, you're providing:

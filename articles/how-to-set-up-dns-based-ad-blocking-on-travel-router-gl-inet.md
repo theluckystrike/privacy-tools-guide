@@ -33,6 +33,15 @@ DNS-based ad blocking intercepts domain name resolution requests and blocks quer
 
 This guide covers deploying AdGuard Home directly on GL-Inet routers and running a separate Pi-hole instance for users who prefer dedicated hardware.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **GL-Inet travel routers running**: OpenWrt-based firmware support several DNS blocking solutions, with AdGuard Home being the most straightforward option for most users.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Travel routers present a**: unique use case.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Why DNS-Based Blocking Matters
 
 Every device on your network makes DNS queries to resolve domain names into IP addresses. Advertisers and trackers host their content on separate domains, and blocking those domains at the DNS level prevents the requests from ever reaching your devices. This method is efficient because a single DNS block eliminates multiple tracking scripts, pixel tags, and advertisement resources simultaneously.

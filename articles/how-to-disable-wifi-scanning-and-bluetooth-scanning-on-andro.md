@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 Android devices continuously scan for nearby WiFi networks and Bluetooth devices to improve location accuracy and enable quick pairing features. While these scanning mechanisms provide convenience, they also create privacy concerns because they generate location data that can be collected by apps, network operators, and potentially malicious actors. This guide explains how to disable WiFi scanning and Bluetooth scanning on Android, targeting developers and power users who want granular control over their device's privacy settings.
 
+## Key Takeaways
+
+- **On most devices running**: Android 10 or later, navigate to Settings > Location > WiFi Scanning and toggle the scanning option off.
+- **For Bluetooth scanning, use**: ```bash
+adb shell settings put global ble_scan_always_enabled 0
+```
+
+Some Android versions require additional commands to prevent apps from triggering their own scans.
+- **This guide explains how**: to disable WiFi scanning and Bluetooth scanning on Android, targeting developers and power users who want granular control over their device's privacy settings.
+- **This information gets uploaded**: to Google's location services and can be used to determine your approximate location even when GPS is disabled.
+- **Both scanning types occur**: automatically in the background, often without explicit user notification.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Android Scanning Behavior
 
 Android performs WiFi scanning primarily to assist GPS positioning through WiFi-based positioning systems (WPS). When your device scans for networks, it records BSSIDs (MAC addresses of access points) along with signal strength data. This information gets uploaded to Google's location services and can be used to determine your approximate location even when GPS is disabled.
@@ -438,4 +451,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

@@ -17,6 +17,14 @@ tags: [privacy-tools-guide, remote-work]---
 
 iOS shows a green dot when any app accesses the camera; watch for this indicator when no apps should use it. On Android, check app permissions in Settings → Apps, monitor data usage in Settings → Network for unexpected spikes, and use network monitoring apps to detect outbound video streams. Review Settings → Applications → Permissions for suspicious camera access requests you don't remember granting. The most reliable detection: disable camera permissions completely for untrusted apps, or use airplane mode while monitoring for unexpected activity when you re-enable it.
 
+## Key Takeaways
+
+- **The most reliable detection**: disable camera permissions completely for untrusted apps, or use airplane mode while monitoring for unexpected activity when you re-enable it.
+- **Use a VPN-based approach**: to capture all traffic: 1.
+- **What are the most**: common mistakes to avoid? 1.
+- **iOS shows a green**: dot when any app accesses the camera; watch for this indicator when no apps should use it.
+- **On Android**: check app permissions in Settings → Apps, monitor data usage in Settings → Network for unexpected spikes, and use network monitoring apps to detect outbound video streams.
+
 ## Understanding the Threat Model
 
 Before looking at detection methods, understand what you're defending against. Remote camera access can occur through several attack surfaces:
@@ -372,4 +380,4 @@ Contact a professional security firm specializing in forensic analysis (Lookout,
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

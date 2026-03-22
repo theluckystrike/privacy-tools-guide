@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Executors must systematically identify, document, and manage hundreds of online accounts to prevent asset loss and identity theft. This guide provides practical discovery methods—email analysis, CLI tools, Have I Been Pwned API checks, and structured inventory templates—to document financial accounts, social media, cloud storage, and subscriptions. Use Python scripts and automation to accelerate account discovery and track completion of priority actions.
 
+## Key Takeaways
+
+- **The average user maintains**: over 100 online accounts across various services.
+- **Freeze credit at major bureaus (Equifax**: Experian, TransUnion)
+2.
+- **Use Python scripts and**: automation to accelerate account discovery and track completion of priority actions.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Scope of Digital Estate
 
 Modern digital life encompasses far more than most people realize. The average user maintains over 100 online accounts across various services. For executors, this means tracking:

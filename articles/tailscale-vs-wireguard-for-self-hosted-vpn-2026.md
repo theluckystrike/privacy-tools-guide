@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison, vpn]---
 
 Use raw WireGuard when you need full control over key management, want zero external dependencies, and are comfortable with manual peer configuration. Use Tailscale when you need a mesh VPN that works through NAT automatically, want a GUI for managing access policies, and value setup speed over configuration control. Both use WireGuard under the hood -- Tailscale is a control plane and key distribution layer built on top of it.
 
+## Key Takeaways
+
+- Both use ChaCha20-Poly1305 encryption.
+- **A peer that has not re-keyed in 180 seconds is either offline or experiencing connectivity problems**: catching this early prevents silent tunnel failures.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Use raw WireGuard when**: you need full control over key management, want zero external dependencies, and are comfortable with manual peer configuration.
+- **Use Tailscale when you**: need a mesh VPN that works through NAT automatically, want a GUI for managing access policies, and value setup speed over configuration control.
+
 ## Architecture Difference
 
 Raw WireGuard is a kernel module and userspace tool. You manage keys, peer configs, and IP addressing manually. Every peer needs [Peer] blocks for every other peer it should reach. For a 10-node mesh, each node has 9 peer entries.

@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 NaiveProxy disguises censorship circumvention traffic as legitimate HTTPS traffic by using HTTP CONNECT tunneling, making it invisible to deep packet inspection systems. Install NaiveProxy on a VPS, configure a client binary, and route traffic through it like a standard proxy—your connection appears identical to normal web browsing. NaiveProxy is highly effective in China and other countries using advanced censorship because it completely hides the fact that you're circumventing restrictions.
 
+## Key Takeaways
+
+- **NaiveProxy is highly effective**: in China and other countries using advanced censorship because it completely hides the fact that you're circumventing restrictions.
+- **Navigate to `about**: preferences`
+2.
+- Choose "SOCKS v5"
+6.
+- **Only use servers you**: control or trust completely.
+- **Consider running NaiveProxy on port 443**: which is almost always open since it's required for normal web browsing.
+- **Use port 443 (standard**: HTTPS) # 2.
+
 ## What Makes NaiveProxy Different
 
 NaiveProxy uses a forward proxy architecture built on top of the standard HTTP CONNECT method. Unlike VPNs that create dedicated tunnels with identifiable protocols, NaiveProxy forwards traffic through a proxy server while the entire connection appears as standard HTTPS traffic to network observers.

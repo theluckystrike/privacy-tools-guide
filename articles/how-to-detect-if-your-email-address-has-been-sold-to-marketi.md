@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Your email address is one of the most valuable pieces of personal data in the advertising ecosystem. Data brokers aggregate, analyze, and sell email addresses to marketers, advertisers, and third-party platforms. If you have ever signed up for a newsletter, downloaded a free resource, or created an account on a website, your email likely exists in broker databases. This guide walks you through practical methods to detect whether your email has been sold to marketing data brokers.
 
+## Key Takeaways
+
+- **OneRep ($99/year)**: Scans 200+ brokers with claimed 98% removal success.
+- **Incogni ($11.99/month or $85.88/year)**: Handles removal requests on your behalf with claimed 95%+ success rate.
+- **SafetyDetectives Personal Data Removal**: ($89/year): Focuses on US brokers, removes your data from Whitepages, spokeo, and similar services.
+- **Experian ($0.15-0.50 per record)**: Credit-focused broker.
+- **Integrates identity theft protection**: for an additional $99/year.
+- **Includes data breach notifications**: and credit monitoring in premium tier ($19.99/month).
+
 ## Understanding the Data Broker Ecosystem
 
 Marketing data brokers compile email profiles by collecting data from public records, social media, e-commerce transactions, app usage, and data breaches. These profiles include not just your email address but also your shopping habits, location history, income estimates, and behavioral patterns. Brokers then sell this information in bulk to advertisers running targeted campaigns.

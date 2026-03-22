@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Proton Drive offers zero-knowledge encryption with strong UI and ecosystem integration, Filen provides affordable ZK storage, Tresorit serves enterprise teams, while Nextcloud self-hosted gives complete control at deployment cost. Encryption models vary from client-side (encrypt then upload), zero-knowledge (provider can't access keys), to server-side (provider holds keys). Choose zero-knowledge for privacy assurances, server-side for compliance features, or self-hosted for complete control.
 
+## Key Takeaways
+
+- **Check whether services use audited**: open-source encryption libraries.
+- **The encryption uses AES-256**: for files and RSA-2048 for key derivation.
+- **The free tier offers**: 10GB with lifetime validity.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose zero-knowledge for privacy**: assurances, server-side for compliance features, or self-hosted for complete control.
+
 ## Encryption Models Explained
 
 Three encryption models define the ecosystem. Client-Side Encryption (CSE) encrypts files on your device before upload — the server stores only encrypted data, protecting against server-side breaches but requiring trust in the client's implementation. Zero-Knowledge (ZK) goes further: the provider cannot decrypt your files, and even if subpoenaed they can only hand over encrypted blobs. This requires memorizing a strong master password or managing encryption keys yourself. Server-Side Encryption (SSE) has the provider encrypt files at rest while managing the keys — useful for compliance but no protection against malicious providers or compromised accounts.

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed protections into your architecture, maintain full functionality alongside privacy, enforce end-to-end security across the data lifecycle, build transparency into your system, and keep user interests paramount. This guide provides concrete code examples and architectural patterns for each principle so you can apply them directly in your projects.
 
+## Key Takeaways
+
+- **Privacy as the Default**: Systems should protect user privacy automatically without requiring manual configuration.
+- **Users should not need**: to change settings to have their data protected.
+- **Users should get full functionality while maintaining privacy**: this is the "win-win" principle.
+- **Visibility and Transparency Be**: open about what data you collect and how you use it.
+- **Users should be able**: to verify that privacy promises are kept.
+- **Respect for User Privacy**: Keep user interests paramount.
+
 ## The Seven Foundational Principles
 
 ### 1. Proactive, Not Reactive

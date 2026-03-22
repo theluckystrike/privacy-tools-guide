@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 VPNs leak your real IPv6 address because most were designed for IPv4only—your device's IPv6 traffic bypasses the VPN tunnel while IPv4 is encrypted. Test for IPv6 leaks at ipleak.net or ipv6leak.com; if your real IP appears, disable IPv6 in your OS settings or switch to a VPN with full IPv6 support.
 
+## Key Takeaways
+
+- **VPNs leak your real IPv6 address because most were designed for IPv4only**: your device's IPv6 traffic bypasses the VPN tunnel while IPv4 is encrypted.
+- **Most internet service providers**: (ISPs) now support IPv6, and many devices prefer it automatically.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **When your computer connects to a website, it may use IPv6 if both the client and server support it**: bypassing your VPN entirely if the VPN only handles IPv4 traffic.
+- **However**: most VPNs were originally designed for IPv4 only.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+
 ## What is IPv6 and Why Does It Matter?
 
 IPv6 (Internet Protocol version 6) is the newest version of internet protocol, designed to replace IPv4, which has run out of available addresses. While IPv4 uses 32-bit addresses (like 192.168.1.1), IPv6 uses 128-bit addresses (like 2001:0db8:85a3:0000:0000:8a2e:0370:7334).

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Proton Drive represents Proton's entry into the encrypted cloud storage market, bringing the same end-to-end encryption philosophy that made ProtonMail a leader in secure email. For developers and power users evaluating encrypted storage solutions, the technical implementation matters as much as the user experience. This review examines Proton Drive's encryption architecture, practical usage patterns, and integration possibilities.
 
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **Testing shows typical throughput**: degradation of 20-40% compared to unencrypted transfers, attributable to the client-side processing requirement.
+- **Add Proton user emails**: to share list 2.
+- **Free and basic plans**: typically get community forum support and documentation.
+- **For developers and power**: users evaluating encrypted storage solutions, the technical implementation matters as much as the user experience.
+- **This is particularly important**: for power users who may store highly sensitive data.
+
 ## Encryption Architecture
 
 Proton Drive employs client-side encryption using AES-256 for file encryption and RSA-4096 for key exchange. Every file uploaded to Proton Drive gets encrypted on your device before transmission, meaning the server never sees unencrypted data. This is a fundamental difference from mainstream cloud providers that encrypt data at rest but maintain the ability to access your files.

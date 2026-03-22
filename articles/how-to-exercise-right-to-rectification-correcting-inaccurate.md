@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 The right to rectification under GDPR Article 16 gives you legal power to demand companies correct inaccurate personal data they hold about you. Unlike simple customer support requests, this is a legally enforceable right backed by potential regulatory enforcement. For developers and power users who understand data systems, exercising this right strategically involves understanding exactly what data points companies store, how to identify inaccuracies, and how to structure requests for maximum compliance.
 
+## Key Takeaways
+
+- **Original data export (SAR**: response) cp ~/data_export_from_company.json "$EVIDENCE_DIR/" # 2.
+- **Screenshots of inaccuracies cp**: ~/screenshots/*.png "$EVIDENCE_DIR/" # 3.
+- **Official identity documents proving**: correct data cp ~/passport_scan.pdf "$EVIDENCE_DIR/" cp ~/utility_bill.pdf "$EVIDENCE_DIR/" # 4.
+- **Your rectification request (with**: proof of delivery) cp ~/rectification_request_sent.eml "$EVIDENCE_DIR/" cp ~/delivery_confirmation.txt "$EVIDENCE_DIR/" # 5.
+- **Company's response (or lack**: thereof) cp ~/company_response.pdf "$EVIDENCE_DIR/" # 6.
+- **Compress for submission tar**: -czf rectification_evidence.tar.gz "$EVIDENCE_DIR" ``` Data Protection Authorities expect this evidence structure.
+
 ## Legal Basis and Scope
 
 GDPR Article 16 establishes your right to have inaccurate personal data corrected without undue delay. You can also require incomplete data be completed—either through direct补充 or by providing a supplementary statement. The key term "inaccurate" covers factual errors, outdated information, and data that misrepresents your current circumstances.

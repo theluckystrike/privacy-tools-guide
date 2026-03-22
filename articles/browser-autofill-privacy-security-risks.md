@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, security, privacy]---
 
 Browser autofill is one of those conveniences that feels invisible until it becomes a liability. For developers and power users who value privacy, understanding how autofill works—and where it fails—is essential for building secure forms and protecting sensitive data.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For authentication use cases**: this is the most privacy-respecting approach available.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **For developers and power users who value privacy, understanding how autofill works**: and where it fails—is essential for building secure forms and protecting sensitive data.
+
 ## How Browser Autofill Actually Works
 
 Modern browsers store autofill data in several places. Chrome maintains a SQLite database at `~/Library/Application Support/Google/Chrome/Default/Web Data` on macOS, containing tables for credit cards, addresses, and profile information. Firefox uses a JSON-based storage format encrypted with a master password if set, otherwise stored in plain text.

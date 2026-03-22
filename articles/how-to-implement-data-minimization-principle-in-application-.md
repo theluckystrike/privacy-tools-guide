@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Implement data minimization by collecting only fields directly required for declared purposes—remove optional fields from forms, use temporary identifiers instead of email addresses, and aggregate data instead of storing individual records. Each data field you collect creates compliance liability under GDPR that deletion requests, breach notifications, and audits must address. Developers should design database schemas around purpose-specific tables, implement field-level access controls, and regularly audit stored data against business justification.
+
+## Key Takeaways
+
+- **The core table remains lean**: reducing exposure in queries that only need basic user information.
+- **Every piece of personal data you collect creates liability**: data that does not exist cannot be breached, leaked, or misused.
+- Consider a user registration form.
+- **Use nullable columns for optional data**: and prefer narrow column types that match actual data requirements.
+- **Uses a rotating daily**: salt so the pseudonym cannot be linked across days.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## The Core Concept: Collecting Less, Not More
 

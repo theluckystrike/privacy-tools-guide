@@ -31,6 +31,21 @@ tags: [privacy-tools-guide]---
 
 DNS encryption is a critical layer of privacy infrastructure. While DoH (DNS over HTTPS) and DoT (DNS over TLS) have gained popularity, DNSCrypt offers an alternative that predates both and provides strong authentication through the DNSCrypt protocol. This guide walks you through setting up DNSCrypt Proxy on Linux, configuring it for authenticated encrypted DNS queries, and verifying that your setup works correctly.
 
+## Key Takeaways
+
+- **Unlike DoH which wraps**: DNS queries in HTTPS traffic, DNSCrypt uses its own encryption layer with Ed25519 public key authentication.
+- **To use a specific resolver**: edit your configuration file:
+
+```toml
+server_names = ['cloudflare', 'google', 'quad9']
+```
+
+For authenticated resolvers, you need to specify the resolver's public key.
+- **You can use a different port if needed**: for example `127.0.0.1:5353` to avoid conflicts with other services.
+- **The DNSCrypt resolver's website**: provides testing methods, or you can query the DNS stamp of your resolver to confirm the protocol in use.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## What is DNSCrypt?
 
 DNSCrypt is a protocol that encrypts and authenticates DNS traffic between your client and resolver. Unlike DoH which wraps DNS queries in HTTPS traffic, DNSCrypt uses its own encryption layer with Ed25519 public key authentication. This means you can verify that responses actually come from your chosen resolver and haven't been tampered with in transit.

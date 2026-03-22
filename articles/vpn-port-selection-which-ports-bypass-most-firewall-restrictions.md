@@ -20,6 +20,19 @@ When you're connecting to a VPN from a restrictive network— whether at work, s
 
 This guide explains how firewall port blocking works, which ports are most likely to get through, and how to configure your VPN for maximum network compatibility.
 
+## Key Takeaways
+
+- **Because blocking port 443**: would break most web browsing, this port is rarely blocked even on restrictive networks.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **This port is particularly**: useful in scenarios where almost all other ports are blocked, though it requires specific VPN configurations and may not be supported by all providers.
+- **Some VPN protocols can**: be configured to use port 80 to bypass firewalls that only allow HTTP and HTTPS traffic.
+- **Switch to port 443**: This is the most likely to work on restricted networks
+2.
+- **Encryption verification**: "
+openssl s_client -connect $(dig +short $(grep remote *.ovpn | head -1 | awk '{print $2}') | head -1):443 -showcerts 2>/dev/null | grep "Protocol\|Cipher"
+
+# 5.
+
 ## Understanding Firewall Port Basics
 
 Every network service communicates through numbered ports— think of them as channel numbers on a television. The most common ports include port 80 for HTTP web traffic, port 443 for HTTPS encrypted web traffic, and port 53 for DNS queries. Firewalls can be configured to allow or block any of these ports, and many networks restrict the ports they consider "unnecessary" or potentially problematic.

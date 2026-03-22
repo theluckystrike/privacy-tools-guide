@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose Obsidian Vault for offline-first note storage with client-side encryption, or select Notion with encryption layers if you need cloud collaboration. For highest security with minimal dependencies, use plaintext files encrypted with GPG or age. Each approach trades convenience for control—evaluate your threat model, access patterns, and deployment requirements against each tool's encryption guarantees to select the best fit.
 
+## Key Takeaways
+
+- **Paid plans ($99/year) include**: unlimited storage, password-protected documents, and collaborative folders.
+- **Paid plans start at**: $99/year for extended functionality.
+- **Obsidian**: One-time $50 purchase includes sync and publish features.
+- **It uses AES-256-GCM for note encryption**: with keys derived from your master password using Argon2id.
+- **Cryptee**: Free tier offers 100MB storage.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Evaluation Criteria
 
 The following criteria determine this comparison:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Running your own Bitcoin full node gives you independent verification of transactions without relying on third-party block explorers. This guide covers the complete setup process for home deployment, from hardware selection through initial synchronization, Tor integration, wallet connection, and ongoing maintenance.
 
+## Key Takeaways
+
+- **Sparrow Wallet is a recommended alternative**: it supports hardware wallets, coin control, and connects to a local node through RPC.
+- **This is the most**: private configuration but reduces peer count since fewer nodes operate exclusively on Tor.
+- **Use it for testing wallet integrations**: transaction construction, and broadcast workflows before moving to mainnet.
+- **How much bandwidth does**: a running node consume after initial sync? An active node uses roughly 20-30GB per month serving blocks to peers.
+- **Power users who value**: financial privacy gain significant advantages by broadcasting transactions directly from their own infrastructure rather than submitting them through a third-party API.
+- **For personal use**: verifying your own transactions — pruning works fine.
+
 ## Why Run Your Own Node
 
 When you use a wallet connected to someone else's node, you trust that node to report accurate information. Your IP address gets linked to your Bitcoin addresses, and transaction queries travel through servers you do not control. A block explorer like Blockstream.info or mempool.space receives your transaction IDs and can correlate them with your IP address. Over time, this creates a metadata trail that undermines the pseudonymous nature of Bitcoin.

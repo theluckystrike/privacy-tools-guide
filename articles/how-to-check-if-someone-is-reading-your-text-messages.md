@@ -33,6 +33,15 @@ Text messages remain one of the most common communication methods, yet they are 
 
 This guide covers practical methods to check if someone is reading your text messages, with technical details and code examples where applicable.
 
+## Key Takeaways
+
+- **Use Alternative Messaging Apps**: - Signal (end-to-end encrypted) - WhatsApp (end-to-end encrypted) - iMessage (iOS only, encrypted) - Session (decentralized, encrypted) 3.
+- **Consider a Custom ROM**: Privacy-focused ROMs like GrapheneOS or CalyxOS offer better security defaults and more granular permission controls.
+- **Check for mdm profiles**: (device management) echo -e "\n[*] Checking for device management profiles..." if [[ "$OSTYPE" == "darwin"* ]]; then profiles show fi # 6.
+- **Use iMessage instead of**: SMS when possible 4.
+- **Enable two-factor authentication on**: critical accounts (use authenticator apps, not SMS) 3.
+- **Use authenticator apps instead**: of SMS 2FA # 4.
+
 ## Understanding SMS Security Architecture
 
 Before detecting interception, you need to understand how SMS works. When you send a text message, it passes through several points:

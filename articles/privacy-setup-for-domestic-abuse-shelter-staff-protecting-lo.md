@@ -31,6 +31,13 @@ tags: [privacy-tools-guide, privacy]---
 
 Protect shelter staff and survivor locations using full-disk encryption on all devices, separate work phones without location services, Signal-encrypted communications, and databases that redact precise addresses while retaining only essential case information. Implement access controls limiting staff visibility to only their assigned cases, disable metadata from photos before sharing, and use Tor for any external communications about residents. This guide covers technical implementations for protecting location data, securing communications, and maintaining operational security in shelter management systems.
 
+## Key Takeaways
+
+- **Implement access controls limiting**: staff visibility to only their assigned cases, disable metadata from photos before sharing, and use Tor for any external communications about residents.
+- **The goal is raising**: the cost of surveillance beyond what most adversaries can sustain.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Threat Model
 
 Location exposure in domestic abuse contexts can have severe consequences. Abusers often possess technical knowledge and may attempt to:

@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append an HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
 
+## Key Takeaways
+
+- **Modern protocols like Signal**: and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
+- **Ed25519 is the recommended algorithm for new implementations**: it offers fast verification, small signature sizes, and strong security guarantees.
+- **Reuse of nonces with AEAD modes completely breaks security**: ensure nonces are unique per message.
+- **Always use `hmac.compare_digest()` for**: timing-safe comparison to prevent timing attacks.
+- **This is useful for**: encrypting a message while authenticating metadata like headers or sequence numbers.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Integrity Problem
 
 When you encrypt a message, you transform plaintext into ciphertext that unreadable without the decryption key. However, encryption schemes like AES in ECB or CBC mode do not protect against manipulation. An attacker can flip bits in the ciphertext, and the decrypted result will change—potentially in ways that benefit the attacker.
@@ -449,4 +458,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

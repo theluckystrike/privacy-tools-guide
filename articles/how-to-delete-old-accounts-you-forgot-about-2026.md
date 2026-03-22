@@ -33,6 +33,15 @@ You've signed up for dozens of services over the years. Geocities, FourSquare, V
 
 This guide walks you through finding and deleting forgotten accounts systematically.
 
+## Key Takeaways
+
+- **Cost**: Free version shows results; paid tier ($99/year) automates removal.
+- **Sort by "Least recently**: used" 4.
+- **Anything from 2018 or**: earlier is probably dormant LastPass: Use the LastPass generator history (if you generated a password when signing up).
+- **Settings & privacy >**: Account preferences 2.
+- **Wait 6 months before**: account is fully deleted ### Services With No Obvious Deletion Page Quora, Wix, Weebly, old services: Use JustDeleteMe or: 1.
+- **Use password manager notes.**: When signing up, add a note: "Using for X, delete after 1 year if not active." Review these notes quarterly.
+
 ## Step 1: Audit Your Email
 
 Your email is the master key to finding accounts. You received a confirmation email when you signed up.

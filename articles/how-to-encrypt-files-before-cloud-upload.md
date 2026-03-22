@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Cloud storage services offer convenience, but they also expose your data to third parties, potential breaches, and unauthorized access. Encrypting files before uploading them to the cloud ensures that only you can read your data—whether you're storing sensitive documents, backups, or personal media. This guide covers practical methods for encrypting files before cloud upload, targeting developers and power users who want automation-friendly solutions.
 
+## Key Takeaways
+
+- **The `-pbkdf2` flag uses**: recommended key derivation, and `-iter 100000` increases the iteration count for stronger protection.
+- **A 20+ character passphrase**: with high entropy is recommended.
+- **This guide covers practical**: methods for encrypting files before cloud upload, targeting developers and power users who want automation-friendly solutions.
+- **Age uses Scrypt for key derivation**: making it resistant to brute-force attacks.
+- **- Strong Passphrases**: Use a password generator.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Client-Side Encryption Matters
 
 Cloud providers often advertise encryption at rest, but this typically means they hold the encryption keys—not you. Client-side encryption puts you in control. Your files are encrypted on your device, and the cloud provider only stores unreadable ciphertext. This approach protects against provider data breaches, insider threats, and lawful requests for your data.

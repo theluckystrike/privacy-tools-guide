@@ -31,6 +31,24 @@ tags: [privacy-tools-guide]---
 
 Managing PGP keys across an organization presents unique challenges. Public key servers like keys.openpgp.org serve the global community well, but many organizations require private key infrastructure for internal communications, code signing, and secure document exchange. This guide walks through configuring an internal OpenPGP key server tailored for organizational use.
 
+## Key Takeaways
+
+- **Upload to $INTERNAL_KEYSERVER**: gpg --keyserver $INTERNAL_KEYSERVER --send-keys [NEW_KEY_ID]
+3.
+- **Add peers to your configuration**: ```toml
+[sks]
+peers = [
+    "keys2.internal.yourcompany.com",
+    "keys.backup.yourcompany.com"
+]
+```
+
+Synchronization uses port 11370 by default.
+- **Verify both servers use**: compatible versions.
+- **Update team wiki with**: new key ID Timeline: Complete rotation at least 7 days before expiration.
+- **This guide walks through**: configuring an internal OpenPGP key server tailored for organizational use.
+- **Developed by the same**: team behind the GnuPG project, SKS pioneered the mesh synchronization model that public servers use.
+
 ## Why Run an Internal Key Server
 
 Public key servers expose your key metadata to the internet. Your email address, key fingerprints, and signing history become searchable by anyone. Organizations in regulated industries or those handling sensitive data often cannot tolerate this exposure. An internal key server keeps your key infrastructure private while still providing the discovery and synchronization features that make PGP practical.
@@ -523,4 +541,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

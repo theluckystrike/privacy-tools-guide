@@ -31,6 +31,14 @@ CalyxOS represents a commitment to digital privacy without sacrificing the funct
 
 This guide covers practical techniques to extend CalyxOS battery life while keeping privacy features active. These methods target developers and power users comfortable with ADB commands, system configurations, and fine-tuning their device behavior.
 
+## Key Takeaways
+
+- **How much battery improvement**: can I expect? Users typically see 20-40% improvement depending on their usage patterns and which privacy features they prioritize.
+- **Can I use battery**: optimization apps? Most battery apps require root or extensive permissions that compromise privacy.
+- **These methods target developers**: and power users comfortable with ADB commands, system configurations, and fine-tuning their device behavior.
+- **The privacy features in**: CalyxOS that affect battery consumption include: - MicroG - A free software reimplementation of Google Play Services.
+- **- Privacy-focused DNS -**: Using DNS-over-HTTPS or DNS-over-TLS increases cryptographic operations for every DNS query.
+
 ## Understanding CalyxOS Power Architecture
 
 Unlike stock Android distributions, CalyxOS removes Google Play Services (GPS) entirely. This single change eliminates a significant source of background processing—the constant sync operations, location polling, and push notification services that GPS performs. However, this also means you lose some battery optimization features that Google built into their Play Services.

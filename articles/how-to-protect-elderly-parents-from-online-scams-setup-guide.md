@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Online scams targeting elderly individuals have grown increasingly sophisticated. Phishing emails impersonating banks, tech support phone calls demanding remote access, and fake charity websites all prey on trust and unfamiliarity with digital systems. As a developer or power user, you possess the technical skills to implement meaningful protections for elderly family members. This guide covers practical, implementable solutions that go beyond generic advice.
 
+## Key Takeaways
+
+- **Tech support scams remain prevalent**: with scammers calling to be from Microsoft or Apple and convincing users to download remote access software.
+- **As a developer or power user**: you possess the technical skills to implement meaningful protections for elderly family members.
+- **For elderly users**: this blocks malicious domains and reduces clutter from advertising networks that often host scam content.
+- **Hardened browser profile**: Limits attack surface for daily browsing
+3.
+- **The most effective protection**: combines technology with communication.
+- **Technical controls catch many threats**: but a skeptical mindset remains the best defense against sophisticated social engineering attacks.
+
 ## Understanding the Threat ecosystem
 
 Elderly users face unique vulnerabilities. Many are unfamiliar with how websites authenticate, making fake login pages nearly indistinguishable from legitimate ones. Tech support scams remain prevalent, with scammers calling to be from Microsoft or Apple and convincing users to download remote access software. Investment fraud and lottery scams continue to drain savings from unsuspecting victims.

@@ -31,6 +31,15 @@ voice-checked: true---
 
 To set up WireGuard on a VPS for a personal VPN, install the `wireguard` package on an Ubuntu/Debian VPS, generate server and client key pairs with `wg genkey`, create a `wg0.conf` with your keys and IP forwarding rules, then connect from your client using `wg-quick up`. The entire setup takes about 30 minutes and gives you a fast, self-hosted VPN with modern cryptography and significantly better performance than OpenVPN or IPSec.
 
+## Key Takeaways
+
+- **The entire setup takes**: about 30 minutes and gives you a fast, self-hosted VPN with modern cryptography and significantly better performance than OpenVPN or IPSec.
+- **The protocol uses modern**: cryptography including Curve25519 for key exchange, ChaCha20 for encryption, and Poly1305 for authentication.
+- **Many users report speed**: improvements of 3-4x when switching from OpenVPN to WireGuard.
+- **A server with 1GB**: RAM and 1 vCPU is sufficient for personal use.
+- **WireGuard operates at the kernel level**: resulting in substantially faster connection speeds compared to user-space VPN solutions.
+- **On Windows**: use the official WireGuard client.
+
 ## Why Choose WireGuard for Your Personal VPN
 
 WireGuard was designed with simplicity and security as core principles. Unlike older VPN protocols that require thousands of lines of code, WireGuard operates with roughly 4,000 lines—this smaller attack surface means fewer potential vulnerabilities. The protocol uses modern cryptography including Curve25519 for key exchange, ChaCha20 for encryption, and Poly1305 for authentication.

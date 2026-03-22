@@ -27,7 +27,18 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 
+
 As of 2026, passkey support is mature across all major platforms: Apple shipped passkeys in iOS 16/macOS Ventura (2022) with iCloud Keychain sync, Google followed with Android 14 and Chrome in 2023 via Google Password Manager, and Microsoft added support through Windows Hello across Windows 11 and 10 (2022-2023). All three ecosystems now support WebAuthn Level 2 with discoverable credentials, meaning developers can implement passkey authentication today with full cross-platform coverage. Below is the detailed adoption timeline with implementation guidance and code examples.
+
+## Key Takeaways
+
+- **Based on the FIDO2/WebAuthn standards**: passkeys use public-key cryptography to authenticate users without transmitting secrets over the network.
+- **User initiates login and**: selects passkey authentication 2.
+- **Safari added full WebAuthn support**: allowing web applications to use passkey authentication.
+- **Understand these limitations when**: advising users.
+- **Contact user**: claiming account compromise
+2.
+- **Direct user to legitimate-looking**: site 3.
 
 ## What Are Passkeys?
 

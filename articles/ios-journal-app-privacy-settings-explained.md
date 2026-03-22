@@ -9,13 +9,24 @@ permalink: /ios-journal-app-privacy-settings-explained/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true---
 
 {% raw %}
 
 The iOS Journal app processes all data on-device using Apple's Neural Engine, meaning your entries never leave your iPhone unless you explicitly share them. You control privacy through Settings by toggling suggestions for photos, locations, and workouts, enabling Face ID lock, and managing per-category permissions. This guide breaks down every privacy setting, permission category, and developer-relevant architecture decision in the Journal app.
+
+## Key Takeaways
+
+- **Request only the permissions**: your app genuinely needs and provide clear explanations for each request, since iOS prompts users with meaningful context strings.
+- **Export from old app**: Use app's export function (usually JSON or PDF)
+2.
+- **Import to Journal**: Create new entries manually or use import script
+4.
+- **Unlike many third-party journaling**: applications that transmit user entries to cloud servers for analysis, Apple's implementation performs all machine learning operations locally.
+- **This architectural decision means**: that your journal entries never leave your device unless you explicitly choose to share them.
+- **When you create a journal entry**: the app uses on-device machine learning to generate personalized suggestions.
 
 ## On-Device Processing: The Core Privacy Principle
 
@@ -376,4 +387,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

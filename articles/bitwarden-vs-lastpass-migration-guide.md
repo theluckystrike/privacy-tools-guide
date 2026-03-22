@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, comparison]---
 
 Migrating password managers requires careful handling of sensitive data. For developers and power users, the transition from LastPass to Bitwarden offers improved open-source transparency, self-hosting options, and better CLI tooling. This guide walks through the technical process using command-line tools for maximum control and automation.
 
+## Key Takeaways
+
+- **For developers and power users**: the transition from LastPass to Bitwarden offers improved open-source transparency, self-hosting options, and better CLI tooling.
+- **LastPass uses PBKDF2-SHA256 with**: a default of 600,000 iterations as of 2023, but older accounts may still use much lower iteration counts inherited from years ago.
+- **A Bitwarden account (free**: or premium) 2.
+- **Use a clean environment**: Run on a secure machine without malware
+2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Why Developers Choose Bitwarden Over LastPass
 
 Several technical factors make Bitwarden the preferred choice for developers:
@@ -54,7 +64,17 @@ The security architecture difference is also meaningful. LastPass uses PBKDF2-SH
 | Self-Hosting | Check availability | Check availability |
 | Pricing | $10/year | $10/year |
 
-## Preparing for Migration
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Preparing for Migration
 
 Before starting, ensure you have:
 
@@ -71,7 +91,7 @@ npm install -g @bitwarden/cli
 bw --version
 ```
 
-## Exporting Data from LastPass
+### Step 2: Exporting Data from LastPass
 
 LastPass provides CSV export through their browser extension or CLI. For programmatic control, use the LastPass CLI:
 
@@ -103,7 +123,7 @@ LastPass exports TOTP codes as "One-Time Passwords" in the Extra field. You'll n
 grep -oP '(?<=TOTP: )[A-Z2-7]+=*' lastpass-export.csv > totp-seeds.txt
 ```
 
-## Importing into Bitwarden
+### Step 3: Importing into Bitwarden
 
 Bitwarden's CLI handles imports directly:
 
@@ -190,7 +210,7 @@ bw list items --url "github.com"
 bw edit item <item-id> --totp "JBSWY3DPEHPK3PXP"
 ```
 
-## Bulk Operations with Bitwarden CLI
+### Step 4: Bulk Operations with Bitwarden CLI
 
 For large vaults, use scripting for efficiency:
 
@@ -206,7 +226,7 @@ bw list items --search "" | jq '.[] | select(.organizationId == null)'
 bw export --format json --output ./bitwarden-backup.json
 ```
 
-## Folder Organization
+### Step 5: Folder Organization
 
 LastPass uses folders; Bitwarden uses collections for organizations and folders for personal vaults. Import automatically creates folders:
 
@@ -218,7 +238,7 @@ bw list folders
 bw move <item-id> <folder-name>
 ```
 
-## Self-Hosting Bitwarden with Vaultwarden
+### Step 6: Self-Hosting Bitwarden with Vaultwarden
 
 One of the most compelling reasons to migrate from LastPass to Bitwarden is the ability to self-host your vault using Vaultwarden, a lightweight Rust implementation of the Bitwarden server API. This eliminates reliance on Bitwarden's cloud infrastructure entirely and gives you complete control over your password data.
 
@@ -264,7 +284,7 @@ server {
 
 Self-hosting eliminates the risk of a cloud provider breach — the LastPass breach of 2022, which exposed encrypted vaults to attackers, is the clearest argument for keeping your vault under your own control.
 
-## Verification Checklist
+### Step 7: Verification Checklist
 
 After migration, verify your data:
 
@@ -279,7 +299,7 @@ After migration, verify your data:
 bw get item "GitHub" | jq '{username, password, totp, notes}'
 ```
 
-## Automating Continuous Migration
+### Step 8: Automate Continuous Migration
 
 For team migrations, script the process:
 
@@ -302,7 +322,7 @@ function migrateEntry(entry) {
 }
 ```
 
-## Post-Migration Password Hygiene
+### Step 9: Post-Migration Password Hygiene
 
 The migration process itself is a good opportunity to address password quality across your vault. LastPass and Bitwarden both offer password health reports, but Bitwarden's Vault Health Reports (available to premium subscribers) are particularly actionable:
 
@@ -326,7 +346,7 @@ bw generate --length 20 --uppercase --lowercase --number --special
 bw generate --passphrase --words 5 --separator "-"
 ```
 
-## Setting Up Emergency Access
+### Step 10: Set Up Emergency Access
 
 Bitwarden Premium and Families plans include an Emergency Access feature that LastPass does not offer in a comparable form. This allows you to designate trusted contacts who can request access to your vault in case of emergency, with a configurable waiting period during which you can deny the request.
 
@@ -349,6 +369,21 @@ shred -u totp-seeds.txt
 ```
 
 The window between export and import is the period of highest risk. The LastPass CSV file contains every password in plaintext. Keep this window as short as possible — ideally complete the full import within the same working session and securely delete the export file before ending the day.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 Magic Wormhole provides a secure, terminal-based method for transferring files between machines without establishing a direct network connection. The tool uses end-to-end encryption with a simple wormhole metaphor: you create a code on one machine, share it with the recipient, and files flow through an encrypted channel. This approach eliminates the need for cloud storage, FTP servers, or expose-your-IP file sharing methods.
 
+## Key Takeaways
+
+- **The tool uses end-to-end**: encryption with a simple wormhole metaphor: you create a code on one machine, share it with the recipient, and files flow through an encrypted channel.
+- **Send a directory with**: the same command used for files: ```bash wormhole send /path/to/project-folder/ ``` The receiving party receives the contents as a folder with the same name.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## How Magic Wormhole Works
 
 Magic Wormhole implements the SPAKE2 algorithm to establish an encrypted channel between two parties. When you initiate a transfer, the tool generates a short, human-readable code (such as `7-abc-def`). The recipient enters this code on their end, and the Wormhole protocol handles key exchange, encryption, and file transfer automatically.

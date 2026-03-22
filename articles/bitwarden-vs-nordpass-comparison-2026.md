@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Bitwarden if you need open-source transparency, self-hosting, extensive API/CLI access, or the lowest premium price ($10/year). Choose NordPass if you already use the Nord ecosystem, prefer XChaCha20-Poly1305 encryption with Argon2id key derivation, or want built-in masked email aliases. For most developers, Bitwarden wins on flexibility, cost, and auditability. Below is a detailed technical comparison of encryption architecture, CLI tooling, self-hosting, and security features.
 
+## Key Takeaways
+
+- **Choose Bitwarden if you**: need open-source transparency, self-hosting, extensive API/CLI access, or the lowest premium price ($10/year).
+- **Choose NordPass if you**: already use the Nord ecosystem, prefer XChaCha20-Poly1305 encryption with Argon2id key derivation, or want built-in masked email aliases.
+- **While Nord operates reliable**: infrastructure, this represents a fundamental limitation for users requiring on-premises data storage or those in regulated industries with data residency requirements.
+- **The server-side code was**: open-sourced in 2022, allowing security researchers to audit the complete encryption flow.
+- **However**: if you're already invested in the Nord ecosystem or prefer XChaCha20's modern cipher design, NordPass remains a solid choice.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Encryption Architecture
 
 Both password managers use AES-256 encryption, but the implementation details differ significantly.

@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Set up DeltaChat by installing the application, adding your existing email account, and enabling Autocrypt encryption to create end-to-end encrypted messaging over email infrastructure. DeltaChat works with any IMAP-compatible email provider without server setup, making it ideal for developers who want encryption without infrastructure maintenance. The email-based architecture means you retain access through any email client and avoid vendor lock-in, though metadata (subject lines, sender/recipient addresses) remains visible to email providers.
+
+## Key Takeaways
+
+- **Create user accounts sudo**: useradd -m -s /usr/sbin/nologin user@example.com echo "user@example.com:$(openssl passwd -crypt password)" | sudo tee -a /etc/dovecot/users # 6.
+- **Most providers**: including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work with DeltaChat.
+- **Start a chat with**: a contact who also uses DeltaChat 2.
+- **Rather than maintaining its own network**: DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption.
+- **This architecture provides several**: advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
+- **For advanced users configuring**: custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
 
 ## Understanding DeltaChat's Architecture
 

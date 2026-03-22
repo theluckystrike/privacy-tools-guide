@@ -31,6 +31,19 @@ voice-checked: true---
 
 Deep packet inspection (DPI) detects VPN traffic by analyzing port numbers, protocol fingerprints, packet timing, and payload patterns—even encrypted data has recognizable signatures. Defend against DPI by using port 443 (HTTPS), obfuscation layers, protocol randomization, or stealth VPN modes that disguise traffic as normal HTTPS connections.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **DPI systems can identify**: the TLS handshake that initiates an OpenVPN connection, even when it uses port 443.
+- **Censorship**: Authoritarian governments use DPI extensively to identify and block VPN traffic, limiting citizens' access to the open internet.
+- **Occasionally pause traffic to**: break connection patterns 3.
+- **Check TLS fingerprint
+# Visit**: https://tlsfingerprint.io/
+# Compare with other users on same VPN
+
+# 2.
+
 ## What Is Deep Packet Inspection?
 
 Deep packet inspection is a network filtering technique that examines the contents of data packets as they pass through a network checkpoint. Unlike basic packet filtering that only looks at header information (source and destination IP addresses, ports, and protocols), DPI goes deeper by inspecting the actual payload of the data packet.

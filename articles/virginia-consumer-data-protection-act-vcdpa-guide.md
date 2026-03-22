@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 The VCDPA applies to businesses that control or process personal data of 100,000+ Virginia consumers, or 25,000+ consumers while deriving over 50% of revenue from data sales. It requires you to implement six consumer rights (access, deletion, correction, portability, opt-out, and right to know), enforce data minimization, and maintain reasonable security measures -- with penalties up to $7,500 per violation. This guide provides the compliance requirements, working Python/Flask code for consumer rights endpoints, and implementation patterns for opt-out mechanisms and encrypted data storage.
 
+## Key Takeaways
+
+- **Your application must support**: mechanisms for users to exercise these rights: 1.
+- **However**: this cure period expires after January 1, 2026, after which the Virginia Attorney General can impose penalties of up to $7,500 per violation.
+- **The VCDPA applies to**: businesses that control or process personal data of 100,000+ Virginia consumers, or 25,000+ consumers while deriving over 50% of revenue from data sales.
+- **Right to Know**: Consumers can request what personal data is collected and how it's used
+2.
+- **Many organizations choose to**: adopt VCDPA-style controls universally rather than building separate compliance pathways.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Who VCDPA Applies To
 
 VCDPA applies to persons conducting business in Virginia or targeting Virginia residents, that either:

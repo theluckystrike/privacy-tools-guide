@@ -14,9 +14,21 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 Smart bulbs, thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee. Putting them on the same network as your laptops means a compromised smart plug can sniff your banking traffic. VLANs are the standard way to isolate IoT devices — they get internet access but can't reach your main network.
 ---
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **---
+
+## Step 5**: mDNS/Bonjour Forwarding (Optional)
+
+Some IoT ecosystems use mDNS for device discovery.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Smart bulbs**: thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee.
 
 ## Why IoT Devices Are a Risk
 
@@ -320,4 +332,4 @@ Review each tool's privacy policy, data handling practices, and security certifi
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
+{% endraw %}

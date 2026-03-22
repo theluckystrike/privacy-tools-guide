@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 An evil twin attack occurs when a malicious actor sets up a fraudulent WiFi access point that mimics a legitimate network. The attacker broadcasts the same network name (SSID) as a trusted network, often in public locations like coffee shops, airports, or co-working spaces. When users connect to this deceptive network, their traffic passes through the attacker's infrastructure, enabling interception of credentials, session hijacking, and data theft. For developers and power users who frequently work on-the-go, understanding how to detect and protect against these attacks is essential.
 
+## Key Takeaways
+
+- **Avoid free VPN services**: they often monetize by selling user data, defeating the purpose of privacy protection.
+- **Disable auto-connect nmcli connection**: modify $(nmcli connection list | awk '{print $1}' | head -1) connection.autoconnect no # 3.
+- **Use an USB wireless**: adapter for public networks while keeping your primary interface for trusted connections only.
+- **When users connect to**: this deceptive network, their traffic passes through the attacker's infrastructure, enabling interception of credentials, session hijacking, and data theft.
+- **For developers and power**: users who frequently work on-the-go, understanding how to detect and protect against these attacks is essential.
+- **Attackers use software like Fluxion**: WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.
+
 ## Understanding the Attack Mechanism
 
 Evil twin attacks exploit the fundamental way WiFi networks operate. Access points broadcast their SSID, and client devices automatically connect to networks they have previously trusted. Attackers use software like Fluxion, WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.

@@ -27,7 +27,18 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 
+
 Briar is worth it if you need a messenger that works without any internet infrastructure -- it delivers genuine offline mesh networking over Bluetooth LE, Wi-Fi Direct, and USB, using end-to-end encryption via the Signal protocol. The trade-offs are significant: it is mobile-only, text and image only (no voice or video), contacts must be exchanged in person via QR code, and battery drain during active mesh mode is heavy. For emergency response, protest coordination, or field research in connectivity-dead zones, Briar is the best available option; for everyday messaging, it is not a replacement for Signal or similar apps.
+
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **User A creates an**: encrypted message 2.
+- **Eventually**: the message reaches User B
+5.
+- **Recommended workflow**: 1.
+- **Jami (GNU Ring) Jami**: provides encrypted communication with offline support, but uses different network protocols.
+- **Free and basic plans**: typically get community forum support and documentation.
 
 ## Architecture Overview
 

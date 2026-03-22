@@ -29,6 +29,15 @@ tags: [privacy-tools-guide, encryption]---
 
 LUKS (Linux Unified Key Setup) is the standard for disk encryption on Linux. It wraps block devices in an encrypted container, protecting all data on the drive if it is physically stolen or accessed without authorization. This guide walks through setting up LUKS2 encryption on a new installation and on an existing secondary drive.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use a strong passphrase**: at least 6 random words from a wordlist.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system**: the installer handles partition layout and bootloader integration automatically.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## LUKS2 vs LUKS1
 
 LUKS2 is the current standard. Key improvements over LUKS1:

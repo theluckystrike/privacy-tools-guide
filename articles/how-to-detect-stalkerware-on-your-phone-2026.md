@@ -31,6 +31,16 @@ intent-checked: true---
 
 Stalkerware disguises as legitimate apps but secretly records location, messages, and calls. Detection involves checking running processes, analyzing network traffic, examining file permissions, and monitoring battery drain. iOS: Focus on jailbreak detection and MDM profiles. Android: Review installed apps, permissions, and adb logs. This technical guide covers detection methods, commands you can run, and how to preserve evidence for authorities.
 
+## Key Takeaways
+
+- **Install Surge from App**: Store ($3 one-time) # 2.
+- **Use strong**: unique password for all accounts
+2.
+- **Observe network traffic spikes**: # Or use Surge (network monitoring app): # 1.
+- **Tap "Delete" ``` ###**: Android Removal ```bash # If stalkerware as system app (most dangerous): # Requires factory reset: 1.
+- **Restore data from cloud**: backup (NOT from previous backup) # If stalkerware as user app: 1.
+- **Use VPN to prevent**: location tracking 7.
+
 ## Understanding Stalkerware vs Legitimate Monitoring
 
 Legitimate monitoring (parental controls, corporate MDM):

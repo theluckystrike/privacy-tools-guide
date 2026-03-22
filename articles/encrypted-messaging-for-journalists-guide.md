@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]---
 Journalist-source communication faces a specific threat model: state actors, corporate investigators, and law enforcement who may have access to carrier metadata, subpoena powers, and device seizure capabilities. Encrypting the message content is the minimum. Protecting metadata — who messaged whom, when, how often — often matters more.
 ---
 
+## Key Takeaways
+
+- **Create account → username**: only (no phone, no email) 2.
+- **Registration - Use a**: number that isn't publicly linked to you - Options: Google Voice, MySudo, prepaid SIM (cash-purchased) - Don't use your work or personal number 2.
+- **Scanning a QR code**: in person (most secure) 2.
+- **Signal's sealed sender encrypts the sender's identity**: Signal servers can verify that the message came from a Signal user but not which one.
+
 ## Threat Model for Journalists
 
 Before choosing tools, be specific about the threat:
@@ -270,4 +277,4 @@ Practical implications:
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

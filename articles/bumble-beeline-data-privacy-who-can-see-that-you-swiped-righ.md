@@ -31,6 +31,18 @@ tags: [privacy-tools-guide, privacy]---
 
 Beeline shows you users who have swiped right on you, but your own swipes are never revealed to free users—only premium subscribers see your likes through Beeline. You can hide from Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest. This guide explains exactly what data Bumble exposes, how privacy controls work, and practical mitigation strategies.
 
+## Key Takeaways
+
+- **Use Incognito mode to limit visibility**: - Only users you've already matched or those with premium can see you
+ - Your profile won't appear in swipe stacks for free users
+
+3.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Beeline shows you users who have swiped right on you, but your own swipes are never revealed to free users**: only premium subscribers see your likes through Beeline.
+- **Incognito Mode**: If enabled, your profile won't appear in Beeline for free users—only premium users who have also liked you can see you.
+- **You can hide from**: Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest.
+- **Both free and premium**: users have data collection risks.
+
 ## What Is Bumble Beeline?
 
 Beeline is Bumble's premium feature that displays a curated list of users who have already swiped right on your profile. Instead of blindly swiping through potential matches, you can see who has already expressed interest. Think of it as a "who likes me" viewer that Bumble has monetized—you cannot access this information without a paid subscription (Bumble Premium or Bumble For Friends).

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Sources communicating with journalists must assume potential state-level compromise including OS-level exploits, network-level interception, and zero-day vulnerabilities; therefore use Tails Linux booted from USB for all sensitive communications, SecureDrop for anonymous document submission, Signal for messaging if using personal devices, and Tor for any internet access. Use a separate device unconnected to your identity, remove all metadata from documents using Mat2 or ExifTool, and establish out-of-band communication channels for verifying journalist identity. This guide provides a practical threat modeling framework covering adversary types, attack vectors, layered defenses, and operational discipline required for source-journalist relationships.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **-name "*.pdf" -o -name**: "*.docx" | while read file; do mat2 --inplace "$file" echo " Stripped: $file" done # 4.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a separate device**: unconnected to your identity, remove all metadata from documents using Mat2 or ExifTool, and establish out-of-band communication channels for verifying journalist identity.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding the Threat ecosystem
 
 Sources communicating with journalists encounter adversaries with significant resources. Understanding who might attempt to compromise your communication determines which defenses matter most.

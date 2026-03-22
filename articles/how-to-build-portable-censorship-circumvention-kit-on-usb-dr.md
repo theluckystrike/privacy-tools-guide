@@ -27,7 +27,21 @@ categories: [guides]
 tags: [privacy-tools-guide, tools]
 intent-checked: true---
 
+
 Building a portable censorship circumvention kit on an USB drive enables reliable internet access in regions with heavy filtering and censorship. This guide provides step-by-step instructions for creating a self-contained toolkit with Tor, VPN clients, and DNS tunneling tools that work across any computer without installation or traces. You'll learn how to configure bridges, automate connections, and maintain your kit for consistent access when traveling to countries that restrict internet freedom.
+
+## Key Takeaways
+
+- **For better security**: consider using LUKS encryption, though this requires administrative privileges on each computer you use.
+- **You'll learn how to configure bridges**: automate connections, and maintain your kit for consistent access when traveling to countries that restrict internet freedom.
+- **Create a SOCKS proxy**: through an SSH server you control: ```bash ssh -D 1080 -N -f user@your-server.com ``` Configure your applications to use `localhost:1080` as a SOCKS5 proxy.
+- **Use system VPN settings**: for fallback OpenVPN connection 5.
+- **KNOW YOUR RIGHTS
+# In most countries**: you have right to attorney before questioning
+# Do not discuss your tools or activities without legal counsel
+
+# 3.
+- **DOCUMENT THE INTERACTION #**: Try to remember: Time, location, badge numbers, questions asked # Report interaction to press freedoms organizations # 4.
 
 ## Why Build a Portable Kit
 

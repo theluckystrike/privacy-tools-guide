@@ -31,6 +31,16 @@ The security of a messaging app depends almost entirely on the cryptographic pro
 
 This comparison covers the main protocols used in privacy-focused messaging in 2026 and what each one actually guarantees.
 
+## Key Takeaways
+
+- **The security of a**: messaging app depends almost entirely on the cryptographic protocol it uses.
+- **This comparison covers the**: main protocols used in privacy-focused messaging in 2026 and what each one actually guarantees.
+- **It uses the same Double Ratchet for 1**: 1 messages and an Olm-based approach for multi-device messaging.
+- **Trail of Bits audited**: Element's cryptographic implementation in 2022 and found issues in key verification flows, most of which were subsequently fixed.
+- **Identify which protocol it uses (Signal**: Matrix, MLS, etc.)
+2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## The Core Properties to Evaluate
 
 Before comparing protocols, understand the properties that distinguish them:

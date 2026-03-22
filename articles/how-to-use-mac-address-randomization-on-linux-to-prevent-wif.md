@@ -33,6 +33,13 @@ Every time your Linux device connects to a WiFi network, it broadcasts a unique 
 
 This guide covers three primary methods for implementing MAC address randomization on Linux: NetworkManager's built-in randomization, `macchanger` for manual control, and systemd-based automation for persistent privacy.
 
+## Key Takeaways
+
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers understanding**: mac addresses and privacy risks, method 1: networkmanager built-in randomization, enabling randomization per network, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Understanding MAC Addresses and Privacy Risks
 
 A MAC (Media Access Control) address is a 48-bit identifier assigned to your network interface controller (NIC). Manufacturers assign these addresses during production, creating a globally unique identifier that persists across networks. When you connect to a public WiFi hotspot, coffee shop, or corporate network, your device transmits this identifier in every probe request and association frame.

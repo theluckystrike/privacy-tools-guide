@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 Encrypted messaging metadata -- who contacted whom, when, how often, and from where -- remains fully exposed even with end-to-end encryption, and protecting it requires layering techniques like onion routing, mixnets, double-ratchet key advancement, and private contact discovery on top of content encryption. This guide explains each mechanism with code examples and shows developers how to architect messaging systems that resist traffic analysis, server-side correlation, and social graph extraction.
 
+## Key Takeaways
+
+- **Export and delete old**: message history # Most services allow: Settings → Data & Privacy → Delete Messages # 2.
+- **Consider this scenario**: Alice uses an end-to-end encrypted messenger to communicate with Bob.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Messaging Metadata
 
 Metadata in messaging contexts encompasses far more than most users realize. It includes:

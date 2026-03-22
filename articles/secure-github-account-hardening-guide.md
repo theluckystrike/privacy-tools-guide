@@ -18,6 +18,13 @@ tags: [privacy-tools-guide]---
 
 GitHub accounts hold source code, credentials, deployment keys, and CI/CD pipelines. A compromised account is a supply chain attack against everyone who uses your code. This guide covers the full hardening checklist.
 
+## Key Takeaways
+
+- **Never use SMS 2FA**: it is vulnerable to SIM swapping.
+- **A compromised account is**: a supply chain attack against everyone who uses your code.
+- **This is strictly better than TOTP apps**: which are phishable.
+- **This guide covers step 1**: enable hardware-key 2fa, step 2: audit and rotate ssh keys, step 3: audit personal access tokens, with specific setup instructions
+
 ## Step 1: Enable Hardware-Key 2FA
 
 GitHub supports FIDO2/WebAuthn security keys (YubiKey, Google Titan). This is strictly better than TOTP apps, which are phishable.
@@ -256,4 +263,4 @@ gh api /user/personal-access-tokens --jq '.[] | "\(.name) expires:\(.expires_at)
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

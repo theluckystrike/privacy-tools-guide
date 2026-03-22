@@ -31,6 +31,17 @@ voice-checked: true---
 
 In March 2026, key privacy law changes include Colorado CPA enforcement of GPC opt-out signals (March 15), Texas TDPSA coverage expanding to 75,000+ consumers (March 1), EU AI Act privacy provisions taking effect, and Canada's Digital Privacy Framework launching March 30. Below is a jurisdiction-by-jurisdiction breakdown with code examples and a compliance checklist for each update.
 
+## Key Takeaways
+
+- **Penalties under the CPA reach $20**:000 per violation.
+- **The Colorado Attorney General**: has finalized guidance on opt-out preference signals, commonly called Global Privacy Control (GPC).
+- **For privacy-focused companies**: this means documenting:
+
+1.
+- **If you handle Texas user data**: review your data processing agreements and consent mechanisms.
+- **Participants must receive plain-language summaries of all data uses before enrollment**: legal boilerplate does not satisfy this requirement.
+- **Add clear notifications wherever**: AI systems process user data.
+
 ## US State Privacy Laws
 
 ### Colorado Privacy Act Enforcement

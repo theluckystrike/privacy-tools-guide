@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 Instagram has been inaccessible from mainland China since 2014, blocked by the country's internet filtering system commonly known as the Great Firewall (GFW). For developers and power users who need to access Instagram while in China, understanding the technical mechanisms behind VPN solutions becomes essential. This guide covers practical approaches to maintaining access in 2026, focusing on self-hosted options and protocol-level configurations that work reliably.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **--mark $(wg show wg0**: fwmark) -j REJECT PostDown = iptables -D OUTPUT !
+- **--mark $(wg show wg0**: fwmark) -j REJECT ``` This configuration ensures all traffic either goes through the VPN or gets rejected when the tunnel is unavailable.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding the Great Firewall's Blocking Mechanism
 
 The GFW employs multiple blocking techniques that have evolved significantly over the years. At its core, the firewall performs deep packet inspection (DPI) on outbound traffic, analyzing packet headers and payloads to identify connections to blocked services. Instagram's IP addresses, domain names, and even specific URL patterns are actively blacklisted.

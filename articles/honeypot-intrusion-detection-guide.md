@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]---
 A honeypot is a decoy system that looks valuable but has no legitimate users. Any access to it is suspicious by definition — there's no reason for real traffic. When someone probes it, you get an early warning that an attacker is on your network or scanning your infrastructure, along with their IP, tools, and techniques.
 ---
 
+## Key Takeaways
+
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers honeypot types**: cowrie: ssh honeypot, install cowrie, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Honeypot Types
 
 | Type | What it simulates | Complexity | Risk |
@@ -371,4 +378,4 @@ The core concepts apply across most CI/CD platforms, though specific syntax and 
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
+{% endraw %}

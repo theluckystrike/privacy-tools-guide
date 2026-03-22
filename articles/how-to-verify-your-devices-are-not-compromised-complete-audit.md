@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Create baseline snapshots of running processes, installed packages, open network connections, and scheduled tasks during a known-clean state. Periodically compare current snapshots against baselines using diff tools to identify new processes, ports, or packages. Monitor system logs for suspicious authentication attempts, privilege escalations, or file modifications. Check for unexpected cron jobs, systemd timers, startup hooks, and browser extensions. Use integrity checkers like `aide` or `tripwire` to alert on unauthorized file modifications to system binaries.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Snapshot current state**: Export process list, network connections, and user sessions before making changes
+2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Use integrity checkers like**: `aide` or `tripwire` to alert on unauthorized file modifications to system binaries.
+
 ## Starting Point: Document Your Baseline
 
 Before detecting anomalies, establish what "normal" looks like for your system. Create a baseline snapshot during a known-clean state:

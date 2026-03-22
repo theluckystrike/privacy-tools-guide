@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Use privacy-focused cryptocurrencies (Monero, Zcash) instead of Bitcoin to eliminate transaction traceability on-chain. Layer network privacy through Tor or VPNs when accessing exchanges, use coinjoin mixing services (Samourai, Wasabi) for Bitcoin transactions, and separate wallet addresses to prevent transaction linkage. Operational security is equally important—avoid posting identifying information on forums where you discuss your wallet, keep private keys offline, and understand that on-chain privacy alone cannot protect against exchange surveillance when converting to fiat currency.
 
+## Key Takeaways
+
+- **HD (Hierarchical Deterministic) wallets**: generate new addresses from a seed phrase, making it easy to use unique addresses for every transaction.
+- **Separate identities**: Use distinct wallets for different activities (donations, business, personal)
+2.
+- **Use privacy-focused cryptocurrencies (Monero,**: Zcash) instead of Bitcoin to eliminate transaction traceability on-chain.
+- **The level of traceability**: depends on how addresses are used.
+- **Each address should ideally**: be used for a single transaction.
+- **Make unlimited payments within**: channel 3.
+
 ## Understanding Blockchain Transparency
 
 Bitcoin, Ethereum, and most cryptocurrencies operate on public ledgers. Each transaction broadcasts the sending address, receiving address, amount, and timestamp to the entire network. Blockchain explorers allow anyone to trace funds between addresses, creating a permanent record that can be analyzed to identify spending patterns, business relationships, or personal identities.

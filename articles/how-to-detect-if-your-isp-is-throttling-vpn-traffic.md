@@ -28,9 +28,21 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 To detect ISP throttling of VPN traffic, compare your connection speed with and without a VPN using speed tests—if performance drops below 50% of baseline, throttling is likely occurring. This guide covers five proven detection methods using command-line tools and network analysis to identify whether your ISP targets VPN protocols, specific ports, or general VPN traffic.
 
 Armed with diagnostic techniques like baseline testing, packet loss analysis, MTR monitoring, and protocol-specific testing, you can confirm throttling and choose appropriate workarounds like protocol switching or port changes.
+
+## Key Takeaways
+
+- **Consistent packet loss exceeding**: 2-3% during VPN use indicates network interference.
+- **To detect ISP throttling of VPN traffic, compare your connection speed with and without a VPN using speed tests**: if performance drops below 50% of baseline, throttling is likely occurring.
+- **A substantial speed differential**: typically below 50% of your baseline—suggests throttling, though legitimate VPN overhead typically reduces speeds by 20-40%.
+- **Switch protocols**: Move from OpenVPN to WireGuard or use protocols with built-in obfuscation
+2.
+- **Use obfuscation**: Tools like obfsproxy or specialized VPN services that mask VPN traffic as regular HTTPS
+4.
+- **Use a reputable speed**: test service or CLI alternatives like `speedtest-cli`: ```bash pip install speedtest-cli speedtest ``` Note your download and upload speeds, ping latency, and server location.
 
 ## Understanding VPN Throttling
 

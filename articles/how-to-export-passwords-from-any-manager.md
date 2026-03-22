@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 To export passwords from any manager, use its CLI tool for the most control: `op vault export` for 1Password, `bw export --format json` for Bitwarden, `lpass export` for LastPass, `keepassxc-cli export` for KeePassXC, or `dcli export` for Dashlane. Each outputs CSV or JSON that you should encrypt immediately with GPG and delete the plaintext file. This guide covers step-by-step export instructions for all major password managers, including web interface alternatives and automated backup scripts.
 
+## Key Takeaways
+
+- **Switching to a different password manager is the most common**: you might prefer an open-source solution or need features unavailable in your current tool.
+- **The platform supports CSV**: export containing usernames, passwords, URLs, and notes.
+- **The CSV option provides**: broader compatibility, while 1PIF preserves more metadata.
+- **You can choose between**: CSV and JSON formats.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why Export Your Passwords?
 
 Several legitimate scenarios require password export. Switching to a different password manager is the most common—you might prefer an open-source solution or need features unavailable in your current tool. Creating regular encrypted backups provides insurance against account lockouts or service outages. Developers building integration tools need programmatic access to credential data. Security researchers auditing password practices may need to analyze stored credentials.

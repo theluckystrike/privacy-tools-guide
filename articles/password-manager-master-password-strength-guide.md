@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Create a master password with at least 80 bits of entropy: use a random 6-8 word passphrase (e.g., generated via diceware) or a 16+ character random string mixing uppercase, lowercase, digits, and symbols. Pair it with a password manager that uses Argon2id for key derivation, never reuse it anywhere, and store a paper backup in a secure location. This guide covers entropy calculations, key derivation function comparisons, common vulnerabilities, and practical steps for both users and developers implementing password strength requirements.
 
+## Key Takeaways
+
+- **Verify your password manager uses Argon2id**: check their security whitepaper or open-source code
+7.
+- **- bcrypt**: Legacy support, but Argon2 is preferred for new implementations.
+- **Pair it with a**: password manager that uses Argon2id for key derivation, never reuse it anywhere, and store a paper backup in a secure location.
+- **For master passwords, target at least 80 bits of entropy**: this provides sufficient security against offline attacks even if your password database is compromised.
+- **Seven words is the**: recommended minimum when passphrases are your only factor.
+- **Configure with at least 64MB memory**: 3 iterations, and 4 parallelism.
+
 ## Understanding Master Password Entropy
 
 Entropy measures the randomness of your password in bits. Higher entropy means more possible combinations an attacker must enumerate. For master passwords, target at least 80 bits of entropy—this provides sufficient security against offline attacks even if your password database is compromised.

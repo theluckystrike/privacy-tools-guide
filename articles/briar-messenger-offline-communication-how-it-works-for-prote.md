@@ -15,10 +15,21 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers need alternatives that work without centralized infrastructure. Briar is an Android messaging application designed from the ground up to function without relying on any central servers. Instead, it uses device-to-device connections via Bluetooth and Wi-Fi to create resilient, decentralized networks that can operate completely offline.
 
 This article examines how Briar achieves offline messaging, the technical mechanisms behind its peer-to-peer communication, and practical considerations for developers and power users evaluating it for high-risk scenarios.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Each conversation has unique**: encryption keys that are never reused, providing forward secrecy even if long-term keys are compromised.
+- **Total latency**: 2-5 seconds with active movement
+
+# If Phone C is out of range initially but person carrying it walks into range:
+# 1.
+- **Phone C receives all**: 5 messages in 10-15 seconds # 4.
+- **Recording message arrival times"**: # Expected: <5 seconds for 30m, <15 seconds for 60m, <30 seconds for 100m+ # Phase 5: Move phones, test dynamic mesh echo "5.
 
 ## Architecture Overview
 
@@ -441,4 +452,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Email Provider Jurisdiction Comparison Which Countries Prote](/privacy-tools-guide/email-provider-jurisdiction-comparison-which-countries-prote/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

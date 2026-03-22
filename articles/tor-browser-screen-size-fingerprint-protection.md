@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Screen size fingerprinting represents one of the most subtle yet effective tracking techniques used across the web. Unlike cookies or IP-based tracking, screen fingerprinting operates passively, collecting display dimensions that can uniquely identify users across sessions without leaving any traceable artifacts. Tor Browser implements several defensive mechanisms to combat this vector, and understanding these protections helps you maintain better anonymity.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Screen size fingerprinting represents**: one of the most subtle yet effective tracking techniques used across the web.
+- **The technique works because**: most users have common but not identical configurations.
+- **Accept default settings**: Tor Browser's defaults balance usability with privacy effectively for most users.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Unlike cookies or IP-based tracking**: screen fingerprinting operates passively, collecting display dimensions that can uniquely identify users across sessions without leaving any traceable artifacts.
+
 ## How Screen Size Fingerprinting Works
 
 When you visit a website, your browser exposes various display properties through the JavaScript Window and Screen APIs. The most commonly collected values include:

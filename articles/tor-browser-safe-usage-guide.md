@@ -33,6 +33,15 @@ Tor routes your traffic through three relays before it reaches the destination. 
 
 This guide focuses on what actually matters for day-to-day safe Tor usage.
 
+## Key Takeaways
+
+- **Most users should start**: at Safer.
+- **Request bridges (solve CAPTCHA**: or use email request) 2.
+- **If you need to access accounts**: use separate dedicated accounts created anonymously and only accessed over Tor.
+- **Verify .onion domain authenticity**: # Use published lists and PGP verification # 2.
+- **Test download safety echo**: "Download safety scan..." # Use VirusTotal or similar (accessed via Tor) # 5.
+- **This guide focuses on**: what actually matters for day-to-day safe Tor usage.
+
 ## Download and Verify Tor Browser
 
 Always download from the official source: `https://www.torproject.org/download/`

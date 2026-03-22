@@ -33,6 +33,15 @@ Password managers are trust: you give them every password you own. If the passwo
 
 This guide compares four password managers focused on actual privacy, not marketing claims. We test encryption, logging, source code, and jurisdiction.
 
+## Key Takeaways
+
+- **Pricing tied to email**: If you don't use ProtonMail, $9.99/month for just Proton Pass seems expensive vs Bitwarden free.
+- **$36/year vs Bitwarden's $10/year**: or free.
+- **For teams**: Bitwarden at $40/user/year beats 1Password ($240/year) significantly.
+- **Price**: $2.99/month adds up.
+- $36/year is acceptable for convenience.
+- **Cost per day**: $0.03.
+
 ## What Makes a Password Manager Private
 
 **Zero-Knowledge**: Company cannot access your passwords. Even employees can't read your vault.

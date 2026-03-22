@@ -31,6 +31,16 @@ Apple's Lockdown Mode represents one of the most aggressive privacy features ava
 
 Lockdown Mode is not a mainstream feature for typical users. It's designed specifically for people facing advanced threats from well-funded adversaries including state-sponsored spyware operators, corporate espionage actors, and other sophisticated threat groups. The feature makes deliberate trade-offs, sacrificing convenience and functionality for security that only matters if you face a specific threat profile.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Regularly review your exception**: list and remove unused entries ### Device Compatibility Lockdown Mode requires iOS 16 or later.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Device configuration profiles**: The ability to install configuration profiles, which could be used for MDM or other management features, gets restricted.
+- **Consider whether you actually need that service**: can you use a native app instead?
+4.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## What Is iOS Lockdown Mode?
 
 Lockdown Mode is an optional security feature that iPhones and iPads ship with starting from iOS 16. When enabled, it restricts several system capabilities that could potentially be exploited by sophisticated attackers, such as those working for state-sponsored spyware companies. This feature was originally designed for high-risk users including journalists, activists, business executives, and individuals who might be targeted by advanced persistent threats.

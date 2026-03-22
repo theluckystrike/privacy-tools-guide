@@ -18,6 +18,16 @@ intent-checked: true---
 
 Signal Messenger provides end-to-end encryption that protects communications from eavesdropping, making it the preferred tool for journalists handling sensitive source communications. While Signal's default settings provide strong security, optimizing the application for source protection requires additional configuration steps. This guide covers the practical setup process for developers and power users who need to maximize their operational security.
 
+## Key Takeaways
+
+- **The available durations range**: from 30 seconds to 1 year.
+- **For most source communications**: a 24-hour or 7-day setting balances operational needs against the risk of accidental loss.
+- **iOS users should note**: that screen security is more limited.
+- **During initial sync**: choose "Continue Without Syncing" if available
+2.
+- **Signal Messenger provides end-to-end**: encryption that protects communications from eavesdropping, making it the preferred tool for journalists handling sensitive source communications.
+- **This guide covers the**: practical setup process for developers and power users who need to maximize their operational security.
+
 ## Why Signal for Journalism
 
 Signal uses the Signal Protocol, which provides forward secrecy and deniability properties that distinguish it from typical messaging applications. Forward secrecy ensures that compromise of long-term keys does not expose past conversations. The protocol has undergone extensive cryptographic review and is considered modern for asynchronous messaging.

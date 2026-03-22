@@ -21,6 +21,13 @@ A dead man's switch (DMS) releases information or sends alerts automatically if 
 This guide builds a Python-based DMS with configurable check-in periods, escalating alerts, and encrypted payload release.
 ---
 
+## Key Takeaways
+
+- **Uses include**: releasing encrypted credentials to trusted people if you're incapacitated, notifying contacts if you go silent, or deleting sensitive data if a device isn't checked within a timeframe.
+- **For high-assurance use cases**: distribute the check-in across multiple independent servers.
+- **This guide covers design principles**: architecture, core dms script, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Design Principles
 
 A good DMS has:
@@ -433,4 +440,4 @@ Run this script as your check-in command instead of a raw `curl` call. The conso
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

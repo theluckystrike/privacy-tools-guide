@@ -19,6 +19,18 @@ When you connect to a VPN, all your network traffic routes through an encrypted 
 
 This guide covers how to configure VPN exempt lists across common VPN protocols and clients, with practical examples for developers and power users managing local network infrastructure.
 
+## Key Takeaways
+
+- **Open System Preferences →**: Network 2.
+- **Confirm VPN path**: Use `traceroute` or `tracert` to verify internet traffic goes through VPN
+4.
+- **DNS resolution**: Local hostnames won't resolve over VPN—use IP addresses or configure local DNS
+4.
+- **VPN protocol limitations**: Some VPN protocols or providers don't support split tunneling—check with your provider
+5.
+- **This guide covers how**: to configure VPN exempt lists across common VPN protocols and clients, with practical examples for developers and power users managing local network infrastructure.
+- **Third-party clients like Tunnelblick**: (OpenVPN) or WireGuard for macOS offer better exempt list functionality.
+
 ## Understanding VPN Exempt Lists
 
 A VPN exempt list specifies IP addresses, CIDR ranges, or hostnames that should not traverse the VPN tunnel. Instead, these destinations are accessed through your local network interface directly. This is the inverse of a split-tunnel include list, which specifies only certain traffic to route through the VPN.
@@ -258,4 +270,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

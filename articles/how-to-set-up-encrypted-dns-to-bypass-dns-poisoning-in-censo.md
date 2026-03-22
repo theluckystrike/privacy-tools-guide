@@ -27,9 +27,17 @@ categories: [guides]
 tags: [privacy-tools-guide, tools]
 intent-checked: true---
 
+
 DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific websites or services. When you type a domain name into your browser, your device performs a DNS lookup to translate that human-readable address into an IP address. In censored networks, intercepting and manipulating these lookups allows blockers to redirect users away from forbidden content or simply return no result at all.
 
 Encrypted DNS protocols—primarily DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT)—solve this problem by encrypting your DNS queries so network operators cannot see or manipulate them. This guide walks you through setting up encrypted DNS on various platforms, with practical configurations you can implement immediately.
+
+## Key Takeaways
+
+- **DNS poisoning represents one**: of the most common censorship techniques employed by governments and network administrators to block access to specific websites or services.
+- **In censored networks**: intercepting and manipulating these lookups allows blockers to redirect users away from forbidden content or simply return no result at all.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers understanding**: dns poisoning, dns-over-https (doh) configuration, using curl for doh testing, with specific setup instructions
 
 ## Understanding DNS Poisoning
 

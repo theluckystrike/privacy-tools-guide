@@ -18,6 +18,15 @@ age is a modern encryption tool that solves problems GPG has struggled with for 
 
 This guide covers age command-line usage, integration with Git, automation, key management, and comparison to GPG. By the end, you'll encrypt files, share with others, and integrate age into your workflow.
 
+## Key Takeaways
+
+- **- Secret key (AGE-SECRET-KEY-1...)**: Keep secret; it's used to decrypt files.
+- **age**: Modern simplicity, perfect for file sharing and backups, better UX.
+- Useful for personal backups.
+- **For most modern workflows**: age is the better choice.
+- **File won't decrypt -**: The key used to encrypt might be different from the key you're using to decrypt.
+- **Use strong passphrases (if**: encrypting keys with a passphrase).
+
 ## Age vs GPG
 
 GPG is old and powerful but has UX problems. age is new and intentionally simple.
@@ -413,4 +422,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Accessible Encrypted File Sharing Tool for Users With Cognitive Impairments 2026](/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

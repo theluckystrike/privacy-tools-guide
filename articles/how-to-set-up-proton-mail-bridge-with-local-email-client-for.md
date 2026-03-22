@@ -31,6 +31,22 @@ tags: [privacy-tools-guide]---
 
 Install Proton Mail Bridge, log in with your Proton Mail credentials, then add the Bridge's local IMAP/SMTP server to your email client (Thunderbird, Apple Mail, Neomutt): Bridge runs locally on your machine and automatically encrypts/decrypts messages while your email client communicates with it using standard protocols. This gives you full end-to-end encryption with the power of desktop email clients without sacrificing Proton Mail's zero-access encryption model.
 
+## Key Takeaways
+
+- **Configure the incoming mail server**: - Host Name: `127.0.0.1`
+ - Port: `1143`
+ - Use SSL: No (Bridge handles encryption internally)
+5.
+- **Configure the outgoing mail server**: - Host Name: `127.0.0.1`
+ - Port: `1025`
+ - Use SSL: No
+
+Click Sign In and Apple Mail will connect through Bridge to Proton Mail.
+- **This architecture lets you**: use powerful email clients like Neomutt, Apple Mail, or Thunderbird while retaining Proton Mail's zero-access encryption model.
+- **Use full-disk encryption and**: keep your operating system updated.
+- **Generate your IMAP/SMTP credentials**: then configure your preferred email client using the settings provided.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## What is Proton Mail Bridge?
 
 Proton Mail Bridge runs locally on your machine and acts as an intermediary between your email client and Proton's servers. It handles the encryption and decryption automatically, meaning your email client communicates with Bridge using standard IMAP and SMTP protocols while Bridge manages the complex encryption layer.

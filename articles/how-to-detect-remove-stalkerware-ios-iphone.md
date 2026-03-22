@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 Stalkerware on iOS is more subtle than Android—Apple's walled-garden prevents most installation methods. However, sophisticated stalkerware can hide in plain sight through compromised iCloud accounts, MDM (Mobile Device Management) profiles, or jailbroken devices. This guide shows you how to detect and remove stalkerware even if someone with your iCloud password has been using your device.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Parental Controls abuse**: Legitimate feature weaponized to monitor an adult
+
+Most stalkerware does NOT give a visible app icon (because Apple prevents this).
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Compromised iCloud account**: Attacker uses your iCloud password to access Location Services, Messages, Photos via iCloud
+2.
+- **Most apps should be**: <100 MB per day.
+- **Use a packet analyzer app (e.g.**: Wireshark if device is jailbroken)
+3.
+
 ## Why iOS Stalkerware Is Different
 
 iOS stalkerware typically requires one of these:

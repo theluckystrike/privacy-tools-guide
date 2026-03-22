@@ -33,6 +33,17 @@ intent-checked: true---
 
 Building privacy into software from the ground up rather than retrofitting it later represents a fundamental shift in how development teams approach application architecture. The enterprise privacy by design framework provides a structured methodology for implementing privacy controls that satisfy regulatory requirements while reducing technical debt. This guide shows development teams how to integrate privacy-by-design principles into existing workflows using practical code patterns and automation strategies.
 
+## Key Takeaways
+
+- **Privacy as Default**: Ensure systems protect data without user intervention
+3.
+- **Privacy Embedded in Design**: Integrate protections into the architecture, not as add-ons
+4.
+- Consider a user registration system.
+- **The permissions mapping can**: be updated dynamically based on user consent changes.
+- **Use AWS KMS**: Google Cloud KMS, or HashiCorp Vault to manage keys separately from data.
+- **OneTrust**: Cookiebot, and Usercentrics are the leading enterprise options.
+
 ## Understanding the Seven Foundational Principles
 
 The privacy by design framework rests on seven core principles that inform every architectural decision:

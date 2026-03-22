@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 Operating system hardening involves reducing the attack surface of your system while maximizing privacy controls. For developers and power users seeking extreme privacy, this means configuring kernel parameters, network settings, file permissions, and system services to minimize data leakage and prevent unauthorized access.
 
+## Key Takeaways
+
+- **The techniques in this**: guide apply primarily to Linux systems, which offer the most granular control.
+- **This blocks many malware**: families that use ptrace for credential theft.
+- Network access uses `--socket=network`.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why OS Hardening Matters for Privacy
 
 Every operating system ships with defaults optimized for usability rather than security. These defaults often include telemetry services, network features that leak identifying information, and permissions that grant excessive access to applications. Hardening your OS closes these gaps.

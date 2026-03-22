@@ -16,6 +16,17 @@ intent-checked: true---
 
 Most mainstream website speed test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics. For developers and power users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks. This guide covers privacy-focused alternatives that measure website performance without tracking or logging tested URLs.
 
+## Key Takeaways
+
+- **GTmetrix retains test results**: and associated URLs for up to 90 days by default on free accounts.
+- **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
+2.
+- **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
+3.
+- **Most mainstream website speed**: test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics.
+- **For developers and power**: users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks.
+- **This guide covers privacy-focused**: alternatives that measure website performance without tracking or logging tested URLs.
+
 ## Why URL Tracking Matters in Speed Testing
 
 When you run a speed test on a client website or internal application through a public service, that URL enters someone else's database. Popular speed testing platforms may retain these records indefinitely, creating several concerns:
@@ -312,4 +323,290 @@ When evaluating any speed testing tool, verify its privacy claims:
 2. **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
 3. **Test with a unique URL**: Create an URL with a distinctive subdomain, then search for it in public databases to see if it was logged
 4. **Read the privacy policy**: Look for explicit statements about URL retention and third-party sharing
+
+## Conclusion
+
+Privacy-focused website speed testing requires moving away from public services that log URLs. Self-hosted solutions like WebPageTest, CLI tools using curl or Puppeteer, and custom scripts all provide accurate performance data while keeping your tested URLs private. Choose the approach that matches your technical requirements and infrastructure capabilities.
+
+For teams regularly testing multiple sites, investing in a self-hosted WebPageTest instance or building a custom dashboard pays dividends in both privacy and control over your testing workflow.
+
+## Advanced Metrics: Beyond Basic Speed
+
+Modern web performance includes metrics that simple curl tests miss. Implement comprehensive measurement:
+
+```javascript
+// comprehensive-metrics.js - Full page performance analysis
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+
+async function measureComprehensively(url) {
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox']
+  });
+
+  const page = await browser.newPage();
+
+  // Clear cache for consistent measurements
+  const context = browser.defaultBrowserContext();
+  await context.clearCookies();
+
+  // Capture all metrics
+  const metrics = {
+    url: url,
+    timestamp: new Date().toISOString(),
+    performance: {},
+    resources: {
+      js: 0,
+      css: 0,
+      images: 0,
+      other: 0
+    }
+  };
+
+  // Performance API metrics
+  const perfData = await page.evaluate(() => {
+    const perf = window.performance;
+    return {
+      navigationStart: perf.timing.navigationStart,
+      domLoaded: perf.timing.domContentLoadedEventEnd,
+      pageLoaded: perf.timing.loadEventEnd,
+      firstPaint: perf.getEntriesByType('paint'),
+      largestContentfulPaint: perf.getEntriesByType('largest-contentful-paint'),
+      layoutShift: perf.getEntriesByType('layout-shift')
+    };
+  });
+
+  // Measure actual resource loading
+  const resourceMetrics = await page.evaluate(() => {
+    return performance.getEntriesByType('resource').map(r => ({
+      name: r.name,
+      type: r.initiatorType,
+      duration: r.duration,
+      size: r.transferSize
+    }));
+  });
+
+  // Network conditions simulation
+  const conditions = [
+    { name: '4G', download: 4000, upload: 3000, latency: 50 },
+    { name: '3G', download: 1600, upload: 750, latency: 100 },
+    { name: 'Slow 4G', download: 400, upload: 400, latency: 200 }
+  ];
+
+  for (const condition of conditions) {
+    await page.emulateNetworkConditions(
+      true,
+      condition.download,
+      condition.upload,
+      condition.latency
+    );
+
+    const loadTime = await page.goto(url, { waitUntil: 'networkidle2' });
+    metrics.performance[condition.name] = {
+      status: loadTime.status(),
+      loadMs: (new Date() - new Date(0)).valueOf() // Simplified
+    };
+  }
+
+  // Analyze resources
+  for (const resource of resourceMetrics) {
+    const ext = resource.type.toLowerCase();
+    if (ext.includes('script')) metrics.resources.js++;
+    else if (ext.includes('stylesheet')) metrics.resources.css++;
+    else if (ext.includes('image')) metrics.resources.images++;
+    else metrics.resources.other++;
+  }
+
+  await browser.close();
+  return metrics;
+}
+
+// Run and store results locally
+(async () => {
+  const testUrl = process.argv[2] || 'https://example.com';
+  const results = await measureComprehensively(testUrl);
+
+  // Save to local file, never transmit
+  const resultsDir = `${process.env.HOME}/.local/share/speed-tests`;
+  fs.mkdirSync(resultsDir, { recursive: true });
+
+  const filename = `${resultsDir}/test_${Date.now()}.json`;
+  fs.writeFileSync(filename, JSON.stringify(results, null, 2));
+
+  console.log(`Results saved to ${filename}`);
+  console.log(JSON.stringify(results, null, 2));
+})();
+```
+
+## Threat Model: What URL Testing Leaks
+
+Testing a URL externally leaks more than you might realize:
+
+| Data Leaked | Risk | Mitigation |
+|---|---|---|
+| URL itself | Critical | Self-hosted or local test |
+| Site structure | Medium | Testing through same ISP/VPN |
+| Technology stack | Medium | Site fingerprinting possible |
+| Geographic origin | Low | Public knowledge often |
+| Update frequency | Medium | Pattern analysis possible |
+| Authentication status | High | Could reveal access levels |
+| File upload progress | High | Metadata about operations |
+
+Self-hosting eliminates all of these risks by keeping the URL completely private.
+
+## Building a Monitoring Dashboard
+
+For ongoing performance tracking without cloud dependency:
+
+```python
+#!/usr/bin/env python3
+# web-perf-dashboard.py
+
+import subprocess
+import json
+import time
+from pathlib import Path
+from datetime import datetime, timedelta
+
+class LocalPerfDashboard:
+    def __init__(self, sites_config):
+        self.sites = sites_config
+        self.results_dir = Path.home() / '.local/share/web-perf'
+        self.results_dir.mkdir(parents=True, exist_ok=True)
+
+    def test_site(self, site_url):
+        """Test single site using Chrome DevTools Protocol"""
+        cmd = [
+            'lighthouse',
+            site_url,
+            '--only-categories=performance',
+            '--output=json',
+            '--chrome-flags="--headless"',
+            '--output-path=-'  # stdout
+        ]
+
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+            data = json.loads(result.stdout)
+
+            return {
+                'url': site_url,
+                'timestamp': datetime.now().isoformat(),
+                'score': data['lighthouseResult']['categories']['performance']['score'] * 100,
+                'first_contentful_paint': data['lighthouseResult']['audits']['first-contentful-paint']['numericValue'],
+                'largest_contentful_paint': data['lighthouseResult']['audits']['largest-contentful-paint']['numericValue'],
+            }
+        except Exception as e:
+            return {'url': site_url, 'error': str(e)}
+
+    def run_daily_tests(self):
+        """Run tests for all configured sites"""
+        results = []
+
+        for site_config in self.sites:
+            print(f"Testing {site_config['name']}...")
+            result = self.test_site(site_config['url'])
+            results.append(result)
+
+            # Store individual result
+            filename = self.results_dir / f"{site_config['name']}_{datetime.now().isoformat()}.json"
+            filename.write_text(json.dumps(result, indent=2))
+
+        return results
+
+    def generate_report(self, days=7):
+        """Generate performance report for last N days"""
+        cutoff = datetime.now() - timedelta(days=days)
+        results_by_site = {}
+
+        # Aggregate results
+        for result_file in self.results_dir.glob('*.json'):
+            if result_file.stat().st_mtime > cutoff.timestamp():
+                data = json.loads(result_file.read_text())
+                site = data['url']
+
+                if site not in results_by_site:
+                    results_by_site[site] = []
+
+                results_by_site[site].append(data)
+
+        # Calculate trends
+        report = {}
+        for site, measurements in results_by_site.items():
+            scores = [m['score'] for m in measurements if 'score' in m]
+            if scores:
+                report[site] = {
+                    'avg_score': sum(scores) / len(scores),
+                    'min_score': min(scores),
+                    'max_score': max(scores),
+                    'measurements': len(scores)
+                }
+
+        return report
+
+# Usage
+sites_to_monitor = [
+    {'name': 'main-site', 'url': 'https://example.com'},
+    {'name': 'api-site', 'url': 'https://api.example.com'},
+]
+
+dashboard = LocalPerfDashboard(sites_to_monitor)
+dashboard.run_daily_tests()
+
+# Generate weekly report
+weekly = dashboard.generate_report(days=7)
+print(json.dumps(weekly, indent=2))
+```
+
+## Continuous Integration: CI/CD Speed Testing
+
+Integrate privacy-preserving speed tests into your CI/CD pipeline:
+
+```yaml
+# .github/workflows/speed-test.yml
+name: Local Speed Test
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Weekly Monday 9 AM
+  workflow_dispatch:
+
+jobs:
+  speed-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          npm install -g lighthouse puppeteer
+          apt-get update && apt-get install -y chromium
+
+      - name: Run speed tests
+        run: |
+          mkdir -p results
+          lighthouse https://your-site.com --output=json --output-path=results/test.json
+
+      - name: Archive results
+        uses: actions/upload-artifact@v3
+        with:
+          name: speed-test-results
+          path: results/
+
+      - name: Commit results
+        run: |
+          git config user.name "Speed Test Bot"
+          git config user.email "bot@example.com"
+          git add results/
+          git commit -m "Speed test: $(date)" || true
+          git push
+```
+
+This approach keeps all testing data in your repository, never sending URLs to external services.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

@@ -31,6 +31,22 @@ tags: [privacy-tools-guide, comparison]---
 
 When evaluating browser-based ad blocking solutions, developers and power users typically consider three factors: blocking effectiveness, performance overhead, and customization capability. Brave Browser's built-in ad blocker and uBlock Origin represent two distinct approaches to the same problem. This comparison examines the technical implementation of each, helping you choose the right tool for your workflow.
 
+## Key Takeaways
+
+- **The 20ms difference is**: imperceptible on most connections.
+- **For advanced users**: uBlock Origin supports custom filter rules with a powerful syntax:
+
+```txt
+!
+- **Users seeking a privacy-respecting**: default with minimal configuration will find Brave's integrated solution sufficient.
+- **Exception**: allowlist specific resource
+@@||trusted-partner.com^$domain=mysite.com
+
+!
+- **Remove tracking parameters from**: URLs ||google.com^$removeparam=utm_source|utm_medium|utm_campaign ``` Import this by copying to uBlock Origin Dashboard → My filters → Paste list.
+- Create user stylesheet
+// 4.
+
 ## How Brave's Built-In Ad Blocking Works
 
 Brave Browser ships with a built-in ad blocker called Shields, which operates at the network level using Rust-based request blocking. The engine compiles filter lists into efficient data structures, checking each network request against these rules before the request leaves your browser.
@@ -475,4 +491,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Brave Browser Honest Review 2026](/privacy-tools-guide/brave-browser-honest-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

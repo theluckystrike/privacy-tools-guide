@@ -27,7 +27,22 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Messaging apps frequently claim to offer end-to-end encryption, but verifying these claims requires technical investigation. As a developer or power user, you can audit encryption implementations yourself using network analysis tools, protocol documentation review, and hands-on testing. This guide walks you through practical methods to verify whether an app actually implements what it claims.
+
+## Key Takeaways
+
+- **Analyze with Wireshark (headless)**: sleep 60 kill $TCPDUMP_PID tshark -r traffic.pcap -Y "tcp.flags.syn" > handshakes.txt # 3.
+- **TLS analysis echo "Analyzing**: TLS configuration..." openssl s_client -connect "${APP_DOMAIN}:443" -showcerts > certs.txt # 4.
+- **Modern E2EE protocols like**: Signal Protocol use the Double Ratchet Algorithm combined with X3DH (Extended Triple Diffie-Hellman) key agreement.
+- **Attempt to modify the**: encrypted payload in transit (advanced: use a proxy) 3.
+- **Network traffic capture echo**: "Capturing network traffic..." sudo tcpdump -i any -w traffic.pcap host "${APP_DOMAIN}" & TCPDUMP_PID=$!
+- **Generate report
+echo "# Audit Report**: ${APP_NAME}" > "${REPORT_FILE}"
+echo "Date: ${AUDIT_DATE}" >> "${REPORT_FILE}"
+echo "" >> "${REPORT_FILE}"
+echo "## Findings" >> "${REPORT_FILE}"
+# ...
 
 ## Understanding End-to-End Encryption Basics
 

@@ -33,6 +33,16 @@ The scale of tracking in Android is staggering. A 2023 study of 300 popular Andr
 
 Most users have no idea this happens. The official permission system doesn't distinguish between legitimate uses and tracking uses. An app with "read contacts" permission might legitimately need this for a messaging app, or it might be harvesting your address book for marketing profiles. The app store ratings and descriptions don't mention tracking. Users must actively audit apps to understand what data is being collected and transmitted.
 
+## Key Takeaways
+
+- **A 2023 study of**: 300 popular Android apps found that 98% contain at least one tracking library.
+- **Most users have no**: idea this happens.
+- **Run Exodus Privacy against**: your most important installed apps 2.
+- **Use ADB to audit permissions quarterly**: focusing on sensitive permissions like location
+4.
+- **The official permission system**: doesn't distinguish between legitimate uses and tracking uses.
+- **Users must actively audit**: apps to understand what data is being collected and transmitted.
+
 ## Why Trackers Matter and What They Collect
 
 Before auditing trackers, understand what they actually do with your data. Different trackers collect different information and serve different purposes.

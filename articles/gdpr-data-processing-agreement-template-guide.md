@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 When you build applications that process personal data for other organizations, you often need a Data Processing Agreement (DPA). GDPR mandates these agreements when you act as a processor handling data on behalf of controllers.
 
+## Key Takeaways
+
+- **These are the most**: commonly used mechanism.
+- **This prevents obligations from**: existing only on paper: ```yaml # dpa-obligations-mapping.yml obligations: - clause: "5.
+- **Subprocessor Management If you**: use subprocessors, track them properly: ```markdown ## 6.
+- **The primary mechanisms available**: after the Schrems II ruling are: Standard Contractual Clauses (SCCs): The EU Commission published updated SCCs in 2021.
+- **Keep your subprocessor list current**: define specific response times for data subject requests, and include a termination clause specifying what happens to data when the agreement ends.
+- **Running a DPA that describes a data model you no longer use creates legal exposure**: the agreement is meant to accurately represent what you actually do.
+
 ## What Is a Data Processing Agreement?
 
 A Data Processing Agreement is a legally binding contract between a data controller (the organization deciding *why* and *what* data to process) and a data processor (the organization handling the actual processing). Under GDPR Article 28, this agreement must specify the subject matter, duration, nature, and purpose of processing, along with the types of personal data and data subjects involved.

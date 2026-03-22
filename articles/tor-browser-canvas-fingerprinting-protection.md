@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Canvas fingerprinting is one of the most sophisticated tracking techniques used by websites to identify users without cookies. Tor Browser includes protections against this threat, but understanding how these protections work helps you configure your setup for maximum privacy.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Canvas fingerprinting is one**: of the most sophisticated tracking techniques used by websites to identify users without cookies.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This "resistance" mode makes**: all Tor users appear identical to websites: - Standardized screen resolution - Common window sizes - Uniform font rendering - Consistent color profiles ### 3.
+- **Use default Tor Browser settings**: Modifications can make you more identifiable
+5.
+- **Use "Safest" security level**: Disables JavaScript which eliminates many fingerprinting vectors
+4.
+
 ## What is Canvas Fingerprinting?
 
 Canvas fingerprinting exploits the HTML5 canvas element to create a unique identifier for your browser. When a website renders graphics through the canvas API, subtle differences in hardware, graphics drivers, and font rendering produce distinct output. These microscopic variations create a fingerprint that persists across sessions.

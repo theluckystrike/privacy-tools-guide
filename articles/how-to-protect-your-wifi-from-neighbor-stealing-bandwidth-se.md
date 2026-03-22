@@ -33,6 +33,15 @@ Bandwidth theft is more common than most people realize. When your neighbor conn
 
 This guide covers practical methods to secure your WiFi network and prevent unauthorized access.
 
+## Key Takeaways
+
+- **Bandwidth theft is more**: common than most people realize.
+- **For developers and power**: users who rely on stable, fast internet for remote work, CI/CD pipelines, and cloud deployments, this can be particularly problematic.
+- **Unauthorized users on your**: network can potentially access shared files, intercept unencrypted traffic, or use your connection for activities that could trace back to your IP address.
+- **Changing these settings is**: the most effective initial step.
+- **Access your router's admin**: panel (typically at `192.168.0.1` or `192.168.1.1`) and change both the admin password and the WiFi password to strong, unique values.
+- **Use a password manager**: to generate and store these credentials.
+
 ## Understanding the Threat
 
 Your WiFi network broadcasts radio waves that extend beyond your property line. Neighbors, passing vehicles, or even nearby businesses can potentially detect and attempt to connect to your network. While some unauthorized connections might be accidental (devices automatically connecting to the strongest available network), others can be deliberate bandwidth theft.

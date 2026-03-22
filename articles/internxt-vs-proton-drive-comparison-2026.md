@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Proton Drive for better CLI integration and API support, making it ideal for developers and automation-heavy workflows. Choose Internxt for lower pricing and slightly faster upload speeds. Both offer equivalent zero-knowledge encryption (AES-256/ChaCha20-Poly1305), so the decision comes down to your workflow: Proton for developers needing CLI/API access, Internxt for cost-conscious users prioritizing raw performance.
 
+## Key Takeaways
+
+- **Choose Proton Drive for**: better CLI integration and API support, making it ideal for developers and automation-heavy workflows.
+- **Proton Drive uses AES-256-GCM**: for file encryption with RSA-2048 for key derivation.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Internxt for lower**: pricing and slightly faster upload speeds.
+- **Proton's encryption library is**: open-source, allowing independent verification of their claims.
+
 ## Architecture and Encryption Models
 
 Both services market themselves as zero-knowledge encrypted cloud storage, but their implementations differ in important ways.

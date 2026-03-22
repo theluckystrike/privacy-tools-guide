@@ -31,6 +31,35 @@ tags: [privacy-tools-guide]---
 
 SSH tunneling creates encrypted pathways between devices, securing data that would otherwise travel in plaintext. Whether you're accessing a database on a remote server, protecting web traffic on public WiFi, or forwarding services across networks, SSH tunnels provide a lightweight alternative to VPNs. This guide walks through the three main tunnel types with real examples you can apply immediately.
 
+## Key Takeaways
+
+- **Forward local port 3306 to reach it**: ```bash
+ssh -L 3306:192.168.1.100:3306 user@ssh_server
+```
+
+Now connect your MySQL client to `localhost:3306`.
+- **For a web service on an internal server**: forward port 8080:
+
+```bash
+ssh -L 8080:10.0.0.50:80 user@jump-server
+```
+
+Access the internal webapp at `http://localhost:8080`.
+- **Instead of deploying to a server**: forward a public port:
+
+```bash
+ssh -R 80:localhost:3000 user@tunnel-server
+```
+
+Now configure your webhook URL to point to your tunnel server.
+- **For Chrome, launch with proxy flags**: ```bash
+google-chrome --proxy-server="socks5://localhost:1080"
+```
+
+Firefox has built-in SOCKS proxy settings in Preferences.
+- **This is useful when**: the destination service exists on the remote network but isn't directly accessible to you.
+- **A practical use case**: running a webhook receiver locally during development.
+
 ## Understanding SSH Tunnels
 
 An SSH tunnel forwards network traffic through an encrypted SSH connection. The SSH protocol already encrypts your terminal session—tunneling extends that encryption to arbitrary ports and services. This means any service using TCP can be secured without modifying its configuration.

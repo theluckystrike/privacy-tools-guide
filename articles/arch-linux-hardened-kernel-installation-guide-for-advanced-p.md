@@ -31,7 +31,30 @@ tags: [privacy-tools-guide, advanced]---
 
 The Arch Linux hardened kernel provides enhanced security features for users who prioritize privacy and system integrity. This guide covers the complete installation process, from understanding the hardened kernel variants to configuring boot parameters for maximum protection. The hardened kernel builds upon the standard Linux kernel with additional security patches from the Linux Hardening Project and grsecurity, though many grsecurity features now require paid subscriptions.
 
-## Understanding Kernel Hardening Options
+## Key Takeaways
+
+- **If you experience stability issues**: you may need to use the open-source nouveau driver instead.
+- **Benchmark your typical workloads**: ```bash
+hyperfine --warmup 3 'your-workload-command'
+```
+
+Typical performance impact ranges from 1-5% for compute-heavy workloads.
+- **The Arch Linux hardened**: kernel provides enhanced security features for users who prioritize privacy and system integrity.
+- **The kernel includes features**: like kernel page table isolation (KPTI), randomize kernel memory offsets, and hardened user copy operations.
+- **The hardened kernel provides**: substantial security improvements for privacy-conscious users.
+- **Combined with proper system**: configuration and security practices, it forms a foundation for a privacy-focused Arch Linux installation.
+
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Kernel Hardening Options
 
 Arch Linux offers several kernel packages through the official repositories and the AUR. The primary options include:
 
@@ -75,7 +98,7 @@ Backup your current kernel configuration if you've made custom modifications:
 cp /boot/config-linux $(uname -r)-config-backup
 ```
 
-## Installing the Hardened Kernel
+### Step 2: Install the Hardened Kernel
 
 Install the hardened kernel and its dependencies:
 
@@ -91,7 +114,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 If you use a different bootloader such as systemd-boot, rEFInd, or Clover, consult its documentation for adding kernel entries. You may need to manually create a boot entry pointing to `/boot/vmlinuz-linux-hardened` and `/boot/initramfs-linux-hardened.img`.
 
-## Configuring Boot Parameters
+### Step 3: Configure Boot Parameters
 
 Hardened kernel features require appropriate boot parameters. Edit your GRUB configuration at `/etc/default/grub` and add the following to `GRUB_CMDLINE_LINUX_DEFAULT`:
 
@@ -115,7 +138,7 @@ After editing, regenerate the GRUB config:
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Verifying Hardening Features
+### Step 4: Verify Hardening Features
 
 After rebooting into the new kernel, verify the hardening features are active:
 
@@ -147,7 +170,7 @@ Check the current sysctl settings related to kernel hardening:
 sysctl -a | grep -E 'kernel\.(randomize|unprivileged)'
 ```
 
-## Managing Kernel Modules
+### Step 5: Manage Kernel Modules
 
 The hardened kernel provides additional module loading controls. To restrict module loading:
 
@@ -179,7 +202,7 @@ blacklist thunderbolt
 
 These blocklists prevent specific hardware drivers from loading, which can protect against physical attacks through USB, FireWire, or Thunderbolt ports.
 
-## Systemd Hardening
+### Step 6: Systemd Hardening
 
 Extend kernel hardening with systemd security options. Edit `/etc/systemd/system.conf`:
 
@@ -208,7 +231,7 @@ ReadOnlyPaths=/bin /boot /dev /etc /lib /lib64 /opt /proc /root /sbin /sys /usr 
 
 These settings isolate services from the filesystem and prevent privilege escalation.
 
-## Boot Security with Secure Boot
+### Step 7: Boot Security with Secure Boot
 
 For systems with UEFI Secure Boot, sign the hardened kernel:
 
@@ -245,7 +268,7 @@ Common issues include:
 - Wireless drivers needing rebuilding
 - Container runtimes requiring specific kernel parameters
 
-## Maintenance and Updates
+### Step 8: Perform Maintenance and Updates
 
 Keep your hardened kernel updated through regular system updates:
 
@@ -304,4 +327,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

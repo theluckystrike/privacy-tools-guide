@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, privacy]---
 
 When a company mishandles your personal data or suffers a breach that exposes your information, the Federal Trade Commission (FTC) provides a formal complaint mechanism. This guide walks through the process of filing an FTC complaint specifically targeting privacy violations and data breaches, with practical steps tailored for developers and power users who understand the technical nuances of data exposure.
 
+## Key Takeaways
+
+- Credit freeze/monitoring
+# 3.
+- **While the FTC does**: not pursue individual disputes, it uses complaints to identify patterns of behavior that indicate broader violations.
+- **As a developer or power user**: you have tools at your disposal to gather evidence systematically.
+- **Select "Privacy & Identity"**: as the category, then choose "Data Breach" or "Impersonation/Identity Theft" depending on your situation.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding FTC Jurisdiction Over Data Breaches
 
 The FTC enforces Section 5 of the FTC Act, which prohibits unfair and deceptive trade practices. This extends to companies that fail to protect consumer data or misrepresent their security practices. While the FTC does not pursue individual disputes, it uses complaints to identify patterns of behavior that indicate broader violations.

@@ -33,6 +33,15 @@ A default SSH installation accepts password logins, allows root access, and supp
 
 This guide walks through locking down `sshd_config` to a minimal, defensible state — key-only authentication, no root login, restricted algorithms, and basic rate limiting.
 
+## Key Takeaways
+
+- **If you must use**: RSA for compatibility with older systems, use RSA-4096 at minimum.
+- **The `curve25519` options are preferred when both sides support them**: they are faster and resist attacks that target traditional finite-field DH.
+- **Older `hmac-sha2-512` without `etm`**: uses MAC-Then-Encrypt, which enables padding oracle attacks.
+- **Group 14 uses 2048-bit**: DH which is borderline acceptable, but groups 16 (4096-bit) and 18 (8192-bit) with SHA-512 are definitively modern.
+- **A default SSH installation**: accepts password logins, allows root access, and supports legacy ciphers that have known weaknesses.
+- **This guide walks through locking down `sshd_config` to a minimal, defensible state**: key-only authentication, no root login, restricted algorithms, and basic rate limiting.
+
 ## Prerequisites
 
 - A Linux server (Debian/Ubuntu or RHEL/Fedora)

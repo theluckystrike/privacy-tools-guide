@@ -33,6 +33,20 @@ Online shopping leaves a financial footprint that data brokers actively harvest.
 
 This guide covers how masked cards work, practical integration methods for developers, and strategies for maximizing privacy without sacrificing convenience.
 
+## Key Takeaways
+
+- **For most users**: virtual cards provide substantial privacy improvements over using raw card numbers everywhere.
+- **Merchant locking**: Bind a card to a single merchant, preventing fraudulent use elsewhere
+5.
+- **Choose a provider**: Consider Privacy.com, Revolut, Wise, or your bank's native solution
+2.
+- **Merchant isolation**: If a merchant database leaks, only the virtual card number is exposed, not your real account
+2.
+- **Spending limits**: Set hard caps that prevent overdrafts and limit exposure if a number is compromised
+4.
+- **Start with low-value cards**: Test the integration before relying on it
+4.
+
 ## What Are Masked Credit Cards?
 
 A masked credit card generates a unique 16-digit number tied to your real account but usable only for specific merchants or time periods. When you make a purchase, the merchant sees the virtual number instead of your actual card details. Charges still appear on your real statement, but the merchant cannot retain your card number for future charges, subscription renewals, or data breaches.

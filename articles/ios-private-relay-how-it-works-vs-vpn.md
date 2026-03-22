@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose iCloud Private Relay if you primarily use Safari on Apple devices and want automatic IP-masking without configuration. Choose a VPN if you need to protect all application traffic across platforms, bypass geo-restrictions, or require a consistent IP address. Private Relay routes only Safari traffic and DNS queries through a dual-hop relay system, while a VPN encrypts everything through a single tunnel -- making them complementary rather than interchangeable.
 
+## Key Takeaways
+
+- **Traditional VPNs remain the**: better choice for traffic protection, cross-platform consistency, and use cases requiring specific IP address behavior.
+- **Choose a VPN if**: you need to protect all application traffic across platforms, bypass geo-restrictions, or require a consistent IP address.
+- **The second relay knows**: the destination but cannot identify you because it only receives encrypted data from Apple with no user identifiers attached.
+- **For developers building privacy-aware**: applications, understanding both systems allows better testing and compatibility decisions.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+
 ## How iCloud Private Relay Works
 
 Private Relay is Apple's implementation of proxy-based privacy, available to iCloud+ subscribers on iOS 15, iPadOS 15, and macOS Monterey or later. When enabled, it routes Safari traffic and DNS queries through two separate relays:

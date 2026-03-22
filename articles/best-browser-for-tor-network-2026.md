@@ -31,6 +31,15 @@ voice-checked: true---
 
 Use Tor Browser for the most secure and recommended option with integrated privacy features. Developers who need to route other browsers through Tor can use the SOCKS proxy method with Firefox or Chrome, though this requires accepting security tradeoffs. Tor Browser remains best for general use due to its hardened configuration and built-in Tor daemon.
 
+## Key Takeaways
+
+- **Use Tor Browser for**: the most secure and recommended option with integrated privacy features.
+- **Tor Browser remains best**: for general use due to its hardened configuration and built-in Tor daemon.
+- **Open them only after**: disconnecting from the network, or use a sandboxed viewer.
+- **Developers who need to**: route other browsers through Tor can use the SOCKS proxy method with Firefox or Chrome, though this requires accepting security tradeoffs.
+- **Tor Browser's defaults are**: deliberately designed to make all users look identical to surveillance systems.
+- **You can route any**: browser through the Tor network by configuring it to use the SOCKS proxy.
+
 ## Tor Browser: The Official Implementation
 
 Tor Browser remains the most recommended option for accessing the Tor network. It is built on Firefox ESR with privacy-hardened configurations and includes the Tor daemon (tor) integrated directly into the application.

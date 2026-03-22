@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 OkCupid, one of the earliest major dating platforms to embrace algorithmic matching, has a complex history with user data sharing that spans over a decade. Understanding what third parties received user profile and message data from OkCupid provides important context for developers building privacy-conscious applications and for users evaluating dating platforms.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use unique credentials**: Don't reuse passwords from other services
+3.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- Enumerate user IDs systematically
+2.
+- **Cross-platform data sharing**: User data could be shared across Match Group properties
+2.
+- **Unified advertising infrastructure**: Adtech systems served users across multiple dating platforms
+3.
+
 ## Historical Context of OkCupid Data Practices
 
 OkCupid launched in 2004 and became known for its detailed personality questionnaires and algorithmic approach to matchmaking. The platform collected extensive personal information including:

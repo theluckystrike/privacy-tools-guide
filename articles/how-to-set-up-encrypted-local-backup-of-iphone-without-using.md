@@ -18,6 +18,15 @@ tags: [privacy-tools-guide]---
 
 If you value privacy and want full control over your iPhone backups, skipping iCloud is a smart move. Local backups give you ownership of your data, eliminate subscription costs, and let you store backups wherever you choose. This guide walks through setting up encrypted local backups using Finder or iTunes on macOS and Windows.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Your data lives on Apple's servers**: you need paid storage beyond the free 5GB tier, and you rely on Apple's security practices.
+- **Here's how to create**: an encrypted backup: ### Step 1: Connect Your iPhone Use a cable to connect your iPhone to your Mac.
+- **Select "Restore Backup" and**: choose your encrypted backup 5.
+- **Choose non-critical iOS device**: or use simulator 2.
+
 ## Why Choose Local Over Cloud
 
 iCloud backups offer convenience but come with trade-offs. Your data lives on Apple's servers, you need paid storage beyond the free 5GB tier, and you rely on Apple's security practices. Local backups put you in control. You decide where to store them, can encrypt them with your own password, and can restore instantly without internet access.
@@ -377,4 +386,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

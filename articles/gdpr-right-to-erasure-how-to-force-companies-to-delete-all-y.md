@@ -27,7 +27,27 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 GDPR Article 17 right to erasure requires companies to delete data within 30 days when you withdraw consent, data becomes unnecessary, or processing is unlawful. Send formal requests explicitly referencing the regulation (not generic "delete my account"), escalate to Data Protection Authorities (ICO, CNIL, AEPD) when companies ignore you, and file compensation claims under Article 82 for damages from non-compliance. Verify deletion by requesting subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
+
+## Key Takeaways
+
+- **Testing account access..." if**: curl -s "$SERVICE/login" | grep -q "user not found"; then echo " ✓ Account removed from active database" else echo " ✗ Account still exists" fi # 2.
+- **Stage 2**: File a Complaint
+If a company refuses or ignores your request, file a complaint with the Data Protection Authority (DPA) in your country.
+- **Verify actual deletion**: ```bash
+#!/bin/bash
+# Deletion verification checklist
+
+EMAIL="user@example.com"
+SERVICE="example-company.com"
+
+echo "=== GDPR Deletion Verification ==="
+
+# 1.
+- **Verify deletion by requesting**: subject access exports afterward (should return empty), and use email aliases per service to track which companies have your data.
+- **> > If you**: do not respond within one month or refuse to delete my data, I will file a complaint with the relevant supervisory authority.
+- **Use email aliases**: Create aliases like `service+eraser@gmail.com` for each service.
 
 ## Understanding Your Rights Under Article 17
 

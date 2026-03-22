@@ -17,6 +17,16 @@ tags: [privacy-tools-guide]---
 
 Selling your old smartphone requires more than tapping "Factory Reset" in settings. Modern devices store sensitive data across multiple partitions, and a simple reset does not guarantee complete data destruction. This guide covers the technical steps to securely wipe Android and iOS devices, verify deletion, and ensure your personal data cannot be recovered.
 
+## Key Takeaways
+
+- Choose Wipe data/factory reset
+5.
+- **Select Wipe all user**: data or Format data (if available) For devices with Android 10+, use File-Based Encryption.
+- **Continue holding Power +**: Volume Down for 5 seconds 4.
+- **Document the wipe method**: For B2B transactions, provide documentation of the secure wipe procedure used.
+- **Understanding the trade-offs helps**: you choose appropriately.
+- **Factory reset alone**: Quickest but least secure.
+
 ## Understanding Mobile Storage Architecture
 
 Before wiping a device, understand how data is stored. Smartphones use flash storage (NAND or UFS) organized into partitions:
@@ -321,4 +331,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Implications Of Robot Vacuum Lidar Mapping Selling H](/privacy-tools-guide/privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

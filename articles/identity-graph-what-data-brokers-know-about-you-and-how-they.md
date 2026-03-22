@@ -33,6 +33,15 @@ Understand how data brokers build identity graphs by using deterministic matchin
 
 Data brokers are quietly collecting, analyzing, and selling your personal information. At the core of their operation is something called an identity graph—a sophisticated system that connects disparate pieces of data about you across the internet. Understanding how these graphs work is essential for anyone serious about protecting their privacy.
 
+## Key Takeaways
+
+- **Target women aged 25-35**: with household income >$100K? That's an identity graph filter.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Cost**: $99/year for initial removal, $49/year renewal.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## What Is an Identity Graph?
 
 An identity graph is a database structure that links together various identifiers belonging to the same individual. These identifiers include:

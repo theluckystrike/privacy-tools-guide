@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Set up an OnionShare dead drop by installing the application, creating a receive-only mode, and hosting it as a Tor onion service that accepts file uploads over encrypted channels. Sources access the service via an one-time URL over Tor, submit documents, and disconnect without leaving identifying information. OnionShare never logs IP addresses, doesn't require accounts, and automatically deletes files after retrieval—creating truly anonymous submission channels for developers and power users protecting sources.
+
+## Key Takeaways
+
+- **DigitalOcean's $6/month Droplet running**: Ubuntu 22.04 is sufficient.
+- **For most use cases**: Tor alone provides sufficient anonymity for the server-side operator.
+- **Use MAT2 or exiftool**: to strip metadata from documents before uploading Important: Close Tor Browser after submission to protect your session.
+- **The key advantage over**: alternatives like SecureDrop (the Freedom of the Press Foundation's journalism-grade submission system) is deployment simplicity.
+- **Keep this message minimal**: instructions to use Tor Browser, an assurance that no logs are kept, and a contact method for questions if needed.
+- **Add Encryption Layer (Optional**: but Recommended) For additional security, encrypt files before processing them.
 
 ## Understanding the Dead Drop Model
 

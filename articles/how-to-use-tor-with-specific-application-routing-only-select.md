@@ -33,6 +33,13 @@ When you need onion routing for specific tasks without routing your entire syste
 
 This guide covers multiple methods to achieve per-application Tor routing on Linux, macOS, and Windows systems.
 
+## Key Takeaways
+
+- **DNS leaks**: Configure applications to use Tor's DNS resolver (port 5353).
+- **IPv6 leaks**: Disable IPv6 entirely or ensure your application only makes IPv4 connections.
+- **Tor supports IPv6 but**: many applications handle it poorly.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Selective Tor Routing
 
 The Tor network routes your traffic through at least three relays, encrypting each hop. While this provides strong anonymity, it introduces latency that makes some activities impractical. Selective routing solves this by applying Tor only where you need it.

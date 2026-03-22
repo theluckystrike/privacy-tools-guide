@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Forward secrecy (also called perfect forward secrecy or PFS) is a cryptographic property that ensures session keys cannot be derived from long-term keys after a conversation ends. In messaging applications, this means that if an attacker compromises your device or obtains your long-term identity keys tomorrow, they cannot decrypt messages you sent yesterday. This property has become essential for anyone handling sensitive communications in 2026.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The most common mechanism**: is the Diffie-Hellman key exchange.
+
 ## How Forward Secrecy Works
 
 Traditional encryption often relies on a single long-term key to protect all messages in a conversation. While this simplifies key management, it creates a catastrophic failure point—compromising that one key exposes the entire message history.

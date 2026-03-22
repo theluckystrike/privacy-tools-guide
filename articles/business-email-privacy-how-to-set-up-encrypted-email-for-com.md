@@ -19,6 +19,15 @@ Email remains the primary communication channel for businesses, yet standard ema
 
 This guide walks through setting up encrypted email for company teams. You'll learn the available encryption methods, implementation approaches, and practical deployment strategies suited for developer and power user skill levels.
 
+## Key Takeaways
+
+- **- S/MIME**: Uses X.509 certificates, integrates naturally with enterprise certificate infrastructure, but requires a PKI setup.
+- **Most mail providers support TLS**: but you can't verify server configuration.
+- **For most teams**: a combination approach works best: E2EE for sensitive communications, TLS as baseline protection, and hosted solutions for organizations lacking dedicated IT resources.
+- **You'll learn the available**: encryption methods, implementation approaches, and practical deployment strategies suited for developer and power user skill levels.
+- **Two dominant standards exist**: - OpenPGP: The open-source implementation of PGP (Pretty Good Privacy).
+- **The YubiKey 5 supports**: OpenPGP and provides hardware-backed key storage.
+
 ## Understanding Email Encryption Options
 
 Before implementing a solution, understand the three primary approaches to email encryption:

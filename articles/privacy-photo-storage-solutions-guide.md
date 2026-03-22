@@ -19,6 +19,15 @@ tags: [privacy-tools-guide]---
 Google Photos and Apple iCloud analyze every photo you upload — detecting faces, locations, objects, and content. This analysis powers their search features, but also creates detailed behavioral profiles. Alternatives range from self-hosted solutions you run yourself to zero-knowledge cloud options where the provider can't read your photos.
 ---
 
+## Key Takeaways
+
+- **Google's privacy policy allows**: them to use your content to improve their AI models on the free plan.
+- **Ente cannot see your photos**: and this is verifiable because the client is open source (`github.com/ente-io/ente`).
+- **For most users**: Ente's paid cloud is the practical choice.
+- **For large libraries (100**:000+ photos), MariaDB performs substantially better.
+- **This is useful if**: you have years of photos already on disk and want browsing capabilities without restructuring.
+- **Ente also offers an**: open-source self-hosted backend (`ente-server`) with your own storage, but the server setup is complex.
+
 ## What Photo Services Analyze
 
 **Google Photos**:
@@ -331,4 +340,4 @@ For most users starting from scratch: Ente Photos is the quickest path to meanin
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

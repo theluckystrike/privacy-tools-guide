@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]---
 A Linux server with SSH exposed to the internet will have thousands of brute-force attempts per day within hours of exposure. Fail2ban reads log files, detects repeated failures, and uses iptables/nftables to block the offending IP for a configurable time. This guide covers SSH protection, web server jails, email alerts, and custom jail creation.
 ---
 
+## Key Takeaways
+
+- **Fail2ban reads log files**: detects repeated failures, and uses iptables/nftables to block the offending IP for a configurable time.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers how fail2ban works**: install fail2ban, basic configuration, with specific setup instructions
+- **Pricing starts at $6**: with options for different team sizes
+
 ## How Fail2ban Works
 
 1. A daemon monitors log files (e.g., `/var/log/auth.log`)
@@ -372,4 +379,4 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
+{% endraw %}

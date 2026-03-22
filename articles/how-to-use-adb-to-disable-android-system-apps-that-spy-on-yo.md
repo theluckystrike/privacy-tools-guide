@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 Enable Developer Mode on your Android device, connect it to a computer via USB with ADB tools installed, then run `adb shell pm disable-user [package.name]` for each bloatware app you want to disable (e.g., `adb shell pm disable-user com.samsung.android.app.telephonyui`). The app becomes inactive but remains installed, allowing you to re-enable it later with `adb shell pm enable [package.name]`. This method doesn't require rooting and immediately stops background data collection and battery drain from disabled apps.
 
+## Key Takeaways
+
+- **It allows you to execute shell commands**: transfer files, and modify system settings that are normally hidden from users.
+- **Disabling `com.google.android.gms` may cause**: crashes or prevent app updates from working.
+- **The disabled apps remain**: on your device but stop consuming resources or collecting data until you choose to re-enable them.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## What is ADB and Why Use It?
 
 ADB is a command-line tool from the Android SDK that creates a communication bridge between your computer and Android device. It allows you to execute shell commands, transfer files, and modify system settings that are normally hidden from users.

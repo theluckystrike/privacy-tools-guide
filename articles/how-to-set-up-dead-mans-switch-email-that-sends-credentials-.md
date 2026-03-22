@@ -33,6 +33,15 @@ A dead man's switch is a safety mechanism that triggers a predefined action when
 
 This guide walks you through building a credential-dispensing dead man's switch using cron jobs, email automation, and encrypted payloads. The solution targets developers and power users comfortable with command-line tools and basic scripting.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **EOF echo "Dead man's**: switch triggered - credentials sent at $(date)" fi ``` This script uses `mutt` for email sending.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The solution targets developers**: and power users comfortable with command-line tools and basic scripting.
+
 ## Why Build Your Own Dead Man's Switch?
 
 Commercial password managers offer inheritance features, but they come with limitations. You may want:

@@ -31,6 +31,15 @@ voice-checked: true---
 
 Protect investigative case files using VeraCrypt encrypted volumes, GPG for encrypted communications, and encrypted USB drives for offline storage. Store surveillance photos with GPS stripped, segregate client data from investigation notes, implement role-based access controls, and maintain audit logs of all case file access.
 
+## Key Takeaways
+
+- **Most PI licensing boards**: recommend retaining files for at least 5 years after case closure.
+- **For the most sensitive case files**: use air-gapped physical backups rather than cloud sync, even with Cryptomator.
+- **Store the password separately from the device**: a hardware security key like YubiKey can be used as an additional authentication factor.
+- **Use hardware-encrypted external drives**: (such as IronKey or Apricorn) for video evidence storage.
+- **For open-source options**: PDFtk and LibreOffice both offer proper redaction that removes the underlying text.
+- **Use secure deletion tools**: when disposing of case files after a case closes.
+
 ## Understanding the Threat World
 
 Private investigators face unique security challenges. Case files often contain:

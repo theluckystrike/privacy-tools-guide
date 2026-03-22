@@ -33,6 +33,15 @@ To benchmark VPN throughput accurately, install iperf3 on a server and client ma
 
 This guide walks through setting up iperf3 for VPN benchmarking, explaining each step with practical examples you can implement immediately.
 
+## Key Takeaways
+
+- **If CPU reaches 100% during testing**: your results reflect server limitations rather than network performance.
+- **This control matters for**: VPN testing because you need to isolate VPN overhead from network limitations.
+- **If your baseline is**: 100 Mbits/sec and VPN throughput is 65 Mbits/sec, your VPN is delivering 65% of available bandwidth.
+- **Tests under 10 seconds**: don't allow TCP congestion control to stabilize.
+- **Use 30-second minimum durations**: for reliable measurements.
+- **Ignoring server CPU limits**: causes false conclusions.
+
 ## Why iperf3 for VPN Testing
 
 iperf3 is a network throughput testing tool that runs as a client-server application. Unlike commercial speed tests, iperf3 lets you control every testing variable: test duration, parallel streams, protocol selection, buffer sizes, and directional testing. This control matters for VPN testing because you need to isolate VPN overhead from network limitations.

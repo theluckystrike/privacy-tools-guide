@@ -31,6 +31,18 @@ tags: [privacy-tools-guide, privacy]---
 
 Protect abuse hotline caller data by using end-to-end encrypted call systems (Jitsi Meet self-hosted), segmented phone lines with no caller ID linkage, and encrypted storage systems without personal identifiers in searchable fields. Train workers on operational security, use Signal for internal communications, and implement a kill-switch policy for immediate data deletion if an abuser gains access. Document conversations anonymously and maintain strict access control over files containing phone numbers or identifying information.
 
+## Key Takeaways
+
+- **Disable compromised account disable_account()**: { sudo usermod -L $USER # Lock account sudo killall -u $USER # Kill all user processes } # 3.
+- **Revoke API tokens revoke_tokens()**: { curl -X POST https://api.hotline.org/auth/revoke \ -H "Authorization: Bearer $API_TOKEN" \ -d "revoke_all=true" } # 4.
+- **Implement these mitigations**: ### Call Handling Best Practices
+
+1.
+- **Callback prevention**: Use temporary numbers that expire after single use
+3.
+- **Settings > Privacy >**: Camera - Disable for all apps (unless video counseling used) 4.
+- **Use temporary communication IDs**: (not caller name/number) 5.
+
 ## Understanding the Threat Field
 
 Abuse hotline environments present unique privacy challenges. Callers may be monitored by abusers through shared devices, compromised accounts, or physical surveillance. The information hotline workers collect—phone numbers, addresses, device identifiers, call metadata—becomes a liability if mishandled.

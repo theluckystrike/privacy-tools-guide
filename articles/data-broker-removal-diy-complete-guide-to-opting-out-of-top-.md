@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Data broker sites aggregate and sell personal information, creating privacy risks for developers and power users who value digital hygiene. This guide covers manual and automated methods for removing your data from major data broker platforms, focusing on practical approaches you can implement immediately.
 
+## Key Takeaways
+
+- **Use a dedicated address instead**: 1.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **Data broker sites aggregate**: and sell personal information, creating privacy risks for developers and power users who value digital hygiene.
+- **- Voter registration**: in most US states, voter rolls are public.
+- **In states with opt-out**: provisions (California, Colorado), you can request suppression of your voter record from commercial use.
+- **- Property records**: deeds and tax assessor records are public in most jurisdictions and are a primary source for home address data.
+
 ## Understanding the Data Broker Ecosystem
 
 Data brokers collect information from public records, social media, purchase histories, and app usage. They compile detailed profiles sold to advertisers, insurers, employers, and other parties. The largest brokers maintain records on hundreds of millions of individuals.

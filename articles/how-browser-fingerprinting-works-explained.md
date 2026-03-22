@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Browser fingerprinting tracks you by combining your screen resolution, installed fonts, GPU model, audio processing quirks, and dozens of other browser attributes into a unique identifier — no cookies required. Because these signals come from APIs browsers must expose for normal functionality, fingerprints are far harder to block than cookies and can follow you across sessions, sites, and even different browsers on the same device. Below is a technical breakdown of each fingerprinting vector, with working code examples and practical defenses.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **When combined**: these attributes create a unique signature that can identify users across sessions and even across different browsers on the same device.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The same APIs used**: for fingerprinting often have legitimate uses, so the challenge for developers is building applications that function properly while minimizing unnecessary information disclosure.
+
 ## What Makes Fingerprinting Possible
 
 Every browser exposes a range of information when visiting websites. This includes installed fonts, screen resolution, timezone, hardware concurrency, and installed plugins. When combined, these attributes create a unique signature that can identify users across sessions and even across different browsers on the same device.

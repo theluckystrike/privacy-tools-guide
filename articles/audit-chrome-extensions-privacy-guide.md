@@ -35,6 +35,15 @@ This guide gives you the tools and process to evaluate extensions before install
 
 For developers, understanding these attack vectors matters because the same principles apply to any application requesting elevated system access. Browser extensions represent an extreme case—they have nearly unfettered access to user data—but the audit methodology generalizes to applications, system services, and integrations in any platform.
 
+## Key Takeaways
+
+- **Users assume published extensions**: have been evaluated; most haven't.
+- **Browser extensions represent an extreme case**: they have nearly unfettered access to user data—but the audit methodology generalizes to applications, system services, and integrations in any platform.
+- **Use Chrome's built-in network**: inspector to watch what they send: 1.
+- **Chrome extensions are one**: of the most dangerous vectors for browser privacy violations.
+- **High user counts and positive ratings provide no assurance of safety**: malicious developers generate fake reviews and install counts through botnets.
+- **The core principle**: never trust an extension's store listing or user reviews.
+
 ## Why Chrome Web Store Vetting Fails
 
 The Chrome Web Store claims to vet all extensions before publication, but this vetting has proven repeatedly inadequate. The store's review process is largely automated—checking manifest syntax, basic code structure, and comparing against known malware signatures. Complex malicious behavior passes detection because reviewers can't meaningfully audit thousands of extensions daily.

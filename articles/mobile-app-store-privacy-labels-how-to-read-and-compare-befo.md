@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison, privacy]---
 
 Mobile app store privacy labels have become the first line of defense for informed app selection. Since Apple introduced App Store privacy labels in December 2020 and Google followed with Data Safety sections on Google Play, these disclosures have fundamentally changed how users evaluate applications before installation. Understanding how to read and compare these labels enables you to make data-driven decisions about which apps deserve access to your personal information.
 
+## Key Takeaways
+
+- **Apps sharing with five**: or more distinct entities (analytics, ads, ads network 2, ad network 3, marketing) typically prioritize data monetization over user value.
+- **Submit for external privacy**: audit before app store submission ``` ## Making Informed Decisions Use this systematic approach when evaluating apps: 1.
+- **Verify third-party sharing -**: prefer apps that don't share with advertisers 4.
+- **Look for privacy-friendly defaults**: - some apps offer privacy-focused configurations 5.
+- **Consider open-source alternatives -**: F-Droid hosts apps with verifiable code 6.
+- **This might include usage data**: location information, or browsing history associated with a user profile.
+
 ## Understanding the Privacy Label Framework
 
 Both Apple and Google require developers to disclose what data their apps collect, how that data is used, and whether it is shared with third parties. However, the presentation and terminology differ between platforms.

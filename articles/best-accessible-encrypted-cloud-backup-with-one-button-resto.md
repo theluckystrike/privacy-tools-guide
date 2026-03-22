@@ -19,6 +19,15 @@ When your development machine fails or you accidentally delete critical project 
 
 This guide evaluates solutions that combine client-side encryption, accessible interfaces, and straightforward restoration processes — all without requiring a degree in cryptography or a complex infrastructure setup.
 
+## Key Takeaways
+
+- **For a 100GB developer backup**: this runs under $1/month.
+- **Arq licenses are $50**: for a perpetual personal license.
+- **If you prefer your own cloud storage**: you can point Arq at any S3-compatible provider.
+- **Whatever you choose**: the best backup solution is one you'll actually use consistently.
+- **Encryption uses AES-256 with**: a passphrase you set.
+- **However, Duplicacy does not encrypt by default**: you must use B2's server-side encryption or add encryption through other means.
+
 ## What Makes a Backup Solution Accessible and Secure
 
 Before examining specific tools, understanding the core requirements helps narrow the selection significantly. Accessibility in backup solutions means minimal friction during setup, clear status indicators, and most importantly, a restoration process that anyone can execute without consulting documentation.

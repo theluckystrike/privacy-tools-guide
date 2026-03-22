@@ -31,6 +31,15 @@ Most people use GPG with a single keypair for everything: sign emails, encrypt f
 
 This guide covers the key management architecture used by security professionals.
 
+## Key Takeaways
+
+- **Most people use GPG**: with a single keypair for everything: sign emails, encrypt files, authenticate to servers.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **The correct approach separates**: your master key (which certifies your identity) from the subkeys used for daily operations.
+- **This guide covers the**: key management architecture used by security professionals.
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
+
 ## The Master Key / Subkey Architecture
 
 **Master key (certification key)**:

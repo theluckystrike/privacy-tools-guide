@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Modern web browsers expose powerful APIs that allow websites to access cameras and microphones. While these capabilities enable video conferencing, streaming, and interactive applications, they also create significant privacy risks through device enumeration and fingerprinting. Understanding how these APIs work and the information they expose helps you make informed decisions about your digital privacy.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This unique identifier persists**: across browsing sessions, allowing trackers to recognize returning users even when they clear cookies or use private browsing mode.
+- **This property returns a**: unique identifier stable across sessions unless the user resets permissions.
+- **Safari**: Uses Intelligent Tracking Prevention and limits media device API access.
+- **Only grant permission to**: applications you actively use for communication or content creation.
+
 ## The MediaDevices API Explained
 
 The MediaDevices interface, part of the WebRTC specification, provides access to connected media input devices like cameras and microphones. websites can enumerate available devices, request permissions, and stream audio/video content. This API has legitimate uses but also enables tracking techniques that work independently of cookies.

@@ -27,7 +27,23 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 When your device has been compromised—whether by malware, theft, or unauthorized access—communicating with your attorney requires extra precautions. Standard email and messaging platforms may expose sensitive discussions to whoever controls your compromised device. This guide covers practical methods to maintain attorney-client privilege and keep your legal communications private even when your primary device is not secure.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Establish preferences**: Work with their preferences
+ - Use their recommended methods
+ - Follow their instructions on encryption
+ - Respect their compromise comfort level
+
+3.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a different**: trusted device for all sensitive communications
+4.
+- **Share your public key**: with your attorney (they must also use Proton Mail or import your key) 3.
+- **Use dedicated devices for**: legal matters when possible 3.
 
 ## Why Standard Communication Methods Fail After Device Compromise
 

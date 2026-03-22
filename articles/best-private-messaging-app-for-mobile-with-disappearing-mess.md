@@ -19,6 +19,15 @@ When privacy matters, choosing the right messaging app requires understanding wh
 
 The stakes of choosing wrong are significant. A poorly chosen messaging app could expose your conversations to the company operating it, to government requests, or to attackers exploiting weaknesses in the encryption implementation. More subtly, weak metadata protection reveals your social relationships, communication frequency, and patterns even if message contents remain hidden.
 
+## Key Takeaways
+
+- **Use Threema Gateway for**: secure business communications Threema's paid model removes advertising incentives that plague free messaging apps.
+- **Enable disappearing messages by**: tapping the conversation name, selecting "Disappearing messages," and choosing your preferred duration 5.
+- **Choose "Create Account" without**: providing phone number, email, or any identifying information 3.
+- **The protocol uses multiple**: relay servers, each knowing only the previous and next hop.
+- **Purchase Threema from the**: official website or app store (it is not free) 2.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
 ## Understanding the Privacy Features That Matter
 
 Not all privacy features provide equal protection. Before examining specific apps, focus on three capabilities that directly impact your security:
@@ -59,6 +68,26 @@ These cryptographic primitives work together to provide perfect forward secrecyâ
 6. Register a security number with each contact to verify encryption integrity
 
 Signal's primary trade-off involves phone number registration. Your number becomes linked to your account, though Signal cannot associate it with your message content.
+
+You can verify Signal's encryption is working correctly by comparing safety numbers with your contact using the Signal CLI:
+
+```bash
+# Install Signal CLI for desktop verification
+brew install signal-cli    # macOS
+# Or download from github.com/AsamK/signal-cli
+
+# Register your number (use your burner number for maximum privacy)
+signal-cli -u +1234567890 register
+
+# Verify registration with the SMS code you receive
+signal-cli -u +1234567890 verify 123-456
+
+# Send an encrypted message
+signal-cli -u +1234567890 send -m "Meeting at the usual spot" +0987654321
+
+# Verify safety numbers with a contact
+signal-cli -u +1234567890 trust -v SAFETY_NUMBER_HERE +0987654321
+```
 
 ## Session: Anonymous Registration Without Phone Numbers
 
@@ -308,4 +337,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Mobile App Store Privacy Labels How To Read And Compare](/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
 
 Built by theluckystrike â€” More at [zovo.one](https://zovo.one)
-
+{% endraw %}

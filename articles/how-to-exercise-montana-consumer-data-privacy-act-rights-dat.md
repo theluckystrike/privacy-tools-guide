@@ -31,6 +31,19 @@ tags: [privacy-tools-guide, privacy]---
 
 The Montana Consumer Data Privacy Act (MCDPA), which went into effect in 2023, provides Montana residents with powerful tools to control their personal information. If you live in Montana, you have legal rights to access, delete, and opt out of the sale of your data. This guide shows you exactly how to exercise those rights effectively.
 
+## Key Takeaways
+
+- **Use certified mail**: For important requests, send via certified mail with return receipt
+3.
+- **Use privacy tools**: Browser extensions like Privacy Badger, uBlock Origin, and GPC-enabled browsers reduce data collection proactively
+5.
+- **Regular audits**: Review which companies have your data quarterly and submit deletion requests for unused accounts
+
+The MCDPA gives you real power over your personal information.
+- **Use these rights proactively**: to minimize your digital footprint and control who has access to your data.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Your Rights Under MCDPA
 
 The MCDPA grants Montana residents several fundamental privacy rights:

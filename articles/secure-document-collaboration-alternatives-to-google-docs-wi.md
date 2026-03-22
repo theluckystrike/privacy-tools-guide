@@ -19,6 +19,15 @@ When you need to collaborate on sensitive documents, Google Docs offers convenie
 
 End-to-end encryption (E2EE) solves this problem. With E2EE, data is encrypted on your device before transmission and can only be decrypted by collaborators who hold the appropriate keys. The server never sees plaintext content. This article covers practical E2EE document collaboration alternatives that give you actual privacy without sacrificing real-time collaboration.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The encryption model uses**: a unique approach: each document generates a random encryption key that gets encoded in the URL fragment.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## What Makes Document Collaboration Truly Secure
 
 True E2EE requires several properties that many popular tools lack. First, encryption must happen client-side before data leaves your device. Second, the service provider should have no way to access your decryption keys. Third, you need verifiable cryptography—ideally with open-source clients that security researchers can audit.

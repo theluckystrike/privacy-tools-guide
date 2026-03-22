@@ -33,6 +33,15 @@ The European Union's General Data Protection Regulation (GDPR) grants individual
 
 Building a DSAR workflow requires more than a generic contact form. You need identity verification, data discovery across systems, response generation, and audit trails. This guide walks through implementing a practical DSAR pipeline suited for developer and power user skill levels.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Among the most operationally**: demanding is the Right of Access (Article 15), commonly called a Data Subject Access Request (DSAR).
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Organizations must respond to these requests within 30 days**: and failure can result in fines reaching €20 million or 4% of global annual revenue.
+- **GDPR requires providing data in "commonly used electronic form"**: JSON or CSV works well for structured data.
+
 ## Understanding DSAR Requirements
 
 Before writing code, understand what GDPR actually requires:

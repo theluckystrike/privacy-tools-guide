@@ -31,6 +31,15 @@ voice-checked: true---
 
 Bitcoin PayJoin (BIP 78) lets the receiver contribute inputs to a transaction, making it impossible for blockchain observers to identify who sent the funds. Unlike normal payments where the sender's inputs are obvious, PayJoin creates ambiguity that defeats standard on-chain analysis heuristics. This guide provides step-by-step technical implementation for both senders and receivers, including Python and Flask code examples, testing strategies, and production deployment checklists.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Replay Protection**: Ensure each PayJoin session uses fresh UTXOs to prevent transaction replay.
+- **Use a fee estimator**: that accounts for additional inputs.
+
 ## Understanding PayJoin Fundamentals
 
 In a standard Bitcoin transaction, blockchain observers can confidently identify which party is sending and receiving based on input/output patterns. PayJoin disrupts this by having the receiver contribute inputs to the transaction, making the flow of funds ambiguous.

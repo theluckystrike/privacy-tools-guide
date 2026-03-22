@@ -46,6 +46,23 @@ This guide hardens Firefox for maximum privacy. It covers:
 4. **DNS and proxy**: Encrypted DNS, VPN integration
 5. **Fingerprinting resistance**: Browser identification prevention
 
+## Key Takeaways
+
+- **Deploy arkenfox**: Copy-paste user.js (most aggressive, will break some sites)
+4.
+- **Use DNS encryption**: NextDNS Free tier (no cost, high value)
+5.
+- **VPN optional**: Add VPN if ISP privacy is concern
+
+For average user: Steps 1 + 2 + 4 = 80% privacy gain with minimal breakage.
+- **Open-source**: Community audits the code
+2.
+- **arkenfox user.js**: Community hardening profile (copy-paste configuration)
+4.
+- **Step 3**: Copy user.js to Firefox profile
+
+Copy the `user.js` file from the downloaded arkenfox folder into your Firefox profile folder (found in Step 1).
+
 ## Privacy Baseline: What Firefox Leaks by Default
 
 Test your default Firefox at [browserleaks.com](https://browserleaks.com):

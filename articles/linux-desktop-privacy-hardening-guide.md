@@ -31,6 +31,14 @@ intent-checked: true---
 
 Linux desktops run on trust—you control the OS, applications, and permissions. But default installations leak data: Ubuntu's Amazon search suggestions, Fedora's automatic analytics, Firefox's default telemetry, and browser fingerprinting. This guide hardens a Linux desktop against data leaks with practical CLI commands and configuration changes. Expect 2-3 hours for a complete hardening. The result: a system that collects no data about you and refuses unauthorized network connections.
 
+## Key Takeaways
+
+- **Check "Use as**: physical volume for encryption" (LVM)
+# 5.
+- **The result**: a system that collects no data about you and refuses unauthorized network connections.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## The Privacy Baseline
 
 Before hardening, understand what your system currently shares:

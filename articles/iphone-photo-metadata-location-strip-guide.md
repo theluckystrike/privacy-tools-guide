@@ -33,6 +33,20 @@ Every photo your iPhone captures contains embedded metadata—Exchangeable Image
 
 This guide covers multiple methods to remove location metadata from iPhone photos, ranging from simple command-line tools to programmatic solutions suitable for automation pipelines.
 
+## Key Takeaways
+
+- **You can also use**: ```bash
+exiftool -a -u photo.jpg | head -50
+```
+
+This shows all metadata including previously unknown tags, confirming removal.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **For developers building apps**: that process user photos, always request `PHAccessLevel.addOnly` rather than full photo library access.
+- **For developers and power**: users handling sensitive photography or building privacy-focused applications, understanding how to strip this location data becomes essential.
+- **Add action**: Remove EXIF Metadata (select GPS only)
+5.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding iPhone Photo Metadata
 
 When you capture a photo on an iPhone, iOS embeds extensive EXIF data within each image file. The most privacy-sensitive fields include:
@@ -346,4 +360,5 @@ def process_upload(file_bytes: bytes) -> bytes:
 Add this to your upload handler in Django, FastAPI, or any framework before writing to your storage layer. Store the returned bytes, not the original upload.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

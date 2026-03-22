@@ -35,6 +35,17 @@ This guide focuses on technical implementation for developers and power users wh
 
 **Why standard VPN advice fails in Indonesia**: Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services. Bali's mobile networks use carrier-grade NAT, some VPN ports may be throttled, and certain development resources face intermittent access issues. This requires protocol selection and configuration that generic guides skip.
 
+## Key Takeaways
+
+- **Intermediate users**: Deploy Algo VPN on DigitalOcean Singapore (approximately $5/month) for a personal server with full control.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Here's a practical breakdown**: ### WireGuard
+
+WireGuard has become the preferred protocol for most scenarios.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Why standard VPN advice**: fails in Indonesia: Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services.
+- **Mobile data networks have**: expanded significantly, with 4G coverage reaching most tourist areas and major population centers.
+
 ## Understanding Bali's Internet Environment
 
 Bali's primary internet providers include PT Telekomunikasi Seluler (Telkomsel), Indosat Ooredoo Hutchison, and XL Axiata. Mobile data networks have expanded significantly, with 4G coverage reaching most tourist areas and major population centers. However, speeds fluctuate dramatically based on location, time of day, and network congestion.

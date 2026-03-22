@@ -27,7 +27,20 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Use private browsing modes to avoid history/cache, connect through VPN or Tor to prevent IP tracking, disable autocompletion and password saving, and manually clear browser data before leaving. Use Tails OS or Whonix virtual machines if handling sensitive credentials on shared machines to ensure no data persists. Avoid keyboard logging by using onscreen keyboards when possible, assume screenshots are captured by surveillance software, and never access accounts containing sensitive data on public computers unless absolutely necessary—operational security is more effective than technical defenses alone.
+
+## Key Takeaways
+
+- **Use these alternatives**: 1.
+- **Password managers with clipboard**: clearing: Copy passwords temporarily, then clear clipboard after use 2.
+- **One-time authentication tokens**: Use services that generate time-based codes
+3.
+- **Pre-session**: Boot from USB or use portable browser
+2.
+- **Authentication**: Use temporary credentials or hardware tokens
+4.
+- **Use private browsing modes**: to avoid history/cache, connect through VPN or Tor to prevent IP tracking, disable autocompletion and password saving, and manually clear browser data before leaving.
 
 ## Understanding the Threat Model
 

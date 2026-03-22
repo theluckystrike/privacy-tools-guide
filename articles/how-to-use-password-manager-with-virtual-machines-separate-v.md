@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Using a password manager alongside virtual machines requires careful architecture to maintain security boundaries. When you run multiple VMs—whether for development, testing, or compartmentalized workflows—each should ideally have access to its own isolated vault. This prevents credential leakage between environments and limits blast radius if one VM is compromised.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use hardware security keys where possible**: YubiKeys can store 1Password secrets or Bitwarden FIDO2 credentials, preventing extraction even if the VM is fully compromised.
+- **Use firewall rules to**: restrict which VMs can reach your Vaultwarden instance.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Why Separate Vaults for Virtual Machines?
 
 Virtual machines create distinct attack surfaces. A development VM running untrusted code, a testing environment with vulnerable applications, or a browsing VM used for risky sites each present different threat profiles. If all your passwords live in a single vault accessed from every VM, a compromise in one environment exposes credentials for everything.

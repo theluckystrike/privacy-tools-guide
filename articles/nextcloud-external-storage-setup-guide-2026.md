@@ -28,7 +28,22 @@ intent-checked: true
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
 Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating an unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
+
+## Key Takeaways
+
+- **Enter the WebDAV URL**: ```bash
+# WebDAV URL format
+https://remote-server.com/remote.php/dav/files/username/
+```
+
+3.
+- **Provide credentials or use**: an app password 4.
+- **S3 authentication failures**: Confirm credentials are correct and the IAM user has s3:GetObject and s3:PutObject permissions for the specific bucket.
+- **Configure the hostname for**: MinIO or other S3-compatible services: ```bash # MinIO configuration example Hostname: minio.example.com Port: 9000 ``` 4.
+- **Configure the remote subfolder**: if needed WebDAV mounts support both basic authentication and OAuth2, depending on your server configuration.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 
@@ -248,4 +263,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

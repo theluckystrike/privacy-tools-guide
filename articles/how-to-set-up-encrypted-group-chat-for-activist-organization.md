@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 For activist organizations, Matrix with Synapse (self-hosted) provides the best balance of security, privacy, and coordination features—it's decentralized, supports end-to-end encryption, offers strong access controls, and gives you complete infrastructure control. Alternative: use Signal's Group Messaging if preferring managed simplicity over self-hosting, though Signal doesn't allow self-hosting. Configure your chosen platform with mandatory end-to-end encryption, strong access controls, and regular security audits.
 
+## Key Takeaways
+
+- **Use Bluetooth range limits**: (typically 10-30 meters) as a security feature 4.
+- **Alternative**: use Signal's Group Messaging if preferring managed simplicity over self-hosting, though Signal doesn't allow self-hosting.
+- **Start with a realistic**: assessment of who your likely adversaries are and what capabilities they have, then choose tools accordingly.
+- **The protocol supports end-to-end**: encryption (E2EE) via the Olm and Megolm encryption protocols.
+- **By default**: Matrix rooms can federate across servers, meaning users from other homeservers can join your rooms if invited.
+- **Set "Who can read**: history" to "Members only (since joining)" 5.
+
 ## Threat Modeling for Group Communications
 
 Before selecting tools, define your threat model. Consider these attack vectors:

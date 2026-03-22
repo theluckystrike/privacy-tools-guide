@@ -19,6 +19,26 @@ This guide compares the leading privacy-focused email alias services: SimpleLogi
 
 {% raw %}
 
+## Key Takeaways
+
+- **SimpleLogin
+
+Price**: Free (limited) / $3.99/month (essential) / $4.99/month (premium)
+
+Overview:
+SimpleLogin was acquired by Proton in 2022 and has become the most email alias service.
+- **Firefox Relay
+
+Price**: Free (limited) / $12.99/year (premium with VPN)
+
+Overview:
+Firefox Relay is Mozilla's email alias service, integrated directly into Firefox.
+- **Premium ($1/month effective) if**: you need custom domain --- ## Operational Best Practices ### 1.
+- **Every feature is privacy-focused**: E2EE encryption, onion address support, custom domain support, catch-all aliasing, and PGPGP key integration.
+- **For most users**: alias services are privacy upgrade vs.
+- **Primary**: SimpleLogin with PGP encryption ($4.99/month)
+2.
+
 ## Why Email Aliases Matter for Privacy
 
 Traditional email behavior:
@@ -610,4 +630,4 @@ Not yet. AI tools generate useful test scaffolding and catch common patterns, bu
 **What happens to my data when using the first tool or the second tool?**
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
+{% endraw %}

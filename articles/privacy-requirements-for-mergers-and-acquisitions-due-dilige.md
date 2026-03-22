@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 In M&A due diligence, conduct privacy assessments to identify data protection liabilities, undisclosed breaches, and non-compliant processing practices. Analyze database schemas for PII, trace data flows to third parties, verify encryption in transit/at rest, and document retention policies to avoid "successor liability" for privacy violations inherited from the target company.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The due diligence phase**: represents your best opportunity to identify these risks.
+- **Transfer mechanisms**: Determine whether the target uses Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), or adequacy decisions for international data transfers.
 
 ## Understanding the Privacy Stakes in M&A Transactions
 

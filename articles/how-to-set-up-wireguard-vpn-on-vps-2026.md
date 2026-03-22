@@ -12,8 +12,15 @@ tags: [privacy-tools-guide, vpn]---
 
 {% raw %}
 
-
 WireGuard is the fastest, simplest VPN protocol available. Unlike OpenVPN (500+ lines of config), WireGuard is 4,000 lines of code and readable. Here's how to deploy your own VPN server on a cheap VPS.
+
+## Key Takeaways
+
+- **--mark $(wg show %i**: fwmark) -m addrtype !
+- **This guide assumes Ubuntu**: 22.04 LTS (most common, easiest setup).
+- **Long-term savings**: Self-hosted is 50-70% cheaper.
+- **WireGuard is the fastest**: simplest VPN protocol available.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Self-Hosted WireGuard?
 
@@ -725,4 +732,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Set Up a Personal VPN with WireGuard](wireguard-personal-vpn-setup-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

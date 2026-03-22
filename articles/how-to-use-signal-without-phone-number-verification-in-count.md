@@ -27,7 +27,17 @@ voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]---
 
+
 In countries with mandatory SIM registration (India, Pakistan, Turkey), use Signal with a virtual number from services like Google Voice, Twilio, or local alternatives. Register Signal with the virtual number, complete SMS verification, and maintain the subscription. Alternatively, use Signal Desktop with existing contacts and disable phone number visibility in settings. For maximum privacy, combine a virtual number with a VPN and separate device to avoid linking your real identity to your Signal account.
+
+## Key Takeaways
+
+- **VoIP Numbers with Caveats**: Signal has increasingly restricted VoIP number registration to prevent abuse.
+- **Use during Signal registration**: # 3.
+- **Using Signal Desktop instead of the mobile app sidesteps some restrictions**: register first with your virtual number on a different device, then use Desktop to access your account.
+- **This requires VPN setup beforehand**: and some users report Signal working only sporadically even with VPN configured.
+- **Use 6+ digits (maximum**: security) # 2.
+- **The long-term solution would**: be for Signal to support usernames or alternative identifiers alongside phone numbers, but this would fundamentally alter Signal's architecture.
 
 ## Understanding Signal's Verification Requirements
 

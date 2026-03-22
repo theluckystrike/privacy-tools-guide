@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Element remains the most feature-rich Matrix client, but default settings prioritize convenience over privacy. This guide walks through configuration changes, command-line options, and account management techniques that reduce your digital footprint when using Matrix.
 
+## Key Takeaways
+
+- **Access your homeserver's user**: settings panel (typically at `https://your-homeserver.org/_matrix/client/r0/account/whoami`).
+- **Choose "Customise your recovery**: key" 3.
+- **Enable "Proxying" in Orbot**: settings and configure Element to use localhost:8118 as a SOCKS/HTTP proxy.
+- **Element remains the most**: feature-rich Matrix client, but default settings prioritize convenience over privacy.
+- **While useful for conversation flow**: they expose your online status and reading habits.
+- **While impractical for daily use**: it demonstrates the principle that less client-side code reduces attack surface.
+
 ## Initial Account Hardening
 
 Before configuring client settings, review your account-level privacy options. Access your homeserver's user settings panel (typically at `https://your-homeserver.org/_matrix/client/r0/account/whoami`).

@@ -31,6 +31,15 @@ voice-checked: true---
 
 For reliable VoIP calls in the UAE, use WireGuard with obfuscation or V2Ray to bypass deep packet inspection that blocks WhatsApp calls, FaceTime, Skype, and Zoom. Connect to servers in neighboring countries like Oman or Qatar for the lowest latency, and keep Stealth or V2Ray as a fallback when standard protocols get blocked. This guide walks through the configuration, protocol selection, and performance tuning you need for stable voice and video from the UAE.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Packet loss above 1%**: causes audible artifacts even with good jitter buffering.
+- **Aim for sub-80ms round-trip**: time to your VPN server for the best VoIP experience.
+- **On iOS**: Shadowrocket ($2.99) provides full support for WireGuard, Shadowsocks, and V2Ray configurations.
+- **For VoIP**: optimize for latency first and use a server within 80ms round-trip.
+- **Shadowsocks or V2Ray are**: proxy-based solutions designed specifically for circumventing censorship, and are popular among users in restrictive regions.
+
 ## Understanding UAE's VoIP Restrictions
 
 The Telecommunications and Digital Government Regulatory Authority (TDRA) restricts VoIP services that operate without local licensing. While some services have achieved compliance and operate legally, many popular VoIP applications remain blocked or degraded. The blocking typically occurs at the ISP level through DNS manipulation, IP address blacklisting, and deep packet inspection (DPI).

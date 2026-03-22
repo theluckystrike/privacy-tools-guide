@@ -27,7 +27,22 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 
+
 Activists in authoritarian countries must assume ISP-level traffic monitoring, sophisticated social media analysis, mobile device compromise capabilities, and sophisticated surveillance tools like Pegasus. Protect yourself by using Tails Linux for sensitive work, communicating through Tor, using Signal with disappearing messages, maintaining separate devices for organizing work, storing sensitive documents encrypted locally, and understanding that your location data is constantly harvested by governments. This guide provides a structured threat modeling approach for activists, covering asset identification, adversary capabilities analysis, and practical mitigation strategies using free and open-source tools adapted to real-world constraints in authoritarian environments.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **However**: completely avoiding mobile networks requires a burner phone that you use only for critical communication and leave powered off most of the time.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Daily phone**: Regular smartphone used for normal activity
+2.
+- **Burner phone**: Cheap, expendable phone used only for encrypted communications, powered off except during use
+
+### Device Compromise
+
+State actors increasingly use commercial spyware.
 
 ## Step 1: Identify What You Need to Protect
 

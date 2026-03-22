@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Jami is worth using in 2026 if you prioritize full architectural decentralization and zero server dependency over polish and features. It delivers genuine peer-to-peer encrypted messaging with no phone number requirement, no central servers, and solid self-hosting options, but the trade-off is a less refined interface and slower feature development compared to Signal or Element. For developers and power users who want complete control over their communication infrastructure, Jami remains one of the few messengers that truly eliminates intermediaries.
 
+## Key Takeaways
+
+- **Better for truly anonymous**: communication but less practical for daily use.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **For group communication or**: sensitive organizational use, these limitations matter.
+- **Jurisdiction-resistant communication**: No centralized servers mean no jurisdiction can legally compel access to user data
+5.
+- **Free and basic plans**: typically get community forum support and documentation.
+- **For developers and power**: users who want complete control over their communication infrastructure, Jami remains one of the few messengers that truly eliminates intermediaries.
+
 ## Architecture and Network Design
 
 Jami uses a distributed hash table (DHT) called GNU Name System for peer discovery. When you install Jami, your device becomes a node on this network. The application maintains connections to other nodes and uses these connections to discover contacts and relay messages when direct peer-to-peer connections aren't possible due to network topology.

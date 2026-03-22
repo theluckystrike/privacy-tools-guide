@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Using Tor in jurisdictions where it is restricted or illegal presents unique challenges that require careful configuration, operational security practices, and understanding of the underlying technology. This guide provides practical techniques for developers and power users who need to access Tor network securely in such environments.
 
+## Key Takeaways
+
+- **This method works in**: some of the most restrictive environments because there's no static list to block.
+- **This disables all features**: that could be used for fingerprinting, including fonts, HTML5 canvas, and SVG.
+- **Only use this if**: your ISP blocking is the primary threat and you trust your VPN provider more than your ISP.
+- **Use different personas**: Never cross-contaminate accounts
+3.
+- **Don't explain your Tor**: usage (it's not illegal to use Tor) 4.
+- **This guide provides practical**: techniques for developers and power users who need to access Tor network securely in such environments.
+
 ## Understanding the Threat Model
 
 When using Tor in a country that actively blocks or criminalizes its use, you face three distinct threat categories: network-level blocking, device forensics, and behavioral detection. Each requires different countermeasures.

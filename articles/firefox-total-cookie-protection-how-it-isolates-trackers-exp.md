@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Cross-site cookie tracking remains one of the most persistent methods advertisers and data brokers use to build user profiles across the web. Firefox's Total Cookie Protection, introduced as part of Enhanced Tracking Protection, addresses this problem by fundamentally changing how cookies are stored and accessed. This article explains the technical mechanisms behind this feature and provides practical guidance for developers and power users who want to understand or configure these protections.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Cross-site cookie tracking remains**: one of the most persistent methods advertisers and data brokers use to build user profiles across the web.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Total Cookie Protection supersedes**: FPI in terms of tracking prevention effectiveness while maintaining better compatibility with legitimate website features.
+- **User-centric identifiers stored only**: on user devices through localStorage or IndexedDB with explicit user consent.
+- **OAuth 2.0 and OpenID**: Connect protocols work well within cookie isolation constraints because they pass tokens through URL parameters and server-side exchanges rather than cross-site cookie access.
+
 ## How Traditional Cookie Tracking Works
 
 To appreciate what Total Cookie Protection accomplishes, you need to understand how traditional cookie tracking operates. When you visit a website, that site can set cookies that are accessible not just to itself, but to any third party embedded on the page. A typical news site might embed content from dozens of external domains—advertising networks, analytics providers, social media widgets, and more. Each of these third parties can set cookies that persist across your entire browsing session.

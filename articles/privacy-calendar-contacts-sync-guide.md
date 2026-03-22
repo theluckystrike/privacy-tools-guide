@@ -14,9 +14,21 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 Google Calendar and Apple iCloud see everything you schedule — meetings, medical appointments, travel. The CalDAV and CardDAV protocols are open standards that let you self-host sync with any client. This guide walks through running your own calendar/contacts server and connecting it to Android, Linux, and macOS.
 ---
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **---
+
+## Option 1**: Nextcloud (Full-Featured)
+
+Nextcloud includes CalDAV/CardDAV support with a web UI, sharing, and multi-user management.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Select Login with URL**: and user name 3.
+- **Username and password as**: configured 5.
+- **If privacy-of-meetings is critical, use a private email provider alongside your CalDAV server**: Tutanota and Proton Mail both support calendar invitations independently of Google.
 
 ## Why Standard Protocols Matter
 
@@ -452,4 +464,4 @@ Review each tool's privacy policy, data handling practices, and security certifi
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
+{% endraw %}

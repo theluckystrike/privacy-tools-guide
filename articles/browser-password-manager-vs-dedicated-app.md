@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose a dedicated password manager if you need CLI access, cross-browser sync, API key storage, or CI/CD integration -- browser built-ins cannot do any of these. Choose your browser's built-in manager only if your needs are limited to filling web login forms in a single browser with no programmatic access required. For developers and power users, dedicated apps like Bitwarden or 1Password provide the vault separation, CLI tooling, and secret management capabilities that browser managers fundamentally lack.
 
+## Key Takeaways
+
+- **Bitwarden is open-source and**: transparent with pricing ($10/year for individuals, $40/year for families).
+- **1Password costs $2.99/month for**: individuals ($4.99 with advanced features) or $5.99/user/month for teams.
+- **For most developers and power users**: the dedicated app approach provides the flexibility, security controls, and integration capabilities that match real-world workflow requirements.
+- **Choose your browser's built-in**: manager only if your needs are limited to filling web login forms in a single browser with no programmatic access required.
+- **The main limitation is**: that the free tier doesn't support organization/team features.
+- **LastPass ($3/month for individuals)**: offers convenient autofill and family sharing.
+
 ## The Security Model: Where Your Data Lives
 
 Browser password managers store credentials within the browser's encrypted vault. Chrome uses OS-level encryption through the Data Protection API on Windows and Keychain on macOS. Firefox employs a master password system that encrypts your logins using AES-256 before storage. The encryption key derivation typically uses PBKDF2 with a configurable iteration count.

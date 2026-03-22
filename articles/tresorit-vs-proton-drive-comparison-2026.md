@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Tresorit offers a better-documented REST API for programmatic file management and team orchestration, while Proton Drive provides open-source cryptographic libraries and stronger transparency, though Proton Drive's API remains limited—choose Tresorit for developers building automated backup solutions or enterprise workflows, and Proton Drive for users prioritizing transparency and cryptographic auditability. Both services use AES-256 encryption, but Tresorit's hierarchical key structure and Proton's open-sourced libraries take different approaches to zero-knowledge storage.
 
+## Key Takeaways
+
+- **Both services use AES-256 encryption**: but Tresorit's hierarchical key structure and Proton's open-sourced libraries take different approaches to zero-knowledge storage.
+- **Proton has open-sourced portions of their cryptographic libraries, allowing independent security audits**: a factor that appeals to users who prioritize transparency.
+- **Tresorit uses a proprietary**: encryption scheme built on AES-256 for file encryption and RSA-4096 for key exchange.
+- **Each file gets its**: own unique encryption key, and these file keys are wrapped with a user-specific master key.
+- **Proton Drive uses the**: same encryption libraries developed for Proton Mail, using AES-256-GCM for symmetric encryption and RSA-2048 or X25519 for key exchange depending on the implementation.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Encryption Architecture
 
 Both Tresorit and Proton Drive implement end-to-end encryption (E2EE), meaning data is encrypted on your device before it reaches their servers. However, the key management approaches diverge in ways that affect operational flexibility.

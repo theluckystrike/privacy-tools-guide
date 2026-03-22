@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, vpn]---
 
 WebRTC (Real-Time Communication) is a browser feature that enables direct peer-to-peer communication for services like Google Meet, Discord, and Zoom. However, it can inadvertently reveal your real IP address even when you're connected to a VPN—a vulnerability known as a WebRTC leak. This guide walks you through testing methods to detect WebRTC leaks, understand the risks, and implement effective mitigation strategies.
 
+## Key Takeaways
+
+- **The `stun**: stun.l.google.com:19302` server is Google's public STUN server, commonly used in WebRTC implementations.
+- **WebRTC leaks are particularly dangerous because they're invisible to most users**: you won't notice them in normal browsing.
+- **This approach is useful**: for integrating WebRTC leak testing into larger security assessment workflows.
+- **Chrome users can use**: the "WebRTC Network Limiter" extension from Google or modify Chrome's flags.
+- **Network Level**: Use VPN with firewall rules blocking WebRTC
+2.
+- **This happens because WebRTC**: queries STUN servers to establish peer-to-peer connections, and these queries occur outside the normal VPN routing.
+
 ## What is a WebRTC Leak?
 
 WebRTC leaks occur when browsers use the STUN (Session Traversal Utilities for NAT) protocol to discover your public IP address through UDP connections, bypassing your VPN tunnel. Both your real IP and your VPN-assigned IP can be exposed, compromising your anonymity. This happens because WebRTC queries STUN servers to establish peer-to-peer connections, and these queries occur outside the normal VPN routing.

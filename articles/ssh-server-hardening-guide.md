@@ -31,6 +31,19 @@ Every publicly accessible Linux server with SSH open on port 22 is scanned by au
 
 This guide covers the essential hardening steps for OpenSSH on a Linux server, ordered from highest to lowest impact.
 
+## Key Takeaways
+
+- **In `sshd_config`**: ```
+Port 2222
+```
+
+Or use a port in the 49152-65535 range to avoid conflicts with other services.
+- **These bots attempt thousands**: of common username/password combinations, looking for weak credentials.
+- **Hardening SSH closes the**: most common attack vectors and dramatically reduces your server's exposure.
+- **In that case**: rely on fail2ban and key-only auth.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Step 0: Back Up Working Access Before Starting
 
 Before making any changes, ensure you have an alternative way to access the server (console access through your hosting provider, a second SSH session, etc.). Locking yourself out is a real risk when changing SSH configuration.
@@ -314,5 +327,5 @@ The patterns shown here follow standard practices, but production deployments ne
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
+```
 {% endraw %}

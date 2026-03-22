@@ -31,6 +31,15 @@ Every domain name lookup you make is normally sent as plaintext UDP to port 53. 
 
 DoT is simpler than DNS over HTTPS (DoH) for system-level deployment: one dedicated port, standard TLS, no HTTP overhead. This guide covers setting it up on Linux using systemd-resolved and on Android using the built-in Private DNS feature.
 
+## Key Takeaways
+
+- **If you're in a**: restrictive environment where port 853 is blocked, DoH is the better choice.
+- **For most privacy use**: cases (ISP snooping prevention, protecting queries on public Wi-Fi), DoT is simpler and sufficient.
+- **If you use Mullvad VPN**: their resolver is the most privacy-preserving option since it operates entirely within their no-log infrastructure.
+- **Use VPN DNS from**: provider that supports DoT # 2.
+- **Cloudflare offers better performance**: in many regions but retains some logs for up to 24 hours.
+- **Use these steps to confirm**: 1.
+
 ## How DoT Compares to DoH
 
 Both protocols encrypt DNS, but they differ in deployment:

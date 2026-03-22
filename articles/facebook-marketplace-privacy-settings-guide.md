@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Facebook Marketplace exposes your name, profile photo, location (city-level minimum), friend network, and activity history directly to buyers. Minimize exposure by creating a separate Facebook account for Marketplace (no real name/photo), using a generic profile picture, disabling location services during listings, and limiting marketplace access to "Friends" or "Friends of friends" if possible. Use a private mailbox service instead of your home address, communicate through Marketplace messages only, and never provide real phone numbers or email addresses for casual sales.
 
+## Key Takeaways
+
+- **Use a private mailbox**: service instead of your home address, communicate through Marketplace messages only, and never provide real phone numbers or email addresses for casual sales.
+- **Enable two-factor authentication (preferably**: hardware key) # 2.
+- **Use a dedicated email**: address # 3.
+- **Mitigation**: Use Marketplace's integrated shipping, not third-party services.
+- **Use a Dedicated Email**: Consider using a separate email address for your Marketplace account distinct from your primary Facebook account.
+- **Phone Number Privacy**: Use a secondary phone number for Marketplace communications.
+
 ## Understanding What Facebook Marketplace Exposes
 
 When you list an item on Facebook Marketplace, the platform makes several data points visible to potential buyers:

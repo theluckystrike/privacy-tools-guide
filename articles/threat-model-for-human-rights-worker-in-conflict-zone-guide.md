@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Human rights workers in conflict zones face nation-state and paramilitary threats with capabilities including physical surveillance, device seizure with forensic extraction, social network analysis, and sophisticated network eavesdropping. Protect evidence of human rights abuses using Tails Linux for documentation work, Signal encrypted communications, encrypted storage vaults for sensitive documents, and regular device wipes. Establish secure communication with international organizations, separate your work device from personal phone, use dead drops or air-gapped document transfer, and implement strict access controls on victim testimony. This guide provides a practical threat modeling framework covering asset identification, adversary capability analysis, and actionable mitigations tailored to conflict zone environments.
 
+## Key Takeaways
+
+- **Protect evidence of human**: rights abuses using Tails Linux for documentation work, Signal encrypted communications, encrypted storage vaults for sensitive documents, and regular device wipes.
+- **Mitigation**: Use end-to-end encrypted communication tools.
+- **Use ephemeral messaging systems**: that do not store message history locally.
+- **Use dedicated communication channels**: for sensitive contacts.
+- **Mitigation**: Use reproducible builds to verify software integrity.
+- **Dead drops for critical documentation**: Arrange secure locations (unattended) where encrypted drives are deposited and picked up by trusted contacts.
+
 ## Understanding the Threat Environment
 
 Conflict zone environments present threat models fundamentally different from corporate or personal security contexts. Your adversaries often include nation-state threat actors with significant resources, technical capability, and operational presence on the ground. The consequences of compromise extend beyond data theft to physical danger for you, your contacts, and local staff.

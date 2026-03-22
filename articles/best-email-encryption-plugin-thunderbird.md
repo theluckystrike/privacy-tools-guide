@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of, encryption]---
 
 Use Thunderbird's built-in OpenPGP support (integrated since Thunderbird 115+) for the best email encryption experience -- no additional plugins required. OpenPGP is the top choice for developers and power users because it provides full key ownership, cross-platform GnuPG compatibility, and extensive CLI automation without requiring paid certificate authorities. For enterprise environments with existing PKI infrastructure, S/MIME is the better fit due to its automatic trust model and centralized certificate management.
 
+## Key Takeaways
+
+- **Use Thunderbird's built-in OpenPGP**: support (integrated since Thunderbird 115+) for the best email encryption experience -- no additional plugins required.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The standard operates through**: GNU Privacy Guard (GnuPG) on most platforms, providing cross-platform compatibility and extensive scripting capabilities.
+- **Choose an email account**: and accept the default RSA 4096-bit key size 4.
+- **Enterprise deployments often use**: internal certificate authorities that integrate with Active Directory.
+
 ## Understanding the Encryption ecosystem in Thunderbird
 
 Thunderbird includes built-in support for both OpenPGP and S/MIME standards through its Enigmail successor, now integrated directly into Thunderbird 115+. The OpenPGP standard uses a web-of-trust model where users validate each other's keys through direct signatures or trusted introducers. S/MIME, by contrast, relies on a hierarchical Public Key Infrastructure (PKI) with certificate authorities.

@@ -17,6 +17,15 @@ intent-checked: true---
 
 Teams handling sensitive data—financial records, health information, legal documents, trade secrets—cannot use consumer file sharing tools like Dropbox or Google Drive. Enterprise-grade secure file sharing requires end-to-end encryption where the provider never has access to plaintext files, granular access controls that define who can view/download/print, audit logs showing every action, and compliance certifications for your industry. This guide compares solutions built specifically for sensitive data with features teams need to maintain legal compliance while enabling efficient collaboration.
 
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- Individual plans from $10/month.
+- **Best For**: Teams prioritizing encryption over integration simplicity.
+- Minimum 5 users typically.
+- **Configure encryption (optional but**: recommended) sudo -u www-data php occ encryption:enable sudo -u www-data php occ encryption:select-encryption-module # 3.
+- **Set up user accounts**: from LDAP sudo -u www-data php occ ldap:create-empty-config sudo -u www-data php occ ldap:set-config s01 ldapHost ldap.company.com # 4.
+
 ## Why Consumer Tools Fail for Sensitive Data
 
 Dropbox, Google Drive, and OneDrive use encryption in transit (TLS) and at rest on their servers, but the provider holds encryption keys. This means:

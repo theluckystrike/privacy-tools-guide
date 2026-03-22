@@ -27,7 +27,15 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Audit your VPN provider's claims by running DNS leak tests with `dig` and dnsleaktest.com, verifying encryption protocols with `nmap` and `wg show`, checking for IP leaks via WebRTC and IPv6, and benchmarking real-world speeds with `speedtest-cli` and `iperf3`. These open source tools let you independently verify whether a provider's no-logs, encryption, and performance promises hold up outside of their marketing materials.
+
+## Key Takeaways
+
+- **These open source tools**: let you independently verify whether a provider's no-logs, encryption, and performance promises hold up outside of their marketing materials.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers why audit your vpn?**: testing dns leak protection, using dnsleaktest.com, with specific setup instructions
 
 ## Why Audit Your VPN?
 

@@ -33,6 +33,15 @@ Gmail is free because Google reads your email to sell ads. Outlook does the same
 
 But which one? ProtonMail is popular but expensive. Tutanota is cheaper but less polished. Mailfence is obscure but feature-rich. Posteo is German and affordable. This guide compares real privacy email providers on encryption, jurisdiction, pricing, and usability.
 
+## Key Takeaways
+
+- **Best for families**: ProtonMail Family Plan ($19.99 shared across 24 addresses).
+- **Gmail is free because**: Google reads your email to sell ads.
+- **Real-world use**: Best for people who want maximum privacy and don't mind less polished UX.
+- **Strength**: Cheap pricing ($2.50 starts).
+- **Best used with desktop**: client like Thunderbird (they contribute to Posteo).
+- **Strength**: Cheapest option ($0.80/month = <$10/year).
+
 ## What "Privacy Email" Actually Means
 
 Privacy email providers use:

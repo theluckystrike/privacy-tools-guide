@@ -17,6 +17,15 @@ voice-checked: true---
 
 Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you and authorized team members hold the encryption keys—your files sync to Keybase's servers encrypted and inaccessible even to the provider. Mount KBFS as a regular filesystem and work with familiar tools while your data stays protected with zero-knowledge encryption.
 
+## Key Takeaways
+
+- **Store development credentials in**: KBFS mkdir -p /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials # 2.
+- **Symlink to project (never**: commit credentials) ln -s /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials/.env ./dev.env # 4.
+- **Source in dev environment**: export $(cat dev.env | grep -v '^#') # 6.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **The filesystem also generates**: a unique public folder where you can share files with specific Keybase users or teams.
+- **Free and basic plans**: typically get community forum support and documentation.
+
 ## What is Keybase Filesystem?
 
 Keybase Filesystem (KBFS) is a cryptographic filesystem that provides end-to-end encrypted storage using the same encryption technology that protects Keybase's messaging platform. Unlike traditional cloud storage solutions where the provider holds encryption keys, KBFS ensures that only you—and those you explicitly share with—can access your data.
@@ -471,4 +480,4 @@ Check the export options before committing. Most tools let you export your data,
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

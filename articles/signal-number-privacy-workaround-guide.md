@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, privacy]---
 
 Signal requires a phone number for registration, tying your identity to a carrier-level identifier that can expose your real-world identity. This guide covers practical workarounds — VoIP numbers, dedicated SIMs, and privacy settings — for developers and power users who want to minimize that exposure.
 
+## Key Takeaways
+
+- **While Google Voice isn't**: designed for Signal, many users report success with this approach: ```bash # Process overview (performed in app/website): # 1.
+- **Insert into a dedicated**: device or use eSIM # 3.
+- **Create separate Google Account**: (privacy-focused) # 2.
+- **Use number for Signal**: registration # 5.
+- **The architecture works like this**: ```
+User A (known number) searches for User B:
+  1.
+- **User A sends hash(User**: B's number) to Signal server 2.
+
 ## Understanding Signal's Phone Number Requirement
 
 When you register with Signal, your phone number becomes your unique identifier. This design choice simplifies contact discovery—Signal checks your address book against other users who have registered with the same number. However, this creates several privacy concerns:

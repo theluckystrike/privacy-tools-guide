@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on paper in a physically secure location like a safe or locked drawer. Never store backup codes in plain text files, unencrypted notes apps, or email. Test at least one code during setup to confirm it works before you need it in an emergency. This guide covers secure generation, encrypted and physical storage strategies, developer implementation patterns with hashed code validation, and multi-account management workflows.
 
+## Key Takeaways
+
+- **When you set up**: two-factor authentication on most services, you'll receive a list of 8-12 alphanumeric codes.
+- **Most services auto-generate these**: codes using a cryptographically secure random number generator, producing codes like `X7K9-M3NP-QR2W`.
+- **Each code uses unique salt**: preventing rainbow table attacks.
+- **Use it immediately (don't**: second-guess) 2.
+- **Regenerate codes afterward (invalidates**: used code) 3.
+- **Verify at least one**: code works 7.
+
 ## Understanding Backup Code Mechanics
 
 Backup codes are typically pre-generated single-use codes that function as an alternative to TOTP tokens. When you set up two-factor authentication on most services, you'll receive a list of 8-12 alphanumeric codes. Each code can be used exactly once, after which it becomes invalid.

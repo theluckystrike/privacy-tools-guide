@@ -33,6 +33,15 @@ Tor hidden services (also called onion services) allow you to host and access se
 
 This guide covers practical methods for accessing hidden services safely, with configuration examples and security considerations for developers building privacy-focused applications.
 
+## Key Takeaways
+
+- **Check for the HTTPS**: lock icon in Tor Browser or use `-k` sparingly in curl to allow invalid certificates only when necessary.
+- **These services use the**: `.onion` top-level domain and route all traffic through the Tor network, providing end-to-end encryption and anonymity for both the server and the client.
+- **This guide covers practical**: methods for accessing hidden services safely, with configuration examples and security considerations for developers building privacy-focused applications.
+- **When you access a hidden service**: your traffic takes a path through at least three Tor relays, and the service itself is also accessed through Tor relays.
+- **The connection uses TLS**: with ephemeral keys, providing forward secrecy.
+- **Use dedicated Tor instances**: For development work, consider running a separate Tor daemon instance rather than using the same Tor connection for sensitive browsing and development.
+
 ## Understanding Tor Hidden Services
 
 A hidden service is a service accessible only through the Tor network. Instead of using a traditional IP address, hidden services use a unique onion address—a 56-character base32 string ending in `.onion` (for version 3) or a 16-character base32 string ending in `.onion` (for version 2, which is deprecated).

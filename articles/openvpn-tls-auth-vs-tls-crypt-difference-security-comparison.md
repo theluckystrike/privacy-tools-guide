@@ -27,7 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose `tls-crypt` if you need maximum security -- it encrypts and authenticates the entire TLS handshake, hiding your server from fingerprinting scans and providing strong DoS protection. Choose `tls-auth` only if you need backward compatibility with older OpenVPN versions, since it adds HMAC authentication to the handshake but leaves the TLS fingerprint visible to network observers. For any new OpenVPN deployment, `tls-crypt` is the recommended option.
+
+## Key Takeaways
+
+- **Choose `tls-auth` only if**: you need backward compatibility with older OpenVPN versions, since it adds HMAC authentication to the handshake but leaves the TLS fingerprint visible to network observers.
+- **Generate new key openvpn**: --genkey secret "$NEW_KEY" # 2.
+- **Update server to accept**: both current and new cat > /etc/openvpn/server.conf << EOF tls-crypt-v2 $CURRENT_KEY tls-crypt-v2 $NEW_KEY # Accept both during transition EOF # 3.
+- **After transition period (e.g.**: 30 days)
+    mv "$CURRENT_KEY" "$PREVIOUS_KEY"
+    mv "$NEW_KEY" "$CURRENT_KEY"
+
+    # 5.
+- **Because the packet is encrypted, network observers cannot determine that an OpenVPN server is listening**: they see only opaque encrypted data.
+- **Update server configuration to**: use `tls-crypt` instead of `tls-auth` 3.
 
 ## Understanding the Baseline: TLS Encryption in OpenVPN
 

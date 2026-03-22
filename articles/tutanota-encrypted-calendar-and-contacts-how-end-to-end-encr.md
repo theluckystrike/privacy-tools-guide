@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all their digital assets. Calendar events and contact lists often contain equally sensitive information—meeting topics, business relationships, personal schedules—yet these frequently remain unencrypted or poorly protected. Tutanota, the Germany-based encrypted email service, extends its end-to-end encryption model to calendar and contacts, providing an unified encrypted ecosystem. Understanding how this encryption works helps developers and power users make informed decisions about their privacy infrastructure.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Key encapsulation**: The event key encrypts using your public key (for single-user events) or a shared symmetric key derived through Diffie-Hellman (for multi-user events)
+5.
+- **When you share contacts**: with another Tutanota user, the system performs a key exchange: 1.
+- **When user A shares**: a contact with user B: ``` User A's action: 1.
+- **Store**: { encrypted_contact, encrypted_key, sharing_policy }
+
+User B's decryption:
+  1.
+
 ## Tutanota's Encryption Architecture
 
 Tutanota implements end-to-end encryption using a combination of symmetric and asymmetric cryptographic primitives. Unlike services that encrypt only email content, Tutanota applies encryption uniformly across its entire platform, including the calendar and contacts applications.

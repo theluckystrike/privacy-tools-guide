@@ -31,6 +31,15 @@ intent-checked: true---
 
 Privacy-focused email providers encrypt your inbox so that the email provider itself cannot read your messages. Proton Mail leads the market with 5 million users and strongest brand recognition, but Tutanota provides superior encryption at lower cost. Mailfence offers unlimited aliases, Posteo provides maximum privacy without accounts, and Disroot prioritizes community and self-hosting. This guide compares encryption approaches, pricing, ease of use, and security tradeoffs.
 
+## Key Takeaways
+
+- **Pro is comparable cost**: to Proton Professional ($144 annual) while offering better encryption.
+- **Pricing reality (annual)**: Plus $72, Professional $144, Visionary $360.
+- **Add VPN if not included ($120/year)**: making total cost $192-480/year.
+- **Pricing reality (annual)**: Premium €144 (~$157), Pro €288 (~$313).
+- **Add VPN separately ($120/year)**: for full privacy suite.
+- **Pricing reality (annual)**: Free (basic), €60/year (supporter tier).
+
 ## Why Standard Email Is Insecure
 
 Gmail, Outlook, Yahoo Mail, and others read message content to train advertising algorithms, comply with law enforcement requests, and analyze user behavior. Your email provider sees everything: business communications, financial information, sensitive relationships, and personal secrets.

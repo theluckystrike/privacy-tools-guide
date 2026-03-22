@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 Paying for VPN subscriptions anonymously requires understanding how traditional payment methods leak information and implementing cryptocurrency-based solutions that preserve privacy. This guide covers practical methods for developers and power users to pay for VPN services without revealing their identity, focusing on implementations that require no email and leave minimal financial traces.
 
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Mullvad currently costs approximately**: €5/month (around $5.50 at current rates), and IVPN costs approximately $6/month.
+- **Fees range from 5-15%**: but provide immediate Bitcoin with no account requirements.
+- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
+- **Discounts of 25-50% are**: common for qualifying organizations.
+- **Cryptocurrency payments offer pseudonymity**: by default, but most mainstream exchanges require KYC (Know Your Customer) verification.
+
 ## Why Traditional Payment Methods Fail
 
 Credit cards, PayPal, and bank transfers all create permanent records linking your identity to VPN purchases. These records can be subpoenaed, sold to data brokers, or leaked in breaches. Even prepaid cards often require phone number verification, creating a link to your identity.

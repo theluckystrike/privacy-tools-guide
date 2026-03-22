@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, privacy]---
 
 DigiLocker stores identity documents (Aadhaar, PAN, passport) and links them to centralized government databases, creating a single point of failure for biometric and identity data. While documents are encrypted in transit, the Indian government maintains access to all stored data. Minimize exposure by using DigiLocker only for mandatory government applications, never for private document storage. For privacy-sensitive documents, use encrypted third-party services like Tresorit or self-hosted solutions instead.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Biometric authentication - Optional**: but commonly used via the DigiLocker app 3.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Transparent Audit Logs**: Show users exactly who accessed their documents and when
+2.
+- **International Privacy Compliance**: Align with GDPR/CCPA standards even for Indian users
+6.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## What Documents Does DigiLocker Store?
 
 DigiLocker serves as a centralized repository for various identity and government-related documents. When you sign up and verify your identity, the platform stores several categories of personal data:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Telegram Secret Chat is genuinely end-to-end encrypted with forward secrecy, meaning message content is well-protected against interception — but it falls short of Signal in three important ways: it uses a less-audited custom protocol (MTProto 2.0), it does not encrypt metadata (Telegram sees who you talk to and when), and it does not support E2E-encrypted group chats. If message confidentiality is your only concern, Secret Chat is solid; if you also need metadata protection or an independently audited protocol, use Signal instead. Here is a full technical breakdown.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Regular group chats are**: also not end-to-end encrypted; only two-party Secret Chats provide E2EE, so for encrypted group messaging use Signal or Session instead.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **If message confidentiality is**: your only concern, Secret Chat is solid; if you also need metadata protection or an independently audited protocol, use Signal instead.
+- **The protocol uses a**: combination of RSA-2048 for key exchange, AES-256-IGE for symmetric encryption, and SHA-256 for message integrity.
+- **Use strong device lock**: (PIN/biometric) to prevent physical access to decrypted messages 6.
+
 ## Understanding Telegram's MTProto Protocol
 
 Telegram uses MTProto 2.0, a custom protocol designed for speed and security. Unlike Signal or WhatsApp which rely on established protocols like Signal Protocol, MTProto implements its own encryption layer. The protocol uses a combination of RSA-2048 for key exchange, AES-256-IGE for symmetric encryption, and SHA-256 for message integrity.

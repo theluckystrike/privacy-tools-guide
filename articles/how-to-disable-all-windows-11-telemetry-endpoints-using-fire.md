@@ -33,6 +33,22 @@ Windows 11 collects telemetry data from your system and sends it to Microsoft se
 
 This guide covers the method of blocking Windows 11 telemetry at the network level using firewall rules.
 
+## Key Takeaways
+
+- **Choose This program or**: port based on your preference 6.
+- **While Microsoft uses this**: data to improve the operating system, privacy-conscious developers and power users often want complete control over what leaves their machines.
+- **For program-based rules**: specify telemetry-related executables:
+
+```
+C:\Windows\System32\CompatTelRunner.exe
+C:\Windows\System32\DiagTrack.exe
+C:\Windows\WindowsUpdate\*.exe
+```
+
+7.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Windows 11 Telemetry
 
 Windows 11 sends data through multiple channels. The main telemetry endpoints include:

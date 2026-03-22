@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 QR codes have become ubiquitous in modern workflows—payments, authentication, product tracking, and event check-ins all rely on them. However, this convenience has attracted threat actors who exploit QR codes for phishing attacks, a technique called "quishing." This guide provides developers and power users with practical strategies to identify, prevent, and respond to QR code phishing attempts.
 
+## Key Takeaways
+
+- **Analyze the URL**: Use tools like the Python script above to examine the destination
+3.
+- **Notify affected users**: If the QR code reached multiple people, warn potential victims
+5.
+- **The attack succeeds because**: QR codes bypass traditional email filters and appear innocuous when printed on physical materials.
+- **The critical security gap**: users cannot determine a QR code's destination without scanning it first.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Quishing Attacks
 
 Quishing combines "QR code" with "phishing." Attackers embed malicious URLs in QR codes that redirect users to credential-harvesting pages, malware download sites, or fake login portals. The attack succeeds because QR codes bypass traditional email filters and appear innocuous when printed on physical materials.

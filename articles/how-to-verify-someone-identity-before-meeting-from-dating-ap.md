@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains prevalent across all major dating platforms. This guide provides practical verification techniques specifically designed for developers and power users who want to validate identities before arranging meetups.
 
+## Key Takeaways
+
+- **Most catfishing cases use**: stolen images from social media accounts, stock photo sites, or influencer profiles.
+- **Requesting social media verification**: is a standard practice that most genuine users understand.
+- **Services like Google Voice can help**: but more importantly, you can use free lookup services to check number validity.
+- **Use established platforms**: Zoom, FaceTime, Google Meet, or Signal Video
+2.
+- **Multiple sessions**: A single short call isn't sufficient—schedule at least two calls on different days
+4.
+- **- Be aware that asking someone for their LinkedIn is revealing your LinkedIn to them**: use a privacy-reviewed profile with limited information if you choose to share.
+
 ## Why Identity Verification Matters Before a First Meeting
 
 Romance scams caused over $1.1 billion in losses in the United States in 2023 according to the FTC. Catfishing does not always have a financial motive — some cases involve stalking, harassment, or social manipulation. Understanding the threat model helps you calibrate how much verification is proportionate.

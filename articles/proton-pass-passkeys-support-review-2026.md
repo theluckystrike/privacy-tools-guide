@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 This review examines Proton Pass passkeys support in 2026—its technical capabilities, implementation details, and practical considerations for developers and privacy-conscious users.
+
+## Key Takeaways
+
+- **This review examines Proton Pass passkeys support in 2026**: its technical capabilities, implementation details, and practical considerations for developers and privacy-conscious users.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **The passkey architecture follows**: the W3C WebAuthn specification, storing credential pairs where the private key remains on the user's device.
+- **This asymmetric approach eliminates**: replay attacks since each authentication uses a unique challenge.
+- **If you require extensive**: automation or custom integrations, Bitwarden's architecture may better suit those needs.
+- **For localhost development**: use "localhost" (not "127.0.0.1").
 
 ## Passkeys Implementation Overview
 

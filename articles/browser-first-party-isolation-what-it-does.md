@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 First-party isolation is a browser security mechanism that separates data on a per-domain basis, preventing trackers and scripts from correlating your activity across different websites. When enabled, cookies, localStorage, sessionStorage, and other client-side storage mechanisms become scoped exclusively to the domain that created them. This fundamental isolation prevents third-party scripts from accessing data they did not originally set, significantly reducing the surface area for cross-site tracking.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Safari's implementation automatically expires**: cross-site tracking cookies after 24 hours and uses on-device processing to determine which trackers to block.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **OAuth redirects that depend**: on sharing cookies across domains need updating to use token-based approaches instead.
+
 ## How First-Party Isolation Differs from Standard Cookie Behavior
 
 In standard browser configurations, cookies set by `analytics.example.com` can be read by `news-site.com` when embedded as a third-party resource. This is the mechanism that allows ad networks to build browsing profiles across thousands of sites. First-party isolation changes this by effectively creating separate cookie jars for each origin, even when the same third-party script loads across multiple sites.
@@ -234,4 +243,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

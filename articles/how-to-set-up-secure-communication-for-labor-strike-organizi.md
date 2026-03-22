@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 To set up secure labor strike communication, deploy Signal for primary encrypted messaging with disappearing messages enabled, Session Messenger for decentralized backup, and self-hosted Jitsi Meet for group calls. Layer in encrypted email through ProtonMail, use a separate device or virtual machine, implement dead man's switches for credential management, and establish clear operational security protocols before coordinating sensitive strike activities.
 
+## Key Takeaways
+
+- **Device seizure**: Phones and computers may be confiscated during pickets or arrests
+5.
+- **Enable disappearing messages (24-72**: hours recommended) 2.
+- **Use group chats rather**: than broadcast lists for coordination 5.
+- **Use a break-glass procedure**: the backup credentials envelope is opened only when the primary admin is unavailable.
+- **Where budget allows, use dedicated devices for organizing**: phones and laptops that never touch employer-managed accounts, networks, or MDM systems.
+- **Designate at least two admins per group**: never a single point of failure.
+
 ## Threat Modeling for Strike Communications
 
 Before deploying any communication tools, establish a clear threat model. Strike communications face specific risks:

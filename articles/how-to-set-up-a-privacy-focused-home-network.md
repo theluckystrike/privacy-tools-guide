@@ -19,6 +19,14 @@ Most home networks leak data relentlessly. Your ISP logs all DNS queries (every 
 
 Building a privacy-hardened home network requires layered controls: DNS filtering (blocking trackers before they load), VLAN segmentation (isolating untrusted devices), encrypted DNS (preventing ISP snooping), and a home VPN (encrypting all traffic). This guide covers the complete setup using open-source tools: Pi-hole (DNS filtering), pfSense or OPNsense (firewall), VLAN segmentation, and WireGuard (VPN).
 
+## Key Takeaways
+
+- **Most home networks leak**: data relentlessly.
+- **Smart home devices (thermostats**: doorbells, TVs) exfiltrate telemetry constantly.
+- **This guide covers the**: complete setup using open-source tools: Pi-hole (DNS filtering), pfSense or OPNsense (firewall), VLAN segmentation, and WireGuard (VPN).
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Privacy Network Architecture Overview
 
 Your hardened network will have:
@@ -841,3 +849,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -17,6 +17,15 @@ intent-checked: true---
 
 Employers can fire you for most social media posts under at-will employment, even private ones, but exceptions exist: discussions about wages/working conditions (NLRA protected concerted activity), posts related to protected characteristics (discrimination laws), and off-duty conduct in some states. Platform privacy settings don't create legal immunity—what matters is the post's legal content, not its visibility. Technical separation (different email/phone for personal accounts), reviewing your company's policy for red flags, and thinking strategically before posting controversial content provides practical protection despite broad employer authority.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use social media screening**: during hiring and employment decisions 4.
+- **Let them use it for 2-3 weeks**: then gather their honest feedback.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## At-Will Employment and the Default Rule
 
 In the United States, most employment is "at-will," meaning either party can terminate the relationship at any time, for any reason—or no reason at all. This is the baseline. Your employer can fire you for something you posted online, even if that post was made on a private account.
@@ -306,4 +315,4 @@ Start with a small pilot group of willing early adopters. Let them use it for 2-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
+{% endraw %}

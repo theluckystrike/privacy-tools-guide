@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 Testing VPN connectivity from within China presents unique technical challenges. The Great Firewall (GFW) employs deep packet inspection (DPI), DNS filtering, and traffic pattern analysis to identify and block VPN protocols. This article documents practical testing of NordVPN's obfuscated servers from mainland China in early 2026, with configuration examples for developers and power users.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does NordVPN offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This article documents practical**: testing of NordVPN's obfuscated servers from mainland China in early 2026, with configuration examples for developers and power users.
+- **NordVPN achieves this through their OpenVPN configuration with obfuscation patches, routing traffic through TCP port 443**: the same port used by standard web traffic.
+- **Speed Trade-offs**: Obfuscation adds overhead, typically reducing connection speeds by 15-30% compared to standard VPN connections.
+
 ## Understanding Obfuscated Servers
 
 Obfuscated servers are designed to mask VPN traffic, making it appear as normal HTTPS traffic. NordVPN achieves this through their OpenVPN configuration with obfuscation patches, routing traffic through TCP port 443—the same port used by standard web traffic. This approach attempts to defeat DPI by encrypting the entire connection payload, including metadata that would typically reveal VPN protocol signatures.

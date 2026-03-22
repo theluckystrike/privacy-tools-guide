@@ -20,6 +20,13 @@ tags: [privacy-tools-guide]---
 
 This guide covers multi-recipient encryption, key distribution workflows, and automating age in CI/CD pipelines.
 
+## Key Takeaways
+
+- **Only share the `age1...`**: public key line.
+- Useful for long-term archival keys.
+- **This guide covers prerequisites**: key generation for each team member, creating a team recipients file, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Prerequisites
 
 - age 1.1+ installed on all machines
@@ -37,7 +44,7 @@ brew install age
 age --version
 ```
 
-## Key Generation for Each Team Member
+### Step 1: Generate Keys for Each Team Member
 
 Every team member generates their own key pair and shares only the public key.
 
@@ -56,7 +63,7 @@ age-keygen -y ~/.age/identity.txt
 
 Never share `identity.txt`. Only share the `age1...` public key line.
 
-## Creating a Team Recipients File
+### Step 2: Create a Team Recipients File
 
 Store all team public keys in a single file checked into your repo.
 
@@ -81,7 +88,7 @@ age -R .age-recipients secrets.env -o secrets.env.age
 age -d -i ~/.age/identity.txt secrets.env.age > secrets.env
 ```
 
-## Encrypting to Subsets — Roles and Access Tiers
+### Step 3: Encrypt to Subsets — Roles and Access Tiers
 
 For role-based access, maintain separate recipient files.
 
@@ -106,7 +113,7 @@ age -R .age-keys/devops.txt db-prod.env -o secrets/db-prod.env.age
 age -R .age-keys/all-engineers.txt dev-keys.env -o secrets/dev-keys.env.age
 ```
 
-## Storing Encrypted Secrets in Git
+### Step 4: Store Encrypted Secrets in Git
 
 A common pattern is to keep encrypted files in the repo and plaintext in `.gitignore`.
 
@@ -131,7 +138,7 @@ encrypt-prod:
 	age -R .age-keys/devops.txt db-prod.env -o secrets/db-prod.env.age
 ```
 
-## CI/CD Integration with GitHub Actions
+### Step 5: Configure CI/CD Integration with GitHub Actions
 
 For CI pipelines, store the private key as a base64-encoded secret.
 
@@ -174,7 +181,7 @@ jobs:
 
 The CI key is a separate key pair added to `.age-keys/devops.txt`. When a team member leaves, remove their key from the recipients file, re-encrypt all secrets with `age -R`, and commit.
 
-## Key Rotation
+### Step 6: Rotate Keys
 
 When a team member leaves or a key is compromised:
 
@@ -212,7 +219,7 @@ git add secrets/
 git commit -m "security: rotate secrets after key removal"
 ```
 
-## Using age with SSH Keys
+### Step 7: Use age with SSH Keys
 
 If your team already uses SSH keys, age can derive recipients from them — no separate key generation needed.
 
@@ -231,7 +238,7 @@ This works with Ed25519 and RSA SSH keys. The recipient decrypts with their SSH 
 age -d -i ~/.ssh/id_ed25519 secrets.env.age > secrets.env
 ```
 
-## Passphrase-Protected Identities
+### Step 8: Set Up Passphrase -Protected Identities
 
 For extra protection on the private key file, use a passphrase. Useful for long-term archival keys.
 
@@ -245,7 +252,7 @@ age -d -i /tmp/identity.txt archive.tar.age > archive.tar
 shred -u /tmp/identity.txt
 ```
 
-## Auditing Who Has Access
+### Step 9: Audit Who Has Access
 
 Since all public keys are in version-controlled files, access auditing is straightforward.
 
@@ -263,6 +270,21 @@ for f in secrets/*.age; do
 done
 ```
 
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
+
 ## Related Reading
 
 - [How to Use age Encryption for Secure File Sharing](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
@@ -271,4 +293,4 @@ done
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Your digital footprint is larger than you think. Your email appears in data breaches, your phone number is sold to marketers, your home address is in property records. This guide walks through using OSINT (Open Source Intelligence) tools to audit what data is exposed about you online—then how to minimize that exposure.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Check annualcreditreport.com (free credit**: report) 2.
+- **Wayback Machine (archive.org) -**: Type your name or website - See snapshots of pages over time - Useful for finding very old digital footprints - Can request removal (though not guaranteed) 3.
+- **Removing the most sensitive**: data 3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding Your Digital Footprint
 
 Your digital footprint consists of:
@@ -409,4 +418,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

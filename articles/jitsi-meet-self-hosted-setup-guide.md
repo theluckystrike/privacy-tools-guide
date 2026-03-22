@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 Deploy a self-hosted Jitsi Meet instance by running `docker-compose up -d` with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name pointed to your server. You will have a working, private video conferencing server with automatic Let's Encrypt SSL in under 30 minutes. This guide covers the full setup -- Docker Compose configuration, authentication, TURN server configuration, security hardening, and horizontal scaling with additional video bridge instances.
 
+## Key Takeaways
+
+- **Deploy a self-hosted Jitsi**: Meet instance by running `docker-compose up -d` with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name pointed to your server.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers why**: self-host jitsi meet, prerequisites and infrastructure, docker deployment, with specific setup instructions
+
 ## Why Self-Host Jitsi Meet
 
 Public Jitsi Meet instances work adequately for casual use, but self-hosting delivers significant advantages. You control all conference metadata—meeting durations, participant counts, and usage patterns remain private. Custom branding becomes possible, including themed interfaces and personalized welcome pages. For organizations with compliance requirements, self-hosting ensures data never leaves your infrastructure.

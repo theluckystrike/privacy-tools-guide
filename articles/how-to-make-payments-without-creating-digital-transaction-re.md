@@ -28,7 +28,20 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Use cash for complete transaction privacy, cryptocurrency with privacy mixers (Monero, CoinJoin) for digital payments without traceability, or prepaid cards and gift cards purchased with cash to create distance between identity and transactions. Each method trades convenience for privacy—cash requires physical presence and carries counterfeiting/theft risks, cryptocurrency requires technical knowledge to avoid linking addresses, while prepaid cards still produce merchant records. Developers and power users should understand that true transaction privacy requires combining multiple techniques rather than relying on any single payment method.
+
+## Key Takeaways
+
+- **Money orders typically have**: lower limits ($1,000-$3,000 per order), but you can purchase multiple to cover larger amounts.
+- **Day-to-day small purchases**: Use cash for routine expenses
+2.
+- **Online shopping**: Prepaid cards with remaining balance discarded after use
+3.
+- **Larger purchases**: Privacy-focused cryptocurrency with proper operational security
+4.
+- **Developers and power users**: should understand that true transaction privacy requires combining multiple techniques rather than relying on any single payment method.
+- **Load them with cash**: at participating retail locations, then use them online or in stores.
 
 ## Understanding Digital Transaction Records
 

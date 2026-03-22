@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 The Tor network stands as one of the most effective tools for circumventing network censorship worldwide. Understanding its technical mechanisms helps developers and power users deploy it effectively in restricted environments. This guide covers the architecture, configuration, and practical implementation of Tor's censorship resistance features.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Understanding its technical mechanisms**: helps developers and power users deploy it effectively in restricted environments.
+- **Your bridge doesn't know who uses it or what they access**: only that it's part of the network.
+- **Use end-to-end encryption (PGP**: Signal, etc.)
+3.
+- **Use DNS-over-HTTPS to hide**: DNS queries 5.
+
 ## How Tor Provides Censorship Resistance
 
 Tor achieves censorship resistance through several interconnected mechanisms. At its core, the network uses onion routing to encapsulate data in multiple encryption layers, each peeled away by successive relays. This design hides both the content and the destination of your traffic from local network observers, including ISP-level filters.

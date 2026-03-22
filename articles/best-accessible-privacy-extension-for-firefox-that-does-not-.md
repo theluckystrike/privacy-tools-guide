@@ -27,6 +27,15 @@ voice-checked: true---
 
 When selecting privacy extensions for Firefox, developers and power users who rely on screen readers face a unique challenge. Many privacy-focused extensions aggressively block scripts, modify DOM elements, or inject content that interferes with accessibility technologies. This guide evaluates privacy extensions that maintain compatibility with screen readers like NVDA, JAWS, and VoiceOver while still providing meaningful tracker blocking.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **uBlock Origin uBlock Origin**: remains the most compatible privacy extension for screen reader users.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **When selecting privacy extensions**: for Firefox, developers and power users who rely on screen readers face a unique challenge.
+- **Extensions that inject shadow**: DOM content also create navigation dead zones for keyboard-only and screen reader users.
+- **This option offers the**: best compatibility since it is integrated into the browser and has been accessibility-tested by Mozilla's own QA team.
+
 ## The Accessibility-Privacy Tradeoff
 
 Privacy extensions typically work by intercepting network requests, modifying page content, or blocking specific DOM elements. These same mechanisms can break screen reader functionality. For instance, an extension that removes tracking parameters from URLs might also strip legitimate form data that screen readers need. Extensions that hide or modify page elements can destroy the semantic structure that assistive technologies rely on.

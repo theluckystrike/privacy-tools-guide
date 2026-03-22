@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 To access Canadian banking from Mexico, configure a VPN with a Canadian exit node using WireGuard (faster) or OpenVPN (more compatible), enable DNS leak prevention with 1.1.1.1 or 1.0.0.1, and activate the kill switch to block unencrypted traffic if the VPN disconnects. Canadian banks detect foreign IP addresses and trigger fraud alerts, so using a Canadian VPN exit node makes your connection appear domestic, while kill switch prevents your real IP from leaking during connection drops and exposing you to the bank's security systems.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most support this through**: their network extension settings or via the macOS firewall configuration.
+- **Banking applications typically require**: response times under 500ms.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding the Security Architecture
 
 Canadian banks employ multiple layers of security that affect users connecting from abroad. These include IP-based geolocation blocks, behavioral analysis systems that detect unusual login patterns, and two-factor authentication that may be triggered by foreign connections. A properly configured VPN addresses these concerns by routing your connection through a Canadian exit node, making your traffic appear to originate from within Canada.

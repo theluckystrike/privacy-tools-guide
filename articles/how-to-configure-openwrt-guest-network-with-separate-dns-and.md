@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 OpenWRT provides powerful network isolation capabilities that go beyond simple WiFi separation. By configuring a guest network with separate DNS resolution and firewall rules, you can create air-gapped network segments that prevent guest devices from accessing your main network while forcing DNS queries through trusted servers. This guide walks through the complete configuration using both the LuCI web interface and command-line tools.
 
+## Key Takeaways
+
+- **For most home use cases**: redirecting port 53 is sufficient.
+- **The router itself will**: use 10.0.2.1 as its gateway address.
+- **Even after assigning custom**: DNS servers through DHCP, a determined guest device may attempt to use hardcoded DNS servers, bypassing your configuration entirely.
+- **This is particularly useful**: if you run a guest network for a small business or AirBnB situation where you want to ensure the network is not being misused.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Prerequisites
 
 Before starting, ensure you have:

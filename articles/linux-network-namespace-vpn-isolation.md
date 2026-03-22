@@ -31,6 +31,16 @@ A VPN kill switch blocks all traffic when the VPN drops — but it affects your 
 
 A network namespace is a Linux kernel feature that creates an isolated copy of the network stack. A process running inside a namespace sees only the network interfaces that are visible in that namespace — no others. By placing a VPN tunnel inside a namespace and running an application inside that namespace, the application is physically isolated to that tunnel.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Run applications inside the namespace**: they can only use the tunnel interface
+4.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
+
 ## How It Works
 
 The approach:

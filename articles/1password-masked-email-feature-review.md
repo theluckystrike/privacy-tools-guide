@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 1Password's masked email feature is worth using if you are a developer managing dozens of service accounts and want to keep your real inbox hidden. It integrates with Apple's Hide My Email and Fastmail for reliable forwarding with under 30-second latency, and it works directly from the browser extension or CLI. The main limitations are restricted reply handling and less suitability for long-term critical communications -- but for service registrations, API signups, and newsletter subscriptions, it delivers practical privacy with minimal friction.
 
+## Key Takeaways
+
+- **The implementation allows users**: to generate unique, forwardable email addresses that hide their actual inbox while maintaining communication continuity.
+- **Average forwarding delays typically**: remain under 30 seconds, though burst traffic can introduce temporary delays.
+- **It integrates with Apple's**: Hide My Email and Fastmail for reliable forwarding with under 30-second latency, and it works directly from the browser extension or CLI.
+- **Contact the service's support**: with forwarding explanation # 3.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Email Masking in 1Password
 
 1Password's email masking primarily manifests through its integration with Apple's Hide My Email feature for iCloud+ subscribers, combined with 1Password's own forwarding infrastructure. The implementation allows users to generate unique, forwardable email addresses that hide their actual inbox while maintaining communication continuity.

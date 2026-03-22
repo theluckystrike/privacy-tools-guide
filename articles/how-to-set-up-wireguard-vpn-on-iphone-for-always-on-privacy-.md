@@ -31,6 +31,15 @@ voice-checked: true---
 
 WireGuard offers one of the fastest and most secure VPN protocols available today, and its lightweight design makes it ideal for mobile devices. When configured with always-on functionality on iPhone, your traffic routes through an encrypted tunnel automatically, protecting your data on cellular networks, public WiFi, and anywhere else you connect. This guide walks through the complete setup process for developers and power users who want fine-grained control over their VPN configuration.
 
+## Key Takeaways
+
+- **Reduce PersistentKeepalive - If**: you primarily use WiFi at home or work, you can increase the keepalive interval to 60 or 120 seconds.
+- **Create from scratch -**: Manual configuration using your server details For most use cases, importing a configuration file from your VPN provider or self-hosted server is the simplest approach.
+- **For iPhone users specifically**: WireGuard integrates natively with iOS through the WireGuard app, using Apple's NetworkExtension framework for system-level VPN control.
+- **The cryptographic foundation uses**: modern primitives: Curve25519 for key exchange, ChaCha20-Poly1305 for authenticated encryption, and BLAKE2s for hashing.
+- **Scan from QR code**: - Use this if your server provides a QR code containing the configuration 2.
+- **Set persistent keepalive to**: 25 seconds (NAT traversal) 3.
+
 ## Why WireGuard on iPhone
 
 WireGuard provides several advantages over traditional VPN protocols on mobile devices. The protocol's minimal codebase—around 4,000 lines compared to hundreds of thousands in OpenVPN—reduces the attack surface and results in fewer security vulnerabilities. Connection times are dramatically faster, often completing in milliseconds rather than seconds.

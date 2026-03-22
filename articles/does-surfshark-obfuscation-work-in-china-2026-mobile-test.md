@@ -31,6 +31,20 @@ tags: [privacy-tools-guide]---
 
 Testing VPN obfuscation in China requires understanding both the technical implementation and the real-world constraints of mobile networks. This article documents practical testing of Surfshark's obfuscation features on mobile devices in China during 2026, focusing on what actually works rather than marketing claims.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **WireGuard connections held for**: an average of 47 seconds before being terminated.
+- **IKEv2 handles network transitions**: (WiFi to cellular) better than other protocols.
+- **On iOS**: - Automatic selection: 58% success rate
+- Manual OpenVPN: 72% success rate
+- Manual IKEv2: 75% success rate
+
+The app's Kill Switch feature is critical.
+- Wait 2 seconds
+// 3.
+
 ## Understanding Obfuscation Technology
 
 Obfuscation works by wrapping VPN traffic in additional encryption layers that make it appear like normal HTTPS traffic. For developers, this means your VPN protocol traffic gets masked as standard web traffic, bypassing deep packet inspection (DPI) systems that China uses to block VPN connections.

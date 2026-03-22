@@ -28,7 +28,17 @@ categories: [guides]
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
 When multiple organizations process personal data together, GDPR requires clarity on who does what. A joint controller agreement formalizes these responsibilities, preventing the blame game when things go wrong. This guide provides a practical template you can adapt for your projects.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **"Joint controller" is not**: a standard term; use "co-discloser" terminology instead.
 
 ## What Is a Joint Controller Agreement?
 

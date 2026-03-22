@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Route email through Tor hidden services by configuring Postfix as a Tor hidden service with an onion address, then configure your email client to connect via SOCKS proxy to the Tor network. This masks your mail server's IP address and your outbound email metadata. For maximum privacy, combine this with end-to-end encryption (PGP or Proton Mail) so neither the mail server operator nor your ISP can observe who you're communicating with.
 
+## Key Takeaways
+
+- **Most clients support SOCKS**: proxy configuration.
+- **Ensure your client uses**: SOCKS Version 5 with hostname resolution enabled (`socks5h://` rather than `socks5://`).
+- **A typical SMTP handshake**: adds 2-5 seconds, though actual delivery time varies based on Tor network congestion.
+- **Use a dedicated keybase.io**: profile or publish your onion address signed with your PGP key.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Onion Email Architecture
 
 Traditional email travels in plaintext across multiple hops between mail servers. Even with TLS, the headers reveal sender, recipient, timestamps, and server paths. Tor hidden services replace this exposure with a unique `.onion` address that provides end-to-end encryption between clients and servers while masking the server's IP address.

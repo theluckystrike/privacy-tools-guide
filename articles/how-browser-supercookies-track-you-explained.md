@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Browser developers have invested significant effort into blocking traditional tracking cookies, but a more insidious category of trackers has emerged: supercookies. These persistent identifiers survive standard privacy protections and can reconstruct user profiles even after users clear their cookies, Incognito mode, or switch devices. This guide explains how supercookies work at a technical level and what developers and power users can do to detect and mitigate them.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **The most effective defense**: is using a privacy-focused browser, auditing storage mechanisms periodically, and choosing implementation approaches that respect user control over browsing data.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Web Storage (localStorage and**: sessionStorage) While technically accessible to users, localStorage provides larger storage capacity than cookies (up to 5MB versus 4KB).
+- **By serving different favicons**: based on a user's unique identifier and using the browser's favicon cache, trackers can identify users across sessions without any traditional cookie storage.
+- **Use HSTS pins to**: encode a secondary identifier 4.
+
 ## What Are Supercookies?
 
 The term "supercookie" refers to any tracking mechanism that mimics standard HTTP cookies but operates through alternative browser storage channels. Unlike regular cookies, which operate under strict browser security policies, supercookies exploit caching mechanisms, service workers, and other web platform features to persist beyond user deletion attempts.

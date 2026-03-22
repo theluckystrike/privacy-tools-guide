@@ -33,6 +33,16 @@ Private DNS provides a method to encrypt Domain Name System (DNS) queries origin
 
 Android's Private DNS feature, introduced in Android 9 (Pie), implements DNS-over-TLS (DoT) at the system level. This means applications that use standard Android networking APIs automatically benefit from encrypted DNS resolution without any code modifications.
 
+## Key Takeaways
+
+- Choose the Hostname option
+6.
+- **This means applications that**: use standard Android networking APIs automatically benefit from encrypted DNS resolution without any code modifications.
+- **The key advantage for**: developers and power users is that this works at the operating system level.
+- **NextDNS offers customizable blocking**: lists, though some features require a free account.
+- **Several methods exist depending**: on your technical preferences.
+- **Network Switching**: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays.
+
 ## Understanding DNS Privacy on Android
 
 By default, DNS queries travel over UDP or TCP in plaintext. Anyone monitoring your network traffic can intercept these queries and build a log of every website you visit. While HTTPS encrypts the contents of your communication, the DNS resolution still reveals the domain names you connect to.

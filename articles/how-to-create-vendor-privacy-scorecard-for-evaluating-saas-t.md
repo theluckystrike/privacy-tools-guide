@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Evaluating SaaS vendors for privacy and data protection is a critical step before committing to any tool. A well-structured vendor privacy scorecard gives you a systematic way to compare options, identify red flags, and make informed decisions. This guide walks you through building a scorecard that works for developers and power users evaluating tools for personal projects or enterprise deployments.
 
+## Key Takeaways
+
+- **The following example uses**: a 100-point scale, but you should adjust weights to match your priorities.
+- **Under what jurisdictions does**: your company operate? ### User Rights 4.
+- **Can users export all**: their data? In what formats? 5.
+- **Do you sell user**: data to third parties? 8.
+- **This guide walks you**: through building a scorecard that works for developers and power users evaluating tools for personal projects or enterprise deployments.
+- **Each category deserves weighted**: scoring based on how critical it is for your use case.
+
 ## Why You Need a Vendor Privacy Scorecard
 
 SaaS vendors handle your data, and the terms they offer vary significantly. Some vendors encrypt data at rest, support GDPR rights, and offer data export. Others collect more data than necessary, share information with third parties, and make it difficult to delete your account. A scorecard transforms subjective impressions into measurable comparisons.
@@ -256,4 +265,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

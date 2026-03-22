@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Choosing a privacy-focused custom ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility. This guide compares the leading options for developers and power users who prioritize data minimization without sacrificing usability.
 
+## Key Takeaways
+
+- **Choosing a privacy-focused custom**: ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility.
+- **GrapheneOS only supports devices**: with verified boot andTitan M/M2 co-processors (Pixel 6 and newer).
+- **Users can install the**: sandboxed Google Play compatibility layer and still run banking apps while maintaining a verified boot chain.
+- **If your threat model**: includes not advertising that you run a custom ROM to services you use, GrapheneOS on a Pixel is currently the only viable option.
+- **Apps that partially work with microG**: Many popular apps that use Firebase Cloud Messaging for notifications, basic location services, and some SafetyNet checks.
+- **For GrapheneOS users who**: need broad app compatibility, the sandboxed Google Play approach is pragmatic.
+
 ## The ROMs at a Glance
 
 Four projects dominate the privacy-focused custom ROM space in 2026:

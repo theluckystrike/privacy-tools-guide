@@ -31,6 +31,15 @@ voice-checked: true---
 
 Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the original C implementation with stronger security guarantees against buffer overflows and use-after-free vulnerabilities. By 2026 it is production-ready, offering modular crates — `arti-client` for high-level integration, `tor-proto` for the core protocol, and `tor-circmgr` for circuit management — that developers can embed directly into Rust applications. This guide covers Arti's architecture, integration examples, performance tuning, and security best practices for privacy-focused projects.
 
+## Key Takeaways
+
+- **This guide covers Arti's architecture**: integration examples, performance tuning, and security best practices for privacy-focused projects.
+- **Arti is a memory-safe**: Rust rewrite of the Tor anonymity protocol, replacing the original C implementation with stronger security guarantees against buffer overflows and use-after-free vulnerabilities.
+- **Rust's ownership model and**: borrow checker eliminate entire classes of bugs, including buffer overflows and use-after-free vulnerabilities.
+- **However, you can run Arti as a separate SOCKS5 proxy on port 9150 and configure Tor Browser to use it**: though this is not officially supported and may affect anonymity properties.
+- **The `arti-client` crate provides**: the simplest integration path for most applications.
+- **You can then configure applications**: browsers, curl, wget — to use `127.0.0.1:9150` as their SOCKS proxy.
+
 ## Why Rust for Tor
 
 The original Tor implementation relies on C, a language prone to memory safety issues. Rust's ownership model and borrow checker eliminate entire classes of bugs, including buffer overflows and use-after-free vulnerabilities. These security properties are critical for anonymity software, where a single vulnerability could deanonymize users.

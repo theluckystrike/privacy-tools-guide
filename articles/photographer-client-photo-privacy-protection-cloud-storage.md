@@ -480,6 +480,12 @@
 
 
 
+
+
+
+
+
+
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
@@ -513,6 +519,12 @@ intent-checked: true
 voice-checked: true
 author: "Privacy Tools Guide"
 ---
+
+
+
+
+
+
 
 
 
@@ -553,13 +565,19 @@ voice-checked: true
 author: "Privacy Tools Guide"---
 
 
-
-
-
-
 # How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage
 
 Protect client photos by using zero-knowledge encrypted cloud storage (Proton Drive, Tresorit, Filen), stripping EXIF metadata before sharing, implementing two-factor authentication, and creating shareable links with expiration dates. Store backups using the 3-2-1 rule: active working copy plus encrypted cloud backup plus offline encrypted external drive. Establish clear data handling agreements with clients and respond to deletion requests within 30 days per GDPR requirements.
+
+## Key Takeaways
+
+- **The cloud provider itself**: cannot access your files because encryption happens before upload, and only you hold the decryption keys.
+- **Use Two-Factor Authentication on**: All Accounts Every cloud storage account storing client photos should have 2FA enabled.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Use authenticator apps (like**: Aegis or Bitwarden Authenticator) rather than SMS codes, which can be intercepted through SIM swapping.
+- **Many cloud services let**: you create shareable links with: - Expiration dates - Password protection - Download limits - Access tracking ### 4.
+- **Remediation**: Work with cybersecurity professionals to prevent future incidents
+5.
 
 ## Understanding the Privacy Risks for Client Photographs
 

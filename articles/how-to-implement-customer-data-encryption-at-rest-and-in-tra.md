@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, encryption]---
 
 Encryption serves as your last line of defense when attackers bypass other security controls. Whether you store customer data on disk or transmit it across networks, implementing proper encryption at rest and in transit prevents unauthorized access even if storage media or network traffic gets compromised. This guide walks through practical implementation strategies with working code examples you can adapt for your projects.
 
+## Key Takeaways
+
+- **Never hardcode keys**: Use environment variables, configuration files outside version control, or KMS solutions
+2.
+- **Use separate keys for**: different purposes: Separate encryption keys from signing keys 4.
+- **Instead**: use a key management service (KMS) or environment variables with proper access controls.
+- **The Fernet library uses**: AES-CBC with HMAC for authentication, providing both confidentiality and integrity.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Encryption at Rest versus in Transit
 
 Encryption at rest protects stored data—when someone gains physical or filesystem access to your servers or databases. Encryption in transit safeguards data moving between client applications and servers, protecting against network sniffing and man-in-the-middle attacks. Both layers work together to create defense in depth, and you should implement both rather than choosing one over the other.

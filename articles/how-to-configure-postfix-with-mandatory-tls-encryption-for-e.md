@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Configure Postfix with mandatory TLS encryption using `smtp_tls_mandatory_ciphers = high` and enforcing certificate verification via `smtp_tls_verify_cert_match = hostname`. This prevents downgrade attacks and man-in-the-middle interception of email traffic between mail servers. Proper TLS setup requires valid certificates, cipher hardening, and monitoring authentication failures to detect tampering attempts.
+
+## Key Takeaways
+
+- **- may**: TLS is opportunistic — used if the remote server supports it, otherwise falls back to plaintext.
+- **Prefer port 465 over**: 587 for new client configurations.
+- Never use this in production.
+- **- dane**: Uses DNSSEC and TLSA DNS records to authenticate remote servers, eliminating reliance on commercial CAs.
+- **Use `verify` or `dane`**: for specific high-value partner domains.
+- **This is the correct behavior for mandatory encryption**: failed delivery is preferable to unencrypted delivery.
 
 ## Why Mandatory TLS Matters for Email Privacy
 

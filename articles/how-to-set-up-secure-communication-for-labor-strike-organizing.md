@@ -31,6 +31,22 @@ tags: [privacy-tools-guide]---
 
 Labor strike organizing requires communication infrastructure that resists employer surveillance, protects activist identities, and maintains operational reliability under pressure. Unlike standard workplace communication, strike organizing faces adversaries with legal resources, corporate monitoring tools, and potentially sophisticated surveillance capabilities. This guide provides practical implementation strategies for developers and power users building secure communication systems for labor organizing.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a separate device**: from your work and personal phones 2.
+- **Install a privacy-focused operating**: system (GrapheneOS, CalyxOS, or standard iOS with minimal apps) 3.
+- **Use code words**: Establish harmless code words for sensitive topics (e.g., "pizza party" for strike vote)
+2.
+- **Verify identities**: Use in-person key verification for core committee members
+
+### Device Seizure Preparation
+
+Prepare for the possibility of device seizure:
+
+1.
+
 ## Establishing Your Threat Model
 
 Before selecting tools, identify what you're protecting against. Labor strike organizers typically face employer surveillance through company devices, subpoena of messaging service records, location tracking via phone metadata, social engineering attacks, and potential device seizure. Your threat model determines which tools provide adequate protection.

@@ -31,6 +31,13 @@ intent-checked: true---
 
 Android apps request permissions to access sensitive data: camera, microphone, location, contacts, photos. Most users grant all permissions during installation without understanding what access they grant. Auditing app permissions reveals which apps have unnecessary access, which permissions are actually used, and whether you can safely restrict access. This guide provides step-by-step techniques for permission audits.
 
+## Key Takeaways
+
+- **Most users grant all**: permissions during installation without understanding what access they grant.
+- **Auditing app permissions reveals**: which apps have unnecessary access, which permissions are actually used, and whether you can safely restrict access.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Android Permission Architecture
 
 Android permissions operate through permission groups. Apps declare required permissions in their manifest; Android groups related permissions together. When an app requests camera access, you can grant or deny it. Unlike older Android versions, you can revoke permissions after installation without uninstalling the app.

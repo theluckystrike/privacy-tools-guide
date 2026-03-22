@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 When selecting an email provider, most users focus on features, storage, and interface design. However, the legal jurisdiction where an email provider operates determines how much access governments have to your inbox. This factor often receives less attention than it deserves, especially for developers and power users who handle sensitive communications.
 
+## Key Takeaways
+
+- **When selecting an email provider**: most users focus on features, storage, and interface design.
+- **Check company registration echo**: "Checking company registration..." whois -h whois.admin.ch "$PROVIDER" 2>/dev/null | grep -i organization # 2.
+- **Verify DNS records (should**: point to jurisdiction) echo "Checking DNS registrar..." dig "$PROVIDER" NS +short # 3.
+- **Check SSL certificate issuer**: echo "Checking SSL certificate..." openssl s_client -connect "$PROVIDER:443" -showcerts 2>/dev/null | \ grep -i "issuer\|subject" | head -5 # 4.
+- **Lookup address information echo**: "Checking registered address..." whois "$PROVIDER" | grep -i "address\|country" # 5.
+- **Set up new email account
+echo "Step 1**: Create new email account at $NEW_PROVIDER"
+# Manual step: Register and verify new account
+
+# 2.
+
 ## Understanding Email Jurisdiction
 
 Email provider jurisdiction refers to the legal framework governing the company that operates your email service. This determines which laws apply when government agencies request access to your data. Different countries have vastly different approaches to privacy, ranging from strong constitutional protections to expansive surveillance authorities.

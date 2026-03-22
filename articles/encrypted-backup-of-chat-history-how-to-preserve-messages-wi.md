@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Create encrypted local backups of chat history using database exports encrypted with GPG, or use platform-native export features combined with client-side encryption tools. Local encryption gives you complete control over your message archive while protecting against cloud breaches, service shutdowns, and subpoena requests. This approach is essential for developers and power users who handle sensitive conversations and need data sovereignty guarantees that cloud-based chat apps cannot provide.
+
+## Key Takeaways
+
+- **For backups intended to**: remain private longer, consider upgrading to post-quantum algorithms as they become standardized (though this is premature for most users).
+- **The nonce (number used**: once) prevents replay attacks and ensures unique ciphertexts.
+- **Create encrypted local backups**: of chat history using database exports encrypted with GPG, or use platform-native export features combined with client-side encryption tools.
+- **This approach is essential**: for developers and power users who handle sensitive conversations and need data sovereignty guarantees that cloud-based chat apps cannot provide.
+- **Choose based on your**: downstream processing needs.
+- **This method works across**: platforms and uses well-audited cryptographic implementations.
 
 ## Why Local Encrypted Backups Matter
 

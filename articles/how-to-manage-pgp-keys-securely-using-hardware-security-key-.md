@@ -31,6 +31,30 @@ tags: [privacy-tools-guide, security]---
 
 Managing PGP keys securely is a critical skill for developers and power users who rely on encryption for communication, code signing, or data protection. Storing your private keys on a hardware security key like YubiKey provides protection against malware, physical theft, and remote attacks that could compromise software-based key storage. This guide covers the complete workflow for setting up GnuPG with a hardware security key.
 
+## Key Takeaways
+
+- **Generate an encryption key**: ```bash
+gpg --card-edit
+generate
+```
+
+Choose "Your key does not expire" or set an expiration period (3-5 years is common for encryption keys).
+- **Use YubiKey Manager to check**: ```bash
+ykman openpgp info
+```
+
+PIN blocked: After 3 failed attempts, the User PIN blocks.
+- **Use the Admin PIN to unblock**: ```bash
+gpg --card-edit
+admin
+passwd
+```
+
+Select option 2 to unblock the PIN.
+- **Managing PGP keys securely**: is a critical skill for developers and power users who rely on encryption for communication, code signing, or data protection.
+- **Hardware security keys like**: YubiKey 5 series support the OpenPGP standard, allowing you to store encryption, signing, and authentication subkeys on the device.
+- **This process sets up**: the card with your preferences and creates three slots for different key types.
+
 ## Understanding the Security Model
 
 When you store PGP keys on your computer, they remain vulnerable to various attack vectors. Malware can scan for private keys, keyloggers can capture passphrases, and physical access to your machine exposes unencrypted keys. A hardware security key solves these problems by keeping cryptographic operations isolated in secure hardware.
@@ -254,4 +278,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Building a privacy dashboard gives users transparent control over their personal data while helping your organization meet regulatory requirements like GDPR and CCPA. This guide walks through the architectural decisions, data modeling, and implementation patterns you'll need to create an effective privacy management interface.
 
+## Key Takeaways
+
+- **Remove from third-party integrations**: analytics_service.delete_user(user_id) email_service.unsubscribe(user_id) # 5.
+- **Anonymize rather than delete**: for analytics anonymize_user_data(user_id) # 2.
+- **Delete from primary database**: db.query(User).filter(User.id == user_id).delete() # 3.
+- **Delete from auth system**: auth_service.delete_user(user_id) # 4.
+- **Both require rate limiting**: to prevent abuse and protect system stability.
+- **But a single IP**: downloading data for 500 different users in an hour is a likely breach.
+
 ## Core Features of a Privacy Dashboard
 
 A functional privacy dashboard typically includes several key capabilities: viewing collected data, exporting personal information, deleting accounts, managing consent preferences, and accessing data processing history. Each feature requires backend support and careful API design.
@@ -497,4 +506,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

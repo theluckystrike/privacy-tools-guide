@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Modern Android keyboards collect and transmit typing data to their developers—Google's Gboard and Samsung Keyboard are no exceptions. This guide explains how typing data flows to these companies, what information gets collected, and practical steps developers and power users can take to prevent it.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use adb shell netstat**: to monitor network connections while typing 2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## How Android Keyboards Transmit Data
 
 Android keyboards operate with extensive system permissions. When you install Gboard or Samsung Keyboard, these apps request permission to read what you type, which fields you're filling, and sometimes even what you're about to type before you finish. This capability, called "predictive text" or "personalized suggestions," requires sending data to remote servers.

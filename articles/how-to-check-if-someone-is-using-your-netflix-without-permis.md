@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Netflix accounts get compromised through data breaches, phishing attacks, or simply sharing credentials with friends who later share them further. Unlike some streaming platforms that make account activity transparent, Netflix buries its security features deep in the settings. This guide shows developers and power users how to identify unauthorized access using the web interface, mobile app, and programmatic approaches.
 
+## Key Takeaways
+
+- **separate profiles** - Suggest**: they create individual profiles on the same account for better recommendations 3.
+- **Most home routers do**: not log detailed traffic by default, but you can enable this or use a Raspberry Pi running Pi-hole with logging enabled.
+- **Use a unique password**: that you do not reuse across services.
+- **Use a password manager**: to generate and store unique passwords for every service.
+- **Consider limiting account sharing**: by creating individual profiles if family members have different viewing preferences.
+- **This guide shows developers**: and power users how to identify unauthorized access using the web interface, mobile app, and programmatic approaches.
+
 ## Viewing Recent Activity Through the Web Interface
 
 The most straightforward method uses Netflix's built-in "Viewing Activity" feature. Log into your Netflix account on a desktop browser and navigate to your profile icon, then select "Account." Under the "Profile & Parental Controls" section, click the profile you want to check, then select "Viewing activity."

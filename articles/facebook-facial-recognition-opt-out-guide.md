@@ -17,6 +17,17 @@ tags: [privacy-tools-guide]---
 
 Facebook's facial recognition technology automatically analyzes photos and videos to identify users across the platform. For developers and power users who prioritize privacy, understanding how this system works and how to disable it is essential. This guide covers the technical mechanisms behind Facebook's facial recognition, the opt-out process through both the UI and Graph API, and considerations for maintaining privacy in integrated applications.
 
+## Key Takeaways
+
+- **Note that as of 2024, Facebook restricted direct API access to facial recognition settings for privacy reasons**: users must manually configure these settings through the interface described above.
+- **The Illinois Biometric Information**: Privacy Act (BIPA) resulted in a $650 million settlement requiring Facebook to obtain explicit consent before collecting facial data.
+- **Use Unique Email**: Create dedicated email for Facebook (not reused)
+2.
+- **Connected Apps Audit**: Remove unused integrations quarterly
+7.
+- **Facebook's facial recognition technology**: automatically analyzes photos and videos to identify users across the platform.
+- **For developers and power**: users who prioritize privacy, understanding how this system works and how to disable it is essential.
+
 ## Understanding Facebook's Facial Recognition System
 
 Facebook's DeepFace system uses deep neural networks to compare facial features across images. When you upload a photo, Facebook's algorithms create a template—a mathematical representation of facial landmarks—and compare it against templates from other photos where you appear. This enables features like automatic tagging suggestions, photo album organization, and profile security alerts.
@@ -410,4 +421,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

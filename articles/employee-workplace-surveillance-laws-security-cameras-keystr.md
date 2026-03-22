@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, security]---
 
 US federal law permits workplace surveillance for legitimate business purposes under ECPA, but states add restrictions—California prohibits keystroke logging and GPS tracking without consent, while New York requires reasonable notice and Connecticut restricts keystroke monitoring to detecting data theft. Security cameras in common areas are generally permitted, but bathrooms, changing rooms, and private areas are always protected. Employers must balance monitoring with employee privacy rights and NLRA protection of wage/working condition discussions, while employees should understand state laws and document any illegal surveillance.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Texas requires notice before**: installing GPS tracking devices on company vehicles used by employees.
+
 ## Federal Baseline for Workplace Surveillance
 
 The Electronic Communications Privacy Act (ECPA) of 1986 establishes the federal framework for workplace monitoring. Under ECPA, employers generally can monitor communications they have a legitimate business reason to access. The law distinguishes between content and metadata, with metadata receiving less protection.
@@ -363,4 +372,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Dark Pattern Regulations Which Privacy Laws Ban Manipulative](/privacy-tools-guide/dark-pattern-regulations-which-privacy-laws-ban-manipulative/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

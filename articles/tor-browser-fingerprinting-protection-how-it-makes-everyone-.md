@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Tor Browser eliminates browser fingerprinting by making all users report the same user agent, screen resolution, fonts, and rendering characteristics to trackers, effectively giving them a fingerprint shared by hundreds of thousands of users. This is achieved through letterboxing (gray margins that normalize window size), font standardization, and JavaScript tricks that return identical values to scripts attempting to identify your browser, making you statistically invisible among the crowd.
 
+## Key Takeaways
+
+- **Research shows that over**: 90% of users can be uniquely identified using just a few fingerprinting vectors.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use Tor Browser for**: privacy-critical browsing // 2.
+- **Use regular browser for**: banking/commerce // 3.
+- **Use Tor Browser (strongest**: fingerprinting protection) // 2.
+
 ## Understanding Browser Fingerprinting
 
 When you visit a website, your browser reveals numerous pieces of information that can be combined into a unique fingerprint. These include:

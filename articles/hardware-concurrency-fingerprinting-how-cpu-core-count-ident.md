@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Hardware concurrency—specifically the number of logical processor cores available on your system—is one of the simpler yet effective signals used in browser fingerprinting. While it may seem like innocuous information, this single data point contributes to creating a unique fingerprint that can track you across websites without cookies. For developers and power users, understanding how this fingerprinting technique works is essential for building more private applications and protecting your own privacy.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **A user with 32**: cores is likely running a high-end workstation, which advertisers can use for profiling.
+- **Use Privacy-Focused Browsers Tor**: Browser spoofs this value to a constant (typically 2), making all users appear identical.
+- **Entropy (bits) - Lower**: is better # 2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## What Is Hardware Concurrency?
 
 Hardware concurrency refers to the number of parallel execution units (threads) your CPU can handle simultaneously. Modern processors use techniques like hyper-threading or simultaneous multithreading to provide more logical cores than physical cores. A quad-core processor with hyper-threading typically reports 8 logical processors to the operating system and applications.

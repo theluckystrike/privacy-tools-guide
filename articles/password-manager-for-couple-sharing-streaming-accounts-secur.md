@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Use a family or team plan in a password manager like Bitwarden, 1Password, or Dashlane to share streaming accounts securely with your partner instead of text messages or sticky notes. Create a shared vault with the streaming credentials, enable audit logging to track access, and set optional expiration dates for revocation if needed. This approach provides encryption, access control, and audit trails that plain text methods cannot offer, while keeping shared credentials organized and automatically synced across both partners' devices.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a family or**: team plan in a password manager like Bitwarden, 1Password, or Dashlane to share streaming accounts securely with your partner instead of text messages or sticky notes.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The `notes` field is**: useful for storing recovery codes, subscription tier information, or PINs required by certain services.
+
 ## Why Password Managers Work Better Than Spreadsheets
 
 Most couples share credentials through_notes, voice dictation, or shared spreadsheets. These methods lack encryption at rest, offer no access logging, and make revocation difficult when relationships change. Password managers solve these problems through:

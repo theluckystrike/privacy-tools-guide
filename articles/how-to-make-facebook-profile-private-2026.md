@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook still offers manual settings, programmatic access through the Graph API and browser automation provide powerful options for bulk management and automation. This guide covers both approaches to make your Facebook profile private in 2026.
 
+## Key Takeaways
+
+- **The platform uses a**: tiered audience system: Public, Friends, Friends Except Acquaintances, Specific Friends, and Only Me.
+- **If you're a developer**: or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly.
+- **The Facebook Graph API**: provides the most reliable programmatic approach for managing privacy settings.
+- **The following example uses**: Playwright to navigate Facebook's settings interface.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding Facebook's Privacy Architecture
 
 Facebook organizes privacy settings across several categories: profile visibility, audience selection, tagging controls, and connection visibility. The platform uses a tiered audience system: Public, Friends, Friends Except Acquaintances, Specific Friends, and Only Me. Understanding these layers is essential for developers building tools that interact with Facebook's privacy controls.

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy, api]---
 
 Telehealth has transformed how we access healthcare, connecting patients with therapists and doctors through video calls. However, many people wonder about the privacy implications: Can your therapist record your session? What happens to video recordings? Who can access them? This guide breaks down the legal framework and practical considerations for telehealth privacy.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Your home network with**: WPA2/WPA3 encryption provides better protection than coffee shop connections.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **DATA STORAGE AND SECURITY**: Provider confirms: ☐ End-to-end encryption is used ☐ Data is encrypted at rest ☐ Backups are encrypted ☐ Access is logged and auditable 3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## The Legal Framework: HIPAA and State Laws
 
 The Health Insurance Portability and Accountability Act (HIPAA) governs how healthcare providers handle your protected health information (PHI). This includes video recordings from telehealth sessions. Under HIPAA, video recordings qualify as PHI when they contain identifiable health information.

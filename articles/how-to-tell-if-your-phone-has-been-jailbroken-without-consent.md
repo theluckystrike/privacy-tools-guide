@@ -33,6 +33,15 @@ Discovering that your phone has been jailbroken without your knowledge can be an
 
 The distinction between intentional jailbreaking (which you control) and unauthorized jailbreaking (which someone else did) carries important security implications. A jailbreak you perform and understand represents a known risk you've evaluated. An unauthorized jailbreak indicates either physical device compromise or social engineering—threats that typically persist beyond a single jailbreak attempt. Someone with access to compromise your device once can compromise it again.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Always use strong**: unique passwords for your device and associated accounts.
+- **Monitor which apps cause**: problems during fresh reinstallation 3.
+- **Let them use it for 2-3 weeks**: then gather their honest feedback.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## The Different Types of Jailbreaking
 
 Understanding jailbreak categories helps you recognize which type of compromise you face. Intentional jailbreaking (which you perform) creates predictable security impacts you understand. Unauthorized jailbreaking falls into distinct categories with different implications.

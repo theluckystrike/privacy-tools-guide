@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Access Control (DAC) lets users control access to their own resources, MAC systems enforce system-wide security policies that even privileged users cannot override. AppArmor and SELinux are the two dominant MAC implementations in the Linux ecosystem, each with distinct philosophies, performance characteristics, and use cases.
 
+## Key Takeaways
+
+- **The targeted policy**: the default for RHEL variants, protects specific network services while leaving most user processes in an unconfined domain.
+- **Performance benchmarks consistently show**: that properly configured SELinux adds only 2-5% overhead for typical workloads.
+- **The type component forms**: the basis of type enforcement, while the user and role components support role-based access control (RBAC).
+- **Red Hat's documentation and**: tooling support make it relatively straightforward to enable and configure for common use cases.
+- **The extensive default policies**: enterprise support contracts, and documented best practices make SELinux the natural choice for organizations standardized on these platforms.
+- **The learning mode proves**: particularly valuable for containerized applications because administrators can observe application behavior before enforcing restrictions.
+
 ## Understanding Mandatory Access Control Fundamentals
 
 Traditional Linux permissions operate on a simple owner-group-others model with read, write, and execute bits. This Discretionary Access Control approach means that if you own a file, you can decide who else can access it. However, this model provides limited protection against privilege escalation, compromised processes, or malicious administrators.

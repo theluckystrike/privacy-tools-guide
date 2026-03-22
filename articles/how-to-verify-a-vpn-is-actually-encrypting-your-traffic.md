@@ -31,6 +31,17 @@ intent-checked: true---
 
 You cannot trust a VPN's marketing claims—you must verify encryption yourself. Many VPN services claim to encrypt traffic while leaking DNS requests, exposing your real IP via WebRTC, or failing kill switches. This guide covers practical tests you can run with free tools to verify your VPN actually protects you: packet inspection with Wireshark, DNS leak detection, kill switch verification, WebRTC leak detection, and IPv6 leak checks. These aren't theoretical—they catch real failures.
 
+## Key Takeaways
+
+- **Do NOT use VPN yet**: note your ISP
+2.
+- **Do NOT use VPN**: note your real IP
+2.
+- **VPN reconnects (after 1-10**: seconds) 8.
+- **Try to access internet**: on Device A for 5 seconds 5.
+- **Worse, some are honeypots**: services run by security agencies to collect information.
+- **It queries STUN (Simple**: Traversal of User Datagram Protocol through NAT) servers to determine your real IP.
+
 ## Why Verification Matters
 
 A VPN's job is simple: encrypt your traffic so your ISP, network administrator, or monitoring service cannot see what you're doing. The promise is confidentiality through encryption.

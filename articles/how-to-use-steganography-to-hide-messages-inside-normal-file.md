@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Hide messages inside images, audio, or video files using steganography tools like Steghide (for images), SilentEye (GUI), or LSB (least significant bit) embedding. Steganography hides data's very existence—unlike encrypted files that signal something is hidden, steganographic files appear completely normal. Use with encryption for maximum security: embed an encrypted message in an image, share it as a photo, and only you and your recipient know to extract and decrypt it.
 
+## Key Takeaways
+
+- **In practice**: use only 10-20% of theoretical capacity to avoid statistical detection.
+- **Use with encryption for**: maximum security: embed an encrypted message in an image, share it as a photo, and only you and your recipient know to extract and decrypt it.
+- **It supports JPEG**: BMP, WAV, and AU formats and uses strong cryptographic algorithms internally.
+- **To resist detection**: prefer tools like OutGuess or F5 that are designed with steganalysis resistance in mind.
+- **Machine learning classifiers**: Tools like Aletheia use neural networks trained on steganographic content to detect embedding with high accuracy
+4.
+- **Hide messages inside images**: audio, or video files using steganography tools like Steghide (for images), SilentEye (GUI), or LSB (least significant bit) embedding.
+
 ## Understanding Steganography Basics
 
 At its core, steganography works by exploiting redundancies in file formats. Image files, audio files, and even documents contain more data than what meets the eye—bits that can be modified without noticeably affecting the file's appearance or functionality.

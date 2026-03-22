@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 Leaked API keys cause real breaches. GitHub's secret scanning detects millions of exposed credentials per year. Most of them are committed accidentally in `.env` files, hardcoded in source, or left in shell history. This guide covers how to handle keys properly from development through production.
 
+## Key Takeaways
+
+- **Most of them are**: committed accidentally in `.env` files, hardcoded in source, or left in shell history.
+- **This guide covers the core rule**: never store keys in code, setting up `.gitignore` correctly, pre-commit hook to block accidental commits, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+- **Practical recommendations**: Specific use-case guidance based on team size and requirements
+
 ## The Core Rule: Never Store Keys in Code
 
 API keys do not belong in:

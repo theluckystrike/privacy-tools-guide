@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Use end-to-end encrypted messaging (Signal), Proton Mail for encrypted email, or a dedicated secure client portal for attorney-client communications to preserve privilege. Ensure no third party (not even your email provider) can decrypt messages. Never use standard Gmail, Microsoft Teams, or Slack for privileged communications. Establish clear written agreements with clients confirming use of specific secure channels. Document that communications were made in confidence for obtaining legal advice. This combination—end-to-end encryption + documented intent + client acknowledgment—preserves privilege protection.
 
+## Key Takeaways
+
+- **Technical protection # -**: Encrypt documents with strong encryption (AES-256) # - Restrict distribution to "need-to-know" recipients only # - Document who accessed what files when # 2.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **Use end-to-end encrypted messaging**: (Signal), Proton Mail for encrypted email, or a dedicated secure client portal for attorney-client communications to preserve privilege.
+- **Never use standard Gmail**: Microsoft Teams, or Slack for privileged communications.
+- **Establish clear written agreements**: with clients confirming use of specific secure channels.
+- **Once you introduce a**: third party or use insecure channels, privilege may be waived.
+
 ## Understanding Attorney-Client Privilege in Digital Contexts
 
 Attorney-client privilege extends to digital communications, but only when certain conditions are met. The communication must be confidential, made between an attorney and client, and intended for seeking or providing legal advice. Once you introduce a third party or use insecure channels, privilege may be waived.

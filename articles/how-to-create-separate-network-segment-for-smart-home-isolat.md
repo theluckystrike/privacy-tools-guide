@@ -15,10 +15,18 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 Smart home devices present a significant attack surface. Every thermostat, camera, bulb, and voice assistant ships with varying levels of security, and many cannot be updated once shipped. Rather than trusting each manufacturer to secure their firmware, you can isolate these devices on a separate network segment. This approach limits lateral movement if a device is compromised while keeping your personal devices—laptops, phones, and workstations—on a distinct network with stricter access controls.
 
 This guide covers three practical approaches to network isolation: VLAN-based segmentation using managed switches or routers, firewall-rule segmentation on Linux gateways, and IoT-specific subnetting with DNS-based filtering. Each method scales differently, so choose based on your existing hardware and technical comfort level.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For most users**: blocking IoT-to-trusted traffic while allowing trusted-to-IoT traffic provides the right balance.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most consumer routers support**: "guest networks" or multiple DHCP pools.
+- **MTU mismatches can also cause throughput issues**: test with different MTU values (1500, 1492, 1480).
 
 ## Understanding Network Segmentation Fundamentals
 
@@ -372,4 +380,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

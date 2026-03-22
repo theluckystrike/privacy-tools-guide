@@ -35,6 +35,15 @@ Running your own email server remains one of the most effective ways to reclaim 
 
 This guide walks through setting up Mail-in-a-Box specifically for privacy-conscious users who want maximum data sovereignty without sacrificing email functionality.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Budget approximately $10-15 monthly**: for a suitable VPS.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Propagation may take up to 48 hours**: though most changes complete within hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding the Privacy Advantages
 
 When you use mainstream email services, your messages pass through servers controlled by companies with financial incentives to analyze your communication patterns. Every email you send reveals metadata: when you communicate, how frequently, and with whom. This data builds profiles used for advertising and potentially shared with third parties.

@@ -33,6 +33,17 @@ You've been using a password manager for years. You have unique, complex passwor
 
 This guide walks you through building a compelling case for password manager adoption, framed in terms your leadership will actually understand: risk reduction, compliance, and productivity.
 
+## Key Takeaways
+
+- **Most enterprise password managers**: cost between $3-8 per user monthly.
+- **Cost per user (15%)**: $3-10/user/month acceptable
+4.
+- **Studies consistently show that**: 65% of people reuse passwords across work and personal accounts.
+- **User experience (15%)**: Fast, intuitive, minimal training
+6.
+- **For a 50-person company**: that's roughly $2,000-5,000 annually.
+- $4.45M average breach cost.
+
 ## Start with Their Priorities, Not Yours
 
 Security professionals often lead with technical arguments—entropy, hashing algorithms, credential stuffing. Your boss likely doesn't care about any of this. Instead, focus on what they do care about: business continuity, legal liability, and operational efficiency.
