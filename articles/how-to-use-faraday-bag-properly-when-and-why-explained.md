@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 A Faraday bag blocks cellular, GPS, WiFi, Bluetooth, and NFC signals by surrounding your device with conductive material that distributes external electromagnetic fields. Use one when: traveling with sensitive devices to prevent remote tracking or interception, entering hostile environments where devices might be compromised, or protecting against physical thieves trying to track your location. Place the device inside, seal completely, and verify blocking by checking for signal loss before relying on it for critical security operations.
 
+## Key Takeaways
+
+- **Keeping your phone in**: a Faraday bag when not in use prevents attackers from using intercepted SMS-based two-factor authentication, though this is an extreme measure most users will not need.
+- **Most bags use a**: conductive strip that must be pressed completely closed.
+- **Closure type**: Roll-top closures generally provide better sealing than zipper-style closures, though both can be effective when properly used.
+- **The cost of a**: new bag ($30-100) is far less than the cost of a compromised device.
+- **They are designed for**: specific frequency ranges, typically from around 800 MHz to 6 GHz, which covers most consumer wireless technologies.
+- **Place your phone inside**: the bag with a running HTTP server, wait 30 seconds, then attempt to reach it from another device on the same network.
+
 ## What Faraday Bags Actually Do
 
 Faraday bags create a conductive enclosure that distributes external electric fields across the bag's surface, preventing them from reaching devices inside. This blocking works bidirectionally: signals cannot escape from your device, and external signals cannot reach it.

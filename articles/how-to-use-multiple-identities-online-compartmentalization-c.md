@@ -17,6 +17,20 @@ tags: [privacy-tools-guide]---
 
 Identity compartmentalization—the practice of separating your online activities into distinct, isolated contexts—reduces your attack surface and protects your privacy. When you use a single identity across all websites, a data breach or tracking profile potentially exposes your entire digital life. This guide covers practical strategies for developers and power users to implement effective identity separation.
 
+## Key Takeaways
+
+- **Iterate**: Add more compartments as needed
+
+## When to Escalate Isolation
+
+Basic compartmentalization works for most users.
+- **The effort scales with your threat model**: most users benefit from basic separation, while high-risk users need more rigorous boundaries.
+- **Choose your isolation method**: Browser profiles for simplicity, containers for flexibility, VMs for maximum isolation
+3.
+- **When you use a**: single identity across all websites, a data breach or tracking profile potentially exposes your entire digital life.
+- **This guide covers practical**: strategies for developers and power users to implement effective identity separation.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Identity Compartmentalization
 
 The core principle is simple: different contexts should not know about each other. Your work email should not be linked to your personal social media. Your development environment should not share cookies with your banking sessions. Each identity operates in its own silo, limiting cross-referencing and reducing exposure if one identity is compromised.

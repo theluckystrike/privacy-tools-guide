@@ -33,6 +33,17 @@ Domain fronting represents one of the most elegant techniques for bypassing netw
 
 This guide explains how domain fronting works at a technical level, provides practical implementations, covers the legal and ethical context you need to understand before using it, and compares it against alternative censorship circumvention tools.
 
+## Key Takeaways
+
+- **Monitor for abuse**: Ensure your frontend domains are not used for malicious command-and-control
+3.
+- **Layer with encryption**: Add VPN or Tor for sensitive use cases — domain fronting alone does not anonymize you
+5.
+- **Domain fronting represents one**: of the most elegant techniques for bypassing network censorship without requiring specialized infrastructure.
+- **- Tor's meek pluggable**: transport uses Azure and Amazon CDNs to disguise Tor bridge connections as ordinary cloud traffic, enabling access in heavily censored environments including Iran and China.
+- **These examples involve defensive**: privacy use.
+- **The same technique can**: also be misused for malicious command-and-control channels, which is part of why CDN providers have tightened their policies over time.
+
 ## How Domain Fronting Works
 
 When you make an HTTPS request, two different hostnames appear in the request:

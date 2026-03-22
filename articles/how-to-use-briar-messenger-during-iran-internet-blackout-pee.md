@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 During Iran's internet blackouts, use Briar Messenger, which works entirely offline through Bluetooth and Wi-Fi Direct without needing centralized servers or internet connectivity. Install Briar on Android or Linux, create an account, and exchange QR codes with contacts in person. Briar's peer-to-peer design makes it impossible to censor and is the most reliable messaging tool when traditional internet access is completely blocked.
 
+## Key Takeaways
+
+- **Use communication inconsistently to**: avoid patterns ## Integrating Briar Into Crisis Planning Organizations preparing for potential blackouts should plan Briar integration: Pre-Crisis Setup: 1.
+- **Both users open Briar**: and navigate to Contacts → Add Contact 2.
+- **One device scans for**: nearby Briar users 4.
+- **Both users open the**: QR code scanner 2.
+- **One user displays their**: QR code 3.
+- **Educate your circle about**: proper usage Having Briar operational before internet restrictions begin gives you the best chance at maintaining communication when it matters most.
+
 ## Why Briar Works When Other Apps Fail
 
 Conventional messaging apps require internet connectivity to reach servers. When Iran blocks internet traffic at the ISP level, these apps become useless. Briar takes a fundamentally different approach by enabling direct device-to-device communication through Bluetooth and Wi-Fi Direct.

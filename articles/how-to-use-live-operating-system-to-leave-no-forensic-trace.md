@@ -31,6 +31,17 @@ voice-checked: true---
 
 Every time you use a computer—whether at a library, hotel business center, or someone else's device—you leave traces. Browser history, cached passwords, USB device logs, and filesystem artifacts can all be recovered by forensic analysis. Live operating systems offer a powerful solution: they run entirely from removable media without touching the hard drive, leaving the host machine unchanged.
 
+## Key Takeaways
+
+- **Use only the system's RAM**: no traces remain
+4.
+- **Choose "Tails" from the**: GRUB menu 5.
+- **Use a VPN over**: Tor for additional layers 3.
+- **Every time you use a computer**: whether at a library, hotel business center, or someone else's device—you leave traces.
+- **It loads into RAM**: uses the computer's existing hardware, and leaves no permanent changes when powered off.
+- Access only essential services
+4.
+
 ## What Is a Live Operating System?
 
 A live operating system is a complete OS that runs from an USB drive, SD card, or DVD without installation. It loads into RAM, uses the computer's existing hardware, and leaves no permanent changes when powered off. The original operating system remains untouched, and upon reboot, the machine returns to its previous state.
