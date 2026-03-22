@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, security]---
+tags: [privacy-tools-guide, comparison, security]
+---
 ---
 layout: default
 title: "1Password vs Keeper Security Comparison 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, security]---
+tags: [privacy-tools-guide, comparison, security]
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 ---
 layout: default
 title: "1Password vs LastPass: Which Survived Their Breaches?"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 

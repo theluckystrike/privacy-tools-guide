@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 ---
 layout: default
 title: "Best Password Generator Strategy 2026: A Developer's Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 
 | Method | Entropy Per Character | Memorability | Offline Generation | Best For |

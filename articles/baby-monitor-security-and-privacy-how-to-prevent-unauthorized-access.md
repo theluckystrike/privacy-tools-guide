@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, security, privacy]---
+tags: [privacy-tools-guide, security, privacy]
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 ---
 layout: default
 title: "Air Gapped Computer Setup For Maximum Security Practical"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 

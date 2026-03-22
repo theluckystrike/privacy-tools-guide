@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 ---
 layout: default
 title: "Best Encrypted Email for Business 2026: A Technical Guide"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 {% raw %}
 

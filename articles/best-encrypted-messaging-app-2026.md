@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 ---
 layout: default
 title: "Best Encrypted Messaging App 2026"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 {% raw %}
 

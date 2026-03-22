@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 ---
 layout: default
 title: "Best Cloud Storage for Researchers Privacy 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 
 {% raw %}
 

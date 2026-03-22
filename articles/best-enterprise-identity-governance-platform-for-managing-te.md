@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, identity-governance, access-reviews, enterprise-security, best-of]---
+tags: [privacy-tools-guide, identity-governance, access-reviews, enterprise-security, best-of]
+---
 
 
 | Platform | Governance Features | SSO Support | Compliance | Pricing |

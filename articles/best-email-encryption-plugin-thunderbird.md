@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, encryption]---
+tags: [privacy-tools-guide, best-of, encryption]
+---
 ---
 layout: default
 title: "Best Email Encryption Plugin Thunderbird"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, encryption]---
+tags: [privacy-tools-guide, best-of, encryption]
+---
 
 
 | Plugin/Method | Protocol | Key Management | Ease of Use | Compatibility |

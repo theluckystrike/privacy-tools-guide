@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 ---
 layout: default
 title: "Ai Sentiment Analyzer Chrome Extension"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 
 {% raw %}
 

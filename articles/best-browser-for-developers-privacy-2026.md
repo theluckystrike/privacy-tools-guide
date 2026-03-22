@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 ---
 layout: default
 title: "Best Browser for Developers Privacy 2026: A Technical Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 
 
 | Browser | Privacy Level | Developer Tools | Fingerprint Resistance | Base Engine |

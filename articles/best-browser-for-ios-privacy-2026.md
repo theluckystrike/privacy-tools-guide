@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 ---
 layout: default
 title: "Best Browser for iOS Privacy 2026: A Developer Guide"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 
 {% raw %}
 

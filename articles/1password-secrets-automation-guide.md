@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 ---
 layout: default
 title: "1password Secrets Automation Guide"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 
 {% raw %}
 

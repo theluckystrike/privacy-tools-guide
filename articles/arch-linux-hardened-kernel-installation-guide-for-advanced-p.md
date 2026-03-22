@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, advanced]---
+tags: [privacy-tools-guide, advanced]
+---
 ---
 layout: default
 title: "Arch Linux Hardened Kernel Installation Guide For Advanced"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, advanced]---
+tags: [privacy-tools-guide, advanced]
+---
 
 {% raw %}
 

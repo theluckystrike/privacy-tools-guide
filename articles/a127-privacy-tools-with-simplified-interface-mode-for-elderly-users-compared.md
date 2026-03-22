@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]---
+tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]
+---
 ---
 layout: default
 title: "Privacy Tools with Simplified Interface Mode for Elderly"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]---
+tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]
+---
 
 {% raw %}
 

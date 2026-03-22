@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, best-of, privacy]---
+tags: [privacy-tools-guide, comparison, best-of, privacy]
+---
 ---
 layout: default
 title: "Best Encrypted Email Providers For Privacy Compared Protonma"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, best-of, privacy]---
+tags: [privacy-tools-guide, comparison, best-of, privacy]
+---
 
 {% raw %}
 

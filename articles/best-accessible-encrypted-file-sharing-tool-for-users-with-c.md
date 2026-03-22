@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]---
+tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]
+---
 ---
 layout: default
 title: "Best Accessible Encrypted File Sharing Tool for Users With"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]---
+tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]
+---
 
 {% raw %}
 

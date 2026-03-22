@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, tutorial, encryption]---
+tags: [privacy-tools-guide, tutorial, encryption]
+---
 ---
 layout: default
 title: "Age Encryption Tool Tutorial for Developers"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, tutorial, encryption]---
+tags: [privacy-tools-guide, tutorial, encryption]
+---
 
 {% raw %}
 

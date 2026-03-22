@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 ---
 layout: default
 title: "Android Privacy Best Practices 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, privacy]---
+tags: [privacy-tools-guide, best-of, privacy]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

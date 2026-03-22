@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 ---
 layout: default
 title: "Best Encrypted Backup Solution For Developers"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 {% raw %}
 

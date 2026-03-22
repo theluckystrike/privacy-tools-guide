@@ -11,7 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 ---
 layout: default
 title: "Aegis Authenticator vs Google Authenticator"
@@ -25,7 +26,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 
