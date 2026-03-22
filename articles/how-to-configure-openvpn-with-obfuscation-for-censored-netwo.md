@@ -258,6 +258,83 @@ For additional security layers, consider combining obfuscation with Tor or using
 
 After configuration, verify that the obfuscation is working correctly. Tools like Wireshark can confirm that traffic appears as HTTPS or the configured obfuscation protocol rather than standard OpenVPN. Test from multiple network environments to ensure reliability across different firewall configurations.
 
+### Confirming Traffic Looks Like HTTPS
+
+On Linux, capture traffic on the server's listening port and inspect it:
+
+```bash
+sudo tcpdump -i eth0 port 443 -w capture.pcap
+```
+
+Open the capture in Wireshark and examine the protocol column. A properly obfuscated connection using stunnel should show TLS records rather than OpenVPN data frames. If you see `OpenVPN` in the protocol column, your obfuscation layer is not engaged correctly.
+
+You can also use `nmap` from a separate machine to fingerprint the service:
+
+```bash
+nmap -sV --version-intensity 5 -p 443 your-server-ip
+```
+
+A successful obfuscation setup returns generic TLS service information rather than identifying OpenVPN.
+
+## Choosing the Right Obfuscation Method for Your Context
+
+Different censorship environments call for different approaches. Understanding which technique to apply saves troubleshooting time and reduces the risk of detection.
+
+### China and Iran: DPI-Resistant Protocols
+
+China's Great Firewall and Iran's filtering infrastructure deploy some of the most advanced DPI systems in the world. In these environments, port 443 alone is insufficient — the firewall actively probes TLS sessions and identifies OpenVPN handshake patterns.
+
+**Recommended stack**: Use obfs4 with obfs4proxy on a non-standard port, or deploy OpenVPN inside a Shadowsocks tunnel using the `v2ray-plugin` with WebSocket transport over TLS. The v2ray-plugin makes OpenVPN traffic appear as ordinary WebSocket connections to a CDN endpoint.
+
+```bash
+# Install v2ray-plugin on Ubuntu 22.04
+sudo apt install v2ray-plugin
+
+# Shadowsocks server config with v2ray-plugin
+{
+  "server": "0.0.0.0",
+  "server_port": 443,
+  "method": "aes-256-gcm",
+  "plugin": "v2ray-plugin",
+  "plugin_opts": "server;tls;host=cdn.example.com"
+}
+```
+
+Route OpenVPN through this Shadowsocks tunnel by pointing your OpenVPN remote to `127.0.0.1` on the local port that Shadowsocks exposes.
+
+### Russia: Protocol Rotation
+
+Russia's FAPSI and Roskomnadzor filtering systems update their block lists frequently but are slower to detect newly registered server IPs. A more effective long-term strategy is automatic protocol and port rotation.
+
+Use OpenVPN's `--remote` directive with multiple server entries:
+
+```
+remote server1.example.com 443 tcp
+remote server2.example.com 8443 tcp
+remote server3.example.com 4443 tcp
+remote-random
+```
+
+The `remote-random` directive shuffles the server order on each connection attempt, distributing connections and making behavioral profiling harder.
+
+### Corporate Networks and School Firewalls
+
+These environments typically use commercial filtering appliances like Palo Alto NGFW or Cisco Umbrella. These systems inspect SNI values and block known VPN provider domains.
+
+**Solution**: Host your own OpenVPN server behind a legitimate-looking domain name. Register a domain that sounds innocuous, obtain a genuine Let's Encrypt certificate, and configure stunnel to present that certificate. The traffic will look identical to ordinary HTTPS to any SNI-based filter.
+
+## Key Management Best Practices
+
+Long-lived certificates and keys are a security liability. Adopt these habits for any production obfuscated VPN:
+
+1. **Use ECDSA keys instead of RSA** — Smaller, faster, and equivalent security at 256 bits vs 2048 bits RSA. Generate with `./easyrsa build-server-full server nopass ec` after setting `set_var EASYRSA_ALGO ec` in the EasyRSA vars file.
+
+2. **Set short certificate lifetimes** — Client certificates should expire in 90 days. Automate reissuance. Long-lived client certs are a liability if a device is seized.
+
+3. **Revoke compromised certs immediately** — Run `./easyrsa revoke client1` and regenerate the CRL, then push it to the server via `crl-verify /path/to/crl.pem` in `server.conf`.
+
+4. **Separate CA from server** — Keep the Certificate Authority offline and air-gapped if possible. Only bring it online to sign new certificates.
+
 Building a reliable obfuscated VPN requires careful attention to both the encryption layer and the transport layer. The methods outlined here provide a solid foundation for developers and power users needing to maintain secure communications in restrictive network environments.
 
 ---
