@@ -233,6 +233,246 @@ NextDNS (USA): logs optional and configurable per account
 Quad9 (Switzerland): no logs, malware filtering, nonprofit
 ```
 
+## macOS Configuration for DoQ
+
+macOS has limited native support, but third-party tools work well:
+
+```bash
+# Install Knot Resolver (supports DoQ)
+brew install knot-resolver
+
+# Create configuration
+mkdir -p ~/.knot-resolver
+cat > ~/.knot-resolver/config << 'EOF'
+-- Knot Resolver macOS configuration
+modules = { 'hints' }
+
+-- DoQ upstream
+policy.add(policy.all(policy.TLS_FORWARD({
+  {'45.76.113.31', 'quic://dns.mullvad.net'},  -- Mullvad DoQ server
+})))
+
+-- Cache
+cache.size = 100 * MB
+cache.min_ttl = 300
+
+-- Listen on localhost only
+net.listen('127.0.0.1', 53, { kind = 'dns' })
+EOF
+
+# Run Knot Resolver
+kresd -c ~/.knot-resolver/config
+
+# Configure system DNS to use local resolver
+# System Preferences → Network → Advanced → DNS
+# Add: 127.0.0.1
+```
+
+Alternatively, use **dnscrypt-proxy**:
+
+```bash
+# Install dnscrypt-proxy
+brew install dnscrypt-proxy
+
+# Configuration file
+cat > /usr/local/etc/dnscrypt-proxy/dnscrypt-proxy.toml << 'EOF'
+listen_addresses = ['127.0.0.1:53']
+
+# Use Mullvad DoQ
+server_names = ['mullvad']
+
+# Log DNS queries (optional, privacy implications)
+log_files = []
+
+# Disable logging for privacy
+cert_ignore_timestamp = false
+EOF
+
+# Start service
+brew services start dnscrypt-proxy
+
+# Verify
+dig @127.0.0.1 example.com
+```
+
+## Windows Configuration for DoQ
+
+Windows 11 native DoT support exists, but DoQ requires workaround:
+
+```powershell
+# Install AdGuard DNS Client (supports DoQ)
+# Download from adguard-dns.io/windows
+
+# Or use Nextdns app (supports DoQ)
+# Download from nextdns.io
+
+# For manual setup, use Go DoQ client:
+# Install Go, then:
+go install github.com/natesales/q@latest
+
+# Query over DoQ from command line
+q example.com @quic://dns.mullvad.net
+```
+
+PowerShell to verify DoQ is working:
+
+```powershell
+# Check DNS server configuration
+Get-DnsClientServerAddress
+
+# Set DNS to local DoQ proxy (if running)
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("127.0.0.1")
+
+# Verify DoQ traffic (requires Wireshark or similar)
+# Look for UDP port 784 traffic
+```
+
+## iOS Configuration for DoQ
+
+iOS 15+ partially supports DoQ via Private DNS (though limited):
+
+```
+Settings → Network & Internet → Advanced → Private DNS
+Choose: Custom
+Enter: dns.mullvad.net
+```
+
+For full DoQ support on iOS, use third-party apps:
+
+- **Intra**: Supports DoH and DoQ, open source
+- **AdGuard for iOS**: Full DoQ support
+- **DNSCloak**: Supports all protocols
+
+Installation via TestFlight (example for Intra):
+
+```
+1. Visit: invite.intra.app
+2. Accept invite
+3. Install from TestFlight
+4. Configure DoQ resolver in app settings
+```
+
+## Troubleshooting DoQ Connectivity Issues
+
+If DoQ appears not to be working:
+
+```bash
+# 1. Verify local DoQ proxy is listening
+ss -ulnp | grep 784
+# Should show: UNCONN  0  0  0.0.0.0:784  0.0.0.0:*
+
+# 2. Test DoQ query directly
+q example.com @quic://dns.mullvad.net -v
+
+# 3. Check firewall rules
+sudo ufw status | grep 784
+# Add if needed: sudo ufw allow 784/udp
+
+# 4. Capture traffic to verify
+sudo tcpdump -i eth0 -n 'udp port 784'
+
+# 5. Test from different network (ISP blocking?)
+# Use hotspot or mobile data to test
+
+# 6. Verify certificate validity (if self-hosted)
+openssl s_client -connect yourdns.example.com:784
+```
+
+## Performance Comparison: DoQ vs Other Protocols
+
+Real-world testing on various networks:
+
+```bash
+#!/bin/bash
+# dns-protocol-benchmark.sh
+
+DOMAIN="example.com"
+ITERATIONS=100
+
+echo "=== DNS Protocol Performance Benchmark ==="
+
+for protocol in "plain-dns" "dot" "doh" "doq"; do
+  case $protocol in
+    plain-dns)
+      RESOLVER="@1.1.1.1"
+      LABEL="DNS (plain)"
+      ;;
+    dot)
+      RESOLVER="@tls://dns.mullvad.net"
+      LABEL="DNS over TLS"
+      ;;
+    doh)
+      RESOLVER="@https://dns.mullvad.net/dns-query"
+      LABEL="DNS over HTTPS"
+      ;;
+    doq)
+      RESOLVER="@quic://dns.mullvad.net"
+      LABEL="DNS over QUIC"
+      ;;
+  esac
+
+  echo -n "Testing $LABEL: "
+
+  total_time=0
+  for ((i=1; i<=ITERATIONS; i++)); do
+    start=$(date +%s%N)
+    q $DOMAIN $RESOLVER > /dev/null 2>&1
+    end=$(date +%s%N)
+    elapsed=$((($end - $start) / 1000000))  # Convert to ms
+    total_time=$(($total_time + $elapsed))
+  done
+
+  avg=$((total_time / ITERATIONS))
+  echo "${avg}ms average"
+done
+
+echo
+echo "Summary:"
+echo "Plain DNS: Fastest, no privacy"
+echo "DoT:       +10-20ms, encrypted"
+echo "DoH:       +15-25ms, looks like HTTPS"
+echo "DoQ:       +5-15ms, lowest latency (QUIC)"
+```
+
+## Selecting Multiple DoQ Providers for Redundancy
+
+Production setup with failover:
+
+```yaml
+# /opt/AdGuardHome/AdGuardHome.yaml
+upstream_dns:
+  - quic://dns.mullvad.net       # Primary (Sweden, audited)
+  - quic://dns.adguard-dns.com   # Secondary (Cyprus)
+  - quic://dns.quad9.net         # Tertiary (Switzerland)
+
+fallback_dns:
+  - 9.9.9.9  # Quad9 (fallback to plain DNS)
+  - 1.1.1.1  # Cloudflare (plain DNS backup)
+
+# If all DoQ fails, falls back to plain DNS
+# Ensures service continuity with privacy degradation only during outages
+```
+
+## Monitoring DoQ Usage and Performance
+
+Track DNS query statistics:
+
+```bash
+# Using AdGuard Home API
+curl -s http://localhost:3000/control/stats \
+  -H "Authorization: Basic $(echo -n 'admin:password' | base64)" | jq '{
+    total_queries: .num_dns_queries,
+    queries_today: .num_dns_queries_today,
+    blocked: .num_blocked_filtering,
+    query_log_enabled: .query_log_enabled,
+    stats_interval: .stats_interval
+  }'
+
+# Parse query log for DoQ specific stats
+jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
+  | sort | uniq -c | sort -rn | head -10
+```
+
 ## Related Reading
 
 - [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)

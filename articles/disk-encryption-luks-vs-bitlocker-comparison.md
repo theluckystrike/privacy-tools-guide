@@ -183,6 +183,143 @@ BitLocker does not expose a raw header, but the recovery key serves the equivale
 | Recovery | Passphrase / key file | Recovery password / recovery key |
 | Header backup | Manual | N/A (recovery key serves this) |
 
+## Practical Setup Walkthrough: LUKS on Ubuntu
+
+For Linux users, setting up LUKS2 from scratch on a new partition:
+
+```bash
+# 1. Identify your device (BE CAREFUL - verify with lsblk)
+lsblk
+# Output: sdb is your new drive
+
+# 2. Create partition if needed (or use existing partition)
+sudo parted /dev/sdb mklabel gpt
+sudo parted /dev/sdb mkpart primary 0% 100%
+lsblk /dev/sdb
+
+# 3. Format with LUKS2
+sudo cryptsetup luksFormat --type luks2 \
+  --cipher aes-xts-plain64 \
+  --key-size 512 \
+  --hash sha512 \
+  --pbkdf pbkdf2 \
+  --pbkdf-force-iterations 100000 \
+  /dev/sdb1
+
+# 4. Enter passphrase twice (use 20+ characters, avoid dictionary words)
+# Example: "Tr0pical$UnderWater#2026@SecurePass"
+
+# 5. Open the encrypted volume
+sudo cryptsetup luksOpen /dev/sdb1 my_secure_drive
+
+# 6. Create filesystem
+sudo mkfs.ext4 -L SecureDrive /dev/mapper/my_secure_drive
+
+# 7. Mount
+mkdir ~/secure_drive
+sudo mount /dev/mapper/my_secure_drive ~/secure_drive
+sudo chown $USER:$USER ~/secure_drive
+
+# 8. Verify
+lsblk
+df -h | grep secure_drive
+```
+
+For persistent mounting across reboots, edit `/etc/crypttab`:
+
+```bash
+# /etc/crypttab
+my_secure_drive /dev/sdb1 none luks,discard
+
+# Then add to /etc/fstab:
+# /dev/mapper/my_secure_drive /home/user/secure_drive ext4 defaults 0 2
+
+# On reboot, systemd will prompt for passphrase before mounting
+```
+
+## BitLocker on Windows: Full Setup
+
+For Windows 10/11 Pro, Enterprise, or Education:
+
+```powershell
+# 1. Check BitLocker status
+Get-BitLockerVolume -MountPoint "C:"
+
+# 2. Enable BitLocker with TPM+PIN (most secure)
+$SecurePin = Read-Host -AsSecureString "Enter 6-20 digit PIN"
+Enable-BitLocker -MountPoint "C:" `
+  -EncryptionMethod XtsAes256 `
+  -TpmAndPinProtector `
+  -Pin $SecurePin `
+  -SkipHardwareTest
+
+# 3. Save recovery key to secure location
+(Get-BitLockerVolume -MountPoint "C:").KeyProtector | `
+  Where-Object {$_.KeyProtectorType -eq 'RecoveryPassword'} | `
+  Select-Object -ExpandProperty RecoveryPassword > C:\Backup\BitLocker-RecoveryKey.txt
+
+# 4. Back up to OneDrive or AD
+Backup-BitLockerKeyProtector -MountPoint "C:" -KeyProtectorId (Get-BitLockerVolume -MountPoint "C:").KeyProtector[0].KeyProtectorId
+
+# 5. Monitor encryption progress
+Get-BitLockerVolume -MountPoint "C:" | Select-Object -Property VolumeStatus, EncryptionPercentage
+```
+
+## Real-World Disaster Recovery Scenarios
+
+### Scenario 1: Forgotten LUKS Passphrase
+
+If you have a backup key slot:
+
+```bash
+# Boot from USB with your Linux distribution
+# Mount the encrypted drive
+sudo cryptsetup luksOpen /dev/sdb1 recovery_attempt
+
+# If that fails with wrong password, try secondary key slot
+# List available slots
+sudo cryptsetup luksDump /dev/sdb1 | grep Keyslot
+
+# The data is still encrypted and locked — there's no backdoor
+# You must either:
+# 1. Use a secondary passphrase if you set one up
+# 2. Use the header backup (if you made one)
+# 3. Accept the data is lost
+
+# Prevention: Always set up multiple key slots
+```
+
+### Scenario 2: BitLocker Disabled, But Forgot PIN
+
+If you can still boot Windows:
+
+```powershell
+# Suspend BitLocker temporarily (no encryption, PIN not required)
+Suspend-BitLocker -MountPoint "C:" -RebootCount 1
+
+# Reboot and immediately change PIN
+Enable-BitLocker -MountPoint "C:" `
+  -EncryptionMethod XtsAes256 `
+  -TpmAndPinProtector `
+  -Pin $NewSecurePin
+
+# Or recover with recovery key
+Unlock-BitLocker -MountPoint "C:" -RecoveryPassword "Your-Recovery-Key-Here"
+```
+
+## When to Use LUKS vs BitLocker
+
+| Scenario | Best Choice | Why |
+|----------|------------|-----|
+| Linux-only system | LUKS | Native, open-source, no licensing |
+| Windows corporate environment | BitLocker | Hardware integration, Group Policy management |
+| Multi-OS (dual-boot) | LUKS on shared partition | Works on all systems |
+| Maximum security paranoia | LUKS2 with Argon2id | More resistant to GPU attacks |
+| Ease of setup | BitLocker | Automated, TPM integration |
+| Cross-platform portability | LUKS | Linux, macOS with FUSE, partial Windows support |
+| Server environments | LUKS | Minimal overhead, automation-friendly |
+| Consumer laptops | BitLocker | Transparent after initial setup |
+
 ## Related Reading
 
 - [LUKS Full Disk Encryption Linux Guide](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)

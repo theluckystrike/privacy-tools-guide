@@ -236,6 +236,266 @@ Both tools release updates regularly, often monthly or more frequently. Feature 
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Breaking Down LastPass's Weaknesses
+
+Why the LastPass breach was particularly damaging:
+
+```python
+# LastPass vulnerability: Weak master password offline cracking
+
+# Attacker has:
+# 1. Encrypted vault backup
+# 2. Master password verification hash
+# 3. Salt used in key derivation
+
+# Attack process:
+weak_passwords = [
+    "Password123",      # Human-memorable
+    "mypassword",       # Common pattern
+    "letmein2024"       # Year-based variation
+]
+
+for candidate in weak_passwords:
+    # Derive key using LastPass method (100,100 PBKDF2 iterations)
+    derived_key = pbkdf2(candidate, salt, iterations=100100)
+
+    # Check if matches verification hash
+    if verify_hash(derived_key, stored_hash):
+        print(f"CRACKED: {candidate}")
+        # Now decrypt vault with this key
+        vault = decrypt_vault(encrypted_backup, derived_key)
+        print(f"Passwords exposed: {vault.passwords}")
+        break
+
+# With offline cracking:
+# - GPU/ASIC can try billions of attempts
+# - 100,100 iterations is manageable for GPU
+# - Weak passwords crack in hours
+# - Strong passwords (20+ chars) still safe
+
+# Key insight: LastPass's PBKDF2 iteration count was INSUFFICIENT
+# Modern standard: 600,000+ iterations
+# Argon2id: Memory-hard, GPU-resistant
+```
+
+## Dashlane's Defensive Design
+
+Why Dashlane's breach had less impact:
+
+```python
+# Dashlane advantages after their 2022 breach:
+
+# 1. No encrypted vault backups were exposed
+# Only email + hashed master passwords
+# Attacker cannot decrypt any passwords
+
+# 2. SHA-512 hashing (not ideal, but better than LastPass)
+# Master password → SHA-512 hash
+# Attacker has hash, not encryption key
+# Even if password is weak, hash doesn't decrypt vault
+
+# 3. Stronger PBKDF2 parameters
+dashlane_iterations = 500000  # vs LastPass 100,100
+lastpass_iterations = 100100
+
+# Time to crack one password guess (GPU):
+# LastPass: 100,100 iterations = 0.1ms
+# Dashlane: 500,000 iterations = 0.5ms
+# 5x more expensive per attempt
+
+# For 10 billion password guesses:
+# LastPass: 1,000,000 seconds ≈ 12 days
+# Dashlane: 5,000,000 seconds ≈ 57 days
+# Major difference at scale
+
+# 4. Migration to Argon2id (announced)
+# Argon2id is memory-hard
+# GPU acceleration ineffective
+# Even more resistant than PBKDF2
+```
+
+## Technical Comparison: Encryption Details
+
+What you should verify for any password manager:
+
+```
+LastPass (after improvements):
+  ✓ AES-256 encryption
+  ✓ 600,000+ PBKDF2-SHA256 iterations (improved from 100,100)
+  ✓ HMAC-SHA256 for authentication
+  ✗ Still not memory-hard (GPU vulnerable)
+
+Dashlane (current):
+  ✓ AES-256-GCM (authenticated encryption)
+  ✓ 500,000+ PBKDF2-SHA512 iterations
+  ✓ Migrating to Argon2id
+  ✓ Separate authentication and encryption keys
+  ✓ No exposed vault data from breaches
+
+Bitwarden:
+  ✓ AES-256-CBC encryption
+  ✓ 600,000 PBKDF2-SHA256 iterations
+  ✓ Open source (code auditable)
+  ✓ Self-hostable
+
+1Password:
+  ✓ AES-256-GCM (authenticated encryption)
+  ✓ PBKDF2-SHA1 (weaker) OR Argon2id (stronger)
+  ✓ SRP (Secure Remote Password) for key derivation
+  ✓ Has security keys as additional factor
+```
+
+## Master Password Strength Calculator
+
+Test your master password against realistic attacks:
+
+```python
+import math
+import hashlib
+
+def estimate_crack_time(password, iterations=500000, gpu_attempts_per_sec=1e9):
+    """
+    Estimate time to crack password with GPU
+
+    Parameters:
+    - password: your master password
+    - iterations: PBKDF2 iterations (Dashlane uses 500,000)
+    - gpu_attempts_per_sec: typical GPU can try 1 billion per second
+    """
+
+    # Estimate entropy
+    entropy = 0
+
+    # Character set analysis
+    if any(c.isupper() for c in password):
+        entropy += 26  # Uppercase letters
+    if any(c.islower() for c in password):
+        entropy += 26  # Lowercase letters
+    if any(c.isdigit() for c in password):
+        entropy += 10  # Digits
+    if any(c in "!@#$%^&*()_+-=[]{}|;:,.<>?" for c in password):
+        entropy += 32  # Special characters
+
+    # Bits of entropy = log2(charset^length)
+    bits = math.log2(entropy) * len(password)
+
+    # Total attempts needed (on average, half keyspace)
+    total_attempts = 2 ** (bits - 1)
+
+    # Account for iterations (increases difficulty)
+    actual_attempts = total_attempts / iterations
+
+    # Time to crack
+    seconds_to_crack = actual_attempts / gpu_attempts_per_sec
+
+    # Convert to human-readable
+    if seconds_to_crack < 60:
+        return f"{seconds_to_crack:.0f} seconds"
+    elif seconds_to_crack < 3600:
+        return f"{seconds_to_crack/60:.0f} minutes"
+    elif seconds_to_crack < 86400:
+        return f"{seconds_to_crack/3600:.0f} hours"
+    elif seconds_to_crack < 31536000:
+        return f"{seconds_to_crack/86400:.0f} days"
+    else:
+        return f"{seconds_to_crack/31536000:.0f} years"
+
+# Test various passwords
+passwords = [
+    "MyPassword123",           # Weak
+    "Tr0pical$UnderWater",     # Medium
+    "Correct-Horse-Battery-Staple",  # Strong (diceware)
+    "aB3xY9kL2mN5oP8qR1sT4uV7wX0yZ",  # Very strong
+]
+
+print("Master Password Strength Analysis")
+print("=" * 50)
+for pwd in passwords:
+    time_estimate = estimate_crack_time(pwd)
+    print(f"Password: {pwd}")
+    print(f"Crack time: {time_estimate}")
+    print()
+
+# Recommendations:
+# - Minimum: 15+ characters with mixed case/numbers/symbols
+# - Better: 20+ characters
+# - Best: Diceware passphrase (5-6 words) = extremely strong
+```
+
+## Safe Migration Path
+
+If leaving LastPass or Dashlane:
+
+```bash
+#!/bin/bash
+# safe-migration.sh - Zero-trust migration between password managers
+
+echo "=== Secure Password Manager Migration ==="
+
+# Step 1: Export from source (if possible)
+# LastPass: lpass export > lastpass_dump.csv
+# Dashlane: Export via Settings → Security → Export
+
+# Step 2: Validate export format
+file lastpass_dump.csv
+wc -l lastpass_dump.csv  # Should have your password count + 1 header
+
+# Step 3: IMPORTANT - Delete from old service AFTER new is working
+# Don't export everything then delete immediately
+
+# Step 4: Import to new service
+# Bitwarden CLI:
+bw import lastpass lastpass_dump.csv
+
+# Step 5: Verify count matches
+bw list items | jq length  # Should match original password count
+
+# Step 6: Test critical passwords work
+# Try logging into banking, email, etc.
+
+# Step 7: Only then disable old account
+# Disable LastPass/Dashlane
+# Wait 30 days to ensure nothing breaks
+
+# Step 8: Shred the export file securely
+shred -vfz -n 5 lastpass_dump.csv
+
+# Step 9: Monitor for compromise
+# Set up breach monitoring: haveibeenpwned.com
+# Enable 2FA on all important accounts
+```
+
+## Long-Term Password Management Strategy
+
+For 2026 and beyond:
+
+```
+Phase 1: Current state
+- Use Dashlane or Bitwarden (avoid LastPass if possible)
+- Enable 2FA on password manager account
+- Use strong master password (20+ chars)
+- Keep recovery codes offline
+
+Phase 2: Transition (over 6 months)
+- Gradually replace weak passwords
+- Enable hardware security keys where available
+- Move away from old services
+- Test recovery procedures
+
+Phase 3: Future (2027+)
+- Passkeys will replace passwords for many services
+- Password manager will manage passkey backups
+- Master password security becomes less critical
+- Hardware security key becomes standard
+
+Strategy:
+1. Don't panic about past breaches (done is done)
+2. Focus on forward security (better tool, strong password)
+3. Implement 2FA universally
+4. Prepare for passkey migration
+5. Never reuse passwords across services
+```
+
 ## Related Articles
 
 - [1Password vs LastPass: Which Survived Their Breaches?](/privacy-tools-guide/1password-vs-lastpass-which-survived-breach/)
