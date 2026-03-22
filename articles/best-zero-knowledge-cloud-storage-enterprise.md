@@ -215,6 +215,35 @@ This pattern ensures your cloud provider stores only unreadable data. The encryp
 Enterprise zero-knowledge storage selection depends on your specific threat model, compliance requirements, and integration complexity. For maximum security, the DIY encryption approach with any S3-compatible backend provides the most control. For rapid deployment with managed key infrastructure, solutions like Tresorit or SpiderOak offer mature enterprise features.
 
 Start with a trial of two or three providers, test the API integration with your actual workflows, and evaluate the admin console features before committing.
+
+## Key Management Strategy: The Weakest Link
+
+Zero-knowledge encryption is only as strong as your key management. The encryption algorithm is almost never the point of failure — key exposure is. Enterprises that implement zero-knowledge storage but store encryption keys in environment variables, version control, or shared password managers have not achieved meaningful zero-knowledge protection.
+
+A production key management strategy for zero-knowledge enterprise storage requires:
+
+- **Hardware Security Modules (HSMs)**: Keys generated and stored inside tamper-resistant hardware. AWS CloudHSM, Azure Dedicated HSM, and Thales Luna are common choices. Keys never leave the HSM in plaintext.
+- **Key Rotation Policies**: Enforce automatic rotation on a schedule (90-day cycles are common under SOC 2). Your zero-knowledge provider should support key rotation without requiring data decryption and re-encryption.
+- **Break-Glass Procedures**: Document and test the emergency process for key recovery. The most secure key management systems have killed data access during incidents because recovery procedures were untested.
+- **Separation of Duties**: The administrator who manages keys should not be the same person who manages the data or the billing account. This limits insider threat exposure.
+
+If your team is not ready to implement HSM-backed key management, start with a managed provider like Tresorit or SpiderOak where key management infrastructure is handled for you, then migrate to a self-managed solution as your security maturity grows.
+
+## Compliance Mapping: Which Provider Fits Which Requirement
+
+Different regulated industries have different minimum requirements. This affects provider selection significantly:
+
+| Regulation | Key Requirement | Best-Fit Provider |
+|---|---|---|
+| HIPAA | Encryption at rest and in transit, audit logging, BAA | Tresorit (BAA available), SpiderOak |
+| SOC 2 Type II | Audited controls, annual third-party review | Sync.com, Tresorit |
+| GDPR/Schrems II | EU data residency, no US government access | Tresorit (Swiss), Filen (German) |
+| FedRAMP | US-based infrastructure, specific control framework | SpiderOak (government division) |
+| ISO 27001 | Information security management system | Tresorit, SpiderOak |
+
+For organizations operating across multiple jurisdictions, verify that your provider can guarantee data residency in each region where you have compliance obligations. A provider certified for GDPR compliance in the EU may still route metadata through US infrastructure, which can create Schrems II exposure.
+
+When evaluating compliance claims, always request the actual audit reports rather than relying on marketing badges. Reputable providers make SOC 2 Type II reports available under NDA upon request.
 ---
 
 
