@@ -2,11 +2,14 @@
 layout: default
 title: "Privacy-Focused Website Speed Test Tool That Does Not Track Tested URLs"
 description: "Discover privacy-focused website speed test tools that do not log or share tested URLs. This guide covers self-hosted options, CLI tools, and techniques for developers who need performance data without compromising URL privacy."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /privacy-focused-website-speed-test-tool-that-does-not-track-/
 categories: [guides]
+voice-checked: true
 tags: [privacy-tools-guide]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

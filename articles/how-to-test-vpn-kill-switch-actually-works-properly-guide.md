@@ -197,6 +197,364 @@ sudo iptables -L -n -v
 
 **Split tunneling enabled**: Check if split tunneling is accidentally allowing traffic outside the VPN tunnel. Disable split tunneling for protection.
 
+## Advanced Kill Switch Testing
+
+### Network Interface Monitoring
+
+Track network interface state changes during VPN operations:
+
+```bash
+#!/bin/bash
+# Monitor network interfaces for kill switch behavior
+
+monitor_interfaces() {
+  local interface="tun"
+  local check_interval=1
+
+  echo "Monitoring network interfaces..."
+
+  while true; do
+    # Get current state
+    current_state=$(ip link show | grep "$interface")
+
+    # Check traffic
+    rx=$(cat /sys/class/net/"${interface}"0/statistics/rx_bytes 2>/dev/null || echo "0")
+    tx=$(cat /sys/class/net/"${interface}"0/statistics/tx_bytes 2>/dev/null || echo "0")
+
+    # Log state
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] RX: $rx TX: $tx State: $current_state"
+
+    sleep $check_interval
+  done
+}
+
+monitor_interfaces
+```
+
+### TCP Connection Monitoring
+
+Verify that TCP connections are terminated on VPN disconnect:
+
+```bash
+#!/bin/bash
+# Monitor TCP connections during kill switch test
+
+monitor_tcp_connections() {
+  echo "TCP connections before VPN connect:"
+  netstat -an | grep ESTABLISHED | wc -l
+
+  # Connect to VPN
+  systemctl start vpn
+
+  sleep 3
+
+  echo "TCP connections while VPN is active:"
+  netstat -an | grep ESTABLISHED | wc -l
+
+  # Simulate disconnect
+  systemctl stop vpn
+
+  sleep 2
+
+  echo "TCP connections after VPN disconnect:"
+  netstat -an | grep ESTABLISHED | wc -l
+
+  # This number should be zero or only system connections
+}
+
+monitor_tcp_connections
+```
+
+### Real-Time DNS Leak Detection
+
+Monitor DNS queries in real-time:
+
+```bash
+#!/bin/bash
+# Real-time DNS leak detection
+
+monitor_dns_leaks() {
+  echo "Starting DNS leak monitor..."
+  echo "DNS queries (should use VPN DNS only):"
+
+  # Capture DNS queries with tcpdump
+  sudo tcpdump -i any 'udp port 53' -n | while read line; do
+    echo "[$(date '+%H:%M:%S')] $line"
+
+    # Extract destination IP
+    dns_ip=$(echo "$line" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | tail -1)
+
+    # Check if it's your configured VPN DNS
+    if [ "$dns_ip" != "1.1.1.1" ] && [ "$dns_ip" != "8.8.8.8" ]; then
+      echo "WARNING: Unexpected DNS server: $dns_ip"
+    fi
+  done
+}
+
+monitor_dns_leaks
+```
+
+### System Call Monitoring
+
+For advanced debugging, trace system calls to understand kill switch behavior:
+
+```bash
+#!/bin/bash
+# Trace system calls during VPN disconnect
+
+trace_kill_switch() {
+  local target_process="$1"
+
+  echo "Tracing kill switch behavior for PID: $target_process"
+
+  # Strace the process
+  strace -p "$target_process" -e trace=network 2>&1 | tee /tmp/strace.log &
+  STRACE_PID=$!
+
+  sleep 5
+
+  # Trigger VPN disconnect
+  systemctl stop vpn
+
+  # Let it run for a few seconds
+  sleep 3
+
+  # Kill trace
+  kill $STRACE_PID
+
+  # Analyze results
+  echo "System calls during disconnect:"
+  grep -E "(socket|connect|close)" /tmp/strace.log | tail -20
+}
+
+trace_kill_switch $(pgrep -f "curl.*check.torproject")
+```
+
+## Protocol-Specific Kill Switch Testing
+
+### WireGuard Kill Switch Testing
+
+WireGuard's simple design makes testing straightforward:
+
+```bash
+#!/bin/bash
+# WireGuard-specific kill switch test
+
+test_wireguard_killswitch() {
+  echo "Testing WireGuard kill switch..."
+
+  # Start ping test
+  ping 8.8.8.8 -c 1000 > /tmp/ping.log 2>&1 &
+  PING_PID=$!
+
+  # Connect to WireGuard
+  wg-quick up wg0
+  sleep 2
+
+  # Verify connected
+  curl https://api.ipify.org
+
+  # Disable WireGuard interface
+  ip link set wg0 down
+
+  # Wait a moment
+  sleep 2
+
+  # Check if ping is still working
+  if ps -p $PING_PID > /dev/null; then
+    echo "WARNING: Ping still running after WireGuard disconnect!"
+  else
+    echo "Kill switch working: ping was terminated"
+  fi
+
+  # Cleanup
+  kill $PING_PID 2>/dev/null
+  wg-quick down wg0
+}
+
+test_wireguard_killswitch
+```
+
+### OpenVPN Kill Switch Testing
+
+OpenVPN requires explicit kill switch configuration:
+
+```bash
+#!/bin/bash
+# OpenVPN-specific kill switch test
+
+test_openvpn_killswitch() {
+  echo "Testing OpenVPN kill switch..."
+
+  # Ensure kill switch is enabled in config
+  grep -q "explicit-exit-notify" /etc/openvpn/client.conf || {
+    echo "error_transport" >> /etc/openvpn/client.conf
+    echo "explicit-exit-notify 1" >> /etc/openvpn/client.conf
+  }
+
+  # Start OpenVPN
+  openvpn --config /etc/openvpn/client.conf &
+  OPENVPN_PID=$!
+
+  sleep 5
+
+  # Establish test connection
+  curl https://api.ipify.org
+
+  # Kill OpenVPN process (simulating crash/disconnect)
+  kill $OPENVPN_PID
+
+  sleep 2
+
+  # Attempt connection - should fail if kill switch works
+  if timeout 3 curl https://api.ipify.org; then
+    echo "FAILED: Connection succeeded after OpenVPN disconnect"
+  else
+    echo "PASSED: Kill switch blocked the connection"
+  fi
+}
+
+test_openvpn_killswitch
+```
+
+## Kill Switch Effectiveness Scoring
+
+Create a comprehensive test report:
+
+```python
+import subprocess
+import json
+from datetime import datetime
+
+class KillSwitchTester:
+    def __init__(self, vpn_type="wireguard"):
+        self.vpn_type = vpn_type
+        self.results = {}
+
+    def test_dns_leak(self):
+        """Test for DNS leaks on disconnect"""
+        try:
+            # This should timeout or fail if kill switch works
+            result = subprocess.run(
+                ["dig", "+short", "google.com"],
+                capture_output=True,
+                timeout=3
+            )
+            return {"passed": False, "message": "DNS query succeeded"}
+        except subprocess.TimeoutExpired:
+            return {"passed": True, "message": "DNS query blocked"}
+
+    def test_ip_leak(self):
+        """Test for IP leaks on disconnect"""
+        try:
+            result = subprocess.run(
+                ["curl", "-s", "--max-time", "3", "https://api.ipify.org"],
+                capture_output=True,
+                text=True
+            )
+            if result.returncode == 0:
+                return {"passed": False, "message": f"IP leaked: {result.stdout}"}
+            else:
+                return {"passed": True, "message": "IP request blocked"}
+        except Exception as e:
+            return {"passed": True, "message": f"Request blocked: {e}"}
+
+    def test_tcp_connections(self):
+        """Test for TCP connection leaks"""
+        result = subprocess.run(
+            ["netstat", "-an"],
+            capture_output=True,
+            text=True
+        )
+        connections = [l for l in result.stdout.split("\n") if "ESTABLISHED" in l]
+        return {
+            "passed": len(connections) == 0,
+            "connection_count": len(connections),
+            "message": f"Found {len(connections)} active connections"
+        }
+
+    def run_full_test(self):
+        """Run all kill switch tests"""
+        self.results = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "vpn_type": self.vpn_type,
+            "tests": {
+                "dns_leak": self.test_dns_leak(),
+                "ip_leak": self.test_ip_leak(),
+                "tcp_connections": self.test_tcp_connections()
+            }
+        }
+        return self.results
+
+    def score(self):
+        """Calculate overall score"""
+        tests = self.results.get("tests", {})
+        passed = sum(1 for t in tests.values() if t.get("passed", False))
+        total = len(tests)
+        percentage = (passed / total * 100) if total > 0 else 0
+        return percentage
+
+    def report(self):
+        """Generate JSON report"""
+        return json.dumps({
+            **self.results,
+            "score": self.score()
+        }, indent=2)
+
+# Usage
+tester = KillSwitchTester("wireguard")
+results = tester.run_full_test()
+print(tester.report())
+```
+
+## Continuous Kill Switch Monitoring
+
+Set up ongoing monitoring for your VPN kill switch:
+
+```bash
+#!/bin/bash
+# Continuous kill switch monitoring
+
+start_continuous_monitoring() {
+  local check_interval=300  # 5 minutes
+  local logfile="/var/log/vpn-killswitch-monitor.log"
+
+  while true; do
+    {
+      echo "=== $(date) ==="
+
+      # Check VPN status
+      if systemctl is-active --quiet vpn; then
+        echo "VPN Status: CONNECTED"
+
+        # Test connectivity
+        if timeout 3 curl -s https://api.ipify.org > /tmp/ip.txt; then
+          echo "IP Check: $(cat /tmp/ip.txt)"
+        else
+          echo "IP Check: FAILED (expected if kill switch active)"
+        fi
+      else
+        echo "VPN Status: DISCONNECTED"
+      fi
+
+      # Check for unexpected traffic
+      leaked=$(netstat -an 2>/dev/null | grep -v "127.0.0.1" | grep ESTABLISHED | wc -l)
+      echo "External Connections: $leaked"
+
+      if [ "$leaked" -gt 2 ]; then
+        echo "WARNING: Possible leak detected!"
+      fi
+    } >> "$logfile"
+
+    sleep $check_interval
+  done
+}
+
+start_continuous_monitoring &
+```
+
+This creates an ongoing log of your kill switch status.
+
 
 
 ## Frequently Asked Questions

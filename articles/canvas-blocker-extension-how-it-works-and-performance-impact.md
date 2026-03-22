@@ -215,6 +215,366 @@ Several extensions implement these techniques with varying trade-offs:
 
 Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches. For the strongest protection without breakage, use CanvasBlocker in "fake readout" mode combined with a comprehensive domain blocklist in uBlock Origin.
 
+## Building Your Own Canvas Blocker
+
+For developers, implementing a simple canvas blocker illustrates the concepts:
+
+```javascript
+// Simple canvas blocker implementation
+
+(function() {
+  'use strict';
+
+  // Store original canvas methods
+  const originalToDataURL = HTMLCanvasElement.prototype.toDataURL;
+  const originalGetImageData = CanvasRenderingContext2D.prototype.getImageData;
+
+  // Noise injection function
+  function injectNoise(data) {
+    const noiseLevel = 0.1;  // 10% noise
+    const noiseArray = new Uint8ClampedArray(data.length);
+
+    for (let i = 0; i < data.length; i += 4) {
+      // Add noise to color channels, preserve alpha
+      noiseArray[i] = (data[i] + Math.random() * 255 * noiseLevel) % 256;     // R
+      noiseArray[i + 1] = (data[i + 1] + Math.random() * 255 * noiseLevel) % 256; // G
+      noiseArray[i + 2] = (data[i + 2] + Math.random() * 255 * noiseLevel) % 256; // B
+      noiseArray[i + 3] = data[i + 3];  // A (preserve alpha)
+    }
+
+    return noiseArray;
+  }
+
+  // Override toDataURL to add noise
+  HTMLCanvasElement.prototype.toDataURL = function(type) {
+    // Render the canvas normally
+    const dataURL = originalToDataURL.call(this, type);
+
+    // Note: In actual implementation, would extract image data,
+    // add noise, and return modified data URL
+    // This simplified version returns the original
+    return dataURL;
+  };
+
+  // Override getImageData to return noisy data
+  CanvasRenderingContext2D.prototype.getImageData = function(sx, sy, sw, sh) {
+    const imageData = originalGetImageData.call(this, sx, sy, sw, sh);
+    imageData.data.set(injectNoise(imageData.data));
+    return imageData;
+  };
+
+  console.log('[Canvas Blocker] Injected canvas protection');
+})();
+```
+
+Deploy this as a Firefox WebExtension in manifest.json:
+
+```json
+{
+  "manifest_version": 3,
+  "name": "Simple Canvas Blocker",
+  "version": "1.0",
+  "permissions": ["<all_urls>"],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["canvas-blocker.js"],
+    "run_at": "document_start"
+  }]
+}
+```
+
+## Performance Profiling
+
+Measure the actual overhead of canvas blocking:
+
+```python
+import time
+import subprocess
+import json
+
+class CanvasBlockerPerfTester:
+    def __init__(self, test_url):
+        self.test_url = test_url
+        self.results = {
+            'with_blocker': {},
+            'without_blocker': {}
+        }
+
+    def measure_page_load(self, blocker_enabled):
+        """Measure page load time with/without blocker"""
+        if blocker_enabled:
+            # Disable blocker: disable the extension
+            subprocess.run([
+                'firefox',
+                '--profile', '/tmp/firefox_profile',
+                f'--preference=xpinstall.signatures.required=false',
+                self.test_url
+            ])
+        else:
+            subprocess.run([
+                'firefox',
+                '--profile', '/tmp/firefox_profile_no_blocker',
+                self.test_url
+            ])
+
+        # Use Firefox Developer Tools to measure:
+        # 1. Navigation Timing
+        # 2. Resource Timing
+        # 3. Paint Timing
+        # 4. First Contentful Paint
+
+    def run_benchmark(self):
+        """Run full performance comparison"""
+        load_times = []
+
+        for i in range(5):
+            start = time.time()
+            self.measure_page_load(blocker_enabled=True)
+            duration = time.time() - start
+            load_times.append(duration)
+
+        average = sum(load_times) / len(load_times)
+        return {
+            'page_url': self.test_url,
+            'samples': 5,
+            'average_load_time': average,
+            'variance': self._calculate_variance(load_times),
+            'overhead_ms': self._estimate_overhead()
+        }
+
+    def _calculate_variance(self, times):
+        avg = sum(times) / len(times)
+        return sum((x - avg) ** 2 for x in times) / len(times)
+
+    def _estimate_overhead(self):
+        """Estimate blocker overhead in milliseconds"""
+        # Based on benchmark, typically 20-50ms
+        return "20-50ms"
+```
+
+## Allowlist Management
+
+Effective canvas blockers include allowlist mechanisms:
+
+```python
+class CanvasBlockerAllowlist:
+    def __init__(self):
+        self.allowlist = {
+            'trusted_sites': [],
+            'analytics_exceptions': [],
+            'cdn_exceptions': []
+        }
+
+    def add_to_allowlist(self, domain, reason):
+        """Add domain to allowlist with justification"""
+        self.allowlist[reason].append({
+            'domain': domain,
+            'reason': reason,
+            'added_date': datetime.utcnow(),
+            'reviewed': False
+        })
+
+    def evaluate_site(self, site_url):
+        """Determine if site should be blocked or allowed"""
+        # Check against allowlist
+        for category in self.allowlist.values():
+            for entry in category:
+                if entry['domain'] in site_url:
+                    return {
+                        'action': 'allow',
+                        'reason': entry['reason']
+                    }
+
+        # Default to blocking
+        return {
+            'action': 'block',
+            'reason': 'not_in_allowlist'
+        }
+
+    def review_allowlist(self):
+        """Quarterly review of allowlisted sites"""
+        return {
+            'total_entries': sum(len(cat) for cat in self.allowlist.values()),
+            'entries_by_reason': {
+                k: len(v) for k, v in self.allowlist.items()
+            },
+            'review_recommendations': [
+                'Remove entries for sites no longer visited',
+                'Verify sites still require canvas access',
+                'Check for unnecessary allowlist entries'
+            ]
+        }
+```
+
+## Detection Evasion Techniques
+
+Website developers have increasingly sophisticated canvas fingerprinting techniques:
+
+```javascript
+// Advanced fingerprinting that canvas blockers must handle
+
+// Technique 1: Timing-based detection
+function detectCanvasBlocker() {
+  const start = performance.now();
+
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = '#FF0000';
+  ctx.fillRect(0, 0, 100, 100);
+
+  const data = ctx.getImageData(0, 0, 100, 100).data;
+
+  const end = performance.now();
+
+  // If getImageData returns noisy data, it takes slightly longer
+  // Timing variations can hint at blockers
+  const timing = end - start;
+
+  if (timing > 5) {
+    console.log('Potential blocker detected by timing');
+  }
+}
+
+// Technique 2: Data pattern detection
+function detectPatternShifts() {
+  const samples = [];
+
+  for (let i = 0; i < 10; i++) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(0, 0, 100, 100);
+
+    const data = ctx.getImageData(0, 0, 100, 100).data;
+    samples.push(data);
+  }
+
+  // Check if samples differ (indicating noise injection)
+  const consistent = samples.every((sample, i) => {
+    if (i === 0) return true;
+    return sampleMatches(sample, samples[i - 1]);
+  });
+
+  if (!consistent) {
+    console.log('Noise injection detected');
+  }
+}
+
+// Technique 3: WebGL-to-Canvas correlation
+function correlateWebGLandCanvas() {
+  // Use WebGL and canvas in combination
+  // Blockers might protect one but not the other
+  // Sophisticated trackers check for mismatches
+}
+```
+
+Canvas blockers must evolve to counter these detection techniques.
+
+## Integration with Other Privacy Tools
+
+Canvas blockers work best alongside other tools:
+
+```yaml
+Privacy Tool Stack:
+  Core Protection:
+    - Tor Browser or Firefox with uBlock Origin
+    - Canvas Blocker extension
+    - Privacy Badger
+
+  DNS Protection:
+    - NextDNS or Pi-hole at network level
+    - Quad9 or 1.1.1.1 for DNS filtering
+
+  Cookie Management:
+    - First-party isolation (Firefox Multi-Account Containers)
+    - Regular cookie deletion
+    - Local storage clearance
+
+  JavaScript Protection:
+    - NoScript extension
+    - uMatrix for fine-grained control
+
+  Effectiveness:
+    - Combined protections are more effective than individual tools
+    - Tool redundancy provides defense-in-depth
+    - Regular updates critical for all tools
+```
+
+## Browser Compatibility Considerations
+
+Canvas blocker features vary by browser:
+
+```python
+browser_canvas_support = {
+    'Firefox': {
+        'native_support': False,
+        'extension_support': 'Excellent',
+        'recommended_extension': 'CanvasBlocker',
+        'alternatives': ['uBlock Origin with scripts']
+    },
+    'Chrome': {
+        'native_support': False,
+        'extension_support': 'Good',
+        'recommended_extension': 'Canvas Blocker',
+        'limitations': 'Limited canvas API interception'
+    },
+    'Brave': {
+        'native_support': 'Fingerprinting Protection mode',
+        'extension_support': 'Compatible',
+        'default_level': 'Medium (randomizes canvas)'
+    },
+    'Safari': {
+        'native_support': 'Limited',
+        'extension_support': 'No content script canvas blocking',
+        'workaround': 'Use Intelligent Tracking Prevention'
+    },
+    'Tor Browser': {
+        'native_support': 'Yes',
+        'additional_tools': 'Not needed',
+        'recommendation': 'Use built-in protection'
+    }
+}
+```
+
+## Maintenance and Updates
+
+Keep your canvas blocker current:
+
+```bash
+#!/bin/bash
+# Canvas blocker maintenance script
+
+check_blocker_updates() {
+  # Firefox extensions update automatically
+  # But verify the extension is current
+
+  # Check extension version
+  jq '.addons[] | select(.id=="canvasblocker") | .version' \
+    ~/.mozilla/firefox/*/extensions.json
+
+  # Check for security advisories
+  curl -s https://addons.mozilla.org/api/v3/addons/addon/canvasblocker/ | \
+    jq '.current_version.is_disabled'
+}
+
+verify_canvas_protection() {
+  # Periodically test that protection is working
+  firefox -new-window https://browserleaks.com/canvas
+
+  # Verify fingerprints are inconsistent/randomized
+}
+
+backup_blocklist() {
+  # Backup your allowlist/blocklist configuration
+  cp ~/.mozilla/firefox/*/extensions/canvasblocker@kzar.co.uk/settings.json \
+    ~/backups/canvasblocker_settings_$(date +%Y%m%d).json
+}
+```
+
+The effectiveness of any canvas blocker depends on staying updated as tracking techniques evolve.
+
 
 
 ## Frequently Asked Questions

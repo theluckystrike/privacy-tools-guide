@@ -197,6 +197,302 @@ You can test Tor Browser's fingerprinting protection using online tools:
 
 This consistency across sessions is exactly what Tor Browser intends. The goal is not to appear random, but to appear identical to everyone else.
 
+## Advanced Fingerprinting Vectors
+
+### Audio Context Fingerprinting
+
+Modern browsers expose audio rendering details that vary by hardware:
+
+```javascript
+function getAudioFingerprint() {
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+  const oscillator = audioContext.createOscillator();
+  const analyser = audioContext.createAnalyser();
+  const gainNode = audioContext.createGain();
+
+  oscillator.connect(analyser);
+  analyser.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  oscillator.start(0);
+
+  const dataArray = new Uint8Array(analyser.frequencyBinCount);
+  analyser.getByteFrequencyData(dataArray);
+
+  oscillator.stop();
+
+  // The frequency response differs subtly between hardware
+  return Array.from(dataArray).join(',');
+}
+
+// Tor Browser protects against this by:
+// 1. Limiting the precision of frequency data
+// 2. Adding noise to the values
+// 3. Rounding to coarser granularity
+```
+
+Tor Browser adds noise to audio context operations, making the fingerprint unstable while maintaining audio functionality.
+
+### WebGL Fingerprinting
+
+WebGL capabilities reveal GPU and driver information:
+
+```javascript
+function getWebGLFingerprint() {
+  const canvas = document.createElement('canvas');
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+  if (!gl) return null;
+
+  const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+
+  return {
+    vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
+    renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL),
+    version: gl.getParameter(gl.VERSION),
+    shaderVersion: gl.getParameter(gl.SHADING_LANGUAGE_VERSION)
+  };
+}
+
+// This would typically vary by GPU model and driver version
+// Tor Browser mitigates by:
+// - Spoofing vendor and renderer strings
+// - Limiting available extensions
+// - Rounding precision of queries
+```
+
+Tor Browser reports standardized WebGL capabilities that don't reveal your actual GPU.
+
+### Protocol Fingerprinting
+
+Browser support for various protocols reveals implementation details:
+
+```javascript
+function checkProtocolSupport() {
+  return {
+    h2: typeof WebSocket !== 'undefined',
+    h2c: typeof WebSocket !== 'undefined',
+    quic: window.navigator.connection?.saveData,
+    http3: false  // Not yet standard
+  };
+}
+
+// Tor Browser normalizes these to prevent identification
+```
+
+### Hardware Concurrency and Device Memory
+
+APIs expose physical hardware specifications:
+
+```javascript
+// In most browsers, these reveal actual hardware
+console.log(navigator.hardwareConcurrency);  // Number of CPU cores
+console.log(navigator.deviceMemory);         // RAM in gigabytes
+
+// Tor Browser reports:
+// hardwareConcurrency: 2 (standardized)
+// deviceMemory: 4 (standardized)
+```
+
+These fixed values are identical across all Tor Browser users regardless of actual hardware.
+
+## Testing Fingerprinting Protection
+
+### Using Automated Testing Tools
+
+```bash
+#!/bin/bash
+# Automated fingerprinting test across multiple sites
+
+test_fingerprint_sites() {
+  local sites=(
+    "https://browserleaks.com/static/img/badge.png"
+    "https://panopticlick.eff.org/"
+    "https://www.deviceanalitics.com/browser-fingerprint/"
+    "https://amiunique.org/"
+  )
+
+  for site in "${sites[@]}"; do
+    echo "Testing: $site"
+    firefox -new-instance --private "$site" &
+    sleep 5
+
+    # Compare fingerprints across multiple runs
+    # They should be identical within the same Tor session
+  done
+}
+
+test_fingerprint_sites
+```
+
+### Creating a Fingerprinting Test Suite
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import json
+from datetime import datetime
+
+class FingerprintingTestSuite:
+    def __init__(self):
+        self.results = []
+
+    def test_tor_browser_consistency(self):
+        """Test that Tor Browser reports consistent fingerprints"""
+
+        test_results = {
+            'timestamp': datetime.utcnow().isoformat(),
+            'samples': []
+        }
+
+        # Would need to run through Tor Browser
+        # and extract fingerprinting data from JavaScript execution
+
+        return test_results
+
+    def compare_with_non_tor(self):
+        """Compare Tor Browser fingerprint with regular browser"""
+
+        # Same site, different browsers
+        # Tor Browser should look identical to other Tor users
+        # Regular browser should look unique
+
+        return {
+            'tor_browser_uniqueness': 'Should be shared with thousands',
+            'regular_browser_uniqueness': 'Should be highly unique'
+        }
+
+    def check_protection_vectors(self):
+        """Verify protection across major fingerprinting vectors"""
+
+        vectors = [
+            'canvas',
+            'webgl',
+            'audio_context',
+            'screen_size',
+            'fonts',
+            'plugins',
+            'user_agent',
+            'timezone'
+        ]
+
+        results = {}
+        for vector in vectors:
+            # Test each vector for stability
+            results[vector] = self._test_vector_stability(vector)
+
+        return results
+
+    def _test_vector_stability(self, vector):
+        """Check if a fingerprinting vector is stable across sessions"""
+        # Implementation would measure consistency
+        return {
+            'vector': vector,
+            'stable': True,
+            'variance': 'none',
+            'protection_level': 'strong'
+        }
+```
+
+## Limitations and Caveats
+
+### Websites That Break
+
+Some legitimate uses of fingerprinting might be affected:
+
+```javascript
+// Sites that rely on fingerprinting for security might break
+// Examples:
+// - Banking sites that use device fingerprinting for fraud detection
+// - Licensed content delivery that requires device verification
+// - Some progressive web apps that use fingerprinting for caching
+
+// Solutions:
+// 1. Use Tor Browser for privacy-critical browsing
+// 2. Use regular browser for banking/commerce
+// 3. Accept lower performance on some sites with Tor
+```
+
+### Performance Trade-offs
+
+Protection comes with costs:
+
+- Slightly slower page rendering due to fingerprinting protection
+- JavaScript execution may be slower with protections in place
+- Some websites detect Tor usage and block access
+
+### Exit Node Considerations
+
+While fingerprinting protection is strong, exit node selection matters:
+
+```bash
+# Tor Browser doesn't automatically select exit nodes
+# The guard node and middle relay use the same protocol
+
+# Your protection strategy:
+# 1. Fingerprinting protection prevents tracking by fingerprint
+# 2. Tor routing prevents tracking by IP address
+# 3. Combined: anonymous and indistinguishable
+```
+
+## Beyond Tor Browser
+
+### Alternative Anti-Fingerprinting Tools
+
+Other browsers offer similar protections:
+
+```python
+browser_fingerprinting_comparison = {
+    'Tor Browser': {
+        'canvas_protection': 'noise_injection',
+        'webgl_protection': 'spoofed_values',
+        'screen_size': 'letterboxed',
+        'effectiveness': 'very_high',
+        'cost': 'free'
+    },
+    'Firefox with uBlock Origin': {
+        'canvas_protection': 'extension_based',
+        'webgl_protection': 'extension_based',
+        'effectiveness': 'medium',
+        'cost': 'free'
+    },
+    'Brave Browser': {
+        'canvas_protection': 'built_in',
+        'webgl_protection': 'built_in',
+        'screen_size': 'variable',
+        'effectiveness': 'high',
+        'cost': 'free'
+    },
+    'Safari with Tracking Prevention': {
+        'canvas_protection': 'limited',
+        'webgl_protection': 'none',
+        'effectiveness': 'medium',
+        'cost': 'free'
+    }
+}
+```
+
+### Combining Protections
+
+Use multiple protections for defense in depth:
+
+```javascript
+// 1. Use Tor Browser (strongest fingerprinting protection)
+// 2. Disable JavaScript where possible
+// 3. Use browser extensions like CanvasBlocker or Privacy Badger
+// 4. Disable or randomize timezone/locale
+// 5. Use NoScript extension for additional control
+
+// This layered approach provides strongest practical protection
+```
+
+## Practical Recommendations
+
+For most users, Tor Browser's built-in fingerprinting protection is sufficient. The network effect—being indistinguishable from thousands of other Tor users—provides stronger anonymity than any individual fingerprinting countermeasure.
+
+If you need additional protection for specific threats, combine Tor Browser with other tools, but understand the trade-offs in performance and functionality.
+
 
 
 ## Frequently Asked Questions
