@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Android Google Account Privacy Settings: Complete Guide to Limiting Data Collection 2026"
 description: "A practical guide to securing your Android device by controlling Google account privacy settings and limiting data collection in 2026."
 date: 2026-03-21
-author: theluckystrike
+author: "Privacy Tools Guide"
 permalink: /android-google-account-privacy-settings-complete-guide-to-li/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 Your Android phone and your Google account work together to collect a significant amount of data about you. Every search query, location update, app usage pattern, and voice command creates a record that Google stores and uses for advertising and service improvements. For privacy-conscious users, understanding how to limit this data collection is essential for maintaining control over your digital footprint.
 
