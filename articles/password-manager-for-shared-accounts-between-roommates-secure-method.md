@@ -196,32 +196,200 @@ Secure shared password management requires more thought than throwing credential
 
 
 
-## Frequently Asked Questions
+## Audit Trail and Access Logging
 
+When multiple people access shared credentials, tracking who changed what becomes essential:
+
+```bash
+# Bitwarden organization audit log
+bw list event --organizationid YOUR_ORG_ID --json | jq -r '.[] | "\(.date) | \(.user) | \(.action)"'
+
+# Output example:
+# 2026-03-22T14:32:15Z | alice@email.com | passwordGenerated
+# 2026-03-22T14:35:42Z | bob@email.com | itemAccessed (Netflix)
+# 2026-03-22T14:36:18Z | alice@email.com | passwordChanged (Netflix)
+
+# 1Password audit (Teams/Family only)
+op api --http GET /teams/team-uuid/activity
+
+# These logs show:
+# - WHO accessed what credential
+# - WHEN it was accessed
+# - WHAT action was performed
+# - WHEN passwords were changed
+```
+
+Regular audit reviews catch unauthorized changes or inappropriate access patterns.
+
+## Conflict Resolution: Password Change Disputes
+
+What happens when two roommates disagree on a password change?
+
+```
+Scenario: Alice changes Netflix password without telling Bob
+Result: Bob is locked out mid-movie
+
+Prevention strategies:
+1. Shared channel/chat for password changes
+   "Changing Netflix password at 2pm, new password in vault in 5 min"
+
+2. Password change approval workflow
+   - Only roommate A can change streaming passwords
+   - Only roommate B can change WiFi password
+   - Emergency override requires both to agree
+
+3. Scheduled password rotation with notice
+   - Monthly password rotation on specific day
+   - 24 hours notice before change
+   - Final confirmation from all users before pressing "change"
+```
+
+Document your household's password change protocol in writing.
+
+## Onboarding New Roommates
+
+When someone new moves in:
+
+```bash
+# Security checklist for new roommate:
+
+1. Create separate vault account
+   # DO NOT share master password
+   bw register new-roommate@email.com
+
+2. Send individual invite for shared collection
+   # NOT the organization password
+
+3. Document security expectations
+   - "Don't share password with others"
+   - "Change your master password weekly"
+   - "Enable 2FA"
+   - "Log out when you move out"
+
+4. Have them configure 2FA immediately
+   bw config server https://bitwarden.your-server.com
+   bw unlock new-roommate@email.com
+   # Then enable authenticator app
+
+5. Review permissions
+   # Make sure they only have access to household shared items
+   # NOT your personal banking vault
+```
+
+## Off-boarding When Roommates Leave
+
+When someone moves out, act immediately:
+
+```bash
+# Within 24 hours:
+
+1. Revoke their vault access
+   bw share remove-access new-vault-item --roommate-email
+
+2. Change all shared passwords
+   # Even if you trust them, safer to rotate
+   bw create item login \
+     --name Netflix \
+     --login-uri https://netflix.com \
+     --login-username newemail@example.com \
+     --login-password "$(bw generate --length 24)"
+
+3. Disable their user account (if organization admin)
+   bw delete user roommate@email.com --organizationid YOUR_ORG_ID
+
+4. Remove them from any group chats
+   Slack/Discord: @roommate has been removed from #household-passwords
+
+5. Document the offboarding
+   - Date removed
+   - Passwords changed
+   - Access revoked
+   - Keep this for security audit trail
+```
+
+Moving too slowly after someone leaves is a major security risk.
+
+## Cost-Benefit Analysis for Shared Vaults
+
+Is a paid password manager worth the cost?
+
+```
+Scenario 1: Single roommate pair
+Cost: Bitwarden Free ($0/month)
+Benefit: End-to-end encrypted credential sharing
+ROI: Infinite (free, prevents password sharing in group chats)
+
+Scenario 2: 3-4 roommates
+Cost: Bitwarden Premium ($10/month) or Families
+Benefit: Audit logging, better support, larger vault
+ROI: $2.50-3.30 per person per month for professional-grade security
+
+Scenario 3: House of 5+ roommates
+Cost: Consider dedicated password manager + VPN
+Benefit: Centralized management, full audit trails
+ROI: More complex; may be worth paying for
+
+Decision tree:
+- < 3 people? Use Bitwarden Free
+- 3-5 people? Use Bitwarden Premium with organization
+- 5+ people? Consider 1Password Family or business-tier Keeper
+```
+
+The ROI improves as the group size increases.
+
+## Alternative: Shared Secret Management Without Permanent Password Manager
+
+For short-term roommate situations (college dorms, temporary housing):
+
+```bash
+# Temporary shared secret sharing via OneTimeSecret
+
+# Alice creates a secret link
+curl -X POST https://onetimesecret.com/api/share \
+  -d "secret=netflix-password-here&passphrase=household-passphrase"
+
+# Response: https://onetimesecret.com/s/yyyyyyyy
+# Alice sends link to Bob via Slack
+# Bob opens link, enters "household-passphrase"
+# Secret is displayed once, then deleted forever
+
+# Pros:
+# - No permanent account needed
+# - No password manager subscription
+# - Audit trail (link was accessed/not accessed)
+
+# Cons:
+# - No password history
+# - Can't manage long-term shared accounts
+# - Each password change requires new link
+```
+
+This works for temporary shares but doesn't scale to ongoing household management.
+
+## Frequently Asked Questions
 
 **Who is this article written for?**
 
-This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-
+Anyone in a shared living situation who needs to manage household credentials securely. Roommates, couples, families, and multi-person offices all benefit from the password manager approach over informal credential sharing methods.
 
 **How current is the information in this article?**
 
-We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
+Updated for 2026. Password manager features and pricing change quarterly. Verify current features and pricing on official websites before deciding. The core principle (encrypted shared vaults) is stable across managers.
 
 **Are there free alternatives available?**
 
-Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
-
+Bitwarden Free supports shared items among 2+ users. For larger groups, free options are limited—most free tiers don't include organization/group sharing.
 
 **Can I trust these tools with sensitive data?**
 
-Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
-
+Password managers store your most sensitive data. Review encryption, security audits, and company track record. Both Bitwarden and 1Password undergo regular security audits and publish results.
 
 **What is the learning curve like?**
 
-Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+Basic setup: 15-30 minutes.
+Full feature adoption: 1-2 hours.
+Teaching roommates: 1 hour per person.
+Integration into household workflow: 2-4 weeks before becoming natural.
 
 
 ## Related Articles

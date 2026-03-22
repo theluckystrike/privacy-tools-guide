@@ -196,32 +196,156 @@ macOS provides detailed privacy controls, but they require intentional configura
 
 
 
-## Frequently Asked Questions
+## Performance Impact of Disabling Spotlight
 
+System-wide Spotlight disablement affects search speed across macOS:
+
+```bash
+# Measure search performance impact
+
+# WITH Spotlight enabled
+time mdutil -E /
+time open /Applications/Finder.app
+# Then search (should be instant <100ms)
+
+# AFTER Spotlight disabled
+sudo mdutil -a -i off
+time find /Users -name "*.pdf" 2>/dev/null
+# Search without index takes 5-30 seconds depending on storage size
+```
+
+Disabling Spotlight sacrifices ~5-10MB of RAM and instant search in exchange for privacy.
+
+## Siri Data Collection Through Spotlight
+
+Siri suggestions in Spotlight send data to Apple:
+
+```bash
+# Siri query data flow
+# 1. User types in Spotlight
+# 2. Query sent to Apple servers (if suggestions enabled)
+# 3. Apple returns web results, app suggestions, news
+# 4. Query history kept on Apple servers
+
+# Disable Siri data collection
+defaults write com.apple.assistant.support 'Siri Data Store Opt-In Offered' -bool false
+defaults write com.apple.assistant.support 'Siri Data Store Opt-In' -bool false
+
+# Verify Siri dictation privacy
+# System Preferences → Siri & Spotlight → Improve Siri & Dictation → OFF
+```
+
+Even with Spotlight disabled, Siri continues sending data if you use voice commands.
+
+## Mail Metadata Indexed by Spotlight
+
+Spotlight indexes email content and metadata, creating a detailed communication history:
+
+```bash
+# Check what email metadata Spotlight has indexed
+mdfind "from:john@example.com"  # Searches all indexed emails
+mdfind "subject:*password*"      # Finds emails with "password" in subject
+
+# Exclude Mail from Spotlight indexing
+# System Settings → Privacy & Security → Spotlight → Uncheck "Mail"
+
+# For extreme privacy, use `.metadata_never_index` in Mail cache
+touch /Users/username/Library/Mail\ Downloads/.metadata_never_index
+touch /Users/username/Library/Mail\ V*/MailData/.metadata_never_index
+```
+
+Indexed emails become searchable by any app with Spotlight access. Remove Mail from indexing if you handle sensitive communications.
+
+## Third-Party App Integration with Spotlight
+
+Apps like Bear, OmniFocus, and Notion integrate with Spotlight:
+
+```bash
+# When these apps register with Spotlight, they can:
+# - See indexed documents
+# - Extract metadata from your files
+# - Build profiles of your activities
+
+# Check which apps have registered with Spotlight
+# System Settings → Privacy & Security → Spotlight → View apps
+
+# Limit app Spotlight integration
+# System Settings → Privacy & Security → Spotlight → Uncheck apps you don't need indexed
+```
+
+Productivity apps use Spotlight integration for convenience but increase data exposure.
+
+## Regular Auditing of Spotlight Configuration
+
+Spotlight settings change after macOS updates:
+
+```bash
+#!/bin/bash
+# Script to audit Spotlight configuration monthly
+
+echo "=== Spotlight Configuration Audit ==="
+
+# Check indexing status
+echo "Indexing enabled?"
+mdutil -s / | grep "indexing"
+
+# List excluded folders
+echo "Excluded folders:"
+defaults read /var/db/Spotlight-Volume/Exclusions
+
+# Check what's being indexed
+echo "Indexed locations:"
+mdutil -E / | grep "Indexed"
+
+# Verify settings match expectations
+echo "Suggestions enabled?"
+defaults read com.apple.spotlight NSUserDomainEnabled
+
+# Run monthly
+crontab -e  # Add: 0 9 1 * * /path/to/audit-spotlight.sh
+```
+
+Run this quarterly to catch privacy setting changes from updates.
+
+## Comparison: Spotlight vs Alfred vs Raycast
+
+| Feature | Spotlight | Alfred | Raycast |
+|---------|-----------|--------|---------|
+| Privacy | Integrated telemetry | Local-first | Cloud-dependent |
+| Cost | Free (included) | £39 lifetime | Freemium + $100/yr |
+| Indexing | System default | Customizable | Minimal |
+| Extensibility | Limited | Powerful | Powerful |
+| Data sent to cloud | Search queries | None (local search) | Snippets, commands |
+| Open source | No | No | No |
+
+For maximum privacy with Spotlight functionality:
+- **Lightweight**: Stick with Spotlight, disable suggestions
+- **Powerful**: Alfred (one-time cost, local)
+- **Modern**: Raycast (if willing to accept cloud features)
+
+## Frequently Asked Questions
 
 **Who is this article written for?**
 
-This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-
+Developers, security researchers, and power users concerned about privacy implications of indexed personal data. Whether you're evaluating baseline privacy or hardening for threat models, this focuses on practical configuration rather than theoretical discussion.
 
 **How current is the information in this article?**
 
-We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
+Updated for macOS Sequoia (2024). Settings paths and feature names change with OS versions. Verify settings on your specific macOS version—older versions may use "System Preferences" instead of "System Settings."
 
+**Are there alternatives to Spotlight indexing?**
 
-**Are there free alternatives available?**
+Yes. fsearch (Linux), Recoll, Everything (Windows) provide local search without Apple integration. For macOS, Alfred and Raycast offer privacy-respecting alternatives with stronger privacy controls.
 
-Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
+**Can I trust Spotlight with very sensitive files?**
 
+No. Even with exclusions, Spotlight indexes files you might forget to exclude. For highly sensitive data, use encrypted containers (LUKS/VeraCrypt) instead—encrypted files are not indexed even if the container is.
 
-**Can I trust these tools with sensitive data?**
+**What is the performance impact of disabling Spotlight indexing?**
 
-Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
-
-
-**What is the learning curve like?**
-
-Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+Initial impact: 30+ minutes of background indexing stops.
+Ongoing impact: Spotlight and Siri become slower (5-30 second searches instead of instant).
+RAM/disk impact: Saves ~5GB of index data.
 
 
 ## Related Articles

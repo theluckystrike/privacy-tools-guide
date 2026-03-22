@@ -256,11 +256,160 @@ For most users, combining AdGuard DNS (or Pi-hole) with Firefox in Strict mode a
 
 ---
 
+## Layer 6: Advanced DNS Techniques
+
+### DNS-over-HTTPS (DoH) for Enforced Privacy
+
+Standard DNS queries are sent in plaintext—your ISP can see every domain you request. DNS-over-HTTPS encrypts DNS queries end-to-end:
+
+```bash
+# Firefox: about:config
+network.trr.mode = 2  # Strict DoH mode
+network.trr.uri = https://94.140.14.14/dns-query  # AdGuard DoH endpoint
+
+# Linux with systemd-resolved
+cat > /etc/systemd/resolved.conf <<EOF
+DNS=94.140.14.14
+FallbackDNS=94.140.15.15
+DNSSEC=yes
+DNSSECNegativeTrustAnchors=
+EOF
+systemctl restart systemd-resolved
+```
+
+DoH prevents ISP-level visibility of your DNS queries. However, DoH providers can still see what you're querying. Pair DoH with a privacy-respecting resolver like Mullvad or CENO for stronger guarantees.
+
+### Stubby for Local DNS Encryption
+
+Stubby is a DNS over TLS resolver you run locally:
+
+```bash
+# Install Stubby
+sudo apt install stubby
+# macOS
+brew install stubby
+
+# Configure /etc/stubby/stubby.yml
+upstream_recursive_servers:
+  - address_data: 94.140.14.14
+    tls_auth_name: "dns.adguard.com"
+    tls_pubkey_pinning: "ABCD1234..."
+
+# Start Stubby daemon
+sudo systemctl start stubby
+sudo systemctl enable stubby
+
+# Test
+dig @127.0.0.1 example.com
+```
+
+Stubby encrypts all DNS traffic between your machine and the resolver. This adds a security layer but requires local daemon management.
+
+## Layer 7: Content Security Policy Inspection
+
+Modern sites implement Content Security Policy (CSP) headers that restrict where scripts and resources load from. Examining CSP reveals the tracking infrastructure a site uses:
+
+```bash
+# Check CSP headers
+curl -I https://example.com | grep -i "content-security"
+
+# Example CSP output:
+# Content-Security-Policy: default-src 'self'; script-src 'self' *.example.com *.analytics.com
+
+# Domains after script-src are allowed to inject JavaScript
+# Domains referenced in img-src, font-src, etc. can load tracking pixels/fonts
+```
+
+Extract and block these domains at the DNS level for that specific site.
+
+## Layer 8: Monitoring Your Success
+
+Verify that your blocking is actually working:
+
+```bash
+# Create a simple test page to check what resolves
+cat > tracker-test.html <<EOF
+<html>
+<head>
+<script src="https://googletagmanager.com/gtag/js?id=G-XXXXX"></script>
+<img src="https://doubleclick.net/test.gif"/>
+<script src="https://connect.facebook.net/test.js"></script>
+</head>
+<body>Open developer console (F12) and check Network tab</body>
+</html>
+EOF
+
+# Browser should show failed requests for tracker domains
+# If requests succeed, your blocking isn't working
+```
+
+## ISP-Level Visibility You Cannot Block
+
+Even with all these layers, your ISP still sees:
+- **IP addresses you connect to** (via BGP routing)
+- **Broad site categories** (you're on netflix.com, regardless of page)
+- **Encrypted SNI** (Server Name Indication) if not using ESNI/ECH
+
+For ISP privacy, you need a VPN, Tor, or ESNI-enabled browser:
+
+```bash
+# Enable ESNI/ECH in Firefox (2026+)
+about:config → search "ech"
+network.dns.use_https_rr_for_ech = true
+```
+
+ESNI hides the specific hostname from your ISP, showing only the IP address.
+
+## Performance Impact of DNS Blocking
+
+DNS blocking introduces minimal latency (1-5ms per query) but can slow initial page loads if the blocklist is misconfigured:
+
+```bash
+# Benchmark Pi-hole DNS performance
+for i in {1..10}; do
+    time dig example.com @192.168.1.1
+done | grep real
+
+# Compare against unblocked DNS
+for i in {1..10}; do
+    time dig example.com @8.8.8.8
+done | grep real
+```
+
+A well-configured Pi-hole typically blocks 20-30% of DNS queries but has negligible performance impact. Misconfigured blocklists (too many rules) can add 50-100ms per query.
+
+## Bypassing Advanced Tracker Evasion
+
+Some trackers use sophisticated evasion techniques:
+
+### Probabilistic Tracking
+
+Trackers hash browser fingerprints without storing identifiable data. This is mathematically harder to block.
+
+### First-Party Data Collection
+
+Services embedded on the site (chat widgets, payment processors) can collect data directly. These cannot be blocked by DNS since they're on the same domain.
+
+### Canvas Fingerprinting
+
+JavaScript code accesses your graphics card information through Canvas API without making external requests. Block this through Content-Security-Policy:
+
+```html
+<!-- Restrict canvas access -->
+<script>
+HTMLCanvasElement.prototype.toDataURL = () => {
+  throw new Error('Canvas fingerprinting blocked');
+};
+</script>
+```
+
 ## Related Reading
 
 - [Android Privacy Dashboard How to Use It](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
 - [Audio Context Fingerprinting How Websites Use Sound API to Track](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Browser Fingerprinting Detection and Prevention Guide](/privacy-tools-guide/browser-fingerprinting-detection/)
+- [DNS Leaks How To Test and Prevent](/privacy-tools-guide/dns-leaks-test-prevent/)
 
 ---
 

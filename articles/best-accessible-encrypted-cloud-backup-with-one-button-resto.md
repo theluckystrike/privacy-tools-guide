@@ -129,15 +129,183 @@ ls -la ~/backup-test/Projects/important-project/
 
 This practice catches issues before they become critical.
 
+## Duplicacy: Version Control for Backups
+
+Duplicacy bridges the gap between rsync-style incremental backups and cloud efficiency through its unique deduplication approach. Rather than storing redundant blocks, Duplicacy identifies identical chunks across multiple backups—even across different machines—and stores only one copy per unique chunk.
+
+```bash
+# Install Duplicacy
+brew install duplicacy
+
+# Initialize a backup to B2
+duplicacy init -e your-backup-id b2://account-id:app-key@bucket-name
+
+# Create a backup
+duplicacy backup
+
+# List snapshots
+duplicacy list -r
+
+# Restore to a directory
+duplicacy restore -r 1 -s 0
+```
+
+Duplicacy's strength lies in its snapshot management and cross-machine deduplication. If you back up multiple machines to the same B2 bucket, Duplicacy ensures identical files are stored only once, dramatically reducing storage costs.
+
+However, Duplicacy does not encrypt by default—you must use B2's server-side encryption or add encryption through other means. The CLI approach suits developers comfortable with command-line tools but doesn't match Arq's graphical simplicity.
+
+### Duplicacy Advanced Configuration
+
+For multi-machine setups with centralized backup management:
+
+```bash
+# Configure Duplicacy with encryption and compression
+duplicacy init -e backup-id \
+  -repository ~/Projects \
+  -storage-name myb2 \
+  b2://account-id:app-key@bucket/backup
+
+# Enable AES-256 encryption
+duplicacy set -key myb2 -password myencryptionpassword
+
+# Enable compression for bandwidth savings
+duplicacy set -key myb2 -compression zstd
+
+# Backup with logging
+duplicacy backup -stats -log backup.log
+
+# Restore specific file from specific snapshot
+duplicacy restore -r 5 ~/Projects/important-file.txt
+```
+
+Duplicacy shines when managing backups across multiple machines (laptop, desktop, server) to a single cloud bucket. Deduplication means the third machine's backup is nearly free if it has similar data to the first two.
+
+## Threat Model Considerations
+
+Before selecting your backup solution, identify what threats you're protecting against:
+
+- **Hardware failure**: All solutions in this guide handle this equally well
+- **Ransomware encryption**: Immutable backups prevent ransomware from corrupting backup versions
+- **Accidental deletion**: Point-in-time recovery across multiple snapshots essential
+- **Insider threats at cloud provider**: Client-side encryption required
+- **Local compromise**: Encrypted container files stored in cloud
+- **Legal seizure**: Zero-knowledge encryption prevents provider from decrypting your data
+
+Solutions like Arq provide client-side encryption but store backups at the provider (who holds encryption keys). Restic and Duplicacy encrypt before upload, so the cloud provider cannot read your backup even with a valid warrant. This distinction matters for high-threat scenarios.
+
+## Verification Testing Procedure
+
+Before relying on any backup system in production:
+
+```bash
+# Test 1: Create a small directory with test files
+mkdir -p ~/backup-test-source
+echo "Critical file $(date)" > ~/backup-test-source/test.txt
+dd if=/dev/urandom of=~/backup-test-source/binary.bin bs=1M count=10
+
+# Test 2: Run backup
+restic -r b2:your-bucket:/ backup ~/backup-test-source
+SNAPSHOT_ID=$(restic snapshots -r b2:your-bucket:/ | tail -1 | awk '{print $1}')
+
+# Test 3: Delete original files
+rm -rf ~/backup-test-source
+
+# Test 4: Restore from backup
+mkdir -p ~/backup-test-restore
+restic -r b2:your-bucket:/ restore $SNAPSHOT_ID --target ~/backup-test-restore
+
+# Test 5: Verify file integrity
+diff -r ~/backup-test-restore/home/user/backup-test-source ~/backup-test-source
+md5sum ~/backup-test-restore/home/user/backup-test-source/binary.bin
+```
+
+Run this quarterly. Automated testing catches issues before they become critical.
+
+## Disaster Recovery Time Objective
+
+Calculate your Recovery Time Objective (RTO) for realistic expectations:
+
+```
+RTO = Time to download backup + Time to decrypt + Time to restore files + Time to verify integrity
+
+Example calculation:
+- Download 100GB backup from B2: 30-60 minutes (depends on internet speed)
+- Decrypt AES-256: 5-10 minutes
+- Restore to filesystem: 15-30 minutes
+- Verify critical files: 10 minutes
+Total RTO: 60-150 minutes
+
+Actual RTO varies based on backup size, internet speed, and destination drive speed
+```
+
+For critical systems, factor this time into your disaster recovery plan. A day of downtime might be acceptable; a week might not.
+
+## Backup Performance Metrics
+
+Understanding backup speed helps you evaluate which solution matches your needs:
+
+```bash
+# Measure backup performance for your setup
+
+# 1. Small files (source code repos)
+time restic -r b2:bucket:/ backup ~/Projects --verbose
+# Expected: 2-15 minutes for 10GB of mostly small files
+# Speed: Varies by file count (more small files = slower)
+
+# 2. Large files (video, databases)
+time restic -r b2:bucket:/ backup ~/Videos --verbose
+# Expected: 5-20 minutes for 100GB of large files
+# Speed: Varies by upload bandwidth
+
+# 3. Incremental backup (only changed files)
+time restic -r b2:bucket:/ backup ~/Projects --verbose
+# Expected: <1 minute if only 100MB changed
+# Deduplication makes incremental nearly instant
+
+# Factors affecting speed:
+# - Upload bandwidth (B2 typically 50-200 Mbps)
+# - CPU (AES-256 encryption uses CPU)
+# - Disk I/O (reading source files)
+# - File count (many small files = slower than few large files)
+```
+
+For developers with frequent backup needs, schedule backups during off-peak hours or use bandwidth-limited modes.
+
+## Combining Backup Solutions
+
+The most resilient approach combines multiple backup strategies:
+
+```bash
+# Strategy 1: Local encrypted external drive (fast, physically controlled)
+sudo cryptsetup luksFormat --type luks2 /dev/external-drive
+sudo cryptsetup luksOpen /dev/external-drive backup-drive
+sudo mount /dev/mapper/backup-drive /mnt/backup
+
+# Daily local backup script
+#!/bin/bash
+restic -r /mnt/backup backup ~/Projects --verbose
+
+# Strategy 2: Cloud backup to encrypted B2 (offsite, provider-independent)
+restic -r b2:bucket:/ backup ~/Projects
+
+# Strategy 3: Versioning using snapshot timestamps
+# Both local and cloud backups tagged with dates
+# Allows rollback to specific points in time
+```
+
+The three-backup rule (two different media, one offsite) applies as much to encrypted cloud backups as to traditional backups.
+
 ## Selecting Your Solution
 
 For pure simplicity with minimal command-line interaction, Arq Backup provides the most accessible experience. Its graphical interface, combined with straightforward restore functionality, makes it ideal for developers who prefer mouse-based interactions.
 
 If you're comfortable with the terminal and want open-source flexibility, Restic combined with Backblaze B2 offers excellent value and performance. The ability to script and customize your backup workflow provides power users with capabilities that closed-source solutions cannot match.
 
+For version-aware deduplication across multiple machines, Duplicacy delivers impressive efficiency, though it requires more setup than Arq.
+
 Whatever you choose, the best backup solution is one you'll actually use consistently. The one-button restore capability ensures that when you need to recover, you can do so without additional complexity or stress.
 
-Start with a single solution, test it thoroughly, and expand your strategy as your needs evolve. Your future self will thank you when a hardware failure becomes a minor inconvenience rather than a catastrophic data loss event.
+Start with a single solution, test it thoroughly quarterly, and expand your strategy as your needs evolve. Your future self will thank you when a hardware failure becomes a minor inconvenience rather than a catastrophic data loss event.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
