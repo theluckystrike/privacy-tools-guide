@@ -259,4 +259,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Block Canvas Fingerprinting Browser](/privacy-tools-guide/how-to-block-canvas-fingerprinting-browser/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+```
 {% endraw %}
