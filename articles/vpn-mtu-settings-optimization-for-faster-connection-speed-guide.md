@@ -6,7 +6,7 @@ description: "Follow this guide to vpn mtu settings optimization for faster conn
 tags: [privacy-tools-guide, vpn]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
