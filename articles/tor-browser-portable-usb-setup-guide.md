@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Running Tor Browser from an USB drive provides a powerful layer of mobility and privacy for users who need anonymous browsing across multiple machines without leaving local traces. This guide covers the complete setup process, security considerations, and practical configurations for developers and power users.
 
+## Key Takeaways
+
+- **Connection Type**: Choose "Connect" for standard usage, or "Configure" if you're on a censored network requiring bridges
+2.
+- **Running Tor Browser from**: an USB drive provides a powerful layer of mobility and privacy for users who need anonymous browsing across multiple machines without leaving local traces.
+- **This guide covers the**: complete setup process, security considerations, and practical configurations for developers and power users.
+- **For portable use, you need the archive format**: not the installer.
+- **Consider a high-quality USB**: drive with high IOPS ratings for better responsiveness.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Run Tor Browser Portably
 
 Traditional browser installations write data to fixed system locations—your home directory on Linux, AppData on Windows, and various plist files on macOS. A portable setup keeps all browser data on the USB drive itself, leaving no residual files on the host machine.

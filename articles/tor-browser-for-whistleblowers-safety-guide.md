@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Whistleblowers face unique challenges when attempting to report misconduct securely. Corporate surveillance, ISP logging, and sophisticated adversaries can correlate metadata, traffic patterns, and behavioral fingerprints to identify sources. Tor Browser provides strong anonymity at the network layer, but proper configuration and operational discipline separate effective protection from dangerous assumptions. This guide covers the technical details developers and power users need to safely use Tor Browser for whistleblower activities in 2026.
 
+## Key Takeaways
+
+- **This guide covers the**: technical details developers and power users need to safely use Tor Browser for whistleblower activities in 2026.
+- **Browser fingerprinting can identify**: users based on unique characteristics even without cookies or IP addresses.
+- **Use the organization's PGP**: key to encrypt submissions 4.
+- **Correlation attacks can deanonymize**: users who behave inconsistently across Tor and regular connections.
+- **Resist Fingerprinting**: The `privacy.resistFingerprinting` preference should remain enabled.
+- **Use dedicated devices when possible**: A separate machine or TAILS USB for whistleblower activities prevents cross-contamination from your normal browsing patterns.
+
 ## How Tor Provides Anonymity for Sources
 
 Tor encrypts traffic through a circuit of at least three relays—the entry guard, middle relay, and exit node. Each relay only knows its predecessor and successor, never the complete path. Your ISP sees encrypted traffic to a Tor relay but cannot determine what you're accessing or with whom you're communicating. The destination website sees traffic from a Tor exit node, not your actual IP address.

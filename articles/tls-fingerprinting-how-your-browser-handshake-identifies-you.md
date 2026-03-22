@@ -27,7 +27,18 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 TLS fingerprinting (JA3) identifies browsers and clients by analyzing the TLS handshake parameters they send—cipher suites, supported curves, extensions, and signature algorithms create a unique fingerprint. Defend against fingerprinting by using Tor Browser, rotating cipher suite order with privacy extensions, or using anti-fingerprinting tools that randomize TLS parameters.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Elliptic curve standardization**: Uses only widely-supported curves
+4.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The most common format is JA3**: developed by Salesforce in 2017.
+- **HTTP/3 and QUIC**: Newer protocols like HTTP/3 use QUIC, which has different handshake characteristics.
+- **Studies have shown that**: even with Tor Browser running, users can be uniquely identified when combining TLS fingerprints with other network-level signals.
 
 ## How TLS Fingerprinting Works
 

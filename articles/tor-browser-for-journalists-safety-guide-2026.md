@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Journalists operating in adversarial environments face sophisticated surveillance threats. Source protection requires more than encryption—it demands anonymity at the network level. Tor Browser remains the gold standard for achieving this, but proper configuration separates genuine protection from a false sense of security. This guide covers the technical details developers and power users need to deploy Tor Browser effectively for journalistic work in 2026.
 
+## Key Takeaways
+
+- Recommended for most source communications.
+- **This guide covers the**: technical details developers and power users need to deploy Tor Browser effectively for journalistic work in 2026.
+- **Configure bridges in Tor**: Browser by navigating to `about:preferences#tor` and entering bridge lines: ``` Bridge obfs4 192.0.2.1:443 fingerprint=ABCD1234 cert=xyz...
+- **New Identity does not change your Tor circuit for existing connections**: you must wait for the circuit to rebuild, typically 10-30 seconds after requesting new identity.
+- **Set `browser.download.useDownloadDir` to `false`**: to always prompt for save location 2.
+- **Create isolated user for**: sensitive work sudo useradd -m -s /bin/bash journalist # 2.
+
 ## Understanding Tor's Security Model
 
 Tor routes your traffic through at least three relays, each with its own encryption layer. The entry node knows your IP address but not what you're accessing. The middle relay sees neither. The exit node sees the destination but not who you are. This layered approach provides strong anonymity against network-level observers.
