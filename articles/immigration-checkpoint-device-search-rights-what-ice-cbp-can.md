@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /immigration-checkpoint-device-search-rights-what-ice-cbp-can/
 description: "Learn immigration checkpoint device search rights what ice cbp can with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Immigration Checkpoint Device Search Rights What Ice Cbp"
 description: "A practical guide for developers and power users on what U.S. Customs and Border Protection can legally search on your electronic devices at border"

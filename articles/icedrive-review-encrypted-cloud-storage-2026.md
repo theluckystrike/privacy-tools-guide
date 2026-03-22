@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /icedrive-review-encrypted-cloud-storage-2026/
 description: "Learn icedrive review encrypted cloud storage 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "IceDrive Review: Encrypted Cloud Storage for 2026"
 description: "IceDrive Review: Encrypted Cloud Storage for 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital"

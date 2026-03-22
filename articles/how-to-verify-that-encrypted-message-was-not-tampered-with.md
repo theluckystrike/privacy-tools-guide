@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
 description: "Follow this guide to how to verify that encrypted message was not tampered with with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered"
 description: "A technical guide for developers and power users on verifying encrypted message integrity using HMACs, digital signatures, and authenticated encryption"

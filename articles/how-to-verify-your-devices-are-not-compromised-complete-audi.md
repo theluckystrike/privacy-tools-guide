@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-verify-your-devices-are-not-compromised-complete-audi/
 description: "Follow this guide to how to verify your devices are not compromised complete audi with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Verify Your Devices Are Not Compromised"
 description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools"

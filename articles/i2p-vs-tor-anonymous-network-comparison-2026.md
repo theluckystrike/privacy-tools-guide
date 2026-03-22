@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /i2p-vs-tor-anonymous-network-comparison-2026/
 description: "Compare i2p vs tor anonymous network comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "I2P vs Tor: Anonymous Network Comparison 2026"
 description: "A technical comparison of I2P and Tor anonymous networks for developers and power users. Architecture differences, use cases, performance benchmarks"

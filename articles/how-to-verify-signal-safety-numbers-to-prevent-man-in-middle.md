@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/
 description: "Follow this guide to how to verify signal safety numbers to prevent man in middle with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Verify Signal Safety Numbers To Prevent Man"
 description: "A technical guide for developers and power users on verifying Signal safety numbers. Learn to protect your encrypted communications from MITM attacks"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-verify-your-browser-is-not-leaking-information-checkl/
 description: "Follow this guide to how to verify your browser is not leaking information checkl with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Verify Your Browser is Not Leaking Information"
 description: "A checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods"
