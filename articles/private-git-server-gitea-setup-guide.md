@@ -1,5 +1,7 @@
 ---
 permalink: /private-git-server-gitea-setup-guide/
+description: "Follow this guide to private git server gitea setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Self-Hosted Private Git Server with Gitea"

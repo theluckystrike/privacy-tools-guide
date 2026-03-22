@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-tools-for-election-observer-protecting-witness-testi/
+description: "Learn privacy tools for election observer protecting witness testi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Tools For Election Observer Protecting Witness"

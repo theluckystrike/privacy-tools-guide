@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
+description: "Learn privacy setup for psychologist telehealth sessions encrypted with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"

@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-witness-protection-program-participant-dig/
+description: "Learn privacy setup for witness protection program participant dig with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup For Witness Protection Program Participant"

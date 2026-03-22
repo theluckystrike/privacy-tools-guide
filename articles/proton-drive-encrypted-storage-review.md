@@ -1,5 +1,7 @@
 ---
 permalink: /proton-drive-encrypted-storage-review/
+description: "Learn proton drive encrypted storage review with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Proton Drive Encrypted Storage Review"

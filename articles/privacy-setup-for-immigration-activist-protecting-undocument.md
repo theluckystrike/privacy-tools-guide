@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
+description: "Learn privacy setup for immigration activist protecting undocument with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"

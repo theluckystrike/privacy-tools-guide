@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/
+description: "Learn privacy setup for political campaign worker protecting voter with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup for Political Campaign Worker"

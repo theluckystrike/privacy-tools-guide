@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
+description: "Learn privacy setup for physical therapist patient exercise data p with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy, api]
 ---
 layout: default
 title: "Privacy Setup For Physical Therapist Patient Exercise Data"

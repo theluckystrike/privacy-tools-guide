@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-survivor-of-revenge-porn-removing-images-g/
+description: "Learn privacy setup for survivor of revenge porn removing images g with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"

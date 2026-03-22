@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-tools-for-whistle-blower-preparing-disclosure-protec/
+description: "Learn privacy tools for whistle blower preparing disclosure protec with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Tools For Whistle Blower Preparing Disclosure"
