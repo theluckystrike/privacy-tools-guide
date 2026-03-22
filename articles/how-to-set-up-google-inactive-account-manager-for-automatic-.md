@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
+description: "Follow this guide to how to set up google inactive account manager for automatic  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Set Up Google Inactive Account Manager for Automatic Data"

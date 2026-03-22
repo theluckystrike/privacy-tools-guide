@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/
+description: "Follow this guide to how to set up dnscrypt proxy for authenticated encrypted dns with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted"

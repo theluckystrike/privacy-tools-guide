@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
+description: "Follow this guide to how to set up github repository with encrypted estate instru with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up GitHub Repository With Encrypted Estate"

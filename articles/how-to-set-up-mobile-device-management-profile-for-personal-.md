@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-mobile-device-management-profile-for-personal-/
+description: "Follow this guide to how to set up mobile device management profile for personal  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Mobile Device Management Profile For Personal"

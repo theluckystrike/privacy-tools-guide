@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-dns-based-ad-blocking-on-travel-router-gl-inet/
+description: "Follow this guide to how to set up dns based ad blocking on travel router gl inet with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Set Up DNS-Based Ad Blocking on Travel Router GL-Inet"

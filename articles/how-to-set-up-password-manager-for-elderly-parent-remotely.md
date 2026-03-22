@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-password-manager-for-elderly-parent-remotely/
+description: "Follow this guide to how to set up password manager for elderly parent remotely with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, remote-work]
 ---
 layout: default
 title: "How to Set Up Password Manager for Elderly Parent Remotely"
