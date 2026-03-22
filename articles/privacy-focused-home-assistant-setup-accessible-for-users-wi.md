@@ -6,7 +6,7 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-focused-home-assistant-setup-accessible-for-users-wi/
 categories: [guides, home-automation, accessibility]
-tags: [home-assistant, privacy, accessibility, smart-home]
+tags: [privacy-tools-guide, home-assistant, privacy, accessibility, smart-home]
 reviewed: true
 intent-checked: true
 voice-checked: true---

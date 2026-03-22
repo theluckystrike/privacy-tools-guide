@@ -9,7 +9,7 @@ permalink: /privacy-notice-vs-privacy-policy-difference/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 tags: [privacy-tools-guide, comparison, privacy]---
 

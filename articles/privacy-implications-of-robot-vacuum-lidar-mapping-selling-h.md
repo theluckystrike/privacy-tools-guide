@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/
 categories: [security]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]---

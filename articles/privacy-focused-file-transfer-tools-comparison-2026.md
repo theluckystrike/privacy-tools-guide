@@ -9,7 +9,7 @@ permalink: /privacy-focused-file-transfer-tools-comparison-2026/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true---
 
