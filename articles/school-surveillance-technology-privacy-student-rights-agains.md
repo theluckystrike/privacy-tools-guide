@@ -33,6 +33,16 @@ Facial recognition technology in schools represents one of the most contentious 
 
 This guide examines the technical architecture of school facial recognition systems, the privacy implications for students, and practical steps developers can take to build tools that help protect student privacy rights.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Request information**: Ask your school district for documentation of all surveillance technology in use
+2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Facial recognition technology in**: schools represents one of the most contentious intersections of security technology and student privacy rights.
+
 ## How Facial Recognition Systems Work in Schools
 
 Modern school surveillance systems combine multiple technologies to create student tracking capabilities.

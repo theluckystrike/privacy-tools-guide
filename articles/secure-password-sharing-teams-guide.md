@@ -33,6 +33,19 @@ Most teams share passwords via Slack messages, shared spreadsheets, or email thr
 
 This guide covers tools and workflows for teams ranging from 2 people to 50.
 
+## Key Takeaways
+
+- **The Teams plan (~$3/user/month)**: supports unlimited users with advanced sharing and audit logs.
+- **No plaintext over chat**: zero credentials sent via Slack, email, or SMS
+
+## Option 1: Bitwarden Organizations
+
+Bitwarden's free organization tier supports up to two users.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+
 ## Why This Matters
 
 When someone leaves a company and you haven't tracked which credentials they had access to:

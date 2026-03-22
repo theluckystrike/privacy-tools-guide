@@ -31,6 +31,16 @@ Dropbox, Google Drive, and S3 encrypt your data in transit and at rest — but t
 
 This guide configures rclone with client-side encryption on top of any cloud storage provider.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **File and directory names**: are also encrypted (optional but recommended) 3.
+- **Filename encryption**: `standard` (encrypts and obfuscates names; use `obfuscate` if you want a weaker form that's easier to debug)
+6.
+- **Let them use it for 2-3 weeks**: then gather their honest feedback.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## How rclone crypt Works
 
 rclone crypt is a transparent encryption layer that wraps any rclone remote. When you sync to a crypt remote:

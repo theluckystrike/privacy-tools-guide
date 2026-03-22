@@ -31,6 +31,19 @@ tags: [privacy-tools-guide, api]---
 
 Websites use the Sensor API to collect accelerometer and gyroscope data, which creates unique device fingerprints by analyzing the specific biases and noise patterns of your device's hardware sensors — information that persists even if you change location or reset your browser. Protect yourself by denying sensor permissions in your browser settings, using Firefox's `privacy.resistFingerprinting`, enabling Tor Browser which blocks sensor access, or using a privacy extension that spoofs sensor data. This guide examines how sensor APIs work technically, demonstrates fingerprinting code examples, explains privacy implications, and provides practical mitigation strategies for developers and power users.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **A 2019 followup by**: SensorID researchers at Cambridge showed that even a brief 1-3 second sample collected without user interaction was sufficient to extract a reliable fingerprint from most devices.
+- **demonstrated that combining accelerometer**: and gyroscope data could uniquely identify devices with over 90% accuracy, even across different browsing sessions and after clearing cookies.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Step 3**: Use Tor Browser
+
+Tor Browser blocks `DeviceMotionEvent` and the Generic Sensor API entirely.
+- **Step 4**: Use a sensor spoofing extension
+
+Extensions like SpoofSensor (Firefox) override sensor APIs to return constant or randomized values.
+
 ## Understanding the Sensor API
 
 The Sensor API provides a standardized interface for accessing device sensors through JavaScript. The most commonly exploited sensors for fingerprinting are:
