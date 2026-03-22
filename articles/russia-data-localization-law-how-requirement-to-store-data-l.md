@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /russia-data-localization-law-how-requirement-to-store-data-l/
 description: "Learn russia data localization law how requirement to store data l with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Russia Data Localization Law: How Requirement to Store"
 description: "A technical guide for developers and power users exploring Russia's data localization requirements, how they impact privacy, and strategies for protecting user"

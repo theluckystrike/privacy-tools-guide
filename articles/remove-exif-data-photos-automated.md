@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /remove-exif-data-photos-automated/
 description: "Learn remove exif data photos automated with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Remove EXIF Data from Photos Automatically"
 description: "Strip EXIF metadata from photos before sharing. Covers ExifTool, mat2, ImageMagick batch scripts, and automatic removal on Linux and macOS."

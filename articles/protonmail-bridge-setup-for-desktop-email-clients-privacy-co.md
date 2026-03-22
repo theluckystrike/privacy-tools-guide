@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /protonmail-bridge-setup-for-desktop-email-clients-privacy-co/
 description: "Discover the best protonmail bridge setup for desktop email clients privacy co with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, best-of, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [best-of]
 ---
+
 layout: default
 title: "Protonmail Bridge Setup For Desktop Email Clients Privacy"
 description: "A technical guide for developers and power users on setting up ProtonMail Bridge with desktop email clients. Includes configuration examples, security"

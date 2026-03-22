@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /restic-encrypted-backup-setup-guide/
 description: "Follow this guide to restic encrypted backup setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Restic Encrypted Backup Setup Guide"
 description: "Set up automated encrypted backups with restic. Covers local, S3, and Backblaze B2 backends, snapshot policies, and scheduled automation."

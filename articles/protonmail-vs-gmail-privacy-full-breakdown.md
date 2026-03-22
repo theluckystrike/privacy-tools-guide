@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /protonmail-vs-gmail-privacy-full-breakdown/
 description: "Compare protonmail vs gmail privacy full breakdown with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "ProtonMail vs Gmail Privacy: A Full Technical Breakdown"
 description: "Choose ProtonMail if you need true end-to-end encryption where the provider cannot read your emails, minimal data collection, and Swiss legal jurisdiction that"

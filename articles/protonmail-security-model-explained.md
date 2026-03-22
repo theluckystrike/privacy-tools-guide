@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /protonmail-security-model-explained/
 description: "Learn protonmail security model explained with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, security]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"
 description: "ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access"
