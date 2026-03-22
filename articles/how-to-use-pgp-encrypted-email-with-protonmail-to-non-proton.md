@@ -27,6 +27,8 @@ ProtonMail supports two methods for external recipient encryption:
 1. **Address Book PGP Keys**: Store recipient public keys in your ProtonMail address book
 2. **Manual Encryption**: Copy and paste public keys for each message
 
+Understanding why ProtonMail's approach differs from traditional PGP clients is helpful context. In a standard desktop PGP setup, your key management happens entirely on your machine — GPG handles the keyring, encryption, and decryption locally. ProtonMail's zero-knowledge architecture stores your private key encrypted with your account password, decrypting it only in your browser session. This means you get PGP's security guarantees without managing key files directly, but it also means external key storage (WKD, keyservers, manual exchange) must happen through ProtonMail's contact management interface.
+
 ## Retrieving Your ProtonMail Public Key
 
 Before sending encrypted emails to external recipients, ensure your public key is accessible. In ProtonMail:
@@ -77,6 +79,20 @@ Recipients can export keys directly:
 ```bash
 gpg --armor --export recipient@example.com > recipient-pubkey.asc
 ```
+
+### Method 4: Web Key Directory (WKD)
+
+WKD is a modern key discovery mechanism that lets mail servers advertise public keys at a well-known URL path. Many privacy-conscious email providers support it. To check if a recipient's domain supports WKD:
+
+```bash
+# Check WKD availability for recipient@example.com
+curl https://example.com/.well-known/openpgpkey/hu/$(echo -n "recipient" | sha1sum | cut -d' ' -f1)
+
+# Or use gpg directly (gpg 2.2.12+ with WKD support)
+gpg --locate-keys recipient@example.com
+```
+
+If WKD is supported, `gpg --locate-keys` automatically downloads and imports the key. This is the most reliable automated method for key discovery when keyserver publishing is not available.
 
 ## Configuring ProtonMail for External Encryption
 
@@ -133,6 +149,8 @@ gpg --fingerprint recipient@example.com
 # Compare the fingerprint via a trusted channel (phone, in-person)
 ```
 
+Fingerprint verification prevents a man-in-the-middle attack where an adversary substitutes their own key for the recipient's. The 40-character fingerprint uniquely identifies a key — if the fingerprint you retrieve from a keyserver matches what the recipient reads to you over the phone, you can be confident you have their authentic key.
+
 ### Encryption Process
 
 When ProtonMail encrypts for external recipients, it:
@@ -164,6 +182,29 @@ For additional security with large attachments, consider encrypting separately:
 # Encrypt file before attaching
 gpg --symmetric --cipher-algo AES256 --output document.pdf.gpg document.pdf
 ```
+
+## Signing Emails for Authenticity
+
+Encryption protects message confidentiality, but it does not prove the message came from you. Digital signatures address this. When you sign a message with your ProtonMail private key, the recipient can verify the signature using your public key — confirming the message was authored by the key holder and was not altered in transit.
+
+ProtonMail signs outgoing messages automatically when sending to contacts with stored keys. For external recipients who want to verify signatures using GPG:
+
+```bash
+# Recipient imports your ProtonMail public key
+gpg --keyserver hkps://api.protonmail.ch --recv-keys YOUR_KEY_ID
+
+# Verify signature on received message saved as message.asc
+gpg --verify message.asc
+```
+
+A successful verification output looks like:
+
+```
+gpg: Good signature from "Your Name <you@protonmail.com>"
+Primary key fingerprint: XXXX XXXX XXXX XXXX XXXX
+```
+
+An "Unknown signature" result means the recipient has not yet imported your key. A "Bad signature" indicates the message was tampered with in transit.
 
 ## Troubleshooting Common Issues
 
@@ -203,7 +244,7 @@ For developers building automated systems:
 ```python
 import gnupg
 
-gpg = gnupr.GPG(gnupghome='/path/to/gnupg/home')
+gpg = gnupg.GPG(gnupghome='/path/to/gnupg/home')
 
 # Encrypt for external recipient
 def encrypt_for_protonmail_recipient(message, recipient_key_path):
@@ -232,6 +273,8 @@ When using PGP with external recipients:
 - **Trust model**: Use web of trust or verify fingerprints personally
 - **Metadata**: Remember that subject lines and headers remain unencrypted
 - **Forward secrecy**: PGP does not provide forward secrecy; consider Signal for real-time messaging
+
+The metadata limitation deserves particular attention in threat models involving surveillance. Even with strong encryption, your email provider and network observers can see who you correspond with, how frequently, and when. If communication metadata is itself sensitive — as it might be for journalists, lawyers, or activists — consider layering email encryption with additional operational security measures, such as using Tor to access ProtonMail's .onion address (`protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion`), which hides your IP from ProtonMail's own servers.
 
 
 ## Related Articles
