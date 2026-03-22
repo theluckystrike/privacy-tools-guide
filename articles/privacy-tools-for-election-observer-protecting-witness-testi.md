@@ -255,6 +255,51 @@ class SecureTestimonyStore:
 
 This provides application-level encryption independent of disk encryption.
 
+## Chain of Custody for Digital Evidence
+
+Protecting witness testimony is only half the challenge. The other half is ensuring that digital evidence maintains an unbroken, verifiable chain of custody that will hold up in formal proceedings — whether a domestic court, an international tribunal, or an electoral commission review.
+
+### Hash Verification at Collection Time
+
+Every piece of digital evidence should be hashed immediately after collection and before any processing. This creates a cryptographic record that the file has not been altered:
+
+```bash
+# Generate SHA-256 hash immediately after collecting evidence
+sha256sum evidence_photo.jpg > evidence_photo.jpg.sha256
+
+# Verify integrity later
+sha256sum -c evidence_photo.jpg.sha256
+```
+
+Store the hash file separately from the evidence — ideally in a location the observer cannot later modify unilaterally. Some organizations send hash values to a trusted third party (a legal team, an international observer body) via encrypted email within minutes of collection.
+
+### Timestamped Witnesses
+
+For high-stakes testimony, a cryptographic timestamp proves a document existed at a specific time. RFC 3161-compliant timestamp authorities issue signed tokens:
+
+```bash
+# Request timestamp from a public TSA
+openssl ts -query -data testimony.pdf -no_nonce -sha256 -out request.tsq
+curl -H "Content-Type: application/timestamp-query" \
+  --data-binary @request.tsq \
+  https://freetsa.org/tsr -o response.tsr
+
+# Verify
+openssl ts -verify -data testimony.pdf -in response.tsr -CAfile cacert.pem
+```
+
+This creates legal-grade proof that the testimony document existed at a specific date and time, independent of your internal systems.
+
+## Cross-Border Data Transfer Considerations
+
+Election observers frequently operate across jurisdictions with conflicting data laws. A document collected in one country may need to be transmitted to a team in a country with different legal obligations for data retention, disclosure, or encryption. Several practical considerations apply:
+
+**Know the jurisdiction's encryption laws before entering**: Some countries restrict strong encryption or require key disclosure to border agents. If you enter a country with encrypted devices, you may be legally compelled to provide decryption keys. Research the local laws before travel. Tails OS on a USB drive that you can destroy is preferable to a laptop with persistent storage.
+
+**Use end-to-end encrypted channels for cross-border transmission**: Sending testimony across borders via unencrypted email or commercial cloud services creates exposure to interception under national intelligence laws in transit countries. Signal, OnionShare, and GPG-encrypted email all provide end-to-end protection that limits this exposure.
+
+**Minimize data collected**: The safest testimony file is one that contains only what is necessary. Before transmitting, review each file and strip any fields — names, locations, timestamps — that are not required by the receiving organization. Less data means less exposure under any jurisdiction's laws.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**
