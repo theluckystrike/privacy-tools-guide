@@ -1,5 +1,7 @@
 ---
 permalink: /library-patron-privacy-rights-what-information-libraries-can/
+description: "Learn library patron privacy rights what information libraries can with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Library Patron Privacy Rights What Information Libraries"

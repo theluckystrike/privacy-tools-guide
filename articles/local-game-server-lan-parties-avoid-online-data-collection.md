@@ -1,5 +1,7 @@
 ---
 permalink: /local-game-server-lan-parties-avoid-online-data-collection/
+description: "Learn local game server lan parties avoid online data collection with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 
 layout: default

@@ -1,5 +1,7 @@
 ---
 permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
+description: "Learn llmnr netbios name resolution privacy disabling windows prot with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy, llm]
 ---
 layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"

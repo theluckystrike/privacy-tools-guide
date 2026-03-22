@@ -1,5 +1,7 @@
 ---
 permalink: /jitsi-meet-self-hosted-setup-guide/
+description: "Follow this guide to jitsi meet self hosted setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"

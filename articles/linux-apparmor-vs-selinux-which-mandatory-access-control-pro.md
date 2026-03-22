@@ -1,5 +1,7 @@
 ---
 permalink: /linux-apparmor-vs-selinux-which-mandatory-access-control-pro/
+description: "Compare linux apparmor vs selinux which mandatory access control pro with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Linux Apparmor Vs Selinux Which Mandatory Access Control Pro"

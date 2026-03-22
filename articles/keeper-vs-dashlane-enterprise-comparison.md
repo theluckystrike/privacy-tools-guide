@@ -1,5 +1,7 @@
 ---
 permalink: /keeper-vs-dashlane-enterprise-comparison/
+description: "Compare keeper vs dashlane enterprise comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Keeper vs Dashlane Enterprise Comparison for Developers"

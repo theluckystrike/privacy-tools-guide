@@ -1,5 +1,7 @@
 ---
 permalink: /linux-network-namespace-vpn-isolation/
+description: "Learn linux network namespace vpn isolation with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "Linux Network Namespaces for VPN Isolation"

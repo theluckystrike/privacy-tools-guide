@@ -1,5 +1,7 @@
 ---
 permalink: /keybase-filesystem-encrypted-storage-review/
+description: "Learn keybase filesystem encrypted storage review with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Keybase Filesystem (KBFS) Review"

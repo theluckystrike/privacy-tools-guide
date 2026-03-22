@@ -1,5 +1,7 @@
 ---
 permalink: /linux-kernel-hardening-sysctl-guide/
+description: "Follow this guide to linux kernel hardening sysctl guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Linux Kernel Hardening with sysctl"

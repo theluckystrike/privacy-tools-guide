@@ -1,5 +1,7 @@
 ---
 permalink: /legitimate-interest-assessment-template-for-processing-perso/
+description: "Learn legitimate interest assessment template for processing perso with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Legitimate Interest Assessment Template For Processing"

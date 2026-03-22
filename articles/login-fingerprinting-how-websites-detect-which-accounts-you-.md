@@ -1,5 +1,7 @@
 ---
 permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/
+description: "Learn login fingerprinting how websites detect which accounts you  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Login Fingerprinting How Websites Detect Which Accounts You"

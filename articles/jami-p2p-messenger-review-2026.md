@@ -1,5 +1,7 @@
 ---
 permalink: /jami-p2p-messenger-review-2026/
+description: "Learn jami p2p messenger review 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Jami P2p Messenger Review 2026"

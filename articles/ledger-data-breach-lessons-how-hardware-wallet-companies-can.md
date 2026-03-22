@@ -1,5 +1,7 @@
 ---
 permalink: /ledger-data-breach-lessons-how-hardware-wallet-companies-can/
+description: "Learn ledger data breach lessons how hardware wallet companies can with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Ledger Data Breach Lessons How Hardware Wallet Companies"
