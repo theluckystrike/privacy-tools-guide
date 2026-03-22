@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Verify VPN Provider No-Logs Claims 2026"
-description: "Audit reports, warrant canaries, infrastructure analysis, and cryptographic verification of VPN no-logs claims. Real provider comparison and third-party verification methods"
+description: "Verify VPN no-logs claims: audit reports, warrant canaries, infrastructure analysis, and cryptographic proofs from NordVPN, Mullvad, and PIA."
 date: 2026-03-22
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

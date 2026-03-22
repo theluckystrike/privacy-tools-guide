@@ -37,7 +37,17 @@ Hardware wallets protect private keys from malware and keyloggers, but using a s
 
 Each wallet operates independently with its own seed phrase, derivation path, and operational patterns.
 
-## Derivation Path Strategy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Derivation Path Strategy
 
 Hardware wallets use BIP-32 derivation paths to generate multiple addresses from a single seed. The standard path for most cryptocurrencies follows this pattern:
 
@@ -81,7 +91,7 @@ Keep a local encrypted map of which path corresponds to which purpose:
 
 Store this map in a password manager, not alongside the seed phrase.
 
-## Physical Device Setup Procedure
+### Step 2: Physical Device Setup Procedure
 
 ### Initial Device Initialization
 
@@ -105,7 +115,7 @@ After initialization, configure the device for its specific role:
 - **Enable passphrases**: Add an extra word to the seed phrase for additional protection. Use a different passphrase for each device.
 - **Set PIN codes**: Use distinct PINs for each device to prevent one compromised PIN from exposing all wallets.
 
-## Network and RPC Configuration
+### Step 3: Network and RPC Configuration
 
 When using purpose-specific wallets with dApps, configure network settings appropriately. For development and testing:
 
@@ -127,7 +137,7 @@ const networks = {
 
 For sensitive operations, consider running your own RPC nodes rather than relying on third-party services. Self-hosted nodes provide better privacy and reduce metadata exposure.
 
-## Transaction Verification Patterns
+### Step 4: Transaction Verification Patterns
 
 Always verify transaction details on the hardware wallet display before signing. For different purposes, establish verification checklists:
 
@@ -146,7 +156,7 @@ Always verify transaction details on the hardware wallet display before signing.
 - Keep transaction amounts small relative to total holdings
 - Enable RBF (Replace-By-Fee) for Bitcoin transactions
 
-## Backup and Recovery Strategy
+### Step 5: Backup and Recovery Strategy
 
 Each purpose-specific wallet requires independent backup procedures:
 
@@ -156,7 +166,7 @@ Each purpose-specific wallet requires independent backup procedures:
 
 3. **Test recovery**: Before funding a wallet significantly, perform a test recovery by restoring the seed to a software wallet or secondary hardware device to verify backup integrity.
 
-## Operational Security Habits
+### Step 6: Operational Security Habits
 
 Maintain separation discipline throughout daily use:
 
@@ -166,7 +176,7 @@ Maintain separation discipline throughout daily use:
 - Verify URLs carefully—bookmark official DeFi sites rather than clicking links
 - Log each transaction in a local ledger for reconciliation
 
-## Comparing Hardware Wallet Devices for Purpose Separation
+### Step 7: Comparing Hardware Wallet Devices for Purpose Separation
 
 Different devices have varying capabilities for managing multiple purposes:
 
@@ -192,7 +202,7 @@ Different devices have varying capabilities for managing multiple purposes:
 
 For most users managing 3-4 distinct purposes, a Ledger Nano X or Trezor provides the best balance of capability and ease of use. Consider purchasing two devices for critical separation: one for trading/transfers, another for DeFi/NFT interactions.
 
-## Address Labeling and Purpose Verification
+### Step 8: Address Labeling and Purpose Verification
 
 Create a system for quickly identifying which wallet serves which purpose:
 
@@ -231,7 +241,7 @@ const walletRegistry = {
 
 This registry serves as your operational reference and audit trail.
 
-## Tax Implications of Multiple Wallets
+### Step 9: Tax Implications of Multiple Wallets
 
 Maintaining separate wallets complicates tax reporting but improves accuracy:
 
@@ -264,7 +274,7 @@ const taxableEvents = {
 
 Tools like Koinly or CoinTracker can import transactions from multiple wallet addresses and automatically categorize by purpose if you tag them correctly.
 
-## Disaster Recovery for Multi-Wallet Setup
+### Step 10: Disaster Recovery for Multi-Wallet Setup
 
 With multiple hardware wallets, recovery becomes complex:
 
@@ -303,7 +313,7 @@ Step 4: Resume normal operations
 
 Store this guide in the same secure location as backup seed phrases.
 
-## Consolidation Strategy When Exiting Crypto
+### Step 11: Consolidation Strategy When Exiting Crypto
 
 If you eventually decide to consolidate or exit holdings, separate purpose wallets require careful planning:
 
@@ -333,6 +343,21 @@ echo "Aggregate across all wallets and purposes"
 
 Planning consolidation in advance prevents emotional decisions or tax mistakes during execution.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -40,7 +40,7 @@ Bitcoin inheritance planning requires careful consideration of key custody, acce
 - **For maximum security**: Coldcard is recommended due to its air-gapped operation and PSBT (Partially Signed Bitcoin Transaction) workflow.
 - **Can I change plans**: later without losing my data? Most tools allow plan changes at any time.
 
-## Understanding Collaborative Custody for Inheritance
+### Step 1: Understand Collaborative Custody for Inheritance
 
 Traditional Bitcoin storage relies on single private keys—a catastrophic failure point if the key holder becomes incapacitated or dies. Multisig (multisignature) wallets require multiple keys to authorize transactions, typically configured as M-of-N schemes where M keys out of N total keys must sign.
 
@@ -63,7 +63,7 @@ Before configuring your Casa multisig setup, ensure you meet these requirements:
 
 For developers, Casa provides API access for programmatic key management. However, the web interface offers sufficient functionality for most inheritance planning use cases.
 
-## Step-by-Step Setup Process
+### Step 2: Step-by-Step Setup Process
 
 ### 1. Initialize Your Casa Account
 
@@ -145,7 +145,7 @@ casa-cli wallet verify-address "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
 # Output: Address verified - Key participation: 3-of-3
 ```
 
-## Inheritance Execution Workflow
+### Step 3: Inheritance Execution Workflow
 
 When the time comes to execute the inheritance, beneficiaries follow this process:
 
@@ -167,7 +167,7 @@ Beyond the Casa setup, implement these additional measures:
 - **Documentation**: Maintain updated estate planning documents that reference your Bitcoin holdings
 - **Succession planning**: Ensure beneficiaries understand Bitcoin fundamentals enough to access their inheritance
 
-## Alternative Approaches for Power Users
+### Step 4: Alternative Approaches for Power Users
 
 Developers may prefer completely non-custodial solutions. Consider combining Housebot with Specter-DIY for a fully self-hosted multisig setup:
 
@@ -250,7 +250,7 @@ class MultisigThresholdDesign:
             return "3-of-5: Any 3 of (primary, backup1, backup2, trusted, escrow)"
 ```
 
-## Timelocks and Escrow Mechanics
+### Step 5: Timelocks and Escrow Mechanics
 
 Prevent immediate loss if keys are stolen by implementing recovery delays:
 
@@ -290,7 +290,7 @@ psbt=$(bitcoin-cli -regtest walletcreatefundedpsbt \
 bitcoin-cli -regtest finalizepsbt $psbt
 ```
 
-## Inheritance Execution Workflow with Legal Documentation
+### Step 6: Inheritance Execution Workflow with Legal Documentation
 
 Ensure beneficiaries understand the process:
 
@@ -347,7 +347,7 @@ inheritance_plan = {
 }
 ```
 
-## Common Inheritance Mistakes to Avoid
+### Step 7: Common Inheritance Mistakes to Avoid
 
 ```python
 # Anti-patterns in Bitcoin inheritance
@@ -385,6 +385,21 @@ mistakes = {
     }
 }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

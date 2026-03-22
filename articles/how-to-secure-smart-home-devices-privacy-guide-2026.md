@@ -40,7 +40,17 @@ Isolate smart home devices on a separate WiFi network (5GHz guest network or ded
 - **Use local NVR for**: cameras instead of cloud 4.
 - **Replace smart thermostat with**: non-connected model 5.
 
-## The Smart Home Privacy Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Smart Home Privacy Problem
 
 Smart home devices collect continuous data: voice recordings (Amazon Echo, Google Home), video feeds (Wyze, Ring), location data (smart thermostats, door locks), and detailed usage patterns (when you're home, temperature preferences). Manufacturers claim they encrypt data and respect privacy. However:
 
@@ -51,7 +61,7 @@ Smart home devices collect continuous data: voice recordings (Amazon Echo, Googl
 
 The only solution is physical isolation: keep smart devices away from your personal data, disable cloud features you don't need, and monitor what they try to contact.
 
-## Network Isolation: Guest Network vs VLAN
+### Step 2: Network Isolation: Guest Network vs VLAN
 
 ### Easy Approach: WiFi Guest Network
 
@@ -128,7 +138,7 @@ UniFi requires a dream machine or controller ($99-299). Setup takes 45 minutes.
 4. Create wireless network on that VLAN
 5. Set firewall rule: Deny IoT → Home, Allow IoT → WAN
 
-## Device-Specific Privacy Settings
+### Step 3: Device-Specific Privacy Settings
 
 ### Smart Speakers: Amazon Echo and Google Home
 
@@ -245,7 +255,7 @@ App → Settings → Sharing
 - Don't use remote unlock feature (only local app access)
 - Use mechanical backup key when possible
 
-## Network Monitoring: Pi-hole and Firewalla
+### Step 4: Network Monitoring: Pi-hole and Firewalla
 
 ### Pi-hole: Block Tracking Domains at Network Level
 
@@ -312,7 +322,7 @@ Home → Devices → Smart Speaker
   You can block each domain individually
 ```
 
-## Firmware Update Schedule
+### Step 5: Firmware Update Schedule
 
 Smart device manufacturers release security patches monthly or quarterly. Create a calendar reminder to check for updates.
 
@@ -329,7 +339,7 @@ Set recurring calendar event: "Smart home firmware updates"
 
 Most devices auto-update at night if enabled. Verify the version monthly and manually update if auto-update failed.
 
-## Privacy-First Smart Home Setup
+### Step 6: Privacy-First Smart Home Setup
 
 **Minimum viable secure setup:**
 
@@ -349,6 +359,21 @@ Most devices auto-update at night if enabled. Verify the version monthly and man
 5. Remove smart locks or disable remote access
 
 **Cost:** $200-500 + hardware refresh
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

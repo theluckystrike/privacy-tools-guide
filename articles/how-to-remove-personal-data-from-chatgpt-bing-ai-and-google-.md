@@ -41,7 +41,17 @@ AI companies collect and use your conversations to train their models. If you've
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding What Data AI Companies Collect
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand What Data AI Companies Collect
 
 Before removing your data, understand what's actually stored:
 
@@ -49,7 +59,7 @@ Before removing your data, understand what's actually stored:
 
 Under GDPR (for EU residents), CCPA (California), and similar privacy regulations, you have the right to request deletion of your personal data from training models. Here's how to do it for each provider.
 
-## Removing Your Data From OpenAI (ChatGPT)
+### Step 2: Remove Your Data From OpenAI (ChatGPT)
 
 OpenAI provides two methods for controlling your data: account settings and direct API deletion requests.
 
@@ -111,7 +121,7 @@ curl -X POST "https://api.openai.com/v1/privacy/delete" \
   }'
 ```
 
-## Removing Your Data From Microsoft Copilot (Bing AI)
+### Step 3: Remove Your Data From Microsoft Copilot (Bing AI)
 
 Microsoft provides privacy controls through your Microsoft account and explicit opt-out mechanisms.
 
@@ -188,7 +198,7 @@ async function deleteCopilotData(accessToken) {
 }
 ```
 
-## Removing Your Data From Google Gemini (Bard)
+### Step 4: Remove Your Data From Google Gemini (Bard)
 
 Google provides data controls through your Google Account and My Activity dashboard.
 
@@ -308,7 +318,7 @@ def sanitize_for_ai(prompt: str, user_preferences: UserAIPreferences) -> str:
     return sanitized
 ```
 
-## What Companies Actually Delete
+### Step 5: What Companies Actually Delete
 
 Be realistic about what these deletion requests accomplish:
 
@@ -318,6 +328,21 @@ Be realistic about what these deletion requests accomplish:
 - **Derived insights** that influenced model behavior without direct storage may persist
 
 The most effective strategy remains prevention: avoid entering sensitive personal information into AI systems in the first place.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

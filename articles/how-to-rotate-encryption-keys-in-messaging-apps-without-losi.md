@@ -38,13 +38,23 @@ Modern messaging apps like Signal use forward secrecy protocols that automatical
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Key Rotation Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Key Rotation Challenge
 
 End-to-end encrypted messaging apps typically use the Signal Protocol or similar cryptographic frameworks. These protocols generate new key pairs for each device and periodically create new session keys. When you reinstall an app or switch devices, the app must re-establish secure sessions with your contacts.
 
 The core challenge: old messages were encrypted with old keys. If those keys are no longer available after rotation, decryption becomes impossible without proper key management.
 
-## Rotating Keys in Signal
+### Step 2: Rotating Keys in Signal
 
 Signal provides the most mature key rotation mechanism while preserving history. Here's how it works:
 
@@ -72,7 +82,7 @@ When you reinstall Signal on a new device:
 
 The backup file contains encrypted session states. Your messages aren't lost—they're just re-associated with new session keys that you can restore from the backup.
 
-## Rotating Keys in WhatsApp
+### Step 3: Rotating Keys in WhatsApp
 
 WhatsApp handles key rotation differently. Here's the practical approach:
 
@@ -103,7 +113,7 @@ After restoration, verify your contact's identity:
 # This indicates new key generation—re-verify safety numbers
 ```
 
-## Custom Implementation: Building Key Rotation for Developers
+### Step 4: Custom Implementation: Building Key Rotation for Developers
 
 For developers building encrypted messaging systems, here's a practical approach to key rotation with history preservation:
 
@@ -236,6 +246,21 @@ Signal: "Safety number changed" notification
 WhatsApp: "Number changed" for new device installations
 Custom apps: Display explicit "Key rotated" banner with verification option
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

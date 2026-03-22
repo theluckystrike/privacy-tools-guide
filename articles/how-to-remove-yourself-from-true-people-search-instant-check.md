@@ -41,7 +41,17 @@ This guide covers the manual opt-out processes for major people search sites and
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding How Data Brokers Collect Your Information
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand How Data Brokers Collect Your Information
 
 Before removing your data, understanding how these platforms acquire it helps you address the root source. Data brokers collect information from:
 
@@ -52,7 +62,7 @@ Before removing your data, understanding how these platforms acquire it helps yo
 
 Each time you provide information to a service, there's a chance it flows into the data broker ecosystem. Removing yourself from these sites provides immediate relief, but new data can appear as brokers continuously update their databases.
 
-## Removing Your Data from TruePeopleSearch
+### Step 2: Remove Your Data from TruePeopleSearch
 
 TruePeopleSearch offers a free people search service that displays personal information prominently. Their opt-out process requires submitting a manual request through their removal form.
 
@@ -66,7 +76,7 @@ TruePeopleSearch offers a free people search service that displays personal info
 
 The removal typically takes effect within 24-72 hours, though you may need to repeat this process if your information reappears.
 
-## Removing Your Data from Instant Checkmate
+### Step 3: Remove Your Data from Instant Checkmate
 
 Instant Checkmate operates as a background check service and maintains extensive records. Their opt-out process follows a formal request pattern.
 
@@ -80,7 +90,7 @@ Instant Checkmate operates as a background check service and maintains extensive
 
 Instant Checkmate states that removals are processed within 48 hours, but the site may retain records for legal and compliance purposes.
 
-## Removing Your Data from Radaris
+### Step 4: Remove Your Data from Radaris
 
 Radaris functions as both a people search engine and a data broker that supplies information to other services. Their opt-out requires account deletion.
 
@@ -93,7 +103,7 @@ Radaris functions as both a people search engine and a data broker that supplies
 
 Radaris also offers a batch removal process for multiple records, which is useful if your information appears under several variations.
 
-## Automating Data Removal with Scripts
+### Step 5: Automate Data Removal with Scripts
 
 For developers managing removal requests across multiple sites, Python scripts can automate parts of this process. The following example demonstrates a structured approach to tracking opt-out requests:
 
@@ -155,7 +165,7 @@ tracker.add_request("Radaris", "https://radaris.com/page/remove")
 
 This script creates a JSON-based tracking system for managing multiple removal requests. You can extend it with automated email notifications using the `smtplib` library to remind yourself to verify completed removals.
 
-## Using Batch Removal Services
+### Step 6: Use Batch Removal Services
 
 For users with extensive digital footprints, manual removal across hundreds of data broker sites becomes impractical. Several services automate this process:
 
@@ -165,7 +175,7 @@ For users with extensive digital footprints, manual removal across hundreds of d
 
 While these services require subscription fees, they handle the tedious process of monitoring and re-removing your data as brokers repopulate their databases.
 
-## Verifying Your Removal
+### Step 7: Verify Your Removal
 
 After submitting opt-out requests, verify effectiveness through periodic checks:
 
@@ -444,7 +454,7 @@ if __name__ == '__main__':
         print(f"  {broker}: {details['scheduled_check']}")
 ```
 
-## Browser-Based Removal Workflow
+### Step 8: Browser-Based Removal Workflow
 
 Use Selenium to automate removal on sites with interactive interfaces:
 
@@ -550,7 +560,7 @@ for result in results:
 bot.cleanup()
 ```
 
-## Legal Rights for Data Removal
+### Step 9: Legal Rights for Data Removal
 
 In many jurisdictions, you have statutory rights to demand data removal:
 
@@ -650,6 +660,21 @@ Removing your data from people search sites addresses immediate visibility but d
 - **Request data deletion under privacy laws**: CCPA (California) and GDPR (EU) provide legal frameworks for data removal requests
 - **Freeze your credit**: Contact Equifax, Experian, and TransUnion to freeze credit reports, preventing data brokers from accessing financial information
 - **Register with the National Do Not Call Registry**: While limited in scope, it reduces some telemarketing use of your data
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
