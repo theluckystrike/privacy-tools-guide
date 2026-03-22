@@ -1,5 +1,7 @@
 ---
 permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
+description: "Learn webrtc local ip leak how it reveals your real address with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real"

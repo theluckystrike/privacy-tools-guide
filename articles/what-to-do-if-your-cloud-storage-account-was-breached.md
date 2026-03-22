@@ -1,5 +1,7 @@
 ---
 permalink: /what-to-do-if-your-cloud-storage-account-was-breached/
+description: "Learn what to do if your cloud storage account was breached with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What to Do If Your Cloud Storage Account Was Breached"

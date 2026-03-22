@@ -1,5 +1,7 @@
 ---
 permalink: /vpn-token-based-authentication-how-hardware-tokens-work-with-vpn/
+description: "Learn vpn token based authentication how hardware tokens work with vpn with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "VPN Token-Based Authentication"

@@ -1,5 +1,7 @@
 ---
 permalink: /webauthn-vs-fido2-vs-passkey-differences/
+description: "Compare webauthn vs fido2 vs passkey differences with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"

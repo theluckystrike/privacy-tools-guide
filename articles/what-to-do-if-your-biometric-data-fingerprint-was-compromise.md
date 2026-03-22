@@ -1,5 +1,7 @@
 ---
 permalink: /what-to-do-if-your-biometric-data-fingerprint-was-compromise/
+description: "Learn what to do if your biometric data fingerprint was compromise with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What To Do If Your Biometric Data Fingerprint Was Compromise"

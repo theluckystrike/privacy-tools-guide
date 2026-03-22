@@ -1,5 +1,7 @@
 ---
 permalink: /what-happens-when-your-password-appears-in-data-breach-steps/
+description: "Learn what happens when your password appears in data breach steps with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What Happens When Your Password Appears In Data Breach"

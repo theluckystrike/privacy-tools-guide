@@ -1,5 +1,7 @@
 ---
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
+description: "Learn what to do if you received sextortion email is it real with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What to Do If You Received Sextortion Email: Is It Real?"

@@ -1,5 +1,7 @@
 ---
 permalink: /webauthn-implementation-guide-developers/
+description: "Follow this guide to webauthn implementation guide developers with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "WebAuthn Implementation Guide for Developers"

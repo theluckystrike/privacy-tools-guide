@@ -1,5 +1,7 @@
 ---
 permalink: /what-happens-if-you-click-a-phishing-link-on-chrome-steps/
+description: "Learn what happens if you click a phishing link on chrome steps with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "What Happens If You Click A Phishing Link On Chrome"
