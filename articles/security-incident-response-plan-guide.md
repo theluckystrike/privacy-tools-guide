@@ -19,12 +19,6 @@ tags: [privacy-tools-guide]
 
 A security incident response plan (IRP) defines exactly what to do when something goes wrong — before it happens. Without one, your team improvises under pressure, wastes time, and makes decisions that destroy forensic evidence. This guide covers the six phases of incident response with templates you can adapt.
 
-## Key Takeaways
-
-- **Output**: $OUTDIR"
-tar czf "/tmp/triage-${TIMESTAMP}.tar.gz" "$OUTDIR"
-```
-
 ## Phase 3: Containment
 
 Containment stops the attack from spreading.

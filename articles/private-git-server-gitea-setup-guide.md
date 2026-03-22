@@ -429,12 +429,13 @@ git push --mirror
 # Enter credentials and select repos to migrate
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up a Privacy-Focused Home Server](/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
-- [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
-- [Encrypt Cloud Storage with Rclone Before Uploading](/secure-cloud-storage-encryption-rclone/)
-
+- [How To Configure Openpgp Key Server For Organization](/privacy-tools-guide/how-to-configure-openpgp-key-server-for-organization-interna/)
+- [Mumble Encrypted Voice Chat Server Setup For Private Team](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
+- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

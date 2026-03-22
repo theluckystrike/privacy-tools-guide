@@ -181,14 +181,13 @@ done
 
 inotifywait gives real-time alerting for immediate response. AIDE provides forensic baseline comparison that detects rootkit-level changes. Use both: inotifywait for rapid alerting, AIDE for periodic deep verification.
 
-## Related Reading
+## Related Articles
 
 - [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-
----
-
+- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
+- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
+- [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

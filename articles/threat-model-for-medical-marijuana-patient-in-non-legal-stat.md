@@ -17,17 +17,6 @@ voice-checked: true
 
 Protect medical marijuana use in non-legal states by separating identities (different email, phone, payment methods), disabling location sharing, stripping GPS from photos, using encrypted messaging, and limiting dispensary communications. Store documentation separately from your main identity, and understand that legal protections may not apply even with out-of-state recommendations.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **These are the most common mistakes**: ### Discussing Online
-
-Never discuss medical marijuana use in unencrypted channels, even casually.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **How visible is your**: use? Do family members, neighbors, or friends know about it? 2.
-- **Who's your threat actor?**: Law enforcement, family members seeking legal use, or just general privacy? 5.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding Your Threat Market](#understanding-your-threat-market)

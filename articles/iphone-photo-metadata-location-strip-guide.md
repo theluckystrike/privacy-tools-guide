@@ -359,4 +359,5 @@ Add this to your upload handler in Django, FastAPI, or any framework before writ
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+```
 {% endraw %}

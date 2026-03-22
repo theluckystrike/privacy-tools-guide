@@ -278,14 +278,13 @@ mysqldump -u matomo -p matomo | gzip > /backup/matomo-db-$(date +%Y%m%d).sql.gz
 tar czf /backup/matomo-files-$(date +%Y%m%d).tar.gz /var/www/html/matomo/
 ```
 
-## Related Reading
+## Related Articles
 
-- [Plausible vs Matomo vs Fathom: Privacy Analytics Compared](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
-- [How to Set Up Privacy-Preserving Customer Analytics](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
-- [How to Configure Google Analytics Alternative for GDPR](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
-
----
-
+- [Google Analytics Tracking Alternatives That Respect User](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
+- [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -319,13 +319,12 @@ Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
-- [Secure Webhook Implementation Guide](/privacy-tools-guide/secure-webhook-implementation-guide/)
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
-
----
-
+- [How to Secure PostgreSQL for Production](/privacy-tools-guide/secure-postgresql-production-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
+- [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
+- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

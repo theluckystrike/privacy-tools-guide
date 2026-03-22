@@ -304,14 +304,13 @@ Run through this quarterly:
 6. On Linux, verify keyring integration is working (`gpg-connect-agent UPDATESTARTUPTTY /bye` should succeed)
 7. If using VPN/Tor, test that Signal traffic routes through the proxy correctly
 
-## Related Reading
+## Related Articles
 
-- [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
-- [Signal Messenger Setup Guide for Journalists](/signal-messenger-setup-guide-for-journalists-source-protecti/)
-- [How to Verify Signal Safety Numbers](/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
-- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
-
+- [Signal Disappearing Messages Best Practices: Sensitive](/privacy-tools-guide/signal-disappearing-messages-best-practices-for-sensitive-co/)
+- [Signal Disappearing Messages Best Practices](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
+- [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
+- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

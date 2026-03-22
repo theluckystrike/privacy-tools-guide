@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 When a loved one passes away, executors face the daunting task of managing digital assets alongside physical belongings. Among the often-overlooked responsibilities is canceling subscription services and recurring payment accounts. This guide provides executors with a systematic approach to identifying, documenting, and closing subscription services while respecting the deceased's digital legacy.
 
-## Key Takeaways
-
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-- **Discounts of 25-50% are**: common for qualifying organizations.
-- **Select "Cancel Membership" If**: you cannot access the account, most services accept death certificate submission via their legal or trust departments.
-- **Can I change plans**: later without losing my data? Most tools allow plan changes at any time.
-- **Your data and settings**: are preserved across plan changes in most cases, but verify this with the specific tool.
-
 ## Why Subscription Cancellation Matters
 
 Active subscriptions can continue charging the estate long after they're needed, draining funds from accounts that may be frozen or in probate. Beyond the financial aspect, some subscriptions contain sensitive personal data—medical records in health apps, financial information in budgeting tools, or private communications in email services. Properly canceling these services ensures the estate isn't charged unnecessarily and that personal data is handled appropriately.

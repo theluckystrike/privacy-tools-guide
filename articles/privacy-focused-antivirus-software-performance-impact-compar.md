@@ -1,6 +1,4 @@
 ---
----
-
 layout: default
 title: "Privacy-Focused Antivirus Software: Performance Impact"
 description: "A technical comparison of privacy-focused antivirus solutions and their system resource usage for developers and power users."
@@ -12,13 +10,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-<<<<<<< HEAD
-=======
 tags: [privacy-tools-guide, privacy]
->>>>>>> 0040dc37f9b130bf28d4c21bd1767b6b1ace4762
 ---
-
-
 {% raw %}
 
 For developers and power users, antivirus software is often a necessary evil. Traditional security suites can introduce significant overhead, slowing down compilation times, increasing battery drain on laptops, and consuming valuable RAM that could be used for development environments. Privacy-focused antivirus solutions offer an alternative, but understanding their actual performance characteristics is crucial for making informed decisions.

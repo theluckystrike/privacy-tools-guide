@@ -347,14 +347,13 @@ Your device model may not be maintained. Check the device list before flashing t
 
 **How often should I update?** Monthly security patches are the industry standard. GrapheneOS and CalyxOS push updates monthly. DivestOS updates less frequently (check your device). LineageOS update frequency depends on your device maintainer.
 
-## Related Reading
+## Related Articles
 
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/how-to-use-yubikey-for-ssh-authentication-guide/)
-- [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
-
----
-
+- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
+- [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
+- [GrapheneOS vs Stock Pixel: What Google Collects](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

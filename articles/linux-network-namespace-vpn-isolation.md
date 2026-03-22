@@ -257,14 +257,13 @@ sudo ip link del veth-host
 sudo iptables -t nat -D POSTROUTING -s 10.200.200.0/30 -j MASQUERADE
 ```
 
-## Related Reading
+## Related Articles
 
-- [VPN Kill Switch Configuration on Linux](/vpn-kill-switch-linux-iptables-setup/)
-- [How to Use WireGuard for a Self-Hosted VPN 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/)
-- [OpenWrt VPN Router Setup with WireGuard](/openwrt-vpn-router-wireguard-setup/)
-- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
-
+- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [How VPN Reconnection Works After Network Switch: Detecting](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
+- [How VPN Reconnection Works After Network Switch: Technical](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

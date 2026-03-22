@@ -206,14 +206,13 @@ borg check --verify-data /mnt/backup/myrepo
 
 Run `borg check` at least monthly. A backup you have never verified may not be restorable.
 
-## Related Reading
+## Related Articles
 
-- [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [Secure Code Signing Setup for Developers](/privacy-tools-guide/secure-code-signing-setup-for-developers/)
-
----
-
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
+- [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
+- [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
+- [Set Up Encrypted Local Backup Of iPhone](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
+- [Encrypted Backup Of Chat History How To Preserve Messages](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

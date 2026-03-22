@@ -18,13 +18,6 @@ tags: [privacy-tools-guide]
 ---
 {% raw %}
 
-## Key Takeaways
-
-- **A dedicated "operations phone"**: with: - No SIM card (use Wi-Fi only) - Privacy-focused ROM (GrapheneOS or CalyxOS) - No Google Play Services - All network toggles disabled when not in use 3.
-- **Unlike WhatsApp**: Signal's protocol is open-source and audited, with minimal metadata retention.
-- **Use separate devices for**: sensitive communications.
-- **Topics covered**: introduction, prerequisites, step 1: end-to-end encrypted messaging
-
 ## Introduction
 
 NGOs and activist organizations in Turkey face escalating surveillance and communication restrictions. Following repeated internet shutdowns during protests and increased social media blocking, digital security is no longer optional—it is operational necessity. This guide provides developers and power users with practical implementations for establishing secure, resilient communication channels.

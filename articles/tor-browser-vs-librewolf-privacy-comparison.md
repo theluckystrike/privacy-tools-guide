@@ -32,15 +32,6 @@ tags: [privacy-tools-guide, comparison, privacy]
 
 Tor Browser hides your IP through onion routing (traffic passes through three relays) with circuit isolation per website, while LibreWolf removes telemetry and hardens Firefox defaults to prevent tracking but still uses your real IP—choose Tor for strong anonymity against network observers and LibreWolf for privacy-hardened local browsing without anonymity. This guide breaks down the technical architecture of each browser's privacy mechanisms and practical scenarios where one outperforms the other.
 
-## Key Takeaways
-
-- **Each relay adds approximately**: 100-200ms of delay, making typical page loads 2-5 seconds longer than direct connections.
-- **On first launch**: Tor Browser connects to the Tor network, which typically takes 10-30 seconds.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **It does not route traffic through the Tor network**: instead, it relies on the user's network configuration for anonymity.
-
 ## Table of Contents
 
 - [Understanding Tor Browser's Privacy Architecture](#understanding-tor-browsers-privacy-architecture)

@@ -19,15 +19,6 @@ tags: [privacy-tools-guide]
 
 Understanding Tor Browser's threat model requires moving beyond marketing claims into actual security guarantees. This article provides a technical breakdown of what Tor Browser protects against, where it falls short, and how developers should think about integrating it into their security architecture.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This prevents website fingerprinting**: attacks where adversaries identify users by their unique browser profile.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Tor Browser normalizes these**: to make all users appear identical.
-
 ## The Core Guarantee: Network-Level Anonymity
 
 Tor Browser's primary function is providing anonymity at the network layer. When you connect through Tor, your traffic traverses three relays: an entry node (guard), a middle relay, and an exit node. Each relay only knows the previous and next hop in the circuit.

@@ -456,14 +456,13 @@ curl https://dnsleaktest.com/api/v1/my/nameservers
 curl -v --socks5h 127.0.0.1:1080 https://example.com
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Use SSH Tunneling for Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
 - [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-
----
-
+- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

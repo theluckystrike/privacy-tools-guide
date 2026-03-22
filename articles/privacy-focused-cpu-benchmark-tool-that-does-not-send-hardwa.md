@@ -10,11 +10,7 @@ categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-<<<<<<< HEAD
-score: 8
-=======
 score: 9
->>>>>>> 0040dc37f9b130bf28d4c21bd1767b6b1ace4762
 intent-checked: true
 ---
 

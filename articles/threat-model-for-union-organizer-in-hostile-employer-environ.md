@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Union organizers in hostile employer environments need a threat model that accounts for corporate surveillance capabilities—email monitoring, badge swipes, video surveillance, and potential infiltration—while remaining practical for organizing work. This guide uses the STRIDE framework adapted for union contexts, showing you how to identify your assets (communication metadata, membership lists, meeting locations), map adversary capabilities, and implement concrete countermeasures that developers and power users can deploy immediately.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use a strong passphrase**: - Minimum 20 characters, stored in password manager 3.
-- **Use a separate device**: - Dedicated phone and laptop for organizing work 5.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding Your Adversary](#understanding-your-adversary)

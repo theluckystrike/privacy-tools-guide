@@ -316,13 +316,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-- [How to Encrypt Files Before Cloud Upload](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
-- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
+- [Best Zero Knowledge Cloud Storage 2026](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
 - [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
-
+- [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Supply chain attacks inject malicious code between the developer and you — in the build system, the package registry, the release artifacts, or the CI pipeline. Verification cannot stop every attack, but it confirms the software you are running matches what the author intended to ship.
 
-## Key Takeaways
-
-- **Topics covered**: verifying downloads with checksums, verifying gpg signatures, sigstore / cosign for container images
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Verifying Downloads with Checksums
 
 Most projects publish SHA256 checksums alongside their releases.
