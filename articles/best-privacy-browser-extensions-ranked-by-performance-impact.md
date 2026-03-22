@@ -159,4 +159,187 @@ Compare results with and without extensions enabled to understand the actual imp
 **For Security Researchers**: NoScript or uMatrix offer the most control, despite higher overhead. The detailed request blocking capabilities are essential for security analysis.
 
 **For General Users**: uBlock Origin alone provides the best balance of privacy protection and performance. Adding Privacy Badger can supplement detection without significant additional overhead.
+
+## Threat Model Analysis
+
+Different extensions protect against different threats. Understanding your specific risk profile helps choose the right combination:
+
+### Tracking Prevention Focus
+
+If your primary concern is third-party tracker blocking:
+- **Recommended**: uBlock Origin + Privacy Badger
+- **Additional**: Ghostery (if detailed blocking reports matter)
+- **Overhead**: 50-90ms combined
+- **Effectiveness**: Blocks 95%+ of tracked domains
+
+### Script Execution Control
+
+For maximum JavaScript filtering (important when handling sensitive data):
+- **Recommended**: NoScript or uMatrix with aggressive defaults
+- **Trade-off**: 200-400ms overhead, but prevents exploit chains
+- **Use case**: Security researchers, developers handling sensitive data
+
+### Browser Fingerprinting Resistance
+
+Extensions cannot fully prevent fingerprinting, but several help:
+- **Canvas Blocker**: Detects and randomizes canvas fingerprinting (20-30ms overhead)
+- **WebGL Shader Editor**: Blocks WebGL fingerprinting (5-10ms overhead)
+- **User-Agent Switcher**: Randomizes reported browser version (negligible overhead)
+
+## Advanced Extension Configurations
+
+### Combining uBlock Origin with Custom Rules
+
+For developers building custom filtering logic:
+
+```javascript
+// Custom uBlock Origin filter rules for advanced scenarios
+// Block specific tracking endpoints
+||analytics.example.com^$script
+||metrics.client.com^$image,fetch
+
+// Allow specific domains while blocking others
+example.com|~trusted-cdn.com##.tracking-pixel
+
+// Domain-specific blocking
+https://sensitive-site.com^$script,third-party
+
+// Whitelist for corporate networks
+trusted-partner.com|~external-analytics.com
+```
+
+Save these in uBlock Origin's "My Filters" tab for immediate effect.
+
+### Performance Optimization Strategies
+
+```javascript
+// Advanced performance tuning configuration
+{
+  "filterLists": {
+    "enabled": [
+      "ublock-filters",
+      "easylist",
+      "easyprivacy"
+    ],
+    "disabled": [
+      "adguard-generic",
+      "annoyances-cookies",
+      "fanboy-social-media"
+    ]
+  },
+  "dynamicFilteringEnabled": true,
+  "advanced": {
+    "jsfiltering": false,
+    "pslFiltering": true,
+    "modifiedUserAgent": false
+  }
+}
+```
+
+This configuration balances blocking with performance by disabling expensive JavaScript filtering while keeping network-level filtering active.
+
+## Benchmarking Extensions in Your Environment
+
+Generic benchmarks don't account for your specific site mix. Measure extensions using this methodology:
+
+```javascript
+// Client-side performance measurement
+function benchmarkExtensionImpact() {
+  const sites = [
+    'https://news.ycombinator.com',
+    'https://github.com',
+    'https://stackoverflow.com',
+    'https://medium.com'
+  ];
+
+  const results = {};
+
+  sites.forEach(site => {
+    const startTime = performance.now();
+
+    // Create hidden frame to measure
+    const frame = document.createElement('iframe');
+    frame.src = site;
+    frame.onload = () => {
+      const endTime = performance.now();
+      results[site] = {
+        loadTime: endTime - startTime,
+        blocked: frame.contentWindow.navigator.blocked_requests || 0
+      };
+      frame.remove();
+    };
+  });
+
+  return results;
+}
+```
+
+Run this measurement with each extension enabled/disabled and compare results.
+
+## Firefox vs Chrome Extension Differences
+
+The browser choice affects extension behavior and performance:
+
+| Aspect | Firefox | Chrome |
+|--------|---------|--------|
+| Memory overhead | 15-20% lower | Baseline |
+| Filter update speed | Faster | Slower on large lists |
+| WebAssembly support | Better | Good |
+| Extension isolation | Stricter | More permissive |
+| uBlock Origin performance | Slightly better | Industry standard |
+
+Choose Firefox if memory efficiency matters or Chrome if you need maximum compatibility with corporate systems.
+
+## Privacy Extension Stack Comparison
+
+Different combination approaches serve different use cases:
+
+**Minimal Stack** (Best for performance):
+- uBlock Origin only
+- Combined overhead: 12-35ms
+- Blocking effectiveness: 85%
+
+**Balanced Stack** (Most users):
+- uBlock Origin + Privacy Badger + HTTPS Everywhere
+- Combined overhead: 45-75ms
+- Blocking effectiveness: 95%
+
+**Maximum Security Stack**:
+- NoScript + uMatrix + uBlock Origin + Privacy Badger + Canvas Blocker
+- Combined overhead: 400-600ms
+- Blocking effectiveness: 99%
+- Trade-off: Site compatibility issues common
+
+## Monitoring Extension Impact Over Time
+
+Extensions can degrade performance as filter lists grow. Monitor regularly:
+
+```bash
+# Browser console command to test page load
+setInterval(() => {
+  const perfData = performance.getEntries()
+    .filter(e => e.name.includes('analytics') || e.name.includes('tracking'))
+    .map(e => ({
+      name: e.name,
+      duration: e.duration,
+      type: e.initiatorType
+    }));
+
+  console.log(`Blocked requests: ${perfData.length}`);
+  console.log(`Total time: ${perfData.reduce((a,b) => a + b.duration, 0)}ms`);
+}, 5000);
+```
+
+Run this during normal browsing to identify slow-loading trackers.
+
+## Extension Interaction Effects
+
+Extensions sometimes interfere with each other. Common conflicts:
+
+- **NoScript + uBlock Origin**: NoScript may override uBlock rules—use one or the other
+- **Multiple ad blockers**: Performance degrades exponentially (don't combine multiple list-based blockers)
+- **Cookie blockers + Privacy Badger**: May create duplicate blocking rules
+
+Test combinations individually before deploying to production machines.
+
 {% endraw %}

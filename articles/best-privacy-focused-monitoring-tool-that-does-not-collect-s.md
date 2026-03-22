@@ -225,4 +225,235 @@ services:
 
 This configuration ensures all monitoring data remains within your infrastructure while providing powerful observability capabilities.
 ```
+
+## Advanced Monitoring Scenarios
+
+### Monitoring Kubernetes Clusters Privately
+
+For containerized deployments, Prometheus works well with Kubernetes without external collection:
+
+```yaml
+# prometheus-values.yaml for Helm deployment
+prometheus:
+  prometheusSpec:
+    retention: 15d
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 50Gi
+
+    # Disable external communication
+    externalLabels: {}
+    remoteWrite: [] # No remote write endpoints
+
+    serviceMonitorSelectorNilUsesHelmValues: false
+```
+
+Deploy using:
+```bash
+helm install prometheus prometheus-community/kube-prometheus-stack \
+  -f prometheus-values.yaml \
+  -n monitoring \
+  --create-namespace
+```
+
+### Log Aggregation Without Cloud Storage
+
+ELK Stack (Elasticsearch, Logstash, Kibana) provides powerful log analysis entirely on-premises:
+
+```bash
+# Docker Compose stack for private logging
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.0.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      - "127.0.0.1:9200:9200"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.0.0
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - "127.0.0.1:5000:5000"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.0.0
+    ports:
+      - "127.0.0.1:5601:5601"
+    depends_on:
+      - elasticsearch
+
+volumes:
+  es-data:
+```
+
+### Application Performance Monitoring (APM)
+
+Open-source APM solutions track application performance without sending data externally:
+
+```javascript
+// Node.js APM agent (local only)
+const apm = require('elastic-apm-node');
+
+apm.start({
+  serviceName: 'my-api-service',
+  secretToken: process.env.APM_SECRET,
+  serverUrl: 'http://localhost:8200', // Local APM server
+  environment: 'production'
+});
+```
+
+## Performance Comparison Table
+
+| Tool | Memory/CPU | Disk I/O | Query Speed | Retention |
+|------|-----------|----------|-------------|-----------|
+| Glances | 50MB / 5% | Minimal | Real-time | None |
+| SAR | 10MB / 1% | High (writes) | Historical | 30 days |
+| Prometheus | 200MB / 10% | Medium | 1-5s | Custom |
+| Grafana | 150MB / 5% | Low | Query time | Depends on datasource |
+| Netdata | 300MB / 15% | Medium | Real-time | 1 hour default |
+
+## Privacy Monitoring Compliance
+
+For regulated environments (HIPAA, GDPR), ensure your monitoring stack meets requirements:
+
+```bash
+# Audit log integrity check
+# Ensure logs cannot be modified after creation
+find /var/log/prometheus -type f -exec chmod 444 {} \;
+
+# Verify no external connections
+netstat -an | grep ESTABLISHED | grep -v "127.0.0.1\|localhost"
+
+# Check for telemetry home-phones
+lsof -i -P -n | grep -i "out\|established"
+```
+
+## Cost Comparison: Self-Hosted vs SaaS
+
+**Self-hosted annual cost** (basic 3-server setup):
+- VPS/dedicated hardware: $1,800-3,600/year
+- Storage: $500-1,000/year
+- Bandwidth (if distributed): $0-500/year
+- **Total: ~$2,300-5,100/year**
+
+**SaaS monitoring annual cost** (equivalent functionality):
+- Datadog: $15-25/month per host = $1,800-3,000/year minimum
+- New Relic: $0.50-1.50 per metric
+- Splunk Cloud: $50-200+/day = $18,250+/year
+- **Total: $1,800-20,000+/year**
+
+Self-hosting has higher upfront effort but lower long-term costs, especially for privacy-sensitive deployments.
+
+## Troubleshooting Common Issues
+
+### Prometheus Storage Issues
+
+```bash
+# Check TSDB integrity
+promtool tsdb list /prometheus
+
+# Repair corrupted blocks
+promtool tsdb repair /prometheus
+
+# Verify query performance
+curl -s 'http://localhost:9090/api/v1/query?query=up' | jq .
+```
+
+### Grafana Dashboard Blank
+
+```bash
+# Verify datasource connectivity
+curl -s http://localhost:9090/api/v1/labels | jq '.data | length'
+
+# Check Grafana logs
+docker logs grafana
+
+# Ensure time range is valid (check dashboard clock sync)
+```
+
+### Netdata High CPU Usage
+
+```bash
+# Disable expensive collectors
+# Edit /etc/netdata/netdata.conf
+[plugin:python.d]
+    enabled = no
+
+[plugin:apps]
+    enabled = yes
+    update every = 5
+    max vfork wait = 10
+```
+
+## Integration with Alerts and Notifications
+
+Send alerts through local channels only:
+
+```yaml
+# Prometheus alerting rules
+groups:
+  - name: local-alerts
+    rules:
+      - alert: HighCPUUsage
+        expr: node_cpu_seconds_total > 0.8
+        for: 5m
+        annotations:
+          summary: "High CPU on {{ $labels.instance }}"
+          description: "CPU usage {{ $value }} for 5 minutes"
+```
+
+Configure alert destinations to local webhooks:
+
+```python
+# Flask webhook receiver for Prometheus alerts
+@app.route('/webhook', methods=['POST'])
+def handle_alert():
+    alerts = request.json['alerts']
+    for alert in alerts:
+        # Send local notification, log, or trigger script
+        send_local_notification(alert['annotations']['summary'])
+    return '', 200
+```
+
+## Scaling Private Monitoring
+
+For multi-server environments, federation provides distributed collection:
+
+```yaml
+# Prometheus federation setup
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  # Local metrics
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Federate from other Prometheus instances
+  - job_name: 'federate'
+    scrape_interval: 15s
+    honor_labels: true
+    metrics_path: '/federate'
+    params:
+      'match[]':
+        - '{job=~".+"}'
+    static_configs:
+      - targets:
+          - 'prometheus-1.example.com:9090'
+          - 'prometheus-2.example.com:9090'
+```
+
+This architecture allows collecting metrics from multiple nodes while maintaining privacy through local aggregation.
+
 {% endraw %}
