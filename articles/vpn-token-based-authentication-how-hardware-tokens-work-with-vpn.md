@@ -213,6 +213,176 @@ Hardware tokens create a single point of failure if not properly backed up. Impl
 
 Organizations should document their hardware token deployment and establish procedures for token loss or failure scenarios.
 
+## Implementing Token-Based VPN Access Control
+
+For enterprises deploying hardware token VPN access, implement certificate-based authentication with hardware tokens:
+
+```bash
+# Step 1: Generate CSR (Certificate Signing Request) on YubiKey
+ykman piv certificates request 9a \
+  --subject-name "CN=user@company.com,OU=VPN,O=Company" \
+  user.csr
+
+# Step 2: Have CA sign the certificate
+openssl x509 -req -in user.csr \
+  -CA ca.crt -CAkey ca.key \
+  -out user-signed.crt -days 365 -CAcreateserial
+
+# Step 3: Import signed certificate back to YubiKey
+ykman piv certificates import 9a user-signed.crt
+
+# Step 4: OpenVPN configuration for token-based auth
+remote vpn.company.com 1194
+proto udp
+dev tun
+
+# Use hardware token for certificate
+pkcs11-module /usr/lib/opensc-pkcs11.so
+pkcs11-id 'YubiKey slot 9a'
+
+# Verify certificate during connection
+remote-cert-tls server
+ca ca.crt
+```
+
+## Hardware Token Management at Scale
+
+Large organizations need robust token lifecycle management:
+
+```python
+# Token lifecycle management system
+class TokenManagementSystem:
+    def __init__(self, pki_backend):
+        self.pki = pki_backend
+        self.audit_log = []
+
+    def provision_token(self, user_id, token_serial):
+        """Enroll new hardware token"""
+        # Generate key on token
+        csr = self._generate_csr_on_token(token_serial)
+
+        # Get CA to sign
+        cert = self.pki.sign_csr(csr, user_id)
+
+        # Import certificate back to token
+        self._import_cert_to_token(token_serial, cert)
+
+        # Log the event
+        self.audit_log.append({
+            "event": "token_provisioned",
+            "user": user_id,
+            "token": token_serial,
+            "timestamp": datetime.now()
+        })
+
+        return cert
+
+    def revoke_token(self, token_serial, reason):
+        """Revoke a compromised or lost token"""
+        self.pki.revoke_certificate(token_serial, reason)
+        self.audit_log.append({
+            "event": "token_revoked",
+            "token": token_serial,
+            "reason": reason,
+            "timestamp": datetime.now()
+        })
+
+    def rotate_token(self, user_id, old_token, new_token):
+        """Replace token during routine rotation"""
+        # Provision new token
+        self.provision_token(user_id, new_token)
+
+        # Revoke old token
+        self.revoke_token(old_token, "routine_rotation")
+
+        return True
+
+    def audit_trail(self, user_id):
+        """Get full audit trail for a user"""
+        return [log for log in self.audit_log if log.get("user") == user_id]
+```
+
+## Testing Hardware Token Failover
+
+Validate token failover mechanisms before relying on them in production:
+
+```bash
+#!/bin/bash
+# test-token-failover.sh — validate backup token works
+
+echo "Testing primary token..."
+openvpn --config client.ovpn \
+  --pkcs11-id 'YubiKey/0000000001' \
+  --connect-timeout 5
+
+if [ $? -eq 0 ]; then
+  echo "Primary token: SUCCESS"
+else
+  echo "Primary token: FAILED"
+
+  echo "Testing backup token..."
+  openvpn --config client.ovpn \
+    --pkcs11-id 'YubiKey/0000000002' \
+    --connect-timeout 5
+
+  if [ $? -eq 0 ]; then
+    echo "Backup token: SUCCESS"
+  else
+    echo "Backup token: FAILED - Critical failure in token authentication"
+    exit 1
+  fi
+fi
+```
+
+## Integration with Identity Providers
+
+Modern VPN solutions integrate with identity providers for token-based access:
+
+```bash
+# Okta VPN integration with hardware tokens
+# Configuration for OpenVPN with Okta authentication
+
+# Okta API for token verification
+curl -X POST https://company.okta.com/api/v1/authn \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "user@company.com",
+    "password": "password",
+    "options": {
+      "warnBeforePasswordExpired": true
+    }
+  }'
+
+# Response includes sessionToken for MFA
+# Hardware token provides second factor
+
+# For Radius-based VPN:
+# FreeRadius can integrate with Okta for token validation
+```
+
+## Hardware Token Lifecycle and Replacement
+
+Plan for token failures and end-of-life:
+
+```bash
+# Annual token replacement schedule
+# Keep spare tokens registered (2-3 per user)
+# Rotate tokens quarterly
+
+# Decommissioning process:
+# 1. Provision new token for user
+# 2. Register new token with VPN system
+# 3. Test connectivity with new token
+# 4. Revoke old token certificate
+# 5. Physically destroy old token (punch hole)
+# 6. Document in inventory system
+
+# Inventory tracking
+# Tool: Simple CSV or database
+# Columns: user, token_serial, registration_date, assigned_date, status
+```
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

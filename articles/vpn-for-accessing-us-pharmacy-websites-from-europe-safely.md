@@ -201,6 +201,111 @@ else:
 
 Implement retry logic and connection health checks for production systems, as VPN connections can drop unexpectedly.
 
+## Advanced: Residential IP and Rotating Proxies
+
+Standard VPN datacenter IPs get blocklisted quickly by pharmacy sites. To maintain consistent access, consider residential proxy services that route traffic through actual residential internet connections:
+
+```bash
+# Residential proxy configuration for OpenVPN
+# These services provide SOCKS5 endpoints that appear as regular home users
+
+# Example: Using a residential proxy provider
+# Provider like Bright Data, Oxylabs, or Smartproxy offers rotating residential IPs
+
+openvpn --config pharmacy-access.ovpn \
+  --socks-proxy 10.0.0.1 8080 \
+  --auth-user-pass
+
+# The traffic appears to come from residential internet rather than a datacenter
+# This bypasses most IP-based blocklists
+```
+
+The trade-off is cost—residential proxies run $5-50+ monthly depending on bandwidth, compared to $5-10 for standard VPNs. However, for users who need reliable pharmacy access, the expense is worthwhile.
+
+## Payment Processing and Card Verification
+
+Even with VPN access to the pharmacy site, payment processing creates a second barrier. Pharmacy payment processors implement Address Verification System (AVS) checks that verify your billing address matches what the card issuer has on file.
+
+When the pharmacy VPN server shows a US IP but your payment card is issued in Europe with a European address, the mismatch triggers AVS failures:
+
+```
+AVS Result: N (No Match)
+CVV Result: M (Match)
+Response: Transaction Declined
+```
+
+Solutions:
+
+1. **Use a US-issued card** — Get a US credit card or prepaid card with a US address
+2. **US virtual card services** — Services like Privacy.com or Wise issue virtual cards with US addresses
+3. **Call the pharmacy** — Some allow phone orders where you can explain the situation
+4. **International pharmacy partnerships** — Some US pharmacies offer direct international shipping with proper licensing
+
+## Setting Up Automated Connection Management
+
+For consistent access without manual intervention:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import requests
+import time
+
+class PharmacyVPNManager:
+    def __init__(self, vpn_config_path):
+        self.vpn_process = None
+        self.config_path = vpn_config_path
+        self.target_country = "US"
+
+    def start_vpn(self):
+        """Start OpenVPN connection"""
+        cmd = ['sudo', 'openvpn', '--config', self.config_path]
+        self.vpn_process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
+        time.sleep(5)  # Allow time for connection
+
+    def verify_location(self):
+        """Verify VPN routed through US"""
+        try:
+            response = requests.get('https://ipinfo.io/json', timeout=10)
+            data = response.json()
+            return data.get('country') == self.target_country
+        except Exception as e:
+            print(f"Location check failed: {e}")
+            return False
+
+    def stop_vpn(self):
+        """Terminate VPN connection"""
+        if self.vpn_process:
+            self.vpn_process.terminate()
+            self.vpn_process.wait(timeout=10)
+
+    def ensure_connected(self, max_retries=3):
+        """Start VPN and retry if initial check fails"""
+        for attempt in range(max_retries):
+            self.start_vpn()
+            if self.verify_location():
+                print("Connected via US IP")
+                return True
+            self.stop_vpn()
+            print(f"Connection attempt {attempt + 1} failed, retrying...")
+            time.sleep(5)
+
+        print("Failed to establish US VPN connection")
+        return False
+
+# Usage
+vpn_manager = PharmacyVPNManager('/path/to/pharmacy-us.ovpn')
+if vpn_manager.ensure_connected():
+    # Proceed with pharmacy website access
+    pass
+```
+
+This script ensures your VPN is connected and properly routed before attempting to access the pharmacy site.
+
 ## Troubleshooting Common Issues
 
 Several problems frequently arise when accessing US pharmacy websites through VPNs:

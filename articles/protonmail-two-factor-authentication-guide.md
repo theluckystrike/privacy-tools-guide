@@ -232,6 +232,178 @@ Always print and store your recovery codes — losing them can mean permanent lo
 
 Remember that 2FA is just one layer of defense — use strong, unique passwords, keep your recovery information updated, and regularly audit your active sessions.
 
+## Enterprise 2FA Configuration
+
+Organizations managing ProtonMail accounts for teams can implement centralized 2FA policies:
+
+```bash
+# Store encrypted TOTP secrets in centralized vault
+# Distribute via secure channels only
+
+# Example: Team secret management with HashiCorp Vault
+vault kv put secret/protonmail/team@company.com \
+  totp_secret="JBSWY3DPEHPK3PXPJBSWY3DPEHPK3PXP" \
+  webauthn_backup_key_id="key-123"
+
+# Team members can retrieve for emergency access without exposing the primary authenticator
+```
+
+### Hardware Key Backup Strategy
+
+For teams handling sensitive communications, maintain multiple registered keys in different physical locations:
+
+```
+Primary Key: YubiKey 5C (carry with daily credentials)
+Backup Key 1: YubiKey 5NFC (home safe)
+Backup Key 2: Titan Security Key (office safe)
+
+Recovery Codes: Printed, stored in lawyer's office
+```
+
+This multi-layer redundancy ensures that losing one key (lost wallet, stolen bag) doesn't result in complete account lockout.
+
+## Advanced: Custom 2FA Workflows
+
+Power users can build custom 2FA integrations for specialized workflows:
+
+```python
+# Custom 2FA orchestration for automated processes
+import pyotp
+import requests
+from datetime import datetime
+
+class ProtonMailAutomationAuth:
+    def __init__(self, username, password, totp_secret, backup_codes):
+        self.username = username
+        self.password = password
+        self.totp_gen = pyotp.TOTP(totp_secret)
+        self.backup_codes = backup_codes
+        self.auth_token = None
+
+    def authenticate(self):
+        """Authenticate to ProtonMail with 2FA"""
+        # Step 1: Initial login attempt
+        auth_url = "https://api.protonmail.ch/auth"
+        response = requests.post(auth_url, data={
+            "Username": self.username,
+            "Password": self.password
+        })
+
+        # Check if 2FA challenge received
+        if response.status_code == 401:
+            # Use TOTP code for 2FA
+            totp_code = self.totp_gen.now()
+
+            # Submit 2FA verification
+            twofa_response = requests.post(f"{auth_url}/2fa", json={
+                "two_factor_code": totp_code,
+                "token": response.json()["Token"]
+            })
+
+            if twofa_response.status_code == 200:
+                self.auth_token = twofa_response.json()["access_token"]
+                return True
+
+            # Fallback to recovery code if TOTP fails
+            recovery_code = self.backup_codes.pop()
+            recovery_response = requests.post(f"{auth_url}/2fa", json={
+                "recovery_code": recovery_code,
+                "token": response.json()["Token"]
+            })
+
+            if recovery_response.status_code == 200:
+                self.auth_token = recovery_response.json()["access_token"]
+                return True
+
+        return False
+
+# Usage (not recommended for storing credentials in code)
+# auth = ProtonMailAutomationAuth(username, password, totp_secret, backup_codes)
+# if auth.authenticate():
+#     # Proceed with ProtonMail operations
+```
+
+## Session Management and Geographic Anomalies
+
+ProtonMail's session audit logs can reveal unauthorized access attempts. Regular monitoring is critical:
+
+```bash
+#!/bin/bash
+# Script to check for suspicious session activity
+
+# Get active sessions via API
+sessions=$(curl -s -H "Authorization: Bearer $AUTH_TOKEN" \
+  https://api.protonmail.ch/auth/sessions)
+
+# Flag sessions from unexpected locations
+echo "$sessions" | jq '.Sessions[] |
+  select(.CreateTime > now - 604800) |
+  {IP: .IP, City: .City, Browser: .Name, Created: .CreateTime}'
+
+# Alert if:
+# - Session from unexpected geographic location
+# - Multiple simultaneous sessions
+# - Session from unusual browser/device
+```
+
+## Biometric Authentication as Phishing Defense
+
+For highest security, combine ProtonMail's 2FA with biometric unlocking of your authenticator app:
+
+```bash
+# Set up biometric-protected TOTP on iOS (Raivo)
+# Set up biometric-protected TOTP on Android (Aegis)
+
+# Workflow:
+# 1. User attempts to log in to ProtonMail
+# 2. Prompted for 2FA code
+# 3. Open authenticator app
+# 4. Authenticate with Face ID / Touch ID
+# 5. Retrieve TOTP code
+# 6. Enter into ProtonMail
+
+# This prevents:
+# - Phishing sites capturing TOTP codes (even if opened)
+# - Malware extracting secrets from authenticator app
+# - Unauthorized use even if device is stolen and unlocked
+```
+
+## Regular Security Audits
+
+Perform monthly 2FA audits:
+
+```bash
+#!/bin/bash
+# Monthly 2FA audit checklist
+
+echo "ProtonMail 2FA Security Audit - $(date +%Y-%m-%d)"
+echo "================================================"
+
+# 1. Check active sessions
+echo "Active Sessions:"
+# Would check via API or web interface
+echo "- Review each session's location and device"
+echo "- Revoke any sessions you don't recognize"
+
+# 2. Verify backup key registration
+echo "Registered Security Keys:"
+echo "- Ensure at least 2 keys are registered"
+echo "- Verify backup key is stored securely"
+
+# 3. Check recovery codes
+echo "Recovery Codes Status:"
+echo "- Verify codes are stored securely"
+echo "- Count remaining unused codes"
+echo "- Request new codes if fewer than 5 remain"
+
+# 4. Test recovery mechanisms
+echo "Recovery Testing:"
+echo "- Test secondary email recovery"
+echo "- Verify PGP key recovery works"
+
+echo "Audit complete. Consider rotating secrets if any anomalies detected."
+```
+
 ## Frequently Asked Questions
 
 **Can I use the same authenticator app for ProtonMail and other services?**

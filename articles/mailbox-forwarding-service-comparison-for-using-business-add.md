@@ -180,6 +180,87 @@ class MailForwardingService:
 
 This pattern lets you automate mail handling as part of larger workflows—useful for businesses processing large volumes of correspondence.
 
+## Setting Up Your Business Address Workflow
+
+Before committing to a service, establish how you'll migrate your address across important accounts. The transition should be methodical to avoid missing critical mail.
+
+### Phase 1: Account Prioritization (Week 1)
+
+Start with accounts that actively send you mail and are difficult to recover if you miss notices:
+
+```python
+# Track your address migration systematically
+priority_accounts = {
+    "critical": [
+        "Bank accounts (checking, savings, investment)",
+        "Credit card companies",
+        "Insurance providers",
+        "Government agencies (tax, benefits, licensing)",
+        "Employer (payroll, benefits)",
+        "Healthcare providers"
+    ],
+    "important": [
+        "Utility companies",
+        "Internet/phone providers",
+        "Subscriptions (magazine, membership)",
+        "Online retailers (Amazon, eBay account settings)"
+    ],
+    "optional": [
+        "Social media platforms",
+        "Free service accounts",
+        "Newsletters and marketing"
+    ]
+}
+```
+
+### Phase 2: Testing (Week 1-2)
+
+Before updating all accounts, run a test. Add your mailbox service address to one non-critical account and verify you receive mail within 7-10 days. This confirms:
+
+- The service is actively receiving mail at that address
+- Scanning/notifications are working properly
+- You can successfully retrieve the mail
+- Forwarding (if applicable) works to your actual address
+
+### Phase 3: Systematic Migration (Weeks 2-4)
+
+Update accounts in order of priority. For each account:
+
+1. **Log in** and find the address update section (usually in "Account Settings" or "Profile")
+2. **Update the primary address** to your mailbox forwarding address
+3. **Keep a spreadsheet** tracking when you updated each account
+4. **Set a reminder** for 2-3 weeks later to verify the update took effect
+
+### Phase 4: Cleanup (Week 4+)
+
+Address changes take time to propagate. Even after updating an account, that organization may continue sending to your old address for:
+
+- Pre-printed statements already in the mail
+- Third-party services that operate independently
+- Forgotten subsidiary companies
+
+Plan to monitor your home address through USPS Informed Delivery for at least 2-3 months after starting the migration. When mail arrives at your old address:
+
+- Open it briefly to identify the sender
+- Update that account if it's one you control
+- File address change requests with the sender if possible
+
+## Advanced Configuration: Multi-Service Setup
+
+Some users run multiple mailbox forwarding services in parallel to optimize for different mail types:
+
+```
+Financial accounts → VirtualPostMail (best scanning quality)
+Government mail → Earth Class Mail (enterprise reliability, check deposit)
+Subscriptions → PostScan Mail (lowest cost for variable volume)
+International → Traveling Mailbox (international forwarding option)
+```
+
+This approach costs more but provides:
+- Failover if one service has issues
+- Optimized processing for different mail types
+- Reduced per-service volume costs
+
 ## Privacy Considerations
 
 Not all services handle your data equally. Before signing up:

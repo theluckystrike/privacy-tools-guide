@@ -205,6 +205,100 @@ When implementing selective routing, keep these security principles in mind:
 
 For maximum security, use the full tunnel unless you have specific requirements for split tunneling. When using selective routing, regularly audit your routing tables to ensure no sensitive traffic is accidentally leaking outside the VPN.
 
+## Advanced Routing: Policy-Based Routing
+
+For complex environments, implement policy-based routing using OpenVPN with iptables rules:
+
+```bash
+# Create separate routing tables for VPN and local
+ip rule add from 192.168.1.100 table 100
+ip route add default via 192.168.1.1 table 100
+
+# Route specific users or ports through VPN
+iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 443 -j MARK --set-mark 1
+iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 80 -j MARK --set-mark 0
+
+# Apply marks to routing tables
+ip rule add fwmark 1 table 101  # VPN route
+ip rule add fwmark 0 table 100  # Local route
+```
+
+This enables application-level control where specific ports or services route through VPN while others remain direct.
+
+## Diagnosing Routing Issues with tcpdump
+
+When split tunneling behaves unexpectedly, packet capture reveals what's happening:
+
+```bash
+# Capture traffic on all interfaces
+sudo tcpdump -i any -n -v '(src 192.168.1.0/24 or dst 192.168.1.0/24)'
+
+# Filter to specific protocol
+sudo tcpdump -i any -n tcp port 22
+
+# Save to file for later analysis
+sudo tcpdump -i tun0 -w vpn-traffic.pcap
+
+# Analyze with Wireshark
+# Look for: packets that should be in VPN but aren't
+# Check TTL (Time To Live) values — VPN traffic should show expected TTL
+```
+
+## Combining OpenVPN Routes with Firewall Rules
+
+For enterprise deployments, combine OpenVPN routes with host-based firewalls:
+
+```bash
+# UFW example (Ubuntu)
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow from 192.168.1.0/24  # Allow from local network only
+sudo ufw allow out 10.8.0.0/24      # Allow to VPN network only
+sudo ufw enable
+
+# This prevents the system from sending traffic outside the VPN
+# even if routing tables get misconfigured
+```
+
+## Metric-Based Routing Priority
+
+Control which routes take precedence when multiple paths exist:
+
+```bash
+# Lower metrics = higher priority
+ip route add 0.0.0.0/0 via 10.8.0.1 metric 10     # VPN route (lower)
+ip route add 0.0.0.0/0 via 192.168.1.1 metric 20  # Local route (higher)
+
+# Verify metric assignments
+route -n
+```
+
+When the VPN is active, packets prefer the lower-metric VPN route. If the VPN fails, traffic falls back to the higher-metric local route.
+
+## Performance Monitoring and Optimization
+
+Split tunneling can create unexpected latency if misconfigured:
+
+```bash
+#!/bin/bash
+# Monitor routing performance
+
+# Test latency to VPN resources
+ping -c 4 10.8.0.1
+echo "VPN latency: ^"
+
+# Test latency to local resources
+ping -c 4 192.168.1.1
+echo "Local latency: ^"
+
+# Test latency to internet via VPN
+mtr -c 5 8.8.8.8
+echo "Internet latency via VPN: ^"
+
+# If internet latency is much higher than local, you have routing issues
+# Check that redirect-gateway is NOT pushing default route when unwanted
+```
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

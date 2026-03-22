@@ -218,6 +218,191 @@ Several projects implement these patterns:
 
 For developers, open-source implementations like `inheritance-contracts` on GitHub provide audited starting points for custom deployments.
 
+## Testing and Deployment
+
+Before going live with inheritance contracts, thoroughly test recovery mechanisms:
+
+```bash
+# Deploy to testnet first
+# Goerli, Sepolia, or other test networks cost no real funds
+
+truffle migrate --network goerli
+
+# Test recovery flow
+# 1. Deploy contract with test heir
+# 2. Fund contract with test ETH
+# 3. Trigger recovery as heir
+# 4. Wait for timelock
+# 5. Complete recovery and verify funds transfer
+
+# Production deployment checklist:
+# [ ] Contract audited by reputable firm
+# [ ] All test cases pass
+# [ ] Gas costs understood and budgeted
+# [ ] Guardian list finalized and notified
+# [ ] Heir setup and tested
+# [ ] Timelock duration determined legally appropriate
+# [ ] Insurance coverage obtained for large amounts
+# [ ] Legal documents reference smart contract address
+```
+
+## Smart Contract Upgrades and Versioning
+
+As inheritance needs evolve, support contract upgrades safely:
+
+```solidity
+// Proxy pattern for upgradeable contracts
+pragma solidity ^0.8.19;
+
+contract InheritanceProxy {
+    address public implementation;
+    address public admin;
+
+    constructor(address _implementation) {
+        implementation = _implementation;
+        admin = msg.sender;
+    }
+
+    function upgradeTo(address _newImplementation) external {
+        require(msg.sender == admin, "Only admin");
+        implementation = _newImplementation;
+    }
+
+    fallback() external payable {
+        // Delegate all calls to implementation
+        (bool success, ) = implementation.delegatecall(msg.data);
+        require(success);
+    }
+}
+```
+
+Upgradeable proxies allow fixing bugs or enhancing features without requiring heirs to migrate to a new contract.
+
+## Multi-Sig Guardian Configuration
+
+For large inheritances, require multiple guardians to confirm death:
+
+```solidity
+// Multi-sig guardian approval
+struct GuardianApproval {
+    address[] guardians;
+    uint256 approvalsRequired;
+    mapping(address => bool) approved;
+    uint256 approvalCount;
+}
+
+function initiateRecovery() external {
+    require(isGuardian(msg.sender), "Not a guardian");
+
+    guardianApproval.approved[msg.sender] = true;
+    guardianApproval.approvalCount++;
+
+    if (guardianApproval.approvalCount >= guardianApproval.approvalsRequired) {
+        recoveryRequestTime = block.timestamp;
+        emit RecoveryInitiated(msg.sender, block.timestamp + timelockDuration);
+    }
+}
+```
+
+This prevents a single guardian from unilaterally triggering recovery.
+
+## Tax and Legal Implications
+
+Cryptocurrency inheritance has complex legal and tax consequences:
+
+```
+Tax Considerations:
+==================
+
+1. Estate Tax
+   - Crypto is treated as property with fair market value at death
+   - Value on date of death determines estate tax basis
+   - Large estates may owe federal estate taxes (40% on amounts >$13M in 2026)
+
+2. Heir Tax Basis
+   - Heirs typically receive "stepped-up" basis
+   - If inherited at market price on death, heirs may have no capital gains tax
+   - Stepping up basis from $100 to $50,000 means $49,900 tax-free gain potential
+
+3. Income Tax
+   - If contracts generate yield (staking, DeFi), recipient owes income tax
+   - Must report all transactions on tax return
+
+4. State Variations
+   - Some states have digital asset inheritance laws
+   - Others treat crypto as tangible property
+   - Requirements vary significantly
+
+Recommendation: Work with estate attorney and tax advisor
+```
+
+## Integration with Traditional Wills
+
+Link smart contract inheritance to legal documents:
+
+```solidity
+// Reference to legal will document
+contract InheritanceWithLegalDocumentation {
+    struct LegalDocumentation {
+        string willHash;        // IPFS or Arweave hash of will
+        string executorName;
+        uint256 creationDate;
+    }
+
+    LegalDocumentation public documentation;
+
+    function registerLegalDocumentation(string memory _willHash) external onlyOwner {
+        documentation = LegalDocumentation({
+            willHash: _willHash,
+            executorName: "Primary Executor Name",
+            creationDate: block.timestamp
+        });
+    }
+
+    // Heirs can verify smart contract aligns with legal will
+    function verifyDocumentation() external view returns (string memory) {
+        return documentation.willHash;
+    }
+}
+```
+
+Store the actual will on decentralized storage (IPFS/Arweave) and reference it from the contract.
+
+## Alternative: Established Services
+
+Several projects provide turnkey inheritance solutions:
+
+```
+Established Services:
+====================
+
+1. Argent
+   - Mobile wallet with built-in social recovery
+   - Guardians selected via phone contacts
+   - Automatic recovery on inactivity
+   - No technical knowledge required
+
+2. Gnosis Safe
+   - Multi-sig wallet with modules
+   - Can add inheritance module from community
+   - Used by organizations managing large treasuries
+   - More complex but very flexible
+
+3. Argentina (Crypto Estate Planning)
+   - Specializes in crypto-specific estate planning
+   - Combines smart contracts with legal services
+   - Handles tax documentation
+   - Most expensive but most complete
+
+4. Coinbase Vault
+   - Shared access for recovery
+   - Built into major exchange
+   - Centralized but convenient
+   - Family members manage keys together
+```
+
+Choose based on desired level of decentralization vs. convenience.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

@@ -212,6 +212,146 @@ sudo tcpdump -i any -c 100 -A | grep -i "tls|https"
 # Watch for unexpected packets or modified responses
 ```
 
+## Implementing Censorship-Resistant Protocols
+
+Developers building applications that survive DPI scrutiny should implement several resistant protocols:
+
+### NaiveProxy: Disguised HTTPS
+
+NaiveProxy wraps traffic to look indistinguishable from HTTPS browsing:
+
+```bash
+# Server configuration
+./naive --listen=https://user:pass@0.0.0.0:443
+
+# Client configuration
+./naive --listen=socks://127.0.0.1:1080 \
+  --proxy=https://user:pass@server.example.com
+
+# To DPI: Looks exactly like visiting a regular HTTPS website
+# All handshakes follow browser patterns
+# Server certificate appears legitimate
+# No VPN-specific signatures visible
+```
+
+### Shadowsocks with Obfuscation
+
+Shadowsocks can evade DPI through traffic obfuscation plugins:
+
+```bash
+# Server: shadowsocks with simple-obfs plugin
+ss-server -s 0.0.0.0 -p 8388 -k password \
+  -m chacha20-ietf-poly1305 \
+  -plugin obfs-server \
+  -plugin-opts "obfs=tls"
+
+# Client: connects through obfuscation layer
+ss-local -s server.example.com -p 8388 -k password \
+  -m chacha20-ietf-poly1305 \
+  -plugin obfs-local \
+  -plugin-opts "obfs=tls"
+
+# Result: Encrypted data wrapped in fake TLS handshakes
+# Appears as normal HTTPS traffic to DPI
+```
+
+### Custom Traffic Morphing
+
+For sophisticated applications, implement traffic morphing that randomizes packet patterns:
+
+```python
+# Example: Randomize packet sizes to avoid statistical fingerprinting
+import os
+import random
+
+def morph_packet(data, target_size=None):
+    """Add padding and randomize packet structure"""
+    if target_size is None:
+        # Use random packet size between 200-1400 bytes
+        target_size = random.randint(200, 1400)
+
+    # Add random padding
+    current_size = len(data)
+    if current_size < target_size:
+        padding = os.urandom(target_size - current_size)
+        return data + padding
+
+    return data
+
+# Application layer: randomize inter-packet delays
+def randomized_send(socket, data, min_delay=0.01, max_delay=0.1):
+    """Send data with random delays to break timing patterns"""
+    delay = random.uniform(min_delay, max_delay)
+    time.sleep(delay)
+    socket.send(morph_packet(data))
+```
+
+## Detecting and Bypassing TLS Inspection
+
+Some advanced DPI systems attempt to inspect encrypted traffic through TLS interception proxies. Detect and bypass this:
+
+```bash
+# Check for certificate pinning or MITM
+openssl s_client -connect example.com:443 -showcerts
+
+# Verify certificate chain matches expected issuer
+# If an unexpected CA appears in the chain, TLS inspection is active
+
+# Bypass strategies:
+# 1. Certificate pinning in your application
+# 2. Use certificate transparency logs to detect invalid certs
+# 3. Require specific certificate attributes not forgeable by intercept proxies
+```
+
+## Building Mesh Networks for Censorship Avoidance
+
+For most resilient access, implement peer-to-peer mesh networks:
+
+```python
+# Simplified mesh network concept
+class MeshNode:
+    def __init__(self, node_id, peers=None):
+        self.node_id = node_id
+        self.peers = peers or {}
+        self.routes = {}
+
+    def discover_route(self, target):
+        """Find path to target through peer network"""
+        if target in self.peers:
+            return [target]  # Direct path
+
+        # Flood-fill search for alternative routes
+        visited = set([self.node_id])
+        queue = [(peer, [peer]) for peer in self.peers]
+
+        while queue:
+            node, path = queue.pop(0)
+            if node == target:
+                return path
+            if node in visited:
+                continue
+
+            visited.add(node)
+            for next_peer in self.peers.get(node, {}).keys():
+                queue.append((next_peer, path + [next_peer]))
+
+        return None  # No route found
+
+    def send_message(self, target, data):
+        """Route message through mesh"""
+        route = self.discover_route(target)
+        if not route:
+            return False
+
+        # Send through intermediate nodes
+        for node in route[:-1]:
+            self.forward_to(node, target, data)
+
+        return True
+```
+
+Mesh networks like Briar and I2P implement these concepts to provide censorship-resistant communication.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**
