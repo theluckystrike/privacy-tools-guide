@@ -9,7 +9,7 @@ permalink: /migrating-from-nordpass-to-bitwarden-export-import-process-guide/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true---
 ---
