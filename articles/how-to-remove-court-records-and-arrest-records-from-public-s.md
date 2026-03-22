@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-remove-court-records-and-arrest-records-from-public-s/
 description: "Follow this guide to how to remove court records and arrest records from public s with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Remove Court Records And Arrest Records From Public"
 description: "A practical technical guide for removing court records and arrest records from public search databases. Includes automation scripts, API approaches"

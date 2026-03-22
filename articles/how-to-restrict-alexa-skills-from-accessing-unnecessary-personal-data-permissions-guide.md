@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/
 description: "Follow this guide to how to restrict alexa skills from accessing unnecessary personal data permissions guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Restrict Alexa Skills From Accessing Unnecessary Personal"
 description: "A practical guide for developers and power users to restrict Alexa skills from accessing unnecessary personal data. Learn permission management"

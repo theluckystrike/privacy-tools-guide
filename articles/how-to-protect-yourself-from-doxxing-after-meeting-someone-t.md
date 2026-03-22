@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
 description: "Follow this guide to how to protect yourself from doxxing after meeting someone t with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Protect Yourself from Doxxing After Meeting Someone"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-remove-yourself-from-true-people-search-instant-check/
 description: "Follow this guide to how to remove yourself from true people search instant check with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Remove Yourself From True People Search Instant"
 description: "A practical guide for developers and power users to remove personal data from people search sites. Includes automation scripts and API strategies"
