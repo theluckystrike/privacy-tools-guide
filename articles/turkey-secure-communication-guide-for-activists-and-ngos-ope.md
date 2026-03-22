@@ -13,6 +13,8 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 ---
+
+
 layout: default
 title: "Turkey Secure Communication Guide For Activists And Ngos"
 description: "A practical technical guide to implementing secure communication channels for activists and NGOs in Turkey. Covers E2EE protocols, Tor, mesh networks"
@@ -28,6 +30,13 @@ voice-checked: true
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
+## Key Takeaways
+
+- **A dedicated "operations phone"**: with: - No SIM card (use Wi-Fi only) - Privacy-focused ROM (GrapheneOS or CalyxOS) - No Google Play Services - All network toggles disabled when not in use 3.
+- **Unlike WhatsApp**: Signal's protocol is open-source and audited, with minimal metadata retention.
+- **Use separate devices for**: sensitive communications.
+- **Topics covered**: introduction, prerequisites, step 1: end-to-end encrypted messaging
 
 ## Introduction
 

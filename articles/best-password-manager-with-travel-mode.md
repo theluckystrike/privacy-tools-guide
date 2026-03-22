@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Manager | Travel Mode | Border Crossing Safety | Offline Access | Price |
+|---|---|---|---|---|
+| 1Password | Yes (hide selected vaults) | Vaults invisible to inspection | Full offline vault | $2.99/month |
+| Bitwarden | No native travel mode | Manual vault organization | Offline read access | Free / $10/year |
+| Dashlane | No native travel mode | VPN included for travel | Limited offline | $3.33/month |
+| KeePassXC | Full local control | Database on encrypted USB | Fully offline | Free |
+| Proton Pass | No travel mode | Swiss privacy protection | Offline access | Free / $1.99/month |
+
+
 {% raw %}
 
 1Password is the best password manager with travel mode -- it is the only major provider with a dedicated, built-in travel mode that automatically removes non-travel vaults from your devices before you cross a border. Bitwarden and NordPass offer workarounds through vault segmentation, but neither matches 1Password's one-toggle simplicity. If you carry production API keys, database credentials, or SSH keys, travel mode protects them from involuntary disclosure at border checkpoints.

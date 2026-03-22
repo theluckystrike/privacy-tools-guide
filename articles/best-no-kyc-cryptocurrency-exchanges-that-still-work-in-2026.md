@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Exchange/Method | KYC Required | Privacy Level | Supported Coins | Trade Limits |
+|---|---|---|---|---|
+| Bisq | No (P2P decentralized) | Very high | BTC + select alts | Varies by payment method |
+| Hodl Hodl | No (P2P non-custodial) | High | BTC only | No limit |
+| RoboSats | No (Tor-native Lightning) | Very high | BTC (Lightning) | Small amounts |
+| LocalCoinSwap | Optional | Moderate-high | BTC, ETH, others | Varies |
+| TradeOgre | No | Moderate | Privacy coins (XMR, etc.) | No withdrawal limits |
+
+
 {% raw %}
 
 The cryptocurrency exchange field has shifted dramatically in 2026. Stricter global regulations have forced many exchanges to implement mandatory KYC (Know Your Customer) procedures. However, several platforms still offer trading without identity verification—though the options have narrowed considerably. This guide covers the remaining no-KYC exchanges that actually work, with practical details for developers building privacy-focused applications.

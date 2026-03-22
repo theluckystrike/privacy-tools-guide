@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| App | Platform | Open Source | Encrypted Backup | Cloud Sync | Pricing |
+|---|---|---|---|---|---|
+| Aegis | Android | Yes (GPLv3) | AES-256 encrypted | No (export only) | Free |
+| Raivo OTP | iOS | Yes | iCloud encrypted sync | iCloud only | Free |
+| Ente Auth | Android + iOS | Yes | End-to-end encrypted | Cross-platform sync | Free |
+| Authy | Android + iOS + Desktop | No | Encrypted backups | Multi-device sync | Free |
+| Google Authenticator | Android + iOS | No | Google Account sync | Limited sync | Free |
+
+
 {% raw %}
 
 The best authenticator app for developers in 2026 is Bitwarden's built-in TOTP generator if you already use a password manager, or Aegis Authenticator (Android) and Raivo OTP (iOS) if you want a standalone open-source option. For terminal-focused workflows, `oathtool` or `pass-totp` let you generate codes directly from the command line without a mobile device. The right choice depends on whether you prioritize integration with existing tools, open-source auditability, or hardware-backed security via YubiKey.

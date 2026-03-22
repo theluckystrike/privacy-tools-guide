@@ -16,6 +16,16 @@ intent-checked: true
 
 Users with visual impairments require RSS readers that work with screen readers like NVDA, JAWS, and VoiceOver while maintaining strict privacy controls. Many mainstream RSS clients prioritize cloud features and data collection over user privacy — a problematic approach for anyone relying on assistive technology. This guide evaluates privacy-first RSS readers that provide excellent accessibility without compromising data security, with configuration examples for developers integrating these tools into accessible workflows.
 
+
+| Tool | Accessibility Features | Privacy Level | Platform | Price |
+|---|---|---|---|---|
+| Bitwarden | Screen reader support, keyboard nav | Strong (open source, E2EE) | All platforms | Free / $10/year |
+| Firefox | Full accessibility tree | High (ETP, containers) | All platforms | Free |
+| ProtonMail | Keyboard navigation | Very high (E2EE, Swiss) | Web + mobile | Free / $3.99/month |
+| Signal | VoiceOver/TalkBack support | Maximum (E2EE) | Mobile + desktop | Free |
+| Tails OS | Accessibility screen reader | Maximum (amnesic) | USB boot | Free |
+
+
 ## Key Takeaways
 
 - **Miniflux (Self-Hosted) Miniflux stands**: as the most capable self-hosted option for visually impaired users.
