@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /is-someone-monitoring-my-home-wifi-network-how-to-check/
 description: "Follow this guide to is someone monitoring my home wifi network how to check with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Is Someone Monitoring My Home WiFi Network? How"
 description: "Learn how to detect if someone is monitoring your home WiFi network. Practical tools and techniques for identifying unauthorized devices and suspicious"

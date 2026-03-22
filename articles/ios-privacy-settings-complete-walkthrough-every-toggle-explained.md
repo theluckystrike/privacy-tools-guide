@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /ios-privacy-settings-complete-walkthrough-every-toggle-explained/
 description: "Learn ios privacy settings complete walkthrough every toggle explained with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "iOS Privacy Settings Complete Walkthrough Every Toggle"
 description: "Review every iOS privacy setting with step-by-step walkthrough: disable tracking (advertising ID), restrict location services (turn off location-based"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /ios-contact-poster-privacy-settings-guide/
 description: "Follow this guide to ios contact poster privacy settings guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "iOS Contact Poster Privacy Settings Guide"
 description: "Learn how to configure Contact Poster privacy settings on iOS. This guide covers Name and Photo sharing controls, FaceTime, and third-party app"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /iot-firmware-update-privacy-risks-what-data-devices-send-dur/
 description: "Learn iot firmware update privacy risks what data devices send dur with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Iot Firmware Update Privacy Risks What Data Devices Send"
 description: "Discover what data your IoT devices transmit during firmware update checks. A technical guide for developers and power users on privacy implications"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /iphone-photo-metadata-location-strip-guide/
 description: "Follow this guide to iphone photo metadata location strip guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
 description: "Every photo your iPhone captures contains embedded metadata—Exchangeable Image File Format (EXIF) data—that reveals more than just the image itself. This"
