@@ -40,7 +40,17 @@ Use the 1Password CLI (`op`) to pull secrets directly into your shell scripts, C
 - **Personal Authentication The `op**: signin` flow works well for local development and interactive use, but automated pipelines require a non-interactive authentication method.
 - **Create a service account**: through the 1Password web console under Integrations > Service Accounts.
 
-## Installing and Configuring the 1Password CLI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install and Configuring the 1Password CLI
 
 The 1Password CLI (op) provides a powerful way to interact with your vault from the terminal. Install it using Homebrew on macOS:
 
@@ -70,7 +80,7 @@ op item list  # no interactive signin needed
 
 Store the service account token in your CI platform's secrets management (GitHub Actions secrets, AWS Secrets Manager, etc.) and inject it as an environment variable. Never hardcode the token in pipeline definition files or Dockerfiles.
 
-## Retrieving Secrets in Scripts
+### Step 2: Retrieve Secrets in Scripts
 
 The fundamental operation involves fetching individual items from your vault. The basic syntax uses the item name or UUID:
 
@@ -120,7 +130,7 @@ STRIPE_KEY=op://Production/Stripe/secret_key
 
 This approach is safer than shell-level variable exports because the secrets are only exposed to the child process, not to the parent shell or its history.
 
-## Environment Variable Integration
+### Step 3: Environment Variable Integration
 
 One of the most practical applications involves loading secrets as environment variables before running applications. Create a script that sources your secrets:
 
@@ -147,7 +157,7 @@ source ./load-secrets.sh && node src/index.js
 
 This approach keeps secrets out of your shell history and process listings while maintaining a clean workflow.
 
-## CI/CD Pipeline Integration
+### Step 4: Configure CI/CD Pipeline Integration
 
 Continuous integration environments require secure secret handling. Most CI platforms support injecting environment variables during builds. Here's how to integrate 1Password with GitHub Actions:
 
@@ -203,7 +213,7 @@ deploy:
 
 Define `OP_SERVICE_ACCOUNT_TOKEN` as a masked and protected CI/CD variable in your GitLab project settings. Masking prevents the token from appearing in job logs even if a script accidentally prints all environment variables.
 
-## Kubernetes and Docker Secrets
+### Step 5: Kubernetes and Docker Secrets
 
 Containerized applications benefit from proper secret management. You can inject 1Password secrets into Kubernetes using external secrets operators, or simply mount secrets at runtime:
 
@@ -230,7 +240,7 @@ services:
 
 Generate your `.env.production` file using a similar sourcing approach described earlier.
 
-## Working with Custom Fields
+### Step 6: Work with Custom Fields
 
 1Password items support custom fields beyond the standard username, password, and URL. This proves invaluable for storing multiple credentials or metadata:
 

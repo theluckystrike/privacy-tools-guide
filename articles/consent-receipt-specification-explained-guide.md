@@ -40,7 +40,17 @@ The Consent Receipt Specification is a JSON-based standard from the Kantara Init
 - **It addresses a common problem**: organizations collect consent but lack a reliable way to prove what users actually agreed to.
 - **Service deprecation**: When you remove a service, existing consent receipts document which users had consented to that service and when their consent was obtained.
 
-## What the Consent Receipt Specification Provides
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What the Consent Receipt Specification Provides
 
 The specification defines a JSON-based format that captures consent events with enough detail to satisfy legal requirements while remaining processable by software. Each consent receipt represents a single consent action—a user agreeing to a specific purpose or data processing activity.
 
@@ -48,7 +58,7 @@ Unlike vague audit logs, a consent receipt contains explicit information about w
 
 The specification builds on the ISO/IEC 29100 framework and integrates with the OpenID Connect ecosystem. It addresses a common problem: organizations collect consent but lack a reliable way to prove what users actually agreed to.
 
-## Core Components of a Consent Receipt
+### Step 2: Core Components of a Consent Receipt
 
 Every consent receipt includes several required fields that identify the consent event, the user, and the organization requesting consent. Understanding these fields helps you design your data model correctly.
 
@@ -90,7 +100,7 @@ Each service or purpose requires its own consent record within the receipt. This
 
 This granular approach lets users consent to some activities while declining others—a requirement under GDPR's explicit consent framework.
 
-## JSON Structure Example
+### Step 3: JSON Structure Example
 
 Here's a complete consent receipt demonstrating the specification in practice:
 
@@ -129,7 +139,7 @@ Here's a complete consent receipt demonstrating the specification in practice:
 
 The salt and signature fields provide integrity verification. The salt ensures the subject identifier cannot be correlated across different receipts, while the signature allows verification that the issuer actually created the receipt.
 
-## Implementation Considerations for Developers
+### Step 4: Implementation Considerations for Developers
 
 When implementing consent receipt generation, several practical concerns arise that the specification leaves to implementers.
 
@@ -206,7 +216,7 @@ Modern consent management platforms (CMPs) often support the Consent Receipt Spe
 - Export functionality for data portability requirements
 - Mechanisms for consent withdrawal that create new receipts marking withdrawal
 
-## Practical Applications
+### Step 5: Practical Applications
 
 The consent receipt becomes valuable in several real-world scenarios:
 
@@ -218,11 +228,26 @@ The consent receipt becomes valuable in several real-world scenarios:
 
 **Service deprecation**: When you remove a service, existing consent receipts document which users had consented to that service and when their consent was obtained.
 
-## Limitations to Understand
+### Step 6: Limitations to Understand
 
 The specification records consent but does not solve every consent management challenge. It does not define how to present consent requests, how to handle consent withdrawal, or how to manage consent across complex organizational structures. These remain implementation decisions.
 
 Additionally, the specification requires careful key management for signatures. If your signing keys are compromised, attackers could create valid-looking consent receipts. Key rotation and proper key management are essential.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

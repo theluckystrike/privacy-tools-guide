@@ -48,7 +48,17 @@ Several scenarios make anonymous job applications valuable. You might be current
 
 Traditional job applications expose your complete profile through platforms like LinkedIn, where recruiters can see your employment history, connections, and activity. Anonymous submission creates a barrier between your professional reputation and your job search activities.
 
-## Removing Personal Identifiers from Your Resume
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Remove Personal Identifiers from Your Resume
 
 The first step involves editing your resume to remove information that directly identifies you. This goes beyond simply using a pseudonym.
 
@@ -73,7 +83,7 @@ Include information that demonstrates your qualifications:
 - Education credentials
 - Portfolio links to anonymous GitHub or code samples
 
-## Creating Anonymous Contact Channels
+### Step 2: Create Anonymous Contact Channels
 
 Before submitting applications, establish separate communication channels that protect your primary identity.
 
@@ -104,7 +114,7 @@ Burner phones work for those requiring maximum separation. Purchase a prepaid ph
 
 Skype or similar services provide VoIP numbers that mask your real number while remaining functional for interviews.
 
-## Using Privacy-Focused Job Platforms
+### Step 3: Use Privacy-Focused Job Platforms
 
 Certain platforms specialize in or support anonymous applications.
 
@@ -124,7 +134,7 @@ Several job boards allow partial anonymity:
 - RemoteOK focuses on remote work and maintains privacy standards
 - AngelList (Wellfound) allows anonymous applications to startups
 
-## Email Masking and Forwarding Services
+### Step 4: Email Masking and Forwarding Services
 
 For additional privacy, consider email masking services that hide your actual email address while maintaining communication flow.
 
@@ -145,7 +155,7 @@ Most email providers support aliases:
 
 Services like 33Mail or Firefox Relay create disposable email addresses that forward to your real inbox while hiding your actual address from recipients.
 
-## Handling Employer Name Anonymity
+### Step 5: Handling Employer Name Anonymity
 
 When your current employer is a well-known company, you have several options:
 
@@ -170,7 +180,7 @@ Software Engineer | Fortune 500 Technology Company | 2020-Present
 
 Verify whether this approach fits your target company's application requirements. Some employers specifically request complete work history.
 
-## LinkedIn Privacy During Job Search
+### Step 6: LinkedIn Privacy During Job Search
 
 Your LinkedIn activity can reveal your job search intentions. Adjust your settings before beginning:
 
@@ -181,7 +191,7 @@ Your LinkedIn activity can reveal your job search intentions. Adjust your settin
 
 Create a new LinkedIn account if maintaining complete separation is critical. This approach requires building connections from scratch but provides absolute privacy.
 
-## Code Portfolios Without Personal Identity
+### Step 7: Code Portfolios Without Personal Identity
 
 For developer positions, your portfolio demonstrates capability. Create anonymous GitHub profiles:
 
@@ -235,6 +245,21 @@ Begin by creating your anonymous communication channels before submitting any ap
 As you apply, maintain discipline about which contact information you provide. Track which platforms have which information so you can respond appropriately if a data breach occurs.
 
 Anonymous resume submission requires more effort than traditional job searching, but the privacy benefits often outweigh the inconvenience. For developers and power users comfortable with managing multiple identities and channels, these methods provide meaningful protection during what can be a stressful career transition.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -55,7 +55,17 @@ Breach data flows from:
 
 ---
 
-## Have I Been Pwned (HIBP)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Have I Been Pwned (HIBP)
 
 HIBP is the most reliable public breach index, operated by Troy Hunt. It indexes breaches and lets you check without exposing your full password.
 
@@ -182,7 +192,7 @@ if __name__ == "__main__":
 
 ---
 
-## DeHashed (Paid, More Detail)
+### Step 2: DeHashed (Paid, More Detail)
 
 DeHashed indexes breach data including plaintext passwords, IP addresses, names, and phone numbers — more detailed than HIBP but costs money.
 
@@ -201,7 +211,7 @@ DeHashed response includes:
 
 ---
 
-## Self-Hosted Breach Monitoring
+### Step 3: Self-Hosted Breach Monitoring
 
 For maximum control, download HIBP's password database locally:
 
@@ -222,7 +232,7 @@ rg "^${sha1:5}" pwned-passwords-sha1-ordered-by-hash-v8.txt
 
 ---
 
-## Monitor Paste Sites
+### Step 4: Monitor Paste Sites
 
 Attackers often dump credentials on Pastebin and similar sites before selling on dark web markets:
 
@@ -260,7 +270,7 @@ check_pastebin_for_domain("yourdomain.com")
 
 ---
 
-## What to Do When You Find Your Data
+### Step 5: What to Do When You Find Your Data
 
 The priority order matters — act quickly:
 
@@ -292,7 +302,7 @@ The priority order matters — act quickly:
 
 ---
 
-## Automated Monitoring Setup
+### Step 6: Automated Monitoring Setup
 
 ```bash
 # Add to crontab to run weekly
@@ -303,6 +313,21 @@ The priority order matters — act quickly:
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

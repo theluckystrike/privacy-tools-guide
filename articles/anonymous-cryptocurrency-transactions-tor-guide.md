@@ -30,7 +30,17 @@ bitcoin-cli getnetworkinfo | grep -A 5 "addr"
 
 Look for `.onion` addresses in the local addresses list, confirming Tor-only connectivity.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Cryptocurrency transactions are not inherently anonymous. Public blockchains record every transaction with wallet addresses, amounts, and timestamps. Blockchain analysis firms track the flow of funds by clustering addresses, analyzing timing patterns, and correlating on-chain data with external information like IP addresses, exchange KYC data, and social media activity.
 
@@ -38,7 +48,7 @@ The Tor network provides anonymity by routing your traffic through multiple encr
 
 However, Tor integration alone does not guarantee complete anonymity. Metadata, behavioral patterns, and implementation flaws can still compromise your privacy. This guide covers both the implementation and the limitations.
 
-## Configuring Tor for Cryptocurrency Wallets
+### Step 2: Configure Tor for Cryptocurrency Wallets
 
 Most cryptocurrency wallets can be configured to use Tor through either SOCKS5 proxy or control port settings. The method varies by wallet, but the general principle remains consistent.
 
@@ -84,7 +94,7 @@ pip3 install -r requirements.txt
 
 Running your own Electrum server ensures that no third party can log which addresses you query. Combine this with a pruned Bitcoin node running exclusively over Tor for a complete setup.
 
-## Running a Tor Hidden Service for Your Node
+### Step 3: Run a Tor Hidden Service for Your Node
 
 Exposing your cryptocurrency node as a Tor hidden service allows other nodes to connect to you without revealing your IP address. This increases the network's decentralization while protecting your privacy.
 
@@ -117,7 +127,7 @@ This produces an address like `example.onion`. Share this with peers who want to
 addnode=example.onion
 ```
 
-## Privacy Coin Considerations
+### Step 4: Privacy Coin Considerations
 
 While Bitcoin with Tor provides reasonable privacy for most users, blockchain analysis can still de-anonymize transactions through pattern analysis, especially for multiple related transactions. Privacy-focused cryptocurrencies like Monero implement stronger defaults.
 
@@ -142,7 +152,7 @@ Configure your wallet to connect to localhost rather than remote nodes:
 monero-wallet-cli --wallet-file yourwallet --daemon-address 127.0.0.1:18081
 ```
 
-## Operational Security Fundamentals
+### Step 5: Operational Security Fundamentals
 
 Technical implementation matters only within a broader operational security context. Weaknesses in your practices can undermine all technical protections.
 
@@ -174,7 +184,7 @@ Logging and telemetry in wallet software can expose your IP address despite Tor.
 
 Chain analysis companies maintain databases of known addresses associated with exchanges, darknet markets, and other services. Any coins passing through these addresses inherit their association. "Coin mixing" or "tumbling" services claim to break these links, but many are scams or operated by law enforcement.
 
-## Verification and Testing
+### Step 6: Verification and Testing
 
 After implementing Tor integration, verify it works correctly:
 
@@ -188,7 +198,7 @@ bitcoin-cli getpeerinfo | grep -E "addronnet.*onion"
 
 Confirm your node accepts only onion connections and that your visible IP differs from your actual IP.
 
-## CoinJoin and Mixing Services for Additional Privacy
+### Step 7: CoinJoin and Mixing Services for Additional Privacy
 
 While Tor provides IP anonymity, blockchain analysis can still trace transaction patterns. CoinJoin implementations add a layer of transaction-level privacy by mixing multiple inputs from different users into a single transaction, breaking the input-output relationship that analysts rely on.
 
@@ -224,7 +234,7 @@ python jmclient/jmclient_launcher.py
 
 This approach avoids centralized services entirely, though it requires more technical knowledge to operate effectively.
 
-## Practical Workflow: Complete Anonymous Transaction
+### Step 8: Practical Workflow: Complete Anonymous Transaction
 
 Here's a step-by-step workflow combining all elements:
 
@@ -284,6 +294,21 @@ For developers or organizations requiring maximum privacy:
 
 The combination of Tor, privacy coins, CoinJoin, and operational security creates a strong privacy architecture. No single component guarantees anonymity—the strength comes from layering multiple protections.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

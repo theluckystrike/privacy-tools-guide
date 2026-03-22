@@ -42,7 +42,17 @@ For Android developers, use the privacy indicators introduced in Android 12.
 - **Your IP address remains**: the most immediate identifier, and routing traffic through an intermediary obscures your origin.
 - **The Onion Browser project**: uses a custom URL scheme and handles Tor internally.
 
-## Network-Layer Anonymity
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Configure Network-Layer Anonymity
 
 The foundation of anonymous browsing starts at the network level. Your IP address remains the most immediate identifier, and routing traffic through an intermediary obscures your origin.
 
@@ -153,7 +163,7 @@ public class AnonymousVpnService extends VpnService {
 }
 ```
 
-## Browser Hardening for Mobile
+### Step 2: Harden the Browser for Mobile
 
 Your choice of mobile browser and its configuration determines what information leaks through browser fingerprinting and tracking scripts.
 
@@ -206,7 +216,7 @@ HTMLCanvasElement.prototype.toDataURL = function(type, ...args) {
 
 This technique adds minimal, imperceptible noise that defeats fingerprinting while maintaining visual fidelity.
 
-## Operating System Privacy Settings
+### Step 3: Configure the Operating System Privacy Settings
 
 Mobile operating systems themselves introduce tracking identifiers that persist across browsing sessions.
 
@@ -258,7 +268,7 @@ fun observeSensorPrivacy(): Flow<Set<SensorPrivacyType>> = callbackFlow {
 }
 ```
 
-## Practical Anonymous Browsing Workflow
+### Step 4: Practical Anonymous Browsing Workflow
 
 Combining these techniques creates a defense-in-depth approach to mobile anonymity:
 
@@ -269,6 +279,21 @@ Combining these techniques creates a defense-in-depth approach to mobile anonymi
 5. Network Identity Rotate network connections (switch between WiFi and cellular) to prevent timing correlation
 
 For developers building anonymous browsing features, test your implementation using tools like AmIUnique (mobile-friendly version) and Cover Your Tracks (EFF) to verify fingerprinting resistance. The effectiveness of your implementation depends on how consistently you apply these techniques across all layers.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

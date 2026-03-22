@@ -34,7 +34,17 @@ The revocation certificate is a specially formatted message that, when published
 
 Consider this scenario: your laptop is stolen with your PGP private key. Without a pre-generated revocation certificate, you cannot notify the world that your key is compromised. Anyone using an old copy of your public key will still encrypt messages to what they believe is your key, but whoever has your stolen key can decrypt them. The revocation certificate prevents this.
 
-## Generating Your Revocation Certificate
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Generate Your Revocation Certificate
 
 The GnuPG tool makes generating a revocation certificate straightforward. You need your key ID to begin.
 
@@ -65,7 +75,7 @@ GnuPG prompts you to select a reason for revocation: key has been compromised, k
 
 The certificate saves to `revocation-certificate.asc`. This file contains the cryptographic proof that you, as the key holder, are revoking the key.
 
-## Securing Your Revocation Certificate
+### Step 2: Secure Your Revocation Certificate
 
 Where you store the revocation certificate matters as much as generating it. If an attacker gains access to your revocation certificate, they can publish it and invalidate your key without your consent. Store it with the same protection you give your private key.
 
@@ -81,7 +91,7 @@ Store the encrypted backup in multiple locations: a secure USB drive kept offlin
 
 Some users store the revocation certificate with their paper key backup, etched into metal or written in a secure location. The goal is ensuring you can access it even if your primary computer is destroyed or inaccessible.
 
-## Publishing the Revocation Certificate
+### Step 3: Publish the Revocation Certificate
 
 When you need to use the revocation certificate, the process involves publishing it to key servers so the world knows your key is invalid.
 
@@ -107,7 +117,7 @@ gpg --keyserver pgp.mit.edu --send-keys 3AA5C6F7
 gpg --keyserver keys.openpgp.org --send-keys 3AA5C6F7
 ```
 
-## Handling Key Revocation for Multiple Keys
+### Step 4: Handling Key Revocation for Multiple Keys
 
 If you manage multiple keys or have subkeys, each key requires its own revocation certificate. Master keys and subkeys are revoked separately.
 
@@ -127,7 +137,7 @@ gpg --output revoke-sub2.asc --gen-revoke SUBKEY_2_ID
 
 Label each certificate file clearly to avoid confusion during an emergency.
 
-## Automating Revocation Certificate Generation
+### Step 5: Automate Revocation Certificate Generation
 
 For users who frequently create new keys, automating revocation certificate generation prevents the common mistake of creating keys without certificates.
 
@@ -152,7 +162,7 @@ chmod +x make-revoke.sh
 ./make-revoke.sh 3AA5C6F7
 ```
 
-## Alternative Revocation Methods
+### Step 6: Alternative Revocation Methods
 
 Beyond the traditional revocation certificate, modern PGP implementations offer alternative methods.
 
@@ -243,7 +253,7 @@ Review Schedule:
 
 Store this document with your will or estate documents.
 
-## Testing Your Revocation Setup
+### Step 7: Test Your Revocation Setup
 
 Periodically verify that your revocation certificate is valid and would work if needed. This is a dry run—you import the certificate, check that your key shows as revoked, then restore the original state.
 
@@ -313,7 +323,7 @@ wait
 # "My PGP key [3AA5C6F7] has been revoked due to compromise"
 ```
 
-## Key Rotation After Revocation
+### Step 8: Rotate Keys After Revocation
 
 When you revoke a key, you need to create a new one:
 
@@ -341,7 +351,7 @@ EOF
 # Send transition statement to your contacts via multiple channels
 ```
 
-## Verifying Revocation Worked
+### Step 9: Verify Revocation Worked
 
 After publishing a revocation certificate:
 
@@ -366,7 +376,7 @@ gpg --keyserver pgp.mit.edu --send-keys 3AA5C6F7
 gpg --keyserver keys.openpgp.org --send-keys 3AA5C6F7
 ```
 
-## Revocation Certificate for Team Keys
+### Step 10: Revocation Certificate for Team Keys
 
 For organizational signing keys shared among team members:
 
@@ -390,44 +400,59 @@ When the team member leaves:
 gpg --gen-revoke ORG_KEY_ID
 ```
 
-## Documentation Checklist for Revocation
+### Step 11: Documentation Checklist for Revocation
 
 Keep this with your key backup:
 
 ```markdown
 # Revocation Certificate Information
 
-## Key Details
+### Step 12: Key Details
 - Key ID: 3AA5C6F7
 - Fingerprint: 4A7C8E9F2B3D1A6C5E4F7890ABCDEF01
 - Created: [Date]
 - Type: [RSA-4096 / Ed25519]
 
-## Revocation Storage
+### Step 13: Revocation Storage
 - Location 1: [Specific location and access method]
 - Location 2: [Specific location and access method]
 - Emergency contact: [Name and contact method]
 
-## Usage Instructions
+### Step 14: Usage Instructions
 1. Recover revocation certificate from storage location
 2. Import: `gpg --import revocation-certificate.asc`
 3. Publish: `gpg --send-keys 3AA5C6F7`
 4. Notify contacts via [email/website/social media]
 5. Generate new key if creating ongoing communications
 
-## Keyserver Details
+### Step 15: Keyserver Details
 Primary keyservers:
 - keyserver.ubuntu.com
 - pgp.mit.edu
 - keys.openpgp.org
 
-## Transition Plan
+### Step 16: Transition Plan
 New key location: [Where new key is stored]
 Transition statement: [Link to signed transition statement]
 ```
 ---
 
 A PGP key revocation certificate is not optional. It is a fundamental part of key management that protects you and your correspondents when things go wrong. Generate it, secure it, and know how to use it.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

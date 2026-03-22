@@ -26,19 +26,29 @@ Baby monitors have evolved from simple audio devices to sophisticated WiFi-enabl
 - **Most modern routers support**: guest networks or can be configured with separate SSIDs.
 - **Use a password manager**: to generate and store these credentials rather than reusing passwords from other accounts.
 
-## Understanding Baby Monitor Security Risks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Baby Monitor Security Risks
 
 Modern baby monitors face several attack vectors that malicious actors exploit. WiFi-enabled monitors can be accessed remotely if not properly secured, allowing strangers to view video feeds or listen to audio. Default passwords, unencrypted connections, and outdated firmware create vulnerabilities that hackers actively scan for. Research has documented numerous cases of baby monitor breaches where attackers gained full control of devices, including pan/tilt functions and two-way audio.
 
 The stakes extend beyond privacy invasion. Some monitors include temperature sensors, humidity readings, and even motion detection that could reveal detailed information about your daily routines. Understanding these risks is the first step toward securing your devices.
 
-## Secure Your WiFi Network for Baby Monitor Use
+### Step 2: Secure Your WiFi Network for Baby Monitor Use
 
 The foundation of baby monitor security starts with your home network. Create a separate network or VLAN specifically for IoT devices including your baby monitor. Most modern routers support guest networks or can be configured with separate SSIDs. This isolation ensures that even if a monitor is compromised, attackers cannot access your primary devices like computers and phones containing sensitive data.
 
 Use a strong, unique WiFi password with WPA3 encryption if your router supports it. Avoid WEP encryption entirely—it can be cracked in minutes. Change default router admin credentials and disable WPS (WiFi Protected Setup), which contains known vulnerabilities. Regularly review connected devices in your router's admin panel and remove any unrecognized hardware.
 
-## Choose a Secure Baby Monitor
+### Step 3: Choose a Secure Baby Monitor
 
 When selecting a baby monitor, prioritize devices from manufacturers with strong security track records. Look for monitors that offer:
 
@@ -50,13 +60,13 @@ When selecting a baby monitor, prioritize devices from manufacturers with strong
 
 Avoid cheap, generic brands with minimal security features. Established companies like Nanit, Owlet, and Eufy have dedicated security teams and provide regular updates. However, even reputable brands require proper configuration.
 
-## Change Default Credentials Immediately
+### Step 4: Change Default Credentials Immediately
 
 One of the most common attack vectors is exploiting default passwords. Baby monitors often ship with simple default credentials like "admin/admin" or "1234/1234." Change these immediately upon setup to strong, unique passwords of at least 12 characters combining letters, numbers, and symbols.
 
 Many monitors have mobile apps requiring accounts. Enable two-factor authentication if available—this prevents account takeover even if your password leaks. Use a password manager to generate and store these credentials rather than reusing passwords from other accounts.
 
-## Enable All Available Security Features
+### Step 5: Enable All Available Security Features
 
 Modern monitors include various security features that are often disabled by default. Enable every available protection:
 
@@ -76,7 +86,7 @@ Ensure your monitor uses TLS/SSL encryption for all communications. Some monitor
 
 Configure accounts to lock after periods of inactivity and require re-authentication.
 
-## Disable Unnecessary Features
+### Step 6: Disable Unnecessary Features
 
 Baby monitors often include features that introduce unnecessary risk. Review all available options and disable those you don't use:
 
@@ -86,13 +96,13 @@ Baby monitors often include features that introduce unnecessary risk. Review all
 - Temperature/humidity sharing: These sensors can reveal household patterns
 - Integration with smart home systems: Each integration expands the attack surface
 
-## Keep Firmware Updated
+### Step 7: Keep Firmware Updated
 
 Manufacturers release firmware updates to patch discovered vulnerabilities. Check for updates monthly and enable automatic updates if your monitor supports them. Create a calendar reminder if automatic updates aren't available.
 
 When updating, use a secure connection—never update over public WiFi. Verify update authenticity by checking the manufacturer's website for the version number and release notes.
 
-## Monitor Network Activity
+### Step 8: Monitor Network Activity
 
 Learn basic network monitoring to detect suspicious behavior. Several tools help identify unusual traffic:
 
@@ -119,7 +129,7 @@ sudo tcpdump -i eth0 host 192.168.1.50 -n 2>/dev/null | head -40
 
 Configure your router's firewall to block incoming connections to your baby monitor except from your authorized devices.
 
-## Use a VPN for Remote Access
+### Step 9: Use a VPN for Remote Access
 
 If you need remote monitoring, avoid directly exposing your monitor to the internet. Instead, use a VPN to create a secure tunnel to your home network. This approach:
 
@@ -137,7 +147,7 @@ wg genkey | sudo tee /etc/wireguard/server_private.key | wg pubkey | sudo tee /e
 # Enable: sudo systemctl enable --now wg-quick@wg0
 ```
 
-## Physical Security Measures
+### Step 10: Implement Physical Security Measures
 
 Digital security complements physical protection. Place cameras where they cannot be easily tampered with, but also consider:
 
@@ -146,7 +156,7 @@ Digital security complements physical protection. Place cameras where they canno
 - Positioning to avoid recording windows or sensitive areas
 - Securing mounting hardware to prevent theft
 
-## What to Do If You Suspect Unauthorized Access
+### Step 11: What to Do If You Suspect Unauthorized Access
 
 If you notice unusual behavior—camera moving on its own, lights activating, strange sounds—act immediately:
 
@@ -159,7 +169,7 @@ If you notice unusual behavior—camera moving on its own, lights activating, st
 
 Consider covering the camera lens until you've secured the device.
 
-## Known Baby Monitor Security Vulnerabilities
+### Step 12: Known Baby Monitor Security Vulnerabilities
 
 Before purchasing any monitor, research known vulnerabilities:
 
@@ -188,7 +198,7 @@ curl -s "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-XXXXX" | grep "
 
 Always check if the specific model you're considering has CVE (Common Vulnerabilities and Exposures) records.
 
-## Behavioral Detection: Identifying Hacked Monitors
+### Step 13: Behavioral Detection: Identifying Hacked Monitors
 
 Signs your monitor may be compromised:
 
@@ -208,7 +218,7 @@ If you notice any of these:
 5. Change all passwords for apps using the monitor
 6. Contact the manufacturer's security team to report the incident
 
-## Tool Recommendations with Pricing
+### Step 14: Tool Recommendations with Pricing
 
 Several manufacturers stand out for security practices:
 
@@ -246,7 +256,7 @@ sudo wireshark -i en0 -f "host 192.168.1.50"
 # Avoid monitors using self-signed certificates (indicates poor security)
 ```
 
-## Behavioral Detection Patterns
+### Step 15: Behavioral Detection Patterns
 
 Hacked monitors typically show distinctive patterns:
 
@@ -258,7 +268,7 @@ Hacked monitors typically show distinctive patterns:
 
 Create a baseline of normal traffic, then compare monthly. Most routers can export traffic logs.
 
-## Alternative: Use a Dedicated Non-Networked Monitor
+### Step 16: Alternative: Use a Dedicated Non-Networked Monitor
 
 For maximum security, consider traditional analog baby monitors that operate on dedicated frequencies without internet connectivity. These cannot be hacked remotely because they don't connect to networks. Modern digital audio monitors from companies like Motorola and VTech offer clear audio without privacy concerns—just verify they use encrypted transmission.
 
@@ -288,6 +298,21 @@ Tailor your security approach to your actual threat:
 - If internet required: dedicated hardware security key, air-gapped backup device
 - Professional security audit of entire network
 - Consult security researchers before selecting specific monitor
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

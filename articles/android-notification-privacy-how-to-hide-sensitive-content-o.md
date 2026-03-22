@@ -24,7 +24,17 @@ Android notifications provide convenient real-time updates, but they can expose 
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: android lock screen notification controls, system settings configuration, conversation-specific privacy, with specific setup instructions
 
-## Understanding Android Lock Screen Notification Controls
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Android Lock Screen Notification Controls
 
 Android provides multiple layers of notification control, each serving different use cases. Understanding these layers helps you implement the right solution for your privacy requirements.
 
@@ -42,7 +52,7 @@ For individual app control, long-press any notification and select "Manage notif
 
 Android 12+ introduced conversation-specific notification settings. Access **Settings > Notifications > Conversations** to prioritize contacts or set specific privacy levels. You can designate conversations as "Silent" (no sound or vibration) or configure them to show as "Bubbles" that offer more controlled visibility.
 
-## Programmatic Implementation for Developers
+### Step 2: Implement Programmatic Implementation for Developers
 
 Developers building Android applications should implement proper notification privacy controls. The `Notification.Builder` class provides methods for controlling lock screen visibility.
 
@@ -142,7 +152,7 @@ Register this service in your `AndroidManifest.xml`:
 
 Users must grant notification access in **Settings > Apps > Special app access > Notification access** after installation.
 
-## Using ADB for Lock Screen Configuration
+### Step 3: Use ADB for Lock Screen Configuration
 
 Power users can configure notification privacy via Android Debug Bridge commands:
 
@@ -200,7 +210,7 @@ Implementing effective lock screen privacy requires a layered approach:
 4. Consider notification dots Disable dots for sensitive apps to prevent visual exposure
 5. Test your configuration Lock your device and walk around to verify what remains visible
 
-## Third-Party Privacy Apps
+### Step 4: Third-Party Privacy Apps
 
 Several applications in the Google Play Store provide enhanced notification privacy features. These apps typically require notification listener access and offer features like:
 
@@ -210,6 +220,21 @@ Several applications in the Google Play Store provide enhanced notification priv
 - Integration with automation tools like Tasker
 
 When selecting third-party solutions, verify the app's privacy policy and ensure it doesn't exfiltrate notification data.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
