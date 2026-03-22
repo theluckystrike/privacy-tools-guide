@@ -4,10 +4,10 @@ description: "Remove your data from Spokeo, BeenVerified, Whitepages. Manual rem
 author: "Privacy Tools Guide"
 date: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
-tags: ["data removal", "data brokers", "privacy", "personal data", "tools"]
+tags: [privacy-tools-guide, data removal, data brokers, privacy, personal data, tools]
 permalink: /how-to-remove-personal-data-from-data-brokers-2026/
 ---
 

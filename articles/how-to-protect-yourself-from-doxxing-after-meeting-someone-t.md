@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
+description: "Follow this guide to how to protect yourself from doxxing after meeting someone t with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Protect Yourself from Doxxing After Meeting Someone"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-register-social-media-accounts-without-providing-real/
+description: "Follow this guide to how to register social media accounts without providing real with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Register Social Media Accounts Without Providing Real Phone"

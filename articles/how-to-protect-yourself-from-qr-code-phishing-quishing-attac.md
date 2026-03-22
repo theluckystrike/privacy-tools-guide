@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-yourself-from-qr-code-phishing-quishing-attac/
+description: "Follow this guide to how to protect yourself from qr code phishing quishing attac with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Protect Yourself From Qr Code Phishing Quishing"

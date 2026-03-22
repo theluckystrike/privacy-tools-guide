@@ -9,7 +9,7 @@ permalink: /how-to-request-human-review-of-ai-automated-decision-that-affects-yo
 categories: [guides]
 tags: [privacy-tools-guide, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -7,7 +7,7 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /how-to-reduce-vpn-battery-drain-on-mobile-while-keeping-priv/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, vpn]

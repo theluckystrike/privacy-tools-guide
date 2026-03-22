@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, artificial-intelligence, chatgpt]

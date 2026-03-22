@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/
 description: "Follow this guide to how to opt out of acxiom oracle data cloud and nielsen consu with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen"
 description: "A practical guide for developers and power users to remove personal data from major consumer data brokers. Includes direct URLs, API considerations"

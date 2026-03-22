@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-protect-elderly-parents-from-online-scams-setup-guide/
 description: "Follow this guide to how to protect elderly parents from online scams setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"
 description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser"

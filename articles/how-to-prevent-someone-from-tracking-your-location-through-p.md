@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-prevent-someone-from-tracking-your-location-through-p/
 description: "Follow this guide to how to prevent someone from tracking your location through p with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Prevent Someone From Tracking Your Location"
 description: "technical guide for developers and power users on preventing phone location tracking. Covers GPS, network-based tracking, app"
