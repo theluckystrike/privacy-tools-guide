@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/
+description: "Follow this guide to how to use adb to disable android system apps that spy on yo with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Adb To Disable Android System Apps That Spy On"

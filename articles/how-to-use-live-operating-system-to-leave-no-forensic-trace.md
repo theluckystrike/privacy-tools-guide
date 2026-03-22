@@ -9,7 +9,7 @@ permalink: /how-to-use-live-operating-system-to-leave-no-forensic-trace/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, security, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

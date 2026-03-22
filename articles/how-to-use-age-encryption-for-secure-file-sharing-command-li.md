@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-age-encryption-for-secure-file-sharing-command-li/
+description: "Follow this guide to how to use age encryption for secure file sharing command li with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "How To Use Age Encryption For Secure File Sharing Command"

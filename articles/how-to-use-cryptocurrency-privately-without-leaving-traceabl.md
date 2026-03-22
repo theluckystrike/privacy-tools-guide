@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-cryptocurrency-privately-without-leaving-traceabl/
+description: "Follow this guide to how to use cryptocurrency privately without leaving traceabl with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Cryptocurrency Privately Without Leaving Traceabl"

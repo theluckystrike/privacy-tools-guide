@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-compartmentalized-identity-for-online-dating-sepa/
+description: "Follow this guide to how to use compartmentalized identity for online dating sepa with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Compartmentalized Identity For Online Dating"

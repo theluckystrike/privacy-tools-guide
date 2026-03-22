@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-masked-credit-cards-for-online-purchases-privacy-/
+description: "Follow this guide to how to use masked credit cards for online purchases privacy  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"
