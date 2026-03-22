@@ -177,6 +177,40 @@ adb shell pm create-user --profileOf 0 --managed DecoyProfile
 
 **Faraday cage**: Store the device in a Faraday pouch when not in use. This blocks all cellular, WiFi, and Bluetooth signals, preventing remote wipe or data extraction.
 
+## Threat Model Documentation
+
+Before deployment, document your threat model explicitly:
+
+```
+THREAT MODEL FOR PROTEST COORDINATION
+
+Assets at risk:
+- Participant identities (highest priority)
+- Meeting locations and times
+- Organizational strategy
+- Financial information (if applicable)
+- Communication patterns
+
+Adversaries:
+- Law enforcement surveillance
+- Institutional surveillance
+- Infiltrators/undercover agents
+- Network-level monitoring (ISP, cellular provider)
+
+Attack vectors:
+1. Device seizure → need full encryption + panic wipe
+2. Network interception → need VPN + encrypted messaging
+3. Location tracking → need GPS disabled + Faraday pouches
+4. Social engineering → need training, discipline
+
+Mitigations implemented:
+- GrapheneOS/CalyxOS (reduces attack surface)
+- Signal E2EE (protects communication)
+- Disappearing messages (limits data persistence)
+- VPN (masks IP/location from ISP)
+- Faraday pouches (prevents remote tracking)
+```
+
 ## Secure Disposal
 
 When a burner device's operational life ends:
@@ -190,7 +224,64 @@ When a burner device's operational life ends:
 # Verify full storage encryption is enabled before disposal
 # Check encryption status
 adb shell dumpsys diskstats | grep "Encrypted"
+
+# Secure wipe internal storage before physical destruction
+# This ensures encrypted storage keys are unrecoverable
+adb shell pm clear com.android.systemui
+adb shell wipe data all
 ```
+
+## Chain of Custody for Burner Devices
+
+Maintain strict control over device ownership:
+
+```python
+# Device tracking and chain of custody
+class BurnerDeviceLog:
+    def __init__(self):
+        self.devices = {}
+
+    def register_device(self, device_id, purchaser):
+        """Record device purchase"""
+        self.devices[device_id] = {
+            'purchased_by': purchaser,
+            'purchase_date': datetime.now(),
+            'purchase_location': 'retail_cash',
+            'condition': 'new',
+            'handlers': [purchaser]
+        }
+
+    def transfer_device(self, device_id, from_person, to_person):
+        """Record device transfer"""
+        self.devices[device_id]['handlers'].append(to_person)
+
+    def destroy_device(self, device_id, proof_of_destruction):
+        """Record device destruction"""
+        self.devices[device_id].update({
+            'destroyed_date': datetime.now(),
+            'proof': proof_of_destruction
+        })
+
+    def print_audit_trail(self, device_id):
+        """Print chain of custody"""
+        device = self.devices[device_id]
+        print(f"Device {device_id}:")
+        print(f"Purchased: {device['purchased_date']} by {device['purchased_by']}")
+        print(f"Handlers: {device['handlers']}")
+        if 'destroyed_date' in device:
+            print(f"Destroyed: {device['destroyed_date']}")
+```
+
+## Post-Action Device Handling
+
+After protest activities conclude:
+
+1. **Power down immediately**: Turn off device completely, remove from area
+2. **Store isolated**: Keep in Faraday pouch until safe house reached
+3. **SIM removal**: Remove SIM card, store separately
+4. **Battery removal** (if possible): Prevents remote wipe commands
+5. **No data review**: Don't connect to networks or check messages until safe
+6. **Disposal**: Follow secure disposal procedures within 48 hours
 
 
 

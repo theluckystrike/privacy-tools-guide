@@ -187,6 +187,35 @@ Aggressive blocking can impact page load times or break functionality. To mainta
 
 A reasonable configuration typically blocks 80-95% of tracking attempts while maintaining full site functionality. Pursuing 100% blocking will break most modern websites.
 
+## Advanced Cosmetic Filtering
+
+Cosmetic filters hide page elements that ads/trackers use, without blocking network requests. This prevents tracking pixels from even loading. Enable these for maximum protection:
+
+```
+! Hide common ad placeholders
+.banner { display: none !important; }
+.advertisement { display: none !important; }
+.ad-space { display: none !important; }
+```
+
+The dashboard shows "Cosmetic filtering" status under "Filter lists" tab. Enabling cosmetic filtering increases CPU usage slightly but significantly improves privacy.
+
+## Practical Real-World Filter Configurations
+
+For news sites that track heavily:
+```
+||reddit.com^$all (block reddit trackers)
+||twitter.com^$all (block twitter pixel tracking)
+@@||cdn.redditjs.com^ (allow critical scripts)
+```
+
+For financial sites where you want privacy but full functionality:
+```
+||quantserve.com^ (block tracking)
+||scorecardresearch.com^ (block analytics)
+@@||youtube.com^$script (allow video if embedded)
+```
+
 ## Verification and Testing
 
 After configuration, verify your protection:
@@ -196,6 +225,37 @@ After configuration, verify your protection:
 3. **deviceinfo.me** — Shows all hardware and browser attributes exposed through standard web APIs
 
 Your goal is reducing the "entropy" of your browser fingerprint — the total amount of information that makes you uniquely identifiable. Perfect entropy elimination is not achievable without breaking most websites, but meaningful reduction is realistic with the configuration above.
+
+## Common Problems and Solutions
+
+**Problem: Site breaks with uBlock enabled**
+Solution: Temporarily allow third-party frames for that domain in the dynamic filtering panel. Click the domain and toggle third-party frames from red to yellow. Test the site. If it works, save the rule.
+
+**Problem: Video players won't load**
+Solution: Many video CDNs are overly blocked. Common fix: whitelist cloudflare videos with `@@||cloudflare.com^$script`
+
+**Problem: Login pages don't work**
+Solution: Login forms often load from different domains. In the logger, find the blocked domain responsible for login form rendering and whitelist it specifically: `@@||auth-cdn.example.com^$script`
+
+**Problem: "uBlock Origin is preventing my website from working properly" message**
+Solution: Site is detecting the extension. Some sites refuse to load with ad blockers active. Options: 1) Accept the limitation, 2) Use a secondary browser without uBlock for that site, 3) File a complaint with the site owner.
+
+## Final Optimization Checklist
+
+Before deploying your uBlock Origin configuration:
+
+- [ ] All essential filter lists enabled
+- [ ] Dynamic filtering tested for your critical sites
+- [ ] WebRTC IP leak prevention enabled
+- [ ] Canvas fingerprinting rules added
+- [ ] Tested on coveryourtracks.eff.org (aim for "good" fingerprint score)
+- [ ] Verified storage space for logger debugging
+- [ ] Backup your "My filters" rules periodically
+- [ ] Document any per-site exceptions you create
+
+A properly configured uBlock Origin provides 90%+ protection against web tracking with minimal impact to page functionality.
+
+Your privacy configuration is an ongoing process, not a one-time setup.
 
 ## Frequently Asked Questions
 
@@ -208,6 +268,7 @@ Not necessarily. More lists mean more rules to evaluate per request, which can s
 **Is uBlock Origin compatible with Tor Browser?**
 Tor Browser already includes its own tracking protections and NoScript. Adding uBlock Origin is technically possible but may reduce the uniformity that makes Tor users harder to fingerprint. For Tor Browser, the default configuration is usually better.
 
+Review and update your uBlock configurations quarterly as tracking methods evolve.
 
 ## Related Articles
 
