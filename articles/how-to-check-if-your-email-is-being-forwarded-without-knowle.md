@@ -33,6 +33,15 @@ Email forwarding is a legitimate feature that millions of users rely on daily. H
 
 This guide provides practical methods to identify if your emails are being forwarded without your knowledge, with code examples and tools suitable for technical users.
 
+## Key Takeaways
+
+- **Monitor sent folder**: Attackers forwarding your emails may use your account
+5.
+- **Email forwarding is a**: legitimate feature that millions of users rely on daily.
+- **Whether you're a developer**: managing corporate email or a privacy-conscious user, knowing how to detect unauthorized forwarding is essential for maintaining email security.
+- **This guide provides practical**: methods to identify if your emails are being forwarded without your knowledge, with code examples and tools suitable for technical users.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Email Forwarding Mechanics
 
 When an email is forwarded, the original message traverses multiple servers before reaching its destination. Each server adds diagnostic headers to the message, creating a trail that reveals the forwarding path. These headers become your primary investigative tool.

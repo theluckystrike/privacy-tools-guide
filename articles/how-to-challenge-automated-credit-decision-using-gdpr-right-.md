@@ -31,6 +31,19 @@ voice-checked: true---
 
 When a bank denies your credit application without human intervention, you have legal recourse under GDPR Article 22. This article provides actionable steps to identify, challenge, and overturn automated credit decisions using your right to human review.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Challenge profiling aspects**: Question the logic used in the automated assessment
+
+## Detecting Automated Credit Decisions
+
+Lenders often bury disclosure language in their terms.
+
 ## Understanding GDPR Article 22
 
 GDPR Article 22 grants individuals the right not to be subject to decisions based solely on automated processing that produce legal or significant effects. Credit decisions fall squarely within this scope—when an algorithm determines whether you qualify for a loan,信用卡, or mortgage without human oversight, you can invoke this right.

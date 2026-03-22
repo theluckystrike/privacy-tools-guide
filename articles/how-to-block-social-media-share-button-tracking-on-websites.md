@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Social media share buttons appear on nearly every website, from news articles to blog posts. These convenient buttons let users share content with a single click, but they come with a significant privacy cost. Behind the scenes, these buttons load tracking scripts from Facebook, Twitter, LinkedIn, and other platforms that collect data about your browsing behavior. This guide shows developers and power users how to block social media share button tracking effectively.
 
+## Key Takeaways
+
+- **These convenient buttons let**: users share content with a single click, but they come with a significant privacy cost.
+- **This guide shows developers**: and power users how to block social media share button tracking effectively.
+- **For Firefox users**: enable Enhanced Tracking Protection in browser settings.
+- **Chrome users can use**: the built-in Safe Browsing protection, though it is less than dedicated privacy extensions.
+- **The key is to**: replace automatic script loading with user-initiated loading.
+- **Ensure users can still**: share content through all intended platforms.
+
 ## How Social Media Share Buttons Track You
 
 When you visit a page with social media share buttons, the browser loads scripts from the social media company's servers. Even if you never click the button, these scripts execute and transmit information back to the social media platform. The data collected typically includes:

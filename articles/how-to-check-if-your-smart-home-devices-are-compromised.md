@@ -17,6 +17,13 @@ tags: [privacy-tools-guide]---
 
 Smart home devices have become ubiquitous, but their security implications often go overlooked until something goes wrong. Whether you're running a home lab or managing dozens of IoT devices, knowing how to detect compromise is essential for maintaining a secure network. This guide covers practical methods for identifying compromised smart home devices, focusing on network analysis, log inspection, and security auditing techniques that work without proprietary tools.
 
+## Key Takeaways
+
+- **Use Wireshark to inspect**: packet contents.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers network**: traffic analysis, capturing network traffic, identifying anomalies, with specific setup instructions
+
 ## Network Traffic Analysis
 
 The first line of defense against compromised devices is understanding what they're actually communicating. Smart home devices should have predictable communication patterns—talking to their manufacturer's cloud services, receiving updates, and occasionally exchanging data with local hubs. Unexpected outbound connections often signal compromise.

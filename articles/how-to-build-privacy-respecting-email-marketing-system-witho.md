@@ -33,6 +33,15 @@ Email marketing remains one of the most effective channels for building customer
 
 This guide covers practical implementation patterns for developers who want to create email marketing infrastructure that works without invasive tracking.
 
+## Key Takeaways
+
+- **These features rely on tracking pixels**: 1x1 images loaded from your servers that reveal user behavior.
+- **Implement immediate processing by default**: there is no legitimate reason to delay an unsubscribe request, and the penalty for delayed processing under GDPR can reach 4% of global annual revenue.
+- **Users are increasingly demanding**: privacy-respecting alternatives, and regulations like GDPR and CCPA make invasive tracking legally risky.
+- **Fortunately**: you can build highly effective email marketing systems that respect user privacy while still delivering measurable results.
+- **Privacy-respecting alternatives focus on**: aggregate metrics rather than individual user tracking.
+- **Hash-Based Click Tracking**: When users click links, use one-way hashed identifiers to measure aggregate click-through rates without building user profiles.
+
 ## Understanding Privacy-First Email Analytics
 
 Traditional email analytics track when users open emails, click links, and move through your website. These features rely on tracking pixels—1x1 images loaded from your servers that reveal user behavior. Privacy-respecting alternatives focus on aggregate metrics rather than individual user tracking.

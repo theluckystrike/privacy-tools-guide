@@ -33,6 +33,21 @@ Every time you visit a website, your browser hands over a surprising amount of i
 
 For developers and power users, understanding what your browser reveals is the first step toward hardening your privacy posture. This guide covers practical methods to audit your browser's digital footprint with working code examples.
 
+## Key Takeaways
+
+- **Beyond basic details like**: your IP address and user agent, websites can extract screen resolution, installed fonts, GPU renderer, timezone, language preferences, and hundreds of other signals.
+- **For developers and power users**: understanding what your browser reveals is the first step toward hardening your privacy posture.
+- **You'll likely see your**: exact browser version, operating system, and language preferences exposed.
+- **Tor Browser can disable**: JavaScript entirely, though many sites will break; use the NoScript extension for granular control.
+- **Enable it in `about**: config`:
+
+```
+privacy.resistFingerprinting = true
+```
+
+Disable WebRTC in browser settings or use an extension that blocks the leak.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## What Your Browser Exposes by Default
 
 Modern browsers expose numerous APIs for legitimate functionality, but these same APIs enable fingerprinting. The key categories include:
