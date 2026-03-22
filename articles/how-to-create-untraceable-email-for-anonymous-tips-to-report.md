@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Untraceable Email For Anonymous Tips"
 description: "A technical guide for developers and power users on setting up untraceable email accounts for submitting anonymous tips. Covers Tor, GPG encryption"

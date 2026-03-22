@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Detect If Smart Home Devices Have Hidden Microphones"
 description: "A technical guide for developers and power users to identify hidden microphones and cameras in smart home devices. Learn network analysis, firmware"

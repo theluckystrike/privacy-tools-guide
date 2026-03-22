@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Windows Sandbox Privacy Testing Guide 2026"
 description: "A practical guide for developers and power users to use Windows Sandbox for privacy testing, analyzing suspicious files, and safely exploring"

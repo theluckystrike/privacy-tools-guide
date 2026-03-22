@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Factory Reset Mobile Phone Securely Before Selling"
 description: "A technical guide for developers and power users on securely wiping Android and iOS devices before resale. Includes verification methods"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Verify If Data Broker Actually Deleted Your Personal"
 description: "A technical guide for developers and power users to verify data broker deletion claims. Includes API verification methods, automated monitoring"

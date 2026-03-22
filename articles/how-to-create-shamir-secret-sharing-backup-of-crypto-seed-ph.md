@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Shamir Secret Sharing Backup Of Crypto Seed"
 description: "A technical guide for developers and power users on implementing Shamir Secret Sharing to secure cryptocurrency seed phrases for inheritance planning"

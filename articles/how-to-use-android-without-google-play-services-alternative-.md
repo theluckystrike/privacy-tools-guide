@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Use Android Without Google Play Services"
 description: "A technical guide for developers and power users on running Android without Google Play Services using F-Droid, Aurora Store, and other alternative app"

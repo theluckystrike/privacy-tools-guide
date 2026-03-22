@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Purchase Phone And Sim Card Anonymously Complete"
 description: "A technical guide for developers and power users on purchasing mobile phones and SIM cards while maintaining privacy. Covers prepaid options, anonymous"

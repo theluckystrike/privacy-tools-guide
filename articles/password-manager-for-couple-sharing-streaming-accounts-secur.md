@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Password Manager For Couple Sharing Streaming Accounts"
 description: "Learn how couples can securely share streaming accounts using password managers. This guide covers setup, encryption, access controls, and automation"

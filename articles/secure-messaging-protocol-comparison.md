@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Messaging Protocol Comparison"
 description: "Technical comparison of Signal Protocol, Matrix, MLS, and OMEMO encryption protocols used in private messaging apps — what each protects and where each"

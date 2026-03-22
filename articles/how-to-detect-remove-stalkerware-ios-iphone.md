@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Detect and Remove Stalkerware From Your iPhone and iPad"
 description: "Complete technical guide to finding hidden surveillance apps on iOS. Includes account security checks, iCloud analysis, and removal procedures"

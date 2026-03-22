@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Signal Without Phone Number Verification"
 description: "In countries with mandatory SIM registration (India, Pakistan, Turkey), use Signal with a virtual number from services like Google Voice, Twilio, or local"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Protect Yourself From Swatting Attack Prevention Measures"
 description: "Learn practical swatting attack prevention measures. This guide covers threat modeling, address protection, emergency response protocols"

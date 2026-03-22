@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Masked Credit Cards For Online Purchases Privacy"
 description: "Online shopping leaves a financial footprint that data brokers actively harvest. Every transaction links your identity, purchasing habits, and payment details"

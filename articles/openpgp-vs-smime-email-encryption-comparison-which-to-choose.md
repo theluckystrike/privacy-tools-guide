@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption Comparison"
 description: "A technical comparison of OpenPGP and S/MIME email encryption standards for developers and power users. Learn about key differences, implementation complexity"

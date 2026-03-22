@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Disappearing Messages Best Practices"
 description: "Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for"

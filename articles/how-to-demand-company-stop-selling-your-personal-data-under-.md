@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Demand Company Stop Selling Your Personal Data Under"
 description: "A practical guide for developers and power users on exercising CCPA opt-out rights. Learn how to send legally binding requests to stop the sale of your"

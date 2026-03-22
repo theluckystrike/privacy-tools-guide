@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Enterprise Password Manager With Zero Knowledg"
 description: "A practical guide for developers and power users setting up enterprise password managers with zero knowledge encryption. Includes architecture"

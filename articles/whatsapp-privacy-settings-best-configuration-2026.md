@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WhatsApp Privacy Settings Best Configuration 2026"
 description: "WhatsApp remains the most widely used messaging platform globally, with over 2 billion users. Despite its popularity, the app collects significant metadata and"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Audit Checklist for SaaS Companies"
 description: "A practical privacy audit checklist for SaaS companies with templates, code examples, and implementation guide. Covers GDPR, CCPA compliance and data"

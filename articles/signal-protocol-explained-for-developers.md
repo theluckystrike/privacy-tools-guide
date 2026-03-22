@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Protocol Explained for Developers"
 description: "A developer-focused explanation of the Signal Protocol's cryptographic mechanisms, including Double Ratchet Algorithm, X3DH key agreement, and practical"

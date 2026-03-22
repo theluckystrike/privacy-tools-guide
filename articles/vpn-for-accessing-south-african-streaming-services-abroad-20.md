@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Vpn For Accessing South African Streaming Services Abroad"
 description: "A technical guide to accessing South African streaming services from abroad using VPN solutions. Includes configuration examples, protocol comparison"

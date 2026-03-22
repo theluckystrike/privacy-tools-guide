@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Casa Multisig Bitcoin Inheritance Plan"
 description: "A technical guide for developers and power users on implementing Bitcoin inheritance planning using Casa multisig wallets with collaborative custody"

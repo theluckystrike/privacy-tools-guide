@@ -11,7 +11,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
-
+---
 {% raw %}
 
 # Privacy Risks of Fitness Trackers and Wearables

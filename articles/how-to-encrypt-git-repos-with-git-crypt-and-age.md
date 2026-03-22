@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Encrypt Git Repos with git-crypt and age"
 description: "Full guide to encrypting sensitive files in Git repos using git-crypt and age. Team key management, CI/CD integration, and GPG-free workflows covered"

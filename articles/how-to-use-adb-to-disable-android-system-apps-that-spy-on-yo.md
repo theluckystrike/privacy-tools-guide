@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Adb To Disable Android System Apps That Spy On"
 description: "Enable Developer Mode on your Android device, connect it to a computer via USB with ADB tools installed, then run adb shell pm disable-user [package.name] for"

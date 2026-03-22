@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Communication Plan Template for Organizations"
 description: "Organizations handling sensitive information—whether client data, proprietary code, legal documents, or healthcare records—need more than ad-hoc secure"

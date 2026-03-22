@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up Password Manager for Elderly Parent Remotely"
 description: "A technical guide for developers and power users to remotely configure a password manager for elderly parents, covering family plans, shared vaults"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Password Manager Master Password Strength Guide"
 description: "Create a master password with at least 80 bits of entropy: use a random 6-8 word passphrase (e.g., generated via diceware) or a 16+ character random string"

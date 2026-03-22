@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Magic Wormhole Encrypted File Transfer How To Send Files"
 description: "A practical guide to using Magic Wormhole for secure, encrypted file transfers directly from your terminal. Learn setup, commands, and real-world"
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Magic Wormhole provides a secure, terminal-based method for transferring files between machines without establishing a direct network connection. The tool uses end-to-end encryption with a simple wormhole metaphor: you create a code on one machine, share it with the recipient, and files flow through an encrypted channel. This approach eliminates the need for cloud storage, FTP servers, or expose-your-IP file sharing methods.

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN for Accessing Medical Records Abroad While"
 description: "Accessing your medical records while traveling abroad is increasingly important in today's interconnected world. Whether you need to consult with your primary"

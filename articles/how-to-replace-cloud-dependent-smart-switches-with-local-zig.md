@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Replace Cloud Dependent Smart Switches With Local"
 description: "A practical guide for developers and power users on migrating from cloud-dependent smart switches to local Zigbee alternatives for privacy and reliability"

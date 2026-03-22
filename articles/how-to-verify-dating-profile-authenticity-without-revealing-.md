@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Verify Dating Profile Authenticity Without Revealing"
 description: "Verifying whether a dating profile is authentic represents a common privacy challenge. You want to confirm the person behind the profile is who they claim to"

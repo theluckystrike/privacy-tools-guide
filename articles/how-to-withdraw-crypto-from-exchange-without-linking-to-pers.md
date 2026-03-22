@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Withdraw Crypto from Exchange Without Linking to Personal"
 description: "A practical guide for developers and power users on withdrawing cryptocurrency from exchanges while maintaining financial privacy. Covers P2P trading, crypto"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Windows Activity History Disable Privacy Guide"
 description: "Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck 'Store my activity history on this device' and 'Send my"

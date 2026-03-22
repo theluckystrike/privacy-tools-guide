@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Delete Old Social Media Accounts"
 description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code"

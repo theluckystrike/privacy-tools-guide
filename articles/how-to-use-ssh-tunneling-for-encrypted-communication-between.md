@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication"
 description: "SSH tunneling creates encrypted pathways between devices, securing data that would otherwise travel in plaintext. Whether you're accessing a database on a"

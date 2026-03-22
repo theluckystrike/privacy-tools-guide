@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Threat Modeling Basics for Developers"
 description: "Learn the STRIDE and PASTA frameworks for threat modeling your applications, with practical examples for web APIs, CI/CD pipelines, and data stores"

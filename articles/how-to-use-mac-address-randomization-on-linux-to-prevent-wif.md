@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Mac Address Randomization On Linux To Prevent"
 description: "A practical guide for developers and power users to implement MAC address randomization on Linux, preventing WiFi tracking while maintaining network"

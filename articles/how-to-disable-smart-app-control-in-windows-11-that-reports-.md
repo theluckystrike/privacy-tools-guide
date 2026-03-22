@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Disable Smart App Control In Windows 11 That Reports"
 description: "A practical guide for developers and power users to disable Windows 11 Smart App Control through Settings, Group Policy, and Registry modifications"

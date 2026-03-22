@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip"
 description: "When you capture a photo with your smartphone, the image file contains more than just pixel data. Modern mobile phones embed extensive metadata within each"
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 When you capture a photo with your smartphone, the image file contains more than just pixel data. Modern mobile phones embed extensive metadata within each photo, including GPS coordinates, device information, timestamps, and camera settings. This metadata, known as EXIF (Exchangeable Image File Format), can reveal sensitive information about your location, habits, and device. For developers and power users who value privacy, understanding how to strip EXIF location data before sharing photos becomes essential.

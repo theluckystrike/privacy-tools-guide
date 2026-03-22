@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN MSS Clamping Explained: Fixing Packet Size Related"
 description: "A technical guide to understanding MSS clamping in VPN connections. Learn how to diagnose and fix MTU-related connection problems that cause VPN"

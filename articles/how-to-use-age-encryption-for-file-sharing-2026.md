@@ -1,4 +1,5 @@
 ---
+---
 title: "How to Use Age Encryption for File Sharing 2026"
 slug: how-to-use-age-encryption-for-file-sharing-2026
 description: "age (Actually Good Encryption) tool guide. CLI examples, integration with other tools, comparison to GPG, key management."

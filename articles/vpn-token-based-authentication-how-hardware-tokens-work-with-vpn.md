@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Token-Based Authentication"
 description: "A practical guide to implementing hardware token authentication with your VPN. Learn how YubiKey, Titan Security Key, and other hardware tokens enhance"

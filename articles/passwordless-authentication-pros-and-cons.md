@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"
 description: "A technical analysis of passwordless authentication methods for developers and power users. Explore FIDO2, passkeys, biometrics, and implementation"

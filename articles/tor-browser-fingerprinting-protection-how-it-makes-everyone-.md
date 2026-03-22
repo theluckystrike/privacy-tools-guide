@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser Fingerprinting Protection How It Makes Everyone"
 description: "Tor Browser Fingerprinting Protection: How It Makes. — privacy guide covering tools, techniques, and best practices to protect your data and digital"

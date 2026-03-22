@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Document Collaboration Alternatives to Google"
 description: "When you need to collaborate on sensitive documents, Google Docs offers convenience but falls short on privacy. Most 'collaborative' document tools store your"

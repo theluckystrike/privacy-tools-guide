@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN IPv6 Leak Explained: Why Most VPNs Still Fail"
 description: "Discover why IPv6 leaks happen even when using a VPN, how to test for them, and what you can do to protect your real IP address from exposure"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser Security Settings Configuration Guide"
 description: "How to configure Tor Browser's security levels, circuit controls, JavaScript settings, and anti-fingerprinting features for different threat scenarios"

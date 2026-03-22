@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup for Confidential Informant"
 description: "A practical guide to privacy setup for confidential informant protection. Learn technical strategies, tools, and code examples to protect your identity"

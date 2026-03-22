@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Optimize Tor Browser Speed Without Compromising"
 description: "A technical guide for developers and power users on optimizing Tor Browser performance while maintaining strong anonymity guarantees. Includes"

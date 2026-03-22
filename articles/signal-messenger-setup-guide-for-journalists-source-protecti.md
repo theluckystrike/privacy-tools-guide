@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Messenger Setup Guide for Journalists: Source"
 description: "A practical guide to configuring Signal Messenger for journalists who need secure communications with confidential sources. Covers phone number"

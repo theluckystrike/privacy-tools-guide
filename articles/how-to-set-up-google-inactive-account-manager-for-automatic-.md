@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up Google Inactive Account Manager for Automatic Data"
 description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when"

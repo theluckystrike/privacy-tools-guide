@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Migrating from Safari Keychain to Bitwarden"
 description: "A technical guide for developers and power users migrating passwords from Safari Keychain to Bitwarden. Covers CLI export, CSV conversion, and automation"

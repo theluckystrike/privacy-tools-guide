@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"
 description: "A technical guide for developers and power users on configuring S/MIME email encryption using OpenSSL, Thunderbird, and Apple Mail with practical"

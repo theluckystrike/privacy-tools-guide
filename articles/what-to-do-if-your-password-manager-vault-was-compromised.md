@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What to Do If Your Password Manager Vault Was Compromised"
 description: "A practical guide for developers and power users on recovering from a compromised password manager vault. Includes immediate actions, forensic steps"

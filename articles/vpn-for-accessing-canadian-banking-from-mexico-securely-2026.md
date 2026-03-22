@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Vpn For Accessing Canadian Banking From Mexico Securely 2026"
 description: "Learn how to securely access Canadian bank accounts while in Mexico using VPN technology. Technical setup guide for developers and power users"

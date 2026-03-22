@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Register Social Media Accounts Without Providing Real Phone"
 description: "Learn privacy-focused methods for creating social media accounts without exposing personal phone numbers or email addresses. Tools, techniques, and code"

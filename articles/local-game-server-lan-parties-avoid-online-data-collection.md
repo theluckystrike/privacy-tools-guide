@@ -1,8 +1,9 @@
 ---
+---
 
 layout: default
 title: "Local Game Server Setup for LAN Parties"
-description: "Host LAN game servers that keep player data off the internet. Setup guides for Minecraft, CS2, and Valheim with zero cloud telemetry."
+description: "A guide to setting up local game servers for LAN parties that keep your gaming activity private and away from online data collection."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /local-game-server-lan-parties-avoid-online-data-collection/
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: false
 tags: [privacy-tools-guide]
 ---
-
 
 Playing games online typically sends significant amounts of data to game publishers, including your IP address, gaming habits, chat logs, purchase history, and behavioral analytics. For privacy-conscious gamers, LAN parties offer an alternative that keeps your gaming activity completely offline and under your control. This guide covers how to set up local game servers, configure your network for peer-to-peer gaming, and find self-hosted alternatives to popular online games.
 

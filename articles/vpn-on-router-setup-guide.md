@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up a VPN on Your Router"
 description: "Configure WireGuard or OpenVPN on your router with OpenWrt or DD-WRT to protect every device on your network without per-device clients"

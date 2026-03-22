@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Jitsi Meet Self Hosted Encrypted Video"
 description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Verify Your Browser is Not Leaking Information"
 description: "A checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods"

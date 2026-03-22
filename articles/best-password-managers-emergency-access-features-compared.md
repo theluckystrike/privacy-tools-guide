@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Best Password Managers With Emergency Access Features"
 description: "Emergency access lets trusted contacts retrieve passwords if you die or become incapacitated—comparison of implementations"

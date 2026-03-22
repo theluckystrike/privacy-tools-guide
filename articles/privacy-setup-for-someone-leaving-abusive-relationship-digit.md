@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Someone Leaving Abusive Relationship"
 description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure"
@@ -8,12 +9,11 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Help abuse survivors immediately by enabling full-disk encryption on their device, securing their email and primary accounts with new strong passwords and two-factor authentication, removing any location-sharing features and checking for installed tracking apps, and establishing secure communications channels using Signal or Tor. Change account recovery methods, remove the abuser from all shared accounts, and document threatening communications for legal purposes. This guide provides practical implementation patterns for securing devices, communications, and accounts during the critical transition period, with actionable steps for technically-minded supporters.

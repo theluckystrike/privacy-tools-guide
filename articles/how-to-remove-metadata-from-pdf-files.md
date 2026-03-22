@@ -5,7 +5,7 @@ description: "Strip author names, creation timestamps, GPS coordinates, and hidd
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-remove-metadata-from-pdf-files/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

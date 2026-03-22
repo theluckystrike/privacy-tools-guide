@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Nextcloud vs Synology Drive Comparison 2026"
 description: "A developer-focused comparison of Nextcloud and Synology Drive in 2026, covering self-hosting, security features, API access, and practical deployment examples"

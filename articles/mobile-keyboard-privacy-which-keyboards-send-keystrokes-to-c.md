@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes"
 description: "A technical comparison of mobile keyboard privacy policies. Learn which keyboards send keystrokes to cloud servers and how to protect your data"

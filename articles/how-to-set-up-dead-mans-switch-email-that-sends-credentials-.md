@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up a Dead Man's Switch Email That Sends Credentials If"
 description: "A practical guide for developers and power users to create an automated system that delivers your credentials to trusted contacts if you become inactive"

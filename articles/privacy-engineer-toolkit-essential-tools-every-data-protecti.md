@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Engineer Toolkit: Essential Tools Every Data"
 description: "Discover the essential privacy engineer toolkit with practical tools and techniques for data protection professionals in 2026. Includes step-by-step"

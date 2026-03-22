@@ -5,7 +5,7 @@ description: "Compare Proton Mail, Tuta, and Fastmail on encryption model, juris
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-cloud-email-providers-compared/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

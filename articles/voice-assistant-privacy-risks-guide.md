@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Risks of Voice Assistants Guide"
 description: "What Amazon Alexa, Google Assistant, and Siri collect, how accidental activations work, and practical steps to reduce voice assistant surveillance"

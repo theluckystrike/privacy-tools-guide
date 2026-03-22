@@ -295,7 +295,8 @@ For businesses managing shared credentials:
 # Tier 2: Infrastructure accounts (CTO + DevOps Lead)
 # Tier 3: Communications accounts (CEO + Communications Director)
 
-# Configure per-tier access---
+# Configure per-tier access
+---
 org:
  finance:
  emergency_contacts: ["treasurer@company.com", "legal@company.com"]

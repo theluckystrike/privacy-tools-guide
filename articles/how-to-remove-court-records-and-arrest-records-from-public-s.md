@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Remove Court Records And Arrest Records From Public"
 description: "A practical technical guide for removing court records and arrest records from public search databases. Includes automation scripts, API approaches"

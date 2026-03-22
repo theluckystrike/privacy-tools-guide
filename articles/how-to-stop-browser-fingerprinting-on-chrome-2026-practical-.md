@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Stop Browser Fingerprinting On Chrome 2026 Practical"
 description: "Enable Chrome's 'Privacy Sandbox' experimental features that obfuscate fingerprinting signals, use the Fingerprint Shield extension to randomize fingerprint"

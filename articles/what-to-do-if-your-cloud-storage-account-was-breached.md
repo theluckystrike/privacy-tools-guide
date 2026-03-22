@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What to Do If Your Cloud Storage Account Was Breached"
 description: "A practical guide for developers and power users on recovering from a cloud storage breach, including detection, containment, and security hardening steps"

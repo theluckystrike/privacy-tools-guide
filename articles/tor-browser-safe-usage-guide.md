@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Use Tor Browser Safely"
 description: "Practical safety guide for Tor Browser. Covers setup, common mistakes, circuit management, security levels, and when Tor doesn't protect you."

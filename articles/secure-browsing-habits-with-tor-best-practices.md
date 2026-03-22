@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Browsing Habits With Tor Best Practices"
 description: "Tor remains one of the most effective tools for anonymous communication on the internet. Unlike standard browsing, Tor routes your traffic through a"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Outline Vpn Server For Creating Personal Proxy"
 description: "A practical guide for developers and power users on setting up Outline VPN server to create personal proxy tunnels for bypassing network restrictions"

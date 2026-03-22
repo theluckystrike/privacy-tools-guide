@@ -1,7 +1,8 @@
 ---
+---
 layout: default
 title: "Media Devices Enumeration Fingerprinting Cameras Microphones"
-description: "Websites fingerprint you via MediaDevices API by enumerating cameras and microphones. Detection scripts, browser differences, and blocking methods."
+description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Modern web browsers expose powerful APIs that allow websites to access cameras and microphones. While these capabilities enable video conferencing, streaming, and interactive applications, they also create significant privacy risks through device enumeration and fingerprinting. Understanding how these APIs work and the information they expose helps you make informed decisions about your digital privacy.

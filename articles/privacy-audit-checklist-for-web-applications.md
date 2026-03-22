@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Audit Checklist for Web Applications: A Developer"
 description: "A practical privacy audit checklist for web applications with implementation code. Covers data collection audit, consent management, encryption"

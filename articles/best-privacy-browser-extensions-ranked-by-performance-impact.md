@@ -1,4 +1,5 @@
 ---
+---
 
 layout: default
 title: "Best Privacy Browser Extensions Ranked by Performance"

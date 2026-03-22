@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "macOS Privacy Permissions Explained Which Tcc Database"
 description: "A guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary"

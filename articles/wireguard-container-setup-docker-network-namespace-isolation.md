@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Wireguard Container Setup Docker Network Namespace Isolation"
 description: "A practical guide to running WireGuard inside Docker containers with network namespace isolation for enhanced privacy and security"

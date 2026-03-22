@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Russia Sovereign Internet Law What It Means For Vpn Users"
 description: "Russia Sovereign Internet Law: What It Means for VPN. — privacy guide covering tools, techniques, and best practices to protect your data and digital"

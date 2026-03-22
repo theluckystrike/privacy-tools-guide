@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained"
 description: "A technical breakdown of WebAuthn, FIDO2, and passkeys for developers. Understand the standards, protocols, and implementations driving passwordless"

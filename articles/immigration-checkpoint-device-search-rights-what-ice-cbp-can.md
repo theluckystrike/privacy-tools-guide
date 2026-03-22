@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Immigration Checkpoint Device Search Rights What Ice Cbp"
 description: "A practical guide for developers and power users on what U.S. Customs and Border Protection can legally search on your electronic devices at border"

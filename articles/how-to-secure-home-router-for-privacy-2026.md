@@ -1,7 +1,8 @@
 ---
+---
 layout: default
 title: "How to Secure Your Home Router for Privacy in 2026"
-description: "Harden your home router: firmware updates, encrypted DNS, guest network isolation, router-level VPN, and OpenWrt setup for privacy in 2026."
+description: "Harden home router security and privacy: firmware updates, custom DNS settings, guest networks, VPN at router level, and OpenWrt setup guide for maximum"
 date: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /how-to-secure-home-router-for-privacy-2026/
@@ -12,7 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, home-router-security, vpn, dns-privacy, network-security, openwrt, guest-networks, firewall]
 ---
-
 {% raw %}
 
 Most home routers ship with weak default settings and outdated firmware. Your router is the gateway to all your household network traffic—securing it prevents ISP snooping, reduces malware risk, and blocks ad tracking at the network level. This guide covers firmware hardening, DNS configuration, guest network isolation, VPN setup, and OpenWrt installation for users needing maximum control.

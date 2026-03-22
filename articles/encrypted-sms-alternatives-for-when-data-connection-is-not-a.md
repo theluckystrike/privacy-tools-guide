@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Encrypted SMS Alternatives for When Data Connection Is"
 description: "A technical guide for developers and power users exploring encrypted SMS alternatives that work without active data connectivity. Covers carrier-based"

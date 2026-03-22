@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tell If Your Phone Has Been Jailbroken Without Consent"
 description: "Discovering that your phone has been jailbroken without your knowledge can be an alarming experience. A jailbroken device bypasses manufacturer security"

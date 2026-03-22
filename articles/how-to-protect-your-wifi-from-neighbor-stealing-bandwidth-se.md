@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth"
 description: "Learn practical methods to secure your WiFi network from bandwidth theft. Includes router configuration, network monitoring tools, and advanced"

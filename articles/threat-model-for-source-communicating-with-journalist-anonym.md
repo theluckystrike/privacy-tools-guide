@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Threat Model For Source Communicating With Journalist"
 description: "A threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational"

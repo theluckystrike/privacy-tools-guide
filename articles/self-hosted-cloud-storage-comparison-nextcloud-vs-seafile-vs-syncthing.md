@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Self Hosted Cloud Storage Comparison Nextcloud vs"
 description: "Compare self-hosted cloud storage solutions: Nextcloud, Seafile, and Syncthing. Covers Docker setup, performance, encryption, and hardware requirements"

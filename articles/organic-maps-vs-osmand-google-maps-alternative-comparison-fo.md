@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Organic Maps Vs Osmand Google Maps Alternative Comparison"
 description: "A technical comparison of Organic Maps and OsmAnd for privacy-conscious navigation. Learn about offline capabilities, OpenStreetMap data, API"

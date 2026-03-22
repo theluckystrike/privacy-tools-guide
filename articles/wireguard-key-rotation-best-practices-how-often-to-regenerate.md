@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WireGuard Key Rotation Best Practices How Often"
 description: "Learn the recommended key rotation intervals for WireGuard VPN, security benefits of key regeneration, and how to automate the process for maximum"

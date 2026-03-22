@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WireGuard Dynamic Endpoint Update"
 description: "A technical guide for developers and power users on configuring WireGuard VPN for roaming between networks, covering dynamic endpoint updates"

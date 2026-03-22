@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Verify Someone's Identity Before Meeting from a Dating App"
 description: "Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains"

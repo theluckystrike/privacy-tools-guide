@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Restic Encrypted Backup Setup Guide"
 description: "Set up automated encrypted backups with restic. Covers local, S3, and Backblaze B2 backends, snapshot policies, and scheduled automation."
@@ -198,7 +199,8 @@ restic -r /mnt/backup/restic-repo snapshots
 
 Output:
 ```
-ID        Time                 Host        Tags        Paths---
+ID        Time                 Host        Tags        Paths
+---
 --------------------------------------------------------------------
 3d8f2a1b 2026-03-21 02:00:00 myhost /home/user
 c7e9f4d2 2026-03-20 02:00:00 myhost /home/user

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN for Safe Browsing on Public WiFi in Airports"
 description: "Airport public WiFi networks present significant security risks for travelers. This guide covers the technical implementation of VPN solutions for developers"

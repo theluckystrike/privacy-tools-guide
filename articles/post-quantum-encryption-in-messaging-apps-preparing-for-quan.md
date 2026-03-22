@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing"
 description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies"

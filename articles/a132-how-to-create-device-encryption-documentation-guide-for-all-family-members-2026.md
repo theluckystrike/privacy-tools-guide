@@ -5,7 +5,7 @@ description: "A step-by-step guide to documenting device encryption setup for ev
 date: 2026-03-22
 author: theluckystrike
 permalink: /a132-how-to-create-device-encryption-documentation-guide-for-all-family-members-2026/
-categories: [guides, security, family]
+categories: [guides, security]
 reviewed: true
 score: 8
 intent-checked: true

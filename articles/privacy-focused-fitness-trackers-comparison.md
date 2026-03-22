@@ -5,7 +5,7 @@ description: "Compare PineTime, Amazfit, and open-firmware wearables on data han
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-fitness-trackers-hardware-compared/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

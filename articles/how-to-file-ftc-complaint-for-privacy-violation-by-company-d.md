@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To File Ftc Complaint For Privacy Violation By Company"
 description: "A practical guide for developers and power users on filing FTC complaints after a company data breach. Includes documentation steps, API references"

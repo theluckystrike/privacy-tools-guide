@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up a Personal VPN with WireGuard"
 description: "Build a personal WireGuard VPN on a cheap VPS. Covers server setup, key generation, client configs for Linux, macOS, Windows, iOS, and Android."

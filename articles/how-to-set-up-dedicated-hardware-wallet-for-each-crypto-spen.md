@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Dedicated Hardware Wallet For Each Crypto"
 description: "A practical guide for developers and power users on creating separate hardware wallets for different crypto spending purposes. Learn derivation path"

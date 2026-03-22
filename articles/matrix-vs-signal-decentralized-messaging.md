@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Matrix Vs Signal Decentralized Messaging"
 description: "A technical comparison of Matrix and Signal protocols for developers building decentralized messaging applications. Covers architecture, encryption"

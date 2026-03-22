@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Home Assistant Esphome For Completely Local"
 description: "A practical guide for developers and power users setting up ESPHome with Home Assistant for privacy-focused, fully local smart home sensors without"

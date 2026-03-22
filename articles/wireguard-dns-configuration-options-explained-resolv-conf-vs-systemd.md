@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WireGuard DNS Configuration Options Explained"
 description: "Complete guide to WireGuard DNS configuration. Learn how to set DNS using resolv.conf, systemd-resolved, and wg-quick. Compare methods for Linux, Android, and"

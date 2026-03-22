@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Tor Browser For Creating Anonymous Accounts"
 description: "A practical guide for developers and power users on using Tor Browser to create anonymous accounts without phone verification. Configuration tips"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mastodon vs Twitter: Privacy Comparison 2026"
 description: "Mastodon vs Twitter: Privacy Comparison 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital identity"
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, comparison, privacy]
 ---
-
 {% raw %}
 
 Choosing between Mastodon and Twitter in 2026 requires understanding fundamentally different architectures. Twitter (now X) operates as a centralized platform with extensive data collection, while Mastodon represents the decentralized fediverse approach. This comparison examines the technical privacy differences that matter to developers and power users.

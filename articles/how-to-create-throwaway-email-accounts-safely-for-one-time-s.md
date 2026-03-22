@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Throwaway Email Accounts Safely For One Time"
 description: "A practical guide for developers and power users on creating secure throwaway email accounts for one-time service signups. Covers alias services"

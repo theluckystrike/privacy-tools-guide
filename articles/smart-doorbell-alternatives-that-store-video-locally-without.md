@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Smart Doorbell Alternatives That Store Video Locally"
 description: "Discover privacy-focused smart doorbell alternatives that store video footage locally without monthly cloud subscription fees. Technical setup guides"

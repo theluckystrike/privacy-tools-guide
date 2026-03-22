@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"
 description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection"
@@ -8,12 +9,11 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Immigration activists protecting undocumented community members must use Signal for encrypted communications, Tor for all internet traffic, separate devices for organizing work, encrypted databases with minimal personal identifying information, and legal frameworks that destroy records after retention periods. Anticipate geographic tracking, social network analysis, communication interception, and device seizures at borders or protests. This guide provides technical implementations including secure communications architecture, database design, access controls, and operational security practices for protecting vulnerable community members from enforcement surveillance.

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Implement Encrypted Webhooks For Secure Application"
 description: "A practical guide for developers on implementing encrypted webhooks. Covers HMAC signatures, AES encryption, TLS best practices, and real-world code"

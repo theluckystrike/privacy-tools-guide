@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Data Protection Officer Role Responsibilities When Your"
 description: "When your business needs a DPO under GDPR, what they do daily, required qualifications, and how to structure reporting to stay compliant."

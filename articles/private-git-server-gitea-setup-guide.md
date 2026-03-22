@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Self-Hosted Private Git Server with Gitea"
 description: "Set up a private Gitea git server on a VPS or home server with HTTPS, SSH key auth, and access controls to keep your code off GitHub and GitLab's servers"

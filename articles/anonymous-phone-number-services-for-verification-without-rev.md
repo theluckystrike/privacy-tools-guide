@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Anonymous Phone Number Services for Verification"
 description: "A technical guide to anonymous phone number services for verification in 2026. Covers SMS forwarding, VoIP alternatives, API integration"

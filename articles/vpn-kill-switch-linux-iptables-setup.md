@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Kill Switch Configuration on Linux with iptables"
 description: "How to configure a VPN kill switch on Linux using iptables and nftables so that all traffic stops if the VPN drops, preventing IP address exposure"

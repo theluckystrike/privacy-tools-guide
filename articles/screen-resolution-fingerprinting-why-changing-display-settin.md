@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display"
 description: "Websites use the JavaScript screen object to collect your screen resolution, color depth, and pixel ratio, combining these with other browser properties to"

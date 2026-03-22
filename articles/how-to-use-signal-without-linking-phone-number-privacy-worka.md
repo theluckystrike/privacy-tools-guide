@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Signal Without Linking Phone Number Privacy"
 description: "A technical guide for developers and power users on how to use Signal without linking your primary phone number. Practical workarounds including VoIP"

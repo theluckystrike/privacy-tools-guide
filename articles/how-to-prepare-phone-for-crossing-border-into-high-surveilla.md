@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Prepare Phone For Crossing Border Into High Surveilla"
 description: "A practical security checklist for developers and power users preparing phones for high-surveillance border crossings. Includes encryption, airplane"

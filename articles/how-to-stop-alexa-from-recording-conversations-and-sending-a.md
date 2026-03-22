@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Stop Alexa From Recording Conversations and Sending Audio"
 description: "A technical guide for developers and power users to prevent Alexa from recording and transmitting audio data to Amazon servers. Includes code examples"

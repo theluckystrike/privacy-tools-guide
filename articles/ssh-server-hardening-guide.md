@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "SSH Server Hardening Guide"
 description: "Step-by-step SSH server hardening for Linux: disable password auth, configure key-only login, change default port, set up fail2ban, and audit active sessions"

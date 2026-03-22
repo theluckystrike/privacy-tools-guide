@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Risks of Smart Speakers Alexa Google Home 2026"
 description: "What data they collect, network traffic analysis, mute hardware vs software, privacy-hardened configs, and privacy-respecting alternatives."

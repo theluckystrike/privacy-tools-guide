@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "OpenVPN Access Server vs Community Edition"
 description: "A comparison of OpenVPN Access Server vs Community Edition. Learn the differences in features, licensing, management, and which option suits your"

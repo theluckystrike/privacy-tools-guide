@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Disable macOS Analytics Sharing That Sends Crash"
 description: "A practical guide for developers and power users to disable macOS analytics, diagnostic data sharing, and crash reports sent to Apple. Includes"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Ledger Data Breach Lessons How Hardware Wallet Companies"
 description: "Analyzing the 2024 Ledger breach and technical lessons for developers on protecting customer identity data in hardware wallet ecosystems"

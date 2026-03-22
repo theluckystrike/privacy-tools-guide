@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Detect Stalkerware on Android Phone 2026"
 description: "Detection methods, ADB commands, battery/data usage analysis, recommended scanning tools, removal steps for finding and removing stalkerware."

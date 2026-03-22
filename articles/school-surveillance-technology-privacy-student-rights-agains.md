@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "School Surveillance Technology Privacy"
 description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"

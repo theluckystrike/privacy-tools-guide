@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"
 description: "A practical guide for developers and power users to remove personal data from Intelius. Includes automation scripts, API verification, and batch"

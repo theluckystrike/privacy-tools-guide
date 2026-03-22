@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"
 description: "A practical technical guide for removing non-consensual intimate images from the internet. Covers content removal requests, image hashing, platform policies"
@@ -8,12 +9,11 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-survivor-of-revenge-porn-removing-images-g/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Use PhotoDNA or file hashing to identify copies of non-consensual intimate images across platforms, file take-down requests with Google using their removal tool, contact individual websites directly through abuse contact information, use the Internet Crimes Complaint Center (IC3) for legal documentation, and consider hiring removal services like AnyKey or Cyber Comply for persistent cases. Document everything with timestamps, create legal records for law enforcement involvement, and monitor ongoing re-uploads using image search alerts. This guide provides systematic approaches combining legal frameworks, platform-specific removal processes, and developer-friendly automation tools for power users.

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Audio Messaging Apps That Encrypt Voice Messages End"
 description: "End-to-end encryption for voice messages protects your audio communications from interception, ensuring that only the sender and recipient can access the"
@@ -288,7 +289,8 @@ cat /var/lib/matrix-synapse/logs/homeserver.log
 Organizations managing encrypted messaging infrastructure can automate setup:
 
 ```yaml
-# Ansible playbook for Element deployment---
+# Ansible playbook for Element deployment
+---
 - name: Deploy secure messaging
  hosts: message_servers
  tasks:

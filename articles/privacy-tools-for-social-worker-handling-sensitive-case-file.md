@@ -13,7 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Secure social worker case files using encrypted DMG containers (macOS) or LUKS encryption (Linux) for case storage, Signal for client communications, and secure agency workflows. Use automatic screen lock, separate work and personal devices, implement access controls per client sensitivity, and maintain audit logs of all data access for HIPAA and state law compliance.

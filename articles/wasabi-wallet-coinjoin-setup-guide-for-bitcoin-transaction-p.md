@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction"
 description: "A practical guide to setting up and using Wasabi Wallet's CoinJoin feature for enhanced Bitcoin transaction privacy in 2026"

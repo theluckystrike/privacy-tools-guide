@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Export Passwords from Any Manager"
 description: "To export passwords from any manager, use its CLI tool for the most control: op vault export for 1Password, bw export --format json for Bitwarden, lpass export"

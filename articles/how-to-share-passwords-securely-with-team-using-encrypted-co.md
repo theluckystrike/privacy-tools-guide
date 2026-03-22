@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Share Passwords Securely With Team Using Encrypted"
 description: "A practical guide for developers and power users on sharing passwords securely within teams using encrypted communication channels, command-line tools"

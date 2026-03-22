@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate"
 description: "Ransomware attacks can happen to anyone—whether you're a developer with sensitive projects or a power user with critical data. The moment your screen freezes"

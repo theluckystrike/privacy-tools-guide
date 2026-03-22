@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What Happens If Password Manager Company"
 description: "If your password manager company shuts down, you lose access to cloud sync and web interfaces, but your locally cached vault remains intact and your passwords"

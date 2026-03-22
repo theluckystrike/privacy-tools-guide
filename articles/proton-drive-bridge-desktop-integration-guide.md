@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Proton Drive Bridge Desktop Integration Guide"
 description: "A practical guide for developers and power users integrating Proton Drive Bridge with desktop applications. Covers WebDAV configuration, CLI"

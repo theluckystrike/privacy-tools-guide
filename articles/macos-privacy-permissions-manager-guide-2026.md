@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "macOS Privacy Permissions Manager Guide 2026"
 description: "Managing application permissions on macOS is essential for maintaining privacy and security. The macOS privacy permissions system controls which apps can"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Encrypt Files Before Cloud"
 description: "A practical guide for developers and power users on encrypting files before uploading to cloud storage. Covers age, gocryptfs, OpenSSL, and automated"

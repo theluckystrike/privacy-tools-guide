@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mobile App Store Privacy Labels How To Read And Compare"
 description: "A technical guide for developers and power users on understanding Apple App Store and Google Play privacy labels. Learn what each data category means"

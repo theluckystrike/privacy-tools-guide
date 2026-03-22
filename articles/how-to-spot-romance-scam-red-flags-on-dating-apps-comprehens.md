@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Spot Romance Scam Red Flags On Dating Apps Comprehens"
 description: "A technical breakdown of romance scam patterns, verification techniques, and automated detection methods for developers and privacy-conscious users"

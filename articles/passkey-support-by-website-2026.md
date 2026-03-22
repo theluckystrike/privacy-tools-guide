@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Passkey Support By Website 2026"
 description: "guide to passkey support across major websites in 2026. Learn which platforms support WebAuthn, FIDO2, and passkey login—plus"
@@ -10,10 +11,9 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 9
+score: 8
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Passkey support has matured significantly by 2026, transforming from an experimental feature into a mainstream authentication method across the web. For developers and power users, understanding which platforms have adopted passkeys—and how they implement the underlying WebAuthn standards—helps in both choosing services and building compliant applications.

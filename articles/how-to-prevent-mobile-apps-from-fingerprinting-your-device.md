@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Prevent Mobile Apps From Fingerprinting Your"
 description: "Learn how mobile app fingerprinting works, what data apps collect to identify your device, and practical steps to prevent tracking and protect your"

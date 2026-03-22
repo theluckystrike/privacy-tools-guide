@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric"
 description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize biometric"

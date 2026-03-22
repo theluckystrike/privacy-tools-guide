@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser vs VPN Comparison: Which Is Better for Privacy?"
 description: "A technical comparison of Tor Browser and VPNs for developers and power users. Understand the underlying mechanisms, use cases, and how to combine both"

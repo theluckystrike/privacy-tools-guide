@@ -12,7 +12,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Apple's Lockdown Mode represents one of the most aggressive privacy features available on iOS devices today. Introduced as a response to sophisticated spyware threats like Pegasus, this security feature dramatically reduces the attack surface of your iPhone or iPad by disabling certain functionalities that attackers commonly exploit. Understanding what Lockdown Mode does and whether you need it can help you make an informed decision about your device security.

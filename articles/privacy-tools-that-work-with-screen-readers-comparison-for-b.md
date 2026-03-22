@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Tools That Work with Screen Readers: Comparison for"
 description: "A practical comparison of privacy tools with full accessibility support for blind users. Covers password managers, browsers, messaging apps, and"

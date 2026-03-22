@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Implement Data Portability Feature For Customers Gdpr Right"
 description: "A technical guide for developers on implementing GDPR data portability features. Learn API design, data export formats, authentication"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Using curl for LinkedIn API"
 description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers"

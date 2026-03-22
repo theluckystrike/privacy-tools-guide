@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Send Encrypted Attachments That Recipients Can Open"
 description: "A practical guide for developers and power users on sending encrypted file attachments that recipients can decrypt and open using only standard tools"

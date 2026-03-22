@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How VPN Reconnection Works After Network Switch: Technical"
 description: "A technical deep-dive into VPN reconnection mechanisms during network transitions, mobile handoffs, and IP changes. Includes code examples for developers"

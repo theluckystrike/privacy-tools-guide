@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Underground Railroad Modern Equivalent Pro"
 description: "Discover modern digital privacy tools that serve as equivalents to the Underground Railroad's route protection methods. Learn practical implementations for"

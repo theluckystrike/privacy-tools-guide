@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Exercise Montana Consumer Data Privacy Act Rights"
 description: "A practical guide for developers and power users on exercising rights under the Montana Consumer Data Privacy Act. Learn how to request data deletion"

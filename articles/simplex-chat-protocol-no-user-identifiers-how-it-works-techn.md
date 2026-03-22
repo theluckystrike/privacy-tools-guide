@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Simplex Chat Protocol No User Identifiers How It Works"
 description: "A technical deep dive into how SimpleX Chat achieves privacy through absence of user identifiers. Learn the queue-based architecture, DH key exchange"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Video Messaging Apps That Do Not Store Recordings On"
 description: "When building privacy-focused applications or selecting communication tools for security-sensitive teams, understanding where video recordings actually live is"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Migrating From Icloud Keychain To Bitwarden Complete"
 description: "A technical guide for developers and power users migrating passwords from iCloud Keychain to Bitwarden. Covers export methods, CLI tools, CSV"
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Bitwarden is the best alternative to iCloud Keychain for developers and power users because it offers cross-platform access, open-source code, CLI automation, and self-hosting options that Apple's solution cannot provide. You can export passwords from iCloud Keychain using macOS Keychain Access or Apple's Password Manager CLI, then import them into Bitwarden via CSV file. This guide walks through the complete technical process with scripts and troubleshooting for common issues.

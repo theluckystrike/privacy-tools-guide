@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Build a Privacy-Preserving Webhook Relay That Strips"
 description: "Learn how to build a webhook relay system that automatically strips personally identifiable information (PII) before forwarding webhooks to your endpoints."

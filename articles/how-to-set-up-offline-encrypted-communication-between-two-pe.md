@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Offline Encrypted Communication Between Two"
 description: "When internet connectivity is unavailable or deliberately avoided, establishing secure communication between two parties requires a different approach. Offline"

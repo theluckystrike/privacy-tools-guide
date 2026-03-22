@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Password Manager For Real Estate Agent Managing Listing"
 description: "Real estate professionals juggling multiple listing services, property management platforms, and vendor portals face a unique password management challenge"

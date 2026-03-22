@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up Encrypted Communication for Mutual Aid"
 description: "A practical technical guide for developers and power users to establish encrypted communication channels for mutual aid networks. Covers Signal"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Audit Checklist for Small Businesses"
 description: "A practical privacy audit checklist for small businesses. Covers data inventory, vendor review, employee access, and basic compliance steps."

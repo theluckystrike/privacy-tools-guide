@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up Secure Communication For Labor Strike: Practical"
 description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption"

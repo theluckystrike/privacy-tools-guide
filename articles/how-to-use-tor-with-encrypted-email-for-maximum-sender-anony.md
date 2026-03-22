@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Use Tor With Encrypted Email for Maximum Sender Anonymity"
 description: "A technical guide for developers and power users combining Tor network routing with PGP encryption for maximum email sender anonymity. Includes setup"

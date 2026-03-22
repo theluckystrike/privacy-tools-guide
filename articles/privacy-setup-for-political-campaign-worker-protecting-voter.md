@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup for Political Campaign Worker"
 description: "A practical guide for political campaign staff on securing voter data, implementing encryption, and hardening devices against threats in the 2026 threat"

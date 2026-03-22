@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Satellite Internet As Backup During Government"
 description: "A technical guide for developers and power users on configuring satellite internet as a reliable backup connection when government-mandated internet"

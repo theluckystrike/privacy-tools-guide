@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"
 description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your"

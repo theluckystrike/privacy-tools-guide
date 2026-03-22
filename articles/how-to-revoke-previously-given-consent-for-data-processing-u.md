@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Revoke Previously Given Consent For Data Processing"
 description: "Learn how to exercise your GDPR right to withdraw consent, including technical implementation for developers and practical steps for users"

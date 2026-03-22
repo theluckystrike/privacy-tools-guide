@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Offline Digital Library For Accessing Informat"
 description: "Building an offline digital library ensures you have access to critical information when the internet fails or becomes restricted. This guide teaches you how"

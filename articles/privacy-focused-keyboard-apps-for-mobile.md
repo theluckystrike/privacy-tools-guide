@@ -5,7 +5,7 @@ description: "Replace Gboard and SwiftKey with keyboard apps that process typing
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-keyboard-apps-for-mobile/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

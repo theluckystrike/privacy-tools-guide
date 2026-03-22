@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Encrypted Group Chat For Activist Organization"
 description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Remove EXIF Data from Photos Automatically"
 description: "Strip EXIF metadata from photos before sharing. Covers ExifTool, mat2, ImageMagick batch scripts, and automatic removal on Linux and macOS."

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "iPhone Significant Locations History What Apple Tracks How"
 description: "A technical guide to understanding iPhone Significant Locations history, what Apple collects, how the data is stored, and step-by-step methods to view"

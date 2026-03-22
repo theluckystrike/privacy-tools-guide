@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Provider Annual Audit Results: Independent Security"
 description: "When selecting a VPN provider, trust is paramount. You entrust these services with your browsing traffic, potentially sensitive communications, and personal"

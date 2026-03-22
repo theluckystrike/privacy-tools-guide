@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "ProtonMail Security Model Explained: A Technical Deep-Dive"
 description: "ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access"

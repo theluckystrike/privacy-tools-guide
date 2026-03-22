@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Insurance Company Data Collection Privacy What Health"
 description: "A technical guide for developers and power users explaining exactly what data insurance companies collect, how they obtain it, and the legal frameworks"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Linux File Permissions Privacy"
 description: "How to audit Linux file permissions to find world-readable sensitive files, SUID binaries, insecure home directories, and misconfigured shared directories"

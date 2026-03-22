@@ -1,5 +1,7 @@
 ---
 
+<<<<<<< HEAD
+
 
 
 
@@ -589,6 +591,8 @@
 
 =======
 >>>>>>> a3ac0d8ac55f191f5e46887ee954ff07553ece65
+=======
+>>>>>>> 79469c40a (fix: final YAML/Liquid cleanup pass)
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
@@ -630,20 +634,22 @@ author: "Privacy Tools Guide"
 
 
 
-
-
-
-
 <<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 77797de089f62d8caae20bf152a72c4a2db138ba
+<<<<<<< HEAD
+
+
+
 
 <<<<<<< HEAD
 =======
->>>>>>> c44578d419cd35cd75fc03bca65e87b034530637
+>>>>>>> 79469c40a (fix: final YAML/Liquid cleanup pass)
 
 
 
@@ -735,8 +741,12 @@ author: "Privacy Tools Guide"
 
 
 
-=======
->>>>>>> a3ac0d8ac55f191f5e46887ee954ff07553ece65
+
+
+
+
+
+
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"

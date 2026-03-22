@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Verify Your Devices Are Not Compromised"
 description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"
 description: "A technical guide to Tor Browser configuration for journalists. Learn advanced security settings, configuration tweaks, and best"

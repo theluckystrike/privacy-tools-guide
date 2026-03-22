@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Protect Yourself from Deepfake Identity Theft"
 description: "Learn practical strategies to protect yourself from deepfake identity theft. This guide covers detection tools, verification methods, and technical"

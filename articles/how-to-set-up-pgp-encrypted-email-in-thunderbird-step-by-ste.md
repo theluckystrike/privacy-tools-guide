@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up Pgp Encrypted Email In Thunderbird Step"
 description: "A practical guide for developers and power users to configure PGP encryption in Thunderbird. Includes key generation, key management, and practical"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Verify PGP Signatures on Software Downloads"
 description: "Step-by-step guide to verifying PGP and GPG signatures before installing software, ensuring downloads are authentic and untampered with real commands"

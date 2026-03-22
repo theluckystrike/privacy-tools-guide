@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How VPN Subnet Conflicts Happen and How to Fix"
 description: "A technical guide explaining VPN subnet conflicts, why they occur, and practical solutions for developers and power users managing multiple VPN"

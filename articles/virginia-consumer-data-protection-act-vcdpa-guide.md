@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Virginia Consumer Data Protection Act Vcdpa Guide"
 description: "A practical technical guide to the Virginia Consumer Data Protection Act covering compliance requirements, data handling patterns, and implementation"

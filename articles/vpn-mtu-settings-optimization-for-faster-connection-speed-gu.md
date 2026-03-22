@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN MTU Settings Optimization for Faster Connection Speed"
 description: "A technical guide to optimizing VPN MTU settings for developers and power users. Learn how to identify MTU issues, test optimal values, and configure"

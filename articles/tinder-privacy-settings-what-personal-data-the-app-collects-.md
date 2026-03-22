@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tinder Privacy Settings What Personal Data The App Collects"
 description: "Tinder Privacy Settings: What Personal Data the App. — privacy guide covering tools, techniques, and best practices to protect your data and digital"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Desktop Security Best Practices"
 description: "How to harden Signal Desktop on Windows, macOS, and Linux with screen lock, proxy settings, notification privacy, linked device audits, and local database"

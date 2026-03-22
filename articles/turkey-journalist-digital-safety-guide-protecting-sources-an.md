@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources"
 description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using"

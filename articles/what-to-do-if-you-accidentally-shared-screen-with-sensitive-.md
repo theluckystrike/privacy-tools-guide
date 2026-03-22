@@ -13,7 +13,21 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
+---
+layout: default
+title: "What To Do If You Accidentally Shared Screen With Sensitive"
+description: "Learn immediate steps to take when you accidentally expose sensitive information during screen sharing. Covers containment, platform-specific actions"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: "Privacy Tools Guide"
+permalink: /what-to-do-if-you-accidentally-shared-screen-with-sensitive-/
+categories: [guides, security]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]
+---
 {% raw %}
 
 Stop screen sharing immediately using platform shortcuts (Cmd+Shift+E in Zoom, Ctrl+Shift+E in Teams), notify participants that sensitive data was exposed, and rotate any credentials visible (API keys, passwords, tokens). If recording was active, check whether the sensitive content was captured and edit the recording to remove compromised segments. Most platforms allow 15-30 minutes before recordings are finalized; act quickly. For code repositories, API keys, or database credentials exposed, treat as immediate security incidents: revoke credentials, reset passwords, audit access logs, and deploy updated keys to production systems.

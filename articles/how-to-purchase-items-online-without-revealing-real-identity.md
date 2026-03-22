@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Purchase Items Online Without Revealing Real Identity"
 description: "A technical guide for developers and power users on anonymous online purchasing. Covers throwaway identities, privacy-focused payment methods, shipping"

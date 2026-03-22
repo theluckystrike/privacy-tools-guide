@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Protonmail Vs Gmail Privacy Comparison"
 description: "When evaluating email privacy for development workflows, the ProtonMail vs Gmail decision hinges on technical architecture rather than marketing claims. Both"

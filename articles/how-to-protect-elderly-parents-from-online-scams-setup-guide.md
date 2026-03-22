@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Protect Elderly Parents From Online Scams Setup Guide"
 description: "A practical technical guide for developers and power users to help protect elderly parents from online scams. Includes DNS filtering, browser"

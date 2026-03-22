@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Protonmail Bridge Setup For Desktop Email Clients Privacy"
 description: "A technical guide for developers and power users on setting up ProtonMail Bridge with desktop email clients. Includes configuration examples, security"

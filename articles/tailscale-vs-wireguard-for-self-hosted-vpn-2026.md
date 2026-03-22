@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tailscale vs WireGuard for Self-Hosted VPN 2026"
 description: "Compare Tailscale and raw WireGuard for self-hosted VPN. Setup configs, performance benchmarks, use cases, and when each is the right choice in 2026"

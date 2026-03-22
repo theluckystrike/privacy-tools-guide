@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What To Do If Your Personal Data Appears On People"
 description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal"

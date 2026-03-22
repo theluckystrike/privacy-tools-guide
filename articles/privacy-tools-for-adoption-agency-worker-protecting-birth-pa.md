@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Tools For Adoption Agency Worker Protecting Birth"
 description: "A technical guide for adoption agency workers on implementing privacy tools to protect sensitive birth parent data. Covers encryption, secure storage"
@@ -10,10 +11,9 @@ categories: [guides]
 reviewed: true
 voice-checked: true
 intent-checked: true
-score: 9
+score: 8
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Adoption agency workers handle some of the most sensitive personal data in any industry. Birth parent information—including medical histories, identifying details, financial circumstances, and personal letters—requires protection that goes beyond basic compliance. If you're a developer or IT professional supporting an adoption agency, or an agency worker looking to implement better data protection practices, this guide covers practical tools and implementation strategies for safeguarding birth parent data.

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Abuse Hotline Worker Protecting Caller"
 description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata"
@@ -8,12 +9,11 @@ author: theluckystrike
 permalink: /privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 Protect abuse hotline caller data by using end-to-end encrypted call systems (Jitsi Meet self-hosted), segmented phone lines with no caller ID linkage, and encrypted storage systems without personal identifiers in searchable fields. Train workers on operational security, use Signal for internal communications, and implement a kill-switch policy for immediate data deletion if an abuser gains access. Document conversations anonymously and maintain strict access control over files containing phone numbers or identifying information.

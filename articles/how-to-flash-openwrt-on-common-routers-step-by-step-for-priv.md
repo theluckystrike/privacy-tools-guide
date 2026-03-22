@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Flash OpenWRT on Common Routers for Privacy Beginners"
 description: "A guide for developers and power users on flashing OpenWRT firmware on popular router models. Includes step-by-step instructions, troubleshooting tips, and"

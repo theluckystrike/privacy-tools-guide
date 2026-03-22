@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Detect If Your Email Address Has Been Sold"
 description: "Your email address is one of the most valuable pieces of personal data in the advertising ecosystem. Data brokers aggregate, analyze, and sell email addresses"

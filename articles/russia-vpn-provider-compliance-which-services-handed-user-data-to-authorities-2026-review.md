@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Russia VPN Provider Compliance Which Services Handed"
 description: "Avoid commercial VPN providers operating in Russia—many have handed user data to Roskomnadzor. Instead, use self-hosted Shadowsocks or NaiveProxy servers on"

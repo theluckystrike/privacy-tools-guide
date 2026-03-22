@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Use Briar Messenger Offline: A Developer's Guide"
 description: "A technical guide to using Briar messenger for offline-first, decentralized communication via Bluetooth and Wi-Fi Direct"

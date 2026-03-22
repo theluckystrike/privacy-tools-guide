@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"
 description: "Build a self-hosted privacy server: hardware selection, OS hardening, Docker containers for VPN, DNS, and email on local infrastructure."

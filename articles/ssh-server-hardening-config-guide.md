@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "SSH Server Hardening Config Guide"
 description: "Step-by-step guide to hardening sshd_config on Linux servers. Disable root login, enforce key auth, restrict ciphers, and set up fail2ban"

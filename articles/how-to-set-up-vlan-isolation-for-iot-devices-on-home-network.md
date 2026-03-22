@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up VLAN Isolation for IoT Devices on Home Network 2026"
 description: "Your smart thermostat, doorbell camera, and wireless bulbs all connect to the same network as your laptop and phone. When any of these IoT devices gets"

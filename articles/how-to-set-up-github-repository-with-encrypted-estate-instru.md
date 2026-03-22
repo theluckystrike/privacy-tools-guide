@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Set Up GitHub Repository With Encrypted Estate"
 description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This"

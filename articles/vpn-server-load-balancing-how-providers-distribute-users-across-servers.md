@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Server Load Balancing How Providers Distribute Users"
 description: "A technical guide explaining how VPN providers distribute users across servers. Learn about load balancing algorithms, geographic routing, and server"

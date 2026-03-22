@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Configure Ublock Origin For Maximum Anti Tracking Pro"
 description: "uBlock Origin remains the gold standard for browser-based ad and tracker blocking. Out of the box, it provides solid protection, but power users can unlock"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Threema vs Signal Privacy Comparison 2026"
 description: "Choose Signal if you want the most widely adopted, open-source E2EE protocol with minimal metadata collection and no cost. Choose Threema if you need"

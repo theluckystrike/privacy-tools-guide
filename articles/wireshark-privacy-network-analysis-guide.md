@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Wireshark Basics for Privacy Network Analysis"
 description: "How to use Wireshark to inspect network traffic from your own devices, identify unexpected connections, detect trackers, and verify encryption is working"

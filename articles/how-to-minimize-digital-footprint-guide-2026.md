@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Minimize Digital Footprint Guide 2026"
 description: "Your digital footprint encompasses every data point you leave behind while using the internet—search queries, browsing history, social media activity, device"

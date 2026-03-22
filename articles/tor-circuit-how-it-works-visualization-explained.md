@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"
 description: "A technical deep dive into Tor circuit mechanics for developers and power users. Understand the onion routing protocol, circuit construction, and how"

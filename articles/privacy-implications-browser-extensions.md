@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Implications of Browser Extensions"
 description: "What browser extensions can technically access, how extension stores get compromised, what malicious extensions actually collect, and how to assess the"

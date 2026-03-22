@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Implement Right To Be Forgotten In Your Application"
 description: "A practical developer guide for implementing the right to be forgotten (data deletion) in your application's database. Includes code examples for SQL, MongoDB"

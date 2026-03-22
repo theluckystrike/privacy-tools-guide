@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Proton Mail Account Inheritance How Encrypted Email Provider"
 description: "Proton Mail accounts cannot be inherited because encryption keys are destroyed when you die—even Proton itself cannot access your emails. Plan for this by"

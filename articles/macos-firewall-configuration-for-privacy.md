@@ -1,4 +1,7 @@
 ---
+---
+
+
 layout: default
 title: "macOS Firewall Configuration"
 description: "Configure macOS firewall for privacy using pf, Application Firewall, and command-line tools. Block trackers, control inbound connections, and secure your"
@@ -13,7 +16,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 ## Introduction

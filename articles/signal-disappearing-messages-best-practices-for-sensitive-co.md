@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Disappearing Messages Best Practices: Sensitive"
 description: "Configure Signal disappearing messages for sensitive conversations. Timer settings, screenshot risks, backup implications, and group chat strategies."

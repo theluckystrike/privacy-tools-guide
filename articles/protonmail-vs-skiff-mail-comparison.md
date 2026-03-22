@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "ProtonMail vs Skiff Mail Comparison: A Developer Guide"
 description: "Choose ProtonMail if you need PGP/OpenPGP compatibility, IMAP/SMTP access via Bridge, and a proven security track record with published audits under Swiss"

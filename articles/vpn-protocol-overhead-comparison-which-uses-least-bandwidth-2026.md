@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Vpn Protocol Overhead Comparison Which Uses Least Bandwidth"
 description: "A technical comparison of VPN protocol bandwidth overhead. Learn which protocols like WireGuard, OpenVPN, and IKEv2 use the least bandwidth and why"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"
 description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples"

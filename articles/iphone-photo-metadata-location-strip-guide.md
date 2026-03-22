@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "iPhone Photo Metadata Location Strip Guide for Developers"
 description: "Every photo your iPhone captures contains embedded metadata—Exchangeable Image File Format (EXIF) data—that reveals more than just the image itself. This"

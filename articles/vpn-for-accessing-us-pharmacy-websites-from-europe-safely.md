@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN for Accessing US Pharmacy Websites from Europe Safely"
 description: "To access US pharmacy websites from Europe, connect via VPN with an US exit node using WireGuard for speed or OpenVPN for compatibility, enable DNS leak"

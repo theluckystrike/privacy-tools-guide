@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What VPN Logs Actually Mean No Log Policy Explained"
 description: "A technical deep dive into VPN logging practices, explaining what data VPNs actually collect, the different types of logs, and how to evaluate no-log"

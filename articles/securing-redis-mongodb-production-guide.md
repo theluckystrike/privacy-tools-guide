@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Securing Redis and MongoDB for Production"
 description: "Harden Redis and MongoDB for production with authentication, TLS encryption, network binding, access control lists, and audit logging to prevent data exposure"

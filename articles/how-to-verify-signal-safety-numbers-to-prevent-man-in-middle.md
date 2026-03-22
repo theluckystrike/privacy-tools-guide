@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Verify Signal Safety Numbers To Prevent Man"
 description: "A technical guide for developers and power users on verifying Signal safety numbers. Learn to protect your encrypted communications from MITM attacks"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Steganography Tools To Hide Encrypted Messages"
 description: "A practical guide for developers and power users on combining encryption with steganography to hide messages in images. Includes Python code examples"

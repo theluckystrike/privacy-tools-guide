@@ -5,7 +5,7 @@ description: "Replace Fitbit and Garmin Connect with open-source fitness trackin
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-fitness-tracker-alternatives/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

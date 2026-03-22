@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WebAuthn Implementation Guide for Developers"
 description: "A practical developer guide to implementing WebAuthn authentication. Code examples for registration, authentication, and best practices"

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Safenote Or Privnote For One Time Secure Credenti"
 description: "Learn how to securely share sensitive credentials one-time using SafeNote and PrivNote. Practical examples for developers and power users"

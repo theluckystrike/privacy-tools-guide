@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Sticky Password Review 2026: A Developer's Perspective"
 description: "An in-depth analysis of Sticky Password for developers and power users. Covers CLI access, secure sharing, API integration, and technical"

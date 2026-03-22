@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "macOS Privacy Settings For Remote Workers 2026"
 description: "Working remotely introduces unique privacy challenges that differ significantly from office environments. Your MacBook becomes the gateway to corporate"

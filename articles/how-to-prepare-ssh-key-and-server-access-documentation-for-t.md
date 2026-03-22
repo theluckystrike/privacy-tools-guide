@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Prepare Ssh Key And Server Access Documentation"
 description: "A practical guide for developers and power users on documenting SSH keys, server credentials, and access details for technical estate inheritance"

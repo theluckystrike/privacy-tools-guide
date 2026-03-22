@@ -1,4 +1,7 @@
 ---
+---
+
+
 title: "Privacy Risks of Browser Autofill and How to Mitigate 2026"
 description: "How autofill leaks data, invisible form field attacks, browser-specific settings, password manager alternatives, and CSP headers to prevent autofill abuse."
 author: Privacy Tools Guide
@@ -10,7 +13,6 @@ voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
-
 {% raw %}
 
 ## Prerequisites

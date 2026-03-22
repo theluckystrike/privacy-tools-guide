@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up Catch All Email Domain For Unlimited Private"
 description: "A practical guide to configuring catch-all email domains for creating unlimited private email aliases. Perfect for developers and power users who want"

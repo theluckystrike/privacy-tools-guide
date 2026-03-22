@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Tools For Union Organizer Protecting Member Communic"
 description: "Union organizers face unique challenges when protecting member communications. Unlike typical enterprise environments, union communications often involve"

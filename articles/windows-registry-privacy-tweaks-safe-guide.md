@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"
 description: "A practical guide to Windows registry privacy tweaks for developers and power users. Learn safe registry modifications to enhance your privacy without"

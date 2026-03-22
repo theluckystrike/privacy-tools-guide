@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Nextcloud Setup Guide Raspberry Pi 2026"
 description: "Running your own cloud storage service gives you complete control over your data. Nextcloud on a Raspberry Pi provides a cost-effective way to host file sync"
@@ -8,12 +9,11 @@ author: theluckystrike
 permalink: /nextcloud-setup-guide-raspberry-pi-2026/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Running your own cloud storage service gives you complete control over your data. Nextcloud on a Raspberry Pi provides a cost-effective way to host file sync, calendar, contacts, and collaborative features without relying on third-party services. This guide covers the complete setup process using Docker, including reverse proxy configuration, performance optimizations, and security hardening.

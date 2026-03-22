@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Telegram Vs Signal Which Is Actually Safer"
 description: "A developer-focused comparison of Telegram and Signal's security architectures, encryption implementations, and privacy features with code examples"

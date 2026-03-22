@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Store Otp Codes In Password Manager"
 description: "Managing multiple authenticator apps across devices creates friction. Developers and power users often prefer consolidating OTP (One-Time Password) codes"

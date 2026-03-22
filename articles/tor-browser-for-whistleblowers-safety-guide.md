@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser for Whistleblowers Safety Guide"
 description: "A technical guide to Tor Browser for whistleblowers. Learn essential configuration, operational security practices, and advanced techniques for source"

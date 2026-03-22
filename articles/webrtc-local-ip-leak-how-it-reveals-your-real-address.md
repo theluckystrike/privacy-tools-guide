@@ -1,7 +1,8 @@
 ---
+---
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real"
-description: "WebRTC leaks your local IP even behind a VPN. Test for the leak, disable WebRTC in Chrome and Firefox, and verify your fix works."
+description: "Discover how WebRTC local IP leaks can expose your real network address even when using a VPN. Learn practical detection methods and mitigation"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 WebRTC (Web Real-Time Communication) is a powerful browser API that enables direct peer-to-peer communication between browsers for audio, video, and data sharing. While WebRTC brings valuable capabilities like video conferencing and file transfer, it harbors a privacy vulnerability that many users remain unaware of: the local IP leak.

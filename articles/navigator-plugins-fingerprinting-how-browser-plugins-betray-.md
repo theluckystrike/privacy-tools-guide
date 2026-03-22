@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"
 description: "Modern web development demands awareness of browser fingerprinting techniques, and the navigator.plugins API represents one of the most effective methods"

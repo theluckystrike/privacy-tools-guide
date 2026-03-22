@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"
 description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent"

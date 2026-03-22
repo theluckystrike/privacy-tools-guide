@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Encrypted Mailing List For Private Group"
 description: "Running a private group communication channel requires more than just a shared email address. Whether you're coordinating with developers on a sensitive"

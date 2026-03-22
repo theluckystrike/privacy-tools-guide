@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Password Sharing for Teams"
 description: "How to share credentials securely across teams. Covers Bitwarden Organizations, Passbolt, 1Password Teams, and one-time secret links for guests."

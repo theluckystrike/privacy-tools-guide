@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Warrant Canary: What It Means and Why It Matters"
 description: "A technical guide to understanding VPN warrant canaries, how they work, and how to interpret them for your security posture"

@@ -304,7 +304,6 @@ curl https://ipinfo.io/ip  # Should show server's IP
 sudo wg-quick down /etc/wireguard/wg-client.conf
 ```
 ---
-
 ### For macOS Client
 
 1. Install WireGuard from App Store or `brew install wireguard-go`

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Smart Refrigerator Data Collection What Samsung Family Hub"
 description: "A technical analysis of Samsung Family Hub refrigerator network traffic, data endpoints, and privacy implications for developers and power users"

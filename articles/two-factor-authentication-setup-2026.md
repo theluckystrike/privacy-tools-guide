@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Two-Factor Authentication Setup Guide 2026"
 description: "Set up 2FA properly in 2026. Covers TOTP apps, hardware keys, passkeys, and backup codes. Includes setup for Google, GitHub, and SSH."

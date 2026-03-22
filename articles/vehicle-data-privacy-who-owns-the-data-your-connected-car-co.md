@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Vehicle Data Privacy Who Owns The Data Your Connected Car"
 description: "Modern vehicles generate massive amounts of data. Your connected car records where you drive, how fast you accelerate, when you brake hard, and even whether"

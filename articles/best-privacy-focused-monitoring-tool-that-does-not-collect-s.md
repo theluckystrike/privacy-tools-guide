@@ -1,4 +1,5 @@
 ---
+---
 
 layout: default
 title: "Best Privacy-Focused Monitoring Tool That Does Not Collect"

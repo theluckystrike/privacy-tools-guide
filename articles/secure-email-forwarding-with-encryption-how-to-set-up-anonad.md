@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Secure Email Forwarding With Encryption How To Set Up"
 description: "A practical guide to setting up secure email forwarding with encryption using Anonaddy and SimpleLogin. Learn how to protect your inbox with alias"

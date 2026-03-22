@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Safely Exchange Social Media Handles With Dating"
 description: "A technical guide for developers and power users on exchanging social media handles with dating matches while protecting privacy. Covers"

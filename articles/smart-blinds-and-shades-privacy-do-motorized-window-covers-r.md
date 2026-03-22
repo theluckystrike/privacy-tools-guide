@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Smart Blinds And Shades Privacy Do Motorized Window Covers"
 description: "An in-depth technical analysis of motorized smart blinds privacy concerns, occupancy detection capabilities, and how to maintain control over your home"

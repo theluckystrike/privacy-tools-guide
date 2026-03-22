@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Zero Knowledge Proof Messaging How Future Protocols Will Pro"
 description: "Learn how zero knowledge proof messaging works and how future protocols will protect conversation metadata using cryptographic techniques"

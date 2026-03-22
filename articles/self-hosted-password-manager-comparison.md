@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Self-Hosted Password Manager Comparison"
 description: "Compare Vaultwarden, KeePass, Passbolt, and Padloc for self-hosting. Covers setup complexity, sync, team features, and security model."

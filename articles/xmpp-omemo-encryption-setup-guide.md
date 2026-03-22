@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Xmpp Omemo Encryption Setup Guide"
 description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end"

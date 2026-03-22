@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"
 description: "Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Password, or KeePassXC) as your primary copy, and keep a second copy written on"

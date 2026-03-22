@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Matrix Spaces vs Discord Servers: A Technical Comparison"
 description: "A technical comparison of Matrix Spaces and Discord servers for developers and power users. Explore federation, encryption, API"

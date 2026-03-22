@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Implement Customer Data Encryption At Rest"
 description: "A developer guide for implementing encryption at rest and in transit. Learn practical techniques with code examples for securing customer"

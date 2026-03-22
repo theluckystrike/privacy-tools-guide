@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Use a Password Manager with Virtual Machines"
 description: "Learn how to set up separate password vaults for each virtual machine to enhance security isolation. Practical configuration examples for Bitwarden, 1Password"

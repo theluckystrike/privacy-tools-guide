@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Delete All Traces of Your Online Presence Completely"
 description: "Removing yourself from the internet requires a systematic approach. Most people believe complete deletion is impossible, but with the right tools and"

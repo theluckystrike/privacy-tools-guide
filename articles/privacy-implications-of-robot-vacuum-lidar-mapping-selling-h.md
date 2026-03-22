@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Implications Of Robot Vacuum Lidar Mapping Selling"
 description: "Explore how robot vacuums with LIDAR mapping collect, store, and potentially sell your home layout data. Technical analysis for developers and power users"

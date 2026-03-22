@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mimblewimble Protocol Privacy Features How Grin And Beam Pro"
 description: "A technical deep dive into the Mimblewimble protocol's privacy mechanisms, covering Confidential Transactions, Pederson commitments, cut-through, and"

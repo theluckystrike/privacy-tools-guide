@@ -13,7 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Mail-in-a-Box turns a fresh Ubuntu server into a fully functional email host in under 15 minutes. If you have been looking for a way to escape Big Tech email surveillance while maintaining full control over your communication infrastructure, this guide walks you through the complete setup process.

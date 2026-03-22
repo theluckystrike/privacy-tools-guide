@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Wire vs Signal for Business Use: A Technical Comparison"
 description: "A developer-focused comparison of Wire and Signal for business communications, covering encryption, API access, self-hosting, and integration capabilities"

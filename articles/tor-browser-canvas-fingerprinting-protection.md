@@ -1,7 +1,8 @@
 ---
+---
 layout: default
 title: "Tor Browser Canvas Fingerprinting Protection"
-description: "How Tor Browser blocks canvas fingerprinting: uniform rendering, API restrictions, and letterboxing. Test your protection and fix common leaks."
+description: "A guide to understanding how Tor Browser protects against canvas fingerprinting. Learn about Tor's built-in protections, configuration settings, and best"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike
@@ -13,7 +14,6 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
-
 {% raw %}
 
 Canvas fingerprinting is one of the most sophisticated tracking techniques used by websites to identify users without cookies. Tor Browser includes protections against this threat, but understanding how these protections work helps you configure your setup for maximum privacy.

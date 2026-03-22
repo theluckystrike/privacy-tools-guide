@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Make Facebook Profile Private 2026"
 description: "If you're a developer or power user looking to lock down your Facebook presence, the platform's privacy controls have evolved significantly. While Facebook"

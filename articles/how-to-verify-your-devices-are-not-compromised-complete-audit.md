@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Verify Your Devices Are Not Compromised: A Complete"
 description: "A practical guide for developers and power users to audit device security. Learn to identify signs of compromise through process analysis, network monitoring"

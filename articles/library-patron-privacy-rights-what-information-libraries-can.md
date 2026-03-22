@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Library Patron Privacy Rights What Information Libraries"
 description: "A practical guide covering library patron privacy rights, what information libraries can share with law enforcement, and how to protect your reading"

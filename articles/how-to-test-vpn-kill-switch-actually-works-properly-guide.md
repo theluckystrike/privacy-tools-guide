@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Test Vpn Kill Switch Actually Works Properly Guide"
 description: "A VPN kill switch is a critical security feature that prevents your real IP address from leaking when the VPN connection drops unexpectedly. However, many"

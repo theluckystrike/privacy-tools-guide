@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Safely Share Location With Date Without Giving"
 description: "Learn technical methods to share your location temporarily with dates or new contacts without revealing your permanent address. Includes code examples"

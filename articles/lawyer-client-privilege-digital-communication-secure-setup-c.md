@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Lawyer Client Privilege Digital Communication Secure Setup"
 description: "A practical guide for developers and power users setting up secure digital communication channels that maintain lawyer-client privilege. Covers"

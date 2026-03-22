@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Verify That Your Encrypted Messages Are Not Being"
 description: "Learn practical techniques to verify your encrypted messages are not being intercepted. A technical guide for developers and power users"
