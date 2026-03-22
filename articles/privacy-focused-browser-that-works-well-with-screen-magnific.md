@@ -7,7 +7,7 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-browser-that-works-well-with-screen-magnific/
 categories: [guides, security]
-tags: [privacy-tools-guide, browser, accessibility, screen-reader, magnification]
+tags: [privacy-tools-guide, browser, accessibility, screen-reader, magnification, privacy]
 reviewed: true
 score: 8
 ---
