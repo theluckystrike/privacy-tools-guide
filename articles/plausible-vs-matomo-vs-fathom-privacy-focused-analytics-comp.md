@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/
 description: "Compare plausible vs matomo vs fathom privacy focused analytics comp with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Plausible Vs Matomo Vs Fathom Privacy Focused Analytics"
 description: "A practical comparison of Plausible, Matomo, and Fathom analytics platforms for businesses prioritizing privacy. Learn deployment options, data"

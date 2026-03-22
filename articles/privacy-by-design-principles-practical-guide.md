@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-by-design-principles-practical-guide/
 description: "Follow this guide to privacy by design principles practical guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"
 description: "Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed"

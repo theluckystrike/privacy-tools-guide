@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /people-search-sites-opt-out-complete-guide-2026/
 description: "Follow this guide to people search sites opt out complete guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "People Search Sites Opt Out Complete Guide 2026"
 description: "A practical guide for developers and power users on opting out of people search sites. Includes automated removal scripts, API approaches, and direct"

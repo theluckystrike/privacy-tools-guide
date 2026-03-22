@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
 description: "Learn post quantum encryption in messaging apps preparing for quan with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, encryption]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing"
 description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies"

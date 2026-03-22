@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
 description: "Compare pop os vs fedora vs debian for privacy focused linux desktop with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux"
 description: "Choose between Pop!OS, Fedora, and Debian for privacy-focused work by comparing their telemetry policies (Debian: none, Fedora: optional Silverblue, Pop!OS"

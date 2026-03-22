@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-analytics-alternatives-google/
 description: "Learn privacy analytics alternatives google with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Privacy-Focused Alternatives to Google Analytics"
 description: "Compare Plausible, Umami, Matomo, and Fathom as Google Analytics replacements. Covers self-hosted setup, GDPR compliance, and feature gaps."

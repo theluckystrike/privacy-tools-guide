@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /passwordless-authentication-pros-and-cons/
 description: "Learn passwordless authentication pros and cons with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"
 description: "A technical analysis of passwordless authentication methods for developers and power users. Explore FIDO2, passkeys, biometrics, and implementation"
