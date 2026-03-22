@@ -1,5 +1,7 @@
 ---
 permalink: /hsts-supercookie-tracking-how-https-settings-create-persiste/
+description: "Learn hsts supercookie tracking how https settings create persiste with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Hsts Supercookie Tracking How Https Settings Create Persiste"

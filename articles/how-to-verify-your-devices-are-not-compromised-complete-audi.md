@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-verify-your-devices-are-not-compromised-complete-audi/
+description: "Follow this guide to how to verify your devices are not compromised complete audi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Verify Your Devices Are Not Compromised"

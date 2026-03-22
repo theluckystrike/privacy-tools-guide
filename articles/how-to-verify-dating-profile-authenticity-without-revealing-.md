@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-verify-dating-profile-authenticity-without-revealing-/
+description: "Follow this guide to how to verify dating profile authenticity without revealing  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Verify Dating Profile Authenticity Without Revealing"

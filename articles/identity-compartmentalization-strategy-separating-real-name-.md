@@ -1,5 +1,7 @@
 ---
 permalink: /identity-compartmentalization-strategy-separating-real-name-/
+description: "Learn identity compartmentalization strategy separating real name  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Identity Compartmentalization Strategy Separating Real Name"

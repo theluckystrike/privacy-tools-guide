@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-verify-that-your-encrypted-messages-are-not-being-int/
+description: "Follow this guide to how to verify that your encrypted messages are not being int with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Verify That Your Encrypted Messages Are Not Being"

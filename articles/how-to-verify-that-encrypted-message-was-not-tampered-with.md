@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-verify-that-encrypted-message-was-not-tampered-with/
+description: "Follow this guide to how to verify that encrypted message was not tampered with with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered"

@@ -1,5 +1,7 @@
 ---
 permalink: /i2p-anonymous-network-setup-guide/
+description: "Follow this guide to i2p anonymous network setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Use the I2P Anonymous Network"
