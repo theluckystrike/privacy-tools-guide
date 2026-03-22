@@ -19,6 +19,8 @@ tags: [privacy-tools-guide]
 
 Most people pick a cloud storage provider based on price and storage size, then forget about it. The provider can read your files (unless zero-knowledge encrypted), scan them for content, share access logs with advertisers, and hand over data to law enforcement. An audit makes this concrete — what does your provider actually know?
 
+This guide covers a systematic six-step audit process: reviewing privacy policies for specific red flags, requesting and analyzing your data export, auditing OAuth grants, verifying encryption claims, finding stale shared links, and reading transparency reports. For each problem found, concrete remediation options are listed.
+
 ---
 
 ## What Cloud Providers Can Access
@@ -31,6 +33,8 @@ Most people pick a cloud storage provider based on price and storage size, then 
 | Self-hosted (Nextcloud) | Whatever your server admin has access to |
 
 Even zero-knowledge providers can see: file names (unless encrypted), timestamps, file sizes, IP address, and account data.
+
+The difference between a standard provider and a zero-knowledge provider is not just a matter of trust — it is a technical architecture difference. Standard providers encrypt your data at rest using keys they control; they can decrypt any file at will. Zero-knowledge providers use client-side encryption before upload; the provider stores ciphertext only and provably cannot read the content. However, most providers claim "encryption" without specifying which model — this audit process makes that distinction concrete.
 
 ---
 
@@ -60,6 +64,19 @@ Key questions:
    - At rest? (standard, they hold keys)
    - Client-side / zero-knowledge?
 ```
+
+Specific policy language to flag as concerning:
+
+- "We may analyze your content to provide personalized recommendations" — means content scanning
+- "We share aggregated data with third parties" — advertising data sharing, even if supposedly non-identifiable
+- "We may retain data for up to 180 days after deletion" — your deleted files are not actually deleted immediately
+- "We respond to valid legal process" — no requirement for a warrant; a subpoena suffices
+- "We may not be able to notify you of legal requests" — gag orders are accepted without a fight
+
+Compare this to privacy-forward policy language:
+- "We require a warrant for content disclosure" (Proton)
+- "We publish a transparency report and canary" (ProtonDrive, Tresorit)
+- "We cannot access your encrypted files" with a technical explanation of why
 
 ---
 
@@ -111,6 +128,13 @@ def analyze_google_export(export_dir):
 analyze_google_export("/path/to/takeout")
 ```
 
+What to look for in the export beyond file count:
+
+- **Access log entries**: Dropbox exports include an `events.csv` with every login, including IP address and device. Compare these against your known devices — unknown IPs indicate unauthorized access or a session you forgot to revoke.
+- **Sharing history**: Files that were shared and then "unshared" may still be accessible to recipients who downloaded or cached them.
+- **App access events**: The export often lists which third-party apps accessed your storage and when, which is more detailed than the connected apps dashboard.
+- **Deleted file metadata**: Some providers include metadata for recently deleted files in the export — useful for confirming your deleted files are actually queued for deletion.
+
 ---
 
 ## Step 3: Audit Connected Apps and OAuth Grants
@@ -128,6 +152,14 @@ analyze_google_export("/path/to/takeout")
 # myapps.microsoft.com
 ```
 
+OAuth grants are a common, overlooked exposure point. An app granted access to your cloud storage retains that access indefinitely unless you revoke it — even if you deleted the app, stopped using the service, or the developer sold it to a new owner. Review the scope of each grant:
+
+- `files.read` — app can read all your files
+- `files.readwrite` — app can modify or delete your files
+- `files.metadata.read` — app can see file names, sizes, and sharing status
+
+For Dropbox, the "last used" timestamp in the Connected Apps panel is valuable. An app last used three years ago still has full access to your current files. Revoke anything not used in the last 90 days unless you have a specific reason to keep it active.
+
 ---
 
 ## Step 4: Check Encryption Status
@@ -142,6 +174,10 @@ openssl s_client -connect api.dropbox.com:443 -brief 2>/dev/null | head -5
 mitmproxy --mode transparent
 # If files are readable as plaintext → NOT zero-knowledge
 ```
+
+The TLS version check tells you whether data is encrypted in transit. TLSv1.3 is current; TLSv1.2 is acceptable; TLSv1.0 or TLSv1.1 is a red flag that the provider is not maintaining their infrastructure. Run this check against the API endpoint, not just the main web domain — some providers serve the web UI on TLS1.3 but use older configurations for their API backends.
+
+The mitmproxy check is the definitive test for zero-knowledge claims. Configure your browser or desktop client to use an HTTP proxy (127.0.0.1:8080), install the mitmproxy CA certificate, then upload a file with known content. Inspect the traffic — if you can see the file content in the mitmproxy stream, the encryption is happening server-side, not client-side. True zero-knowledge clients encrypt before the data reaches the network layer.
 
 ---
 
@@ -160,6 +196,10 @@ for link in links.links:
     print(f"  {link.path_lower}")
     print(f"  URL: {link.url}")
 ```
+
+Beyond counting them, check whether your provider allows expiring shared links. Dropbox Business and Google Drive support expiration dates on shared links. If you are on a personal plan that does not support expiring links, the only option is to revoke them manually.
+
+For files you shared publicly (no password, no expiry), check whether search engines have indexed the URL. A file shared via a predictable URL pattern may appear in search results. Search for `site:dropbox.com/s/ "your-username"` to find indexed links.
 
 ---
 
@@ -183,6 +223,10 @@ What to look at:
 - Whether they notify users when legally permitted
 - NSL count
 
+Transparency reports tell you how likely the provider is to hand over your data if requested. Google received tens of thousands of government requests per year and complied with the majority. Proton received a fraction of that number and publishes a canary statement that would disappear if they received a National Security Letter requiring silence.
+
+Data residency matters if you are under specific regulatory obligations (GDPR, HIPAA, CCPA). Use the `whois` output to determine what jurisdiction governs the IP blocks hosting your data, and whether that matches your provider's stated data residency policy.
+
 ---
 
 ## Remediation If You Find Problems
@@ -204,6 +248,10 @@ rclone config
 # Password: set strong password
 rclone copy /local/files encrypteddropbox:backup/
 ```
+
+Cryptomator is the easiest remediation if you want to keep your current provider. It creates an encrypted vault folder on your disk that syncs to the cloud — files are encrypted before the sync client sees them. The provider stores ciphertext. Cryptomator is open source and audited. Install it, create a vault in your cloud sync folder, and move sensitive files into it.
+
+Rclone's `crypt` remote wraps any other Rclone remote with client-side encryption. This is suitable for backup workflows where you are not syncing files across devices but pushing from a single machine. The configuration creates an encrypted remote that looks like a standard Rclone destination — `rclone sync /local/path encryptedremote:` works identically to syncing to an unencrypted remote.
 
 ---
 
