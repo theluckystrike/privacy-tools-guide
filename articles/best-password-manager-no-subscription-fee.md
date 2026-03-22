@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Bitwarden Free is the best password manager with no subscription fee for most developers -- it offers unlimited passwords, cloud sync across all devices, and a CLI for automation scripts, all at zero cost. KeePassXC is the best choice if you want full local control with no cloud dependency. Proton Pass rounds out the top picks with a privacy-focused free tier that includes unlimited passwords and built-in email aliasing. Here is how each option compares on security, features, and developer workflow.
 
+## Key Takeaways
+
+- **Proton Pass rounds out**: the top picks with a privacy-focused free tier that includes unlimited passwords and built-in email aliasing.
+- **A good free solution**: should handle these use cases without artificially limiting storage or features.
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **KeePass databases use KDBX format**: an open-source specification allowing community-developed tools to read and write databases.
+- **The free tier includes**: sync across all devices and uses end-to-end encryption.
+- **For pure password management**: specialized managers offer better user experience.
+
 ## Why Free Password Managers Matter
 
 For developers, password managers serve more than just storing website credentials. You likely need to manage SSH keys, API tokens, database passwords, and secrets for various environments. A good free solution should handle these use cases without artificially limiting storage or features.

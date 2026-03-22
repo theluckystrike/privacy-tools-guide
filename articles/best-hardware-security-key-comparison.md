@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of, security]---
 
 Hardware security keys provide the strongest protection against phishing and account takeover. For developers managing GitHub, AWS, Google Cloud, and production infrastructure, these devices offer security that software-based 2FA cannot match.
 
+## Key Takeaways
+
+- **The Solo+ ($40) supports**: FIDO2 and U2F with firmware that community researchers can audit.
+- **Price ranges from under**: $20 to $150+.
+- **The 5Ci ($70) offers**: Lightning for iOS devices.
+- **The Nitrokey FIDO2 ($40)**: provides FIDO2/U2F, while the Nitrokey 3 ($70, upcoming) adds NFC and additional protocols.
+- **Budget-conscious teams or privacy-focused**: users might prefer open-source alternatives like SoloKeys or Nitrokey.
+- **- Budget constraints and**: no high-value accounts: If your potential loss from account takeover is under $5,000, the key investment might not ROI.
+
 ## What Hardware Security Keys Offer
 
 Hardware keys implement the FIDO2 (Fast Identity Online) standard, which combines WebAuthn (web authentication) and CTAP (Client to Authenticator Protocol). This architecture ensures private keys never leave the device—authentication happens entirely on the hardware module.

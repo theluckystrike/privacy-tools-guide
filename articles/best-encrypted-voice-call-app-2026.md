@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Finding the best encrypted voice call app requires understanding the underlying cryptography, deployment options, and threat models. This guide covers applications that prioritize voice communication with strong end-to-end encryption, avoiding general messaging platforms that happen to include calling features.
 
+## Key Takeaways
+
+- **The open-source SIP client**: supports ZRTP encryption with SAS verification.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Finding the best encrypted**: voice call app requires understanding the underlying cryptography, deployment options, and threat models.
+- **Its voice implementation uses**: the Signal Protocol with SRTP for media encryption, providing forward secrecy through the Double Ratchet algorithm.
+- **You must use the**: official applications or implement the protocol independently.
+- **The platform has matured significantly**: supporting E2EE through the Insertable Streams API.
+
 ## Understanding Voice Call Encryption Requirements
 
 True encrypted voice calling requires specific technical components:

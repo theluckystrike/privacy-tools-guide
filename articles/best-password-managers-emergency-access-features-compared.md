@@ -17,6 +17,19 @@ intent-checked: true---
 
 Emergency access (also called legacy contact access) lets you designate trusted people to access your passwords if you die or become incapacitated. This solves a real problem: your family locked out of critical accounts (bank, email, insurance). Few password managers offer this feature; those that do implement it very differently in terms of security, delay period, and verification process.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Wait period (delays to**: prevent abuse) 3.
+- **Add contact**: Name: "Alice (wife)"
+   Email: alice@example.com
+   Wait time: 30 days (gives time to revoke)
+   Access: Full vault (alternative: grantable = user must approve each password)
+4.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Why Emergency Access Matters
 
 Without emergency access, passwords disappear with you:

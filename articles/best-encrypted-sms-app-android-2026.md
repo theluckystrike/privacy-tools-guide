@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Signal is the best encrypted messaging app for Android in 2026 -- it provides open-source Double Ratchet encryption with forward secrecy, sealed-sender metadata protection, and minimal data collection. Choose WhatsApp if you need broad contact reach with acceptable privacy trade-offs, or XMPP+OMEMO if you want a federated, self-hosted alternative. Avoid Telegram for sensitive conversations since its default chats lack end-to-end encryption. This guide breaks down the technical architecture, security properties, and developer considerations for each major option.
 
+## Key Takeaways
+
+- **With over 2 billion users**: the practical benefit is reaching contacts who won't install specialized apps.
+- **Users must explicitly enable**: Secret Chats for E2EE, and group chats cannot use Signal Protocol.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Choose WhatsApp if you**: need broad contact reach with acceptable privacy trade-offs, or XMPP+OMEMO if you want a federated, self-hosted alternative.
+- **Additionally**: Signal's centralized architecture means service disruption affects all users.
+- **The lack of default**: E2EE and MTProto's relatively limited public cryptanalysis compared to Signal Protocol represent significant concerns.
+
 ## Understanding SMS Encryption Fundamentals
 
 Standard SMS travels in plaintext through carrier networks. True encrypted SMS requires either: Over-the-Top (OTT) messaging apps that bypass SMS entirely, or RCS-based solutions that work within the messaging ecosystem. The distinction matters: app-based encryption protects against both carriers and app providers, while RCS encryption (as implemented by Google and carriers) primarily protects against interception but leaves metadata accessible.

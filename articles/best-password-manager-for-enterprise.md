@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 Choosing the best password manager for enterprise requires understanding security architecture, integration capabilities, and administrative controls. This guide evaluates top solutions from a developer's perspective, focusing on technical implementation rather than marketing claims.
 
+## Key Takeaways
+
+- **Plan for user adoption.**: The most secure password manager is the one your team actually uses consistently.
+- **Choosing the best password**: manager for enterprise requires understanding security architecture, integration capabilities, and administrative controls.
+- **The ability to integrate**: with your existing identity provider is non-negotiable in most organizational contexts.
+- **The directory sync ensures**: that when you remove a user from your identity provider, their access to 1Password revokes automatically.
+- **The key derivation uses PBKDF2 with 100**:000 iterations for master password protection.
+- **For production use, ensure you have solid backup procedures**: the SQLite database at `/vw-data/db.sqlite3` contains all vault data.
+
 ## Why Enterprise Password Management Is a Privacy Problem, Not Just a Security Problem
 
 Most organizations frame password management as a security concern — preventing credential theft, reducing phishing success rates, eliminating password reuse. These are valid goals. But enterprise password management is equally a privacy concern, specifically around what data the password manager vendor can access about your organization.

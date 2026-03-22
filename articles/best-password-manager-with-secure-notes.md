@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, best-of]---
 
 For developers who value open-source transparency and self-hosting, Bitwarden provides the best flexible secure notes implementation. If you prefer an unified privacy ecosystem without self-hosting, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for complete local control. All options provide adequate encryption for storing API keys, encryption keys, software licenses, and personal documents alongside your passwords.
 
+## Key Takeaways
+
+- **For developers who value**: open-source transparency and self-hosting, Bitwarden provides the best flexible secure notes implementation.
+- **If you prefer an**: unified privacy ecosystem without self-hosting, Proton Pass delivers solid functionality in the free tier.
+- **All options listed provide adequate encryption for most use cases**: the decision hinges on features and infrastructure preferences.
+- **For developers**: this distinction matters because secure notes often support custom fields, file attachments, and structured data formats.
+- **The underlying encryption uses**: AES-256 for data at rest and PBKDF2 with 600,000 iterations for key derivation.
+- **The free tier includes**: unlimited notes and basic custom fields.
+
 ## What Makes Secure Notes Different from Standard Notes
 
 Secure notes differ from regular notes in three critical ways: encryption at rest, access controls, and structured data handling. A standard note-taking app might encrypt data during transmission but store content with weaker protection on disk. Password managers with secure notes encrypt everything using the same master key protecting your vault—typically AES-256 with PBKDF2 or Argon2 for key derivation.

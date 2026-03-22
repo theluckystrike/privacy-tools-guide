@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of, security]---
 
 The best hardware security key for most developers is the YubiKey 5 series -- it supports FIDO2, OpenPGP code signing, TOTP, and integrates with GitHub, AWS, and CI/CD pipelines out of the box. If open-source firmware verification matters more to you, choose SoloKeys instead. Both eliminate phishing vulnerabilities that plague password-only and TOTP-based authentication, providing defense-in-depth that software solutions cannot match.
 
+## Key Takeaways
+
+- **The best hardware security**: key for most developers is the YubiKey 5 series -- it supports FIDO2, OpenPGP code signing, TOTP, and integrates with GitHub, AWS, and CI/CD pipelines out of the box.
+- **If open-source firmware verification**: matters more to you, choose SoloKeys instead.
+- **Your use case determines**: which features matter most.
+- **The trade-off involves fewer**: protocol options than YubiKey, but for pure WebAuthn use cases, the open-source advantage matters to security-conscious developers.
+- **FIDO2 extends U2F with**: WebAuthn (browser standard) and resident credentials (keys store username, enabling passwordless login).
+- **For legacy systems requiring**: TOTP fallback, choose a key that supports both.
+
 ## Understanding Hardware Security Key Standards
 
 The FIDO2/WebAuthn standard powers most modern hardware keys. When you authenticate with a hardware key, the private key never leaves the device. The server sends a challenge, your key signs it internally, and only the signature returns. This architectural guarantee means even if someone intercepts your login attempt or creates a perfect phishing site, they cannot replicate the cryptographic proof.
