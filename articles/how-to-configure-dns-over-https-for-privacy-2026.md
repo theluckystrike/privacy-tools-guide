@@ -25,6 +25,20 @@ permalink: /how-to-configure-dns-over-https-for-privacy-2026/---
 
 Standard DNS queries are unencrypted. Your ISP, network operator, and DNS resolver see every website you visit. DNS over HTTPS (DoH) encrypts DNS lookups, hiding your browsing activity from surveillance. This guide covers DoH setup across all platforms with real configuration steps.
 
+## Key Takeaways
+
+- **Add preferred DNS**: - Preferred: `1.1.1.1`
+ - Alternate: `1.0.0.1`
+10.
+- **Add preferred DNS**: - Preferred: `2606:4700:4700::1111`
+ - Alternate: `2606:4700:4700::1001`
+12.
+- **Username/Password**: Leave blank
+7.
+- **Install Mullvad VPN app**: (free) 2.
+- Toggle "Use custom DNS"
+5.
+
 ## Why DoH Matters
 
 When you visit example.com, your device sends an unencrypted DNS query: "What is the IP for example.com?" Every network device between you and the DNS resolver can see this query. DoH wraps DNS queries in HTTPS encryption, hiding your traffic from ISPs, corporate networks, and attackers on public WiFi.

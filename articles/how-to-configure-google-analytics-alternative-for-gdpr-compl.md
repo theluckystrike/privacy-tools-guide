@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 If you operate a website serving European visitors, Google Analytics requires significant configuration to meet GDPR standards. Many organizations now prefer self-hosted alternatives that provide analytics without the compliance complexity. This guide walks through configuring privacy-first analytics solutions that work out of the box for GDPR compliance.
 
+## Key Takeaways
+
+- **You can host it**: yourself on any PHP-compatible server or use their cloud offering.
+- **Confirm users can request**: data deletion and that your system processes these requests within the required 30-day window.
+- **Many organizations now prefer**: self-hosted alternatives that provide analytics without the compliance complexity.
+- **GDPR requires explicit consent**: before setting non-essential cookies, the right to access collected data, and the ability to delete user data upon request.
+- **The most popular options include Matomo**: Plausible, Fathom, and Umami.
+- **Matomo provides the most**: feature-complete alternative, offering goals, funnels, heatmaps, and custom events.
+
 ## Understanding GDPR Requirements for Analytics
 
 The General Data Protection Regulation imposes strict requirements on how you collect and process personal data. Under GDPR, IP addresses constitute personal data, and analytics tools that collect this information without proper consent violate the regulation unless you implement specific technical safeguards.

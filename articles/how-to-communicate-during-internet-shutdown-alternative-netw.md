@@ -31,6 +31,14 @@ tags: [privacy-tools-guide]---
 
 When the internet goes down due to shutdowns, disasters, or infrastructure failures, alternative communication methods become critical for staying connected. This guide teaches practical techniques for maintaining communication during internet shutdowns using mesh networks, offline messaging apps, LoRa radio systems, and satellite communication. You'll learn how to set up ad-hoc Wi-Fi networks, use Briar for device-to-device messaging, and configure emergency communication layers that work independently of traditional internet infrastructure.
 
+## Key Takeaways
+
+- **You'll learn how to**: set up ad-hoc Wi-Fi networks, use Briar for device-to-device messaging, and configure emergency communication layers that work independently of traditional internet infrastructure.
+- **(Better Approach to Mobile**: Ad-hoc Networking) or OLSR (Optimized Link State Routing) protocols for automatic mesh formation.
+- **These typically use Bluetooth**: Wi-Fi Direct, or local network scanning to discover nearby devices.
+- **An untested solution fails**: when needed most.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Problem Space
 
 Internet shutdowns typically affect connectivity at the ISP level, disrupting DNS resolution, blocking traffic at network borders, or completely severing physical links. However, local network infrastructure often remains functional. This creates opportunities for alternative communication methods that operate independently of wide-area networks.

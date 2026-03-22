@@ -31,6 +31,20 @@ intent-checked: true---
 
 Firefox is the only major browser developed by a non-profit. It's the best privacy browser if configured correctly—but the default settings leave you exposed to trackers and advertisers. This guide hardens Firefox without causing widespread site breakage (the common problem with overly aggressive privacy configs).
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use only 3-4**: ### uBlock Origin (Ad/Tracker Blocking)
+
+Install from: addons.mozilla.org
+
+Configuration:
+1.
+- **Temporarily disable HTTPS only**: mode for that domain: ``` about:preferences → Privacy & Security → HTTPS only mode → Off ``` 2.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **But they use Google**: as default search (revenue sharing), and many default settings are permissive for compatibility.
+- **If you want 99.9% privacy**: you'll lose some sites.
+
 ## The Privacy Problem Firefox Solves
 
 Most browsers (Chrome, Edge, Safari) are built by corporations that profit from your data:

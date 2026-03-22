@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 uBlock Origin remains the gold standard for browser-based ad and tracker blocking. Out of the box, it provides solid protection, but power users can unlock significantly stronger anti-tracking capabilities through careful configuration. This guide walks through practical steps to harden uBlock Origin against advanced tracking techniques, including fingerprinting, canvas manipulation, and behavioral profiling.
 
+## Key Takeaways
+
+- **For Brave users**: the built-in shields handle most use cases, but adding uBlock Origin on top provides scriptlet injection and custom filter list support that Shields lacks.
+- **Pursuing 100% blocking will**: break most modern websites.
+- **Limit external font loading**: ||fonts.googleapis.com^$important ||fonts.gstatic.com^$important ``` Note that blocking Google Fonts will break the visual design of sites that depend on them.
+- **amiunique.org**: More detailed fingerprint breakdown showing which attributes contribute most to uniqueness
+3.
+- **Options**: 1) Accept the limitation, 2) Use a secondary browser without uBlock for that site, 3) File a complaint with the site owner.
+- **- Dynamic filtering**: Unlike most blockers, uBlock Origin supports per-site dynamic rules that give you firewall-level control over which domains load scripts, frames, and media.
+
 ## Why uBlock Origin vs. Other Blockers
 
 Before looking at configuration, it's worth understanding why uBlock Origin stands out from alternatives like Adblock Plus, Privacy Badger, and Brave's built-in shields:

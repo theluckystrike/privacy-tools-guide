@@ -33,6 +33,19 @@ macOS users assume their system is private by default. It's not. Apple collects 
 
 Most of this is clickable in System Settings. Some require terminal commands. All take less than 30 minutes.
 
+## Key Takeaways
+
+- **Choose**: Quad9 or Cloudflare (not Google)
+
+## Security vs Convenience Tradeoff
+
+Total privacy settings break iCloud sync, Apple features, and some app integrations.
+- **But if you don't trust Apple**: use 1Password instead (covered later).
+- **Firefox (most private by default)**: 1.
+- **Switch to Firefox or**: Safari (already have it, 5 minutes) These five changes cover 80% of privacy vulnerabilities and take 20 minutes.
+- **macOS users assume their**: system is private by default.
+- **Most of this is**: clickable in System Settings.
+
 ## System Settings Changes
 
 ### 1. Sign Out of iCloud

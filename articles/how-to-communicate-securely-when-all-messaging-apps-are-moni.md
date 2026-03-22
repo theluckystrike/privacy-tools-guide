@@ -33,6 +33,14 @@ When mainstream messaging platforms become compromised, monitored, or coerced in
 
 The core problem is straightforward: your messages pass through servers you do not control, are subject to legal demands you may never see, and rely on encryption implementations you cannot audit. The solution requires understanding what "secure" actually means in this context and building a communication stack that puts you in control.
 
+## Key Takeaways
+
+- **Use Signal for convenience**: Even with its limitations, Signal's E2EE is strong and the UX is good.
+- **When mainstream messaging platforms**: become compromised, monitored, or coerced into backdooring their encryption, developers and security-conscious users need alternatives that actually work.
+- **Verify keys out-of-band**: Cryptography is useless if you encrypt to the wrong person.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Threat Model
 
 Before implementing any solution, define what you are protecting against. Different adversaries require different approaches:
