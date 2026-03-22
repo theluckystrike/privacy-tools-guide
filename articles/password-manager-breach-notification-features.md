@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /password-manager-breach-notification-features/
 description: "Learn password manager breach notification features with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Password Manager Breach Notification Features"
 description: "A guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations"

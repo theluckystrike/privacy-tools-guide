@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /passkey-adoption-timeline-by-platform/
 description: "Learn passkey adoption timeline by platform with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Passkey Adoption Timeline by Platform: A Developer Guide"
 description: "A timeline of passkey adoption across major platforms, with technical details and implementation guidance for developers and power users"

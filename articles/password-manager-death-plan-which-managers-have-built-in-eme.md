@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /password-manager-death-plan-which-managers-have-built-in-eme/
 description: "Learn password manager death plan which managers have built in eme with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Password Manager Death Plan"
 description: "A technical comparison of password managers with built-in emergency access and death plan features. Covers 1Password, Bitwarden, Dashlane, Keeper"

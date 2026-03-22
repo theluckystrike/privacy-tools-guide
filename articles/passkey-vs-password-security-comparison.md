@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /passkey-vs-password-security-comparison/
 description: "Compare passkey vs password security comparison with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, security]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
 description: "Choose passkeys over passwords when your users have modern devices (iOS 16+, Android 9+, recent browsers) and you can implement proper recovery flows --"

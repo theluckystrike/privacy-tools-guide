@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /openpgp-vs-smime-email-encryption-comparison-which-to-choose/
 description: "Compare openpgp vs smime email encryption comparison which to choose with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, encryption]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption Comparison"
 description: "A technical comparison of OpenPGP and S/MIME email encryption standards for developers and power users. Learn about key differences, implementation complexity"

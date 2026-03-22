@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /password-manager-for-musician-managing-streaming-platform-di/
 description: "Learn password manager for musician managing streaming platform di with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Password Manager For Musician Managing Streaming Platform"
 description: "A practical guide to managing multiple streaming platform distributor accounts securely using password managers. Includes CLI workflows and automation"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /password-manager-for-travel-agent-managing-booking-platform-/
 description: "Learn password manager for travel agent managing booking platform  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Password Manager for Travel Agent Managing Booking Platform"
 description: "Learn how to securely manage multiple booking platform credentials as a travel agent. This guide covers password manager setup, CLI automation, and best"
