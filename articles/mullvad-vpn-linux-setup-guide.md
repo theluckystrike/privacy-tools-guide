@@ -5,7 +5,7 @@ description: "Install and configure Mullvad VPN on Linux using the official app 
 date: 2026-03-22
 author: theluckystrike
 permalink: /mullvad-vpn-linux-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

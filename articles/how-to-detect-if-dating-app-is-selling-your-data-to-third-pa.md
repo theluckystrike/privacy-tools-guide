@@ -179,16 +179,151 @@ Please cease selling my personal data to third parties and confirm within 45 day
 [California Address]
 ```
 
+## Interpreting Network Analysis Results
+
+When analyzing network traffic, understanding what you're seeing matters:
+
+### Identifying Telemetry vs. Functional Data
+
+Not all third-party connections mean data selling. Some are legitimate:
+
+```
+Safe third-party connections:
+- CDN requests (cloudflare.com, cloudfront.amazonaws.com) - just serving images
+- Analytics for crash reporting (crashlytics.google.com) - helps fix bugs
+- Payment processors (stripe.com, paypal.com) - necessary for transactions
+
+Concerning connections:
+- Data brokers (acxiom.com, oracle.com) - explicit data monetization
+- Ad networks with behavioral targeting (criteo.com, appnexus.com)
+- Unrelated service connections (connections to companies not involved in dating)
+```
+
+### Decoding API Request Bodies
+
+When examining mitmproxy captures, look for these data patterns:
+
+```json
+// CONCERNING: Full profile data sent to third party
+{
+  "user_id": "12345678",
+  "name": "John Doe",
+  "age": 32,
+  "location": {"lat": 40.7128, "lng": -74.0060},
+  "interested_in": ["women", "19-35"],
+  "profile_text": "Software engineer, looking for...",
+  "photo_hashes": ["hash1", "hash2"]
+}
+
+// ACCEPTABLE: Anonymized analytics data
+{
+  "session_duration_seconds": 1234,
+  "features_used": ["browse", "message"],
+  "crashes": 0
+}
+```
+
+The difference is whether the data preserves identity. Personal identifiers (names, locations, explicit interests) should never flow to marketing networks.
+
+## Understanding Data Broker Techniques
+
+Data brokers employ sophisticated collection methods:
+
+**Append Services**: Brokers buy email addresses from one source and append phone numbers, home addresses, and other attributes from different sources. This creates comprehensive profiles.
+
+**Inference Services**: Brokers use machine learning to infer sensitive attributes (income level, political affiliation, health conditions) from observed behavior.
+
+**Identity Resolution**: Multiple profiles (online and offline) are linked using probabilistic matching techniques.
+
+If a dating app sells your email to brokers, expect your complete profile across all platforms to become known to advertisers within weeks.
+
+## Building a Personal Data Audit Trail
+
+For power users wanting comprehensive visibility:
+
+```bash
+#!/bin/bash
+# dating-app-audit.sh - Track data exposure over time
+
+APP_NAME="$1"
+AUDIT_DIR="$HOME/.audit/${APP_NAME}"
+mkdir -p "$AUDIT_DIR"
+
+# Extract APK and analyze
+apktool d "${APP_NAME}.apk" -o "${AUDIT_DIR}/extracted"
+
+# Find all API endpoints
+grep -r "http" "${AUDIT_DIR}/extracted/smali" | \
+  grep -oP 'https?://[^\s"]+' | \
+  sort -u > "${AUDIT_DIR}/api-endpoints-$(date +%Y%m%d).txt"
+
+# Compare against previous scans
+if [ -f "${AUDIT_DIR}/api-endpoints-baseline.txt" ]; then
+  comm -13 \
+    <(sort "${AUDIT_DIR}/api-endpoints-baseline.txt") \
+    <(sort "${AUDIT_DIR}/api-endpoints-$(date +%Y%m%d).txt") \
+  > "${AUDIT_DIR}/new-endpoints-$(date +%Y%m%d).txt"
+
+  echo "New API endpoints detected:"
+  cat "${AUDIT_DIR}/new-endpoints-$(date +%Y%m%d).txt"
+fi
+```
+
+Run this script after app updates to identify new data collection vectors.
+
 ## Practical Countermeasures
 
 While complete data protection requires avoiding dating apps entirely, several measures reduce exposure:
 
-1. **Limit profile information**: Provide minimal personal details; avoid connecting social media accounts
-2. **Use alternative verification**: Some apps allow phone-only verification instead of social login
-3. **Disable location history**: Deny location permissions or use app-specific location spoofing
-4. **Regularly request data deletion**: Submit GDPR/CCPA deletion requests to force data purging
-5. **Use privacy-focused alternatives**: Platforms like [Signal](https://signal.org) for dating or decentralized options provide better privacy
+1. **Limit profile information**: Provide minimal personal details; avoid connecting social media accounts. Use generic profile text that doesn't reveal interests or location preferences.
 
+2. **Use alternative verification**: Some apps allow phone-only verification instead of social login. This prevents the app from accessing your social graph.
+
+3. **Disable location history**: Deny location permissions or use app-specific location spoofing. Disable "precise location" and use only approximate location if necessary.
+
+4. **Regularly request data deletion**: Submit GDPR/CCPA deletion requests to force data purging. Keep documentation of these requests; companies sometimes ignore them.
+
+5. **Use privacy-focused alternatives**: Decentralized platforms that don't collect data provide better privacy, though they have smaller user bases. Consider privacy trade-offs carefully.
+
+6. **Monitor your online presence**: Periodically search for your data on breach databases (haveibeenpwned.com, breachdb.com) to detect if dating app data surfaces in broader data breaches.
+
+7. **Consider a dedicated email**: Create a separate email address used only for dating apps. If this email appears in data broker databases, you know the source.
+
+## Long-Term Data Tracking
+
+For serious privacy advocates, implement ongoing monitoring:
+
+```javascript
+// Service worker tracking data requests
+self.addEventListener('fetch', event => {
+  const request = event.request;
+
+  // Log all POST requests to external domains
+  if (request.method === 'POST' &&
+      !request.url.includes('dating-app.com')) {
+
+    // Store in IndexedDB for later analysis
+    const db = new Promise(resolve => {
+      const req = indexedDB.open('DataAudit');
+      req.onsuccess = () => resolve(req.result);
+    });
+
+    db.then(db => {
+      const tx = db.transaction('requests', 'readwrite');
+      tx.objectStore('requests').add({
+        timestamp: Date.now(),
+        url: request.url,
+        method: request.method,
+        body: request.body
+      });
+    });
+  }
+
+  event.respondWith(fetch(request));
+});
+```
+
+This enables automatic detection of unexpected data flows without manual network monitoring.
 
 
 ## Frequently Asked Questions

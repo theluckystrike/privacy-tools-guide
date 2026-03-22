@@ -189,6 +189,120 @@ All three approaches give you secure, encrypted access to your home network whil
 
 Start with the option matching your technical comfort level and network constraints. You can always migrate between solutions as your needs change.
 
+## Advanced Security Hardening
+
+Beyond basic setup, several security improvements protect your home network from compromise through the VPN:
+
+### Implementing Zero Trust Network Access
+
+Rather than trusting all VPN clients equally, implement per-application access controls:
+
+```bash
+# WireGuard: Restrict client to specific home network services
+[Peer]
+PublicKey = <client-public-key>
+AllowedIPs = 10.0.0.2/32
+# Restrict: Only allows access to 192.168.1.100 (NAS) and 192.168.1.1 (gateway)
+# Other hosts remain inaccessible even over VPN
+AllowedIPs = 10.0.0.2/32, 192.168.1.100/32, 192.168.1.1/32
+```
+
+### Rate Limiting and Connection Limits
+
+Prevent brute force attacks against your home network through the VPN:
+
+```bash
+# iptables: Limit SSH connections per IP
+sudo iptables -A INPUT -p tcp --dport 22 -m limit --limit 3/min -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
+
+# Limit WireGuard handshake attempts
+wg set wg0 private-key <(wg genkey)
+```
+
+### Monitoring VPN Access Logs
+
+Track all VPN connections to detect unauthorized access:
+
+```bash
+# Monitor WireGuard connections in real-time
+sudo journalctl -u wg-quick@wg0.service -f
+
+# Parse OpenVPN logs for suspicious behavior
+grep -E "AUTH|CN=|Peer Connection Initiated" /var/log/openvpn.log | \
+  awk '{print $1, $2, $NF}' | \
+  sort | uniq -c
+```
+
+## Handling Device Management and Revocation
+
+When clients lose access rights (laptop sold, smartphone destroyed), revoke their credentials immediately:
+
+```bash
+# WireGuard: Rotate server private key and regenerate all peer keys
+wg genkey | tee server.key | wg pubkey > server.pub
+
+# Regenerate client keys
+wg genkey | tee client.key | wg pubkey > client.pub
+
+# Update server and client configs with new keys
+# This invalidates all old connections
+```
+
+## Backup and Disaster Recovery
+
+VPN infrastructure protects your home network but becomes useless if corrupted:
+
+```bash
+#!/bin/bash
+# Backup VPN configuration and keys securely
+
+BACKUP_DIR="/encrypted/backups"
+mkdir -p "$BACKUP_DIR"
+
+# Backup WireGuard configs
+tar -czf "$BACKUP_DIR/wireguard-$(date +%Y%m%d).tar.gz" \
+  /etc/wireguard/
+
+# Backup OpenVPN certs and keys
+tar -czf "$BACKUP_DIR/openvpn-$(date +%Y%m%d).tar.gz" \
+  /etc/openvpn/
+
+# Encrypt backups
+gpg --symmetric --cipher-algo AES256 \
+  "$BACKUP_DIR/wireguard-$(date +%Y%m%d).tar.gz"
+
+# Remove unencrypted version
+rm "$BACKUP_DIR/wireguard-$(date +%Y%m%d).tar.gz"
+```
+
+Store encrypted backups on a separate system, not on the VPN server itself.
+
+## Multi-User VPN Scenarios
+
+For families or shared housing where multiple people need home network access:
+
+```bash
+# Create separate VPN clients for each person
+# Each gets isolated access based on their needs
+
+[Peer]
+# Alice: can access home server but not smart home system
+PublicKey = <alice-pubkey>
+AllowedIPs = 10.0.0.10/32, 192.168.1.100/32  # NAS only
+
+[Peer]
+# Bob: can access smart home but not personal servers
+PublicKey = <bob-pubkey>
+AllowedIPs = 10.0.0.11/32, 192.168.1.50/32   # SmartHome hub only
+
+[Peer]
+# Family admin: full access
+PublicKey = <admin-pubkey>
+AllowedIPs = 10.0.0.12/32, 192.168.1.0/24    # Everything
+```
+
+This approach prevents one person's compromised device from exposing everyone's data.
 
 
 ## Frequently Asked Questions
