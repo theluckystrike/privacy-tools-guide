@@ -1,5 +1,7 @@
 ---
 permalink: /nextcloud-vs-owncloud-self-hosted-comparison/
+description: "Compare nextcloud vs owncloud self hosted comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Nextcloud vs OwnCloud Self-Hosted Comparison"

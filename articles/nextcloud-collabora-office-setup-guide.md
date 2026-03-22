@@ -1,5 +1,7 @@
 ---
 permalink: /nextcloud-collabora-office-setup-guide/
+description: "Follow this guide to nextcloud collabora office setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"

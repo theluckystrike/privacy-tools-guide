@@ -1,5 +1,7 @@
 ---
 permalink: /mobile-photo-metadata-exif-location-data-how-to-strip-before/
+description: "Follow this guide to mobile photo metadata exif location data how to strip before with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip"

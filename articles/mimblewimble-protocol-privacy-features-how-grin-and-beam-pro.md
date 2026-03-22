@@ -1,5 +1,7 @@
 ---
 permalink: /mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/
+description: "Learn mimblewimble protocol privacy features how grin and beam pro with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Mimblewimble Protocol Privacy Features How Grin And Beam Pro"

@@ -1,5 +1,7 @@
 ---
 permalink: /nym-mixnet-vs-tor-comparison-explained/
+description: "Compare nym mixnet vs tor comparison explained with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Nym Mixnet vs Tor Comparison Explained: A Technical Guide"

@@ -1,5 +1,7 @@
 ---
 permalink: /onionshare-secure-file-sharing-guide/
+description: "Follow this guide to onionshare secure file sharing guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Secure File Sharing with OnionShare"

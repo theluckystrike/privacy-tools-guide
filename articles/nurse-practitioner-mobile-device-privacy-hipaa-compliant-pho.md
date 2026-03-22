@@ -1,5 +1,7 @@
 ---
 permalink: /nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/
+description: "Learn nurse practitioner mobile device privacy hipaa compliant pho with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Nurse Practitioner Mobile Device Privacy Hipaa Compliant"

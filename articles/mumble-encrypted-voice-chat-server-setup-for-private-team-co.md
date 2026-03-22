@@ -1,5 +1,7 @@
 ---
 permalink: /mumble-encrypted-voice-chat-server-setup-for-private-team-co/
+description: "Learn mumble encrypted voice chat server setup for private team co with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Mumble Encrypted Voice Chat Server Setup For Private Team"

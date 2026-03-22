@@ -1,5 +1,7 @@
 ---
 permalink: /nextcloud-end-to-end-encryption-setup-guide/
+description: "Follow this guide to nextcloud end to end encryption setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "Nextcloud End to End Encryption Setup Guide"

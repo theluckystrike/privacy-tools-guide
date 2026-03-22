@@ -1,5 +1,7 @@
 ---
 permalink: /nixos-declarative-system-configuration-for-reproducible-priv/
+description: "Learn nixos declarative system configuration for reproducible priv with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Nixos Declarative System Configuration For Reproducible"

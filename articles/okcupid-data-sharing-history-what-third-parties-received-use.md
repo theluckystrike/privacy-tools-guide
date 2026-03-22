@@ -1,5 +1,7 @@
 ---
 permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
+description: "Learn okcupid data sharing history what third parties received use with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Okcupid Data Sharing History What Third Parties Received"
