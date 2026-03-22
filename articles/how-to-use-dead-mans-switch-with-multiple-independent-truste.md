@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]
