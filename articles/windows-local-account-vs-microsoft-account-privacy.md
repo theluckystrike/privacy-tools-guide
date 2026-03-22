@@ -6,7 +6,7 @@ description: "Compare windows local account vs microsoft account privacy with pr
 tags: [privacy-tools-guide, comparison, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [comparisons]
 ---

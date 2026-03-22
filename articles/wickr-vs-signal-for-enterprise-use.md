@@ -6,7 +6,7 @@ description: "Compare wickr vs signal for enterprise use with practical examples
 tags: [privacy-tools-guide, comparison]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [comparisons]
 ---

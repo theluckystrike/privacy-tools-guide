@@ -6,7 +6,7 @@ description: "Learn what to do if you received sextortion email is it real with 
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

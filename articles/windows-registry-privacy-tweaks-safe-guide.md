@@ -6,7 +6,7 @@ description: "Follow this guide to windows registry privacy tweaks safe guide wi
 tags: [privacy-tools-guide, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
