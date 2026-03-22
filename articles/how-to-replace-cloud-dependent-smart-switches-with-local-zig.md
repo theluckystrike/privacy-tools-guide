@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 Cloud-dependent smart switches send your device data, usage patterns, and network information to third-party servers. For privacy-conscious developers and power users, this represents an unacceptable trade-off. This guide walks through the process of replacing cloud-dependent smart switches with local Zigbee alternatives that operate entirely within your network.
 
+## Key Takeaways
+
+- **This usually involves pressing**: and holding a button for 5-10 seconds until the LED flashes.
+- **Set up the hub**: Install Zigbee2MQTT or your preferred software
+4.
+- **For privacy-conscious developers and**: power users, this represents an unacceptable trade-off.
+- **Purchase one test device**: Verify compatibility before buying in bulk
+3.
+- **Zigbee2MQTT supports OTA updates**: for many devices.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Problem
 
 Most commercial smart switches rely on cloud infrastructure for basic functionality. When you tap that button in an app, the signal travels to the manufacturer's server, gets processed, and then sends a command back to your device. This architecture creates several problems:

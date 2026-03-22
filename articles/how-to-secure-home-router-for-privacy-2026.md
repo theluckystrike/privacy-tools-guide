@@ -29,6 +29,17 @@ tags: [privacy-tools-guide, home-router-security, vpn, dns-privacy, network-secu
 
 Most home routers ship with weak default settings and outdated firmware. Your router is the gateway to all your household network traffic—securing it prevents ISP snooping, reduces malware risk, and blocks ad tracking at the network level. This guide covers firmware hardening, DNS configuration, guest network isolation, VPN setup, and OpenWrt installation for users needing maximum control.
 
+## Key Takeaways
+
+- **ISP Snooping**: Without HTTPS, your ISP can see which sites you visit, which apps you use
+2.
+- **DNS Leaks**: Your ISP's DNS logs every site you attempt to visit, even if you use a VPN on one device
+3.
+- **Sign up at nexdns.io**: (free tier available) 2.
+- **Create DNS profile with**: your blocking preferences 3.
+- **Install OpenWrt ``` Router**: Admin Panel → Firmware Update → Choose File Select OpenWrt .bin file for your model Install → Reboot ``` 5.
+- **Most home routers ship**: with weak default settings and outdated firmware.
+
 ## Why Router Privacy Matters
 
 Your router sees all traffic from your household devices:

@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, artificial-intelligence, chatgpt]---
 
 AI companies collect and use your conversations to train their models. If you've ever shared personal information, code, or sensitive business data with ChatGPT, Microsoft Copilot (formerly Bing AI), or Google Gemini (formerly Bard), that data may already be incorporated into their training pipelines. Here's how to exercise your rights and remove your data from AI training in 2026.
 
+## Key Takeaways
+
+- **Choose time range or**: specific conversations 4.
+- **AI companies collect and**: use your conversations to train their models.
+- **Google Gemini stores conversation**: history, account information, and may use interactions to improve Google's language models.
+- **Visit https**: //support.google.com/policies/contact/safety/
+2.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding What Data AI Companies Collect
 
 Before removing your data, understand what's actually stored:

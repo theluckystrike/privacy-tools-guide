@@ -31,6 +31,13 @@ tags: [privacy-tools-guide, encryption]---
 
 Modern messaging apps like Signal use forward secrecy protocols that automatically rotate encryption keys with each message, so you won't lose chat history. To manually rotate your safety numbers in Signal, simply reinstall the app or add a new device—the app automatically regenerates new identity keys while keeping your local message history intact. For custom implementations, implement the Double Ratchet Algorithm which rotates keys per-message while storing decryption material for old messages.
 
+## Key Takeaways
+
+- **Modern messaging apps like**: Signal use forward secrecy protocols that automatically rotate encryption keys with each message, so you won't lose chat history.
+- **Use Key Derivation Functions**: Properly Never store raw keys.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Key Rotation Challenge
 
 End-to-end encrypted messaging apps typically use the Signal Protocol or similar cryptographic frameworks. These protocols generate new key pairs for each device and periodically create new session keys. When you reinstall an app or switch devices, the app must re-establish secure sessions with your contacts.

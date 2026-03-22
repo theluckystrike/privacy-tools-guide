@@ -31,6 +31,15 @@ voice-checked: true---
 
 Automated decision-making systems increasingly influence significant aspects of daily life, from credit approvals and employment screening to insurance underwriting and housing applications. When these AI systems make decisions that legally impact you, you have the right to request human review. This guide provides practical strategies for exercising that right, with templates and technical context for developers building compliant systems.
 
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **Ask what data was**: used in the evaluation 3.
+- **Ask if AI was**: used in the decision-making process 2.
+- **Request information about the**: criteria used 3.
+- **Ask for human review**: if you believe the AI made an error ### Insurance Premium Increase Insurers increasingly use algorithms to set premiums: 1.
+- **Request the data used**: in the calculation ## What Organizations Must Provide When you request human review, the organization must: 1.
+
 ## Legal Framework: Your Right to Human Review
 
 Under GDPR Article 22, individuals have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. This includes decisions made through profiling. Similar protections exist in CCPA/CPRA (California), VCDPA (Virginia), and other privacy regulations worldwide.

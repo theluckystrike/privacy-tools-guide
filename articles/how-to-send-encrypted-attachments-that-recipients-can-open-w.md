@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 The easiest solution is sending password-protected ZIP archives—all operating systems natively support creating and opening encrypted ZIPs without additional software. On macOS, use `zip -e` to create an encrypted archive; on Windows, right-click and select "Send to → Compressed (Zipped) folder" then set a password; on Linux, use the `zip -e` command. Share the password through a separate, secure channel, and the recipient can open it immediately using their built-in file manager.
 
+## Key Takeaways
+
+- **iOS users can use**: the built-in Files app or any free ZIP utility.
+- **You need solutions that**: work with any file size, don't require account creation, and use tools the recipient already possesses.
+- **Only use this for**: trusted recipients.
+- **On macOS**: use `zip -e` to create an encrypted archive; on Windows, right-click and select "Send to → Compressed (Zipped) folder" then set a password; on Linux, use the `zip -e` command.
+- **Recipients either lack the**: technical knowledge to set up encryption or simply refuse to install new software.
+- **If emailing a ZIP**: call the recipient with the password or use Signal.
+
 ## The Problem with Traditional Encryption
 
 PGP encryption has been the standard for decades, but it requires recipients to install software like Gpg4win, GPGTools, or browser extensions. For sending documents to lawyers, clients, family members, or colleagues who aren't cryptography experts, this approach often fails. Recipients either lack the technical knowledge to set up encryption or simply refuse to install new software.

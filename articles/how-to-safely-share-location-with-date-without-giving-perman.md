@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Sharing your location with someone you've just met requires trust, but that trust shouldn't require permanent access to where you live. Whether you're meeting a date from a dating app or connecting with a new contact, revealing your home address creates lasting privacy risks. This guide covers practical methods to share temporary, controlled location data that expires automatically—protecting your safety without sacrificing convenience.
 
+## Key Takeaways
+
+- **Select "Until you turn**: this off" or choose a time limit (15 minutes to 3 days) 4.
+- **Most cities have plenty of options**: choose somewhere with good lighting, foot traffic, and staff present.
+- **Create a secondary Google**: account used only for location sharing 2.
+- **Copy the link and**: send it through your preferred messaging app 5.
+- **Use a burner phone**: number for account verification 3.
+- **Disable sharing immediately after**: each use This limits your exposure even if the app's location data is compromised.
+
 ## The Privacy Risk of Permanent Location Sharing
 
 When you share your real-time location through most apps, you're typically granting continuous access to your movements. Dating apps like Tinder, Bumble, and Hinge often encourage users to share their location for features like "live location" or "proximity alerts." Once granted, this permission persists until manually revoked—and many users forget to check which apps still have access months later.

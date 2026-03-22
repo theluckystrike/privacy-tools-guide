@@ -31,6 +31,17 @@ intent-checked: true---
 
 Vaultwarden is a lightweight, open-source implementation of Bitwarden's password vault API. Self-hosting Vaultwarden gives you full control over your credentials without trusting a third-party SaaS provider. This guide covers full Docker deployment, reverse proxy configuration with Nginx, SSL certificate automation with Let's Encrypt, automated backups, security hardening, and the maintenance workflow for running your own password vault.
 
+## Key Takeaways
+
+- **Use Nginx as a reverse proxy to**: - Add SSL/TLS encryption
+- Rate-limit API requests
+- Add security headers
+- Separate concerns (web server vs.
+- **Disable signups (if self-hosted**: for one user): Already set in docker-compose.yml: `SIGNUPS_ALLOWED: "false"` 2.
+- **Vaultwarden is a lightweight**: open-source implementation of Bitwarden's password vault API.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why Self-Host Vaultwarden?
 
 Bitwarden's SaaS offering is privacy-respecting, but self-hosting provides:

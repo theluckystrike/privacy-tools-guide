@@ -31,6 +31,13 @@ intent-checked: true---
 
 Send formal deletion requests explicitly referencing applicable state laws (Virginia VCDPA, Colorado CPA, Connecticut CTDPA, Utah UCPA, Texas TDPSA) even to non-GDPR/CCPA companies, as many voluntarily comply. If companies refuse, escalate to state attorneys general, the FTC, or BBB. For companies beyond legal reach, minimize future data sharing through temporary emails, pseudonyms, and privacy tools, or pursue small claims court for significant violations.
 
+## Key Takeaways
+
+- **CCPA applies primarily to**: for-profit businesses meeting specific thresholds (>$25M revenue, data >100K consumers, or deriving 50%+ revenue from selling personal data).
+- **If companies refuse**: escalate to state attorneys general, the FTC, or BBB.
+- **For developers and power users**: this means building automation around data deletion requests requires understanding both legal frameworks and practical API-driven approaches.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding the Data Protection Gap
 
 When GDPR and CCPA don't apply to a company, your personal data rights become significantly limited. GDPR covers companies with EU connections—either offering goods/services to EU residents or monitoring their behavior. CCPA applies primarily to for-profit businesses meeting specific thresholds (>$25M revenue, data >100K consumers, or deriving 50%+ revenue from selling personal data).
