@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /what-to-do-if-ransomware-locks-your-computer-immediate-steps/
 description: "Learn what to do if ransomware locks your computer immediate steps with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "What To Do If Ransomware Locks Your Computer Immediate"
 description: "Ransomware attacks can happen to anyone—whether you're a developer with sensitive projects or a power user with critical data. The moment your screen freezes"

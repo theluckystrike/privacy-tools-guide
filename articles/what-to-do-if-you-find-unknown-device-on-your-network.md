@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
 description: "Learn what to do if you find unknown device on your network with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "What to Do If You Find an Unknown Device on Your"
 description: "A guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against"

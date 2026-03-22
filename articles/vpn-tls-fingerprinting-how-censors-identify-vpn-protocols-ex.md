@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/
 description: "Learn vpn tls fingerprinting how censors identify vpn protocols ex with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "VPN TLS Fingerprinting: How Censors Identify VPN Protocols"
 description: "Learn how TLS fingerprinting enables network censors to detect and block VPN traffic. Understand the mechanics, see practical examples, and learn"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /vpn-warrant-canary-what-it-means/
 description: "Learn vpn warrant canary what it means with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "VPN Warrant Canary: What It Means and Why It Matters"
 description: "A technical guide to understanding VPN warrant canaries, how they work, and how to interpret them for your security posture"
