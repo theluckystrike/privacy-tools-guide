@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-smime-email-encryption/
+description: "Follow this guide to how to set up smime email encryption with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "How to Set Up S/MIME Email Encryption: A Practical Guide"

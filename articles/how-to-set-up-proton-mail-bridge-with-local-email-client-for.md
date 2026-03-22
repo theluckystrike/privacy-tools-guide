@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-proton-mail-bridge-with-local-email-client-for/
+description: "Follow this guide to how to set up proton mail bridge with local email client for with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Proton Mail Bridge With Local Email Client"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-satellite-internet-as-backup-during-government/
+description: "Follow this guide to how to set up satellite internet as backup during government with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Satellite Internet As Backup During Government"

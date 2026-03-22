@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-vpn-on-router-firmware-level-guide/
+description: "Follow this guide to how to set up vpn on router firmware level guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "How to Set Up VPN on Router Firmware: Complete Guide"

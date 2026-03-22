@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-tor-relay-node/
+description: "Follow this guide to how to set up tor relay node with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Set Up a Tor Relay"

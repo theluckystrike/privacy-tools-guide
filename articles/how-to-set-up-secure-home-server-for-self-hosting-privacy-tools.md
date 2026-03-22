@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/
+description: "Follow this guide to how to set up secure home server for self hosting privacy tools with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"

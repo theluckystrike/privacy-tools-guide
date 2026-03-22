@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/
+description: "Follow this guide to how to set up pgp encrypted email in thunderbird step by ste with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Set Up Pgp Encrypted Email In Thunderbird Step"

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-set-up-password-manager-for-home-server-ssh-keys/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
