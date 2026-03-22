@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/
 description: "Follow this guide to how to use tcpdump to verify vpn traffic is encrypted with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "How To Use Tcpdump To Verify Vpn Traffic Is Encrypted"
 description: "Learn how to use tcpdump to verify your VPN tunnel is properly encrypting traffic. This guide covers packet capture analysis, identifying encrypted vs"

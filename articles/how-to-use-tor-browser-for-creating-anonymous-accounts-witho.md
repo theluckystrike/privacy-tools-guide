@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-tor-browser-for-creating-anonymous-accounts-witho/
 description: "Follow this guide to how to use tor browser for creating anonymous accounts witho with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "How To Use Tor Browser For Creating Anonymous Accounts"
 description: "A practical guide for developers and power users on using Tor Browser to create anonymous accounts without phone verification. Configuration tips"

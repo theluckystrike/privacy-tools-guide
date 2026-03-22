@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/
 description: "Follow this guide to how to use pgp encrypted email with protonmail to non proton with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Use Pgp Encrypted Email With Protonmail To Non"
 description: "A practical guide for developers and power users on sending PGP-encrypted emails from ProtonMail to external recipients. Includes key management"

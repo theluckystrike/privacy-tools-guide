@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-ssh-tunneling-for-encrypted-communication-between/
 description: "Follow this guide to how to use ssh tunneling for encrypted communication between with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Use Ssh Tunneling For Encrypted Communication"
 description: "SSH tunneling creates encrypted pathways between devices, securing data that would otherwise travel in plaintext. Whether you're accessing a database on a"

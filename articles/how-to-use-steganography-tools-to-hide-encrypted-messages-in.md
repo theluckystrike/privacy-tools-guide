@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-steganography-tools-to-hide-encrypted-messages-in/
 description: "Follow this guide to how to use steganography tools to hide encrypted messages in with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Use Steganography Tools To Hide Encrypted Messages"
 description: "A practical guide for developers and power users on combining encryption with steganography to hide messages in images. Includes Python code examples"

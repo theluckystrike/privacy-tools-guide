@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-tor-with-encrypted-email-for-maximum-sender-anony/
 description: "Follow this guide to how to use tor with encrypted email for maximum sender anony with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Use Tor With Encrypted Email for Maximum Sender Anonymity"
 description: "A technical guide for developers and power users combining Tor network routing with PGP encryption for maximum email sender anonymity. Includes setup"
