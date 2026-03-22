@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-enterprise-password-manager-with-zero-knowledg/
 description: "Follow this guide to how to set up enterprise password manager with zero knowledg with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "How To Set Up Enterprise Password Manager With Zero Knowledg"
 description: "A practical guide for developers and power users setting up enterprise password managers with zero knowledge encryption. Includes architecture"
@@ -263,7 +271,7 @@ Vaultwarden does not enforce password strength by default. Configure minimum req
 ```bash
 # Vaultwarden environment variables for organization policy
 environment:
-  - PASSWORD_ITERATIONS=600000          # PBKDF2 iterations (Bitwarden default as of 2023)
+  - PASSWORD_ITERATIONS=600000          # PBKDF2 iterations (Bitwarden default )
   - ENFORCE_2FA_POLICY=true             # Require 2FA for all organization members
   - DISABLE_ADMIN_TOKEN=false           # Keep admin panel protected
   - SIGNUPS_VERIFY=true                 # Require email verification

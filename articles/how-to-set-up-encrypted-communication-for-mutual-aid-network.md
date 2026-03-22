@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-encrypted-communication-for-mutual-aid-network/
 description: "Follow this guide to how to set up encrypted communication for mutual aid network with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Set Up Encrypted Communication for Mutual Aid"
 description: "A practical technical guide for developers and power users to establish encrypted communication channels for mutual aid networks. Covers Signal"

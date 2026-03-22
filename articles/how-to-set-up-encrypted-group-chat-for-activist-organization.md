@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-encrypted-group-chat-for-activist-organization/
 description: "Follow this guide to how to set up encrypted group chat for activist organization with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Encrypted Group Chat For Activist Organization"
 description: "A practical technical guide for developers and power users setting up secure group messaging infrastructure for activist organizations. Covers Matrix"

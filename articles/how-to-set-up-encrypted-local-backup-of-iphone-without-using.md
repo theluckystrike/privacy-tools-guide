@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-encrypted-local-backup-of-iphone-without-using/
 description: "Follow this guide to how to set up encrypted local backup of iphone without using with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Set Up Encrypted Local Backup Of iPhone"
 description: "If you value privacy and want full control over your iPhone backups, skipping iCloud is a smart move. Local backups give you ownership of your data, eliminate"

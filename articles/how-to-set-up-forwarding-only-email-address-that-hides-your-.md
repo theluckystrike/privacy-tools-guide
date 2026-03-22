@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-forwarding-only-email-address-that-hides-your-/
 description: "Follow this guide to how to set up forwarding only email address that hides your  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Forwarding Only Email Address That Hides Your"
 description: "Every developer knows the pain of exposing their primary email address across the internet. Whether you're signing up for a new service, contributing to open"

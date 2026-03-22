@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
 description: "Follow this guide to how to set up jitsi meet self hosted encrypted video confere with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Jitsi Meet Self Hosted Encrypted Video"
 description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment"

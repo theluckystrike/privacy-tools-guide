@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/
 description: "Follow this guide to how to set up offline encrypted communication between two pe with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Offline Encrypted Communication Between Two"
 description: "When internet connectivity is unavailable or deliberately avoided, establishing secure communication between two parties requires a different approach. Offline"

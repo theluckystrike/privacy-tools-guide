@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/
 description: "Follow this guide to how to set up panic button on phone emergency privacy wipe with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Set Up Panic Button on Phone: Emergency Privacy"
 description: "Setting up a panic button on your phone enables rapid data destruction when you face an emergency situation. Whether you're a journalist protecting sources, a"
