@@ -2,9 +2,12 @@
 layout: default
 title: "How to Build a Privacy-Preserving Webhook Relay That Strips PII Before Delivery"
 description: "Learn how to build a webhook relay system that automatically strips personally identifiable information (PII) before forwarding webhooks to your endpoints."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /how-to-build-privacy-preserving-webhook-relay-that-strips-pi/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 {% raw %}
 Webhooks are the backbone of modern event-driven architectures. They power everything from payment notifications to CI/CD pipelines. But handling webhooks from third-party services often means receiving sensitive user data you don't need—and shouldn't store. Building a privacy-preserving webhook relay gives you control over what data reaches your systems.
