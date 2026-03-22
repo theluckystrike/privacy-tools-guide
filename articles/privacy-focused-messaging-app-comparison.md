@@ -5,7 +5,7 @@ description: "Compare Signal, SimpleX, Briar, Element, and Session on metadata p
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-messaging-app-comparison/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

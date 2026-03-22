@@ -5,7 +5,7 @@ description: "Replace data-hungry weather apps with open-source and privacy-resp
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-weather-app-alternatives/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

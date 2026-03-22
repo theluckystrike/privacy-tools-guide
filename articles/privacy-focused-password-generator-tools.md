@@ -5,7 +5,7 @@ description: "Compare offline and open-source password generators for creating s
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-password-generator-tools/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
