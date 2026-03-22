@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [tor, privacy, anonymity, browser-optimization]
+tags: [privacy-tools-guide, tor, privacy, anonymity, browser-optimization]
 ---
 
 {% raw %}

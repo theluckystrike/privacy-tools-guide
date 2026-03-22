@@ -8,7 +8,7 @@ permalink: /how-to-optimize-librewolf-browser-speed-and-compatibility-wi/
 categories: [guides]
 tags: [privacy-tools-guide, librewolf, browser, privacy, security, performance, firefox]
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 intent-checked: true
 ---
