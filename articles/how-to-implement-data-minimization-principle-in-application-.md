@@ -39,13 +39,23 @@ Implement data minimization by collecting only fields directly required for decl
 - **Uses a rotating daily**: salt so the pseudonym cannot be linked across days.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## The Core Concept: Collecting Less, Not More
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Core Concept: Collecting Less, Not More
 
 Data minimization starts at the requirements phase. Before storing any field, ask whether the application genuinely needs it. Every piece of personal data you collect creates liability—data that does not exist cannot be breached, leaked, or misused.
 
 Consider a user registration form. Many applications request full name, phone number, date of birth, and address. But if your application only needs an email address for account recovery, collecting additional fields violates minimization. Each unnecessary field represents a privacy risk with no corresponding business value.
 
-## Database Schema Strategies
+### Step 2: Database Schema Strategies
 
 ### Column Selection: Only What You Need
 
@@ -113,7 +123,7 @@ class UserSession(Base):
 
 Schedule this cleanup to run daily, ensuring that session tokens do not accumulate indefinitely in your database.
 
-## API Design for Minimization
+### Step 3: API Design for Minimization
 
 ### Request and Response Filtering
 
@@ -179,7 +189,7 @@ def get_user_logs(user_id, cursor=None, limit=50):
     }
 ```
 
-## Input Processing: Validate, Do Not Store
+### Step 4: Input Processing: Validate, Do Not Store
 
 ### Ephemeral Processing Patterns
 
@@ -240,7 +250,7 @@ function validateEmailForRateLimit(email) {
 }
 ```
 
-## Data Retention Policies
+### Step 5: Data Retention Policies
 
 Implement automated retention enforcement at the database level.
 
@@ -280,7 +290,7 @@ class DataRetentionPolicy:
 
 Run a daily cron job that applies these policies, ensuring no personal data lingers beyond its necessity.
 
-## Collection Logging
+### Step 6: Collection Logging
 
 When you must collect data for security purposes, minimize what you retain.
 
@@ -316,7 +326,7 @@ class PrivacyAwareLogger:
         logging.info(f"{action}: {safe_data}")
 ```
 
-## Auditing Existing Data Collections
+### Step 7: Audit Existing Data Collections
 
 When joining a team with an existing codebase, the first step is mapping what personal data the application already collects. An automated schema audit gives you a starting inventory:
 
@@ -365,7 +375,7 @@ for f in findings:
 
 Run this audit and export the results to a spreadsheet. For each flagged column, document the business purpose it serves. Columns with no documented purpose are candidates for removal in the next schema migration.
 
-## Designing Registration Flows for Minimization
+### Step 8: Designing Registration Flows for Minimization
 
 Registration forms are the primary point where applications over-collect. A minimized registration should request the fewest fields needed to create a working account. Progressive disclosure — asking for additional information only when a feature that requires it is accessed — keeps the initial profile lean:
 
@@ -388,7 +398,7 @@ const billingSchema = {
 
 This pattern also reduces abandonment rates — shorter forms convert better — while simultaneously reducing your data liability.
 
-## Anonymizing Analytics Without Losing Insights
+### Step 9: Anonymizing Analytics Without Losing Insights
 
 Analytics are a common source of unnecessary personal data retention. You can capture meaningful usage metrics without storing user-identifying information:
 
@@ -417,6 +427,21 @@ def anonymize_event(user_id: str, event: dict) -> dict:
 ```
 
 Daily rotation of the salt means you can count unique sessions within a day (for DAU metrics) without building a long-term profile that links a user's behavior across weeks or months.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

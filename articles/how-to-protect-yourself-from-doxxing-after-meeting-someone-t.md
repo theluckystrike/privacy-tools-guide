@@ -42,7 +42,17 @@ Online dating has become the primary way many people meet romantic partners, but
 3.
 - **Use a dedicated device**: (old laptop/phone) # 2.
 
-## Understanding the Doxxing Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Doxxing Threat Model
 
 Doxxing involves gathering and publicly exposing someone's personal information without their consent. In the context of online dating, this typically manifests as someone you met collecting your address, workplace, social media accounts, or other identifying details, then sharing them—often as retaliation after a relationship ends poorly or as use during a dispute.
 
@@ -55,7 +65,7 @@ The information a bad actor can collect falls into several categories:
 
 Understanding what you're protecting against helps you implement appropriate countermeasures. For developers and power users, this means thinking like an attacker conducting OSINT (Open Source Intelligence) reconnaissance.
 
-## Before Meeting: Establish Information Boundaries
+### Step 2: Before Meeting: Establish Information Boundaries
 
 The most effective defense starts before you ever meet someone in person. Set clear boundaries about what information you share and when.
 
@@ -89,7 +99,7 @@ op item create --title="Dating Account Email" \
 
 This separation ensures that even if one account is compromised, your primary email, GitHub, LinkedIn, and other services remain protected.
 
-## After Meeting: Immediate Post-Meeting Security Measures
+### Step 3: After Meeting: Immediate Post-Meeting Security Measures
 
 Once you've met someone in person, assume some information has been observed. This isn't about paranoia—it's about understanding realistic threat levels and implementing proportional defenses.
 
@@ -175,7 +185,7 @@ op item get "Netflix" --format json | op item edit \
   login.password="$(openssl rand -base64 24)"
 ```
 
-## Long-Term Privacy Maintenance
+### Step 4: Long-Term Privacy Maintenance
 
 Protecting yourself from doxxing requires ongoing vigilance, not just one-time fixes.
 
@@ -210,7 +220,7 @@ Set up Google Alerts for your name and variations to catch when your information
 3. Set frequency to "As it happens"
 4. Check periodically and respond to unexpected results
 
-## Digital Footprint Cleanup Tools
+### Step 5: Digital Footprint Cleanup Tools
 
 Automate the process of finding and removing information:
 
@@ -252,7 +262,7 @@ search_digital_footprint "John Smith" "john@example.com"
 
 Tools like Google's Takeout let you download all your data, then you can systematically remove it.
 
-## Responding to Doxxing
+### Step 6: Responding to Doxxing
 
 If despite your precautions, you experience doxxing, act quickly:
 
@@ -262,7 +272,7 @@ If despite your precautions, you experience doxxing, act quickly:
 4. **Consider legal action**: Depending on jurisdiction, doxxing may violate laws
 5. **Change exposed information**: Update phone numbers, emails, and addresses if necessary
 
-## Legal Response Framework
+### Step 7: Legal Response Framework
 
 Understanding your legal options depends on jurisdiction:
 
@@ -323,7 +333,7 @@ threat_models = {
 }
 ```
 
-## Counter-Surveillance Techniques
+### Step 8: Counter-Surveillance Techniques
 
 If you suspect active monitoring after meeting someone:
 
@@ -362,7 +372,7 @@ ps aux | grep -i "spy\|monitor\|track"
 tcpdump -i any -n 'ip and port != 53' | head -100
 ```
 
-## Creating a Safe Room Setup
+### Step 9: Create a Safe Room Setup
 
 If you need to maintain contact with someone you met while protecting privacy:
 
@@ -405,7 +415,7 @@ setup_safe_device() {
 }
 ```
 
-## Monitoring Services for Exposure
+### Step 10: Monitor Services for Exposure
 
 Use automated services to alert you if your information appears:
 
@@ -442,7 +452,7 @@ monitor_breaches() {
 }
 ```
 
-## Recovery from Active Doxxing Campaign
+### Step 11: Recovery from Active Doxxing Campaign
 
 If you're currently experiencing doxxing:
 
@@ -466,6 +476,21 @@ If you're currently experiencing doxxing:
 3. Implement permanent identity separation
 4. Strengthen ongoing security practices
 5. Consider relocation if threats are credible
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,13 +40,23 @@ Amazon Alexa devices are designed to listen for their wake word continuously, wh
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding Alexa's Recording Behavior
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Alexa's Recording Behavior
 
 When you speak to Alexa, your voice is processed locally on the device initially, then sent to Amazon's cloud servers for speech recognition and response generation. Amazon stores these recordings, and they can be reviewed, transcribed, and potentially used for improving voice recognition algorithms. Even when you are not actively interacting with Alexa, the device may occasionally record and transmit audio if it misinterprets background sounds as the wake word.
 
 The wake word detection itself happens on-device using a small neural network, but the actual voice commands and any incidental conversations within range of the microphone are transmitted to Amazon's servers. This is a fundamental design choice that cannot be completely eliminated without fundamentally modifying the device's firmware.
 
-## Basic Privacy Settings Through the Alexa App
+### Step 2: Basic Privacy Settings Through the Alexa App
 
 The most straightforward approach to limiting Alexa's data collection involves adjusting settings within the Alexa app. While these settings do not stop all recording, they provide the first layer of privacy control.
 
@@ -66,7 +76,7 @@ Brief Mode reduces the verbal responses from Alexa but does not stop recording. 
 
 Navigate to Settings > Alexa Account > Voice Purchasing and disable this feature. This prevents accidental purchases and reduces the need for Alexa to process payment-related voice data.
 
-## Using Alexa's Built-in Privacy Features
+### Step 3: Use Alexa's Built-in Privacy Features
 
 Amazon has implemented several privacy-focused features that developers and power users should understand:
 
@@ -172,7 +182,7 @@ config rule
 
 This approach requires more configuration but provides granular control over what data your Alexa device can send.
 
-## Limitations of Network Blocking
+### Step 4: Limitations of Network Blocking
 
 Blocking Alexa's network traffic has consequences you should understand:
 
@@ -183,7 +193,7 @@ Blocking Alexa's network traffic has consequences you should understand:
 
 The only way to have a fully functional Alexa device while preventing data transmission to Amazon is through custom firmware, which is beyond the scope of this guide and may void your warranty.
 
-## The Muting Strategy
+### Step 5: The Muting Strategy
 
 The most effective immediate action is using the physical mute button on your Alexa device. This provides a hardware-level guarantee that no audio is being captured:
 
@@ -248,7 +258,7 @@ uci commit
 
 This setup allows only Amazon-destined traffic from Alexa, blocking most exfiltration.
 
-## Monitoring Alexa's Actual Network Activity
+### Step 6: Monitor Alexa's Actual Network Activity
 
 See exactly what Alexa sends:
 
@@ -283,7 +293,7 @@ sudo tcpdump -i eth0 -A -s 0 'tcp port 443 and (host 52.94.0.0/14)'
 
 Monitoring reveals the extent of Alexa's communication.
 
-## Firmware-Level Modifications (Advanced)
+### Step 7: Firmware-Level Modifications (Advanced)
 
 For maximum control, modify Alexa's firmware (requires technical expertise):
 
@@ -313,7 +323,7 @@ For maximum control, modify Alexa's firmware (requires technical expertise):
 
 Firmware modification is extreme but guarantees no recording.
 
-## Detecting Unauthorized Activation
+### Step 8: Detecting Unauthorized Activation
 
 Monitor for unexpected Alexa usage:
 
@@ -380,7 +390,7 @@ def analyze_recording_patterns():
 
 Regular monitoring catches unauthorized use.
 
-## Alternative: Replace Alexa Entirely
+### Step 9: Alternative: Replace Alexa Entirely
 
 If Alexa's privacy posture is unacceptable:
 
@@ -415,7 +425,7 @@ apt-get install mycroft-core
 
 Open-source alternatives offer full privacy at cost of simplicity.
 
-## Regulatory and Legal Considerations
+### Step 10: Regulatory and Legal Considerations
 
 Be aware of laws regarding audio recording:
 
@@ -444,7 +454,7 @@ What you can do:
 
 Understand legal implications of voice recording in your location.
 
-## Complete Privacy Auditing Checklist
+### Step 11: Complete Privacy Auditing Checklist
 
 Alexa privacy audit:
 
@@ -506,6 +516,21 @@ echo "=== AUDIT COMPLETE ==="
 ```
 
 Run this audit regularly (monthly recommended).
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

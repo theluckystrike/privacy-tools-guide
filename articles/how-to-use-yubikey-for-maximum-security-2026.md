@@ -27,11 +27,21 @@ tags: ["YubiKey", "Two-Factor Authentication", "Hardware Security", "Encryption"
 
 {% raw %}
 
-## How to Use YubiKey for Maximum Security in 2026
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How to Use YubiKey for Maximum Security in 2026
 
 YubiKeys provide hardware-backed authentication and encryption protection against phishing, credential theft, and unauthorized access. This guide covers complete YubiKey setup for FIDO2, GPG, SSH, and OTP with multi-key backup and disaster recovery strategies.
 
-## YubiKey Hardware Overview
+### Step 2: YubiKey Hardware Overview
 
 **YubiKey 5 Series Options:**
 
@@ -50,7 +60,7 @@ YubiKeys provide hardware-backed authentication and encryption protection agains
 
 Total cost: ~$165 for maximum redundancy and recovery capability.
 
-## FIDO2 Authentication Setup
+### Step 3: FIDO2 Authentication Setup
 
 **What is FIDO2:**
 - Passwordless authentication standard
@@ -110,7 +120,7 @@ After registration: YubiKey is required for login + recovery.
 4. Name and register backup keys
 ```
 
-## GPG Key Management
+### Step 4: GPG Key Management
 
 **Step 1: Generate Master GPG Key (on secure machine)**
 
@@ -179,7 +189,7 @@ gpg --symmetric secret-key.asc.gpg
 # - NOT with the key file
 ```
 
-## SSH Key Setup
+### Step 5: SSH Key Setup
 
 **Step 1: Enable SSH on YubiKey**
 
@@ -251,7 +261,7 @@ Host *.internal
   IdentityAgent ~/.gnupg/S.gpg-agent.ssh
 ```
 
-## One-Time Password (OTP) Setup
+### Step 6: One-Time Password (OTP) Setup
 
 **Step 1: Configure OTP on YubiKey**
 
@@ -307,7 +317,7 @@ ykman otp yubiotp
 6. Paste YubiKey secret
 ```
 
-## Multi-Key Backup Strategy
+### Step 7: Multi-Key Backup Strategy
 
 **Backup Architecture:**
 
@@ -356,7 +366,7 @@ Scenario 3: Key damaged/non-functional
 4. Receive replacement within 2 weeks
 ```
 
-## Account Recovery Codes
+### Step 8: Account Recovery Codes
 
 **Step 1: Generate Recovery Codes**
 
@@ -397,7 +407,7 @@ Secondary storage: Home safe
 └── Service usernames/emails
 ```
 
-## PIN and Password Management
+### Step 9: PIN and Password Management
 
 **YubiKey PIN Settings:**
 
@@ -432,7 +442,7 @@ Note: Memorizing PINs is NOT recommended
 Store in password manager with YubiKey serial number
 ```
 
-## Disaster Recovery Plan
+### Step 10: Disaster Recovery Plan
 
 **Complete Recovery Playbook:**
 
@@ -485,7 +495,7 @@ Step 4: Update Backups (1 month)
 - Risk: Security vulnerabilities go unpatched
 - Fix: Update YubiKey firmware yearly (ykman firmware update)
 
-## Regular Maintenance Schedule
+### Step 11: Regular Maintenance Schedule
 
 **Monthly:**
 - Test YubiKey connection to primary computer
@@ -503,6 +513,21 @@ Step 4: Update Backups (1 month)
 - Review and update backup storage locations
 - Check YubiKey warranty status
 - Update emergency contact procedures
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Articles
 

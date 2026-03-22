@@ -40,7 +40,17 @@ Your digital footprint encompasses every data point you leave behind while using
 - **However**: developers testing web applications should use Firefox with its strict tracking protection in "strict" mode, accessible via `about:config`.
 - **iOS 17+ and Android**: 14+ support system-wide DoH without requiring additional apps.
 
-## Browser Hardening: First Line of Defense
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Harden the Browser : First Line of Defense
 
 Browser fingerprinting has become sophisticated enough to track users across sessions without cookies. Firefox with the arkenfox user.js configuration provides strong anti-fingerprinting protections out of the box. Install Firefox and apply the arkenfox configuration:
 
@@ -81,7 +91,7 @@ Practical container setup:
 
 This prevents the scenario where your social media tracker loads as a "like" button on a shopping site and correlates your identity across both. The Facebook container extension automates this specifically for Facebook and its properties.
 
-## Network-Level Protection
+### Step 2: Network-Level Protection
 
 Your ISP sees every domain you resolve. Running your own DNS over HTTPS (DoH) resolver blocks that observation. Pi-hole provides network-wide ad and tracker blocking while supporting DoH upstream:
 
@@ -120,7 +130,7 @@ A VPN shifts DNS and traffic visibility from your ISP to the VPN provider. This 
 
 Avoid free VPN services. Operators that offer free VPN access typically monetize through user data collection—directly contradicting the privacy purpose.
 
-## Email Privacy and Masking
+### Step 3: Email Privacy and Masking
 
 Email addresses serve as unique identifiers across services. Creating separate email aliases for different contexts reduces correlation. For developers comfortable with command-line tools, FastMail's alias system or SimpleLogin (now part of Proton) provide managed solutions.
 
@@ -162,7 +172,7 @@ soffice --headless --infilter="writer8" --convert-to "odt" document.docx
 # Then use exiftool on the output
 ```
 
-## Data Minimization in Development
+### Step 4: Data Minimization in Development
 
 If you build applications, implement data minimization principles. Collect only what you need, retain it for the minimum necessary time, and encrypt it at rest:
 
@@ -194,7 +204,7 @@ class DataMinimizer:
 
 Avoid logging personally identifiable information. Use structured logging with correlation IDs rather than embedding user emails or names in log files.
 
-## Device Hardening
+### Step 5: Device Hardening
 
 Modern devices collect substantial telemetry. Disable what you can through operating system settings:
 
@@ -235,7 +245,7 @@ while IFS='|' read -r service email status date; do
 done < ~/privacy/accounts.txt
 ```
 
-## Social Media Exposure Reduction
+### Step 6: Social Media Exposure Reduction
 
 Social media platforms are the single largest voluntary data contribution most users make. Even without sharing posts publicly, your interactions—likes, follows, search behavior, and time-on-content—feed extensive behavioral profiles.
 
@@ -254,7 +264,7 @@ On Google: myaccount.google.com/connections
 
 **Pseudonymous accounts**: For technical communities where you share work but want separation from your real identity, maintain distinct pseudonymous accounts using separate email addresses and browser containers. Never cross-link them from personal accounts.
 
-## Automation for Continuous Privacy Hygiene
+### Step 7: Automation for Continuous Privacy Hygiene
 
 Maintain your privacy posture with automated checks. Create scripts that verify your configurations:
 
@@ -294,6 +304,21 @@ Schedule this script weekly via cron to catch configuration drift:
 # Add to crontab
 0 9 * * 0 ~/scripts/privacy-check.sh >> ~/logs/privacy-check.log 2>&1
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

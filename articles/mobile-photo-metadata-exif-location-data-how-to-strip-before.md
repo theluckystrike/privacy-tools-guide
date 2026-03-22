@@ -38,13 +38,23 @@ When you capture a photo with your smartphone, the image file contains more than
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding EXIF Location Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand EXIF Location Data
 
 EXIF data lives inside image files themselves, added automatically by your phone's camera application. Location data appears as GPS coordinates stored in specific EXIF tags: GPSLatitude, GPSLongitude, GPSAltitude, and related fields. When you share a photo directly from your phone's gallery, you may inadvertently transmit this embedded location information to recipients or third-party platforms.
 
 The implications extend beyond simple privacy concerns. Metadata can reveal your home address, workplace, travel patterns, and the exact times you visit specific locations. Social media platforms, messaging apps, and cloud storage services may retain this metadata even after you upload images, creating lasting records of your movements.
 
-## Inspecting EXIF Metadata
+### Step 2: Inspecting EXIF Metadata
 
 Before removing metadata, you should understand what information your photos contain. Several tools allow you to examine EXIF data from the command line.
 
@@ -97,7 +107,7 @@ gps_data = get_exif_data("photo.jpg")
 print(gps_data)
 ```
 
-## Stripping EXIF Data with Command-Line Tools
+### Step 3: Stripping EXIF Data with Command-Line Tools
 
 Once you identify the metadata, removing it requires several approaches depending on your workflow.
 
@@ -183,7 +193,7 @@ def strip_exif_efficient(input_path, output_path=None):
         image.save(output_path, **save_kwargs)
 ```
 
-## Platform-Specific Solutions
+### Step 4: Platform-Specific Solutions
 
 ### Android
 
@@ -236,7 +246,7 @@ func stripEXIF(from url: URL) -> Data? {
 }
 ```
 
-## Automating the Workflow
+### Step 5: Automate the Workflow
 
 For developers who frequently share photos, automation scripts improve the process. A simple shell script processes incoming images:
 
@@ -288,6 +298,21 @@ alias strip-gps='exiftool -gps:all= -overwrite_original'
 ```
 
 This allows quick GPS removal from the current directory with a single command.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

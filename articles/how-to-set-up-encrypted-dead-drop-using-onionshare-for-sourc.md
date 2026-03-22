@@ -39,7 +39,7 @@ Set up an OnionShare dead drop by installing the application, creating a receive
 - **Keep this message minimal**: instructions to use Tor Browser, an assurance that no logs are kept, and a contact method for questions if needed.
 - **Add Encryption Layer (Optional**: but Recommended) For additional security, encrypt files before processing them.
 
-## Understanding the Dead Drop Model
+### Step 1: Understand the Dead Drop Model
 
 A dead drop works like a physical mailbox in espionage tradecraft: one party leaves information at a predetermined location for another party to retrieve later. In digital form, this means your source can submit encrypted documents or messages that only you can decrypt, without any direct communication or IP address correlation.
 
@@ -58,7 +58,7 @@ Before setting up your dead drop, ensure you have:
 
 For a persistent dead drop that remains available around the clock, a VPS is more reliable than a laptop that gets closed or rebooted. DigitalOcean's $6/month Droplet running Ubuntu 22.04 is sufficient. OnionShare supports headless operation through its CLI, making server deployment practical.
 
-## Step-by-Step Setup
+### Step 2: Step-by-Step Setup
 
 ### 1. Install OnionShare
 
@@ -234,7 +234,7 @@ Important: Close Tor Browser after submission to protect your session.
 Do not reuse this session for other browsing.
 ```
 
-## Sharing the Dead Drop Address
+### Step 3: Sharing the Dead Drop Address
 
 When providing the onion address to sources, use multiple channels:
 

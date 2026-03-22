@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 When your password appears in a data breach, automated credential stuffing bots test it against thousands of services within hours, exploiting password reuse to gain access to your email, banking, and social media accounts. Immediately change passwords on all accounts where you reused credentials (starting with email, which is the master account), use a password manager to generate unique passwords going forward, enable multi-factor authentication on critical accounts, and monitor breach databases like Have I Been Pwned for future compromises. If the breached password was hashed, attackers may crack weak passwords offline—this is why strong, unique passwords matter more after a breach.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Account enumeration**: They check what services you use and extract profile data
+3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Attackers use automated tools**: to try compromised credentials against banking sites, social media, email providers, and SaaS applications.
+
 ## How Breached Passwords Get Exploited
 
 When a service suffers a data breach, attackers typically obtain more than just passwords. Depending on the breach, they may access:

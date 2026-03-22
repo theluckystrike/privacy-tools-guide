@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, privacy]---
 
 Use open source tools to audit and harden Windows privacy: Wireshark monitors network traffic to catch unexpected data exfiltration, OpenSSL handles certificate validation for encrypted connections, Gpg4win provides transparent PGP encryption for email, and Hashcat audits password security. Windows 11 still collects telemetry by default, so combine Settings tweaks (disable diagnostics, turn off Cortana) with open source firewall tools like ZoneAlarm community edition or Windows Firewall administration scripts to block Microsoft's telemetry endpoints. Open source tools are preferable because you can audit their source code and avoid proprietary "privacy cleaners" that sometimes misidentify legitimate system files.
 
+## Key Takeaways
+
+- **Open source tools are**: preferable because you can audit their source code and avoid proprietary "privacy cleaners" that sometimes misidentify legitimate system files.
+- Choose "Standard VeraCrypt volume"
+5.
+- **The open source version**: works with many VPN providers.
+- **While not fully open source**: the tools are freely available and widely used for Windows auditing.
+- **While not open source**: it provides valuable privacy hardening.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Network Monitoring and Firewall Tools
 
 ### Wireshark

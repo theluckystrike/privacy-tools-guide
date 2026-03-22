@@ -42,7 +42,17 @@ This guide provides practical strategies and technical configurations to reduce 
 2.
 - **Enable "Pause background activity"**: for VPN apps when screen is off # 2.
 
-## Understanding Why VPNs Drain Battery
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Why VPNs Drain Battery
 
 Before implementing solutions, you need to understand the root causes of VPN-related battery drain.
 
@@ -54,7 +64,7 @@ Before implementing solutions, you need to understand the root causes of VPN-rel
 
 **DNS resolution** through encrypted DNS servers can introduce latency and additional processing compared to local resolution.
 
-## Protocol Selection: The Foundation of Battery Efficiency
+### Step 2: Protocol Selection: The Foundation of Battery Efficiency
 
 Your choice of VPN protocol dramatically impacts battery consumption.
 
@@ -94,7 +104,7 @@ IKEv2 handles network transitions smoothly, making it ideal for mobile users who
 
 OpenVPN, while versatile, generates significantly more overhead due to its TLS-based architecture. Unless specific use cases require it, stick with WireGuard or IKEv2 for mobile deployments.
 
-## Configuration Strategies for Power Users
+### Step 3: Configuration Strategies for Power Users
 
 ### Split Tunneling
 
@@ -136,7 +146,7 @@ VPN kill switches prevent data leaks by blocking traffic when the VPN disconnect
 
 For mobile devices, consider using the **application-level kill switch** rather than the system-level variant if your VPN client supports it. This approach monitors only VPN-specific traffic rather than all network activity.
 
-## Mobile-Specific Optimizations
+### Step 4: Mobile-Specific Optimizations
 
 ### Android Settings
 
@@ -165,7 +175,7 @@ Both Android and iOS aggressively manage background apps. To ensure your VPN rem
 - Disable **Data Saver mode** for the VPN application
 - Enable **unrestricted background activity** (Android) or disable **Background App Refresh** restrictions (iOS)
 
-## Network Transition Handling
+### Step 5: Network Transition Handling
 
 Mobile devices constantly switch networks, each transition potentially disrupting the VPN tunnel.
 
@@ -182,7 +192,7 @@ Mobile devices constantly switch networks, each transition potentially disruptin
 
 For WireGuard, the built-in handshake reinitiation typically handles transitions within seconds without full reconnection.
 
-## Monitoring and Debugging
+### Step 6: Monitor and Debugging
 
 To verify your optimizations are working, monitor VPN battery impact:
 
@@ -220,7 +230,7 @@ PersistentKeepalive = 30
 
 This configuration routes only development-related traffic through the VPN while keeping personal traffic direct, minimizing battery impact while protecting sensitive work communications.
 
-## Measuring and Benchmarking
+### Step 7: Measuring and Benchmarking
 
 Track actual battery consumption with specific VPN configurations:
 
@@ -296,6 +306,21 @@ class BatteryOptimizedVPN {
     }
 }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

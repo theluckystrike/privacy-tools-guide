@@ -35,7 +35,17 @@ Digital estate planning has become essential as more aspects of our lives move o
 
 This guide covers the technical implementation of beneficiary access across major cloud password managers, focusing on time-delayed release mechanisms that balance security with practical recovery needs.
 
-## Understanding Time-Delayed Release Mechanisms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Time-Delayed Release Mechanisms
 
 Time-delayed release in password manager beneficiary systems operates through a combination of cryptographic key sharing and timed authorization workflows. Unlike simple password sharing, which grants immediate and often permanent access, time-delayed release introduces a waiting period between the beneficiary's access request and actual vault decryption.
 
@@ -59,7 +69,7 @@ The typical time-delayed release workflow follows these stages:
 4. **Grace Period**: The delay timer runs—if you actively deny the request, access is blocked
 5. **Release Phase**: If not denied, the beneficiary gains decrypted access after the timer elapses
 
-## Setting Up Beneficiary Access in Bitwarden
+### Step 2: Set Up Beneficiary Access in Bitwarden
 
 Bitwarden provides trusted beneficiary functionality through its Emergency Access feature. Here's how to configure it:
 
@@ -93,7 +103,7 @@ bw list emergency-access --pending
 
 The JSON output shows the status, delay hours, and whether the relationship is confirmed.
 
-## Setting Up Beneficiary Access in 1Password
+### Step 3: Set Up Beneficiary Access in 1Password
 
 1Password implements a similar concept called "Emergency Kit" and family sharing, but true time-delayed beneficiary access is available through 1Password Families or Teams.
 
@@ -117,7 +127,7 @@ The JSON output shows the status, delay hours, and whether the relationship is c
 
 While this doesn't provide automatic time-delayed release, it gives your beneficiary complete vault access when needed.
 
-## Implementing Custom Time-Delayed Release with Vaultwarden
+### Step 4: Implementing Custom Time-Delayed Release with Vaultwarden
 
 For developers who want more control, self-hosted Vaultwarden (the open-source Bitwarden server implementation) can be extended with custom time-delayed access logic.
 
@@ -209,7 +219,7 @@ Time-delayed beneficiary access introduces several security considerations:
 - **Regular Verification**: Periodically verify that your beneficiary's contact information remains current
 - **Document Instructions**: Provide your beneficiary with written instructions on what to do when they need to request access
 
-## Alternative Approaches
+### Step 5: Alternative Approaches
 
 ### Secret Sharing Schemes
 
@@ -238,6 +248,21 @@ def split_secret(secret: str, shares: int, threshold: int) -> list[str]:
 ```
 
 This approach requires multiple trusted parties to combine their shares, providing defense in depth.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

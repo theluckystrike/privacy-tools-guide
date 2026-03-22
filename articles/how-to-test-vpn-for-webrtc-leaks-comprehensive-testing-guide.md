@@ -47,7 +47,17 @@ WebRTC leaks occur when browsers use the STUN (Session Traversal Utilities for N
 
 The vulnerability affects all major browsers including Chrome, Firefox, Safari, and Edge. Even if you've configured your VPN correctly and see a VPN IP address in other tests, WebRTC can still expose your true location. Understanding this threat is essential for anyone serious about online privacy, particularly journalists, activists, and security professionals.
 
-## Testing for WebRTC Leaks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Test for WebRTC Leaks
 
 ### Method 1: Online WebRTC Leak Testing Tools
 
@@ -152,7 +162,7 @@ if __name__ == "__main__":
 
 This script queries multiple STUN servers and reports the detected IP addresses. Run this script both with and without your VPN connected to compare results. If the reported IP changes when you connect to your VPN, your WebRTC implementation is working correctly—but remember that browser-level WebRTC can still leak even if this test passes.
 
-## Mitigating WebRTC Leaks
+### Step 2: Mitigating WebRTC Leaks
 
 ### Browser Extension Solutions
 
@@ -170,13 +180,13 @@ Chrome users can use the "WebRTC Network Limiter" extension from Google or modif
 
 Some VPN providers implement WebRTC leak protection on their clients. This typically involves firewall rules that block UDP traffic except through the VPN tunnel, or by intercepting and filtering STUN requests at the application level. Check if your VPN provider offers this feature—it provides protection regardless of browser configuration.
 
-## Testing After Mitigation
+### Step 3: Test After Mitigation
 
 After implementing mitigation strategies, verify they work by repeating the testing methods described above. Browser extensions can sometimes be bypassed by determined attackers, and configuration settings may reset after browser updates. Make testing a regular part of your security routine, especially when using sensitive services.
 
 Test on all browsers you use, since each handles WebRTC differently. Chrome's Chromium-based browsers share similar protections, while Firefox has its own independent implementation. Mobile browsers also need testing—iOS Safari and Android Chrome both support WebRTC and may leak.
 
-## Understanding the Risk
+### Step 4: Understand the Risk
 
 The severity of a WebRTC leak depends on your threat model. For average users, IP exposure might mean targeted ads or basic geographic tracking. For journalists, activists, or those bypassing censorship, a leaked IP can have serious consequences including identity exposure or physical danger.
 
@@ -202,7 +212,7 @@ tcpdump -r webrtc_capture.pcap -X | head -50
 
 This approach reveals exactly which IP addresses your device contacts, providing definitive evidence of leaks that testing tools might miss.
 
-## Testing Across Different Network Conditions
+### Step 5: Test Across Different Network Conditions
 
 WebRTC behavior varies depending on network conditions. Test in multiple scenarios:
 
@@ -242,7 +252,7 @@ If accessing from office networks with proxies, test WebRTC behavior:
 # Some proxies interfere with VPN/STUN interactions
 ```
 
-## Interpreting Test Results
+### Step 6: Interpreting Test Results
 
 Understanding what results mean matters as much as getting them:
 
@@ -255,7 +265,7 @@ Understanding what results mean matters as much as getting them:
 - VPN routing leak that needs VPN provider attention
 - Browser-specific behavior that differs between testing methods
 
-## Browser-Specific Testing Matrix
+### Step 7: Browser-Specific Testing Matrix
 
 Different browsers leak differently. Test fully:
 
@@ -278,7 +288,7 @@ done
 
 Record results for each browser. You may find that one browser needs different configuration than others.
 
-## WebRTC Leak Severity Assessment
+### Step 8: WebRTC Leak Severity Assessment
 
 Not all WebRTC leaks are equally severe:
 
@@ -302,7 +312,7 @@ Some VPN providers handle WebRTC better than others:
 
 Test your specific VPN provider rather than relying on general reputation. Implementations vary.
 
-## Automating Regular WebRTC Leak Testing
+### Step 9: Automate Regular WebRTC Leak Testing
 
 Set up automated testing to catch regressions:
 
@@ -386,6 +396,21 @@ WebRTC leak testing is one component of VPN protection:
 5. **Trust Level**: Verify your VPN provider's commitment to WebRTC protection
 
 This layered approach ensures WebRTC leaks become extremely unlikely even if one component fails.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

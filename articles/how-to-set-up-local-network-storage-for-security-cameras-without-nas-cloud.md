@@ -52,7 +52,17 @@ Consider these factors when planning your storage:
 
 For most home installations, a dedicated hard drive with 2-4TB provides adequate storage for 7-14 days of footage from 2-4 cameras using motion-triggered recording.
 
-## Option 1: Direct Network Share (SMB/CIFS)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1: Direct Network Share (SMB/CIFS)
 
 The simplest approach uses your existing network infrastructure. Most modern IP cameras support writing directly to network shares via SMB/CIFS protocol.
 
@@ -102,7 +112,7 @@ Access your camera's web interface and navigate to storage settings. Configure t
 
 This approach works well for cameras from manufacturers like Amcrest, Reolink, and many Dahua devices. The footage writes directly to your server, bypassing any cloud dependency.
 
-## Option 2: RTSP Stream Recording with Dedicated Software
+### Step 2: Option 2: RTSP Stream Recording with Dedicated Software
 
 For greater control and compatibility with more camera models, use RTSP streaming with dedicated recording software.
 
@@ -154,7 +164,7 @@ Create a storage plan in Shinobi's dashboard. Set up different retention periods
 
 This configuration enables motion-triggered recording, immediately saving clips when movement is detected.
 
-## Option 3: Raspberry Pi with MotionEyeOS
+### Step 3: Option 3: Raspberry Pi with MotionEyeOS
 
 For smaller deployments or edge storage, Raspberry Pi combined with MotionEyeOS provides an excellent solution.
 
@@ -198,7 +208,7 @@ sudo mount /dev/sdX1 /mnt/cameras
 
 Configure MotionEye to use this mount point for recordings through the storage settings in the web interface.
 
-## Option 4: Containerized Recording with Docker
+### Step 4: Option 4: Containerized Recording with Docker
 
 For developers preferring containerized deployments, combine FFmpeg with Docker for flexible recording.
 
@@ -262,7 +272,7 @@ cameras:
         mode: motion
 ```
 
-## Securing Your Local Storage
+### Step 5: Secure Your Local Storage
 
 Regardless of which method you choose, implement these security practices:
 
@@ -298,7 +308,7 @@ sudo mkfs.ext4 /dev/mapper/camera_storage
 sudo mount /dev/mapper/camera_storage /srv/camera-storage
 ```
 
-## Monitoring and Maintenance
+### Step 6: Monitor and Maintenance
 
 Implement basic monitoring to ensure continuous operation:
 
@@ -319,6 +329,21 @@ Regular maintenance tasks include:
 - Checking disk space weekly
 - Testing backup restoration quarterly
 - Updating camera firmware and recording software monthly
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

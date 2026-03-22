@@ -54,7 +54,7 @@ Before implementing failover, gather the following:
 - Basic familiarity with terminal commands and cron scheduling
 - Root or sudo access on your Linux system
 
-## Setting Up Your Primary and Secondary VPN Tunnels
+### Step 1: Set Up Your Primary and Secondary VPN Tunnels
 
 First, establish both VPN connections on your Linux machine. This example uses WireGuard, but the principles apply to any protocol.
 
@@ -122,7 +122,7 @@ sudo wg-quick up wg0
 sudo wg-quick up wg1
 ```
 
-## Implementing the Failover Script
+### Step 2: Implementing the Failover Script
 
 The core of your failover system is a monitoring script that checks connectivity through each tunnel and switches routes when needed.
 
@@ -206,7 +206,7 @@ Make the script executable:
 sudo chmod +x /usr/local/bin/vpn-failover.sh
 ```
 
-## Running the Failover Monitor
+### Step 3: Run the Failover Monitor
 
 Start the failover script as a systemd service for reliability. Create the service file:
 
@@ -239,7 +239,7 @@ sudo systemctl enable vpn-failover
 sudo systemctl start vpn-failover
 ```
 
-## Testing Your Failover System
+### Step 4: Test Your Failover System
 
 Verify the failover mechanism works before relying on it in production.
 
@@ -283,7 +283,7 @@ The script will detect recovery and switch back, or you can configure it to rema
 
 **Logging**: Monitor the log file regularly or integrate with a log aggregation system for production environments.
 
-## Policy Routing for Split Traffic
+### Step 5: Policy Routing for Split Traffic
 
 Use `ip rule` with named routing tables to send specific traffic through each tunnel independently of the default route:
 
@@ -308,6 +308,21 @@ ip route show table vpn0
 This routes sensitive API traffic through provider 1 and general traffic through provider 2, without modifying the global default route. Add rules to `/etc/rc.local` or a systemd oneshot service for persistence across reboots.
 
 Automatic failover with WireGuard and systemd eliminates single-point failures. Swap providers by updating the `.conf` files — the monitoring script and routing tables stay unchanged.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

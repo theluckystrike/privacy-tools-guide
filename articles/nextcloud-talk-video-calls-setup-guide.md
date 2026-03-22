@@ -39,7 +39,17 @@ Nextcloud Talk provides a self-hosted video conferencing solution that gives you
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Nextcloud Talk Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Nextcloud Talk Architecture
 
 Nextcloud Talk uses WebRTC for peer-to-peer communication, which means video streams flow directly between participants when possible. However, NAT traversal and firewall configurations often require relay servers to ensure connectivity. The system consists of three main components: the Nextcloud server with the Talk app installed, a signaling server (built into Nextcloud), and TURN/STUN servers for media relay.
 
@@ -56,7 +66,7 @@ occ app:enable spreed
 
 After installation, navigate to **Settings > Administration > Talk** in your Nextcloud dashboard to configure basic options. The default settings work for small deployments, but production environments require additional tuning.
 
-## Configuring TURN Servers for Reliable Connectivity
+### Step 2: Configure TURN Servers for Reliable Connectivity
 
 The most critical configuration for video call success is the TURN server setup. Without properly configured TURN servers, participants behind corporate firewalls or NAT cannot establish connections. The public STUN server list maintained by Nextcloud provides basic functionality, but production deployments should run their own TURN server.
 
@@ -92,7 +102,7 @@ Return to Nextcloud Talk settings and enter your TURN server details:
 
 For high availability, configure multiple TURN servers using a load balancer or specify multiple entries in the Nextcloud settings.
 
-## Firewall and Network Configuration
+### Step 3: Firewall and Network Configuration
 
 Firewall rules often block the UDP ports required for WebRTC. Configure your firewall to allow:
 
@@ -112,7 +122,7 @@ iptables -A INPUT -p udp --dport 32768:60999 -j ACCEPT
 
 For organizations with strict outbound restrictions, you may need to allow traffic to external TURN servers. Document the required ports and IP ranges, noting that UDP is preferred but TCP fallback improves compatibility.
 
-## Optimizing Performance for Large Calls
+### Step 4: Optimizing Performance for Large Calls
 
 Nextcloud Talk handles group calls differently than one-on-one conversations. For calls with more than a few participants, the system uses a Selective Forwarding Unit (SFU) architecture that reduces client-side processing requirements. Enable these settings in **Settings > Administration > Talk > Advanced settings**:
 
@@ -131,7 +141,7 @@ Nextcloud Talk handles group calls differently than one-on-one conversations. Fo
 
 The `max-attendees` setting prevents resource exhaustion on shared hosting environments. For dedicated servers, values up to 200 work well depending on available CPU and bandwidth.
 
-## Integrating with External Authentication
+### Step 5: Integrate with External Authentication
 
 For organizations using existing identity providers, Nextcloud Talk supports OAuth2 and SAML integration. Configure external storage in your `config.php`:
 
@@ -161,7 +171,7 @@ Common issues and solutions include:
 - **Call connection failures:** Check TURN server connectivity with `nc -zvu your-domain.com 3478`
 - **Poor video quality:** Enable hardware encoding if available; check bandwidth between participants and TURN servers.
 
-## Scripted Deployment with Ansible
+### Step 6: Scripted Deployment with Ansible
 
 For repeatable deployments, use configuration management tools. Here's an Ansible task for TURN server setup:
 
@@ -180,7 +190,7 @@ For repeatable deployments, use configuration management tools. Here's an Ansibl
 
 This approach ensures consistent configuration across development, staging, and production environments while maintaining documentation in code.
 
-## Scaling Beyond Single Server
+### Step 7: Scaling Beyond Single Server
 
 As usage grows, consider separating components onto dedicated infrastructure. The signaling component can be scaled horizontally behind a load balancer, while TURN servers benefit from anycast routing to minimize latency. Nextcloud Enterprise provides optimized container images for Kubernetes deployment.
 
@@ -188,7 +198,7 @@ For most small to medium deployments, a single well-configured server handles 50
 
 Nextcloud Talk delivers capable video conferencing without sacrificing data sovereignty. With proper TURN server configuration and network setup, you gain a reliable communication platform under your complete control.
 
-## WebRTC Protocol Deep-Dive
+### Step 8: WebRTC Protocol Deep-Dive
 
 Understanding WebRTC internals helps optimize Nextcloud Talk:
 
@@ -237,7 +247,7 @@ Configuration in Nextcloud:
 ],
 ```
 
-## Media Codec Selection and Quality
+### Step 9: Media Codec Selection and Quality
 
 Codec choice affects quality, bandwidth, and CPU usage:
 
@@ -263,7 +273,7 @@ Audio Codecs:
 ],
 ```
 
-## Bandwidth Management and QoS
+### Step 10: Bandwidth Management and QoS
 
 Control bandwidth usage to prevent network saturation:
 
@@ -303,7 +313,7 @@ occ config:app:set spreed recording_path --value=/mnt/secure-storage/recordings
 openssl enc -aes-256-cbc -e -in call-recording.mp4 -out call-recording.mp4.enc
 ```
 
-## Integration with Chatbot Services
+### Step 11: Integration with Chatbot Services
 
 Automate meeting features with bots:
 
@@ -325,7 +335,7 @@ curl -X POST https://nextcloud.example.com/ocs/v2.php/apps/spreed/api/v1/bots/st
 # - message sent
 ```
 
-## High-Availability Deployment
+### Step 12: High-Availability Deployment
 
 For production, ensure redundancy:
 
@@ -375,7 +385,7 @@ volumes:
   redis-data:
 ```
 
-## Security Hardening for Talk
+### Step 13: Security Hardening for Talk
 
 Additional hardening measures:
 
@@ -400,7 +410,7 @@ Additional hardening measures:
 ],
 ```
 
-## Mobile App Optimization
+### Step 14: Mobile App Optimization
 
 Optimize for mobile clients:
 
@@ -417,6 +427,21 @@ Optimize for mobile clients:
     'mobile_codec_preference' => 'vp8', // Lower CPU codec
 ],
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -41,7 +41,17 @@ Using Tor in jurisdictions where it is restricted or illegal presents unique cha
 - **Don't explain your Tor**: usage (it's not illegal to use Tor) 4.
 - **This guide provides practical**: techniques for developers and power users who need to access Tor network securely in such environments.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 When using Tor in a country that actively blocks or criminalizes its use, you face three distinct threat categories: network-level blocking, device forensics, and behavioral detection. Each requires different countermeasures.
 
@@ -49,7 +59,7 @@ Network-level blocking involves ISP-level filtering that identifies and blocks T
 
 Effective protection requires addressing all three vectors simultaneously.
 
-## Obfs4 Bridge Configuration
+### Step 2: Obfs4 Bridge Configuration
 
 Standard Tor bridges are often blocked within days of publication in restrictive jurisdictions. Obfs4 bridges provide an additional layer of obfuscation that makes Tor traffic appear like normal TLS connections. Unlike pluggable transports that were previously popular, obfs4 has proven more resilient against automated blocking systems.
 
@@ -66,7 +76,7 @@ ClientTransportPlugin obfs4 exec /usr/local/bin/obfs4proxy
 
 The `iat-mode=2` parameter enables polymorphic traffic padding that randomizes packet sizes and timing, making traffic analysis significantly more difficult.
 
-## Pluggable Transports and Meek
+### Step 3: Pluggable Transports and Meek
 
 For environments with sophisticated filtering, the meek transport provides an additional layer. Meek works by wrapping Tor traffic inside HTTPS requests to legitimate cloud services, making it appear as normal web browsing to network observers.
 
@@ -80,7 +90,7 @@ ClientTransportPlugin meek_lite exec /usr/local/bin/meek-client --url=https://me
 
 This configuration routes your Tor traffic through Microsoft's Azure content delivery network, which is unlikely to be blocked without causing significant collateral damage to legitimate services.
 
-## Tor Browser Hardening
+### Step 4: Tor Browser Hardening
 
 Beyond network configuration, Tor Browser itself requires hardening for high-risk environments. Default settings prioritize usability over maximum security, so power users should adjust several parameters.
 
@@ -107,7 +117,7 @@ docker run --rm -it --cap-add NET_ADMIN \
   kalilinux/kali-rolling /bin/bash
 ```
 
-## Network Isolation Techniques
+### Step 5: Network Isolation Techniques
 
 Your Tor traffic can be compromised by DNS leaks, WebRTC exposure, and IPv6 leaks. Verify your configuration using the Tor Browser's built-in check at check.torproject.org, but be aware that accessing this site itself may be monitored.
 
@@ -143,7 +153,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 ```
 
-## Operational Security Practices
+### Step 6: Operational Security Practices
 
 Technical configuration alone does not ensure safety. Operational security practices are equally important in high-risk environments.
 
@@ -160,7 +170,7 @@ echo "get transport obfs4" | mail -s "get transport obfs4" bridges@torproject.or
 
 Monitor your network connections using tools like Wireshark or nethogs to ensure traffic is actually being routed through Tor. Unexpected direct connections can expose your activities.
 
-## Backup Communication Channels
+### Step 7: Backup Communication Channels
 
 In case your Tor connection fails or is detected, establish out-of-band communication channels using alternative methods. Signal, with disappearing messages enabled, provides end-to-end encryption for critical communications. For maximum security, use encrypted email with PGP through a provider that doesn't log IP addresses.
 
@@ -231,7 +241,7 @@ PublicServer 0
 
 Cost: $5-20/month for a VPS. Benefit: A bridge that's completely under your control, impossible for an ISP to block without blocking your VPS provider's entire IP range.
 
-## Detecting and Responding to ISP Blocking
+### Step 8: Detecting and Responding to ISP Blocking
 
 Recognizing when you're being blocked is critical for adapting your strategy:
 
@@ -326,7 +336,7 @@ Some argue running Tor over a VPN adds a layer of obfuscation. However, this has
 
 This is controversial because it introduces a new choke point. Only use this if your ISP blocking is the primary threat and you trust your VPN provider more than your ISP.
 
-## Monitoring for Detection
+### Step 9: Monitor for Detection
 
 Staying safe requires assuming you might be detected despite precautions:
 
@@ -358,7 +368,7 @@ sudo tail -f /var/log/auth.log
 tail -f /var/log/tor/log
 ```
 
-## Safe Content Consumption Over Tor
+### Step 10: Safe Content Consumption Over Tor
 
 Even with perfect technical security, behavioral patterns can reveal identity. Security researchers have demonstrated that writing style, posting times, and content interests can deanonymize users.
 
@@ -381,7 +391,7 @@ Even with perfect technical security, behavioral patterns can reveal identity. S
 # Never share cookies, browser profiles, or configurations between personas
 ```
 
-## Contingency Planning
+### Step 11: Contingency Planning
 
 Assume your Tor usage will be detected at some point. Have an exit plan:
 
@@ -419,7 +429,7 @@ Using Tails OS (live operating system that routes all traffic through Tor) provi
 
 Tails is recommended for anyone in truly high-risk environments.
 
-## Ongoing Security Maintenance
+### Step 12: Ongoing Security Maintenance
 
 Tor and bridge technology evolve as censors adapt. Staying safe requires regular updates:
 
@@ -438,7 +448,7 @@ sudo apt-get update && sudo apt-get upgrade tor
 echo "get transport obfs4" | mail -s "get transport obfs4" bridges@torproject.org
 ```
 
-## Privacy Considerations Beyond Tor
+### Step 13: Privacy Considerations Beyond Tor
 
 Tor protects your network routing, but it doesn't protect against:
 
@@ -453,6 +463,21 @@ Supplement Tor with:
 - Strict site isolation browser setting
 - Clearnet account never accessed from Tor
 - Tor account never accessed from clearnet
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -43,7 +43,17 @@ Android's Private DNS feature, introduced in Android 9 (Pie), implements DNS-ove
 - **Several methods exist depending**: on your technical preferences.
 - **Network Switching**: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays.
 
-## Understanding DNS Privacy on Android
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand DNS Privacy on Android
 
 By default, DNS queries travel over UDP or TCP in plaintext. Anyone monitoring your network traffic can intercept these queries and build a log of every website you visit. While HTTPS encrypts the contents of your communication, the DNS resolution still reveals the domain names you connect to.
 
@@ -51,7 +61,7 @@ Private DNS solves this problem by establishing a TLS-encrypted connection betwe
 
 The key advantage for developers and power users is that this works at the operating system level. Unlike browser extensions or app-specific solutions, Private DNS protects all applications simultaneously.
 
-## Configuring Private DNS on Android
+### Step 2: Configure Private DNS on Android
 
 The configuration process involves navigating to your device's network settings and specifying a Private DNS provider hostname. Android accepts three modes:
 
@@ -68,7 +78,7 @@ The configuration process involves navigating to your device's network settings 
 5. Choose the **Hostname** option
 6. Enter the provider hostname
 
-## Popular Private DNS Providers
+### Step 3: Popular Private DNS Providers
 
 Several organizations operate free, privacy-respecting DNS-over-TLS services:
 
@@ -82,7 +92,7 @@ Several organizations operate free, privacy-respecting DNS-over-TLS services:
 
 For users wanting to avoid major technology companies, Quad9 provides a solid option with no logging of IP addresses. NextDNS offers customizable blocking lists, though some features require a free account.
 
-## Verifying Your Private DNS Configuration
+### Step 4: Verify Your Private DNS Configuration
 
 After configuration, you should verify that DNS queries are actually encrypted. Several methods exist depending on your technical preferences.
 
@@ -161,7 +171,7 @@ Some applications or networks may experience issues with Private DNS. Common pro
 
 **Network Switching**: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays. This is normal behavior.
 
-## Limitations of Private DNS
+### Step 5: Limitations of Private DNS
 
 Understanding what Private DNS does not protect is important for security-conscious users:
 
@@ -221,7 +231,7 @@ curl -X POST "https://api.nextdns.io/profiles" \
 
 This profile can then be used in Android's Private DNS setting.
 
-## Bypassing DNS Blocking in Restricted Networks
+### Step 6: Bypassing DNS Blocking in Restricted Networks
 
 In environments where DNS blocking prevents access to certain sites:
 
@@ -236,7 +246,7 @@ nslookup example.com your-private-dns-provider
 
 DNS-over-HTTPS may evade some network-level blocks because it uses standard HTTPS ports (443) rather than dedicated DNS ports.
 
-## Monitoring DNS Configuration with ADB
+### Step 7: Monitor DNS Configuration with ADB
 
 For power users wanting verification:
 
@@ -250,7 +260,7 @@ adb shell getprop | grep dns
 
 This helps confirm Private DNS is active and reveals fallback behavior.
 
-## Integration with VPN Services
+### Step 8: Integration with VPN Services
 
 When using Private DNS alongside a VPN:
 
@@ -268,7 +278,7 @@ DNSSECNegativeTrustAnchors=
 
 This configuration forces DNS through only specified servers, preventing leaks.
 
-## DNS Privacy in Development and Testing
+### Step 9: DNS Privacy in Development and Testing
 
 For developers testing applications:
 

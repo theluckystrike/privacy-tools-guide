@@ -44,7 +44,17 @@ This guide walks through setting up Mail-in-a-Box specifically for privacy-consc
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding the Privacy Advantages
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Privacy Advantages
 
 When you use mainstream email services, your messages pass through servers controlled by companies with financial incentives to analyze your communication patterns. Every email you send reveals metadata: when you communicate, how frequently, and with whom. This data builds profiles used for advertising and potentially shared with third parties.
 
@@ -68,7 +78,7 @@ Research VPS providers carefully. Some actively block port 25 (SMTP) or throttle
 
 Before proceeding, reserve your domain name and ensure you can modify its DNS records. You'll need to create several DNS entries during the Mail-in-a-Box setup process.
 
-## Installation Process
+### Step 2: Install ation Process
 
 The actual installation involves downloading and running the automated setup script. Begin by connecting to your server via SSH:
 
@@ -100,7 +110,7 @@ The script prompts for an email address (which becomes your administrative accou
 
 The entire process typically completes in 10-15 minutes. Once finished, the script displays administrative credentials and URLs for accessing your new email system.
 
-## DNS Configuration
+### Step 3: DNS Configuration
 
 Proper DNS records prove essential for email deliverability and security. After installation, Mail-in-a-Box provides specific records you must add to your domain's DNS settings.
 
@@ -114,7 +124,7 @@ Access your domain registrar's DNS management interface and create these records
 
 Test your DNS configuration using online tools like MXToolbox or mail-tester.com. These services verify that your records are correctly configured and provide feedback on potential issues affecting email deliverability.
 
-## Hardening Your Mail Server for Privacy
+### Step 4: Hardening Your Mail Server for Privacy
 
 The default Mail-in-a-Box configuration provides solid security, but privacy-conscious users should implement additional measures.
 
@@ -154,7 +164,7 @@ BACKUP_ENCRYPTION=your-encryption-key
 
 Consider backing up to a location separate from your primary server—for example, an S3-compatible storage service or another VPS in a different location.
 
-## Accessing Your Email
+### Step 5: Access Your Email
 
 Mail-in-a-Box provides multiple access methods:
 
@@ -169,7 +179,7 @@ Mail-in-a-Box provides multiple access methods:
 
 For mobile devices, the K-9 Mail app (Android) or Thunderbird (desktop) provide excellent privacy-respecting options that support standard protocols.
 
-## Adding Additional Users and Aliases
+### Step 6: Adding Additional Users and Aliases
 
 Create separate accounts for different purposes to maintain separation between your communications:
 
@@ -187,7 +197,7 @@ You can also create email aliases that forward to multiple recipients or catch-a
 
 This flexibility enables compartmentalized communication—a valuable privacy practice for managing different aspects of your digital life.
 
-## Maintaining Your Server
+### Step 7: Maintaining Your Server
 
 Regular maintenance keeps your private email server running securely:
 
@@ -209,7 +219,7 @@ Even well-configured mail servers encounter problems. Here are solutions for fre
 
 **Certificate warnings**: Let's Encrypt certificates should auto-renew. If you see warnings, check that your DNS records point correctly and that the renewal cron job runs successfully.
 
-## Privacy Considerations for Power Users
+### Step 8: Privacy Considerations for Power Users
 
 For maximum privacy, consider these additional measures:
 

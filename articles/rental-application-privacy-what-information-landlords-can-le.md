@@ -31,6 +31,15 @@ intent-checked: true---
 
 Landlords can require income verification, credit checks, rental history, and background checks to assess financial responsibility and tenancy reliability, but cannot request protected class information (race, religion, family status, disability status, national origin) regardless of stated reasons. Fair Housing Act restrictions mean refusing to rent based on protected characteristics is illegal; landlords must use objective criteria consistently applied—if you're asked invasive health questions, social security numbers not required for credit checks, or employment history unrelated to income verification, you can decline. Most states allow tenants to obtain copies of reports used for denial decisions (FCRA rights), challenge inaccurate data, and request correction before rental decisions. For protection: provide only information requested, refuse optional questions, and if denied, request the specific reasons and review reports for errors—many rental denials trace to incorrect background checks or credit reports that you can challenge and correct.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Use PDF redaction tools**: to remove sensitive information from financial documents 3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Most states allow tenants**: to obtain copies of reports used for denial decisions (FCRA rights), challenge inaccurate data, and request correction before rental decisions.
+- **They cannot use the**: application process to gather information that would allow discriminatory filtering.
+
 ## The Fair Housing Act: Foundation of Tenant Privacy
 
 The Fair Housing Act prohibits discrimination based on protected classes including race, color, national origin, religion, sex, familial status, and disability. This federal law forms the backbone of what landlords cannot ask about, but it does not explicitly list every permissible or prohibited question.

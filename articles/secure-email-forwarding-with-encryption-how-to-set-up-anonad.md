@@ -41,13 +41,23 @@ Email privacy is a fundamental concern for developers and power users who manage
 - **The key difference lies**: in their architecture: Anonaddy is open-source and self-hostable, while SimpleLogin offers both hosted and self-hosted versions.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Email Alias Services
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Email Alias Services
 
 Email alias services act as intermediaries between your real inbox and the outside world. Instead of giving out your primary email, you create unique aliases that forward to your actual inbox. When an alias gets compromised or sold to spammers, you simply delete it—your primary address remains untouched.
 
 Both Anonaddy and SimpleLogin offer browser extensions, mobile apps, and SMTP forwarding capabilities. The key difference lies in their architecture: Anonaddy is open-source and self-hostable, while SimpleLogin offers both hosted and self-hosted versions.
 
-## Setting Up Anonaddy
+### Step 2: Set Up Anonaddy
 
 Anonaddy provides a free tier with limited features and paid plans for additional aliases and domains. The self-hosted version requires Docker and a mail server, but we'll focus on the hosted version for quick setup.
 
@@ -85,7 +95,7 @@ gpg --full-generate-key
 gpg --armor --export your@email.com > public_key.asc
 ```
 
-## Setting Up SimpleLogin
+### Step 3: Set Up SimpleLogin
 
 SimpleLogin provides a similar workflow with a polished interface. The free tier includes unlimited aliases on the `@simplelogin.com` domain, while premium plans support custom domains.
 
@@ -126,7 +136,7 @@ services:
       - redis
 ```
 
-## Implementing End-to-End Encryption
+### Step 4: Implementing End-to-End Encryption
 
 Both services forward emails as plain text by default. For sensitive communications, implement PGP encryption:
 
@@ -234,7 +244,7 @@ When implementing email aliasing in production environments:
 - **Enable 2FA**: Protect your alias service account with hardware keys or TOTP
 - **Separate concerns**: Use different aliases for different purposes (shopping, social media, work)
 
-## Comparing Anonaddy vs SimpleLogin
+### Step 5: Comparing Anonaddy vs SimpleLogin
 
 | Feature | Anonaddy | SimpleLogin |
 |---------|----------|-------------|
@@ -249,7 +259,7 @@ When implementing email aliasing in production environments:
 
 SimpleLogin's acquisition by Proton AG means it integrates well with ProtonMail. For users who prefer full independence and self-hosting, Anonaddy remains the better option.
 
-## Security Hardening for Alias Accounts
+### Step 6: Security Hardening for Alias Accounts
 
 Your alias service account is a high-value target. Protect it:
 
@@ -260,6 +270,21 @@ Your alias service account is a high-value target. Protect it:
 5. **Enable PGP encryption** so even if the service is compromised, email contents remain encrypted
 
 These precautions ensure that your alias service remains a privacy enhancement rather than a single point of failure.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

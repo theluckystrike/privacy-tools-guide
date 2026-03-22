@@ -43,7 +43,17 @@ Zoom bombing occurs when uninvited participants join your meeting and disrupt it
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Zoom Bombing Attack Vectors
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Zoom Bombing Attack Vectors
 
 Before implementing defenses, recognize how zoom bombing attacks succeed. The primary attack vectors include:
 
@@ -55,7 +65,7 @@ Before implementing defenses, recognize how zoom bombing attacks succeed. The pr
 
 Each vulnerability represents a configuration option you can disable or strengthen.
 
-## Essential Security Settings for Zoom Meetings
+### Step 2: Essential Security Settings for Zoom Meetings
 
 ### Account-Level Security Configuration
 
@@ -83,7 +93,7 @@ When scheduling individual meetings, apply these settings:
 3. **Lock the meeting**: Once all expected participants have joined, lock the meeting to prevent additional joins
 4. **Restrict screen sharing**: Limit to host only or designated presenters
 
-## Using Zoom CLI for Automated Meeting Security
+### Step 3: Use Zoom CLI for Automated Meeting Security
 
 For developers who want to script meeting creation with security baked in, the Zoom CLI (part of the Zoom SDK) provides programmatic control. While Zoom doesn't offer a direct CLI for end users, you can use the Zoom API with curl or your preferred HTTP client.
 
@@ -126,7 +136,7 @@ curl -X POST "https://api.zoom.us/v2/users/me/meetings" \
 
 This API call creates a meeting with waiting room enabled, join-before-host disabled, and geographic restrictions applied.
 
-## Implementing a Meeting Security Script
+### Step 4: Implementing a Meeting Security Script
 
 Create a shell script that generates secure meeting credentials and logs them to your password manager or secure storage:
 
@@ -165,7 +175,7 @@ curl -X POST "https://api.zoom.us/v2/users/me/meetings" \
 #   password="$MEETING_PASSWORD" url="https://zoom.us/j/YOUR-MEETING-ID"
 ```
 
-## Real-Time Meeting Security Commands
+### Step 5: Real-Time Meeting Security Commands
 
 During an active meeting, hosts can execute several security actions:
 
@@ -231,6 +241,21 @@ Configure meetings to require authentication:
 ```
 
 This ensures only authenticated Zoom users with verified email domains can join.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

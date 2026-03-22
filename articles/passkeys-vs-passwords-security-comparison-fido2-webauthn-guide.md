@@ -41,7 +41,17 @@ Passwords are dying. FIDO2-based passkeys (biometric or hardware key authenticat
 - User provides fingerprint/face/key interaction
 5.
 
-## The Fundamental Difference: Public Key vs Shared Secret
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Fundamental Difference: Public Key vs Shared Secret
 
 **Passwords are shared secrets:**
 
@@ -90,7 +100,7 @@ User Authentication:
 8. User logged in
 ```
 
-## Passkeys: Practical Security
+### Step 2: Passkeys: Practical Security
 
 A passkey is a FIDO2 credential stored on your device (phone, laptop, hardware key). Each passkey is unique to the service—you can't accidentally reuse the same passkey for multiple services (unlike password reuse).
 
@@ -121,7 +131,7 @@ You create an Apple ID with passkey:
 
 Next time you log in, just Face ID/Touch ID. No password required.
 
-## Platform Support for Passkeys (2026)
+### Step 3: Platform Support for Passkeys (2026)
 
 **Full passkey support (good):**
 - **macOS 13.3+**: Keychain passkeys, iCloud syncing
@@ -178,7 +188,7 @@ if (window.PublicKeyCredential) {
 | **Account recovery** | Easy (reset password via email) | Hard (requires backup passkeys or recovery codes) |
 | **Device theft** | Passwords still work elsewhere | Passkeys on device are locked (biometric required) |
 
-## Real-World Attack Prevention: Examples
+### Step 4: Real-World Attack Prevention: Examples
 
 **Scenario 1: Phishing attack**
 
@@ -212,7 +222,7 @@ Attacker hacks service.com database, steals password hashes.
 3. Passkey remains secure on your device
 4. Account remains locked down
 
-## WebAuthn Implementation Details
+### Step 5: WebAuthn Implementation Details
 
 For developers, here's how passkey registration and authentication work:
 
@@ -321,7 +331,7 @@ verified_auth = verify_authentication_response(
 # User authenticated!
 ```
 
-## Migration Strategy: Passwords to Passkeys
+### Step 6: Migration Strategy: Passwords to Passkeys
 
 You don't need to force passkeys immediately. A practical migration:
 
@@ -364,7 +374,7 @@ function promptPasskeyUpgrade() {
 }
 ```
 
-## Account Recovery Without Passwords
+### Step 7: Account Recovery Without Passwords
 
 Passkeys complicate account recovery (can't reset password). Solutions:
 
@@ -419,7 +429,7 @@ Balance security (not too easy to recover) with usability (not impossible).
 - Services requiring WCAG accessibility compliance
 - Hybrid approaches (passkeys optional, passwords fallback)
 
-## Real-World Examples (2026)
+### Step 8: Real-World Examples (2026)
 
 **Google Account (Gmail, Drive, etc):**
 - Passkey support: ✓ Full
@@ -443,7 +453,7 @@ Balance security (not too easy to recover) with usability (not impossible).
 - Password: Still primary for developer accounts
 - Passkey available for high-security access
 
-## Future of Authentication
+### Step 9: Future of Authentication
 
 By 2027-2028, expect:
 - Passkeys becoming standard on all major services
@@ -451,6 +461,21 @@ By 2027-2028, expect:
 - Regulatory requirements for high-security services to support passkeys
 - Hardware security keys becoming more affordable and common
 - Cross-service credential syncing improving
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -59,7 +59,7 @@ Before starting, ensure you have:
 
 If you need to set up a WireGuard server first, you can use a VPS with Ubuntu or Debian and follow the standard WireGuard installation process. Many managed VPN services also offer WireGuard configuration files for their servers.
 
-## Installing and Configuring the WireGuard App
+### Step 1: Install and Configuring the WireGuard App
 
 Search for "WireGuard" in the App Store and install the official application developed by the WireGuard team. The app is free and does not require any account creation or subscription.
 
@@ -94,7 +94,7 @@ PersistentKeepalive = 25
 
 The `PersistentKeepalive` setting sends periodic packets every 25 seconds to maintain the connection through NAT and firewalls. For mobile networks where connection state may change frequently, this parameter ensures your tunnel remains active.
 
-## Enabling Always-On VPN
+### Step 2: Enable Always-On VPN
 
 The key feature for privacy-conscious users is the always-on VPN, which encrypts all your traffic by default without manual intervention. To enable this in iOS:
 
@@ -119,7 +119,7 @@ For maximum privacy, enable both WiFi and Cellular connections and set the VPN t
 
 The "Disconnected" option maintains the VPN connection even when your iPhone sleeps, which is important for continuous protection. However, this may increase battery consumption slightly.
 
-## Optimizing for Battery Life
+### Step 3: Optimizing for Battery Life
 
 Always-on VPNs do consume battery, but WireGuard's efficiency minimizes this impact compared to older protocols. To optimize battery performance:
 
@@ -131,7 +131,7 @@ Always-on VPNs do consume battery, but WireGuard's efficiency minimizes this imp
 
 4. **WiFi Scanning** - Disable "Ask to Join Networks" and auto-joining for open networks to prevent unexpected disconnections and reconnections that cycle your VPN.
 
-## Testing Your Always-On Configuration
+### Step 4: Test Your Always-On Configuration
 
 After configuration, verify that the VPN activates properly:
 
@@ -221,7 +221,7 @@ Workaround: Use split tunneling
 - Not true chaining, but privacy for most traffic
 ```
 
-## Connecting to Self-Hosted WireGuard Servers
+### Step 5: Connecting to Self-Hosted WireGuard Servers
 
 If you host your own VPN server, additional configuration is needed:
 
@@ -274,7 +274,7 @@ fi
 # Add to crontab: */10 * * * * /path/to/ddns-update.sh
 ```
 
-## DNS and IPv6 Configuration
+### Step 6: DNS and IPv6 Configuration
 
 Proper DNS configuration prevents leaks:
 
@@ -436,7 +436,7 @@ Common problems and solutions:
    - Disable on cellular to save battery
 ```
 
-## Integration with Privacy Services
+### Step 7: Integration with Privacy Services
 
 Enhance WireGuard with other privacy tools:
 

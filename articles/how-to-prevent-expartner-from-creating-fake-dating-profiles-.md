@@ -26,7 +26,17 @@ Immediately reduce your attack surface by making social media profiles private, 
 - **Use them defensively and**: understand the legal implications in your jurisdiction.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Threat Vector
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Vector
 
 Fake dating profiles using your photos typically exploit three things: your digital footprint, metadata embedded in images, and the relative ease of impersonation on platforms with weak verification. Understanding how this works helps you build effective defenses.
 
@@ -39,7 +49,7 @@ When someone uploads your photo to a dating app, they're often aided by:
 
 The person creating the fake profile doesn't need technical skills—dating apps prioritize new user signups over verification. Your defense therefore focuses on reducing your attack surface and detecting misuse quickly.
 
-## Detecting Fake Profiles Using Your Photos
+### Step 2: Detecting Fake Profiles Using Your Photos
 
 ### Automated Reverse Image Search
 
@@ -113,7 +123,7 @@ Alert examples:
 
 This won't catch photo-based impersonation directly, but it's useful if your name appears in fake profiles.
 
-## Removing Metadata From Your Photos
+### Step 3: Remove Metadata From Your Photos
 
 EXIF metadata can reveal when and where photos were taken—information that makes impersonation more convincing. Stripping metadata from images before sharing them online is a fundamental privacy practice.
 
@@ -179,7 +189,7 @@ if __name__ == "__main__":
     batch_strip_metadata("/path/to/your/photos")
 ```
 
-## Reducing Your Digital Footprint
+### Step 4: Reducing Your Digital Footprint
 
 The fewer photos of you that exist online, the harder it is for someone to create convincing fake profiles.
 
@@ -215,7 +225,7 @@ Include in your report:
 - Statement that this is impersonation
 - Your relationship to the offender (if safe to disclose)
 
-## Technical Countermeasures for Developers
+### Step 5: Technical Countermeasures for Developers
 
 If you're building tools to protect against this threat, consider these approaches:
 
@@ -285,7 +295,7 @@ def check_photo_against_database(unknown_photo, known_faces_db):
 
 Note: Facial recognition tools raise ethical considerations. Use them defensively and understand the legal implications in your jurisdiction.
 
-## Legal Options andDMCA takedowns
+### Step 6: Legal Options andDMCA takedowns
 
 If someone is using your photos without permission, you can:
 
@@ -296,7 +306,7 @@ If someone is using your photos without permission, you can:
 
 Document everything: take screenshots, note dates, save communications. This evidence matters whether you're dealing with the platform directly or pursuing legal action.
 
-## Building a Proactive Defense
+### Step 7: Build a Proactive Defense
 
 The most effective strategy combines multiple layers:
 
@@ -308,6 +318,21 @@ The most effective strategy combines multiple layers:
 
 This isn't about paranoia—it's about recognizing that once photos are online, you have limited control over how they're used. Taking these steps gives you the best chance of catching misuse early and minimizing harm.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

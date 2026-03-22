@@ -45,7 +45,17 @@ For teams, establish a shared GPG key or use a key management system.
 - **All transfers use TLS**: and are end-to-end encrypted.
 - **For production deployments**: use reverse proxies with HTTPS (Let's Encrypt), proper database backends (PostgreSQL), and regular backups.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing any file sharing solution, identify what you're protecting against. Common threats include:
 
@@ -56,7 +66,7 @@ Before implementing any file sharing solution, identify what you're protecting a
 
 Each protection mechanism addresses different threats. End-to-end encryption protects against interception but doesn't hide metadata. Self-hosted solutions give you control over data retention but require proper hardening.
 
-## Encrypt Before You Share
+### Step 2: Encrypt Before You Share
 
 The foundation of secure file sharing is encrypting files before transmission. This ensures that even if the transport layer is compromised, your data remains unreadable.
 
@@ -101,7 +111,7 @@ curl -X POST https://your-privatebin-instance.com/api/v1/paste \
 
 This approach ensures the server never sees plaintext data—all encryption happens client-side.
 
-## Self-Hosted File Sharing Solutions
+### Step 3: Self-Hosted File Sharing Solutions
 
 Self-hosted solutions give you complete control over data, compliance, and retention policies.
 
@@ -145,7 +155,7 @@ Enable end-to-end encryption in the admin settings for sensitive documents. This
 
 For production deployments, use reverse proxies with HTTPS (Let's Encrypt), proper database backends (PostgreSQL), and regular backups.
 
-## Secure Transfer Utilities
+### Step 4: Secure Transfer Utilities
 
 ### curl with SFTP/SCP
 
@@ -184,7 +194,7 @@ rclone copy ./local-folder encrypted-backup:documents/
 
 Files are encrypted client-side with AES-256 before storage. The cloud provider sees only opaque blobs.
 
-## File Sharing Checklist
+### Step 5: File Sharing Checklist
 
 Before sharing sensitive documents, verify these items:
 
@@ -203,7 +213,7 @@ exiftool -all= document-scan.jpg
 shred -u sensitive-file.pdf
 ```
 
-## Ephemeral vs Persistent File Sharing
+### Step 6: Ephemeral vs Persistent File Sharing
 
 Different scenarios require different retention models. Understanding when to use each approach is crucial:
 
@@ -258,7 +268,7 @@ seafile-cli create-repo Documents
 seafile-cli share-repo Documents your-team@company.com rw
 ```
 
-## Managing Encryption Keys Operationally
+### Step 7: Manage Encryption Keys Operationally
 
 For team environments, key management becomes critical. Here are tested patterns:
 

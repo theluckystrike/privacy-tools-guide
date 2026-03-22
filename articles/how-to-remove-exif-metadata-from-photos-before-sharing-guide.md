@@ -26,7 +26,17 @@ Every photo you take contains metadata invisible to the human eye. The camera re
 - **Most people are unaware**: their photos leak this information.
 - **Most sharing platforms (Facebook**: Instagram, Twitter) strip EXIF automatically before display.
 
-## What Metadata Does Photos Contain
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Metadata Does Photos Contain
 
 EXIF data encodes:
 
@@ -89,7 +99,7 @@ Most people are unaware their photos leak this information. Most sharing platfor
 
 Remove EXIF before sharing to assume data you own stays private.
 
-## Tools for EXIF Removal
+### Step 2: Tools for EXIF Removal
 
 ### exiftool (Command-line, Most Powerful)
 
@@ -342,7 +352,7 @@ exiftool -all= -overwrite_original ~/Downloads/phone_photos/*.jpg
 
 This ensures no metadata leaks.
 
-## Metadata Removal Strategy by Use Case
+### Step 3: Metadata Removal Strategy by Use Case
 
 **Sharing on social media (Facebook, Instagram, Twitter):**
 - These platforms strip EXIF automatically for display
@@ -373,7 +383,7 @@ This ensures no metadata leaks.
 - Consider using "traveled mode" on cameras (removes GPS)
 - Strip metadata on encrypted devices before transmission
 
-## Verifying EXIF Removal
+### Step 4: Verify EXIF Removal
 
 After removing EXIF, verify it's gone.
 
@@ -396,7 +406,7 @@ Visit [https://verexif.com](https://verexif.com), upload the photo, inspect what
 
 **Verify before sharing:** Always verify after removing EXIF, especially for sensitive situations.
 
-## File Format Considerations
+### Step 5: File Format Considerations
 
 **JPEG:** Standard format, EXIF removal straightforward.
 
@@ -424,7 +434,7 @@ Time to remove EXIF from 1000 photos on 2023 MacBook:
 
 Command-line is fastest for batch jobs.
 
-## Privacy-First Photo Sharing Checklist
+### Step 6: Privacy-First Photo Sharing Checklist
 
 Before sharing any photo:
 
@@ -436,7 +446,7 @@ Before sharing any photo:
 - [ ] If sensitive (protest, abuse situation), assume metadata matters even if removed—also cover faces/identifiers
 - [ ] Use private sharing links (not public uploads) when possible
 
-## Automation for Regular Photo Management
+### Step 7: Automation for Regular Photo Management
 
 If you regularly clean photos before sharing:
 
@@ -470,7 +480,7 @@ while true; do
 done
 ```
 
-## Final Security Reminder
+### Step 8: Final Security Reminder
 
 Removing EXIF is a first step, not complete privacy. Photos still may reveal:
 - Location via background landmarks
@@ -489,6 +499,21 @@ EXIF removal is automatic hygiene, like locking your door. Do it always. But don
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

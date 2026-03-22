@@ -40,7 +40,17 @@ Your smartphone constantly broadcasts location data through multiple channels—
 - **Set all apps to**: "Allow only while using" not "Allow all the time" 3.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Location Tracking Vectors Explained
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Location Tracking Vectors Explained
 
 Modern smartphones expose location data through four primary mechanisms, each with distinct technical characteristics and mitigation strategies.
 
@@ -83,7 +93,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
 
 Retail stores, airports, and smart cities deploy BLE beacons for location tracking. Your phone detects these beacons for indoor navigation and proximity marketing.
 
-## Systematic Countermeasure Implementation
+### Step 2: Systematic Countermeasure Implementation
 
 ### Phase 1: Permission Audit and Revocation
 
@@ -182,7 +192,7 @@ Settings → Privacy & Security → Location Services → Location Services indi
 - Privacy Tester apps simulate tracking scenarios
 - Network analysis tools (Wireshark, Packet Capture) reveal location data transmission
 
-## Platform-Specific Recommendations
+### Step 3: Platform-Specific Recommendations
 
 ### Android Users
 
@@ -210,7 +220,7 @@ Digital countermeasures fail without physical device security:
 - **Encrypted Storage:** Full-disk encryption is default on modern devices but verify in settings
 - **Secure Boot:** Ensure your device verifies software integrity on each boot
 
-## Special Use Cases
+### Step 4: Special Use Cases
 
 **Journalists and Activists:**
 Standard countermeasures are insufficient. Consider:
@@ -225,6 +235,21 @@ If your app requires location:
 - Implement permission rationale before system prompt
 - Provide clear privacy policy
 - Consider on-device processing over server transmission
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

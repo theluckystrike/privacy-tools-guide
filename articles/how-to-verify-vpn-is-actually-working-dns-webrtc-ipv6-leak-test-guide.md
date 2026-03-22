@@ -57,7 +57,17 @@ A "working" VPN means:
 
 Many VPN apps claim to do this. Few actually do it correctly. Misconfigurations like DNS not routing through the VPN, WebRTC not being blocked, or IPv6 bypass routes mean your privacy isn't actually protected—even though the VPN app shows "Connected."
 
-## Test 1: Check Your Real IP
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Test 1: Check Your Real IP
 
 First, establish what your real IP is. This is what you want to hide.
 
@@ -87,7 +97,7 @@ curl https://icanhazip.com
 
 Note the IP address (e.g., 203.0.113.45). This is your real IP that you want to hide.
 
-## Test 2: DNS Leak Detection
+### Step 2: Test 2: DNS Leak Detection
 
 When you use a VPN, your DNS queries should go through the VPN's DNS servers, encrypted. If they leak, your ISP can still see what sites you visit.
 
@@ -158,7 +168,7 @@ sudo tcpdump -i any -n 'udp port 53' -c 5
 
 If you see DNS queries (port 53) going directly to your ISP while connected to VPN, there's a leak.
 
-## Test 3: WebRTC Leak Detection
+### Step 3: Test 3: WebRTC Leak Detection
 
 WebRTC is used by browsers for real-time communication (video calls, file sharing). It can bypass your VPN and leak your real IP directly.
 
@@ -240,7 +250,7 @@ If you found a WebRTC leak, disable WebRTC:
 2. Install WebRTC Leak Prevent extension
 3. Leave it enabled
 
-## Test 4: IPv6 Leak Detection
+### Step 4: Test 4: IPv6 Leak Detection
 
 If your network supports IPv6, traffic can leak through IPv6 routes that bypass your VPN.
 
@@ -313,7 +323,7 @@ netsh interface ipv6 set state disabled=yes
 netsh interface ipv6 set state disabled=no
 ```
 
-## Test 5: Kill Switch Verification
+### Step 5: Test 5: Kill Switch Verification
 
 A "kill switch" stops all traffic if the VPN drops, preventing unencrypted data from leaking.
 
@@ -366,7 +376,7 @@ netstat -an | grep ESTABLISHED
 # tcp4  0  0  192.168.1.100.54322  8.8.8.8.443  ESTABLISHED
 ```
 
-## Test 6: Check Leak Test Sites Themselves
+### Step 6: Test 6: Check Leak Test Sites Themselves
 
 Some leak test sites have false positives. Cross-reference:
 
@@ -377,7 +387,7 @@ Some leak test sites have false positives. Cross-reference:
 
 Visit 2-3 sites. If they all show the same IP (your VPN's IP), the VPN is working. If they show different IPs, something is wrong.
 
-## Test Checklist
+### Step 7: Test Checklist
 
 Before you trust a VPN, run this full verification:
 
@@ -413,7 +423,7 @@ Before you trust a VPN, run this full verification:
    [ ] All three should show VPN provider's IP
 ```
 
-## Common Leaks and Fixes
+### Step 8: Common Leaks and Fixes
 
 **Problem: DNS leak detected**
 
@@ -460,7 +470,7 @@ Fixes:
 - Check firewall isn't allowing exceptions
 - Restart VPN app and computer
 
-## Real Example: Testing ExpressVPN
+### Step 9: Real Example: Testing ExpressVPN
 
 Here's a complete verification of ExpressVPN:
 
@@ -473,6 +483,21 @@ Here's a complete verification of ExpressVPN:
 7. **Kill switch test:** Ping stops on VPN disconnect ✓ (working)
 
 Result: **ExpressVPN working correctly, no leaks detected.**
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

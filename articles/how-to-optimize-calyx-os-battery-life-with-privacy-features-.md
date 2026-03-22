@@ -39,7 +39,17 @@ This guide covers practical techniques to extend CalyxOS battery life while keep
 - **The privacy features in**: CalyxOS that affect battery consumption include: - MicroG - A free software reimplementation of Google Play Services.
 - **- Privacy-focused DNS -**: Using DNS-over-HTTPS or DNS-over-TLS increases cryptographic operations for every DNS query.
 
-## Understanding CalyxOS Power Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand CalyxOS Power Architecture
 
 Unlike stock Android distributions, CalyxOS removes Google Play Services (GPS) entirely. This single change eliminates a significant source of background processing—the constant sync operations, location polling, and push notification services that GPS performs. However, this also means you lose some battery optimization features that Google built into their Play Services.
 
@@ -50,7 +60,7 @@ The privacy features in CalyxOS that affect battery consumption include:
 - **Firewall rules** - CalyxOS includes NetGuard or a similar firewall that monitors all network traffic, adding slight overhead.
 - **Location masking** - Using fuzzy location instead of precise GPS reduces battery but still requires some location services.
 
-## First Steps: Basic Battery Optimization
+### Step 2: First Steps: Basic Battery Optimization
 
 Before diving into advanced techniques, ensure you've configured the fundamentals:
 
@@ -128,7 +138,7 @@ settings put global bluetooth_on 0
 settings put secure nfc_enabled 0
 ```
 
-## Sleep Mode and Battery Optimization
+### Step 3: Sleep Mode and Battery Optimization
 
 ### Implementing Aggressive Doze
 
@@ -161,7 +171,7 @@ When battery saver activates, it will:
 - Disable location services for most apps
 - Reduce network sync frequency
 
-## App-Specific Optimization Strategies
+### Step 4: App-Specific Optimization Strategies
 
 ### Identifying Battery-Draining Apps
 
@@ -199,7 +209,7 @@ Consider using F-Droid versions of apps instead of Play Store versions:
 # - Often use less battery due to simpler architectures
 ```
 
-## Privacy Feature Trade-offs
+### Step 5: Privacy Feature Trade-offs
 
 ### Location Privacy vs Battery
 
@@ -230,7 +240,7 @@ Running a VPN adds encryption overhead to all network traffic:
 # - Split tunneling to exclude low-risk apps
 ```
 
-## Monitoring and Maintenance
+### Step 6: Monitor and Maintenance
 
 ### Regular Battery Health Checks
 
@@ -281,6 +291,21 @@ echo "Battery optimizations applied"
 ```
 
 Save this as `calyxos-battery-privacy.sh` and run it via Termux or ADB.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

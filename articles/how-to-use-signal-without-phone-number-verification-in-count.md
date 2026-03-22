@@ -51,7 +51,17 @@ The current verification methods Signal supports include:
 
 None of these methods eliminate the phone number requirement entirely—they just offer different delivery mechanisms.
 
-## Workarounds for SIM Registration Restrictions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Workarounds for SIM Registration Restrictions
 
 ### 1. International Numbers from Permissive Jurisdictions
 
@@ -150,7 +160,7 @@ For temporary needs, several services provide disposable verification codes:
 
 These services work but carry risks: the number may be reassigned, enabling someone else to potentially claim your Signal account. Always enable Signal's registration lock PIN for security.
 
-## Implementing Signal PIN Protection
+### Step 2: Implementing Signal PIN Protection
 
 Regardless of verification method, enable Signal's registration lock:
 
@@ -169,7 +179,7 @@ Regardless of verification method, enable Signal's registration lock:
 
 This feature protects your account even if someone obtains your verification number.
 
-## Technical Considerations for Developers
+### Step 3: Technical Considerations for Developers
 
 If you're building systems around Signal's limitations, consider these approaches:
 
@@ -206,7 +216,7 @@ Choosing the right virtual number service depends on several technical factors. 
 
 For users in SIM-registration countries, SMS-Activate or Twilio represent the most reliable options because they maintain dedicated number pools and don't reassign numbers mid-session. Receive-SMS.co is cheaper but carries higher risk of number reassignment.
 
-## Country-Specific Strategies
+### Step 4: Country-Specific Strategies
 
 Different countries present unique challenges when registering Signal:
 
@@ -257,7 +267,7 @@ Once your account is registered through any method, you can link additional devi
 
 This method has several advantages: it's completely supported by Signal, carries no terms-of-service risk, and once linked, the secondary device functions identically to the primary. If your primary device is in a permissive jurisdiction with your virtual number, you can link secondary devices elsewhere.
 
-## Handling Registration Lock PIN Securely
+### Step 5: Handling Registration Lock PIN Securely
 
 If you're using a temporary or shared virtual number, Signal's Registration Lock becomes critical:
 
@@ -278,7 +288,7 @@ If you're using a temporary or shared virtual number, Signal's Registration Lock
 
 The Registration Lock ties your account to the phone number you registered with. Even if someone obtains your verification code, they cannot claim your account without the PIN. This is your primary defense against SIM reassignment attacks.
 
-## Risk Mitigation Checklist
+### Step 6: Risk Mitigation Checklist
 
 When using a virtual number for Signal registration:
 
@@ -308,11 +318,26 @@ ONGOING:
 - [ ] Be aware that ISP-level blocking may still occur
 ```
 
-## The Fundamental Limitation
+### Step 7: The Fundamental Limitation
 
 No matter which workaround you use, understand that Signal's core design assumes phone numbers as permanent identifiers. The vulnerabilities in mandatory SIM registration countries exist because Signal's verification requires a phone number that the government can track.
 
 The long-term solution would be for Signal to support usernames or alternative identifiers alongside phone numbers, but this would fundamentally alter Signal's architecture. Until that happens, the best approach remains: use a virtual number from a jurisdiction without SIM registration, combine it with a VPN for added privacy, maintain strong PIN protection, and link additional devices for redundancy.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -57,7 +57,17 @@ OnionShare automatically downloads and manages its own Tor binary — you don't 
 
 ---
 
-## Share Files (Send Mode)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Share Files (Send Mode)
 
 ### GUI Usage
 
@@ -116,7 +126,7 @@ Waiting for a connection...
 
 ---
 
-## Receive Files (Receive Mode)
+### Step 2: Receive Files (Receive Mode)
 
 Receive mode sets up an upload form at a .onion address. Sources can upload files to you without knowing who you are or where your server is.
 
@@ -153,7 +163,7 @@ When running a public receive drop, communicate the address through a channel yo
 
 ---
 
-## Host an Anonymous Website
+### Step 3: Host an Anonymous Website
 
 OnionShare can host a static website as an .onion site — no domain registration, no hosting provider:
 
@@ -177,7 +187,7 @@ Static site generators like Hugo or Jekyll work well here — build your site lo
 
 ---
 
-## Chat (Anonymous Chat Room)
+### Step 4: Chat (Anonymous Chat Room)
 
 OnionShare includes an ephemeral chat mode — no messages stored, no accounts:
 
@@ -194,7 +204,7 @@ This is useful for one-time secure group discussions where Signal or Matrix isn'
 
 ---
 
-## Persistent .onion Addresses
+### Step 5: Persistent .onion Addresses
 
 A persistent key means you can publish your .onion address and have it remain the same when you restart OnionShare:
 
@@ -265,7 +275,7 @@ For heavily censored networks (China, Iran), use Snowflake bridges — they disg
 
 ---
 
-## Verify Your .onion Address
+### Step 6: Verify Your .onion Address
 
 Before sharing your address with someone, verify it's the one OnionShare is actually serving:
 
@@ -283,7 +293,7 @@ onionshare-cli document.pdf
 
 ---
 
-## Scripting OnionShare for Automation
+### Step 7: Scripting OnionShare for Automation
 
 ```python
 #!/usr/bin/env python3
@@ -318,7 +328,7 @@ if __name__ == "__main__":
 
 ---
 
-## OnionShare vs. Alternatives
+### Step 8: OnionShare vs. Alternatives
 
 Understanding where OnionShare fits relative to other secure transfer tools helps you choose the right tool for each situation:
 
@@ -331,6 +341,21 @@ Understanding where OnionShare fits relative to other secure transfer tools help
 For most one-time sensitive file transfers between known parties, OnionShare is the simplest tool that provides genuine anonymity for both sides.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

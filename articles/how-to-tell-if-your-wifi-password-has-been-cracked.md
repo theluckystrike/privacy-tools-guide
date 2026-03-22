@@ -42,13 +42,23 @@ Check your router's connected devices list (usually at 192.168.1.1 or 192.168.0.
 - **Enable WPA3**: If your hardware supports it, WPA3 provides protection against offline dictionary attacks
 3.
 
-## Understanding WiFi Authentication Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand WiFi Authentication Basics
 
 WiFi networks protected with WPA2 or WPA3 use four-way handshake authentication. When a device connects, it exchanges cryptographic messages with the router that prove the device possesses the correct password—without actually transmitting the password over the air. A cracked password means someone has captured and processed this handshake to extract the credential.
 
 The cracking process typically involves two approaches: brute force (trying every possible password combination) or dictionary attacks (testing common passwords or leaked credentials). Once cracked, attackers can access your network and everything connected to it.
 
-## Monitoring Connected Devices
+### Step 2: Monitor Connected Devices
 
 The most straightforward detection method involves reviewing devices on your network. Your router maintains a table of connected clients with MAC addresses, IP assignments, and connection times.
 
@@ -62,7 +72,7 @@ arp -a | grep "$router_ip" -B 1
 
 Compare the current device list against your inventory. Unknown devices with manufacturer identifiers matching common device types (particularly smartphones or laptops) warrant investigation. Remember that MAC addresses can be spoofed, so this method catches casual intruders but not sophisticated attackers.
 
-## Analyzing Router Logs
+### Step 3: Analyzing Router Logs
 
 Routers maintain logs that record connection attempts, authentication successes, and errors. Access these through the administrative panel, typically under "System Log," "Security Log," or "Advanced > Logs."
 
@@ -96,7 +106,7 @@ with open('router.log', 'r') as f:
     print(f"Unknown MACs: {results['new_devices']}")
 ```
 
-## Network Traffic Analysis
+### Step 4: Network Traffic Analysis
 
 For deeper inspection, analyze network traffic flowing through your router. Tools like Wireshark or `tcpdump` on a monitoring interface can reveal patterns indicating unauthorized use.
 
@@ -135,7 +145,7 @@ print("High traffic destinations:", anomalies)
 
 This approach detects bandwidth-heavy activities like large downloads, streaming, or data transfers—activities you didn't initiate.
 
-## Checking for Handshake Capture
+### Step 5: Checking for Handshake Capture
 
 If attackers are actively attempting to crack your password, they must capture the four-way handshake. Some modern routers and access points log when handshakes are captured by external monitoring tools.
 
@@ -155,7 +165,7 @@ sudo airodump-ng mon0
 
 Deauthentication frames—legitimate parts of 802.11 but abused by attackers to force device reconnection and trigger new handshakes—appear in monitoring mode as repeated disassociation events.
 
-## Monitoring DNS and Internet Activity
+### Step 6: Monitor DNS and Internet Activity
 
 Unusual DNS queries or internet traffic patterns reveal unauthorized network use. Set up Pi-hole as a local DNS server to log all queries:
 
@@ -172,7 +182,7 @@ After installation, review query logs for domains you don't recognize, particula
 
 Similarly, monitor your bandwidth usage through your ISP's portal or router statistics. Sudden spikes in data usage—particularly upload traffic—may indicate someone using your network for activities ranging from file sharing to hosting illicit services.
 
-## Practical Defense Strategies
+### Step 7: Practical Defense Strategies
 
 Detection works alongside prevention. Implement these measures to reduce your attack surface:
 
@@ -292,7 +302,7 @@ EOF
 
 Queries to Tor exit nodes, VPN services, or piracy sites indicate unauthorized network use.
 
-## Detecting Specific Attack Vectors
+### Step 8: Detecting Specific Attack Vectors
 
 Different cracking methods leave different forensic traces:
 
@@ -336,7 +346,7 @@ Attackers attempting to crack WPA passwords must capture handshakes:
 
 Deauthentication attacks (forcing device disconnections) in the logs indicate someone actively capturing handshakes.
 
-## Recovery Steps After Compromise
+### Step 9: Recovery Steps After Compromise
 
 If you've confirmed unauthorized access:
 
@@ -386,7 +396,7 @@ curl http://192.168.1.1/cgi-bin/luci -v | grep -i version
 # If you need remote access, use OpenVPN, not direct router access
 ```
 
-## Estimating Damage from Compromise
+### Step 10: Estimating Damage from Compromise
 
 If unauthorized access occurred, understand what attackers accessed:
 
@@ -402,7 +412,7 @@ If unauthorized access occurred, understand what attackers accessed:
 
 The seriousness depends on what data was actually transmitted over the compromised network.
 
-## Professional Network Audits
+### Step 11: Professional Network Audits
 
 For high-value networks, consider professional audits:
 
@@ -411,6 +421,21 @@ For high-value networks, consider professional audits:
 - **Traffic analysis**: $2,000-10,000, forensic analysis of network patterns
 
 These services provide documented vulnerability assessments valuable for security hardening and legal proceedings if needed.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

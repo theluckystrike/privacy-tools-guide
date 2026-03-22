@@ -33,6 +33,18 @@ People search aggregators compile and sell personal data—phone numbers, addres
 
 This guide provides actionable steps to remove your data from people search sites, automate the opt-out process where possible, and reduce your digital footprint going forward.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most require email verification**: and some make the process intentionally difficult.
+- **Use aliases online**: Create separate identities for different contexts
+2.
+- **Use a VPN**: Mask your IP address when browsing
+4.
+- **Use encrypted communication**: Signal for messaging, ProtonMail for email
+5.
+
 ## Understanding People Search Sites
 
 People search sites like Spokeo, Whitepages, BeenVerified, and Acxiom aggregate data from public records, social media, and data brokers. They monetize this information through background check services, marketing data, and subscription plans.

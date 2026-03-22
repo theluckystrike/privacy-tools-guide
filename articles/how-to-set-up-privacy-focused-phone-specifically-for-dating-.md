@@ -46,7 +46,17 @@ When you use your primary smartphone for dating apps, you grant those applicatio
 
 A secondary phone also enables you to discard the device and start fresh if a date goes poorly or you need to cut off communication completely. This physical separation provides psychological and operational security that software alone cannot achieve.
 
-## Selecting the Hardware
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Select the Hardware
 
 For this setup, you need an affordable Android device that supports custom ROMs. The Google Pixel 4a (discontinued but available used) or newer budget devices like the Pixel 7a provide excellent support for privacy-oriented custom ROMs. Avoid iOS devices because they offer limited options for user control over app permissions and network traffic.
 
@@ -59,7 +69,7 @@ fastboot flashing get_unlock_ability
 
 If the value returns as 1, you can unlock the bootloader and install custom ROMs.
 
-## Operating System Selection
+### Step 2: Configure the Operating System Selection
 
 Stock Android includes Google Play Services, which continuously syncs data to Google's servers. For maximum privacy, install a de-Googled custom ROM. Two excellent options exist:
 
@@ -69,7 +79,7 @@ Stock Android includes Google Play Services, which continuously syncs data to Go
 
 For dating app use specifically, CalyxOS with Google Play Services disabled by default provides the best balance. Install only the apps you need, and enable Play Services only for specific applications that refuse to work otherwise.
 
-## Initial Device Configuration
+### Step 3: Initial Device Configuration
 
 After flashing your chosen ROM, follow these hardening steps before installing any dating applications:
 
@@ -120,7 +130,7 @@ PersistentKeepalive = 25
 
 This configuration routes all traffic through your VPN, preventing your internet service provider and local network operators from observing your dating app usage.
 
-## App-Specific Privacy Configurations
+### Step 4: App-Specific Privacy Configurations
 
 Each dating platform requires individual attention to minimize data exposure.
 
@@ -160,7 +170,7 @@ A safer approach involves manually disabling location services in your phone's q
 # Add tile: "Location" for one-tap disabling
 ```
 
-## Operational Security for Meetups
+### Step 5: Operational Security for Meetups
 
 The privacy setup continues beyond the digital realm into physical meetups.
 
@@ -185,7 +195,7 @@ if __name__ == "__main__":
 
 This approach prevents platform correlation—if one dating service experiences a breach, your other accounts remain unlinked to your identity.
 
-## Budgeting for a Dedicated Dating Phone
+### Step 6: Budgeting for a Dedicated Dating Phone
 
 Setting up a separate device requires reasonable budget planning:
 
@@ -203,7 +213,7 @@ Focus on used devices to avoid expense while still getting privacy-focused ROM s
 
 Total annual cost: $200-$500 including hardware, much less than the mental health cost of dating app breaches affecting your primary identity.
 
-## Network-Level Configuration for Dating Privacy
+### Step 7: Network-Level Configuration for Dating Privacy
 
 Beyond the OS and app level, configure network protections:
 
@@ -224,7 +234,7 @@ These DNS providers don't log queries and prevent your ISP from observing which 
 # Ensures all traffic is encrypted end-to-end
 ```
 
-## Managing Multiple Dating Accounts Across Platforms
+### Step 8: Manage Multiple Dating Accounts Across Platforms
 
 Some people maintain separate accounts on different dating platforms. Consider these synchronization challenges:
 
@@ -234,7 +244,7 @@ Some people maintain separate accounts on different dating platforms. Consider t
 
 **Activity Timing**: If you use the dating phone for multiple accounts, vary when you're active on different apps. Synchronized activity patterns across accounts suggest they're managed by the same person.
 
-## Emergency Phone Setup
+### Step 9: Emergency Phone Setup
 
 Maintain an emergency plan for your dating phone:
 
@@ -253,7 +263,7 @@ If you suspect a dating app on the phone has been compromised:
 
 **Natural Upgrade**: When ready to upgrade the dating phone, wipe it completely and sell it for parts or recycle responsibly. Your dating activity remains isolated to the device and never leaks to your next phone.
 
-## Long-Term Privacy Maintenance
+### Step 10: Long-Term Privacy Maintenance
 
 Maintaining privacy on your dating phone requires ongoing effort:
 
@@ -265,7 +275,7 @@ Maintaining privacy on your dating phone requires ongoing effort:
 
 **After Deleting Profiles**: Don't assume your data is deleted from platform servers. Use your generated email address information to request data deletion under privacy laws like GDPR (if in EU) or CCPA (if in California).
 
-## Ethical Considerations
+### Step 11: Ethical Considerations
 
 Using a separate phone for dating raises some ethical questions worth considering:
 
@@ -275,7 +285,7 @@ Using a separate phone for dating raises some ethical questions worth considerin
 
 **Information Sharing**: The privacy phone doesn't justify lying in your profile. Age, occupation, and relationship status should be accurate.
 
-## Managing Multiple Dating Personas
+### Step 12: Manage Multiple Dating Personas
 
 Some people maintain multiple dating profiles on the same platform to appeal to different audiences:
 
@@ -297,7 +307,7 @@ Some people maintain multiple dating profiles on the same platform to appeal to 
 
 **Ethical Concerns**: Operating multiple personas raises authenticity questions. Be honest within each persona—if someone on your Tinder profile is your authentic self, don't represent a different person. Multiple personas should represent different aspects of your authentic self, not deceptions.
 
-## Handling Relationship Formation and Trust
+### Step 13: Handling Relationship Formation and Trust
 
 If a connection becomes serious, transitioning from the dating phone requires planning:
 
@@ -317,7 +327,7 @@ If a connection becomes serious, transitioning from the dating phone requires pl
 5. Wait retention period, then request permanent deletion
 6. Verify deletion through account status checks
 
-## Long-Term Privacy Maintenance on Dating Phone
+### Step 14: Long-Term Privacy Maintenance on Dating Phone
 
 Maintaining a dating phone for months requires ongoing attention:
 
@@ -357,7 +367,7 @@ exiftool dating_photo.jpg | grep -i gps
 
 **Message Encryption**: Dating app in-app messaging is not end-to-end encrypted. For sensitive conversations, suggest switching to Signal or Briar early. This establishes trust and provides security.
 
-## Recovery and Device Loss
+### Step 15: Recovery and Device Loss
 
 If your dating phone is lost or stolen:
 
@@ -372,6 +382,21 @@ If your dating phone is lost or stolen:
 - No personal identity leaked (since phone is completely separated)
 
 **Access Prevention**: If someone obtains the dating phone, they have access to your dating identity but nothing connecting to your primary identity. This compartmentalization provides the security value—a compromised dating phone doesn't compromise your entire digital identity.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

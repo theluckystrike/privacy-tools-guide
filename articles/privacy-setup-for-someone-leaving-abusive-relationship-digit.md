@@ -42,7 +42,17 @@ Help abuse survivors immediately by enabling full-disk encryption on their devic
 # 1.
 - **Create NEW master password**: - never reuse any old password # 3.
 
-## Immediate Threat Assessment
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Immediate Threat Assessment
 
 Before implementing any security measures, understand the common attack vectors in abusive situations:
 
@@ -54,7 +64,7 @@ Before implementing any security measures, understand the common attack vectors 
 
 The goal is creating immediate separation while building longer-term security posture. Start with the highest-impact changes first.
 
-## Device Hardening
+### Step 2: Device Hardening
 
 ### Removing Tracker Access
 
@@ -94,7 +104,7 @@ For Android, verify the bootloader is locked after reset. Enter recovery mode an
 
 If possible, obtain a fresh device using cash or a separate payment method. When this isn't feasible, thoroughly reset existing devices. The key principle: assume compromise until proven otherwise.
 
-## Account Security Implementation
+### Step 3: Account Security Implementation
 
 ### Email Account Isolation
 
@@ -142,7 +152,7 @@ Move beyond SMS-based 2FA whenever possible. SIM swapping remains a viable attac
 
 For accounts that only support SMS, contact support to see if alternative 2FA methods are available. Some banks and financial institutions can add additional security layers.
 
-## Phone Number Security
+### Step 4: Phone Number Security
 
 ### Obtaining a New Number
 
@@ -169,7 +179,7 @@ Audit accounts linked to the old number:
 
 Create a systematic checklist and methodically work through each service.
 
-## Secure Communications
+### Step 5: Secure Communications
 
 ### Messaging Platform Selection
 
@@ -205,7 +215,7 @@ Establish communication plans before they're needed:
 
 Document this plan in a secure location—not on devices that might be compromised.
 
-## Data Protection
+### Step 6: Data Protection
 
 ### Photo and File Security
 
@@ -249,7 +259,7 @@ Review all cloud storage for sensitive data:
 # 5. Family sharing schemes - exit all shared arrangements
 ```
 
-## Ongoing Maintenance
+### Step 7: Ongoing Maintenance
 
 Security isn't an one-time configuration. Establish regular review habits:
 
@@ -257,6 +267,21 @@ Security isn't an one-time configuration. Establish regular review habits:
 - Monthly: Review privacy settings on social media
 - Quarterly: Update passwords on critical accounts
 - After any concerning incident: Immediate password change on potentially compromised accounts
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

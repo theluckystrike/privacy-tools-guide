@@ -42,7 +42,17 @@ Organizing peaceful assemblies requires communication infrastructure that protec
 - **Install a privacy-focused custom**: ROM or use the stock OS with extensive hardening.
 - **Use a dedicated mobile**: hotspot or public WiFi with a VPN.
 
-## Hardware Selection and Initial Acquisition
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Select Hardware and Initial Acquisition
 
 The goal is hardware with no personal data linkage. Purchase devices with cash from physical retail locations rather than online. Avoid devices tied to your identity through carrier accounts. Recommended options include:
 
@@ -52,7 +62,7 @@ The goal is hardware with no personal data linkage. Purchase devices with cash f
 
 Do not use your primary device for protest-related communication. The security of your entire operation depends on maintaining strict separation between personal and operational identities.
 
-## Operating System Hardening
+### Step 2: Harden the Operating System
 
 After acquiring the device, perform a factory reset before first use. Install a privacy-focused custom ROM or use the stock OS with extensive hardening. GrapheneOS and CalyxOS are the leading choices for Android devices—both remove Google dependencies and implement aggressive security defaults.
 
@@ -94,7 +104,7 @@ while true; do
 done
 ```
 
-## Communication Stack Selection
+### Step 3: Communication Stack Selection
 
 Choose communication tools based on threat model. For protest coordination, prioritize:
 
@@ -132,7 +142,7 @@ Before deployment, verify these settings in Signal:
 - Disable **notification content** (prevents message preview on lock screen)
 - Use **Screen security** (blocks screenshots)
 
-## Application and Permission Audit
+### Step 4: Application and Permission Audit
 
 Every installed app is a potential attack vector. Install only what is strictly necessary. Audit permissions aggressively:
 
@@ -162,7 +172,7 @@ adb shell dumpsys package | grep -A 5 "android.permission.ACCESS_FINE_LOCATION" 
 
 Remove any app that requests unnecessary permissions. A messaging app should need: network access, storage (for attachments), and notifications. Nothing else.
 
-## Data Hygiene and Operational Security
+### Step 5: Data Hygiene and Operational Security
 
 During active operations, maintain strict data hygiene:
 
@@ -184,7 +194,7 @@ secure_wipe() {
 }
 ```
 
-## Device Seizure Response
+### Step 6: Device Seizure Response
 
 Prepare for the possibility of device seizure. The goal is to maximize time before device unlock and minimize exposed data.
 
@@ -235,7 +245,7 @@ Mitigations implemented:
 - Faraday pouches (prevents remote tracking)
 ```
 
-## Secure Disposal
+### Step 7: Secure Disposal
 
 When a burner device's operational life ends:
 
@@ -255,7 +265,7 @@ adb shell pm clear com.android.systemui
 adb shell wipe data all
 ```
 
-## Chain of Custody for Burner Devices
+### Step 8: Chain of Custody for Burner Devices
 
 Maintain strict control over device ownership:
 
@@ -296,7 +306,7 @@ class BurnerDeviceLog:
             print(f"Destroyed: {device['destroyed_date']}")
 ```
 
-## Post-Action Device Handling
+### Step 9: Post-Action Device Handling
 
 After protest activities conclude:
 
@@ -306,6 +316,21 @@ After protest activities conclude:
 4. **Battery removal** (if possible): Prevents remote wipe commands
 5. **No data review**: Don't connect to networks or check messages until safe
 6. **Disposal**: Follow secure disposal procedures within 48 hours
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,7 @@ The California Consumer Privacy Act (CCPA) grants California residents significa
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide walks you**: through submitting a privacy complaint to the CAG, with practical examples tailored for developers and power users who understand the technical aspects of data privacy.
 
-## Understanding CCPA Enforcement Authority
+### Step 1: Understand CCPA Enforcement Authority
 
 The CAG holds primary enforcement authority for CCPA violations. Unlike some privacy laws that rely solely on private lawsuits, the CCPA enables the Attorney General to take action against businesses that fail to comply with consumer rights requirements. This makes the CAG complaint process a powerful tool for accountability.
 
@@ -59,7 +59,7 @@ Gather documentation before submitting your complaint. The CAG needs specific ev
 
 Document every interaction with the business. Save emails, screenshots of web forms, and timestamps of requests. If you submitted a request programmatically, log your API calls and responses.
 
-## Submitting Your Complaint Online
+### Step 2: Submitting Your Complaint Online
 
 The CAG provides an online complaint portal at oag.ca.gov/contact/consumer-complaint-against-business-or-company. Navigate to this page and select the appropriate category related to your complaint type.
 
@@ -72,7 +72,7 @@ The complaint form requires:
 
 For developers submitting requests programmatically, the 45-day response window is critical. If a business ignores API-based requests or returns errors without proper justification, document this in your complaint. Reference the specific API endpoints, HTTP status codes, and response bodies.
 
-## Writing an Effective Complaint Description
+### Step 3: Writing an Effective Complaint Description
 
 Structure your complaint description for maximum impact. The CAG reviews thousands of complaints—clarity and specificity improve your chances of action.
 
@@ -138,7 +138,7 @@ class CCPARequestLogger:
 
 This logger captures essential data for potential complaints, including payload hashes that prove what you sent without storing sensitive request contents.
 
-## What Happens After Submission
+### Step 4: What Happens After Submission
 
 After submitting your complaint, expect the following process:
 
@@ -154,7 +154,7 @@ After submitting your complaint, expect the following process:
 
 You will receive updates on case status via email. However, the CAG does not disclose the outcome of enforcement actions to individual complainants in detail.
 
-## Alternative: California Privacy Rights Act (CPRA)
+### Step 5: Alternative: California Privacy Rights Act (CPRA)
 
 California residents gained additional rights under the CPRA, which amended and expanded the CCPA effective January 1, 2023. Key additions include:
 - Right to correct inaccurate personal information
@@ -163,7 +163,7 @@ California residents gained additional rights under the CPRA, which amended and 
 
 For CPRA-specific violations, you can also file complaints with the California Privacy Protection Agency at privacy.ca.gov.
 
-## Timeline and Enforcement Outcomes
+### Step 6: Timeline and Enforcement Outcomes
 
 Historical data shows CCPA complaints have specific patterns:
 
@@ -240,7 +240,7 @@ if not all(audit_results.values()):
     print("CCPA compliance gaps detected. Implement fixes immediately.")
 ```
 
-## Developer-Specific Considerations
+### Step 7: Developer-Specific Considerations
 
 If you're building applications that handle California consumer data, understand that users may file complaints against your organization. Implement CCPA compliance:
 
@@ -320,6 +320,21 @@ class CCPARequestProcessor:
 ```
 
 Ensure your systems respond to consumer requests within the mandated 45-day window. Implement automated tracking for request deadlines to avoid unintentional violations. Set up calendar alerts at day 30 and day 40 to ensure you don't miss deadlines.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

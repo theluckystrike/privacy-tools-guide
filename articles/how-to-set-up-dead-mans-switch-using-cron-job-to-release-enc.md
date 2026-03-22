@@ -42,7 +42,17 @@ This guide walks through setting up a dead man's switch using cron jobs to relea
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For developers and power**: users concerned about digital legacy, emergency access, or automated backups, this technique provides a reliable way to release encrypted files automatically.
 
-## Understanding the Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Architecture
 
 The system operates on a simple premise: a cron job runs at scheduled intervals to check whether you've recently confirmed you're still active. If no confirmation occurs within a defined period, the switch triggers and releases your encrypted files.
 
@@ -54,7 +64,7 @@ Three components make this work:
 
 This design keeps your encrypted files secure until the trigger condition is met, without requiring third-party services or cloud dependencies.
 
-## Preparing Your Environment
+### Step 2: Preparing Your Environment
 
 Before implementing the dead man's switch, ensure you have the necessary tools installed:
 
@@ -71,7 +81,7 @@ mkdir -p ~/deadman-switch/{keys,data,scripts}
 
 GPG handles the encryption layer, while cron provides the scheduling. Both are standard utilities available on most Unix-like systems.
 
-## Creating Encrypted Files
+### Step 3: Create Encrypted Files
 
 First, generate an encryption key and create the files you want to release:
 
@@ -91,7 +101,7 @@ gpg --encrypt --recipient your-email@example.com \
 
 Keep your private key separate from the release mechanism. The dead man's switch only needs the encrypted file and instructions for decryption.
 
-## Building the Release Script
+### Step 4: Build the Release Script
 
 Create a shell script that handles the release logic:
 
@@ -142,7 +152,7 @@ echo "$(date): Release complete." >> "$LOG_FILE"
 
 The script checks whether release already occurred to prevent repeated executions. It uses a settings file for configurable parameters.
 
-## Creating Configuration and Check-In Files
+### Step 5: Create Configuration and Check-In Files
 
 The settings file contains your parameters:
 
@@ -166,7 +176,7 @@ To perform a check-in, you periodically update this file:
 date +%s > ~/deadman-switch/data/.lastcheckin
 ```
 
-## Setting Up the Cron Job
+### Step 6: Set Up the Cron Job
 
 Add a cron entry to run the check daily:
 
@@ -180,7 +190,7 @@ crontab -e
 
 The cron job runs the release script automatically. If you haven't checked in within the threshold, the switch activates.
 
-## Testing the System
+### Step 7: Test the System
 
 Before relying on this mechanism, test each component:
 
@@ -207,7 +217,7 @@ A few points to strengthen your implementation:
 - **Monitor the logs** — Regularly check `release.log` and `cron.log` to ensure the system runs correctly
 - **Test periodic check-ins** — Set calendar reminders to update your check-in file before the threshold
 
-## Extending the System
+### Step 8: Extending the System
 
 You can enhance this basic implementation:
 
@@ -215,7 +225,7 @@ You can enhance this basic implementation:
 - **Multiple files** — Modify the release script to handle directories or multiple encrypted files
 - **External triggers** — Add HTTP callbacks or file uploads to transfer decrypted content to a secure location
 
-## Multi-Recipient Dead Man's Switch
+### Step 9: Multi-Recipient Dead Man's Switch
 
 For scenarios where multiple trustees should receive information simultaneously:
 
@@ -250,7 +260,7 @@ done
 
 This approach ensures multiple trustees can access information without sharing a single decryption key.
 
-## Health Check Monitoring Alternative
+### Step 10: Health Check Monitoring Alternative
 
 Instead of manual check-ins, automate health checks:
 
@@ -287,7 +297,7 @@ done
 
 This approach allows background processes to verify you're still active, triggering release only if multiple attempts fail.
 
-## Cloud-Based Dead Man's Switch Integration
+### Step 11: Cloud-Based Dead Man's Switch Integration
 
 For users wanting cloud backup of the dead man's switch state:
 
@@ -327,7 +337,7 @@ else:
 
 This ensures your encrypted dead man's switch data persists even if your local device fails.
 
-## Testing Dead Man's Switch Reliability
+### Step 12: Test Dead Man's Switch Reliability
 
 Verify your system actually works before depending on it:
 
@@ -386,7 +396,7 @@ echo "All tests passed"
 
 Run this test suite monthly to ensure the dead man's switch remains functional.
 
-## Privacy Considerations for Dead Man's Switches
+### Step 13: Privacy Considerations for Dead Man's Switches
 
 Using a dead man's switch creates metadata risks:
 
@@ -400,6 +410,21 @@ Mitigations:
 - Disable bash history for sensitive operations
 - Encrypt backup cloud accounts with strong passwords
 - Consider air-gapped storage for maximum security
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

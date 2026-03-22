@@ -40,13 +40,23 @@ Implement purpose limitation by creating purpose-tagged data buckets with role-b
 - **This includes the service**: making the request, the user's current session context, and any consent state.
 - **This transparency helps build**: user trust and satisfies regulatory requirements.
 
-## Understanding Purpose Limitation in Practice
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Purpose Limitation in Practice
 
 The principle sounds straightforward: collect data only for specified, explicit purposes. In practice, enforcing this requires architectural decisions at the database level, application logic, and access controls. When a user provides their email address for account verification, that email should never leak into marketing systems, analytics pipelines, or third-party data sharing arrangements.
 
 Modern applications often face pressure to repurpose collected data—whether for analytics, product improvement, or advertising. Purpose limitation creates technical barriers that prevent this drift, protecting both users and your organization from regulatory violations and trust damage.
 
-## Database-Level Purpose Tagging
+### Step 2: Database-Level Purpose Tagging
 
 The foundation of purpose limitation starts at schema design. Every field or table should carry metadata indicating its processing purpose.
 
@@ -81,7 +91,7 @@ class TaggedField:
 
 This approach embeds purpose directly into your data model. When any component attempts to access a field, it must declare its purpose, and the system validates whether that purpose matches the original collection purpose.
 
-## Enforcing Purpose at the Repository Layer
+### Step 3: Enforcing Purpose at the Repository Layer
 
 Repository pattern implementations can intercept all database access and enforce purpose restrictions. This prevents accidental or intentional purpose creep.
 
@@ -110,7 +120,7 @@ class PurposeAwareRepository:
 
 Each service declares its purpose when instantiating the repository. A billing service with `ProcessingPurpose.ORDER_FULFILLMENT` can access email addresses, but a marketing service with `ProcessingPurpose.MARKETING` would be blocked—unless the user explicitly consented to marketing communications.
 
-## Implementing Context-Based Access Control
+### Step 4: Implementing Context-Based Access Control
 
 Beyond simple purpose matching, sophisticated implementations track the full context of each data access request. This includes the service making the request, the user's current session context, and any consent state.
 
@@ -154,7 +164,7 @@ class PurposeLimitationEnforcer:
 
 The audit logger creates an immutable record of every access attempt, supporting both compliance demonstrations and breach detection. This transparency helps build user trust and satisfies regulatory requirements.
 
-## Row-Level Security with Purpose Constraints
+### Step 5: Row-Level Security with Purpose Constraints
 
 For database systems supporting row-level security, you can enforce purpose limitations at the query engine level, ensuring no application can bypass these restrictions.
 
@@ -176,7 +186,7 @@ ALTER SESSION SET current_purpose = 'order_fulfillment';
 
 This approach provides defense in depth. Even if application-level controls are bypassed, the database itself enforces the purpose restrictions.
 
-## Handling Purpose Changes and Data Migration
+### Step 6: Handling Purpose Changes and Data Migration
 
 When business requirements change and you need to use data for a new purpose, the technical approach must involve fresh consent collection and clear user communication.
 
@@ -206,7 +216,7 @@ async def request_purpose_expansion(user_id: str, new_purpose: ProcessingPurpose
 
 This pattern ensures that data collected for Purpose A cannot silently be used for Purpose B. The user must be informed and provide affirmative consent before the expansion occurs.
 
-## Practical Implementation Checklist
+### Step 7: Practical Implementation Checklist
 
 Building a purpose-limited architecture requires coordinated changes across multiple layers:
 
@@ -218,7 +228,7 @@ Building a purpose-limited architecture requires coordinated changes across mult
 6. **Consent Management**: Build consent collection and storage
 7. **Testing**: Include purpose violation tests in your test suite
 
-## Common Pitfalls to Avoid
+### Step 8: Common Pitfalls to Avoid
 
 Several mistakes undermine purpose limitation implementations:
 
@@ -229,6 +239,21 @@ Several mistakes undermine purpose limitation implementations:
 - **Derived data**: Creating computed fields without tracking their purpose lineage
 
 The most subtle issue involves derived data. If you combine data from two purposes to create a new field, the derived field inherits the most restrictive purpose. Many teams overlook this and accidentally expand data use beyond consent boundaries.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

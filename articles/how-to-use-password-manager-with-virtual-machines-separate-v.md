@@ -46,7 +46,17 @@ Virtual machines create distinct attack surfaces. A development VM running untru
 
 Separate vaults provide defense in depth. You might have production credentials in one vault accessible only from your stable work VM, testing credentials in another for your test environment, and minimal credentials in a disposable browsing VM. This isolation ensures that credentials from one context never migrate to another.
 
-## Bitwarden: Multiple Vaults with Self-Hosted Instance
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Bitwarden: Multiple Vaults with Self-Hosted Instance
 
 Bitwarden offers the most straightforward multi-vault architecture through its self-hosted deployment option. Running your own Vaultwarden instance allows you to create distinct organizations, each with its own vault.
 
@@ -98,7 +108,7 @@ export BW_SERVER="http://127.0.0.1:8080"
 # Store master key securely, consider using a hardware token
 ```
 
-## 1Password: Multiple Vaults via CLI
+### Step 2: 1Password: Multiple Vaults via CLI
 
 1Password supports multiple vaults within a single account. While the GUI shows all vaults by default, you can restrict which vaults each VM accesses.
 
@@ -152,7 +162,7 @@ op serviceaccount create \
 
 Use service account tokens within VMs, ensuring each VM only has credentials to its designated vault.
 
-## KeePassXC: Local Vaults with File-Based Isolation
+### Step 3: KeePassXC: Local Vaults with File-Based Isolation
 
 KeePassXC provides the simplest approach—each VM gets its own `.kdbx` database file, stored locally on that VM's virtual disk.
 
@@ -207,7 +217,7 @@ keepassxc-cli unlock -k keyfile.key dev-vault-with-key.kdbx
 
 Store the key file on a separate virtual disk or USB pass-through to maintain isolation.
 
-## Vault Synchronization Strategies
+### Step 4: Vault Synchronization Strategies
 
 Keeping vault contents consistent across VMs requires careful synchronization.
 
@@ -247,7 +257,7 @@ git remote add origin git@github.com:your-private/vaults.git
 git push -u origin main
 ```
 
-## Automation Considerations
+### Step 5: Automation Considerations
 
 Automating password retrieval in VM workflows requires balancing convenience with security.
 
@@ -299,6 +309,21 @@ curl -H "Authorization: Bearer $ADMIN_TOKEN" \
 ```
 
 Separate vaults for separate VMs creates meaningful security boundaries. A compromise of your browsing VM remains isolated to that context's credentials, protecting your production systems and development environments from lateral movement.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

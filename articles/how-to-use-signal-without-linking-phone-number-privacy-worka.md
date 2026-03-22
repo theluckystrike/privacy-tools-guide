@@ -42,13 +42,23 @@ Signal's phone number requirement creates a significant privacy challenge for us
 Your phone number links directly to your carrier account, which carries identification information.
 - **Law enforcement can obtain**: carrier records to identify Signal users.
 
-## The Phone Number Privacy Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Phone Number Privacy Problem
 
 Signal uses your phone number as your unique identifier for account registration and contact discovery. When someone has your phone number, they can find you on Signal regardless of whether you've saved their contact information. This design decision, while simplifying user experience, introduces several privacy concerns:
 
 Your phone number links directly to your carrier account, which carries identification information. Law enforcement can obtain carrier records to identify Signal users. Your phone number may appear in data breaches, potentially exposing your Signal identity. Cross-referencing phone numbers across platforms can build behavioral profiles.
 
-## Method 1: VoIP Numbers for Signal Registration
+### Step 2: Method 1: VoIP Numbers for Signal Registration
 
 VoIP (Voice over IP) numbers provide an intermediary layer between your Signal identity and your carrier-linked phone number. Several services offer numbers that work with Signal's verification system.
 
@@ -96,7 +106,7 @@ Google Voice numbers can work with Signal, but with caveats:
 
 Signal's SMS verification may not work consistently with Google Voice because Google Voice doesn't always pass through automated verification codes reliably. Twilio or similar services typically provide better reliability.
 
-## Method 2: Dedicated SIM Card Approach
+### Step 3: Method 2: Dedicated SIM Card Approach
 
 For maximum privacy separation, use a dedicated SIM card registered independently from your primary identity:
 
@@ -116,7 +126,7 @@ This approach provides:
 - Complete device isolation
 - Ability to power off the device when not in use
 
-## Method 3: Signal CLI with Headless Registration
+### Step 4: Method 3: Signal CLI with Headless Registration
 
 For advanced users, signal-cli provides programmatic control over Signal without the standard mobile app interface:
 
@@ -149,7 +159,7 @@ signal-cli -u +1234567890 blocked
 signal-cli -u +1234567890 updateGroup -i <group-id>
 ```
 
-## Method 4: Docker-Based Signal Relay
+### Step 5: Method 4: Docker-Based Signal Relay
 
 For users who want to run Signal on a server and relay messages to their primary device:
 
@@ -176,7 +186,7 @@ docker exec signal-relay-1 signal-cli -u +1234567890 send +0987654321 -m "Messag
 
 This approach allows you to keep your Signal identity on a remote server while accessing messages through the Signal CLI, effectively decoupling your Signal usage from your primary device.
 
-## Privacy Settings Configuration
+### Step 6: Privacy Settings Configuration
 
 Regardless of which method you use, configure Signal's privacy settings for maximum protection:
 
@@ -209,7 +219,7 @@ Enable screen security to prevent screenshots:
 - **Android**: Settings > Privacy > Screen security
 - **iOS**: Settings > Privacy > Screen security
 
-## Network-Level Privacy
+### Step 7: Network-Level Privacy
 
 Add an extra layer of privacy by routing Signal traffic through a VPN or Tor:
 
@@ -235,6 +245,21 @@ Each method provides different privacy guarantees:
 | Tor Routing | Full | Full | High |
 
 Choose the method matching your threat model. For most users, a VoIP number combined with proper privacy settings provides adequate protection. High-risk users should consider the dedicated SIM or CLI approaches.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

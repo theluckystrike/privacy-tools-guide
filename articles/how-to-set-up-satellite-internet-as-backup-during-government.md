@@ -38,7 +38,17 @@ When governments restrict or completely shut down internet access, maintaining c
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Satellite Internet as a Backup Solution
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Satellite Internet as a Backup Solution
 
 Satellite internet operates by transmitting data between a dish antenna at your location and satellites orbiting the Earth. Unlike cable or fiber optic connections that depend on ground-level infrastructure, satellite connectivity only requires a clear view of the sky. This independence from local telecommunications infrastructure makes it resilient to government-ordered shutdowns that target terrestrial networks.
 
@@ -62,7 +72,7 @@ For portable or emergency setups, consider:
 - **Portable terminals**: Compact units designed for mobility and quick deployment
 - **Vehicle-mounted systems**: Integrated solutions for mobile operations
 
-## Network Configuration for Automatic Failover
+### Step 2: Network Configuration for Automatic Failover
 
 Implementing true backup functionality requires configuring your network to automatically switch to satellite internet when your primary connection fails. This section covers the technical implementation using common tools.
 
@@ -188,7 +198,7 @@ Satellite connections typically have lower bandwidth and higher latency:
 - Use bandwidth-efficient protocols (HTTP/2, gRPC with compression)
 - Set up offline-first workflows that sync when connectivity is available
 
-## Testing Your Configuration
+### Step 3: Test Your Configuration
 
 Regular testing ensures your backup system works when needed:
 
@@ -208,11 +218,26 @@ iperf3 -c test-server.example.com -R -V -M 1280
 
 Document your test results to establish baseline expectations during actual emergencies.
 
-## Cost and Accessibility
+### Step 4: Cost and Accessibility
 
 Satellite internet services typically operate on subscription models with varying data allowances. Some providers offer pay-as-you-go options, while others provide monthly plans with priority data. Research providers available in your region and understand their terms of service, including any restrictions that might apply during government emergencies.
 
 For organizations, consider maintaining relationships with multiple satellite providers to ensure service availability during crisis situations when demand spikes.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -401,7 +426,7 @@ if __name__ == '__main__':
 
 This system maintains awareness of both connections and can switch automatically if the primary fails.
 
-## Privacy-Optimized Satellite Configuration
+### Step 5: Privacy-Optimized Satellite Configuration
 
 Satellite internet creates unique privacy considerations—your terminal's physical location and orbital position data could reveal information.
 
@@ -459,7 +484,7 @@ chmod +x /usr/local/bin/wg-obfs.sh
 
 This makes your satellite VPN traffic indistinguishable from normal web traffic to network analysis.
 
-## Offline-First Architecture for Satellite Resilience
+### Step 6: Offline-First Architecture for Satellite Resilience
 
 Satellite connectivity is unreliable compared to terrestrial internet. Design applications to work offline and sync when connection is available:
 
@@ -554,7 +579,7 @@ function OfflineFirstApp() {
 
 This architecture ensures work is never lost even during extended satellite outages—data syncs when connection resumes.
 
-## Long-Duration Outage Preparation
+### Step 7: Long-Duration Outage Preparation
 
 For extended internet shutdowns (days or weeks), additional preparation helps:
 

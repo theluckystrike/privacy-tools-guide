@@ -242,6 +242,208 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
+## Debugging microG Issues with Logcat
+
+When apps fail, examine system logs for detailed error messages:
+
+```bash
+# Real-time logging for microG
+adb logcat | grep -i microg
+
+# More detailed filtering
+adb logcat GmsCore:D GmsKit:D | head -100
+
+# Save logs to file for analysis
+adb logcat -c  # Clear buffer
+# Reproduce the issue
+adb logcat > microg_debug.log
+# Press Ctrl+C when done
+
+# Search for specific errors
+grep "ERROR\|Exception\|FAILED" microg_debug.log
+```
+
+### Common Log Errors and Solutions
+
+```
+E/GmsCore: Signature check failed
+  → Solution: Enable signature spoofing in microG Settings
+
+E/GmsCore: Device not registered
+  → Solution: Re-register device in microG Self-Check
+
+E/GmsCore: Network error
+  → Solution: Check firewall rules, ensure apps have network permission
+
+E/GmsCore: com.android.vending not available
+  → Solution: Ensure Google Play Services mock is installed and enabled
+```
+
+## Optimizing microG for Performance
+
+microG can impact battery and performance. Optimize for your use case:
+
+```bash
+# Reduce CPU overhead
+# Disable location service updates when not needed
+adb shell settings put secure location_mode 0
+
+# Restrict background services
+# Settings → Apps → microG Services Core → Restrict background activity
+
+# Reduce FCM check frequency
+# Settings → microG Settings → Network check interval (set to 5 minutes)
+
+# Monitor battery impact
+adb shell dumpsys batterystats | grep "com.google.android"
+```
+
+## Advanced microG Configuration
+
+For power users, microG has additional configuration files:
+
+```bash
+# Edit microG preferences directly
+adb shell settings get system microg_settings
+
+# Custom GMS core settings (advanced)
+# /data/adb/gmsbootstrap/conf
+
+# Available options:
+# gms.enable=location,maps,cloudmessaging
+# gms.disable=ads,analytics
+# gcm.register.url=custom_server
+```
+
+### Self-Hosted Services
+
+For maximum privacy, host your own microG-compatible services:
+
+```bash
+# UnifiedPush distributor (self-hosted push notifications)
+docker run -d \
+  -p 5000:5000 \
+  -v /path/to/data:/data \
+  registry.github.com/unifiedpush/server
+
+# microG can then route through your own server
+# instead of Google's Firebase Cloud Messaging
+```
+
+## Testing Specific Google APIs
+
+Verify that different Google APIs work correctly:
+
+```bash
+# Test Google Play Services availability
+adb shell pm list packages | grep -E "^package:com.google.android" | sort
+
+# Test Maps API
+adb shell am start -n com.google.android.apps.maps/.MapsActivity
+
+# Test Drive API (if installed)
+adb shell am start -n com.google.android.apps.drive/.LauncherActivity
+
+# Test Calendar integration
+adb shell am start -n com.google.android.calendar/.MainActivity
+
+# Check logs while testing
+adb logcat | grep -i "maps\|drive\|calendar"
+```
+
+## Handling App Compatibility Issues
+
+Some apps have specific requirements that cause issues with microG:
+
+```
+Issue: App requires Google Play Certification
+  → Solution: Use Aurora Store with device ID spoofing
+
+Issue: App requires hardware attestation
+  → Solution: Use GrapheneOS (better hardware attestation)
+  or set attestation mode to 'disabled' in microG
+
+Issue: In-app purchases don't work
+  → Solution: Use alternative payment methods
+  or accept that IAP won't work
+
+Issue: Real-time notification delay
+  → Solution: Use UnifiedPush-compatible apps instead
+  or increase FCM check frequency
+```
+
+## Comparison: microG vs Google Play Services
+
+| Feature | microG | Official GMS |
+|---------|--------|------------|
+| Privacy | Excellent | Minimal |
+| Battery impact | Low | Medium |
+| API coverage | 95% | 100% |
+| Hardware attestation | Limited | Full |
+| In-app purchases | Limited | Full |
+| Play Store compatibility | Most | All |
+| Setup difficulty | Medium | Easy |
+| Size | 50MB | 100MB+ |
+
+## Building a Privacy-Optimized Stack
+
+Combine microG with other privacy tools for maximum protection:
+
+```bash
+# Privacy-optimized configuration
+1. CalyxOS (or GrapheneOS)
+2. microG Services Core
+3. Datura Firewall (whitelist mode)
+4. F-Droid (open-source apps)
+5. Shelter (app isolation)
+6. NextDNS (DNS filtering)
+
+# Result:
+# - No Google Play Services
+# - All network requests explicit
+# - Apps restricted to minimum permissions
+# - Open-source software where possible
+```
+
+## Remote Testing and ADB Best Practices
+
+For developers testing microG across devices:
+
+```bash
+# Connect multiple devices over network
+adb connect 192.168.1.100:5555
+
+# Test across several devices simultaneously
+for device in "192.168.1.100:5555" "192.168.1.101:5555"; do
+  adb -s $device install app.apk
+  adb -s $device shell am start -n com.example.app/.MainActivity
+done
+
+# Automated testing of GMS compatibility
+adb shell pm list packages -3 | while read package; do
+  adb shell cmd package dump-profiles $package
+done
+```
+
+## Long-term Maintenance
+
+Keep your microG setup current:
+
+```bash
+# Check for microG updates
+# Settings → microG Settings → About
+
+# Update microG frequently (monthly recommended)
+# Updates fix compatibility issues and security problems
+
+# Monitor app compatibility
+# If app updates break compatibility, check microG changelog
+
+# Report issues
+# microG GitHub: github.com/microg/GmsCore
+# CalyxOS bugtracker: dev.calyxos.org
+```
+
 ## Related Articles
 
 - [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)

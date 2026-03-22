@@ -52,7 +52,17 @@ When you use a forwarding-only address, messages sent to the disposable alias ar
 
 For developers specifically, this technique proves invaluable when testing email workflows, building applications that send notifications, or managing multiple projects across different platforms. You can create unique forwarding addresses for each project or purpose, making it easy to identify which service has shared or sold your information.
 
-## Setting Up Forwarding with Popular Email Providers
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Forwarding with Popular Email Providers
 
 ### Gmail and Google Workspace
 
@@ -81,7 +91,7 @@ To set this up, purchase a domain from any registrar, then configure the DNS rec
 
 For example, if you own `myprivacy.dev`, you could use addresses like `github@myprivacy.dev`, `twitter@myprivacy.dev`, or `newsletter@myprivacy.dev`. All messages sent to these addresses forward automatically to your primary inbox.
 
-## Automating Forwarding with Custom Scripts
+### Step 2: Automate Forwarding with Custom Scripts
 
 For advanced use cases, you can set up custom forwarding scripts using email handling libraries. Here's a Python example using the `imaplib` module to fetch and forward emails:
 
@@ -191,7 +201,7 @@ This approach is superior to email alias services because:
 3. You can migrate forwarding services without changing addresses
 4. You can receive replies (some services block this)
 
-## Forwarding with Proton Mail and ProtonPlus
+### Step 3: Forwarding with Proton Mail and ProtonPlus
 
 Proton Mail offers a particularly privacy-friendly forwarding setup through ProtonPlus subscription. Unlike consumer email services that track your behavior, Proton doesn't log IP addresses or build behavioral profiles.
 
@@ -208,7 +218,7 @@ Proton Mail offers a particularly privacy-friendly forwarding setup through Prot
 
 For maximum security, consider using Proton Mail's forwarding combined with their VPN to mask your location when accessing the forwarding inbox.
 
-## Spam Filtering and List Management
+### Step 4: Spam Filtering and List Management
 
 A critical challenge with forwarding-only addresses is that they become spam targets. Implement aggressive filtering at multiple levels:
 
@@ -276,7 +286,7 @@ Implement these rules at the forwarding service level before they reach your rea
 # Action: Archive to spam folder
 ```
 
-## Monitoring and Auditing Forwarding Activity
+### Step 5: Monitor and Auditing Forwarding Activity
 
 Keep detailed records of which services have which forwarding addresses. This helps you identify which company sold or leaked your information when spam targeting increases:
 
@@ -353,7 +363,7 @@ print(tracker.identify_leaky_services())
 
 Use this tracker to inform your decisions about which services deserve your real contact information and which are too risky.
 
-## Recovery and Deletion Procedures
+### Step 6: Recovery and Deletion Procedures
 
 When a forwarding address is compromised, having a clear recovery procedure minimizes damage:
 
@@ -391,7 +401,7 @@ echo "Update your account at service.com to use: $NEW_ADDRESS"
 echo "Monitoring for leaked address abuse..."
 ```
 
-## Integration with Password Managers
+### Step 7: Integration with Password Managers
 
 Store your forwarding email setup in a password manager alongside service credentials. This provides:
 
@@ -411,7 +421,7 @@ Store your forwarding email setup in a password manager alongside service creden
 }
 ```
 
-## Forwarding vs. Email Aliasing: When to Use Each
+### Step 8: Forwarding vs. Email Aliasing: When to Use Each
 
 **Use forwarding addresses when:**
 - You want to hide your real email from the service
@@ -422,6 +432,21 @@ Store your forwarding email setup in a password manager alongside service creden
 - You need to reply from the alias
 - You want the service to know your email for password recovery
 - You're using the same service long-term and trust it
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

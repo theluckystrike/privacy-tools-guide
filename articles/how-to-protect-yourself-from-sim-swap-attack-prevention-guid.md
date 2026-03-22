@@ -44,7 +44,17 @@ Never store both keys in the same location.
 - **Geographic IP restrictions -**: Only allow logins from specific countries - Alert on unexpected login locations 5.
 - **Call your carrier's fraud**: line (number on your bill) from another phone DO NOT use the number the "attacker" provides 2.
 
-## Understanding the Attack Vector
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Attack Vector
 
 A SIM swap attack begins with social engineering. Attackers gather personal information about you through data breaches, social media, or phishing campaigns. They then contact your mobile carrier, impersonating you and requesting a SIM swap. With enough stolen information—often just your name, address, and last four digits of your Social Security number—customer service representatives may honor the request.
 
@@ -52,7 +62,7 @@ Once the swap completes, your phone loses signal. The attacker now receives all 
 
 The 2020 Twitter hack demonstrated this attack's power when attackers used SIM swaps to hijack accounts belonging to Barack Obama, Elon Musk, and others. Cryptocurrency users have lost millions to this attack vector, making it a critical threat for anyone holding digital assets.
 
-## Warning Signs You Should Not Ignore
+### Step 2: Warning Signs You Should Not Ignore
 
 Recognizing an attack in progress allows you to act quickly. Watch for these indicators:
 
@@ -62,7 +72,7 @@ Recognizing an attack in progress allows you to act quickly. Watch for these ind
 
 If you experience these signs, contact your carrier immediately through an official channel—preferably in person at a retail store with photo identification.
 
-## Carrier-Level Protections
+### Step 3: Carrier-Level Protections
 
 Your first line of defense involves securing your carrier account. Most carriers offer account PIN or password protection that must be provided before any SIM-related changes. Enable this feature immediately:
 
@@ -72,7 +82,7 @@ Your first line of defense involves securing your carrier account. Most carriers
 
 Verizon, AT&T, T-Mobile, and other major carriers all offer these protections, but they often require explicit opt-in. Without this barrier, anyone with basic personal information can request a SIM swap through customer service.
 
-## Authentication Methods That Resist SIM Swaps
+### Step 4: Authentication Methods That Resist SIM Swaps
 
 SMS-based two-factor authentication has become a liability. Migrate to more secure authentication methods:
 
@@ -119,7 +129,7 @@ Configure alerts for any account changes—address updates, SIM swaps, new devic
 
 Cryptocurrency exchanges and financial services often support address whitelisting. Configure your account to require manual verification for any new withdrawal addresses. This prevents attackers from adding their own wallets even if they compromise your account.
 
-## Recovery Procedures When Compromised
+### Step 5: Recovery Procedures When Compromised
 
 If you suspect a SIM swap has occurred despite your precautions, act immediately:
 
@@ -153,7 +163,7 @@ Understanding realistic SIM swap attack patterns helps you prioritize defenses:
 - Account number (sometimes visible on bills)
 - Date of birth (social media, public records)
 
-## Step-by-Step Carrier Protection Setup
+### Step 6: Step-by-Step Carrier Protection Setup
 
 **For Verizon**:
 
@@ -211,7 +221,7 @@ Contact your carrier's security team directly and request:
 - Port freeze/prevention service
 - Notification of any account access attempts
 
-## Verification: Confirm Your Carrier Protections Are Active
+### Step 7: Verification: Confirm Your Carrier Protections Are Active
 
 ```
 Verification Checklist:
@@ -268,7 +278,7 @@ Registration Process:
 6. Test authentication by logging out and back in using the key
 ```
 
-## TOTP Implementation for Developers
+### Step 8: TOTP Implementation for Developers
 
 **Setting Up TOTP Authentication**:
 
@@ -324,7 +334,7 @@ Week 5-6: Require TOTP for sensitive operations (password change, payment)
 Week 7+: Require TOTP for all account access (with grace period for support)
 ```
 
-## Cryptocurrency-Specific Protections
+### Step 9: Cryptocurrency-Specific Protections
 
 For users holding significant cryptocurrency:
 
@@ -361,7 +371,7 @@ Verification:
    - Use separate API keys for different exchange accounts
 ```
 
-## Post-SIM Swap Recovery Protocol
+### Step 10: Post-SIM Swap Recovery Protocol
 
 If you discover a SIM swap has occurred:
 
@@ -441,7 +451,7 @@ If you discover a SIM swap has occurred:
     - Consider credit monitoring service for 24+ months
 ```
 
-## Building Defense in Depth
+### Step 11: Build Defense in Depth
 
 Security requires layered approaches. No single measure guarantees protection, but combining carrier account protections, hardware security keys, authenticator apps, and vigilant monitoring significantly reduces your attack surface. Review your authentication methods periodically, removing SMS-based 2FA where alternatives exist.
 
@@ -450,6 +460,21 @@ For developers building authentication systems, design with SIM swap vulnerabili
 Protecting yourself from SIM swap attacks demands awareness, proactive configuration, and commitment to stronger authentication methods. The effort required is minimal compared to the potential loss from a successful attack.
 
 {% endraw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

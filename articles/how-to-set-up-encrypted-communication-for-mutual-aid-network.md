@@ -34,7 +34,17 @@ The primary security goals for mutual aid communication include protecting messa
 
 Traditional messaging platforms create significant risks: phone number linkage exposes participant identities, centralized servers can be compelled to hand over data, and cloud backups often store decrypted messages indefinitely. A mutual aid communication stack addresses each vulnerability systematically.
 
-## Building Your Encrypted Communication Stack
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Build Your Encrypted Communication Stack
 
 ### Primary Channel: Signal with Hardened Settings
 
@@ -124,7 +134,7 @@ docker-compose up -d
 
 After deployment, configure end-to-end encryption by enabling it in the Element client settings. Create separate rooms for different coordination functions, and consider implementing guest access controls for participants who only need temporary communication channels.
 
-## Offline Communication Methods
+### Step 2: Offline Communication Methods
 
 Mutual aid networks must prepare for scenarios where internet infrastructure becomes unavailable. Offline communication methods enable coordination during natural disasters, infrastructure attacks, or deliberate network shutdowns.
 
@@ -160,7 +170,7 @@ onionshare --chat
 
 OnionShare works well for asynchronous coordination where participants cannot establish direct communication but can access Tor.
 
-## Key Management and Recovery Planning
+### Step 3: Key Management and Recovery Planning
 
 Secure communication requires strong key management that doesn't create single points of failure. Mutual aid networks should implement backup procedures that enable recovery without exposing communications to unauthorized parties.
 
@@ -178,7 +188,7 @@ gpg --symmetric --cipher-algo AES256 secret-recovery-phrase.txt
 # Use GPG's --encrypt with multiple recipients for threshold access
 ```
 
-## Network Security Hygiene
+### Step 4: Secure the Network Hygiene
 
 Technical encryption tools provide limited protection without consistent operational security practices. Mutual aid networks should establish clear protocols addressing device security, communication discipline, and incident response.
 
@@ -193,7 +203,7 @@ Technical encryption tools provide limited protection without consistent operati
 
 Regular security audits help identify vulnerabilities before adversaries exploit them. Schedule monthly reviews of participant device security, application configurations, and recovery procedure accessibility.
 
-## Scaling Communication Infrastructure
+### Step 5: Scaling Communication Infrastructure
 
 As mutual aid networks grow, centralized communication channels become bottlenecks and single points of failure. Distributed architectures improve resilience.
 
@@ -256,7 +266,7 @@ while true; do
 done
 ```
 
-## Training and Documentation
+### Step 6: Training and Documentation
 
 Secure communication systems require participant training. Create documentation covering:
 
@@ -270,7 +280,7 @@ Secure communication systems require participant training. Create documentation 
 
 Distribute training materials offline or through low-bandwidth channels that don't reveal participant involvement.
 
-## Incident Response for Compromised Channels
+### Step 7: Plan Incident Response for Compromised Channels
 
 Prepare for scenarios where communication infrastructure is compromised or infiltrated.
 
@@ -324,6 +334,21 @@ If law enforcement or hostile actors infiltrated your network:
 
 Recovery from infiltration is primarily operational and legal rather than technical.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

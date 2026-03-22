@@ -31,6 +31,21 @@ tags: [privacy-tools-guide]---
 
 Wasabi Wallet implements CoinJoin through a decentralized mixing protocol that breaks the on-chain link between your input and output addresses. This guide covers the technical setup, configuration options, and practical implementation for developers and power users seeking to improve their Bitcoin transaction privacy.
 
+## Key Takeaways
+
+- **Values between 8 and**: 50 provide reasonable privacy for most use cases.
+- **The minimum amount per**: CoinJoin round varies based on network conditions, but typically you need at least 0.001 BTC for optimal participation.
+- **Compare this to centralized**: services like CoinJoin mixers that charge flat $50-$100 per transaction without refund mechanisms if coins are compromised.
+- **Mix outputs through additional rounds
+- Cost**: $50-$150 in fees
+- Time: Multiple days to weeks
+
+## Avoiding On-Chain Deanonymization After Mixing
+
+Mixing is just the first step.
+- **Wasabi Wallet typically charges**: between 0.3% and 0.5% per mixing round for the coordination service.
+- **This is significantly cheaper**: than centralized mixing services, which charge 1-5% but provide no transparency regarding coin handling.
+
 ## Understanding CoinJoin Fundamentals
 
 CoinJoin combines multiple Bitcoin transactions from different users into a single transaction, making it difficult to determine which inputs correspond to which outputs. Wasabi Wallet uses the WabiSabi protocol, which provides anonymity set improvements without requiring a centralized coordinator to trust the mixing process.

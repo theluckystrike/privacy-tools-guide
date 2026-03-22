@@ -42,13 +42,23 @@ Maintaining anonymity when purchasing a mobile phone and SIM card requires under
 - **Use a privacy-focused exchange**: (non-KYC) # 2.
 - **Disable telemetry completely adb**: shell settings put global stay_on_while_plugged_in 0 adb shell pm disable-user --user 0 com.google.android.gms/.analytics # 3.
 
-## Understanding the Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Challenge
 
 Mobile phones and SIM cards represent a significant privacy vulnerability because most jurisdictions require identity verification during purchase. Carriers maintain subscriber databases linking phone numbers, SIM card identifiers (ICCID), and personal information. However, several strategies can minimize or eliminate this tracking vector.
 
 The core problem involves three distinct layers: the device itself (IMEI tracking), the SIM card (ICCID and phone number registration), and the payment method (credit card or identity-linked transactions). Effective anonymous purchasing requires addressing all three layers.
 
-## Prepaid SIM Cards: The Foundation
+### Step 2: Prepaid SIM Cards: The Foundation
 
 Prepaid SIM cards remain the most accessible starting point for anonymous mobile usage. These cards require no contract and typically need minimal or no identification at purchase. However, regulations vary significantly by country and even by carrier within the same jurisdiction.
 
@@ -70,7 +80,7 @@ echo "ICCID: $(cat /proc/iccid 2>/dev/null || echo 'N/A')" >> ~/secure-notes/sim
 
 If registration is required, consider using a mail forwarding service with a business address. Some privacy-focused users maintain dedicated mailboxes specifically for this purpose, registered under an LLC or business entity rather than a personal name.
 
-## Device Acquisition Strategies
+### Step 3: Device Acquisition Strategies
 
 ### Burner Phones and Budget Devices
 
@@ -99,7 +109,7 @@ settings -> security -> trusted credentials
 
 For iOS devices, restore through iTunes/Finder to ensure a clean iOS installation without any MDM profiles or configuration profiles left behind.
 
-## Payment Method Anonymization
+### Step 4: Payment Method Anonymization
 
 ### Cash-Based Purchasing
 
@@ -134,7 +144,7 @@ Privacy-oriented mail forwarding services can help:
 - Some services offer package rejection and forwarding
 - Combine with a VPN when ordering online to avoid IP-based correlation
 
-## Operational Security After Purchase
+### Step 5: Operational Security After Purchase
 
 Acquiring hardware anonymously is only part of the equation. Operational security afterward matters equally.
 
@@ -165,7 +175,7 @@ Consider these network-level privacy measures:
 # Signal, Session, or SimpleX for sensitive communications
 ```
 
-## Carrier-Specific Prepaid Options and Real Pricing
+### Step 6: Carrier-Specific Prepaid Options and Real Pricing
 
 Understanding specific carrier policies and pricing helps optimize anonymous acquisition:
 
@@ -203,7 +213,7 @@ For travelers or specific country selection:
 - **holafly.com**: Virtual numbers (esim format, requires verification)
 - **skyroam.com**: International portable WiFi for location-free internet
 
-## Device Acquisition Deep Dive
+### Step 7: Device Acquisition Deep Dive
 
 ### Budget Device Models and IMEI Considerations
 
@@ -320,7 +330,7 @@ Some payment methods provide better anonymity than others:
 
 Most effective: Cash → Vanilla prepaid card → Online purchase → Mail forwarding service
 
-## Post-Purchase Hardening
+### Step 8: Post-Purchase Hardening
 
 Immediately after acquiring hardware, establish baseline hardening:
 
@@ -374,7 +384,7 @@ adb shell mount -o ro,remount /system
 
 Most users seeking reasonable privacy will benefit from Level 1-2 measures. Level 3 requires extreme discipline and attracts attention through unusual purchasing patterns.
 
-## Legal and Practical Considerations
+### Step 9: Legal and Practical Considerations
 
 Jurisdictions vary significantly in their requirements. In some countries, owning a mobile phone without registration is illegal and can result in service disconnection or fines. Research local regulations before proceeding:
 
@@ -384,6 +394,21 @@ Jurisdictions vary significantly in their requirements. In some countries, ownin
 - **India**: Registration required for all SIM cards within 90 days
 
 For most use cases, the goal should be reasonable privacy rather than complete anonymity, which is practically impossible. The techniques in this guide reduce your attack surface without requiring extreme measures that might themselves attract attention or create legal complications.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

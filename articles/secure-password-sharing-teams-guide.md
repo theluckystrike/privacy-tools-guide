@@ -38,7 +38,17 @@ This guide covers tools and workflows for teams ranging from 2 people to 50.
 - **The Teams plan (~$3/user/month)**: supports unlimited users with advanced sharing and audit logs.
 - **No plaintext over chat**: zero credentials sent via Slack, email, or SMS
 
-## Option 1: Bitwarden Organizations
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1: Bitwarden Organizations
 
 Bitwarden's free organization tier supports up to two users.
 - **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
@@ -66,7 +76,7 @@ A secure team password sharing setup should provide:
 5. **Secret rotation** — process for changing credentials when someone leaves
 6. **No plaintext over chat** — zero credentials sent via Slack, email, or SMS
 
-## Option 1: Bitwarden Organizations
+### Step 2: Option 1: Bitwarden Organizations
 
 Bitwarden's free organization tier supports up to two users. The Teams plan (~$3/user/month) supports unlimited users with advanced sharing and audit logs.
 
@@ -118,7 +128,7 @@ bw get template item | jq '.name="AWS Production Key" | .login.username="deploy"
   bw encode | bw create item --collectionids COLLECTION_ID
 ```
 
-## Option 2: 1Password Teams
+### Step 3: Option 2: 1Password Teams
 
 1Password Teams includes travel mode, item history (restore previous passwords), and document storage alongside credentials.
 
@@ -156,7 +166,7 @@ op run --env-file=".env.1p" -- docker-compose up
 
 This pattern means secrets are never written to `.env` files in the repo.
 
-## Option 3: Passbolt (Open Source, Self-Hosted)
+### Step 4: Option 3: Passbolt (Open Source, Self-Hosted)
 
 Passbolt uses OpenPGP — each secret is encrypted with the public keys of each authorized user. Not even the server admin can read passwords.
 
@@ -189,7 +199,7 @@ When someone leaves:
 2. Rotate any credentials they had access to (Passbolt's activity log shows exactly which ones)
 3. Deactivate their account
 
-## Option 4: One-Time Secret Links for Guests
+### Step 5: Option 4: One-Time Secret Links for Guests
 
 For sharing a credential with a contractor, vendor, or client — someone who isn't on your team's password manager:
 
@@ -233,7 +243,7 @@ curl -X POST https://onetimesecret.com/api/v1/share \
 
 This is a hosted service — only use for non-critical, temporary credentials.
 
-## Access Audit Workflow
+### Step 6: Access Audit Workflow
 
 Run this process when anyone leaves the organization:
 
@@ -253,7 +263,7 @@ Steps for offboarding:
 5. Update any systems using rotated credentials
 6. Document the rotation in your change log
 
-## Team Password Hygiene Rules
+### Step 7: Team Password Hygiene Rules
 
 Write these into a team security policy document:
 
@@ -263,6 +273,21 @@ Write these into a team security policy document:
 - When someone leaves, rotation happens within 48 hours for high-privilege credentials
 - Service accounts use separate credentials from human accounts
 - Production credentials are never on developer laptops (use a secrets manager for CI/CD)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

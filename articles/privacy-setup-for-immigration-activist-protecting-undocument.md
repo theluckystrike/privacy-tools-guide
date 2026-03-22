@@ -39,7 +39,17 @@ Immigration activists protecting undocumented community members must use Signal 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Threat ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat ecosystem
 
 Immigration enforcement agencies employ sophisticated digital surveillance tools. Activists and organizers should anticipate:
 
@@ -51,7 +61,7 @@ Immigration enforcement agencies employ sophisticated digital surveillance tools
 
 The threat model requires protecting not only yourself but every community member whose information passes through your networks.
 
-## Secure Communications Architecture
+### Step 2: Secure Communications Architecture
 
 ### End-to-End Encrypted Messaging
 
@@ -93,7 +103,7 @@ gpg --encrypt --armor --recipient recipient@example.com message.txt
 
 Maintain separate keys for activist work and personal communications. Never reuse keys across contexts.
 
-## Data Protection for Member Databases
+### Step 3: Data Protection for Member Databases
 
 ### Local-First Architecture
 
@@ -135,7 +145,7 @@ cryptomator create "$vault_path" --password-file=/path/to/vault-password.txt
 
 For sensitive documents, maintain air-gapped backups on encrypted USB drives stored in secure locations separate from primary work spaces.
 
-## Network-Level Protection
+### Step 4: Network-Level Protection
 
 ### VPN Configuration for Sensitive Work
 
@@ -177,7 +187,7 @@ Configure Tor Browser with:
 - HTTPS Everywhere for encrypted connections
 - New identity regularly when switching between sensitive topics
 
-## Device Security Hardening
+### Step 5: Device Security Hardening
 
 ### Mobile Device Configuration
 
@@ -221,7 +231,7 @@ sudo systemctl disable cups.service
 # Enable disk encryption during installation (LUKS)
 ```
 
-## Operational Security Practices
+### Step 6: Operational Security Practices
 
 ### Communication Hygiene
 
@@ -256,7 +266,7 @@ Digital security fails without physical security:
 - Power down devices completely rather than sleep mode
 - Consider using TAILS operating system from a dedicated USB for highest-risk activities
 
-## Incident Response Planning
+### Step 7: Create an Incident Response Plan
 
 Prepare for potential device seizure or account compromise:
 
@@ -264,6 +274,21 @@ Prepare for potential device seizure or account compromise:
 2. **Document incident procedures** - Know who to contact if detained
 3. **Maintain encrypted backups** - Offline backups prevent data loss from remote wipe
 4. **Establish pre-agreed communication plans** - If detained, how do others know?
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

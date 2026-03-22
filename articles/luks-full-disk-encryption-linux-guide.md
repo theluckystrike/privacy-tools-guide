@@ -38,7 +38,7 @@ LUKS (Linux Unified Key Setup) is the standard for disk encryption on Linux. It 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## LUKS2 vs LUKS1
+### Step 1: LUKS2 vs LUKS1
 
 LUKS2 is the current standard. Key improvements over LUKS1:
 
@@ -62,7 +62,7 @@ cryptsetup --version
 # Should show 2.x.x
 ```
 
-## Option A: Encrypt a Secondary Drive
+### Step 2: Option A: Encrypt a Secondary Drive
 
 This is the simpler case — encrypting a data drive that does not contain your OS.
 
@@ -106,7 +106,7 @@ sudo umount /mnt/secure
 sudo cryptsetup luksClose secure_data
 ```
 
-## Option B: Full System Encryption During OS Install
+### Step 3: Option B: Full System Encryption During OS Install
 
 Most Linux installers (Ubuntu, Debian, Fedora) offer full disk encryption during the setup wizard. Ubuntu calls it "Encrypt the new Ubuntu installation for security." This is the recommended path for a new system — the installer handles partition layout and bootloader integration automatically.
 
@@ -150,7 +150,7 @@ sudo mkswap /dev/vg0/swap
 sudo mkfs.ext4 /dev/vg0/root
 ```
 
-## Configuring Auto-Mount via crypttab
+### Step 4: Configure Auto-Mount via crypttab
 
 To have the system prompt for a LUKS passphrase at boot and mount the drive automatically, add an entry to `/etc/crypttab`:
 
@@ -170,7 +170,7 @@ echo "/dev/mapper/secure_data /mnt/secure ext4 defaults 0 2" \
 
 After rebooting, the system will prompt for the passphrase before mounting the drive.
 
-## Adding a Keyfile (for Convenience)
+### Step 5: Adding a Keyfile (for Convenience)
 
 A keyfile allows unlocking the container without typing a passphrase — useful for automatically mounting secondary drives while still keeping your root partition passphrase-protected.
 
@@ -190,7 +190,7 @@ sudo nano /etc/crypttab
 
 Keep the passphrase as a backup key slot — if the keyfile is lost or the system disk fails, you can still unlock the drive with the passphrase.
 
-## Inspecting and Managing Key Slots
+### Step 6: Inspecting and Managing Key Slots
 
 LUKS supports up to 32 key slots (LUKS2). You can have multiple passphrases, keyfiles, or recovery keys:
 
@@ -205,7 +205,7 @@ sudo cryptsetup luksAddKey /dev/sdb
 sudo cryptsetup luksKillSlot /dev/sdb 1
 ```
 
-## Benchmarking Your Configuration
+### Step 7: Benchmarking Your Configuration
 
 Test encryption speed to ensure your parameters are practical:
 
@@ -219,7 +219,7 @@ sudo cryptsetup luksDump /dev/sdb | grep -A5 "Key Slot 0"
 
 The Argon2id settings above target ~5 seconds for key derivation — slow enough to resist brute force but fast enough not to be annoying at boot.
 
-## Backup the LUKS Header
+### Step 8: Backup the LUKS Header
 
 The LUKS header contains the key slots. If it is corrupted, all data is unrecoverable. Back it up:
 
@@ -229,6 +229,21 @@ sudo cryptsetup luksHeaderBackup /dev/sdb \
 ```
 
 Store this backup encrypted (ironically, in another LUKS container or encrypted ZIP) and off-device.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

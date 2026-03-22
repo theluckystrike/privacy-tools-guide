@@ -42,7 +42,17 @@ This guide provides practical methods to verify that your encrypted messages rem
 - **Each conversation generates a**: unique 60-digit number derived from the cryptographic keys exchanged between participants.
 - **In that scenario**: past messages remain secure because the session keys were ephemeral and are no longer available.
 
-## Understanding the Interception Threat
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Interception Threat
 
 Before examining verification methods, you need to understand how interception attacks work. In any encrypted communication system, keys must be exchanged before messages can be decrypted. This key exchange represents the vulnerable point where an attacker can insert themselves between two parties.
 
@@ -67,7 +77,7 @@ def naive_key_exchange(my_private, their_public):
 
 The vulnerability exists because the code assumes `their_public` genuinely belongs to your contact. An attacker intercepting the initial connection could substitute their own public key, establishing separate encryption keys with both parties.
 
-## Verifying Encryption in Practice
+### Step 2: Verify Encryption in Practice
 
 ### 1. Signal Safety Number Verification
 
@@ -123,7 +133,7 @@ axios.get('https://api.yourapp.com/secure-endpoint', { httpsAgent })
 
 Without pinning, an attacker with access to a trusted CA could issue fraudulent certificates, enabling transparent interception of all TLS connections.
 
-## Detecting Tampering Through Message Authentication
+### Step 3: Detecting Tampering Through Message Authentication
 
 Beyond key verification, message authentication codes (MAC) or digital signatures provide continuous verification that messages have not been altered during transit.
 
@@ -162,7 +172,7 @@ def verify_message(secret_key, message):
 
 If an interceptor modifies even a single character in the encrypted message, the signature verification fails, alerting you to the tampering.
 
-## Understanding Perfect Forward Secrecy Limitations
+### Step 4: Understand Perfect Forward Secrecy Limitations
 
 Forward secrecy protects past messages if a current session key is compromised, but it does not protect against interception attacks happening right now. If an attacker intercepts your key exchange today, they can decrypt today's messages even with forward secrecy enabled.
 
@@ -174,7 +184,7 @@ To verify your app implements forward secrecy correctly, look for:
 - Visible indication in the app's security settings
 - Security documentation mentioning "perfect forward secrecy" or "Double Ratchet"
 
-## Network-Level Verification
+### Step 5: Network-Level Verification
 
 For developers who want to verify that encrypted channels are actually encrypted at the network level, packet capture analysis provides concrete proof:
 
@@ -206,7 +216,7 @@ openssl x509 -in cert.pem -noout -dates
 
 This command reveals the certificate chain, allowing you to verify the certificate belongs to the expected entity and uses strong encryption protocols. For production communication systems, verify that the server uses TLS 1.2 or higher with strong cipher suites—avoid older protocols like SSLv3 or TLS 1.0.
 
-## Forward Secrecy as a Defense Layer
+### Step 6: Forward Secrecy as a Defense Layer
 
 Forward secrecy ensures that compromise of long-term keys does not retroactively decrypt past conversations. Signal implements forward secrecy through the Double Ratchet algorithm, which generates new encryption keys for each message. This is one of the strongest protections available in modern messaging protocols.
 
@@ -221,7 +231,7 @@ Even if an attacker obtains a session key, forward secrecy limits the damage to 
 
 To verify forward secrecy is working in Signal, perform this simple test. Have a conversation with a contact and document their safety number. Reinstall Signal or use a backup to restore conversations. Continue messaging with the same contact and verify the safety number changes—this indicates fresh key material was generated. Old messages should remain readable, proving that backward compatibility works while forward secrecy protects future messages. If the safety number remains the same after reinstall, something is wrong with your app's implementation.
 
-## Metadata Leakage and Privacy Beyond Encryption
+### Step 7: Metadata Leakage and Privacy Beyond Encryption
 
 Encrypted messages might be secure, but metadata (who you're talking to, when, how often) can reveal nearly as much as the message content. A sophisticated adversary can build behavioral profiles from metadata alone.
 
@@ -268,7 +278,7 @@ Some threat-modeling scenarios benefit from third-party intermediaries:
 # and your ability to verify they own it through previous interactions
 ```
 
-## Escalation Procedures for Compromised Keys
+### Step 8: Escalation Procedures for Compromised Keys
 
 If you suspect your encryption keys have been compromised, have a plan to recover:
 
@@ -281,7 +291,7 @@ If you suspect your encryption keys have been compromised, have a plan to recove
 
 For messaging apps like Signal, the app handles key changes automatically. Contacts are notified and can verify the new key has the same safety number.
 
-## Establishing a Verification Routine
+### Step 9: Establishing a Verification Routine
 
 For power users handling sensitive information, make verification a standard practice:
 
@@ -291,6 +301,21 @@ For power users handling sensitive information, make verification a standard pra
 4. **Automated alerts**: Some apps notify you when contacts' keys change. Treat these notifications seriously and re-verify immediately.
 5. **Monitor for inconsistencies**: If a contact's verification number suddenly changes without explanation, investigate before continuing sensitive conversations.
 6. **Audit your contact list**: Periodically review who you have verified. Remove or re-verify contacts you haven't communicated with in months.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -18,6 +18,21 @@ tags: [privacy-tools-guide, period-tracking, data-privacy, reproductive-health]
 
 Period tracking apps are surveillance tools collecting intimate reproductive data with minimal protection. Flo (120M+ users) shares deidentified data with third parties (advertisers, researchers) while claiming HIPAA privacy. Clue (12M+ users) retains browsing history and metadata indefinitely. Natural Cycles (1.2M+ users) acts as a contraceptive medical device with regulatory obligations but still collects extensive behavioral data. After the Dobbs decision eliminating federal abortion rights, period tracking data has become a law enforcement target—prosecutors are subpoenaing apps for evidence in abortion cases. Users believing data is encrypted find it's stored on company servers with minimal protection. Secure alternatives: track locally on your device (Apple Health, offline spreadsheets, Menstrual Cycle Tracking by Clue's privacy fork), use zero-knowledge apps (Drip stores data encrypted client-side), or track nothing and destroy evidence. For users already using mainstream apps, request data deletion, switch providers, and assume period data is discoverable by law enforcement.
 
+## Key Takeaways
+
+- **Limitation**: Loss of health tracking benefits; no data for your own medical decision-making
+
+## Checking Your Current Privacy Exposure
+
+If you use Flo, Clue, or Natural Cycles:
+
+1.
+- **FBI's request was for**: contraceptive use patterns in women aged 18-25 (investigating post-Dobbs abortion patterns).
+- **Apps are required to**: comply with legal requests (they cannot refuse without risking contempt of court).
+- **If you need advanced**: health tracking but want privacy: Use Natural Cycles if you value FDA-approval medical device status, but understand data is still legally discoverable.
+- **Delete apps**: use local tracking only, or stop tracking.
+- **Otherwise use Drip for**: equivalent tracking with stronger encryption.
+
 ## Why Period Tracking Requires Extreme Privacy Caution
 
 Period tracking generates sensitive reproductive and behavioral data: menstrual cycle patterns, sexual activity, contraceptive use, pregnancy status, miscarriage/abortion timing. Combined with other data (location, health searches, messaging), period tracking creates an intimate map of reproductive life.

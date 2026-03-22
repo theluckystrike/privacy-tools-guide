@@ -41,7 +41,17 @@ Hide messages inside images, audio, or video files using steganography tools lik
 4.
 - **Hide messages inside images**: audio, or video files using steganography tools like Steghide (for images), SilentEye (GUI), or LSB (least significant bit) embedding.
 
-## Understanding Steganography Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Steganography Basics
 
 At its core, steganography works by exploiting redundancies in file formats. Image files, audio files, and even documents contain more data than what meets the eye—bits that can be modified without noticeably affecting the file's appearance or functionality.
 
@@ -49,7 +59,7 @@ The most common technique is **least significant bit (LSB) embedding**. Each byt
 
 Steganography differs fundamentally from encryption. Encryption scrambles data so it is unreadable without a key, but its presence is visible — anyone inspecting your files knows something is hidden. Steganography conceals the very existence of hidden data. Combining both methods provides defense in depth: even if someone suspects steganographic content and extracts it, they still face an encryption layer.
 
-## Legal and Privacy Context
+### Step 2: Legal and Privacy Context
 
 Before implementing steganography, understand the legal space in your jurisdiction. In most countries, steganography itself is entirely legal — it is simply a data encoding technique. However, using it to transmit material that is already illegal remains unlawful regardless of how it is transmitted.
 
@@ -57,7 +67,7 @@ In some jurisdictions with mandatory decryption laws (such as the UK under RIPA 
 
 For journalists communicating with sources, human rights workers in repressive environments, or individuals seeking to avoid traffic analysis, steganography provides meaningful practical privacy. The technique is used in legitimate security research, watermarking for digital rights management, and covert communications in adversarial settings.
 
-## Image Steganography with Python
+### Step 3: Image Steganography with Python
 
 The Python `stegano` library provides straightforward tools for hiding data in images. Install it first:
 
@@ -135,7 +145,7 @@ def decode_image(image_path):
     return message
 ```
 
-## Audio Steganography Techniques
+### Step 4: Audio Steganography Techniques
 
 Audio files offer another viable carrier for hidden data. The `pydub` library can assist with audio manipulation, though more specialized tools exist.
 
@@ -188,7 +198,7 @@ def extract_message_from_audio(audio_file):
     return message.replace("<<<END>>>", "")
 ```
 
-## Command-Line Tools for Quick Implementation
+### Step 5: Command-Line Tools for Quick Implementation
 
 For quick implementation without writing code, several mature command-line tools exist:
 
@@ -242,7 +252,7 @@ outguess -k "passphrase" -r output.jpg recovered.txt
 
 OutGuess is the preferred tool when your carrier image will be shared publicly and you need to resist statistical detection.
 
-## Practical Considerations
+### Step 6: Practical Considerations
 
 ### Detection and Countermeasures
 
@@ -296,6 +306,21 @@ Real-world threats to steganographic communications include:
 4. **Metadata exposure**: Image metadata (EXIF) can reveal editing history that suggests manipulation
 
 Always encrypt sensitive data before embedding it within carrier files. This provides defense in depth — even if hidden data is discovered, it remains unreadable without the decryption key.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

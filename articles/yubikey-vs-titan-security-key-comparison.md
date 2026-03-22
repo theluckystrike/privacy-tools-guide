@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose YubiKey if you need multi-protocol support (TOTP, OpenPGP, PIV, SSH), multiple connector options (USB-A, USB-C, Lightning, NFC), or offline operation without cloud dependencies. Choose Titan Security Key if you want lower cost for organization-wide deployment (~$45 vs $50-80), simple WebAuthn/U2F-only authentication, or tight Google Workspace integration. For WebAuthn implementation, both keys perform identically at the API level -- the difference lies in YubiKey's broader protocol support and Titan's simpler, more affordable design.
+
+## Key Takeaways
+
+- **Choose Titan Security Key**: if you want lower cost for organization-wide deployment (~$45 vs $50-80), simple WebAuthn/U2F-only authentication, or tight Google Workspace integration.
+- **Choose YubiKey if you**: need multi-protocol support (TOTP, OpenPGP, PIV, SSH), multiple connector options (USB-A, USB-C, Lightning, NFC), or offline operation without cloud dependencies.
+- **Developers managing SSH access**: can use YubiKey's PIV or OpenPGP support without additional hardware.
+- **Yubico has faced criticism**: for its patent portfolio and licensing practices, which some in the security community view as potentially limiting open-source alternatives.
+- **Titan Security Key does not support OATH**: requiring you to use a separate authenticator app for TOTP codes.
+- **GitLab**: GitHub, and Gitea all support WebAuthn directly, allowing you to use the same key for multiple authentication methods.
 
 ## Hardware and Form Factor
 

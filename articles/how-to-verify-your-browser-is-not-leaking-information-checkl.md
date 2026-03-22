@@ -41,7 +41,17 @@ Every browser has potential information leakage points that can expose your iden
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For developers and power users**: verifying that your browser is not leaking information requires testing multiple attack vectors systematically.
 
-## WebRTC Leak Test
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: WebRTC Leak Test
 
 WebRTC (Web Real-Time Communication) can expose your real IP address even when using a VPN. This happens because WebRTC creates direct peer-to-peer connections that bypass VPN tunnels.
 
@@ -77,7 +87,7 @@ testWebRTCLeak();
 
 If this code returns candidate information, your browser is leaking IP addresses through WebRTC. Firefox users can disable WebRTC by setting `media.peerconnection.enabled` to `false` in about:config. Chrome users should install an extension like WebRTC Leak Shield or use a browser with built-in WebRTC protection.
 
-## DNS Leak Test
+### Step 2: DNS Leak Test
 
 Even with a VPN, your DNS requests might bypass the encrypted tunnel and go through your ISP's servers. This defeats the purpose of privacy-focused browsing.
 
@@ -104,7 +114,7 @@ dnsleaktest -t standard
 
 If the DNS servers shown belong to your ISP rather than your VPN provider, you have a DNS leak. Fix this by configuring your system to use DNS-over-HTTPS (DoH) or DNS-over-TLS (DoT).
 
-## Canvas Fingerprinting Test
+### Step 3: Canvas Fingerprinting Test
 
 Canvas fingerprinting works by having your browser draw a hidden image and extracting the resulting pixel data. Different hardware and software configurations produce unique signatures.
 
@@ -135,7 +145,7 @@ console.log('Canvas fingerprint:', getCanvasFingerprint());
 
 If the function returns a consistent string across different websites, your browser has a unique canvas fingerprint. Firefox with `privacy.resistFingerprinting` enabled randomizes canvas output. Extensions like CanvasBlocker add noise to canvas readings.
 
-## WebGL Fingerprint Test
+### Step 4: WebGL Fingerprint Test
 
 Similar to canvas fingerprinting, WebGL can expose your GPU renderer and vendor information, creating another unique identifier.
 
@@ -163,7 +173,7 @@ console.log('WebGL Info:', getWebGLInfo());
 
 A privacy-hardened browser should either block this API or return generic values. Tor Browser, for example, standardizes WebGL output across all users.
 
-## User Agent and Navigator Properties
+### Step 5: User Agent and Navigator Properties
 
 Your browser's user agent string and navigator properties reveal significant information about your system.
 
@@ -193,7 +203,7 @@ console.table(auditNavigator());
 
 Compare this output across different browsers and incognito windows. A well-configured privacy browser should show consistent or generic values.
 
-## Cookie and Storage Isolation Test
+### Step 6: Configure Cookie and Storage Isolation Test
 
 Verify that websites cannot access cookies and storage from other domains:
 
@@ -220,7 +230,7 @@ function testStorageIsolation() {
 console.log('Storage Isolation:', testStorageIsolation());
 ```
 
-## Browser Privacy Checklist
+### Step 7: Browser Privacy Checklist
 
 Use this checklist to verify your browser configuration:
 
@@ -235,7 +245,7 @@ Use this checklist to verify your browser configuration:
 9. **Extensions**: Audited for excessive permissions
 10. **Fingerprinting resistance**: Enabled in browser settings
 
-## Automation for Regular Auditing
+### Step 8: Automation for Regular Auditing
 
 For developers who want to automate these checks, create a Node.js script:
 
@@ -270,6 +280,21 @@ auditBrowserPrivacy('https://example.com')
 ```
 
 Run this script periodically to track changes in your browser's privacy posture.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

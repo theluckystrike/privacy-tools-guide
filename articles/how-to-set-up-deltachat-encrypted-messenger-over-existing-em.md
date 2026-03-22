@@ -39,7 +39,7 @@ Set up DeltaChat by installing the application, adding your existing email accou
 - **This architecture provides several**: advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
 - **For advanced users configuring**: custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
 
-## Understanding DeltaChat's Architecture
+### Step 1: Understand DeltaChat's Architecture
 
 DeltaChat operates on a decentralized model by using email protocols with automatic encryption. Rather than maintaining its own network, DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption. This approach means you retain full ownership of your communication without depending on a single service provider.
 
@@ -51,7 +51,7 @@ Before configuring DeltaChat, ensure you have access to an email account that su
 
 For developers seeking maximum privacy, consider running a personal email server. A minimal Postfix and Dovecot setup on a VPS provides complete control over your communication infrastructure.
 
-## Configuring DeltaChat with Your Email Provider
+### Step 2: Configure DeltaChat with Your Email Provider
 
 ### Desktop Client Setup
 
@@ -87,7 +87,7 @@ Mobile users can install DeltaChat from F-Droid (recommended for privacy-conscio
 
 For advanced users configuring custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
 
-## Verifying Encryption Setup
+### Step 3: Verify Encryption Setup
 
 After initial configuration, DeltaChat generates encryption keys automatically. To verify your setup is functioning correctly:
 
@@ -167,7 +167,7 @@ When the green lock icon doesn't appear:
 
 DeltaChat checks for new messages periodically. You can reduce latency by adjusting the sync interval in settings, though more frequent checks increase server load and battery consumption on mobile devices.
 
-## Autocrypt Key Management Deep Dive
+### Step 4: Autocrypt Key Management Deep Dive
 
 DeltaChat implements the Autocrypt standard, which automatically manages encryption keys without user intervention:
 
@@ -198,7 +198,7 @@ For paranoid users, verify fingerprints through an independent channel:
 # Share fingerprint via voice call or in-person meeting
 ```
 
-## Integration with Self-Hosted Email Infrastructure
+### Step 5: Integration with Self-Hosted Email Infrastructure
 
 For maximum control, run DeltaChat against self-hosted mail servers:
 
@@ -234,7 +234,7 @@ echo "user@example.com:$(openssl passwd -crypt password)" | sudo tee -a /etc/dov
 # Connect to mail.example.com:993 (IMAP) and mail.example.com:587 (SMTP)
 ```
 
-## Multi-Device DeltaChat Setup
+### Step 6: Multi-Device DeltaChat Setup
 
 Managing DeltaChat across multiple devices requires careful key synchronization:
 
@@ -265,7 +265,7 @@ Export your backup code immediately after setup:
 # Can be used to restore if device is lost
 ```
 
-## Comparing DeltaChat to Alternatives
+### Step 7: Comparing DeltaChat to Alternatives
 
 When evaluating encrypted messaging solutions:
 
@@ -281,7 +281,7 @@ When evaluating encrypted messaging solutions:
 
 DeltaChat stands out for its use of existing email infrastructure—you can access conversations from any email client, even if DeltaChat is unavailable.
 
-## Practical DeltaChat Workflows
+### Step 8: Practical DeltaChat Workflows
 
 ### For Journalists
 

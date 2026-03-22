@@ -42,7 +42,17 @@ This guide covers the most impactful settings with an explanation of what each o
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Hardening these settings closes**: off attack paths that local and remote attackers use to escalate privileges, enumerate systems, and exploit the network stack.
 
-## How sysctl Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How sysctl Works
 
 Read a current value:
 
@@ -69,7 +79,7 @@ Apply all settings from the file:
 sudo sysctl --system
 ```
 
-## The Complete Hardening File
+### Step 2: The Complete Hardening File
 
 Create the configuration file:
 
@@ -194,7 +204,7 @@ Apply the settings:
 sudo sysctl --system
 ```
 
-## Verify Key Settings
+### Step 3: Verify Key Settings
 
 Check that the most critical settings are applied:
 
@@ -274,7 +284,7 @@ sudo update-initramfs -u   # Debian/Ubuntu
 sudo dracut --force         # Fedora/RHEL
 ```
 
-## Secure /proc and /sys Mounts
+### Step 4: Secure /proc and /sys Mounts
 
 Mount `/proc` with `hidepid=2` so users can only see their own processes:
 
@@ -301,7 +311,7 @@ Remount without rebooting:
 sudo mount -o remount,hidepid=2,gid=proc /proc
 ```
 
-## Audit Current Settings Against Baseline
+### Step 5: Audit Current Settings Against Baseline
 
 The `lynis` tool audits Linux security configuration and reports on settings that deviate from hardening benchmarks:
 
@@ -319,13 +329,28 @@ sudo grep -A2 "sysctl" /var/log/lynis.log | tail -50
 
 Lynis outputs a hardening index score and specific recommendations. Run it after applying changes to measure improvement.
 
-## Impact on Performance
+### Step 6: Impact on Performance
 
 Most of these settings have zero measurable performance impact on typical workloads. The exceptions:
 
 - `tcp_syncookies` — adds minor CPU overhead under SYN flood conditions (acceptable tradeoff)
 - `log_martians` — generates log entries for spoofed packets (can be noisy on some networks, disable if logs fill up)
 - `rp_filter` — can cause issues on multi-homed servers with asymmetric routing (set to `0` per interface if needed)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

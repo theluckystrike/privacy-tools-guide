@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, comparison]---
 
 When selecting a backup solution for sensitive data, encryption becomes the deciding factor. Restic and Borg are both open-source, deduplicating backup programs, but their encryption approaches differ significantly. This comparison examines how each tool handles encryption, performance, and usability from a developer's perspective.
 
+## Key Takeaways
+
+- **Both use Argon2id for**: key derivation with configurable memory and iteration parameters.
+- **Never store passwords in shell history**: use environment variables or a secret manager
+2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Restic and Borg are both open-source**: deduplicating backup programs, but their encryption approaches differ significantly.
+- **Supported backends include local filesystem**: SFTP, REST server, Amazon S3, Backblaze B2, Microsoft Azure Blob Storage, and Google Cloud Storage.
+
 ## Encryption Architecture
 
 ### Restic's Encryption

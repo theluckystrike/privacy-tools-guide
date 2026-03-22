@@ -56,7 +56,7 @@ Before you begin, ensure you have:
 
 For the VPS, providers like DigitalOcean, Linode, Hetzner, and AWS Lightsail all offer suitable options. A server with 1GB RAM and 1 vCPU is sufficient for personal use.
 
-## Setting Up the VPS (Server-Side)
+### Step 1: Set Up the VPS (Server-Side)
 
 First, connect to your VPS via SSH and update the package lists:
 
@@ -129,7 +129,7 @@ Verify the interface is running:
 wg show wg0
 ```
 
-## Setting Up the Client
+### Step 2: Set Up the Client
 
 Now configure your local machine to connect to the VPN. The process is similar but reversed.
 
@@ -178,7 +178,7 @@ sudo wg-quick up ~/wg0.conf
 
 On macOS, install the WireGuard app from the App Store and import the configuration. On Windows, use the official WireGuard client.
 
-## Testing Your VPN Connection
+### Step 3: Test Your VPN Connection
 
 After connecting, verify the connection is working:
 
@@ -192,7 +192,7 @@ curl ifconfig.me
 
 The displayed IP should now be your VPS IP, confirming your traffic routes through the VPN.
 
-## Managing Persistent Connections
+### Step 4: Manage Persistent Connections
 
 To ensure your VPN reconnects automatically after reboots, enable the service on the client:
 

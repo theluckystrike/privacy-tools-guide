@@ -46,7 +46,17 @@ However, misconfigurations break this model:
 These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked DNS. Grab a free testing tool and verify your VPN today.
 ---
 
-## Test 1: DNS Leak Detection (Most Common)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Test 1: DNS Leak Detection (Most Common)
 
 **What it tests:** Whether DNS queries go through the VPN or leak to ISP.
 
@@ -75,7 +85,7 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 
 ---
 
-## Test 2: WebRTC Leak Detection (Browser Vulnerability)
+### Step 2: Test 2: WebRTC Leak Detection (Browser Vulnerability)
 
 **What it tests:** Whether browser's WebRTC protocol leaks your real IP address even with VPN connected.
 
@@ -105,7 +115,7 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 
 ---
 
-## Test 3: IPv6 Leak Detection
+### Step 3: Test 3: IPv6 Leak Detection
 
 **What it tests:** Whether you're leaking an IPv6 address outside the VPN tunnel.
 
@@ -133,7 +143,7 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 
 ---
 
-## Test 4: Real IP Address Leak (IP Geolocation Check)
+### Step 4: Test 4: Real IP Address Leak (IP Geolocation Check)
 
 **What it tests:** Whether your real IP address and location are visible.
 
@@ -162,7 +172,7 @@ These are not theoretical; they're common. A 2016 study found 38% of VPNs leaked
 
 ---
 
-## Test 5: Kill Switch Verification (Critical Test)
+### Step 5: Test 5: Kill Switch Verification (Critical Test)
 
 **What it tests:** Whether your kill switch actually blocks all traffic if VPN disconnects.
 
@@ -204,7 +214,7 @@ ping 8.8.8.8
 
 ---
 
-## Test 6: VPN Disconnection Detection (Browser Leak Test)
+### Step 6: Test 6: VPN Disconnection Detection (Browser Leak Test)
 
 **What it tests:** Whether your browser is aware of VPN disconnection.
 
@@ -227,7 +237,7 @@ All in one test. Very reliable.
 
 ---
 
-## Test 7: DNS Leak Over Time (Passive Test)
+### Step 7: Test 7: DNS Leak Over Time (Passive Test)
 
 **What it tests:** Whether DNS leaks occur intermittently.
 
@@ -259,7 +269,7 @@ dig @8.8.8.8 google.com
 
 ---
 
-## Test 8: Kill Switch Test with Multiple VPN Servers
+### Step 8: Test 8: Kill Switch Test with Multiple VPN Servers
 
 **What it tests:** Whether kill switch works across all VPN servers.
 
@@ -279,7 +289,7 @@ dig @8.8.8.8 google.com
 
 ---
 
-## VPN Brands: Known Leak Issues (2026)
+### Step 9: VPN Brands: Known Leak Issues (2026)
 
 **Generally safe (rare leaks):**
 - Mullvad VPN (independent audit, IPv6 support)
@@ -296,7 +306,7 @@ dig @8.8.8.8 google.com
 
 ---
 
-## Quick Test: 5-Minute Verification
+### Step 10: Quick Test: 5-Minute Verification
 
 If you only have 5 minutes:
 
@@ -339,13 +349,28 @@ done
 
 ---
 
-## Verdict: Trust But Verify
+### Step 11: Verdict: Trust But Verify
 
 VPN providers are not adversarial, but they're also not immune to mistakes. A DNS leak, WebRTC leak, or kill switch failure is a single bug away.
 
 Run these tests monthly. More often if you change VPN providers or update your OS.
 
 A VPN is only as good as its actual implementation. Test it.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

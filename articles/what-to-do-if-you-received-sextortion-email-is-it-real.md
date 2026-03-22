@@ -31,6 +31,20 @@ tags: [privacy-tools-guide]---
 
 Sextortion emails have become one of the most prevalent forms of online fraud. If you received one of these threatening messages, your first question is likely whether it's legitimate or just an elaborate scam. The truth is that the vast majority of these emails are bluffs—criminals relying on fear rather than actual evidence. However, understanding how to verify these claims and protect yourself is essential for any developer or power user.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **You have 48 hours**: to send $2000 in Bitcoin to: bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh If you don't pay, I will send this video to all your contacts.
+- **Review exposed passwords**: If you reuse passwords, this is critical
+3.
+- **Change all passwords**: especially important ones
+# Use a password manager to generate unique passwords
+
+# 2.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Check all data breaches**: Use Have I Been Pwned to see which services leaked your data
+2.
+
 ## Understanding Sextortion Email Scams
 
 A typical sextortion email claims that hackers have compromised your device, recorded you visiting adult websites, and threaten to expose your activities unless you pay a ransom—usually in cryptocurrency. These messages often include specific details to appear credible, such as referencing a password you actually use or claiming to have accessed your contact list.

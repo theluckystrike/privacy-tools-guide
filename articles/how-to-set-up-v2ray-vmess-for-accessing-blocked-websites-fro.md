@@ -42,13 +42,23 @@ This guide walks through setting up V2Ray with VMess from scratch. You'll learn 
 - **Values between 4 and**: 16 work well for most connections.
 - **V2Ray is a powerful**: network proxy tool that supports multiple protocols, including VMess.
 
-## Understanding the Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Architecture
 
 V2Ray operates on a client-server model. The server runs on a machine outside the restricted region (such as a VPS in Hong Kong, Japan, or Singapore), and the client runs on your local machine or network. When you connect to a blocked website, the traffic routes through the V2Ray server, bypassing regional restrictions.
 
 The VMess protocol uses UUID-based authentication and supports dynamic port allocation. Each user has a unique UUID that identifies them to the server. The protocol also includes anti-replay mechanisms and traffic obfuscation to prevent detection.
 
-## Installing V2Ray
+### Step 2: Install V2Ray
 
 The installation process varies by operating system. For most Linux distributions, use the official installation script:
 
@@ -73,7 +83,7 @@ v2ray --version
 
 This command should output the version number, confirming a successful installation.
 
-## Configuring the Server
+### Step 3: Configure the Server
 
 Create a configuration file at `/etc/v2ray/config.json` on your server. This file defines how V2Ray handles incoming connections.
 
@@ -132,7 +142,7 @@ sudo systemctl status v2ray
 
 The service should show as active and running.
 
-## Configuring the Client
+### Step 4: Configure the Client
 
 On your local machine, create a client configuration file. The structure is similar to the server config but includes an outbound connection to your server.
 
@@ -180,7 +190,7 @@ Start the client:
 v2ray -config ~/.v2ray/config.json
 ```
 
-## Testing the Connection
+### Step 5: Test the Connection
 
 With both server and client running, test the connection by routing traffic through the local SOCKS proxy. The client listens on port 1080 by default.
 
@@ -207,7 +217,7 @@ curl --socks5 127.0.0.1:1080 https://api.ipify.org?format=json
 
 The returned IP should match your server's IP, not your local machine's IP.
 
-## Optimizing Performance
+### Step 6: Optimizing Performance
 
 Several settings improve V2Ray performance and reliability.
 

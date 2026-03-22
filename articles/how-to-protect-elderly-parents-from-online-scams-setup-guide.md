@@ -41,13 +41,23 @@ Online scams targeting elderly individuals have grown increasingly sophisticated
 - **The most effective protection**: combines technology with communication.
 - **Technical controls catch many threats**: but a skeptical mindset remains the best defense against sophisticated social engineering attacks.
 
-## Understanding the Threat ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat ecosystem
 
 Elderly users face unique vulnerabilities. Many are unfamiliar with how websites authenticate, making fake login pages nearly indistinguishable from legitimate ones. Tech support scams remain prevalent, with scammers calling to be from Microsoft or Apple and convincing users to download remote access software. Investment fraud and lottery scams continue to drain savings from unsuspecting victims.
 
 The challenge lies in implementing protections without making technology unusable. Overly restrictive controls lead to frustration and defeat the purpose. The goal is defense in depth: multiple layers of protection that catch threats at different stages.
 
-## DNS-Level Filtering: Your First Line of Defense
+### Step 2: DNS-Level Filtering: Your First Line of Defense
 
 DNS filtering blocks requests to known malicious domains before they ever reach the browser. This approach works at the network level, protecting all devices without requiring individual configuration on each machine.
 
@@ -79,7 +89,7 @@ networksetup -setdnsservers "Wi-Fi" 45.90.28.0 45.90.30.0
 
 NextDNS provides logs that show which domains were blocked, useful for identifying new threats targeting your family member.
 
-## Browser Hardening: Chromium-Based Browsers
+### Step 3: Harden the Browser : Chromium-Based Browsers
 
 For elderly users who primarily browse on desktop, hardening the browser configuration prevents many common attack vectors. Chrome, Edge, and Brave share similar configuration mechanisms through policies.
 
@@ -114,7 +124,7 @@ Configure uBlock Origin in "hard mode" by enabling "my filters" and adding rules
 ||*.xyz^$third-party
 ```
 
-## Scripting Automated Checks
+### Step 4: Scripting Automated Checks
 
 Automation can catch issues before they cause harm. The following scripts run as cron jobs to check for common problems.
 
@@ -182,7 +192,7 @@ if [ -d "$EXTENSIONS_DIR" ]; then
 fi
 ```
 
-## Remote Access and Monitoring
+### Step 5: Remote Access and Monitoring
 
 Sometimes elderly users need help, and providing controlled remote access is safer than giving them your password or walking them through complex steps.
 
@@ -215,7 +225,7 @@ Microsoft Family Safety and Apple Family Sharing provide parental control featur
 
 Configure these through family.microsoft.com or Apple ID family sharing settings.
 
-## Communication and Education
+### Step 6: Communication and Education
 
 Technical solutions work best combined with ongoing education. Set up regular conversations about online safety.
 
@@ -239,7 +249,7 @@ Create a family protocol for verifying unexpected requests:
 
 Write these protocols and tape them near the phone or computer for easy reference.
 
-## Building Your Protection Stack
+### Step 7: Build Your Protection Stack
 
 Layer your defenses based on your family member's technical comfort level:
 
@@ -253,6 +263,21 @@ Layer your defenses based on your family member's technical comfort level:
 Start with DNS filtering and browser hardening, as these require minimal behavior change. Add monitoring scripts incrementally as you identify what works for your situation.
 
 The most effective protection combines technology with communication. Technical controls catch many threats, but a skeptical mindset remains the best defense against sophisticated social engineering attacks.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

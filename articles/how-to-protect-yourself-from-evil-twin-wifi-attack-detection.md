@@ -40,7 +40,17 @@ An evil twin attack occurs when a malicious actor sets up a fraudulent WiFi acce
 - **For developers and power**: users who frequently work on-the-go, understanding how to detect and protect against these attacks is essential.
 - **Attackers use software like Fluxion**: WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.
 
-## Understanding the Attack Mechanism
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Attack Mechanism
 
 Evil twin attacks exploit the fundamental way WiFi networks operate. Access points broadcast their SSID, and client devices automatically connect to networks they have previously trusted. Attackers use software like Fluxion, WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.
 
@@ -48,7 +58,7 @@ The attack typically unfolds in phases. First, the attacker performs reconnaissa
 
 The consequences extend beyond simple data theft. Attackers can inject malicious code into HTTP responses, capture authentication tokens, perform man-in-the-middle attacks on encrypted connections, and even install malware on connected devices. For developers handling sensitive code repositories or API credentials, a single compromised session can lead to catastrophic data breaches.
 
-## Detecting Evil Twin Attacks
+### Step 2: Detecting Evil Twin Attacks
 
 Detection requires both automated tools and manual verification techniques. Several approaches exist for identifying suspicious access points.
 
@@ -140,7 +150,7 @@ wlan.fc.type == 0x0c && wlan.fc.subtype == 0x0001
 
 Frequent deauthentication frames often indicate an attack in progress, attempting to force devices to reconnect to a malicious access point.
 
-## Protection Strategies
+### Step 3: Protection Strategies
 
 Detection alone is insufficient—implementing protection measures prevents compromise even when attacks succeed.
 
@@ -183,7 +193,7 @@ For developers working with sensitive systems, consider using a dedicated guest 
 
 Always enable 2FA for accounts accessed over public WiFi. Even if credentials are intercepted through an evil twin attack, 2FA adds a critical verification layer that prevents unauthorized access. Hardware security keys provide the strongest protection, followed by authenticator apps and SMS codes.
 
-## Practical Defense Implementation
+### Step 4: Practical Defense Implementation
 
 For developers who need protection, combining multiple strategies creates defense-in-depth. Here's a practical setup:
 
@@ -251,7 +261,7 @@ echo "pass in all" | sudo pfctl -ef -
 
 **Public Event (Conference, Protest)**: High threat. These venues attract sophisticated attackers and state actors. Use Tor Browser for sensitive activities. Prefer wired connections where available. Consider air-gapping sensitive devices.
 
-## Implementation: Building a Secure Work Environment
+### Step 5: Implementation: Building a Secure Work Environment
 
 For developers who frequently work in hostile environments, implement a dedicated secure workstation setup:
 
@@ -305,7 +315,7 @@ sudo kismet
 
 Kismet maintains a database of known good networks and flags anomalies like unexpected MAC addresses or duplicate SSIDs.
 
-## Detection Automation Script
+### Step 6: Detection Automation Script
 
 Create a continuous monitoring script that alerts you in real-time:
 
@@ -367,6 +377,21 @@ if __name__ == '__main__':
 ```
 
 Run this continuously on a laptop used in public spaces for real-time threat detection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

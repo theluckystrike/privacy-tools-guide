@@ -40,13 +40,23 @@ Cryptocurrency wallet security remains one of the most critical skills for anyon
 - **For developers and power**: users managing significant holdings, understanding the attack vectors and implementing defense-in-depth strategies is essential.
 - **For developers building applications**: the recommended approach involves separating funds between hot and cold wallets.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing security measures, you must understand how attackers target cryptocurrency wallets. The primary attack vectors include phishing attacks that trick users into revealing seed phrases, malware that monitors clipboard data or keystrokes, exchange breaches, compromised private keys through insecure storage, and SIM swapping for accounts tied to phone numbers.
 
 Each threat requires different countermeasures. A security strategy addresses all layers rather than focusing on a single measure.
 
-## Hot Wallets vs Cold Storage
+### Step 2: Hot Wallets vs Cold Storage
 
 The fundamental decision in wallet security involves choosing between hot wallets (connected to the internet) and cold storage (offline wallets). Hot wallets provide convenience for frequent transactions but present a larger attack surface. Cold storage keeps private keys entirely offline, significantly reducing exposure to remote attacks.
 
@@ -54,7 +64,7 @@ For developers building applications, the recommended approach involves separati
 
 Hardware wallets like Ledger and Trezor devices generate and store private keys within secure elements, never exposing them to the connected computer. This isolation protects against malware that might compromise a software wallet.
 
-## Implementing Multi-Signature Security
+### Step 3: Implementing Multi-Signature Security
 
 Multi-signature wallets require multiple private keys to authorize transactions, eliminating single points of failure. This approach is particularly valuable for significant holdings or organizational funds.
 
@@ -87,7 +97,7 @@ createMultiSig(2, [
 
 This configuration ensures that compromising a single key does not result in fund loss. Each key should be stored independently—perhaps one on a hardware wallet, one in secure paper backup, and one with a trusted party.
 
-## Secure Private Key Management
+### Step 4: Secure Private Key Management
 
 Private keys represent ultimate control over funds, and their exposure directly determines wallet security. Never store private keys in plain text on computers, cloud storage, or version control systems.
 
@@ -101,7 +111,7 @@ op item get "Ethereum Wallet Backup" --field "private-key" | \
 
 This approach ensures private keys never exist in plaintext on disk. Decryption occurs only when needed, and the decrypted key remains in memory only for the duration of the signing operation.
 
-## Hardware Wallet Integration
+### Step 5: Hardware Wallet Integration
 
 For developers integrating hardware wallet signing into applications, the HID protocol provides secure communication with devices. Libraries like `@ledgerhq/hw-app-eth` enable transaction signing without private keys leaving the device:
 
@@ -126,7 +136,7 @@ async function signTransactionWithLedger(txParams) {
 
 This pattern enables applications to initiate transactions while hardware wallets provide cryptographic signing. Users maintain control over their keys while developers can build functional interfaces.
 
-## Seed Phrase Security and Backup
+### Step 6: Seed Phrase Security and Backup
 
 Seed phrases—typically 12 or 24 words—derive all keys in a hierarchical deterministic wallet. Securing the seed phrase is therefore equivalent to securing all derived keys.
 
@@ -134,13 +144,13 @@ Physical backup strategies include steel backup plates that survive fires and fl
 
 When creating backups, verify the backup works by restoring to a fresh wallet on a different device and confirming balance visibility. This verification ensures your backup is complete and accurate.
 
-## Network and Device Security
+### Step 7: Network and Device Security
 
 Even with secure key storage, compromised devices can intercept transactions or redirect addresses through DNS hijacking or browser extensions. Essential network security practices include hardware wallet use for all significant transactions, dedicated devices for cryptocurrency operations, browser extension minimization on wallet machines, and VPN usage when accessing cryptocurrency services.
 
 Regular device hygiene involves keeping operating systems and wallet software updated, using hardware wallets for signing rather than software wallets when possible, and verifying transaction addresses character-by-character before confirming.
 
-## Monitoring and Incident Response
+### Step 8: Monitor and Incident Response
 
 Proactive monitoring enables early detection of compromise. Services like Etherscan watch addresses for unauthorized activity, while hardware wallets often include connection verification features. Set up alerts for large transfers or any interaction with known malicious addresses.
 
@@ -235,7 +245,7 @@ if (allowance > ethers.utils.parseEther('0.1')) {
 }
 ```
 
-## Wallet Recovery and Backup Verification
+### Step 9: Wallet Recovery and Backup Verification
 
 Beyond storing seed phrases, implement a backup verification system:
 
@@ -274,7 +284,7 @@ function verify_wallet_restoration() {
 }
 ```
 
-## Insurance and Custody Solutions
+### Step 10: Insurance and Custody Solutions
 
 For significant holdings, consider custody services that provide insurance:
 
@@ -300,6 +310,21 @@ Japan: Requires tax reporting for cryptocurrency gains and holdings
 ```
 
 For privacy-conscious users, this creates a tension: maximizing privacy through non-custodial self-hosted wallets versus accepting regulatory visibility through licensed exchanges for compliance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

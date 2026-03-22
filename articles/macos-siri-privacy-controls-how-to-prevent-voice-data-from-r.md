@@ -40,7 +40,17 @@ Siri, Apple's voice assistant built into macOS, processes voice commands to prov
 - **Apple processes most voice**: queries on its servers, which means your voice commands travel over the internet to Apple's infrastructure.
 - **Even though Apple states**: it uses differential privacy techniques and on-device processing for some queries, the reality is that voice recordings can be stored and associated with your Apple ID.
 
-## How Siri Processes Voice Data on macOS
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Siri Processes Voice Data on macOS
 
 When you activate Siri on macOS—whether through voice activation, keyboard shortcut, or clicking the Siri icon—the audio passes through several stages. Apple processes most voice queries on its servers, which means your voice commands travel over the internet to Apple's infrastructure. Even though Apple states it uses differential privacy techniques and on-device processing for some queries, the reality is that voice recordings can be stored and associated with your Apple ID.
 
@@ -50,7 +60,7 @@ Understanding this data flow is critical for developers and power users implemen
 - Device metadata including IP address, location, and usage patterns
 - Interaction data with Apple services triggered through Siri
 
-## Disabling Siri Voice Activation
+### Step 2: Disable Siri Voice Activation
 
 The first and most effective step is disabling Siri's ability to listen for voice activation. This prevents accidental activations from sending audio to Apple's servers.
 
@@ -67,7 +77,7 @@ defaults write com.apple.assistant.backedup "Hey Siri Enabled" -bool false
 
 After running these commands, restart your Mac for changes to take effect. You can still access Siri through the menu bar icon or keyboard shortcut, but the microphone will not actively listen for voice activation.
 
-## Deleting Existing Siri Voice History
+### Step 3: Delete Existing Siri Voice History
 
 If you have been using Siri, Apple likely stores voice recordings associated with your account. To request deletion:
 
@@ -85,7 +95,7 @@ rm -rf ~/Library/Caches/com.apple.Siri/
 rm -rf ~/Library/com.apple.Siri/
 ```
 
-## Using Alternatives to Siri
+### Step 4: Use Alternatives to Siri
 
 For developers who need voice assistant functionality without sending data to Apple, several alternatives offer local processing or more privacy-respecting policies:
 
@@ -95,7 +105,7 @@ For developers who need voice assistant functionality without sending data to Ap
 
 These alternatives require more technical setup but provide complete control over voice data. For developers building privacy-focused applications, consider integrating these libraries instead of relying on Siri or cloud-based speech services.
 
-## Configuring macOS Firewall for Siri
+### Step 5: Configure macOS Firewall for Siri
 
 Advanced users can block Siri network traffic using the built-in firewall. Create application-specific rules to prevent Siri from communicating with Apple's servers:
 
@@ -121,7 +131,7 @@ anchor "com.custom.siriblock"
 load anchor "com.custom.siriblock" from "/etc/pf.anchors/siri-block"
 ```
 
-## Using Focus Modes to Limit Siri
+### Step 6: Use Focus Modes to Limit Siri
 
 macOS Focus modes can restrict when Siri is available and active. Configure Focus to disable Siri during specific hours or when working on sensitive tasks:
 
@@ -130,7 +140,7 @@ macOS Focus modes can restrict when Siri is available and active. Configure Focu
 3. Disable Siri integration within that mode
 4. Schedule the Focus mode for times when you need maximum privacy
 
-## Automating Siri Privacy with Shortcuts
+### Step 7: Automate Siri Privacy with Shortcuts
 
 For power users, Apple Shortcuts can automate privacy controls. Create a shortcut that disables Siri functionality when activated:
 
@@ -144,7 +154,7 @@ Actions:
 
 You can trigger this shortcut manually or through keyboard shortcuts for quick privacy toggling.
 
-## Understanding Apple's On-Device Processing
+### Step 8: Understand Apple's On-Device Processing
 
 Recent macOS versions include more on-device processing for Siri queries. However, many complex queries still require server-side processing. To check which processing your queries use:
 
@@ -155,7 +165,7 @@ defaults read com.apple.assistant.support
 
 Look for settings indicating local vs. cloud processing. While Apple continues to expand on-device capabilities, the safest approach remains disabling Siri or using alternatives when handling sensitive information.
 
-## Monitoring Network Connections
+### Step 9: Monitor Network Connections
 
 Use tools like `netstat` or `lsof` to monitor which connections Siri attempts:
 
@@ -166,7 +176,7 @@ sudo tcpdump -i en0 -n | grep -E "(apple|siri|icloud)"
 
 This command shows real-time network traffic related to Apple services. You can verify whether Siri is attempting to send data after implementing privacy controls.
 
-## Alternative Voice Solutions for macOS
+### Step 10: Alternative Voice Solutions for macOS
 
 For developers and power users who need voice assistance without Apple's servers:
 
@@ -248,7 +258,7 @@ launchctl disable system/com.apple.Siri.support
 
 This approach is aggressive and may disable system features that depend on Siri.
 
-## Monitoring Siri Over Time
+### Step 11: Monitor Siri Over Time
 
 Create automated checks to verify Siri privacy controls remain in place:
 
@@ -272,7 +282,7 @@ if [ $SIRI_CONNECTIONS -gt 0 ]; then
 fi
 ```
 
-## Privacy Controls Across Apple Ecosystem
+### Step 12: Privacy Controls Across Apple Ecosystem
 
 Siri privacy considerations extend beyond macOS:
 
@@ -294,7 +304,7 @@ Settings → Siri & Search
 - Limit which apps can access Siri suggestions
 - Review health data shared with Siri services
 
-## Verifying Privacy Settings with Activity Monitor
+### Step 13: Verify Privacy Settings with Activity Monitor
 
 ```bash
 # Launch Activity Monitor
@@ -309,7 +319,7 @@ open /Applications/Utilities/Activity\ Monitor.app
 # They may be background services not fully disabled
 ```
 
-## macOS Security Configuration Profile Approach
+### Step 14: macOS Security Configuration Profile Approach
 
 Organizations can deploy privacy controls via MDM:
 
@@ -370,6 +380,21 @@ Combining multiple approaches provides defense-in-depth for voice privacy:
 4. Use firewall rules to block Siri network traffic
 5. Monitor network connections to verify privacy measures work
 6. Keep macOS updated, as Apple periodically changes Siri behavior
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -15,8 +15,16 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 WireGuard automatically detects when your device's IP changes (WiFi to cellular, switching coffee shops) and updates the endpoint dynamically without dropping the tunnel, unlike OpenVPN which requires reconnection. Enable this by configuring PersistentKeepalive = 25 (sends heartbeat packets every 25 seconds) and letting the peer endpoint be updated by sending packets from the new address—WireGuard's stateless design means it accepts packets from new IPs as long as the cryptographic keys match. This provides roaming for mobile devices and laptops without application layer reconnections; however, the initial handshake may briefly interrupt traffic during the IP transition.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **For typical NAT scenarios**: 25 seconds works well.
+- **Only use this for**: fixed-location clients.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## How WireGuard Handles Network Roaming
 

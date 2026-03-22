@@ -42,7 +42,17 @@ Stop mobile games from collecting your location data using app permission contro
 - **Look for `NSLocationWhenInUseUsageDescription` or**: `NSLocationAlwaysUsageDescription` keys.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Location Data Collection in Mobile Games
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Location Data Collection in Mobile Games
 
 Mobile games collect location data through multiple pathways beyond the obvious GPS sensor. The primary vectors include:
 
@@ -55,7 +65,7 @@ Mobile games collect location data through multiple pathways beyond the obvious 
 
 Game developers often embed third-party analytics SDKs—Unity Analytics, Firebase, AppsFlyer, or Adjust—that automatically collect location data as part of their telemetry pipelines. Even when a game does not explicitly request location permissions, these SDKs may harvest data from IP addresses or network information.
 
-## Technical Countermeasures for Power Users
+### Step 2: Technical Countermeasures for Power Users
 
 ### Analyzing App Permissions and Network Traffic
 
@@ -121,7 +131,7 @@ geolocation-api.purple.ai
 
 This approach blocks some SDKs from reaching their backend servers entirely, preventing location data from leaving your device.
 
-## Developer-Level Solutions
+### Step 3: Developer-Level Solutions
 
 ### Implementing Privacy-Preserving Location Handling
 
@@ -178,7 +188,7 @@ Identify and remove SDKs that transmit location data unnecessarily. Many analyti
 FirebaseAnalytics.getInstance(context).setUserProperty("location_collection", "disabled");
 ```
 
-## Practical Protection Strategy
+### Step 4: Practical Protection Strategy
 
 A layered approach provides the strongest protection:
 
@@ -187,6 +197,21 @@ A layered approach provides the strongest protection:
 3. **During use**: Monitor network traffic with a proxy; block known trackers at DNS level
 4. **Post-session**: Revoke permissions after gameplay; clear app data periodically
 5. **Alternative**: Use emulators or test devices with mock locations for game testing
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -282,7 +307,7 @@ POST /sdk/event
   }
 ```
 
-## SDK-Specific Configuration Options
+### Step 5: SDK-Specific Configuration Options
 
 Major analytics SDKs include flags to disable location collection. Developers can implement these:
 
@@ -321,7 +346,7 @@ Analytics.CustomEvent("game_start", new Dictionary<string, object>
 });
 ```
 
-## Network-Level Filtering Strategy
+### Step 6: Network-Level Filtering Strategy
 
 For power users, creating blocklists prevents location data exfiltration:
 
@@ -338,7 +363,7 @@ For power users, creating blocklists prevents location data exfiltration:
 
 For more sophisticated filtering, use Pi-hole's blocklist functionality to filter these domains across all devices on your network.
 
-## Behavioral Detection Systems
+### Step 7: Behavioral Detection Systems
 
 Some games implement detection to flag users who:
 - Disable location permission (may block gameplay features)
@@ -378,7 +403,7 @@ function detectLocationSpoofing() {
 
 Emulators provide the strongest protection since they inherently provide fake location data that games cannot distinguish from real GPS.
 
-## Building Privacy-First Mobile Games
+### Step 8: Build Privacy-First Mobile Games
 
 For developers creating location-based games, privacy by design reduces liability:
 

@@ -54,7 +54,17 @@ Different tools address these threats differently. No single solution provides p
 
 Threat modeling is not an one-time activity. As your organization grows and as the political environment changes, revisit your model. A group facing low-level online harassment has different requirements than one operating in a country with active surveillance of civil society. Start with a realistic assessment of who your likely adversaries are and what capabilities they have, then choose tools accordingly.
 
-## Self-Hosted Option: Matrix with Synapse
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Self-Hosted Option: Matrix with Synapse
 
 Matrix provides the most flexible option for organizations wanting infrastructure control. The protocol supports end-to-end encryption (E2EE) via the Olm and Megolm encryption protocols.
 
@@ -147,7 +157,7 @@ gpg --symmetric --cipher-algo AES256 synapse_backup_$(date +%Y%m%d).sql
 
 Store encrypted backups at a location independent of your primary server. If the server is seized or goes offline, having recent backups means you can restore to a new instance quickly.
 
-## Signal Group Chats
+### Step 2: Signal Group Chats
 
 For organizations preferring managed solutions, Signal provides group encryption. Each group uses Sender Keys, allowing efficient many-to-many communication without the overhead of pairwise encryption.
 
@@ -173,7 +183,7 @@ client.update_group_timer(group_id, duration_seconds)
 
 Signal's limitation for organizations is that it requires a phone number for registration, which creates a link between your communications identity and your phone account. In jurisdictions where carriers cooperate with authorities, this can be a meaningful risk factor.
 
-## Session Messenger: Decentralized Alternative
+### Step 3: Session Messenger: Decentralized Alternative
 
 Session operates on the Signal protocol but routes traffic through onion nodes, providing metadata resistance without requiring phone numbers.
 
@@ -186,7 +196,7 @@ Session operates on the Signal protocol but routes traffic through onion nodes, 
 
 Session's routing through Lokinet provides anonymity properties unavailable in traditional messaging apps. The trade-off is slightly higher latency and no phone-number-based contact discovery. For new members joining your organization, this means you need an out-of-band way to share your Session ID — a meeting in person or through a separate secure channel.
 
-## Briar: Offline-First Encrypted Messaging
+### Step 4: Briar: Offline-First Encrypted Messaging
 
 For organizations operating in connectivity-restricted environments, Briar provides mesh networking via Bluetooth and Wi-Fi Direct.
 
@@ -252,7 +262,7 @@ The weakest point in most organization's communication security is the onboardin
 
 A practical approach: conduct initial onboarding in person when possible. Exchange device verification codes face-to-face, verify safety numbers together, and establish shared secrets that can be used to authenticate future communications. If in-person onboarding is not possible, use multiple independent channels to verify identity before granting access to sensitive rooms.
 
-## Infrastructure and Hosting Decisions
+### Step 5: Infrastructure and Hosting Decisions
 
 Where you host your Synapse server matters as much as how you configure it. Consider these factors when selecting a hosting provider:
 
@@ -266,7 +276,7 @@ Where you host your Synapse server matters as much as how you configure it. Cons
 
 For most organizations, a VPS from a provider with a no-logs policy, encrypted storage, and a history of resisting government requests is sufficient. Run your Synapse instance with full-disk encryption enabled at the OS level, and ensure the decryption key is not stored on the server itself — this prevents offline analysis of seized disks.
 
-## Comparing Communication Needs Across Org Types
+### Step 6: Comparing Communication Needs Across Org Types
 
 Different activist contexts require different communication infrastructure:
 
@@ -278,7 +288,7 @@ Different activist contexts require different communication infrastructure:
 
 **Advocacy organization with public-facing work**: Mix of public (website, social media) and private (board communications, sensitive campaigns) channels. Use Matrix for internal communications, separate Signal groups for time-sensitive operational coordination.
 
-## Disaster Recovery: When Infrastructure Fails
+### Step 7: Disaster Recovery: When Infrastructure Fails
 
 Your communications system will eventually fail. Be prepared:
 
@@ -362,7 +372,7 @@ def create_operation_room(matrix_server, access_token, operation_name, duration_
 # Room automatically deletes after 7 days
 ```
 
-## Monitoring for Compromise Indicators
+### Step 8: Monitor for Compromise Indicators
 
 Even encrypted infrastructure can be compromised. Watch for these warning signs:
 
@@ -374,7 +384,7 @@ Even encrypted infrastructure can be compromised. Watch for these warning signs:
 
 If compromise is suspected, treat it as urgent. Initiate immediate credential rotation, alert all members, consider server migration. Document the incident for post-action analysis.
 
-## Scaling: Beyond 50 People
+### Step 9: Scaling: Beyond 50 People
 
 As your organization grows, communication becomes more complex. Some guidance:
 
@@ -387,6 +397,21 @@ As your organization grows, communication becomes more complex. Some guidance:
 **Separate operational and strategic communication**: Real-time tactical coordination uses one system, strategic planning uses different channel with asynchronous discussion.
 
 **Regular audit of access**: As org grows, review who has access to what rooms. Remove departed members immediately.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

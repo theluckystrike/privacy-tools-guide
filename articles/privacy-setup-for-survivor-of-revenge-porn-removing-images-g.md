@@ -40,11 +40,21 @@ Use PhotoDNA or file hashing to identify copies of non-consensual intimate image
 - **Maintaining your evidence repository**: and continuing to submit removal requests remains the most effective technical approach.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Challenge
 
 Non-consensual intimate image (NCII) distribution occurs when intimate media is shared without the subject's consent. The technical ecosystem for removal varies significantly across platforms—some have dedicated reporting systems, while others require email-based takedown requests. Your setup should address both immediate removal needs and long-term monitoring.
 
-## Immediate Action Steps
+### Step 2: Immediate Action Steps
 
 ### Document Everything
 
@@ -65,7 +75,7 @@ whois example.com
 
 This documentation serves both platform removal requests and potential legal action.
 
-## Platform Removal Automation
+### Step 3: Platform Removal Automation
 
 Major platforms have specific reporting mechanisms. For developers, automating initial detection and response can significantly reduce response time.
 
@@ -148,7 +158,7 @@ def similarity_check(new_image_hash, known_hash, threshold=5):
 
 This approach works even when images are slightly modified—resized, cropped, or with filters applied.
 
-## Platform-Specific Removal Processes
+### Step 4: Platform-Specific Removal Processes
 
 ### Google Search Removal
 
@@ -187,7 +197,7 @@ Each platform handles NCII differently:
 - Use the report button, but also contact moderators directly
 - For persistent issues, email the legal team: legal@reddit.com
 
-## Technical Privacy Protection
+### Step 5: Technical Privacy Protection
 
 ### Image Fingerprinting
 
@@ -221,7 +231,7 @@ export SEARCH_ENGINE="https://duckduckgo.com"
 alias private-search="$SEARCH_ENGINE/?q="
 ```
 
-## Legal Considerations
+### Step 6: Legal Considerations
 
 In the United States, the [NOVID (Non-consensual Distribution of Intimate Images)](https://www.congress.gov/bill/117th-congress/senate-bill/2360) Act provides federal criminalization. Document all:
 
@@ -232,7 +242,7 @@ In the United States, the [NOVID (Non-consensual Distribution of Intimate Images
 
 This documentation strengthens both platform requests and potential legal action.
 
-## Monitoring and Alerts
+### Step 7: Monitor and Alerts
 
 Set up automated monitoring for your name or associated identifiers:
 
@@ -274,6 +284,21 @@ Begin with the highest-impact actions:
 4. **Consider legal consultation** - Especially for persistent cases
 
 The removal process requires persistence. Content may reappear on different platforms or under different URLs. Maintaining your evidence repository and continuing to submit removal requests remains the most effective technical approach.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

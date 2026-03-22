@@ -42,13 +42,23 @@ This guide covers practical methods to secure your WiFi network and prevent unau
 - **Access your router's admin**: panel (typically at `192.168.0.1` or `192.168.1.1`) and change both the admin password and the WiFi password to strong, unique values.
 - **Use a password manager**: to generate and store these credentials.
 
-## Understanding the Threat
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat
 
 Your WiFi network broadcasts radio waves that extend beyond your property line. Neighbors, passing vehicles, or even nearby businesses can potentially detect and attempt to connect to your network. While some unauthorized connections might be accidental (devices automatically connecting to the strongest available network), others can be deliberate bandwidth theft.
 
 The impact goes beyond slower speeds. Unauthorized users on your network can potentially access shared files, intercept unencrypted traffic, or use your connection for activities that could trace back to your IP address.
 
-## Router Configuration: Your First Line of Defense
+### Step 2: Router Configuration: Your First Line of Defense
 
 Most router security issues stem from default configurations. Changing these settings is the most effective initial step.
 
@@ -81,7 +91,7 @@ Password: minimum 12 characters, mix of types
 
 WPS was designed for convenience, allowing connections via a PIN or push button. However, it contains known vulnerabilities that attackers can exploit. Disable WPS in your router settings to eliminate this attack vector.
 
-## Network Segmentation for Advanced Security
+### Step 3: Network Segmentation for Advanced Security
 
 For developers and power users, network segmentation provides additional protection. This involves creating separate networks for different use cases.
 
@@ -119,7 +129,7 @@ config interface 'guest'
 
 This separates your primary devices from IoT devices or guest connections, limiting potential damage from any single compromised device.
 
-## Network Monitoring and Detection
+### Step 4: Network Monitoring and Detection
 
 Detecting unauthorized users requires monitoring your network traffic. Several approaches work for different technical levels.
 
@@ -164,7 +174,7 @@ sudo systemctl start arpwatch
 sudo tail -f /var/log/arpwatch.log
 ```
 
-## MAC Address Filtering: Limitations and Implementation
+### Step 5: MAC Address Filtering: Limitations and Implementation
 
 MAC address filtering restricts network access to specific device addresses. While not foolproof (MAC addresses can be spoofed), this adds another layer of difficulty for casual attackers.
 
@@ -182,7 +192,7 @@ cat /sys/class/net/wlan0/address
 
 Add these addresses to your router's MAC filtering whitelist. This approach works well for fixed devices but becomes cumbersome with frequent guest devices.
 
-## Firmware Updates and Router Maintenance
+### Step 6: Firmware Updates and Router Maintenance
 
 Router manufacturers release firmware updates that patch security vulnerabilities. Check your router settings monthly for available updates, or enable automatic updates if your router supports this feature.
 
@@ -293,7 +303,7 @@ for ip, score in anomalies:
     print(f"⚠️ Suspicious activity from {ip} (anomaly score: {score})")
 ```
 
-## Implementing Rate Limiting and Bandwidth Allocation
+### Step 7: Implementing Rate Limiting and Bandwidth Allocation
 
 Beyond detection, you can throttle unauthorized users' bandwidth to minimize their impact on your network. Most modern routers support QoS (Quality of Service) configuration:
 
@@ -314,7 +324,7 @@ tc filter add dev wlan0 protocol ip parent 1: prio 1 u32 \
 
 This configuration automatically limits any unknown devices to 512 kilobits per second, making bandwidth theft impractical while allowing legitimate traffic to flow normally.
 
-## SSL/TLS Certificate Pinning for Admin Access
+### Step 8: SSL/TLS Certificate Pinning for Admin Access
 
 Prevent man-in-the-middle attacks on your router's admin panel by implementing certificate pinning. Generate a self-signed certificate for your router and configure clients to trust only that certificate:
 
@@ -337,7 +347,7 @@ ssh -L 8443:192.168.1.1:443 -p 22 admin@router.local
 curl https://localhost:8443/admin/
 ```
 
-## Long-Term Security Maintenance Schedule
+### Step 9: Long-Term Security Maintenance Schedule
 
 Establish a regular maintenance cadence to keep your WiFi security current:
 
@@ -356,6 +366,21 @@ Establish a regular maintenance cadence to keep your WiFi security current:
 - Audit which devices still need access (remove IoT devices no longer used)
 - Review router logs for security events from the past year
 - Test guest network isolation and bandwidth limits
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

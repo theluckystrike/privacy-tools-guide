@@ -42,7 +42,17 @@ Use private browsing modes to avoid history/cache, connect through VPN or Tor to
 4.
 - **Use private browsing modes**: to avoid history/cache, connect through VPN or Tor to prevent IP tracking, disable autocompletion and password saving, and manually clear browser data before leaving.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing countermeasures, recognize what you're protecting against:
 
@@ -52,7 +62,7 @@ Before implementing countermeasures, recognize what you're protecting against:
 - **Typed URLs**: Browser address bar suggestions reveal your activity
 - **System logs**: OS-level logging captures application usage
 
-## Browser Isolation Techniques
+### Step 2: Browser Isolation Techniques
 
 ### Use Private/Incognito Mode Effectively
 
@@ -95,7 +105,7 @@ cd /media/usb/firefox/
 ./firefox --profile ./profile --no-remote
 ```
 
-## Network-Level Privacy
+### Step 3: Network-Level Privacy
 
 ### Avoid Credential Persistence
 
@@ -125,7 +135,7 @@ sudo wg-quick up wg0
 curl ifconfig.me
 ```
 
-## File System Hygiene
+### Step 4: File System Hygiene
 
 ### Temporary File Management
 
@@ -180,7 +190,7 @@ firejail --private --private-tmp firefox
 bwrap --unshare-user --private /tmp --dev /dev bash
 ```
 
-## Practical Session Workflow
+### Step 5: Practical Session Workflow
 
 Follow this sequence for maximum privacy on public computers:
 
@@ -191,7 +201,7 @@ Follow this sequence for maximum privacy on public computers:
 5. **Post-session**: Clear all browser data, clipboard, and temporary files
 6. **Verification**: Check for any residual files in home directory
 
-## Limitations and Realistic Expectations
+### Step 6: Limitations and Realistic Expectations
 
 No method provides absolute anonymity. Public computers may have:
 
@@ -244,6 +254,21 @@ Even after you log out and clear your session:
 2. **Review SSH known hosts**: Connections to servers may be logged
 3. **Check for planted malware**: Files may have been secretly dropped on USB drives
 4. **Monitor accounts**: Watch for unauthorized access in the following days
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

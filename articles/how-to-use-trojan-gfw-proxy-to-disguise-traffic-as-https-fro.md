@@ -40,7 +40,17 @@ Trojan GFW proxy represents a sophisticated approach to network traffic obfuscat
 - **This makes active probing**: by censors significantly harder than with protocols that use custom encryption schemes.
 - **For browsers**: both Firefox and Chrome support SOCKS5 proxy configuration.
 
-## Understanding How Trojan Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand How Trojan Works
 
 Trojan operates on a deceptively simple principle: it wraps encrypted traffic in the TLS protocol, the same encryption used by every secure website on the internet. When you connect to a Trojan server, your traffic appears identical to a normal HTTPS connection to any web server. The GFW cannot distinguish between legitimate HTTPS traffic and Trojan-encrypted data because both use the same port (443) and identical TLS handshakes.
 
@@ -48,7 +58,7 @@ The protocol achieves this by acting as a reverse proxy. Your client connects to
 
 What differentiates Trojan from earlier protocols like Shadowsocks or V2Ray VMess is its use of authentic TLS certificates issued by trusted certificate authorities. When the GFW probes a Trojan server, it receives a valid TLS handshake and then sees what appears to be normal HTTPS responses—because the server also runs a real web server on the fallback port 80. This makes active probing by censors significantly harder than with protocols that use custom encryption schemes.
 
-## Server-Side Configuration
+### Step 2: Server-Side Configuration
 
 Setting up a Trojan server requires a Linux VPS with TLS certificate support. You'll need a domain name pointing to your server and root or sudo access.
 
@@ -119,7 +129,7 @@ EOF
 sudo systemctl enable --now trojan
 ```
 
-## Setting Up the Nginx Fallback Server
+### Step 3: Set Up the Nginx Fallback Server
 
 A critical component of a convincing Trojan deployment is the fallback web server. When the GFW or any censor probes your server without the Trojan password, they should receive a legitimate website response. Run Nginx on port 80 serving real content:
 
@@ -146,7 +156,7 @@ sudo systemctl enable --now nginx
 
 The content at `/var/www/html` should be a plausible static site. An empty directory or a default Nginx page looks suspicious under active probing. A minimal blog or landing page with a few HTML files significantly reduces the probability that automated scanning identifies the server as a proxy.
 
-## Client-Side Configuration
+### Step 4: Client-Side Configuration
 
 On the client side, you have multiple options depending on your operating system. For desktop systems, the Qt-based Trojan-Qt5 or Trojan-GUI clients provide graphical interfaces. For mobile, the ignoring Android client or ShadowRocket on iOS work well.
 
@@ -190,7 +200,7 @@ trojan-go -config client-config.json
 
 Your local SOCKS5 proxy now runs at `127.0.0.1:1080`.
 
-## Integrating with Your Workflow
+### Step 5: Integrate with Your Workflow
 
 For browser-based browsing, configure your system or browser to use the SOCKS5 proxy. For command-line tools, use `proxychains` or set environment variables:
 
@@ -256,7 +266,7 @@ Monitor logs on both client and server to identify authentication failures or ne
 
 If your server is being actively blocked despite correct configuration, the issue may be IP-level blocking rather than DPI detection. Check whether your VPS IP is in commonly blocked ranges using tools like `ping`, `traceroute`, or online GFW checking services. If the IP is blocked at the routing level, switching VPS providers or using CDN fronting through Cloudflare may resolve the issue—configure Cloudflare in front of your domain, set a custom ALPN value, and route Trojan traffic through Cloudflare's 443 port using Websocket mode in trojan-go.
 
-## Certificate Renewal Automation
+### Step 6: Certificate Renewal Automation
 
 TLS certificates issued by Let's Encrypt expire after 90 days. Failing to renew them breaks your proxy silently—the client will reject the expired certificate and connections will fail. Automate renewal with a systemd timer:
 

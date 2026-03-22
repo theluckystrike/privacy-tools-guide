@@ -44,7 +44,17 @@ TAILS is a live Linux distribution that boots from USB, runs entirely in RAM lea
 4.
 - **Use TAILS for maximum**: privacy when handling sensitive data, whistleblowing, or circumventing surveillance.
 
-## Understanding Tails Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Tails Architecture
 
 Tails operates on a fundamental principle: nothing should persist between sessions unless explicitly configured. When you boot Tails, the entire operating system loads into RAM, leaving no trace on the host machine's storage. This architecture provides several privacy guarantees that traditional operating systems cannot match.
 
@@ -56,7 +66,7 @@ The system consists of three primary layers:
 
 This design means every session starts with a clean slate—no browser history, no cached credentials, no filesystem artifacts. For developers working with sensitive data or conducting security research, this isolation provides a valuable sandbox.
 
-## Setting Up Tails for Daily Use
+### Step 2: Set Up Tails for Daily Use
 
 ### Installation Methods
 
@@ -108,7 +118,7 @@ Configure which features persist by editing `/live/persistence.conf` on the pers
 /home/amnesia/.gnupg       source=Persistent,link=./tor-connection/gnupg
 ```
 
-## Daily Workflow Integration
+### Step 3: Daily Workflow Integration
 
 ### Development Workflows
 
@@ -189,7 +199,7 @@ Advanced users can configure additional network isolation:
 # Note: Requires significant resources and setup time
 ```
 
-## Automation and Scripting
+### Step 4: Automation and Scripting
 
 For daily privacy workflows, automation reduces human error:
 
@@ -270,6 +280,21 @@ Understanding what Tails does not protect against is critical:
 4. **Persistent network fingerprints**: While Tor hides IP addresses, timing attacks and traffic analysis can sometimes deanonymize users
 
 For threat models requiring protection against physical access, consider combining Tails with Qubes OS or air-gapped machines.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

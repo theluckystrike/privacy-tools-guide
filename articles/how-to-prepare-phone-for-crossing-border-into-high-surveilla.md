@@ -42,7 +42,17 @@ This security checklist covers practical steps to harden your device before cros
 - **For developers who use**: browser-based developer tools or local development servers, shut down all running local services and clear any localhost bindings that might expose internal services.
 - **Use SSH agent forwarding**: from a separate key that you can revoke remotely if needed.
 
-## Backup Everything Before Departure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Backup Everything Before Departure
 
 The single most important step is a complete backup. If border agents require you to unlock your device or if they seize it temporarily, you need a secure copy of your data elsewhere.
 
@@ -56,13 +66,13 @@ adb pull /sdcard/Downloads/ ./backup-downloads/
 
 Store this backup on encrypted external storage or a secure cloud service that uses zero-knowledge encryption. Verify the backup is accessible from a separate device before your trip.
 
-## Verify Full-Disk Encryption Status
+### Step 2: Verify Full-Disk Encryption Status
 
 Both iOS and Android enable encryption by default when a passcode is set, but verification matters. On Android, check encryption status in Settings → Security → Encryption. On iOS, encryption is tied to the Secure Enclave—ensure Find My iPhone is enabled, as it protects the encryption keys.
 
 For developers using file-based encryption (FBE) on Android 10+, understand that decryption requires your screen lock credential. Choose a strong passcode—at least 6 characters with mixed types—and avoid patterns or simple PINs.
 
-## Audit Installed Apps
+### Step 3: Audit Installed Apps
 
 Review every installed application. Border agents may question specific apps, and some applications can create legal complications depending on the destination country.
 
@@ -74,7 +84,7 @@ Review every installed application. Border agents may question specific apps, an
 
 For apps you must keep, verify they don't store sensitive credentials in plaintext. Developer tools like Termux, iSH, or Bluestacks often contain SSH keys or API tokens. Either remove these tools or move sensitive configs to encrypted containers before travel.
 
-## Clear Browser Data and Session Tokens
+### Step 4: Clear Browser Data and Session Tokens
 
 Browser data reveals significant information about your activities. Clear cookies, local storage, and cached credentials:
 
@@ -87,7 +97,7 @@ Disable auto-fill for passwords and addresses. Remove saved login credentials fo
 
 For developers who use browser-based developer tools or local development servers, shut down all running local services and clear any localhost bindings that might expose internal services.
 
-## Manage Cloud Sync and Remote Wipe Capabilities
+### Step 5: Manage Cloud Sync and Remote Wipe Capabilities
 
 Cloud services can be accessed by border agents if they have your device and you authenticate. Before crossing borders:
 
@@ -97,7 +107,7 @@ Cloud services can be accessed by border agents if they have your device and you
 
 Consider turning off iCloud Keychain and Google Smart Lock. When these services are active, agents can potentially request Apple or Google to provide data related to your account.
 
-## Airplane Mode and Network Isolation
+### Step 6: Airplane Mode and Network Isolation
 
 At the border itself, airplane mode becomes your primary defense. Enable it before approaching immigration:
 
@@ -115,7 +125,7 @@ Airplane mode disables cellular, WiFi, and Bluetooth radios. This prevents:
 - Exploitation of wireless vulnerabilities
 - IMSI catchers from detecting your device
 
-## Use Secondary Devices Strategically
+### Step 7: Use Secondary Devices Strategically
 
 Many security professionals travel with a dedicated "border device"—a stripped-down phone containing minimal data. This device is:
 - Factory reset before travel
@@ -125,7 +135,7 @@ Many security professionals travel with a dedicated "border device"—a stripped
 
 This approach limits exposure if the device is inspected or confiscated. Your primary device stays powered off in checked luggage or at home.
 
-## Prepare for Device Inspection Scenarios
+### Step 8: Prepare for Device Inspection Scenarios
 
 Understand the legal framework of your destination. Some countries can compel device decryption; others may simply copy data and return the device later.
 
@@ -137,7 +147,7 @@ Understand the legal framework of your destination. Some countries can compel de
 
 For developers with code repositories on the device, ensure no private keys or deployment credentials remain. Use SSH agent forwarding from a separate key that you can revoke remotely if needed.
 
-## Post-Crossing Verification
+### Step 9: Post-Crossing Verification
 
 After crossing the border, perform immediate security checks:
 
@@ -198,7 +208,7 @@ hdiutil eject /Volumes/Border\ Backup
 
 Never carry all backups with you to the border.
 
-## Technical Deep Dive: Encryption Verification
+### Step 10: Technical Deep Dive: Encryption Verification
 
 Before relying on device encryption, verify it's actually enabled:
 
@@ -240,7 +250,7 @@ If encryption is not enabled, enable it before traveling:
 # Do NOT restart device during this process
 ```
 
-## App-Specific Data Removal
+### Step 11: App-Specific Data Removal
 
 Different apps store sensitive data in different locations:
 
@@ -295,7 +305,7 @@ done
 echo "Review above output and remove sensitive data"
 ```
 
-## Custom Shortcut Automation for iOS
+### Step 12: Custom Shortcut Automation for iOS
 
 iOS Shortcuts can automate border preparation:
 
@@ -322,7 +332,7 @@ import Foundation
 
 This provides one-tap activation of all protective measures.
 
-## Legal Documentation and Rights
+### Step 13: Legal Documentation and Rights
 
 Understanding your legal rights depends on destination:
 
@@ -359,7 +369,7 @@ I do not consent to sharing my passwords or unlock methods.
 [Your lawyer's contact information]
 ```
 
-## Post-Border Device Verification
+### Step 14: Post-Border Device Verification
 
 After crossing the border, verify device integrity:
 
@@ -409,7 +419,7 @@ For travelers with sophisticated threat models:
 - Post-border: Assume device is fully compromised; rotate all credentials
 - Consider: Device is no longer trustworthy; consider replacement
 
-## Device Restoration and Recovery
+### Step 15: Device Restoration and Recovery
 
 After border crossing, proper restoration reduces risks:
 
@@ -435,7 +445,7 @@ After border crossing, proper restoration reduces risks:
 
 This "clean room" restoration approach detects malware introduced at border.
 
-## Credential Rotation Checklist
+### Step 16: Credential Rotation Checklist
 
 After suspected device compromise:
 
@@ -463,7 +473,7 @@ After suspected device compromise:
 - [ ] Set calendar reminder to rotate passwords quarterly
 ```
 
-## Insurance and Liability Considerations
+### Step 17: Insurance and Liability Considerations
 
 Developers traveling should understand liability implications:
 
@@ -490,6 +500,21 @@ echo "Device searched by [Border Agency]" >> border_travel_log.txt
 echo "Duration: [time]" >> border_travel_log.txt
 echo "Post-search findings: [any suspicious changes]" >> border_travel_log.txt
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

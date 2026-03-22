@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 WiFi deauthentication attacks represent one of the most common and disruptive layer 2 wireless network attacks. Attackers exploit the 802.11 management frames that lack authentication, sending forged deauthentication frames to disconnect devices from legitimate access points. Understanding how to detect and prevent these attacks is essential for network administrators, security researchers, and developers building resilient wireless infrastructure.
 
+## Key Takeaways
+
+- **The attack works because**: the 802.11 standard does not require access points to verify that deauthentication requests originate from authenticated clients.
+- **Clients without 802.11w support**: cannot connect, which may cause issues with older devices.
+- **Devices that support 802.11w will use it**: while legacy devices can still connect.
+- **WiFi deauthentication attacks represent**: one of the most common and disruptive layer 2 wireless network attacks.
+- **Tools like Aircrack-ng and**: MDK3 automate this process, allowing attackers to disconnect entire networks with single commands.
+- **While WPA3 introduced Dragonblood**: protocol enhancements, deauthentication frames remain a problem due to backward compatibility modes that fallback to WPA2-style authentication.
+
 ## Understanding the Deauthentication Attack Vector
 
 The 802.11 protocol requires clients and access points to exchange management frames for association, authentication, and disassociation. These frames are sent in plaintext and require no cryptographic verification, making them trivially easy to forge. An attacker with a WiFi adapter in monitor mode can inject arbitrary deauthentication frames targeting any connected client.

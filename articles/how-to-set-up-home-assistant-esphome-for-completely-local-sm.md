@@ -60,7 +60,7 @@ Before starting, ensure you have the following components:
 
 For hardware, the ESP32 is generally preferred over the ESP8266 due to its dual-core processor, more GPIO pins, and built-in support for Bluetooth alongside WiFi. Common ESP32 development boards like the DOIT DevKit V1 or the Wemos D1 Mini32 cost under $5 and are widely available.
 
-## Installing the ESPHome Addon
+### Step 1: Install the ESPHome Addon
 
 Open Home Assistant and navigate to **Settings → Add-ons → Add-on Store**. Search for "ESPHome" and install the official addon. After installation, click **Start** and enable **Show in sidebar** for convenient access.
 
@@ -78,7 +78,7 @@ docker run --rm --privileged \
 
 This exposes the ESPHome dashboard on port 6052 and mounts a local directory for configurations.
 
-## Creating Your First ESPHome Device
+### Step 2: Create Your First ESPHome Device
 
 From the ESPHome dashboard, click **+ NEW DEVICE**. Enter a name for your device (use lowercase letters and hyphens only). Connect your ESP32 or ESP8266 via USB, or select **Skip** to create a configuration file for later flashing.
 
@@ -116,7 +116,7 @@ sensor:
 
 Replace the WiFi credentials and passwords with your own values. Save this configuration in the ESPHome dashboard and click **INSTALL** to flash the firmware to your device.
 
-## Configuring Home Assistant Integration
+### Step 3: Configure Home Assistant Integration
 
 After the device connects to your network, Home Assistant automatically detects it if you enabled **discovery** in your configuration. Navigate to **Settings → Devices & Services** to find the new sensor entity.
 
@@ -143,7 +143,7 @@ wifi:
     subnet: 255.255.255.0
 ```
 
-## Adding More Sensor Types
+### Step 4: Adding More Sensor Types
 
 ESPHome supports numerous sensor types. Below are common configurations for expanding your local sensor network.
 
@@ -225,7 +225,7 @@ The `delayed_on` filter prevents false positives from brief moisture contact.
 | BH1750 | I2C | ±20% | Low | Ambient light |
 | MCP9808 | I2C | ±0.0625°C | Low-medium | Precision temperature |
 
-## Automating with Home Assistant
+### Step 5: Automate with Home Assistant
 
 With sensors reporting locally, create automations that respond to sensor events without cloud connectivity. Example automation that turns on lights when motion is detected:
 
@@ -271,7 +271,7 @@ Because everything runs locally, this automation fires even when your internet c
 
 **High CPU usage on the ESP**: Polling sensors too frequently can overwhelm the microcontroller. Start with `update_interval: 60s` for most sensors and reduce only if you genuinely need faster updates. The BME680 in particular benefits from intervals of 30 seconds or longer to allow the gas sensor to stabilize.
 
-## Securing Your Local Network
+### Step 6: Secure Your Local Network
 
 Even though your sensors operate locally, implement basic security practices:
 

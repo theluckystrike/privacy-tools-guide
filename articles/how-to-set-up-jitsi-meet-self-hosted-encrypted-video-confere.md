@@ -41,7 +41,17 @@ Deploying a self-hosted Jitsi Meet instance with end-to-end encryption gives you
 - **Jitsi Meet supports E2EE**: using the WebRTC Insertable Streams API, which allows JavaScript to process media frames before transmission.
 - **Guests can still join**: meetings started by authenticated users, but they cannot initiate new conferences.
 
-## Understanding Jitsi Meet Encryption
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Jitsi Meet Encryption
 
 Jitsi Meet provides two layers of encryption: transport layer security (TLS) for the connection between clients and the server, and end-to-end encryption (E2EE) for the actual media streams. The distinction matters significantly for privacy-conscious deployments.
 
@@ -73,7 +83,7 @@ mkdir -p ~/jitsi/{/.jitsi-meet-cfg,/{transcripts,recordings,logs}}
 cd ~/jitsi
 ```
 
-## Docker Compose Configuration
+### Step 2: Docker Compose Configuration
 
 Create your docker-compose.yml file with production-ready settings:
 
@@ -169,7 +179,7 @@ HTTPS_PORT=443
 RESTART_POLICY=unless-stopped
 ```
 
-## Enabling End-to-End Encryption
+### Step 3: Enable End-to-End Encryption
 
 Jitsi Meet's E2EE requires no additional configuration in recent versions—it activates through the UI. However, certain settings ensure optimal operation:
 
@@ -179,7 +189,7 @@ Note that E2EE has trade-offs. Screen sharing quality may decrease, and some fea
 
 For organizations requiring E2EE, communicate these limitations to users before deployment.
 
-## User Authentication Setup
+### Step 4: User Authentication Setup
 
 Internal authentication requires users to register before hosting meetings. Configure this in the Prosody configuration:
 
@@ -192,7 +202,7 @@ Host authentication prevents unauthorized users from starting meetings. Guests c
 
 For tighter control, consider LDAP or OAuth integration by modifying the prosody configuration files in `.jitsi-meet-cfg/prosody/`.
 
-## TURN Server Configuration
+### Step 5: TURN Server Configuration
 
 TURN servers enable connectivity when participants are behind restrictive firewalls or NAT. Without a TURN server, some users cannot establish peer connections.
 
@@ -221,7 +231,7 @@ TURN_SECRET=your_turn_secret
 
 Generate the secret using a random string generator and store it securely.
 
-## Network and Firewall Configuration
+### Step 6: Network and Firewall Configuration
 
 For production deployments, configure your firewall appropriately:
 
@@ -237,7 +247,7 @@ sudo ufw enable
 
 If using a cloud provider, ensure security groups permit this traffic.
 
-## SSL Certificate Management
+### Step 7: SSL Certificate Management
 
 The configuration enables Let's Encrypt automatically on first deployment. For production environments, consider using certbot for manual certificate management:
 
@@ -247,7 +257,7 @@ sudo certbot certonly --webroot -w /var/www/html -d jitsi.yourdomain.com
 
 Copy the certificates to your Jitsi configuration and update the web container environment to point to them instead of using automatic Let's Encrypt.
 
-## Starting and Testing Your Deployment
+### Step 8: Starting and Testing Your Deployment
 
 Launch the stack:
 
@@ -269,6 +279,21 @@ Beyond basic setup, implement these hardening measures:
 3. **Rate limiting**: Prevent abuse through nginx rate limits
 4. **Monitoring**: Set up health checks and alerting
 5. **Backups**: Regularly back up configuration and user data
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

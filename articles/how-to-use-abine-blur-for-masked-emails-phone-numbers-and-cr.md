@@ -40,19 +40,29 @@ Abine Blur is a privacy-focused service that provides masked contact details—c
 - **This routing adds minimal**: latency (typically <1 second) but operates best on reliable internet.
 - **Abine Blur is a privacy-focused service that provides masked contact details**: creating throwaway email addresses, phone numbers, and credit card numbers that forward to your real information.
 
-## How Abine Blur Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Abine Blur Works
 
 Blur acts as an intermediary layer between your real contact information and the services you interact with. When you generate a masked email, phone number, or credit card, Blur assigns a unique identifier that routes communications through its servers before forwarding to you. This means services never see your actual data, and if a service experiences a breach, your real information remains protected.
 
 The service offers both a browser extension and a mobile app, along with API access for developers who want to integrate masked data generation into their applications. The core value proposition is simple: maintain your digital presence while keeping your personal information private.
 
-## Setting Up Your Blur Account
+### Step 2: Set Up Your Blur Account
 
 Before using any masking features, create an account at blur.io. The free tier provides limited masking capabilities, while premium tiers offer unlimited masked emails, phone numbers, and credit cards. After registration, install the browser extension for Chrome, Firefox, or Safari, or download the mobile app for iOS or Android.
 
 Once installed, log in through the extension and configure your default forwarding rules. You can specify which of your real email addresses and phone numbers should receive forwarded messages. This configuration happens in the Blur dashboard under the "Settings" section.
 
-## Using Masked Emails Effectively
+### Step 3: Use Masked Emails Effectively
 
 Masked emails are perhaps the most frequently used feature. To generate a new masked email address, click the Blur icon in your browser toolbar and select "Mask Email." Blur provides several options:
 
@@ -95,7 +105,7 @@ async function createMaskedEmail(label) {
 
 This approach works well for SaaS applications that need to generate temporary contact points for users.
 
-## Masked Phone Numbers for Calls and Texts
+### Step 4: Masked Phone Numbers for Calls and Texts
 
 Phone number masking follows a similar pattern to email masking. When you generate a masked number through Blur, you receive a unique phone number that forwards calls and SMS messages to your actual phone. This proves useful for online purchases, dating apps, classified listings, and any situation where you need to communicate without revealing your personal number.
 
@@ -103,7 +113,7 @@ To generate a masked number, access the "Phone" section in the Blur dashboard or
 
 The practical use case for developers involves integrating Blur into applications where users need temporary communication channels. For instance, a marketplace application might offer sellers the option to display a masked number rather than exposing their real contact information.
 
-## Masked Credit Cards for Online Purchases
+### Step 5: Masked Credit Cards for Online Purchases
 
 Perhaps the most powerful feature for privacy-conscious users is masked credit cards. Blur generates virtual card numbers linked to your actual payment method but with randomized details. These virtual cards can be used anywhere that accepts credit card payments, but the merchant never sees your real card number.
 
@@ -135,7 +145,7 @@ const maskedCard = {
 
 The XXXX placeholders represent the masked portions that Blur generates.
 
-## Managing Your Masked Data
+### Step 6: Manage Your Masked Data
 
 The Blur dashboard provides management tools for all your masked data. You can view history, categorize masks by service or purpose, and terminate individual masks when they're no longer needed. This centralized management makes it easy to maintain good privacy hygiene by regularly rotating masks.
 
@@ -151,13 +161,13 @@ Beyond basic usage, Blur offers API access that allows developers to build priva
 
 API documentation is available through Blur's developer portal, and authentication uses OAuth 2.0 with scoped access tokens. Rate limits apply based on your subscription tier.
 
-## Privacy Considerations and Limitations
+### Step 7: Privacy Considerations and Limitations
 
 While Blur provides excellent protection for your contact information, understanding its limitations matters. Masked data still routes through Blur's servers, which means you're placing trust in Abine's security practices. For maximum security, some users combine Blur with other privacy tools like VPNs and encrypted email providers.
 
 Additionally, some services may not accept masked payment cards, particularly those with strict fraud prevention measures. Masked phone numbers generally work for most purposes, but certain banking applications and high-security services may flag them.
 
-## Comparing Blur to Alternatives
+### Step 8: Comparing Blur to Alternatives
 
 For developers evaluating masking services, understanding competitive positioning is essential. Several vendors compete in this space:
 
@@ -216,7 +226,7 @@ When you create unique aliases for different services, spam or unwanted contact 
 
 This forensic capability proves invaluable for identifying data brokers.
 
-## Handling Failed Transactions
+### Step 9: Handling Failed Transactions
 
 Occasionally masked cards decline due to fraud prevention systems that specifically block virtual cards. When this occurs:
 
@@ -227,7 +237,7 @@ Occasionally masked cards decline due to fraud prevention systems that specifica
 
 For recurring subscription charges, test a new masked card with small transaction first, then update the service with new card details.
 
-## Phone Number Masking Technical Details
+### Step 10: Phone Number Masking Technical Details
 
 Masked phone numbers route through Blur's infrastructure. When someone calls your masked number:
 
@@ -241,7 +251,7 @@ Text messages follow a similar pattern. Blur intercepts SMS to the masked number
 
 This routing adds minimal latency (typically <1 second) but operates best on reliable internet. In areas with poor cellular coverage, call quality may degrade.
 
-## SMS Forwarding and Verification Codes
+### Step 11: SMS Forwarding and Verification Codes
 
 Blur handles incoming SMS automatically, which is useful for verification codes:
 
@@ -255,7 +265,7 @@ Forwarded to your real number:
 
 This works smoothly for most services. However, some authentication systems (particularly banking) detect the forwarding and may block access as a security measure.
 
-## Toll-Free and International Numbers
+### Step 12: Toll-Free and International Numbers
 
 Blur's masked phone numbers include options for:
 
@@ -265,7 +275,7 @@ Blur's masked phone numbers include options for:
 
 Choose area codes strategically—using a local area code when services validate regional requirements helps prevent friction.
 
-## Card Declining and Processor Limitations
+### Step 13: Card Declining and Processor Limitations
 
 Payment processors increasingly decline virtual card transactions due to fraud prevention upgrades. Specifically:
 
@@ -276,7 +286,7 @@ Payment processors increasingly decline virtual card transactions due to fraud p
 
 When a virtual card declines, switch to single-use card for that transaction, or temporarily disable the card and create a new one.
 
-## Developer Integration: Building Masked Data into Applications
+### Step 14: Developer Integration: Building Masked Data into Applications
 
 If you're building an application that benefits from masking capabilities, the Blur API enables programmatic workflows:
 
@@ -336,7 +346,7 @@ class BlurIntegration:
 
 This integration pattern is useful for SaaS platforms offering privacy features to users.
 
-## Organizing Mask Rotation
+### Step 15: Organizing Mask Rotation
 
 For maximum privacy, rotate masks periodically:
 
@@ -356,7 +366,7 @@ blur_cli masks:create --label="monthly-subscription" --type=card --single-use=fa
 
 Regular rotation ensures even if a service gets compromised, the exposed mask becomes worthless within months.
 
-## Privacy Considerations Beyond Masking
+### Step 16: Privacy Considerations Beyond Masking
 
 While Blur provides excellent data segregation, remember:
 
@@ -367,6 +377,21 @@ While Blur provides excellent data segregation, remember:
 - Law enforcement can compel Blur to reveal which real contact information backs a masked number
 
 These limitations don't negate Blur's value but should inform your threat model.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

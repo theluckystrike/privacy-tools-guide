@@ -40,7 +40,7 @@ Route email through Tor hidden services by configuring Postfix as a Tor hidden s
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Onion Email Architecture
+### Step 1: Understand Onion Email Architecture
 
 Traditional email travels in plaintext across multiple hops between mail servers. Even with TLS, the headers reveal sender, recipient, timestamps, and server paths. Tor hidden services replace this exposure with a unique `.onion` address that provides end-to-end encryption between clients and servers while masking the server's IP address.
 
@@ -68,7 +68,7 @@ tor --version
 
 You'll also need a mail transfer agent. Postfix is a solid choice for this setup due to its flexibility and Tor integration capabilities.
 
-## Configuring Tor as a Hidden Service
+### Step 2: Configure Tor as a Hidden Service
 
 Edit your Tor configuration file to enable hidden service functionality for SMTP:
 
@@ -108,7 +108,7 @@ sudo cat /var/lib/tor/mail_hidden_service/hostname
 
 This command outputs something like `abcdef1234567890.onion`—share this address with correspondents who want to reach you via your hidden service.
 
-## Setting Up Postfix for Tor Integration
+### Step 3: Set Up Postfix for Tor Integration
 
 Configure Postfix to listen on localhost and work with Tor. Edit your Postfix configuration:
 
@@ -159,7 +159,7 @@ Restart Postfix:
 sudo systemctl restart postfix
 ```
 
-## Client Configuration for Onion Email
+### Step 4: Client Configuration for Onion Email
 
 Configure your email client to route mail through the Tor network. Most clients support SOCKS proxy configuration.
 
@@ -183,7 +183,7 @@ curl --socks5-hostname 127.0.0.1:9050 \
   smtp://mail.onion-service.com:25/
 ```
 
-## Verifying Your Setup
+### Step 5: Verify Your Setup
 
 Test that your hidden service is reachable:
 

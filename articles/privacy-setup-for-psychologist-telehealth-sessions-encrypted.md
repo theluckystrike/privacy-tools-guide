@@ -51,7 +51,17 @@ For psychological telehealth, you need:
 - **Minimal metadata collection**
 - **Self-hosted or semi-self-hosted options for maximum control**
 
-## Self-Hosted Video Infrastructure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Self-Hosted Video Infrastructure
 
 The most privacy-respecting approach runs your own video server. Jitsi Meet provides an open-source foundation that supports E2EE through the Matrix protocol. Setting up a basic Jitsi deployment requires a VPS with at least 2 CPU cores and 4GB RAM.
 
@@ -97,7 +107,7 @@ e2ee: {
 
 This encrypts media streams directly on client devices using WebRTC's Insertable Streams API. Both participants must use compatible browsers—Chrome, Firefox, and Edge support this natively.
 
-## Matrix-Based Secure Communication
+### Step 2: Matrix-Based Secure Communication
 
 Matrix is an open protocol for real-time communication with E2EE built into the specification. For psychologists requiring secure messaging alongside video, a Matrix homeserver provides both.
 
@@ -141,7 +151,7 @@ For video calls within Matrix, Element (the reference client) supports Jitsi int
 }
 ```
 
-## Client-Side Security Configurations
+### Step 3: Client-Side Security Configurations
 
 Server configuration matters less than client-side practices. Even with E2EE enabled, the endpoint devices must be secured.
 
@@ -170,7 +180,7 @@ webgl.disabled = true
 
 Disabling WebRTC completely prevents IP leaks but eliminates peer-to-peer video. For most use cases, keeping WebRTC enabled with the E2EE option provides adequate protection while allowing video functionality.
 
-## Network-Level Privacy
+### Step 4: Network-Level Privacy
 
 Your internet connection reveals metadata about telehealth sessions. A VPN masks your IP address from the video server, though it introduces the VPN provider as a new trust boundary.
 
@@ -191,7 +201,7 @@ sudo netfilter-persistent save
 
 This ensures that if the VPN disconnects, no traffic—including telehealth video—leaves your network until the VPN reconnects.
 
-## Practical Patient Instructions
+### Step 5: Practical Patient Instructions
 
 For psychologist-patient sessions, guide patients through basic privacy setup:
 
@@ -214,7 +224,7 @@ While this guide focuses on technical privacy implementation, remember that HIPA
 
 Self-hosted solutions give you control but transfer compliance responsibility entirely to your infrastructure. Document your technical setup and conduct regular security audits if handling sensitive patient information.
 
-## Session Recording and Data Retention
+### Step 6: Session Recording and Data Retention
 
 Many psychologists record sessions for documentation or clinical review. E2EE changes how recording works.
 
@@ -283,37 +293,37 @@ class SessionRecordingManager:
 
 This system maintains a clear audit trail of who accessed session recordings when and why—a HIPAA requirement.
 
-## Patient-Facing Privacy Documentation
+### Step 7: Patient-Facing Privacy Documentation
 
 Patients need clear, non-technical language about privacy. A one-pager reduces confusion:
 
 ```markdown
 # Your Telehealth Privacy Policy
 
-## How We Protect Your Session
+### Step 8: How We Protect Your Session
 - Your video and audio are encrypted end-to-end, meaning only you and Dr. [Name] can see/hear the session
 - [Provider name] (the video service) cannot see your session content
 - Your session is NOT recorded unless you and Dr. [Name] agree in writing
 
-## What We Collect
+### Step 9: What We Collect
 - Your name and contact information (needed for appointment scheduling)
 - Session notes (kept in encrypted storage)
 - Billing information (if paying by credit card)
 - Technical logs (IP address, connection time) - kept for 30 days for security
 
-## What We Don't Collect
+### Step 10: What We Don't Collect
 - Your browsing history
 - Location data beyond what your IP shows
 - Biometric data
 - Session recordings (unless you consent in writing)
 
-## Your Rights
+### Step 11: Your Rights
 - You can request a copy of your records at any time
 - You can request we delete your data (with exceptions per law)
 - You can report privacy concerns to [contact]
 - You can file a complaint with HHS if you believe your privacy was violated
 
-## Security Measures
+### Step 12: Security Measures
 - All data stored on encrypted servers
 - Only Dr. [Name] and you can access your session notes
 - Passwords are protected with 2FA
@@ -322,7 +332,7 @@ Patients need clear, non-technical language about privacy. A one-pager reduces c
 
 This transparency builds patient trust and legally documents consent.
 
-## Backup and Disaster Recovery
+### Step 13: Backup and Disaster Recovery
 
 E2EE creates a backup problem: if you lose your encryption keys, you cannot decrypt old sessions. Plan for this:
 
@@ -363,7 +373,7 @@ fi
 
 **Critical**: Separation of duties. The person with the backup encryption key should not have admin access to the video server. This prevents one compromised account from exposing both live systems and backups.
 
-## Security Incident Response for Therapists
+### Step 14: Security Incident Response for Therapists
 
 If you suspect a breach (unauthorized access, data loss, ransomware):
 
@@ -397,7 +407,7 @@ day_2_30:
 
 The sooner you act, the less harm. Delaying breach notification or investigation can violate HIPAA and state law, resulting in fines 10x the cost of incident response.
 
-## Telehealth with VPN for Patients Outside US
+### Step 15: Telehealth with VPN for Patients Outside US
 
 Psychologists with international patients face additional complexity. If your patient is in Australia but you're in the US, what privacy law applies?
 
@@ -434,6 +444,21 @@ For international patients, use GDPR as your baseline (most restrictive). This i
 - Data Protection Impact Assessments for any processing
 
 It's harder than US-only telehealth, but treating all patients as GDPR-protected is a safe choice.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

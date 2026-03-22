@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 If your Amazon account is compromised, immediately reset your password at amazon.com/gp/forgot-password, review your Login & Security page for unauthorized email addresses or devices, and contact Amazon support (phone is faster than email for account recovery). Check your order history for fraudulent purchases, review payment methods and address changes, and monitor your Alexa voice purchase history. Enable two-factor authentication once you regain control, place a fraud alert with credit bureaus if your personal information was changed, and check linked accounts (Prime, Audible, Twitch) for cross-account compromises since attackers often exploit connected services.
 
+## Key Takeaways
+
+- **For maximum security**: use a hardware security key (like YubiKey) or a TOTP authenticator app rather than SMS:
+
+1.
+- **Choose Set up two-step**: verification 3.
+- **If you use a**: password manager (which you should), verify your master password was not compromised.
+- **Revoke access to any**: applications you do not recognize or no longer use ### Remove Stale Payment Methods Delete any payment methods added by the attacker.
+- **Email address on file**: (should be YOUR email only) 2.
+- **Phone number (should be**: YOUR number only) 3.
+
 ## Recognizing the Signs of Compromise
 
 Before exploring recovery, you need to confirm that your account was indeed compromised. Amazon sends email notifications for various activities, but attackers often disable these or redirect them. Watch for these indicators:

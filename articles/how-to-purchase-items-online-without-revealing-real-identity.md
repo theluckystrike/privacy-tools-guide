@@ -42,7 +42,17 @@ Online shopping leaves a trail of personal data with every transaction. From you
 - **Some users employ services**: in privacy-friendly jurisdictions for added protection.
 - **This works best for**: smaller packages that can be retrieved from mail centers.
 
-## Understanding the Data Trail
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Data Trail
 
 Every online purchase generates multiple data points that can be linked back to you:
 
@@ -55,7 +65,7 @@ Every online purchase generates multiple data points that can be linked back to 
 
 The goal is not evasion of lawful requirements but reducing unnecessary data exposure to trackers, data brokers, and potential breach vectors.
 
-## Anonymous Email and Identity
+### Step 2: Anonymous Email and Identity
 
 Creating separate identities for online purchases starts with email. A throwaway email service like [Proton Mail](https://proton.me/mail) or [Tuta Mail](https://tuta.com) provides end-to-end encrypted email without requiring phone verification. For maximum privacy, use an email address that cannot be traced to your real identity—avoid incorporating your name, birth year, or other identifying information.
 
@@ -79,7 +89,7 @@ alias = generate_purchase_alias("example-store.com")
 
 This approach lets you track which vendor leaked or sold your email address by using a different alias for each purchase.
 
-## Privacy-Focused Payment Methods
+### Step 3: Privacy-Focused Payment Methods
 
 ### Prepaid Debit Cards
 
@@ -131,7 +141,7 @@ For higher-value purchases, cryptocurrency provides pseudonymity rather than tru
 
 Gift cards from major retailers can be purchased with cash and used for online purchases. This method works particularly well for Amazon, Target, or general-purpose Visa gift cards. The key is purchasing in person with cash—digital gift cards often require account creation.
 
-## Shipping Address Anonymization
+### Step 4: Shipping Address Anonymization
 
 The shipping address presents the most direct challenge to anonymous purchasing. Several strategies help:
 
@@ -151,7 +161,7 @@ For students or employees, shipping to a campus or workplace address separates p
 
 Some carriers offer delivery to secure lockers (Amazon Hub, UPS Access Point) or nearby convenience stores. This allows package retrieval without home delivery.
 
-## Network-Level Privacy
+### Step 5: Network-Level Privacy
 
 Your IP address reveals significant location information. Methods to mask it include:
 
@@ -192,7 +202,7 @@ Isolating your purchase activities in a dedicated browser profile with:
 })
 ```
 
-## Practical Implementation: Anonymous Purchase Workflow
+### Step 6: Practical Implementation: Anonymous Purchase Workflow
 
 A complete anonymous purchase workflow combines multiple techniques:
 
@@ -239,7 +249,7 @@ class AnonymousPurchase:
         return json.loads(result.stdout)
 ```
 
-## Limitations and Legal Considerations
+### Step 7: Limitations and Legal Considerations
 
 True anonymity online faces practical and legal constraints:
 
@@ -249,6 +259,21 @@ True anonymity online faces practical and legal constraints:
 - **Jurisdictional issues**: Some items cannot be shipped across borders legally
 
 Balance privacy needs against these constraints based on your specific situation and threat model.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

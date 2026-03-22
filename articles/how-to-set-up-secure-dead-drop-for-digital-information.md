@@ -42,13 +42,23 @@ This guide covers three approaches to building secure dead drops: GPG-based encr
 - Let's Encrypt provides free certificates.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Digital Dead Drops
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Digital Dead Drops
 
 Traditional communication requires simultaneous presence—both parties must be online at the same time. Dead drops break this requirement by separating the upload and download actions. The sender leaves encrypted data at a predetermined location; the recipient retrieves it later using a shared key or authentication mechanism.
 
 Legitimate use cases include secure tip lines, investigative journalism communications, incident response coordination, and any scenario where metadata minimization matters. The key security property is temporal separation: sender and receiver never directly communicate.
 
-## Method 1: GPG-Encrypted File Drops
+### Step 2: Method 1: GPG-Encrypted File Drops
 
 The simplest approach uses GPG encryption with a shared drop location. This method requires minimal infrastructure—a simple file server or even cloud storage.
 
@@ -105,7 +115,7 @@ gpg --decrypt --output recovered-file.txt drop-TIMESTAMP.gpg
 
 This method provides confidentiality through GPG encryption but offers no anonymity by default. Server logs reveal upload and download patterns. For enhanced anonymity, combine with Tor Browser or a VPN.
 
-## Method 2: Tor Onion Service Dead Drops
+### Step 3: Method 2: Tor Onion Service Dead Drops
 
 Onion services provide inherent encryption and can be configured for anonymity. This approach creates a dedicated .onion address that accepts encrypted submissions.
 
@@ -189,7 +199,7 @@ Distribute your GPG public key through the onion service:
 
 Senders download the key, encrypt their message locally, then paste the encrypted content into the submission form.
 
-## Method 3: Custom Implementation with Access Codes
+### Step 4: Method 3: Custom Implementation with Access Codes
 
 For more control, implement a system with expiring access codes. This adds authentication without requiring GPG.
 
@@ -264,7 +274,7 @@ Regardless of implementation choice, follow these principles:
 
 **Transport encryption** remains essential. Even with onion services, use HTTPS/TLS for any web interface. Let's Encrypt provides free certificates.
 
-## Deployment Considerations
+### Step 5: Deploy ment Considerations
 
 For production deployments, consider additional hardening:
 
@@ -280,6 +290,21 @@ Begin with the GPG-based method if you need quick setup with minimal infrastruct
 Each approach trades simplicity for control. The right choice depends on your specific threat model and operational requirements.
 
 For additional privacy tools and security guides, explore the Privacy Tools Guide collection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

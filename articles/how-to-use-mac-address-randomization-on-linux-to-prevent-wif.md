@@ -40,7 +40,17 @@ This guide covers three primary methods for implementing MAC address randomizati
 - **This guide covers understanding**: mac addresses and privacy risks, method 1: networkmanager built-in randomization, enabling randomization per network, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
-## Understanding MAC Addresses and Privacy Risks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand MAC Addresses and Privacy Risks
 
 A MAC (Media Access Control) address is a 48-bit identifier assigned to your network interface controller (NIC). Manufacturers assign these addresses during production, creating a globally unique identifier that persists across networks. When you connect to a public WiFi hotspot, coffee shop, or corporate network, your device transmits this identifier in every probe request and association frame.
 
@@ -48,7 +58,7 @@ WiFi access points log these addresses, building location-based profiles that pe
 
 Linux provides several tools to combat this tracking vector by generating random MAC addresses for each connection or on a schedule.
 
-## Method 1: NetworkManager Built-in Randomization
+### Step 2: Method 1: NetworkManager Built-in Randomization
 
 Modern Linux distributions running NetworkManager have native support for MAC address randomization. This approach requires no additional software and integrates with your existing network management.
 
@@ -90,7 +100,7 @@ sudo systemctl restart NetworkManager
 
 This global setting affects all WiFi connections. However, some networks implement MAC filtering based on registered devices, which may block randomized addresses. For corporate networks with device registration, stick with your real MAC address or register randomized addresses in advance.
 
-## Method 2: macchanger for Manual Control
+### Step 3: Method 2: macchanger for Manual Control
 
 The `macchanger` utility provides fine-grained control over MAC address manipulation. Install it via your distribution's package manager:
 
@@ -143,7 +153,7 @@ When you need your permanent MAC address (for MAC-filtered networks):
 sudo macchanger -p wlan0
 ```
 
-## Method 3: Automated Randomization with systemd
+### Step 4: Method 3: Automated Randomization with systemd
 
 For persistent privacy across reboots and connections, create a systemd service that randomizes your MAC address on interface activation.
 
@@ -193,7 +203,7 @@ sudo systemctl start mac-randomize.timer
 
 This configuration randomizes your MAC address five minutes after boot, then rotates it hourly while maintaining active connections.
 
-## Verifying Your Privacy Protection
+### Step 5: Verify Your Privacy Protection
 
 After implementing randomization, verify that your MAC address changes as expected. Use these commands to confirm:
 
@@ -219,7 +229,7 @@ sudo dhclient -r wlan0 && sudo dhclient wlan0
 
 **Persistent Storage Concerns**: NetworkManager caches connection details by default. Clear cached profiles in `/etc/NetworkManager/system-connections/` if you suspect leftover identifiers.
 
-## Practical Considerations
+### Step 6: Practical Considerations
 
 MAC address randomization significantly reduces your fingerprint but operates within limitations. Sophisticated tracking systems combine multiple signals—timing patterns, packet sizes, radio characteristics—to de-anonymize randomized MAC addresses despite the address changes. For protection, combine MAC randomization with VPN usage, browser fingerprinting defenses, and consistent network hygiene.
 

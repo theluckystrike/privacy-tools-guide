@@ -54,7 +54,17 @@ Email remains one of the weakest links in digital communication. Standard SMTP t
 
 The key advantage for developers is verification. PGP signatures allow you to verify that messages actually came from claimed senders and haven't been tampered with. This matters for sensitive communications, code reviews, or any scenario where message integrity is critical.
 
-## Installing GPG
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install GPG
 
 Most Linux distributions include GPG by default. On macOS, install via Homebrew:
 
@@ -72,7 +82,7 @@ gpg --version
 
 You should see output indicating GPG version 2.4 or higher.
 
-## Generating Your PGP Key Pair
+### Step 2: Generate Your PGP Key Pair
 
 Create a new key pair with a 4096-bit RSA key:
 
@@ -91,7 +101,7 @@ Follow the prompts:
 
 The key generation process may take several minutes as GPG generates entropy. For faster results on servers, install `haveged` to provide additional entropy.
 
-## Managing Your Keys
+### Step 3: Manage Your Keys
 
 ### Listing Keys
 
@@ -133,7 +143,7 @@ gpg --armor --gen-revoke your-key-id > revocation.asc
 
 If your key is compromised, this certificate tells others your key is no longer valid.
 
-## Configuring Your Email Client
+### Step 4: Configure Your Email Client
 
 ### Thunderbird (Enigmail/Built-in)
 
@@ -164,7 +174,7 @@ set crypt_autosign = yes
 set crypt_autoencrypt = yes
 ```
 
-## Practical Usage Examples
+### Step 5: Practical Usage Examples
 
 ### Encrypting a Message
 
@@ -209,7 +219,7 @@ gpg --decrypt encrypted-message.asc
 
 GPG prompts for your passphrase and outputs the plaintext.
 
-## Key Servers and Key Management
+### Step 6: Key Servers and Key Management
 
 ### Publishing Your Public Key
 
@@ -318,7 +328,7 @@ save
 
 Note that you can only extend expiry on keys you own. For others' keys, the extension must come from the key owner.
 
-## PGP for Git Commit Signing
+### Step 7: PGP for Git Commit Signing
 
 Beyond email, PGP is widely used to sign Git commits, providing cryptographic proof that commits came from a specific key holder. Configure Git to sign commits automatically:
 

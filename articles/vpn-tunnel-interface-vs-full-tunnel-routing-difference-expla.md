@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose tunnel interface routing if you need simultaneous access to local resources (printers, NAS, Docker networks) and VPN-protected resources -- it routes only specific subnets through the VPN while keeping everything else on your direct connection. Choose full tunnel routing if your organization mandates all traffic through the VPN for compliance, or if you need complete protection on untrusted networks like public WiFi. The core difference is control granularity: tunnel interface gives you precise per-subnet routing decisions, while full tunnel encrypts everything at the cost of added latency and lost local network access.
 
+## Key Takeaways
+
+- **Most modern VPN clients**: support both approaches, giving you the flexibility to choose based on your current task.
+- **Use AI-generated tests as a starting point**: then add cases that cover your unique requirements and failure modes.
+- **Choose full tunnel routing**: if your organization mandates all traffic through the VPN for compliance, or if you need complete protection on untrusted networks like public WiFi.
+- **A packet to a**: nearby website might take 50ms directly but 150ms through a VPN server on the other coast.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## What Is a Tunnel Interface?
 
 A tunnel interface represents a virtual network interface created by the VPN software. Instead of routing all traffic through the VPN, you can treat the tunnel as a specific network route—similar to how you might have multiple network adapters on a single machine. The tunnel interface gets its own IP address from the VPN's address space, and you decide which traffic flows through it.

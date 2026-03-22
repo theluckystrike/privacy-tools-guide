@@ -53,7 +53,17 @@ Before writing code, understand what GDPR actually requires:
 
 Personal data under GDPR includes not just obvious fields like name and email, but also IP addresses, device identifiers, transaction histories, and any recorded preferences or interactions.
 
-## Designing Your DSAR Pipeline
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Designing Your DSAR Pipeline
 
 A DSAR workflow consists of five stages:
 
@@ -284,7 +294,7 @@ async function checkAndAlertDeadlines() {
 }
 ```
 
-## Handling Erasure Requests
+### Step 2: Handling Erasure Requests
 
 The Right to Erasure (Article 17) adds complexity—data must be deleted not just from your primary systems but from backups, third-party processors, and any cached copies.
 
@@ -322,7 +332,7 @@ async function processErasureRequest(requestId) {
 }
 ```
 
-## Automating Where Possible
+### Step 3: Automate Where Possible
 
 Manual DSAR handling doesn't scale. As request volume grows, automate:
 
@@ -333,7 +343,7 @@ Manual DSAR handling doesn't scale. As request volume grows, automate:
 
 However, retain human oversight for complex cases—ambiguous requests, potential legal holds, or requests affecting multiple jurisdictions.
 
-## Testing Your Workflow
+### Step 4: Test Your Workflow
 
 Before relying on your DSAR pipeline, validate it works:
 
@@ -342,6 +352,21 @@ Before relying on your DSAR pipeline, validate it works:
 3. **Test deadline handling** by backdating requests and confirming alerts fire
 4. **Validate erasure** by attempting to access deleted data across all systems
 5. **Audit trail verification** ensuring all actions are logged with timestamps
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ Deploy mesh networking using BATMAN-Adv for WiFi-based mesh (100-200m range) or 
 - **Babel Babel is a**: loop-free distance-vector routing protocol that converges quickly and handles networks with varying link costs effectively.
 - **Wireless Pirate Box For**: simpler use cases, Pirate Box implements a decentralized communication platform that works without internet.
 
-## Understanding Mesh Networking Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Mesh Networking Fundamentals
 
 Traditional network topologies rely on central servers or access points. If the central node fails, the entire network becomes unreachable. Mesh networks eliminate this single point of failure by allowing every device to connect to multiple peers. When one path becomes unavailable, the network automatically routes traffic through alternative routes.
 
@@ -48,7 +58,7 @@ Two primary categories exist: **full mesh**, where every device connects directl
 
 The communication range depends on the hardware and frequency band. Wi-Fi-based mesh typically covers 100-200 meters between nodes, while radio-based solutions using devices like LoRa modules can extend to several kilometers.
 
-## Protocol Options for Mesh Networking
+### Step 2: Protocol Options for Mesh Networking
 
 Several protocols cater to different use cases:
 
@@ -104,7 +114,7 @@ meshbird init -name "mynode"
 meshbird join -secret "YOUR_NETWORK_SECRET"
 ```
 
-## Practical Implementation with ESP32 Devices
+### Step 3: Practical Implementation with ESP32 Devices
 
 For hardware-based mesh networks, ESP32 microcontrollers offer an excellent balance of capability and cost. The ESP-MESH protocol from Espressif handles routing automatically.
 
@@ -182,7 +192,7 @@ void broadcastMessage(const char* message) {
 }
 ```
 
-## Building a Mesh Network with Raspberry Pi and Wi-Fi
+### Step 4: Build a Mesh Network with Raspberry Pi and Wi-Fi
 
 A practical approach uses Raspberry Pi devices with multiple wireless adapters.
 
@@ -263,7 +273,7 @@ PersistentKeepalive = 25
 
 Isolate mesh networks from production networks using VLANs or separate physical interfaces.
 
-## Practical Use Cases
+### Step 5: Practical Use Cases
 
 1. **Emergency Communications**: When infrastructure fails during disasters, mesh networks provide essential communication channels
 2. **Remote Property Networks**: Connect buildings across large properties without trenching cables
@@ -277,6 +287,21 @@ Start small with two devices connected via Wi-Fi ad-hoc mode or wired Ethernet. 
 For production deployments, consider using battery-backed nodes for resilience during power outages. Regular network testing ensures reliability when you need it most.
 
 Mesh networking transforms how devices communicate, replacing fragile centralized infrastructure with resilient, distributed systems that continue functioning even when individual nodes fail.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

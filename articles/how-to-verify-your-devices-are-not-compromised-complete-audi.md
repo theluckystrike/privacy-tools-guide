@@ -47,7 +47,17 @@ Developers and power users store sensitive data, API keys, SSH credentials, and 
 
 The audit process involves checking running processes, examining network connections, reviewing system logs, verifying file integrity, and analyzing authentication events. Each category provides different signals that together paint a picture of your device's security posture.
 
-## Checking Running Processes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Checking Running Processes
 
 Unwanted or suspicious processes often indicate malware, backdoors, or unauthorized monitoring tools. On Linux and macOS, use the `ps` command with aux flags to see all running processes:
 
@@ -81,7 +91,7 @@ netstat -ano | findstr "LISTENING"
 
 Compare the output against your expectations. Any listening service you did not install warrants investigation.
 
-## Examining Network Connections
+### Step 2: Examining Network Connections
 
 Malware often communicates with command-and-control servers or exfiltrates data over network connections. Check active network connections and routing tables:
 
@@ -105,7 +115,7 @@ nmap -sT localhost
 
 If you discover connections to IP addresses you do not recognize, investigate those IPs using threat intelligence databases. Tools like `curl ipinfo.io/<IP>` or `whois <IP>` provide context about the connection origin.
 
-## Analyzing Authentication Logs
+### Step 3: Analyzing Authentication Logs
 
 Reviewing authentication logs reveals failed login attempts, successful logins from unexpected locations, and session anomalies.
 
@@ -133,7 +143,7 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; StartTime=(Get-Date).AddDays
 
 Look for multiple failed authentication attempts, successful logins at unusual hours, or logins from unfamiliar IP addresses.
 
-## Verifying File Integrity
+### Step 4: Verify File Integrity
 
 Compromised systems often have modified system binaries, suspicious files in temporary directories, or unauthorized cron jobs and launch agents.
 
@@ -174,7 +184,7 @@ sudo aideinit
 sudo aide --check
 ```
 
-## Checking for Rootkits and Malware
+### Step 5: Checking for Rootkits and Malware
 
 Rootkits hide malicious activity by intercepting system calls and modifying kernel structures. Specialized tools detect these threats.
 
@@ -211,7 +221,7 @@ sudo freshclam
 clamscan -r ~/ --exclude-dir=/home/\.cache
 ```
 
-## System Integrity Verification
+### Step 6: System Integrity Verification
 
 macOS and iOS users can verify system integrity using built-in tools. On macOS, check for Gatekeeper and System Integrity Protection status:
 
@@ -225,7 +235,7 @@ csrutil status
 
 On iOS, the jailbreak community has developed tools to detect compromise, though these require careful interpretation as some jailbreaks now hide from detection.
 
-## Practical Audit Checklist
+### Step 7: Practical Audit Checklist
 
 Perform these steps in order for an audit:
 
@@ -237,7 +247,7 @@ Perform these steps in order for an audit:
 6. **Scan for malware**: Use specialized detection tools
 7. **Review access tokens**: Check active sessions and authorized devices
 
-## Responding to Findings
+### Step 8: Responding to Findings
 
 If your audit reveals compromise indicators:
 
@@ -247,6 +257,21 @@ If your audit reveals compromise indicators:
 - Consider reformatting and reinstalling the operating system for severe infections
 - Rotate all credentials, API keys, and passwords that were accessible from the device
 - Enable two-factor authentication on all accounts
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

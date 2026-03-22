@@ -39,7 +39,17 @@ Encrypted DNS protocols—primarily DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT)�
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: dns poisoning, dns-over-https (doh) configuration, using curl for doh testing, with specific setup instructions
 
-## Understanding DNS Poisoning
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand DNS Poisoning
 
 Traditional DNS queries travel in plaintext across the network. Anyone in the communication path—your ISP, government surveillance systems, or WiFi hotspot operators—can intercept these packets and modify the responses. This technique, called DNS cache poisoning or DNS spoofing, works by injecting false records into the DNS resolver's cache.
 
@@ -51,7 +61,7 @@ In practice, DNS poisoning manifests as:
 
 Countries with extensive internet censorship, including China, Iran, Russia, and Turkey, actively employ DNS poisoning alongside other filtering techniques. TheEncrypting your DNS queries prevents this interception by ensuring only your chosen DNS resolver can see and respond to your requests.
 
-## DNS-over-HTTPS (DoH) Configuration
+### Step 2: DNS-over-HTTPS (DoH) Configuration
 
 DoH wraps DNS queries in HTTPS traffic, making them indistinguishable from regular web browsing. This provides both encryption and obfuscation—network observers cannot even tell you're performing DNS lookups.
 
@@ -102,7 +112,7 @@ Navigate to Settings → Network & Internet → Wi-Fi → Hardware Properties �
 - Preferred: `1.1.1.1` (Cloudflare)
 - Alternate: `8.8.8.8` (Google)
 
-## DNS-over-TLS (DoT) Configuration
+### Step 3: DNS-over-TLS (DoT) Configuration
 
 DoT uses TLS encryption directly on port 853, creating a dedicated encrypted channel for DNS queries. While slightly less obfuscated than DoH (the TLS handshake is visible on the wire), DoT offers broader compatibility with existing DNS infrastructure.
 
@@ -165,7 +175,7 @@ result = query_dot('example.com')
 print(f"Response length: {len(result)} bytes")
 ```
 
-## Choosing Your DNS Resolver
+### Step 4: Choose Your DNS Resolver
 
 Selecting a trustworthy DNS resolver matters significantly. Your chosen resolver sees all your DNS queries, so opt for providers with strong privacy policies.
 
@@ -196,7 +206,7 @@ obfs4proxy -nodeID 0000000000000000000000000000000000000000 \
 
 This runs an obfs4 bridge accepting connections on port 443, making encrypted DNS traffic appear as random noise to deep packet inspection systems.
 
-## Verifying Your Configuration
+### Step 5: Verify Your Configuration
 
 After configuration, verify your DNS queries are actually encrypted:
 
@@ -219,6 +229,21 @@ Encrypted DNS should show only TLS handshake traffic with no readable DNS conten
 Encrypted DNS addresses DNS poisoning but does not make you invisible online. Your browsing activity still traverses your ISP's network, and they can see the IP addresses you connect to. For privacy, combine encrypted DNS with a VPN or Tor network.
 
 Additionally, some networks implement SNI (Server Name Indication) filtering, which can block access to DoH servers by inspecting HTTPS handshake metadata. In these cases, VPN-based solutions provide more circumvention.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

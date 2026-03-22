@@ -25,7 +25,17 @@ Protecting children from online predators requires a multi-layered technical app
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Network-Level Content Filtering
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Network-Level Content Filtering
 
 The most effective first line of defense operates at the network level. By configuring a custom DNS service or running a local filtering proxy, you can block known malicious domains across all devices simultaneously.
 
@@ -78,7 +88,7 @@ iptables-save > /etc/iptables/rules.v4
 
 This ensures that even if a device's DNS is changed manually, all DNS queries are still redirected to your filtering server.
 
-## Device Hardening for Children's Devices
+### Step 2: Device Hardening for Children's Devices
 
 ### iOS Screen Time Configuration
 
@@ -147,7 +157,7 @@ device_activity = service.deviceinfo().get(
 print(f"Screen time: {device_activity.get('screenTime', 'N/A')}")
 ```
 
-## Monitoring and Activity Logging
+### Step 3: Monitor and Activity Logging
 
 ### Setting Up Activity Logging
 
@@ -207,7 +217,7 @@ if __name__ == '__main__':
     check_dns_query('/var/log/family/dns-queries.log')
 ```
 
-## Privacy Enforcement Strategies
+### Step 4: Privacy Enforcement Strategies
 
 ### Restricting Social Media and Messaging Apps
 
@@ -258,7 +268,7 @@ Children who know about VPNs may attempt to install one to circumvent your netwo
 
 On Android, use a device policy controller to restrict VPN profile creation through the `DevicePolicyManager.setAlwaysOnVpnPackage` API — setting this to a controlled package prevents any other VPN from being activated.
 
-## Recognizing Warning Signs
+### Step 5: Recognizing Warning Signs
 
 Technical controls catch a lot, but understanding behavioral patterns helps identify situations where additional investigation is needed. Review DNS logs and device usage reports when you observe:
 
@@ -270,7 +280,7 @@ Technical controls catch a lot, but understanding behavioral patterns helps iden
 
 These signals do not guarantee predatory contact is occurring, but they indicate a conversation is warranted. Approach it without accusation — the goal is to understand the context, not to punish.
 
-## Communication and Education
+### Step 6: Communication and Education
 
 Technical controls work best alongside open communication. Establish clear rules about:
 
@@ -283,7 +293,7 @@ Create a family agreement document that outlines expectations and consequences. 
 
 Age-appropriate conversations about online safety should start earlier than most parents expect. Children as young as 6 use tablets and messaging apps. At that age, the focus is simple: "Never talk to strangers online without showing me first." By age 10-12, expand to explaining why some adults seek contact with children and what grooming behavior looks like. Framing these conversations around awareness rather than fear gives children the tools to recognize manipulation without making them afraid of the internet entirely.
 
-## Ongoing Maintenance
+### Step 7: Ongoing Maintenance
 
 Security requires continuous attention. Schedule regular reviews:
 
@@ -301,6 +311,21 @@ Blocklist updates are particularly important — new domains appear constantly. 
 
 By combining network-level filtering, device hardening, active monitoring, and open communication, you create a protection system that adapts to evolving online threats.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

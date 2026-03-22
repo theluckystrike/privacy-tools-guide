@@ -48,7 +48,17 @@ The core principle is data minimization: log only what you need for operational 
 
 Regulators increasingly treat log files as subject to the same data protection requirements as primary databases. Under GDPR Article 5(1)(e), personal data must not be kept longer than necessary. Logs containing IP addresses—which the CJEU has ruled can constitute personal data—may require specific retention limits and deletion procedures. Getting this right from the start is far cheaper than retrofitting privacy controls after an audit.
 
-## Data Classification: What Can You Log?
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Data Classification: What Can You Log?
 
 Before writing a single log statement, classify your data into three categories:
 
@@ -72,7 +82,7 @@ Before writing a single log statement, classify your data into three categories:
 - Government-issued identification numbers
 - Health and biometric data
 
-## Redaction Techniques
+### Step 2: Redaction Techniques
 
 ### 1. Structured Logging with Field Filtering
 
@@ -196,7 +206,7 @@ def privacy_hash(value: str) -> str:
 
 Store the HMAC key in a secrets manager (AWS Secrets Manager, HashiCorp Vault, etc.) and rotate it periodically. After rotation, hashes from old logs will not match hashes from new logs, providing automatic unlinkability over time.
 
-## IP Address Handling
+### Step 3: IP Address Handling
 
 IP addresses present a specific challenge. They are often necessary for security monitoring (detecting brute-force attacks, rate limiting) but constitute personal data under GDPR in many jurisdictions.
 
@@ -239,7 +249,7 @@ if logger.isEnabledFor(logging.DEBUG):
     logger.debug(f"Processing request: {request_id}, payload size: {len(data)}")
 ```
 
-## Retention Policies and Automated Deletion
+### Step 4: Retention Policies and Automated Deletion
 
 Keeping logs indefinitely accumulates privacy debt. Define explicit retention periods and enforce them automatically:
 
@@ -261,7 +271,7 @@ resource "aws_cloudwatch_log_group" "app" {
 }
 ```
 
-## Secure Log Storage
+### Step 5: Secure Log Storage
 
 Even after redaction, protect your logs:
 
@@ -292,7 +302,7 @@ Even after redaction, protect your logs:
 }
 ```
 
-## Consent and Transparency
+### Step 6: Consent and Transparency
 
 When logging user activity, be transparent about what you collect:
 
@@ -323,7 +333,7 @@ function logUserAction(userId, action, metadata, hasConsent) {
 }
 ```
 
-## Testing Your Privacy Controls
+### Step 7: Test Your Privacy Controls
 
 Privacy controls should be tested like any other security control. Add these checks to your CI pipeline:
 
@@ -341,7 +351,7 @@ def test_login_log_contains_no_pii(caplog):
 
 Run these tests against real log output in a staging environment periodically, not just in unit tests. Log libraries, frameworks, and third-party middleware can inject PII at unexpected points in the request lifecycle.
 
-## Third-Party Libraries and Middleware
+### Step 8: Third-Party Libraries and Middleware
 
 One of the most common sources of unintended PII in logs is third-party libraries. An HTTP framework may log request bodies on error. An ORM may log query parameters that happen to contain email addresses. A payment library may log API responses containing card data.
 
@@ -374,6 +384,21 @@ Use this checklist when reviewing your logging implementation for GDPR, CCPA, or
 - Development environments do not receive copies of production logs
 - Audit trail logs have longer retention than operational logs, per compliance requirements
 - Log shipping uses TLS in transit
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
 
+
 {% raw %}To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
+
+## Key Takeaways
+
+- **Implement rate limiting on**: registration and authentication endpoints to prevent abuse.
+- **This guide provides copy-ready**: Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
+- **For `app.example.com`**: you can use either `app.example.com` or `example.com`.
+- **For local development**: use `localhost` or configure self-signed certificates.
+- **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Understanding WebAuthn Fundamentals
 

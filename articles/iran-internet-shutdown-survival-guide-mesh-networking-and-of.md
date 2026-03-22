@@ -37,7 +37,17 @@ When internet shutdowns occur in Iran, mesh networking and offline communication
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: mesh networking fundamentals, briar: mesh messaging for android, installation and setup, with specific setup instructions
 
-## Understanding Mesh Networking Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Mesh Networking Fundamentals
 
 Mesh networking creates interconnected networks where each node can communicate directly with nearby nodes, forming a resilient web of communication that doesn't require internet access. Unlike traditional client-server models, mesh networks are decentralized—no single point of failure can bring down the entire system.
 
@@ -49,7 +59,7 @@ There are three primary mesh networking topologies:
 
 For practical emergency communication, partial mesh networks using Wi-Fi Direct and Bluetooth Low Energy (BLE) offer the best balance of range, battery efficiency, and device compatibility.
 
-## Briar: Mesh Messaging for Android
+### Step 2: Briar: Mesh Messaging for Android
 
 Briar stands as the most mature offline mesh messaging application available. It creates encrypted peer-to-peer connections over Bluetooth, Wi-Fi Direct, and Tor hidden services, enabling communication without any internet connectivity.
 
@@ -77,7 +87,7 @@ For community organizers, the recommended approach involves:
 3. Establishing "message courier" nodes at strategic locations
 4. Using forums for broadcast announcements to all connected peers
 
-## Serval Mesh: Mesh Networking for Multiple Platforms
+### Step 3: Serval Mesh: Mesh Networking for Multiple Platforms
 
 Serval Mesh offers cross-platform support including Android, iOS, and dedicated mesh hardware. Unlike Briar's focus on messaging, Serval emphasizes voice communication and file sharing over mesh networks.
 
@@ -101,7 +111,7 @@ voice=enabled
 
 The Rhizome protocol ensures data eventually reaches its destination through store-and-forward mechanisms, even when direct paths don't exist.
 
-## Building Custom Mesh Networks with Python
+### Step 4: Build Custom Mesh Networks with Python
 
 For developers wanting to build custom solutions, the `meshshake` library provides Python tools for experimental mesh networking:
 
@@ -136,7 +146,7 @@ def handle_incoming(msg, sender):
     print(f"Received from {sender}: {msg.content}")
 ```
 
-## Syncthing: Offline File Synchronization
+### Step 5: Syncthing: Offline File Synchronization
 
 When internet is unavailable but local networks exist, Syncthing provides decentralized file synchronization across devices without cloud dependencies:
 
@@ -167,7 +177,7 @@ Key advantages for emergency scenarios:
 - Selective synchronization (only needed folders)
 - Works over Wi-Fi Direct on Android
 
-## Offline Maps and Navigation
+### Step 6: Offline Maps and Navigation
 
 Internet shutdowns often disrupt navigation and mapping services. Pre-cached offline maps become essential:
 
@@ -185,7 +195,7 @@ Internet shutdowns often disrupt navigation and mapping services. Pre-cached off
 
 For community coordination, exporting custom maps with marked meeting points, safe houses, and medical facilities enables navigation without connectivity.
 
-## Implementing Mesh VPN for Network Extension
+### Step 7: Implementing Mesh VPN for Network Extension
 
 When some community members maintain internet access (via satellite, international borders, or cached content), mesh VPN solutions can extend connectivity:
 
@@ -210,7 +220,7 @@ PersistentKeepalive = 25
 # extending network access to all connected devices
 ```
 
-## Practical Preparation Checklist
+### Step 8: Practical Preparation Checklist
 
 Technical preparation before an emergency involves:
 
@@ -221,7 +231,7 @@ Technical preparation before an emergency involves:
 - **Hardware redundancy**: Multiple devices with different capabilities
 - **Practice sessions**: Regular mesh network testing within community
 
-## Limitations and Threat Considerations
+### Step 9: Limitations and Threat Considerations
 
 Mesh networking provides resilience but comes with constraints:
 
@@ -231,6 +241,21 @@ Mesh networking provides resilience but comes with constraints:
 - **Metadata risks**: Even encrypted traffic reveals who communicates with whom
 
 For high-risk scenarios, combining mesh networking with appropriate operational security—limiting communication to essential messages, using dead drops, and rotating devices—reduces exposure.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

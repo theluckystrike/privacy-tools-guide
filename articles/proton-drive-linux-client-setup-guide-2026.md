@@ -40,7 +40,17 @@ Proton Drive provides end-to-end encrypted cloud storage, and the Linux client e
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Proton Drive for Linux
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Proton Drive for Linux
 
 Proton Drive offers client-side encryption, meaning your files are encrypted before they leave your device. The Linux client supports both graphical and headless operation, making it suitable for desktop workstations and server environments alike. Unlike traditional cloud storage solutions, Proton's zero-knowledge architecture ensures that even Proton cannot access your stored files.
 
@@ -52,7 +62,7 @@ Proton Drive uses a hybrid cryptography model. Each file is encrypted with a ran
 
 This means even if Proton's servers were fully compromised, attackers would get only encrypted blobs with no way to recover the plaintext content. The folder and file names are also encrypted, so directory listings on the server reveal no metadata about what you are storing.
 
-## Installation Methods
+### Step 2: Install ation Methods
 
 Proton Drive provides multiple installation formats. Choose the method matching your distribution.
 
@@ -110,7 +120,7 @@ flatpak run me.proton.Drive
 
 The Flatpak sandbox limits what the app can access on your system. You can review and restrict permissions with Flatseal if you want to further lock down which directories the app can read.
 
-## Authentication and Initial Setup
+### Step 3: Authentication and Initial Setup
 
 Launch the client to begin authentication:
 
@@ -142,7 +152,7 @@ mv /path/to/token.txt /mnt/decrypted/proton-token.txt
 # Update your scripts to reference /mnt/decrypted/proton-token.txt
 ```
 
-## Mounting Your Drive
+### Step 4: Mounting Your Drive
 
 Proton Drive supports FUSE mounting, allowing you to access your encrypted files through standard filesystem operations. This approach treats your cloud storage as a local directory.
 
@@ -201,7 +211,7 @@ systemctl --user enable --now proton-drive
 
 Check status with `systemctl --user status proton-drive`. Logs are available via `journalctl --user -u proton-drive`.
 
-## Command-Line Operations
+### Step 5: Command-Line Operations
 
 The Proton Drive CLI provides full control without requiring a graphical interface. These commands integrate well with shell scripts and CI/CD pipelines.
 
@@ -256,7 +266,7 @@ Use the `--recursive` flag for non-empty directories:
 proton-drive rm --recursive /large-folder
 ```
 
-## Synchronization Configuration
+### Step 6: Synchronization Configuration
 
 Control synchronization behavior through the client configuration file at `~/.config/Proton Drive/config.json`:
 
@@ -276,7 +286,7 @@ Control synchronization behavior through the client configuration file at `~/.co
 
 The `bandwidth_limit` setting controls upload speed in kilobytes per second, useful for preventing the client from consuming your entire connection. Exclude patterns follow glob syntax, matching your `.gitignore` conventions.
 
-## Using with File Managers
+### Step 7: Use with File Managers
 
 Proton Drive integrates with GNOME Files (Nautilus), KDE Dolphin, and other FUSE-capable file managers. After mounting, browse your drive directly:
 
@@ -338,7 +348,7 @@ docker run --device /dev/fuse --cap-add SYS_ADMIN \
 
 In LXC, add `lxc.mount.entry = /dev/fuse dev/fuse none bind,create=file 0 0` to the container config and ensure the `fuse` module is loaded on the host.
 
-## Automation Examples
+### Step 8: Automation Examples
 
 ### Automated Backups
 
@@ -386,7 +396,7 @@ echo "Backup verified: $LOCAL_COUNT files uploaded."
 
 Running this check after each backup catches partial upload failures before you need to restore.
 
-## Integrating with Development Workflows
+### Step 9: Integrate with Development Workflows
 
 Developers can integrate Proton Drive into their existing toolchains to get encrypted cloud backups of code, databases, and configuration files without changing their workflow significantly.
 

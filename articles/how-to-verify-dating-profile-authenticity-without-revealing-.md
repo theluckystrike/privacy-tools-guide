@@ -40,11 +40,21 @@ Verifying whether a dating profile is authentic represents a common privacy chal
 - **This guide provides practical**: techniques for developers and power users to verify dating profiles while maintaining operational security.
 - Use these skills responsibly.
 
-## The Core Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Core Challenge
 
 Traditional verification methods often require you to reveal information first—you might ask for a video call (exposing your phone number) or search social media (tying your identity to your curiosity). The techniques in this guide flip this approach: verify before you engage, using tools and methods that protect your privacy.
 
-## Reverse Image Search Techniques
+### Step 2: Reverse Image Search Techniques
 
 The most effective initial verification uses reverse image search, but executing this without revealing your own identity requires specific tools and workflows.
 
@@ -102,7 +112,7 @@ print(f"Result: {message}")
 
 This script maintains a local database of known fake profile images. When you encounter a suspicious profile, you hash the image and compare it against your database without ever transmitting the image externally.
 
-## Browser Fingerprinting and Detection
+### Step 3: Browser Fingerprinting and Detection
 
 Sophisticated fake profiles often use stolen photos. You can detect inconsistencies through browser fingerprinting analysis.
 
@@ -152,7 +162,7 @@ def cross_reference_profile(photo_url, platforms=['tinder', 'bumble', 'hinge']):
 
 This approach lets you check whether the same photo appears on multiple platforms—a strong indicator the images are stolen.
 
-## Network-Level Verification
+### Step 4: Network-Level Verification
 
 For advanced users, network analysis provides additional verification vectors.
 
@@ -182,7 +192,7 @@ def capture_profile_endpoints(interface='en0'):
 
 This technique helps identify profiles that may be generated or managed programmatically rather than by real individuals.
 
-## Practical Verification Workflow
+### Step 5: Practical Verification Workflow
 
 Combine these techniques into a systematic verification process:
 
@@ -193,7 +203,7 @@ Combine these techniques into a systematic verification process:
 5. **Cross-reference platforms** - Run the cross-reference script
 6. **Document findings** - Add confirmed fakes to your local database
 
-## Privacy Considerations
+### Step 6: Privacy Considerations
 
 Throughout this process, maintain these operational security practices:
 
@@ -203,13 +213,13 @@ Throughout this process, maintain these operational security practices:
 - Store all investigation data in an encrypted local database
 - Clear browser cookies and local storage between investigations
 
-## Limitations and Ethical Considerations
+### Step 7: Limitations and Ethical Considerations
 
 These techniques have boundaries. They help identify obvious fakes and stolen photos, but they cannot verify someone identity with certainty. A determined scammer with access to stolen legitimate photos can defeat many of these methods.
 
 Use these skills responsibly. These tools protect your privacy—they should not enable harassment or surveillance of others. Verify profiles to protect yourself from scams, not to invade others privacy.
 
-## Identifying Common Scam Patterns
+### Step 8: Identifying Common Scam Patterns
 
 Fake profiles exhibit recurring behavioral patterns beyond photo analysis:
 
@@ -277,7 +287,7 @@ If you see multiple CRITICAL flags, walk away. No romantic connection is worth f
 Beyond photos, legitimate people exhibit consistent behavior:
 
 ```markdown
-## Behavioral Authenticity Checklist
+### Step 9: Behavioral Authenticity Checklist
 
 **Conversation patterns:**
 - Asks follow-up questions about your life (shows interest in YOU, not your wallet)
@@ -384,12 +394,12 @@ def assess_social_media_presence(profile_data):
 
 Remember: absence of social media may indicate privacy-conscious, not fake. Don't penalize legitimate privacy choices.
 
-## If You Encounter a Scam
+### Step 10: If You Encounter a Scam
 
 Response protocol:
 
 ```markdown
-## Scam Response Procedure
+### Step 11: Scam Response Procedure
 
 **Immediately:**
 1. Stop all communication
@@ -431,7 +441,7 @@ Once you've identified a scammer, the only rational action is disengagement.
 The core principle: verify before vulnerability, in ways that protect your own privacy.
 
 ```markdown
-## Your Verification Toolkit (Ranked by Privacy Impact)
+### Step 12: Your Verification Toolkit (Ranked by Privacy Impact)
 
 **Lower Privacy Risk:**
 1. Reverse image search (anonymous, read-only)
@@ -453,6 +463,21 @@ The core principle: verify before vulnerability, in ways that protect your own p
 Stick to the lower risk tier. Anything requiring you to spy crosses ethical lines.
 
 The fundamental approach: if someone won't verify authenticity to you through standard methods (photos, video chat, social media), they may not be worth your time. The right person will understand your caution and respect it.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

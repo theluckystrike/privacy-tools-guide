@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison, privacy]---
 
 Choose ProtonMail if you need true end-to-end encryption where the provider cannot read your emails, minimal data collection, and Swiss legal jurisdiction that shields you from US surveillance requests. Choose Gmail if you need a full REST API for building email-powered applications, direct Google Workspace integration, and industry-leading spam filtering. The core architectural difference: ProtonMail encrypts client-side so even their servers never see plaintext, while Gmail encrypts in transit and at rest but retains the keys and scans content for ads and features.
 
+## Key Takeaways
+
+- **Choose Gmail if you**: need a full REST API for building email-powered applications, direct Google Workspace integration, and industry-leading spam filtering.
+- **Gmail's $0 tier gives**: 15x the storage but trades privacy for convenience.
+- **For organizations**: Google Workspace costs $6/user/month with full API access, while ProtonMail Business at $10/user adds custom domains and team features.
+- **Average API response time**: 200-300ms.
+- **Email delivery**: typically <2 seconds between Gmail servers.
+- **Email delivery**: typically 5-10 seconds due to encryption overhead.
+
 ## Encryption Architecture
 
 ### ProtonMail's Encryption Model

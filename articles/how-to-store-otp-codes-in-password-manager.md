@@ -40,7 +40,17 @@ The TOTP appears in the entry and auto-fills like standard credentials.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding TOTP Storage Mechanisms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand TOTP Storage Mechanisms
 
 TOTP (Time-based One-Time Password) codes rely on a shared secret key—the base32-encoded seed that both your authenticator app and the service generate codes from. When you store this secret in your password manager, you generate the same codes any authenticator would produce.
 
@@ -50,7 +60,7 @@ The secret typically arrives in two formats when setting up 2FA:
 
 Password managers like Bitwarden and 1Password capture these automatically during 2FA setup, but you can also manually add them for existing accounts.
 
-## Storing OTP in Bitwarden
+### Step 2: Store OTP in Bitwarden
 
 Bitwarden offers native TOTP integration. The easiest method involves using the browser extension or desktop app during login setup. When a service presents a QR code, Bitwarden's "Add Login" dialog includes an option to scan and automatically populate the TOTP field.
 
@@ -89,7 +99,7 @@ bw get item "github" --pretty | jq -r '.login.totp'
 
 This enables cron jobs or scripts that fetch current codes without opening the UI.
 
-## Storing OTP in 1Password
+### Step 3: Store OTP in 1Password
 
 1Password handles TOTP similarly, embedding the secret within each login item. During 2FA setup on any website, 1Password's browser extension intercepts the QR code and automatically stores the secret.
 
@@ -121,7 +131,7 @@ fi
 echo "$OTP"
 ```
 
-## KeePass and KeePassXC Approach
+### Step 4: KeePass and KeePassXC Approach
 
 For users preferring open-source solutions, KeePassXC stores TOTP through plugins:
 
@@ -144,7 +154,7 @@ keepassxc-cli totp database.kdbx -s EntryName
 
 This approach works well for users who want offline-first storage without cloud synchronization.
 
-## Extracting TOTP Secrets from Existing Authenticator Apps
+### Step 5: Extracting TOTP Secrets from Existing Authenticator Apps
 
 If you already use apps like Google Authenticator or Authy, migrating to password manager storage requires extracting the secrets. Several methods exist:
 
@@ -189,7 +199,7 @@ For high-security scenarios, maintain separate storage:
 - Dedicated hardware token (YubiKey) for critical 2FA
 - Paper backup of recovery codes in secure location
 
-## Automating TOTP in Development Workflows
+### Step 6: Automate TOTP in Development Workflows
 
 Developers often need TOTP codes in CI/CD pipelines or deployment scripts:
 
@@ -236,6 +246,21 @@ Some scenarios warrant keeping authenticator apps separate:
 - **Organizations requiring dedicated authenticator hardware**
 
 Hardware security keys (YubiKey, SoloKey) provide stronger protection than TOTP codes stored in software.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

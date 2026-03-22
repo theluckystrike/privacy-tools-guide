@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose ProtonMail if you need PGP/OpenPGP compatibility, IMAP/SMTP access via Bridge, and a proven security track record with published audits under Swiss jurisdiction. Choose Skiff Mail if you want a generous free tier (10GB), an integrated encrypted workspace with Pages, Calendar, and Drive, and a simpler encryption model without PGP complexity. ProtonMail wins on developer integration and protocol support; Skiff wins on bundled productivity tools and storage value.
 
+## Key Takeaways
+
+- **Choose Skiff Mail if**: you want a generous free tier (10GB), an integrated encrypted workspace with Pages, Calendar, and Drive, and a simpler encryption model without PGP complexity.
+- **Choose ProtonMail if you**: need PGP/OpenPGP compatibility, IMAP/SMTP access via Bridge, and a proven security track record with published audits under Swiss jurisdiction.
+- **ProtonMail additionally supports U2F/YubiKey**: which developers often prefer for hardware-backed authentication.
+- **Use with gpg or**: your preferred tool # Import to gpg for verification gpg --import proton-public-key.asc gpg --list-keys your@email.com ``` Skiff Mail does not currently support PGP/OpenPGP.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Encryption Models
 
 Both services offer end-to-end encryption, but their approaches differ significantly.

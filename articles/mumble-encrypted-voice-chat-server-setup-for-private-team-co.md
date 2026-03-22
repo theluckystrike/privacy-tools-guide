@@ -32,7 +32,17 @@ Mumble uses Opus for audio encoding, which delivers excellent voice quality at r
 
 The architecture is straightforward: a single Murmur server (the server component) handles multiple simultaneous voice channels, while team members connect using Mumble clients on their preferred platform. This simplicity makes it ideal for teams that want to own their communication infrastructure without the complexity of more elaborate solutions.
 
-## Installing the Murmur Server
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install the Murmur Server
 
 Murmur, the server component of Mumble, is available in most package repositories. On Ubuntu or Debian systems, install it with:
 
@@ -58,7 +68,7 @@ docker run -d -p 64738:64738 -p 64738:64738/udp \
 
 The server requires a superuser account for administrative tasks. Set a strong password during initial configuration.
 
-## Configuring Server Encryption
+### Step 2: Configure Server Encryption
 
 Murmur configuration lives in `/etc/murmur.ini` on Linux systems. The encryption settings work out of the box, but you should verify and customize them for your needs:
 
@@ -90,7 +100,7 @@ sudo openssl req -new -x509 -nodes -out /etc/murmur/ssl_cert.pem \
 
 For production environments, consider using certificates from Let's Encrypt or your organization's certificate authority. The default Mumble encryption uses AES-128, but you can increase this to AES-256 by recompiling with OpenSSL 1.0+ or using a custom build.
 
-## User Authentication and Access Control
+### Step 3: User Authentication and Access Control
 
 Mumble supports multiple authentication mechanisms. For team use, certificate-based authentication provides the best security:
 
@@ -115,7 +125,7 @@ channel2=Team Beta
 channel3=General Discussion
 ```
 
-## Firewall and Network Configuration
+### Step 4: Firewall and Network Configuration
 
 Ensure your firewall allows the Mumble ports:
 
@@ -134,7 +144,7 @@ If your server is behind a NAT, configure port forwarding to direct traffic to y
 
 For teams connecting from restrictive networks, consider running Mumble over an OpenVPN or WireGuard tunnel. This masks the Mumble traffic and provides an additional encryption layer.
 
-## Client Configuration for Maximum Security
+### Step 5: Client Configuration for Maximum Security
 
 When setting up team members, configure the client for optimal security:
 
@@ -168,7 +178,7 @@ timeout=30
 
 The bandwidth setting directly affects audio quality. The default 72000 bytes supports Opus at 48kHz. Lower values reduce quality but decrease bandwidth usage.
 
-## Maintenance and Backups
+### Step 6: Perform Maintenance and Backups
 
 Regular maintenance ensures continued secure operation:
 
@@ -239,7 +249,7 @@ ldappassword=service_password
 ldapfilter=(uid=%{username})
 ```
 
-## Containerized Mumble Deployment
+### Step 7: Containerized Mumble Deployment
 
 Deploy Mumble in a Kubernetes cluster for high availability:
 
@@ -304,7 +314,7 @@ spec:
  claimName: mumble-data
 ```
 
-## Monitoring and Security Auditing
+### Step 8: Monitor and Security Auditing
 
 Set up logging and monitoring:
 
@@ -349,7 +359,7 @@ echo "Database Size:"
 du -h /var/lib/murmur/murmur.sqlite
 ```
 
-## Client-Side Security Hardening
+### Step 9: Client-Side Security Hardening
 
 Configure clients for maximum security:
 
@@ -413,7 +423,7 @@ hardener = MumbleClientHardener(os.path.expanduser('~/.config/Mumble'))
 hardener.generate_config()
 ```
 
-## Backup and Disaster Recovery
+### Step 10: Backup and Disaster Recovery
 
 Implement automated backup strategy:
 
@@ -478,6 +488,21 @@ maxconcurrentconnections=500
 # Buffer optimization
 timeout=30
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

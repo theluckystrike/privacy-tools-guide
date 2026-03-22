@@ -41,13 +41,23 @@ Use privacy-focused cryptocurrencies (Monero, Zcash) instead of Bitcoin to elimi
 - **Each address should ideally**: be used for a single transaction.
 - **Make unlimited payments within**: channel 3.
 
-## Understanding Blockchain Transparency
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Blockchain Transparency
 
 Bitcoin, Ethereum, and most cryptocurrencies operate on public ledgers. Each transaction broadcasts the sending address, receiving address, amount, and timestamp to the entire network. Blockchain explorers allow anyone to trace funds between addresses, creating a permanent record that can be analyzed to identify spending patterns, business relationships, or personal identities.
 
 The level of traceability depends on how addresses are used. If you receive Bitcoin to an address linked to your identity (through an exchange KYC process, a public donation address, or a transaction with a known entity), all funds flowing from that address become potentially traceable through various heuristics and chain analysis tools.
 
-## Privacy-Focused Cryptocurrencies
+### Step 2: Privacy-Focused Cryptocurrencies
 
 The most effective approach to transaction privacy involves using cryptocurrencies designed with privacy by default.
 
@@ -81,7 +91,7 @@ const shieldedPayment = new Payment({
 
 The privacy guarantees depend on using shielded addresses exclusively. Transactions between transparent addresses remain fully visible.
 
-## CoinJoin and Bitcoin Mixing
+### Step 3: CoinJoin and Bitcoin Mixing
 
 For users preferring to stay with Bitcoin, CoinJoin combines multiple transactions into a single broadcast, breaking the deterministic link between input and output addresses.
 
@@ -107,7 +117,7 @@ Wasabi Wallet implements WabiSabi, a coordinator-based CoinJoin protocol that do
 
 Wasabi's built-in Tor integration provides network-level privacy by default.
 
-## Avoiding Address Reuse
+### Step 4: Avoiding Address Reuse
 
 Address reuse is one of the most common privacy failures. Each address should ideally be used for a single transaction. HD (Hierarchical Deterministic) wallets generate new addresses from a seed phrase, making it easy to use unique addresses for every transaction.
 
@@ -128,7 +138,7 @@ print(f"New address: {address}")
 
 Most modern wallets automatically generate new addresses for each transaction. Verify your wallet settings to ensure this feature is enabled.
 
-## Running Your Own Full Node
+### Step 5: Run Your Own Full Node
 
 Using third-party nodes (such as block explorers or light wallets) exposes your addresses to those services. Running your own full node ensures your wallet communicates directly with the network without trusted intermediaries.
 
@@ -142,7 +152,7 @@ bitcoin-cli getnetworkinfo | grep -A 5 "onion"
 
 Full nodes download and verify the entire blockchain locally, providing complete transaction history without sharing addresses with external services.
 
-## Network-Level Privacy with Tor
+### Step 6: Network-Level Privacy with Tor
 
 Connecting to cryptocurrency networks through Tor obscures your IP address from network observers. Both Bitcoin and Monero support Tor connections natively.
 
@@ -161,7 +171,7 @@ monerod --proxy-type socks5 --proxy 127.0.0.1:9050
 
 Using a dedicated machine for cryptocurrency operations further reduces fingerprinting risks.
 
-## Air-Gapped and Hardware Wallets
+### Step 7: Air-Gapped and Hardware Wallets
 
 Air-gapped computers never connect to the internet, making them immune to network-based attacks. Hardware wallets provide secure key storage with display confirmation for transactions.
 
@@ -172,7 +182,7 @@ gpg --gen-random 2 32 | hexdump -v -e '/1 "%02X"'
 
 Combine hardware wallets with air-gapped transaction signing for maximum security. Generate the unsigned transaction on an online machine, transfer it to the hardware wallet via QR code or USB, sign it offline, and broadcast from an air-gapped device.
 
-## Exchange and KYC Considerations
+### Step 8: Exchange and KYC Considerations
 
 Know Your Customer (KYC) requirements at exchanges directly link your identity to cryptocurrency addresses. The moment you withdraw funds from a KYC exchange to a wallet, those addresses become associated with your identity.
 
@@ -182,7 +192,7 @@ Solutions include:
 - In-person trades with cash
 - Mining directly to private wallets
 
-## Operational Security Practices
+### Step 9: Operational Security Practices
 
 Technical solutions fail without operational security. Consider these practices:
 
@@ -249,7 +259,7 @@ wasabi-cli mix --wallet MixedWallet --rounds 10
 # Alternative: Use Monero exclusively (no UTXO model)
 ```
 
-## Transaction Graph Analysis
+### Step 10: Transaction Graph Analysis
 
 Investigators map flows through the blockchain:
 
@@ -313,7 +323,7 @@ Example transaction:
 - No visible amounts or addresses
 ```
 
-## Exchange Deanonymization
+### Step 11: Exchange Deanonymization
 
 The critical vulnerability in private crypto:
 
@@ -329,7 +339,7 @@ Solutions:
 3. **Mining**: Generate crypto without KYC interaction
 4. **P2P lending**: Borrow crypto using collateral instead of trading
 
-## Lightning Network for Privacy
+### Step 12: Lightning Network for Privacy
 
 Layer 2 payment channels provide transaction privacy:
 
@@ -359,7 +369,7 @@ lncli openchannel node_pubkey amount
 lncli sendpayment payment_request
 ```
 
-## Timing Attack Mitigation
+### Step 13: Timing Attack Mitigation
 
 Transaction timing reveals spending patterns:
 
@@ -398,7 +408,7 @@ class PrivacyTimingManager:
         return base_amount + variance
 ```
 
-## Mining for Private Cryptocurrency
+### Step 14: Mining for Private Cryptocurrency
 
 Generate crypto without exchange KYC:
 
@@ -415,6 +425,21 @@ xmrig --cpu-affinity 0 -t $(nproc)  # Mine with all cores
 # Electricity: ~$0.10-0.50 per day
 # Monthly yield: Highly variable (pool mining is more stable)
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

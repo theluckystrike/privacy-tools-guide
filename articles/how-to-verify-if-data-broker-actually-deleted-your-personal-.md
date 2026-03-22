@@ -45,7 +45,17 @@ Data brokers operate under different legal frameworks depending on jurisdiction.
 
 The confirmation email you receive often means the broker has marked your request for processing—not that deletion is complete. Back-end systems may take weeks or months to fully purge data across all systems.
 
-## Direct Verification Methods
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Direct Verification Methods
 
 ### 1. Search the Broker's Public Portal
 
@@ -76,7 +86,7 @@ Please provide this in a portable format within 30 days per GDPR Article 15 / CC
 
 If the broker cannot produce a report or claims no data exists, your deletion likely succeeded. If they provide a report showing your data still exists, you have grounds for a complaint.
 
-## Automated Verification with Scripts
+### Step 2: Automated Verification with Scripts
 
 For power users managing opt-outs across multiple brokers, automated verification provides ongoing monitoring.
 
@@ -172,7 +182,7 @@ def check_email_breaches(email):
 
 This doesn't verify broker deletion directly but helps you understand if your data is circulating elsewhere.
 
-## Third-Party Monitoring Services
+### Step 3: Third-Party Monitoring Services
 
 Several services automate broker monitoring:
 
@@ -194,7 +204,7 @@ When selecting a monitoring service, prioritize:
 3. **API access**: Can you integrate with your own systems?
 4. **Custom alerts**: Do they notify you when your data reappears?
 
-## Legal Verification Methods
+### Step 4: Legal Verification Methods
 
 ### Filing Complaints with Regulatory Bodies
 
@@ -215,7 +225,7 @@ Maintain records for potential legal action:
 - Record timestamps of verification checks
 - Keep copies of any data reports received
 
-## Practical Verification Workflow
+### Step 5: Practical Verification Workflow
 
 For systematic verification, follow this workflow:
 
@@ -227,7 +237,7 @@ For systematic verification, follow this workflow:
 
 This timeline accounts for processing delays while establishing a documented pattern of non-compliance.
 
-## Technical Considerations
+### Step 6: Technical Considerations
 
 ### API Limitations
 
@@ -248,6 +258,21 @@ Your data may reappear due to:
 - Data appending (brokers combine their data with external sources)
 
 Set up recurring checks monthly to catch re-appearance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

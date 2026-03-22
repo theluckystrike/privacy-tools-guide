@@ -40,7 +40,17 @@ The Connecticut Data Privacy Act (CTDPA), effective since July 1, 2023, grants C
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## What CTDPA Covers
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What CTDPA Covers
 
 CTDPA applies to businesses that process personal data of Connecticut residents and meet one of these thresholds:
 
@@ -61,7 +71,7 @@ Connecticut residents can exercise these rights:
 5. **Right to Data Portability** - Receive data in a portable, machine-readable format
 6. **Right to Appeal** - Appeal denied requests
 
-## How to Opt Out of Data Sharing
+### Step 2: How to Opt Out of Data Sharing
 
 ### Direct Consumer Requests
 
@@ -273,7 +283,7 @@ def export_user_data(user_id, format='json'):
         return convert_to_csv(user_data)
 ```
 
-## Verifying Your Opt-Out Status
+### Step 3: Verify Your Opt-Out Status
 
 After submitting requests, verify companies have honored them:
 
@@ -282,7 +292,7 @@ After submitting requests, verify companies have honored them:
 3. **Monitor for data leakage** - Set up Google Alerts for your name and email
 4. **Test with different browsers** - Verify GPC signals work across browsers
 
-## Common Pitfalls
+### Step 4: Common Pitfalls
 
 Several issues frequently trip up Connecticut residents exercising their rights:
 
@@ -290,6 +300,21 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 - **Verification delays** - Companies can request additional verification
 - **Third-party data** - Deletion doesn't always remove data shared with partners
 - **Retention exceptions** - Companies can keep data for security, legal obligations
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

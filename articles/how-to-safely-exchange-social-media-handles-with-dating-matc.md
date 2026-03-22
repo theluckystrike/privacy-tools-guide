@@ -40,7 +40,17 @@ When you match with someone on a dating app, transitioning to social media feels
 - **For power users and**: developers concerned about privacy, this guide provides technical strategies for exchanging social media handles while minimizing your exposure footprint.
 - **Even for everyday users**: the discomfort of granting strangers access to your personal life deserves a privacy-conscious solution.
 
-## The Privacy Risk of Direct Handle Exchange
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Privacy Risk of Direct Handle Exchange
 
 Your social media handle is not just an identifier—it is often a key that unlocks substantial personal data. Consider what someone finds when they search your Instagram username:
 
@@ -53,7 +63,7 @@ Your social media handle is not just an identifier—it is often a key that unlo
 
 For users with elevated threat models—journalists, activists, or anyone managing sensitive information—this exposure creates genuine risk. Even for everyday users, the discomfort of granting strangers access to your personal life deserves a privacy-conscious solution.
 
-## Strategy One: Dedicated Compartmentalized Accounts
+### Step 2: Strategy One: Dedicated Compartmentalized Accounts
 
 The most approach involves creating separate social media accounts specifically for dating transitions. This compartmentalization follows the principle of least privilege: your dating contacts access only what you explicitly choose to share.
 
@@ -80,7 +90,7 @@ When creating your compartmentalized account, follow these technical configurati
 
 4. **Follower isolation**: Start with zero followers. Add only the specific contacts you want to see this content. Never sync your phone contacts.
 
-## Strategy Two: Signal or Session for Handle Exchange
+### Step 3: Strategy Two: Signal or Session for Handle Exchange
 
 Encrypted messaging applications provide a safer channel for eventual handle exchange. By communicating through Signal or Session first, you maintain control over the transition timeline and can verify the person before sharing any identifiers.
 
@@ -102,7 +112,7 @@ USERNAME_STRATEGY = {
 
 The advantage here is that Signal usernames are discoverable only through direct sharing—you cannot search for users by username, preventing unsolicited contact or background checks.
 
-## Strategy Three: Temporary Redirect Services
+### Step 4: Strategy Three: Temporary Redirect Services
 
 For users who prefer maintaining a single primary account, temporary redirect services provide controlled exposure. You share a unique identifier that forwards to your real account, which you can later disable.
 
@@ -137,7 +147,7 @@ def redirect_to_social(short_code):
 
 This approach gives you visibility into who accessed your profile and allows you to revoke access by letting the link expire or manually removing the mapping.
 
-## Strategy Four: Privacy-First Social Platforms
+### Step 5: Strategy Four: Privacy-First Social Platforms
 
 Alternative social platforms with stronger privacy defaults provide another layer of protection. These platforms minimize data collection and offer better controls over profile visibility.
 
@@ -149,7 +159,7 @@ Alternative social platforms with stronger privacy defaults provide another laye
 
 These platforms often have smaller user bases but provide substantially better privacy controls. You can set your profile to require follower approval, control who sees your posts, and in some cases, use pseudonymous identities without verification requirements.
 
-## Implementation Checklist
+### Step 6: Implementation Checklist
 
 Before exchanging handles with a dating match, complete these privacy verification steps:
 
@@ -269,7 +279,7 @@ account = manager.create_account(
 print(f"Created account with ID: {account['id']}")
 ```
 
-## Red Flag Recognition Framework
+### Step 7: Red Flag Recognition Framework
 
 Before sharing any social media handles, evaluate the person for these warning signs:
 
@@ -322,7 +332,7 @@ Different dating apps have different data sharing policies:
 
 For the most privacy-conscious approach, use privacy-focused dating platforms that support pseudonyms and don't integrate with Facebook or Google.
 
-## What to Do If Things Go Wrong
+### Step 8: What to Do If Things Go Wrong
 
 If you share a handle and later regret it:
 
@@ -335,6 +345,21 @@ If you share a handle and later regret it:
 - Document all interactions for evidence
 
 Your digital privacy is not about paranoia—it is about maintaining control over your personal narrative. The strategies in this guide provide layers of protection that work for varying threat levels and comfort zones.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

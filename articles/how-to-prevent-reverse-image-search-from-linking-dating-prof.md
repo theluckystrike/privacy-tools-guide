@@ -39,7 +39,17 @@ Reverse image search poses a significant risk to dating profile privacy. When so
 - **While this data often**: gets stripped during upload to most platforms, some dating services preserve certain tags or re-embed data that could aid identification.
 - **If your photo returns**: matches to your real identity, don't use it.
 
-## How Reverse Image Search Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Reverse Image Search Works
 
 Understanding the technical foundation helps you defend against it effectively. Search engines extract visual fingerprints from images using perceptual hashing algorithms. These algorithms generate unique identifiers based on color distribution, edge patterns, and texture features.
 
@@ -47,7 +57,7 @@ When you upload a photo, the engine computes its hash and compares it against a 
 
 Dating platforms typically compress and resize uploaded images, which can alter the hash slightly but rarely enough to prevent matching. The real vulnerability emerges when your dating profile photo resembles photos linked to your professional presence, social media accounts, or family gatherings—anything indexed by search engines and associated with your name.
 
-## Method 1: Strip Image Metadata
+### Step 2: Method 1: Strip Image Metadata
 
 Every digital photo contains metadata (EXIF data) that reveals information like the device used, GPS coordinates, and timestamps. While this data often gets stripped during upload to most platforms, some dating services preserve certain tags or re-embed data that could aid identification.
 
@@ -78,7 +88,7 @@ exiftool -all= dating_profile.jpg
 
 This creates a copy with all metadata removed. The original file remains unchanged, so work on copies.
 
-## Method 2: Apply Visual Transformations
+### Step 3: Method 2: Apply Visual Transformations
 
 Perceptual hashes aren't completely immutable. Applying specific transformations changes the hash while preserving enough visual similarity for a normal viewer. However, note that sophisticated algorithms can sometimes account for these modifications.
 
@@ -136,7 +146,7 @@ transform_for_privacy('original.jpg', 'dating_photo.jpg')
 
 This script produces a version that looks similar to humans but has a different perceptual hash.
 
-## Method 3: Use Dedicated Dating Photos
+### Step 4: Method 3: Use Dedicated Dating Photos
 
 The most effective strategy involves using photos exclusively for dating platforms—images that never appear anywhere else online. This creates a complete barrier since there's nothing for reverse search engines to match against.
 
@@ -149,7 +159,7 @@ When creating dedicated photos:
 
 If you've already used a photo elsewhere, stop using it immediately. Even if you've applied transformations, sophisticated matching algorithms improve continuously, and the connection might still be discoverable.
 
-## Method 4: Use Image Similarity Checkers
+### Step 5: Method 4: Use Image Similarity Checkers
 
 Before uploading to a dating platform, verify your photo isn't easily discoverable. Run your intended profile photo through reverse image search yourself to see what matches appear.
 
@@ -176,7 +186,7 @@ def check_image_visibility(image_path):
 check_image_visibility('my_dating_photo.jpg')
 ```
 
-## Method 5: Use Platform Privacy Settings
+### Step 6: Method 5: Use Platform Privacy Settings
 
 Some dating platforms offer privacy controls that affect how your photos can be discovered:
 
@@ -198,7 +208,7 @@ Beyond image modifications, consider these complementary strategies:
 
 **Regular photo rotation**: Change your profile photo periodically. This limits the window for someone to successfully link your dating and real identities.
 
-## Testing Your Privacy
+### Step 7: Test Your Privacy
 
 After applying these methods, verify your protections work:
 
@@ -249,7 +259,7 @@ def compare_image_hashes(original_path, transformed_path):
 compare_image_hashes('original.jpg', 'transformed.jpg')
 ```
 
-## Face Recognition Bypass Techniques
+### Step 8: Face Recognition Bypass Techniques
 
 Beyond perceptual hashing, modern reverse image search uses facial recognition. Transformations that fool hashing may not fool face recognition:
 
@@ -278,7 +288,7 @@ curl -X POST \
 
 If the API still detects a face, further transformation is needed.
 
-## Legal Considerations for Dating Privacy
+### Step 9: Legal Considerations for Dating Privacy
 
 Depending on your jurisdiction, dating profile privacy involves different legal risks:
 
@@ -291,7 +301,7 @@ Depending on your jurisdiction, dating profile privacy involves different legal 
 
 Understand your local laws before uploading. In many jurisdictions, uploading intimate photos creates legal liability even if consensual.
 
-## Continuous Monitoring
+### Step 10: Continuous Monitoring
 
 Implement ongoing monitoring for unauthorized photo use:
 
@@ -332,6 +342,21 @@ monitor_photo_usage('dating_photo.jpg', check_frequency_days=7)
 ```
 
 Run this weekly via cron job to catch unauthorized use quickly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
