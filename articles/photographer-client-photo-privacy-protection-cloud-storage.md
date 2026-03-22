@@ -548,6 +548,7 @@
 
 
 
+
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
@@ -581,6 +582,7 @@ intent-checked: true
 voice-checked: true
 author: "Privacy Tools Guide"
 ---
+
 
 
 
