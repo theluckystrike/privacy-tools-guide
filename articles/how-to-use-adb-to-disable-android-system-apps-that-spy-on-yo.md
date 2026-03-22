@@ -311,5 +311,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
 - [How to Detect Hidden Trackers in Android](/privacy-tools-guide/detect-hidden-trackers-android-apps/)
 - [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -356,4 +356,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [Stop Alexa From Recording Conversations and Sending Audio](/privacy-tools-guide/how-to-stop-alexa-from-recording-conversations-and-sending-a/)
 - [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -294,5 +294,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
 - [How To Set Up Satellite Internet As Backup During Government](/privacy-tools-guide/how-to-set-up-satellite-internet-as-backup-during-government/)
 - [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

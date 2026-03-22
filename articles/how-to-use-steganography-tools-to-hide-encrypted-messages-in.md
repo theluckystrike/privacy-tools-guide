@@ -300,5 +300,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Encrypted Backup Of Chat History How To Preserve Messages](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
 - [How To Implement Encrypted Webhooks For Secure Application](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

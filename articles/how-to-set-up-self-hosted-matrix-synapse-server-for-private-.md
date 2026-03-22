@@ -387,5 +387,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 - [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

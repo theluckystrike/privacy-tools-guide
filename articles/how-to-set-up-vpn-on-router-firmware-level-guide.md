@@ -465,5 +465,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 - [How to Secure Your Home Router for Privacy in 2026](/privacy-tools-guide/how-to-secure-home-router-for-privacy-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -440,5 +440,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [Whonix vs Tails for Anonymous Browsing 2026](/privacy-tools-guide/whonix-vs-tails-for-anonymous-browsing-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

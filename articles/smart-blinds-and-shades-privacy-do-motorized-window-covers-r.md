@@ -270,5 +270,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
 - [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
 - [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

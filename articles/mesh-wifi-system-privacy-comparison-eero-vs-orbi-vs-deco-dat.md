@@ -335,6 +335,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [Privacy Risks of AI Chatbots: Data Collection (2026)](/privacy-tools-guide/privacy-risks-of-ai-chatbots-data-collection-2026/---)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

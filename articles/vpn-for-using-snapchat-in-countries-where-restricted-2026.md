@@ -253,4 +253,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Vpn For Accessing Crypto Exchanges In Restricted Countries](/privacy-tools-guide/vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/)
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

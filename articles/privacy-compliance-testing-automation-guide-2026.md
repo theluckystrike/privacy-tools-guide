@@ -361,5 +361,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Compliance API Design Best Practices](/privacy-tools-guide/privacy-compliance-api-design-best-practices/)
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
+- [AI for Automated Regression Test Generation from Bug](https://theluckystrike.github.io/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

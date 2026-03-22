@@ -421,5 +421,6 @@ Treat consent as secondary to good UX. Make privacy-protective choices the easie
 - [Enterprise Privacy by Design Framework Implementation](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

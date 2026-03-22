@@ -320,6 +320,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/privacy-tools-guide/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
 - [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 - [Children's Privacy Compliance: COPPA Requirements](/privacy-tools-guide/childrens-privacy-compliance-coppa-requirements-for-apps-and/)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

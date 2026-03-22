@@ -1449,3 +1449,4 @@ Everything you need to protect your digital privacy, organized by topic. Each gu
 - [1Password vs Dashlane Comparison 2026: Which Is Better](/privacy-tools-guide/1password-vs-dashlane-comparison-2026/)
 - [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
 - [Dashlane Vs 1password Comparison 2026](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

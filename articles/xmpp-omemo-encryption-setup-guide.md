@@ -419,5 +419,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
 - [How To Implement Customer Data Encryption At Rest](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
 - [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

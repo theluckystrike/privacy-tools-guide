@@ -425,6 +425,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Risks of Fitness Apps and Health Data Sharing in](/privacy-tools-guide/privacy-risks-of-fitness-apps-health-data-sharing-2026/---)
 - [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
 - [ChatGPT Privacy Risks What OpenAI Stores From Your](/privacy-tools-guide/chatgpt-privacy-risks-what-openai-stores-from-your-conversations-detailed-breakdown/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

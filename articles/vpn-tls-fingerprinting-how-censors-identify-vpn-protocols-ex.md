@@ -356,5 +356,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
 - [Tls Fingerprinting How Your Browser Handshake Identifies](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
 - [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

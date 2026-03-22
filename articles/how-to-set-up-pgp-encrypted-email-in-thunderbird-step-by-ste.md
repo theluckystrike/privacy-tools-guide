@@ -345,5 +345,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Pgp Encrypted Email With Protonmail To Non](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
 - [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

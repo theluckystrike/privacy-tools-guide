@@ -470,6 +470,7 @@ If experiencing stalking or domestic abuse:
 - [How To Detect And Remove Stalkerware From Android Phone](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
 - [How to Detect Stalkerware on Android Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-android-phone-2026/)
 - [How To Stop Someone From Accessing Your Icloud](/privacy-tools-guide/how-to-stop-someone-from-accessing-your-icloud-without-permi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -288,5 +288,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

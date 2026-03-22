@@ -328,5 +328,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

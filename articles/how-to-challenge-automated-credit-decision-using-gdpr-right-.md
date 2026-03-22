@@ -262,5 +262,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
 - [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
+- [AI Tools for Automated Rollback Decision Making in Deploymen](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-rollback-decision-making-in-deploymen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

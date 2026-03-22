@@ -359,5 +359,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Implement Encrypted Webhooks For Secure Application](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 - [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [Complete Guide To Operating System Hardening For Extreme](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

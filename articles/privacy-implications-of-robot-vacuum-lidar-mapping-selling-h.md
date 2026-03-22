@@ -427,6 +427,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
 - [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
 - [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

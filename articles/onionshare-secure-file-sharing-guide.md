@@ -365,5 +365,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Onion Share File Sharing Anonymously Guide](/privacy-tools-guide/onion-share-file-sharing-anonymously-guide/)
 - [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -424,5 +424,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Build Privacy Dashboard For Customers To Manage](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 - [How To Implement Encrypted Webhooks For Secure Application](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

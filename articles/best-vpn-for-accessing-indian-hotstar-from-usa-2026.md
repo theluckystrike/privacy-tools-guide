@@ -366,5 +366,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Accessing Hulu from Canada: Current Working Servers](/privacy-tools-guide/vpn-for-accessing-hulu-from-canada-current-working-servers/)
 - [VPN for Accessing European Banking Apps from United](/privacy-tools-guide/vpn-for-accessing-european-banking-apps-from-united-states/)
 - [VPN for Accessing US Pharmacy Websites from Europe Safely](/privacy-tools-guide/vpn-for-accessing-us-pharmacy-websites-from-europe-safely/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

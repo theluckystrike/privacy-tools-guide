@@ -258,6 +258,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

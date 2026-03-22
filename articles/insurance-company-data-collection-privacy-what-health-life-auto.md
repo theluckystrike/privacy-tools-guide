@@ -260,5 +260,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Privacy Risks of Fitness Trackers and Health Data 2026](/privacy-tools-guide/privacy-risks-of-fitness-trackers-health-data-2026/)
 - [Privacy Risks of Fitness Apps and Health Data Sharing in](/privacy-tools-guide/privacy-risks-of-fitness-apps-health-data-sharing-2026/---)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

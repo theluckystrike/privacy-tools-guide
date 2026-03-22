@@ -251,5 +251,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
 - [Privacy Focused Password Managers Comparison 2026](/privacy-tools-guide/privacy-focused-password-managers-comparison-2026/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

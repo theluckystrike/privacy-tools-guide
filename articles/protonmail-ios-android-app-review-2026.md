@@ -328,5 +328,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Protonmail Vpn Integration How Combining Email And Vpn](/privacy-tools-guide/protonmail-vpn-integration-how-combining-email-and-vpn-impro/)
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 - [Protonmail Vs Tutanota For Daily Email Use Honest Comparison](/privacy-tools-guide/protonmail-vs-tutanota-for-daily-email-use-honest-comparison/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

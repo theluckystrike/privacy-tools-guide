@@ -428,5 +428,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [How to Detect Hidden Trackers in Android](/privacy-tools-guide/detect-hidden-trackers-android-apps/)
 - [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API](https://theluckystrike.github.io/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

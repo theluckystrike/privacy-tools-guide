@@ -388,5 +388,6 @@ Workaround: Use South African friend's account, or VPN + South African virtual c
 - [Best VPN for Accessing Peacock Streaming from Outside](/privacy-tools-guide/best-vpn-for-accessing-peacock-streaming-from-outside-us/)
 - [Best VPN for Accessing Japanese Streaming Services](/privacy-tools-guide/best-vpn-for-accessing-japanese-streaming-services-from-abro/)
 - [VPN for Accessing US Sports Streaming from Europe 2026](/privacy-tools-guide/vpn-for-accessing-us-sports-streaming-from-europe-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

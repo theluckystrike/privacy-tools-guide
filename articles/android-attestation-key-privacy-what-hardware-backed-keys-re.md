@@ -377,5 +377,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 - [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
 - [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

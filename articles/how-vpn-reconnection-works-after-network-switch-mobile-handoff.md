@@ -452,4 +452,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

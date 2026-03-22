@@ -356,6 +356,7 @@ Test combinations individually before deploying to production machines.
 - [How to Audit Your Browser Extensions for Privacy](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
 - [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 - [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 
 {% endraw %}

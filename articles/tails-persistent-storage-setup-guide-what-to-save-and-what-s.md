@@ -423,6 +423,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [WireGuard Persistent Keepalive Setting Explained](/privacy-tools-guide/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/)
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

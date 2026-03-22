@@ -374,5 +374,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager for Family of Four with Kids Accounts Guide](/privacy-tools-guide/password-manager-for-family-of-four-with-kids-accounts-guide/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

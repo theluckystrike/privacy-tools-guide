@@ -346,6 +346,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Vpn That Works In Iran 2026 Tested And Confirmed](/privacy-tools-guide/vpn-that-works-in-iran-2026-tested-and-confirmed/)
 - [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)
 - [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

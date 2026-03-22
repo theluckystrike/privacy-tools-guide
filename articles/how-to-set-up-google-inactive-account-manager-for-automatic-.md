@@ -559,5 +559,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Remove Personal Data From ChatGPT Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

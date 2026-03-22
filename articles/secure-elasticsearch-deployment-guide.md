@@ -167,6 +167,9 @@ curl -k -u elastic:YOUR_PASSWORD https://127.0.0.1:9200/_cluster/health
 - [Secure Redis Deployment Without Exposure](/privacy-tools-guide/secure-redis-deployment-without-exposure/)
 - [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
 - [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+- [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
 
 ---
 

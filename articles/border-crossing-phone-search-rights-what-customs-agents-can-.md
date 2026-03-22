@@ -531,5 +531,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
 - [Disable Location Services Before Crossing Border](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

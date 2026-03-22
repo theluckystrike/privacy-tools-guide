@@ -344,5 +344,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)
 - [VPN Traffic Obfuscation Techniques](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compared-2026/)
 - [Best Vpn For Accessing Uk Betting Sites](/privacy-tools-guide/best-vpn-for-accessing-uk-betting-sites-from-abroad/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

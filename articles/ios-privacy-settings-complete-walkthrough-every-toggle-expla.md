@@ -314,5 +314,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 - [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 - [iOS Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

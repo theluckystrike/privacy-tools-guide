@@ -314,4 +314,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
 - [How To Create Anonymous Online Identity That Cannot Be](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

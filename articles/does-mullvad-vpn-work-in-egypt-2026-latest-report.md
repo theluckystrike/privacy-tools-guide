@@ -297,4 +297,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How VPN Reconnection Works After Network Switch: Technical](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

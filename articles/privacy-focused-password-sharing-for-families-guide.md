@@ -757,5 +757,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [1Password Families Plan Review 2026: Is It Worth It](/privacy-tools-guide/1password-families-plan-review-2026/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Proton Drive Sharing Links Privacy Review](/privacy-tools-guide/proton-drive-sharing-links-privacy-review/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

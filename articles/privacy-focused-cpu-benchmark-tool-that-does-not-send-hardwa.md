@@ -393,6 +393,7 @@ For professionals who benchmark regularly, local tools eliminate the privacy ris
 - [Privacy-Focused Antivirus Software: Performance Impact](/privacy-tools-guide/privacy-focused-antivirus-software-performance-impact-compar/)
 - [Privacy-Focused Website Speed Test Tool That Does Not Track](/privacy-tools-guide/privacy-focused-website-speed-test-tool-that-does-not-track-/)
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
+- [Does WindSurf AI Send Entire Project Context or Just Open](https://theluckystrike.github.io/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

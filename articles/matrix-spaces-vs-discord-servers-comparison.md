@@ -220,6 +220,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
 - [Wire vs Signal for Business Use: A Technical Comparison](/privacy-tools-guide/wire-vs-signal-for-business-use/)
 - [Protonmail Vs Gmail Privacy Comparison](/privacy-tools-guide/protonmail-vs-gmail-privacy-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Advanced Technical Comparisons
 
 ### Message Format and Serialization

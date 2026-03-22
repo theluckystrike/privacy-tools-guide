@@ -351,6 +351,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing.](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -294,5 +294,6 @@ Yes. In the Bitwarden mobile app, tap the region selector on the login screen an
 - [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
 - [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

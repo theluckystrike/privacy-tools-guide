@@ -272,5 +272,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Bypass China Great Firewall Using Shadowsocks](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 - [Best VPN for Using WhatsApp in China 2026](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -291,5 +291,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 - [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
 - [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

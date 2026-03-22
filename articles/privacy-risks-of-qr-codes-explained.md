@@ -171,6 +171,7 @@ Do not use URL shorteners (they add a tracking layer), UTM parameters (tell your
 - [Privacy-Focused Maps and Navigation Apps](/privacy-tools-guide/privacy-focused-maps-and-navigation-apps/)
 - [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](https://theluckystrike.github.io/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
 ---
 

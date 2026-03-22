@@ -334,5 +334,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
 - [How To Build Privacy Dashboard For Customers To Manage](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

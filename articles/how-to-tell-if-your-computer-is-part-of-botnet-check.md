@@ -369,6 +369,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
 - [What To Do If Ransomware Locks Your Computer Immediate Steps](/privacy-tools-guide/what-to-do-if-ransomware-locks-your-computer-immediate-steps/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

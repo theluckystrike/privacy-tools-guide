@@ -407,4 +407,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [iOS Advanced Data Protection For Icloud End To End](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

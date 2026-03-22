@@ -268,5 +268,6 @@ Retention requirements vary by jurisdiction and case type. Most PI licensing boa
 - [Privacy Tools For Whistle Blower Preparing Disclosure](/privacy-tools-guide/privacy-tools-for-whistle-blower-preparing-disclosure-protec/)
 - [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
 - [Privacy Tools For Election Observer Protecting Witness](/privacy-tools-guide/privacy-tools-for-election-observer-protecting-witness-testimony/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

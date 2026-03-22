@@ -411,5 +411,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [WireGuard Postup Postdown Scripts For Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [AI-Powered Database Performance Tuning Tools](https://theluckystrike.github.io/ai-tools-compared/ai-powered-database-performance-tuning)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

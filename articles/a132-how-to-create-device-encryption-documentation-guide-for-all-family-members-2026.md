@@ -200,6 +200,7 @@ Set a recurring calendar reminder to:
 - [How Does Bitwarden Encryption Work Zero Knowledge](/privacy-tools-guide/how-does-bitwarden-encryption-work-zero-knowledge/)
 - [Smart Refrigerator Data Collection What Samsung Family Hub](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

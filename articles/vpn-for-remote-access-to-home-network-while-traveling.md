@@ -348,5 +348,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Use Tailscale To Access Home Assistant Remotely](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
 - [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [How VPN Reconnection Works After Network Switch: Detecting](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -593,5 +593,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)
 - [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
 - [Privacy Focused Two Factor Authentication Apps Comparison](/privacy-tools-guide/privacy-focused-two-factor-authentication-apps-comparison-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

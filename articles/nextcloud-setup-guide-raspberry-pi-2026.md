@@ -441,5 +441,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Self Hosted Cloud Storage Comparison Nextcloud vs](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

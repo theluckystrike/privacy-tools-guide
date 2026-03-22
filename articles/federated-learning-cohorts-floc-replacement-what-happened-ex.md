@@ -572,6 +572,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
 - [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

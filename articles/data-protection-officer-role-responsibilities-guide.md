@@ -352,5 +352,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
 - [iOS Advanced Data Protection For Icloud End To End](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

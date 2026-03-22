@@ -333,5 +333,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [What To Do If Ransomware Locks Your Computer Immediate](/privacy-tools-guide/what-to-do-if-ransomware-locks-your-computer-immediate-steps/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

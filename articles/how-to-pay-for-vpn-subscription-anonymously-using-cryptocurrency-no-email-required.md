@@ -430,5 +430,6 @@ When your account balance expires, your VPN connection closes. No data is retain
 - [VPN over Tor vs Tor over VPN: A Technical Comparison](/privacy-tools-guide/vpn-over-tor-vs-tor-over-vpn/)
 - [Best VPN for Using WhatsApp in China 2026](/privacy-tools-guide/best-vpn-for-using-whatsapp-in-china-2026-actually-works/)
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

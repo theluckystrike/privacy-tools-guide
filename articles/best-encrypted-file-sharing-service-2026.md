@@ -249,5 +249,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
 - [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
 - [Chrome Extension File Sharing Quick](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

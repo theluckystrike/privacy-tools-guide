@@ -396,6 +396,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to remove yourself from data broker sites step by step.](/privacy-tools-guide/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
 - [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

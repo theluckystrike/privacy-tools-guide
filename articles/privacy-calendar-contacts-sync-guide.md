@@ -454,6 +454,7 @@ Nextcloud supports server-side encryption per-file using AES-256, though it adds
 - [Tutanota Encrypted Calendar And Contacts How End To End](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
@@ -478,3 +479,4 @@ Review each tool's privacy policy, data handling practices, and security certifi
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+{% endraw %}

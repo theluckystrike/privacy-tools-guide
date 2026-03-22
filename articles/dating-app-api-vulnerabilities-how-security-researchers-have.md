@@ -206,6 +206,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How To Detect If Dating App Is Selling Your Data To Third](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Advanced Attack Scenarios and Real-World Cases
 
 ### Profile Enumeration via Weak User Identifiers

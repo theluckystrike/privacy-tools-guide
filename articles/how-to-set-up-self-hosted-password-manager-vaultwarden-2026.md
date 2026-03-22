@@ -503,5 +503,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -407,5 +407,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
 - [How VPN Encryption Key Exchange Works Diffie Hellman](/privacy-tools-guide/how-vpn-encryption-key-exchange-works-diffie-hellman-explained/)
 - [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

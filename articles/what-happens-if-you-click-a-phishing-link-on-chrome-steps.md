@@ -294,5 +294,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Link Decoration Tracking How Utm Parameters And Click Ids](/privacy-tools-guide/link-decoration-tracking-how-utm-parameters-and-click-ids-tr/)
 - [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)
 - [How To Protect Yourself From Qr Code Phishing Quishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

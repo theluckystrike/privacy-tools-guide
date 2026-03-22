@@ -369,5 +369,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Accessing Polish Streaming Services from UK 2026](/privacy-tools-guide/vpn-for-accessing-polish-streaming-services-from-uk-2026/)
 - [Best VPN for South Korea: Accessing Western Streaming](/privacy-tools-guide/best-vpn-for-south-korea-accessing-western-streaming-sites/)
 - [Best Vpn For Accessing German Streaming From Us 2026](/privacy-tools-guide/best-vpn-for-accessing-german-streaming-from-us-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

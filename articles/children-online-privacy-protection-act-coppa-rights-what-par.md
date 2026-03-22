@@ -336,6 +336,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [Virginia Consumer Data Protection Act Vcdpa Guide](/privacy-tools-guide/virginia-consumer-data-protection-act-vcdpa-guide/)
 - [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

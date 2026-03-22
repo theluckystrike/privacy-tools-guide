@@ -321,5 +321,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
 - [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 - [Threat Model For Activist In Authoritarian Country Digital](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -272,5 +272,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Privacy Focused Password Managers Comparison 2026](/privacy-tools-guide/privacy-focused-password-managers-comparison-2026/)
 - [Dashlane Vs 1password Comparison 2026](/privacy-tools-guide/dashlane-vs-1password-comparison-2026/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -368,6 +368,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Pay For Vpn Subscription Anonymously Using Cryptocurrency](/privacy-tools-guide/how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/)
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [Onion Share File Sharing Anonymously Guide](/privacy-tools-guide/onion-share-file-sharing-anonymously-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

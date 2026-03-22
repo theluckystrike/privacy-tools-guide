@@ -431,6 +431,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Data Broker Opt Out Automation Tools That Continuously](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
 - [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [How to Remove Personal Information from Data Brokers 2026](/privacy-tools-guide/how-to-remove-personal-information-from-data-brokers-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

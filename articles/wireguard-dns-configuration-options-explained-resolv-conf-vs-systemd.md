@@ -270,5 +270,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
 - [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 - [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

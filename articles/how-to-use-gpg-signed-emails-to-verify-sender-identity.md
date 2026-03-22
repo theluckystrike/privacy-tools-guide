@@ -280,5 +280,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [GPG Key Management Best Practices](/privacy-tools-guide/gpg-key-management-best-practices/)
 - [Someone Signed Up for Services Using My Email](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

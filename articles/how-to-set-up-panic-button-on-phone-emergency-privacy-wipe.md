@@ -333,6 +333,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

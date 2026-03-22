@@ -357,6 +357,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
 - [Vpn Provider Server Infrastructure How To Evaluate.](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

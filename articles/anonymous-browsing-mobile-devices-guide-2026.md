@@ -300,6 +300,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Secure Browsing Habits With Tor Best Practices](/privacy-tools-guide/secure-browsing-habits-with-tor-best-practices/)
 - [VPN for Safe Browsing on Public WiFi in Airports](/privacy-tools-guide/vpn-for-safe-browsing-on-public-wifi-in-airports/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -379,5 +379,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [Dating App Location Spoofing How To Hide Real Position](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
 - [Bumble Location Tracking Precision How Accurately The App](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -373,6 +373,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [How To Use Ssh Tunneling For Encrypted Communication Between](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

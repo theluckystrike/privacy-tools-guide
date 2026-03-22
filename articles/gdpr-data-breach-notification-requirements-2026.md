@@ -392,5 +392,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [AI Coding Assistant Data Sovereignty Requirements](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

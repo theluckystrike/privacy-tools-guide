@@ -233,6 +233,7 @@ The effort pays dividends beyond compliance — cleaner logs are easier to searc
 - [GDPR Compliant User Authentication](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

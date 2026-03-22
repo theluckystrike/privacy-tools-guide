@@ -328,5 +328,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
 - [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
 - [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

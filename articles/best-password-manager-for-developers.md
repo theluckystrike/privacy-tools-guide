@@ -432,5 +432,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Password Manager For macOS 2026](/privacy-tools-guide/best-password-manager-for-macos-2026/)
 - [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
 - [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

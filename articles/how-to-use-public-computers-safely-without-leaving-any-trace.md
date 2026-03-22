@@ -281,4 +281,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
 - [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
 - [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

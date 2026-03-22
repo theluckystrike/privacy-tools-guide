@@ -245,5 +245,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
 - [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
 - [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
+- [Best AI Assistant for Debugging AWS Lambda Cold Start](https://theluckystrike.github.io/ai-tools-compared/ai-assistant-for-debugging-aws-lambda-cold-start-timeout-issues-in-vpc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

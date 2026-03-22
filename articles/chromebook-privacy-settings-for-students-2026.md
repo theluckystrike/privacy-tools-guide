@@ -539,6 +539,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Feeld Privacy Settings For Couples And Alternative Dating Pr](/privacy-tools-guide/feeld-privacy-settings-for-couples-and-alternative-dating-pr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

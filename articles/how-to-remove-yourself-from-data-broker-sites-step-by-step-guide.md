@@ -548,5 +548,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

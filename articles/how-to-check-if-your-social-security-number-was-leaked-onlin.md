@@ -496,5 +496,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [How To Check If Someone Is Using Your Netflix](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permis/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -293,5 +293,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy-Focused Analytics: Self-Hosted Options](/privacy-tools-guide/privacy-analytics-self-hosted-setup/)
 - [Gdpr Compliance Tools For Small Business Complete Implementa](/privacy-tools-guide/gdpr-compliance-tools-for-small-business-complete-implementa/)
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

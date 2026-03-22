@@ -425,6 +425,7 @@ Complete this before storing sensitive data.
 - [Secure Cloud Storage Encryption Rclone](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
 - [GDPR Compliance Cloud Storage Requirements](/privacy-tools-guide/gdpr-cloud-storage-compliance/)
 - [Data Residency and Cloud Storage Legal Implications](/privacy-tools-guide/cloud-data-residency-legal/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

@@ -342,6 +342,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Password Manager For Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

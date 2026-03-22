@@ -266,5 +266,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 - [Privacy-Focused Analytics: Self-Hosted Options](/privacy-tools-guide/privacy-analytics-self-hosted-setup/)
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [Best AI for Analyzing Google Analytics Data Exports](https://theluckystrike.github.io/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

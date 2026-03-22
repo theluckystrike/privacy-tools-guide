@@ -247,5 +247,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Vpn For Using Twitter X In Countries Where Banned](/privacy-tools-guide/vpn-for-using-twitter-x-in-countries-where-banned/)
 - [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

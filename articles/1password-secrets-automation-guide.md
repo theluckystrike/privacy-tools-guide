@@ -297,6 +297,7 @@ Network errors in CI environments often indicate a firewall or proxy blocking ou
 - [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 - [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

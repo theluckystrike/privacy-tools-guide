@@ -352,6 +352,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
 - [Browser Storage Isolation Explained](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
 - [Tor Browser Android Setup Guide](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

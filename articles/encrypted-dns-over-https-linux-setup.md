@@ -349,6 +349,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 - [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 - [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

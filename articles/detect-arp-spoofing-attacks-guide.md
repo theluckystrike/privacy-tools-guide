@@ -255,6 +255,9 @@ When you detect spoofing:
 - [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
 - [How to Use Zeek for Network Monitoring](/privacy-tools-guide/zeek-network-monitoring-guide/)
 - [How to Set Up CrowdSec for Server Security](/privacy-tools-guide/crowdsec-server-security-setup-guide/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

@@ -455,5 +455,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

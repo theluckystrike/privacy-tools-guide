@@ -354,6 +354,7 @@ Your device model may not be maintained. Check the device list before flashing t
 - [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
 - [GrapheneOS vs Stock Pixel: What Google Collects](/privacy-tools-guide/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)
 - [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

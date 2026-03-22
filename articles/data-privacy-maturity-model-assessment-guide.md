@@ -495,5 +495,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
 - [How To Build Privacy Dashboard For Customers To Manage](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

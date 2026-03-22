@@ -275,6 +275,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
 - [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

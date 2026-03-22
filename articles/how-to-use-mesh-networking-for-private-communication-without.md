@@ -318,5 +318,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

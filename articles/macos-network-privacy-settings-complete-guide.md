@@ -296,5 +296,6 @@ Some enterprise networks authenticate by MAC address. Enabling Private WiFi Addr
 - [macOS Privacy Hardening Checklist 2026](/privacy-tools-guide/macos-privacy-hardening-checklist-2026/)
 - [Harden macOS Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [AI Coding Assistant for Network Traffic Analysis: What](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

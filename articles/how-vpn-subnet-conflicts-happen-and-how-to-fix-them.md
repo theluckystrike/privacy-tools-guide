@@ -503,5 +503,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Configure Per App Vpn On Android](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
 - [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [How To Set Up Vpn Failover Between Two Providers Automatical](/privacy-tools-guide/how-to-set-up-vpn-failover-between-two-providers-automatical/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

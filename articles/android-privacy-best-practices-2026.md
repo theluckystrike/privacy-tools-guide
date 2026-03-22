@@ -551,5 +551,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 - [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

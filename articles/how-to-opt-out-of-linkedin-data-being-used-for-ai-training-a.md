@@ -255,5 +255,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
 - [How To Protect LinkedIn Profile From Being Discovered](/privacy-tools-guide/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
 - [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

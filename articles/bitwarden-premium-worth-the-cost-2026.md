@@ -405,5 +405,6 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 - [Tresorit Review Is It Worth The Price 2026](/privacy-tools-guide/tresorit-review-is-it-worth-the-price-2026/)
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)
 - [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

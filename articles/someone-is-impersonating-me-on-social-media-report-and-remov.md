@@ -349,5 +349,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Safely Exchange Social Media Handles With Dating](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
 - [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
 - [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
+- [AI Tools for Social Media Analytics: A Practical Guide](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-social-media-analytics/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

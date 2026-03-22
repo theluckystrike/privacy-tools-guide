@@ -436,6 +436,7 @@ git push --mirror
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 - [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
 - [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

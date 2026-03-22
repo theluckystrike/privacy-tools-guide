@@ -400,4 +400,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Configure Little Snitch On macOS To Block All Unnecessary](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [CalyxOS Datura Firewall Setup: Controlling Per-App](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [How to Configure Cursor AI Rules for Consistent CSS](https://theluckystrike.github.io/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

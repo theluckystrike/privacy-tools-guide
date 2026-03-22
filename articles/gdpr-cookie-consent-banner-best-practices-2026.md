@@ -299,5 +299,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [How To Revoke Previously Given Consent For Data Processing](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
 - [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
 - [How To Implement Consent Receipts Giving Customers Proof](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
+- [Best AI Tool for Generating Accessible Cookie Consent](https://theluckystrike.github.io/ai-tools-compared/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

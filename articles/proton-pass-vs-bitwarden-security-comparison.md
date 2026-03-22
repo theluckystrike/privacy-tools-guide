@@ -335,5 +335,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)
 - [Bitwarden vs NordPass Comparison 2026](/privacy-tools-guide/bitwarden-vs-nordpass-comparison-2026/)
 - [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
+- [AI Coding Assistant for Rust Developers Compared](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

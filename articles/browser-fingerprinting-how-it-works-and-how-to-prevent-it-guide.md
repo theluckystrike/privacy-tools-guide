@@ -502,6 +502,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Test if Your Anti-Fingerprinting Setup Actually Works](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 - [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

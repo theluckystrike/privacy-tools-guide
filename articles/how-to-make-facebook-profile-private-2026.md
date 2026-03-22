@@ -260,5 +260,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
 - [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

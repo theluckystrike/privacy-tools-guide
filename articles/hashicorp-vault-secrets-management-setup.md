@@ -262,6 +262,7 @@ spec:
 - [Bitwarden Web Vault vs Desktop App Comparison](/privacy-tools-guide/bitwarden-web-vault-vs-desktop-app-comparison/)
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

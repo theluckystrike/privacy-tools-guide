@@ -320,6 +320,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 - [VPN Provider Annual Audit Results: Independent Security.](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
 - [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

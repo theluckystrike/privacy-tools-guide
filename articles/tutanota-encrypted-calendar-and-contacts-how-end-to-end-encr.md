@@ -423,5 +423,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy-Focused Calendar and Contacts Sync](/privacy-tools-guide/privacy-calendar-contacts-sync-guide/)
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

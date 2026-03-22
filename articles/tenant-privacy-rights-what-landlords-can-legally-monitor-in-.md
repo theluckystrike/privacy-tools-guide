@@ -472,6 +472,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Email Account Inheritance Can Executor Legally Access Deceas](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

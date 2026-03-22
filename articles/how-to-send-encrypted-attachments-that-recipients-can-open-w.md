@@ -270,5 +270,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Pgp Encrypted Email With Protonmail To Non](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
 - [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](https://theluckystrike.github.io/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

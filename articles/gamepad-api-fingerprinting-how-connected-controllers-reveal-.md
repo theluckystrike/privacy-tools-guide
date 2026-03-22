@@ -430,5 +430,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Audio Context Fingerprinting How Websites Use Sound API](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Topics API Chrome Replacement For Cookies How It Tracks](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

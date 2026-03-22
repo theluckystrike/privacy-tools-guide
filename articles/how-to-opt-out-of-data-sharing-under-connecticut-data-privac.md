@@ -333,4 +333,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

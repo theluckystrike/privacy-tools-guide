@@ -269,5 +269,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 - [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 - [Jami P2p Messenger Review 2026](/privacy-tools-guide/jami-p2p-messenger-review-2026/)
+- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -368,5 +368,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 - [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
 - [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -332,5 +332,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 - [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

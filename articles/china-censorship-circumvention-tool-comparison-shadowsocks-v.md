@@ -320,5 +320,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Best Vpn Protocols That Still Work Inside China After Deep](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
 - [How To Use Naiveproxy To Disguise Censorship Circumvention](/privacy-tools-guide/how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/)
 - [China Golden Shield Project How Censorship Detection Works](/privacy-tools-guide/china-golden-shield-project-how-censorship-detection-works-t/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

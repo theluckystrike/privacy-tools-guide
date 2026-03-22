@@ -511,6 +511,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
 - [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

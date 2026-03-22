@@ -310,6 +310,7 @@ What allowed it to occur? (e.g., no patch management process, no secret rotation
 - [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

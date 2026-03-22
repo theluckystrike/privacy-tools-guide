@@ -411,5 +411,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
 - [Best Accessible Encrypted Cloud Backup With One Button](/privacy-tools-guide/best-accessible-encrypted-cloud-backup-with-one-button-resto/)
 - [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -181,6 +181,7 @@ trivy image --format json myapp:latest | \
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 - [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
 - [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

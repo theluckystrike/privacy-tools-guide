@@ -389,5 +389,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
 - [Privacy Focused Cloud Email Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-email-comparison-2026/)
 - [Setting Up Encrypted Email with Tutanota](/privacy-tools-guide/tutanota-encrypted-email-setup-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

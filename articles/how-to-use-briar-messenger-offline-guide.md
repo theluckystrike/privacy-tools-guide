@@ -352,5 +352,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
 - [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](https://theluckystrike.github.io/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

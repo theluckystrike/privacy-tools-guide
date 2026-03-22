@@ -277,5 +277,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [Anonymous Conference Call Services That Do Not Log](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [Anonymous Phone Number Services for Verification](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

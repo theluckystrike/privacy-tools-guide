@@ -291,5 +291,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
 - [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
 - [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

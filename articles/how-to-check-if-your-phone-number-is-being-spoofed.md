@@ -513,6 +513,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 - [How To Use Signal Without Phone Number Verification In Count](/privacy-tools-guide/how-to-use-signal-without-phone-number-verification-in-count/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -457,6 +457,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Adb To Disable Android System Apps That Spy On](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
 - [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
 - [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

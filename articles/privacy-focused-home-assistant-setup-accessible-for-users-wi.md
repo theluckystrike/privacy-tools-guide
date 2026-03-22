@@ -471,6 +471,7 @@ This configuration provides rapid emergency response alongside accessible normal
 - [How To Set Up Home Assistant Esphome For Completely Local](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 - [How To Use Tailscale To Access Home Assistant Remotely](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
 - [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

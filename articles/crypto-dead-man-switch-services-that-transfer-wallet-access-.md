@@ -331,5 +331,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [Vpn For Accessing Crypto Exchanges In Restricted Countries](/privacy-tools-guide/vpn-for-accessing-crypto-exchanges-in-restricted-countries-2/)
 - [How to Set Up a Dead Man's Switch for Data](/privacy-tools-guide/dead-mans-switch-python-script-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

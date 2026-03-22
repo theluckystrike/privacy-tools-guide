@@ -238,5 +238,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [How To Implement Pseudonymization In Your Database For Gdpr](/privacy-tools-guide/how-to-implement-pseudonymization-in-your-database-for-gdpr-/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

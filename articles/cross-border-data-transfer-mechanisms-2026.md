@@ -269,5 +269,6 @@ Verify the provider's DPF certification at dataprivacyframework.gov, document th
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
 - [How To Anonymize User Data In Production Database](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

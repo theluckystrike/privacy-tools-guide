@@ -323,5 +323,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

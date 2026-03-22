@@ -269,5 +269,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

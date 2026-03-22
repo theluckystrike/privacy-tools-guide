@@ -331,5 +331,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use Live Operating System to Leave No Forensic](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)
 - [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
 - [macOS Privacy Hardening Checklist 2026](/privacy-tools-guide/macos-privacy-hardening-checklist-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

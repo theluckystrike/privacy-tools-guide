@@ -258,6 +258,7 @@ trivy image goharbor/harbor-core:v2.11.0
 - [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
 - [Secure WebSocket Connections Setup Guide](/privacy-tools-guide/secure-websocket-connections-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
 
 ---
 

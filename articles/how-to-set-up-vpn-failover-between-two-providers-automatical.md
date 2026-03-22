@@ -340,5 +340,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
 - [How VPN Reconnection Works After Network Switch: Technical](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [AI Autocomplete Behavior Differences Between VS Code](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

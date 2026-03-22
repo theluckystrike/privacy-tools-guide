@@ -629,6 +629,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [How To Set Up Dnscrypt Proxy For Authenticated Encrypted](/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
 - [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best AI Tools for Automated DNS Configuration Management](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-automated-dns-configuration-management-acr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

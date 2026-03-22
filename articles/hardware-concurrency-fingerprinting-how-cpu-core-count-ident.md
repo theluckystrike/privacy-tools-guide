@@ -495,6 +495,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

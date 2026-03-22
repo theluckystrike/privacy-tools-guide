@@ -546,5 +546,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Submit Subject Access Request To Employer For All](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
 - [Challenge Automated Credit Decision Using GDPR Right](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 - [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -405,5 +405,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
 - [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
 - [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

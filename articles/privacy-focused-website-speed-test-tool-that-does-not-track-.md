@@ -614,6 +614,7 @@ This approach keeps all testing data in your repository, never sending URLs to e
 - [How to Optimize LibreWolf Browser Speed and Compatibility](/privacy-tools-guide/how-to-optimize-librewolf-browser-speed-and-compatibility-wi/)
 - [How to Test if Your Anti-Fingerprinting Setup Actually](/privacy-tools-guide/how-to-test-if-your-anti-fingerprinting-setup-actually-works/)
 - [Best Privacy-Focused Monitoring Tool That Does Not Collect](/privacy-tools-guide/best-privacy-focused-monitoring-tool-that-does-not-collect-s/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

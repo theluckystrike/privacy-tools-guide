@@ -298,6 +298,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
 - [Passkey Support By Website 2026](/privacy-tools-guide/passkey-support-by-website-2026/)
 - [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

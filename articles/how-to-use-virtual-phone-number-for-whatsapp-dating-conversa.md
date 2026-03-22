@@ -417,5 +417,6 @@ This is actually a feature—it prevents an ex or bad match from retaining acces
 - [How To Use Signal For Early Dating Conversations Instead Of](/privacy-tools-guide/how-to-use-signal-for-early-dating-conversations-instead-of-/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
+- [AI Code Generation for Java Virtual Threads Project Loom](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

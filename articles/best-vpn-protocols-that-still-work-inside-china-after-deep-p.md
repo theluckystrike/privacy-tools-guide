@@ -333,6 +333,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Does Expressvpn Still Work In Turkey 2026 Latest Test](/privacy-tools-guide/does-expressvpn-still-work-in-turkey-2026-latest-test/)
 - [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
 - [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

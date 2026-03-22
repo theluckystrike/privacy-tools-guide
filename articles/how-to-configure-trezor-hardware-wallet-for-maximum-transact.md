@@ -277,5 +277,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
 - [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

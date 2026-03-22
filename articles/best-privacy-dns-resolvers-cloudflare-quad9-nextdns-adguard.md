@@ -565,6 +565,7 @@ Resolve-DnsName google.com
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
 - [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/---)
 - [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

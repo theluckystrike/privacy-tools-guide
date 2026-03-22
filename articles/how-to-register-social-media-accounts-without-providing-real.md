@@ -300,5 +300,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
 - [How To Prepare Social Media Accounts For Memorialization](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 - [How To Safely Exchange Social Media Handles With Dating](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

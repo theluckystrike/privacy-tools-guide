@@ -286,5 +286,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

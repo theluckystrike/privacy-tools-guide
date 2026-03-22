@@ -303,6 +303,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best Accessible Encrypted File Sharing Tool for Users With Cognitive Impairments 2026](/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/best-privacy-focused-email-aliases-service-comparison-2026/)
 - [Best Privacy-Focused Email Alternatives to Gmail 2026](/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [Best Accessible Privacy-Focused RSS Reader for Users with](/privacy-tools-guide/best-accessible-privacy-focused-rss-reader-for-users-with-visual-impairments/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Auditing Accessible Responsive Design](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
 ## iOS Accessibility Options
 
 iOS users face more limited choices due to Apple's walled ecosystem. However, several privacy-respecting options exist:

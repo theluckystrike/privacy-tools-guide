@@ -212,6 +212,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Dating App Background Location Tracking What Happens When](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Data Retention and Cross-Platform Sharing
 
 Tinder's parent company Match Group owns numerous dating platforms and shares data across them. Understanding this ecosystem is critical:

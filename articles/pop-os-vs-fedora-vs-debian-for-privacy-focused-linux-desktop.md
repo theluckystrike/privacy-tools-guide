@@ -387,5 +387,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [How To Migrate From Windows To Linux Without Losing Workflow](/privacy-tools-guide/how-to-migrate-from-windows-to-linux-without-losing-workflow/)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 - [How To Set Up Secureboot Plus Encryption On Fedora Linux](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

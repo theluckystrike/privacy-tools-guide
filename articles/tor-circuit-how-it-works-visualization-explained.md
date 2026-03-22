@@ -289,5 +289,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 - [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

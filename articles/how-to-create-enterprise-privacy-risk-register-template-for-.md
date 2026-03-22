@@ -332,6 +332,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Enterprise Privacy by Design Framework Implementation](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Frequently Asked Questions
 
 **How long does it take to create enterprise privacy risk register template?**

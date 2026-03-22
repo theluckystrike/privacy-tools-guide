@@ -323,5 +323,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [How To Purchase Phone And Sim Card Anonymously Complete](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [Temporary Phone Number For Receiving Sms Verification Codes](/privacy-tools-guide/temporary-phone-number-for-receiving-sms-verification-codes-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

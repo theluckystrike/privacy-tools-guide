@@ -326,6 +326,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
 - [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

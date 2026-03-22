@@ -439,5 +439,6 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [How to Evaluate Privacy Tool Claims](/privacy-tools-guide/evaluate-privacy-tool-claims-red-flags-marketing-versus-protection/)
 - [Enterprise Privacy by Design Framework Implementation](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
+- [AI-Powered Cloud Cost Analyzer Tools Compared](https://theluckystrike.github.io/ai-tools-compared/ai-cloud-cost-analyzer-tools-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

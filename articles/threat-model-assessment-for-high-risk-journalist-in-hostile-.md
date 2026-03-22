@@ -326,4 +326,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 - [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model For Religious Minority In Persecuting Country](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

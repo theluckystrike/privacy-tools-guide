@@ -275,5 +275,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
 - [Set Up Secure Communication For Labor Strike: Practical](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

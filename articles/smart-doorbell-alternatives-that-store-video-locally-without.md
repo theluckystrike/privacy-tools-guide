@@ -285,6 +285,7 @@ With local storage, losing internet connectivity has no effect on recording. Clo
 - [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
 - [Signal Alternatives That Offer End To End Encryption Without](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

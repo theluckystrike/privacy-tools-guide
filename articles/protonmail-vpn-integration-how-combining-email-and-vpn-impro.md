@@ -281,5 +281,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Protonmail Vs Tutanota For Daily Email Use Honest Comparison](/privacy-tools-guide/protonmail-vs-tutanota-for-daily-email-use-honest-comparison/)
 - [ProtonMail iOS Android App Review 2026](/privacy-tools-guide/protonmail-ios-android-app-review-2026/)
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

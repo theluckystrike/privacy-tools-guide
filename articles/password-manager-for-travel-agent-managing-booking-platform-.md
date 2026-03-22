@@ -297,6 +297,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager For Musician Managing Streaming Platform Di](/privacy-tools-guide/password-manager-for-musician-managing-streaming-platform-di/)
 - [Best Password Manager With Travel Mode: A Developer Guide](/privacy-tools-guide/best-password-manager-with-travel-mode/)
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

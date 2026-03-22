@@ -367,5 +367,6 @@ The cumulative effect of multiple devices with personal names creates multiple i
 - [iPhone Mail Privacy Protection: How It](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -362,5 +362,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
 - [What to Do If Your Amazon Account Was Hacked: Recovery Guide](/privacy-tools-guide/what-to-do-if-your-amazon-account-was-hacked-recovery/)
 - [What to Do If Your Cloud Storage Account Was Breached](/privacy-tools-guide/what-to-do-if-your-cloud-storage-account-was-breached/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

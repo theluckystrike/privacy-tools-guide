@@ -309,5 +309,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 - [How To Configure Wireguard With Obfuscation To Bypass](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

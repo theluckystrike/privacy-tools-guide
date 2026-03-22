@@ -285,5 +285,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [What Happens If Password Manager Company](/privacy-tools-guide/what-happens-if-password-manager-company-closes/)
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

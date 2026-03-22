@@ -334,5 +334,6 @@ Check the export options before committing. Most tools let you export your data,
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
 - [Session Messenger Decentralized Onion Routing How It](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
+- [AI Tools for Database Schema Migration Review 2026](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

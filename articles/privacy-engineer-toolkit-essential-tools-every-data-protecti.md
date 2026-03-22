@@ -248,5 +248,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [Real Estate Agent Client Data Protection Privacy Best](/privacy-tools-guide/real-estate-agent-client-data-protection-privacy-best-practi/)
 - [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

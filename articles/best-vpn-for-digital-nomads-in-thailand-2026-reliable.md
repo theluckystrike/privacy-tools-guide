@@ -418,6 +418,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
 - [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -352,6 +352,7 @@ The privacy-focused speed test ecosystem continues evolving as awareness grows. 
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 - [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
 - [How to Optimize LibreWolf Browser Speed and Compatibility](/privacy-tools-guide/how-to-optimize-librewolf-browser-speed-and-compatibility-wi/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](https://theluckystrike.github.io/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

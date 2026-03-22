@@ -333,5 +333,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 - [Privacy Focused Two Factor Authentication Apps Comparison](/privacy-tools-guide/privacy-focused-two-factor-authentication-apps-comparison-2026/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

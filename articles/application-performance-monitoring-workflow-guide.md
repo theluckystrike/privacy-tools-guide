@@ -310,5 +310,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 - [Openvpn Data Channel Offload Explained Performance](/privacy-tools-guide/openvpn-data-channel-offload-explained-performance-improvement-2026/)
 - [Qubes OS Compartmentalized Workflow Guide](/privacy-tools-guide/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
+- [AI Tools That Analyze Application Performance Bottlenecks](https://theluckystrike.github.io/ai-tools-compared/ai-tools-that-analyze-application-performance-bottlenecks-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -254,5 +254,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Protect Yourself from Doxxing After Meeting Someone](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [How To Protect Yourself From Ai Voice Cloning Scam](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
 - [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -493,6 +493,7 @@ jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

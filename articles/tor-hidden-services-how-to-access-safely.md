@@ -250,5 +250,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 - [How To Set Up Onion Routing For Email Using Tor Hidden](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
 - [How to Use Tor Safely in Country That Criminalizes Its](/privacy-tools-guide/how-to-use-tor-safely-in-country-that-criminalizes-its-use/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

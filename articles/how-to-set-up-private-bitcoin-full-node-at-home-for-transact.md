@@ -345,5 +345,6 @@ A full node validates blocks and transactions but does not produce new blocks. A
 - [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
 - [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
 - [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

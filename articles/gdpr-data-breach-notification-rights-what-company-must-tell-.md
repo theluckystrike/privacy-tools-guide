@@ -300,5 +300,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
 - [What Happens When Your Password Appears In Data Breach](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

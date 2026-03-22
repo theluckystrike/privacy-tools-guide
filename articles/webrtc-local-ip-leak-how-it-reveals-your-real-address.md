@@ -328,6 +328,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
 - [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
 - [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

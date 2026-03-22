@@ -281,5 +281,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Create Anonymous Online Identity That Cannot Be](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [Anonymous Online Shopping How To Order Physical Goods](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
 - [Anonymous Payment Methods For Online Services When You](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -301,5 +301,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [GDPR Cookie Consent Banner Best Practices for 2026](/privacy-tools-guide/gdpr-cookie-consent-banner-best-practices-2026/)
 - [India Data Protection Bill 2026 What It Means For Citizen](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
 - [Data Protection Officer Role Responsibilities Guide](/privacy-tools-guide/data-protection-officer-role-responsibilities-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -333,5 +333,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 - [How To Prepare Social Media Accounts For Memorialization](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
 - [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

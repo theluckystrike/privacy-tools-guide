@@ -254,5 +254,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
 - [Use Virtual Phone Number For Whatsapp Dating Conversations](/privacy-tools-guide/how-to-use-virtual-phone-number-for-whatsapp-dating-conversations/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

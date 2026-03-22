@@ -354,6 +354,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
 - [Organic Maps Vs Osmand Google Maps Alternative Comparison Fo](/privacy-tools-guide/organic-maps-vs-osmand-google-maps-alternative-comparison-fo/)
 - [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

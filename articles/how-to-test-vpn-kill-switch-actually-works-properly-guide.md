@@ -595,6 +595,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 - [How VPN Reconnection Works After Network Switch Mobile](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 - [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

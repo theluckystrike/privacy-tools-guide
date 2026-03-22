@@ -461,6 +461,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Privacy DNS Resolvers Cloudflare Quad9 NextDNS Adguard](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 - [Cloud DLP for Google Workspace Guide 2026](/privacy-tools-guide/cloud-dlp-for-google-workspace-guide-2026/)
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

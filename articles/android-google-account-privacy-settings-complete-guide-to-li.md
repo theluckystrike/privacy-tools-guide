@@ -345,6 +345,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](https://theluckystrike.github.io/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 The settings in this guide represent the most impactful changes you can make without abandoning Google services entirely. For those seeking even greater privacy, alternatives to Google's ecosystem exist, but they come with significant trade-offs in convenience and functionality. The key is understanding the trade-offs and making deliberate choices rather than accepting Google's defaults passively.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

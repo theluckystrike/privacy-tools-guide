@@ -460,6 +460,7 @@ Users' realistic risk:
 - [Russia Sovereign Internet Law What It Means For Vpn Users](/privacy-tools-guide/russia-sovereign-internet-law-what-it-means-for-vpn-users-an/)
 - [VPN over Tor vs Tor over VPN: A Technical Comparison](/privacy-tools-guide/vpn-over-tor-vs-tor-over-vpn/)
 - [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Frequently Asked Questions
 
 **Who is this article written for?**

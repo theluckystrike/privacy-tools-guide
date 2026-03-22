@@ -447,6 +447,7 @@ Start with Wormhole if you're technical. Start with Tresorit Send if you priorit
 - [Best Secure File Sharing Tools for Teams Handling](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 - [Magic Wormhole Encrypted File Transfer How To Send Files](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 - [Best Accessible Encrypted File Sharing Tool for Users With](/privacy-tools-guide/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

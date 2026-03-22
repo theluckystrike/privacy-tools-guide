@@ -459,5 +459,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Compliance for Fintech Startups 2026](/privacy-tools-guide/privacy-compliance-for-fintech-startups-2026/)
 - [Tax Preparer Client Financial Data Privacy IRS](/privacy-tools-guide/tax-preparer-client-financial-data-privacy-irs-compliance-di/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

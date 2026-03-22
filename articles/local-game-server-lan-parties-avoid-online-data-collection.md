@@ -219,6 +219,213 @@ Look for these characteristics when selecting games for private LAN parties:
 
 The open-source game community provides excellent alternatives to most commercial titles, often with better mod support and completely free of data collection concerns.
 
+## Advanced: Game Server Deployment with Docker
+
+Containerized game servers provide consistent, reproducible deployments:
+
+```dockerfile
+# Dockerfile for CS2 game server
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+    wget curl git steamcmd lib32z1 lib32gcc-s1
+
+RUN useradd -m csserver
+USER csserver
+WORKDIR /home/csserver
+
+# Install CS2 server
+RUN /usr/games/steamcmd +login anonymous \
+    +app_update 730 \
+    +quit
+
+# Copy server configuration
+COPY server.cfg /home/csserver/csgo/cfg/
+
+EXPOSE 27015/udp 27015/tcp
+
+CMD ["/home/csserver/srcds_linux", \
+     "-game csgo", \
+     "-console", \
+     "-usercon", \
+     "+exec server.cfg", \
+     "+map de_dust2"]
+```
+
+Deploy with Docker Compose for easy management:
+
+```yaml
+version: '3.8'
+services:
+  cs2-server:
+    build: .
+    image: cs2-server:latest
+    networks:
+      lan-only:
+        ipv4_address: 192.168.100.10
+    environment:
+      - PLAYERS=10
+      - MAP=de_dust2
+    volumes:
+      - ./config:/home/csserver/csgo/cfg
+      - ./logs:/home/csserver/logs
+    restart: unless-stopped
+
+networks:
+  lan-only:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
+```
+
+## Network Performance Optimization for LAN Gaming
+
+Maximize throughput and minimize latency for smooth gameplay:
+
+```bash
+#!/bin/bash
+# LAN gaming network optimization
+
+# Increase network buffer sizes
+sudo sysctl -w net.core.rmem_max=134217728
+sudo sysctl -w net.core.wmem_max=134217728
+sudo sysctl -w net.ipv4.tcp_rmem="4096 87380 134217728"
+sudo sysctl -w net.ipv4.tcp_wmem="4096 65536 134217728"
+
+# Reduce packet loss on LAN (disable flow control)
+sudo ethtool -A eth0 rx off tx off
+
+# Verify network quality
+iperf3 -s  # On server
+iperf3 -c 192.168.1.100 -P 4 -t 30  # From client
+
+# Expected LAN performance: >900 Mbps, <1ms latency
+```
+
+## Game Selection and Testing Matrix
+
+Create a testing matrix for games before your LAN party:
+
+```bash
+#!/bin/bash
+# game-testing-matrix.sh
+
+GAMES=(
+  "minecraft-server:latest"
+  "cs2-server:latest"
+  "valheim-server:latest"
+)
+
+TESTS=(
+  "connectivity"
+  "performance"
+  "player_limit"
+  "mod_loading"
+  "save_persistence"
+)
+
+for game in "${GAMES[@]}"; do
+  echo "Testing $game..."
+
+  for test in "${TESTS[@]}"; do
+    case $test in
+      connectivity)
+        docker run --rm $game timeout 10 nc -zv localhost 27015
+        echo "✓ Connectivity: PASS"
+        ;;
+      performance)
+        docker stats --no-stream $game
+        ;;
+      player_limit)
+        # Connect max players + 1
+        for i in {1..11}; do
+          docker run --rm -d $game &
+        done
+        sleep 5
+        ps aux | grep $game | wc -l
+        ;;
+      *)
+        echo "Unknown test: $test"
+        ;;
+    esac
+  done
+done
+```
+
+## Anti-Cheat and Fair Play Without Data Collection
+
+Implement local anti-cheat without sending data to publishers:
+
+```python
+# Simple anti-cheat for local servers
+class LocalAntiCheat:
+    def __init__(self):
+        self.known_cheats = {
+            "aimbot": ["aim_punch_angle", "client_cmd_unrestricted"],
+            "wallhack": ["r_drawothermodels", "mat_wireframe"],
+            "speedhack": ["host_timescale", "speed_multiplier"]
+        }
+        self.suspicious_activity = {}
+
+    def monitor_player(self, player_id, commands):
+        """Monitor for suspicious console commands"""
+        for cmd in commands:
+            for cheat_type, forbidden_cmds in self.known_cheats.items():
+                if cmd in forbidden_cmds:
+                    self.flag_player(player_id, cheat_type)
+
+    def flag_player(self, player_id, cheat_type):
+        """Flag player for admin review"""
+        if player_id not in self.suspicious_activity:
+            self.suspicious_activity[player_id] = []
+
+        self.suspicious_activity[player_id].append({
+            "cheat": cheat_type,
+            "timestamp": time.time()
+        })
+
+    def should_kick(self, player_id, violation_threshold=3):
+        """Determine if player should be kicked"""
+        if player_id in self.suspicious_activity:
+            return len(self.suspicious_activity[player_id]) >= violation_threshold
+        return False
+```
+
+All monitoring happens locally, no data sent to external servers.
+
+## LAN Party Hosting Checklist
+
+Before your LAN party:
+
+```
+NETWORK SETUP (72 hours before)
+- [ ] Test all game servers on LAN
+- [ ] Verify all players can connect
+- [ ] Check network latency (should be <5ms)
+- [ ] Backup working configurations
+- [ ] Test failover and restart procedures
+
+SECURITY (24 hours before)
+- [ ] Block internet access to game network segment
+- [ ] Verify no telemetry leaving network
+- [ ] Test firewall rules
+- [ ] Isolate gaming network from work/sensitive data
+
+HARDWARE (Day of event)
+- [ ] Power up servers 30 minutes early
+- [ ] Load games and verify startup
+- [ ] Test voice communication system
+- [ ] Have backup network cables and power supplies
+- [ ] Monitor server health during event
+
+DOCUMENTATION
+- [ ] Server IP addresses for each game
+- [ ] Admin passwords (stored securely)
+- [ ] Common issues and fixes
+- [ ] Emergency contact for technical support
+```
+
 ## Frequently Asked Questions
 
 **How long does it take to lan parties?**
@@ -246,6 +453,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Android Google Account Privacy Settings: Complete Guide to Limiting Data Collection 2026](/android-google-account-privacy-settings-complete-guide-to-li/)
 - [EA App Origin Replacement Privacy Data Collection Review](/ea-app-origin-replacement-privacy-data-collection-review-ana/)
+- [How to Set Up CrowdSec for Server Security](/privacy-tools-guide/crowdsec-server-security-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

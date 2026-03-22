@@ -267,5 +267,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 - [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

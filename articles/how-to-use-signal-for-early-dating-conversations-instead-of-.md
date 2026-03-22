@@ -376,5 +376,6 @@ This ensures even if someone accesses your Signal profile, they learn little bey
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 - [How To Use Compartmentalized Identity For Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Use Signal Without Linking Phone Number Privacy](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

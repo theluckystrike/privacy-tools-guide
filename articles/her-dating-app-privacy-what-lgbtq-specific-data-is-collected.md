@@ -251,5 +251,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

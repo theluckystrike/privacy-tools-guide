@@ -341,5 +341,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Cryptocurrency Wallet Recovery Planning For Heirs How](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
 - [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -539,5 +539,6 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [How To Build Privacy Dashboard For Customers To Manage](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [How To Anonymize User Data In Production Database](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

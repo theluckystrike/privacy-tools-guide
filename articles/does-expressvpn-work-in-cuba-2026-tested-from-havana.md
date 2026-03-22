@@ -247,5 +247,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Does NordVPN Work in Russia? Tested from Moscow (2026)](/privacy-tools-guide/does-nordvpn-work-in-russia-2026-tested-from-moscow/)
 - [Does NordVPN Work in Uzbekistan? 2026 Tested and Reviewed](/privacy-tools-guide/does-nordvpn-work-in-uzbekistan-2026-tested-and-reviewed/)
 - [Does Surfshark Work in Vietnam 2026: Tested on](/privacy-tools-guide/does-surfshark-work-in-vietnam-2026-tested-on-mobile/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

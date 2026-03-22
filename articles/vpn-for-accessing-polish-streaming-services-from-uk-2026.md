@@ -326,5 +326,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best VPN for Accessing Japanese Streaming Services](/privacy-tools-guide/best-vpn-for-accessing-japanese-streaming-services-from-abro/)
 - [Vpn For Accessing South African Streaming Services Abroad](/privacy-tools-guide/vpn-for-accessing-south-african-streaming-services-abroad-20/)
 - [Best VPN for Accessing Peacock Streaming from Outside](/privacy-tools-guide/best-vpn-for-accessing-peacock-streaming-from-outside-us/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

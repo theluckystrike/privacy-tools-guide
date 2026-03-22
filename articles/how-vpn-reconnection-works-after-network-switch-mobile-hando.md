@@ -273,5 +273,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
 - [VPN Kill Switch: How It Works and Which VPNs Have Real](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
 - [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

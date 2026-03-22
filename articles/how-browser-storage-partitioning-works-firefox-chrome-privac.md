@@ -441,5 +441,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [First Party Sets Chrome Proposal How It Affects Cross Site](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
 - [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

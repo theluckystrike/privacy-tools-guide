@@ -347,5 +347,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Data Breach Notification Requirements Timeline And Process](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
 - [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

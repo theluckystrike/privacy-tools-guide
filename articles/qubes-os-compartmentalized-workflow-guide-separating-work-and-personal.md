@@ -321,4 +321,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [GitHub Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
 - [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

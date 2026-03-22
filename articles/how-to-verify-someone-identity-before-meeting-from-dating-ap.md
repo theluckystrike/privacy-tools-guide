@@ -301,5 +301,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How To Prevent Dating App Photos From Appearing In Google](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

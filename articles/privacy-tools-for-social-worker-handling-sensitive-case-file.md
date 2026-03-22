@@ -412,5 +412,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Tools For Adoption Agency Worker Protecting Birth](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)
 - [Privacy Engineer Toolkit: Essential Tools Every Data](/privacy-tools-guide/privacy-engineer-toolkit-essential-tools-every-data-protecti/)
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

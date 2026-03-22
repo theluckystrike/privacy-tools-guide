@@ -344,5 +344,6 @@ Users with partial vision often benefit from additional organizational strategie
 - [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
 - [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
 - [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
+- [Best AI Tool for Generating Accessible Cookie Consent](https://theluckystrike.github.io/ai-tools-compared/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -242,5 +242,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
 - [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 - [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [How to Set Up Model Context Protocol Server for Custom](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

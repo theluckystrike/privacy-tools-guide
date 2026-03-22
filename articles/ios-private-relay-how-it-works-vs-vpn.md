@@ -476,5 +476,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [How to Build a Privacy-Preserving Webhook Relay That Strips](/privacy-tools-guide/how-to-build-privacy-preserving-webhook-relay-that-strips-pi/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

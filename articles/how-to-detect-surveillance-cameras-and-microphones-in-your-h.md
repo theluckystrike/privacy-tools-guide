@@ -346,5 +346,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
 - [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
 - [How To Detect And Remove Stalkerware From Android Phone](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

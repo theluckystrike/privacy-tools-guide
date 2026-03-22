@@ -240,6 +240,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
 - [Android Attestation Key Privacy What Hardware Backed Keys](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

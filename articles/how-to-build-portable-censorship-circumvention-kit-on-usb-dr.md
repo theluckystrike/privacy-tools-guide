@@ -389,4 +389,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 - [China Censorship Circumvention Tool Comparison Shadowsocks](/privacy-tools-guide/china-censorship-circumvention-tool-comparison-shadowsocks-v/)
 - [Verify Your VPN Is Actually Bypassing Censorship (Not](/privacy-tools-guide/how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

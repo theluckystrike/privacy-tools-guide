@@ -9,7 +9,7 @@ permalink: /mobile-fitness-tracker-privacy-what-health-apps-share-with-t/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
@@ -266,5 +266,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Privacy Risks of Fitness Trackers and Wearables](/privacy-tools-guide/privacy-risks-wearables-fitness-data/)
 - [Privacy-Focused Fitness Trackers Comparison 2026](/privacy-tools-guide/privacy-focused-fitness-trackers-comparison-2026/---)
 - [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

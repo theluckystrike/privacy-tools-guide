@@ -474,5 +474,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 - [Best Encrypted Email Providers For Privacy Compared Protonma](/privacy-tools-guide/best-encrypted-email-providers-for-privacy-compared-protonma/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -404,6 +404,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 - [VPN for Safe Browsing on Public WiFi in Airports](/privacy-tools-guide/vpn-for-safe-browsing-on-public-wifi-in-airports/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

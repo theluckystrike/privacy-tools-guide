@@ -255,5 +255,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
+- [Best AI Assistant for Debugging AWS Lambda Cold Start](https://theluckystrike.github.io/ai-tools-compared/ai-assistant-for-debugging-aws-lambda-cold-start-timeout-issues-in-vpc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

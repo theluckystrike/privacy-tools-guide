@@ -266,6 +266,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How To Remove Yourself From True People Search Instant](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
 - [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/privacy-tools-guide/how-to-verify-if-data-broker-actually-deleted-your-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -512,5 +512,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 - [Audit Password Vault for Weak, Duplicate, and Reused](/privacy-tools-guide/how-to-audit-password-vault-for-weak-duplicates-reused-passw/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -432,6 +432,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Check If Someone Is Using Your Netflix Without Permission](/privacy-tools-guide/how-to-check-if-someone-is-using-your-netflix-without-permission/)
 - [Best VPN for Accessing YouTube in China Without Buffering](/privacy-tools-guide/best-vpn-for-accessing-youtube-in-china-without-buffering/)
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

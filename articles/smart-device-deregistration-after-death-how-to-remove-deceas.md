@@ -329,6 +329,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
 - [Subscription Service Cancellation After Death How Executor C](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-c/)
 - [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

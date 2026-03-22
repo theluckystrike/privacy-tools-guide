@@ -305,5 +305,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best Voip App With Encryption 2026](/privacy-tools-guide/best-voip-app-with-encryption-2026/)
 - [Best Encrypted SMS App for Android 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-sms-app-android-2026/)
 - [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

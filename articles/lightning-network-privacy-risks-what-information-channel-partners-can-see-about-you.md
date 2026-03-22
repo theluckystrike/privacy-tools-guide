@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/
 categories: [guides]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
@@ -412,5 +412,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [AI Coding Assistant for Network Traffic Analysis: What](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-network-traffic-analysis-what-connection/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

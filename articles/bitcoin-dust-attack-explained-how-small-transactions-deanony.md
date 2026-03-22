@@ -507,5 +507,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Bitcoin Inheritance Planning Using Multisig With Family](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
 - [Protect Yourself From Swatting Attack Prevention Measures](/privacy-tools-guide/how-to-protect-yourself-from-swatting-attack-prevention-measures/)
 - [Password Manager Browser Extension Attack](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

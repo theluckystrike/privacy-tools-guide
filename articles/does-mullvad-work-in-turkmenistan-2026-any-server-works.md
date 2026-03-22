@@ -258,5 +258,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
 - [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -519,5 +519,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 - [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
 - [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](https://theluckystrike.github.io/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

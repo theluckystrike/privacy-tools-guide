@@ -383,4 +383,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
 - [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
 - [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://theluckystrike.github.io/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

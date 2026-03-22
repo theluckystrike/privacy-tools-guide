@@ -429,5 +429,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
 - [Dating App Payment Privacy How Subscription Charges Appear](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
 - [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

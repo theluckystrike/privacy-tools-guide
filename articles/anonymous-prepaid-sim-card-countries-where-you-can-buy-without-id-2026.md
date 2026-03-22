@@ -313,5 +313,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Anonymous Domain Registration How To Buy Domain](/privacy-tools-guide/anonymous-domain-registration-how-to-buy-domain-without-expo/)
 - [Anonymous Conference Call Services That Do Not Log](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
 - [Anonymous Vehicle Registration Options For Keeping Home](/privacy-tools-guide/anonymous-vehicle-registration-options-for-keeping-home-addr/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -298,5 +298,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Check if Someone Cloned Your Phone: Signs](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [Handle Password Manager on Lost Phone: Immediate](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

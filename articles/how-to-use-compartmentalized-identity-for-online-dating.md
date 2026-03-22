@@ -342,6 +342,7 @@ Most dating apps have published privacy policies with contact information for ex
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
 - [How To Create Burner Email Specifically For Dating Site](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

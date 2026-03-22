@@ -294,5 +294,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Migrating From Keepass Database To Bitwarden Cloud Vault](/privacy-tools-guide/migrating-from-keepass-database-to-bitwarden-cloud-vault-step-by-step/)
 - [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
 - [Migrating From Icloud Keychain To Bitwarden Complete](/privacy-tools-guide/migrating-from-icloud-keychain-to-bitwarden-complete-transfe/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

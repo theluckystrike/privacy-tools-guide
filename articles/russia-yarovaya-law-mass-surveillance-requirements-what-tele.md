@@ -265,5 +265,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 - [Russia Vpn Provider Compliance Which Services Handed User](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-da/)
 - [Russia Telegram Compliance What Data Telegram Shares](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

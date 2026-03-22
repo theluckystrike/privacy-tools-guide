@@ -243,6 +243,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Use Tor With Specific Application Routing Only Select](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
 - [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
 - [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

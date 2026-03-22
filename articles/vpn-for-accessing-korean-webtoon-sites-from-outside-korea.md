@@ -540,5 +540,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [VPN for Accessing US Sports Streaming from Europe 2026](/privacy-tools-guide/vpn-for-accessing-us-sports-streaming-from-europe-2026/)
 - [Best VPN for Accessing NFL Game Pass](/privacy-tools-guide/best-vpn-for-accessing-nfl-game-pass-from-europe/)
 - [Best VPN for Accessing Brazilian Streaming Globoplay](/privacy-tools-guide/best-vpn-for-accessing-brazilian-streaming-globoplay-from-abroad/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

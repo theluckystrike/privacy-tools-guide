@@ -374,5 +374,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Android Background Location Access Which Apps Track You](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
 - [How to Audit Android App Permissions Privacy Guide 2026](/privacy-tools-guide/how-to-audit-android-app-permissions-privacy-guide-2026/)
 - [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

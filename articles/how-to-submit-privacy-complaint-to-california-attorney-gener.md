@@ -347,4 +347,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How To File Ftc Complaint For Privacy Violation By Company](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

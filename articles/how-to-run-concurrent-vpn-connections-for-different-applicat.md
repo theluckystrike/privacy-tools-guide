@@ -301,5 +301,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

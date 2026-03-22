@@ -313,4 +313,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 - [VPN Traffic Obfuscation Techniques](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compared-2026/)
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

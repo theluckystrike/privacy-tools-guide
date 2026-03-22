@@ -257,5 +257,6 @@ gh api /user/personal-access-tokens --jq '.[] | "\(.name) expires:\(.expires_at)
 - [How To Create Anonymous GitHub Account For Open Source](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 - [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
 - [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

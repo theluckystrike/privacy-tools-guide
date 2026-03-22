@@ -347,5 +347,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 - [How To Prevent Dating App Photos From Appearing In Google](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

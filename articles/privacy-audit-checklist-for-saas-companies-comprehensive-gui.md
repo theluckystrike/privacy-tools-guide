@@ -337,5 +337,6 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Privacy Audit Checklist for Web Applications: A Developer](/privacy-tools-guide/privacy-audit-checklist-for-web-applications/)
 - [Data Privacy Framework Eu Us Explained 2026](/privacy-tools-guide/data-privacy-framework-eu-us-explained-2026/)
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

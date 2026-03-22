@@ -281,6 +281,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Opt Out Of Linkedin Data Being Used For Ai Training A](/privacy-tools-guide/how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/)
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

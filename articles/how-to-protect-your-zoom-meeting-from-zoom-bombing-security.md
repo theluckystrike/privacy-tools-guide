@@ -269,5 +269,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy & Security Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Password Manager Autofill Security](/privacy-tools-guide/password-manager-autofill-security-risks/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

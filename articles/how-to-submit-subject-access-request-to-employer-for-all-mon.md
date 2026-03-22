@@ -308,6 +308,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
 - [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

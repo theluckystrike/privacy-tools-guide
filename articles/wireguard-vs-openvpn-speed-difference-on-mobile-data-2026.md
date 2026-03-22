@@ -432,5 +432,6 @@ echo "  CPU: <5% for WireGuard, <15% for OpenVPN"
 - [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 - [Wireguard Android Battery Optimization Settings](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://theluckystrike.github.io/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

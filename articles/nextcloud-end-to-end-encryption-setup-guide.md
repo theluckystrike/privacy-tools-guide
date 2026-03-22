@@ -368,5 +368,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [Xmpp Omemo Encryption Setup Guide](/privacy-tools-guide/xmpp-omemo-encryption-setup-guide/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

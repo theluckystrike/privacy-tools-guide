@@ -585,6 +585,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/privacy-tools-guide/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)
 - [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

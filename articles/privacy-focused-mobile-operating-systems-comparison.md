@@ -871,6 +871,7 @@ Each step is optional; you can stop when you reach your privacy/usability sweet 
 - [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
 - [Privacy Focused Calendar Apps Comparison 2026](/privacy-tools-guide/privacy-focused-calendar-apps-comparison-2026/)
 - [Privacy-Focused Android ROM Comparison 2026](/privacy-tools-guide/privacy-android-rom-comparison-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

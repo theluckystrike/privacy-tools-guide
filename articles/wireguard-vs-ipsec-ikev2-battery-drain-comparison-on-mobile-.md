@@ -357,5 +357,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Wireguard Android Battery Optimization Settings: Breaking](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [WireGuard vs OpenVPN Speed Difference on Mobile Data](/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/)
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

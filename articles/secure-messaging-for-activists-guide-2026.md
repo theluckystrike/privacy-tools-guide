@@ -512,6 +512,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Signal Alternatives That Offer End To End Encryption](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
 - [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
 - [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -611,6 +611,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 - [Firefox Arkenfox User Js Full Guide](/privacy-tools-guide/firefox-arkenfox-user-js-full-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
