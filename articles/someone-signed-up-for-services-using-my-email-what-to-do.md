@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
+description: "Learn someone signed up for services using my email what to do with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Someone Signed Up for Services Using My Email"
 description: "Received a verification email for an account you didn't create? This guide covers technical solutions, privacy protection steps, and preventive measures for"

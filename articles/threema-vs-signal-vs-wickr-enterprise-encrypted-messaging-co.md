@@ -1,5 +1,7 @@
 ---
 permalink: /threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/
+description: "Compare threema vs signal vs wickr enterprise encrypted messaging co with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging"

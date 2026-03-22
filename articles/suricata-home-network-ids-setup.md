@@ -1,5 +1,7 @@
 ---
 permalink: /suricata-home-network-ids-setup/
+description: "Learn suricata home network ids setup with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Suricata Home Network IDS Setup Guide"

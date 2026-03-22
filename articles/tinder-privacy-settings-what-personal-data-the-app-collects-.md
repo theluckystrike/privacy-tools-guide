@@ -1,5 +1,7 @@
 ---
 permalink: /tinder-privacy-settings-what-personal-data-the-app-collects-/
+description: "Learn tinder privacy settings what personal data the app collects  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Tinder Privacy Settings What Personal Data The App Collects"

@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-connection-troubleshooting-guide/
+description: "Fix tor browser connection troubleshooting guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"

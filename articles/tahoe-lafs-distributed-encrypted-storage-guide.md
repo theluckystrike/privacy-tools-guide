@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /tahoe-lafs-distributed-encrypted-storage-guide/
+description: "Follow this guide to tahoe lafs distributed encrypted storage guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Tahoe LAFS Distributed Encrypted Storage Guide"
 description: "A practical guide to implementing Tahoe LAFS for distributed, encrypted storage. Learn to build fault-tolerant, privacy-preserving file systems"

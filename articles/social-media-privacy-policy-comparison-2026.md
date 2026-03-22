@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /social-media-privacy-policy-comparison-2026/
+description: "Learn social media privacy policy comparison 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Social Media Privacy Policy Comparison 2026"
 description: "Technical comparison of social media privacy policies in 2026. Covers data collection, API access, export options, and practical tools for developers"

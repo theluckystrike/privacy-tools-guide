@@ -1,5 +1,7 @@
 ---
 permalink: /threat-model-for-undocumented-immigrant-protecting-location-/
+description: "Learn threat model for undocumented immigrant protecting location  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Threat Model for Undocumented Immigrant Protecting"

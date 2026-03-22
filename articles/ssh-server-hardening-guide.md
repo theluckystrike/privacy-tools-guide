@@ -1,5 +1,7 @@
 ---
 permalink: /ssh-server-hardening-guide/
+description: "Follow this guide to ssh server hardening guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "SSH Server Hardening Guide"

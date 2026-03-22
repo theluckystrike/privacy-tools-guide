@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-cookies-tracking-prevention-guide/
+description: "Follow this guide to tor browser cookies tracking prevention guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Browser Cookies Tracking Prevention Guide"

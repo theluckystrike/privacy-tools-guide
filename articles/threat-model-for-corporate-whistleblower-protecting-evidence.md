@@ -1,5 +1,7 @@
 ---
 permalink: /threat-model-for-corporate-whistleblower-protecting-evidence/
+description: "Learn threat model for corporate whistleblower protecting evidence with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Threat Model For Corporate Whistleblower Protecting Evidence"
