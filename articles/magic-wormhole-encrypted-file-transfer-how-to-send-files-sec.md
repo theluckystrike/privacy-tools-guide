@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/
 description: "Follow this guide to magic wormhole encrypted file transfer how to send files sec with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Magic Wormhole Encrypted File Transfer How To Send Files"
 description: "A practical guide to using Magic Wormhole for secure, encrypted file transfers directly from your terminal. Learn setup, commands, and real-world"

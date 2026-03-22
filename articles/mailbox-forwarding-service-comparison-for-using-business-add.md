@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /mailbox-forwarding-service-comparison-for-using-business-add/
 description: "Learn mailbox forwarding service comparison for using business add with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Mailbox Forwarding Service Comparison For Using Business"
 description: "A practical comparison of mailbox forwarding services for developers and power users who need a business address while protecting home privacy"

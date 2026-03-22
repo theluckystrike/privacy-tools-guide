@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /matrix-vs-signal-decentralized-messaging/
 description: "Compare matrix vs signal decentralized messaging with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Matrix Vs Signal Decentralized Messaging"
 description: "A technical comparison of Matrix and Signal protocols for developers building decentralized messaging applications. Covers architecture, encryption"

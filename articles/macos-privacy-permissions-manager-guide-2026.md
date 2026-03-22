@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /macos-privacy-permissions-manager-guide-2026/
 description: "Follow this guide to macos privacy permissions manager guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "macOS Privacy Permissions Manager Guide 2026"
 description: "Managing application permissions on macOS is essential for maintaining privacy and security. The macOS privacy permissions system controls which apps can"

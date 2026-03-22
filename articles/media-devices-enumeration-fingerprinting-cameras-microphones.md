@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /media-devices-enumeration-fingerprinting-cameras-microphones/
 description: "Learn media devices enumeration fingerprinting cameras microphones with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Media Devices Enumeration Fingerprinting Cameras Microphones"
 description: "Discover how websites enumerate your media devices, the privacy risks of device fingerprinting through MediaDevices API, and practical protection"
