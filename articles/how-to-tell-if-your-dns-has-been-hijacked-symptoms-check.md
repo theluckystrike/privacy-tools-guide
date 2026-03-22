@@ -226,6 +226,265 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 
+## DNS Hijacking Attack Vectors
+
+Understanding how attacks happen helps you protect against them:
+
+### 1. ISP-Level DNS Hijacking
+
+Your ISP intercepts DNS queries and redirects them:
+
+```
+Attacker profile: ISP technician or rogue state
+Impact: All users of that ISP affected
+Detection: Your DNS server will be ISP-owned address
+Defense: Use DoH (DNS over HTTPS) to bypass ISP
+```
+
+### 2. Router Compromise
+
+Attacker gains access to your router's admin panel:
+
+```
+Attack vector:
+- Default credentials (admin/admin)
+- Firmware vulnerability
+- Social engineering
+
+Attack setup:
+1. SSH into 192.168.1.1
+2. Change WAN DNS to attacker's server
+3. All devices on network use malicious DNS
+
+Detection:
+- Your configured DNS != what router shows
+- nslookup will route through attacker's server
+```
+
+### 3. Device-Level DNS Hijacking
+
+Malware installed on your computer changes DNS:
+
+```
+Common malware tactics:
+- Modifies /etc/resolv.conf (Linux)
+- Changes DHCP settings (Windows)
+- Injects DNS settings into browser
+
+Detection:
+cat /etc/resolv.conf | grep nameserver
+# Look for unexpected DNS IPs
+```
+
+## Advanced Detection: DNSSEC Validation
+
+DNSSEC cryptographically verifies DNS responses:
+
+```bash
+# Test DNSSEC on your resolver
+dig +dnssec google.com | grep -E "RRSIG|ad"
+
+# If you see "ad" flag: DNSSEC validation working
+# If missing: Your resolver doesn't validate DNSSEC
+# If RRSIG shows as "BOGUS": DNSSEC tampering detected
+
+# Test against known bad DNSSEC
+dig +dnssec www.dnssec-failed.org
+
+# Should show: status: SERVFAIL
+# (This domain intentionally has bad DNSSEC signature)
+```
+
+If bad DNSSEC zones resolve successfully, your resolver is compromised.
+
+## Implementation: Continuous DNS Monitoring
+
+```python
+#!/usr/bin/env python3
+# dns_monitor.py - Continuous DNS health monitoring
+
+import subprocess
+import json
+import time
+from datetime import datetime
+
+class DNSMonitor:
+    def __init__(self):
+        self.baseline_results = {}
+        self.trusted_resolvers = [
+            '8.8.8.8',      # Google
+            '1.1.1.1',      # Cloudflare
+            '9.9.9.9'       # Quad9
+        ]
+
+    def establish_baseline(self):
+        """Run initial DNS tests to establish baseline"""
+        test_domains = [
+            'google.com',
+            'github.com',
+            'amazon.com',
+            'cloudflare.com'
+        ]
+
+        for domain in test_domains:
+            for resolver in self.trusted_resolvers:
+                result = self.query_dns(domain, resolver)
+                self.baseline_results[f"{domain}@{resolver}"] = result
+
+    def query_dns(self, domain, resolver):
+        """Query DNS and return IPs"""
+        try:
+            result = subprocess.check_output(
+                ['dig', f'@{resolver}', domain, '+short'],
+                text=True
+            ).strip().split('\n')
+            return result
+        except Exception as e:
+            return None
+
+    def continuous_monitor(self, interval_minutes=15):
+        """Periodically check DNS health"""
+        while True:
+            anomalies = []
+
+            for key, baseline_ips in self.baseline_results.items():
+                domain, resolver = key.split('@')
+                current = self.query_dns(domain, resolver)
+
+                if current != baseline_ips:
+                    anomalies.append({
+                        'domain': domain,
+                        'resolver': resolver,
+                        'expected': baseline_ips,
+                        'actual': current,
+                        'timestamp': datetime.now().isoformat()
+                    })
+
+            if anomalies:
+                print(f"WARNING: DNS anomalies detected at {datetime.now()}")
+                for anom in anomalies:
+                    print(json.dumps(anom, indent=2))
+
+            time.sleep(interval_minutes * 60)
+
+# Usage
+monitor = DNSMonitor()
+monitor.establish_baseline()
+monitor.continuous_monitor()
+```
+
+Run this script to continuously verify DNS integrity.
+
+## DNS Leak Tests: Services and Tools
+
+```
+Online DNS Leak Testers:
+- https://dnsleaktest.com
+- https://ipleak.net
+- https://do.ibm.com/4b8DuKp (IBM's leak test)
+- https://www.perfect-privacy.com/check-ip (includes WebRTC)
+
+Command-line verification:
+$ curl -L https://dns.google/resolve?name=example.com&type=A
+
+Your resolver's IP will be visible in response metadata
+```
+
+## Incident Response: If Hijacked
+
+Immediate steps (before normal troubleshooting):
+
+```bash
+# 1. From CLEAN NETWORK, change critical passwords
+# Use phone hotspot or public WiFi, NOT your compromised network
+
+# 2. If router-level hijacking suspected:
+# Hard reset router to factory defaults
+# Do NOT restore settings from backup (may restore hijacking)
+
+# 3. If device-level hijacking:
+# Boot into Safe Mode (Windows) or Recovery Mode (Mac)
+# Run antivirus in safe mode
+
+# 4. Verify fix before resuming normal activity
+# Confirm DNS requests actually use your configured resolver
+```
+
+## Encrypted DNS Protocols
+
+Use these to prevent DNS hijacking:
+
+### DoH (DNS over HTTPS)
+```
+Standard: RFC 8484
+Encryption: TLS 1.3
+Port: 443 (same as HTTPS)
+Advantage: Works through most firewalls
+Implementation:
+  Firefox: Settings > Privacy > DNS over HTTPS
+  Chrome: Settings > Privacy > Secure DNS
+```
+
+### DoT (DNS over TLS)
+```
+Standard: RFC 7858
+Encryption: TLS 1.3
+Port: 853 (dedicated)
+Advantage: Cleaner separation from HTTP traffic
+Implementation:
+  Android 9+: Settings > Private DNS
+  OpenWrt routers: UCI configuration
+```
+
+## Network Segregation: Router-Level Protection
+
+Protect your home network:
+
+```bash
+# 1. Disable UPnP (reduces attack surface)
+# 2. Change admin password to something strong
+# 3. Update firmware to latest version
+# 4. Disable remote management
+# 5. Set static DNS instead of ISP default
+
+# Example: DD-WRT router configuration
+# SSH into router and set:
+nvram set wan_dns0="8.8.8.8"
+nvram set wan_dns1="1.1.1.1"
+nvram commit
+service dnsmasq restart
+```
+
+## Testing After Recovery
+
+Verify hijacking is resolved:
+
+```bash
+# Comprehensive post-recovery test
+echo "=== Post-Hijacking Recovery Test ==="
+
+# 1. Verify configured DNS
+cat /etc/resolv.conf
+
+# 2. Test DNS from multiple resolvers
+for resolver in 8.8.8.8 1.1.1.1 9.9.9.9; do
+  echo "Testing $resolver:"
+  dig @$resolver google.com +short
+done
+
+# 3. DNSSEC validation test
+dig +dnssec google.com | grep -E "flags|RRSIG|ad"
+
+# 4. DNS leak test
+curl https://dnsleaktest.com
+
+# 5. Verify no unexpected redirects
+# Visit security.google.com (should show valid cert)
+# NOT redirect to suspicious login page
+```
+
+All tests should show consistent results.
+
 ## Related Articles
 
 - [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)

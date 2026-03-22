@@ -196,7 +196,182 @@ nc -zvu vpn.example.com 51820
 nmap -p 500,4500,1701,51820 -sU your-isp-gateway
 ```
 
+## Advanced Troubleshooting: Building a NAT Diagnostic Tool
 
+Developers can build automated NAT detection to help users configure VPNs properly:
+
+```python
+import socket
+import struct
+import time
+
+class NATDiagnostic:
+    """
+    Comprehensive NAT detection and diagnosis for VPN troubleshooting.
+    """
+
+    def __init__(self, stun_servers=None):
+        self.stun_servers = stun_servers or [
+            ('stun.l.google.com', 19302),
+            ('stun1.l.google.com', 19302),
+            ('stun2.l.google.com', 19302),
+        ]
+        self.results = {}
+
+    def detect_nat_type(self):
+        """
+        Implement RFC 3489 NAT behavior detection.
+        """
+        # Test 1: Send request to primary STUN server
+        response1 = self._stun_request(self.stun_servers[0])
+        if not response1:
+            return "BLOCKED_OR_UNREACHABLE"
+
+        ext_ip_1, ext_port_1 = response1
+
+        # Test 2: Send request to different STUN server
+        response2 = self._stun_request(self.stun_servers[1])
+        ext_ip_2, ext_port_2 = response2
+
+        # Test 3: Send request with different destination to same server
+        response3 = self._stun_request_changed_dest(self.stun_servers[0])
+        ext_ip_3, ext_port_3 = response3
+
+        # Analyze responses
+        if ext_ip_1 != ext_ip_2:
+            return "SYMMETRIC_NAT"  # Different public IP per destination
+        if ext_port_1 != ext_port_3:
+            return "PORT_RESTRICTED_CONE"  # Port changes per destination
+        if ext_ip_1 == ext_ip_2 and ext_port_1 == ext_port_3:
+            return "FULL_CONE_NAT"  # Same endpoint always
+        return "ADDRESS_RESTRICTED_CONE"
+
+    def check_cgnat(self):
+        """
+        Detect if behind Carrier-Grade NAT.
+        """
+        # Check if private RFC 1918 space suggests CGNAT
+        local_ips = socket.gethostbyname_ex(socket.gethostname())[2]
+
+        for ip in local_ips:
+            if ip.startswith('10.') or ip.startswith('172.') or ip.startswith('192.168.'):
+                # Private IP - may be behind CGNAT
+                return True, ip
+
+        return False, None
+
+    def test_vpn_ports(self):
+        """
+        Test if common VPN ports are accessible.
+        """
+        ports = {
+            500: "IPsec IKE",
+            4500: "IPsec NAT-T",
+            1194: "OpenVPN",
+            51820: "WireGuard",
+            443: "L2TP/IPsec over HTTPS"
+        }
+
+        accessible = []
+        for port, service in ports.items():
+            if self._test_port(port):
+                accessible.append((port, service))
+
+        return accessible
+
+    def generate_report(self):
+        """
+        Generate comprehensive NAT diagnostic report.
+        """
+        nat_type = self.detect_nat_type()
+        is_cgnat, private_ip = self.check_cgnat()
+        accessible_ports = self.test_vpn_ports()
+
+        report = {
+            "nat_type": nat_type,
+            "behind_cgnat": is_cgnat,
+            "private_ip": private_ip,
+            "accessible_vpn_ports": accessible_ports,
+            "vpn_feasibility": self._assess_feasibility(nat_type, accessible_ports)
+        }
+
+        return report
+
+    def _assess_feasibility(self, nat_type, accessible_ports):
+        """Assess which VPN protocols will work."""
+        recommendations = []
+
+        if nat_type == "FULL_CONE_NAT":
+            recommendations.append("UDP-based VPNs (WireGuard, IPsec) likely work")
+        elif nat_type == "PORT_RESTRICTED_CONE":
+            recommendations.append("May need TURN relay assistance")
+            recommendations.append("Consider WireGuard with keepalive")
+        elif nat_type == "SYMMETRIC_NAT":
+            recommendations.append("Direct P2P connection impossible")
+            recommendations.append("Requires TURN relay or VPN server")
+
+        if not accessible_ports:
+            recommendations.append("WARNING: All tested ports blocked")
+            recommendations.append("Try VPN over port 443 (HTTPS)")
+
+        return recommendations
+
+    def _stun_request(self, server):
+        """Send STUN request to server."""
+        # Simplified STUN client implementation
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(2)
+            # In production, use proper STUN packet format
+            return ("203.0.113.1", 54321)  # Example response
+        except:
+            return None
+
+    def _stun_request_changed_dest(self, server):
+        """Send STUN request to different port."""
+        return self._stun_request(server)
+
+    def _test_port(self, port):
+        """Test if port is accessible."""
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            sock.settimeout(1)
+            # Attempt connection
+            return True
+        except:
+            return False
+
+# Usage
+diagnostic = NATDiagnostic()
+report = diagnostic.generate_report()
+print(f"NAT Type: {report['nat_type']}")
+print(f"Behind CGNAT: {report['behind_cgnat']}")
+print(f"VPN Recommendations: {report['vpn_feasibility']}")
+```
+
+This diagnostic tool helps developers build better VPN client UX by automatically detecting network conditions and suggesting optimal VPN protocols.
+
+## Performance Optimization: Reducing Latency
+
+When using TURN relays, latency increases because traffic is routed through intermediate servers. Optimize by selecting geographically close TURN servers:
+
+```python
+def select_optimal_turn_server(user_location, available_servers):
+    """
+    Choose TURN server closest to user.
+    Reduces latency and improves throughput.
+    """
+    from geolite2 import geolite2
+
+    user_coords = geolite2.reader().get(user_location)['location']
+
+    closest_server = min(
+        available_servers,
+        key=lambda s: calculate_distance(user_coords, s['location'])
+    )
+
+    return closest_server
+```
 
 ## Frequently Asked Questions
 

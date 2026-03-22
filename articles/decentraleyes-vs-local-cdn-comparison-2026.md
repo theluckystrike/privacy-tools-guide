@@ -226,6 +226,264 @@ Both tools release updates regularly, often monthly or more frequently. Feature 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 
+## Library Coverage: What's Actually Cached
+
+Decentraleyes maintains approximately 4,000 libraries, but this covers only a fraction of what's available:
+
+```
+Covered by Decentraleyes:
+✓ jQuery (all versions)
+✓ Bootstrap (all versions)
+✓ Font Awesome (all versions)
+✓ Moment.js
+✓ Underscore.js
+✓ D3.js
+✓ Lodash
+✓ Vue.js (older versions)
+
+NOT Covered (requires external CDN):
+✗ Three.js (3D graphics)
+✗ Babylon.js
+✗ TensorFlow.js
+✗ Modern framework assets (Next.js, Nuxt)
+✗ Specialized animation libraries
+✗ Real-time charting libraries
+```
+
+For modern applications using cutting-edge frameworks, Decentraleyes provides only partial coverage.
+
+## Implementing Local CDN with Docker
+
+```yaml
+# docker-compose.yml - Self-hosted CDN server
+version: '3.9'
+services:
+  cdn-cache:
+    image: nginx:latest
+    container_name: local-cdn
+    ports:
+      - "8080:80"
+    volumes:
+      - ./cdn-assets:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - internal
+
+  asset-sync:
+    # Background service to keep assets fresh
+    image: node:18
+    volumes:
+      - ./sync-scripts:/app
+      - ./cdn-assets:/data
+    command: node /app/sync-libraries.js
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+```
+
+```javascript
+// sync-libraries.js - Keep CDN assets updated
+const fs = require('fs');
+const https = require('https');
+
+const LIBRARIES = {
+  'jquery': 'https://code.jquery.com/jquery-3.7.1.min.js',
+  'bootstrap': 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js',
+  'axios': 'https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js'
+};
+
+async function syncLibrary(name, url) {
+  return new Promise((resolve) => {
+    const file = fs.createWriteStream(`/data/${name}.js`);
+    https.get(url, (response) => {
+      response.pipe(file);
+      file.on('finish', () => {
+        file.close();
+        console.log(`Updated ${name}`);
+        resolve();
+      });
+    });
+  });
+}
+
+async function syncAll() {
+  for (const [name, url] of Object.entries(LIBRARIES)) {
+    await syncLibrary(name, url);
+  }
+}
+
+// Run daily
+setInterval(syncAll, 24 * 60 * 60 * 1000);
+syncAll(); // Initial sync
+```
+
+## Network Traffic Comparison
+
+Decentraleyes intercepts requests at the extension level:
+
+```
+Without Decentraleyes:
+Browser → ISP → jsDelivr CDN → Browser
+(ISP logs: "accessed cdn.jsdelivr.net")
+
+With Decentraleyes:
+Browser → Extension Cache → Browser
+(ISP logs nothing about jQuery requests)
+```
+
+Local CDN comparison:
+
+```
+Without Local CDN:
+Browser → ISP → jsDelivr CDN → Browser
+
+With Local CDN (self-hosted):
+Browser → Your Server → Browser
+(No external CDN request needed)
+(ISP sees: traffic to your own server, not external CDN)
+```
+
+## Size and Storage Analysis
+
+Decentraleyes extension size: ~60 MB
+Maintained library set: ~4,000 files
+
+Common Local CDN approaches:
+
+```
+Approach 1: Full bundle (all common libraries)
+├─ Download size: ~200-400 MB
+├─ Setup time: 1 hour
+├─ Storage requirement: 500 MB on server
+└─ Benefit: Maximum offline capability
+
+Approach 2: Selective caching (top 100 libraries)
+├─ Download size: ~50-100 MB
+├─ Setup time: 30 minutes
+├─ Storage requirement: 200 MB on server
+└─ Benefit: Balance convenience and storage
+
+Approach 3: Dynamic caching (fetch on first request)
+├─ Initial download: 5-10 MB
+├─ Setup time: 15 minutes
+├─ Storage requirement: Grows with usage
+└─ Benefit: Minimal initial investment
+```
+
+## Advanced Caching Strategy
+
+```python
+# Intelligent cache manager
+class LocalCDNCache:
+    def __init__(self, cache_dir):
+        self.cache_dir = cache_dir
+        self.hit_count = {}
+        self.miss_count = {}
+
+    def request_resource(self, library, version):
+        """Route request through cache with fallback"""
+        cache_key = f"{library}@{version}"
+
+        # Check local cache
+        if self.is_cached(cache_key):
+            self.hit_count[cache_key] = self.hit_count.get(cache_key, 0) + 1
+            return self.read_from_cache(cache_key)
+
+        # Fetch from CDN and cache
+        self.miss_count[cache_key] = self.miss_count.get(cache_key, 0) + 1
+        content = self.fetch_from_cdn(library, version)
+        self.write_to_cache(cache_key, content)
+        return content
+
+    def optimize_cache(self):
+        """Remove infrequently accessed resources"""
+        # Keep top 80% by usage, remove low-traffic assets
+        sorted_keys = sorted(self.hit_count.items(), key=lambda x: x[1], reverse=True)
+        total_hits = sum(self.hit_count.values())
+        cumulative = 0
+
+        for key, hits in sorted_keys:
+            cumulative += hits
+            if cumulative / total_hits > 0.8:
+                # Keep this and above
+                break
+            else:
+                # Remove below 80% threshold
+                self.delete_from_cache(key)
+```
+
+## Fallback Strategies
+
+For robust implementation, combine both approaches:
+
+```javascript
+// HTML: Fallback configuration
+<script>
+  // Try local CDN first
+  if (!window.jQuery) {
+    const script = document.createElement('script');
+    script.src = 'https://local-cdn.example.com/jquery@3.7.1.min.js';
+    script.onerror = function() {
+      // Fallback to jsDelivr if local unavailable
+      const fallback = document.createElement('script');
+      fallback.src = 'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js';
+      document.head.appendChild(fallback);
+    };
+    document.head.appendChild(script);
+  }
+</script>
+```
+
+## Monitoring and Observability
+
+Track your Local CDN health:
+
+```bash
+# Monitor cache hit rate
+# Log every request and whether it hit local cache
+
+# Sample log entry:
+# 2026-03-22 10:45:32 | jquery@3.7.1.min.js | HIT | 150KB | 45ms
+# 2026-03-22 10:45:33 | bootstrap@5.3.2 | MISS | 300KB | 1200ms
+
+# Calculate metrics:
+# Hit rate = hits / (hits + misses) * 100%
+# Average latency = total response time / requests
+# Bandwidth saved = (misses * CDN avg size) compared to local serve
+```
+
+## Migration Path from Decentraleyes
+
+If moving from Decentraleyes to Local CDN:
+
+```
+Phase 1: Assessment (Week 1)
+├─ Audit which libraries your sites actually use
+├─ List top 20 most-accessed libraries
+└─ Estimate storage requirements
+
+Phase 2: Setup (Week 2)
+├─ Deploy Docker container with Nginx
+├─ Download top 100 libraries
+├─ Configure local DNS (optional)
+└─ Test fallbacks
+
+Phase 3: Migration (Week 3)
+├─ Disable Decentraleyes extension
+├─ Monitor site performance
+├─ Fill cache with any missing libraries
+└─ Enable local CDN for all traffic
+
+Phase 4: Optimization (Week 4)
+├─ Analyze cache hit rates
+├─ Remove unused libraries (free space)
+├─ Fine-tune caching headers
+└─ Document your setup
+```
+
 ## Related Articles
 
 - [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
