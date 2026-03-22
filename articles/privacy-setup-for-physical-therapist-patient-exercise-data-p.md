@@ -6,7 +6,7 @@ description: "Learn privacy setup for physical therapist patient exercise data p
 tags: [privacy-tools-guide, privacy, api]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

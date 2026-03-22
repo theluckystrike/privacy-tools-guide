@@ -6,7 +6,7 @@ description: "Learn privacy setup for domestic abuse shelter staff protecting lo
 tags: [privacy-tools-guide, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
