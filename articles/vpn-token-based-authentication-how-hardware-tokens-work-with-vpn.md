@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /vpn-token-based-authentication-how-hardware-tokens-work-with-vpn/
 description: "Learn vpn token based authentication how hardware tokens work with vpn with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "VPN Token-Based Authentication"
 description: "A practical guide to implementing hardware token authentication with your VPN. Learn how YubiKey, Titan Security Key, and other hardware tokens enhance"
