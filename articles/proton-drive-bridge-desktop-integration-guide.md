@@ -46,7 +46,17 @@ Proton Drive Bridge is a desktop synchronization client that mounts your encrypt
 
 Bridge operates differently from simple file sync tools. It creates a virtual drive that your operating system recognizes as a native volume. This means you can use standard file operations, command-line tools, and IDE integrations without special adaptation.
 
-## Installation and Initial Setup
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install ation and Initial Setup
 
 The installation process differs slightly across operating systems, but the core configuration remains consistent.
 
@@ -68,7 +78,7 @@ The configuration file location varies by platform:
 - **macOS**: `~/Library/Application Support/Proton Drive Bridge/settings.json`
 - **Linux**: `~/.config/Proton Drive Bridge/settings.json`
 
-## WebDAV Integration
+### Step 2: WebDAV Integration
 
 One of Bridge's most powerful features is WebDAV server support. This enables integration with applications that speak the WebDAV protocol, including many backup tools, media servers, and development environments.
 
@@ -93,7 +103,7 @@ http://localhost:8787/
 
 Windows users can map a network drive to the WebDAV endpoint through Explorer.
 
-## Command-Line Interface Usage
+### Step 3: Command-Line Interface Usage
 
 Proton Drive Bridge includes a CLI for automation scenarios. The command-line interface enables scriptable sync operations, status checks, and selective folder management.
 
@@ -121,7 +131,7 @@ proton-drive status --json | jq '.sync_state'
 
 This makes Bridge suitable for CI/CD pipelines and automated backup scripts.
 
-## Desktop Application Integration
+### Step 4: Desktop Application Integration
 
 Bridge integrates with desktop applications through standard filesystem semantics. Here are practical integration patterns.
 

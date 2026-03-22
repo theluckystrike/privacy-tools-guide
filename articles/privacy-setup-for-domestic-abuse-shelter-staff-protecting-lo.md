@@ -38,7 +38,17 @@ Protect shelter staff and survivor locations using full-disk encryption on all d
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Location exposure in domestic abuse contexts can have severe consequences. Abusers often possess technical knowledge and may attempt to:
 
@@ -49,7 +59,7 @@ Location exposure in domestic abuse contexts can have severe consequences. Abuse
 
 Shelter staff need defense in depth. No single measure provides complete protection. The goal is raising the cost of surveillance beyond what most adversaries can sustain.
 
-## Device Hardening for Staff
+### Step 2: Device Hardening for Staff
 
 ### Mobile Device Configuration
 
@@ -80,7 +90,7 @@ Staff devices require careful audit:
 # Never mix the two in same session
 ```
 
-## Network-Level Protection
+### Step 3: Network-Level Protection
 
 ### DNS Configuration
 
@@ -115,7 +125,7 @@ PersistentKeepalive = 25
 
 WireGuard's minimal codebase makes auditing easier than OpenVPN alternatives.
 
-## Secure Communications
+### Step 4: Secure Communications
 
 ### Encrypted Messaging
 
@@ -142,7 +152,7 @@ gpg --full-generate-key
 
 Store private keys on hardware tokens when possible. This prevents key extraction if devices are compromised.
 
-## Application-Level Location Protection
+### Step 5: Application-Level Location Protection
 
 ### Photo Metadata Scrubbing
 
@@ -189,7 +199,7 @@ def fuzz_coordinates(lat, lon, radius_meters=500):
 
 This allows general area display without exposing exact addresses.
 
-## Operational Security Patterns
+### Step 6: Operational Security Patterns
 
 ### Incident Response Communication
 
@@ -229,6 +239,21 @@ Technical measures fail without physical security discipline:
 - Physical documents should be stored in locked cabinets
 - Staff should avoid working with sensitive data in public spaces
 - Shred all printed materials containing survivor information
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

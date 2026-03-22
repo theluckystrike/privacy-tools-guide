@@ -49,13 +49,23 @@ Remember that security is an ongoing process, not an one-time configuration.
 - **Signal offers the best**: combination of security and usability, with features like disappearing messages that automatically delete communications after a set time.
 - **Abandoned accounts can be**: compromised and used to gather information about you.
 
-## Understanding the Digital Threat Market
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Digital Threat Market
 
 When you enter witness protection, your adversaries may attempt to track you through digital means. This includes analyzing your social media activity, tracking device signals, monitoring online accounts, and exploiting any remaining connections to your previous life. The goal is to create a complete digital separation from your past identity while maintaining essential connectivity for legitimate needs.
 
 Modern smartphones and computers constantly broadcast information about your location, habits, and contacts. Every app you install, website you visit, and network you connect to leaves traces that skilled investigators can follow. Understanding these tracking mechanisms is the first step toward counteracting them.
 
-## Device Hardening Essentials
+### Step 2: Device Hardening Essentials
 
 Your smartphone is both your greatest tool and your biggest vulnerability. For witness protection participants, consider these essential hardening steps:
 
@@ -81,7 +91,7 @@ End-to-end encrypted messaging apps provide stronger privacy guarantees, but req
 
 For sensitive communications, consider using encrypted email services with zero-knowledge architecture. Services like ProtonMail don't have access to your message contents, meaning they cannot be compelled to provide decrypted data.
 
-## Identity Management in Digital Spaces
+### Step 3: Identity Management in Digital Spaces
 
 Creating and maintaining a new digital identity requires careful attention to separation from your past presence online. This extends beyond simply creating new accounts—you must ensure no digital breadcrumbs link your new identity to your old one.
 
@@ -97,7 +107,7 @@ Use cash for日常 purchases whenever possible. This breaks the digital transact
 
 Cryptocurrency can provide additional financial privacy, but requires careful handling. Simply purchasing cryptocurrency through exchanges that require identity verification creates a link to your identity. Privacy-focused cryptocurrencies like Monero offer stronger anonymity, but converting to and from traditional currency requires compliant exchanges that may maintain records.
 
-## Network Security Fundamentals
+### Step 4: Secure the Network Fundamentals
 
 Your network connection reveals significant information about your location and activities. Each website you visit logs your IP address, creating a record of your browsing activity that can be traced back to your internet connection.
 
@@ -113,7 +123,7 @@ Audit all account recovery options and remove links to your previous identity. R
 
 Create strong, unique passwords for each account using a password manager. This prevents a single compromised password from exposing multiple accounts. For the password manager itself, use the longest passphrase you can remember.
 
-## Practical Implementation Steps
+### Step 5: Practical Implementation Steps
 
 Implementing these security measures requires a systematic approach. Begin with the highest-priority items that create the most significant vulnerabilities:
 
@@ -306,6 +316,21 @@ echo "Security review completed. Details saved to: $REVIEW_LOG"
 Remember that security is an ongoing process, not an one-time configuration. New threats emerge regularly, and the tools and techniques for protection evolve accordingly. Stay informed, remain vigilant, and prioritize your digital privacy as seriously as your physical security.
 
 The balance between maintaining necessary connectivity and protecting your anonymity requires constant attention. By implementing these measures systematically, you create layers of protection that make digital surveillance significantly more difficult—giving you the space to build your new life with greater confidence and security.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

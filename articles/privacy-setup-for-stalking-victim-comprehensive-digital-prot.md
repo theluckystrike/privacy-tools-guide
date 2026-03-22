@@ -52,7 +52,17 @@ Before implementing protections, identify what you're defending against. Stalkin
 
 Understanding the attack surface helps prioritize defensive measures. Document any known compromised accounts or suspicious device activity before hardening your environment.
 
-## Device Hardening Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Device Hardening Fundamentals
 
 ### Mobile Device Security
 
@@ -88,7 +98,7 @@ bw generate --length 24 --includeSymbols --includeNumbers --includeUppercase --i
 
 For accounts requiring maximum security, consider hardware security keys. YubiKeys or SoloKeys provide phishing-resistant authentication that cannot be intercepted through man-in-the-middle attacks.
 
-## Communication Channel Hardening
+### Step 2: Communication Channel Hardening
 
 ### Email Configuration
 
@@ -125,7 +135,7 @@ Choose messaging platforms with end-to-end encryption and minimal metadata reten
 
 Avoid messaging platforms that store message content on servers, lack end-to-end encryption, or retain extensive metadata about your communications.
 
-## Network-Level Protection
+### Step 3: Network-Level Protection
 
 ### VPN Implementation
 
@@ -165,7 +175,7 @@ FallbackDNS=9.9.9.9 8.8.8.8
 
 Alternatively, deploy a local DNS resolver like Pi-hole on a Raspberry Pi to block tracking domains at the network level.
 
-## Location Privacy
+### Step 4: Location Privacy
 
 ### Location Services Audit
 
@@ -196,7 +206,7 @@ Avoid connecting to unfamiliar networks. Stalkers may create fake WiFi access po
 
 Disable Bluetooth when not in use. Bluetooth beacons can track device presence, and Bluetooth vulnerabilities have allowed remote code execution on millions of devices.
 
-## Data Minimization and Cleanup
+### Step 5: Data Minimization and Cleanup
 
 ### Reducing Digital Footprint
 
@@ -225,7 +235,7 @@ exiftool -all= -overwrite_original image.jpg
 for img in *.jpg; do exiftool -all= -overwrite_original "$img"; done
 ```
 
-## Monitoring and Incident Response
+### Step 6: Monitor and Incident Response
 
 ### Account Monitoring
 
@@ -256,6 +266,21 @@ Digital protection must complement physical security. Stalkers may gain access t
 - Avoid leaving devices unattended
 - Consider using a privacy screen in public
 - Use Faraday bags for devices when not in use
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

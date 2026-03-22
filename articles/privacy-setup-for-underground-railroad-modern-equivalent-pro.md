@@ -44,7 +44,17 @@ The Tor network functions as the most accessible equivalent to the Underground R
 Just as the Underground Railroad used coded songs and phrases, modern privacy relies on encrypted communication.
 - **The same applies today**: - Device separation: Use a dedicated device for sensitive activities.
 
-## The Parallel: From Escape Routes to Encryption Tunnels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Parallel: From Escape Routes to Encryption Tunnels
 
 The Underground Railroad succeeded because it was decentralized, used coded communications, and moved information through trusted networks. No single point of failure could bring it down. Modern digital privacy tools work the same way:
 
@@ -67,7 +77,7 @@ Before deploying any tools, define your threat model explicitly. The appropriate
 
 For most activists, journalists, and at-risk individuals, the threat sits between stalker-level and local law enforcement. This guide covers that range with practical mitigations that do not require nation-state budgets.
 
-## Core Privacy Tools: Your Digital Safe Houses
+### Step 2: Core Privacy Tools: Your Digital Safe Houses
 
 ### 1. Tor: The Modern "Station Master" Network
 
@@ -220,7 +230,7 @@ signal-cli --config ~/.config/signal-cli link -n "Privacy Laptop"
 signal-cli send --message "Your route is clear" +1234567890
 ```
 
-## Tool Selection by Scenario
+### Step 3: Tool Selection by Scenario
 
 | Scenario | Recommended Tool | Why |
 |----------|-----------------|-----|
@@ -251,7 +261,7 @@ socat TCP-LISTEN:4444,bind=127.0.0.1,fork SOCKS:127.0.0.1:9050,i2p://localhost:4
 openvpn --config privacy.ovpn --socks-proxy 127.0.0.1 9050
 ```
 
-## Physical Operational Security
+### Step 4: Physical Operational Security
 
 Digital tools alone are insufficient. The Underground Railroad's conductors knew that a careless slip in the physical world could unravel an otherwise sound operation. The same applies today:
 
@@ -260,7 +270,7 @@ Digital tools alone are insufficient. The Underground Railroad's conductors knew
 - **Meeting protocol**: When in-person meetings are necessary, leave phones at home. Phones reveal location data even when powered off in some configurations.
 - **Dead man's switches**: Use tools like Cryptolock or custom scripts to release information or wipe devices if a check-in does not occur within a defined interval. This mirrors the Underground Railroad practice of ensuring information would reach its destination even if the carrier was intercepted.
 
-## Network Diagnostics: Verifying Your Protection
+### Step 5: Network Diagnostics: Verifying Your Protection
 
 Always verify your protection is working:
 
@@ -277,7 +287,7 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 Run these checks before every sensitive session. A single DNS leak can reveal your real IP even while Tor is active.
 
-## Maintenance and Operational Security
+### Step 6: Perform Maintenance and Operational Security
 
 Privacy tools require ongoing attention:
 
@@ -287,7 +297,7 @@ Privacy tools require ongoing attention:
 - **Air-gapped backups**: Keep sensitive keys on devices without network interfaces
 - **Compartmentalize roles**: Assign each participant in a network the minimum information needed for their role. No single person should hold the complete map of the network.
 
-## Common Pitfalls
+### Step 7: Common Pitfalls
 
 Even technically sound setups fail through operational errors:
 
@@ -297,6 +307,21 @@ Even technically sound setups fail through operational errors:
 - Forgetting that Tor protects network-level identity, not application-level behavior
 
 The Underground Railroad's success depended equally on the courage of its participants and the discipline of its operational procedures. Modern privacy tools provide the technical foundation. The procedures and discipline are still your responsibility.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

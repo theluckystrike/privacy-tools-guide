@@ -68,7 +68,7 @@ wget https://protonmail.com/download/bridge/protonmail-bridge_1.8.5_amd64.deb
 dpkg -i protonmail-bridge_1.8.5_amd64.deb
 ```
 
-## Initial Configuration
+### Step 1: Initial Configuration
 
 Launch ProtonMail Bridge and complete the initial setup:
 
@@ -79,7 +79,7 @@ Launch ProtonMail Bridge and complete the initial setup:
 
 The Bridge application runs in your system tray, managing IMAP and SMTP connections on ports 1143 (IMAP) and 1025 (SMTP) by default. You can modify these ports in the Bridge settings if they conflict with existing services.
 
-## Desktop Client Configuration
+### Step 2: Desktop Client Configuration
 
 ### Thunderbird Configuration
 
@@ -214,7 +214,7 @@ tail -f ~/.local/share/protonmail/bridge/logs/bridge.log
 
 Common issues include incorrect authentication credentials, port conflicts, and expired session tokens. Check the logs first—they typically reveal the exact failure point.
 
-## Automation Integration
+### Step 3: Automation Integration
 
 Developers can interface with ProtonMail Bridge programmatically:
 
@@ -245,6 +245,21 @@ Bridge caches emails locally to reduce server round-trips. Adjust cache settings
 ```
 
 Larger caches improve performance but consume disk space. Balance according to your workflow.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

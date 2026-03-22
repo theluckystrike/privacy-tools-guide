@@ -26,13 +26,23 @@ Campaign staff protecting voter data must enable full-disk encryption (FileVault
 - **Browser security matters significantly**: since most campaign work happens in web applications.
 - **Use a privacy-focused browser**: with built-in tracker blocking.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Campaign environments present unique security challenges. Unlike corporate IT settings, campaign staff often work remotely, use personal devices, and collaborate with volunteers who have varying levels of technical expertise. The threat ecosystem includes targeted phishing attacks, device theft, unsecured network connections, and insider risks from temporary staff or volunteers.
 
 In 2026, regulatory requirements around voter data have tightened significantly. Many jurisdictions now mandate specific security controls for anyone handling personally identifiable information (PII) related to voters. Beyond compliance, protecting this data is simply the right thing to do—voters entrust campaigns with their information, and that trust must be respected.
 
-## Device Hardening for Campaign Devices
+### Step 2: Device Hardening for Campaign Devices
 
 Every device that accesses voter data requires a baseline security configuration. Start with full-disk encryption. On macOS, enable FileVault; on Windows, use BitLocker; on Linux, set up LUKS. This ensures that if a device is lost or stolen, the data remains inaccessible without authentication.
 
@@ -48,7 +58,7 @@ Operating system updates must be automatic and immediate. Configure your devices
 
 Browser security matters significantly since most campaign work happens in web applications. Use a privacy-focused browser with built-in tracker blocking. Configure strict cookie policies and enable HTTPS-only mode for all connections. Consider using separate browser profiles for campaign work versus personal browsing to prevent cross-site tracking.
 
-## Password Management and Authentication
+### Step 3: Password Management and Authentication
 
 Strong, unique passwords for every service are foundational. A password manager eliminates the need to memorize dozens of complex passwords while ensuring each account has a distinct, high-entropy credential. For campaign work, consider using a dedicated vault with organizational sharing features.
 
@@ -62,7 +72,7 @@ Enable multi-factor authentication (MFA) everywhere possible. Hardware security 
 
 For devices, enable biometric authentication (Touch ID, Windows Hello, or fingerprint sensors) combined with a strong alphanumeric PIN or password. This provides convenience without sacrificing security.
 
-## Securing Voter Data at Rest and in Transit
+### Step 4: Secure Voter Data at Rest and in Transit
 
 Voter databases should be encrypted both at rest and during transmission. If you're using cloud services, verify that encryption is enabled by default and understand where encryption keys are managed. For sensitive operations, consider client-side encryption where data is encrypted before it leaves your device.
 
@@ -76,7 +86,7 @@ File sharing within campaign teams requires attention. Avoid sending voter data 
 
 Database access should follow the principle of least privilege. Grant volunteers and junior staff access only to the specific data they need for their role. Regular access audits help identify and remove unnecessary permissions.
 
-## Secure Communication Channels
+### Step 5: Secure Communication Channels
 
 Campaign communication often moves quickly, but security shouldn't be compromised for convenience. End-to-end encrypted messaging provides protection against interception. Signal remains the gold standard for secure mobile communication, offering disappearing messages and encryption.
 
@@ -89,7 +99,7 @@ echo "Sensitive voter data attached" | gpg --encrypt --recipient campaign@exampl
 
 Video conferencing should use services with end-to-end encryption enabled by default. Configure meeting rooms to require passwords and enable waiting rooms to control participant access. Avoid discussing sensitive voter information in public spaces or on calls that aren't secured.
 
-## Network Security for Campaign Field Work
+### Step 6: Secure the Network for Campaign Field Work
 
 Campaign staff frequently work from coffee shops, campaign offices, and field locations. Public WiFi networks present significant risks—attackers can intercept unencrypted traffic or inject malicious content. Always use a VPN when connecting to campaign resources from untrusted networks.
 
@@ -102,7 +112,7 @@ sudo wg-quick up wg0
 
 Configure your devices to prefer secure protocols (HTTPS, SSH with key-based authentication) and warn about insecure connections. Consider using a personal VPN service or setting up a campaign-managed VPN for all staff.
 
-## Operational Security Practices
+### Step 7: Operational Security Practices
 
 Good operational security goes beyond technical configurations. Develop clear protocols for handling voter data:
 
@@ -118,7 +128,7 @@ Volunteer training is critical. Even with excellent technical controls, a volunt
 - Secure file sharing practices
 - Incident reporting procedures
 
-## Incident Response Preparation
+### Step 8: Plan Incident Response Preparation
 
 Despite best efforts, security incidents can occur. Prepare in advance by establishing clear incident response procedures. Know who to contact if you suspect a breach, and understand the legal requirements for reporting in your jurisdiction.
 
@@ -131,13 +141,13 @@ tar czvf - /path/to/voter_data | gpg --symmetric --cipher-algo AES256 --output b
 
 Regular backup testing verifies that your recovery procedures actually work. Schedule quarterly tests to ensure you can restore data from backups within acceptable timeframes.
 
-## Privacy Tools for Campaign Analytics
+### Step 9: Privacy Tools for Campaign Analytics
 
 When analyzing voter data, minimize data exposure by using local processing whenever possible. Rather than uploading datasets to cloud services for analysis, work with local tools that keep data on your device. This reduces the attack surface and maintains better control over who accesses the information.
 
 For required cloud analytics, audit each service's data handling practices. Understand what data is stored, how it's protected, and who can access it. Prefer services with strong security certifications and transparent data policies.
 
-## Building a Security Culture
+### Step 10: Build a Security Culture
 
 Technical tools are only part of the solution. Building a security-conscious culture within your campaign makes everyone a participant in protecting voter data. Celebrate good security practices, acknowledge when staff report suspicious activity, and lead by example in following security protocols.
 
@@ -145,7 +155,7 @@ The work you do impacts real people's privacy. Voters share their information wi
 
 Start with the basics—full-disk encryption, strong passwords, MFA—then layer in additional protections based on your specific needs. Security improvements don't need to happen all at once, but they do need to happen consistently.
 
-## Data Segregation Architecture
+### Step 11: Data Segregation Architecture
 
 Campaign data requires architectural separation. Rather than a single "campaign device," implement these compartments:
 
@@ -168,7 +178,7 @@ Campaign data requires architectural separation. Rather than a single "campaign 
 
 This segregation means compromise of a public device doesn't expose voter information.
 
-## Implementation Timeline
+### Step 12: Implementation Timeline
 
 For campaigns just beginning, prioritize in this order:
 
@@ -186,7 +196,7 @@ For campaigns just beginning, prioritize in this order:
 
 This phased approach avoids overwhelming staff while systematically improving security posture.
 
-## Phishing Defense in Detail
+### Step 13: Phishing Defense in Detail
 
 Campaign staff face targeted phishing attacks. Implement these specific mitigations:
 
@@ -211,7 +221,7 @@ Develop a staff reporting workflow:
 
 Mock phishing campaigns help staff maintain awareness. Services like Gophish simulate realistic attacks. Track staff who click malicious links, provide additional training to high-risk individuals.
 
-## Database Security for Voter Lists
+### Step 14: Database Security for Voter Lists
 
 Voter data presents unique challenges—large datasets, multiple access points, sensitive PII:
 
@@ -242,7 +252,7 @@ SET GLOBAL general_log = 'ON'
 # bulk exports not consistent with normal work patterns
 ```
 
-## Volunteer Management Security
+### Step 15: Volunteer Management Security
 
 Volunteers significantly increase attack surface. Many aren't technically sophisticated and may become vectors for compromise:
 
@@ -261,7 +271,7 @@ Volunteers significantly increase attack surface. Many aren't technically sophis
 - Alert on unusual access patterns (accessing data outside their territory, late-night access, large exports)
 - Revoke access immediately when volunteers stop working
 
-## Physical Security for Campaign Offices
+### Step 16: Implement Physical Security for Campaign Offices
 
 Campaign offices store devices, documents, and may have unattended workstations:
 
@@ -286,7 +296,7 @@ Security practices should explicitly support legal compliance:
 # Maintain audit logs for 1 year minimum for compliance verification
 ```
 
-## Crisis Response Procedures
+### Step 17: Crisis Response Procedures
 
 When things go wrong, preparation minimizes damage:
 
@@ -311,7 +321,7 @@ When things go wrong, preparation minimizes damage:
 3. Rotate encryption keys or reset databases
 4. Notify law enforcement if criminal activity suspected
 
-## Building Security Champions
+### Step 18: Build Security Champions
 
 Rather than treating security as compliance burden, cultivate security champions on staff:
 
@@ -322,6 +332,21 @@ Rather than treating security as compliance burden, cultivate security champions
 
 Security-aware staff become force multipliers, helping educate colleagues and spotting problems others might miss.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -54,7 +54,17 @@ Immediately enable full-disk encryption (FileVault on macOS, BitLocker on Window
 
 When fleeing an abusive ex who possesses technical knowledge, your threat model includes someone who may have installed spyware, has credentials to shared accounts, understands your digital habits, and could use social engineering against your contacts. Every recommendation below addresses these specific risks.
 
-## Device Hardening
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Device Hardening
 
 ### Clean Device Installation
 
@@ -84,7 +94,7 @@ GrapheneOS on a Pixel device provides strong sandboxing and sensor toggles that 
 
 For desktop, Tails or Qubes OS compartmentalize your activities. Tails wipes memory on shutdown—essential for preventing forensic recovery of your location data.
 
-## Account Isolation
+### Step 2: Account Isolation
 
 ### Email Separation
 
@@ -124,7 +134,7 @@ bw generate --length 24 --complexity --includeNumber --includeSymbol --includeUp
 
 Enable the emergency access feature with a trusted person who understands the sensitivity—but give them instructions to delete the request if they receive it unexpectedly. This serves as a dead man's switch for your digital life.
 
-## Network Security
+### Step 3: Secure the Network
 
 ### VPN Configuration
 
@@ -176,7 +186,7 @@ webgl.disabled = true
 
 Install uBlock Origin and Privacy Badger. Create a separate browser profile for sensitive activities—bookmark the new email, the VPN status page, and your safety plan.
 
-## Operational Security
+### Step 4: Operational Security
 
 ### Metadata Stripping
 
@@ -215,7 +225,7 @@ curl -X DELETE https://api.example-data-broker.com/v1/profile \
   -d '{"email": "your-new-email@example.com"}'
 ```
 
-## Emergency Protocols
+### Step 5: Emergency Protocols
 
 If you suspect immediate danger:
 
@@ -228,6 +238,21 @@ Save these resources offline:
 
 - National Domestic Violence Hotline: 1-800-799-7233
 - Cyber Civil Rights Initiative: 1-844-878-2274
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -259,7 +284,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Insurance Agent Client Health Data Privacy Protection Setup](/privacy-tools-guide/insurance-agent-client-health-data-privacy-protection-setup/)
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 
-## Ongoing Monitoring and Maintenance
+### Step 6: Ongoing Monitoring and Maintenance
 
 Security doesn't end with initial setup. Continuous monitoring catches changes:
 
@@ -306,7 +331,7 @@ run_audit
 # 0 3 * * 0 /path/to/security-audit.sh
 ```
 
-## Contact Safety Protocols
+### Step 7: Contact Safety Protocols
 
 If safe to do so, establish secure communication with trusted contacts:
 
@@ -358,7 +383,7 @@ chmod +x ~/.local/share/dead-mans-switch.sh
 (crontab -l 2>/dev/null; echo "0 9 * * 0 ~/.local/share/dead-mans-switch.sh") | crontab -
 ```
 
-## Emergency Access Recovery
+### Step 8: Emergency Access Recovery
 
 Prepare for worst-case scenarios:
 
@@ -406,7 +431,7 @@ lp recovery-instructions.txt.gpg
 # Store one copy separate from home
 ```
 
-## Recognition of Escalation Signs
+### Step 9: Recognition of Escalation Signs
 
 Know when technical measures may not be sufficient:
 
@@ -430,7 +455,7 @@ Technical measures are supplementary to physical safety.
 Professional help (DV advocates, law enforcement) is primary.
 ```
 
-## Long-Term Resilience
+### Step 10: Long-Term Resilience
 
 Building sustainable privacy practices for extended security:
 
@@ -473,7 +498,7 @@ echo "Reviewing service terms..."
 echo "Security review complete"
 ```
 
-## Resources for Ongoing Support
+### Step 11: Resources for Ongoing Support
 
 Technical measures work best with social support:
 

@@ -27,7 +27,17 @@ This guide provides practical, technical approaches to protecting location priva
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Location Data Exposure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Location Data Exposure
 
 Modern smartphones collect location data through multiple mechanisms. The most obvious is GPS, which provides precise coordinates. However, several other data sources can reveal location even when GPS is disabled:
 
@@ -39,7 +49,7 @@ Modern smartphones collect location data through multiple mechanisms. The most o
 
 For shelter staff, the threat model includes abusive partners who may have technical expertise or access to commercial surveillance tools. This means defense-in-depth matters.
 
-## Device Hardening for Shelter Staff
+### Step 2: Device Hardening for Shelter Staff
 
 ### Mobile Device Configuration
 
@@ -90,7 +100,7 @@ address=/location.apple.com/0.0.0.0
 address=/geoip-api.apple.com/0.0.0.0
 ```
 
-## Application Configuration for Privacy
+### Step 3: Application Configuration for Privacy
 
 ### Browser Privacy Settings
 
@@ -163,7 +173,7 @@ with open('suspicious_email.eml', 'rb') as f:
     cleaned = sanitize_email(f.read())
 ```
 
-## Network Architecture for Shelters
+### Step 4: Network Architecture for Shelters
 
 For organizations, network architecture plays a critical role in protecting location privacy:
 
@@ -242,7 +252,7 @@ mkfs.ext4 /dev/mapper/secure_volume
 mount /dev/mapper/secure_volume /mnt/secure_data
 ```
 
-## Incident Response Considerations
+### Step 5: Plan Incident Response Considerations
 
 Staff should have clear protocols for suspected surveillance:
 
@@ -251,7 +261,7 @@ Staff should have clear protocols for suspected surveillance:
 3. **Communication backup**: Ensure critical contacts exist outside primary channels
 4. **Physical security**: Consider device storage in Faraday bags during sensitive meetings
 
-## Continuous Improvement
+### Step 6: Continuous Improvement
 
 Privacy configuration requires ongoing attention. Establish a quarterly review process:
 
@@ -266,6 +276,21 @@ Protecting location privacy for domestic abuse survivors demands technical rigor
 For developers building tools for this population, prioritize privacy by design: collect only necessary data, minimize retention periods, encrypt everything, and provide users with meaningful controls over their information.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

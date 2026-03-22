@@ -42,7 +42,17 @@ The FTC fined Vizio $2.2M in 2017 for collecting viewing data without consent. V
 
 ---
 
-## Samsung Smart TV
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Samsung Smart TV
 
 ### Disable ACR
 
@@ -89,7 +99,7 @@ Settings → General → External Device Manager → Device Connect Manager
 
 ---
 
-## LG Smart TV (webOS)
+### Step 2: LG Smart TV (webOS)
 
 ### Disable ACR
 
@@ -118,7 +128,7 @@ If you signed into an LG account on your TV, that account links your viewing dat
 
 ---
 
-## Roku
+### Step 3: Roku
 
 Roku's business model is advertising, not hardware — aggressive data collection by default.
 
@@ -141,7 +151,7 @@ This controls whether Roku shares your channel usage data with third parties for
 
 ---
 
-## Apple TV
+### Step 4: Apple TV
 
 ```
 Settings → Privacy → Analytics → Share Apple TV Analytics → OFF
@@ -154,7 +164,7 @@ Apple's own apps collect usage data regardless of these settings when you're sig
 
 ---
 
-## Network-Level Blocking
+### Step 5: Network-Level Blocking
 
 Settings inside the TV OS can be changed by firmware updates — manufacturers have pushed updates that quietly re-enabled tracking. DNS blocking at the router persists regardless of firmware changes.
 
@@ -225,7 +235,7 @@ This tells you exactly what your TV is contacting and lets you make informed blo
 
 ---
 
-## Isolate TV on Its Own VLAN
+### Step 6: Isolate TV on Its Own VLAN
 
 Network isolation prevents your smart TV from communicating with other devices on your local network — useful if you're concerned about lateral movement in the event the TV OS is compromised, or simply want to limit what the TV can reach.
 
@@ -240,7 +250,7 @@ With VLAN isolation, your TV can stream Netflix but cannot scan or communicate w
 
 ---
 
-## What Can't Be Blocked
+### Step 7: What Can't Be Blocked
 
 Even with aggressive network blocking, some features stop working:
 
@@ -252,7 +262,7 @@ The cleanest solution: use a "dumb TV" (older set or commercial display without 
 
 ---
 
-## Hardware-Level Mitigation: Physical Shielding
+### Step 8: Hardware-Level Mitigation: Physical Shielding
 
 For extreme threat models, consider physical modifications:
 
@@ -268,7 +278,7 @@ tcpdump -i any -w tv-traffic.pcap host <tv-ip> &
 
 Most modern TVs lack hardware cameras. The microphone concern is legitimate for voice-remote models.
 
-## Identifying What Your TV Queries
+### Step 9: Identifying What Your TV Queries
 
 Monitor your TV's real-time DNS queries:
 
@@ -288,7 +298,7 @@ pihole -t | grep -i "192.168.1.55"  # Replace with your TV IP
 
 Record these queries over a week to build a blocklist.
 
-## TCPDump for Deep Packet Inspection
+### Step 10: TCPDump for Deep Packet Inspection
 
 For packet-level analysis of TV traffic:
 
@@ -313,7 +323,7 @@ This deep inspection reveals whether the TV is:
 - Exfiltrating data in large chunks (likely backups or logs)
 - Attempting connections outside your geographic region
 
-## Roku Data Collection Examples (2026)
+### Step 11: Roku Data Collection Examples (2026)
 
 Roku's privacy policy explicitly states they collect:
 - Every title you watch
@@ -337,7 +347,7 @@ Roku's privacy policy explicitly states they collect:
 
 If privacy is critical, Roku is the worst choice among major manufacturers.
 
-## AppleTV vs Smart TVs
+### Step 12: AppleTV vs Smart TVs
 
 AppleTV avoids most smart TV tracking because:
 
@@ -352,7 +362,7 @@ Tradeoff: AppleTV is expensive ($99-$199 vs $200-$500 TV)
 
 For someone already in the Apple ecosystem, AppleTV replaces a smart TV entirely—just use a dumb monitor or older TV.
 
-## Warranty and Support Implications
+### Step 13: Warranty and Support Implications
 
 Disabling device features in factory settings may void warranties:
 
@@ -368,7 +378,7 @@ In practice: Most TV warranties don't cover software configuration issues
             But keep documentation in case of disputes
 ```
 
-## Detection: Is Your TV Compromised?
+### Step 14: Detection: Is Your TV Compromised?
 
 Signs that telemetry blocking failed or malware is present:
 
@@ -386,7 +396,7 @@ Response:
 4. Re-enable network-level blocking
 ```
 
-## Commercial Display Alternative
+### Step 15: Commercial Display Alternative
 
 For maximum control, replace the smart TV with a commercial display + streaming device:
 
@@ -409,6 +419,21 @@ For maximum control, replace the smart TV with a commercial display + streaming 
 ```
 
 This approach sacrifices convenience for complete privacy.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

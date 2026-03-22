@@ -27,13 +27,23 @@ Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerifie
 - **However**: some states require LLC member names to be disclosed in annual reports, so consult with an attorney familiar with privacy-focused asset protection.
 - **Each alias can be**: routed to your primary inbox or used independently.
 
-## Understanding the Threat Environment
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Environment
 
 Public personal information accumulates across dozens of data broker sites, social media platforms, public records databases, and leaked breach datasets. A single search can reveal home addresses, family member names, phone numbers, and even property ownership details. For celebrities, this creates physical security risks including stalking, swatting, and unwanted contact.
 
 The solution requires a layered approach: removing existing data from broker sites, preventing future exposure, hardening digital accounts, and implementing technical barriers against information aggregation.
 
-## Removing Data from People Search Sites
+### Step 2: Remove Data from People Search Sites
 
 Data broker sites like Spokeo, Whitepages, BeenVerified, and Acxiom maintain detailed profiles on nearly everyone. These profiles include addresses, phone numbers, family members, and past locations. Removing this data requires either manual opt-out requests or automated tools.
 
@@ -86,7 +96,7 @@ class DataBrokerRemover:
 
 For production use, consider services like DeleteMe, Optery, or Incogni, which automate these requests at scale.
 
-## Securing Property Records
+### Step 3: Secure Property Records
 
 Property records are public information in most jurisdictions, making home addresses particularly difficult to hide. However, several strategies reduce exposure:
 
@@ -110,7 +120,7 @@ Many counties allow property owners to request address suppression for safety re
 
 Contact your county recorder's office to determine available options in your area.
 
-## Hardening Digital Accounts
+### Step 4: Hardening Digital Accounts
 
 Digital account security directly impacts physical privacy. A compromised email account can lead to address exposure through order confirmations, shipping notifications, and password reset requests.
 
@@ -145,7 +155,7 @@ echo "enable-ssh-support" >> ~/.gnupg/gpg-agent.conf
 
 Hardware keys like YubiKeys or Titan Security Keys require physical possession to authenticate, eliminating remote takeover attacks. Register multiple keys—one kept at home, another in a safe deposit box—for recovery purposes.
 
-## Protecting Family Members
+### Step 5: Protecting Family Members
 
 Family members often become attack vectors for information gathering. Children and relatives may not maintain the same privacy practices, creating exposure points.
 
@@ -177,7 +187,7 @@ def setup_family_monitoring(family_members):
 
 Services like Google Alerts, Mention, and social monitoring tools can detect when family information appears online, enabling rapid response.
 
-## Phone Number Protection
+### Step 6: Phone Number Protection
 
 Phone numbers serve as keys to personal information. Through reverse lookup services, anyone can obtain addresses, family members, and associated accounts from a phone number.
 
@@ -203,7 +213,7 @@ Request account PIN protection and port-out protection from your mobile carrier.
 # - Port-out authorization requirement
 ```
 
-## Implementation Priority
+### Step 7: Implementation Priority
 
 Implementing everything simultaneously overwhelms most people. Prioritize in this order:
 
@@ -214,6 +224,21 @@ Implementing everything simultaneously overwhelms most people. Prioritize in thi
 5. **Ongoing**: Family member education and monitoring setup
 
 This layered approach progressively reduces your attack surface while remaining manageable.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

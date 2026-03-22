@@ -23,7 +23,17 @@ Zoom sends meeting metadata to Amazon, Google Meet processes video through Googl
 
 - **Galene requires almost no maintenance after setup**: the binary has no external dependencies and uses minimal server resources.
 - **---
-## Option 1**: Jitsi Meet
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Option 1**: Jitsi Meet
 
 Jitsi Meet is the most widely deployed self-hosted video conferencing platform.
 - **Browser-based**: no account required for participants, and supports E2EE for small meetings.
@@ -31,7 +41,7 @@ Jitsi Meet is the most widely deployed self-hosted video conferencing platform.
 - **Choose Jitsi Meet when**: You need quick meeting links you can share with external participants who have no accounts.
 - **Choose Matrix + Element when**: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers.
 
-## Option 1: Jitsi Meet
+### Step 2: Option 1: Jitsi Meet
 
 Jitsi Meet is the most widely deployed self-hosted video conferencing platform. Browser-based, no account required for participants, and supports E2EE for small meetings.
 
@@ -126,7 +136,7 @@ Participants enable E2EE via the security icon (shield) in the bottom toolbar. A
 
 ---
 
-## Option 2: Matrix + Element
+### Step 3: Option 2: Matrix + Element
 
 Matrix is a federated, open protocol for real-time communication including video calls. Element is the primary client. Self-hosting Synapse (Matrix homeserver) gives you persistent rooms, team communication, and video via Jitsi integration or native WebRTC.
 
@@ -232,7 +242,7 @@ Enter: `https://meet.yourdomain.com`
 
 ---
 
-## Option 3: Galene (Minimal, for Small Groups)
+### Step 4: Option 3: Galene (Minimal, for Small Groups)
 
 Galene is a small, dependency-free video conferencing server written in Go. No WebRTC SFU complexity — runs as a single binary with minimal configuration. Suitable for small team calls (up to ~20 participants).
 
@@ -267,7 +277,7 @@ EOF
 
 ---
 
-## Firewall Rules for Video Calling
+### Step 5: Firewall Rules for Video Calling
 
 Video calling requires additional ports:
 
@@ -288,7 +298,7 @@ sudo ufw allow 49152:65535/udp  # WebRTC media (STUN/TURN)
 
 ---
 
-## TURN Server (Required Behind NAT)
+### Step 6: TURN Server (Required Behind NAT)
 
 Without a TURN server, participants behind strict NAT can't connect (corporate firewalls, some ISPs):
 
@@ -324,7 +334,7 @@ config.p2p.stunServers = [
 
 ---
 
-## Monitoring Server Health and Call Quality
+### Step 7: Monitor Server Health and Call Quality
 
 After deploying a self-hosted video calling server, ongoing monitoring ensures call quality stays acceptable and the server doesn't silently degrade. Video traffic is resource-intensive, and a server that looked adequate at setup may struggle under concurrent meetings.
 
@@ -376,7 +386,7 @@ More than 1-2% packet loss consistently will cause visible video artifacts. If y
 }
 ```
 
-## Choosing Between Jitsi, Matrix, and Galene
+### Step 8: Choose Between Jitsi, Matrix, and Galene
 
 Each option in this guide serves different use cases. Choosing the wrong tool for your situation creates maintenance overhead without proportional privacy benefit.
 
@@ -395,6 +405,21 @@ Resource requirements comparison:
 | Galene | 512MB | 1 core | ~20 | Low |
 
 For most privacy-focused individuals or small teams, Jitsi on a $20/month VPS handles needs well. Teams with ongoing communication requirements that currently pay for Slack will find Matrix's total cost of ownership competitive after the initial setup investment.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
