@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 When you make a call through a SIP (Session Initiation Protocol) provider, the call itself is only part of the story. The metadata generated during call setup, routing, and termination creates an extensive trail that reveals who you called, when, for how long, and often where you were at the time. Understanding what providers log is essential for anyone building privacy-sensitive communications systems or selecting a VoIP service.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Can I use my**: own SIP domain? - Prevents number-to-identity linking 6.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most providers log both**: but the signaling logs contain the most sensitive metadata.
+
 ## SIP Call Logging Fundamentals
 
 SIP operates in two distinct layers: signaling and media. The signaling layer (using SIP messages) handles call setup, teardown, and modification. The media layer (using RTP - Real-time Transport Protocol) carries the actual audio. Most providers log both, but the signaling logs contain the most sensitive metadata.
