@@ -1,5 +1,7 @@
 ---
 permalink: /india-upi-payment-privacy-what-digital-payment-metadata-gove/
+description: "Learn india upi payment privacy what digital payment metadata gove with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "India Upi Payment Privacy What Digital Payment Metadata"

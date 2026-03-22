@@ -1,5 +1,7 @@
 ---
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
+description: "Learn india data protection bill 2026 what it means for citizen pr with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "India Data Protection Bill 2026 What It Means For Citizen"

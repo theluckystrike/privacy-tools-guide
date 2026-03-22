@@ -1,5 +1,7 @@
 ---
 permalink: /intelius-opt-out-guide-remove-personal-information-2026/
+description: "Follow this guide to intelius opt out guide remove personal information 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"

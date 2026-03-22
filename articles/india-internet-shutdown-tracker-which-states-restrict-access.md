@@ -1,5 +1,7 @@
 ---
 permalink: /india-internet-shutdown-tracker-which-states-restrict-access/
+description: "Learn india internet shutdown tracker which states restrict access with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "India Internet Shutdown Tracker Which States Restrict"

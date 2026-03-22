@@ -1,5 +1,7 @@
 ---
 permalink: /india-aadhaar-privacy-risks-what-biometric-data-government-c/
+description: "Learn india aadhaar privacy risks what biometric data government c with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "India Aadhaar Privacy Risks What Biometric Data Government"
