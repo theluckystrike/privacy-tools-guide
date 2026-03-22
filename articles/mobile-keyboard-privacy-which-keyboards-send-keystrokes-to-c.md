@@ -3,7 +3,7 @@ layout: default
 title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes"
 description: "A technical comparison of mobile keyboard privacy policies. Learn which keyboards send keystrokes to cloud servers and how to protect your data"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
 categories: [guides]
@@ -17,7 +17,6 @@ voice-checked: true
 
 {% raw %}
 
-# Mobile Keyboard Privacy: Which Keyboards Send Keystrokes to Cloud Servers
 
 GBoard sends keystrokes to Google servers for predictions and emoji suggestions. SwiftKey, Gboard, and many keyboards transmit keystroke data to cloud services for personalization. Use locally-processing keyboards (Heliboard, OpenBoard) or analyze network traffic with Burp Suite to verify no data leaves your device before choosing.
 

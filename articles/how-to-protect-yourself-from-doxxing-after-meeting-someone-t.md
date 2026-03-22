@@ -3,7 +3,7 @@ layout: default
 title: "Protect Yourself from Doxxing After Meeting Someone"
 description: "A practical security guide for developers and power users on protecting your personal information after meeting someone through online dating"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /how-to-protect-yourself-from-doxxing-after-meeting-someone-t/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Protect Yourself from Doxxing After Meeting Someone Through Online Dating Platforms
 
 Online dating has become the primary way many people meet romantic partners, but the transition from digital conversation to real-world meeting introduces significant privacy risks. When you move from chatting on a platform to meeting someone in person, you expose information that can be weaponized against you. This guide provides actionable technical strategies to minimize your attack surface and protect yourself from doxxing after meeting someone through online dating platforms.
 

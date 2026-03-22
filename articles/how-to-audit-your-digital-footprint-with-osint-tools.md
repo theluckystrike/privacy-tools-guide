@@ -3,7 +3,7 @@ layout: default
 title: "Using exiftool on photos:"
 description: "Complete guide to finding your personal data online using open-source intelligence tools to identify exposure and privacy leaks"
 date: 2026-03-20
-last_modified_at: 2026-03-20
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-audit-your-digital-footprint-with-osint-tools/
 categories: [guides, security]
@@ -250,7 +250,6 @@ Review quarterly:
 Files like PDFs and Word docs contain metadata (author, creation date, edits):
 
 ```bash
-# Using exiftool on photos:
 exiftool photo.jpg
 # Shows: Camera model, GPS coordinates, creation time
 

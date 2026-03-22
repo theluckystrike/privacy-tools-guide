@@ -3,7 +3,7 @@ layout: default
 title: "Signal Disappearing Messages Best Practices"
 description: "Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /signal-disappearing-messages-best-practices/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, best-of]
 
 
 {% raw %}
-# Signal Disappearing Messages Best Practices: Security Configuration Guide
 
 Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for low-sensitivity ongoing conversations. Enable the feature in any conversation by tapping the contact name and selecting "Disappearing messages." Both participants must have the feature enabled -- the recipient's device performs the actual deletion via cryptographic key erasure, not simple file deletion. This guide covers timer strategy, programmatic configuration via Signal CLI, the cryptographic deletion mechanism, and enterprise deployment patterns.
 

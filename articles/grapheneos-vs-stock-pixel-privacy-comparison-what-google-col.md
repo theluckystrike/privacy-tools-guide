@@ -3,7 +3,7 @@ layout: default
 title: "GrapheneOS vs Stock Pixel: What Google Collects"
 description: "A technical comparison of GrapheneOS and stock Pixel Android for developers and power users. Analyze what Google collects on unmodified Android and how"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/
 categories: [guides]
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide, comparison, privacy]
 
 {% raw %}
 
-# GrapheneOS vs Stock Pixel: What Google Collects on Unmodified Android
 
 For developers and power users evaluating mobile privacy, the choice between GrapheneOS and stock Pixel Android represents a fundamental decision about data ownership. While Google's Pixel devices offer a polished experience with timely updates, unmodified Android ships with extensive telemetry that collects substantially more user data than most users realize.
 

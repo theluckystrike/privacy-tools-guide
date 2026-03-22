@@ -3,7 +3,7 @@ layout: default
 title: "Firefox Strict Tracking Protection Vs"
 description: "Firefox Strict Tracking Protection vs Custom: A. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /firefox-strict-tracking-protection-vs-custom/
 categories: [guides]
@@ -376,3 +376,4 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```

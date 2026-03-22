@@ -3,7 +3,7 @@ layout: default
 title: "How To Spoof Browser User Agent"
 description: "Learn how to spoof browser user agent strings to enhance privacy, test web applications, and avoid fingerprinting. Practical techniques for developers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-spoof-browser-user-agent-privacy/
 categories: [guides, security]
@@ -429,3 +429,4 @@ For organizational deployments:
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
+```

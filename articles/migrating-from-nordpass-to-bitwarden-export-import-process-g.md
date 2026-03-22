@@ -3,7 +3,7 @@ layout: default
 title: "Migrating From NordPass to Bitwarden"
 description: "A technical guide for developers and power users migrating passwords from NordPass to Bitwarden. Covers CLI export, import automation, custom fields"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /migrating-from-nordpass-to-bitwarden-export-import-process-guide/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# Migrating From NordPass to Bitwarden: Export/Import Process Guide
 
 Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app or CLI, then importing into Bitwarden using the web interface or bitwarden CLI tool. Both methods preserve passwords, folders, and custom fields, though some NordPass-specific features require manual remapping.
 

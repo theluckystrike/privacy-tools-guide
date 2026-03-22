@@ -3,7 +3,7 @@ layout: default
 title: "Briar Messenger Offline Communication"
 description: "When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /briar-messenger-offline-communication-how-it-works-for-prote/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Briar Messenger Offline Communication: How It Works for Protest Situations
 
 When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers need alternatives that work without centralized infrastructure. Briar is an Android messaging application designed from the ground up to function without relying on any central servers. Instead, it uses device-to-device connections via Bluetooth and Wi-Fi to create resilient, decentralized networks that can operate completely offline.
 

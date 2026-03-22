@@ -3,7 +3,7 @@ layout: default
 title: "ProtonMail Import Export Tool Guide"
 description: "Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (brew install --cask"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /protonmail-import-export-tool-guide/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 
 {% raw %}
-# ProtonMail Import Export Tool Guide: Complete Technical Reference
 
 Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (`brew install --cask proton-mail-bridge`) for continuous desktop client sync, or the Proton Mail API for automated developer integrations. For imports, upload MBOX files through the web interface or push messages via IMAP. This guide covers step-by-step configuration for each method, including Python automation scripts and cron-based backup scheduling.
 

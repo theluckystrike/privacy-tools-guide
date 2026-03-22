@@ -13,7 +13,6 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# Privacy Risks of Cloud Document Editors: Google Docs 2026
 
 Google Docs, Notion, and Microsoft Office365 dominate collaborative editing. They're convenient. They're also data collection platforms. Here's what you're actually trading for that convenience.
 

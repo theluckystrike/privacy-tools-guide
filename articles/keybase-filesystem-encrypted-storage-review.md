@@ -3,7 +3,7 @@ layout: default
 title: "Keybase Filesystem (KBFS) Review"
 description: "A review of Keybase Filesystem (KBFS) - explore how this zero-knowledge encrypted storage solution works for individuals and teams"
 date: 2024-01-15
-last_modified_at: 2024-01-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /keybase-filesystem-encrypted-storage-review/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# Keybase Filesystem (KBFS) Review: Secure Encrypted Storage for Teams
 
 Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you and authorized team members hold the encryption keys—your files sync to Keybase's servers encrypted and inaccessible even to the provider. Mount KBFS as a regular filesystem and work with familiar tools while your data stays protected with zero-knowledge encryption.
 

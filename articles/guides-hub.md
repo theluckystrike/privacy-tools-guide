@@ -13,7 +13,6 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-# Privacy & Security Guides Hub
 
 Everything you need to protect your digital privacy, organized by topic. Each guide is technically reviewed and scored for depth and accuracy.
 

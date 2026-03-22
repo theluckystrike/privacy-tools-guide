@@ -3,7 +3,7 @@ layout: default
 title: "Set Up Google Inactive Account Manager for Automatic Data"
 description: "A technical guide for developers and power users on configuring Google Inactive Account Manager to automatically transfer data to trusted contacts when"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-set-up-google-inactive-account-manager-for-automatic-/
 categories: [guides, security]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up Google Inactive Account Manager for Automatic Data Transfer After Death
 
 Digital estate planning remains one of the most overlooked aspects of personal security. Google Inactive Account Manager provides a built-in solution for transferring your data to trusted contacts when you stop using your account—whether due to extended travel, hospitalization, or death. This guide walks through the technical implementation for developers and power users who want precise control over their digital legacy.
 

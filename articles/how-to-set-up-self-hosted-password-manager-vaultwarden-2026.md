@@ -13,7 +13,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Set Up Self-Hosted Password Manager Vaultwarden 2026
 
 Vaultwarden is a free, open-source password manager compatible with Bitwarden clients. Unlike cloud-hosted password managers, you control the server—no company between you and your encrypted vault. This guide covers complete setup: Docker deployment, reverse proxy configuration, automated backups, HTTPS, and admin panel hardening.
 

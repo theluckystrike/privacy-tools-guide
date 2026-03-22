@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Secure Boot and TPM Explained for Linux
 
 Secure Boot and TPM 2.0 are often misunderstood as Windows-only features or corporate lock-in tools. On Linux, they can form a real chain of trust — ensuring that only your signed bootloader and kernel load, and that disk unlock happens automatically only when the system hasn't been tampered with.
 

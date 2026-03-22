@@ -3,7 +3,7 @@ layout: default
 title: "Ethereum Wallet Inheritance: Using Social Recovery Smart"
 description: "Learn how to implement Ethereum wallet inheritance using social recovery smart contracts. A technical guide for developers and power users"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /ethereum-wallet-inheritance-using-social-recovery-smart-cont/
 reviewed: true
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Ethereum Wallet Inheritance: Using Social Recovery Smart Contracts for Heir Access After Death
 
 Managing cryptocurrency inheritance remains one of the most challenging problems in Web3. Unlike traditional bank accounts with clear legal frameworks, Ethereum wallets lack built-in mechanisms for transferring assets to heirs upon death. This guide explores how social recovery smart contracts solve this problem, enabling secure heir access after the wallet owner's passing.
 

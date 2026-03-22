@@ -3,7 +3,7 @@ layout: default
 title: "How to Use Live Operating System to Leave No Forensic"
 description: "A practical guide to using live operating systems like Tails for privacy. Learn how to boot from USB, use RAM-only computing, and leave no traces on"
 date: 2026-03-17
-last_modified_at: 2026-03-17
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-live-operating-system-to-leave-no-forensic-trace/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# How to Use Live Operating System to Leave No Forensic Trace
 
 Every time you use a computer—whether at a library, hotel business center, or someone else's device—you leave traces. Browser history, cached passwords, USB device logs, and filesystem artifacts can all be recovered by forensic analysis. Live operating systems offer a powerful solution: they run entirely from removable media without touching the hard drive, leaving the host machine unchanged.
 
