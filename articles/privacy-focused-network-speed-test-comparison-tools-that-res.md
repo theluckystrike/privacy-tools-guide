@@ -2,11 +2,13 @@
 layout: default
 title: "Privacy-Focused Network Speed Test Comparison Tools That Respect User Data"
 description: "Compare network speed test tools that prioritize user privacy. Learn about open-source alternatives, data handling practices, and implementation for developers."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "Privacy Tools Guide"
 permalink: /privacy-focused-network-speed-test-comparison-tools-that-res/
 categories: [privacy-tools, guides]
 tags: [privacy-tools-guide, network, speed-test]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
