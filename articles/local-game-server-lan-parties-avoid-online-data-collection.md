@@ -15,7 +15,7 @@ tags: [privacy-tools-guide]
 ---
 
 
-{% raw %}
+
 
 Playing games online typically sends significant amounts of data to game publishers, including your IP address, gaming habits, chat logs, purchase history, and behavioral analytics. For privacy-conscious gamers, LAN parties offer an alternative that keeps your gaming activity completely offline and under your control. This guide covers how to set up local game servers, configure your network for peer-to-peer gaming, and find self-hosted alternatives to popular online games.
 
@@ -223,8 +223,8 @@ The open-source game community provides excellent alternatives to most commercia
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
+
 =======
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
 >>>>>>> b900bdda56765d71068413d810978b9f118b0721
