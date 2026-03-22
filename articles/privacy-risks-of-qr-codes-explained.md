@@ -164,6 +164,159 @@ qrencode -s 10 -o print.png "https://yoursite.com"
 
 Do not use URL shorteners (they add a tracking layer), UTM parameters (tell your analytics server who scanned), or third-party QR management platforms (they own the redirect data).
 
+## Advanced QR Code Attacks: Beyond Tracking
+
+QR codes can be weaponized in ways beyond simple tracking:
+
+### 1. Malware Distribution
+
+```
+Physical QR code → Shortened URL → Malicious APK download
+```
+
+Example:
+- QR code on parking meter
+- Decodes to: `https://bit.ly/parking-pay`
+- Redirects to: `https://fake-parking-app.com/pay.apk`
+- APK contains banking malware
+
+Defense:
+- Never tap "Install" for APKs from unknown sources
+- Download from Play Store / F-Droid only
+- Decode QR before opening (use zbarimg or camera preview)
+
+### 2. Exploit Chains
+
+Attackers chain QR code endpoints for multi-stage attacks:
+
+```
+https://bit.ly/parking →
+https://redirector.site/123?token=xyz →
+https://phishing-site.com/?redirect_token=xyz&user_id=<YOUR_IP>
+```
+
+Each redirect layer extracts information and forwards you to the next. By the time you reach the destination, the attacker knows:
+- Your IP address (from the first request)
+- Your device type (from user agent)
+- Your location (from the QR code's physical placement)
+- Whether you followed the link (tracking pixel at destination)
+
+### 3. NFC-to-QR Hybrid Attacks
+
+Some QR codes trigger NFC actions when scanned:
+
+```
+QR code + NFC tag → Opens app + starts Bluetooth connection
+→ Connects to attacker-controlled Bluetooth device
+→ Exfiltrates nearby device list or phone number
+```
+
+Mitigate by:
+- Disabling NFC if you don't actively use it
+- Checking app permissions before granting Bluetooth access
+- Using airplane mode while scanning public QR codes (enables offline decode)
+
+## QR Code Tracking at Scale
+
+Governments and corporations use QR codes for population-level tracking:
+
+**China's "Health Code" System**:
+- Every citizen scanned at entrances to buildings, transit
+- Central database tracked location history
+- System persisted after COVID for general surveillance
+
+**Parking Payment QR Codes**:
+- Each parking space has a QR code
+- Scanning linked to phone number or account
+- City analytics firm knows: where you parked, how long, how often
+
+**Product QR Codes**:
+- Products scanned by customers reveal supply chain tracking
+- Retailer knows: which items you viewed, timestamp, location within store
+- Data aggregated and sold to marketing firms
+
+If you see QR codes everywhere, assume each one is a tracking opportunity. Decode before scanning.
+
+## Building QR Code Awareness
+
+Train your organization to avoid dangerous QR code practices:
+
+**For employees**:
+1. Decode QR codes before opening them (don't blindly scan)
+2. Check the domain in the decoded URL — does it match the expected service?
+3. Report suspicious QR codes to IT/security
+4. Never scan QR codes from public restrooms, elevators, or unusual locations
+
+**For your website/service**:
+1. If you generate QR codes, use direct links (no UTM parameters, no shorteners)
+2. Include text near the QR code with the expected domain (e.g., "Scan to visit example.com")
+3. Don't use URL shorteners — the redirect layer is an attack point
+4. Rotate QR codes regularly (monthly, not quarterly)
+5. Monitor clicks from QR codes using a dedicated endpoint (not your general analytics)
+
+## QR Code Forensics: If You Suspect Compromise
+
+If you scanned a suspicious QR code and worry about consequences:
+
+```bash
+# 1. Check browser history for unexpected redirects
+# Open: history > search for the date you scanned
+
+# 2. Review recently installed apps
+# Settings > Apps > Sort by "Install Date"
+
+# 3. Check recent network connections (on rooted device)
+adb shell netstat -tlnp 2>/dev/null | grep ESTABLISHED
+
+# 4. Monitor battery drain (suggests background activity)
+adb shell dumpsys batteryexplained | grep "Uid" | head -10
+
+# 5. Check system logs for error messages
+adb logcat | grep -i "crash\|error\|malware" | tail -20
+```
+
+If you suspect real compromise:
+1. Enable Safe Mode (suppresses third-party apps)
+2. Install Malwarebytes on Android (detects common payloads)
+3. Use a network monitor app (e.g., NetGuard) to see what's connecting
+4. If confident it's malware, factory reset the device
+
+## QR Code Privacy Legislation
+
+Some jurisdictions are restricting QR code tracking:
+
+**GDPR (Europe)**:
+- QR codes that track individuals require consent
+- Restaurant menu QR codes must disclose data collection
+- Users can request data deletion
+
+**CCPA (California)**:
+- Users have right to know what data QR codes collect
+- Businesses must disclose QR code tracking in privacy policy
+
+**Australia (Privacy Act)**:
+- Similar to GDPR, requires disclosure of tracking
+
+If a QR code is placed on property you control and it tracks users, you may have legal obligations to disclose this. Consult a privacy lawyer if you operate public QR codes.
+
+## Alternative to QR Codes: Direct URLs
+
+QR codes are convenient but privacy-invasive. Alternatives:
+
+```
+Instead of QR code:
+https://bit.ly/parking-pay
+
+Use:
+Direct URL on sign: "Pay at parking.cityname.gov"
+```
+
+Benefits:
+- No tracking parameters
+- Users can type the URL themselves
+- Works on any device (no camera required)
+- Can be verified before opening
+
 ## Related Reading
 
 - [Privacy-Focused Weather App Alternatives](/privacy-tools-guide/privacy-focused-weather-app-alternatives/)

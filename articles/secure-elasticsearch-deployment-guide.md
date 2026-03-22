@@ -162,6 +162,203 @@ curl -k https://127.0.0.1:9200/
 curl -k -u elastic:YOUR_PASSWORD https://127.0.0.1:9200/_cluster/health
 ```
 
+## Multi-Node Cluster Security
+
+Elasticsearch clusters have internal communication (transport layer) that must also be secured:
+
+```bash
+# Generate transport certificates for multi-node cluster
+sudo /usr/share/elasticsearch/bin/elasticsearch-certutil cert \
+  --name node-01 \
+  --dns node-01.example.com \
+  --ip 10.0.0.10 \
+  --ca /etc/elasticsearch/certs/elastic-ca.p12
+
+# Repeat for each node with unique names and IPs
+```
+
+In `elasticsearch.yml` for node-01:
+
+```yaml
+cluster.name: production-cluster
+node.name: node-01
+node.roles: [data, master]
+
+network.host: 10.0.0.10
+discovery.seed_hosts: ["10.0.0.10", "10.0.0.11", "10.0.0.12"]
+cluster.initial_master_nodes: ["node-01", "node-02", "node-03"]
+
+# TLS for transport (node-to-node)
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.keystore.path: /etc/elasticsearch/certs/node-01.p12
+xpack.security.transport.ssl.truststore.path: /etc/elasticsearch/certs/elastic-ca.p12
+```
+
+Each node verifies every other node's certificate. An attacker cannot join the cluster without valid certificates.
+
+## Index-Level Encryption
+
+Even with TLS, data on disk is unencrypted unless you use LUKS. Add full-disk encryption:
+
+```bash
+# Install cryptsetup
+sudo apt install cryptsetup
+
+# Create encrypted volume for Elasticsearch data
+sudo cryptsetup luksFormat /dev/sdb1
+sudo cryptsetup luksOpen /dev/sdb1 elasticsearch-data
+
+# Format and mount
+sudo mkfs.ext4 /dev/mapper/elasticsearch-data
+sudo mount /dev/mapper/elasticsearch-data /var/lib/elasticsearch
+
+# Update elasticsearch.yml
+path.data: /var/lib/elasticsearch
+```
+
+With full-disk encryption, if someone steals the physical drive, data is unreadable without the encryption key.
+
+## Snapshot Security
+
+Elasticsearch snapshots can be stored on S3, local filesystem, or other backends. Secure them:
+
+```bash
+# Configure S3 repository with encryption
+curl -k -u elastic:YOUR_PASSWORD \
+  -X PUT "https://127.0.0.1:9200/_snapshot/my_s3_repo" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "s3",
+    "settings": {
+      "bucket": "my-elasticsearch-backups",
+      "region": "us-east-1",
+      "server_side_encryption": true,
+      "storage_class": "STANDARD_IA",
+      "base_path": "elasticsearch",
+      "compress": true
+    }
+  }'
+
+# Create snapshot
+curl -k -u elastic:YOUR_PASSWORD \
+  -X PUT "https://127.0.0.1:9200/_snapshot/my_s3_repo/snapshot_$(date +%s)"
+```
+
+Always enable:
+- Server-side encryption (S3 encrypts at rest)
+- Compression (reduces snapshot size and bandwidth)
+- Separate AWS account or IAM role for snapshot access
+
+## Preventing Common Elasticsearch Breaches
+
+**Breach Pattern 1: Unauthenticated Access**
+
+Public ES instances have been compromised thousands of times. Always:
+
+```yaml
+xpack.security.enabled: true
+network.host: 127.0.0.1  # Never 0.0.0.0
+```
+
+**Breach Pattern 2: Default Credentials**
+
+Elasticsearch comes with default passwords. Always:
+
+```bash
+/usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto
+```
+
+This generates random passwords for built-in users.
+
+**Breach Pattern 3: Privilege Escalation**
+
+Users with read access to one index shouldn't read all indexes:
+
+```bash
+# Create minimal privilege role
+curl -k -u elastic:YOUR_PASSWORD \
+  -X PUT "https://127.0.0.1:9200/_security/role/logs_reader" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "indices": [{
+      "names": ["logs-*"],
+      "privileges": ["read"]
+    }]
+  }'
+
+# Create user with only logs_reader role
+curl -k -u elastic:YOUR_PASSWORD \
+  -X PUT "https://127.0.0.1:9200/_security/user/logstash" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "password": "StrongLogstashPassword",
+    "roles": ["logs_reader"]
+  }'
+```
+
+Logstash now reads only `logs-*` indices, cannot access user data or configuration.
+
+**Breach Pattern 4: Insufficient Audit Logging**
+
+Configure detailed auditing:
+
+```yaml
+xpack.security.audit.enabled: true
+xpack.security.audit.logfile.enabled: true
+xpack.security.audit.logfile.events.include:
+  - authentication_success
+  - authentication_failed
+  - access_denied
+  - index_access
+  - connection_granted
+  - connection_denied
+```
+
+Monitor audit logs for suspicious activity:
+
+```bash
+# Failed authentication attempts
+tail -f /var/log/elasticsearch/*.audit.json | \
+  jq 'select(.event.type == "authentication_failed")'
+
+# Unauthorized access attempts
+tail -f /var/log/elasticsearch/*.audit.json | \
+  jq 'select(.event.type == "access_denied")'
+```
+
+## Performance Impact of Security
+
+Security adds overhead:
+
+- **TLS encryption**: ~10-15% CPU cost
+- **Authentication checks**: Minimal (~2%)
+- **Audit logging**: ~5-10% disk I/O cost
+
+On modern hardware, this is acceptable. Elasticsearch remains fast even with security enabled.
+
+If performance becomes critical:
+
+1. Use separate security clusters (policy enforcement) and data clusters
+2. Disable audit logging on high-throughput nodes
+3. Use AES-NI hardware acceleration (available on most CPUs)
+
+## Security Checklist
+
+Before deploying Elasticsearch to production:
+
+- [ ] X-Pack security enabled
+- [ ] TLS configured for HTTP and transport
+- [ ] Passwords are 16+ characters, auto-generated
+- [ ] Network access restricted to application servers only
+- [ ] Unauthenticated port 9200 blocked globally
+- [ ] RBAC roles created for each application
+- [ ] Audit logging enabled
+- [ ] Snapshots encrypted in S3 or backup storage
+- [ ] Data at rest encrypted (LUKS or S3 server-side encryption)
+- [ ] Elasticsearch updated to latest patch version
+- [ ] Firewall rules reviewed monthly
+
 ## Related Reading
 
 - [Secure Redis Deployment Without Exposure](/privacy-tools-guide/secure-redis-deployment-without-exposure/)

@@ -162,6 +162,175 @@ chmod +x passgen.sh
 ./passgen.sh -l 32 -t full -n 5
 ```
 
+## Entropy Deep Dive: Why Diceware Wins
+
+Entropy is measured in bits. Assuming an attacker can try 1 trillion guesses/second:
+
+- **56 bits of entropy**: 2 days to crack
+- **77 bits of entropy**: 400 years
+- **103 bits of entropy**: 1 trillion years
+- **128 bits of entropy**: Cryptographically unbreakable in foreseeable future
+
+**Method**: `cat /dev/urandom | tr -dc 'A-Za-z0-9' | head -c 12`
+- Entropy: ~71 bits (26 lowercase + 26 uppercase + 10 numbers = 62 charset)
+- Time to crack: ~10 years
+
+**Method**: 6 EFF Diceware words
+- Entropy: ~77 bits (log2(7776^6) = 77.5)
+- Time to crack: ~400 years
+- Passphrase: "correct-horse-battery-staple"
+
+The diceware approach is superior because:
+1. Human-memorable words are easier to type correctly
+2. Distributed across word boundaries (less pattern fatigue)
+3. Mathematically equivalent to random character strings
+4. No special characters that websites reject
+
+For user accounts: Use 5-6 EFF words (70-80 bits). For root/admin: Use 7-8 words (100+ bits).
+
+## Password Reuse: The Catastrophic Mistake
+
+One compromised service exposes a password that works on multiple sites. This is the #1 cause of account takeover.
+
+**Consequence of password reuse**:
+1. LinkedIn breach: 700 million passwords
+2. Attacker cracks a few passwords
+3. Tests those passwords on Gmail, Twitter, Banking sites
+4. Gains access to 40% of accounts
+
+**Solution**: Unique password per site, generated locally.
+
+```bash
+# Store passwords in KeePassXC (encrypted local database)
+# Generate passwords with KeePassXC's built-in generator
+# Configure to 32 characters, all character types
+
+# Or use a local password store with GPG encryption:
+pip3 install pass
+pass init your-gpg-key
+
+# Generate and store
+pass generate Banking/Checking 32
+# Stores: Banking/Checking.gpg (encrypted with your GPG key)
+
+# Retrieve
+pass Banking/Checking
+```
+
+Never use online password managers that sync to the cloud (LastPass, 1Password cloud) if you want local control.
+
+## Master Password Strategy
+
+If using KeePassXC or local password manager:
+
+```
+Master password: 8 EFF words (128 bits)
+Diceware passphrase: "seven-autumn-pencil-gravity-nephew-orange-rocket-system"
+```
+
+Write this down and store it in a physical safe. It's your master key to all other passwords. If you forget it, all passwords are lost forever.
+
+Alternative: Split the master password using Shamir's Secret Sharing
+
+```bash
+pip3 install pyminizip
+
+# Create encrypted password database
+pass init your-gpg-key
+
+# Your master password, split into 3 shares (need 2 to recover)
+# Requires external tool: https://www.ssss.readthedocs.io/
+# This is advanced and rarely necessary
+```
+
+For most users: One strong master password in a safe location is sufficient.
+
+## Avoiding Common Password Generation Mistakes
+
+**Mistakes to avoid**:
+
+1. **Using website "random password generators"**: They're logging what they generate
+2. **Using `Math.random()` in JavaScript**: Not cryptographically secure
+3. **Patterns** ("Password2024!", "Winter2025!"): Attackers specifically test these
+4. **Reusing a base**: "Gmail123", "Gmail456" on multiple sites
+5. **Birthdate or personal info**: Easily guessable supplementary data
+6. **Weak special characters**: "!" "?" "@" are guessed first
+7. **Keyboard patterns**: "qwerty", "12345", "!@#$%"
+
+**Correct approach**:
+```bash
+# Using openssl (cryptographically secure randomness)
+openssl rand -base64 32 | cut -c 1-32
+# Output: aB4kDpLx+8yZcQwErTuIsH/VjNmKoP
+
+# Using /dev/urandom (pure randomness)
+head -c 32 /dev/urandom | base64
+# Output: x9Zm2L5vQWaE8+3pKnJbRs4MvTyU7F
+```
+
+Both are cryptographically secure and not guessable.
+
+## API Key Generation Strategy
+
+For API keys and tokens (longer-lived secrets), use even stronger entropy:
+
+```bash
+# OAuth token (128 bits minimum)
+openssl rand -base64 48 | cut -c 1-64
+
+# AWS access key format (simulate)
+python3 -c "
+import secrets, string
+# AWS format: 20 base32 chars
+key = ''.join(secrets.choice(string.ascii_uppercase + '234567') for _ in range(20))
+print('AKIA' + key)  # AKIA prefix for real AWS keys
+"
+
+# API key with mixed alphabet and numbers
+python3 -c "
+import secrets
+chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+api_key = 'sk_' + ''.join(secrets.choice(chars) for _ in range(48))
+print(api_key)
+"
+```
+
+Use 256-bit entropy (43 base64 characters) for API keys that authenticate applications.
+
+## Secure Password Storage After Generation
+
+After generating a password:
+
+1. **Copy to password manager immediately**: Never store in plaintext on disk
+2. **Clear clipboard after pasting**: `xclip -selection clipboard < /dev/null`
+3. **Use browser's built-in password saver** (or password manager plugin)
+4. **Never email the password to yourself**: Email is transmitted in plaintext
+
+For shared team credentials (AWS accounts, SSH keys):
+
+1. Use a shared password manager (Bitwarden Business, 1Password Teams)
+2. Rotate credentials quarterly
+3. Audit access logs
+4. Never share via chat or email
+
+## Testing Your Generator
+
+Verify your password generator is actually cryptographically secure:
+
+```bash
+# Generate 1000 passwords and check for patterns
+for i in {1..1000}; do
+    openssl rand -hex 16 | cut -c 1-16
+done | sort | uniq -d | wc -l
+# Should be 0 (no duplicates in 1000 samples means good randomness)
+
+# Statistical test (NIST)
+pip3 install randomness-tester
+# Tests distribution of random bytes
+```
+
+If you see any duplicates or patterns in 1000+ samples, your generator is flawed.
+
 ## Related Reading
 
 - [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)

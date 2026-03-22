@@ -111,6 +111,160 @@ alias weather='curl -s "wttr.in/$(cat ~/.config/weather_city)?format=3"'
 - **Weather Underground**: Owned by IBM, same data practices as TWC
 - **Weather apps requiring account creation**: Ties location to an identity
 
+## Building Your Own Weather CLI Tool
+
+For the ultimate privacy, host your own weather tool that queries public APIs and caches results locally:
+
+```python
+#!/usr/bin/env python3
+# weather.py — local weather tool using Open-Meteo
+
+import requests
+import json
+from datetime import datetime
+from pathlib import Path
+
+def get_weather(lat, lon):
+    """Fetch weather without storing or tracking location."""
+    url = "https://api.open-meteo.com/v1/forecast"
+    params = {
+        "latitude": lat,
+        "longitude": lon,
+        "current_weather": True,
+        "hourly": "temperature_2m,precipitation,windspeed_10m",
+        "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,windgusts_10m",
+        "temperature_unit": "celsius",
+        "timezone": "auto"
+    }
+
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    return response.json()
+
+def format_weather(data):
+    """Pretty print weather data."""
+    current = data["current_weather"]
+    daily = data["daily"]
+
+    print(f"Temperature: {current['temperature']}°C")
+    print(f"Wind: {current['windspeed']} km/h")
+    print(f"Weather code: {current['weathercode']}")
+    print("\n7-day forecast:")
+
+    for i in range(7):
+        high = daily["temperature_2m_max"][i]
+        low = daily["temperature_2m_min"][i]
+        rain = daily["precipitation_sum"][i]
+        print(f"  Day {i+1}: {high}°/{low}°C, {rain}mm rain")
+
+if __name__ == "__main__":
+    # Use approximate coordinates (rounding protects location privacy)
+    lat, lon = 51.5, -0.1  # London approximation
+
+    data = get_weather(lat, lon)
+    format_weather(data)
+```
+
+Run locally:
+```bash
+chmod +x weather.py
+./weather.py
+```
+
+No account, no tracking, no ads, no data storage.
+
+## Weather Data Providers Comparison
+
+| Provider | Free | No API Key | Privacy Policy | Data Retention |
+|----------|------|-----------|----------------|-|
+| Open-Meteo | Yes | Yes | Minimal | No personal data |
+| MET Norway | Yes | Yes | EU/GDPR | Logs aggregated only |
+| wttr.in | Yes | Yes | See rainbo.ws | No personal data |
+| Pirate Weather | Yes | No | Ad-free, privacy-focused | Limited logs |
+| OpenWeatherMap | Free tier | Registration | Limited free tier | Log location for paid users |
+| NOAA (US) | Yes | Yes | US government | Public data only |
+
+For maximum privacy, stack rank providers:
+1. **Open-Meteo** (best for EU/global)
+2. **MET Norway** (best for Northern Europe)
+3. **wttr.in** (best for simplicity)
+4. **Pirate Weather** (best for US)
+
+Avoid commercial weather APIs that require registration — they track your lookups.
+
+## Privacy-Respecting Configuration
+
+On Android with Breezy Weather, disable location permissions entirely:
+
+1. **Do NOT grant GPS permission**
+2. **Search location by city name only**
+3. **Disable location services** in system settings when not actively using weather
+4. Use a rounded approximation of your city (e.g., "London" not "51.5074, -0.1278")
+
+On iOS with Meteo:
+1. Settings > Meteo > Location → "Never"
+2. Manually enter city name at startup
+
+This prevents the app from:
+- Recording your GPS coordinates
+- Tracking movements between locations
+- Building location history
+
+## Checking What Your Current App Sends
+
+If you suspect your weather app is leaking data:
+
+```bash
+# On a rooted Android device or via mitmproxy:
+mitmproxy --mode reverse --listen-port 8080
+
+# Configure device to use mitmproxy as HTTP proxy
+# Then use your weather app and observe HTTP requests
+
+# Look for:
+# - Location data in URL parameters
+# - Unique device identifiers
+# - Analytics domain calls
+# - Unencrypted HTTP (not HTTPS)
+```
+
+Most weather apps claim location isn't tracked but still send it to analytics backends. DNS-level blocking helps:
+
+```bash
+# On a network with Pi-hole installed:
+# Block domains: analytics.*, ads.*, track.*
+# This prevents app-level tracking even if the app tries to send data
+```
+
+## Weather API Rate Limits and Caching
+
+If building your own tool, cache results locally to reduce API calls:
+
+```bash
+#!/bin/bash
+# weather.sh with local caching
+
+CACHE_DIR="$HOME/.cache/weather"
+CACHE_FILE="$CACHE_DIR/forecast.json"
+CACHE_AGE_HOURS=3
+
+mkdir -p "$CACHE_DIR"
+
+if [ -f "$CACHE_FILE" ]; then
+    AGE=$(($(date +%s) - $(stat -f%m "$CACHE_FILE" 2>/dev/null || stat -c%Y "$CACHE_FILE")))
+    AGE_HOURS=$((AGE / 3600))
+
+    if [ $AGE_HOURS -lt $CACHE_AGE_HOURS ]; then
+        cat "$CACHE_FILE" && exit 0
+    fi
+fi
+
+# Fetch fresh data
+curl -s "https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.1&current_weather=true" | tee "$CACHE_FILE"
+```
+
+This reduces API calls to once per 3 hours, protecting your privacy further.
+
 ## Related Reading
 
 - [Privacy-Focused Maps and Navigation Apps](/privacy-tools-guide/privacy-focused-maps-and-navigation-apps/)

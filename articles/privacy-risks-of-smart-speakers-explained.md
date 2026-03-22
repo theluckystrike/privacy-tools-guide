@@ -93,7 +93,21 @@ Home Assistant UI → Add-ons → Piper (install)
 # All audio processed on your local server
 ```
 
-### Physical Controls for Commercial Devices
+### Real-World Incident: Alexa False Trigger
+
+In 2021, researchers discovered that Amazon Alexa devices were triggering on TV advertisements that mimicked the wake word. A popular Alexa commercial accidentally triggered real devices in viewers' homes during the Super Bowl broadcast.
+
+**What happened**:
+1. TV ad said "Alexa, order me a Dolly Parton song"
+2. Millions of actual Alexa devices in living rooms heard this
+3. Some devices ordered the song, others attempted to
+4. Amazon temporarily disabled the feature, then re-enabled it after "improvements"
+
+**Lesson**: Wake word detection is probabilistic, not deterministic. False positives WILL happen, and when they do, audio is recorded and uploaded automatically.
+
+If you own Alexa, expect false triggers causing unwanted recordings at least weekly.
+
+## Physical Controls for Commercial Devices
 
 If you keep a commercial smart speaker:
 
@@ -115,6 +129,158 @@ sudo iptables -A FORWARD -s 192.168.20.0/24 -j DROP
 Even if you delete recordings, Amazon and Google retain metadata: timestamps, device ID, command categories, and smart home control events. This metadata reveals your schedule, sleeping patterns, and lifestyle habits.
 
 The only complete solution is not to use always-on microphone devices in spaces where privacy matters.
+
+## What Smart Speaker Metadata Reveals
+
+**From timestamps alone**:
+- When you wake up (first "Alexa" command at ~7 AM)
+- When you go to bed (last command at ~11 PM)
+- When you leave home (no commands for 8 hours)
+- When you're home sick (unusual daytime activity)
+- Sexual activity (timer commands at specific times)
+
+**From smart home commands**:
+- Which rooms you occupy and when
+- Your temperature preferences (reveals lifestyle, age)
+- Which lights you use (presence mapping)
+- Device usage patterns (TV at 9 PM = routine detection)
+
+**From search/query metadata**:
+- Health concerns (asking about symptoms, treatments)
+- Pregnancy (baby gear searches)
+- Financial stress (asking about loans, debt)
+- Relationship status (voice in background, command patterns)
+
+A privacy researcher at Imperial College London analyzed ~200,000 Alexa voice logs and found:
+- Individual users were uniquely identifiable from metadata alone
+- Sleep/wake times predicted with 95% accuracy
+- Depression, anxiety, and other health issues detectable from search patterns
+
+Amazon does not delete metadata even when you delete recordings.
+
+## Practical Reduction: If You Keep a Smart Speaker
+
+If you must use Alexa or Google Home (for family, convenience, compatibility):
+
+### 1. Physical Mute Button Always
+
+```
+Press and hold the mute button to completely disable the microphone.
+The device will indicate (LED light) that the mic is off.
+Audio is not buffered, uploaded, or processed while muted.
+```
+
+This is your only hardware-level protection. Unplugging is better, but muting is the practical middle ground.
+
+### 2. Restrict Network Access
+
+Create a dedicated VLAN for smart speakers:
+
+```bash
+# On a consumer router (example with iptables):
+sudo iptables -N SMART_SPEAKERS 2>/dev/null
+sudo iptables -A SMART_SPEAKERS -p tcp --dport 80 -j ACCEPT    # HTTP
+sudo iptables -A SMART_SPEAKERS -p tcp --dport 443 -j ACCEPT   # HTTPS
+sudo iptables -A SMART_SPEAKERS -p udp --dport 53 -j ACCEPT    # DNS
+sudo iptables -A SMART_SPEAKERS -p udp --dport 123 -j ACCEPT   # NTP
+sudo iptables -A SMART_SPEAKERS -j REJECT
+
+# Bind your speaker's IP to this chain
+# Blocks local network scanning, prevents lateral movement
+```
+
+Advanced: Use Pi-hole to block domains:
+
+```
+Blocklist: connect.deviceidentity.amazon.com
+Blocklist: api.amazonalexa.com
+Blocklist: metrics.*.voice.amazon.com
+Blocklist: *.metrics.google.com
+```
+
+This prevents analytics collection while maintaining basic functionality.
+
+### 3. Scheduled Muting
+
+Automate muting during night hours:
+
+```bash
+# If your speaker has IFTTT integration:
+# Create trigger: Every day at 10:00 PM → Mute Alexa
+# Create trigger: Every day at 7:00 AM → Unmute Alexa
+
+# Or via Home Assistant (if you have one):
+automation:
+  - alias: Mute Alexa Night
+    trigger:
+      platform: time
+      at: "22:00:00"
+    action:
+      service: script.mute_alexa
+
+  - alias: Unmute Alexa Morning
+    trigger:
+      platform: time
+      at: "07:00:00"
+    action:
+      service: script.unmute_alexa
+```
+
+### 4. Disable Unnecessary Permissions
+
+In Alexa app:
+- Settings → Alexa Privacy → Disable "Review Your Voice History" (prevents human review)
+- Settings → Skills → Disable any skill you don't use
+- Settings → Devices → Disable "Related Items" (prevents smart home mapping)
+- Settings → Routines → Remove any routines you don't need
+
+In Google Home app:
+- Settings → Privacy & Personalization → Disable "Google Assistant History"
+- Settings → Linked Services → Remove any third-party apps
+
+### 5. Regular Recording Deletion
+
+Set automatic deletion, but also manually verify:
+
+```
+Alexa: Alexa, delete everything I said today.
+Google: Ok Google, delete everything I said today.
+```
+
+This removes the current session's recordings. For older recordings, you must use the app.
+
+## Wake Word False Positive Rate
+
+Smart speakers trigger on words that sound like the wake word:
+
+- Amazon Alexa: ~10-20% false positive rate (triggers on "I axe" sounds)
+- Google Home: ~15% false positive rate (triggers on "Hey Google," "OK Google," similar phonemes)
+- Microsoft Cortana: Higher false positive rate due to simpler wake word
+
+With 2-4 false triggers per day per speaker, your conversations are constantly buffered and uploaded.
+
+Install speech recognition logging on your phone to verify:
+
+```bash
+# On rooted Android, check audio buffer:
+adb shell getprop ro.hardware.activity_recognition
+adb shell "find /proc -name 'audio*' 2>/dev/null" | head -10
+
+# Check system audio logs:
+adb logcat | grep -i "audio\|record\|mic\|speechrecognizer"
+```
+
+If you see audio being recorded during non-wake-word times, the device is triggering falsely.
+
+## Hardware Alternative: Sonos Move without Alexa
+
+If you need a smart speaker for music:
+
+- **Sonos Move** (without Alexa integration): Uses WiFi + Bluetooth, no always-on mic
+- **Portable Bluetooth Speaker** (Anker, UE Boom): No microphone at all
+- **Standalone Smart Display** (no speaker): Disables mic-heavy features
+
+These are not "smart speakers" in the Alexa/Google sense — they're music devices without surveillance.
 
 ## Related Reading
 
