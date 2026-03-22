@@ -258,7 +258,7 @@ Schedule this monitoring for sites where you suspect information might appear, s
 
 ## Combining Multiple Detection Methods
 
-Effective monitoring requires layering multiple approaches. Create an unified dashboard combining alerts, breach monitoring, and broker checks.
+Effective monitoring requires layering multiple approaches. Create a unified dashboard combining alerts, breach monitoring, and broker checks.
 
 ```python
 import json

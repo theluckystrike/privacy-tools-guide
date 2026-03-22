@@ -46,7 +46,7 @@ The ProtonMail web interface works well for basic usage, but power users often r
 - **Advanced filtering** and sorting capabilities native to desktop clients
 - **Keyboard-driven workflows** with custom shortcuts and macros
 - **External tool integration** through scripts and automation
-- **Multiple account management** in an unified interface
+- **Multiple account management** in a unified interface
 
 ProtonMail Bridge acts as a local IMAP/SMTP proxy that handles encryption transparently. Your desktop client connects to Bridge locally, and Bridge communicates with ProtonMail servers. This architecture ensures your private keys never leave your device.
 

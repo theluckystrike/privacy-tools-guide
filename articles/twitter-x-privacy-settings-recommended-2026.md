@@ -146,7 +146,7 @@ ACCESS_TOKEN = os.environ['TWITTER_ACCESS_TOKEN']
 ACCESS_TOKEN_SECRET = os.environ['TWITTER_ACCESS_TOKEN_SECRET']
 ```
 
-Audit your connected applications periodically. Any app authorized to access your Twitter X account has a long-lived token that remains valid until explicitly revoked. Applications you authorized years ago for an one-time use still have that access unless you have removed it. Go to Settings → Apps and sessions → Connected apps and revoke everything you do not actively use.
+Audit your connected applications periodically. Any app authorized to access your Twitter X account has a long-lived token that remains valid until explicitly revoked. Applications you authorized years ago for a one-time use still have that access unless you have removed it. Go to Settings → Apps and sessions → Connected apps and revoke everything you do not actively use.
 
 ## Content Visibility Controls
 

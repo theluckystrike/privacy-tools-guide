@@ -246,7 +246,7 @@ This approach adds latency but provides better privacy and can help avoid traffi
 
 VoIP requires stable, low-latency connections. Optimize your setup with these adjustments:
 
-Always use ethernet when possible; if WiFi is necessary, connect to the 5GHz band and minimize distance to the access point. Adjust MTU in your VPN configuration to avoid fragmentation (1420 works for most networks, but run an MTU discovery test to confirm your specific path). If your router supports QoS, prioritize UDP traffic for VoIP. Enable the VPN kill switch to prevent accidental data leaks if the connection drops.
+Always use ethernet when possible; if WiFi is necessary, connect to the 5GHz band and minimize distance to the access point. Adjust MTU in your VPN configuration to avoid fragmentation (1420 works for most networks, but run a MTU discovery test to confirm your specific path). If your router supports QoS, prioritize UDP traffic for VoIP. Enable the VPN kill switch to prevent accidental data leaks if the connection drops.
 
 On Android, use the official WireGuard app or v2rayNG. On iOS, Shadowrocket ($2.99) provides full support for WireGuard, Shadowsocks, and V2Ray configurations. On desktop, the official WireGuard client handles basic setups; for V2Ray/Xray, use the GUI clients Qv2ray or Hiddify.
 

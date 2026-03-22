@@ -92,7 +92,7 @@ OpenVPN configuration files work portably with the OpenVPN Connect client. Downl
 
 Store your OpenVPN configuration files in the `/kit/vpn` folder. Include multiple provider configurations so you can switch if one gets blocked. Many providers offer obfuscated servers that work better in censored regions.
 
-For scenarios where VPN protocols get blocked, SSH tunneling provides another option. Create a SOCKS proxy through an SSH server you control:
+For scenarios where VPN protocols get blocked, SSH tunneling provides another option. Create a SOCKS proxy through a SSH server you control:
 
 ```bash
 ssh -D 1080 -N -f user@your-server.com
@@ -188,7 +188,7 @@ Test each configuration before travel to verify connectivity. Document which con
 
 ## Advanced: Chaining Multiple Proxies for Resilience
 
-For maximum resilience, chain multiple proxy layers. This approach uses Tor behind a VPN behind an SSH tunnel, providing multiple fallback points:
+For maximum resilience, chain multiple proxy layers. This approach uses Tor behind a VPN behind a SSH tunnel, providing multiple fallback points:
 
 ```bash
 # Layer 1: SSH tunnel through trusted server (fastest, detectable)

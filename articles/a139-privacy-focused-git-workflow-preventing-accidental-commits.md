@@ -213,7 +213,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Run gitleaks
         uses: gitleaks/gitleaks-action@v2
         env:
@@ -397,13 +397,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Run detect-secrets
         run: |
           pip install detect-secrets
           detect-secrets scan --baseline .secrets.baseline
           detect-secrets audit .secrets.baseline || exit 1
-      
+
       - name: Run gitleaks
         uses: gitleaks/gitleaks-action@v2
 ```

@@ -318,7 +318,7 @@ Check timer status:
 systemctl list-timers restic-backup.timer
 ```
 
-`RandomizedDelaySec=1h` spreads backup start times across an hour window, which prevents thundering-herd issues if you run the same timer on many machines.
+`RandomizedDelaySec=1h` spreads backup start times across a hour window, which prevents thundering-herd issues if you run the same timer on many machines.
 
 ### Step 12: Alerting on Backup Failures
 

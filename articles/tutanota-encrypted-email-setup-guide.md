@@ -152,7 +152,7 @@ yourdomain.com.  TXT  "v=spf1 include:spf.tutanota.de -all"
 _dmarc.yourdomain.com.  TXT  "v=DMARC1; p=quarantine; rua=mailto:dmarc@yourdomain.com"
 ```
 
-After saving DNS records, propagation can take up to 48 hours, though it usually completes within an hour. Use `dig MX yourdomain.com` to verify the MX record is live before completing setup in Tutanota's wizard.
+After saving DNS records, propagation can take up to 48 hours, though it usually completes within a hour. Use `dig MX yourdomain.com` to verify the MX record is live before completing setup in Tutanota's wizard.
 
 Once the domain is verified, you can create aliases at that domain directly in the account settings. This lets you use `support@yourdomain.com`, `personal@yourdomain.com`, and similar addresses, all received in the same inbox. Aliases can be hidden from your contact list to avoid exposing the main address.
 

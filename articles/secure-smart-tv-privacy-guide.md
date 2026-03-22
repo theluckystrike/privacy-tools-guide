@@ -123,7 +123,7 @@ On newer webOS versions (webOS 22 and later), LG has reorganized these menus. Na
 
 ### LG ThinQ Account
 
-If you signed into an LG account on your TV, that account links your viewing data to your identity across LG devices. Consider using the TV without an LG account — most features work without one. To sign out: `Settings → General → LG Account → Sign Out`.
+If you signed into a LG account on your TV, that account links your viewing data to your identity across LG devices. Consider using the TV without a LG account — most features work without one. To sign out: `Settings → General → LG Account → Sign Out`.
 
 ---
 

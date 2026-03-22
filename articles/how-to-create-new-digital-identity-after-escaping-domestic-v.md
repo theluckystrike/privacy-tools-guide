@@ -178,7 +178,7 @@ Consider credit freezes with all three bureaus (Equifax, Experian, TransUnion) t
 
 ## Ongoing Operational Security
 
-Creating a new digital identity is not an one-time event—it's a practice:
+Creating a new digital identity is not a one-time event—it's a practice:
 
 - **Audit app permissions monthly**: Review what data your applications access
 - **Rotate credentials quarterly**: Change passwords and API keys on a schedule

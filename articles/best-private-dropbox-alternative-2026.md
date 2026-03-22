@@ -65,7 +65,7 @@ Cryptomator excels because it separates encryption from storage—you keep full 
 
 ### 2. Filen (Zero-Knowledge Cloud)
 
-Filen is a European zero-knowledge cloud storage provider with native Linux support and competitive pricing. All files are encrypted client-side before upload, meaning Filen cannot access your data.
+Filen is an European zero-knowledge cloud storage provider with native Linux support and competitive pricing. All files are encrypted client-side before upload, meaning Filen cannot access your data.
 
 
 - Zero-knowledge encryption with 12-word mnemonic phrase

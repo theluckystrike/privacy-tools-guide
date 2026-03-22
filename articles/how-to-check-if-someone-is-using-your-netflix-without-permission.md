@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Check If Someone Is Using Your Netflix Without Permission"
-description: "Detect unauthorized Netflix account access by checking active sessions, login locations, and device streams. Stop sharing with freeloaders or compromised accounts."
+description: "Detect unauthorized Netflix account access by checking active sessions, login locations, and device streams. Stop sharing with freeloaders or compromised
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

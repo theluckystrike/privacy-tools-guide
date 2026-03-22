@@ -229,7 +229,7 @@ grep -r "log\|Log\|LOG" src/
 
 1. Third-party audits
  - Has the provider commissioned independent audits by reputable firms (Deloitte, PwC, Cure53)?
- - Are audit reports publicly available, or behind an NDA?
+ - Are audit reports publicly available, or behind a NDA?
  - How recent is the latest audit? (Annual audits are strong; audits older than 2 years are questionable)
 
 2. Warrant canary

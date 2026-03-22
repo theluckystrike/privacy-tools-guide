@@ -202,7 +202,7 @@ Always verify the recovered wallet shows your expected balance before transferri
 
 Shamir Secret Sharing isn't your only option for inheritance planning. Multi-signature wallets require multiple private keys to authorize transactions—different from SSS in that the blockchain itself enforces the requirement rather than cryptographic splitting.
 
-Consider multi-sig for larger estates where you want ongoing control requiring multiple approvals for large transactions. SSS works better when you want an one-time backup that becomes active only after triggering conditions (death, incapacity).
+Consider multi-sig for larger estates where you want ongoing control requiring multiple approvals for large transactions. SSS works better when you want a one-time backup that becomes active only after triggering conditions (death, incapacity).
 
 ### Step 7: Security Trade-offs and Risks
 

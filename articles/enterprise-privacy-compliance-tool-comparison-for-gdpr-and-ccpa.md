@@ -151,7 +151,7 @@ Transcend's DSR automation handles erasure workflows across all registered data 
 
 ## Implementation Patterns for Developers
 
-### Building an Unified DSAR Pipeline
+### Building a Unified DSAR Pipeline
 
 Rather than relying on a single vendor, many enterprises build internal DSAR pipelines that use multiple tools. Here's a pattern for handling requests at scale:
 

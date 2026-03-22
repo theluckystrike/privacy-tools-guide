@@ -178,7 +178,7 @@ The safest approach to medical record access is to prepare before departure. Las
 
 ### HIPAA Compliance and Your Rights
 
-If you're an US citizen accessing records from US healthcare providers, the Health Insurance Portability and Accountability Act (HIPAA) protects your medical information and gives you the right to access your own records. Healthcare providers are required to provide records in a reasonable timeframe, and many now offer immediate digital access through patient portals. However, HIPAA protections govern US providers — they do not extend to how foreign entities handle data once it crosses borders.
+If you're a US citizen accessing records from US healthcare providers, the Health Insurance Portability and Accountability Act (HIPAA) protects your medical information and gives you the right to access your own records. Healthcare providers are required to provide records in a reasonable timeframe, and many now offer immediate digital access through patient portals. However, HIPAA protections govern US providers — they do not extend to how foreign entities handle data once it crosses borders.
 
 ### International Data Transfer Risks
 

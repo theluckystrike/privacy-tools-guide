@@ -272,7 +272,7 @@ For developers building digital estate tools, consider integrating with multiple
 - Google: Inactive Account Manager
 - LinkedIn: Family member request process
 
-Each platform has its own policies and timelines. Building an unified tracking system helps manage multiple requests across services.
+Each platform has its own policies and timelines. Building a unified tracking system helps manage multiple requests across services.
 
 ## Troubleshooting
 

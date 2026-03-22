@@ -147,7 +147,7 @@ PersistentKeepalive = 25
 
 ### Step 4: Technique 3: WireGuard over SSH Tunnel
 
-Another effective method involves tunneling WireGuard through an SSH connection. This uses SSH's established presence in enterprise networks.
+Another effective method involves tunneling WireGuard through a SSH connection. This uses SSH's established presence in enterprise networks.
 
 ### Server Configuration
 

@@ -1,18 +1,11 @@
 ---
 
 
-<<<<<<< HEAD
 
 
 
 
 
-
-
-
-
-
-<<<<<<< HEAD
 
 
 
@@ -20,8 +13,24 @@
 
 
 <<<<<<< HEAD
-=======
->>>>>>> c44578d419cd35cd75fc03bca65e87b034530637
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
+
+
+
+
+
+
+<<<<<<< HEAD
 
 
 
@@ -594,6 +603,8 @@
 >>>>>>> a3ac0d8ac55f191f5e46887ee954ff07553ece65
 =======
 >>>>>>> 79469c40a (fix: final YAML/Liquid cleanup pass)
+=======
+>>>>>>> 4a98aa92641b964c84f352a1cf13135979fa8c6c
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
@@ -636,22 +647,28 @@ author: "Privacy Tools Guide"
 
 
 
-<<<<<<< HEAD
 
 
 
 
 
-=======
->>>>>>> 77797de089f62d8caae20bf152a72c4a2db138ba
-<<<<<<< HEAD
+
+
 
 
 
 
 <<<<<<< HEAD
-=======
->>>>>>> 79469c40a (fix: final YAML/Liquid cleanup pass)
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
 
 
 
@@ -783,6 +800,8 @@ voice-checked: true
 author: "Privacy Tools Guide"---
 
 
+=======
+>>>>>>> 4a98aa92641b964c84f352a1cf13135979fa8c6c
 # How to Protect Client Photos: Privacy Best Practices for Photographers Using Cloud Storage
 
 Protect client photos by using zero-knowledge encrypted cloud storage (Proton Drive, Tresorit, Filen), stripping EXIF metadata before sharing, implementing two-factor authentication, and creating shareable links with expiration dates. Store backups using the 3-2-1 rule: active working copy plus encrypted cloud backup plus offline encrypted external drive. Establish clear data handling agreements with clients and respond to deletion requests within 30 days per GDPR requirements.

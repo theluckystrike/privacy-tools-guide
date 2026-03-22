@@ -167,7 +167,7 @@ Different EHR systems have different behaviors when accessed via VPN:
 
 **Cerner/Oracle Health**: Generally VPN-friendly but can have strict session timeouts.
 
-**Veterans Health Administration (My HealtheVet)**: Requires VA-specific authentication; VPN must terminate at an US IP.
+**Veterans Health Administration (My HealtheVet)**: Requires VA-specific authentication; VPN must terminate at a US IP.
 
 ## Kill Switch Implementation
 
@@ -249,7 +249,7 @@ curl -I https://your-cerner-patient-portal.com/
 
 ### VA HealtheVet (Veterans Health Administration)
 
-VA systems require connections to appear from US IP addresses only. No foreign IP bypass exists without an US-based VPN exit node:
+VA systems require connections to appear from US IP addresses only. No foreign IP bypass exists without a US-based VPN exit node:
 
 ```bash
 # Verify your VPN endpoint is in the US

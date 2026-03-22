@@ -113,7 +113,7 @@ Session excels for users who need strong metadata protection but may lack the de
 
 ## SimpleX: Zero-Knowledge Identity
 
-SimpleX stands out by requiring absolutely no identifier—not even an username. Every conversation generates an unique queue, making it impossible to link communications to a persistent identity.
+SimpleX stands out by requiring absolutely no identifier—not even an username. Every conversation generates a unique queue, making it impossible to link communications to a persistent identity.
 
 ### The SimpleX Queue Model
 

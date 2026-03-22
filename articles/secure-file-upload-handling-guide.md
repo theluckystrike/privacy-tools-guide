@@ -1,7 +1,11 @@
 ---
 layout: default
 title: "Secure File Upload Handling for Developers"
+<<<<<<< HEAD
 description: "Prevent file upload attacks including web shells, path traversal, and SSRF by validating MIME types, enforcing size limits, scanning with ClamAV, and."
+=======
+description: "Prevent file upload attacks including web shells, path traversal, and SSRF by validating MIME types, enforcing size limits, scanning with ClamAV, and
+>>>>>>> 900910b9245b9b701f9371a2b27423efb875d01e
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-file-upload-handling-guide/

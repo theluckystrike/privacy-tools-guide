@@ -42,7 +42,7 @@ suricata --version
 
 ## 2. Configure NFQUEUE
 
-NFQUEUE is a netfilter target that holds packets in a kernel queue until a userspace process accepts or drops them. Add rules to send traffic through Suricata:
+NFQUEUE is a netfilter target that holds packets in a kernel queue until an userspace process accepts or drops them. Add rules to send traffic through Suricata:
 
 ```bash
 # IPS on a forwarding host (router/firewall)

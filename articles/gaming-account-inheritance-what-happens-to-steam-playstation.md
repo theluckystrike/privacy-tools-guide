@@ -268,7 +268,7 @@ Consider a broader digital asset audit:
 **Financial accounts**: Digital bank accounts, investment platforms, and payment services should be included in your will.
 
 For each category, think about your goals:
-- Is this account transferable to an heir, or just something they should know about?
+- Is this account transferable to a heir, or just something they should know about?
 - Are there specific messages or memories that need preservation?
 - Could this account become a security liability if left unattended?
 

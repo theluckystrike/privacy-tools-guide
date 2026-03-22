@@ -69,7 +69,7 @@ Before starting, gather these components:
 
 ### Step 2: Install the MQTT Broker
 
-Zigbee2MQTT publishes device states to an MQTT broker. Run Mosquitto in Docker:
+Zigbee2MQTT publishes device states to a MQTT broker. Run Mosquitto in Docker:
 
 ```bash
 docker run -d \
@@ -283,7 +283,7 @@ Weak signal strength often causes disconnections. Add routers (powered bulbs or 
 Ensure no other Zigbee hubs are active nearby — two coordinators on the same channel will interfere. Some devices require specific pairing procedures; consult the Zigbee2MQTT supported devices list at zigbee2mqtt.io/supported-devices/ before purchasing hardware.
 
 **High CPU on Raspberry Pi:**
-The Zigbee2MQTT process is lightweight, but Mosquitto logging at debug level can generate substantial disk I/O on SD cards. Set the MQTT log level to `info` and consider using an USB SSD instead of an SD card for the data directory.
+The Zigbee2MQTT process is lightweight, but Mosquitto logging at debug level can generate substantial disk I/O on SD cards. Set the MQTT log level to `info` and consider using an USB SSD instead of a SD card for the data directory.
 
 ### Step 9: Extending the Setup
 

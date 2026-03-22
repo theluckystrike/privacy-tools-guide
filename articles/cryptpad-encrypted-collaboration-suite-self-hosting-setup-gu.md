@@ -101,7 +101,7 @@ CryptPad employs a unique encryption architecture worth understanding before pro
 
 User accounts use a different mechanism. When users create accounts, CryptPad derives encryption keys from their password using Argon2id. The server stores authentication credentials separately from encryption keys. This separation ensures that compromising the database does not automatically expose document contents.
 
-Document types in CryptPad include CryptDrive (file manager), Pad (rich text), Code (code editor), Slide (presentations), Sheet (spreadsheets), Kanban, and Form. Each document type shares the same zero-knowledge guarantee. When a user opens a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of an URL in HTTP requests.
+Document types in CryptPad include CryptDrive (file manager), Pad (rich text), Code (code editor), Slide (presentations), Sheet (spreadsheets), Kanban, and Form. Each document type shares the same zero-knowledge guarantee. When a user opens a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of a URL in HTTP requests.
 
 ### Step 3: Configuration and Customization
 
@@ -286,7 +286,7 @@ docker run --rm -v cryptpad_data:/data -v $(pwd):/backup alpine tar xzf /backup/
 docker-compose up -d
 ```
 
-For off-site backups, pipe the tarball through `rclone` to push it to an S3-compatible bucket or Backblaze B2:
+For off-site backups, pipe the tarball through `rclone` to push it to a S3-compatible bucket or Backblaze B2:
 
 ```bash
 docker run --rm -v cryptpad_data:/data alpine tar czf - /data | \

@@ -35,7 +35,7 @@ Mullvad and Private Internet Access (PIA) are the most reliable VPNs for accessi
 
 ## Understanding Hotstar's Geo-Restriction Mechanisms
 
-Hotstar employs several layers of geographic detection. The primary method involves IP-based geolocation using MaxMind and similar databases. When you connect from an US IP address, Hotstar's CDN (Content Delivery Network) serves different content based on licensing agreements.
+Hotstar employs several layers of geographic detection. The primary method involves IP-based geolocation using MaxMind and similar databases. When you connect from a US IP address, Hotstar's CDN (Content Delivery Network) serves different content based on licensing agreements.
 
 Beyond IP checking, Hotstar monitors DNS requests to detect mismatches between your claimed location and actual DNS resolution. If your DNS servers resolve to US-based addresses while your IP appears Indian, the system flags this inconsistency. Additionally, Hotstar analyzes TLS ClientHello messages, examining Server Name Indication (SNI) fields and certificate details to identify VPN fingerprints.
 

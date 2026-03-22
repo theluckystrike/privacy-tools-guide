@@ -247,7 +247,7 @@ This delay means your credentials may be circulating in attacker databases befor
 
 When your password appears in a data breach, attackers have a window of opportunity to compromise your accounts. The automated nature of modern credential attacks means timing matters—acting quickly to change passwords, enable MFA, and rotate API keys significantly reduces your risk exposure.
 
-For developers and power users, the stakes extend beyond personal accounts. A compromised developer account can become a stepping stone to supply chain attacks affecting users worldwide. Treating credential hygiene as an ongoing practice rather than an one-time fix provides the best long-term protection.
+For developers and power users, the stakes extend beyond personal accounts. A compromised developer account can become a stepping stone to supply chain attacks affecting users worldwide. Treating credential hygiene as an ongoing practice rather than a one-time fix provides the best long-term protection.
 
 ## Frequently Asked Questions
 

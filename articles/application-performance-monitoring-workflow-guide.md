@@ -92,7 +92,7 @@ Distributed tracing follows a request as it travels through multiple services, e
 
 ### Trace Context Propagation
 
-When a request enters your system, generate an unique trace ID. Pass this ID through all subsequent service calls, typically via HTTP headers. Each service adds its own span data, creating a complete picture of the request journey.
+When a request enters your system, generate a unique trace ID. Pass this ID through all subsequent service calls, typically via HTTP headers. Each service adds its own span data, creating a complete picture of the request journey.
 
 ```javascript
 // Example: Trace context propagation in Node.js

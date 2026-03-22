@@ -41,7 +41,7 @@ GDPR applies to any organization processing personal data of EU residents, regar
 
 CCPA applies to for-profit businesses that meet one of three thresholds: annual gross revenue exceeding $25 million, buy or sell personal information of 100,000 or more consumers, or derive 50% or more of annual revenue from selling personal information. This means many small businesses and startups may not need to comply unless they hit these marks.
 
-For developers, this means your application's compliance obligations depend on your user base geography and your company's scale. A startup with EU users must implement GDPR compliance from day one, while an US-only service might only need CCPA compliance if it meets the thresholds.
+For developers, this means your application's compliance obligations depend on your user base geography and your company's scale. A startup with EU users must implement GDPR compliance from day one, while a US-only service might only need CCPA compliance if it meets the thresholds.
 
 ## Quick Comparison
 

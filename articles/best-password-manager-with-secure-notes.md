@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, best-of]
 
 {% raw %}
 
-For developers who value open-source transparency and self-hosting, Bitwarden provides the best flexible secure notes implementation. If you prefer an unified privacy ecosystem without self-hosting, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for complete local control. All options provide adequate encryption for storing API keys, encryption keys, software licenses, and personal documents alongside your passwords.
+For developers who value open-source transparency and self-hosting, Bitwarden provides the best flexible secure notes implementation. If you prefer a unified privacy ecosystem without self-hosting, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for complete local control. All options provide adequate encryption for storing API keys, encryption keys, software licenses, and personal documents alongside your passwords.
 
 ## Table of Contents
 
@@ -307,7 +307,7 @@ def convert_1password_to_bitwarden(input_file):
 
 ## For Developers and Power Users
 
-For developers who value open-source transparency and self-hosting capability, Bitwarden provides the most flexible secure notes implementation. If you prefer an unified privacy ecosystem with no self-hosting requirement, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for those requiring complete local control.
+For developers who value open-source transparency and self-hosting capability, Bitwarden provides the most flexible secure notes implementation. If you prefer a unified privacy ecosystem with no self-hosting requirement, Proton Pass delivers solid functionality in the free tier. KeePassXC remains the choice for those requiring complete local control.
 
 The best password manager with secure notes ultimately depends on your threat model, technical comfort level, and whether self-hosting aligns with your workflow. All options listed provide adequate encryption for most use cases—the decision hinges on features and infrastructure preferences.
 ---

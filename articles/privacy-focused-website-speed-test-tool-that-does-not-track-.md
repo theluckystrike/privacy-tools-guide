@@ -327,7 +327,7 @@ When evaluating any speed testing tool, verify its privacy claims:
 
 1. **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
 2. **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
-3. **Test with a unique URL**: Create an URL with a distinctive subdomain, then search for it in public databases to see if it was logged
+3. **Test with a unique URL**: Create a URL with a distinctive subdomain, then search for it in public databases to see if it was logged
 4. **Read the privacy policy**: Look for explicit statements about URL retention and third-party sharing
 
 ## Advanced Metrics: Beyond Basic Speed

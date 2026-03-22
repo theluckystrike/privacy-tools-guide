@@ -178,7 +178,7 @@ def get_reddit_data(username):
 
 ### Step 3: Automate Cross-Platform Data Collection
 
-For developers managing data across multiple platforms, an unified approach helps:
+For developers managing data across multiple platforms, a unified approach helps:
 
 {% highlight python %}
 import asyncio

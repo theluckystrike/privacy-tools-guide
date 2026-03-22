@@ -31,7 +31,7 @@ Connecting from Asia to US office networks adds 200-400ms of latency due to geog
 
 ## Understanding the Core Challenge
 
-The fundamental issue is physical distance. A connection from Tokyo to an US west coast data center travels approximately 8,000 kilometers through multiple network hops. Each hop adds milliseconds of latency, and packet loss becomes more likely as distance increases. A typical unoptimized connection from Singapore to an US server might experience 200-300ms round-trip time, while connections from Sydney or Tokyo to US east coast facilities can exceed 400ms.
+The fundamental issue is physical distance. A connection from Tokyo to a US west coast data center travels approximately 8,000 kilometers through multiple network hops. Each hop adds milliseconds of latency, and packet loss becomes more likely as distance increases. A typical unoptimized connection from Singapore to a US server might experience 200-300ms round-trip time, while connections from Sydney or Tokyo to US east coast facilities can exceed 400ms.
 
 This latency directly impacts interactive workflows. Code compilation across a high-latency VPN feels sluggish. Database queries take longer to complete. Video conferences may stutter. Understanding these constraints helps you choose appropriate solutions and set realistic expectations.
 

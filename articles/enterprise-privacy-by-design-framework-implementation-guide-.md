@@ -203,7 +203,7 @@ async def require_consent(user_id: str, consent_type: str) -> bool:
     return result['consent_given'] if result else False
 ```
 
-**Consent Management Platforms (CMPs):** For organizations serving EU users, a certified CMP satisfies GDPR consent requirements for cookies and tracking. OneTrust, Cookiebot, and Usercentrics are the leading enterprise options. Integrate their APIs into your backend consent_records table to maintain an unified audit trail.
+**Consent Management Platforms (CMPs):** For organizations serving EU users, a certified CMP satisfies GDPR consent requirements for cookies and tracking. OneTrust, Cookiebot, and Usercentrics are the leading enterprise options. Integrate their APIs into your backend consent_records table to maintain a unified audit trail.
 
 ### Step 6: Privacy Impact Assessments as Code
 

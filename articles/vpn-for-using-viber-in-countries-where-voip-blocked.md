@@ -108,7 +108,7 @@ WireGuard's persistent keepalive option (25 seconds) helps maintain NAT mappings
 
 ## OpenVPN with Obfuscation
 
-When WireGuard gets blocked, OpenVPN with SSL obfuscation provides an alternative. By wrapping VPN traffic in an SSL tunnel, you make it appear as standard HTTPS traffic.
+When WireGuard gets blocked, OpenVPN with SSL obfuscation provides an alternative. By wrapping VPN traffic in a SSL tunnel, you make it appear as standard HTTPS traffic.
 
 ### Installing and Configuring
 

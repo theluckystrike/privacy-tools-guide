@@ -238,7 +238,7 @@ Consider using a custom ROM like **Lineage OS** or **GrapheneOS** (for Pixel dev
 
 ## Best Practices for Ongoing Permission Hygiene
 
-Permission management requires ongoing attention, not an one-time audit. Adopt these habits:
+Permission management requires ongoing attention, not a one-time audit. Adopt these habits:
 
 **Pre-installation audit**: Review permissions before installing any app—the Play Store shows requested permissions before download. Search for user reviews mentioning unusual permission requests or data collection.
 

@@ -157,7 +157,7 @@ sudo cp /etc/issue.net /etc/issue
 
 ## SSH Session Logging with script
 
-Every command run in an SSH session can be recorded:
+Every command run in a SSH session can be recorded:
 
 ```bash
 # /etc/profile.d/session-log.sh

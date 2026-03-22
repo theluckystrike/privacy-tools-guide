@@ -1,7 +1,11 @@
 ---
 layout: default
 title: "How to Use John the Ripper for Password Auditing"
+<<<<<<< HEAD
 description: "Audit password security with John the Ripper using wordlist attacks, rule-based mangling, incremental mode, and hash extraction from Linux, Windows, and."
+=======
+description: "Audit password security with John the Ripper using wordlist attacks, rule-based mangling, incremental mode, and hash extraction from Linux, Windows, and
+>>>>>>> 900910b9245b9b701f9371a2b27423efb875d01e
 date: 2026-03-22
 author: theluckystrike
 permalink: /john-the-ripper-password-auditing-guide/
@@ -18,7 +22,7 @@ tags: [privacy-tools-guide]
 
 John the Ripper (JtR) audits the strength of stored password hashes. In a security assessment, you use it to identify accounts using weak or guessable passwords before an attacker does. This guide covers authorized use — auditing your own infrastructure and running penetration tests you have explicit written permission to perform.
 
-**Legal note**: Only run password auditing on systems and hashes you own or have written authorization to test. Unauthorized access to computer systems is a criminal offense in virtually every jurisdiction.
+**Legal note**: Only run password auditing on systems and hashes you own or have written authorization to test. Unauthorized access to computer systems is a criminal offense in nearly every jurisdiction.
 
 ---
 

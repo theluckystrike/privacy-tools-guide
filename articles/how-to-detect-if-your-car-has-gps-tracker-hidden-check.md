@@ -220,7 +220,7 @@ If an unknown device responds on the OBD bus, this could indicate aftermarket te
 
 ### Step 4: Build a Detection Routine
 
-Effective tracker detection isn't an one-time effort—it requires periodic checks. Here's a practical routine:
+Effective tracker detection isn't a one-time effort—it requires periodic checks. Here's a practical routine:
 
 1. **Weekly:** Quick visual inspection of OBD-II port and obvious exterior locations
 2. **Monthly:** Full physical inspection of all common hiding spots

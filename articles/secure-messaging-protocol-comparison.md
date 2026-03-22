@@ -109,7 +109,7 @@ Decentralization: Strong advantage for censorship resistance
 
 Used by: Conversations, Gajim, Dino XMPP clients
 
-OMEMO is an XMPP extension (XEP-0384) that ports the Signal Protocol to XMPP. It uses the same Double Ratchet for 1:1 messages and an Olm-based approach for multi-device messaging.
+OMEMO is a XMPP extension (XEP-0384) that ports the Signal Protocol to XMPP. It uses the same Double Ratchet for 1:1 messages and an Olm-based approach for multi-device messaging.
 
 Security properties are close to Signal Protocol for 1:1 messaging. The main differences are in deployment:
 - XMPP's federated nature means different servers have different security practices

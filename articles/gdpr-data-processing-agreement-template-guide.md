@@ -265,7 +265,7 @@ Customize this template to match your architecture and update it as your data pr
 
 ### Step 17: DPA Lifecycle Management
 
-A DPA is not an one-time document. As your technical architecture evolves, your DPA must reflect the current state of your processing. Running a DPA that describes a data model you no longer use creates legal exposure—the agreement is meant to accurately represent what you actually do.
+A DPA is not a one-time document. As your technical architecture evolves, your DPA must reflect the current state of your processing. Running a DPA that describes a data model you no longer use creates legal exposure—the agreement is meant to accurately represent what you actually do.
 
 Build version control into your DPA workflow. Store DPAs in a repository alongside your technical documentation, and treat significant architecture changes as triggers for DPA review:
 

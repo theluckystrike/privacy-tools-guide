@@ -257,7 +257,7 @@ An attacker cannot modify the kernel even with root access (requires special CAP
 
 ## Validating Your Own System Configuration
 
-Create a comprehensive boot chain report:
+Create a boot chain report:
 
 ```bash
 #!/bin/bash

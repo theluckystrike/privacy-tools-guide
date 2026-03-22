@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all their digital assets. Calendar events and contact lists often contain equally sensitive information—meeting topics, business relationships, personal schedules—yet these frequently remain unencrypted or poorly protected. Tutanota, the Germany-based encrypted email service, extends its end-to-end encryption model to calendar and contacts, providing an unified encrypted ecosystem. Understanding how this encryption works helps developers and power users make informed decisions about their privacy infrastructure.
+End-to-end encryption has become the gold standard for protecting sensitive data in transit, but many users assume this protection extends automatically to all their digital assets. Calendar events and contact lists often contain equally sensitive information—meeting topics, business relationships, personal schedules—yet these frequently remain unencrypted or poorly protected. Tutanota, the Germany-based encrypted email service, extends its end-to-end encryption model to calendar and contacts, providing a unified encrypted ecosystem. Understanding how this encryption works helps developers and power users make informed decisions about their privacy infrastructure.
 
 ## Table of Contents
 
@@ -151,7 +151,7 @@ For developers integrating Tutanota's encrypted features, several practical cons
 
 ## Comparison with Alternatives
 
-While Tutanota provides integrated encrypted calendar and contacts, alternatives like **Proton Calendar** and **Proton Contacts** offer similar functionality. Both use end-to-end encryption, though implementation details differ. The key distinction is that Tutanota's approach maintains consistent encryption across email, calendar, and contacts within an unified system.
+While Tutanota provides integrated encrypted calendar and contacts, alternatives like **Proton Calendar** and **Proton Contacts** offer similar functionality. Both use end-to-end encryption, though implementation details differ. The key distinction is that Tutanota's approach maintains consistent encryption across email, calendar, and contacts within a unified system.
 
 For users requiring maximum privacy, Tutanota's approach reduces attack surface by eliminating the need to trust separate services for different data types.
 

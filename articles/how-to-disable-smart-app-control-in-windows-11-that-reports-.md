@@ -277,7 +277,7 @@ netstat -ano | findstr /R "established"
 # - settings.data.microsoft.com
 ```
 
-Each blocked or permitted application generates a HTTPS request that includes a hash of the executable plus system identifiers.
+Each blocked or permitted application generates an HTTPS request that includes a hash of the executable plus system identifiers.
 
 ### Step 10: Alternative Security Models
 

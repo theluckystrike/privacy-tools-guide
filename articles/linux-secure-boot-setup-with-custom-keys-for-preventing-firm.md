@@ -157,7 +157,7 @@ sbsign --key ~/secureboot/keys/db.key --cert ~/secureboot/keys/db.crt \
     /boot/efi/EFI/systemd/systemd-bootx64.efi
 ```
 
-If you use an unified kernel image (UKI), sign the entire kernel bundle:
+If you use a unified kernel image (UKI), sign the entire kernel bundle:
 
 ```bash
 sbsign --key ~/secureboot/keys/db.key --cert ~/secureboot/keys/db.crt \

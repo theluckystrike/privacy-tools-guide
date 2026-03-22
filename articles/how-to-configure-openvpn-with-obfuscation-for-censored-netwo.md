@@ -41,7 +41,7 @@ Several obfuscation techniques exist for OpenVPN, each with different trade-offs
 
 3. **OpenVPN with TLS handshake camouflage** — Modifying the TLS handshake to look like regular web traffic, evading protocol detection.
 
-4. **Stunnel or SSL tunneling** — Encapsulating OpenVPN inside an SSL tunnel, making it indistinguishable from HTTPS connections.
+4. **Stunnel or SSL tunneling** — Encapsulating OpenVPN inside a SSL tunnel, making it indistinguishable from HTTPS connections.
 
 For most developers and power users, the combination of OpenVPN with obfsproxy or stunnel provides the best balance of compatibility and effectiveness.
 
