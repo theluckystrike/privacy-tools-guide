@@ -35,6 +35,15 @@ The problem: most people install extensions without understanding the risks. You
 
 This guide shows you how to audit extensions before installing them. You'll learn what permissions to question, how to read manifest files, how to detect suspicious behavior, and what tools reveal hidden data exfiltration.
 
+## Key Takeaways
+
+- **Most users click through**: without reading.
+- **Most extensions use Google's**: update service.
+- **Toggle "Allow on all**: sites" off and use "Allow on specified sites" to limit it to only the domains you need it on.
+- **uBlock Origin (open-source**: no data collection) is the best choice.
+- **Risk score (0-100, lower is better)**: Based on permissions, version history, age, and update frequency.
+- **The problem**: most people install extensions without understanding the risks.
+
 ## Understanding Browser Extension Permissions
 
 When you install an extension, it asks for permissions. Most users click through without reading. This is a mistake.

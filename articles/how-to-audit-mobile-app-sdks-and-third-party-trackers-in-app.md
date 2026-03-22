@@ -31,6 +31,19 @@ tags: [privacy-tools-guide, sdk]---
 
 Mobile applications frequently bundle third-party software development kits (SDKs) that collect user data for analytics, advertising, and other purposes. Understanding what these SDKs do is essential for developers building privacy-conscious apps and for power users who want to know what happens on their devices. This guide covers practical methods to audit mobile app SDKs and identify third-party trackers in iOS and Android applications.
 
+## Key Takeaways
+
+- **Set up a proxy like mitmproxy**: ```bash
+mitmproxy -p 8080
+```
+
+Configure your device or emulator to use the proxy.
+- **Mobile applications frequently bundle**: third-party software development kits (SDKs) that collect user data for analytics, advertising, and other purposes.
+- **Understanding what these SDKs**: do is essential for developers building privacy-conscious apps and for power users who want to know what happens on their devices.
+- **By auditing the SDKs embedded in an app**: you can identify privacy risks, ensure compliance with regulations like GDPR and CCPA, and make informed decisions about which apps to use or distribute.
+- **Once traffic flows through the proxy**: use the app and examine requests.
+- **Start with static analysis**: to identify obvious trackers, then use network monitoring to confirm data transmission.
+
 ## Why SDK Auditing Matters
 
 Third-party SDKs can transmit sensitive user data to remote servers without clear disclosure. Common data points include device identifiers, location information, installation details, browsing behavior, and contact lists. Some SDKs share data with advertising networks, data brokers, or analytics platforms. By auditing the SDKs embedded in an app, you can identify privacy risks, ensure compliance with regulations like GDPR and CCPA, and make informed decisions about which apps to use or distribute.

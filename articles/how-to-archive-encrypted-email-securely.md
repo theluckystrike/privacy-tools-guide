@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 To archive encrypted email securely, export your messages to MBOX or Maildir format via IMAP, then store your PGP/S/MIME private keys in a separate AES-256-encrypted container — never alongside the mail archive itself. This guide gives you three concrete methods (Python IMAP export, gpg-mailroom automation, and per-message Maildir encryption) with copy-paste commands, plus the key-backup, verification, and recovery steps that prevent your archive from becoming permanently unreadable.
 
+## Key Takeaways
+
+- **For most use cases**: annual refreshes to new drives and diversified cloud backup provide sufficient protection.
+- **Keep at least two**: copies on different media and account for key expiration and rotation when planning your schedule.
+- **Maintain your key backups carefully**: because there is no recovery path without them.
+- **Verification procedures to confirm**: successful restoration Test recovery on a clean system at least once to ensure your documentation is accurate.
+
 ## Understanding the Encryption Challenge
 
 Standard email archiving tools assume they can read message content. Encrypted email breaks this assumption. When you archive a PGP-encrypted message, you must preserve:

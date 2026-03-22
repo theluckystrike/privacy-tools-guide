@@ -35,6 +35,17 @@ A 2024 study found 32% of popular Chrome extensions requested permissions they d
 
 This guide teaches you to audit your extensions yourself. You'll learn to read permission manifests, monitor network traffic, and replace risky extensions with privacy-safe alternatives.
 
+## Key Takeaways
+
+- **Cost**: Free tier (unlimited passwords, 1 device), or $10/year (premium, multiple devices).
+- **A 2024 study found**: 32% of popular Chrome extensions requested permissions they don't actually use.
+- **Another 12% were caught**: exfiltrating user data (browsing history, clipboard contents) to remote servers.
+- **Wireshark (advanced)**: For deeper inspection, use Wireshark (free, open-source network sniffer):
+
+1.
+- Most users have no idea.
+- **Cost**: $5–15/month (varies by provider).
+
 ## What Permissions Actually Mean
 
 Browser extension permissions are deceptive. The manifest says `tabs` and `activeTab`; in reality, one reads every site you visit, the other reads only the current site. Knowing the difference is step one.

@@ -33,6 +33,15 @@ Most home networks leak DNS data: every website you visit, every app you use, ev
 
 This guide walks through installing Pi-hole on a Raspberry Pi (or any Linux server) and configuring it to protect your entire home network.
 
+## Key Takeaways
+
+- **A healthy Pi-hole typically**: blocks 15–40% of DNS queries depending on household browsing patterns.
+- **Most home networks leak DNS data**: every website you visit, every app you use, every device connecting—your ISP (internet service provider) sees it all.
+- **Connect ethernet cable (better**: than WiFi) 3.
+- **Choose network interface (eth0**: if ethernet connected) # 2.
+- **Choose blocklistss (default is**: fine) # 5.
+- **Query will block going**: forward If something you use is blocked: 1.
+
 ## Understanding DNS and Privacy
 
 DNS (Domain Name System) is the internet's phone book. When you visit google.com, your device asks: "What IP address is google.com?" Your ISP's DNS server logs this request, creating a record of everywhere you browse.

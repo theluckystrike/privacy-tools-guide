@@ -31,6 +31,13 @@ tags: [privacy-tools-guide, security]---
 
 Consumer routers ship with default credentials, remote management enabled, and firmware that often goes unpatched for years. They're one of the most common entry points for home network attacks. Hardening your router takes less than an hour and covers the majority of real-world threat vectors.
 
+## Key Takeaways
+
+- **They're one of the**: most common entry points for home network attacks.
+- **Check the manufacturer's support**: page for your model 3.
+- **Malware on a compromised**: device can use UPnP to expose it directly to the internet.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understand What You're Working With
 
 Before making changes, note:
