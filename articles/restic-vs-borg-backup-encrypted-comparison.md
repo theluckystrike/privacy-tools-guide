@@ -6,7 +6,7 @@ description: "Compare restic vs borg backup encrypted comparison with practical 
 tags: [privacy-tools-guide, comparison]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
