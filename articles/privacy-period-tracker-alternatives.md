@@ -5,7 +5,7 @@ description: "The safest period and cycle tracking apps that store data locally,
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-period-tracker-alternatives/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
