@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Harden Windows 10 and 11 Privacy Settings
 
 Windows collects diagnostic data, browsing habits, clipboard content, location data, and usage telemetry by default. Some collection can't be disabled through the UI — it requires Group Policy, registry edits, or PowerShell. This guide covers what to disable and how to verify it's actually off.
 

@@ -3,7 +3,7 @@ layout: default
 title: "Migrating from Safari Keychain to Bitwarden"
 description: "A technical guide for developers and power users migrating passwords from Safari Keychain to Bitwarden. Covers CLI export, CSV conversion, and automation"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /migrating-from-safari-keychain-to-bitwarden-complete-migration-guide/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Migrating from Safari Keychain to Bitwarden: Complete Migration Guide
 
 Apple's Safari Keychain provides basic password management for macOS and iOS users, but developers and power users often need more advanced features. Bitwarden offers open-source transparency, cross-platform support, CLI tooling, and self-hosting options. This guide covers the technical process of moving your credentials from Safari Keychain to Bitwarden using command-line methods.
 

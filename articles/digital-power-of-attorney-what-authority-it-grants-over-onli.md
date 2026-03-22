@@ -3,7 +3,7 @@ layout: default
 title: "Digital Power of Attorney: What Authority It Grants Over"
 description: "A technical breakdown of digital power of attorney and how it applies to cryptocurrency wallets, online accounts, and digital assets. Includes"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /digital-power-of-attorney-what-authority-it-grants-over-onli/
 categories: [guides, security, enterprise]
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# Digital Power of Attorney: What Authority It Grants Over Online Accounts and Crypto Wallets
 
 As developers and power users, we accumulate digital assets that have real-world value. From cryptocurrency holdings to cloud storage accounts, our online presence represents significant assets. But what happens if you become incapacitated or pass away? A digital power of attorney (DPOA) provides the legal framework for someone to manage these digital assets on your behalf.
 

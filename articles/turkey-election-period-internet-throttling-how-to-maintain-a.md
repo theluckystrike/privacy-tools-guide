@@ -3,7 +3,7 @@ layout: default
 title: "Turkey Election Period Internet Throttling"
 description: "A technical guide for developers and power users on maintaining internet access during Turkey's election periods. Includes practical tools, configuration"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /turkey-election-period-internet-throttling-how-to-maintain-a/
 categories: [guides]
@@ -15,7 +15,6 @@ intent-checked: true
 ---
 
 {% raw %}
-# Turkey Election Period Internet Throttling: How to Maintain Access During Political Censorship 2026
 
 Turkey has a documented history of internet throttling and censorship during election periods. For developers and power users, understanding how these restrictions work and knowing technical countermeasures is essential for maintaining access to information and communication channels.
 

@@ -3,7 +3,7 @@ layout: default
 title: "Stop Alexa From Recording Conversations and Sending Audio"
 description: "A technical guide for developers and power users to prevent Alexa from recording and transmitting audio data to Amazon servers. Includes code examples"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-stop-alexa-from-recording-conversations-and-sending-a/
 categories: [guides]
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, best-of]
 ---
 
 {% raw %}
-# How to Stop Alexa From Recording Conversations and Sending Audio to Amazon
 
 Amazon Alexa devices are designed to listen for their wake word continuously, which means they constantly process audio from your environment. Understanding how to minimize what Alexa records and where that data goes is essential for privacy-conscious users. This guide provides practical methods to reduce Alexa's data collection, from basic settings adjustments to more advanced techniques suitable for developers and power users.
 

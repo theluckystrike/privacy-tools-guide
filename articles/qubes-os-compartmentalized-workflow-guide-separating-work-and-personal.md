@@ -3,7 +3,7 @@ layout: default
 title: "Qubes OS Compartmentalized Workflow Guide"
 description: "A practical guide to implementing a compartmentalized workflow in Qubes OS, isolating work and personal activities with proven security boundaries"
 date: 2026-03-18
-last_modified_at: 2026-03-18
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
 categories: [guides, security]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, workflow]
 
 {% raw %}
 
-# Qubes OS Compartmentalized Workflow Guide: Separating Work and Personal in 2026
 
 Modern threat models require more than antivirus software and strong passwords. Whether you're a developer handling sensitive code, a professional working with confidential client data, or an privacy-conscious user wanting strict separation between your personal digital life and work, Qubes OS provides the strongest isolation model available for desktop computing. This guide walks you through implementing a practical compartmentalized workflow that keeps your work and personal activities strictly separated while maintaining usability.
 

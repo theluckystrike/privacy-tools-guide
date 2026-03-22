@@ -3,7 +3,7 @@ layout: default
 title: "Briar Messenger Offline Mesh Review: Technical Deep Dive"
 description: "Briar is worth it if you need a messenger that works without any internet infrastructure -- it delivers genuine offline mesh networking over Bluetooth LE"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "theluckystrike"
 permalink: /briar-messenger-offline-mesh-review/
 reviewed: true
@@ -14,8 +14,6 @@ voice-checked: true
 tags: [privacy-tools-guide]
 ---
 
-
-# Briar Messenger Offline Mesh Review: Technical Deep Dive
 
 Briar is worth it if you need a messenger that works without any internet infrastructure -- it delivers genuine offline mesh networking over Bluetooth LE, Wi-Fi Direct, and USB, using end-to-end encryption via the Signal protocol. The trade-offs are significant: it is mobile-only, text and image only (no voice or video), contacts must be exchanged in person via QR code, and battery drain during active mesh mode is heavy. For emergency response, protest coordination, or field research in connectivity-dead zones, Briar is the best available option; for everyday messaging, it is not a replacement for Signal or similar apps.
 

@@ -3,7 +3,7 @@ layout: default
 title: "Privacy Focused Calendar Apps Comparison 2026"
 description: "Compare privacy-focused calendar apps with end-to-end encryption. Reviews Proton Calendar, Tutanota, EteSync, Nextcloud Calendar, and self-hosted options"
 date: 2026-03-20
-last_modified_at: 2026-03-20
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-calendar-apps-comparison-2026/
 categories: [guides]
@@ -16,7 +16,6 @@ intent-checked: true
 
 {% raw %}
 
-# Privacy Focused Calendar Apps Comparison 2026
 
 Google Calendar, Outlook, and Apple Calendar sync your schedule to corporate servers. They track meeting attendees, analyze content, and use data for advertising targeting. Privacy-focused alternatives encrypt your data end-to-end, keep schedules private, and offer self-hosting options. This guide compares Proton Calendar, Tutanota, EteSync, Nextcloud Calendar, and self-hosted solutions.
 

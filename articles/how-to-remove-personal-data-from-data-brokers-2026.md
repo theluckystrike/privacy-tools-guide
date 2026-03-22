@@ -3,7 +3,7 @@ layout: default
 title: "How to Remove Personal Data from Data Brokers 2026"
 description: " guide to opting out of 20+ data brokers including Spokeo, WhitePages, PeopleFinder. CCPA/GDPR compliant methods."
 date: 2026-03-21
-last_modified_at: 2026-03-21
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 categories: [security, guides]
 tags: [privacy-tools-guide]
@@ -14,7 +14,6 @@ intent-checked: true
 permalink: /how-to-remove-personal-data-from-data-brokers-2026/
 ---
 
-# How to Remove Personal Data from Data Brokers 2026
 
 {% raw %}
 

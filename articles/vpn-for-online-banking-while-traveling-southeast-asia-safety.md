@@ -3,7 +3,7 @@ layout: default
 title: "VPN for Online Banking While Traveling Southeast Asia"
 description: "A technical guide to securing your online banking with VPN while traveling through Southeast Asia. Learn setup, configuration, and security best practices"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /vpn-for-online-banking-while-traveling-southeast-asia-safety/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# VPN for Online Banking While Traveling Southeast Asia Safety
 
 Protect your online banking in Southeast Asia by connecting through a WireGuard or OpenVPN tunnel before opening any banking app or website on public WiFi. Use a VPN server in Singapore or Hong Kong for the lowest latency, verify your IP and DNS are not leaking before each session, and enable a kill switch to block traffic if the VPN drops. This guide covers the full security workflow, from protocol selection to compromise detection.
 

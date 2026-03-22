@@ -3,7 +3,7 @@ layout: default
 title: "Bitwarden Vault Export Backup Guide"
 description: "A practical guide to exporting and backing up your Bitwarden vault. Learn CLI methods, automation scripts, and recovery strategies for developers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /bitwarden-vault-export-backup-guide/
 categories: [guides, security]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 
 {% raw %}
-# Bitwarden Vault Export Backup Guide: Complete Technical Reference
 
 To back up your Bitwarden vault, run `bw export --format json --encrypted` from the Bitwarden CLI to create a master-password-protected export of all your passwords, notes, and identities. For automated daily backups, wrap this command in a cron job that also handles session management and old backup cleanup. This guide covers all three export formats (JSON, encrypted JSON, CSV), step-by-step CLI setup, automated backup scripts, restore procedures, and security best practices for storing your exports.
 

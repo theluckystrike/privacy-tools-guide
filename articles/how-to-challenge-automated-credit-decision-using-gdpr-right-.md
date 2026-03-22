@@ -3,7 +3,7 @@ layout: default
 title: "Challenge Automated Credit Decision Using GDPR Right"
 description: "A practical guide for developers and power users on invoking GDPR Article 22 to challenge automated credit decisions and request human review. Includes"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-challenge-automated-credit-decision-using-gdpr-right-/
 categories: [guides]
@@ -16,7 +16,6 @@ voice-checked: true
 
 {% raw %}
 
-# How to Challenge Automated Credit Decision Using GDPR Right to Human Review
 
 When a bank denies your credit application without human intervention, you have legal recourse under GDPR Article 22. This article provides actionable steps to identify, challenge, and overturn automated credit decisions using your right to human review.
 

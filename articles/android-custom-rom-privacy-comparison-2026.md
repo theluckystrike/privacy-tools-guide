@@ -3,7 +3,7 @@ layout: default
 title: "Android Custom ROM Privacy Comparison 2026"
 description: "A developer-focused comparison of GrapheneOS, CalyxOS, LineageOS, and DivestOS privacy features, sandboxing, and degoogled Android experiences"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /android-custom-rom-privacy-comparison-2026/
 categories: [security, guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# Android Custom ROM Privacy Comparison 2026: A Technical Guide
 
 Choosing a privacy-focused custom ROM requires understanding the technical tradeoffs between security hardening, Google dependency, and ecosystem compatibility. This guide compares the leading options for developers and power users who prioritize data minimization without sacrificing usability.
 

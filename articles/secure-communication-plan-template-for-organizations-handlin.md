@@ -3,7 +3,7 @@ layout: default
 title: "Secure Communication Plan Template for Organizations"
 description: "Organizations handling sensitive information—whether client data, proprietary code, legal documents, or healthcare records—need more than ad-hoc secure"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /secure-communication-plan-template-for-organizations-handlin/
 categories: [guides]
@@ -16,7 +16,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# Secure Communication Plan Template for Organizations Handling Sensitive Information Guide
 
 Organizations handling sensitive information—whether client data, proprietary code, legal documents, or healthcare records—need more than ad-hoc secure messaging. A documented communication plan defines what tools to use, when to use them, who has access, and how to handle incidents. This guide provides a template you can adapt to your organization, with implementation examples for developers and power users.
 

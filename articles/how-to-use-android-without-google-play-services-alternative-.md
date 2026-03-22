@@ -3,7 +3,7 @@ layout: default
 title: "Use Android Without Google Play Services"
 description: "A technical guide for developers and power users on running Android without Google Play Services using F-Droid, Aurora Store, and other alternative app"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-android-without-google-play-services-alternative-stores/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# How to Use Android Without Google Play Services: Alternative Stores Guide
 
 Many Android users seek alternatives to Google Play Services for privacy, security, or philosophical reasons. This guide covers practical methods for running a functional Android device without Google's ecosystem, focusing on alternative app stores and sideloading techniques suitable for developers and power users.
 

@@ -3,7 +3,7 @@ layout: default
 title: "CCPA Compliance Requirements for Online Businesses"
 description: "A practical guide to CCPA compliance for developers and power users. Learn about consumer rights, data handling requirements, and implementation"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /ccpa-compliance-requirements-for-online-businesses-californi/
 reviewed: true
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# CCPA Compliance Requirements for Online Businesses: California Privacy Law Guide 2026
 
 CCPA requires California businesses to disclose what data they collect, allow users to delete and opt-out, avoid selling data without explicit consent, and respond to data access requests within 45 days. You must comply if you handle California residents' data and meet revenue or data thresholds, implementing privacy policies, opt-out mechanisms, and data request processes. The CPRA (2023 successor) adds more consumer rights including data correction and algorithm opt-out, increasing compliance complexity and potential penalties for non-compliance.
 

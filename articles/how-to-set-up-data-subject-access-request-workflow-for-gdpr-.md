@@ -3,7 +3,7 @@ layout: default
 title: "Set Up Data Subject Access Request Workflow"
 description: "A practical technical guide for developers building GDPR-compliant data subject access request (DSAR) workflows. Covers automated pipelines, identity"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /how-to-set-up-data-subject-access-request-workflow-for-gdpr-/
 categories: [guides]
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide, workflow]
 ---
 
 {% raw %}
-# How to Set Up Data Subject Access Request Workflow for GDPR Compliance
 
 The European Union's General Data Protection Regulation (GDPR) grants individuals significant rights over their personal data. Among the most operationally demanding is the **Right of Access** (Article 15), commonly called a Data Subject Access Request (DSAR). Organizations must respond to these requests within 30 days—and failure can result in fines reaching €20 million or 4% of global annual revenue.
 

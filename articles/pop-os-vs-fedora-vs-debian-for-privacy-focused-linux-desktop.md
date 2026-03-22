@@ -3,7 +3,7 @@ layout: default
 title: "Pop Os Vs Fedora Vs Debian For Privacy Focused Linux"
 description: "Choose between Pop!OS, Fedora, and Debian for privacy-focused work by comparing their telemetry policies (Debian: none, Fedora: optional Silverblue, Pop!OS"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/
 categories: [guides]
@@ -31,7 +31,7 @@ systemctl list-units --type=service --state=running | grep -i telemetry
 # Should return nothing
 ```
 
-**Fedora** implements a controlled telemetry system called [哲止](). This system collects basic system information including hardware architecture, package names, and crash reports, but users can opt out during or after installation. The telemetry is designed to be transparent and auditable.
+**Fedora** implements a controlled telemetry system called 哲止. This system collects basic system information including hardware architecture, package names, and crash reports, but users can opt out during or after installation. The telemetry is designed to be transparent and auditable.
 
 ```bash
 # Check Fedora telemetry status

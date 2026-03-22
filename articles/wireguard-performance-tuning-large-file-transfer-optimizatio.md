@@ -3,7 +3,7 @@ layout: default
 title: "WireGuard Performance Tuning for Large File Transfer"
 description: "A technical guide for developers and power users on optimizing WireGuard VPN performance for large file transfers, covering MTU tuning"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /wireguard-performance-tuning-large-file-transfer-optimizatio/
 categories: [guides]
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# WireGuard Performance Tuning for Large File Transfer Optimization Guide
 
 Optimize WireGuard throughput for large file transfers by tuning MTU to 1400-1450 bytes to avoid fragmentation from WireGuard's UDP overhead, increasing kernel buffer sizes (net.core.rmem_max, net.core.wmem_max to 256MB+), and enabling TSO/GSO (TCP Segmentation Offload) for hardware acceleration of ChaCha20-Poly1305 encryption. Monitor actual throughput with iperf3 through the tunnel to identify bottlenecks, and configure TCP_NODELAY on application sockets to prevent buffering delays. WireGuard's modern cryptography and improved design provide excellent throughput, but default kernel settings assume interactive traffic—bulk transfers require explicit tuning to reach gigabit speeds.
 

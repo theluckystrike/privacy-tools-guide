@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Data Processing Agreement Template Guide"
 description: "A practical guide to GDPR data processing agreements for developers. Learn what clauses to include, how to implement DPA handling in code, and ensure"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /gdpr-data-processing-agreement-template-guide/
 intent-checked: true
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# GDPR Data Processing Agreement Template Guide
 
 When you build applications that process personal data for other organizations, you often need a Data Processing Agreement (DPA). GDPR mandates these agreements when you act as a processor handling data on behalf of controllers.
 

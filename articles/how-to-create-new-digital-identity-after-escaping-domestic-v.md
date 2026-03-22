@@ -3,7 +3,7 @@ layout: default
 title: "Create a New Digital Identity After Escaping Domestic"
 description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, api]
 
 {% raw %}
 
-# How to Create a New Digital Identity After Escaping Domestic Violence
 
 Creating a new digital identity requires more than just opening new accounts. For survivors of domestic violence, every digital footprint can become a vector for tracking, harassment, or coercion. This guide provides technical strategies for building an isolated, secure digital presence using tools and workflows accessible to developers and power users.
 
