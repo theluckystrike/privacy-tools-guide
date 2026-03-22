@@ -28,12 +28,22 @@ To lock down Snapchat privacy in 2026, go to Settings > Privacy and set "Contact
 
 For privacy-sensitive users**: regular cache clearing prevents local data accumulation.
 
-## Accessing Snapchat's Privacy Settings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Access Snapchat's Privacy Settings
 
 Open Snapchat and tap your **profile icon** → **Settings gear** (⚙️). Scroll to the **Privacy** section at the top of the Settings menu.
 For developers building applications with the Snapchat API, understanding these user-facing controls is critical because they directly affect what data your application can access through Snapchat's Graph API and Kit integrations.
 
-## Account Visibility Controls
+### Step 2: Account Visibility Controls
 
 ### Who Can Contact You
 
@@ -68,7 +78,7 @@ Snap Map visibility is controlled separately from other privacy settings:
 
 Enable Ghost Mode at **Privacy → Show My Location** → toggle on **Ghost Mode**. You can set a timer for temporary ghost mode, useful when you need location sharing for a specific duration only.
 
-## Snap and Chat Privacy
+### Step 3: Snap and Chat Privacy
 
 ### Auto-Delete Settings
 
@@ -86,7 +96,7 @@ Snapchat notifies users when someone screenshots or records their snaps. While y
 
 This is a platform-level protection you cannot modify as a user. However, developers building Snapchat experiences should note that `onScreenCapture` events fire in Snap Kit when screenshots are detected, allowing your application to respond appropriately.
 
-## Account Security Settings
+### Step 4: Account Security Settings
 
 ### Two-Factor Authentication
 
@@ -101,7 +111,7 @@ For developers, understanding 2FA implementation helps when building apps that i
 
 Enable login verification to require confirmation from a trusted device when logging in from a new device. This adds an extra layer beyond 2FA and is essential for accounts with sensitive data.
 
-## Data and Information Management
+### Step 5: Data and Information Management
 
 ### Who Can See Your Snapcode
 
@@ -181,7 +191,7 @@ window.snapPixel.init('YOUR_PIXEL_ID', {
 
 The `respectConsent` flag ensures pixels only fire when users have provided appropriate consent under GDPR and CCPA.
 
-## Quick Privacy Checklist
+### Step 6: Quick Privacy Checklist
 
 Use this checklist to audit your Snapchat privacy configuration:
 
@@ -251,7 +261,7 @@ Quarterly:
 - Review login verification history
 ```
 
-## Privacy Implications of Snap Map
+### Step 7: Privacy Implications of Snap Map
 
 Snap Map presents unique privacy challenges beyond standard location sharing. Snapchat displays your location on a map visible to selected users, but implementation details matter significantly.
 
@@ -273,7 +283,7 @@ Your Bitmoji avatar's location appears on Snap Map, serving as a proxy for your 
 
 **Safest approach**: Disable Bitmoji entirely if location privacy matters, or use a completely generic avatar.
 
-## Detecting Account Compromise
+### Step 8: Detecting Account Compromise
 
 Even with strong settings, accounts can be compromised. Watch for these signs:
 
@@ -290,6 +300,21 @@ If compromised, immediately:
 4. Check and reset recovery phone number
 5. Enable 2FA with new authenticator app
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

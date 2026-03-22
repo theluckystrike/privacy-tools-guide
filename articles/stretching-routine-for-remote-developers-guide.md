@@ -50,7 +50,17 @@ Working from home often means longer hours and fewer natural movement breaks. Wi
 
 The key is integrating movement into your workflow rather than treating stretching as a separate task. Here is how to structure your day.
 
-## Morning Warm-Up Routine (5 Minutes)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Morning Warm-Up Routine (5 Minutes)
 
 Start your workday with these activation stretches to prepare your body for hours of sitting:
 
@@ -71,7 +81,7 @@ Start your workday with these activation stretches to prepare your body for hour
 
 Complete each movement slowly, breathing deeply. Do not bounce or force any stretch—gentle tension is sufficient.
 
-## Hourly Desk Stretches (2-3 Minutes)
+### Step 2: Hourly Desk Stretches (2-3 Minutes)
 
 Set a timer to remind yourself every hour. These stretches require no equipment and can be performed while seated:
 
@@ -87,7 +97,7 @@ Extend your arms forward and make fists. Rotate your wrists in circles—10 cloc
 ### Seated Spinal Twist
 While seated, place your right hand on the outside of your left knee and twist your torso to the left, looking over your left shoulder. Hold for 20 seconds, then repeat on the other side. This rotation maintains spine mobility.
 
-## End-of-Day Deep Stretches (10 Minutes)
+### Step 3: End-of-Day Deep Stretches (10 Minutes)
 
 Before finishing work, dedicate 10 minutes to deeper stretches that address chronic tightness:
 
@@ -110,7 +120,7 @@ Before finishing work, dedicate 10 minutes to deeper stretches that address chro
 
 These deeper stretches require consistency. You will not feel immediate relief after one session, but daily practice over two weeks typically yields noticeable improvements in mobility.
 
-## Configuring Break Reminders
+### Step 4: Configure Break Reminders
 
 Rather than relying on memory, use your terminal to set regular reminders:
 
@@ -129,7 +139,7 @@ done
 
 Consistent reminders transform stretching from an afterthought into a sustainable habit.
 
-## Creating a Stretching Schedule
+### Step 5: Create a Stretching Schedule
 
 Block stretching time on your calendar just like meetings. Treat it as non-negotiable—it prevents the injuries that ultimately cost more time than prevention. Many developers use the Pomodoro Technique, stretching during each fifth break:
 
@@ -147,7 +157,7 @@ Pomodoro Schedule with Stretching:
 
 This cycle maintains focus while ensuring adequate movement throughout your workday.
 
-## Tracking Your Progress
+### Step 6: Tracking Your Progress
 
 Create a simple tracking system to maintain accountability:
 
@@ -181,13 +191,13 @@ For developers experiencing persistent pain, consider these tools:
 
 Physical therapists who specialize in desk ergonomics can provide personalized routines based on your specific posture patterns and pain points. Do not ignore persistent pain—early intervention prevents chronic issues.
 
-## Building Long-Term Habits
+### Step 7: Build Long-Term Habits
 
 The best stretching routine is one you actually follow. Start with just 5 minutes per day, preferably at the same time each morning. Once this becomes automatic, gradually add the hourly desk stretches. Use your current workflow as cues—stretch right after your morning coffee, or right before your lunch break.
 
 Technology should support your wellness, not compete with it. Configure your tools once, then forget about them while they quietly remind you to move throughout the day.
 
-## Stretching Modification for Different Fitness Levels
+### Step 8: Stretching Modification for Different Fitness Levels
 
 The stretches described work for most people, but modifications account for different fitness levels:
 
@@ -228,7 +238,7 @@ The stretches described work for most people, but modifications account for diff
 # 3. Wrist pain: Avoid forceful rotations, do gentle circular movements
 ```
 
-## Stretching Routine for Different Ergonomic Issues
+### Step 9: Stretching Routine for Different Ergonomic Issues
 
 Not all developers need the same stretches. Tailor your routine to your specific pain points:
 
@@ -258,7 +268,7 @@ Not all developers need the same stretches. Tailor your routine to your specific
 
 Identify which areas give you pain, then prioritize stretches targeting those areas. Even 2 minutes of focused stretching for your problem areas beats 10 minutes of generic stretching.
 
-## Ergonomic Assessment for Remote Work Setup
+### Step 10: Ergonomic Assessment for Remote Work Setup
 
 Beyond stretching, your workspace configuration significantly impacts injury prevention. Poor ergonomics can't be overcome by stretching alone:
 
@@ -292,7 +302,7 @@ Mouse far away: Constant reaching
 
 **Desk Organization**: Keep frequently used items within arm's reach. Items requiring reaching (phone, files) outside normal work area should be accessed during intentional breaks.
 
-## Recognizing Repetitive Strain Injury Warning Signs
+### Step 11: Recognizing Repetitive Strain Injury Warning Signs
 
 Early intervention prevents chronic issues. Watch for:
 
@@ -310,7 +320,7 @@ These symptoms suggest inflammation. Stretching alone may not resolve underlying
 
 Physical therapists specializing in occupational health can perform ergonomic assessments and identify movement patterns causing strain.
 
-## Mental Benefits of Movement Breaks
+### Step 12: Mental Benefits of Movement Breaks
 
 Beyond physical health, stretching provides mental benefits:
 
@@ -322,7 +332,7 @@ Beyond physical health, stretching provides mental benefits:
 
 **Workflow Rhythm**: Incorporating movement creates natural work rhythms that prevent burnout. Your brain gets periodic rest from intense focus.
 
-## Integrating Movement Into Development Workflow
+### Step 13: Integrate Movement Into Development Workflow
 
 Rather than viewing stretching as separate from work, integrate it into your development cycle:
 
@@ -336,7 +346,7 @@ Rather than viewing stretching as separate from work, integrate it into your dev
 
 **Pomodoro Stretching**: Combine the Pomodoro Technique with stretching. Every fifth break includes deeper stretching rather than just screen-free time.
 
-## Automated Stretch Suggestions
+### Step 14: Automated Stretch Suggestions
 
 For those who forget manual reminders, several tools provide guided stretching:
 
@@ -349,6 +359,21 @@ For those who forget manual reminders, several tools provide guided stretching:
 **VS Code Extension**: The "Pomodoro" extension includes built-in stretch recommendations during breaks
 
 Setting up one of these automated systems removes the "willpower" requirement and makes stretching automatic.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

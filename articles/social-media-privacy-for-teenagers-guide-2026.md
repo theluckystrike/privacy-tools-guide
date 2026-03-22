@@ -40,7 +40,17 @@ Protect your social media privacy by making all accounts private, disabling loca
 - **Apps you haven't used**: in 90 days should be removed immediately.
 - **Many parents are confused**: about the difference between "friends only" and "public" posts, so taking time to explain helps them understand your privacy strategy.
 
-## Understanding Social Media Data Collection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Social Media Data Collection
 
 Every post, like, and search contributes to your digital footprint. Platforms collect extensive data including your location, interests, behavioral patterns, and social connections. For teenagers, this data collection begins at an age when many don't fully understand the implications.
 
@@ -48,7 +58,7 @@ The first step in protecting your privacy is awareness. Major platforms like Ins
 
 Understanding what each platform collects helps you make informed decisions about what you share. Developers and power users can take this a step further by examining API permissions and understanding how third-party apps access your data.
 
-## Platform-Specific Privacy Settings
+### Step 2: Platform-Specific Privacy Settings
 
 ### Instagram Privacy Configuration
 
@@ -68,25 +78,25 @@ Snapchat's Snap Map feature requires particular attention. This feature shares y
 
 Review your quick add settings to control whether Snapchat suggests your account to people who have your phone number or are near you. Disabling this prevents unwanted friend requests from strangers.
 
-## Password and Account Security
+### Step 3: Password and Account Security
 
 Strong, unique passwords form the foundation of account security. Each social media account should have a distinct password that you don't use anywhere else. A password manager helps generate and store complex passwords securely.
 
 Enable two-factor authentication (2FA) on every platform that supports it. Use authentication apps like Google Authenticator or Authy rather than SMS-based 2FA, as SIM swapping attacks can compromise text messages. For example, Instagram's 2FA can be configured through Settings > Privacy and Security > Two-Factor Authentication.
 
-## Managing App Permissions and Third-Party Access
+### Step 4: Manage App Permissions and Third-Party Access
 
 Third-party apps often request access to your social media accounts for quizzes, games, or tools. Each permission grant allows these apps to collect your data. Regularly review and revoke unnecessary permissions through each platform's connected apps settings.
 
 On Instagram, check Settings > Apps and Websites to see connected apps. Remove any apps you no longer use. Similarly, review connected apps on other platforms quarterly.
 
-## Understanding and Avoiding Tracking
+### Step 5: Understand and Avoiding Tracking
 
 Modern social media employs sophisticated tracking across websites and apps. Browser extensions like Privacy Badger or uBlock Origin can block many trackers. On mobile devices, iOS and Android offer varying levels of tracking prevention through their privacy settings.
 
 When possible, use the platform's built-in browser rather than opening external links, as this reduces cross-site tracking. Some platforms also offer "Limit Ad Tracking" options that reduce the data collected for advertising purposes.
 
-## Android-Specific Privacy Configuration
+### Step 6: Android-Specific Privacy Configuration
 
 Android devices offer several privacy advantages for social media apps. Start by reviewing app permissions in Settings > Apps. For each social media app, disable unnecessary permissions:
 
@@ -110,7 +120,7 @@ Use Android's built-in Permission Manager to grant temporary permissions that au
 
 Consider using GrapheneOS if your device supports it—this hardened Android variant provides granular control over app permissions and removes Google services by default, preventing data sharing with Google's ad network.
 
-## Practical Privacy Habits
+### Step 7: Practical Privacy Habits
 
 Developing consistent privacy habits provides lasting protection. Before posting, ask yourself: would I be comfortable with this content appearing in a public space? Remember that screenshots exist—anything you share can be preserved indefinitely, even on platforms designed for ephemeral content.
 
@@ -133,7 +143,7 @@ openssl rand -base64 16  # Creates 16-character random password
 
 Each social media account should have a completely different password. If one account is compromised, it doesn't expose all your other accounts.
 
-## Responding to Privacy Concerns
+### Step 8: Responding to Privacy Concerns
 
 If you encounter harassment or unwanted contact, use platform reporting tools immediately. Document any concerning interactions by taking screenshots before blocking, as blocked users cannot see your content but may have already saved information.
 
@@ -182,7 +192,7 @@ Even after securing your social media accounts, data brokers may have compiled p
 
 Services like Spokeo, MyLife, and PeopleFinder aggregate social media data with other sources. You can request removal from these services, though it requires individual requests per site. Automated services like Privacy.com or Optery can handle bulk removal requests.
 
-## Privacy-Focused Alternatives to Mainstream Platforms
+### Step 9: Privacy-Focused Alternatives to Mainstream Platforms
 
 Consider whether you actually need accounts on every major platform. Some teenagers maintain just one or two accounts to reduce overall data exposure while staying connected with peers.
 
@@ -192,7 +202,7 @@ Consider whether you actually need accounts on every major platform. Some teenag
 
 **Tumbleweed or WriteFreely for Sharing**: If you like writing longer-form content, these private blogging platforms don't track readers or profile your interests.
 
-## School and Educational Privacy Concerns
+### Step 10: School and Educational Privacy Concerns
 
 Schools increasingly use student information systems integrated with social platforms. Be aware of:
 
@@ -203,7 +213,7 @@ Schools increasingly use student information systems integrated with social plat
 
 Review your school's privacy policies and opt-out of directory listings where possible. Many schools allow students to restrict visibility of photos and personal information in school systems.
 
-## Dealing With Unwanted Attention and Harassment
+### Step 11: Dealing With Unwanted Attention and Harassment
 
 Social media privacy intersects with safety when dealing with unwanted contact or harassment.
 
@@ -215,7 +225,7 @@ Social media privacy intersects with safety when dealing with unwanted contact o
 
 **Recognize Catfishing**: Accounts that don't match real people, that use photos from other people, or that quickly push conversations to private messaging may be catfishing attempts. Verify identities independently if someone claims to be from your school or community.
 
-## Parental Involvement and Family Privacy
+### Step 12: Parental Involvement and Family Privacy
 
 If parents monitor your accounts, establish boundaries about what information is shared with them while acknowledging their legitimate safety concerns.
 
@@ -225,7 +235,7 @@ If parents monitor your accounts, establish boundaries about what information is
 
 **Explaining Privacy Settings**: Educate your parents about what various privacy controls do. Many parents are confused about the difference between "friends only" and "public" posts, so taking time to explain helps them understand your privacy strategy.
 
-## Building a Healthy Relationship With Social Media
+### Step 13: Build a Healthy Relationship With Social Media
 
 Privacy protections are important, but equally important is developing a healthy mindset about social media.
 
@@ -237,7 +247,7 @@ Privacy protections are important, but equally important is developing a healthy
 
 **Reality Check on Influencers**: Influencers' lives are heavily curated and often misrepresent reality. Spending hours looking at edited photos and carefully crafted narratives contributes to mental health issues independently of privacy concerns.
 
-## Understanding Platform Algorithms and Filter Bubbles
+### Step 14: Understand Platform Algorithms and Filter Bubbles
 
 Social media platforms use complex algorithms that, while useful for content discovery, can affect your privacy:
 
@@ -253,7 +263,7 @@ Social media platforms use complex algorithms that, while useful for content dis
 
 This inference happens through machine learning without explicit disclosure.
 
-## Protecting Minors' Digital Identity
+### Step 15: Protecting Minors' Digital Identity
 
 If you're a minor, additional considerations apply:
 
@@ -265,7 +275,7 @@ If you're a minor, additional considerations apply:
 
 **Parental Monitoring**: If parents monitor your accounts, understand this is legitimate parental responsibility but also limits privacy. Establish what information they monitor and negotiate boundaries that respect both safety and autonomy.
 
-## Understanding Platform Business Models
+### Step 16: Understand Platform Business Models
 
 Why platforms collect data helps you understand privacy implications:
 
@@ -279,7 +289,7 @@ Why platforms collect data helps you understand privacy implications:
 
 Understanding these business models explains why privacy controls often feel weak—the platform profits from data collection, so privacy is never the priority.
 
-## Making Smarter Platform Choices
+### Step 17: Making Smarter Platform Choices
 
 Rather than trying to protect yourself on inherently ad-supported platforms, consider alternatives:
 
@@ -290,6 +300,21 @@ Rather than trying to protect yourself on inherently ad-supported platforms, con
 **Federated Alternatives**: Mastodon and other ActivityPub platforms distribute control so no single company controls all your data.
 
 These alternatives have tradeoffs (smaller communities, fewer features) but eliminate the fundamental tension between your privacy and the platform's business model.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -26,7 +26,17 @@ Tor Browser on Android provides powerful privacy protection, but configuring it 
 - **The app provides an**: one-tap connect option, but power users should access advanced settings for optimal configuration.
 - **Configure app-specific routing if**: needed This creates a system-wide VPN that forces all applications to use Tor, not just the browser.
 
-## Understanding Orbot and Tor Browser Relationship
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Orbot and Tor Browser Relationship
 
 Orbot is the official Android implementation of Tor (The Onion Router). It creates a proxy network that routes your internet traffic through multiple encrypted relays, masking your IP address and protecting your traffic from surveillance.
 
@@ -39,7 +49,7 @@ Tor Browser works alongside Orbot to provide anonymous web browsing. While Orbot
 
 The Android implementation differs from desktop versions because mobile operating systems have different network stack behaviors and permission models.
 
-## Installing Tor Browser and Orbot
+### Step 2: Install Tor Browser and Orbot
 
 Both applications are available on F-Droid and Google Play Store. For maximum privacy, F-Droid is recommended as it provides reproducible builds.
 
@@ -51,7 +61,7 @@ adb install org.torproject.android_XX.X.X.X-arm64-v8a.apk
 
 After installation, grant the necessary permissions. Orbot requires network access permissions to function as a proxy.
 
-## Configuring Orbot for Tor Network Access
+### Step 3: Configure Orbot for Tor Network Access
 
 Launch Orbot and complete the initial configuration. The app provides an one-tap connect option, but power users should access advanced settings for optimal configuration.
 
@@ -95,7 +105,7 @@ Orbot's VPN mode routes all device traffic through Tor—a critical feature for 
 
 This creates a system-wide VPN that forces all applications to use Tor, not just the browser.
 
-## Integrating Tor Browser with Orbot
+### Step 4: Integrate Tor Browser with Orbot
 
 ### Connection Methods
 
@@ -179,7 +189,7 @@ def get_circuit_info(control_port=9051):
 get_circuit_info()
 ```
 
-## Security Hardening
+### Step 5: Security Hardening
 
 ### Tor Browser Security Settings
 
@@ -249,7 +259,7 @@ Some applications fail with Tor due to:
 
 For such apps, Orbot's VPN mode may help bypass proxy detection.
 
-## Maintenance and Updates
+### Step 6: Perform Maintenance and Updates
 
 Keep both applications updated for security patches:
 

@@ -53,7 +53,17 @@ Tutanota's free plan includes 1GB storage and one email address. Paid plans star
 
 ---
 
-## Enable Two-Factor Authentication
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Enable Two-Factor Authentication
 
 Adding a second factor dramatically reduces the risk from password leaks. Tutanota supports both authenticator apps (TOTP) and hardware security keys.
 
@@ -79,7 +89,7 @@ If you add a hardware key, also add an authenticator app as a fallback. Losing y
 
 ---
 
-## Desktop Client Setup
+### Step 2: Desktop Client Setup
 
 The Tutanota desktop client is built on Electron and signed by Tutanota GmbH. Verify the signature before running any downloaded binary.
 
@@ -115,7 +125,7 @@ The desktop client stores a local cache of your emails in an encrypted SQLite da
 
 ---
 
-## Custom Domain Setup
+### Step 3: Custom Domain Setup
 
 A custom domain (`you@yourdomain.com`) gives you email independence — if Tutanota were to shut down or you want to move, your address stays yours.
 
@@ -145,7 +155,7 @@ Once the domain is verified, you can create aliases at that domain directly in t
 
 ---
 
-## Sending Encrypted Email to External Recipients
+### Step 4: Sending Encrypted Email to External Recipients
 
 When you email someone outside Tutanota, they receive a link to a password-protected message hosted on Tutanota's servers:
 
@@ -160,7 +170,7 @@ A common pattern for journalists or lawyers is to publish a Tutanota address wit
 
 ---
 
-## Tutanota's Encryption Implementation
+### Step 5: Tutanota's Encryption Implementation
 
 Tutanota's encryption is audited and open source. The client code is available at `github.com/tutao/tutanota`.
 
@@ -182,7 +192,7 @@ Tutanota does not support PGP — this is by design. PGP leaves subject lines un
 
 ---
 
-## Export / Backup Your Emails
+### Step 6: Export / Backup Your Emails
 
 Tutanota's desktop client includes a basic export function. For a more systematic backup, use the Tutanota export functionality periodically:
 
@@ -200,7 +210,7 @@ If you have years of email and large attachments, export by folder and compress 
 
 ---
 
-## Aliases and Spam Compartmentalization
+### Step 7: Aliases and Spam Compartmentalization
 
 One practical use for Tutanota is creating aliases for different contexts — shopping, newsletters, professional contacts — while all mail lands in one inbox. This way, if one alias gets spammed, you delete it and create a new one without losing your main address.
 
@@ -213,7 +223,7 @@ For free-plan users, Tutanota offers `+` subaddressing at some address domains: 
 
 ---
 
-## Comparing Tutanota vs ProtonMail
+### Step 8: Comparing Tutanota vs ProtonMail
 
 | Feature | Tutanota | ProtonMail |
 |---------|----------|-----------|
@@ -231,7 +241,7 @@ Germany's privacy laws (GDPR, BDSG) provide strong legal protections, though Ger
 
 ---
 
-## Metadata That Tutanota CANNOT Encrypt
+### Step 9: Metadata That Tutanota CANNOT Encrypt
 
 Even with E2EE, some metadata remains visible to Tutanota's servers:
 
@@ -248,7 +258,7 @@ This metadata alone reveals communication patterns. If Tutanota receives a law e
 
 For maximum privacy, pair Tutanota with Tor Browser or a VPN to hide your IP address.
 
-## Using Tutanota with Mobile Devices
+### Step 10: Use Tutanota with Mobile Devices
 
 The Tutanota mobile app (iOS and Android) provides the same E2EE guarantees as the web and desktop clients:
 
@@ -265,7 +275,7 @@ The Tutanota mobile app (iOS and Android) provides the same E2EE guarantees as t
 
 Mobile E2EE continues even for emails sent outside Tutanota—the mobile app handles password-encrypted external emails .
 
-## Integration with Standard Email Clients
+### Step 11: Integration with Standard Email Clients
 
 Tutanota does not support IMAP/POP access because those protocols lack E2EE support. This means:
 
@@ -275,7 +285,7 @@ Tutanota does not support IMAP/POP access because those protocols lack E2EE supp
 
 For users requiring Outlook or Thunderbird integration, ProtonMail's mail bridge provides this at the cost of additional complexity.
 
-## Tutanota Business/Organization Plans
+### Step 12: Tutanota Business/Organization Plans
 
 Organizations with custom domain requirements and multiple accounts use Tutanota Business:
 
@@ -294,7 +304,7 @@ curl -X GET https://mail.tutanota.com/api/users \
 
 Business plans start at €5/user/month and suitable for teams prioritizing encrypted collaboration.
 
-## Testing Tutanota's Encryption
+### Step 13: Test Tutanota's Encryption
 
 For developers who want to verify encryption claims:
 
@@ -342,7 +352,7 @@ Before choosing Tutanota, assess your threat model:
 - You require legacy email client support (Posteo + Tor)
 - You need quantum-resistant encryption (not yet available in any mainstream provider)
 
-## Automation and Integration Scripts
+### Step 14: Automation and Integration Scripts
 
 For developers managing multiple Tutanota accounts:
 
@@ -362,6 +372,21 @@ For developers managing multiple Tutanota accounts:
 ```
 
 Tutanota's lack of full API prevents advanced automation that ProtonMail offers. This is a tradeoff for the simpler security model.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -42,7 +42,17 @@ User A (known number) searches for User B:
   1.
 - **User A sends hash(User**: B's number) to Signal server 2.
 
-## Understanding Signal's Phone Number Requirement
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Signal's Phone Number Requirement
 
 When you register with Signal, your phone number becomes your unique identifier. This design choice simplifies contact discovery—Signal checks your address book against other users who have registered with the same number. However, this creates several privacy concerns:
 
@@ -50,7 +60,7 @@ Your phone number becomes publicly associated with your Signal usage, allowing a
 
 Signal does allow you to hide your number from contacts who haven't saved your contact info, but the underlying phone number requirement remains.
 
-## Workaround 1: Using VoIP Numbers
+### Step 2: Workaround 1: Using VoIP Numbers
 
 The most common approach for privacy-conscious users involves using a VoIP (Voice over IP) number instead of a primary phone number. Services like Google Voice, Twilio, or Burner provide secondary numbers that forward SMS to your primary device.
 
@@ -88,7 +98,7 @@ for message in messages:
 
 Signal's terms of service don't explicitly prohibit VoIP numbers, but the service may flag accounts using non-carrier numbers. Additionally, some features like calling may have degraded quality. Consider these trade-offs before relying on a VoIP number as your primary Signal identity.
 
-## Workaround 2: Dedicated SIM Card Strategy
+### Step 3: Workaround 2: Dedicated SIM Card Strategy
 
 For maximum separation between your Signal identity and real-world identity, consider using a dedicated SIM card registered under an anonymous or secondary identity. This approach provides:
 
@@ -104,7 +114,7 @@ A dedicated SIM provides complete carrier-level separation from your primary num
 
 This approach requires additional hardware and ongoing costs but provides the strongest isolation between your Signal activity and your documented identity.
 
-## Workaround 3: Signal Without Phone Number (Limited Options)
+### Step 4: Workaround 3: Signal Without Phone Number (Limited Options)
 
 As of early 2026, Signal does not officially support phone-number-less registration. However, the project has discussed this feature, and the technical architecture exists for future implementation. Currently, your practical options remain the VoIP and dedicated SIM approaches described above.
 
@@ -127,7 +137,7 @@ async function registerWithUsername(username, password) {
 }
 ```
 
-## Workaround 4: Signal Privacy Settings
+### Step 5: Workaround 4: Signal Privacy Settings
 
 Regardless of which number you use, Signal provides several settings to enhance your privacy:
 
@@ -184,7 +194,7 @@ Regardless of which workaround you implement, consider these additional security
 - Keep Signal updated: security patches address discovered vulnerabilities
 - Review linked devices: regularly audit and remove unused linked devices
 
-## Platform-Specific VoIP Solutions
+### Step 6: Platform-Specific VoIP Solutions
 
 Different VoIP providers offer different trade-offs for Signal registration:
 
@@ -248,7 +258,7 @@ messages = client.messages.list()
 - Highest cost per number ($4.99/month)
 - May not retain number for extended Signal use
 
-## Phone Number Privacy Architecture
+### Step 7: Phone Number Privacy Architecture
 
 Understanding Signal's architecture helps understand phone number privacy:
 
@@ -307,7 +317,7 @@ async function lookupContact(targetUsername) {
 
 While this isn't available yet, monitoring Signal's GitHub for username-based registration discussions shows the team recognizing this limitation.
 
-## Metadata Minimization Beyond Phone Numbers
+### Step 8: Metadata Minimization Beyond Phone Numbers
 
 Even with number privacy, Signal still transmits metadata:
 
@@ -363,6 +373,21 @@ Different users have different threat models:
 - Risk: Highest protection requires maximum separation
 
 Each scenario calls for different protective measures. Determine your actual threat model before implementing solutions.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -26,7 +26,17 @@ Tahoe LAFS (Least Authority File Store) provides a unique approach to cloud stor
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## What Makes Tahoe LAFS Different
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Makes Tahoe LAFS Different
 
 Traditional cloud storage forces you to trust a single provider with your data. Even services advertising end-to-end encryption typically hold the decryption keys on their servers, creating a honeypot for attackers. Tahoe LAFS takes a different path using the concept of "mutable pointers" and "immutable caps" (capabilities).
 
@@ -38,7 +48,7 @@ When you store a file in Tahoe LAFS, the system:
 
 This design means you can store files on servers you don't control—and still maintain complete privacy. The storage nodes never see unencrypted data because encryption happens before transmission.
 
-## Installing Tahoe LAFS
+### Step 2: Install Tahoe LAFS
 
 Install Tahoe LAFS using pip on Linux or macOS:
 
@@ -66,7 +76,7 @@ services:
     command: create-node
 ```
 
-## Initializing Your First Node
+### Step 3: Initializing Your First Node
 
 Create a new Tahoe LAFS node with:
 
@@ -100,7 +110,7 @@ tahoe start
 
 Your node now listens on port 3456 for both the web UI and API connections.
 
-## Creating and Managing Introducers
+### Step 4: Create and Managing Introducers
 
 For a truly distributed setup, you need multiple nodes. The introducer acts as a discovery service, helping nodes find each other. Configure an introducer in your `tahoe.cfg`:
 
@@ -111,7 +121,7 @@ furl = pb://your-node-id@introducer.example.com:3456/introducer
 
 Share your introducer's FURL (Tahoe's universal resource locator format) with trusted peers. They add it to their configuration to discover your node.
 
-## Storing Your First File
+### Step 5: Store Your First File
 
 Upload a file using the CLI:
 
@@ -133,7 +143,7 @@ Download the file using:
 tahoe get URI:DIR2-L2HGSZDXL7Y7PNCLDH7Q7G6Q:M5B7MFK7O6Y4HGRQDCY5B5GR3T7QXC3R3Z3T7O6Y4HG restored.pdf
 ```
 
-## Understanding Immutable vs Mutable Caps
+### Step 6: Understand Immutable vs Mutable Caps
 
 Tahoe LAFS uses two capability types:
 
@@ -143,7 +153,7 @@ Tahoe LAFS uses two capability types:
 
 For most applications, immutable caps provide stronger security guarantees since data cannot be retroactively modified.
 
-## Configuring Redundancy Settings
+### Step 7: Configure Redundancy Settings
 
 Tahoe LAFS allows you to configure how many shares are required to reconstruct your data. Add these parameters to your upload command:
 
@@ -157,7 +167,7 @@ This configuration:
 
 This means your file remains recoverable even if 7 of 10 storage nodes fail. Balance redundancy against storage overhead—higher redundancy costs more storage but provides stronger durability.
 
-## Programmatic Integration with Python
+### Step 8: Implement Programmatic Integration with Python
 
 Interact with Tahoe LAFS programmatically using the `allmydata` library:
 
@@ -190,7 +200,7 @@ print(f"File uploaded with capability: {cap}")
 download_file(cap, '/tmp/restored.enc', '/path/to/node.yaml')
 ```
 
-## Building a Multi-Node Test Network
+### Step 9: Build a Multi-Node Test Network
 
 For testing, create a small network on your local machine:
 
@@ -254,6 +264,21 @@ Tahoe LAFS excels in scenarios requiring:
 
 For quick, simple encrypted storage, client-side tools like age or Rclone with encryption may be more practical. For building truly distributed systems where multiple parties share storage infrastructure without mutual trust, Tahoe LAFS remains a powerful choice.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -38,7 +38,17 @@ Tor Browser works out of the box. Its default settings protect most users in mos
 - **Use a read-only sandbox**: (like Dangerzone for documents) 4.
 - **Use Tails OS or**: Whonix where the entire system routes through Tor 2.
 
-## The Three Security Levels
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Three Security Levels
 
 Tor Browser's most important control is the Security Level, accessible from the shield icon next to the address bar, or from Settings → Privacy & Security → Security Level.
 
@@ -72,7 +82,7 @@ Safer      → sensitive work, recommended default for most users
 Safest     → maximum threat, activist/journalist in hostile environment
 ```
 
-## Circuit Controls
+### Step 2: Circuit Controls
 
 Each tab in Tor Browser uses a circuit: a path through three Tor relays (guard → middle → exit). The exit relay is the one that communicates with the destination website.
 
@@ -95,7 +105,7 @@ Use this when you want to break the connection between your current browsing ses
 
 Do not use New Identity frequently during a single sensitive task — the act of requesting new circuits repeatedly can itself be a pattern observable to relay operators.
 
-## The No-Extensions Rule
+### Step 3: The No-Extensions Rule
 
 Do not install extensions in Tor Browser. This is one of the most critical rules.
 
@@ -108,7 +118,7 @@ The same principle applies to:
 - Modifying `about:config` settings that affect fingerprint
 - Installing language packs beyond what Tor Browser ships with
 
-## JavaScript and NoScript
+### Step 4: JavaScript and NoScript
 
 When Security Level is set to Safer or Safest, NoScript controls which sites can run JavaScript. With Safer:
 
@@ -122,7 +132,7 @@ To temporarily enable JavaScript on a specific HTTP site (if necessary):
 
 Never click "Trust all domains" — this disables the entire point of NoScript.
 
-## Handling Downloads
+### Step 5: Handling Downloads
 
 Downloads are a significant risk in Tor Browser. Downloaded files can contain content that your operating system opens automatically — PDFs, documents, videos — and some of these may make network connections that bypass Tor, revealing your real IP.
 
@@ -141,7 +151,7 @@ Heed this warning. For sensitive downloads:
 3. Use a read-only sandbox (like Dangerzone for documents)
 4. For PDFs: use a text extractor rather than a PDF viewer
 
-## Tor Browser on Windows vs Linux vs macOS
+### Step 6: Tor Browser on Windows vs Linux vs macOS
 
 Tor Project's security is strongest when running on a minimal Linux system:
 
@@ -153,7 +163,7 @@ Tor Project's security is strongest when running on a minimal Linux system:
 
 **Tails OS**: Best option for maximum anonymity — the entire operating system is designed around anonymity, running from RAM with no persistent storage by default, and all connections go through Tor at the system level (not just Tor Browser).
 
-## Common Mistakes That Undermine Tor Browser
+### Step 7: Common Mistakes That Undermine Tor Browser
 
 **Logging into personal accounts**: If you log into your real Google, Facebook, or email account inside Tor Browser, the site operator knows who you are. Tor hides your IP from the site, but your account credentials defeat that. Never mix identity with anonymity.
 
@@ -165,7 +175,7 @@ Tor Project's security is strongest when running on a minimal Linux system:
 
 **Using HTTP sites for sensitive work**: Tor protects against your ISP and network observers. An exit relay can see HTTP traffic in plaintext. Always use HTTPS for sensitive sites — check the address bar for the padlock.
 
-## Bridges for Censored Regions
+### Step 8: Bridges for Censored Regions
 
 If Tor is blocked in your country, configure bridges in Tor Browser:
 
@@ -221,7 +231,7 @@ UseEntryGuards 1
 NumEntryGuards 3
 ```
 
-## Testing Tor Browser Configuration
+### Step 9: Test Tor Browser Configuration
 
 After configuration changes, verify your anonymity:
 
@@ -252,7 +262,7 @@ browserleaks.com/webrtc
 # If shows your ISP IP, WebRTC is leaking
 ```
 
-## Tor Browser Fingerprinting Risks
+### Step 10: Tor Browser Fingerprinting Risks
 
 Tor Browser specifically minimizes browser fingerprinting, but users often accidentally re-enable it:
 
@@ -271,7 +281,7 @@ Tor Browser specifically minimizes browser fingerprinting, but users often accid
 
 5. **Using multiple profiles** - Each profile is a separate fingerprint. Tor Browser intentionally uses one profile per instance.
 
-## Timing Attack Mitigation
+### Step 11: Timing Attack Mitigation
 
 Tor protects against IP leaks but not against traffic analysis by powerful network observers:
 
@@ -306,7 +316,7 @@ sleep $delay
 torsocks curl https://example.com
 ```
 
-## Using Tails with Tor Browser
+### Step 12: Use Tails with Tor Browser
 
 Tails OS (The Amnesic Incognito Live System) combines Tor Browser with system-level protections:
 
@@ -330,7 +340,7 @@ Tails OS (The Amnesic Incognito Live System) combines Tor Browser with system-le
 # No evidence of activity remains
 ```
 
-## When Tor Browser Is Not Enough
+### Step 13: When Tor Browser Is Not Enough
 
 Recognize when additional protections are needed:
 

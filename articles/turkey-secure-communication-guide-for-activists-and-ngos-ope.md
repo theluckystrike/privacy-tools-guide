@@ -35,7 +35,17 @@ NGOs and activist organizations in Turkey face escalating surveillance and commu
 
 The threat model includes ISP-level traffic analysis, messaging app metadata collection, SIM-card tracking, and physical device seizure. Effective communication security requires addressing each vector systematically. Turkey's Information and Communication Technologies Authority (BTK) maintains real-time filtering infrastructure capable of blocking VPN protocols, specific IP ranges, and application fingerprints within hours of a judicial order. Your architecture must assume each individual tool may fail and build redundancy accordingly.
 
-## End-to-End Encrypted Messaging
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: End-to-End Encrypted Messaging
 
 Signal remains the gold standard for encrypted messaging. Unlike WhatsApp, Signal's protocol is open-source and audited, with minimal metadata retention. However, Signal requires a phone number, which creates identification risk.
 
@@ -96,7 +106,7 @@ location / {
 }
 ```
 
-## Network Resilience: Tor and Mesh Networks
+### Step 2: Network Resilience: Tor and Mesh Networks
 
 ### Tor Onion Services
 
@@ -161,7 +171,7 @@ sudo apt install shadowsocks-libev
 
 Port 443 with TLS obfuscation is the most resilient option—blocking it would disable standard HTTPS traffic, which carries severe economic and political costs for any government.
 
-## Secure File Transfer and Storage
+### Step 3: Secure File Transfer and Storage
 
 ### Onion-Share for Sensitive Document Transfer
 
@@ -183,7 +193,7 @@ Avoid US-based cloud services with questionable data disclosure policies. **Tres
 
 For self-hosted alternatives, Nextcloud with end-to-end encrypted folders provides fine-grained control. Deploy on a server outside Turkey and access through a Tor onion service address for maximum resistance to blocking.
 
-## Operational Security Practices
+### Step 4: Operational Security Practices
 
 ### Device Security Fundamentals
 
@@ -237,7 +247,7 @@ Also enable HSTS to prevent SSL stripping attacks, which can expose onion servic
 add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
 ```
 
-## Emergency Protocols
+### Step 5: Emergency Protocols
 
 ### Communication Contingency Planning
 
@@ -284,6 +294,21 @@ Train all team members on a three-step response to device seizure risk:
 1. **Remote wipe**: Enable remote wipe on all organization devices through a self-hosted MDM (Headwind MDM or similar) so you can trigger wipes from any internet connection if a device is detained.
 2. **Pre-commitment deletion**: Set disappearing message timers on all active conversations. One week is a reasonable default; reduce to 24 hours for sensitive operations.
 3. **Key rotation**: After any device is seized, treat all keys that device held as compromised. Rotate Signal safety numbers, Matrix verification, and any stored passwords immediately.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
