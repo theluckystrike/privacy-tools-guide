@@ -9,7 +9,7 @@ permalink: /iran-whatsapp-restrictions-how-government-monitors-and-limit/
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
