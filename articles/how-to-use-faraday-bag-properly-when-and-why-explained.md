@@ -292,5 +292,4 @@ Leave at least 1 inch of space around devices to prevent RF coupling with the co
 - [Screen Resolution Fingerprinting Why Changing Display Settin](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

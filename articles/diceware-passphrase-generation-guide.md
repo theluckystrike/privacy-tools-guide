@@ -285,5 +285,4 @@ For international teams, coordinating on a single language (typically English) p
 - [LUKS Full Disk Encryption on Linux](/luks-full-disk-encryption-linux-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

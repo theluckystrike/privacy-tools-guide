@@ -276,5 +276,4 @@ Yes, with proper configuration. Self-hosted solutions eliminate third-party data
 - [Organic Maps Vs Osmand Google Maps Alternative Comparison Fo](/privacy-tools-guide/organic-maps-vs-osmand-google-maps-alternative-comparison-fo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -492,5 +492,4 @@ Metadata removal is a core privacy practice. The right tool depends on your plat
 - [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

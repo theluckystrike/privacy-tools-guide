@@ -339,5 +339,4 @@ Building an offline library requires ongoing maintenance. Schedule regular updat
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

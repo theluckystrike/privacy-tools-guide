@@ -57,8 +57,8 @@ Chrome offers the most seamless passkey experience for users with Google account
 1. Navigate to a passkey-enabled website
 2. Click "Create Passkey" or enable passkey in account settings
 3. Choose between:
-   - **Device screen lock**: Uses your computer's PIN/biometric
-   - **External security key**: For hardware token users
+ - **Device screen lock**: Uses your computer's PIN/biometric
+ - **External security key**: For hardware token users
 4. Confirm with your device credentials
 
 Chrome automatically saves passkeys to your Google Password Manager. These sync across all devices where you're signed in.
@@ -336,5 +336,4 @@ Passkey adoption continues to accelerate in 2026:
 - [Brave vs Safari Privacy Comparison 2026: A Developer Guide](/privacy-tools-guide/brave-vs-safari-privacy-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -289,6 +289,7 @@ class GoogleTakeoutRequest:
 
 6. **Plan ahead**: If you're creating an estate plan, document your email accounts, password manager access, and explicit wishes for digital asset distribution.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

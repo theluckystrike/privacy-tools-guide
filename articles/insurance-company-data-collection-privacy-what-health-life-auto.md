@@ -231,5 +231,4 @@ Understanding these collection practices helps you make informed decisions about
 - [Smart Refrigerator Data Collection What Samsung Family Hub S](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

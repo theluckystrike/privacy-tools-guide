@@ -205,5 +205,4 @@ Multiple companies have faced significant fines in 2025-2026 for dark pattern im
 - [VPN for Using TikTok in India After Ban 2026](/privacy-tools-guide/vpn-for-using-tiktok-in-india-after-ban-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

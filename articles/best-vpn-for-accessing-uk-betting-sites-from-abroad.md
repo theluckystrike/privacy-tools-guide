@@ -168,7 +168,7 @@ When connection problems persist, systematically diagnose:
 2. **Test with a fresh browser profile** — Extensions and cookies may leak information
 3. **Verify your actual IP atipleak.com** — Confirm the VPN is actually routing traffic
 4. **Check for IPv6 leaks** — Many VPNs fail to route IPv6 properly:
-   ```bash
+ ```bash
    # Test IPv6 leak
    curl -s -6 ifconfig.me
    ```
@@ -432,5 +432,4 @@ Before accessing betting platforms from abroad, verify that:
 - [Best Vpn For Accessing Us Healthcare Portals From Abroad](/privacy-tools-guide/best-vpn-for-accessing-us-healthcare-portals-from-abroad/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

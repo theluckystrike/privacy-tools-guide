@@ -252,5 +252,4 @@ Aegis is preferred for privacy-conscious users because it is open source, stores
 - [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

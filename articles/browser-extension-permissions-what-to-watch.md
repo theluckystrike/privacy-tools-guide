@@ -270,5 +270,4 @@ Malicious actors often create lookalike extensions with similar names. The exten
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

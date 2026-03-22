@@ -218,5 +218,4 @@ Store this backup encrypted (ironically, in another LUKS container or encrypted 
 - [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

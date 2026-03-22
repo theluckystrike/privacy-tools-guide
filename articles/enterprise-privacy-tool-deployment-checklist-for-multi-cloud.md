@@ -304,5 +304,4 @@ Package and timestamp these reports for each audit cycle. Retention periods vary
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

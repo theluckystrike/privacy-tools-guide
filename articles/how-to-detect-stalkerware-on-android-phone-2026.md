@@ -37,27 +37,27 @@ Professional stalkerware (Pegasus, Spymax, mSpy) is indistinguishable from legit
 If you notice these patterns, investigate further:
 
 1. **Battery drain accelerates** — Phone loses 30%+ battery daily with normal use
-   - Check: Settings → Battery → Battery Usage (see which apps consumed power)
-   - Stalkerware shows 2-5% each for 10+ background apps
+ - Check: Settings → Battery → Battery Usage (see which apps consumed power)
+ - Stalkerware shows 2-5% each for 10+ background apps
 
 2. **Data usage spikes without explanation** — Extra 500MB+ monthly with unchanged usage
-   - Check: Settings → Network → Mobile Data Usage
-   - Sort by data consumption; unfamiliar apps appear
+ - Check: Settings → Network → Mobile Data Usage
+ - Sort by data consumption; unfamiliar apps appear
 
 3. **Phone becomes sluggish** — Noticeable lag in scrolling, typing, app launches
-   - Stalkerware constantly monitors in background, consuming CPU cycles
+ - Stalkerware constantly monitors in background, consuming CPU cycles
 
 4. **Unexpected phone restarts** — App crashes or reboots when accessing certain apps (Messages, Photos)
-   - Stalkerware crashes during capture operations
+ - Stalkerware crashes during capture operations
 
 5. **Elevated temperature** — Phone feels warm constantly
-   - Background encryption and data transfer generate heat
+ - Background encryption and data transfer generate heat
 
 6. **Missed messages or calls** — Texts/calls sometimes don't arrive, or arrive hours later
-   - Stalkerware intercepts and copies messages before forwarding
+ - Stalkerware intercepts and copies messages before forwarding
 
 7. **Strange notifications about "unknown" apps** — Notifications from apps you don't recognize
-   - Stalkerware disguises as system processes
+ - Stalkerware disguises as system processes
 
 **None of these alone proves stalkerware.** Combined, they warrant investigation.
 
@@ -66,44 +66,44 @@ If you notice these patterns, investigate further:
 ### Detailed Battery Analysis
 
 1. **Access Battery Settings**
-   - Android 12+: Settings → Battery → Battery Usage → View Detailed Usage
-   - Older: Settings → Battery → Battery Usage
+ - Android 12+: Settings → Battery → Battery Usage → View Detailed Usage
+ - Older: Settings → Battery → Battery Usage
 
 2. **Identify unusual apps**
-   - Look for apps consuming 5-10% battery with minimal usage
-   - Check: Do you recognize every app?
-   - Stalkerware often named:
-     - "System Update Manager"
-     - "Google Services Framework" (different from real one)
-     - "Device Care"
-     - "Security Center"
-     - Random numbers or technical names (com.android.system.processor)
+ - Look for apps consuming 5-10% battery with minimal usage
+ - Check: Do you recognize every app?
+ - Stalkerware often named:
+ - "System Update Manager"
+ - "Google Services Framework" (different from real one)
+ - "Device Care"
+ - "Security Center"
+ - Random numbers or technical names (com.android.system.processor)
 
 3. **Examine app details**
-   - Tap suspect app → check:
-     - Installation date (installed before you remember?)
-     - Data usage (consuming data without obvious reason?)
-     - Permissions (why does "System Update" need Contacts?)
-     - Last run time (active even though you didn't open it?)
+ - Tap suspect app → check:
+ - Installation date (installed before you remember?)
+ - Data usage (consuming data without obvious reason?)
+ - Permissions (why does "System Update" need Contacts?)
+ - Last run time (active even though you didn't open it?)
 
 ### Detailed Data Usage Analysis
 
 1. **Settings → Network → Mobile Data Usage**
 
 2. **Sort by data consumption**
-   - Check for 20MB+ apps you rarely use
-   - Stalkerware exports data during:
-     - 2-4 AM (when phone is idle, WiFi available)
-     - While connected to WiFi (exfiltrate efficiently)
+ - Check for 20MB+ apps you rarely use
+ - Stalkerware exports data during:
+ - 2-4 AM (when phone is idle, WiFi available)
+ - While connected to WiFi (exfiltrate efficiently)
 
 3. **Check WiFi data usage**
-   - Some Android versions: Settings → Network → WiFi → Data Usage
-   - If WiFi usage is 10x higher than cellular, stalkerware is exfiltrating over WiFi
+ - Some Android versions: Settings → Network → WiFi → Data Usage
+ - If WiFi usage is 10x higher than cellular, stalkerware is exfiltrating over WiFi
 
 4. **Monitor overnight data**
-   - Before sleep: note your data counter
-   - Upon waking: check if data changed (indicates background activity)
-   - Repeat 3 nights; if data increases 50MB+ nightly, investigate
+ - Before sleep: note your data counter
+ - Upon waking: check if data changed (indicates background activity)
+ - Repeat 3 nights; if data increases 50MB+ nightly, investigate
 
 ## Method 2: Android Debug Bridge (ADB) Analysis
 
@@ -162,9 +162,9 @@ adb shell pm list packages
 **Analyze output:**
 - Do you recognize every package?
 - Look for:
-  - Duplicate system apps (com.google.android.messaging AND two other messaging apps)
-  - Typos in known apps (com.whatsapp.official vs actual com.whatsapp)
-  - Unknown packages with names like "com.tracking.system" or "com.monitor.device"
+ - Duplicate system apps (com.google.android.messaging AND two other messaging apps)
+ - Typos in known apps (com.whatsapp.official vs actual com.whatsapp)
+ - Unknown packages with names like "com.tracking.system" or "com.monitor.device"
 
 ### List Hidden/System Apps Specifically
 
@@ -365,13 +365,13 @@ adb shell pm list packages | grep suspicious
 ### Safe Mode Uninstall (If ADB Fails)
 
 1. Restart phone into Safe Mode
-   - Hold Power button → "Power off"
-   - After shutdown: Hold Power + Volume Down (varies by phone)
-   - Tap "Safe Mode"
+ - Hold Power button → "Power off"
+ - After shutdown: Hold Power + Volume Down (varies by phone)
+ - Tap "Safe Mode"
 
 2. In Safe Mode, stalkerware may not run
-   - Settings → Apps → Uninstall suspicious app
-   - If uninstall succeeds, restart phone normally
+ - Settings → Apps → Uninstall suspicious app
+ - If uninstall succeeds, restart phone normally
 
 3. Restart and verify removal
 
@@ -394,21 +394,21 @@ adb logcat > logcat_output.txt
 Stalkerware sometimes reinstalls itself:
 
 1. **Check installed apps daily**
-   ```bash
+ ```bash
    adb shell pm list packages > installed_apps.txt
    # Save this; compare tomorrow
    ```
 
 2. **Monitor installation logs**
-   - Settings → Security → Install unknown apps
-   - Check if anything tried to install
-   - Block any suspicious sources
+ - Settings → Security → Install unknown apps
+ - Check if anything tried to install
+ - Block any suspicious sources
 
 3. **Change passwords** (especially if location/messages were compromised)
-   - Google account password
-   - Email password
-   - Social media passwords
-   - Financial account passwords
+ - Google account password
+ - Email password
+ - Social media passwords
+ - Financial account passwords
 
 ### Enable Enhanced Security
 
@@ -424,23 +424,23 @@ If stalkerware was found, or you believe you're being monitored:
 1. **Do not confront the abuser** — This may escalate violence
 
 2. **Seek professional help**
-   - National Domestic Violence Hotline: 1-800-799-7233
-   - Text START to 88788
-   - They can advise on safe phone use and digital security
+ - National Domestic Violence Hotline: 1-800-799-7233
+ - Text START to 88788
+ - They can advise on safe phone use and digital security
 
 3. **Consider a new device**
-   - If stalkerware keeps reinstalling, the device itself may be compromised
-   - A clean device is sometimes safer than repeated cleaning
+ - If stalkerware keeps reinstalling, the device itself may be compromised
+ - A clean device is sometimes safer than repeated cleaning
 
 4. **Use a trusted computer for sensitive accounts**
-   - If stalkerware accessed your email/passwords, change them from a trusted device
-   - Do not use the potentially-compromised phone
+ - If stalkerware accessed your email/passwords, change them from a trusted device
+ - Do not use the potentially-compromised phone
 
 5. **Document evidence**
-   - Keep records of any monitoring you've confirmed
-   - Screenshots of suspicious apps
-   - Timing of incidents (messages that arrived late, unexpected contact)
-   - This may be useful for legal action
+ - Keep records of any monitoring you've confirmed
+ - Screenshots of suspicious apps
+ - Timing of incidents (messages that arrived late, unexpected contact)
+ - This may be useful for legal action
 
 ## Technical Reality: Some Stalkerware is Undetectable
 
@@ -473,6 +473,5 @@ For typical domestic abuse situations, the ADB methods and scanning tools in thi
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 - [Anonymous Browsing Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
 
-Built by Privacy Tools Guide — More at [zovo.one](https://zovo.one)
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

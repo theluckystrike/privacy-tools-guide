@@ -212,7 +212,5 @@ For truly sensitive information, combine canary traps with encryption, access lo
 - [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
 - [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

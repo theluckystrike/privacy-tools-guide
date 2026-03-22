@@ -222,5 +222,4 @@ veracrypt --create --size=500M --volume-type=normal \
 - [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

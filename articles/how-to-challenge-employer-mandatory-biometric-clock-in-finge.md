@@ -210,5 +210,4 @@ While challenging employer policies, protect your own interests:
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Linkedin Deceased Member Profile Removal How To Report"
+title: "LinkedIn Deceased Member Profile Removal How To Report"
 description: "Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -215,5 +215,4 @@ For families seeking to preserve professional portfolios, consider archiving the
 - [How To Opt Out Of Linkedin Data Being Used For Ai Training A](/privacy-tools-guide/how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

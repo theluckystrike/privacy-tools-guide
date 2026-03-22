@@ -225,5 +225,4 @@ For high-stakes software, cross-reference release announcements, check reproduci
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

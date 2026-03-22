@@ -275,5 +275,4 @@ Regular VPN verification is essential security hygiene. Test after major softwar
 - [Verify Your Browser is Not Leaking Information](/privacy-tools-guide/how-to-verify-your-browser-is-not-leaking-information-checkl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

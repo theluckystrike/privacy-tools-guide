@@ -278,5 +278,4 @@ sudo watch -n1 'sudo wg show wg0'
 - [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -195,6 +195,7 @@ aa-enforce /etc/apparmor.d/usr.bin.myapp
 aa-complain /etc/apparmor.d/usr.bin.myapp
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ## Command-Line Privacy Audit

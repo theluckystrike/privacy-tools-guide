@@ -361,6 +361,8 @@ echo "Quality Metric"
 - Advanced automation pipelines
 - Regular process retrospectives
 - Leadership education on async culture
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

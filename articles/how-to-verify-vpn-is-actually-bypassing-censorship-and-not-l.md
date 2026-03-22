@@ -181,9 +181,9 @@ If you discover leaks, several fixes are available:
 4. **Use a different VPN protocol**: Some protocols handle leaks better than others (WireGuard typically performs well)
 5. **Consider custom DNS**: Configure your system to use privacy-focused DNS servers (like Cloudflare 1.1.1.1 or Quad9) that support DNS-over-HTTPS
 
-## Comprehensive Leak Testing Script
+## Leak Testing Script
 
-Automate all verification tests into a single comprehensive script:
+Automate all verification tests into a single script:
 
 ```bash
 #!/bin/bash

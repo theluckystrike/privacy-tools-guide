@@ -259,6 +259,5 @@ Test both applications with your specific use case. Run network traffic analysis
 - [Russia Telegram Compliance What Data Telegram Shares With Ru](/privacy-tools-guide/russia-telegram-compliance-what-data-telegram-shares-with-ru/)
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)**
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

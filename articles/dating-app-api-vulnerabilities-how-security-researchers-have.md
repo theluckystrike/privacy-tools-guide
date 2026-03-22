@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dating App Api Vulnerabilities How Security Researchers"
+title: "Dating App API Vulnerabilities How Security Researchers"
 description: "A guide to dating app API vulnerabilities and how security researchers have discovered and reported data exposure flaws in popular platforms"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -174,7 +174,7 @@ While developers bear primary responsibility for security, users can take protec
 - [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
 - [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Advanced Attack Scenarios and Real-World Cases
 
@@ -447,4 +447,6 @@ Many dating apps now offer bug bounty programs:
 - HackerOne: Tinder, Bumble, Match Group
 - Bugcrowd: Various platforms
 - Direct programs: Check individual app websites
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

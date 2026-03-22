@@ -384,6 +384,8 @@ As the Bitcoin ecosystem matures, Taproot's privacy benefits compound with other
 The Taproot upgrade demonstrated Bitcoin's ability to evolve while maintaining its core properties. For developers and power users, understanding these privacy improvements is essential for building or using Bitcoin in ways that respect user confidentiality.
 
 The transaction anonymity landscape has genuinely shifted—complex transactions now blend with simple payments, and the playing field for on-chain analysis has become noticeably more challenging.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ---

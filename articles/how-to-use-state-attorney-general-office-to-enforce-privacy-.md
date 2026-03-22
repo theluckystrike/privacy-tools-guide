@@ -210,5 +210,4 @@ State attorneys general remain powerful allies in enforcing your privacy rights.
 - [Threat Model For Political Dissident In Surveillance State 2](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

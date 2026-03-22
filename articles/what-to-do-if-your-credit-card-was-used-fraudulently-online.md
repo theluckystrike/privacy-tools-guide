@@ -265,5 +265,4 @@ If the dispute isn't resolved satisfactorily, escalate to:
 - [How To Purchase Phone And Sim Card Anonymously Complete Guid](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

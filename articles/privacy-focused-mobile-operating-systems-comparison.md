@@ -860,5 +860,4 @@ Each step is optional; you can stop when you reach your privacy/usability sweet 
 - [Nurse Practitioner Mobile Device Privacy Hipaa Compliant Pho](/privacy-tools-guide/nurse-practitioner-mobile-device-privacy-hipaa-compliant-pho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

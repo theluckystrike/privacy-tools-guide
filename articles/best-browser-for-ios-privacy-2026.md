@@ -369,5 +369,4 @@ iOS browsers receive regular security updates. Check App Store for updates month
 - [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -360,5 +360,4 @@ Regularly review and resubmit opt-out requests, as businesses may collect new da
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -271,5 +271,4 @@ Disable the ESPHome dashboard's external access if you do not need it. The dashb
 - [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

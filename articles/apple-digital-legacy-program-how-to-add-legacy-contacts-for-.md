@@ -360,5 +360,4 @@ Print and sign this document. Include it in your physical estate planning docume
 - [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

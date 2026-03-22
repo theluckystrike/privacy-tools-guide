@@ -250,6 +250,7 @@ Store these recovery documents in encrypted storage that is itself compartmental
 | SimpleLogin | Email aliasing | Per-service unique addresses |
 | Privacy.com | Virtual cards | Per-merchant payment isolation |
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

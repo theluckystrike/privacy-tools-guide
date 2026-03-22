@@ -271,5 +271,4 @@ The smart plug market demonstrates how convenient features can mask extensive da
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

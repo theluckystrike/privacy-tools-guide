@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Privacy Tools That Work with Screen Readers: Comparison for Blind Users 2026"
-description: "A practical comparison of privacy tools with full accessibility support for blind users. Covers password managers, browsers, messaging apps, and command-line tools with screen reader compatibility."
+title: "Privacy Tools That Work with Screen Readers: Comparison for"
+description: "A practical comparison of privacy tools with full accessibility support for blind users. Covers password managers, browsers, messaging apps, and"
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-tools-that-work-with-screen-readers-comparison-for-b/
@@ -69,7 +69,7 @@ As an open-source option, KeePassXC works with screen readers through its access
 
 ### Firefox with Enhanced Tracking Protection
 
-Firefox provides robust screen reader support through ARIA landmarks and semantic HTML. Configure privacy settings entirely through about:config:
+Firefox provides strong screen reader support through ARIA landmarks and semantic HTML. Configure privacy settings entirely through about:config:
 
 ```javascript
 // privacy.trackingprotection.enabled = true
@@ -243,5 +243,4 @@ When evaluating any privacy tool, verify:
 Tools that pass these tests provide genuine privacy protection without creating barriers for screen reader users.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

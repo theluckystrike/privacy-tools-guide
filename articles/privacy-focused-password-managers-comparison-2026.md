@@ -353,4 +353,6 @@ Bitwarden is the privacy-per-dollar winner. 1Password is the ease-of-use winner.
 KeePassXC is for people who don't trust the cloud with anything. Justifiable but requires discipline.
 
 Pick one, set it up today, and stop reusing passwords.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

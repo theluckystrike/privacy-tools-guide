@@ -235,5 +235,4 @@ Biometric unlock speed differs significantly. In testing, 1Password responds fas
 - [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

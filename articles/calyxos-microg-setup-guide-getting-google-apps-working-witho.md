@@ -213,5 +213,4 @@ The privacy-utility balance depends on your threat model and use cases. MicroG e
 - [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

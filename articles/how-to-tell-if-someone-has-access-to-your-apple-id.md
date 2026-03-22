@@ -221,5 +221,4 @@ for event in data.get("signInEvents", []):
 - [Iphone Significant Locations History What Apple Tracks How T](/privacy-tools-guide/iphone-significant-locations-history-what-apple-tracks-how-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

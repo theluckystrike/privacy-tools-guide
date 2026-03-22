@@ -45,9 +45,9 @@ OpenWrt is the most widely deployed open-source router firmware, supporting 1000
 - Minimum: 128MB RAM, 32MB flash storage (severely limited)
 - Recommended: 256MB+ RAM, 128MB+ flash (most modern consumer routers)
 - Example supported routers:
-  - ASUS RT-AX88U ($180): 1GB RAM, 512MB flash (excellent OpenWrt performance)
-  - Linksys WRT3200ACM ($150): 512MB RAM, 128MB flash
-  - TP-Link Archer C7 ($70): 128MB RAM, 16MB flash (tight but works)
+ - ASUS RT-AX88U ($180): 1GB RAM, 512MB flash (excellent OpenWrt performance)
+ - Linksys WRT3200ACM ($150): 512MB RAM, 128MB flash
+ - TP-Link Archer C7 ($70): 128MB RAM, 16MB flash (tight but works)
 
 **Installation** (varies by router, ASUS RT-AX88U example):
 
@@ -427,5 +427,4 @@ OPNsense: Automatic monthly updates recommended
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

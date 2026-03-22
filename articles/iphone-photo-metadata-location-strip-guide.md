@@ -232,7 +232,7 @@ done
 - [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
 - [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Preventing Metadata at Capture Time
 
@@ -313,4 +313,5 @@ def process_upload(file_bytes: bytes) -> bytes:
 
 Add this to your upload handler in Django, FastAPI, or any framework before writing to your storage layer. Store the returned bytes, not the original upload.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

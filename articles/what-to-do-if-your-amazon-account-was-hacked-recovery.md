@@ -181,24 +181,24 @@ After recovery, determine how you were compromised to prevent recurrence:
 **Possible compromise vectors:**
 
 1. **Credential reuse** - Your Amazon password used elsewhere that was breached
-   - Check haveibeenpwned.com for your email address
-   - If found, that explains the attack vector
-   - Change passwords everywhere
+ - Check haveibeenpwned.com for your email address
+ - If found, that explains the attack vector
+ - Change passwords everywhere
 
 2. **Phishing attack** - Attacker posed as Amazon in email
-   - Check email for suspicious "verify account" emails
-   - Amazon never requests passwords via email links
-   - Check your email forwarding rules for hidden redirects
+ - Check email for suspicious "verify account" emails
+ - Amazon never requests passwords via email links
+ - Check your email forwarding rules for hidden redirects
 
 3. **Weak password** - Account brute-forced
-   - Check if your password was simple or dictionary-based
-   - Amazon's security doesn't prevent brute force after certain attempts
-   - Implement minimum 16-character passwords with high entropy
+ - Check if your password was simple or dictionary-based
+ - Amazon's security doesn't prevent brute force after certain attempts
+ - Implement minimum 16-character passwords with high entropy
 
 4. **Malware or keylogger** - Attacker logged keystrokes
-   - Run full antivirus scan on your computer
-   - Change passwords from a different device
-   - Consider complete OS reinstall if malware found
+ - Run full antivirus scan on your computer
+ - Change passwords from a different device
+ - Consider complete OS reinstall if malware found
 
 **Detection script for compromised device:**
 

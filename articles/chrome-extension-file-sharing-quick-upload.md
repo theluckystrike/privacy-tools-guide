@@ -206,5 +206,4 @@ For regulated industries, dedicated enterprise file sharing solutions with prope
 - [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

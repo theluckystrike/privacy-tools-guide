@@ -210,5 +210,4 @@ Each platform represents a different tradeoff between privacy, administrative co
 - [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

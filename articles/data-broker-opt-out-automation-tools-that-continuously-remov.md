@@ -230,5 +230,4 @@ Third, maintain a verification loop. After submitting opt-outs, periodically sea
 - [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

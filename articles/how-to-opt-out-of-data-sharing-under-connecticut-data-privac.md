@@ -269,6 +269,7 @@ Several issues frequently trip up Connecticut residents exercising their rights:
 - **Third-party data** - Deletion doesn't always remove data shared with partners
 - **Retention exceptions** - Companies can keep data for security, legal obligations
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

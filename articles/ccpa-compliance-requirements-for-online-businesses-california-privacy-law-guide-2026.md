@@ -338,5 +338,4 @@ Start with the data inventory—without knowing what you collect, you cannot beg
 - [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

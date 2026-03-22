@@ -218,5 +218,4 @@ Magic Wormhole provides a practical, terminal-native solution for secure file tr
 - [How To Send Encrypted Attachments That Recipients Can Open W](/privacy-tools-guide/how-to-send-encrypted-attachments-that-recipients-can-open-w/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

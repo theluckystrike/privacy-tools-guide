@@ -225,6 +225,7 @@ Regardless of method chosen, certain practices improve privacy:
 - Regularly audit your digital footprint related to finances
 - Consider which entities actually need to know about your finances
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

@@ -288,5 +288,4 @@ For minimal privacy exposure beyond content, Signal is the stronger choice.
 - [ChatGPT Voice Mode Not Working Fix 2026](/privacy-tools-guide/chatgpt-voice-mode-not-working-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

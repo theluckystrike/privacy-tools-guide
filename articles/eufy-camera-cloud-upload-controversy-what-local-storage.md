@@ -211,18 +211,18 @@ from scapy.all import rdpcap, IP, TCP
 import json
 
 def analyze_camera_traffic(pcap_file):
-    """Analyze camera PCAP for external connections."""
-    packets = rdpcap(pcap_file)
-    external_ips = set()
+ """Analyze camera PCAP for external connections."""
+ packets = rdpcap(pcap_file)
+ external_ips = set()
 
-    for packet in packets:
-        if IP in packet:
-            dst = packet[IP].dst
-            # Flag non-RFC1918 addresses
-            if not dst.startswith(('10.', '172.', '192.168.')):
-                external_ips.add(dst)
+ for packet in packets:
+ if IP in packet:
+ dst = packet[IP].dst
+ # Flag non-RFC1918 addresses
+ if not dst.startswith(('10.', '172.', '192.168.')):
+ external_ips.add(dst)
 
-    return external_ips
+ return external_ips
 
 external = analyze_camera_traffic('camera_traffic.pcap')
 print(f"External IPs contacted: {external}")
@@ -279,6 +279,7 @@ Isolate all IoT devices from your main network:
 
 This prevents compromised cameras from accessing your main devices, work laptop, or personal computers.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ## Related Reading

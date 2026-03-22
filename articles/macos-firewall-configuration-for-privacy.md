@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "MacOS Firewall Configuration"
+title: "macOS Firewall Configuration"
 description: "Configure macOS firewall for privacy using pf, Application Firewall, and command-line tools. Block trackers, control inbound connections, and secure your"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -226,5 +226,4 @@ When configuring macOS firewall for privacy, avoid these mistakes:
 - [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -248,5 +248,4 @@ fi
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

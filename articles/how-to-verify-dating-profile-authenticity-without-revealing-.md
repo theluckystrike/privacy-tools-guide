@@ -442,5 +442,4 @@ The fundamental approach: if someone won't verify authenticity to you through st
 - [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

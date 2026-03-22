@@ -336,5 +336,4 @@ Annual:
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

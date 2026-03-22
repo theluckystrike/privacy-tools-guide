@@ -441,5 +441,4 @@ These organizations provide legal assistance, documentation support, and interna
 - [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

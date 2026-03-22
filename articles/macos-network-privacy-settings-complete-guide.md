@@ -82,9 +82,9 @@ Configure privacy-focused DNS:
 1. **System Settings** → **Network** → **WiFi** (or Ethernet)
 2. Click **Details** → **DNS**
 3. Add servers like:
-   - Cloudflare: `1.1.1.1`, `1.0.0.1`
-   - Quad9: `9.9.9.9` (blocks malicious domains)
-   - NextDNS: custom resolvers with filtering and logging control
+ - Cloudflare: `1.1.1.1`, `1.0.0.1`
+ - Quad9: `9.9.9.9` (blocks malicious domains)
+ - NextDNS: custom resolvers with filtering and logging control
 
 ### Enabling DNS Encryption
 

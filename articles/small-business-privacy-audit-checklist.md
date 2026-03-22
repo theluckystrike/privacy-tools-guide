@@ -247,5 +247,4 @@ Technical controls fail when employees don't understand basic threats.
 - [Ccpa Compliance Requirements For Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

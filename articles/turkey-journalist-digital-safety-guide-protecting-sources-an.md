@@ -229,5 +229,4 @@ Prepare for potential device seizure:
 - [Turkey Election Period Internet Throttling](/privacy-tools-guide/turkey-election-period-internet-throttling-how-to-maintain-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

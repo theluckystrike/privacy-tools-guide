@@ -230,5 +230,4 @@ Document policy changes with version control and maintain a changelog showing wh
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

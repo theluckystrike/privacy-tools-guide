@@ -220,7 +220,7 @@ Several non-obvious operational practices improve your username privacy posture:
 
 **Disable read receipts for username contacts.** Read receipts combined with online status create a timing channel: an observer who sends you a message via username can infer your activity patterns. Disabling both in Settings → Privacy limits this signal.
 
-**Use a dedicated username for sensitive communications.** If you operate multiple Signal accounts via secondary numbers or VoIP lines, assign distinct usernames to each identity. Never reuse a username across identities — that defeats the purpose.
+**Use a dedicated username for sensitive communications.** If you operate multiple Signal accounts via secondary numbers or VoIP lines, assign distinct usernames to each identity. Never reuse an username across identities — that defeats the purpose.
 
 ## Common Pitfalls
 
@@ -228,7 +228,7 @@ Several non-obvious operational practices improve your username privacy posture:
 
 **Sharing your username QR code in a screenshot that retains metadata.** QR code screenshots sometimes include EXIF location or device metadata. Strip metadata before sharing username QR codes publicly.
 
-**Assuming username deletion is instant.** Signal's servers may cache lookup results for a brief window after you delete or change a username. If you are actively being targeted, plan for a propagation delay of several minutes before a rotated username is fully unreachable via the old handle.
+**Assuming username deletion is instant.** Signal's servers may cache lookup results for a brief window after you delete or change an username. If you are actively being targeted, plan for a propagation delay of several minutes before a rotated username is fully unreachable via the old handle.
 
 **Failing to update stored identifiers in bots or integrations.** If you use signal-cli or an automation that stores your username, remember that discriminator changes will break stored identifiers. Your automation should query and store the full `username#discriminator` form and handle 404 responses by refreshing the stored value.
 

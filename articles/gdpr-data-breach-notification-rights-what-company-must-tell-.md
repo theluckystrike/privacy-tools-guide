@@ -282,5 +282,4 @@ Many jurisdictions now have streamlined online complaint systems that take 5-10 
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

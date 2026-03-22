@@ -215,5 +215,4 @@ These tools integrate with your VLAN architecture without requiring fundamental 
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

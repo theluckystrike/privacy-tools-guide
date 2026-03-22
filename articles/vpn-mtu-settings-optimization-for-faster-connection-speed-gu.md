@@ -208,5 +208,4 @@ Host vpn.example.com
 - [How To Diagnose Slow Vpn Connection Speeds Step By Step](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

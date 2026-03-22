@@ -265,5 +265,4 @@ Run this periodically to monitor unexpected network activity.
 - [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

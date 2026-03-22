@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure Little Snitch On Macos To Block All Unnecessary"
+title: "Configure Little Snitch On macOS To Block All Unnecessary"
 description: "A practical guide for developers and power users to configure Little Snitch on macOS. Learn to monitor, audit, and block unnecessary outbound network"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -321,5 +321,4 @@ This ensures all developers maintain consistent security postures and blocking p
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

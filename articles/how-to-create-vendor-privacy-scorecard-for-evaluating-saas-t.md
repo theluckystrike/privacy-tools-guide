@@ -237,5 +237,4 @@ Building a vendor privacy scorecard takes initial effort but pays dividends acro
 - [How To Create Anonymous Github Account For Open Source Contr](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

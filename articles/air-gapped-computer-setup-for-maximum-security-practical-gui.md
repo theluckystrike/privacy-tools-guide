@@ -416,5 +416,4 @@ Time investment: 4-6 hours initial setup, 1-2 hours monthly maintenance.
 - [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

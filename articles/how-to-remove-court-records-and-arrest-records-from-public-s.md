@@ -233,5 +233,4 @@ Removing court records and arrest records from public search databases requires 
 - [How to Use Public Computers Safely Without Leaving Any Trace](/privacy-tools-guide/how-to-use-public-computers-safely-without-leaving-any-trace/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

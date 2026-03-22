@@ -215,9 +215,9 @@ In 2025, a sophisticated phishing campaign targeted tech workers:
 2. **Social engineering**: "Verify your GitHub account to complete onboarding"
 3. **Phishing site structure**: Perfectly cloned GitHub login with subtle domain differences
 4. **Bypass techniques**:
-   - Used HTTPS certificate for legitimacy
-   - Registered domain with similar-looking characters
-   - Included SSL security indicators to build trust
+ - Used HTTPS certificate for legitimacy
+ - Registered domain with similar-looking characters
+ - Included SSL security indicators to build trust
 
 **Password Manager Response**:
 - Bitwarden: Blocked due to domain mismatch (stored github.com, site was github-verify.con)
@@ -358,5 +358,4 @@ For developers and power users, consider these implementation strategies:
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

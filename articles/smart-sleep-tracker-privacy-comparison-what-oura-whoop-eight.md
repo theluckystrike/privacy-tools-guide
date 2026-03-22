@@ -241,5 +241,4 @@ The trade-off between sleep optimization insights and biometric data sharing rem
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

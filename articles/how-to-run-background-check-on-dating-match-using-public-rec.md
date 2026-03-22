@@ -277,5 +277,4 @@ def create_verification_record(name):
 - [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -281,7 +281,7 @@ Plan wipe operations accordingly. An 8-hour wipe makes sense for high-value devi
 
 Different manufacturer implementations vary significantly.
 
-**Samsung devices**: Support Knox platform with hardware-backed security. Samsung's factory reset is generally more reliable than stock Android. Enable Knox from settings before reset to leverage platform security.
+**Samsung devices**: Support Knox platform with hardware-backed security. Samsung's factory reset is generally more reliable than stock Android. Enable Knox from settings before reset to use platform security.
 
 **Apple devices with Secure Enclave**: Provide the strongest guarantee of data destruction. Secure Enclave deletes encryption keys on erase, making data unrecoverable.
 

@@ -588,5 +588,4 @@ Your encryption key is critical. If lost, backups are unrecoverable:
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

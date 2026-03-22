@@ -62,10 +62,10 @@ That's cheaper than a single month of 1Password Families.
 3. Admin invites 5 family members (links sent via email)
 4. Each member accepts invite
 5. Admin creates shared collections:
-   - "Streaming" (Netflix, Disney+, etc.)
-   - "Financial" (bank logins, investment sites)
-   - "Home" (WiFi, smart home devices)
-   - "Emergency Access" (sensitive docs)
+ - "Streaming" (Netflix, Disney+, etc.)
+ - "Financial" (bank logins, investment sites)
+ - "Home" (WiFi, smart home devices)
+ - "Emergency Access" (sensitive docs)
 
 **Setup Steps:**
 
@@ -689,6 +689,7 @@ No way to revoke their access
 - [ ] Confirm adult children know emergency access process
 - [ ] Holiday gift: New family member added? Invite to vault
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

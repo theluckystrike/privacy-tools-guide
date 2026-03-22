@@ -332,5 +332,4 @@ Keep contacts and calendar separate from E2EE file storage for best results.
 - [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

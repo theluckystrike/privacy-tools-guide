@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ios Shortcuts Automation Privacy Considerations"
+title: "iOS Shortcuts Automation Privacy Considerations"
 description: "Learn about privacy implications when using iOS Shortcuts automation. Discover security best practices, data access permissions, and how to build"
 date: 2026-03-15
 last_modified_at: 2026-03-15

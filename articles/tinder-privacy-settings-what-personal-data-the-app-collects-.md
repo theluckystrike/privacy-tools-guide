@@ -382,13 +382,13 @@ Deleting an account doesn't make recovery impossible:
 Watch for these indicators that Tinder has excessive access:
 
 1. **Location accuracy**: App shows <5 meter precision instead of neighborhood level
-   - Fix: Disable fine location, use coarse only
+ - Fix: Disable fine location, use coarse only
 
 2. **Too-accurate recommendations**: Profiles match your stated preferences exactly
-   - Indicates: Rich behavioral profile exists
+ - Indicates: Rich behavioral profile exists
 
 3. **Cross-app targeting**: Ads on other apps match your Tinder activity
-   - Indicates: Data sharing with ad network
+ - Indicates: Data sharing with ad network
 
 
 ## Related Articles
@@ -400,5 +400,4 @@ Watch for these indicators that Tinder has excessive access:
 - [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

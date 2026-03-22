@@ -353,6 +353,7 @@ To check if a site is using permission fingerprinting:
 3. **Test with Fingerprinting Test Sites**
  - Use sites likecovery.org or AmIUnique to see what permissions they can detect
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

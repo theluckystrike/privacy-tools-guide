@@ -232,5 +232,4 @@ Fourth, prepare for data subject requests. Your consent receipt system should in
 - [How To Safely Share Location With Date Without Giving Perman](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

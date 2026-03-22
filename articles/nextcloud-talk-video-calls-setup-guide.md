@@ -407,5 +407,4 @@ Optimize for mobile clients:
 - [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -336,5 +336,4 @@ The cost ($500-2,000 for professional planning) prevents infinitely more expensi
 - [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

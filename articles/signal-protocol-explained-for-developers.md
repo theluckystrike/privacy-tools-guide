@@ -237,5 +237,4 @@ Developers new to Signal-style protocols often make these errors:
 - [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

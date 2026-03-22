@@ -210,5 +210,4 @@ The right VPN setup enables productive remote work from Thailand while maintaini
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/privacy-tools-guide/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

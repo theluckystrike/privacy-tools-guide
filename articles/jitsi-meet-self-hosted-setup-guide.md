@@ -313,5 +313,4 @@ docker logs prosody
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -331,5 +331,4 @@ Choose alternative solutions if:
 - [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

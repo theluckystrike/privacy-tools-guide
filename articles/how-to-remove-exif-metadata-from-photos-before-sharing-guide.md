@@ -478,6 +478,7 @@ For truly sensitive situations (abuse, activist work, journalism in hostile envi
 
 EXIF removal is automatic hygiene, like locking your door. Do it always. But don't assume it's total security without other precautions.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ---

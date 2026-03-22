@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Attribution Reporting Api How Chrome Replaced Cookies"
+title: "Attribution Reporting API How Chrome Replaced Cookies"
 description: "Attribution Reporting API: How Chrome Replaced Cookies. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -204,5 +204,4 @@ The transition away from third-party cookies represents both a challenge and an 
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

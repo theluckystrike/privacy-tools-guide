@@ -202,5 +202,4 @@ Self-hosted solutions give you control but transfer compliance responsibility en
 - [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

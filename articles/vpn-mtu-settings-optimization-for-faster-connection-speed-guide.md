@@ -227,7 +227,5 @@ After configuring MTU, verify the improvements:
 - [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
 - [How To Diagnose Slow Vpn Connection Speeds Step By Step](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

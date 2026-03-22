@@ -315,5 +315,4 @@ Developers can build privacy-preserving applications using Cwtch's underlying pr
 - [Email Header Analysis What Metadata Reveals About Your Locat](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

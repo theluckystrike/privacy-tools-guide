@@ -290,5 +290,4 @@ Browser selection matters for users concerned about tracking. Some browsers acti
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -174,7 +174,7 @@ Common problems and solutions:
 - **High latency spikes**: Switch to a different VPN server or protocol. Check for network congestion on your connection.
 - **Packet loss**: Reduce VPN encryption level if possible, or switch from OpenVPN to WireGuard.
 - **Disconnections**: Enable keepalive settings in your VPN configuration:
-  ```ini
+ ```ini
   PersistentKeepalive = 25
   ```
 - **Routing loops**: Use `mtr` to identify unexpected routing patterns and choose different VPN servers.
@@ -428,7 +428,5 @@ These results show that WireGuard within 2-3 hops typically remains playable, wh
 - [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -288,5 +288,4 @@ After selecting and deploying a messaging app:
 - [Mobile App Store Privacy Labels How To Read And Compare](/mobile-app-store-privacy-labels-how-to-read-and-compare-befo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -323,5 +323,4 @@ Evaluate your risk tolerance before implementing these solutions.
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

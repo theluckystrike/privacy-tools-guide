@@ -304,5 +304,4 @@ The social media ecosystem continues evolving. Staying informed about data pract
 - [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

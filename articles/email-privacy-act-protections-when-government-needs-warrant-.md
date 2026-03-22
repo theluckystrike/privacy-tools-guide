@@ -414,5 +414,4 @@ Understanding when the government needs a warrant to read your emails matters no
 - [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

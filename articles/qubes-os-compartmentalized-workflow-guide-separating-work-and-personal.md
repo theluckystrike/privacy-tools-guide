@@ -274,6 +274,7 @@ If copy-paste between qubes fails:
 [user@dom0 ~]$ systemctl restart qubes-mem-info
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

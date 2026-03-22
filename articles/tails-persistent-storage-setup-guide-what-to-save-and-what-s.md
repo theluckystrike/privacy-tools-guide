@@ -368,5 +368,4 @@ Understanding what persists and what disappears is fundamental to using Tails ef
 - [How to Use Tails OS for Maximum Anonymity](/privacy-tools-guide/how-to-use-tails-os-for-maximum-anonymity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

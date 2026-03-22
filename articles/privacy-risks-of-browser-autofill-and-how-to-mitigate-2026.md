@@ -484,4 +484,5 @@ Open this on your own computer. If autofill populates sensitive fields, disable 
 
 Browser autofill is convenient but creates privacy risk. Password managers offer 95% of the convenience with 99% less risk.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

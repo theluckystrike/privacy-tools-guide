@@ -108,11 +108,11 @@ diskutil eject /dev/diskN
 1. **Insert USB drive into the computer where you want to run Tails**
 2. **Restart the computer**
 3. **Immediately hold the boot key:** This varies by computer
-   - Mac: Hold Option during startup
-   - Lenovo/Thinkpad: F12
-   - Dell: F2
-   - HP: Esc
-   - Generic: Try Esc, F2, F10, F12, Delete (check your computer's manual)
+ - Mac: Hold Option during startup
+ - Lenovo/Thinkpad: F12
+ - Dell: F2
+ - HP: Esc
+ - Generic: Try Esc, F2, F10, F12, Delete (check your computer's manual)
 4. **Select the USB drive** from boot menu (may be labeled "TAILS USB" or similar)
 5. **Wait for Tails to boot** (~30-60 seconds depending on hardware)
 
@@ -131,11 +131,11 @@ When Tails boots for the first time, you'll see the Greeter (welcome screen):
 1. **Language:** Select your language
 2. **Keyboard Layout:** Select your keyboard layout
 3. **Tor Network Connection:**
-   - Select "Connect to Tor" (automatic connection, usually sufficient)
-   - Or "Configure it" if you need bridge relay (for censored networks)
+ - Select "Connect to Tor" (automatic connection, usually sufficient)
+ - Or "Configure it" if you need bridge relay (for censored networks)
 4. **Startup Passphrase (Optional):**
-   - Creates encrypted persistent storage (recommended)
-   - You'll choose the passphrase here
+ - Creates encrypted persistent storage (recommended)
+ - You'll choose the passphrase here
 5. **Additional Settings:** Timezone, etc.
 
 After clicking "Start Tails", the system boots into the desktop (~30-60 seconds more).
@@ -172,13 +172,13 @@ By default, Tails doesn't save anything. Shutdown and restart, everything is gon
 
 1. Open Files > Persistent > Create
 2. Select what to store persistently:
-   - Personal Data (Documents, Downloads, Pictures)
-   - Browsing (Firefox bookmarks, cache)
-   - Email (Thunderbird settings)
-   - System (Network settings)
-   - GPG (Encryption keys - important!)
-   - SSH keys
-   - Tor Browser Bridges (if using bridges)
+ - Personal Data (Documents, Downloads, Pictures)
+ - Browsing (Firefox bookmarks, cache)
+ - Email (Thunderbird settings)
+ - System (Network settings)
+ - GPG (Encryption keys - important!)
+ - SSH keys
+ - Tor Browser Bridges (if using bridges)
 
 **Recommended persistent storage:**
 - GPG keys (if you use GPG regularly)
@@ -403,5 +403,4 @@ Tails OS is designed for users who need maximum privacy and anonymity. The setup
 - [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

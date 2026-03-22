@@ -254,5 +254,4 @@ The regulatory landscape continues evolving. Organizations that build assessment
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

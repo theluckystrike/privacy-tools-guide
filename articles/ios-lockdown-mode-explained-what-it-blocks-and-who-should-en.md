@@ -268,14 +268,6 @@ Understanding the limitations matters as much as understanding the features. Loc
 - **Network-level surveillance**: Your ISP and VPN provider can still see your traffic patterns and which domains you visit (though not content with HTTPS)
 - **Recovery key theft**: If an attacker obtains your recovery key, they can reset your account security without your physical device
 
-## Final Thoughts
-
-Lockdown Mode represents Apple's most serious response to advanced security threats facing specific user populations. It imposes genuine usability sacrifices in exchange for meaningful security improvements against sophisticated attackers. Most users will find the trade-offs too restrictive for daily use. However, for those facing credible threats from well-funded adversaries, this feature provides defense-in-depth that significantly raises the cost and complexity of successful attacks.
-
-Before enabling Lockdown Mode, consider your actual threat model honestly. If you are unsure whether your situation warrants this level of protection, consult with a security professional who can assess your specific circumstances. Journalists, activists, and human rights defenders facing documented threats should strongly consider enabling this feature despite its usability costs.
-
-The trade-off between security and functionality is real, but for the right threat model, Lockdown Mode represents one of the strongest protections available on any consumer device platform.
-
 ## Ongoing Maintenance and Monitoring
 
 If you enable Lockdown Mode, maintain it properly:

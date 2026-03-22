@@ -289,5 +289,4 @@ A well-chosen set of 5-6 extensions is significantly more private than 20+ exten
 - [Browser Permission Prompt Fingerprinting How Notification Re](/privacy-tools-guide/browser-permission-prompt-fingerprinting-how-notification-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

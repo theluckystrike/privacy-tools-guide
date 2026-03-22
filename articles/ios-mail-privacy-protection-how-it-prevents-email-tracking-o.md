@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Ios Mail Privacy Protection How It Prevents Email Tracking"
+title: "iOS Mail Privacy Protection How It Prevents Email Tracking"
 description: "Learn how iOS Mail Privacy Protection blocks email tracking pixels, prevents open receipts, and shields your email behavior from marketers and snoopers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -504,5 +504,4 @@ These measurements quantify Mail Privacy Protection's overhead on your specific 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

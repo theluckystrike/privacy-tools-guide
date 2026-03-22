@@ -277,5 +277,4 @@ Consider enabling Redis for session management in high-load scenarios by adding 
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

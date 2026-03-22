@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Harden Macos Sequoia Privacy Settings Beyond Default"
+title: "Harden macOS Sequoia Privacy Settings Beyond Default"
 description: "Master macOS Sequoia privacy hardening beyond defaults. Configure TCC permissions, disable telemetry, tighten app access controls, and implement"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -213,5 +213,4 @@ These hardening steps transform macOS Sequoia from a consumer-oriented operating
 - [Macos Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

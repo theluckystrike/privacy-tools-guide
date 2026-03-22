@@ -61,9 +61,9 @@ In Tor Browser:
 1. Connection settings (before connecting or via Settings > Tor)
 2. "Use a bridge"
 3. Select a built-in bridge type:
-   - **obfs4** — traffic obfuscation, widely effective
-   - **Snowflake** — uses WebRTC, looks like video conferencing traffic
-   - **meek-azure** — routes through Azure CDN, effective but slower
+ - **obfs4** — traffic obfuscation, widely effective
+ - **Snowflake** — uses WebRTC, looks like video conferencing traffic
+ - **meek-azure** — routes through Azure CDN, effective but slower
 
 For custom bridges (obtained from `https://bridges.torproject.org`):
 1. Request bridges (solve CAPTCHA or use email request)
@@ -133,7 +133,7 @@ This shows your three relay hops. If a site is slow or blocked by the exit node'
 - Click "New Circuit for this Site" — gets you a new exit node
 - Click "New Identity" (in the Tor menu) — completely new circuit for all tabs plus clears browsing data
 
-Use "New Identity" between different browsing sessions (e.g., between researching Topic A and Topic B) to prevent circuit correlation.
+Use "New Identity" between different browsing sessions (e.g., between researching Topic An and Topic B) to prevent circuit correlation.
 
 ## Guard Nodes and Anonymity
 
@@ -450,5 +450,4 @@ sudo reboot -h now
 - [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

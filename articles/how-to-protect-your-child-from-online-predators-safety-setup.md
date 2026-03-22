@@ -250,5 +250,4 @@ By combining network-level filtering, device hardening, active monitoring, and o
 - [How To Verify Signal Safety Numbers To Prevent Man In Middle](/privacy-tools-guide/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

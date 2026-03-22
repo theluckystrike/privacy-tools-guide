@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Github Pull Request Workflow For Distributed Teams"
+title: "GitHub Pull Request Workflow For Distributed Teams"
 description: "Set up an effective distributed PR workflow by adopting trunk-based development with short-lived feature branches (under two days), using PR templates that"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -369,5 +369,4 @@ This eliminates the final approval-to-merge friction point, letting reviews comp
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

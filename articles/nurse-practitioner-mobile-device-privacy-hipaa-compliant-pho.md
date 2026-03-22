@@ -347,5 +347,4 @@ Implement role-based access control at both the device level (MDM) and applicati
 - [Healthcare Data Privacy Hipaa Compliance For Software Compan](/privacy-tools-guide/healthcare-data-privacy-hipaa-compliance-for-software-compan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -484,5 +484,4 @@ signal-cli -u +1234567890 listIdentities
 - [Secure Audio Messaging Apps That Encrypt Voice Messages End](/privacy-tools-guide/secure-audio-messaging-apps-that-encrypt-voice-messages-end-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

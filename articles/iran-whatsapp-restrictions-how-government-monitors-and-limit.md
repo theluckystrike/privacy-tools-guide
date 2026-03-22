@@ -211,5 +211,4 @@ Understanding these technical dynamics helps developers and power users make inf
 - [Iphone Focus Modes For Privacy How To Limit App Access By Co](/privacy-tools-guide/iphone-focus-modes-for-privacy-how-to-limit-app-access-by-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

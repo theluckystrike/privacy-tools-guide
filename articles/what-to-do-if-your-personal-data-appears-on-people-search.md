@@ -272,5 +272,4 @@ Data minimization reduces your liability and protects users.
 - [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}
