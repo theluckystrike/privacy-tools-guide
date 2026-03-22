@@ -1,5 +1,7 @@
 ---
 permalink: /wireshark-privacy-network-analysis-guide/
+description: "Follow this guide to wireshark privacy network analysis guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Wireshark Basics for Privacy Network Analysis"

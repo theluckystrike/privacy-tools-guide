@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-confi/
+description: "Learn wireguard postup postdown scripts for advanced routing confi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, advanced]
 ---
 layout: default
 title: "WireGuard PostUp/PostDown Scripts for Advanced Routing"

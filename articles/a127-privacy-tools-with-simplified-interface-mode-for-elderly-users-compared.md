@@ -8,10 +8,10 @@ author: "theluckystrike"
 permalink: /privacy-tools-with-simplified-interface-mode-for-elderly-users-compared/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, elderly, accessibility, simplified-interface]
+tags: [privacy-tools-guide, elderly, accessibility, simplified-interface, comparison, privacy]
 ---
 ---
 layout: default

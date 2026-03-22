@@ -1,5 +1,7 @@
 ---
 permalink: /zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/
+description: "Learn zoosk behavioral matchmaking privacy how the platform tracks with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Zoosk Behavioral Matchmaking Privacy How The Platform"

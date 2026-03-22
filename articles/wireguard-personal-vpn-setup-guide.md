@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-personal-vpn-setup-guide/
+description: "Follow this guide to wireguard personal vpn setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "Set Up a Personal VPN with WireGuard"

@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
+description: "Learn wireguard persistent keepalive setting explained when to enable it with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "WireGuard Persistent Keepalive Setting Explained"

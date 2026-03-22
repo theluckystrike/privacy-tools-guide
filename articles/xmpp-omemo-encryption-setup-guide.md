@@ -1,5 +1,7 @@
 ---
 permalink: /xmpp-omemo-encryption-setup-guide/
+description: "Follow this guide to xmpp omemo encryption setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "Xmpp Omemo Encryption Setup Guide"

@@ -1,5 +1,7 @@
 ---
 permalink: /workplace-drug-testing-privacy-rights-what-employers-can-and/
+description: "Learn workplace drug testing privacy rights what employers can and with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Workplace Drug Testing Privacy Rights"

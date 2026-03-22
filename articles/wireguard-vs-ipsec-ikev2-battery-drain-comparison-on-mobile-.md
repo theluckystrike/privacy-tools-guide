@@ -1,5 +1,7 @@
 ---
 permalink: /wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/
+description: "Compare wireguard vs ipsec ikev2 battery drain comparison on mobile  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison]
 ---
 layout: default
 title: "Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile"
