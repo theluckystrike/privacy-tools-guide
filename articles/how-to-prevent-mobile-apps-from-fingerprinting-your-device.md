@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prevent-mobile-apps-from-fingerprinting-your-device/
+description: "Follow this guide to how to prevent mobile apps from fingerprinting your device with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Prevent Mobile Apps From Fingerprinting Your"

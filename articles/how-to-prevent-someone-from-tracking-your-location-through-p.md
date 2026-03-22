@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prevent-someone-from-tracking-your-location-through-p/
+description: "Follow this guide to how to prevent someone from tracking your location through p with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Prevent Someone From Tracking Your Location"

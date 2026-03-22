@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-opt-out-of-targeted-advertising-under-state-privacy-l/
+description: "Follow this guide to how to opt out of targeted advertising under state privacy l with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How To Opt Out Of Targeted Advertising Under State Privacy"

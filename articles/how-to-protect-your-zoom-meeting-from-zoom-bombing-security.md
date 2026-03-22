@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-your-zoom-meeting-from-zoom-bombing-security/
+description: "Follow this guide to how to protect your zoom meeting from zoom bombing security with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, security]
 ---
 layout: default
 title: "How To Protect Your Zoom Meeting From Zoom Bombing Security"

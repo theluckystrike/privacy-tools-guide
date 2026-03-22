@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-protect-your-child-from-online-predators-safety-setup/
+description: "Follow this guide to how to protect your child from online predators safety setup with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Protect Your Child From Online Predators Safety Setup"

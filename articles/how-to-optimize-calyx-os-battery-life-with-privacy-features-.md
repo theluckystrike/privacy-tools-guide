@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
+description: "Follow this guide to how to optimize calyx os battery life with privacy features  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"

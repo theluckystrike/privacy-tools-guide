@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/
+description: "Follow this guide to how to prevent android keyboard from sending typing data to google or samsung with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Prevent Android Keyboard From Sending Typing Data To Google"
