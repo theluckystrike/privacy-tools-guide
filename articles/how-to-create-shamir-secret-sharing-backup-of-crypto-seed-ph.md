@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-create-shamir-secret-sharing-backup-of-crypto-seed-ph/
+description: "Follow this guide to how to create shamir secret sharing backup of crypto seed ph with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Create Shamir Secret Sharing Backup Of Crypto Seed"

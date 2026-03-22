@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-detect-and-block-hidden-third-party-trackers-on-websi/
+description: "Follow this guide to how to detect and block hidden third party trackers on websi with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Detect And Block Hidden Third Party Trackers On"

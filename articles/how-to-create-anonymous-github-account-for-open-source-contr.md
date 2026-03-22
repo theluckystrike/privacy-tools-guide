@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-create-anonymous-github-account-for-open-source-contr/
+description: "Follow this guide to how to create anonymous github account for open source contr with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Create Anonymous GitHub Account For Open Source"

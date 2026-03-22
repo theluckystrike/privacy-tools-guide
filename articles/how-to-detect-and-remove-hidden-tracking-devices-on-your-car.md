@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-detect-and-remove-hidden-tracking-devices-on-your-car/
+description: "Follow this guide to how to detect and remove hidden tracking devices on your car with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Detect and Remove Hidden Tracking Devices on Your"

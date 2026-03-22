@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-configure-wireguard-with-obfuscation-to-bypass-russia/
+description: "Follow this guide to how to configure wireguard with obfuscation to bypass russia with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Configure Wireguard With Obfuscation To Bypass"

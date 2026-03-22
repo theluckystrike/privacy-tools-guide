@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-create-sealed-envelope-with-digital-credentials-for-e/
+description: "Follow this guide to how to create sealed envelope with digital credentials for e with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Create Sealed Envelope With Digital Credentials"

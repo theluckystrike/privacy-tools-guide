@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-create-throwaway-email-accounts-safely-for-one-time-s/
+description: "Follow this guide to how to create throwaway email accounts safely for one time s with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Create Throwaway Email Accounts Safely For One Time"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-create-new-digital-identity-after-escaping-domestic-v/
+description: "Follow this guide to how to create new digital identity after escaping domestic v with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, api]
 ---
 layout: default
 title: "Create a New Digital Identity After Escaping Domestic"
