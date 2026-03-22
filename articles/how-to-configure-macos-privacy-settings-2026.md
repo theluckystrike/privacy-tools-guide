@@ -37,7 +37,17 @@ Most of this is clickable in System Settings. Some require terminal commands. Al
 
 - **Choose**: Quad9 or Cloudflare (not Google)
 
-## Security vs Convenience Tradeoff
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Security vs Convenience Tradeoff
 
 Total privacy settings break iCloud sync, Apple features, and some app integrations.
 - **But if you don't trust Apple**: use 1Password instead (covered later).
@@ -46,7 +56,7 @@ Total privacy settings break iCloud sync, Apple features, and some app integrati
 - **macOS users assume their**: system is private by default.
 - **Most of this is**: clickable in System Settings.
 
-## System Settings Changes
+### Step 2: System Settings Changes
 
 ### 1. Sign Out of iCloud
 
@@ -190,7 +200,7 @@ macOS runs code at startup before the OS loads. Lock this down.
 
 This prevents unsigned code from running at boot time.
 
-## Terminal Commands for Advanced Settings
+### Step 3: Terminal Commands for Advanced Settings
 
 These go deeper than System Settings. Open Terminal (Applications → Utilities → Terminal).
 
@@ -270,7 +280,7 @@ Handoff lets you start work on iPhone and continue on Mac. Requires connectivity
 defaults write ~/Library/Preferences/com.apple.NSUserDefaults AppleAnnounceReceiptPreference -int 2
 ```
 
-## Browser Privacy
+### Step 4: Browser Privacy
 
 macOS settings are just part of it. Your browser leaks more data than the OS.
 
@@ -293,7 +303,7 @@ Install privacy extensions:
 - Privacy Badger (stops tracking)
 - Decentraleyes (blocks CDN tracking)
 
-## App-Level Privacy
+### Step 5: App-Level Privacy
 
 Even with OS settings locked down, apps request permissions.
 
@@ -316,7 +326,7 @@ Audit permissions monthly:
 defaults read ~/Library/Caches/com.apple.LaunchServices* | grep -E '(LSQuarantine|com.apple.metadata)'
 ```
 
-## VPN and DNS
+### Step 6: VPN and DNS
 
 Your Internet Service Provider sees all unencrypted traffic. A VPN encrypts your traffic but the VPN provider sees everything instead.
 
@@ -332,7 +342,7 @@ Your Internet Service Provider sees all unencrypted traffic. A VPN encrypts your
 2. DNS Providers: Select "Private"
 3. Choose: Quad9 or Cloudflare (not Google)
 
-## Security vs Convenience Tradeoff
+### Step 7: Security vs Convenience Tradeoff
 
 Total privacy settings break iCloud sync, Apple features, and some app integrations. You decide the balance.
 
@@ -363,7 +373,7 @@ Total privacy settings break iCloud sync, Apple features, and some app integrati
 
 Most people benefit from "Privacy by Default." Maximum privacy requires daily habits (always-on VPN, clearing caches) that most users don't sustain.
 
-## Ongoing Maintenance
+### Step 8: Ongoing Maintenance
 
 Privacy isn't set-and-forget.
 
@@ -382,7 +392,7 @@ Privacy isn't set-and-forget.
 - Go through this guide again
 - Check Privacy & Security settings
 
-## Quick Wins (Do These First)
+### Step 9: Quick Wins (Do These First)
 
 If privacy feels overwhelming, start here:
 
@@ -394,7 +404,7 @@ If privacy feels overwhelming, start here:
 
 These five changes cover 80% of privacy vulnerabilities and take 20 minutes.
 
-## The Honest Assessment
+### Step 10: The Honest Assessment
 
 macOS is less private than Linux. More private than Windows. If you use Apple's full ecosystem (iCloud, Apple TV, Apple Music), you've traded some privacy for convenience. That's a valid choice.
 
@@ -405,6 +415,21 @@ If you value privacy:
 - Disable telemetry
 
 The changes are straightforward. Most take minutes. The payoff is knowing your data isn't flowing to ad networks or being sold to brokers.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

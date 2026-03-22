@@ -28,7 +28,17 @@ Obfuscation wraps VPN traffic in a different protocol layer, making it appear li
 - **Always use modern cipher**: suites (AES-256-GCM with SHA-256 authentication) and maintain proper key management practices.
 - **Recommended stack**: Use obfs4 with obfs4proxy on a non-standard port, or deploy OpenVPN inside a Shadowsocks tunnel using the `v2ray-plugin` with WebSocket transport over TLS.
 
-## Understanding OpenVPN Obfuscation Methods
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand OpenVPN Obfuscation Methods
 
 Several obfuscation techniques exist for OpenVPN, each with different trade-offs:
 
@@ -42,7 +52,7 @@ Several obfuscation techniques exist for OpenVPN, each with different trade-offs
 
 For most developers and power users, the combination of OpenVPN with obfsproxy or stunnel provides the best balance of compatibility and effectiveness.
 
-## Server-Side Configuration
+### Step 2: Server-Side Configuration
 
 This section walks through setting up OpenVPN with obfsproxy on a Linux server. The example assumes Ubuntu 22.04.
 
@@ -127,7 +137,7 @@ sudo systemctl enable obfs4proxy
 sudo systemctl start obfs4proxy
 ```
 
-## Client-Side Configuration
+### Step 3: Client-Side Configuration
 
 On the client machine, install OpenVPN and configure the connection.
 
@@ -198,7 +208,7 @@ Verify the connection by checking the assigned IP address:
 curl ifconfig.me
 ```
 
-## Alternative: Using Stunnel for Obfuscation
+### Step 4: Alternative: Using Stunnel for Obfuscation
 
 Stunnel provides another effective obfuscation method by wrapping OpenVPN in SSL. This makes traffic appear as regular HTTPS.
 
@@ -262,7 +272,7 @@ While obfuscation helps bypass censorship, it does not replace strong encryption
 
 For additional security layers, consider combining obfuscation with Tor or using WireGuard in addition to OpenVPN for different network scenarios.
 
-## Testing Your Setup
+### Step 5: Test Your Setup
 
 After configuration, verify that the obfuscation is working correctly. Tools like Wireshark can confirm that traffic appears as HTTPS or the configured obfuscation protocol rather than standard OpenVPN. Test from multiple network environments to ensure reliability across different firewall configurations.
 
@@ -284,7 +294,7 @@ nmap -sV --version-intensity 5 -p 443 your-server-ip
 
 A successful obfuscation setup returns generic TLS service information rather than identifying OpenVPN.
 
-## Choosing the Right Obfuscation Method for Your Context
+### Step 6: Choose the Right Obfuscation Method for Your Context
 
 Different censorship environments call for different approaches. Understanding which technique to apply saves troubleshooting time and reduces the risk of detection.
 
