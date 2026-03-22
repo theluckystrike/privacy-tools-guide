@@ -197,6 +197,290 @@ pg_dump -U hockeypuck hockeypuck > hockeypuck-backup-$(date +%Y%m%d).sql
 
 
 
+## Advanced Key Management Workflows
+
+Beyond basic key distribution, implement organizational policies:
+
+**Automated Key Rotation**: Enforce regular key rotation to limit damage from compromised keys:
+
+```bash
+#!/bin/bash
+# rotate_organizational_keys.sh
+# Run monthly to identify expiring keys and prepare rotations
+
+EXPIRATION_DAYS=90
+INTERNAL_KEYSERVER="keys.internal.yourcompany.com"
+
+# Export all keys with expiration info
+gpg --keyserver $INTERNAL_KEYSERVER --list-keys --with-colons | \
+  awk -F: '$1=="pub" && $7=="0" {print $5}' | \
+  while read keyid; do
+    # Get key owner email
+    owner=$(gpg --keyid-format LONG -k $keyid | grep uid | head -1 | awk -F'<' '{print $2}' | tr -d '>')
+
+    # Calculate days until expiration
+    exp_date=$(gpg --with-colons --list-keys $keyid | grep "^pub:" | cut -d: -f7)
+    exp_unix=$exp_date
+    current_unix=$(date +%s)
+    days_until_exp=$(( ($exp_unix - $current_unix) / 86400 ))
+
+    if [ $days_until_exp -lt $EXPIRATION_DAYS ] && [ $days_until_exp -gt 0 ]; then
+      echo "KEY ROTATION REQUIRED: $owner ($keyid) expires in $days_until_exp days"
+
+      # Send reminder to employee
+      mail -s "Action Required: Rotate Your PGP Key" "$owner" <<EOF
+Your PGP key ($keyid) will expire in $days_until_exp days.
+
+To rotate:
+1. Create new key: gpg --gen-key
+2. Upload to $INTERNAL_KEYSERVER: gpg --keyserver $INTERNAL_KEYSERVER --send-keys [NEW_KEY_ID]
+3. Sign your new key with old key to establish continuity
+4. Update team wiki with new key ID
+
+Timeline: Complete rotation at least 7 days before expiration.
+EOF
+    fi
+done
+```
+
+Schedule this script monthly via cron. Proactive rotation prevents operational incidents when a key expires and developers lose the ability to sign commits.
+
+**Key Signing Ceremony**: For high-security environments, implement key signing ceremonies where team members sign each other's keys in person:
+
+```bash
+#!/bin/bash
+# key_signing_ceremony.sh
+# Formal ceremony for establishing web of trust
+
+echo "=== PGP Key Signing Ceremony ==="
+echo "Purpose: Establish organizational web of trust"
+echo "Participants must have valid ID and fingerprint verification"
+echo ""
+
+# Step 1: Import keys
+echo "Step 1: Import all participating keys"
+for participant in alice@company.com bob@company.com charlie@company.com; do
+  gpg --keyserver keys.internal.yourcompany.com --recv-keys $participant
+done
+
+# Step 2: Verify fingerprints in person
+echo "Step 2: Verify fingerprints (each person reads out loud)"
+for participant in alice@company.com bob@company.com charlie@company.com; do
+  gpg --fingerprint $participant
+done
+
+# Step 3: Sign each key
+echo "Step 3: Sign each key if verification successful"
+read -p "Verify all fingerprints? (y/n) " verified
+
+if [ "$verified" = "y" ]; then
+  for keyid in $(gpg --list-keys --with-colons | grep "^pub:" | cut -d: -f5); do
+    gpg --sign-key $keyid
+  done
+
+  # Step 4: Upload signed keys back to server
+  echo "Step 4: Upload signed keys"
+  gpg --keyserver keys.internal.yourcompany.com --send-keys $keyid
+fi
+
+echo "Key signing ceremony complete."
+```
+
+This creates a web of trust where employees have personally verified each other's keys. It's slower to scale but creates extremely strong trust relationships.
+
+## Integration with Code Signing Requirements
+
+Organizations with compliance requirements often mandate code signing. Configure your key server for this:
+
+**Git Configuration for Signed Commits**:
+
+```bash
+# Set user signing key globally
+git config --global user.signingkey [YOUR_KEY_ID]
+
+# Enable signing by default for commits
+git config --global commit.gpgsign true
+
+# Enable signing by default for tags
+git config --global tag.gpgsign true
+
+# Configure GPG to use your internal keyserver
+cat >> ~/.gnupg/gpg.conf <<EOF
+keyserver hkps://keys.internal.yourcompany.com
+keyserver-options timeout=10
+EOF
+```
+
+**Verification on CI/CD Pipeline**:
+
+```yaml
+# .github/workflows/verify-commits.yml
+name: Verify Commit Signatures
+
+on: [push, pull_request]
+
+jobs:
+  verify-signatures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Need full history to check all commits
+
+      - name: Configure internal keyserver
+        run: |
+          mkdir -p ~/.gnupg
+          echo "keyserver hkps://keys.internal.yourcompany.com" >> ~/.gnupg/gpg.conf
+          echo "keyserver-options timeout=10" >> ~/.gnupg/gpg.conf
+
+      - name: Verify commit signatures
+        run: |
+          for commit in $(git log --pretty=%H origin/main..HEAD); do
+            if git verify-commit $commit 2>/dev/null; then
+              echo "✓ $commit is signed correctly"
+            else
+              echo "✗ $commit is NOT signed"
+              exit 1
+            fi
+          done
+```
+
+This ensures every commit in production branches is cryptographically signed by an authorized developer. It prevents unauthorized code from being merged.
+
+## Disaster Recovery and Key Escrow
+
+Organizations must plan for scenarios where key owners are unavailable:
+
+**Key Escrow Procedure**: Securely backup keys in case of emergencies:
+
+```bash
+#!/bin/bash
+# escrow_key.sh - Escrow procedure for organizational keys
+
+# Step 1: Export private key (HIGHLY SENSITIVE)
+gpg --armor --export-secret-key [KEY_ID] > /tmp/key_escrow.asc
+
+# Step 2: Encrypt with 3-of-5 Shamir Secret Sharing
+# Requires: ssss (Secret Sharing Scheme)
+# brew install ssss (macOS) or apt-get install ssss (Ubuntu)
+
+ssss-split -t 3 -n 5 -w escrow < /tmp/key_escrow.asc
+
+# This produces 5 shares; any 3 can reconstruct the key
+# Distribute shares to:
+# 1. HR department
+# 2. Finance department
+# 3. Legal department
+# 4. CTO
+# 5. Operations director
+
+# Store each share in a separate secure location
+echo "Escrow shares generated. Distribute accordingly."
+
+# Cleanup
+shred -vfz -n 3 /tmp/key_escrow.asc
+```
+
+Using Shamir's Secret Sharing ensures no single person can recover a key unilaterally. You need 3 of the 5 shares, preventing any individual from accessing escrowed keys without accountability.
+
+**Periodic Testing**: Quarterly, practice key recovery to ensure procedures work:
+
+```bash
+# Quarterly drill: Recover test key from escrow
+# Only proceed if authorized by management
+
+recovered_key=$(ssss-combine -w escrow < combined_shares.txt)
+gpg --import $recovered_key
+
+# Verify key functions
+gpg --list-keys [RECOVERED_KEY_ID]
+gpg --sign --trust-model always -u [RECOVERED_KEY_ID] /tmp/test_file.txt
+
+# Verify signature works
+gpg --verify /tmp/test_file.txt.gpg
+
+# Clean up test materials
+shred -vfz -n 3 /tmp/test_file.txt.gpg
+```
+
+Document that recovery works. This prevents discovering during an actual emergency that your escrow procedure is broken.
+
+## Monitoring and Compliance Auditing
+
+Implement continuous monitoring of your key server:
+
+```python
+import sqlite3
+from datetime import datetime, timedelta
+import logging
+
+class KeyServerAudit:
+    def __init__(self, db_path, log_path):
+        self.db = sqlite3.connect(db_path)
+        self.logger = logging.getLogger('keyserver')
+        self.logger.addHandler(logging.FileHandler(log_path))
+
+    def audit_key_distribution(self):
+        """Ensure all employees have keys"""
+        cursor = self.db.cursor()
+
+        # Get all active employees
+        cursor.execute("SELECT email FROM employees WHERE status='active'")
+        employees = set(row[0] for row in cursor.fetchall())
+
+        # Get all keys on server
+        cursor.execute("SELECT uid FROM keys")
+        keys = set(row[0] for row in cursor.fetchall())
+
+        missing_keys = employees - keys
+        if missing_keys:
+            self.logger.warning(f"Missing keys for: {', '.join(missing_keys)}")
+
+        return missing_keys
+
+    def audit_key_expiration(self):
+        """Check for expiring keys"""
+        cursor = self.db.cursor()
+        now = datetime.utcnow()
+        thirty_days = now + timedelta(days=30)
+
+        cursor.execute(
+            "SELECT uid, expires FROM keys WHERE expires < ?",
+            (thirty_days.timestamp(),)
+        )
+
+        expiring = cursor.fetchall()
+        for uid, exp_time in expiring:
+            days = (exp_time - now.timestamp()) / 86400
+            self.logger.warning(f"Key {uid} expires in {days:.0f} days")
+
+        return expiring
+
+    def audit_access_logs(self):
+        """Review who accessed which keys"""
+        cursor = self.db.cursor()
+        yesterday = datetime.utcnow() - timedelta(days=1)
+
+        cursor.execute(
+            "SELECT user, key_accessed, timestamp FROM access_log WHERE timestamp > ?",
+            (yesterday.timestamp(),)
+        )
+
+        accesses = cursor.fetchall()
+        for user, key, ts in accesses:
+            self.logger.info(f"{user} accessed {key} at {datetime.fromtimestamp(ts)}")
+
+        return accesses
+
+# Usage
+audit = KeyServerAudit('/var/lib/hockeypuck/hockeypuck.db', '/var/log/keyserver-audit.log')
+audit.audit_key_distribution()
+audit.audit_key_expiration()
+audit.audit_access_logs()
+```
+
+Run this daily. Set up alerts for missing keys or expiring keys. Review access logs weekly to detect unusual patterns.
+
 ## Frequently Asked Questions
 
 

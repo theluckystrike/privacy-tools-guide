@@ -224,11 +224,163 @@ Germany's privacy laws (GDPR, BDSG) provide strong legal protections, though Ger
 
 ---
 
+## Metadata That Tutanota CANNOT Encrypt
+
+Even with E2EE, some metadata remains visible to Tutanota's servers:
+
+```
+Unencrypted metadata:
+- Your email address and IP address
+- Recipient email addresses (required for routing)
+- Send/receive timestamps
+- Mail size
+- Subject line headers in IMAP access
+
+This metadata alone reveals communication patterns. If Tutanota receives a law enforcement request, they can disclose when you emailed someone, but not what you said or any message content.
+```
+
+For maximum privacy, pair Tutanota with Tor Browser or a VPN to hide your IP address.
+
+## Using Tutanota with Mobile Devices
+
+The Tutanota mobile app (iOS and Android) provides the same E2EE guarantees as the web and desktop clients:
+
+```bash
+# iOS: Download from App Store
+# Android: Download from Play Store or F-Droid (open-source build)
+
+# Setup on mobile:
+# 1. Install app
+# 2. Log in with credentials
+# 3. Allow notification permissions for incoming mail alerts
+# 4. Configure autodiscovery for push notifications
+```
+
+Mobile E2EE continues even for emails sent outside Tutanota—the mobile app handles password-encrypted external emails seamlessly.
+
+## Integration with Standard Email Clients
+
+Tutanota does not support IMAP/POP access because those protocols lack E2EE support. This means:
+
+- Cannot use Gmail client, Thunderbird, or Outlook with Tutanota
+- Must use Tutanota's official clients (web, desktop, mobile)
+- Exception: Tutanota offers a mail bridge (beta) for limited IMAP support on desktop
+
+For users requiring Outlook or Thunderbird integration, ProtonMail's mail bridge provides this at the cost of additional complexity.
+
+## Tutanota Business/Organization Plans
+
+Organizations with custom domain requirements and multiple accounts use Tutanota Business:
+
+```bash
+# Business plan includes:
+- Unlimited aliases per account
+- Delegation (managing other mailboxes)
+- Group calendars
+- Multi-user organization management
+- Admin audit logs
+
+# API for programmatic access
+curl -X GET https://mail.tutanota.com/api/users \
+  -H "Authorization: Bearer $TUTANOTA_API_TOKEN"
+```
+
+Business plans start at €5/user/month and suitable for teams prioritizing encrypted collaboration.
+
+## Testing Tutanota's Encryption
+
+For developers who want to verify encryption claims:
+
+```bash
+# Send yourself a test email and inspect the network traffic
+# Using browser DevTools (F12):
+# 1. Open Network tab
+# 2. Compose an email
+# 3. Watch POST request to /api/mail/send
+# 4. Inspect the payload — it's base64 encoded binary encrypted data
+# 5. No plaintext email body visible in network traffic
+
+# Attempt to intercept between client and server:
+mitmproxy --mode regular --ssl-insecure
+# Browser proxy configured to mitmproxy:8080
+# Send an email through Tutanota
+# mitmproxy shows encrypted request body — no plaintext
+```
+
+This verification demonstrates that encryption happens on your device before data leaves your computer.
+
+## Comparison Table: Encrypted Email Providers 2026
+
+| Provider | E2EE | Subject Encrypted | Open Source | Custom Domain (Free) | Jurisdiction |
+|----------|------|-----------------|------------|---------------------|--------------|
+| Tutanota | Yes | Yes | Yes (clients) | No | Germany |
+| ProtonMail | Yes | Yes (since 2024) | Yes (clients) | No | Switzerland |
+| Mailfence | Yes | Yes | Partial | No | Belgium |
+| Posteo | No | No | No | Yes | Germany |
+| StartMail | Yes | No | No | No | Netherlands |
+
+## Threat Model Considerations
+
+Before choosing Tutanota, assess your threat model:
+
+**Tutanota is ideal if:**
+- You want subject line encryption
+- You value open-source verification
+- Your contacts already use encrypted email
+- You're in an EU jurisdiction (data residency benefits)
+- You don't need IMAP integration
+
+**Consider alternatives if:**
+- You need wider ecosystem compatibility (ProtonMail has better Android integration)
+- You require legacy email client support (Posteo + Tor)
+- You need quantum-resistant encryption (not yet available in any mainstream provider)
+
+## Automation and Integration Scripts
+
+For developers managing multiple Tutanota accounts:
+
+```bash
+#!/bin/bash
+# Batch export emails from Tutanota accounts
+# Note: Tutanota API doesn't support bulk export; use desktop client
+
+# Desktop client export workflow (requires GUI)
+# This is a limitation of Tutanota's current architecture
+# API access is beta/limited
+
+# For now, scripted exports use:
+# 1. Selenium + browser automation
+# 2. Tutanota desktop client with file system integration
+# 3. Manual export for critical emails
+```
+
+Tutanota's lack of full API prevents advanced automation that ProtonMail offers. This is a tradeoff for the simpler security model.
+
+## Frequently Asked Questions
+
+**Can Tutanota read my emails?**
+
+No. Tutanota operates on a zero-knowledge architecture. They cannot read your encrypted emails, access your encryption keys, or decrypt content even with a valid court order.
+
+**What if I forget my password?**
+
+You cannot reset it. Tutanota has no password recovery because they don't store password-recovery mechanisms. This is the intended security design. Always save your recovery code offline. Losing both your password and recovery code means permanent loss of vault access.
+
+**How are calendar events encrypted?**
+
+Tutanota encrypts calendar events end-to-end the same as emails. Shared calendars use key sharing similar to password-protected external emails.
+
+**Can I migrate from ProtonMail to Tutanota?**
+
+Yes, but not automatically. Export emails from ProtonMail as EML files, then import them into Tutanota desktop client. This is a manual process without built-in migration tools.
+
 ## Related Reading
 
 - [ProtonMail vs Tutanota for Daily Email Use](/privacy-tools-guide/protonmail-vs-tutanota-for-daily-email-use-honest-comparison/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
 - [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
+- [PGP Email Encryption Setup Guide](/privacy-tools-guide/pgp-email-encryption-setup/)
+- [Email Encryption Standards SMTP TLS vs End-to-End](/privacy-tools-guide/email-encryption-standards/)
 
 ---
 

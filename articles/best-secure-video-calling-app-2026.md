@@ -197,32 +197,190 @@ Choose based on your threat model. Self-hosted solutions give you infrastructure
 
 
 
+## TURN Server Considerations for NAT Traversal
+
+Video calls need TURN servers to traverse firewalls and NAT:
+
+```bash
+# Without TURN servers, peers behind restrictive NAT cannot connect
+# With TURN, voice/video is relayed through the server (server can see data)
+
+# Jitsi TURN configuration
+# In docker-compose.yml or jitsi-meet configuration:
+
+JITSI_TURN_HOST=turn.your-domain.com
+JITSI_TURN_PORT=3478
+JITSI_TURN_TRANSPORT=tcp
+JITSI_TURN_SECRET=your-shared-secret
+
+# Self-hosted TURN (coturn)
+# For maximum privacy, run your own TURN server
+
+docker run -d \
+  -p 3478:3478/tcp \
+  -p 3478:3478/udp \
+  -v /etc/coturn:/etc/coturn \
+  coturn/coturn:latest
+```
+
+Relaying through your own TURN server prevents the video call provider from seeing video content while still enabling connectivity.
+
+## Call Metadata Privacy
+
+Even with E2EE, metadata reveals sensitive information:
+
+```
+Call metadata (visible to provider/TURN server):
+- Who initiated the call
+- Who received the call
+- Call start and end time
+- Call duration
+- Call routing (which server handled relay)
+- Device information (user agent, IP)
+
+This metadata alone reveals:
+- Communication patterns
+- Relationships
+- Meeting frequency
+- Time zone
+- Device types in use
+
+Defense: Use VPN + Tor for metadata privacy
+         Combined with E2EE for content privacy
+```
+
+For maximum privacy, layer multiple tools: Jitsi (content E2EE) + Tor Browser (metadata hiding).
+
+## Recording and Transcript Privacy
+
+Video calls are often recorded. Check if recordings include encryption:
+
+```bash
+# Jitsi recording configurations
+
+# Option 1: Server-side recording (provider can see content)
+JIBRI_RECORDINGS_ENABLED=true
+RECORDING_FOLDER=/recordings
+
+# Option 2: Client-side recording (only you have access)
+# Browser extension: ScreenFlow, OBS
+# Records to your device, not server
+# Provides end-to-end privacy for recordings
+
+# Transcript generation (if supported)
+# Google Meet auto-generates transcripts
+# Transcripts are stored on Google's servers indefinitely
+# Transcripts are searchable, indexable
+# Disable transcripts if privacy matters
+```
+
+Insist on client-side recording or refuse recording altogether for sensitive discussions.
+
+## Mobile App Comparison
+
+Secure video calling on mobile has different constraints:
+
+```
+Desktop application trust model:
+- You control the desktop OS
+- Can verify application code
+- Can monitor network connections
+
+Mobile application constraints:
+- App store approval process bypasses some vetting
+- OS permissions are coarse-grained
+- Background activity harder to detect
+- App store censorship (China removing apps, etc.)
+
+Recommendation for mobile:
+- Use Signal app (smallest attack surface)
+- Use Jitsi via browser (no app store concerns)
+- Avoid Zoom, Google Meet on sensitive networks
+```
+
+Mobile video calling has weaker privacy guarantees than desktop.
+
+## End-to-End Encryption Algorithm Comparison
+
+| App | Algorithm | Key Agreement | Forward Secrecy |
+|-----|-----------|---|---|
+| Signal | Double Ratchet | X3DH | Yes |
+| Jitsi (E2EE) | SRTP | DTLS | Yes |
+| Matrix | MLS (beta) | X3DH | Yes |
+| Zoom (client-side) | AES-256-GCM | ECDH | Yes |
+| Google Meet | No (server decrypts) | N/A | No |
+
+Signal's Double Ratchet is the strongest for privacy. Jitsi's SRTP provides good encryption but metadata still visible.
+
+## Threat Model: Who Should Use What
+
+```
+Threat: Corporate espionage → Use Jitsi self-hosted
+Threat: Government surveillance → Use Signal + Tor
+Threat: Casual eavesdropping → Use BigBlueButton
+Threat: Zero-day vulnerabilities → Use Matrix (federation reduces impact)
+Threat: App store manipulation → Use web-based (Jitsi in browser)
+Threat: ISP monitoring → Use Jitsi + VPN or Signal + Tor
+Threat: Hardware compromise → No software solution helps; physical inspection needed
+```
+
+Different threats require different tools.
+
+## Call Quality vs Privacy Tradeoff
+
+```
+Maximum privacy = Lower call quality
+- E2EE requires more local processing (CPU/battery drain)
+- P2P routing adds jitter and latency
+- VPN + Tor adds latency (sometimes 500-1000ms)
+
+Maximum quality = Lower privacy
+- Server-relayed (provider sees metadata)
+- No VPN/Tor (ISP sees activity)
+- Unencrypted streams (provider sees content)
+
+Best balance: Jitsi with local TURN + standard encryption
+- Content E2EE (privacy)
+- Server relay (quality)
+- Moderate metadata exposure
+```
+
+Choose based on whether you prioritize privacy or call quality.
+
 ## Frequently Asked Questions
 
+**Are free video calling tools good enough for secure calls?**
 
-**Are free AI tools good enough for secure video calling app?**
+Free tools often have limitations: Jitsi free instances at meet.jit.si are public and shouldn't be trusted for sensitive calls. Self-hosted free Jitsi is secure. Signal is free and very secure. Google Meet free tier has no E2EE. Evaluate specific tools.
 
-Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
+**How do I evaluate which tool fits my threat model?**
 
+Answer these questions:
+1. Who is the adversary? (ISP, provider, nation-state, corporate rival)
+2. What is being protected? (IP, trade secrets, relationships, communications)
+3. What resources do I have? (budget for self-hosting, technical expertise)
+4. What's acceptable? (call quality, usability, learning curve)
 
-**How do I evaluate which tool fits my workflow?**
+**Do these tools work for large conference calls?**
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+Signal: No (limited to ~8 people)
+Jitsi: Yes (50+ participants, quality degrades)
+BigBlueButton: Yes (hundreds, education-focused)
+Matrix: Yes (federation allows unlimited)
 
+**Can I switch between tools mid-call?**
 
-**Do these tools work offline?**
+No. All participants must use the same tool. Switching requires rescheduling and re-inviting.
 
-Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
+**Should I self-host if I'm not technical?**
 
+No. Self-hosting Jitsi or BigBlueButton requires:
+- Linux server knowledge
+- Domain name setup
+- SSL certificate management
+- Ongoing maintenance
 
-**Can I use these tools with a distributed team across time zones?**
-
-Most modern tools support asynchronous workflows that work well across time zones. Look for features like async messaging, recorded updates, and timezone-aware scheduling. The best choice depends on your team's specific communication patterns and size.
-
-
-**Should I switch tools if something better comes out?**
-
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+Use hosted solutions if you lack these skills.
 
 
 ## Related Articles

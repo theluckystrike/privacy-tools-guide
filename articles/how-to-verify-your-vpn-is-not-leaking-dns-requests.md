@@ -9,7 +9,7 @@ permalink: /how-to-verify-your-vpn-is-not-leaking-dns-requests/
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

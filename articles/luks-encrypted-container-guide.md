@@ -260,11 +260,157 @@ sudo mount /dev/mapper/myvault /mnt/vault
 
 ---
 
+## Performance Impact of Encrypted Containers
+
+LUKS2 encryption adds measurable I/O overhead:
+
+```bash
+# Benchmark unencrypted vs encrypted reads
+# Unencrypted test
+dd if=/mnt/unencrypted/largefile of=/dev/null bs=1M status=progress
+
+# Encrypted container test (via cryptsetup)
+dd if=/mnt/vault/largefile of=/dev/null bs=1M status=progress
+
+# Results vary by CPU/drive:
+# SSD + AES-NI: 5-10% overhead
+# HDD + older CPU: 15-25% overhead
+# SSD + ARM (no AES-NI): 30-40% overhead
+```
+
+Modern CPUs with AES-NI hardware acceleration make LUKS2 nearly transparent. Legacy hardware shows measurable slowdown.
+
+## Cross-Platform Container Portability
+
+LUKS containers work across Linux distributions but struggle on non-Linux systems:
+
+```bash
+# Windows: Use WinCryptFS or VeraCrypt (incompatible with LUKS2 header)
+# macOS: Mount LUKS container via Docker Linux VM
+
+# For cross-platform compatibility, use VeraCrypt instead:
+# VeraCrypt containers open on Windows, macOS, and Linux
+# Trade-off: VeraCrypt is closed-source; LUKS is open-source Linux-first
+
+# If you need cross-platform, create LUKS on Linux, then:
+sudo cryptsetup luksDump /home/user/vault.luks  # Export header
+# Document passphrase/keyfiles offline
+# On macOS/Windows, VeraCrypt can convert or you use Docker
+```
+
+True cross-platform encrypted containers require VeraCrypt or cloud-based solutions like Cryptomator.
+
+## Automating Container Mounting at Boot
+
+For systems that should auto-mount encrypted containers:
+
+```bash
+# /etc/crypttab entry
+myvault /home/user/vault.luks none timeout=0
+
+# /etc/fstab entry
+/dev/mapper/myvault /mnt/vault ext4 defaults,nofail 0 2
+
+# At boot, systemd will:
+# 1. Prompt for passphrase
+# 2. Create device mapper entry
+# 3. Mount filesystem
+# 4. Fail gracefully if container unavailable
+
+# Verify setup
+sudo systemctl daemon-reload
+sudo mount -a  # Test mount without reboot
+```
+
+Note: This makes the passphrase available to the boot process. For maximum security, don't auto-mount—decrypt manually when needed.
+
+## Security Hardening of LUKS Containers
+
+Advanced hardening techniques for threat models beyond casual attacks:
+
+```bash
+# Use PBKDF2 with very high iteration count
+sudo cryptsetup luksFormat --type luks2 --pbkdf pbkdf2 \
+  --pbkdf-force-iterations 1000000 /home/user/vault.luks
+
+# This makes brute force attacks expensive but slows legitimate unlocking
+# Takes 5-10 seconds to unlock vs 1 second default
+
+# Disable some LUKS features if not needed
+sudo cryptsetup luksDump /home/user/vault.luks | grep "Sector size"
+# If sector size mismatches drive, performance degrades
+
+# Use argon2 for maximum security (LUKS2 only)
+sudo cryptsetup luksFormat --type luks2 --pbkdf argon2id \
+  --pbkdf-force-iterations 4 --pbkdf-memory 1048576 /home/user/vault.luks
+```
+
+Trade security parameters against unlock speed.
+
+## Disaster Recovery: Corrupted Containers
+
+If a container becomes corrupted:
+
+```bash
+# First, try filesystem check without mounting
+sudo cryptsetup luksOpen /home/user/vault.luks myvault
+sudo e2fsck -n /dev/mapper/myvault  # -n = non-destructive check
+
+# If errors appear, try recovery
+sudo e2fsck -p /dev/mapper/myvault  # -p = auto-fix simple errors
+
+# For severe corruption, mount read-only and copy data out
+sudo mount -r /dev/mapper/myvault /mnt/vault-recover
+
+# Last resort: restore from backup
+sudo cryptsetup luksHeaderRestore /home/user/vault.luks \
+  --header-backup-file /home/user/vault.luks.header.bak
+```
+
+Having backup headers makes recovery possible.
+
+## Comparing LUKS to Alternatives
+
+| Feature | LUKS | VeraCrypt | BitLocker | FileVault |
+|---------|------|-----------|-----------|-----------|
+| Open source | Yes | No | No | No |
+| Cross-platform | Linux | Win/Mac/Linux | Windows | macOS/iOS |
+| E2EE E2EE | AES-256 | AES-256 | AES-256 | AES-256 |
+| Full disk capable | Yes | Yes | Yes | Yes |
+| Container file | Yes | Yes | No (native volumes) | No |
+| Linux native | Yes | Requires drivers | No | No |
+| Deniability mode | No | Yes | No | No |
+
+LUKS excels in Linux; VeraCrypt for cross-platform; native OS encryption (BitLocker, FileVault) for OS integration.
+
+## Automated Backup of Encrypted Containers
+
+Backing up an encrypted container file:
+
+```bash
+# Backup entire container (simple but large)
+rsync -av /home/user/vault.luks /backup/location/
+
+# Backup only differences (faster for repeated backups)
+restic backup /home/user/vault.luks
+
+# For remote backup
+gpg --symmetric --cipher-algo AES256 /home/user/vault.luks
+scp vault.luks.gpg remote-server:/backup/
+
+# Note: Backup the container while closed (unmounted)
+# Backing up open containers can capture partial/inconsistent state
+```
+
+Automated container backups should use locked (unmounted) containers only.
+
 ## Related Reading
 
 - [LUKS Full Disk Encryption Linux Guide](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
 - [Secure Boot and TPM Explained for Linux](/privacy-tools-guide/secure-boot-tpm-linux-explained/)
 - [Encrypt USB Drive with VeraCrypt](/privacy-tools-guide/encrypt-usb-drive-veracrypt-guide/)
+- [Linux File System Encryption Strategy](/privacy-tools-guide/linux-filesystem-encryption/)
+- [Cryptsetup Performance Tuning Guide](/privacy-tools-guide/cryptsetup-performance-tuning/)
 
 ---
 
