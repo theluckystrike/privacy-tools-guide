@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /eufy-camera-cloud-upload-controversy-what-local-storage/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
