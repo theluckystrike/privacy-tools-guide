@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /nextcloud-external-storage-setup-guide-2026/
 description: "Follow this guide to nextcloud external storage setup guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Nextcloud External Storage Setup Guide 2026"
 description: "A technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage"

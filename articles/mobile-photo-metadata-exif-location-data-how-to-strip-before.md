@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /mobile-photo-metadata-exif-location-data-how-to-strip-before/
 description: "Follow this guide to mobile photo metadata exif location data how to strip before with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Mobile Photo Metadata Exif Location Data How To Strip"
 description: "When you capture a photo with your smartphone, the image file contains more than just pixel data. Modern mobile phones embed extensive metadata within each"

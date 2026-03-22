@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /nft-and-digital-asset-inheritance-how-to-transfer-ownership-/
 description: "Follow this guide to nft and digital asset inheritance how to transfer ownership  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Nft And Digital Asset Inheritance How To Transfer Ownership"
 description: "A technical guide for developers and power users on implementing digital asset inheritance for NFTs and tokens. Covers smart contract patterns"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/
 description: "Learn mobile keyboard privacy which keyboards send keystrokes to c with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Mobile Keyboard Privacy: Which Keyboards Send Keystrokes"
 description: "A technical comparison of mobile keyboard privacy policies. Learn which keyboards send keystrokes to cloud servers and how to protect your data"

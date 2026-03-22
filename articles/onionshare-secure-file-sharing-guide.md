@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /onionshare-secure-file-sharing-guide/
 description: "Follow this guide to onionshare secure file sharing guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Secure File Sharing with OnionShare"
 description: "Use OnionShare to share files, host anonymous websites, and receive documents over Tor without exposing sender or recipient identities or IP addresses"

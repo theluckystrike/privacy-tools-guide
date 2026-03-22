@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /nextcloud-collabora-office-setup-guide/
 description: "Follow this guide to nextcloud collabora office setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"
 description: "Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This"
