@@ -9,7 +9,7 @@ author: theluckystrike
 permalink: /iot-firmware-update-privacy-risks-what-data-devices-send-dur/
 categories: [guides]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
