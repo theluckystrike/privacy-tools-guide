@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choosing between CryptDrive and ProtonDrive means evaluating two fundamentally different approaches to encrypted cloud storage. Both promise to keep your files private, but their implementations, pricing models, and feature sets differ significantly. This comparison helps you determine which service aligns with your privacy needs and workflow.
 
+## Key Takeaways
+
+- **The encryption uses AES-256-GCM**: which provides both confidentiality and integrity verification.
+- **The service uses AES-256**: for file encryption with RSA-4096 for key exchange.
+- **ProtonDrive's key derivation uses**: a similar Argon2 implementation, though they layer additional protection through their Proton ecosystem.
+- **ProtonDrive offers similar encrypted**: sharing capabilities but integrates better with the Proton ecosystem.
+- **The API is primarily**: for enterprise integrations and doesn't provide direct personal-use CLI access.
+- **Contact ProtonDrive support to**: determine retention duration for your use case.
+
 ## Encryption Architecture
 
 ### CryptDrive Encryption

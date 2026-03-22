@@ -33,6 +33,15 @@ Managing cryptocurrency wealth carries a unique risk: if something happens to yo
 
 This guide examines how these services work, reviews available implementations, and provides practical guidance for developers and power users implementing wallet succession plans.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most services address this**: through configurable grace periods ranging from 30 days to several years.
+- **If you use Ethereum**: send a small transaction to your wallet every 90 days to reset the inactivity timer.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## How Crypto Dead Man Switch Services Work
 
 A crypto dead man switch monitors wallet activity and triggers a succession event if no activity occurs within a specified timeframe. The core mechanism involves three components:

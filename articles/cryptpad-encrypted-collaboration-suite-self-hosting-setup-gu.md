@@ -33,6 +33,15 @@ CryptPad is an end-to-end encrypted collaboration suite that provides real-time 
 
 This guide walks through deploying CryptPad using Docker, configuring essential settings, hardening security, and managing team access.
 
+## Key Takeaways
+
+- **Memory pressure usually indicates**: too many concurrent document sessions; raising your server to 4GB RAM resolves most scaling issues up to 200 concurrent users.
+- **This design means your**: server stores only encrypted blobs; even with full server access, administrators cannot read user content.
+- **When users create accounts**: CryptPad derives encryption keys from their password using Argon2id.
+- **User accounts use a**: different mechanism.
+- **When a user opens**: a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of an URL in HTTP requests.
+- **These changes survive container**: updates because the customize directory is mounted as a volume.
+
 ## Prerequisites
 
 Before starting, ensure you have:

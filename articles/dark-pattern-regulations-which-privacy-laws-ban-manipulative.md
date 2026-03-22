@@ -31,6 +31,19 @@ tags: [privacy-tools-guide, privacy]---
 
 Dark patterns in consent interfaces represent one of the most pervasive forms of deceptive design on the web today. These manipulative design tricks coerce users into agreeing to data collection, newsletter subscriptions, or privacy-invasive settings through carefully crafted visual and behavioral manipulations. For developers building consent management systems, understanding which regulations ban these practices—and how to implement compliant interfaces—is essential in 2026.
 
+## Key Takeaways
+
+- **Fine**: $25 million settlement
+
+Lesson: Cancellation must be as easy as signup.
+- **Can I use pre-checked**: boxes for "necessary" cookies? Yes, in most jurisdictions.
+- **Article 25 prohibits platforms**: from designing interfaces that "mislead, manipulate, or unfairly influence" users.
+- **Clear language**: Avoid legal jargon; use plain language users understand
+4.
+- **Granular control**: Allow users to select individual purposes separately
+5.
+- **Making it difficult for**: users under 13 to opt out of data sharing.
+
 ## What Are Dark Patterns in Consent Interfaces?
 
 Dark patterns are design elements that trick users into making choices they would not otherwise make. In the context of consent interfaces, this includes:

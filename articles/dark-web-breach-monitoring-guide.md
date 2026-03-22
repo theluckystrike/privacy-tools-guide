@@ -19,6 +19,24 @@ tags: [privacy-tools-guide]---
 When a company's database is breached, the stolen data ends up on dark web markets, paste sites, and breach-trading forums within hours to weeks. Your credentials may be circulating for months before the company notifies you — or they never do. Monitoring these sources lets you react before attackers do.
 ---
 
+## Key Takeaways
+
+- **Change the breached password**: immediately - Every site where you used that password (password reuse is the real risk) - Use a password manager to generate unique passwords 3.
+- **Identify which password was breached
+   - Check the breach name → when it happened → which service
+   - Most passwords are old**: you may have already changed them
+
+2.
+- **Watch for phishing -**: Attackers with your email know your username - Be skeptical of any email asking you to click/login after a breach 6.
+- **Indexed by aggregators (HIBP**: DeHashed, etc.)
+
+---
+
+## Have I Been Pwned (HIBP)
+
+HIBP is the most reliable public breach index, operated by Troy Hunt.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Breach Data
 
 A typical breach dump contains one or more of:
