@@ -41,7 +41,17 @@ The core problem is straightforward: your messages pass through servers you do n
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing any solution, define what you are protecting against. Different adversaries require different approaches:
 
@@ -52,7 +62,7 @@ Before implementing any solution, define what you are protecting against. Differ
 
 For most developers and power users, the practical approach combines end-to-end encryption (E2EE) with self-hosted infrastructure and good operational security practices.
 
-## Implementing End-to-End Encryption
+### Step 2: Implementing End-to-End Encryption
 
 The foundation of secure messaging is ensuring only the intended recipients can decrypt messages. This means the service provider never sees plaintext.
 
@@ -128,7 +138,7 @@ gpg --decrypt message.asc
 
 The key management challenge is real: you need to verify key fingerprints through a separate channel and maintain a web of trust or use a keyserver with verified signatures.
 
-## Self-Hosted Messaging Infrastructure
+### Step 3: Self-Hosted Messaging Infrastructure
 
 When you cannot trust third-party services, hosting your own infrastructure gives you control over the encryption pipeline.
 
@@ -172,7 +182,7 @@ mvn package -DskipTests
 
 This requires significant infrastructure investment but removes dependence on Signal's hosted service.
 
-## Operational Security Beyond Encryption
+### Step 4: Operational Security Beyond Encryption
 
 Encryption only protects message content. Metadata and communication patterns reveal significant information.
 
@@ -219,7 +229,7 @@ gpg --fingerprint recipient@example.com
 # For Signal, exchange safety numbers in person or via verified channel
 ```
 
-## Practical Recommendations
+### Step 5: Practical Recommendations
 
 For most developers and power users, the implementation hierarchy is:
 
@@ -236,6 +246,21 @@ For most developers and power users, the implementation hierarchy is:
 The reality is that perfect security does not exist. Every layer of protection adds cost in usability, performance, or both. The goal is raising the bar high enough that interception becomes expensive and risky for your specific threat model.
 
 Start with Signal, understand its limitations, then add layers as your requirements demand. Document your threat model, implement controls, and test them regularly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

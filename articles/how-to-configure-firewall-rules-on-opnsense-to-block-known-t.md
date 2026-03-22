@@ -45,7 +45,17 @@ Browser-based ad blockers like uBlock Origin effectively handle tracking scripts
 
 Blocking trackers at the IP level offers several advantages over DNS-based blocking methods. IP-level blocking works with any DNS configuration, meaning you can use your preferred DNS resolver while still blocking known tracker IP addresses. This approach also handles edge cases where trackers use DNS CNAME records to disguise themselves as first-party domains.
 
-## Gathering Tracking Domain IP Addresses
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Gathering Tracking Domain IP Addresses
 
 The foundation of this setup involves obtaining a list of IP addresses associated with known tracking domains. Several maintained blocklists exist, with StevenBlack's hosts file being one of the most options. This aggregated list combines multiple sources including ad servers, trackers, and phishing domains.
 
@@ -61,7 +71,7 @@ This command downloads the hosts file, filters out comments and blank lines, ext
 
 For more targeted blocking, you might prefer lists that focus specifically on known tracker networks rather than 广告 servers. The EasyList and EasyPrivacy projects maintain separate lists, and several community-curated repositories offer specialized blocklists optimized for different threat models.
 
-## Importing IP Addresses into OPNsense
+### Step 2: Importing IP Addresses into OPNsense
 
 OPNsense handles large IP lists efficiently through its alias functionality. Rather than creating individual firewall rules for each IP address, you create a single alias that references the entire list. The firewall then evaluates this alias as a single rule, maintaining performance even with thousands of entries.
 
@@ -74,7 +84,7 @@ Navigate to **Firewall > Aliases** in the OPNsense web interface. Click the **pl
 
 For very large lists exceeding several thousand entries, consider breaking them into multiple aliases by category—for example, separating advertising trackers from analytics trackers. This allows you to toggle categories independently if needed.
 
-## Creating the Blocking Firewall Rule
+### Step 3: Create the Blocking Firewall Rule
 
 With the alias created, you now need to create a firewall rule that uses this alias to block traffic. Navigate to **Firewall > Rules > [Interface]**, where `[Interface]` represents the interface where you want to enforce blocking. For most home users, this will be the LAN interface, which applies to all devices on your internal network.
 
@@ -90,7 +100,7 @@ Create a new rule with these parameters:
 
 Place this rule near the top of your LAN rules, though below any rules that explicitly allow legitimate traffic. Firewall rules are evaluated top-to-bottom, with the first matching rule taking precedence.
 
-## Verifying the Configuration Works
+### Step 4: Verify the Configuration Works
 
 After applying your new rule, test that blocking actually occurs by attempting to access a known tracker domain from a device on your network. You can verify the blocking in several ways.
 
@@ -105,7 +115,7 @@ nslookup doubleclick.net
 
 Both domains should resolve to IP addresses. The difference is that connections to `doubleclick.net` (and similar trackers) will be blocked at the firewall level after the DNS lookup completes, while legitimate sites continue working normally.
 
-## Automating List Updates
+### Step 5: Automate List Updates
 
 Tracker IP addresses change over time as companies rotate their infrastructure. To maintain effective blocking, you should automate periodic updates of your blocklist. OPNsense includes a cron-like scheduler you can use for this purpose.
 
@@ -139,7 +149,7 @@ Second, ensure your OPNsense has adequate RAM. Aliases are loaded into memory, a
 
 Third, monitor your CPU usage after implementing the blocking rules. OPNsense provides real-time monitoring through the **Interfaces > Diagnostics > Traffic Graph** section.
 
-## Alternative Approaches
+### Step 6: Alternative Approaches
 
 While IP-level blocking provides network-wide protection, consider supplementing it with DNS-based blocking for defense-in-depth. OPNsense includes the Unbound DNS resolver, which can be configured to return null responses for known tracker domains. This handles some cases that IP blocking misses, such as trackers behind CDNs that share IPs with legitimate services.
 
@@ -199,7 +209,7 @@ echo "Combined blocklist: $(wc -l < /tmp/combined_blocklist.txt) unique IPs"
 
 Then import this combined list into OPNsense as before.
 
-## DNS-Level Blocking with Unbound
+### Step 7: DNS-Level Blocking with Unbound
 
 Configure OPNsense's Unbound resolver for additional DNS-level protection:
 
@@ -242,7 +252,7 @@ Rule 3: Block tracker IPs 20,001-30,000
 
 This distributes the computational load across multiple rules.
 
-## Testing Blocklist Effectiveness
+### Step 8: Test Blocklist Effectiveness
 
 After implementing blocking rules, verify they're working correctly:
 
@@ -276,7 +286,7 @@ curl -I https://www.google.com
 
 Run these tests on client devices behind the OPNsense firewall.
 
-## Logging and Monitoring
+### Step 9: Logging and Monitoring
 
 Enable firewall rule logging to track blocking effectiveness:
 
@@ -314,7 +324,7 @@ ssh admin@opnsense.local "tail -n 50000 /var/log/filter.log" | \
 
 This provides visibility into which trackers your network is blocking.
 
-## Handling False Positives
+### Step 10: Handling False Positives
 
 Legitimate services sometimes hosted on IPs in blocklists cause false positives. Create whitelist exceptions:
 
@@ -325,7 +335,7 @@ Legitimate services sometimes hosted on IPs in blocklists cause false positives.
 
 The rule evaluation order matters: the first matching rule wins.
 
-## Blocklist Updates and Maintenance
+### Step 11: Blocklist Updates and Maintenance
 
 Network-wide protection requires keeping blocklists current:
 
@@ -357,6 +367,21 @@ echo "Blocklist updated: $(wc -l < /tmp/blocklist_update.txt) entries"
 ```
 
 Schedule this via cron to run weekly or monthly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -28,13 +28,23 @@ This guide walks through installing and configuring the Cloak plugin to transfor
 - **The `AdminUID` is a**: special UID that grants administrative access, allowing you to manage connected users without authentication.
 - **In production deployments**: you typically run a separate instance for administration or use the management API.
 
-## Understanding Active Probing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Active Probing
 
 When a censor performs active probing, they send packets designed to trigger specific responses from known circumvention protocols. Shadowsocks servers respond in ways that reveal the protocol, enabling censors to identify and block the connection even when encryption prevents content inspection. Cloak addresses this by multiplexing Shadowsocks traffic over a TLS tunnel that looks indistinguishable from regular HTTPS traffic.
 
 The plugin operates at the transport layer, meaning your Shadowsocks configuration remains unchanged. Cloak handles the obfuscation transparently, creating a dual-layer architecture where the outer TLS connection resists classification while the inner Shadowsocks connection provides the actual proxy functionality.
 
-## Installing Cloak
+### Step 2: Install Cloak
 
 Cloak is written in Go and compiles to a single binary. The installation process varies by operating system, but the general approach involves downloading the compiled binary or building from source.
 
@@ -60,7 +70,7 @@ Verify the installation:
 ck-server -version
 ```
 
-## Server-Side Configuration
+### Step 3: Server-Side Configuration
 
 Cloak requires a configuration file in JSON format. Create `/etc/cloak.json` on your server with the following structure:
 
@@ -97,7 +107,7 @@ sudo touch /var/lib/cloak/users.json
 
 The database stores user credentials and connection statistics. Each user entry includes their UID, data transfer limits, and connection parameters.
 
-## Configuring Shadowsocks with Cloak
+### Step 4: Configure Shadowsocks with Cloak
 
 Your Shadowsocks configuration needs modification to work with Cloak. Edit your Shadowsocks server configuration (typically in `/etc/shadowsocks-libev/config.json`):
 
@@ -130,7 +140,7 @@ sudo systemctl enable cloak
 sudo systemctl start cloak
 ```
 
-## Client-Side Configuration
+### Step 5: Client-Side Configuration
 
 On client machines, you need both a Shadowsocks client and the Cloak plugin. Install Cloak using the same method as the server, then configure your client.
 
@@ -160,7 +170,7 @@ Configure your Shadowsocks client to use the Cloak plugin. In many clients, this
 
 When the client connects, it performs a TLS handshake using the server's domain name. The connection appears identical to legitimate HTTPS traffic to external observers. The inner Shadowsocks protocol only activates after the TLS tunnel is established.
 
-## Managing Users
+### Step 6: Manage Users
 
 Cloak includes a command-line tool for user management. Add a new user:
 

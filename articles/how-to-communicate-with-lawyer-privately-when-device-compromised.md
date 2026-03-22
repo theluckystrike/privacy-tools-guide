@@ -51,7 +51,17 @@ A compromised device grants attackers varying levels of access depending on the 
 
 Email presents particular risks because unencrypted messages can be intercepted at multiple points. Standard email providers store messages on servers that may be subpoenaed or hacked. Even encrypted email leaves metadata—information about who you contacted, when, and how often—which can be valuable to adversaries.
 
-## Immediate Actions Before Communicating with Your Attorney
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Immediate Actions Before Communicating with Your Attorney
 
 Before reaching out to your lawyer, take these critical steps to prevent further exposure:
 
@@ -63,7 +73,7 @@ Before reaching out to your lawyer, take these critical steps to prevent further
 
 If you have no access to a clean device, visit a library computer, a friend's phone, or a public computer. Document what happened and preserve evidence if the compromise relates to legal matters.
 
-## Secure Email Options for Attorney Communication
+### Step 2: Secure Email Options for Attorney Communication
 
 ### Proton Mail
 
@@ -93,7 +103,7 @@ gpg --encrypt --armor --recipient attorney@lawfirm.com --output encrypted_messag
 
 Share your public key securely—ideally in person or through a verified channel. Your attorney will need their own PGP setup to reply securely.
 
-## Encrypted Messaging Alternatives
+### Step 3: Encrypted Messaging Alternatives
 
 ### Signal
 
@@ -117,7 +127,7 @@ Session offers messenger-style communication without requiring a phone number. T
 
 Session does not collect phone numbers or require personal information, making it suitable for high-sensitivity communication.
 
-## Secure File Sharing for Legal Documents
+### Step 4: Secure File Sharing for Legal Documents
 
 When sharing sensitive documents with your attorney, avoid standard file sharing services:
 
@@ -144,7 +154,7 @@ Tresorit provides encrypted cloud storage with end-to-end encryption:
 
 This service works well for ongoing legal matters requiring document sharing.
 
-## Physical Methods for Maximum Security
+### Step 5: Physical Methods for Maximum Security
 
 For the most sensitive communications, consider methods that don't involve digital transmission:
 
@@ -160,7 +170,7 @@ For ongoing anonymous communication, establish a dead drop location where both p
 
 Whenever possible, meet your attorney in person. Choose locations without surveillance cameras if possible. Turn off phones before the meeting and leave them in your car or a faraday bag.
 
-## What to Avoid
+### Step 6: What to Avoid
 
 Several common communication methods pose unacceptable risks after device compromise:
 
@@ -170,7 +180,7 @@ Several common communication methods pose unacceptable risks after device compro
 - **Video calls on standard platforms**: Can be recorded, metadata collected
 - **Messaging apps requiring phone number linkage**: Metadata exposes relationships
 
-## Preserving Attorney-Client Privilege
+### Step 7: Preserving Attorney-Client Privilege
 
 Beyond secure communication channels, protect privilege through careful practices:
 
@@ -182,7 +192,7 @@ Beyond secure communication channels, protect privilege through careful practice
 
 Your attorney should understand device compromise scenarios and have their own recommendations. Many law firms now offer secure client portals specifically designed for sensitive communications.
 
-## Legal Tool Recommendations and Setup
+### Step 8: Legal Tool Recommendations and Setup
 
 ### Proton Mail Enterprise for Law Firms
 
@@ -231,7 +241,7 @@ Alternative with higher privacy focus:
 Cost: CHF 50-250/year depending on storage
 ```
 
-## Threat Assessment Decision Tree
+### Step 9: Threat Assessment Decision Tree
 
 Use this to decide what tools you need:
 
@@ -260,7 +270,7 @@ How time-critical is the communication?
 └─ Standard (2+ weeks): In-person meeting preferred
 ```
 
-## Privilege and Waiver Avoidance
+### Step 10: Privilege and Waiver Avoidance
 
 Maintaining attorney-client privilege requires careful practices:
 
@@ -278,7 +288,7 @@ Maintaining attorney-client privilege requires careful practices:
 
 **Critical**: If your attorney instructs you to use a specific communication method, follow those instructions. Courts recognize attorney's judgment about what maintains privilege.
 
-## Example: Complete Threat Response Workflow
+### Step 11: Example: Complete Threat Response Workflow
 
 **Scenario**: Your laptop appears to have malware. You need to discuss this with your criminal attorney immediately.
 
@@ -316,7 +326,7 @@ HOUR 2: Device handling
 
 This workflow minimizes exposure while preserving privilege.
 
-## Documenting Your Security Measures
+### Step 12: Documenting Your Security Measures
 
 For privilege protection, document that you took reasonable security precautions:
 
@@ -345,7 +355,7 @@ Communication Tools:
 This documentation demonstrates good faith security practices if privilege is challenged in court.
 ```
 
-## Working With Your Attorney on Security
+### Step 13: Work with Your Attorney on Security
 
 Coordinate security practices with your legal team:
 
@@ -371,7 +381,7 @@ Coordinate security practices with your legal team:
 
 A good attorney will have thought through these issues already.
 
-## Red Flags: When to Get a Different Attorney
+### Step 14: Red Flags: When to Get a Different Attorney
 
 If your attorney:
 - Refuses to use encrypted communication for sensitive matters
@@ -381,6 +391,21 @@ If your attorney:
 - Pushes all sensitive discussion to in-person (extreme but suspicious)
 
 These red flags suggest limited security awareness. Consider consulting an attorney at a firm with dedicated security practices, especially for sensitive legal matters.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

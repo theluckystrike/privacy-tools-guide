@@ -24,7 +24,17 @@ Smart home devices have become ubiquitous, but their security implications often
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers network**: traffic analysis, capturing network traffic, identifying anomalies, with specific setup instructions
 
-## Network Traffic Analysis
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Network Traffic Analysis
 
 The first line of defense against compromised devices is understanding what they're actually communicating. Smart home devices should have predictable communication patterns—talking to their manufacturer's cloud services, receiving updates, and occasionally exchanging data with local hubs. Unexpected outbound connections often signal compromise.
 
@@ -59,7 +69,7 @@ After capturing traffic, look for these red flags:
 
 Create a baseline by documenting normal traffic patterns. This makes anomalies easier to spot over time.
 
-## Log Analysis and Device Inspection
+### Step 2: Log Analysis and Device Inspection
 
 Most smart home devices store logs locally or transmit them to cloud services. Accessing these logs varies by manufacturer but typically involves either local API endpoints or cloud account dashboards.
 
@@ -103,7 +113,7 @@ For open-source firmware projects like OpenWrt or Tasmota, verify git commit sig
 git verify-commit $(git rev-parse HEAD)
 ```
 
-## Network Segmentation and Monitoring
+### Step 3: Network Segmentation and Monitoring
 
 Network segmentation limits the blast radius of a compromised device. Even if an attacker gains control of one device, proper segmentation prevents lateral movement.
 
@@ -141,7 +151,7 @@ sudo suricata -c /etc/suricata/suricata.yaml -i eth0
 
 Review alerts for known IoT attack signatures, such as attempts to exploit UPnP vulnerabilities or known camera firmware backdoors.
 
-## Behavioral Analysis
+### Step 4: Behavioral Analysis
 
 Sometimes network and log analysis isn't enough. Behavioral anomalies can reveal compromise even when traffic appears normal.
 
@@ -165,7 +175,7 @@ Watch for:
 - LED indicators showing activity when idle
 - Device reboots at odd hours
 
-## Response and Remediation
+### Step 5: Response and Remediation
 
 If you identify a compromised device, act immediately:
 
@@ -176,7 +186,7 @@ If you identify a compromised device, act immediately:
 
 For devices that cannot be updated or secured, consider replacement. The cost of a new device is far less than the potential consequences of a continued compromise.
 
-## Prevention Fundamentals
+### Step 6: Prevention Fundamentals
 
 The best defense is proactive security:
 
@@ -247,7 +257,7 @@ ssh admin@device-ip "grep -E '(nf_|xt_|ipt_)' /proc/modules"
 
 Unusual kernel modules from unknown vendors warrant further investigation.
 
-## Incident Response Timeline
+### Step 7: Plan Incident Response Timeline
 
 If you discover compromise, document your response:
 
@@ -263,7 +273,7 @@ If you discover compromise, document your response:
 
 **Ongoing**: Continue monitoring. Implement the monitoring procedures from this guide as permanent fixtures in your network operations.
 
-## Implementing Continuous Monitoring
+### Step 8: Implementing Continuous Monitoring
 
 One-time analysis isn't sufficient. Establish ongoing monitoring procedures.
 
@@ -332,6 +342,21 @@ weekly_iot_audit() {
 
 Regular audits catch drift before it becomes a security problem.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

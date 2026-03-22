@@ -40,7 +40,17 @@ Element remains the most feature-rich Matrix client, but default settings priori
 - **While useful for conversation flow**: they expose your online status and reading habits.
 - **While impractical for daily use**: it demonstrates the principle that less client-side code reduces attack surface.
 
-## Initial Account Hardening
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Initial Account Hardening
 
 Before configuring client settings, review your account-level privacy options. Access your homeserver's user settings panel (typically at `https://your-homeserver.org/_matrix/client/r0/account/whoami`).
 
@@ -68,7 +78,7 @@ Your presence state (online, offline, typing) broadcasts to contacts. Disable pr
 2. Uncheck "Share my online status on this device"
 3. Set "Who can see my online status" to "Never"
 
-## Session and Device Management
+### Step 2: Session and Device Management
 
 Matrix's device-based encryption means each device operates as a separate security context. Regular session review prevents unauthorized access.
 
@@ -103,7 +113,7 @@ Cross-signing links your devices under a single identity, allowing you to verify
 
 Cross-signing enables the "Verified" green checkmark on devices you control, making tampering obvious.
 
-## Encryption Configuration
+### Step 3: Encryption Configuration
 
 Element supports end-to-end encryption (E2EE) by default in direct messages and optionally in rooms. However, several settings require attention.
 
@@ -137,7 +147,7 @@ const backupManager = new BackupManager({
 });
 ```
 
-## Metadata Minimization
+### Step 4: Metadata Minimization
 
 Even with encryption, metadata reveals communication patterns. Reduce exposure through these strategies.
 
@@ -192,7 +202,7 @@ Homeservers can auto-delete old messages. Add a retention policy to your room:
 
 This deletes messages older than 30 days while keeping at least 1 day of history.
 
-## Network-Level Privacy
+### Step 5: Network-Level Privacy
 
 Client configuration extends beyond Element itself. Consider these network-level measures.
 
@@ -257,7 +267,7 @@ localStorage.setItem('mx_directory_visibility', 'private');
 
 For extremely security-conscious users, matrix-puppet-bridge provides a CLI-based Matrix client. While impractical for daily use, it demonstrates the principle that less client-side code reduces attack surface.
 
-## Maintenance and Monitoring
+### Step 6: Perform Maintenance and Monitoring
 
 Security requires ongoing attention.
 
@@ -277,6 +287,21 @@ Enable notifications for new device logins:
 2. Enable "Notify me when there's a new login to my account"
 
 This alerts you to unauthorized access attempts.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

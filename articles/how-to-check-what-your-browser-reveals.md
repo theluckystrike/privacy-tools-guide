@@ -48,7 +48,17 @@ privacy.resistFingerprinting = true
 Disable WebRTC in browser settings or use an extension that blocks the leak.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## What Your Browser Exposes by Default
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Your Browser Exposes by Default
 
 Modern browsers expose numerous APIs for legitimate functionality, but these same APIs enable fingerprinting. The key categories include:
 
@@ -75,7 +85,7 @@ Modern browsers expose numerous APIs for legitimate functionality, but these sam
 - Timezone
 - Connection type
 
-## Using the Navigator API
+### Step 2: Use the Navigator API
 
 The simplest way to see what your browser reveals is directly querying the Navigator API. Create a test HTML file:
 
@@ -107,7 +117,7 @@ document.getElementById('output').textContent = output;
 
 Open this file in your browser and examine the output. You'll likely see your exact browser version, operating system, and language preferences exposed.
 
-## Querying Screen Properties
+### Step 3: Querying Screen Properties
 
 Screen information adds another fingerprinting vector. Query the Screen API:
 
@@ -126,7 +136,7 @@ console.table(screenInfo);
 
 These values reveal your monitor resolution, whether taskbars are visible, and your display configuration. Multiple monitors or unusual resolutions make you more identifiable.
 
-## Extracting GPU Information
+### Step 4: Extracting GPU Information
 
 Graphics card details are particularly valuable for fingerprinting. Use WebGL:
 
@@ -152,7 +162,7 @@ console.log(getGpuInfo());
 
 This exposes your exact graphics card model. Combined with your CPU and screen resolution, this creates a highly unique fingerprint.
 
-## Canvas Fingerprinting Test
+### Step 5: Canvas Fingerprinting Test
 
 Canvas fingerprinting works by drawing a hidden image and extracting its hash. Different browsers and GPUs render slightly differently, creating a unique signature:
 
@@ -182,7 +192,7 @@ console.log('Canvas hash:', fingerprint.slice(0, 50) + '...');
 
 The resulting data URL differs between browsers and devices, even when running the same code.
 
-## Font Detection
+### Step 6: Font Detection
 
 Installed fonts provide another fingerprinting vector. This technique works by measuring text width with different font families:
 
@@ -221,7 +231,7 @@ console.log('Detected fonts:', detectFonts(baseFonts, testFonts));
 
 This reveals which fonts you have installed, and the specific combination is highly identifying.
 
-## WebRTC Leak Detection
+### Step 7: WebRTC Leak Detection
 
 WebRTC can expose your real IP address even behind a VPN:
 
@@ -257,7 +267,7 @@ checkWebRTC().then(result => console.log('WebRTC result:', result));
 
 If this returns an IP address that differs from your VPN's IP, you have a WebRTC leak.
 
-## Using Existing Fingerprinting Test Sites
+### Step 8: Use Existing Fingerprinting Test Sites
 
 While building your own tests provides the deepest understanding, several established tools audit browser fingerprinting:
 
@@ -265,7 +275,7 @@ Panopticlick (EFF Cover Your Tracks) tests how unique your browser is based on e
 
 These tools compare your fingerprint against a database to calculate your uniqueness score.
 
-## Reducing Your Digital Footprint
+### Step 9: Reducing Your Digital Footprint
 
 After auditing what your browser reveals, consider these hardening steps:
 
@@ -278,6 +288,21 @@ privacy.resistFingerprinting = true
 ```
 
 Disable WebRTC in browser settings or use an extension that blocks the leak.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

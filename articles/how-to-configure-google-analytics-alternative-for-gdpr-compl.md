@@ -57,7 +57,17 @@ GDPR requires explicit consent before setting non-essential cookies, the right t
 | Jurisdiction | Check provider | Check provider |
 | Self-Hosting | Check availability | Check availability |
 
-## Self-Hosted Analytics Solutions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Self-Hosted Analytics Solutions
 
 Several open-source and commercial alternatives provide analytics without the GDPR complications. The most popular options include Matomo, Plausible, Fathom, and Umami. Each offers different trade-offs between features, hosting requirements, and pricing.
 
@@ -145,7 +155,7 @@ deleteOldVisitorLogsOlderThan = 180
 do_not_track = 1
 ```
 
-## Configuring Plausible for Privacy-First Tracking
+### Step 2: Configure Plausible for Privacy-First Tracking
 
 Plausible requires no cookie consent because it doesn't use cookies or collect personal data. The self-hosted version runs as a single Erlang application.
 
@@ -198,7 +208,7 @@ Configure your website in Plausible's admin interface, then add the lightweight 
 <script defer data-domain="yourdomain.com" src="https://analytics.yourdomain.com/js/script.js"></script>
 ```
 
-## Implementing Consent Management
+### Step 3: Implementing Consent Management
 
 Even with privacy-focused analytics, implementing a proper consent mechanism strengthens compliance. Create a simple consent banner that respects user choices:
 
@@ -260,6 +270,21 @@ After configuration, verify your setup meets GDPR requirements. Check that IP ad
 Test the anonymization features by visiting your site and checking whether your full IP appears in analytics reports. With Matomo, the admin dashboard should show truncated IP addresses. Plausible never collects full IP addresses by design.
 
 Document your data processing activities, update your privacy policy to reflect your analytics choice, and maintain records of consent when applicable. These steps demonstrate compliance during regulatory inquiries.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
