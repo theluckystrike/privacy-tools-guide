@@ -5,7 +5,7 @@ description: "How to set up Tutanota encrypted email, configure custom domains, 
 date: 2026-03-22
 author: theluckystrike
 permalink: /tutanota-encrypted-email-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
