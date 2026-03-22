@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Service | Encryption Type | Storage | Max File Size | Price |
+|---|---|---|---|---|
+| Tresorit | End-to-end (zero-knowledge) | 1TB+ | No limit | $10.42/month |
+| Proton Drive | End-to-end (zero-access) | Up to 3TB | 4GB (free), larger paid | Free / $3.99/month |
+| Nextcloud + E2EE | Server-side + optional E2EE | Self-hosted (unlimited) | Server limit | Free (self-hosted) |
+| Cryptomator | Client-side vault encryption | Any cloud provider | Provider limit | Free / $14.99 mobile |
+| SpiderOak ONE | Zero-knowledge encryption | 2TB | No limit | $6/month |
+
+
 {% raw %}
 
 For quick encrypted transfers between two machines, Magic Wormhole is the best option -- it creates a direct encrypted connection with no cloud dependency. For encrypted cloud storage with CLI support, use Rclone with its crypt backend to layer zero-knowledge encryption on top of any provider. For team collaboration with audit trails, Tresorit or self-hosted Nextcloud with end-to-end encryption provide the most complete feature sets. Here is how each solution compares on API access, encryption architecture, and developer workflow integration.

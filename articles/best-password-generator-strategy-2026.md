@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Method | Entropy Per Character | Memorability | Offline Generation | Best For |
+|---|---|---|---|---|
+| Random 20+ chars | ~6.5 bits/char | Very low | Yes (any tool) | Machine-stored passwords |
+| Diceware (6+ words) | ~12.9 bits/word | High | Yes (physical dice) | Master passwords |
+| Passphrase + symbols | ~10-13 bits/word | Moderate | Yes | Memorable secure passwords |
+| Hardware RNG | True random | None | Yes (device required) | Cryptographic key generation |
+| Password manager generator | Configurable entropy | Low (stored in vault) | Yes | Per-site unique passwords |
+
+
 {% raw %}
 
 The best password generator strategy in 2026 is to use a cryptographically secure random generator (like Python's `secrets` module or the Web Crypto API) to create 20+ character random strings for machine credentials and 6+ word passphrases for human-memorable passwords, then store everything in a password manager. Length matters more than character complexity -- a 24-character lowercase password delivers more entropy (113 bits) than a 12-character full-ASCII password. This guide covers the entropy math, code implementations in Python, JavaScript, and Go, and the pitfalls to avoid.

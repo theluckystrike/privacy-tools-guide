@@ -27,6 +27,16 @@ reviewed: true
 intent-checked: true
 voice-checked: true---
 
+
+| Browser | Tor Integration | Anonymity Level | Speed | Usability |
+|---|---|---|---|---|
+| Tor Browser | Native (bundled Tor) | Maximum | Slow (3-hop routing) | Moderate |
+| Brave (Tor Window) | Built-in Tor mode | High (single-hop option) | Faster than Tor Browser | Easy |
+| Firefox + Tor Proxy | Manual SOCKS proxy setup | High (custom config) | Depends on config | Technical |
+| Whonix Browser | VM-isolated Tor routing | Maximum (Gateway VM) | Slow | Complex setup |
+| Tails Browser | Boot-level Tor enforcement | Maximum (all traffic) | Slow | Moderate |
+
+
 {% raw %}
 
 Use Tor Browser for the most secure and recommended option with integrated privacy features. Developers who need to route other browsers through Tor can use the SOCKS proxy method with Firefox or Chrome, though this requires accepting security tradeoffs. Tor Browser remains best for general use due to its hardened configuration and built-in Tor daemon.
