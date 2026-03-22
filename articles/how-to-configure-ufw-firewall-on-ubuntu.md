@@ -17,13 +17,6 @@ tags: [privacy-tools-guide]
 
 UFW (Uncomplicated Firewall) is a front-end for iptables that ships with Ubuntu. It gives you a readable interface for managing packet filtering without writing raw iptables rules. This guide covers practical hardening: default deny, SSH protection, web server rules, and logging.
 
-## Key Takeaways
-
-- **SRC=203.0.113.99 DST=10.0.0.1 \ LEN=44**: TTL=244 ID=54321 DF PROTO=TCP SPT=44231 DPT=3306 FLAGS=S ``` ## Step 9: IPv6 Support Ensure IPv6 rules are also applied.
-- **Topics covered**: prerequisites, check ufw status, step 1: set default policies
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Prerequisites
 
 - Ubuntu 20.04 or later

@@ -18,14 +18,6 @@ tags: [privacy-tools-guide]
 
 To build a GDPR-compliant contact form, add a mandatory consent checkbox with specific purpose language, set a defined retention period (e.g., 30 days) with automatic deletion, and implement endpoints for data access and erasure requests. Below you will find working HTML, JavaScript, and Python code for each requirement, from consent capture through automated data cleanup.
 
-## Key Takeaways
-
-- **Data must be used**: only for stated purposes (purpose limitation) and you should collect only what you need (data minimization).
-- **Users can request their**: data (right to access) and request deletion (right to erasure).
-- **For a basic contact form**: consent is the most straightforward lawful basis, but you must implement it correctly.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Core GDPR Requirements for Contact Forms
 
 The GDPR establishes specific requirements for processing personal data through contact forms:

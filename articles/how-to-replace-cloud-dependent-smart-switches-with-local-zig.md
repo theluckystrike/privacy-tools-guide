@@ -275,11 +275,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
-- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
-
+- [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
+- [Smart Device Deregistration After Death How To Remove](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
+- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

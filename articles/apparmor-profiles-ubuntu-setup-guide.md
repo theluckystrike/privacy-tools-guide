@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 AppArmor restricts what a process can do by defining explicit rules about which files it can read, write, or execute, which network operations it can perform, and which capabilities it can use. When a program is compromised, AppArmor limits what the attacker can reach. Ubuntu ships with AppArmor enabled and includes profiles for common daemons — this guide covers writing custom profiles and enforcing them.
 
-## Key Takeaways
-
-- **This guide covers understanding**: apparmor modes, tools you need, step 1: generate a profile with aa-genprof, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-- **Feature comparison**: Side-by-side analysis of capabilities and limitations
-
 ## Understanding AppArmor Modes
 
 AppArmor runs profiles in two modes:

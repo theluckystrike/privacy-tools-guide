@@ -376,11 +376,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
-- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
-
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [Complete Guide To Operating System Hardening For Extreme](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

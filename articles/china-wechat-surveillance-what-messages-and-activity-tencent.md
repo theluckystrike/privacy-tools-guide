@@ -19,16 +19,6 @@ tags: [privacy-tools-guide, tools]
 
 Tencent collects all WeChat messages, metadata, location data, and payment information and is legally required to share this data with Chinese authorities upon request. Keyword monitoring systems flag sensitive terms, political discussions, and communications with targeted groups (journalists, activists, Uyghurs) for government review. Users have no expectation of privacy on WeChat—the platform prioritizes government cooperation and state surveillance integration over user confidentiality by design.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Users have no expectation of privacy on WeChat**: the platform prioritizes government cooperation and state surveillance integration over user confidentiality by design.
-- **The primary laws governing this include**: Cybersecurity Law (2017)
-Requires network operators to store user data within China and cooperate with security investigations.
-- **User profiling - Communication**: patterns with known activists - International contacts analyzed - Network mapping of connected users 3.
-
 ## Table of Contents
 
 - [What Data Tencent Collects](#what-data-tencent-collects)

@@ -331,14 +331,13 @@ docker stats searxng
 # (disable metrics in settings if public instance)
 ```
 
-## Related Reading
+## Related Articles
 
-- [Privacy-Focused Search Engine Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
-- [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
-- [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
-
----
-
+- [Privacy Focused Search Engines Comparison 2026](/privacy-tools-guide/privacy-focused-search-engines-comparison-2026/)
+- [Best Privacy-Focused Search Engines Comparison 2026](/privacy-tools-guide/best-privacy-focused-search-engines-comparison-2026/)
+- [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
+- [How to Disable Google AMP Tracking in Search Results Guide](/privacy-tools-guide/how-to-disable-google-amp-tracking-in-search-results-guide/)
+- [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

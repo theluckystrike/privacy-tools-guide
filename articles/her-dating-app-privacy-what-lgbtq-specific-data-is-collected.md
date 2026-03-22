@@ -13,35 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Her Dating App Privacy What Lgbtq Specific Data Is Collected"
-description: "A technical breakdown of data collection practices in Her, the LGBTQ+ dating app. Learn what personal information developers store, how it's processed, and"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /her-dating-app-privacy-what-lgbtq-specific-data-is-collected/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 
 Understanding data collection practices in LGBTQ+ dating applications requires examining both standard mobile app telemetry and identity-specific data points. Her, one of the largest dating platforms designed for queer women and the LGBTQ+ community, collects various categories of user data that warrant careful analysis from a privacy engineering perspective.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use unique email addresses**: specifically for dating profiles 4.
-- **Use in-app blocking features**: to limit exposure to specific users 6.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The application's data handling**: practices reveal important privacy implications for a user base that may face unique risks from data exposure.
-- **Limit profile information**: Provide only necessary identity details
-2.
 
 ## Data Categories Collected by Her
 

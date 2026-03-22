@@ -18,13 +18,6 @@ tags: [privacy-tools-guide]
 
 Managing subprocessors under GDPR requires careful tracking of any third parties that process personal data on your behalf. This guide provides developers with practical patterns for building subprocessor management systems that satisfy Article 28 requirements while integrating smoothly into existing workflows.
 
-## Key Takeaways
-
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **This guide provides developers**: with practical patterns for building subprocessor management systems that satisfy Article 28 requirements while integrating smoothly into existing workflows.
-- **For developers**: this translates into building systems that can track which services access user data, store processing agreements, and generate required documentation automatically.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

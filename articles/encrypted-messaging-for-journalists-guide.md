@@ -20,13 +20,6 @@ tags: [privacy-tools-guide]
 Journalist-source communication faces a specific threat model: state actors, corporate investigators, and law enforcement who may have access to carrier metadata, subpoena powers, and device seizure capabilities. Encrypting the message content is the minimum. Protecting metadata — who messaged whom, when, how often — often matters more.
 ---
 
-## Key Takeaways
-
-- **Create account → username**: only (no phone, no email) 2.
-- **Registration - Use a**: number that isn't publicly linked to you - Options: Google Voice, MySudo, prepaid SIM (cash-purchased) - Don't use your work or personal number 2.
-- **Scanning a QR code**: in person (most secure) 2.
-- **Signal's sealed sender encrypts the sender's identity**: Signal servers can verify that the message came from a Signal user but not which one.
-
 ## Table of Contents
 
 - [Threat Model for Journalists](#threat-model-for-journalists)
@@ -301,13 +294,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Best Encrypted Messaging for Journalists](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
-- [How to Set Up Encrypted Dead Drop with OnionShare](/privacy-tools-guide/how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/)
-- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-
----
-
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
+- [Secure Messaging for Activists Guide 2026: Signal vs](/privacy-tools-guide/secure-messaging-for-activists-guide-2026/)
+- [Encrypted Messaging Metadata Protection: A Developer's Guide](/privacy-tools-guide/encrypted-messaging-metadata-protection/)
+- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

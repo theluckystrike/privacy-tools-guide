@@ -20,19 +20,6 @@ tags: [privacy-tools-guide]
 When a company's database is breached, the stolen data ends up on dark web markets, paste sites, and breach-trading forums within hours to weeks. Your credentials may be circulating for months before the company notifies you — or they never do. Monitoring these sources lets you react before attackers do.
 ---
 
-## Key Takeaways
-
-- **Change the breached password**: immediately - Every site where you used that password (password reuse is the real risk) - Use a password manager to generate unique passwords 3.
-- **Identify which password was breached
-   - Check the breach name → when it happened → which service
-   - Most passwords are old**: you may have already changed them
-
-2.
-- **Watch for phishing -**: Attackers with your email know your username - Be skeptical of any email asking you to click/login after a breach 6.
-- **Indexed by aggregators (HIBP**: DeHashed, etc.)
-
----
-
 ## Table of Contents
 
 - [Have I Been Pwned (HIBP)](#have-i-been-pwned-hibp)
@@ -338,14 +325,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-- [Best Encrypted Messaging for Journalists](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
-- [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
-
----
-
+- [What Happens When Your Password Appears In Data Breach](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
+- [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
+- [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [1Password vs LastPass: Which Survived Their Breaches?](/privacy-tools-guide/1password-vs-lastpass-which-survived-breach/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

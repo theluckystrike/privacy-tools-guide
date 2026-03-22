@@ -289,10 +289,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
-- [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
-- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-- [How to Set Up Private DNS on Android for All Apps](/privacy-tools-guide/how-to-set-up-private-dns-on-android-for-all-apps/)
-- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
-
+- [How to Audit Android App Permissions Privacy Guide 2026](/privacy-tools-guide/how-to-audit-android-app-permissions-privacy-guide-2026/)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Android Background Location Access Which Apps Track You](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -271,11 +271,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-- [Iot Firmware Update Privacy Risks What Data Devices Send Dur](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
-- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Network Segmentation for IoT Devices](/privacy-tools-guide/iot-network-segmentation-vlan-guide/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
-
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

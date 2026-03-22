@@ -295,9 +295,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Proton Mail Account Inheritance How Encrypted Email Provider](/privacy-tools-guide/proton-mail-account-inheritance-how-encrypted-email-provider/)
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [Guerrilla Mail vs Temp Mail vs Mailinator](/privacy-tools-guide/guerrilla-mail-vs-temp-mail-vs-mailinator-which-disposable-e/)
+- [Protonmail Bridge Setup For Desktop Email Clients Privacy](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 - [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
-- [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

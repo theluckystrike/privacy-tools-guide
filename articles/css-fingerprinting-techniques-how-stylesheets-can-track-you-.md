@@ -17,15 +17,6 @@ tags: [privacy-tools-guide]
 
 CSS fingerprinting detects installed fonts, screen resolution, and browser capabilities through stylesheet cascading and HTTP requests, enabling tracking without JavaScript by observing which CSS rules the browser applies. Trackers use @font-face to detect fonts, CSS media queries to identify screen properties, and selectors that trigger requests only when specific conditions match. Defend against CSS fingerprinting by disabling web fonts (use system fonts), blocking external stylesheet resources with privacy extensions, or using browsers with CSS fingerprinting protections built-in.
 
-## Key Takeaways
-
-- **NoScript ($0, free, Firefox)**: Blocks JavaScript but allows CSS.
-- **Privacy Badger ($0**: free, Chrome/Firefox): Learns to block trackers based on behavior.
-- **uBlock Origin ($0**: free, Chrome/Firefox): Advanced content blocker that can target tracking URLs in stylesheets.
-- **CSS Guard ($0, free, Chrome)**: Specifically designed for CSS fingerprinting defense.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Check for external font**: requests echo "Checking for external fonts..." curl -s "$TARGET_URL" | grep -i "@font-face" | grep -v "local" # 2.
-
 ## The Fundamental Mechanism
 
 CSS fingerprinting exploits the cascade and specificity rules of stylesheets to detect user characteristics without executing any script. When a browser renders a page, it applies styles based on device type, screen resolution, installed fonts, and browser preferences. By observing which styles activate, trackers infer unique device properties that collectively form a fingerprint.

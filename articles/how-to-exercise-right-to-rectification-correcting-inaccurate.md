@@ -380,11 +380,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
-- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Privacy Setup For Physical Therapist Patient Exercise Data](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
-- [Privacy Setup For Physical Therapist Patient Exercise Data P](/privacy-tools-guide/privacy-setup-for-physical-therapist-patient-exercise-data-p/)
-- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
-
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

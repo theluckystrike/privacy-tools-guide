@@ -20,16 +20,6 @@ For developers and power users evaluating mobile privacy, the choice between Gra
 
 This analysis examines what Google collects on unmodified Android in 2026 and how GrapheneOS addresses these privacy concerns through architectural changes and disabled by default services.
 
-## Key Takeaways
-
-- **While Google's Pixel devices**: offer a polished experience with timely updates, unmodified Android ships with extensive telemetry that collects substantially more user data than most users realize.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **For developers and power**: users evaluating mobile privacy, the choice between GrapheneOS and stock Pixel Android represents a fundamental decision about data ownership.
-- **GrapheneOS users cannot receive**: FCM notifications without workarounds.
-- **Device Identifier Collection**: Every device maintains unique identifiers that persist across factory resets
-2.
-
 ## Understanding the Data Collection Gap
 
 Stock Pixel Android, even without signing into a Google account, transmits significant telemetry data to Google's servers. The operating system includes multiple components that collect and report device behavior, usage patterns, and diagnostic information.

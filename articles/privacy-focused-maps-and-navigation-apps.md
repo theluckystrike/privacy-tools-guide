@@ -5,7 +5,7 @@ description: "Replace Google Maps with open-source navigation apps that store no
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-maps-and-navigation-apps/
-categories: [guides]
+categories: [guides, privacy]
 reviewed: true
 score: 8
 intent-checked: true
@@ -174,16 +174,16 @@ Access your private tile server at `http://localhost:8080` and configure OsmAnd 
 
 - [Privacy Focused Calendar Apps Comparison 2026](/privacy-tools-guide/privacy-focused-calendar-apps-comparison-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Assistants for Writing Skip Navigation Links](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistants-for-writing-skip-navigation-links-corre/)
 ---
 
 ## Related Articles
 
 - [Organic Maps Vs Osmand Google Maps Alternative Comparison](/privacy-tools-guide/organic-maps-vs-osmand-google-maps-alternative-comparison-fo/)
 - [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
-- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 - [Privacy-Focused Keyboard Apps for Mobile](/privacy-tools-guide/privacy-focused-keyboard-apps-for-mobile/)
 - [Calyxos Microg Setup Guide Getting Google Apps Working](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-
+- [Android Location History Google Timeline How To Delete](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -18,17 +18,6 @@ tags: [privacy-tools-guide]
 
 Facebook's facial recognition technology automatically analyzes photos and videos to identify users across the platform. For developers and power users who prioritize privacy, understanding how this system works and how to disable it is essential. This guide covers the technical mechanisms behind Facebook's facial recognition, the opt-out process through both the UI and Graph API, and considerations for maintaining privacy in integrated applications.
 
-## Key Takeaways
-
-- **Note that as of 2024, Facebook restricted direct API access to facial recognition settings for privacy reasons**: users must manually configure these settings through the interface described above.
-- **The Illinois Biometric Information**: Privacy Act (BIPA) resulted in a $650 million settlement requiring Facebook to obtain explicit consent before collecting facial data.
-- **Use Unique Email**: Create dedicated email for Facebook (not reused)
-2.
-- **Connected Apps Audit**: Remove unused integrations quarterly
-7.
-- **Facebook's facial recognition technology**: automatically analyzes photos and videos to identify users across the platform.
-- **For developers and power**: users who prioritize privacy, understanding how this system works and how to disable it is essential.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

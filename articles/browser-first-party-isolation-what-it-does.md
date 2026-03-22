@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 First-party isolation is a browser security mechanism that separates data on a per-domain basis, preventing trackers and scripts from correlating your activity across different websites. When enabled, cookies, localStorage, sessionStorage, and other client-side storage mechanisms become scoped exclusively to the domain that created them. This fundamental isolation prevents third-party scripts from accessing data they did not originally set, significantly reducing the surface area for cross-site tracking.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Safari's implementation automatically expires**: cross-site tracking cookies after 24 hours and uses on-device processing to determine which trackers to block.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **OAuth redirects that depend**: on sharing cookies across domains need updating to use token-based approaches instead.
-
 ## Table of Contents
 
 - [How First-Party Isolation Differs from Standard Cookie Behavior](#how-first-party-isolation-differs-from-standard-cookie-behavior)
@@ -427,7 +418,7 @@ First-party isolation adds minimal overhead:
 - **Page load time**: <1% increase
 - **Network requests**: Unaffected
 
-The performance cost is essentially zero for users, while privacy benefit is substantial.
+The performance cost is zero for users, while privacy benefit is substantial.
 
 ## Related Articles
 

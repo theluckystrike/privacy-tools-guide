@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Hardware wallet inheritance planning remains one of the most overlooked aspects of cryptocurrency ownership. While developers and power users understand seed phrases, BIP39 passwords, and multi-signature setups, their loved ones often face impossible confusion during grief-stricken moments. This guide teaches you how to write clear, actionable recovery instructions that transform cryptographic complexity into simple steps your heirs can follow without specialized knowledge.
 
-## Key Takeaways
-
-- **While developers and power**: users understand seed phrases, BIP39 passwords, and multi-signature setups, their loved ones often face impossible confusion during grief-stricken moments.
-- **Hardware wallet inheritance planning**: remains one of the most overlooked aspects of cryptocurrency ownership.
-- **Assume your reader has**: never used cryptocurrency software.
-- **Download wallet software from**: the official website only 2.
-- **BitBox02 and certain Coldcard**: configurations support this feature.
-- **Your heirs will thank**: you not for teaching them cryptocurrency, but for giving them a simple path forward when it matters most.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

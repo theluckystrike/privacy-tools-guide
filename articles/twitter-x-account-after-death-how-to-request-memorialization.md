@@ -328,11 +328,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Instagram Memorialization Request Process What Happens To Ph](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
-- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-- [Mastodon vs Twitter: Privacy Comparison 2026](/privacy-tools-guide/mastodon-vs-twitter-privacy-comparison-2026/)
-- [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
-
+- [Instagram Memorialization Request Process What Happens](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
+- [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
+- [Windows Local Account Vs Microsoft Account](/privacy-tools-guide/windows-local-account-vs-microsoft-account-privacy/)
+- [LinkedIn Deceased Member Profile Removal How To Report](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
+- [Subscription Service Cancellation After Death](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

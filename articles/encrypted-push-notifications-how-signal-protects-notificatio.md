@@ -17,17 +17,6 @@ voice-checked: true
 
 Standard push notifications expose sender information and message metadata to Google (FCM) and Apple (APNs), who can read this data during delivery. Signal solves this problem by sending encrypted payloads through FCM/APNs that contain only minimal unencrypted wake-up signals, keeping message content and sender identity hidden from platform operators. This architecture provides end-to-end privacy while maintaining the real-time notification experience users expect.
 
-## Key Takeaways
-
-- **However**: Wire's paid model ($5/month for premium features) creates complexity in comparing free services.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Signal offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Device token correlation**: If a device receives many notifications, pattern analysis could potentially identify users
-3.
-- **Fallback mechanisms**: When Sealed Sender isn't available (first message from new contact, offline devices), traditional notifications are used
-4.
-
 ## Table of Contents
 
 - [The Privacy Problem With Traditional Push Notifications](#the-privacy-problem-with-traditional-push-notifications)

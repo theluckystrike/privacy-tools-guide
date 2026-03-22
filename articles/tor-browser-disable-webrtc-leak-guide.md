@@ -438,11 +438,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
-- [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
-- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
-- [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
-
+- [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

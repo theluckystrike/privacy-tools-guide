@@ -24,15 +24,6 @@ Self-hosted alternatives eliminate monthly per-user licensing and storage tier f
 
 For developers managing repositories, config files, or sensitive documents, self-hosted sync provides consistency across machines without relying on external services.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Let them use it for 2-3 weeks**: then gather their honest feedback.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Choose Syncthing for minimal overhead**: Nextcloud for feature-rich collaboration, or hybrid setups combining both for maximum flexibility.
-
 ## Table of Contents
 
 - [Syncthing: Decentralized Peer-to-Peer Sync](#syncthing-decentralized-peer-to-peer-sync)

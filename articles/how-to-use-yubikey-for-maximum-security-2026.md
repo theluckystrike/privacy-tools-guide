@@ -546,12 +546,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [Hardware Security Keys Compared 2026](/articles/hardware-keys-comparison/)
-- [GPG Encryption Guide for Developers](/articles/gpg-guide/)
-- [SSH Key Management Best Practices](/articles/ssh-keys/)
-- [Two-Factor Authentication Methods](/articles/2fa-methods/)
-- [Account Recovery Planning](/articles/account-recovery/)
-
+- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

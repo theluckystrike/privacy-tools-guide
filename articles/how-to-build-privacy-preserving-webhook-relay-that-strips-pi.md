@@ -9,19 +9,13 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 {% raw %}
 
 Webhooks are the backbone of modern event-driven architectures. They power everything from payment notifications to CI/CD pipelines. But handling webhooks from third-party services often means receiving sensitive user data you don't need—and shouldn't store. Building a privacy-preserving webhook relay gives you control over what data reaches your systems.
 
 This guide walks you through creating a webhook relay that strips PII before delivery, keeping your systems compliant and your data minimal.
-
-## Key Takeaways
-
-- **But handling webhooks from third-party services often means receiving sensitive user data you don't need**: and shouldn't store.
-- **When a SaaS platform**: notifies you of a new user signup, it might include full names and phone numbers.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Table of Contents
 

@@ -463,9 +463,8 @@ Check the export options before committing. Most tools let you export your data,
 
 - [Privacy Policy Generator Tools Comparison: A Developer Guide](/privacy-tools-guide/privacy-policy-generator-tools-comparison/)
 - [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
-- [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
-- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
-- [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
-
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

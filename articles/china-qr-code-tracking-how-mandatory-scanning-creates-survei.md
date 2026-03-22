@@ -11,23 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 China's mandatory QR code system creates surveillance trails of citizens' movements through centralized tracking of venue check-ins, payment transactions, and location registrations. Each scan generates permanent records linking identity to location, timestamp, and even GPS coordinates in integrated government databases. For developers and power users in China, understanding this architecture is critical for assessing privacy risks and implementing effective countermeasures.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Purpose limitation**: Restrict use to stated purposes only
-3.
-- **This action**: appearing innocuous to most users, transmits your identity to a server.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Identity linking is standard**: Most systems require real-name authentication
-3.
-- **Client sends**: {user_id, merchant_id, timestamp, amount}
-3.
 
 ## Table of Contents
 

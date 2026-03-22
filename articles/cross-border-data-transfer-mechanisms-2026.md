@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 To legally transfer personal data across borders in 2026, use the EU-US Data Privacy Framework (DPF) for US transfers, Standard Contractual Clauses (SCCs) for other jurisdictions, or Binding Corporate Rules (BCRs) for intra-group transfers -- and back each mechanism with technical safeguards like TLS 1.3 encryption, data pseudonymization, and regional processing hubs that keep raw PII within its source jurisdiction. This guide covers the current regulatory environment across GDPR, UK GDPR, LGPD, APPI, and DPDPA, with working code examples for encrypted transfers, pseudonymization, and compliance architecture patterns.
 
-## Key Takeaways
-
-- **For most cross-border use cases**: pseudonymization combined with SCCs is more practical.
-- **They require significant investment**: typically 12-18 months to approval — but provide the most durable legal basis for multinational corporations with complex internal data flows.
-- **Modern implementations use TLS**: 1.3 as the baseline, with additional application-layer encryption for sensitive data.
-- **- India's DPDPA**: Phased implementation continues through 2026; cross-border restrictions apply to certain "significant data fiduciaries" designated by the Indian government.
-- **For developers**: this means your application architecture must accommodate multiple legal bases for data transfers depending on user location.
-- **Can I use a**: VPN or Tor to route data transfers and avoid regulatory requirements? No.
-
 ## Table of Contents
 
 - [The Regulatory Environment in 2026](#the-regulatory-environment-in-2026)

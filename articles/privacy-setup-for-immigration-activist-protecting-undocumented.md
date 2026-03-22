@@ -294,10 +294,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-- [Threat Model for Undocumented Immigrant Protecting.](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
-- [Privacy Setup For Abuse Hotline Worker Protecting Caller Inf](/privacy-tools-guide/privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/)
-- [Privacy Setup for Celebrity: Protecting Personal Address.](/privacy-tools-guide/privacy-setup-for-celebrity-protecting-personal-address-and-/)
 - [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
-
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [How to Create Enterprise Privacy Risk Register Template](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,13 +18,6 @@ tags: [privacy-tools-guide]
 Windows collects diagnostic data, browsing habits, clipboard content, location data, and usage telemetry by default. Some collection can't be disabled through the UI — it requires Group Policy, registry edits, or PowerShell. This guide covers what to disable and how to verify it's actually off.
 ---
 
-## Key Takeaways
-
-- **Reboot recommended." ``` ---**: ## Block Microsoft Telemetry Domains (Hosts File) Even with services disabled, Windows may use scheduled tasks or secondary processes to report telemetry.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers what**: windows collects by default, quick win: privacy settings ui, disable telemetry via group policy (pro/enterprise), with specific setup instructions
-
 ## What Windows Collects by Default
 
 - **Diagnostic data**: App crashes, driver failures, OS usage statistics

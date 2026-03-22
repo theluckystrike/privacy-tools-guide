@@ -20,16 +20,6 @@ Running your own Bitwarden instance gives you complete control over your passwor
 
 This guide walks through deploying Bitwarden on a Linux server using Docker, configuring SSL with Let's Encrypt, and performing essential first-time setup tasks. It also covers the privacy implications of each approach, legal considerations for organizations handling regulated data, and how self-hosting compares to the managed cloud option.
 
-## Key Takeaways
-
-- **SSL certificate**: Choose "Let's Encrypt" for automatic free certificates, or provide your own
-5.
-- **For very small deployments (1-5 users) with limited hardware, Vaultwarden as an alternative requires only a single container and under 100MB RAM**: a meaningful difference if running on a 1GB VPS.
-- **Is self-hosted Bitwarden free?**: The community edition is free for unlimited users.
-- **Unless you intend to**: run a shared service, restrict registration to invited users only via the admin panel toggle.
-- **Uses Microsoft SQL Server**: by default (or SQLite for simpler setups), is backed by Bitwarden Inc., and receives official support.
-- **Memory usage is higher**: (approximately 1-2GB at idle) because it runs multiple microservices.
-
 ## Table of Contents
 
 - [Why Self-Host Bitwarden?](#why-self-host-bitwarden)

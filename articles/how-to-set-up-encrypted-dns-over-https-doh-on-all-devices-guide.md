@@ -542,12 +542,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/---)
 - [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
-- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted Dns](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
-- [How To Set Up Encrypted Dns To Bypass Dns Poisoning In Censo](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
-- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
-- [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
-
+- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

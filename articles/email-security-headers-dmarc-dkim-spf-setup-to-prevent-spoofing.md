@@ -20,15 +20,6 @@ Email spoofing remains one of the most common attack vectors used by malicious a
 
 This guide walks through setting up each protocol with practical examples you can implement immediately.
 
-## Key Takeaways
-
-- **Email spoofing remains one**: of the most common attack vectors used by malicious actors.
-- **Use the `-all` (hard**: fail) only after thoroughly testing with `~all`.
-- **Use `p=reject` only after confirming all legitimate mail streams authenticate properly**: rejecting mail can cause legitimate messages to bounce.
-- **When someone sends emails**: that appear to originate from your domain, they can phishing your users, damage your sender reputation, and compromise communications with your customers.
-- **Most providers give you**: the complete record to copy.
-- **Use `spf=aligned` in your**: DMARC record or ensure consistent domain usage.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

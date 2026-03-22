@@ -20,13 +20,6 @@ tags: [privacy-tools-guide]
 Firejail is a SUID sandbox that restricts what processes can access using Linux namespaces, seccomp-bpf, and capabilities. When your browser is sandboxed with Firejail, a successful exploit — remote code execution via a malicious PDF or JavaScript vulnerability — is contained: the attacker's code can't read your SSH keys, home directory files, or make arbitrary system calls.
 ---
 
-## Key Takeaways
-
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers what firejail does**: install firejail, basic usage, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## What Firejail Does
 
 Firejail creates restricted containers using:

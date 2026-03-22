@@ -276,11 +276,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
-- [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
-- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Facebook Marketplace Privacy Settings Guide](/privacy-tools-guide/facebook-marketplace-privacy-settings-guide/)
+- [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
 - [Facebook Data Collection: What They Track in 2026](/privacy-tools-guide/facebook-data-collection-what-they-track-2026/)
-- [Facebook Dating Privacy Does Meta Use Your Dating Activity F](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
-
+- [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

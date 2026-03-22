@@ -274,11 +274,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
+- [Android Notification Privacy: How to Hide Sensitive](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
-- [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
-- [Dating App Api Vulnerabilities How Security Researchers Have](/privacy-tools-guide/dating-app-api-vulnerabilities-how-security-researchers-have/)
-- [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
-
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

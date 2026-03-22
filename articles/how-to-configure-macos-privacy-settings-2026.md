@@ -11,31 +11,14 @@ tags: [privacy-tools-guide, macos, operating-systems, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Configure macOS Privacy Settings 2026"
-description: "Complete guide to hardening macOS privacy settings including system preferences, terminal commands, and app-level controls"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-configure-macos-privacy-settings-2026/
-categories: [guides]
-tags: [privacy-tools-guide, macos, operating-systems, privacy]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 macOS users assume their system is private by default. It's not. Apple collects telemetry, apps request unnecessary permissions, and tracking is enabled. This guide covers the specific settings, terminal commands, and app permissions that matter for actual privacy.
 
 Most of this is clickable in System Settings. Some require terminal commands. All take less than 30 minutes.
-
-## Key Takeaways
-
-- **Choose**: Quad9 or Cloudflare (not Google)
 
 ## Prerequisites
 

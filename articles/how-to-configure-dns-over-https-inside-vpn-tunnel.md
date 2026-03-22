@@ -13,42 +13,12 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
 ---
----
-layout: default
-title: "How to Configure DNS over HTTPS Inside a VPN"
-description: "A technical guide to setting up DNS over HTTPS within your VPN tunnel for enhanced privacy and security"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-configure-dns-over-https-inside-vpn-tunnel/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]
----
 
 {% raw %}
 
 When you use a VPN, your internet traffic is encrypted and routed through the VPN server, hiding your browsing activity from your ISP. However, even with a VPN, your DNS requests can still leak information about your browsing habits. DNS over HTTPS (DoH) adds an additional layer of privacy by encrypting your DNS queries, making it impossible for anyone—including your VPN provider—to see what domains you're accessing.
 
 In this guide, we'll explore how to configure DNS over HTTPS inside a VPN tunnel, why it matters, and the various methods to implement it across different platforms and VPN protocols.
-
-## Key Takeaways
-
-- **Set "Preferred DNS" and**: "Alternate DNS" to the same IP 8.
-- **Under "Preferred DNS encryption"**: select "Encrypted (DNS over HTTPS)"
-9.
-- **Repeat for IPv6 if desired
-
-#### Step 2**: Configure VPN to Use System DNS
-
-When your VPN connects, it may override your DNS settings.
-- **To ensure your VPN**: uses the DoH-enabled system DNS: 1.
-- **Disable "Use VPN provider's**: DNS" or similar option 4.
-- **dnsleaktest.com**: Run the extended test to check which DNS servers are being used
-2.
 
 ## Understanding DNS Leaks and Why DoH Inside VPN Matters
 

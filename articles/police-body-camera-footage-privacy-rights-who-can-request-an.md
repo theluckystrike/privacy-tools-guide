@@ -301,10 +301,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Healthcare Privacy Rights Hipaa What Patients Can Request Re](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
+- [Privacy Risks of Smart Doorbells and Ring Cameras 2026](/privacy-tools-guide/privacy-risks-of-smart-doorbells-ring-cameras-2026/)
 - [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
-- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
-- [Genetic Data Privacy Rights What 23andme Ancestry Can Do Wit](/privacy-tools-guide/genetic-data-privacy-rights-what-23andme-ancestry-can-do-wit/)
-- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
-
+- [Healthcare Privacy Rights Hipaa What Patients Can Request](/privacy-tools-guide/healthcare-privacy-rights-hipaa-what-patients-can-request-re/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

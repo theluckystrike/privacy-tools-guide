@@ -337,11 +337,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
-- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
-
+- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Activist In Authoritarian Country Digital](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -444,15 +444,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [LUKS Full Disk Encryption Linux Guide](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
-- [Secure Boot and TPM Explained for Linux](/privacy-tools-guide/secure-boot-tpm-linux-explained/)
-- [Encrypt USB Drive with VeraCrypt](/privacy-tools-guide/encrypt-usb-drive-veracrypt-guide/)
-- [Linux File System Encryption Strategy](/privacy-tools-guide/linux-filesystem-encryption/)
-- [Cryptsetup Performance Tuning Guide](/privacy-tools-guide/cryptsetup-performance-tuning/)
-
----
-
+- [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
+- [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
+- [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
+- [Container Security Basics for Developers](/privacy-tools-guide/container-security-basics-developers)
+- [Magic Wormhole Encrypted File Transfer How To Send Files](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

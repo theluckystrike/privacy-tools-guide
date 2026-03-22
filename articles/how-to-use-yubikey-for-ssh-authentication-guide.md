@@ -608,16 +608,13 @@ grep "Accepted publickey" /var/log/auth.log | \
 
 ---
 
-## Related Reading
+## Related Articles
 
-- [SSH Hardening Best Practices](https://guides.zovo.one/ssh-hardening)
-- [GPG and Email Encryption Guide](https://guides.zovo.one/gpg-encryption)
-- [Hardware Security Keys Comparison](https://guides.zovo.one/hardware-security-keys)
-- [Secrets Management for DevOps](https://guides.zovo.one/secrets-management)
-- [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-
----
-
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
+- [How to Use YubiKey for Maximum Security in 2026](/privacy-tools-guide/how-to-use-yubikey-for-maximum-security-2026/)
+- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

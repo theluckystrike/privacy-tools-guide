@@ -18,17 +18,6 @@ voice-checked: true
 
 First Party Sets allows related domains (like example.com, example.app, and example.co) to declare a relationship so browsers grant them shared access to cookies and storage normally restricted to single sites. While this convenience simplifies multi-domain properties, it creates cross-site tracking opportunities that contradict privacy principles. Developers must weigh FPS adoption benefits against user privacy implications and evolving browser restrictions on third-party data sharing.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Developers must weigh FPS**: adoption benefits against user privacy implications and evolving browser restrictions on third-party data sharing.
-- **Privacy regulations and browser restrictions are rapidly closing this pathway**: Safari and Firefox already block most third-party cookies by default, and Chrome plans to do the same.
-- **Policy compliance**: Sets must meet Google's policy requirements around legitimate use cases
-3.
-- **Excessive associated sites**: Keep the set focused on genuinely related properties
-4.
-
 ## Understanding the Core Problem
 
 Third-party cookies have powered cross-site tracking for decades. When you visit site An and it loads resources from tracker B, that tracker can set a cookie that follows you to site C, D, and beyond. Privacy regulations and browser restrictions are rapidly closing this pathway — Safari and Firefox already block most third-party cookies by default, and Chrome plans to do the same.

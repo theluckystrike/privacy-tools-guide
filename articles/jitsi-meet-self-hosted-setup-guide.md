@@ -347,11 +347,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
 - [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-
+- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

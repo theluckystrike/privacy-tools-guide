@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 AdGuard Home is a self-hosted DNS server that blocks ads, trackers, and malware domains before they reach any device on your network. Unlike Pi-hole, it ships with built-in DNS-over-HTTPS and DNS-over-TLS, per-client rules, and a query log with filtering — no separate proxy required.
 
-## Key Takeaways
-
-- **Topics covered**: installation, initial configuration via web ui, configure encrypted upstream dns
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Table of Contents
 
 - [Installation](#installation)

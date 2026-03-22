@@ -340,10 +340,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
-- [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
-- [Browser Extension Permissions What To Watch](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
+- [Browser Extension Permissions What](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
+- [Browser Password Manager Vs Dedicated](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

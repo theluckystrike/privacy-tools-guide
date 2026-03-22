@@ -20,13 +20,6 @@ The European Union's General Data Protection Regulation grants individuals the r
 
 This guide provides concrete implementation strategies for handling GDPR Article 17 erasure requests programmatically.
 
-## Key Takeaways
-
-- **Notify users when erasure**: completes and expose an API endpoint for integration with external privacy tools.
-- **Confirm user identity before**: processing any erasure and document legal bases for any data retained after a request.
-- **User data may live in an authentication service, an analytics pipeline, a recommendation engine, a notification service, and a billing system**: each with its own database and team.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Understanding Article 17 Requirements
 
 Article 17 establishes that data subjects can request erasure when:

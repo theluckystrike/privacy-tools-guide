@@ -60,11 +60,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ```
 
 2. CookieYes automatically:
-   - Scans your site for cookies
-   - Categorizes them (Essential, Analytics, Marketing, etc.)
-   - Creates consent banner
-   - Blocks non-essential cookies until consent
-   - Logs consent records
+ - Scans your site for cookies
+ - Categorizes them (Essential, Analytics, Marketing, etc.)
+ - Creates consent banner
+ - Blocks non-essential cookies until consent
+ - Logs consent records
 
 3. Minimal configuration needed (most automatic)
 

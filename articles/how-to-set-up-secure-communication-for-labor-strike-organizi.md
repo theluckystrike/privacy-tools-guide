@@ -295,11 +295,10 @@ Yes, through MDM software that can log keystrokes or take screenshots at the OS 
 
 ## Related Articles
 
-- [Set Up Secure Communication For Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
-- [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
-- [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
-
+- [Set Up Secure Communication For Labor Strike: Practical](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [How to Set Up Encrypted Communication for Mutual Aid](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
+- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

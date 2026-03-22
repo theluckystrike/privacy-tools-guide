@@ -359,11 +359,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
-- [Configure Xray Reality Protocol for Undetectable Proxy from](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
-- [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
+- [Secure Messaging Protocol Comparison](/privacy-tools-guide/secure-messaging-protocol-comparison/)
+- [Post Quantum Encryption In Messaging Apps Preparing](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
+- [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)
 - [Signal Protocol Explained for Developers](/privacy-tools-guide/signal-protocol-explained-for-developers/)
-- [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
-
+- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

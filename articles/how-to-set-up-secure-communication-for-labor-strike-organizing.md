@@ -291,10 +291,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Lawyer Client Privilege Digital Communication Secure Setup C](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
-- [Secure Communication Plan Template for Organizations.](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
-- [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [How to Set Up Encrypted Communication for Mutual Aid Network](/privacy-tools-guide/how-to-set-up-encrypted-communication-for-mutual-aid-network/)
-
+- [Turkey Secure Communication Guide For Activists And Ngos](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
+- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
+- [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [How To Use Safenote Or Privnote For One Time Secure Credenti](/privacy-tools-guide/how-to-use-safenote-or-privnote-for-one-time-secure-credenti/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

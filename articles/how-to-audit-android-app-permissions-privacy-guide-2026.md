@@ -43,14 +43,6 @@ This guide shows you how to:
 4. **Validate** that apps work with restricted permissions
 
 
-## Key Takeaways
-
-- **Keep enabled**: Network, internet (usually needed)
-4.
-- **Topics covered**: prerequisites, step 1: android permission categories, step 2: manual audit via settings
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Table of Contents
 
 - [Why Android Permissions Audit Matters](#why-android-permissions-audit-matters)
@@ -411,10 +403,10 @@ Use a work profile on your device:
 4. **Monitor constantly**: Use Permission Dogs or similar to track actual usage
 5. **Update regularly**: New app versions may request new permissions; review them
 6. **Use strong alternatives**:
-   - ProtonMail (email, encrypted)
-   - Signal (messaging, encrypted)
-   - Mullvad VPN (no logging)
-   - Elytra (anonymous profiles)
+ - ProtonMail (email, encrypted)
+ - Signal (messaging, encrypted)
+ - Mullvad VPN (no logging)
+ - Elytra (anonymous profiles)
 
 ## FAQ
 

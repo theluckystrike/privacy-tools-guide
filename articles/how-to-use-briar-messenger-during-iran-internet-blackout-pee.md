@@ -375,11 +375,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
-- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
-- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
-
+- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

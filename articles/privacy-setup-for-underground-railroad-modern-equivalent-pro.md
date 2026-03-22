@@ -331,14 +331,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
-- [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
-- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
-- [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)
-- [Linux Apparmor Vs Selinux Which Mandatory Access Control Pro](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
-
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

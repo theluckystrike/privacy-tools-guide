@@ -452,10 +452,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
-- [How To Opt Out Of Targeted Advertising Under State Privacy L](/privacy-tools-guide/how-to-opt-out-of-targeted-advertising-under-state-privacy-l/)
-- [Digital Power of Attorney: What Authority It Grants Over.](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
-- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
-- [Threat Model For Political Dissident In Surveillance State 2](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
-
+- [How To Opt Out Of Targeted Advertising Under State Privacy](/privacy-tools-guide/how-to-opt-out-of-targeted-advertising-under-state-privacy-l/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

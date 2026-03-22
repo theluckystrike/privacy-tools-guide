@@ -282,10 +282,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
-- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
-- [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [Veterinarian Client Pet Data Privacy Protection Setup Guide](/privacy-tools-guide/veterinarian-client-pet-data-privacy-protection-setup-guide/)
-
+- [Data Protection Officer Role Responsibilities Guide](/privacy-tools-guide/data-protection-officer-role-responsibilities-guide/)
+- [India Data Protection Bill 2026 What It Means For Citizen](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -250,11 +250,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Handle Password Manager on Lost Phone: Immediate Steps](/privacy-tools-guide/how-to-handle-password-manager-on-lost-phone-immediate-steps/)
-- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [What To Do If You Accidentally Shared Screen With Sensitive](/privacy-tools-guide/what-to-do-if-you-accidentally-shared-screen-with-sensitive-/)
+- [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)
 - [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
-- [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
-- [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
-
+- [What To Do If You Accidentally Downloaded Malware On](/privacy-tools-guide/what-to-do-if-you-accidentally-downloaded-malware-on-mac/)
+- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

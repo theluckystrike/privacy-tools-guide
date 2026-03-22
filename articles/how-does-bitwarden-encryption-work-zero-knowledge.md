@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, encryption]
 
 Bitwarden encrypts your vault with AES-256 using a key derived from your master password via PBKDF2 (600,000 iterations) or Argon2id -- and that key never leaves your device. The server stores only encrypted blobs and a hashed authentication token, so even a full server compromise cannot expose your passwords. Here is exactly how the zero-knowledge architecture works, from key derivation through authentication to sync.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Device decrypts locally using**: K2 The critical insight: the server sends encrypted data that only your new device can decrypt because only that device has the ability to derive the correct K2.
-- **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The self-hosted server still cannot read user data**: it provides storage and synchronization only.
-- **Server sends the user's**: salt 3.
-
 ## The Encryption Foundation
 
 Bitwarden uses AES-256 bit encryption for vault data, combined with PBKDF2 for key derivation. When you create a master password, your client generates an encryption key derived from that password. This key never leaves your device in plaintext form.

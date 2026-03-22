@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC transport — the same protocol behind HTTP/3 — which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks. DoQ also prevents DNS traffic from being identified and blocked by DPI (Deep Packet Inspection) as easily as DoT.
 
-## Key Takeaways
-
-- **It uses QUIC transport**: the same protocol behind HTTP/3 — which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks.
-- **Topics covered**: why doq over dot or doh, public doq resolvers, configuration on linux (adguard home)
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Table of Contents
 
 - [Why DoQ Over DoT or DoH](#why-doq-over-dot-or-doh)

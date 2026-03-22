@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy, artificial-intelligence, chatgpt]
 
 ChatGPT has become a daily tool for developers, but many users operate under a false assumption: that their conversations are private once the chat window closes. Understanding what OpenAI actually stores—and how that data flows through their systems—is essential for anyone handling sensitive information, proprietary code, or client data.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Free tier users have**: less transparency.
-- **OpenAI explicitly states that**: free conversations may be reviewed by staff to improve systems and detect abuse.
-- **Pricing is competitive with**: OpenAI ($0.003 per 1K input tokens, $0.015 per 1K output tokens).
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-
 ## Table of Contents
 
 - [What OpenAI Actually Stores](#what-openai-actually-stores)

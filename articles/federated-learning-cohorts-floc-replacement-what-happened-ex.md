@@ -11,22 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
 Google's FLoC failed due to user privacy concerns and regulatory opposition, leading to its replacement with the Topics API in 2023. Topics provides coarser interest categories updated weekly rather than persistent cohort assignments, reducing re-identification risks while still enabling interest-based advertising. Developers migrating from cookies should understand that Topics, Protected Audiences, and Attribution Reporting form the modern Privacy Sandbox—each addressing different advertising use cases with varying privacy guarantees.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Google's FLoC failed due**: to user privacy concerns and regulatory opposition, leading to its replacement with the Topics API in 2023.
-- **Cohort Assignment**: Your browser would analyze your browsing history locally and assign you to a "cohort" of approximately 1,000 to 5,000 users with similar interests
-2.
-- **Chrome holds approximately 65%**: market share, and the Topics API is enabled by default.
-- **Respect user preferences**: Implement proper consent mechanisms
-2.
 
 ## What Was Federated Learning of Cohorts?
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Browser Compartmentalization Guide Separating Identities 2026"
+title: "Browser Compartmentalization Guide Separating Identities"
 description: "How to use browser profiles, containers, and separate browsers to compartmentalize online identities and prevent cross-site tracking"
 date: 2026-03-22
 last_modified_at: 2026-03-22

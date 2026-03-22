@@ -304,10 +304,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)
-- [How Secure Is Telegram Secret Chat Mode](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)
+- [How Secure Is Telegram Secret Chat](/privacy-tools-guide/how-secure-is-telegram-secret-chat-mode/)
 - [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
-- [How To Create Encrypted Mailing List For Private Group Commu](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
 - [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
-
+- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

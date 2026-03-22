@@ -623,10 +623,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
-- [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
-- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
-- [Secure Email Forwarding With Encryption How To Set Up Anonad](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
-
+- [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 CalyxOS includes a powerful built-in firewall called Datura that lets you control which apps can access the internet. Unlike traditional Android firewall solutions that require root access, Datura operates at the system level through CalyxOS's microG integration. This makes it accessible to anyone running CalyxOS on supported devices like Pixel phones.
 
-## Key Takeaways
-
-- **Launch app and check**: if it connects # (Wait 30 seconds, most telemetry is eager) # 3.
-- **Navigate to the appropriate**: app category (All Apps, System Apps, or User Apps) 3.
-- **If Datura consumes >5% CPU**: there may be excessive policy enforcement overhead.
-- **It uses Linux's native**: packet filtering capabilities to block or allow network traffic on a per-application basis.
-- **It runs as a privileged system service**: giving it more control over network packets than user-space firewall applications that rely on VPN-based routing.
-- **Find the application you**: want to restrict 4.
-
 ## Table of Contents
 
 - [What is Datura Firewall?](#what-is-datura-firewall)

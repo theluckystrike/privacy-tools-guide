@@ -437,10 +437,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
-- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 - [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
-- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
-- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
-
+- [How To Implement Customer Data Encryption At Rest](/privacy-tools-guide/how-to-implement-customer-data-encryption-at-rest-and-in-tra/)
+- [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
