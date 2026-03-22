@@ -18,6 +18,13 @@ intent-checked: true---
 
 Digital estate planning requires separating executor access from heir access with different unlock timelines. Executors need immediate access to handle funerals, bills, and estate administration, while heirs should only access assets after probate completes or a waiting period passes. This guide teaches developers how to implement time-locked encryption, access control layers, and verification systems that automatically grant executor access immediately while delaying heir access by 30+ days based on configurable conditions.
 
+## Key Takeaways
+
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **Test the system while alive**: Use a "test mode" that allows you to verify all access paths work correctly without triggering actual estate conditions.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers understanding**: the tiered access model, core components of the system, implementation architecture, with specific setup instructions
+
 ## Understanding the Tiered Access Model
 
 A tiered access plan separates digital assets into layers based on when they should become accessible. The executor layer grants immediate access to accounts needed for funeral arrangements, debt payment, and estate administration. The heir layer delays access to sentimental items, inheritance accounts, and less critical digital property.

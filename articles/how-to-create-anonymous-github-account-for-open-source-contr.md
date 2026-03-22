@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Contributing to open source projects is a rewarding way to improve your coding skills, build a portfolio, and give back to the developer community. However, there are legitimate reasons why you might want to maintain separation between your professional identity and your open source work. Perhaps you're contributing to sensitive projects, working on controversial software, or simply value keeping your coding activities private. This guide walks you through creating an anonymous GitHub account that remains unlinked from your real-world identity.
 
+## Key Takeaways
+
+- **Use Tor Browser or**: a VPN when signing up to mask your IP address 2.
+- **Choose a pseudonym that**: doesn't reveal your identity 4.
+- **GitHub's rate limiting and**: CAPTCHA systems treat Tor users more strictly.
+- **They explicitly support anonymous**: development and don't track users across projects.
+- **Contributing to open source**: projects is a rewarding way to improve your coding skills, build a portfolio, and give back to the developer community.
+- **However**: there are legitimate reasons why you might want to maintain separation between your professional identity and your open source work.
+
 ## Why Create an Anonymous GitHub Account
 
 Developers choose anonymous GitHub accounts for various reasons. Some contribute to projects related to privacy tools, security research, or advocacy work where identification could attract unwanted attention. Others maintain strict compartmentalization between their day job and personal projects. Whatever your motivation, the goal remains the same: participate in the open source ecosystem without exposing who you are.

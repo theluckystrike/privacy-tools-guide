@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, best-of]---
 
 The California Consumer Privacy Act (CCPA) and its successor, the California Privacy Rights Act (CPRA), give California residents powerful rights over their personal information. Among the most important is the right to opt out of the sale of your personal data. If you've ever wondered how to actually exercise this right effectively—especially as a developer or power user who wants to automate the process—this guide provides practical steps, template scripts, and technical details for making your opt-out requests stick.
 
+## Key Takeaways
+
+- **The AG can impose penalties of up to $2**:500 per unintentional violation and $7,500 per intentional violation.
+- **Once you opt out**: the company cannot sell or share your data for at least 12 months before asking again.
+- **Among the most important**: is the right to opt out of the sale of your personal data.
+- **If you require additional**: information to verify my identity, please contact me at {user_info['email']}.
+- **Global Privacy Control (GPC)**: a browser signal you can enable, automatically transmits opt-out preferences to websites.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Your CCPA Opt-Out Rights
 
 Under CCPA/CPRA, California residents have the right to direct businesses that sell or share their personal information to stop doing so. The law defines "sale" broadly—it includes renting, releasing, disclosing, disseminating, making available, transferring, or communicating your personal information to third parties for monetary or other valuable consideration.

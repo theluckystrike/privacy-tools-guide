@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Creating untraceable email for anonymous tips requires understanding how traditional email systems leak metadata. Standard email contains IP addresses, timestamps, device fingerprints, and message headers that can identify the sender. This guide covers technical methods to minimize your digital footprint when communicating with journalists or whistleblowing platforms.
 
+## Key Takeaways
+
+- **Use a dedicated device**: or VM for anonymous communications 2.
+- **Create email account with**: random username 4.
+- **Understanding these attack vectors**: helps you design better anonymous communication systems.
+- **Most people assume that**: registering a new email account with a fake name provides sufficient anonymity.
+- **Use the Tor Browser**: in a dedicated virtual machine or on Tails OS, completely separated from your regular workflow.
+- **Services like ProtonMail**: Disroot, and RiseUp allow registration over Tor without phone verification, though ProtonMail sometimes requires it for new accounts during periods of high abuse.
+
 ## Understanding Email Traceability
 
 Every email leaves traces. Even when you use a "fake" email address, the underlying transport layer reveals information:

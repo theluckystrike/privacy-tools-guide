@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Running a private group communication channel requires more than just a shared email address. Whether you're coordinating with developers on a sensitive project, organizing a privacy-conscious community, or managing confidential business communications, encrypting your mailing list prevents eavesdropping, metadata leaks, and unauthorized access. This guide walks through practical methods for creating encrypted mailing lists using open-source tools that work across platforms in 2026.
 
+## Key Takeaways
+
+- **For broader groups wanting**: friction-free encryption, Delta Chat offers the best user experience.
+- **The tradeoff**: all members must use Delta Chat or a compatible E2EE email client.
+- **This guide walks through**: practical methods for creating encrypted mailing lists using open-source tools that work across platforms in 2026.
+- **This matters because mailing list archives often become targets**: once compromised, unencrypted archives expose years of communications.
+- **This approach works when**: all participants use GPG and configure their email clients accordingly.
+- **If a member loses access or leaves**: having revocation certificates ready prevents unauthorized future use.
+
 ## Understanding the Threat Model
 
 Before selecting tools, identify what you're protecting against. Email encryption addresses different threats than messaging app encryption. For mailing lists, consider three attack vectors: content interception (someone reading emails in transit), list compromise (an attacker gaining access to the list server), and metadata analysis (knowing who communicates with whom, even without reading content).

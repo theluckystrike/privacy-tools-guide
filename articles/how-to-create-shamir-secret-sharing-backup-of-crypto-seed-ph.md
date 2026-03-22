@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Shamir Secret Sharing (SSS) provides a mathematically elegant solution for securing cryptocurrency seed phrases across multiple parties without placing trust in a single location. Originally described by cryptographer Adi Shamir in 1979, this algorithm enables you to divide a secret into N shares where any subset of K shares can reconstruct the original secret, but fewer than K shares reveal nothing. For cryptocurrency inheritance planning, this means you can distribute seed phrase fragments among family members, attorneys, or secure locations—ensuring no single point of failure compromises your holdings while enabling recovery when needed.
 
+## Key Takeaways
+
+- Choose "Private Key"
+3.
+- **SSS works better when**: you want an one-time backup that becomes active only after triggering conditions (death, incapacity).
+- **Any K points uniquely**: determine the polynomial, while K-1 or fewer points remain information-theoretically secure.
+- **Warning**: Run this on an air-gapped machine for production use.
+- **Uses the reference implementation**: from trezor/trezor-crypto.
+- **Use a hardware wallet**: to generate your seed initially, then export it in hex format for SSS processing.
+
 ## Understanding the Mathematics Behind SSS
 
 The mathematical foundation relies on polynomial interpolation over a finite field. To create K shares from a secret, you construct a random polynomial of degree K-1 where the constant term equals your seed phrase (encoded as a number). Evaluating this polynomial at K different points produces the shares. Any K points uniquely determine the polynomial, while K-1 or fewer points remain information-theoretically secure.

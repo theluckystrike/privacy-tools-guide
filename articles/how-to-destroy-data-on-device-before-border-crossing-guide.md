@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Crossing international borders with sensitive data requires careful preparation. Border agents in many countries have broad legal authority to examine devices, request passwords, and sometimes copy or retain device contents. Rather than surrendering access to your data, you may choose to securely destroy sensitive information before reaching the border. This guide covers practical methods for developers and power users to permanently erase data from devices while understanding the underlying security considerations.
 
+## Key Takeaways
+
+- **Transfer only what you genuinely need**: and ensure the backup itself uses strong encryption.
+- **Rather than surrendering access**: to your data, you may choose to securely destroy sensitive information before reaching the border.
+- **This guide covers practical**: methods for developers and power users to permanently erase data from devices while understanding the underlying security considerations.
+- **For cloud backups**: ensure you use services with strong end-to-end encryption where you control the keys.
+- **For external drives**: use LUKS encryption on Linux, FileVault on macOS, or BitLocker on Windows with strong passphrases.
+- **The `shred` command comes**: pre-installed on most Linux systems.
+
 ## Understanding the Threat Model
 
 Border crossing scenarios differ from typical data security situations. You face two primary risks: forced decryption under duress and forensic examination of device contents. Full disk encryption with a strong password provides protection against the latter, but border agents may demand the password under legal authority. Secure data destruction offers a different approach—ensuring sensitive data no longer exists on the device when you reach the border.

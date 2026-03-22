@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Your online presence grows with every account you create. That MySpace profile from 2008, the Twitter account you abandoned in 2019, and the Instagram you barely used all contain personal data that could be compromised in data breaches. Removing these accounts is a fundamental step in reducing your digital footprint. This guide walks you through deleting old social media accounts with practical methods, automation tools, and verification techniques.
 
+## Key Takeaways
+
+- **Use platform's support contact**: form 2.
+- **That MySpace profile from 2008**: the Twitter account you abandoned in 2019, and the Instagram you barely used all contain personal data that could be compromised in data breaches.
+- **Beyond security**: deleting unused accounts reduces the data companies hold about you, limiting exposure to future privacy violations.
+- **- Temporary email for**: throwaway accounts: When testing services, use temporary email addresses from services like Guerrilla Mail or 33mail.
+- **Attackers target these accounts**: because users are unlikely to notice unauthorized access.
+- **Select "Delete your account"**: and choose a reason.
+
 ## Why Deleting Old Accounts Matters
 
 Every dormant social media account represents a liability. Data breaches affect platforms regularly, and abandoned accounts often have outdated security settings. Attackers target these accounts because users are unlikely to notice unauthorized access. Beyond security, deleting unused accounts reduces the data companies hold about you, limiting exposure to future privacy violations.

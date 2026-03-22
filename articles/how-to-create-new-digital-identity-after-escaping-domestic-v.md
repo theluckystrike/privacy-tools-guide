@@ -15,8 +15,16 @@ tags: [privacy-tools-guide, api]---
 
 {% raw %}
 
-
 Creating a new digital identity requires more than just opening new accounts. For survivors of domestic violence, every digital footprint can become a vector for tracking, harassment, or coercion. This guide provides technical strategies for building an isolated, secure digital presence using tools and workflows accessible to developers and power users.
+
+## Key Takeaways
+
+- **Use your password manager**: to generate and store random strings: ``` Question: Mother's maiden name Answer: xK9#mP2$vL8@nQ4 ``` Store these as secure notes in your password manager.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use this SIM only**: for critical accounts.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Understanding the Threat Model
 

@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, vpn]---
 
 Creating an untraceable email account requires understanding how email services track users and how to systematically obscure identifying information. This guide covers the technical methods developers and power users can employ to create email accounts with minimal traceability.
 
+## Key Takeaways
+
+- **Burner phones**: Cash purchases, use once, discard
+3.
+- **Boot into a privacy-focused**: OS (Tails or Whonix) 2.
+- **Use a new browser**: profile 5.
+- **Both ProtonMail and Tutanota**: support PGP-style encryption natively for messages between their users.
+- **Creating an untraceable email**: account requires understanding how email services track users and how to systematically obscure identifying information.
+- **This guide covers the**: technical methods developers and power users can employ to create email accounts with minimal traceability.
+
 ## Understanding Email Tracking Mechanisms
 
 Email services collect multiple data points that can identify users:
