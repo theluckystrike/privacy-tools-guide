@@ -19,6 +19,15 @@ tags: [privacy-tools-guide, git, security, workflow]
 
 Accidentally committing sensitive information to a public repository is one of the most common and potentially devastating security mistakes developers make. Whether it's an API key, password, private key, or personal information, once committed to Git history, removing it completely becomes extraordinarily difficult. This guide covers comprehensive strategies and tools to prevent accidental commits of sensitive data in the first place.
 
+## Key Takeaways
+
+- **Root cause analysis within**: 24 hours 4.
+- **The `trailing-whitespace` hook eliminates**: accidental trailing spaces that can cause unnecessary diff noise.
+- **Instead**: use environment variables and secret management solutions.
+- **Revoke the exposed credential**: immediately # Contact the service provider if needed # 2.
+- **All credentials must be**: stored in environment variables or secret management systems 2.
+- **Pre-commit hooks must be**: installed on all developer workstations 3.
+
 ## The Gravity of Accidental Commits
 
 Unlike traditional file deletion, Git's distributed nature means that once you commit and push sensitive data, it exists in every clone of the repository. Even after removing the file from subsequent commits, the original commit remains in the history. Attackers actively scan public repositories for exposed credentials, using automated tools that can detect API keys, passwords, and other secrets within minutes of publication.
