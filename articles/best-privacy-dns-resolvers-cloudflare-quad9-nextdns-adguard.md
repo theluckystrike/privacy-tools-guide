@@ -17,6 +17,17 @@ tags: [privacy-tools-guide, best-of, privacy]---
 
 Your ISP's DNS resolver logs every website you visit, selling this data to data brokers. Switching to a privacy-focused DNS resolver takes 90 seconds and immediately blocks this tracking. However, DNS resolver privacy is murky—some claim "no logging" while keeping 24-hour retention. This guide compares actual logging practices, speed benchmarks, and configuration across Cloudflare 1.1.1.1, Quad9, NextDNS, and AdGuard based on 2026 published policies and independent testing.
 
+## Key Takeaways
+
+- **Switching to a privacy-focused**: DNS resolver takes 90 seconds and immediately blocks this tracking.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
+- **Which is better for beginners**: the first tool or the second tool?
+
+It depends on your background.
+
 ## How DNS Leaks Your Browsing
 
 When you visit google.com, your device asks a DNS resolver: "What's the IP address for google.com?" The resolver logs your IP address, the domain you requested, the time, and your device fingerprint. This data reveals:

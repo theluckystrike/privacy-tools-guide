@@ -17,6 +17,25 @@ intent-checked: true---
 
 Google Search dominates with 90% market share, tracking every query, click, and dwell time. Your search history creates a surveillance profile: what you research, what you buy, what worries you, what excites you. This information is valuable—sold to advertisers, shared with governments, and used to shape results you see. Privacy-focused search engines exist as alternatives, but they're not all equal. DuckDuckGo advertises privacy but funders have surveillance ties. Startpage proxies Google results (private wrapper, same results). Brave Search built its own index from scratch. Mojeek maintained an independent index for 20 years. SearXNG is open-source and self-hostable. This comparison covers privacy guarantees, result quality, pricing, and which engine fits which use case.
 
+## Key Takeaways
+
+- **Pricing**: Free with ads, or Premium ($45/year for ad-free)
+
+Verdict: Best if you want Google's search quality with full privacy.
+- **Pricing**: Free (basic), $15/month (priority)
+
+Verdict: Best if UK/GDPR privacy law matters to you, or if you value 20-year independence track record.
+- **Pricing**: Free
+
+Verdict: Best for privacy purists and those willing to accept 10-15% quality loss for total independence.
+- **Pricing**: Free
+
+Verdict: Best for technical users who want maximum control and transparency.
+- **Pricing**: Free (ad-supported)
+
+Verdict: Best for general-purpose searches if you accept minor quality trade-offs and Microsoft's presence via Bing backend.
+- **Real-world**: 93% accuracy on average (mixing best sources).
+
 ## How Google Search Works (and Why Privacy Matters)
 
 Google Search is free because users are the product. Every search is logged to your Google account (or Google Profile Cookie if not logged in).
