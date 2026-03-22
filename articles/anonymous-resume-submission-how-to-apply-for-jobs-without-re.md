@@ -33,6 +33,15 @@ Applying for jobs often requires revealing more personal information than necess
 
 This guide covers practical methods for developers and power users to submit applications without exposing their full identity.
 
+## Key Takeaways
+
+- **This guide covers practical**: methods for developers and power users to submit applications without exposing their full identity.
+- **Users verify employment at**: specific companies without revealing their identity to other users.
+- **The time invested in**: privacy protection fails if you slip and use personal contact information.
+- **Always use personal devices**: and networks for job search activities.
+- **Anonymous submission protects your**: privacy during the initial screening phases where you receive the most exposure.
+- **Most companies eventually need**: your legal name, Social Security number, and verification documents.
+
 ## Why Anonymous Resume Submission Matters
 
 Several scenarios make anonymous job applications valuable. You might be currently employed and not ready to inform your employer about your job search. You could be concerned about recruitment agencies selling your data. Perhaps you want to avoid geographic bias or prevent your current company from learning you're looking.

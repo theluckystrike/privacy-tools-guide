@@ -21,6 +21,15 @@ Most people pick a cloud storage provider based on price and storage size, then 
 This guide covers a systematic six-step audit process: reviewing privacy policies for specific red flags, requesting and analyzing your data export, auditing OAuth grants, verifying encryption claims, finding stale shared links, and reading transparency reports. For each problem found, concrete remediation options are listed.
 ---
 
+## Key Takeaways
+
+- **Zero-knowledge providers use client-side**: encryption before upload; the provider stores ciphertext only and provably cannot read the content.
+- **Revoke anything not used**: in the last 90 days unless you have a specific reason to keep it active.
+- **Run this check against the API endpoint, not just the main web domain**: some providers serve the web UI on TLS1.3 but use older configurations for their API backends.
+- **Configure your browser or**: desktop client to use an HTTP proxy (127.0.0.1:8080), install the mitmproxy CA certificate, then upload a file with known content.
+- **However, most providers claim "encryption" without specifying which model**: this audit process makes that distinction concrete.
+- **- Deleted file metadata**: Some providers include metadata for recently deleted files in the export — useful for confirming your deleted files are actually queued for deletion.
+
 ## What Cloud Providers Can Access
 
 | Provider type | What they can see |

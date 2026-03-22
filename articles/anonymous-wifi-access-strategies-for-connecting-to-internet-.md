@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Every time you connect to a WiFi network, your device reveals multiple identifiers that network operators, advertisers, and surveillance systems can harvest to build a persistent profile of your physical movements. Your MAC address, DHCP hostname, HTTP user agent, and even subtle radio characteristics create a fingerprint that persists across networks. This guide provides practical strategies for developers and power users to connect anonymously using layer 2 through layer 7 privacy controls.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This guide provides practical**: strategies for developers and power users to connect anonymously using layer 2 through layer 7 privacy controls.
+- **Windows 11 randomizes MAC**: addresses for random SSID probing but often uses the real address for trusted networks.
+- **-o %i -p udp**: --dport 53 -j DROP; iptables -I OUTPUT !
+- **Always use MAC randomization**: for WiFi connections 2.
+
 ## Device Identity at the Network Layer
 
 Before implementing anonymity strategies, you need to understand what your device reveals at each network layer. At layer 2, your MAC address serves as an unique hardware identifier that WiFi access points log immediately upon association. Even before authentication completes, your device transmits this 48-bit identifier in probe requests and association frames.

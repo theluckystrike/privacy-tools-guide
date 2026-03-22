@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 The average Node.js project pulls in hundreds of transitive dependencies. Any one of them can introduce a vulnerability, or worse, malicious code designed to steal credentials or environment variables. This guide covers the full audit workflow from basic npm audit to CI automation.
 
+## Key Takeaways
+
+- **Any one of them**: can introduce a vulnerability, or worse, malicious code designed to steal credentials or environment variables.
+- **This guide covers step 1**: npm audit, step 2: fix vulnerabilities, step 3: socket.dev for supply chain analysis, with specific setup instructions
+- **A free tier is**: available with feature limitations compared to paid plans
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Step 1: npm audit
 
 The built-in audit command checks your installed packages against the npm advisory database.
