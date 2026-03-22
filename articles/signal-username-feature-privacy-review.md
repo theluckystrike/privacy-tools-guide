@@ -232,6 +232,35 @@ Several non-obvious operational practices improve your username privacy posture:
 
 **Failing to update stored identifiers in bots or integrations.** If you use signal-cli or an automation that stores your username, remember that discriminator changes will break stored identifiers. Your automation should query and store the full `username#discriminator` form and handle 404 responses by refreshing the stored value.
 
+
+## Frequently Asked Questions
+
+
+**Is Signal worth the price?**
+
+Value depends on your usage frequency and specific needs. If you use Signal daily for core tasks, the cost usually pays for itself through time savings. For occasional use, consider whether a free alternative covers enough of your needs.
+
+
+**What are the main drawbacks of Signal?**
+
+No tool is perfect. Common limitations include pricing for advanced features, learning curve for power features, and occasional performance issues during peak usage. Weigh these against the specific benefits that matter most to your workflow.
+
+
+**How does Signal compare to its closest competitor?**
+
+The best competitor depends on which features matter most to you. For some users, a simpler or cheaper alternative works fine. For others, Signal's specific strengths justify the investment. Try both before committing to an annual plan.
+
+
+**Does Signal have good customer support?**
+
+Support quality varies by plan tier. Free and basic plans typically get community forum support and documentation. Paid plans usually include email support with faster response times. Enterprise plans often include dedicated support contacts.
+
+
+**Can I migrate away from Signal if I decide to switch?**
+
+Check the export options before committing. Most tools let you export your data, but the format and completeness of exports vary. Test the export process early so you are not locked in if your needs change later.
+
+
 ## Related Articles
 
 - [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)

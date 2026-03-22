@@ -5,7 +5,7 @@ description: "Install and configure I2P for anonymous browsing, set up eepsites,
 date: 2026-03-22
 author: theluckystrike
 permalink: /i2p-anonymous-network-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

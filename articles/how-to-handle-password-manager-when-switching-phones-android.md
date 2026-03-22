@@ -191,6 +191,255 @@ Throughout the migration process, maintain these security practices:
 
 **Large vault import timeout**: iOS may kill the app during long imports. Split large exports into smaller batches or use desktop import when available.
 
+## Advanced Migration Scenarios
+
+### Migrating Between Different Password Managers
+
+Cross-platform migrations (Bitwarden to 1Password, etc.) present additional complexity:
+
+```bash
+#!/bin/bash
+# Convert between password manager formats
+
+# Bitwarden CSV to 1Password CSV
+convert_bitwarden_to_1password() {
+  local input_file="$1"
+  local output_file="$2"
+
+  # Bitwarden columns: folder,favorite,type,name,notes,fields,login_uri,login_username,login_password,login_totp
+  # 1Password columns: title,url,username,password,notes
+
+  awk -F',' 'NR>1 {
+    # Extract relevant fields
+    name=$4
+    url=$7
+    username=$8
+    password=$9
+    notes=$5
+
+    # Output in 1Password format
+    printf "\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\n", name, url, username, password, notes
+  }' "$input_file" > "$output_file"
+
+  echo "Converted $input_file to 1Password format: $output_file"
+}
+
+convert_bitwarden_to_1password "bitwarden-export.csv" "1password-import.csv"
+```
+
+### Handling Sub-passwords and Security Questions
+
+Some password managers store additional security data that CSV doesn't capture:
+
+```json
+{
+  "entry": {
+    "name": "Bank Account",
+    "password": "MainPassword123!",
+    "security_questions": [
+      {
+        "question": "What was your first pet's name?",
+        "answer": "Fluffy"
+      }
+    ],
+    "additional_fields": {
+      "account_number": "xxxx-xxxx-1234",
+      "branch_code": "NYC001"
+    }
+  }
+}
+```
+
+Export to JSON format (not CSV) to preserve this metadata:
+
+```bash
+# Bitwarden: Export with all metadata
+bw export --format json --output vault-complete.json
+
+# Verify all security questions included
+jq '.items[].securityQuestions' vault-complete.json | grep -c "question"
+```
+
+### Synchronization Verification Protocol
+
+After migration, verify completeness:
+
+```bash
+#!/bin/bash
+# verify-migration.sh
+
+source_app="$1"
+target_app="$2"
+
+# Count entries in source
+source_count=$(bw list items | jq 'length')
+
+# Wait for target to sync
+echo "Waiting 60 seconds for sync..."
+sleep 60
+
+# Count entries in target
+target_count=$(op list items | jq 'length')
+
+if [ "$source_count" -eq "$target_count" ]; then
+  echo "✓ Migration verified: $source_count items in both vaults"
+else
+  echo "✗ Migration incomplete"
+  echo "  Source: $source_count items"
+  echo "  Target: $target_count items"
+  echo "  Missing: $((source_count - target_count))"
+fi
+```
+
+## Emergency Recovery from Migration Failure
+
+If migration fails partway through, recovery requires careful sequencing:
+
+```bash
+# Step 1: Restore from backup (if available)
+restore_from_backup() {
+  local backup_file="$1"
+  local backup_date=$(date -r "$backup_file" '+%Y-%m-%d')
+
+  echo "Restoring from backup dated $backup_date"
+
+  # Decrypt backup if encrypted
+  if [[ "$backup_file" == *.gpg ]]; then
+    gpg --decrypt "$backup_file" > vault-restored.json
+  else
+    cp "$backup_file" vault-restored.json
+  fi
+
+  # Import into target manager
+  echo "Importing into target password manager..."
+}
+
+# Step 2: Verify recovery
+verify_recovery() {
+  # Check for data corruption
+  jq . vault-restored.json > /dev/null
+  if [ $? -ne 0 ]; then
+    echo "ERROR: Backup file is corrupted"
+    return 1
+  fi
+
+  # Count items
+  local item_count=$(jq '.items | length' vault-restored.json)
+  echo "Recovered $item_count items"
+  return 0
+}
+
+restore_from_backup "vault-backup-2026-03-20.json.gpg"
+verify_recovery
+```
+
+## Device-Specific Migration Quirks
+
+### Android Quirks
+
+- Some Android password managers fail to export TOTP if device time is not synchronized
+- Android 12+ enforces stricter file permissions; exports may fail without additional permissions
+- NFC-based unlock (used by some premium managers) doesn't transfer to iPhone
+
+### iOS Quirks
+
+- iCloud Keychain may interfere with third-party password manager imports
+- iOS forces you to choose a system password manager; switching later requires manual verification
+- Some password managers don't support app extensions on older iOS versions (requiring manual entry)
+
+## Security Practices Throughout Migration
+
+Maintain these practices during the transition:
+
+```bash
+#!/bin/bash
+# migration-security-checklist.sh
+
+# 1. Backup original vault before any export
+cp ~/.password-manager/vault.db vault-backup-$(date +%s).db
+gpg --symmetric vault-backup-*.db
+
+# 2. Verify backup integrity
+gpg vault-backup-*.db.gpg --output - | md5sum
+
+# 3. Generate secure temporary passwords
+# (Use these during transition if accounts need password reset)
+
+# 4. Document migration in audit log
+echo "[$(date)] Password manager migration started" >> migration.log
+
+# 5. Securely delete original exports after verification
+shred -vfz -n 7 bitwarden-export.json  # 7-pass overwrite
+
+# 6. Verify new manager accepts all accounts
+# Test login to 5 random accounts to confirm import worked
+
+# 7. Update emergency access contacts
+# (If your password manager has emergency access sharing)
+```
+
+## Post-Migration: Ongoing Verification
+
+After successful migration, continue verifying integrity:
+
+```bash
+#!/bin/bash
+# monthly-vault-audit.sh
+
+# Run monthly to catch issues early
+if [ "$(date +%d)" == "15" ]; then
+  # Compare vault count to baseline
+  current_count=$(bw list items | jq 'length')
+  baseline_count=347  # Your baseline count
+
+  if [ "$current_count" -ne "$baseline_count" ]; then
+    echo "WARNING: Vault size changed from $baseline_count to $current_count"
+    bw list items | jq '.[] | {name, uri}' > vault-audit-$(date +%Y%m%d).json
+  fi
+
+  # Verify no corrupted entries
+  bw list items | jq '.[] | select(.login.password | length < 8)' | wc -l > short-passwords.txt
+
+  if [ $(cat short-passwords.txt) -gt 0 ]; then
+    echo "WARNING: Found $(cat short-passwords.txt) entries with suspiciously short passwords"
+  fi
+fi
+```
+
+## Conclusion
+
+Switching from Android to iPhone password manager migration requires careful attention to export formats, encryption, and compatibility. Cloud sync provides the simplest approach, while encrypted exports offer maximum transparency and control. TOTP seeds require explicit handling, and CSV migrations demand careful field mapping.
+
+The most common migration failures stem from incomplete exports (TOTP excluded) and time-of-sync issues (iOS importing before Android upload completes). Test with a subset of accounts before full migration, and maintain encrypted backups throughout the process. After successful migration, verify vault integrity monthly to catch sync issues early.
+
+
+## Frequently Asked Questions
+
+
+**How long does it take to handle password manager when switching phones?**
+
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+
+
+**What are the most common mistakes to avoid?**
+
+The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+
+
+**Do I need prior experience to follow this guide?**
+
+Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+
+
+**Is this approach secure enough for production?**
+
+The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
+
+
+**Where can I get help if I run into issues?**
+
+Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+
 
 ## Related Articles
 
