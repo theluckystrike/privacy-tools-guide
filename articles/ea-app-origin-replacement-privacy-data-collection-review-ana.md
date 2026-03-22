@@ -27,6 +27,20 @@ The EA app, formerly known as Origin, serves as Electronic Arts' primary desktop
 - **This guide provides a**: technical analysis of EA app data collection, privacy implications, and practical steps developers and power users can take to minimize exposure.
 - **If you use this**: product daily for core tasks, the cost usually pays for itself through time savings.
 
+## Table of Contents
+
+- [Understanding EA App Architecture](#understanding-ea-app-architecture)
+- [Data Collection Breakdown](#data-collection-breakdown)
+- [Privacy Implications for Power Users](#privacy-implications-for-power-users)
+- [Auditing EA App Data Collection](#auditing-ea-app-data-collection)
+- [Privacy-Focused Alternatives and Mitigations](#privacy-focused-alternatives-and-mitigations)
+- [Reviewing Your EA Data](#reviewing-your-ea-data)
+- [Making Informed Decisions](#making-informed-decisions)
+- [Practical Mitigation Strategies for Power Users](#practical-mitigation-strategies-for-power-users)
+- [Understanding EA App Alternatives](#understanding-ea-app-alternatives)
+- [Data Access Rights](#data-access-rights)
+- [Compliance and Monitoring](#compliance-and-monitoring)
+
 ## Understanding EA App Architecture
 
 The EA app replaced Origin in 2022, bringing a refreshed interface while maintaining the core functionality. The application runs as a persistent background service, maintaining connections to EA servers for authentication, social features, and automatic updates.

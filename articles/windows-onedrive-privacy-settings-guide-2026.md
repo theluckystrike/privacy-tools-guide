@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Windows OneDrive Privacy Settings Guide 2026"
-description: "A technical guide to configuring OneDrive privacy settings on Windows for developers and power users. Covers registry tweaks, Group"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /windows-onedrive-privacy-settings-guide-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -551,10 +538,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
-- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
-- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
-
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

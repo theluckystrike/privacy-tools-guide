@@ -40,6 +40,21 @@ It depends on your background.
 - **the first tool tends**: to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration.
 - **Try the free tier**: or trial of each before committing to a paid plan.
 
+## Table of Contents
+
+- [The Self-Hosted Email Market](#the-self-hosted-email-market)
+- [Mail-in-a-Box: Easiest Setup](#mail-in-a-box-easiest-setup)
+- [Mailcow: Best Spam Filtering](#mailcow-best-spam-filtering)
+- [iRedMail: Traditional, Stable](#iredmail-traditional-stable)
+- [Modoboa: Modern and Flexible](#modoboa-modern-and-flexible)
+- [Docker Mailserver: Maximum Control](#docker-mailserver-maximum-control)
+- [Comparison Matrix](#comparison-matrix)
+- [Migration Costs (Switching Providers)](#migration-costs-switching-providers)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Cost Comparison Over 1 Year](#cost-comparison-over-1-year)
+- [Bottom Line](#bottom-line)
+- [Related Reading](#related-reading)
+
 ## The Self-Hosted Email Market
 
 | Solution | Setup Time | Monthly Cost | Maintenance | Spam Fighting |

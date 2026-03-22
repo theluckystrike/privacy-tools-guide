@@ -42,6 +42,17 @@ Most mainstream smart doorbells force you into recurring cloud subscription plan
 - **Network Attached Storage (NAS) integration**: Professional-grade solution using existing home server infrastructure
 3.
 
+## Table of Contents
+
+- [Why Local Storage Matters](#why-local-storage-matters)
+- [Privacy and Legal Implications of Cloud Doorbells](#privacy-and-legal-implications-of-cloud-doorbells)
+- [Technical Approaches to Local Video Storage](#technical-approaches-to-local-video-storage)
+- [Comparing Local Storage Doorbell Options](#comparing-local-storage-doorbell-options)
+- [Recommended Hardware Alternatives](#recommended-hardware-alternatives)
+- [Integrating with Home Automation](#integrating-with-home-automation)
+- [Network Isolation for Maximum Privacy](#network-isolation-for-maximum-privacy)
+- [Storage Considerations](#storage-considerations)
+
 ## Why Local Storage Matters
 
 When your doorbell streams every motion event to a cloud provider, you lose control over that data. The vendor decides retention policies, access controls, and can terminate service at will. Local storage puts you in control — you own the hardware, the storage medium, and the data. This approach eliminates subscription fees entirely after initial hardware purchase.

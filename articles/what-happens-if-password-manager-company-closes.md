@@ -40,6 +40,18 @@ If your password manager company shuts down, you lose access to cloud sync and w
 - **Most password managers support**: encrypted export formats.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Shutdown Spectrum](#the-shutdown-spectrum)
+- [What Actually Happens to Your Data](#what-actually-happens-to-your-data)
+- [Critical Mitigation Strategies](#critical-mitigation-strategies)
+- [Technical Deep Dive: Encryption and Data Ownership](#technical-deep-dive-encryption-and-data-ownership)
+- [Real-World Examples](#real-world-examples)
+- [Building Your Contingency Plan](#building-your-contingency-plan)
+- [Code Example: Automated Backup Script](#code-example-automated-backup-script)
+- [Auditing Your Password Vault](#auditing-your-password-vault)
+- [Generating Strong Passphrases](#generating-strong-passphrases)
+
 ## The Shutdown Spectrum
 
 Password manager companies can cease operations in several ways, each with different implications for your data:

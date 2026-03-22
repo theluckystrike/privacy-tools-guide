@@ -41,6 +41,18 @@ A network namespace is a Linux kernel feature that creates an isolated copy of t
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [How It Works](#how-it-works)
+- [Prerequisites](#prerequisites)
+- [Step 1: Create the Network Namespace](#step-1-create-the-network-namespace)
+- [Step 2: Set Up WireGuard Inside the Namespace](#step-2-set-up-wireguard-inside-the-namespace)
+- [Step 3: Run Applications Inside the Namespace](#step-3-run-applications-inside-the-namespace)
+- [Step 4: DNS Inside the Namespace](#step-4-dns-inside-the-namespace)
+- [Step 5: Automate with a Script](#step-5-automate-with-a-script)
+- [Cleanup](#cleanup)
+- [Related Reading](#related-reading)
+
 ## How It Works
 
 The approach:

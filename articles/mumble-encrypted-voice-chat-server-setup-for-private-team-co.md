@@ -26,6 +26,15 @@ Mumble is an open-source voice chat application that provides low-latency, encry
 - **The first time a user connects**: they can create a certificate that gets stored locally.
 - **Certificate Management**: Have each user generate a certificate in Settings > Certificate > Create New Certificate.
 
+## Table of Contents
+
+- [Why Choose Mumble for Team Communication](#why-choose-mumble-for-team-communication)
+- [Prerequisites](#prerequisites)
+- [Performance Optimization](#performance-optimization)
+- [Advanced Security Hardening](#advanced-security-hardening)
+- [Performance Tuning for Large Teams](#performance-tuning-for-large-teams)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Choose Mumble for Team Communication
 
 Mumble uses Opus for audio encoding, which delivers excellent voice quality at relatively low bandwidth. The server-to-client communication is encrypted using AES-128-CBC with OCB mode by default, providing strong protection for your conversations. The client also supports end-to-end encryption through the use of certificates, ensuring that even the server operator cannot listen to your communications.

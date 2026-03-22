@@ -29,6 +29,17 @@ The European Union's Digital Markets Act (DMA) represents the most significant s
 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What the DMA Actually Requires](#what-the-dma-actually-requires)
+- [How Gatekeepers Have Changed Data Practices](#how-gatekeepers-have-changed-data-practices)
+- [Developer Implications](#developer-implications)
+- [Power User Benefits](#power-user-benefits)
+- [Checking Your Privacy Settings](#checking-your-privacy-settings)
+- [Looking Forward](#looking-forward)
+- [DMA Enforcement Actions: What Has Actually Been Penalized](#dma-enforcement-actions-what-has-actually-been-penalized)
+- [Preparing Your Applications for DMA-Derived Privacy Controls](#preparing-your-applications-for-dma-derived-privacy-controls)
+
 ## What the DMA Actually Requires
 
 The DMA targets companies designated as "gatekeepers"—platforms with significant market reach and revenue. As of 2026, this includes Google, Meta (Facebook/Instagram), Apple, Microsoft, Amazon, and ByteDance (TikTok). These companies must comply with a set of interoperability, data portability, and privacy-focused obligations.
@@ -269,11 +280,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [China Social Credit System Digital Privacy Implications](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Children's Online Privacy Protection Act](/privacy-tools-guide/children-online-privacy-protection-act-coppa-rights-what-par/)
-- [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
-- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

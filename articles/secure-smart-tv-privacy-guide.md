@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -27,6 +28,13 @@ Smart TVs are advertising terminals that also show video. Automatic Content Reco
 - **The voice data is**: used to improve voice recognition models, and may be stored for months.
 - **This includes timestamps of**: when you turn the TV on and off, which apps you use and for how long, and what buttons you press on the remote.
 - **Vizio was capturing ACR**: data and selling it to data brokers without adequately disclosing this to users.
+
+## Table of Contents
+
+- [What Smart TVs Collect](#what-smart-tvs-collect)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## What Smart TVs Collect
 
@@ -444,6 +452,14 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Private Home Networking Setup Guide](/privacy-tools-guide/private-home-network-setup/)
 
 ---
+
+## Related Articles
+
+- [Smart Tv Tracking What Data Samsung Lg Vizio Collect About](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
+- [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
+- [macOS Siri Privacy Controls How To Prevent Voice Data](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -38,6 +38,15 @@ Magic Wormhole provides a secure, terminal-based method for transferring files b
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Usage Patterns](#advanced-usage-patterns)
+- [Security Considerations](#security-considerations)
+- [Common Troubleshooting](#common-troubleshooting)
+- [When to Use Magic Wormhole](#when-to-use-magic-wormhole)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

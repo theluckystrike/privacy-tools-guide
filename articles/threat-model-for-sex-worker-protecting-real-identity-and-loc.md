@@ -27,6 +27,15 @@ Separate your professional and personal identities completely: use dedicated dev
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Threat Environment Assessment](#threat-environment-assessment)
+- [Identity Separation Architecture](#identity-separation-architecture)
+- [Location Privacy Implementation](#location-privacy-implementation)
+- [Communication Security](#communication-security)
+- [Payment Privacy](#payment-privacy)
+- [Operational Security Checklist](#operational-security-checklist)
+
 ## Threat Environment Assessment
 
 Before implementing protections, identify what you're defending against:

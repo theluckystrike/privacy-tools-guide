@@ -44,6 +44,17 @@ Websites use the JavaScript `screen` object to collect your screen resolution, c
 - **Running at 1920x1080 or**: 1366x768 makes you blend in with more users.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is Screen Resolution Fingerprinting?](#what-is-screen-resolution-fingerprinting)
+- [Why Display Settings Matter for Privacy](#why-display-settings-matter-for-privacy)
+- [Techniques to Mitigate Screen Fingerprinting](#techniques-to-mitigate-screen-fingerprinting)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Quantifying Fingerprinting Effectiveness](#quantifying-fingerprinting-effectiveness)
+- [Fingerprinting Countermeasures: Technical Deep-Dive](#fingerprinting-countermeasures-technical-deep-dive)
+- [Browser-Specific Privacy Configurations](#browser-specific-privacy-configurations)
+- [The Bigger Picture](#the-bigger-picture)
+
 ## What Is Screen Resolution Fingerprinting?
 
 Screen resolution fingerprinting is a browser fingerprinting technique that collects information about your display configuration to create a unique device identifier. While a single data point like your screen resolution might seem generic, combining it with other metrics creates a highly distinctive fingerprint.

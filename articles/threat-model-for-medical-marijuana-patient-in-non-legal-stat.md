@@ -41,6 +41,27 @@ Never discuss medical marijuana use in unencrypted channels, even casually.
 - **Who's your threat actor?**: Law enforcement, family members seeking legal use, or just general privacy? 5.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Your Threat Market](#understanding-your-threat-market)
+- [Digital Identity Protection](#digital-identity-protection)
+- [Financial Privacy](#financial-privacy)
+- [Communication Security](#communication-security)
+- [Physical Security Considerations](#physical-security-considerations)
+- [Travel Security](#travel-security)
+- [Documentation and Legal Protection](#documentation-and-legal-protection)
+- [Building Your Security Stack](#building-your-security-stack)
+- [Advanced Threat Modeling Scenarios](#advanced-threat-modeling-scenarios)
+- [Cryptocurrency Payment Strategies](#cryptocurrency-payment-strategies)
+- [Operational Security Discipline](#operational-security-discipline)
+- [Incident Response Planning](#incident-response-planning)
+- [Medical Documentation Strategies](#medical-documentation-strategies)
+- [Avoiding Common Operational Security Mistakes](#avoiding-common-operational-security-mistakes)
+- [State-Specific Considerations](#state-specific-considerations)
+- [Building Your Threat Model](#building-your-threat-model)
+- [Understanding Your Legal Options](#understanding-your-legal-options)
+- [Evaluating Your Security Implementation](#evaluating-your-security-implementation)
+
 ## Understanding Your Threat Market
 
 Medical marijuana patients in non-legal states face several distinct threat categories that differ significantly from typical privacy concerns. Law enforcement interest, data broker aggregation, and digital tracking create a multifaceted risk profile requiring careful consideration.

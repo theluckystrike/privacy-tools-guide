@@ -25,6 +25,20 @@ Inspect and revoke macOS TCC (Transparency, Consent, and Control) database entri
 - **If no entry exists**: the system prompts the user for permission.
 - **For power users**: it means knowing which apps have been granted access helps identify potential privacy risks.
 
+## Table of Contents
+
+- [How TCC Works on macOS](#how-tcc-works-on-macos)
+- [Accessing the TCC Database](#accessing-the-tcc-database)
+- [Common TCC Services You Should Audit](#common-tcc-services-you-should-audit)
+- [Revoking TCC Entries for Security](#revoking-tcc-entries-for-security)
+- [Practical Examples](#practical-examples)
+- [Security Considerations](#security-considerations)
+- [Extended TCC Service Reference](#extended-tcc-service-reference)
+- [Advanced TCC Queries](#advanced-tcc-queries)
+- [System Integrity Protection and TCC](#system-integrity-protection-and-tcc)
+- [TCC Database Corruption and Recovery](#tcc-database-corruption-and-recovery)
+- [Automating TCC Management for Security Teams](#automating-tcc-management-for-security-teams)
+
 ## How TCC Works on macOS
 
 Every time an application requests access to a protected resource—be it the camera, microphone, calendar, or desktop folder—macOS checks the TCC database. If no entry exists, the system prompts the user for permission. Once granted, the decision is stored in TCC, and subsequent requests are allowed automatically.

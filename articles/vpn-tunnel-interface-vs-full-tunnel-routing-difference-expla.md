@@ -50,6 +50,24 @@ Choose tunnel interface routing if you need simultaneous access to local resourc
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [What Is a Tunnel Interface?](#what-is-a-tunnel-interface)
+- [Full Tunnel Routing Explained](#full-tunnel-routing-explained)
+- [Key Differences Between Tunnel Interface and Full Tunnel](#key-differences-between-tunnel-interface-and-full-tunnel)
+- [Use Cases for Each Approach](#use-cases-for-each-approach)
+- [Implementation Examples](#implementation-examples)
+- [Security Considerations](#security-considerations)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+- [Advanced Routing Policy Management](#advanced-routing-policy-management)
+- [DNS Configuration for Split Routing](#dns-configuration-for-split-routing)
+- [Linux iptables Rules for Tunnel Interface Enforcement](#linux-iptables-rules-for-tunnel-interface-enforcement)
+- [macOS Packet Tunnel Implementation](#macos-packet-tunnel-implementation)
+- [Windows Network Extension (Wintun)](#windows-network-extension-wintun)
+- [Bandwidth and Latency Monitoring](#bandwidth-and-latency-monitoring)
+- [VPN Connection Recovery and Failover](#vpn-connection-recovery-and-failover)
+- [Practical Testing Framework](#practical-testing-framework)
+
 ## What Is a Tunnel Interface?
 
 A tunnel interface represents a virtual network interface created by the VPN software. Instead of routing all traffic through the VPN, you can treat the tunnel as a specific network route—similar to how you might have multiple network adapters on a single machine. The tunnel interface gets its own IP address from the VPN's address space, and you decide which traffic flows through it.

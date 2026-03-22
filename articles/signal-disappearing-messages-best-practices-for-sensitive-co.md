@@ -38,6 +38,17 @@ Signal's disappearing messages feature provides a powerful layer of protection f
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **This guide covers the**: technical implementation, security considerations, and practical workflows that developers and power users should adopt for sensitive communication scenarios.
 
+## Table of Contents
+
+- [How Signal Disappearing Messages Work Under the Hood](#how-signal-disappearing-messages-work-under-the-hood)
+- [Configuring Disappearing Messages Effectively](#configuring-disappearing-messages-effectively)
+- [Integration Patterns for Developer Workflows](#integration-patterns-for-developer-workflows)
+- [Security Considerations and Limitations](#security-considerations-and-limitations)
+- [Verification and Best Practices Checklist](#verification-and-best-practices-checklist)
+- [Disaster Recovery and Operational Procedures](#disaster-recovery-and-operational-procedures)
+- [Scaling Disappearing Messages to Teams](#scaling-disappearing-messages-to-teams)
+- [Limitations Under Device Compromise](#limitations-under-device-compromise)
+
 ## How Signal Disappearing Messages Work Under the Hood
 
 Signal's disappearing messages operate at the application layer, independent of end-to-end encryption. When enabled in a conversation, the app associates a timer with each outgoing message. Upon timer expiration, Signal deletes the local message and, more importantly, removes the corresponding cryptographic key from the recipient's device.

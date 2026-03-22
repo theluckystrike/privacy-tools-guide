@@ -42,6 +42,15 @@ This guide focuses on what actually matters for day-to-day safe Tor usage.
 - **Test download safety echo**: "Download safety scan..." # Use VirusTotal or similar (accessed via Tor) # 5.
 - **This guide focuses on**: what actually matters for day-to-day safe Tor usage.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Tails OS: Better Than Tor Browser Alone](#tails-os-better-than-tor-browser-alone)
+- [Tor Browser Security Level Practical Comparison](#tor-browser-security-level-practical-comparison)
+- [Advanced: Using Tails OS for Tor](#advanced-using-tails-os-for-tor)
+- [Onion Site Access Best Practices](#onion-site-access-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

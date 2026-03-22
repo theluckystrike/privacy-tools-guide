@@ -42,6 +42,21 @@ Canvas fingerprinting is one of the most sophisticated tracking techniques used 
 - **Use "Safest" security level**: Disables JavaScript which eliminates many fingerprinting vectors
 4.
 
+## Table of Contents
+
+- [What is Canvas Fingerprinting?](#what-is-canvas-fingerprinting)
+- [How Tor Browser Protects Against Canvas Fingerprinting](#how-tor-browser-protects-against-canvas-fingerprinting)
+- [Configuring Tor Browser for Maximum Protection](#configuring-tor-browser-for-maximum-protection)
+- [Understanding the Limitations](#understanding-the-limitations)
+- [Best Practices for 2026](#best-practices-for-2026)
+- [Advanced Canvas Protection Techniques](#advanced-canvas-protection-techniques)
+- [Fingerprinting Attack Detection](#fingerprinting-attack-detection)
+- [Comparison: Tor Browser vs Firefox with Extensions](#comparison-tor-browser-vs-firefox-with-extensions)
+- [Testing Canvas Protection Across Sessions](#testing-canvas-protection-across-sessions)
+- [Canvas Protection in Tor Browser v2026](#canvas-protection-in-tor-browser-v2026)
+- [Best Practices for 2026](#best-practices-for-2026)
+- [Testing Your Protection](#testing-your-protection)
+
 ## What is Canvas Fingerprinting?
 
 Canvas fingerprinting exploits the HTML5 canvas element to create a unique identifier for your browser. When a website renders graphics through the canvas API, subtle differences in hardware, graphics drivers, and font rendering produce distinct output. These microscopic variations create a fingerprint that persists across sessions.

@@ -57,6 +57,14 @@ Before choosing a tool, understand your risks:
 
 ## Prerequisites
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Comparison Table](#comparison-table)
+- [Threat Model Decision Tree](#threat-model-decision-tree)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 Before you begin, make sure you have the following ready:
 
 - A computer running macOS, Linux, or Windows

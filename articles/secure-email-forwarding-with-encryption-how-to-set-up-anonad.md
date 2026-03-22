@@ -41,6 +41,13 @@ Email privacy is a fundamental concern for developers and power users who manage
 - **The key difference lies**: in their architecture: Anonaddy is open-source and self-hostable, while SimpleLogin offers both hosted and self-hosted versions.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: API Integration for Developers](#advanced-api-integration-for-developers)
+- [Best Practices for Production Use](#best-practices-for-production-use)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

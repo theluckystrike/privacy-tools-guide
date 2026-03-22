@@ -27,6 +27,23 @@ Korean webtoon platforms have exploded in popularity globally, but many of the m
 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Korean Webtoon Sites Are Geoblocked](#why-korean-webtoon-sites-are-geoblocked)
+- [VPN Configuration for Korean Webtoon Access](#vpn-configuration-for-korean-webtoon-access)
+- [Browser Configuration for Korean Platforms](#browser-configuration-for-korean-platforms)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Alternative Approaches](#alternative-approaches)
+- [Advanced Geoblocking Detection and Evasion](#advanced-geoblocking-detection-and-evasion)
+- [Protocol Optimization for Streaming Quality](#protocol-optimization-for-streaming-quality)
+- [Korean CDN Detection and Routing](#korean-cdn-detection-and-routing)
+- [Smart DNS Service Comparison for Webtoons](#smart-dns-service-comparison-for-webtoons)
+- [Content Unlocking and Premium Access](#content-unlocking-and-premium-access)
+- [VPN Performance Monitoring for Webtoons](#vpn-performance-monitoring-for-webtoons)
+- [Multi-Provider Failover Setup](#multi-provider-failover-setup)
+- [Legal and Content Rights Considerations](#legal-and-content-rights-considerations)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+
 ## Why Korean Webtoon Sites Are Geoblocked
 
 Korean webtoon platforms implement geo-restriction for several business reasons. Licensing agreements with creators often restrict content to specific geographic regions. Additionally, platforms may offer different pricing tiers and content catalogs based on regional licensing. The technical blocking mechanisms these platforms use include:

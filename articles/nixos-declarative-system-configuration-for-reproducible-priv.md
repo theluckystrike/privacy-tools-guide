@@ -40,6 +40,17 @@ NixOS enables privacy-hardened, reproducible Linux systems through declarative c
 - **This guide shows how**: to set up and maintain a privacy-focused NixOS system with practical examples.
 - **Because Nix pins exact versions**: moving this file to another machine produces identical results.
 
+## Table of Contents
+
+- [What Makes NixOS Different](#what-makes-nixos-different)
+- [Building a Privacy-Hardened Configuration](#building-a-privacy-hardened-configuration)
+- [Kernel Hardening with NixOS](#kernel-hardening-with-nixos)
+- [Reproducible Development Environments](#reproducible-development-environments)
+- [Secrets Management with NixOps](#secrets-management-with-nixops)
+- [Atomic Updates and Rollback Strategy](#atomic-updates-and-rollback-strategy)
+- [Building Your Configuration](#building-your-configuration)
+- [Maintaining Your System Over Time](#maintaining-your-system-over-time)
+
 ## What Makes NixOS Different
 
 NixOS uses the Nix package manager as its foundation. Rather than installing packages into a shared filesystem hierarchy, Nix stores each package in an isolated store path based on its dependencies and version. This isolation means you can have multiple versions of the same software installed simultaneously without conflicts. More importantly, the entire system configuration lives in `/etc/nixos/configuration.nix`, where you declare what you want rather than what commands to run.

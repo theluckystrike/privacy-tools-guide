@@ -27,6 +27,13 @@ Control Facebook privacy through Settings > Privacy by restricting "Who can see 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: AccountKit and Login API](#advanced-accountkit-and-login-api)
+- [Privacy Comparison: Facebook vs. Alternatives (2026)](#privacy-comparison-facebook-vs-alternatives-2026)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

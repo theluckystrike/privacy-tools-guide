@@ -40,6 +40,22 @@ Choose Bitwarden if you need self-hosting, extensive CLI automation, and mature 
 - **Proton Pass has a**: more limited open-source footprint.
 - **The most recent (2023)**: audit found the codebase follows security best practices.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Zero-Knowledge Architecture](#zero-knowledge-architecture)
+- [Open Source and Auditing](#open-source-and-auditing)
+- [Developer Integrations and API Access](#developer-integrations-and-api-access)
+- [Security Features Comparison](#security-features-comparison)
+- [Practical Considerations for Developers](#practical-considerations-for-developers)
+- [Secret Management Alternative](#secret-management-alternative)
+- [Password Generation and Strength Testing](#password-generation-and-strength-testing)
+- [Audit and Certification Status](#audit-and-certification-status)
+- [Breach Response and Transparency](#breach-response-and-transparency)
+- [Cost and Plan Breakdown](#cost-and-plan-breakdown)
+- [Integration Scenarios](#integration-scenarios)
+- [Final Recommendation Framework](#final-recommendation-framework)
+
 ## Encryption Architecture
 
 Both managers use AES-256 encryption, but their key derivation approaches differ significantly.

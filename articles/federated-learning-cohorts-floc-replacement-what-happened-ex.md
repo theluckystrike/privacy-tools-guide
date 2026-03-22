@@ -227,6 +227,13 @@ The story of FLoC demonstrates how difficult it is to balance advertising busine
 
 ## Measuring Topics API Impact on Your Traffic
 
+## Table of Contents
+
+- [Measuring Topics API Impact on Your Traffic](#measuring-topics-api-impact-on-your-traffic)
+- [Alternative Advertising Approaches](#alternative-advertising-approaches)
+- [Measuring Privacy Impact](#measuring-privacy-impact)
+- [Compliance Framework](#compliance-framework)
+
 ### Analytics Integration
 
 Understand how Topics API affects your website traffic and targeting:

@@ -40,6 +40,13 @@ Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions
 - **Setting up a basic**: Jitsi deployment requires a VPS with at least 2 CPU cores and 4GB RAM.
 - **Both participants must use compatible browsers**: Chrome, Firefox, and Edge support this natively.
 
+## Table of Contents
+
+- [Understanding the Encryption Requirements](#understanding-the-encryption-requirements)
+- [Prerequisites](#prerequisites)
+- [Compliance Considerations](#compliance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding the Encryption Requirements
 
 Psychotherapy sessions require protection at multiple layers. End-to-end encryption (E2EE) ensures that only the participants can decrypt and view the video streams—not the service provider, not intermediaries, not anyone with server access. This differs from transport-layer encryption (TLS), which protects data only while moving between clients and servers, leaving server operators with access to decrypted content.

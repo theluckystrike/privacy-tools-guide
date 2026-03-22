@@ -22,6 +22,15 @@ Google Calendar and Apple iCloud see everything you schedule — meetings, medic
 - **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - **---
 
+## Table of Contents
+
+- [Option 1**: Nextcloud (Full-Featured)](#option-1-nextcloud-full-featured)
+- [Why Standard Protocols Matter](#why-standard-protocols-matter)
+- [Prerequisites](#prerequisites)
+- [Migrating from Google Calendar and Google Contacts](#migrating-from-google-calendar-and-google-contacts)
+- [Troubleshooting Common Sync Problems](#troubleshooting-common-sync-problems)
+- [Related Reading](#related-reading)
+
 ## Option 1**: Nextcloud (Full-Featured)
 
 Nextcloud includes CalDAV/CardDAV support with a web UI, sharing, and multi-user management.

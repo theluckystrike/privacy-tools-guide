@@ -50,6 +50,22 @@ Choose Shadowsocks if you need faster speeds and simpler client setup for bypass
 - **This comparison breaks down**: their technical trade-offs to help you pick the right obfuscation method for your threat model in 2026.
 - **The protocol uses various ciphers**: with AEAD ciphers like ChaCha20-Poly1305 being the recommended choice for security.
 
+## Table of Contents
+
+- [Understanding Traffic Obfuscation](#understanding-traffic-obfuscation)
+- [What is Shadowsocks?](#what-is-shadowsocks)
+- [What is Stunnel?](#what-is-stunnel)
+- [Shadowsocks vs Stunnel: Technical Comparison](#shadowsocks-vs-stunnel-technical-comparison)
+- [When to Use Each Solution](#when-to-use-each-solution)
+- [The Role in 2026's Privacy Market](#the-role-in-2026s-privacy-market)
+- [Deep Packet Inspection Detection and Evasion](#deep-packet-inspection-detection-and-evasion)
+- [Implementation-Level Obfuscation](#implementation-level-obfuscation)
+- [Benchmarking Real-World Performance](#benchmarking-real-world-performance)
+- [Advanced Evasion Techniques](#advanced-evasion-techniques)
+- [Monitoring and Diagnostics](#monitoring-and-diagnostics)
+- [Practical Deployment Comparison](#practical-deployment-comparison)
+- [Future-Proofing Your Obfuscation Strategy](#future-proofing-your-obfuscation-strategy)
+
 ## Understanding Traffic Obfuscation
 
 Before examining the comparison, it's essential to understand what traffic obfuscation actually does. Traditional VPN protocols like OpenVPN and WireGuard can be identified through their distinctive handshake patterns and packet characteristics. DPI systems used by ISPs and government agencies can detect these signatures and block connections.

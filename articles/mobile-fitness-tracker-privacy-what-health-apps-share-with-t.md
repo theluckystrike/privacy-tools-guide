@@ -40,6 +40,16 @@ Fitness apps share your heart rate, sleep data, GPS routes, and biometric readin
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Data Do Fitness Apps Collect?](#what-data-do-fitness-apps-collect)
+- [Third-Party Data Sharing Mechanisms](#third-party-data-sharing-mechanisms)
+- [API Security Considerations for Developers](#api-security-considerations-for-developers)
+- [Regulatory Environment in 2026](#regulatory-environment-in-2026)
+- [Practical Steps for Protecting Your Health Data](#practical-steps-for-protecting-your-health-data)
+- [Network Traffic Analysis: See What Your Fitness App Sends](#network-traffic-analysis-see-what-your-fitness-app-sends)
+- [Privacy-First Fitness App Recommendations](#privacy-first-fitness-app-recommendations)
+
 ## What Data Do Fitness Apps Collect?
 
 Modern fitness trackers collect a range of biometric and behavioral data. The typical dataset includes:

@@ -40,6 +40,14 @@ When you make a call through a SIP (Session Initiation Protocol) provider, the c
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Most providers log both**: but the signaling logs contain the most sensitive metadata.
 
+## Table of Contents
+
+- [SIP Call Logging Fundamentals](#sip-call-logging-fundamentals)
+- [What Providers Actually Log](#what-providers-actually-log)
+- [Provider Retention Practices](#provider-retention-practices)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Mitigating SIP Metadata Exposure](#mitigating-sip-metadata-exposure)
+
 ## SIP Call Logging Fundamentals
 
 SIP operates in two distinct layers: signaling and media. The signaling layer (using SIP messages) handles call setup, teardown, and modification. The media layer (using RTP - Real-time Transport Protocol) carries the actual audio. Most providers log both, but the signaling logs contain the most sensitive metadata.

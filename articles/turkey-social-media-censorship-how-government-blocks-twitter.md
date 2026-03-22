@@ -40,6 +40,15 @@ intent-checked: true---
 - **Chrome users can enable**: DoH in Settings > Privacy and security > Security > Use secure DNS.
 - **When the government blocks certain IPs**: Twitter often migrates to new address ranges, creating a cat-and-mouse game.
 
+## Table of Contents
+
+- [How Turkey Blocks Social Media: Technical Overview](#how-turkey-blocks-social-media-technical-overview)
+- [DNS-Level Blocking](#dns-level-blocking)
+- [IP Address Blocking](#ip-address-blocking)
+- [Deep Packet Inspection and SNI Filtering](#deep-packet-inspection-and-sni-filtering)
+- [Content Delivery Network Blocking](#content-delivery-network-blocking)
+- [Current State in 2026](#current-state-in-2026)
+
 ## How Turkey Blocks Social Media: Technical Overview
 
 Turkey maintains one of the most sophisticated internet censorship systems in the Western world, with the Information and Communication Technologies Authority (BTK) blocking access to major social media platforms. The blocking methods include DNS hijacking, IP address blocking, deep packet inspection (DPI), and SNI (Server Name Indication) filtering. This guide explains each blocking technique and provides practical workarounds for developers and power users who need to access blocked services.

@@ -28,6 +28,18 @@ When you connect to a VPN, you expect your traffic to be encrypted and protected
 Always use SHA-256 or stronger for certificate hashes.
 - **SHA-1 is cryptographically broken**: and should not be used for security-critical applications.
 
+## Table of Contents
+
+- [What is Certificate Pinning in VPNs?](#what-is-certificate-pinning-in-vpns)
+- [How MITM Attacks Work Against VPNs](#how-mitm-attacks-work-against-vpns)
+- [Technical Implementation of Certificate Pinning](#technical-implementation-of-certificate-pinning)
+- [Why Certificate Pinning Matters for Your Security](#why-certificate-pinning-matters-for-your-security)
+- [Checking If Your VPN Uses Certificate Pinning](#checking-if-your-vpn-uses-certificate-pinning)
+- [Best Practices for VPN Certificate Pinning](#best-practices-for-vpn-certificate-pinning)
+- [Implementation Examples](#implementation-examples)
+- [Certificate Transparency Monitoring](#certificate-transparency-monitoring)
+- [Common Certificate Pinning Mistakes](#common-certificate-pinning-mistakes)
+
 ## What is Certificate Pinning in VPNs?
 
 Certificate pinning is a security mechanism where a client (like your VPN app) is configured to trust only a specific certificate or public key, rather than trusting any certificate signed by a certificate authority. In the context of VPNs, this means your VPN client verifies that it's connecting to the legitimate VPN server by checking that the server's certificate matches the expected certificate or public key pinned in the application.

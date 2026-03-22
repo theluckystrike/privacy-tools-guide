@@ -42,6 +42,14 @@ Tor Browser provides strong anonymity by routing traffic through three-hop onion
 
 It depends on your background.
 
+## Table of Contents
+
+- [Architectural Overview](#architectural-overview)
+- [Privacy Properties Comparison](#privacy-properties-comparison)
+- [Use Case Analysis](#use-case-analysis)
+- [Developer Considerations](#developer-considerations)
+- [Limitations and Trade-offs](#limitations-and-trade-offs)
+
 ## Architectural Overview
 
 ### Tor Browser

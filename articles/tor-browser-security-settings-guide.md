@@ -38,6 +38,13 @@ Tor Browser works out of the box. Its default settings protect most users in mos
 - **Use a read-only sandbox**: (like Dangerzone for documents) 4.
 - **Use Tails OS or**: Whonix where the entire system routes through Tor 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration: The Torrc File](#advanced-configuration-the-torrc-file)
+- [Troubleshooting Tor Browser Issues](#troubleshooting-tor-browser-issues)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

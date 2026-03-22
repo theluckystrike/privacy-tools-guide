@@ -11,7 +11,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -25,6 +26,17 @@ Your Lightning channel partners can see your channel balance, inbound/outbound c
 - **On-chain wallet address (used**: for funding) # 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Understanding Lightning Network Channel Architecture](#understanding-lightning-network-channel-architecture)
+- [What Channel Partners Can See](#what-channel-partners-can-see)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Mitigating Channel Partner Surveillance](#mitigating-channel-partner-surveillance)
+- [Privacy-Enhanced Lightning Implementations](#privacy-enhanced-lightning-implementations)
+- [Advanced Node Configuration for Privacy](#advanced-node-configuration-for-privacy)
+- [Monitoring and Detecting Surveillance](#monitoring-and-detecting-surveillance)
+- [The Bigger Picture](#the-bigger-picture)
 
 ## Understanding Lightning Network Channel Architecture
 
@@ -404,11 +416,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Bumble Beeline Data Privacy Who Can See That You Swiped Righ](/privacy-tools-guide/bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/)
-- [Hotel Guest Privacy Rights What Information Hotels Can Share](/privacy-tools-guide/hotel-guest-privacy-rights-what-information-hotels-can-share/)
-- [Library Patron Privacy Rights What Information Libraries Can](/privacy-tools-guide/library-patron-privacy-rights-what-information-libraries-can/)
-- [Rental Application Privacy What Information Landlords Can Le](/privacy-tools-guide/rental-application-privacy-what-information-landlords-can-le/)
-- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
-
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [Wireshark Basics for Privacy Network Analysis](/privacy-tools-guide/wireshark-privacy-network-analysis-guide/)
+- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

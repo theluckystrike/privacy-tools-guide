@@ -40,6 +40,21 @@ HIPAA-compliant mobile devices require full-disk encryption enabled through a st
 - **Prevention**: Use only HIPAA-compliant messaging apps (Signal with BAA, or dedicated healthcare platforms) and disable iMessage/email notifications on lock screen.
 - **Prevention**: Enable auto-lock (5 minutes max), disable lock screen notifications, use privacy screen protectors for clinical settings.
 
+## Table of Contents
+
+- [Device Encryption and Basic Security](#device-encryption-and-basic-security)
+- [Mobile Device Management (MDM) Solutions](#mobile-device-management-mdm-solutions)
+- [Application Vetting and Healthcare Apps](#application-vetting-and-healthcare-apps)
+- [Network Security Configuration](#network-security-configuration)
+- [Audit Readiness](#audit-readiness)
+- [Practical Implementation Checklist](#practical-implementation-checklist)
+- [Common HIPAA Violations and How to Prevent Them](#common-hipaa-violations-and-how-to-prevent-them)
+- [Network Security for Mobile Healthcare Workflows](#network-security-for-mobile-healthcare-workflows)
+- [Handling Lost or Stolen Devices](#handling-lost-or-stolen-devices)
+- [Biometric Authentication for Healthcare Apps](#biometric-authentication-for-healthcare-apps)
+- [Annual HIPAA Compliance Training and Audits](#annual-hipaa-compliance-training-and-audits)
+- [Multi-Tenant Security for Group Practices](#multi-tenant-security-for-group-practices)
+
 ## Device Encryption and Basic Security
 
 HIPAA's Security Rule requires encryption of PHI at rest. Both iOS and Android provide full-disk encryption by default when you enable a device passcode, but the configuration matters.

@@ -11,7 +11,8 @@ reviewed: true
 score: 7
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -25,6 +26,23 @@ Living without a smartphone is feasible using a basic dumb phone for calls/SMS, 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **If going smartphone-free**: 1.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [The Privacy Case for Going Smartphone-Free](#the-privacy-case-for-going-smartphone-free)
+- [Essential Hardware: The Dumb Phone Transition](#essential-hardware-the-dumb-phone-transition)
+- [Communication Without Smartphone Dependency](#communication-without-smartphone-dependency)
+- [Navigation and Maps](#navigation-and-maps)
+- [Financial Transactions and Authentication](#financial-transactions-and-authentication)
+- [Implementation Strategy: Transitioning Away from Smartphone](#implementation-strategy-transitioning-away-from-smartphone)
+- [Automation for the Power User](#automation-for-the-power-user)
+- [Complete Migration Checklist](#complete-migration-checklist)
+- [Dumb Phone Selection Criteria](#dumb-phone-selection-criteria)
+- [Advanced Tools for Smartphone-Free Life](#advanced-tools-for-smartphone-free-life)
+- [Social Impact: Handling Smartphone-Dependent Services](#social-impact-handling-smartphone-dependent-services)
+- [Emergency Protocols](#emergency-protocols)
+- [Working with Employers](#working-with-employers)
+- [Measuring Privacy Gains](#measuring-privacy-gains)
 
 ## The Privacy Case for Going Smartphone-Free
 
@@ -416,11 +434,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
-- [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
-- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
-- [VPN for Safe Torrent Downloading While Living in Germany](/privacy-tools-guide/vpn-for-safe-torrent-downloading-while-living-in-germany/)
-- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
-
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
+- [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
+- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

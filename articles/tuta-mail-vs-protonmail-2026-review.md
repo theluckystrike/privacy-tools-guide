@@ -212,6 +212,20 @@ Regardless of your choice, maintain good security practices. Enable two-factor a
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Advanced Feature Comparison](#advanced-feature-comparison)
+- [Mobile Apps Comparison](#mobile-apps-comparison)
+- [Pricing and Storage Tiers](#pricing-and-storage-tiers)
+- [Email Forwarding and Aliases](#email-forwarding-and-aliases)
+- [Spam and Phishing Protection](#spam-and-phishing-protection)
+- [Data Residency and Legal Jurisdiction](#data-residency-and-legal-jurisdiction)
+- [Forward Compatibility: Testing Setup](#forward-compatibility-testing-setup)
+- [Regulatory Compliance for Businesses](#regulatory-compliance-for-businesses)
+- [Migration Strategy](#migration-strategy)
+- [Long-term Maintenance](#long-term-maintenance)
+- [Decision Matrix for Email Choice](#decision-matrix-for-email-choice)
+
 **Can I use ProtonMail and the second tool together?**
 
 Yes, many users run both tools simultaneously. ProtonMail and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.

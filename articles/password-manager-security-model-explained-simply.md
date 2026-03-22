@@ -40,6 +40,21 @@ Password managers protect your data through three layers: your master password i
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Core Problem: Encrypting at Rest](#the-core-problem-encrypting-at-rest)
+- [Key Derivation: From Password to Key](#key-derivation-from-password-to-key)
+- [Zero-Knowledge Architecture](#zero-knowledge-architecture)
+- [Encryption Algorithms: AES-256-GCM](#encryption-algorithms-aes-256-gcm)
+- [The Unlock Flow: Putting It Together](#the-unlock-flow-putting-it-together)
+- [Security Considerations for Developers](#security-considerations-for-developers)
+- [Common Misconceptions](#common-misconceptions)
+- [Real-World Implementation: How 1Password Does It](#real-world-implementation-how-1password-does-it)
+- [Key Derivation in Practice: Iterations Matter](#key-derivation-in-practice-iterations-matter)
+- [Attack Scenarios and Mitigations](#attack-scenarios-and-mitigations)
+- [Comparative Security Audits](#comparative-security-audits)
+- [Syncing Multiple Devices Securely](#syncing-multiple-devices-securely)
+
 ## The Core Problem: Encrypting at Rest
 
 When you save a password locally or sync it to the cloud, that data must be encrypted. The challenge is straightforward: you need to encrypt data that only you can decrypt, without storing the decryption key somewhere that could be compromised.

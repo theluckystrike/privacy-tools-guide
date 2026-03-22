@@ -66,6 +66,18 @@ Medium-term changes (1-2 weeks):
 
 3.
 
+## Table of Contents
+
+- [Privacy Risks of Grocery Store Loyalty Programs in 2026](#privacy-risks-of-grocery-store-loyalty-programs-in-2026)
+- [What Major Grocers Collect](#what-major-grocers-collect)
+- [How Purchase Data Flows](#how-purchase-data-flows)
+- [Data Broker Ecosystem](#data-broker-ecosystem)
+- [Specific Risk Categories](#specific-risk-categories)
+- [Practical Opt-Out Strategies](#practical-opt-out-strategies)
+- [Grocery Stores Without Aggressive Data Harvesting](#grocery-stores-without-aggressive-data-harvesting)
+- [What You Can Do Right Now](#what-you-can-do-right-now)
+- [State Privacy Laws and Rights](#state-privacy-laws-and-rights)
+
 ## Privacy Risks of Grocery Store Loyalty Programs in 2026
 
 Grocery loyalty programs collect detailed purchase history, pharmaceutical data, and personal preferences. This information is aggregated, sold to data brokers, and used for price discrimination and targeted advertising. This guide details what major grocers collect, how data flows, and practical strategies to minimize exposure.

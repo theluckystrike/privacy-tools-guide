@@ -42,6 +42,28 @@ Choose Wickr if you need enterprise admin controls, API integrations, compliance
 - **Technical support**: SLA requirements and support channels needed
 8.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [API and Integration Capabilities](#api-and-integration-capabilities)
+- [Administrative Controls](#administrative-controls)
+- [Deployment Considerations](#deployment-considerations)
+- [Performance and Scalability](#performance-and-scalability)
+- [Making the Decision](#making-the-decision)
+- [Implementation Example](#implementation-example)
+- [Pricing and Cost Analysis](#pricing-and-cost-analysis)
+- [Audit and Compliance Logging](#audit-and-compliance-logging)
+- [Migration and Interoperability](#migration-and-interoperability)
+- [Architecture Comparison for Scaling](#architecture-comparison-for-scaling)
+- [Device and OS Support](#device-and-os-support)
+- [Implementation Checklist](#implementation-checklist)
+- [Pilot Program Approach](#pilot-program-approach)
+- [Hybrid Deployment Example](#hybrid-deployment-example)
+- [User Training and Change Management](#user-training-and-change-management)
+- [Signal Training (1 hour)](#signal-training-1-hour)
+- [Wickr Training (2 hours)](#wickr-training-2-hours)
+- [ROI Analysis Template](#roi-analysis-template)
+
 ## Encryption Architecture
 
 Signal uses the Signal Protocol (formerly known as TextSecure) for end-to-end encryption. This protocol implements the Double Ratchet algorithm, providing forward secrecy and future secrecy (also called post-compromise security). The protocol is open-source and has undergone extensive cryptanalysis.

@@ -40,6 +40,20 @@ Privacy-focused email providers encrypt your inbox so that the email provider it
 - **Add VPN separately ($120/year)**: for full privacy suite.
 - **Pricing reality (annual)**: Free (basic), €60/year (supporter tier).
 
+## Table of Contents
+
+- [Why Standard Email Is Insecure](#why-standard-email-is-insecure)
+- [Proton Mail: Market Leader](#proton-mail-market-leader)
+- [Tutanota: Maximum Encryption](#tutanota-maximum-encryption)
+- [Mailfence: Maximum Aliases](#mailfence-maximum-aliases)
+- [Posteo: Privacy Without Accounts](#posteo-privacy-without-accounts)
+- [Disroot: Community-Oriented](#disroot-community-oriented)
+- [Comparison Table](#comparison-table)
+- [Security Audit Status](#security-audit-status)
+- [Selecting Your Provider](#selecting-your-provider)
+- [Migration From Gmail](#migration-from-gmail)
+- [Realistic Privacy](#realistic-privacy)
+
 ## Why Standard Email Is Insecure
 
 Gmail, Outlook, Yahoo Mail, and others read message content to train advertising algorithms, comply with law enforcement requests, and analyze user behavior. Your email provider sees everything: business communications, financial information, sensitive relationships, and personal secrets.

@@ -40,6 +40,19 @@ Tor Browser eliminates browser fingerprinting by making all users report the sam
 - **Use regular browser for**: banking/commerce // 3.
 - **Use Tor Browser (strongest**: fingerprinting protection) // 2.
 
+## Table of Contents
+
+- [Understanding Browser Fingerprinting](#understanding-browser-fingerprinting)
+- [Tor Browser's Anti-Fingerprinting Strategy](#tor-browsers-anti-fingerprinting-strategy)
+- [The Privacy Trade-offs](#the-privacy-trade-offs)
+- [Practical Implications](#practical-implications)
+- [Verifying Your Protection](#verifying-your-protection)
+- [Advanced Fingerprinting Vectors](#advanced-fingerprinting-vectors)
+- [Testing Fingerprinting Protection](#testing-fingerprinting-protection)
+- [Limitations and Caveats](#limitations-and-caveats)
+- [Beyond Tor Browser](#beyond-tor-browser)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding Browser Fingerprinting
 
 When you visit a website, your browser reveals numerous pieces of information that can be combined into a unique fingerprint. These include:

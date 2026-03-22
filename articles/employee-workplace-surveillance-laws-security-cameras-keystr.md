@@ -27,6 +27,17 @@ US federal law permits workplace surveillance for legitimate business purposes u
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Texas requires notice before**: installing GPS tracking devices on company vehicles used by employees.
 
+## Table of Contents
+
+- [Federal Baseline for Workplace Surveillance](#federal-baseline-for-workplace-surveillance)
+- [Security Camera Regulations](#security-camera-regulations)
+- [Keystroke Logging Laws](#keystroke-logging-laws)
+- [GPS Tracking Restrictions](#gps-tracking-restrictions)
+- [State-by-State Quick Reference](#state-by-state-quick-reference)
+- [Compliance Recommendations](#compliance-recommendations)
+- [Consent and Disclosure Best Practices](#consent-and-disclosure-best-practices)
+- [Future Considerations](#future-considerations)
+
 ## Federal Baseline for Workplace Surveillance
 
 The Electronic Communications Privacy Act (ECPA) of 1986 establishes the federal framework for workplace monitoring. Under ECPA, employers generally can monitor communications they have a legitimate business reason to access. The law distinguishes between content and metadata, with metadata receiving less protection.

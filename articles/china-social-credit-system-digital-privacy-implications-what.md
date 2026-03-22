@@ -27,19 +27,6 @@ The China Social Credit System (SCS) represents one of the most digital surveill
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The China Social Credit**: System (SCS) represents one of the most digital surveillance infrastructures ever deployed at national scale.
 
-## Table of Contents
-
-- [What Data Points Are Collected](#what-data-points-are-collected)
-- [Online Behavior Monitoring Mechanisms](#online-behavior-monitoring-mechanisms)
-- [Technical Implications for Developers](#technical-implications-for-developers)
-- [What This Means for Digital Privacy](#what-this-means-for-digital-privacy)
-- [Protecting Your Digital Footprint](#protecting-your-digital-footprint)
-- [Practical Technical Defenses](#practical-technical-defenses)
-- [Data Aggregation Risks in Other Contexts](#data-aggregation-risks-in-other-contexts)
-- [Building Privacy-Conscious Applications](#building-privacy-conscious-applications)
-- [International Data Transfer Considerations](#international-data-transfer-considerations)
-- [The Surveillance-as-a-Service Ecosystem](#the-surveillance-as-a-service-ecosystem)
-
 ## What Data Points Are Collected
 
 The SCS aggregates data from multiple government agencies, private companies, and public records. Understanding the data sources helps developers grasp the system's reach:
@@ -179,6 +166,14 @@ The China Social Credit System represents a particular implementation of behavio
 
 
 ## Practical Technical Defenses
+
+## Table of Contents
+
+- [Practical Technical Defenses](#practical-technical-defenses)
+- [Data Aggregation Risks in Other Contexts](#data-aggregation-risks-in-other-contexts)
+- [Building Privacy-Conscious Applications](#building-privacy-conscious-applications)
+- [International Data Transfer Considerations](#international-data-transfer-considerations)
+- [The Surveillance-as-a-Service Ecosystem](#the-surveillance-as-a-service-ecosystem)
 
 For developers and individuals concerned about behavioral surveillance in any jurisdiction, several approaches provide defense-in-depth:
 
@@ -339,11 +334,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
+- [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [Insurance Company Data Collection Privacy What Health](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
-- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
-- [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
-- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-
+- [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

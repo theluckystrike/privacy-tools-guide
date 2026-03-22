@@ -40,6 +40,23 @@ Use a family or team plan in a password manager like Bitwarden, 1Password, or Da
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The `notes` field is**: useful for storing recovery codes, subscription tier information, or PINs required by certain services.
 
+## Table of Contents
+
+- [Why Password Managers Work Better Than Spreadsheets](#why-password-managers-work-better-than-spreadsheets)
+- [Setting Up a Shared Vault](#setting-up-a-shared-vault)
+- [Implementing Access Controls](#implementing-access-controls)
+- [Automating Credential Rotation](#automating-credential-rotation)
+- [Handling Two-Factor Authentication](#handling-two-factor-authentication)
+- [Security Considerations](#security-considerations)
+- [When Relationships Change](#when-relationships-change)
+- [Advanced: Programmatic Access with CLI](#advanced-programmatic-access-with-cli)
+- [Streaming Service Restrictions and Account Sharing](#streaming-service-restrictions-and-account-sharing)
+- [Setting Up Emergency Access](#setting-up-emergency-access)
+- [Threat Modeling for Couples](#threat-modeling-for-couples)
+- [Streaming Account Ownership and Breakup Scenarios](#streaming-account-ownership-and-breakup-scenarios)
+- [Biometric Security for Shared Vaults](#biometric-security-for-shared-vaults)
+- [Migration Strategies When Changing Password Managers](#migration-strategies-when-changing-password-managers)
+
 ## Why Password Managers Work Better Than Spreadsheets
 
 Most couples share credentials through_notes, voice dictation, or shared spreadsheets. These methods lack encryption at rest, offer no access logging, and make revocation difficult when relationships change. Password managers solve these problems through:

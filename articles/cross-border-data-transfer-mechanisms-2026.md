@@ -27,6 +27,15 @@ To legally transfer personal data across borders in 2026, use the EU-US Data Pri
 - **For developers**: this means your application architecture must accommodate multiple legal bases for data transfers depending on user location.
 - **Can I use a**: VPN or Tor to route data transfers and avoid regulatory requirements? No.
 
+## Table of Contents
+
+- [The Regulatory Environment in 2026](#the-regulatory-environment-in-2026)
+- [Understanding the Legal Mechanisms](#understanding-the-legal-mechanisms)
+- [Technical Mechanisms for Secure Transfers](#technical-mechanisms-for-secure-transfers)
+- [Regional Transfer Hubs](#regional-transfer-hubs)
+- [Compliance Implementation Checklist](#compliance-implementation-checklist)
+- [Future Considerations](#future-considerations)
+
 ## The Regulatory Environment in 2026
 
 The European Union's GDPR remains the foundational regulation for cross-border data transfers. The Data Privacy Framework (DPF) between the EU and US provides a valid transfer mechanism for US companies, while Standard Contractual Clauses (SCCs) and Binding Corporate Rules (BCRs) continue to serve as alternative pathways. Other jurisdictions have implemented their own frameworks, including:

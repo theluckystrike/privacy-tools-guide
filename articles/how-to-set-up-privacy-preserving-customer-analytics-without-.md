@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -337,11 +338,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Set Up Privacy Focused Crm That Minimizes Customer Da](/privacy-tools-guide/how-to-set-up-privacy-focused-crm-that-minimizes-customer-da/)
+- [Google Analytics Tracking Alternatives That Respect User](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
 - [Implement Privacy Preserving Machine Learning](/privacy-tools-guide/how-to-implement-privacy-preserving-machine-learning-for-business-analytics-2026/)
-- [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
-- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
-- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
-
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
+- [How To Build Privacy Dashboard For Customers To Manage](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

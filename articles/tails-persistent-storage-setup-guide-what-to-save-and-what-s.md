@@ -40,6 +40,16 @@ Tails is a privacy-focused operating system that runs from an USB stick, routing
 - **By default, Tails leaves no trace on the computer you use**: but this anonymity comes with a trade-off: every shutdown wipes your session clean.
 - **This partition uses LUKS**: (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Trade-offs and Best Practices](#security-trade-offs-and-best-practices)
+- [Advanced Persistent Storage Encryption](#advanced-persistent-storage-encryption)
+- [Persistent Storage File Organization Best Practices](#persistent-storage-file-organization-best-practices)
+- [Threat Models for Persistent Storage Configuration](#threat-models-for-persistent-storage-configuration)
+- [Persistent Storage Performance Optimization](#persistent-storage-performance-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

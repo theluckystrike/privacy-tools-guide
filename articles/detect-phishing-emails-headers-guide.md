@@ -26,6 +26,17 @@ Email headers contain a full audit trail — every server the message passed thr
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 - **Practical recommendations**: Specific use-case guidance based on team size and requirements
 
+## Table of Contents
+
+- [How to Access Email Headers](#how-to-access-email-headers)
+- [The Key Fields to Check](#the-key-fields-to-check)
+- [Parsing Headers Programmatically](#parsing-headers-programmatically)
+- [Quick Reference: Red Flags in Headers](#quick-reference-red-flags-in-headers)
+- [Advanced Email Forensics](#advanced-email-forensics)
+- [Integration with Email Clients](#integration-with-email-clients)
+- [Industry-Specific Phishing Patterns](#industry-specific-phishing-patterns)
+- [Related Reading](#related-reading)
+
 ## How to Access Email Headers
 
 **Gmail:** Open the email → three dots menu → "Show original"
@@ -514,6 +525,14 @@ Reply-To: <tax-support@verify-identity.com>
 - [How to Protect Yourself from QR Code Phishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
 
 ---
+
+## Related Articles
+
+- [Email Header Analysis What Metadata Reveals About Your](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [Email Security Headers Dmarc Dkim Spf Setup To Prevent](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
+- [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

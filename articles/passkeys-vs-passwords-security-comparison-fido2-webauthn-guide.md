@@ -41,6 +41,14 @@ Passwords are dying. FIDO2-based passkeys (biometric or hardware key authenticat
 - User provides fingerprint/face/key interaction
 5.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [What is FIDO2?](#what-is-fido2)
+- [Security Comparison: Passkeys vs Passwords](#security-comparison-passkeys-vs-passwords)
+- [When to Use Passkeys vs Passwords](#when-to-use-passkeys-vs-passwords)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

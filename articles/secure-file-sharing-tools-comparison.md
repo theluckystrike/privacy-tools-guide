@@ -113,6 +113,18 @@ onionshare-cli --auto-start share contract.pdf
 
 ## Tresorit Send
 
+## Table of Contents
+
+- [Tresorit Send](#tresorit-send)
+- [Wormhole (Magic Wormhole)](#wormhole-magic-wormhole)
+- [Firefox Send Alternatives](#firefox-send-alternatives)
+- [Comparison Table](#comparison-table)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Security Checklist](#security-checklist)
+- [Practical Workflow Examples](#practical-workflow-examples)
+- [Key Recommendation](#key-recommendation)
+- [Related Reading](#related-reading)
+
 Tresorit Send is a commercial E2E encrypted file sharing service owned by Tresorit (a zero-knowledge cloud provider). Files are encrypted client-side, uploaded to Tresorit servers, encrypted link generated.
 
 **Security Model:**

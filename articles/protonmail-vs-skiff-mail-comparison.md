@@ -40,6 +40,20 @@ Choose ProtonMail if you need PGP/OpenPGP compatibility, IMAP/SMTP access via Br
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Encryption Models](#encryption-models)
+- [Quick Comparison](#quick-comparison)
+- [PGP and OpenPGP Support](#pgp-and-openpgp-support)
+- [SMTP and IMAP Access](#smtp-and-imap-access)
+- [API and Developer Tools](#api-and-developer-tools)
+- [Storage and Features](#storage-and-features)
+- [Development Environment Integration](#development-environment-integration)
+- [Privacy Policy and Jurisdiction](#privacy-policy-and-jurisdiction)
+- [Zero-Knowledge Verification](#zero-knowledge-verification)
+- [Decision Framework](#decision-framework)
+- [Security Considerations](#security-considerations)
+
 ## Encryption Models
 
 Both services offer end-to-end encryption, but their approaches differ significantly.

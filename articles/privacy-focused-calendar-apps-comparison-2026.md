@@ -41,6 +41,15 @@ Google and Microsoft profiles this data. They build predictive models, target ad
 
 ## Tool Comparison
 
+## Table of Contents
+
+- [Tool Comparison](#tool-comparison)
+- [Comparison Table](#comparison-table)
+- [Decision Framework](#decision-framework)
+- [Setup Checklist](#setup-checklist)
+- [Migration from Google Calendar](#migration-from-google-calendar)
+- [Privacy Considerations](#privacy-considerations)
+
 ### 1. Proton Calendar
 
 **Overview**: Part of Proton ecosystem (Proton Mail, VPN, Drive). Strong encryption, tight integration with Proton Mail.

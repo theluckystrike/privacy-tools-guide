@@ -38,6 +38,13 @@ Data ethics has become a critical discipline for anyone handling sensitive infor
 - **Users should understand exactly**: what data you collect and how you use it.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Compliance Considerations for 2026](#compliance-considerations-for-2026)
+- [Practical Compliance Checklist](#practical-compliance-checklist)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

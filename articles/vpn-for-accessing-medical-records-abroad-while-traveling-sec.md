@@ -40,6 +40,27 @@ Access medical records abroad using WireGuard (fastest) or OpenVPN to bypass geo
 - **Clear browser sessions after each use**: no persistent login cookies
 4.
 
+## Table of Contents
+
+- [The Security Problem](#the-security-problem)
+- [VPN Protocol Selection](#vpn-protocol-selection)
+- [Implementation: WireGuard Setup](#implementation-wireguard-setup)
+- [Implementation: OpenVPN with Obfuscation](#implementation-openvpn-with-obfuscation)
+- [Split Tunneling for Medical Access](#split-tunneling-for-medical-access)
+- [Verifying Your Connection](#verifying-your-connection)
+- [Accessing Common Healthcare Systems](#accessing-common-healthcare-systems)
+- [Kill Switch Implementation](#kill-switch-implementation)
+- [Additional Security Measures](#additional-security-measures)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Understanding Healthcare Portal Architecture](#understanding-healthcare-portal-architecture)
+- [Advanced VPN Configuration for Healthcare](#advanced-vpn-configuration-for-healthcare)
+- [Secure Temporary Storage of Medical Records](#secure-temporary-storage-of-medical-records)
+- [Remote Device Management for Healthcare Access](#remote-device-management-for-healthcare-access)
+- [Password Management for Healthcare Portals](#password-management-for-healthcare-portals)
+- [Monitoring for Unauthorized Access](#monitoring-for-unauthorized-access)
+- [Backup and Recovery Procedures](#backup-and-recovery-procedures)
+- [International Healthcare Coverage Considerations](#international-healthcare-coverage-considerations)
+
 ## The Security Problem
 
 Medical portals require connections that appear to originate from your home country. Many healthcare providers implement geographic IP restrictions as a basic security measure. When you connect from a foreign location, your real IP gets flagged or blocked entirely.

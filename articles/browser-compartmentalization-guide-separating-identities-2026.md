@@ -18,6 +18,17 @@ intent-checked: true
 
 ## Why Browser Compartmentalization Matters
 
+## Table of Contents
+
+- [Why Browser Compartmentalization Matters](#why-browser-compartmentalization-matters)
+- [Compartmentalization Strategies (Ranked by Effectiveness)](#compartmentalization-strategies-ranked-by-effectiveness)
+- [Strategy 1: Browser Profiles (Easiest)](#strategy-1-browser-profiles-easiest)
+- [Strategy 2: Firefox Multi-Account Containers (Powerful + Easy)](#strategy-2-firefox-multi-account-containers-powerful-easy)
+- [Strategy 3: Separate Browsers (Highest Isolation)](#strategy-3-separate-browsers-highest-isolation)
+- [Practical Compartmentalization Scenarios](#practical-compartmentalization-scenarios)
+- [Tracking Prevention (Beyond Compartmentalization)](#tracking-prevention-beyond-compartmentalization)
+- [Switching Between Compartments (Workflow)](#switching-between-compartments-workflow)
+
 Advertisers track you across websites using cookies and fingerprinting. You login to Google, then visit unrelated news site—Google's ad tracking code fires, matches your identity, builds profile. Same identity fragments appear across 100+ sites. Compartmentalization means: Google cookies don't leak to news sites. Each identity has separate browser profile/window. Trackers can't connect the dots.
 
 **Typical Tracking Without Compartmentalization:**

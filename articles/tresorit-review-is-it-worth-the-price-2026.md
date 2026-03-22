@@ -40,6 +40,22 @@ Tresorit positions itself as the premium choice for end-to-end encrypted cloud s
 - **But with pricing significantly**: higher than mainstream alternatives, the question becomes whether the security features justify the cost for developers and power users in 2026.
 - **Business plans add admin controls**: user management, and larger storage quotas (starting at 2TB for teams).
 
+## Table of Contents
+
+- [Encryption Architecture and Security Model](#encryption-architecture-and-security-model)
+- [CLI Tools and Developer Integration](#cli-tools-and-developer-integration)
+- [Pricing Structure in 2026](#pricing-structure-in-2026)
+- [Admin Controls and Team Features](#admin-controls-and-team-features)
+- [Practical Limitations](#practical-limitations)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Advanced Configuration for Teams](#advanced-configuration-for-teams)
+- [Security Comparison: Tresorit vs Alternatives](#security-comparison-tresorit-vs-alternatives)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Implementation Guide: Document Handling Workflow](#implementation-guide-document-handling-workflow)
+- [Cost Analysis: 3-Year TCO Calculation](#cost-analysis-3-year-tco-calculation)
+- [Migration from Other Platforms](#migration-from-other-platforms)
+- [Is It Worth the Price?](#is-it-worth-the-price)
+
 ## Encryption Architecture and Security Model
 
 Tresorit's core security claim rests on client-side encryption using AES-256 for file content and RSA-2048 for key exchange. Every file uploaded to Tresorit gets encrypted on your device before transmission—meaning the servers never see unencrypted data. This differs from services like Google Drive or Dropbox, which encrypt data at rest on their servers but retain the ability to access your files.

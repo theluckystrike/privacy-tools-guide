@@ -45,6 +45,16 @@ Sextortion emails have become one of the most prevalent forms of online fraud. I
 - **Check all data breaches**: Use Have I Been Pwned to see which services leaked your data
 2.
 
+## Table of Contents
+
+- [Understanding Sextortion Email Scams](#understanding-sextortion-email-scams)
+- [Technical Analysis: Why Most Sextortion Emails Are Fake](#technical-analysis-why-most-sextortion-emails-are-fake)
+- [Verifying Email Authenticity](#verifying-email-authenticity)
+- [What To Do If You Receive a Sextortion Email](#what-to-do-if-you-receive-a-sextortion-email)
+- [Prevention Strategies for Developers and Power Users](#prevention-strategies-for-developers-and-power-users)
+- [Assessing Legitimate Threats vs. Mass Scams](#assessing-legitimate-threats-vs-mass-scams)
+- [Long-Term Security Posture After Sextortion Email](#long-term-security-posture-after-sextortion-email)
+
 ## Understanding Sextortion Email Scams
 
 A typical sextortion email claims that hackers have compromised your device, recorded you visiting adult websites, and threaten to expose your activities unless you pay a ransom—usually in cryptocurrency. These messages often include specific details to appear credible, such as referencing a password you actually use or claiming to have accessed your contact list.

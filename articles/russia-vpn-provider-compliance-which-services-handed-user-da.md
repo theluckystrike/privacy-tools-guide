@@ -40,6 +40,19 @@ Understanding VPN provider compliance with governmental data requests is critica
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **When evaluating a VPN**: service for production use, the corporate structure determines what data might be accessible to authorities.
 
+## Table of Contents
+
+- [The Russian Legal Framework for VPN Services](#the-russian-legal-framework-for-vpn-services)
+- [Which Providers Handled Data Requests](#which-providers-handled-data-requests)
+- [Technical Analysis: What Data Gets Disclosed](#technical-analysis-what-data-gets-disclosed)
+- [Verifying Provider Claims](#verifying-provider-claims)
+- [Practical Recommendations for Developers](#practical-recommendations-for-developers)
+- [Analysis of Specific Compliance Events](#analysis-of-specific-compliance-events)
+- [Technical Verification Methods](#technical-verification-methods)
+- [Multi-Hop VPN Strategies](#multi-hop-vpn-strategies)
+- [The Threat Model for Russian Users](#the-threat-model-for-russian-users)
+- [Building Compliant vs Non-Compliant Infrastructure](#building-compliant-vs-non-compliant-infrastructure)
+
 ## The Russian Legal Framework for VPN Services
 
 Russia's approach to VPN regulation centers on the Federal Law No. 276-FZ and subsequent amendments to the Information Act. VPN providers must register with Roskomnadzor and agree to block access to prohibited websites listed in the registry. More significantly, providers must maintain user logs and be prepared to surrender this data upon legal request.

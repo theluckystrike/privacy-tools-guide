@@ -40,6 +40,21 @@ Accessing cryptocurrency exchanges from countries with restrictions requires tec
 - **IKEv2 balances speed and stability**: particularly useful for mobile connections.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding VPN Basics for Crypto Access](#understanding-vpn-basics-for-crypto-access)
+- [Protocol Comparison for Crypto Trading](#protocol-comparison-for-crypto-trading)
+- [Server Selection and Configuration](#server-selection-and-configuration)
+- [Connecting to Crypto Exchanges](#connecting-to-crypto-exchanges)
+- [DNS and IPv6 Considerations](#dns-and-ipv6-considerations)
+- [Encrypted DNS Configuration](#encrypted-dns-configuration)
+- [Multi-Layer Approaches](#multi-layer-approaches)
+- [Exchange-Specific Considerations](#exchange-specific-considerations)
+- [Performance Optimization](#performance-optimization)
+- [Security Best Practices](#security-best-practices)
+- [Choosing a VPN Provider for Crypto Use](#choosing-a-vpn-provider-for-crypto-use)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+
 ## Understanding VPN Basics for Crypto Access
 
 A VPN creates an encrypted tunnel between your device and a remote server, masking your actual IP address and routing traffic through the VPN provider's network. For crypto exchange access, this means appearing to connect from a permitted location while physically operating from a restricted region.

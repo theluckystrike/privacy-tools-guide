@@ -40,6 +40,18 @@ A VPN kill switch is one of the most misunderstood security features in the priv
 - **A VPN kill switch**: is one of the most misunderstood security features in the privacy toolkit.
 - **Marketing teams have diluted**: the term to the point where many users believe any VPN with a "kill switch" checkbox is protected.
 
+## Table of Contents
+
+- [What a Kill Switch Actually Does](#what-a-kill-switch-actually-does)
+- [Technical Implementation Types](#technical-implementation-types)
+- [The Problem with Marketing Claims](#the-problem-with-marketing-claims)
+- [Which VPNs Have Genuine Kill Switches](#which-vpns-have-genuine-kill-switches)
+- [Testing Your Kill Switch](#testing-your-kill-switch)
+- [Building Your Own Kill Switch](#building-your-own-kill-switch)
+- [Advanced Kill Switch Verification](#advanced-kill-switch-verification)
+- [Kill Switch Comparison Matrix](#kill-switch-comparison-matrix)
+- [Custom Kill Switch for Multiple VPN Protocols](#custom-kill-switch-for-multiple-vpn-protocols)
+
 ## What a Kill Switch Actually Does
 
 At its core, a kill switch prevents your real IP address from leaking when the VPN tunnel unexpectedly disconnects. Without a kill switch, your device automatically falls back to your regular internet connection, exposing your actual IP address, location, and potentially sensitive data. This sounds simple, but the implementation details matter significantly.

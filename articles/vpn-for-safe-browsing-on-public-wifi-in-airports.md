@@ -40,6 +40,18 @@ Airport public WiFi networks present significant security risks for travelers. T
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide covers the**: technical implementation of VPN solutions for developers and power users who need secure browsing on airport networks.
 
+## Table of Contents
+
+- [Understanding Airport WiFi Security Risks](#understanding-airport-wifi-security-risks)
+- [VPN Protocol Selection for Travel](#vpn-protocol-selection-for-travel)
+- [Network Isolation Techniques](#network-isolation-techniques)
+- [DNS Security Configuration](#dns-security-configuration)
+- [Practical Airport Network Testing](#practical-airport-network-testing)
+- [Mobile Device Configuration](#mobile-device-configuration)
+- [Choosing a VPN Provider for Travel Security](#choosing-a-vpn-provider-for-travel-security)
+- [Evaluating Your Security Posture Before Connecting](#evaluating-your-security-posture-before-connecting)
+- [Corporate Device Considerations](#corporate-device-considerations)
+
 ## Understanding Airport WiFi Security Risks
 
 Airport WiFi networks are among the most dangerous public networks you'll encounter. Multiple factors contribute to this risk:

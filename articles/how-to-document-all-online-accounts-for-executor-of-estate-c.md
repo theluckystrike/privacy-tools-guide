@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Document All Online Accounts For Executor Of Estate"
-description: "A practical guide for executors and power users to systematically document and manage deceased person's digital accounts. Includes CLI tools, inventory"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-document-all-online-accounts-for-executor-of-estate-c/
-categories: [guides]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -417,11 +404,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Subscription Service Cancellation After Death How.](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
-- [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
-- [How To Document Privacy Violations For Potential Class Actio](/privacy-tools-guide/how-to-document-privacy-violations-for-potential-class-actio/)
-- [How To Set Up Github Repository With Encrypted Estate Instru](/privacy-tools-guide/how-to-set-up-github-repository-with-encrypted-estate-instru/)
-- [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
-
+- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
+- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
+- [How To Prepare Social Media Accounts For Memorialization](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [How To Audit Your Digital Footprint And Find All Accounts](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

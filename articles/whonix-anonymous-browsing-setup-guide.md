@@ -29,6 +29,13 @@ Whonix is a two-VM anonymity system: the Gateway routes all traffic through Tor;
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Topics covered**: architecture, option 1: virtualbox (easiest), download and import
 
+## Table of Contents
+
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Architecture
 
 ```

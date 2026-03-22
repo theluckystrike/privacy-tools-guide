@@ -11,21 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Data Retention Policy Template for Startups"
-description: "A practical data retention policy template designed for startups. Includes code examples, retention schedules by data type, and implementation guidance"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /data-retention-policy-template-for-startups/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
@@ -266,11 +253,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
-- [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
+- [Data Retention Policy Template What To Keep And For How](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
-- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
+- [Coffee Meets Bagel Data Retention Policy How Long The App](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

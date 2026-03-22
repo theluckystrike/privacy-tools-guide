@@ -44,6 +44,19 @@ The practical reality: most public records requests for body camera footage get 
 8.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Legal Basis for Body Camera Footage Classification](#the-legal-basis-for-body-camera-footage-classification)
+- [Understanding Body Camera Footage as Public Records](#understanding-body-camera-footage-as-public-records)
+- [Who Can Request Footage?](#who-can-request-footage)
+- [State-Specific Variations](#state-specific-variations)
+- [Technical Implementation for Developers](#technical-implementation-for-developers)
+- [Practical Examples](#practical-examples)
+- [Challenges and Limitations](#challenges-and-limitations)
+- [Handling Denials and Appeals](#handling-denials-and-appeals)
+- [Redaction and Sensitivity Concerns](#redaction-and-sensitivity-concerns)
+- [Recommendations for Requesters](#recommendations-for-requesters)
+
 ## The Legal Basis for Body Camera Footage Classification
 
 Body camera footage classification as public record stems from general public records laws (FOIA at federal level, state equivalents for state/local). These laws presume government documents are public unless specific exemptions apply. Body camera footage qualifies as a government document—recorded by government employees during government operations using government equipment.

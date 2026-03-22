@@ -40,6 +40,21 @@ Whistleblowers should use Signal for encrypted communications, SecureDrop or Glo
 - **Your threat model determines**: which tools and practices matter most.
 - **For sensitive document sharing**: use SecureDrop or Globaleaks.
 
+## Table of Contents
+
+- [Understanding the Threat Model](#understanding-the-threat-model)
+- [Secure Communication Channels](#secure-communication-channels)
+- [Document Sanitization and Metadata Removal](#document-sanitization-and-metadata-removal)
+- [Secure File Transfer and Storage](#secure-file-transfer-and-storage)
+- [Network-Level Protection](#network-level-protection)
+- [Identity Separation](#identity-separation)
+- [Practical Workflow for Evidence Preparation](#practical-workflow-for-evidence-preparation)
+- [Organizational Intelligence Detection and Evasion](#organizational-intelligence-detection-and-evasion)
+- [Securing Communication with Journalists](#securing-communication-with-journalists)
+- [Handling Law Enforcement and Subpoenas](#handling-law-enforcement-and-subpoenas)
+- [Physical Operational Security](#physical-operational-security)
+- [Threat Assessment Decision Tree](#threat-assessment-decision-tree)
+
 ## Understanding the Threat Model
 
 Every whistleblower faces a different adversary. Corporate whistleblowers typically deal with internal investigations, IP tracing, and legal intimidation. Government whistleblowers may face national security laws, sophisticated surveillance, and cross-agency coordination. Your threat model determines which tools and practices matter most.

@@ -40,6 +40,17 @@ Accessing US sports streaming platforms from Europe presents technical challenge
 - **WireGuard offers the best**: balance of speed and security, while OpenVPN provides broader compatibility with older infrastructure.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Technical Challenges](#understanding-the-technical-challenges)
+- [Choosing the Right VPN Server Location](#choosing-the-right-vpn-server-location)
+- [Protocol Selection and Configuration](#protocol-selection-and-configuration)
+- [DNS Configuration for Streaming Services](#dns-configuration-for-streaming-services)
+- [WebRTC and Browser Fingerprinting](#webrtc-and-browser-fingerprinting)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Network-Level Implementation](#network-level-implementation)
+- [Legal and Terms of Service Considerations](#legal-and-terms-of-service-considerations)
+
 ## Understanding the Technical Challenges
 
 US sports streaming services like ESPN+, Fox Sports, NBC Sports, and MLB.TV implement multiple layers of geographic detection. These systems combine IP address filtering, DNS geolocation, WebRTC leak detection, and browser fingerprinting to enforce regional restrictions. A successful implementation requires addressing each detection vector.

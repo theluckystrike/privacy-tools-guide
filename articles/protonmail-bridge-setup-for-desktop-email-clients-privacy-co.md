@@ -50,6 +50,15 @@ ProtonMail Bridge is a local IMAP/SMTP proxy that lets Thunderbird, Apple Mail, 
 - **Use this password in**: your desktop client configuration ### Certificate Verification ProtonMail Bridge uses self-signed certificates for local connections.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Use ProtonMail Bridge](#why-use-protonmail-bridge)
+- [Prerequisites and Installation](#prerequisites-and-installation)
+- [Security Considerations](#security-considerations)
+- [Advanced Configuration](#advanced-configuration)
+- [Performance Optimization](#performance-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Use ProtonMail Bridge
 
 The ProtonMail web interface works well for basic usage, but power users often require desktop client integration for several reasons:

@@ -39,6 +39,13 @@ tags: [privacy-tools-guide]---
 - **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

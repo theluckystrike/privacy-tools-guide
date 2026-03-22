@@ -50,6 +50,21 @@ Store your TOTP backup codes in an encrypted password manager (Bitwarden, 1Passw
 - **Regenerate codes afterward (invalidates**: used code) 3.
 - **Verify at least one**: code works 7.
 
+## Table of Contents
+
+- [Understanding Backup Code Mechanics](#understanding-backup-code-mechanics)
+- [Generating Secure Backup Codes](#generating-secure-backup-codes)
+- [Storage Strategies That Work](#storage-strategies-that-work)
+- [Recovery Workflows for Developers](#recovery-workflows-for-developers)
+- [Managing Multiple Accounts](#managing-multiple-accounts)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Backup Code Rotation Strategies](#backup-code-rotation-strategies)
+- [Authenticator Device Failure Scenarios](#authenticator-device-failure-scenarios)
+- [Service-Specific Backup Code Behavior](#service-specific-backup-code-behavior)
+- [Backup Code Documentation Template](#backup-code-documentation-template)
+- [Recovery from Lost Backup Codes](#recovery-from-lost-backup-codes)
+- [Compliance and Professional Standards](#compliance-and-professional-standards)
+
 ## Understanding Backup Code Mechanics
 
 Backup codes are typically pre-generated single-use codes that function as an alternative to TOTP tokens. When you set up two-factor authentication on most services, you'll receive a list of 8-12 alphanumeric codes. Each code can be used exactly once, after which it becomes invalid.

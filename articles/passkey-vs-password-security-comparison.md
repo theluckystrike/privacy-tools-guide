@@ -212,6 +212,14 @@ The shift from passwords to passkeys represents the most significant authenticat
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Backend Implementation for Hybrid Authentication](#backend-implementation-for-hybrid-authentication)
+- [Database Schema for Passkey Support](#database-schema-for-passkey-support)
+- [Testing Passkey Implementation](#testing-passkey-implementation)
+- [Migration Path: Adding Passkeys to Existing Password System](#migration-path-adding-passkeys-to-existing-password-system)
+- [Real-World Limitations](#real-world-limitations)
+
 **Can I use the first tool and the second tool together?**
 
 Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.

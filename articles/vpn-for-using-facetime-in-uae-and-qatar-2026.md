@@ -40,6 +40,18 @@ FaceTime remains one of the most reliable video calling platforms, but users in 
 - **If WiFi is necessary**: use the 5GHz band and minimize distance to your access point.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Restrictions](#understanding-the-restrictions)
+- [Technical Requirements](#technical-requirements)
+- [Configuration Guide](#configuration-guide)
+- [Mobile VPN Optimization for FaceTime](#mobile-vpn-optimization-for-facetime)
+- [Real-Time Protocol Optimization](#real-time-protocol-optimization)
+- [Obfuscation Techniques for DPI Evasion](#obfuscation-techniques-for-dpi-evasion)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Alternative Solutions](#alternative-solutions)
+- [Performance Optimization](#performance-optimization)
+
 ## Understanding the Restrictions
 
 The UAE and Qatar both maintain sophisticated internet filtering systems that impact VoIP services. In the UAE, the Telecommunications and Digital Government Regulatory Authority (TDRA) manages blocking through multiple methods: DNS filtering, IP blacklisting, and deep packet inspection (DPI). Qatar's censorship, managed through the Ministry of Communications and Transport, employs similar techniques.

@@ -42,6 +42,21 @@ If your Amazon account is compromised, immediately reset your password at amazon
 - **Email address on file**: (should be YOUR email only) 2.
 - **Phone number (should be**: YOUR number only) 3.
 
+## Table of Contents
+
+- [Recognizing the Signs of Compromise](#recognizing-the-signs-of-compromise)
+- [Immediate Recovery Actions](#immediate-recovery-actions)
+- [Post-Recovery Security Hardening](#post-recovery-security-hardening)
+- [Monitoring for Future Threats](#monitoring-for-future-threats)
+- [Prevention Strategies](#prevention-strategies)
+- [Post-Compromise Forensics](#post-compromise-forensics)
+- [Establishing Trust After Compromise](#establishing-trust-after-compromise)
+- [Monitoring for Secondary Compromise](#monitoring-for-secondary-compromise)
+- [Linked Account Compromise Audit](#linked-account-compromise-audit)
+- [Long-Term Protection: Password Manager Strategy](#long-term-protection-password-manager-strategy)
+- [Credit and Financial Monitoring Post-Hack](#credit-and-financial-monitoring-post-hack)
+- [Automation for Ongoing Protection](#automation-for-ongoing-protection)
+
 ## Recognizing the Signs of Compromise
 
 Before exploring recovery, you need to confirm that your account was indeed compromised. Amazon sends email notifications for various activities, but attackers often disable these or redirect them. Watch for these indicators:

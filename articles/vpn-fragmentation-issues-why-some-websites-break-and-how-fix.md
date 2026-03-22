@@ -39,6 +39,17 @@ VPN fragmentation happens when packets exceed MTU (Maximum Transmission Unit) li
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 - **If no one else reports it**: your local environment configuration is likely the cause.
 
+## Table of Contents
+
+- [What Causes VPN Fragmentation Issues](#what-causes-vpn-fragmentation-issues)
+- [Symptoms of Fragmentation Problems](#symptoms-of-fragmentation-problems)
+- [Diagnosing Fragmentation Issues](#diagnosing-fragmentation-issues)
+- [Fixing VPN Fragmentation Issues](#fixing-vpn-fragmentation-issues)
+- [Troubleshooting Specific Scenarios](#troubleshooting-specific-scenarios)
+- [Advanced Solutions](#advanced-solutions)
+- [Prevention Best Practices](#prevention-best-practices)
+- [When to Contact Your VPN Provider](#when-to-contact-your-vpn-provider)
+
 ## What Causes VPN Fragmentation Issues
 
 Fragmentation happens at multiple levels of the network stack:

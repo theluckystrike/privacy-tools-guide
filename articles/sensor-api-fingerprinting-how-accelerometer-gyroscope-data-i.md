@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
 ---
-layout: default
-title: "Sensor API Fingerprinting How Accelerometer Gyroscope Data"
-description: "Learn how websites use the Sensor API to fingerprint devices using accelerometer and gyroscope data. Understand the technical mechanisms, code"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, api]---
 
 {% raw %}
 
@@ -43,6 +30,16 @@ Tor Browser blocks `DeviceMotionEvent` and the Generic Sensor API entirely.
 - **Step 4**: Use a sensor spoofing extension
 
 Extensions like SpoofSensor (Firefox) override sensor APIs to return constant or randomized values.
+
+## Table of Contents
+
+- [Understanding the Sensor API](#understanding-the-sensor-api)
+- [How Sensor Data Creates Unique Fingerprints](#how-sensor-data-creates-unique-fingerprints)
+- [Code Example: Collecting Sensor Data](#code-example-collecting-sensor-data)
+- [Fingerprinting Techniques](#fingerprinting-techniques)
+- [Privacy Implications](#privacy-implications)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Verifying Your Protection](#verifying-your-protection)
 
 ## Understanding the Sensor API
 
@@ -299,11 +296,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Android Sensor Permissions How Accelerometer Gyroscope Can B](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
-- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
-- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
-- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
-
+- [Android Sensor Permissions How Accelerometer Gyroscope Can](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
+- [Device Memory API Fingerprinting How Ram Amount Narrows](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
+- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

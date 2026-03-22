@@ -28,6 +28,22 @@ End-to-end encryption (E2EE) solves this problem. With E2EE, data is encrypted o
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Makes Document Collaboration Truly Secure](#what-makes-document-collaboration-truly-secure)
+- [CryptPad: Real-Time Collaboration with E2EE](#cryptpad-real-time-collaboration-with-e2ee)
+- [Standard Notes: Encrypted Notes with Extensibility](#standard-notes-encrypted-notes-with-extensibility)
+- [Self-Hosted Solutions: Total Control](#self-hosted-solutions-total-control)
+- [Implementing E2EE in Your Own Tools](#implementing-e2ee-in-your-own-tools)
+- [Choosing Your Alternative](#choosing-your-alternative)
+- [Advanced Cryptography Implementation for Teams](#advanced-cryptography-implementation-for-teams)
+- [Comparing Self-Hosted Solutions](#comparing-self-hosted-solutions)
+- [Audit Logging in E2EE Collaboration](#audit-logging-in-e2ee-collaboration)
+- [Integration with Existing Workflows](#integration-with-existing-workflows)
+- [Performance Characteristics of E2EE Collaboration](#performance-characteristics-of-e2ee-collaboration)
+- [Compliance and Data Residency with Self-Hosted Solutions](#compliance-and-data-residency-with-self-hosted-solutions)
+- [Security Audits of Collaboration Tools](#security-audits-of-collaboration-tools)
+
 ## What Makes Document Collaboration Truly Secure
 
 True E2EE requires several properties that many popular tools lack. First, encryption must happen client-side before data leaves your device. Second, the service provider should have no way to access your decryption keys. Third, you need verifiable cryptography—ideally with open-source clients that security researchers can audit.

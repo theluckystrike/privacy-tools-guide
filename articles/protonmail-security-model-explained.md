@@ -25,6 +25,20 @@ ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-
 - **Hey ($99/year)**: Privacy-focused email from Basecamp.
 - **Does ProtonMail offer a**: free tier? Most major tools offer some form of free tier or trial period.
 
+## Table of Contents
+
+- [End-to-End Encryption Fundamentals](#end-to-end-encryption-fundamentals)
+- [Zero-Access Encryption Architecture](#zero-access-encryption-architecture)
+- [Authentication and Session Security](#authentication-and-session-security)
+- [Address Verification and Key Transparency](#address-verification-and-key-transparency)
+- [Limitations and Threat Model](#limitations-and-threat-model)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [ProtonMail vs. Alternative Encrypted Email Services](#protonmail-vs-alternative-encrypted-email-services)
+- [Metadata Leakage in ProtonMail](#metadata-leakage-in-protonmail)
+- [Cryptographic Implementation Details](#cryptographic-implementation-details)
+- [Setting Up ProtonMail Bridge for Maximum Privacy](#setting-up-protonmail-bridge-for-maximum-privacy)
+- [Auditing ProtonMail Security Assumptions](#auditing-protonmail-security-assumptions)
+
 ## End-to-End Encryption Fundamentals
 
 ProtonMail employs end-to-end encryption (E2EE) as its foundational principle. Unlike traditional email services that encrypt messages only during transmission (transport layer security), ProtonMail ensures that only the intended recipient can decrypt and read the message content.

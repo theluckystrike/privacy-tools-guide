@@ -37,6 +37,22 @@ A VPN warrant canary is a regularly updated public statement confirming that a p
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **When they can no longer make that statement**: the canary "dies."
 
+## Table of Contents
+
+- [How to Check a VPN Warrant Canary](#how-to-check-a-vpn-warrant-canary)
+- [What Is a Warrant Canary?](#what-is-a-warrant-canary)
+- [Why VPNs Use Warrant Canaries](#why-vpns-use-warrant-canaries)
+- [How to Check a VPN Warrant Canary](#how-to-check-a-vpn-warrant-canary)
+- [Interpreting Warrant Canary Changes](#interpreting-warrant-canary-changes)
+- [Technical Implementation for Developers](#technical-implementation-for-developers)
+- [Limitations of Warrant Canaries](#limitations-of-warrant-canaries)
+- [Combining Warrant Canaries with Other Security Measures](#combining-warrant-canaries-with-other-security-measures)
+- [Notable VPN Providers with Warrant Canaries](#notable-vpn-providers-with-warrant-canaries)
+- [Cryptographic Signing Standards for Canaries](#cryptographic-signing-standards-for-canaries)
+- [Jurisdiction-Specific Warrant Canary Considerations](#jurisdiction-specific-warrant-canary-considerations)
+- [Monitoring Tools for Automated Canary Checking](#monitoring-tools-for-automated-canary-checking)
+- [Interpreting Warrant Canary History](#interpreting-warrant-canary-history)
+
 ## How to Check a VPN Warrant Canary
 
 Checking a warrant canary is straightforward, but you need to do it correctly:

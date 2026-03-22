@@ -29,6 +29,20 @@ NAS encryption (using TrueNAS, unRAID, or Linux md with LUKS) provides complete 
 
 It depends on your background.
 
+## Table of Contents
+
+- [Understanding the Core Difference](#understanding-the-core-difference)
+- [Encryption Models Compared](#encryption-models-compared)
+- [Performance Considerations](#performance-considerations)
+- [Access Patterns and Multi-Device Sync](#access-patterns-and-multi-device-sync)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Practical Recommendations](#practical-recommendations)
+- [Implementing a Hybrid Setup](#implementing-a-hybrid-setup)
+- [Advanced NAS Security Features](#advanced-nas-security-features)
+- [Cloud Storage Redundancy Strategy](#cloud-storage-redundancy-strategy)
+- [Performance Tuning for Real-World Use](#performance-tuning-for-real-world-use)
+- [Disaster Recovery Testing](#disaster-recovery-testing)
+
 ## Understanding the Core Difference
 
 A NAS is physical hardware you own and manage, sitting on your local network. When properly encrypted, data stored on a NAS never leaves your premises in an accessible form. Cloud storage, by contrast, entrusts your data to a third-party provider—though many offer zero-knowledge encryption options that maintain privacy even from the provider.

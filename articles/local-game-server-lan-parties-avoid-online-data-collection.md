@@ -37,6 +37,16 @@ Playing games online typically sends significant amounts of data to game publish
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Online Gaming Collects Your Data](#why-online-gaming-collects-your-data)
+- [Setting Up a Local Game Server](#setting-up-a-local-game-server)
+- [Self-Hosted Alternatives to Popular Online Games](#self-hosted-alternatives-to-popular-online-games)
+- [Configuring Games for Offline Play](#configuring-games-for-offline-play)
+- [Security Best Practices for LAN Parties](#security-best-practices-for-lan-parties)
+- [Practical Setup: Valheim Server](#practical-setup-valheim-server)
+- [Finding Privacy-Respecting Games](#finding-privacy-respecting-games)
+
 ## Why Online Gaming Collects Your Data
 
 Every time you play an online game, the publisher collects substantial information about you and your gaming behavior. Understanding what gets collected helps motivate the switch to local gaming alternatives.

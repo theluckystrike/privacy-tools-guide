@@ -288,6 +288,14 @@ gpg -c /root/tripwire-keys-$(date +%Y%m%d).tar.gz
 
 ---
 
+## Related Articles
+
+- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
+- [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
+- [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

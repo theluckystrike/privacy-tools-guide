@@ -227,6 +227,16 @@ Google's solution handles one piece of the puzzle—coordinate it with broader d
 
 ## Automating Backup Verification
 
+## Table of Contents
+
+- [Automating Backup Verification](#automating-backup-verification)
+- [Digital Legacy Best Practices](#digital-legacy-best-practices)
+- [Access Credentials](#access-credentials)
+- [Inactive Account Manager Configuration](#inactive-account-manager-configuration)
+- [Post-Transfer Actions](#post-transfer-actions)
+- [Backup Locations](#backup-locations)
+- [Contact Information for Executor](#contact-information-for-executor)
+
 ### Scheduled Takeout Exports
 
 Create a system to automatically verify your data exports remain complete:

@@ -41,6 +41,17 @@ Research involving human subjects generates data that demands rigorous protectio
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding IRB Data Protection Requirements](#understanding-irb-data-protection-requirements)
+- [Encryption Fundamentals for Research Data](#encryption-fundamentals-for-research-data)
+- [Secure Data Collection Tools](#secure-data-collection-tools)
+- [Secure Data Analysis Environments](#secure-data-analysis-environments)
+- [Data De-identification Techniques](#data-de-identification-techniques)
+- [Access Control and Audit Logging](#access-control-and-audit-logging)
+- [Data Retention and Destruction](#data-retention-and-destruction)
+- [Practical Implementation Checklist](#practical-implementation-checklist)
+
 ## Understanding IRB Data Protection Requirements
 
 The Common Rule (45 CFR 46) establishes baseline protections for human subjects research in the United States. Beyond the ethical considerations, IRBs increasingly require documented data protection protocols before approving studies. Key requirements typically include:

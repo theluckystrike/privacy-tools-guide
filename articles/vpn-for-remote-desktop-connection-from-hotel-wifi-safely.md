@@ -40,6 +40,21 @@ Hotel WiFi is vulnerable to packet sniffing, man-in-the-middle attacks, and sess
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Let them use it for 2-3 weeks**: then gather their honest feedback.
 
+## Table of Contents
+
+- [The Security Risks of Hotel WiFi](#the-security-risks-of-hotel-wifi)
+- [Choosing the Right VPN Setup](#choosing-the-right-vpn-setup)
+- [Configuring Remote Desktop Over VPN](#configuring-remote-desktop-over-vpn)
+- [Network Configuration Checklist](#network-configuration-checklist)
+- [Handling Connection Drops](#handling-connection-drops)
+- [Alternative: SSH Jump Host](#alternative-ssh-jump-host)
+- [Security Comparison Table](#security-comparison-table)
+- [Advanced WireGuard Configuration for Stability](#advanced-wireguard-configuration-for-stability)
+- [Certificate Validation for VPN Connections](#certificate-validation-for-vpn-connections)
+- [Monitoring Connection Health](#monitoring-connection-health)
+- [Firewall Rules for RDP Over VPN](#firewall-rules-for-rdp-over-vpn)
+- [Troubleshooting Hotel Network Issues](#troubleshooting-hotel-network-issues)
+
 ## The Security Risks of Hotel WiFi
 
 Hotel networks operate differently from corporate or home networks. Most hotels provide open (unencrypted) WiFi or use weak encryption that can be bypassed with minimal effort. When you connect to RDP or VNC over these networks without protection, your credentials, session data, and potentially sensitive company information travel in plain text.

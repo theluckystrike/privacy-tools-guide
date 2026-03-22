@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
@@ -25,6 +26,19 @@ Secure your Tor Browser bookmarks by disabling automatic backup, using generic f
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 - **Should I switch tools**: if something better comes out? Switching costs are real: learning curves, workflow disruption, and data migration all take time.
+
+## Table of Contents
+
+- [Understanding the Bookmark Threat Model](#understanding-the-bookmark-threat-model)
+- [Strategic Bookmark Organization](#strategic-bookmark-organization)
+- [Practical Implementation](#practical-implementation)
+- [Browser Configuration Tweaks](#browser-configuration-tweaks)
+- [Advanced: Encrypted Bookmark Storage](#advanced-encrypted-bookmark-storage)
+- [Automating Bookmark Hygiene](#automating-bookmark-hygiene)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Quick Reference Checklist](#quick-reference-checklist)
+- [Operational Security for Bookmark Review Sessions](#operational-security-for-bookmark-review-sessions)
+- [Recognizing Phishing and Spoofed Onion Addresses](#recognizing-phishing-and-spoofed-onion-addresses)
 
 ## Understanding the Bookmark Threat Model
 
@@ -333,10 +347,9 @@ Do not trust a bookmark you did not personally create from a verified source. Tr
 ## Related Articles
 
 - [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
 - [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
-- [Secure Browsing Habits With Tor Best Practices](/privacy-tools-guide/secure-browsing-habits-with-tor-best-practices/)
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [Best Browser To Use With Tor Hidden Services](/privacy-tools-guide/best-browser-to-use-with-tor-hidden-services/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

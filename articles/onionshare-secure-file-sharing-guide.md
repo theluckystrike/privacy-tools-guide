@@ -30,6 +30,14 @@ This guide covers installation, every major mode, security considerations, metad
 - **For high-risk situations, use OnionShare from a Tails OS live session**: Tails routes all traffic through Tor and leaves no trace on the host machine.
 - **OnionShare is better for**: individuals and one-off transfers.
 
+## Table of Contents
+
+- [Install OnionShare](#install-onionshare)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Install OnionShare
 
 ```bash

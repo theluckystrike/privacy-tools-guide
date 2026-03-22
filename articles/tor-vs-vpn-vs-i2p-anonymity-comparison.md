@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, best-of, comparison, vpn]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
@@ -47,6 +48,20 @@ Setup:
 ---
 
 ## VPN: Weakest Anonymity (But Useful)
+
+## Table of Contents
+
+- [VPN: Weakest Anonymity (But Useful)](#vpn-weakest-anonymity-but-useful)
+- [Tor: Maximum Anonymity (Slow)](#tor-maximum-anonymity-slow)
+- [I2P: Peer-to-Peer Anonymity (Faster Than Tor)](#i2p-peer-to-peer-anonymity-faster-than-tor)
+- [Lokinet: Decentralized VPN Alternative](#lokinet-decentralized-vpn-alternative)
+- [Performance Comparison: Real Numbers](#performance-comparison-real-numbers)
+- [Anonymity vs Speed Tradeoff](#anonymity-vs-speed-tradeoff)
+- [Threat Model Decision Tree](#threat-model-decision-tree)
+- [Real-World Setup: Multi-Layer Approach](#real-world-setup-multi-layer-approach)
+- [DNS Leak Prevention (All Methods)](#dns-leak-prevention-all-methods)
+- [Comparison: Tor vs I2P vs Lokinet](#comparison-tor-vs-i2p-vs-lokinet)
+- [Related Reading](#related-reading)
 
 A VPN (Virtual Private Network) masks your IP address by routing traffic through a provider's server. That's it. It does NOT provide anonymity.
 
@@ -731,6 +746,14 @@ nslookup example.com 127.0.0.1
 - [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 - [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+
+## Related Articles
+
+- [VPN over Tor vs Tor over VPN: A Technical Comparison](/privacy-tools-guide/vpn-over-tor-vs-tor-over-vpn/)
+- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)
+- [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
+- [Tor Browser vs LibreWolf Privacy Comparison](/privacy-tools-guide/tor-browser-vs-librewolf-privacy-comparison/)
+- [How to Use the I2P Anonymous Network](/privacy-tools-guide/i2p-anonymous-network-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

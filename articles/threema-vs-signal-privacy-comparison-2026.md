@@ -40,6 +40,21 @@ Choose Signal if you want the most widely adopted, open-source E2EE protocol wit
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Metadata Analysis](#metadata-analysis)
+- [Self-Hosting and Deployment](#self-hosting-and-deployment)
+- [Protocol and Ecosystem](#protocol-and-ecosystem)
+- [Verification and Security Features](#verification-and-security-features)
+- [Practical Considerations](#practical-considerations)
+- [Making the Technical Choice](#making-the-technical-choice)
+- [Advanced Configuration and Deployment](#advanced-configuration-and-deployment)
+- [Protocol Comparison Deep Dive](#protocol-comparison-deep-dive)
+- [Use Case Decision Matrix](#use-case-decision-matrix)
+- [Migration Strategies](#migration-strategies)
+- [Performance and Reliability](#performance-and-reliability)
+
 ## Encryption Architecture
 
 ### Signal Protocol Implementation

@@ -28,6 +28,18 @@ For developers and power users, this incident provides concrete lessons about da
 - **Use a shipping address**: that doesn't reveal your home (PO box, mail forwarding) 3.
 - **Generate new addresses for**: each transaction to avoid address reuse analysis 5.
 
+## Table of Contents
+
+- [What Happened in the Ledger Breach](#what-happened-in-the-ledger-breach)
+- [The Identity Linkage Problem](#the-identity-linkage-problem)
+- [Data Minimization for Hardware Wallet Companies](#data-minimization-for-hardware-wallet-companies)
+- [Technical Architecture Recommendations](#technical-architecture-recommendations)
+- [What Power Users Can Do](#what-power-users-can-do)
+- [The Broader Ecosystem Problem](#the-broader-ecosystem-problem)
+- [Implementing Zero-Knowledge Architectures in Practice](#implementing-zero-knowledge-architectures-in-practice)
+- [Real-World Response After a Breach](#real-world-response-after-a-breach)
+- [For Power Users: Minimizing Your Exposure](#for-power-users-minimizing-your-exposure)
+
 ## What Happened in the Ledger Breach
 
 In December 2024, a former Ledger employee leaked a database containing customer information from 2020 and 2021. The exposed data included:

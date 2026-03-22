@@ -26,6 +26,13 @@ A home NAS holding photos, documents, and backups is a high-value target. By def
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers the default problem**: section 1: account and authentication, disable the default admin account, with specific setup instructions
 
+## Table of Contents
+
+- [The Default Problem](#the-default-problem)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## The Default Problem
 
 NAS systems come out of the box with:

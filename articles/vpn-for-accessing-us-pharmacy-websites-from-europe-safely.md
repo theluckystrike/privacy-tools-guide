@@ -40,6 +40,16 @@ To access US pharmacy websites from Europe, connect via VPN with an US exit node
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The most common method**: is IP address detection, where the server examines the visitor's IP address and matches it against a geolocation database.
 
+## Table of Contents
+
+- [Understanding Geo-Restrictions on Pharmacy Websites](#understanding-geo-restrictions-on-pharmacy-websites)
+- [How VPNs Bypass Geographic Restrictions](#how-vpns-bypass-geographic-restrictions)
+- [Choosing a VPN for Pharmacy Access](#choosing-a-vpn-for-pharmacy-access)
+- [Technical Configuration](#technical-configuration)
+- [Security Considerations](#security-considerations)
+- [Automation and Scripting](#automation-and-scripting)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Understanding Geo-Restrictions on Pharmacy Websites
 
 US pharmacy websites often restrict access based on geographic location through several technical mechanisms. The most common method is IP address detection, where the server examines the visitor's IP address and matches it against a geolocation database. If the IP originates from a European country, the server returns a blocking page or redirects to a local partner site.

@@ -12,6 +12,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
+<<<<<<< Updated upstream
 ---
 ---
 layout: default
@@ -28,6 +29,9 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -352,9 +356,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
+- [How to Set Up a Dead Man's Switch for Data](/privacy-tools-guide/dead-mans-switch-python-script-guide/)
 - [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
-- [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
-- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
-
+- [VPN for Accessing Polish Streaming Services from UK 2026](/privacy-tools-guide/vpn-for-accessing-polish-streaming-services-from-uk-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

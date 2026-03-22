@@ -140,6 +140,19 @@ Server: 192.168.1.1
 
 ## Quad9
 
+## Table of Contents
+
+- [Quad9](#quad9)
+- [Mullvad DNS](#mullvad-dns)
+- [AdGuard DNS](#adguard-dns)
+- [Cloudflare 1.1.1.1](#cloudflare-1111)
+- [Comparison Table](#comparison-table)
+- [Router Configuration Checklist](#router-configuration-checklist)
+- [Comparison: Device Configuration Difficulty](#comparison-device-configuration-difficulty)
+- [Privacy Comparison: Detailed](#privacy-comparison-detailed)
+- [Recommendation](#recommendation)
+- [Related Reading](#related-reading)
+
 Quad9 is a nonprofit DNS service focused on security and privacy. It blocks known malicious and phishing domains.
 
 **Privacy Model:**

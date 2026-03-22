@@ -41,6 +41,25 @@ This comparison covers the main protocols used in privacy-focused messaging in 2
 2.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [The Core Properties to Evaluate](#the-core-properties-to-evaluate)
+- [Signal Protocol](#signal-protocol)
+- [Matrix Protocol (Megolm + Olm)](#matrix-protocol-megolm-olm)
+- [OMEMO (for XMPP)](#omemo-for-xmpp)
+- [MLS (Messaging Layer Security)](#mls-messaging-layer-security)
+- [Briar's Bramble Protocol](#briars-bramble-protocol)
+- [Comparison Table](#comparison-table)
+- [What Protocol Audit Reports Say](#what-protocol-audit-reports-say)
+- [What Protocol Cannot Protect Against](#what-protocol-cannot-protect-against)
+- [Practical Implementation: Verifying Protocol Claims](#practical-implementation-verifying-protocol-claims)
+- [Comparing Real-World Deployments](#comparing-real-world-deployments)
+- [Threat Models and Protocol Choices](#threat-models-and-protocol-choices)
+- [Code-Level Protocol Differences](#code-level-protocol-differences)
+- [Post-Quantum Considerations](#post-quantum-considerations)
+- [Deployment Checklist for Teams](#deployment-checklist-for-teams)
+- [Related Reading](#related-reading)
+
 ## The Core Properties to Evaluate
 
 Before comparing protocols, understand the properties that distinguish them:

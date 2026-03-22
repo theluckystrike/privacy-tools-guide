@@ -55,6 +55,16 @@ It depends on your background.
 - **Signal tends to work**: well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration.
 - **Try the free tier**: or trial of each before committing to a paid plan.
 
+## Table of Contents
+
+- [Encryption and Security Architecture](#encryption-and-security-architecture)
+- [API Access and Developer Extensibility](#api-access-and-developer-extensibility)
+- [Self-Hosting and Data Sovereignty](#self-hosting-and-data-sovereignty)
+- [Group Communication and Team Features](#group-communication-and-team-features)
+- [Integration Ecosystem](#integration-ecosystem)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Cost Considerations](#cost-considerations)
+
 ## Encryption and Security Architecture
 
 Both platforms use the Signal Protocol for end-to-end encryption, which provides forward secrecy and async message support. However, their implementations and security models diverge in important ways.

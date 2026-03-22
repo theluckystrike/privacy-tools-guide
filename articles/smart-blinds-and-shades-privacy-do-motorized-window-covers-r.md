@@ -41,6 +41,16 @@ Motorized window treatments have evolved from simple convenience devices into so
 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Smart Blinds Collect and Transmit Data](#how-smart-blinds-collect-and-transmit-data)
+- [Occupancy Detection Mechanisms](#occupancy-detection-mechanisms)
+- [Cloud Connectivity and Data Privacy](#cloud-connectivity-and-data-privacy)
+- [Running Smart Blinds Locally](#running-smart-blinds-locally)
+- [API Access and Data Management](#api-access-and-data-management)
+- [Privacy-Preserving Alternatives](#privacy-preserving-alternatives)
+- [Evaluating Devices Before Purchase](#evaluating-devices-before-purchase)
+
 ## How Smart Blinds Collect and Transmit Data
 
 Modern motorized blinds and shades integrate with multiple protocols—Z-Wave, Zigbee, Wi-Fi, and Thread—each with distinct privacy implications. Devices from manufacturers like Lutron, Somfy, and IKEA's Fyrtur connect to central hubs that may relay data to cloud services, creating potential exposure points for sensitive information.

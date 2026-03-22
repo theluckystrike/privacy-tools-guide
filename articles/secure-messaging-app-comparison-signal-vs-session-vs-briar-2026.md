@@ -18,6 +18,17 @@ intent-checked: true
 
 ## Secure Messaging in 2026: The Landscape
 
+## Table of Contents
+
+- [Secure Messaging in 2026: The Landscape](#secure-messaging-in-2026-the-landscape)
+- [Signal: The Gold Standard (With Trade-Offs)](#signal-the-gold-standard-with-trade-offs)
+- [Session: Anonymous Messaging (With Compromises)](#session-anonymous-messaging-with-compromises)
+- [Briar: Decentralized Mesh Messaging](#briar-decentralized-mesh-messaging)
+- [Comparison Table](#comparison-table)
+- [Decision Framework](#decision-framework)
+- [Real-World Deployment Strategy](#real-world-deployment-strategy)
+- [Technical Comparison: Encryption Depth](#technical-comparison-encryption-depth)
+
 Messaging apps are surveillance vectors. Traditional apps (WhatsApp, Telegram, iMessage) leak metadata: who talks to whom, when, from where. Some encrypt content but not metadata. Others don't encrypt at all.
 
 Three apps stand out for privacy and security: Signal, Session, and Briar. Each takes a different approach:

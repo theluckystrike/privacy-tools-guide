@@ -40,6 +40,21 @@ Landlords can require income verification, credit checks, rental history, and ba
 - **Most states allow tenants**: to obtain copies of reports used for denial decisions (FCRA rights), challenge inaccurate data, and request correction before rental decisions.
 - **They cannot use the**: application process to gather information that would allow discriminatory filtering.
 
+## Table of Contents
+
+- [The Fair Housing Act: Foundation of Tenant Privacy](#the-fair-housing-act-foundation-of-tenant-privacy)
+- [Information Landlords Can Legally Require](#information-landlords-can-legally-require)
+- [Information Landlords Cannot Legally Request](#information-landlords-cannot-legally-request)
+- [State-Specific Protections](#state-specific-protections)
+- [Practical Tips for Privacy-Conscious Renters](#practical-tips-for-privacy-conscious-renters)
+- [Handling Red Flags](#handling-red-flags)
+- [Building Your Rental Application Toolkit](#building-your-rental-application-toolkit)
+- [State-Specific Resource Guide (2026)](#state-specific-resource-guide-2026)
+- [Real Threat: Predatory Screening Companies](#real-threat-predatory-screening-companies)
+- [Decoding Screening Reports](#decoding-screening-reports)
+- [Requesting and Challenging Reports](#requesting-and-challenging-reports)
+- [Documenting Discrimination](#documenting-discrimination)
+
 ## The Fair Housing Act: Foundation of Tenant Privacy
 
 The Fair Housing Act prohibits discrimination based on protected classes including race, color, national origin, religion, sex, familial status, and disability. This federal law forms the backbone of what landlords cannot ask about, but it does not explicitly list every permissible or prohibited question.

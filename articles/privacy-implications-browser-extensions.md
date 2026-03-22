@@ -41,6 +41,24 @@ Understanding what extensions actually can do, and have done, changes how you ev
 - **Extension gains users over**: months or years 3.
 - **Existing users auto-update and**: receive the malicious version This pattern has played out repeatedly: Web of Trust (WOT), 2016: 140 million users.
 
+## Table of Contents
+
+- [What a Browser Extension Can Do Technically](#what-a-browser-extension-can-do-technically)
+- [The Extension Compromise Pattern](#the-extension-compromise-pattern)
+- [The Review Problem](#the-review-problem)
+- [Manifest V3 Does Not Solve This](#manifest-v3-does-not-solve-this)
+- [Risk Model by Permission Level](#risk-model-by-permission-level)
+- [The Minimum Footprint Principle](#the-minimum-footprint-principle)
+- [Alternatives to Common High-Permission Extensions](#alternatives-to-common-high-permission-extensions)
+- [Isolating Extensions](#isolating-extensions)
+- [Auditing Extensions Before Installation](#auditing-extensions-before-installation)
+- [Extension Compromise Timeline: Real Examples](#extension-compromise-timeline-real-examples)
+- [Building an Extension Allowlist](#building-an-extension-allowlist)
+- [Manifest V3 Extensions to Avoid](#manifest-v3-extensions-to-avoid)
+- [Enterprise Extension Policies](#enterprise-extension-policies)
+- [Firefox vs Chrome Extension Security](#firefox-vs-chrome-extension-security)
+- [Related Reading](#related-reading)
+
 ## What a Browser Extension Can Do Technically
 
 A Chrome or Firefox extension with the `<all_urls>` permission (which most request) and the ability to run content scripts can:

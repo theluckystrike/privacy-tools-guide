@@ -40,6 +40,15 @@ Wasabi Wallet implements CoinJoin through a decentralized mixing protocol that b
 - Cost**: $50-$150 in fees
 - Time: Multiple days to weeks
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Command-Line Interface](#advanced-command-line-interface)
+- [Performance and Scalability Considerations](#performance-and-scalability-considerations)
+- [Troubleshooting Advanced Issues](#troubleshooting-advanced-issues)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

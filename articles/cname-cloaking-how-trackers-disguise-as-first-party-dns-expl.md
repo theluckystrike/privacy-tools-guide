@@ -27,6 +27,23 @@ CNAME cloaking hides third-party tracker domains behind first-party domain alias
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is CNAME Cloaking](#what-is-cname-cloaking)
+- [How the Attack Works in Practice](#how-the-attack-works-in-practice)
+- [Real-World Examples](#real-world-examples)
+- [Detecting CNAME Cloaking](#detecting-cname-cloaking)
+- [Protecting Against CNAME Cloaking](#protecting-against-cname-cloaking)
+- [Technical Deep Dive: The DNS Resolution Chain](#technical-deep-dive-the-dns-resolution-chain)
+- [Code Example: Checking CNAME Records with Python](#code-example-checking-cname-records-with-python)
+- [Real-World CNAME Cloaking Examples](#real-world-cname-cloaking-examples)
+- [Measuring the Impact of CNAME Cloaking](#measuring-the-impact-of-cname-cloaking)
+- [Enterprise and CDN Considerations](#enterprise-and-cdn-considerations)
+- [Implementing Privacy-Respecting DNS Resolution](#implementing-privacy-respecting-dns-resolution)
+- [Regulatory Compliance and CNAME Cloaking](#regulatory-compliance-and-cname-cloaking)
+- [Tor Browser Protection Against CNAME Tracking](#tor-browser-protection-against-cname-tracking)
+- [Building CNAME Cloaking Detection Into Your Privacy Tools](#building-cname-cloaking-detection-into-your-privacy-tools)
+
 ## What Is CNAME Cloaking
 
 DNS CNAME records map one domain name to another, creating aliases. This is legitimate infrastructure—CDNs, load balancers, and content delivery systems rely on CNAMEs for routing. Trackers discovered they could abuse this mechanism to disguise third-party tracking domains as first-party resources.

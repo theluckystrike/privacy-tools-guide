@@ -192,6 +192,19 @@ For users concerned about this threat vector, the best defense remains awareness
 
 ## Detection Methods
 
+## Table of Contents
+
+- [Detection Methods](#detection-methods)
+- [Browser-Level Protections](#browser-level-protections)
+- [Mobile Device Protections](#mobile-device-protections)
+- [Organizational Defenses](#organizational-defenses)
+- [Industry Developments](#industry-developments)
+- [Future-Proofing Against Ultrasonic Threats](#future-proofing-against-ultrasonic-threats)
+- [User Education](#user-education)
+- [Signs an app might be using ultrasonic tracking:](#signs-an-app-might-be-using-ultrasonic-tracking)
+- [Immediate protections:](#immediate-protections)
+- [Long-term vigilance:](#long-term-vigilance)
+
 Beyond Web Audio API detection, several approaches can identify ultrasonic activity:
 
 ### Software Defined Radio (SDR) Detection

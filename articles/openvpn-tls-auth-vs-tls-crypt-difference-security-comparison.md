@@ -43,6 +43,25 @@ Choose `tls-crypt` if you need maximum security -- it encrypts and authenticates
 - **Because the packet is encrypted, network observers cannot determine that an OpenVPN server is listening**: they see only opaque encrypted data.
 - **Update server configuration to**: use `tls-crypt` instead of `tls-auth` 3.
 
+## Table of Contents
+
+- [Understanding the Baseline: TLS Encryption in OpenVPN](#understanding-the-baseline-tls-encryption-in-openvpn)
+- [What is tls-auth?](#what-is-tls-auth)
+- [What is tls-crypt?](#what-is-tls-crypt)
+- [Security Comparison](#security-comparison)
+- [Performance Considerations](#performance-considerations)
+- [Practical Recommendations](#practical-recommendations)
+- [Migration Path](#migration-path)
+- [Verification and Testing](#verification-and-testing)
+- [Packet-Level Analysis](#packet-level-analysis)
+- [Denial-of-Service Protection Mechanics](#denial-of-service-protection-mechanics)
+- [Static Key Rotation Strategy](#static-key-rotation-strategy)
+- [Protocol Fingerprinting Evasion](#protocol-fingerprinting-evasion)
+- [OpenVPN Protocol Variants](#openvpn-protocol-variants)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Integration with Modern TLS](#integration-with-modern-tls)
+- [Operational Recommendations](#operational-recommendations)
+
 ## Understanding the Baseline: TLS Encryption in OpenVPN
 
 OpenVPN uses TLS for key exchange and authentication by default. The TLS protocol provides confidentiality and integrity through symmetric encryption (typically AES-256-GCM or AES-256-CBC) and digital signatures. However, the default TLS implementation in OpenVPN has a vulnerability: an attacker can perform TLS fingerprinting, denial-of-service attacks, or attempt to exploit TLS implementation bugs without establishing a full connection.

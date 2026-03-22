@@ -40,6 +40,22 @@ Instagram has been inaccessible from mainland China since 2014, blocked by the c
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Great Firewall's Blocking Mechanism](#understanding-the-great-firewalls-blocking-mechanism)
+- [Protocol Selection for China Access](#protocol-selection-for-china-access)
+- [Self-Hosted vs. Commercial Solutions](#self-hosted-vs-commercial-solutions)
+- [Implementation Considerations for Developers](#implementation-considerations-for-developers)
+- [Testing Your Setup](#testing-your-setup)
+- [Advanced GFW Evasion Techniques](#advanced-gfw-evasion-techniques)
+- [China-Specific Considerations](#china-specific-considerations)
+- [Instagram-Specific Access Strategies](#instagram-specific-access-strategies)
+- [Performance Optimization](#performance-optimization)
+- [Mobile Instagram Configuration](#mobile-instagram-configuration)
+- [Troubleshooting Instagram-Specific Issues](#troubleshooting-instagram-specific-issues)
+- [Long-term Access Strategies](#long-term-access-strategies)
+- [Legal and Ethical Considerations](#legal-and-ethical-considerations)
+
 ## Understanding the Great Firewall's Blocking Mechanism
 
 The GFW employs multiple blocking techniques that have evolved significantly over the years. At its core, the firewall performs deep packet inspection (DPI) on outbound traffic, analyzing packet headers and payloads to identify connections to blocked services. Instagram's IP addresses, domain names, and even specific URL patterns are actively blacklisted.

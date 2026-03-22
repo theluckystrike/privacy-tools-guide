@@ -30,6 +30,14 @@ This guide walks through creating a LUKS2 container from scratch, including choo
 - **The `dd if=/dev/urandom` approach**: is slower because it reads from the kernel's random device.
 - **In that case, use `openssl rand` which uses OpenSSL's PRNG seeded from the kernel entropy pool**: it produces cryptographically indistinguishable output and is much faster.
 
+## Table of Contents
+
+- [Why a Container File vs Full Disk Encryption](#why-a-container-file-vs-full-disk-encryption)
+- [Prerequisites](#prerequisites)
+- [Performance Impact of Encrypted Containers](#performance-impact-of-encrypted-containers)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why a Container File vs Full Disk Encryption
 
 | Use case | Full disk | Container file |

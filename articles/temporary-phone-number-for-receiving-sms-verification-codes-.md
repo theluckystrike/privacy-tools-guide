@@ -40,6 +40,21 @@ When you need to verify a phone number for account creation but want to avoid ex
 - **Limited to 10 activations**: per day to prevent abuse.
 - **SMSActivate ($0.30-1.00 per SMS)**: Covers 100+ countries.
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [Categories of Temporary Phone Numbers](#categories-of-temporary-phone-numbers)
+- [Practical Approaches for Developers](#practical-approaches-for-developers)
+- [Service Considerations](#service-considerations)
+- [Privacy Implications and Limitations](#privacy-implications-and-limitations)
+- [Use Cases for Developers](#use-cases-for-developers)
+- [Building Your Own Solution](#building-your-own-solution)
+- [Temporary Phone Number Services: Comparison and Pricing](#temporary-phone-number-services-comparison-and-pricing)
+- [Selection Criteria by Use Case](#selection-criteria-by-use-case)
+- [VoIP Number Detection and Blocking](#voip-number-detection-and-blocking)
+- [Automation Framework for SMS Verification](#automation-framework-for-sms-verification)
+- [Integration with Selenium/Playwright](#integration-with-seleniumplaywright)
+
 ## Understanding the Problem
 
 SMS verification has become ubiquitous in modern web applications. Services use phone numbers to verify identity, prevent spam, and enable two-factor authentication. However, sharing your personal phone number with every service introduces privacy risks—unwanted marketing calls, data breaches, and potential tracking across platforms.

@@ -50,6 +50,26 @@ When choosing a VPN protocol for mobile devices, battery consumption often ranks
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **IPSec IKEv2**: while mature and widely supported, involves a more complex handshake process.
 
+## Table of Contents
+
+- [Protocol Architecture Differences](#protocol-architecture-differences)
+- [Battery Impact: Real-World Measurements](#battery-impact-real-world-measurements)
+- [Connection Stability and Reconnection Behavior](#connection-stability-and-reconnection-behavior)
+- [Configuration Optimization for Mobile](#configuration-optimization-for-mobile)
+- [Platform-Specific Considerations](#platform-specific-considerations)
+- [Detailed Performance Benchmarks](#detailed-performance-benchmarks)
+- [Cellular vs WiFi Battery Patterns](#cellular-vs-wifi-battery-patterns)
+- [Advanced Handshake Comparison](#advanced-handshake-comparison)
+- [Memory Footprint and Battery Impact](#memory-footprint-and-battery-impact)
+- [Keepalive Optimization Deep Dive](#keepalive-optimization-deep-dive)
+- [Kernel vs Userspace VPN](#kernel-vs-userspace-vpn)
+- [Encryption Algorithm Efficiency](#encryption-algorithm-efficiency)
+- [Rekeying and Re-Authentication Overhead](#rekeying-and-re-authentication-overhead)
+- [Practical Mobile Device Testing](#practical-mobile-device-testing)
+- [Protocol Selection Decision Tree](#protocol-selection-decision-tree)
+- [Kernel vs Userspace Implementation Impact](#kernel-vs-userspace-implementation-impact)
+- [Making the Right Choice](#making-the-right-choice)
+
 ## Protocol Architecture Differences
 
 WireGuard represents a modern approach to VPN design. It operates with approximately 4,000 lines of code compared to IPSec IKEv2's 400,000+ lines. This simplicity translates directly to reduced CPU overhead during packet processing. WireGuard uses ChaCha20-Poly1305 for encryption—a symmetric key algorithm optimized for efficient computation on mobile processors without requiring specialized cryptographic hardware.

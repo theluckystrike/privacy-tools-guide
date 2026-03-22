@@ -44,6 +44,24 @@ End-to-end encryption has become the gold standard for protecting sensitive data
 User B's decryption:
   1.
 
+## Table of Contents
+
+- [Tutanota's Encryption Architecture](#tutanotas-encryption-architecture)
+- [Calendar Encryption in Practice](#calendar-encryption-in-practice)
+- [Contacts Encryption Mechanism](#contacts-encryption-mechanism)
+- [Security Properties and Limitations](#security-properties-and-limitations)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Detailed Encryption Comparison](#detailed-encryption-comparison)
+- [Advanced: Implementing Encrypted Calendar in Your Application](#advanced-implementing-encrypted-calendar-in-your-application)
+- [Calendar Sharing and Access Control](#calendar-sharing-and-access-control)
+- [Metadata Leakage and What Tutanota Cannot Hide](#metadata-leakage-and-what-tutanota-cannot-hide)
+- [Practical Setup: Tutanota for Teams](#practical-setup-tutanota-for-teams)
+- [Backup and Recovery Strategy](#backup-and-recovery-strategy)
+- [Performance Implications of End-to-End Encryption](#performance-implications-of-end-to-end-encryption)
+- [Compliance and Jurisdictional Considerations](#compliance-and-jurisdictional-considerations)
+- [Integration Limitations and Workarounds](#integration-limitations-and-workarounds)
+
 ## Tutanota's Encryption Architecture
 
 Tutanota implements end-to-end encryption using a combination of symmetric and asymmetric cryptographic primitives. Unlike services that encrypt only email content, Tutanota applies encryption uniformly across its entire platform, including the calendar and contacts applications.

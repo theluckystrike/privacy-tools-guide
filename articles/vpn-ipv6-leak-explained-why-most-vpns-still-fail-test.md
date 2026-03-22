@@ -40,6 +40,18 @@ VPNs leak your real IPv6 address because most were designed for IPv4only—your 
 - **However**: most VPNs were originally designed for IPv4 only.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What is IPv6 and Why Does It Matter?](#what-is-ipv6-and-why-does-it-matter)
+- [How IPv6 Leaks Work](#how-ipv6-leaks-work)
+- [Real-World Impact of IPv6 Leaks](#real-world-impact-of-ipv6-leaks)
+- [How to Test for IPv6 Leaks](#how-to-test-for-ipv6-leaks)
+- [Why Most VPNs Still Fail](#why-most-vpns-still-fail)
+- [Solutions and Protections](#solutions-and-protections)
+- [The Bigger Picture](#the-bigger-picture)
+- [Block IPv6 with nftables (Persistent)](#block-ipv6-with-nftables-persistent)
+- [Automated Leak Test Script](#automated-leak-test-script)
+
 ## What is IPv6 and Why Does It Matter?
 
 IPv6 (Internet Protocol version 6) is the newest version of internet protocol, designed to replace IPv4, which has run out of available addresses. While IPv4 uses 32-bit addresses (like 192.168.1.1), IPv6 uses 128-bit addresses (like 2001:0db8:85a3:0000:0000:8a2e:0370:7334).

@@ -40,6 +40,21 @@ Turkey forces platforms to remove content through a layered legal system anchore
 - **Enacted in 2007**: it establishes the legal basis for removing content, blocking websites, and holding platforms accountable for user-generated content.
 - **The company noted that**: roughly 80% of these requests resulted in some content being withheld or removed.
 
+## Table of Contents
+
+- [Legal Framework: The Laws Enabling Censorship](#legal-framework-the-laws-enabling-censorship)
+- [Technical Mechanisms: How Platforms Actually Censor](#technical-mechanisms-how-platforms-actually-censor)
+- [Real Examples: When Orders Become Public](#real-examples-when-orders-become-public)
+- [Financial Impact of Non-Compliance](#financial-impact-of-non-compliance)
+- [Developer and Power User Implications](#developer-and-power-user-implications)
+- [Practical Defenses](#practical-defenses)
+- [Specific Content Categories Under Attack](#specific-content-categories-under-attack)
+- [Real-World Content Removal Patterns](#real-world-content-removal-patterns)
+- [Monitoring Your Own Internet Access](#monitoring-your-own-internet-access)
+- [VPN and Circumvention Options in Turkey](#vpn-and-circumvention-options-in-turkey)
+- [What Developers Building Turkish Services Should Know](#what-developers-building-turkish-services-should-know)
+- [The Broader Privacy Implications](#the-broader-privacy-implications)
+
 ## Legal Framework: The Laws Enabling Censorship
 
 Turkey's content removal authority stems from multiple laws that create a complex, overlapping system of censorship.

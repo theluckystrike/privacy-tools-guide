@@ -31,6 +31,15 @@ Redis and MongoDB have both been responsible for massive data breaches — not b
 user readonly on >MonitorPass!
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Default-Open Problem](#the-default-open-problem)
+- [Redis Security](#redis-security)
+- [MongoDB Security](#mongodb-security)
+- [Firewall Rules for Both Services](#firewall-rules-for-both-services)
+- [Verify Your Hardening](#verify-your-hardening)
+- [Related Reading](#related-reading)
+
 ## The Default-Open Problem
 
 **Redis defaults**:

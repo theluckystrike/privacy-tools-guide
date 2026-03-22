@@ -45,6 +45,15 @@ This guide provides actionable steps to remove your data from people search site
 - **Use encrypted communication**: Signal for messaging, ProtonMail for email
 5.
 
+## Table of Contents
+
+- [Understanding People Search Sites](#understanding-people-search-sites)
+- [Step 1: Identify Where Your Data Appears](#step-1-identify-where-your-data-appears)
+- [Step 2: Submit Opt-Out Requests](#step-2-submit-opt-out-requests)
+- [Step 3: Use Legal Use (CCPA/GDPR)](#step-3-use-legal-use-ccpagdpr)
+- [Step 4: Monitor and Maintain](#step-4-monitor-and-maintain)
+- [Step 5: Reduce Future Exposure](#step-5-reduce-future-exposure)
+
 ## Understanding People Search Sites
 
 People search sites like Spokeo, Whitepages, BeenVerified, and Acxiom aggregate data from public records, social media, and data brokers. They monetize this information through background check services, marketing data, and subscription plans.

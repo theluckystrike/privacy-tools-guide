@@ -41,6 +41,13 @@ The VCDPA applies to businesses that control or process personal data of 100,000
 - **Many organizations choose to**: adopt VCDPA-style controls universally rather than building separate compliance pathways.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Requirements](#security-requirements)
+- [Compliance Timeline and Enforcement](#compliance-timeline-and-enforcement)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

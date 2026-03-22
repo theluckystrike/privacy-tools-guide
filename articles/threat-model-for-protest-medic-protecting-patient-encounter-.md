@@ -40,6 +40,18 @@ Protect protest medic patient data by documenting encounters without storing ide
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Most medics inadvertently store**: patient information across multiple platforms, creating a fragmented attack surface.
 
+## Table of Contents
+
+- [Who Wants Your Data](#who-wants-your-data)
+- [Digital Footprint Assessment](#digital-footprint-assessment)
+- [Secure Encounter Documentation](#secure-encounter-documentation)
+- [Device Security Fundamentals](#device-security-fundamentals)
+- [Communication Security](#communication-security)
+- [Data Retention Strategy](#data-retention-strategy)
+- [Physical Security Considerations](#physical-security-considerations)
+- [Incident Response Plan](#incident-response-plan)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Who Wants Your Data
 
 Before implementing protections, identify the adversaries. Protest medic data faces several threat actors:

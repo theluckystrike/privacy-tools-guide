@@ -40,6 +40,15 @@ Tor's IP anonymity and aggressive bot detection frequently collide: exit nodes a
 - **Use Onion Services When Available**: Many services offer .onion versions that bypass clearnet detection entirely.
 - **Start with circuit changes and security level adjustments**: they resolve most captcha friction without touching your privacy settings.
 
+## Table of Contents
+
+- [Why Tor Browser Triggers Captchas So Frequently](#why-tor-browser-triggers-captchas-so-frequently)
+- [Built-in Tor Browser Solutions](#built-in-tor-browser-solutions)
+- [Browser Configuration Adjustments](#browser-configuration-adjustments)
+- [Third-Party Service Integration](#third-party-service-integration)
+- [Automating Browser Interactions](#automating-browser-interactions)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Why Tor Browser Triggers Captchas So Frequently
 
 Tor Browser's architecture intentionally masks your real IP address by routing traffic through the Tor network, but this same anonymity makes you appear suspicious to many automated detection systems. Websites interpret the shared exit node IPs and the browser's unique fingerprint as indicators of bot-like behavior.

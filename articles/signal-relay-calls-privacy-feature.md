@@ -40,6 +40,16 @@ Signal's relay calls feature represents a significant advancement in protecting 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Typical latency additions range**: from 20-80ms depending on server distance.
 
+## Table of Contents
+
+- [How Signal Relay Calls Work](#how-signal-relay-calls-work)
+- [Technical Implementation Details](#technical-implementation-details)
+- [Enabling and Configuring Relay Calls](#enabling-and-configuring-relay-calls)
+- [Performance Considerations](#performance-considerations)
+- [Use Cases for Developers and Power Users](#use-cases-for-developers-and-power-users)
+- [Limitations and Trade-offs](#limitations-and-trade-offs)
+- [Advanced Configuration and Optimization](#advanced-configuration-and-optimization)
+
 ## How Signal Relay Calls Work
 
 When you make a standard VoIP call, the calling and receiving devices typically exchange IP addresses directly. This direct peer-to-peer connection enables low-latency communication but exposes sensitive network information. The other party can potentially:

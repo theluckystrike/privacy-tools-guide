@@ -40,6 +40,16 @@ Connecting from Asia to US office networks adds 200-400ms of latency due to geog
 - **Many enterprise VPN solutions**: use IKEv2 for this reason.
 - **Most enterprise VPN solutions**: support certificates, which resist credential theft and enable revocation if compromised.
 
+## Table of Contents
+
+- [Understanding the Core Challenge](#understanding-the-core-challenge)
+- [VPN Protocol Selection](#vpn-protocol-selection)
+- [Network Architecture Considerations](#network-architecture-considerations)
+- [Performance Optimization Techniques](#performance-optimization-techniques)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Getting Started](#getting-started)
+
 ## Understanding the Core Challenge
 
 The fundamental issue is physical distance. A connection from Tokyo to an US west coast data center travels approximately 8,000 kilometers through multiple network hops. Each hop adds milliseconds of latency, and packet loss becomes more likely as distance increases. A typical unoptimized connection from Singapore to an US server might experience 200-300ms round-trip time, while connections from Sydney or Tokyo to US east coast facilities can exceed 400ms.

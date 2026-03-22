@@ -42,6 +42,20 @@ MyQ and Chamberlain smart garage door openers transmit detailed timestamps of ev
 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Data Collection Overview](#data-collection-overview)
+- [Network Traffic Analysis](#network-traffic-analysis)
+- [What Schedule Information Gets Exposed](#what-schedule-information-gets-exposed)
+- [The Developer Perspective: API Limitations and Alternatives](#the-developer-perspective-api-limitations-and-alternatives)
+- [Practical Recommendations](#practical-recommendations)
+- [Deep Network Analysis of MyQ Communication](#deep-network-analysis-of-myq-communication)
+- [Data Export and Forensic Analysis](#data-export-and-forensic-analysis)
+- [Privacy Impact Assessment for Legal Proceedings](#privacy-impact-assessment-for-legal-proceedings)
+- [Alternative Smart Garage Solutions](#alternative-smart-garage-solutions)
+- [Data Minimization for Existing MyQ Users](#data-minimization-for-existing-myq-users)
+- [Privacy Implications by User Type](#privacy-implications-by-user-type)
+
 ## Data Collection Overview
 
 The MyQ system operates through a combination of a hub device connected to your garage door opener and a cloud-based infrastructure. This architecture means that every door operation travels through Chamberlain's servers, creating a detailed log of when your garage opens and closes.

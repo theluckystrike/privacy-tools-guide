@@ -41,6 +41,14 @@ To identify unknown devices, check your router's admin interface (192.168.1.1 or
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **To access this**: open your web browser and enter your router's IP address (commonly 192.168.0.1, 192.168.1.1, or 10.0.0.1).
 
+## Table of Contents
+
+- [Identifying Devices on Your Network](#identifying-devices-on-your-network)
+- [Investigating the Unknown Device](#investigating-the-unknown-device)
+- [Securing Your Network](#securing-your-network)
+- [Preventing Future Unauthorized Access](#preventing-future-unauthorized-access)
+- [When to Seek Professional Help](#when-to-seek-professional-help)
+
 ## Identifying Devices on Your Network
 
 The first step in handling unknown devices is identifying what's currently connected to your network. Modern routers maintain a list of all connected devices, though the process for accessing this information varies by manufacturer.

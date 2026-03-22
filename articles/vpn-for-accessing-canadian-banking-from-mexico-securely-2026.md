@@ -40,6 +40,25 @@ To access Canadian banking from Mexico, configure a VPN with a Canadian exit nod
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Security Architecture](#understanding-the-security-architecture)
+- [Protocol Selection and Configuration](#protocol-selection-and-configuration)
+- [DNS Leak Prevention](#dns-leak-prevention)
+- [Kill Switch Implementation](#kill-switch-implementation)
+- [Multi-Factor Authentication Considerations](#multi-factor-authentication-considerations)
+- [Connection Monitoring and Logging](#connection-monitoring-and-logging)
+- [Common Issues and Troubleshooting](#common-issues-and-troubleshooting)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced DNS Security Configuration](#advanced-dns-security-configuration)
+- [Latency and Connection Stability Monitoring](#latency-and-connection-stability-monitoring)
+- [VPN Provider Evaluation Framework](#vpn-provider-evaluation-framework)
+- [Certificate Pinning and MFA Integration](#certificate-pinning-and-mfa-integration)
+- [Emergency Backup Access Methods](#emergency-backup-access-methods)
+- [Audit Logging for Compliance](#audit-logging-for-compliance)
+- [Regulatory Compliance Considerations](#regulatory-compliance-considerations)
+- [Performance Optimization for Mobile Banking Apps](#performance-optimization-for-mobile-banking-apps)
+
 ## Understanding the Security Architecture
 
 Canadian banks employ multiple layers of security that affect users connecting from abroad. These include IP-based geolocation blocks, behavioral analysis systems that detect unusual login patterns, and two-factor authentication that may be triggered by foreign connections. A properly configured VPN addresses these concerns by routing your connection through a Canadian exit node, making your traffic appear to originate from within Canada.

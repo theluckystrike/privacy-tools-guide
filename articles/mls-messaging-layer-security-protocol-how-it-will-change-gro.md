@@ -40,6 +40,20 @@ If you build messaging applications, coordinate teams, or manage sensitive group
 - **Test your integration against**: at least two independent MLS libraries before production deployment.
 - **Element (Matrix)**: Developing MLS support for the Matrix protocol to provide better group security than current implementations.
 
+## Table of Contents
+
+- [What MLS Actually Provides](#what-mls-actually-provides)
+- [How MLS Changes Group Encryption Architecture](#how-mls-changes-group-encryption-architecture)
+- [Practical Implementation Patterns for 2026](#practical-implementation-patterns-for-2026)
+- [What Developers Need to Know Now](#what-developers-need-to-know-now)
+- [Understanding the Ratchet Tree Structure](#understanding-the-ratchet-tree-structure)
+- [Production Deployment Considerations](#production-deployment-considerations)
+- [Performance Implications for Real Deployments](#performance-implications-for-real-deployments)
+- [Testing and Compatibility](#testing-and-compatibility)
+- [Implementation Pitfalls to Avoid](#implementation-pitfalls-to-avoid)
+- [Interoperability Testing Approach](#interoperability-testing-approach)
+- [Looking Forward](#looking-forward)
+
 ## What MLS Actually Provides
 
 MLS is an IETF-standardized protocol (RFC 9420) designed specifically for group messaging security. Unlike Signal Protocol, which excels at one-to-one communication, MLS addresses the unique challenges of group conversations where membership changes dynamically and cryptographic state must remain consistent across all participants.

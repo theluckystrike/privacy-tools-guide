@@ -44,6 +44,14 @@ Regular stretching improves blood circulation, reduces muscle tension, and preve
 # pigeon pose (seated version)
 # 1.
 
+## Table of Contents
+
+- [Why Remote Developers Need Stretching Routines](#why-remote-developers-need-stretching-routines)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Additional Resources](#additional-resources)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Remote Developers Need Stretching Routines
 
 Working from home often means longer hours and fewer natural movement breaks. Without a commute or office walkabouts, developers can easily spend 8+ hours seated. This sedentary behavior leads to tight hip flexors, rounded shoulders, and wrist strain—all preventable with a consistent stretching routine.

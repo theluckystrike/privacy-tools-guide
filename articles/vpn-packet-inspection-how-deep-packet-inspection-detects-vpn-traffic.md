@@ -44,6 +44,23 @@ Deep packet inspection (DPI) detects VPN traffic by analyzing port numbers, prot
 
 # 2.
 
+## Table of Contents
+
+- [What Is Deep Packet Inspection?](#what-is-deep-packet-inspection)
+- [How DPI Detects VPN Traffic](#how-dpi-detects-vpn-traffic)
+- [Advanced Detection Techniques](#advanced-detection-techniques)
+- [How VPN Providers Evade Detection](#how-vpn-providers-evade-detection)
+- [Practical Implications](#practical-implications)
+- [Measuring DPI Detection Risk](#measuring-dpi-detection-risk)
+- [Practical DPI Evasion Techniques](#practical-dpi-evasion-techniques)
+- [Deep Packet Inspection Under TLS](#deep-packet-inspection-under-tls)
+- [Behavioral Analysis Defenses](#behavioral-analysis-defenses)
+- [Traffic Pattern Analysis Detection](#traffic-pattern-analysis-detection)
+- [VPN Providers That Successfully Evade DPI](#vpn-providers-that-successfully-evade-dpi)
+- [Protecting Yourself: Complete Strategy](#protecting-yourself-complete-strategy)
+- [Legal and Ethical Considerations](#legal-and-ethical-considerations)
+- [Related Reading](#related-reading)
+
 ## What Is Deep Packet Inspection?
 
 Deep packet inspection is a network filtering technique that examines the contents of data packets as they pass through a network checkpoint. Unlike basic packet filtering that only looks at header information (source and destination IP addresses, ports, and protocols), DPI goes deeper by inspecting the actual payload of the data packet.

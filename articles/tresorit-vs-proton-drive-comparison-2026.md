@@ -40,6 +40,22 @@ Tresorit offers a better-documented REST API for programmatic file management an
 - **Proton Drive uses the**: same encryption libraries developed for Proton Mail, using AES-256-GCM for symmetric encryption and RSA-2048 or X25519 for key exchange depending on the implementation.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [API Access and Developer Integration](#api-access-and-developer-integration)
+- [File Synchronization and Performance](#file-synchronization-and-performance)
+- [Platform Support and Ecosystem](#platform-support-and-ecosystem)
+- [Pricing Structure](#pricing-structure)
+- [Security Incident Track Record](#security-incident-track-record)
+- [Practical Recommendations](#practical-recommendations)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Implementation Guide: Choosing and Setting Up](#implementation-guide-choosing-and-setting-up)
+- [Team Workflow Considerations](#team-workflow-considerations)
+- [Compliance and Certification](#compliance-and-certification)
+- [Migration Between Services](#migration-between-services)
+- [Cost Analysis Over 3 Years](#cost-analysis-over-3-years)
+
 ## Encryption Architecture
 
 Both Tresorit and Proton Drive implement end-to-end encryption (E2EE), meaning data is encrypted on your device before it reaches their servers. However, the key management approaches diverge in ways that affect operational flexibility.

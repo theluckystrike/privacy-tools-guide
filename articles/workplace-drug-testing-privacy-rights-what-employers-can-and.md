@@ -226,6 +226,17 @@ For developers and power users, understanding workplace drug testing regulations
 
 ## Building Compliance Documentation Systems
 
+## Table of Contents
+
+- [Building Compliance Documentation Systems](#building-compliance-documentation-systems)
+- [Test Details](#test-details)
+- [Collection Process](#collection-process)
+- [Specimen Handling](#specimen-handling)
+- [Results](#results)
+- [Employee Acknowledgment](#employee-acknowledgment)
+- [State-Specific Dispute Procedures](#state-specific-dispute-procedures)
+- [Healthcare Worker Special Considerations](#healthcare-worker-special-considerations)
+
 ### Creating a Drug Testing Policy Registry
 
 Maintain a personal registry of your employer's drug testing policies:

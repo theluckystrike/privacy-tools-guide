@@ -50,6 +50,14 @@ Proton Drive Bridge provides a powerful way to integrate encrypted cloud storage
 - **If you use multiple devices, each maintains its own key material**: files remain accessible across devices because the encryption uses your Proton account credentials for key derivation.
 - **For sensitive deployments**: route Bridge traffic through a VPN or use Tor (though this impacts performance significantly).
 
+## Table of Contents
+
+- [What Is Proton Drive Bridge?](#what-is-proton-drive-bridge)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Configuration](#advanced-configuration)
+
 ## What Is Proton Drive Bridge?
 
 Proton Drive Bridge is a desktop synchronization client that mounts your encrypted cloud storage as a local filesystem. Unlike the web-based interface, Bridge enables direct filesystem access, allowing standard desktop applications to work with encrypted files as if they were local. The client handles encryption transparently—files encrypt on your device before transmission and decrypt only when you access them.

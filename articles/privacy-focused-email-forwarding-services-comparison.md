@@ -43,6 +43,20 @@ This guide compares 5 privacy-focused forwarding services. Choose SimpleLogin if
 Your real email should be strong password + 2FA.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [The Email Forwarding Problem](#the-email-forwarding-problem)
+- [SimpleLogin: Maximum Features and Control](#simplelogin-maximum-features-and-control)
+- [Addy.io: Open Source and Developer-Friendly](#addyio-open-source-and-developer-friendly)
+- [Firefox Relay: Simple Integration with Mozilla Products](#firefox-relay-simple-integration-with-mozilla-products)
+- [DuckDuckGo Email: Zero-Config Simplicity](#duckduckgo-email-zero-config-simplicity)
+- [ForwardEmail: Self-Hosted and Open Source](#forwardemail-self-hosted-and-open-source)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Selecting the Right Service](#selecting-the-right-service)
+- [Email Forwarding Best Practices](#email-forwarding-best-practices)
+- [Migration Between Services](#migration-between-services)
+
 ## The Email Forwarding Problem
 
 Your email address is your digital identity. Every service you join—banks, shopping sites, newsletters, random accounts—receives your email. Services leak, sell, or misuse addresses. One email address can generate 200+ pieces of spam annually.

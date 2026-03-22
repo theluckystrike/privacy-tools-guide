@@ -42,6 +42,19 @@ But which one? ProtonMail is popular but expensive. Tutanota is cheaper but less
 - **Best used with desktop**: client like Thunderbird (they contribute to Posteo).
 - **Strength**: Cheapest option ($0.80/month = <$10/year).
 
+## Table of Contents
+
+- [What "Privacy Email" Actually Means](#what-privacy-email-actually-means)
+- [ProtonMail](#protonmail)
+- [Tutanota](#tutanota)
+- [Mailfence](#mailfence)
+- [Posteo](#posteo)
+- [Comparison Table](#comparison-table)
+- [Practical Recommendations](#practical-recommendations)
+- [Implementation Path](#implementation-path)
+- [Cost Analysis](#cost-analysis)
+- [Final Verdict](#final-verdict)
+
 ## What "Privacy Email" Actually Means
 
 Privacy email providers use:

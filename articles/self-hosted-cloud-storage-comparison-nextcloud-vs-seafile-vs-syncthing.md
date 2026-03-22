@@ -28,6 +28,19 @@ Self-hosted cloud storage gives you complete control over your data and eliminat
 
 It depends on your background.
 
+## Table of Contents
+
+- [Why Self-Host Cloud Storage?](#why-self-host-cloud-storage)
+- [Architecture Comparison: Centralized vs Peer-to-Peer](#architecture-comparison-centralized-vs-peer-to-peer)
+- [Nextcloud: Feature-Rich Centralized Storage](#nextcloud-feature-rich-centralized-storage)
+- [Seafile: Lightweight and Fast](#seafile-lightweight-and-fast)
+- [Syncthing: Decentralized and Simple](#syncthing-decentralized-and-simple)
+- [Hardware Requirements Comparison](#hardware-requirements-comparison)
+- [Encryption and Security Comparison](#encryption-and-security-comparison)
+- [Real-World Scenario: Which to Choose?](#real-world-scenario-which-to-choose)
+- [Backup Strategy for Self-Hosted Storage](#backup-strategy-for-self-hosted-storage)
+- [Related Reading](#related-reading)
+
 ## Why Self-Host Cloud Storage?
 
 Proprietary cloud storage (Google Drive, OneDrive, iCloud) monetizes your data. You don't control encryption, backups, or access policies. You're one policy change away from losing access or having your data scanned.

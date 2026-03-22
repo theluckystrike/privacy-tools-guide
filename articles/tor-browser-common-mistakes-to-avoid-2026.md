@@ -40,6 +40,24 @@ Tor Browser remains one of the most accessible tools for privacy-conscious users
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Using Tor Browser Without Understanding Its Isolation Model](#using-tor-browser-without-understanding-its-isolation-model)
+- [Resizing the Browser Window](#resizing-the-browser-window)
+- [JavaScript Blind Trust](#javascript-blind-trust)
+- [Neglecting Bridge Configurations](#neglecting-bridge-configurations)
+- [Reusing the Same Tor Identity](#reusing-the-same-tor-identity)
+- [HTTP vs HTTPS Confusion](#http-vs-https-confusion)
+- [Running Multiple Tor Browser Instances](#running-multiple-tor-browser-instances)
+- [Ignoring Browser Updates](#ignoring-browser-updates)
+- [Mixing Tor with Non-Tor Activity](#mixing-tor-with-non-tor-activity)
+- [Leaking Metadata Through File Operations](#leaking-metadata-through-file-operations)
+- [Leaking DNS Queries](#leaking-dns-queries)
+- [Tab Correlation Attacks](#tab-correlation-attacks)
+- [Certificate Validation Failures](#certificate-validation-failures)
+- [Network Timing Analysis Risks](#network-timing-analysis-risks)
+- [Comparing Tor Browser Configurations](#comparing-tor-browser-configurations)
+
 ## Using Tor Browser Without Understanding Its Isolation Model
 
 The most fundamental mistake involves treating Tor Browser like a regular browser with a VPN. Tor routes your traffic through at least three relays, but this protection evaporates if you mishandle browser state.

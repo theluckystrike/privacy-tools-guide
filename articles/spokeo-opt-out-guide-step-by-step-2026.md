@@ -45,6 +45,17 @@ This guide walks through the Spokeo opt-out process with practical steps, automa
 
 Spokeo re-ingests data on an ongoing basis from its source feeds.
 
+## Table of Contents
+
+- [Understanding What Spokeo Collects](#understanding-what-spokeo-collects)
+- [Manual Opt-Out Process](#manual-opt-out-process)
+- [Automation Considerations for Developers](#automation-considerations-for-developers)
+- [Handling Removal Failures](#handling-removal-failures)
+- [Preventing Re-Appearance](#preventing-re-appearance)
+- [How Spokeo Differs from Other People-Search Sites](#how-spokeo-differs-from-other-people-search-sites)
+- [Other Data Brokers](#other-data-brokers)
+- [Related Reading](#related-reading)
+
 ## Understanding What Spokeo Collects
 
 Spokeo operates as a people search engine that compiles data from multiple sources:

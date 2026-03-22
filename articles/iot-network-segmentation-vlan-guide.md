@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -325,6 +326,14 @@ for ip in main_lan_ips:
 - [OpenWrt VPN Router WireGuard Setup](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 
 ---
+
+## Related Articles
+
+- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [Iot Firmware Update Privacy Risks What Data Devices Send](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

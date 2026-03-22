@@ -27,6 +27,26 @@ SSH's built-in dynamic port forwarding turns any SSH connection into a SOCKS5 pr
 - **Unlike a VPN, it works at the application level**: you choose which apps use it — and requires no additional server software beyond sshd.
 - **Any app that supports**: SOCKS5 can route traffic through it.
 
+## Table of Contents
+
+- [Basic SOCKS5 Proxy in One Command](#basic-socks5-proxy-in-one-command)
+- [Configure Applications to Use the Proxy](#configure-applications-to-use-the-proxy)
+- [Persistent Connection with systemd](#persistent-connection-with-systemd)
+- [Restricting the Server-Side Key](#restricting-the-server-side-key)
+- [Bind to a Specific Interface](#bind-to-a-specific-interface)
+- [Multiple Hops (Jump Hosts)](#multiple-hops-jump-hosts)
+- [DNS Leak Check](#dns-leak-check)
+- [Comparing SSH SOCKS5 vs Other Options](#comparing-ssh-socks5-vs-other-options)
+- [Advanced SSH Configuration for SOCKS Proxies](#advanced-ssh-configuration-for-socks-proxies)
+- [Monitoring Proxy Health](#monitoring-proxy-health)
+- [Debugging Connection Issues](#debugging-connection-issues)
+- [Application-Level Configuration Examples](#application-level-configuration-examples)
+- [Performance Optimization](#performance-optimization)
+- [Threat Model: SOCKS vs VPN vs Tor](#threat-model-socks-vs-vpn-vs-tor)
+- [Security Hardening for Production](#security-hardening-for-production)
+- [Troubleshooting DNS Leaks with SOCKS5](#troubleshooting-dns-leaks-with-socks5)
+- [Related Reading](#related-reading)
+
 ## Basic SOCKS5 Proxy in One Command
 
 ```bash

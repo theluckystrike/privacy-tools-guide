@@ -39,6 +39,16 @@ Simplex Chat is worth it if metadata protection is your top priority. It is the 
 - **Your username creates a**: persistent handle.
 - **This creates several privacy**: vulnerabilities: Correlation attacks occur because your phone number or username links conversations across different groups, enabling mass surveillance.
 
+## Table of Contents
+
+- [The Identifier Problem](#the-identifier-problem)
+- [How Simplex Chat Eliminates Identifiers](#how-simplex-chat-eliminates-identifiers)
+- [Protocol Implementation Details](#protocol-implementation-details)
+- [Practical Usage Patterns](#practical-usage-patterns)
+- [Security Analysis](#security-analysis)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Developer Integration](#developer-integration)
+
 ## The Identifier Problem
 
 Every conventional messaging platform requires some form of user identification to establish connections. Your phone number links your identity across services. Your username creates a persistent handle. Even cryptographic identities in protocols like Signal still produce stable public keys that serve as permanent identifiers.

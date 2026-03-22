@@ -41,6 +41,25 @@ The Tor network stands as one of the most effective tools for circumventing netw
 3.
 - **Use DNS-over-HTTPS to hide**: DNS queries 5.
 
+## Table of Contents
+
+- [How Tor Provides Censorship Resistance](#how-tor-provides-censorship-resistance)
+- [Bridges: The First Line of Defense](#bridges-the-first-line-of-defense)
+- [Pluggable Transports: Beyond Basic Obfuscation](#pluggable-transports-beyond-basic-obfuscation)
+- [Verifying Your Tor Connection](#verifying-your-tor-connection)
+- [Building Censorship-Resistant Applications](#building-censorship-resistant-applications)
+- [Advanced: Running Your Own Bridge](#advanced-running-your-own-bridge)
+- [Security Considerations](#security-considerations)
+- [Deep Packet Inspection (DPI) and How Tor Evades It](#deep-packet-inspection-dpi-and-how-tor-evades-it)
+- [Measuring Blocking and Implementing Fallbacks](#measuring-blocking-and-implementing-fallbacks)
+- [Censoring Countries' Blocking Strategies](#censoring-countries-blocking-strategies)
+- [Tor Performance Optimization](#tor-performance-optimization)
+- [Exit Node Risk and Mitigations](#exit-node-risk-and-mitigations)
+- [Self-Operating a Bridge to Strengthen the Network](#self-operating-a-bridge-to-strengthen-the-network)
+- [Integrating Tor into Applications](#integrating-tor-into-applications)
+- [Monitoring for Signs of Blocking](#monitoring-for-signs-of-blocking)
+- [Future-Proofing Against Evolution of Censorship](#future-proofing-against-evolution-of-censorship)
+
 ## How Tor Provides Censorship Resistance
 
 Tor achieves censorship resistance through several interconnected mechanisms. At its core, the network uses onion routing to encapsulate data in multiple encryption layers, each peeled away by successive relays. This design hides both the content and the destination of your traffic from local network observers, including ISP-level filters.

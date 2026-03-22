@@ -28,6 +28,25 @@ Protect your location and identity by disabling location permissions for all app
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Start with a dedicated**: phone used only for sensitive activities, keeping your work and personal devices separate from any activities that could compromise your location.
 
+## Table of Contents
+
+- [What Is a Threat Model](#what-is-a-threat-model)
+- [Mapping Your Digital Footprint](#mapping-your-digital-footprint)
+- [Device Hardening Fundamentals](#device-hardening-fundamentals)
+- [Network-Level Protections](#network-level-protections)
+- [Communication Security](#communication-security)
+- [Identity Protection Layers](#identity-protection-layers)
+- [Operational Security Habits](#operational-security-habits)
+- [Building Your Protection Stack](#building-your-protection-stack)
+- [Detailed App Permission Audit Process](#detailed-app-permission-audit-process)
+- [Cellular Network Tracking Countermeasures](#cellular-network-tracking-countermeasures)
+- [Identity Compartmentalization Techniques](#identity-compartmentalization-techniques)
+- [Location Metadata and Removal Procedures](#location-metadata-and-removal-procedures)
+- [Signal and Security Culture in Community](#signal-and-security-culture-in-community)
+- [Advanced Threat Scenarios and Responses](#advanced-threat-scenarios-and-responses)
+- [Integration with Legal Resources](#integration-with-legal-resources)
+- [Testing Your Threat Model](#testing-your-threat-model)
+
 ## What Is a Threat Model
 
 A threat model is a structured analysis of what you need to protect, who might try to expose or harm you, and which attack vectors are most likely. For someone protecting their location and identity, the model typically includes three core components: assets (what matters), adversaries (who poses a threat), and attack surfaces (how adversaries might reach you).

@@ -42,6 +42,20 @@ Most note-taking apps (Evernote, OneNote, Notion) sync your notes to cloud serve
 - **Download app or use**: web version 4.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Understanding End-to-End Encryption for Notes](#understanding-end-to-end-encryption-for-notes)
+- [Standard Notes: Best for Simplicity and Security](#standard-notes-best-for-simplicity-and-security)
+- [Joplin: Best for Privacy + Features](#joplin-best-for-privacy-features)
+- [Notesnook: Best for Modern UX + Security](#notesnook-best-for-modern-ux-security)
+- [Obsidian with E2E Sync: Best for Power Users](#obsidian-with-e2e-sync-best-for-power-users)
+- [Cryptee: Best for Rich Media Privacy](#cryptee-best-for-rich-media-privacy)
+- [Comparison Table](#comparison-table)
+- [Export and Portability](#export-and-portability)
+- [Decision Matrix](#decision-matrix)
+- [Implementation Guide](#implementation-guide)
+- [Related Reading](#related-reading)
+
 ## Understanding End-to-End Encryption for Notes
 
 Before comparing apps, understand the encryption model that protects your notes:

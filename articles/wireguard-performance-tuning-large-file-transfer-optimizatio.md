@@ -26,6 +26,20 @@ Optimize WireGuard throughput for large file transfers by tuning MTU to 1400-145
 - **This adds overhead that**: can cause fragmentation if not properly accounted for.
 - **Check WireGuard's current pricing**: page for the latest free tier details, as these change frequently.
 
+## Table of Contents
+
+- [Understanding WireGuard Performance Characteristics](#understanding-wireguard-performance-characteristics)
+- [MTU Configuration for Large Transfers](#mtu-configuration-for-large-transfers)
+- [Kernel Parameter Tuning](#kernel-parameter-tuning)
+- [WireGuard-Specific Performance Options](#wireguard-specific-performance-options)
+- [CPU and Encryption Optimization](#cpu-and-encryption-optimization)
+- [Network Path Optimization](#network-path-optimization)
+- [Benchmarking Your Setup](#benchmarking-your-setup)
+- [Practical Deployment Example](#practical-deployment-example)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+- [Troubleshooting Common Throughput Problems](#troubleshooting-common-throughput-problems)
+- [WireGuard on Windows and macOS](#wireguard-on-windows-and-macos)
+
 ## Understanding WireGuard Performance Characteristics
 
 WireGuard uses modern cryptographic primitives and an improved codebase, typically achieving throughput that exceeds older VPN protocols. However, several factors can limit performance:

@@ -40,6 +40,16 @@ Self-hosting a password manager keeps your credentials off someone else's server
 - **This comparison covers the**: four most practical options: Vaultwarden, KeePass/KeePassXC, Passbolt, and Padloc.
 - **Best for**: Individuals or small families who want the full Bitwarden feature set without a subscription, and are comfortable managing a VPS or home server.
 
+## Table of Contents
+
+- [The Four Options at a Glance](#the-four-options-at-a-glance)
+- [Option 1: Vaultwarden](#option-1-vaultwarden)
+- [Option 2: KeePassXC](#option-2-keepassxc)
+- [Option 3: Passbolt](#option-3-passbolt)
+- [Option 4: Padloc](#option-4-padloc)
+- [Security Considerations for All Options](#security-considerations-for-all-options)
+- [Which to Choose](#which-to-choose)
+
 ## The Four Options at a Glance
 
 | | Vaultwarden | KeePassXC | Passbolt | Padloc |

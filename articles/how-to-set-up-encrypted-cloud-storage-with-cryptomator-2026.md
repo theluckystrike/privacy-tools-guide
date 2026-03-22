@@ -18,6 +18,21 @@ intent-checked: true
 
 ## Why End-to-End Cloud Encryption Matters
 
+## Table of Contents
+
+- [Why End-to-End Cloud Encryption Matters](#why-end-to-end-cloud-encryption-matters)
+- [What Cryptomator Does (And Doesn't)](#what-cryptomator-does-and-doesnt)
+- [Installation (All Platforms)](#installation-all-platforms)
+- [Step 1: Create Your First Vault](#step-1-create-your-first-vault)
+- [Step 2: Set Your Vault Password](#step-2-set-your-vault-password)
+- [Step 3: Mount and Use Your Vault](#step-3-mount-and-use-your-vault)
+- [Step 4: Sync Across Devices](#step-4-sync-across-devices)
+- [Real-World Vault Organization](#real-world-vault-organization)
+- [Mobile Access (iOS/Android)](#mobile-access-iosandroid)
+- [Advanced Configuration](#advanced-configuration)
+- [Security Best Practices](#security-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 Cloud storage providers (Google Drive, Dropbox, OneDrive) encrypt data in transit and at rest—but they hold encryption keys. That means Google employees can theoretically read your documents. Cryptomator flips this model: you control encryption keys, cloud provider stores encrypted blobs they can't read.
 
 **Trust Model Comparison:**

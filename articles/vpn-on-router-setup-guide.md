@@ -28,6 +28,14 @@ This guide covers WireGuard setup on OpenWrt (the best modern option) and briefl
 - **WireGuard's ChaCha20 cipher is**: hardware-friendly, but you may still see throughput limitations on budget routers.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Router Requirements](#router-requirements)
+- [Prerequisites](#prerequisites)
+- [Performance Tuning](#performance-tuning)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Router Requirements
 
 Not every router can run a VPN — you need one with custom firmware support or a VPN-capable chipset.

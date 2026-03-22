@@ -39,6 +39,22 @@ Choose Shadowsocks if you need lower latency (5-15% overhead) and lightweight ob
 - **Always use strong passwords**: and modern ciphers (AES-256-GCM for Shadowsocks, TLS 1.3 for stunnel).
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Traffic Obfuscation](#understanding-traffic-obfuscation)
+- [Shadowsocks Implementation](#shadowsocks-implementation)
+- [Stunnel Implementation](#stunnel-implementation)
+- [Comparing Performance](#comparing-performance)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Combining Approaches](#combining-approaches)
+- [Security Considerations](#security-considerations)
+- [Protocol Comparison: Deep Technical Analysis](#protocol-comparison-deep-technical-analysis)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Deployment Scenarios and Tool Selection](#deployment-scenarios-and-tool-selection)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Monitoring and Logging](#monitoring-and-logging)
+- [Comparison Table: Final Decision Matrix](#comparison-table-final-decision-matrix)
+
 ## Understanding Traffic Obfuscation
 
 Traffic obfuscation works by encapsulating encrypted data within a protocol that appears innocuous to network scanners. The goal is not to provide strong encryption (your underlying VPN handles that), but to evade detection. Both Shadowsocks and stunnel achieve this through different mechanisms.

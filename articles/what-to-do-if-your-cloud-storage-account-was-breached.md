@@ -41,6 +41,18 @@ Immediately revoke all active sessions and access tokens (Google Workspace secur
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Revoke Active Sessions and**: Tokens Most cloud services allow you to view and terminate active sessions.
 
+## Table of Contents
+
+- [Immediate Response: Contain the Breach](#immediate-response-contain-the-breach)
+- [Forensic Analysis: Understand the Scope](#forensic-analysis-understand-the-scope)
+- [Data Exposure Assessment](#data-exposure-assessment)
+- [Notification and Compliance](#notification-and-compliance)
+- [Long-Term Security Hardening](#long-term-security-hardening)
+- [Recovery Verification](#recovery-verification)
+- [Post-Incident Communication and Documentation](#post-incident-communication-and-documentation)
+- [Long-Term Account Hardening](#long-term-account-hardening)
+- [Incident Prevention Best Practices](#incident-prevention-best-practices)
+
 ## Immediate Response: Contain the Breach
 
 The first priority is stopping further unauthorized access. Time is critical—every minute an attacker retains access, they can exfiltrate data, modify files, or escalate privileges to other connected services.

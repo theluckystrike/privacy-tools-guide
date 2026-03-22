@@ -29,6 +29,13 @@ No email, no username, no phone number.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Account Setup](#account-setup)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Linux Issues](#troubleshooting-common-linux-issues)
+- [Related Reading](#related-reading)
+
 ## Account Setup
 
 Mullvad doesn't require an email address:

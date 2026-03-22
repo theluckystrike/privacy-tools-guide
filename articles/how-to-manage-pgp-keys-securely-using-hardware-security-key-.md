@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
 ---
-layout: default
-title: "How To Manage Pgp Keys Securely Using Hardware Security Key"
-description: "A practical guide for developers and power users to store and manage PGP keys on hardware security keys like YubiKey. Includes GnuPG setup, key"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-manage-pgp-keys-securely-using-hardware-security-key-/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, security]---
 
 {% raw %}
 
@@ -278,12 +265,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
 - [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
-- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
-
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [Android Attestation Key Privacy What Hardware Backed Keys](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

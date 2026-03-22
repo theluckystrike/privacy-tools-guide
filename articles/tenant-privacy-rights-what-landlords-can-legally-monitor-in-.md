@@ -41,6 +41,15 @@ Understanding what landlords can legally monitor in rental property varies drama
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Legal Framework: Landlord Access vs. Tenant Privacy](#the-legal-framework-landlord-access-vs-tenant-privacy)
+- [State-by-State Overview](#state-by-state-overview)
+- [Technical Documentation: Building Your Evidence Framework](#technical-documentation-building-your-evidence-framework)
+- [Common Monitoring Technologies and Their Legal Status](#common-monitoring-technologies-and-their-legal-status)
+- [Practical Steps: Protecting Your Privacy](#practical-steps-protecting-your-privacy)
+- [State-Specific Quick Reference](#state-specific-quick-reference)
+
 ## The Legal Framework: Landlord Access vs. Tenant Privacy
 
 Landlords maintain certain rights to access rental property for maintenance, inspections, and legal compliance. However, tenant privacy rights create boundaries that vary by state. The core tension exists between a landlord's property rights and a tenant's right to quiet enjoyment of their home.

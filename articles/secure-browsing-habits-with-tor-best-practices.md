@@ -50,6 +50,24 @@ Tor remains one of the most effective tools for anonymous communication on the i
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **Tor remains one of**: the most effective tools for anonymous communication on the internet.
 
+## Table of Contents
+
+- [Understanding the Tor Network Architecture](#understanding-the-tor-network-architecture)
+- [Installing and Verifying Tor Browser](#installing-and-verifying-tor-browser)
+- [Configuring Browser Security Settings](#configuring-browser-security-settings)
+- [Common Pitfalls That Compromise Anonymity](#common-pitfalls-that-compromise-anonymity)
+- [Advanced Configuration for Power Users](#advanced-configuration-for-power-users)
+- [Network-Level Protections](#network-level-protections)
+- [Tor Network Topology and Relay Types](#tor-network-topology-and-relay-types)
+- [Performance Optimization and Latency Considerations](#performance-optimization-and-latency-considerations)
+- [Practical Tor Usage for Developers](#practical-tor-usage-for-developers)
+- [Fingerprinting Resistance and Canvas Blocking](#fingerprinting-resistance-and-canvas-blocking)
+- [.onion Services and Hidden Services](#onion-services-and-hidden-services)
+- [Defense Against Advanced Adversaries](#defense-against-advanced-adversaries)
+- [Combining Tor with VPN (Tor-Over-VPN vs VPN-Over-Tor)](#combining-tor-with-vpn-tor-over-vpn-vs-vpn-over-tor)
+- [Operational Security Beyond Tor](#operational-security-beyond-tor)
+- [Behavioral Deidentification](#behavioral-deidentification)
+
 ## Understanding the Tor Network Architecture
 
 Before implementing best practices, understanding how Tor works helps you make better security decisions. When you connect to Tor, your traffic passes through three relays in sequence: entry relay, middle relay, and exit relay. Each relay only knows the previous and next hop in the circuit, not the original source or final destination.

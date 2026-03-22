@@ -44,6 +44,16 @@ This comparison focuses on practical aspects: encryption models, third-party acc
 
 It depends on your background.
 
+## Table of Contents
+
+- [Encryption Models](#encryption-models)
+- [Quick Comparison](#quick-comparison)
+- [Data Ownership and Harvesting](#data-ownership-and-harvesting)
+- [Developer Experience and API Access](#developer-experience-and-api-access)
+- [Self-Hosting Considerations](#self-hosting-considerations)
+- [Practical Decision Framework](#practical-decision-framework)
+- [Hybrid Approaches](#hybrid-approaches)
+
 ## Encryption Models
 
 ### ProtonMail Encryption Architecture

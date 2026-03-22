@@ -40,6 +40,17 @@ Zero knowledge proofs allow future messaging protocols to prove authentication a
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [The Metadata Problem](#the-metadata-problem)
+- [How Zero Knowledge Proofs Work in Messaging](#how-zero-knowledge-proofs-work-in-messaging)
+- [Implementing ZKP-Based Metadata Protection](#implementing-zkp-based-metadata-protection)
+- [Building ZKP Messaging Systems](#building-zkp-messaging-systems)
+- [Limitations and Challenges](#limitations-and-challenges)
+- [Combining ZKP with Other Privacy Techniques](#combining-zkp-with-other-privacy-techniques)
+- [Performance and Scalability Challenges](#performance-and-scalability-challenges)
+- [Looking Forward](#looking-forward)
+
 ## The Metadata Problem
 
 Even with Signal or similar E2EE apps, metadata flows freely through central servers. The server knows:

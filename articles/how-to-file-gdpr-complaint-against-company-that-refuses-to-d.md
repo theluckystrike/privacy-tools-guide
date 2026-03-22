@@ -223,6 +223,15 @@ You receive updates throughout the process and can provide additional evidence i
 
 Exercise your GDPR rights systematically. Document everything, escalate formally, and use regulatory channels when companies ignore their obligations. The process takes time, but enforcement is improving across the EU in 2026.
 
+## Table of Contents
+
+- [Automation Tools and Open-Source Solutions](#automation-tools-and-open-source-solutions)
+- [Submitted Requests](#submitted-requests)
+- [Follow-ups Required](#follow-ups-required)
+- [Legal Framework Deep Dive](#legal-framework-deep-dive)
+- [Building Escalation Strategy](#building-escalation-strategy)
+- [Case Study: Real Company Responses](#case-study-real-company-responses)
+
 ## Automation Tools and Open-Source Solutions
 
 ### GDPR Request Automation

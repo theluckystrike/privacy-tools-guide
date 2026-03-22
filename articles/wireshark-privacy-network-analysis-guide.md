@@ -40,6 +40,19 @@ This guide covers the privacy-relevant use cases: finding unexpected connections
 - **To find POST requests**: with bodies (most likely to contain sensitive data): ``` http.request.method == "POST" ``` Follow the stream on each result to inspect the posted content.
 - **This is a known privacy limitation of TLS**: only Encrypted Client Hello (ECH) hides the SNI.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Step 1: Capture Traffic on Your Interface](#step-1-capture-traffic-on-your-interface)
+- [Step 2: Filter for Interesting Traffic](#step-2-filter-for-interesting-traffic)
+- [Step 3: Identify Unexpected Connections](#step-3-identify-unexpected-connections)
+- [Step 4: Verify VPN Tunnel Encryption](#step-4-verify-vpn-tunnel-encryption)
+- [Step 5: Detect Unencrypted Data Transmission](#step-5-detect-unencrypted-data-transmission)
+- [Step 6: Inspect TLS Certificates](#step-6-inspect-tls-certificates)
+- [Step 7: Analyze a Mobile Device](#step-7-analyze-a-mobile-device)
+- [Using tshark for Command-Line Analysis](#using-tshark-for-command-line-analysis)
+- [Related Reading](#related-reading)
+
 ## Installation
 
 ### Linux

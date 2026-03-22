@@ -40,6 +40,25 @@ Sticky Password is a competent password manager for individual users who want lo
 - **This pricing is competitive**: with Bitwarden Premium ($10/year) and significantly cheaper than 1Password ($35/year), though the feature gap justifies the price differences.
 - **For occasional use**: consider whether a free alternative covers enough of your needs.
 
+## Table of Contents
+
+- [Technical Architecture](#technical-architecture)
+- [CLI and Programmatic Access](#cli-and-programmatic-access)
+- [Browser Integration](#browser-integration)
+- [Secure Sharing Capabilities](#secure-sharing-capabilities)
+- [Security Features](#security-features)
+- [Database Export and Portability](#database-export-and-portability)
+- [Platform Coverage](#platform-coverage)
+- [Developer-Specific Considerations](#developer-specific-considerations)
+- [Pricing](#pricing)
+- [Threat Model: Password Manager Attack Surfaces](#threat-model-password-manager-attack-surfaces)
+- [Cryptographic Analysis](#cryptographic-analysis)
+- [API and Integration Limitations](#api-and-integration-limitations)
+- [Migration Path: Exporting from Sticky Password](#migration-path-exporting-from-sticky-password)
+- [Sticky Password vs Open Source Alternatives](#sticky-password-vs-open-source-alternatives)
+- [Security Incidents and Track Record](#security-incidents-and-track-record)
+- [Verdict for Different User Profiles](#verdict-for-different-user-profiles)
+
 ## Technical Architecture
 
 Sticky Password stores vault data locally on each device, with optional cloud synchronization through their own servers. Unlike Bitwarden or 1Password, which offer fully open-source clients, Sticky Password uses proprietary encryption implementations. The vault uses AES-256 encryption with a master password that never leaves your device.

@@ -40,6 +40,18 @@ Migrate from NordPass to Bitwarden by exporting to CSV through the desktop app o
 - **Check vault for $(bw**: list items | jq 'length') items" ``` ### Handling Custom Fields NordPass supports custom fields that require special attention during migration.
 - **Does Bitwarden offer a**: free tier? Most major tools offer some form of free tier or trial period.
 
+## Table of Contents
+
+- [Understanding Export Formats](#understanding-export-formats)
+- [Exporting Data From NordPass](#exporting-data-from-nordpass)
+- [Importing Into Bitwarden](#importing-into-bitwarden)
+- [Migrating TOTP Authenticator Data](#migrating-totp-authenticator-data)
+- [Preserving Folder Organization](#preserving-folder-organization)
+- [Automation Script for Complete Migration](#automation-script-for-complete-migration)
+- [Post-Migration Verification](#post-migration-verification)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Understanding Export Formats
 
 NordPass and Bitwarden use different export mechanisms. NordPass provides encrypted exports that require specific handling, while Bitwarden accepts multiple import formats including CSV and JSON.

@@ -40,6 +40,25 @@ Modern web browsers expose powerful APIs that allow websites to access cameras a
 - **Safari**: Uses Intelligent Tracking Prevention and limits media device API access.
 - **Only grant permission to**: applications you actively use for communication or content creation.
 
+## Table of Contents
+
+- [The MediaDevices API Explained](#the-mediadevices-api-explained)
+- [What Information Gets Exposed](#what-information-gets-exposed)
+- [Fingerprinting Techniques and Applications](#fingerprinting-techniques-and-applications)
+- [Behavioral Tracking Through Media API](#behavioral-tracking-through-media-api)
+- [Browser Privacy Protections](#browser-privacy-protections)
+- [Protecting Yourself as a User](#protecting-yourself-as-a-user)
+- [Implementation Guidance for Developers](#implementation-guidance-for-developers)
+- [The Broader Privacy Context](#the-broader-privacy-context)
+- [Advanced Browser Configuration for Device Privacy](#advanced-browser-configuration-for-device-privacy)
+- [Fingerprinting in Mobile Applications](#fingerprinting-in-mobile-applications)
+- [Testing Your Device Fingerprinting Profile](#testing-your-device-fingerprinting-profile)
+- [Regulatory and Industry Developments](#regulatory-and-industry-developments)
+- [Implementation Checklist for Users](#implementation-checklist-for-users)
+- [Distinguishing Between Legitimate and Tracking Uses](#distinguishing-between-legitimate-and-tracking-uses)
+- [Working With Multiple Devices](#working-with-multiple-devices)
+- [Real-World Fingerprinting Examples](#real-world-fingerprinting-examples)
+
 ## The MediaDevices API Explained
 
 The MediaDevices interface, part of the WebRTC specification, provides access to connected media input devices like cameras and microphones. websites can enumerate available devices, request permissions, and stream audio/video content. This API has legitimate uses but also enables tracking techniques that work independently of cookies.

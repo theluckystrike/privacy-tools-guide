@@ -40,6 +40,21 @@ Access Twitter/X in banned countries by deploying a self-hosted VPN server (Wire
 - **IPv6 leakage is common**: because many VPN clients fail to properly route IPv6 traffic, creating leaks that reveal your actual location.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Network-Level Blocking](#understanding-network-level-blocking)
+- [How VPNs Bypass Geographic Restrictions](#how-vpns-bypass-geographic-restrictions)
+- [Self-Hosted VPN Solutions for Advanced Users](#self-hosted-vpn-solutions-for-advanced-users)
+- [Client Configuration for Twitter Access](#client-configuration-for-twitter-access)
+- [Security and Operational Considerations](#security-and-operational-considerations)
+- [Verification and Testing](#verification-and-testing)
+- [Commercial VPN Solutions Comparison](#commercial-vpn-solutions-comparison)
+- [Advanced Evasion Techniques](#advanced-evasion-techniques)
+- [Troubleshooting Twitter/X Access Issues](#troubleshooting-twitterx-access-issues)
+- [Monitoring VPN Reliability](#monitoring-vpn-reliability)
+- [VPN Kill Switch Configuration](#vpn-kill-switch-configuration)
+- [Legal and Safety Considerations](#legal-and-safety-considerations)
+
 ## Understanding Network-Level Blocking
 
 Before examining solutions, it's helpful to understand how countries block access to Twitter/X. The blocking typically occurs at the ISP level through DNS manipulation, IP address blacklisting, or deep packet inspection (DPI) that identifies and filters HTTPS connections to Twitter's servers.

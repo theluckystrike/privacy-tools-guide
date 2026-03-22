@@ -40,6 +40,20 @@ Choose Tor over VPN if you want to hide Tor usage from your ISP, need stable ban
 - **Choose Tor over VPN**: if you want to hide Tor usage from your ISP, need stable bandwidth, and prefer simpler setup -- your traffic hits the VPN first, then enters Tor.
 - **Use tools like `torcheck`**: and `ipleak.net` to verify your configuration.
 
+## Table of Contents
+
+- [Understanding the Two Architectures](#understanding-the-two-architectures)
+- [Security and Privacy Implications](#security-and-privacy-implications)
+- [Performance Characteristics](#performance-characteristics)
+- [Practical Implementation](#practical-implementation)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Hybrid and Specialized Approaches](#hybrid-and-specialized-approaches)
+- [DNS and Leak Prevention](#dns-and-leak-prevention)
+- [Traffic Pattern Analysis](#traffic-pattern-analysis)
+- [Developer Considerations](#developer-considerations)
+- [Exit Node Risks and Trust Implications](#exit-node-risks-and-trust-implications)
+- [Common Misconceptions](#common-misconceptions)
+
 ## Understanding the Two Architectures
 
 ### Tor over VPN

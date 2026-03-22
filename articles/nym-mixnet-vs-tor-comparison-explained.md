@@ -44,6 +44,25 @@ Tor uses onion routing through 7,000+ volunteer relays to hide traffic through e
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding Tor's Onion Routing](#understanding-tors-onion-routing)
+- [Quick Comparison](#quick-comparison)
+- [Understanding Nym Mixnet's Sphinx Packets](#understanding-nym-mixnets-sphinx-packets)
+- [Metadata Protection Comparison](#metadata-protection-comparison)
+- [Performance Considerations](#performance-considerations)
+- [Practical Use Cases](#practical-use-cases)
+- [Integrating Both Systems](#integrating-both-systems)
+- [Implementation Considerations](#implementation-considerations)
+- [Setting Up Each System: Practical Comparison](#setting-up-each-system-practical-comparison)
+- [Network Analysis Resistance: Detailed Comparison](#network-analysis-resistance-detailed-comparison)
+- [Cost/Benefit Analysis](#costbenefit-analysis)
+- [Selection Decision Tree](#selection-decision-tree)
+- [Hybrid Approaches: Combining Systems](#hybrid-approaches-combining-systems)
+- [Future Evolution: Post-Quantum Considerations](#future-evolution-post-quantum-considerations)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Monitoring and Logging Considerations](#monitoring-and-logging-considerations)
+
 ## Understanding Tor's Onion Routing
 
 Tor (The Onion Router) uses onion routing—a technique that wraps your traffic in multiple layers of encryption, routing it through a series of relays before reaching its destination. Each relay peels away one layer, learning only about the previous and next hop in the chain.

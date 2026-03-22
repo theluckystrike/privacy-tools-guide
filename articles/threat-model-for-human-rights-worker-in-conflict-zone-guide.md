@@ -40,6 +40,22 @@ Human rights workers in conflict zones face nation-state and paramilitary threat
 - **Mitigation**: Use reproducible builds to verify software integrity.
 - **Dead drops for critical documentation**: Arrange secure locations (unattended) where encrypted drives are deposited and picked up by trusted contacts.
 
+## Table of Contents
+
+- [Understanding the Threat Environment](#understanding-the-threat-environment)
+- [Step 1: Identifying Critical Assets](#step-1-identifying-critical-assets)
+- [Step 2: Identifying and Profiling Adversaries](#step-2-identifying-and-profiling-adversaries)
+- [Step 3: Analyzing Attack Vectors](#step-3-analyzing-attack-vectors)
+- [Step 4: Implementing Practical Mitigations](#step-4-implementing-practical-mitigations)
+- [Step 5: Operational Security Procedures](#step-5-operational-security-procedures)
+- [Continuous Threat Model Maintenance](#continuous-threat-model-maintenance)
+- [Building a Tiered Security Approach](#building-a-tiered-security-approach)
+- [Technical Infrastructure for Sensitive Documentation](#technical-infrastructure-for-sensitive-documentation)
+- [Understanding Institutional Pressure Techniques](#understanding-institutional-pressure-techniques)
+- [Incident Response Drills](#incident-response-drills)
+- [Working with International Organizations](#working-with-international-organizations)
+- [Ongoing Threat Assessment](#ongoing-threat-assessment)
+
 ## Understanding the Threat Environment
 
 Conflict zone environments present threat models fundamentally different from corporate or personal security contexts. Your adversaries often include nation-state threat actors with significant resources, technical capability, and operational presence on the ground. The consequences of compromise extend beyond data theft to physical danger for you, your contacts, and local staff.

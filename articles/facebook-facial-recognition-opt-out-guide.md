@@ -29,6 +29,13 @@ Facebook's facial recognition technology automatically analyzes photos and video
 - **Facebook's facial recognition technology**: automatically analyzes photos and videos to identify users across the platform.
 - **For developers and power**: users who prioritize privacy, understanding how this system works and how to disable it is essential.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Additional Privacy Measures](#additional-privacy-measures)
+- [Advanced: Detecting if Facial Recognition Occurred](#advanced-detecting-if-facial-recognition-occurred)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

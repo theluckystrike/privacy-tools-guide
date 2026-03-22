@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}
@@ -26,6 +27,17 @@ To enable two-factor authentication on ProtonMail, go to Settings, then Security
 - **Remember that 2FA is just one layer of defense**: use strong, unique passwords, keep your recovery information updated, and regularly audit your active sessions.
 - **Use Aegis with a**: manual encrypted backup for the most secure configuration.
 - **ProtonMail provides several recovery**: mechanisms: ### Recovery Codes ProtonMail generates 10 single-use recovery codes during 2FA setup.
+
+## Table of Contents
+
+- [Understanding ProtonMail's 2FA Options](#understanding-protonmails-2fa-options)
+- [Setting Up TOTP-Based 2FA](#setting-up-totp-based-2fa)
+- [Setting Up WebAuthn Security Keys](#setting-up-webauthn-security-keys)
+- [Automating 2FA with ProtonMail API](#automating-2fa-with-protonmail-api)
+- [Recovery Strategies](#recovery-strategies)
+- [Security Considerations for Developers](#security-considerations-for-developers)
+- [Auditing Active Sessions](#auditing-active-sessions)
+- [Common Pitfalls](#common-pitfalls)
 
 ## Understanding ProtonMail's 2FA Options
 
@@ -250,11 +262,10 @@ Aegis is preferred for privacy-conscious users because it is open source, stores
 
 ## Related Articles
 
-- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
 - [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)
-- [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
-- [How To Set Up Vpn Failover Between Two Providers Automatical](/privacy-tools-guide/how-to-set-up-vpn-failover-between-two-providers-automatical/)
-- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
-
+- [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
+- [How To Use Pgp Encrypted Email With Protonmail To Non](/privacy-tools-guide/how-to-use-pgp-encrypted-email-with-protonmail-to-non-proton/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
+- [ProtonMail iOS Android App Review 2026](/privacy-tools-guide/protonmail-ios-android-app-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

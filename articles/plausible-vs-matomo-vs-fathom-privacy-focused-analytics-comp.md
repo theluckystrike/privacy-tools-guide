@@ -202,6 +202,15 @@ All three platforms provide genuine privacy-focused alternatives to Google Analy
 
 ## Data Retention and Deletion Policies
 
+## Table of Contents
+
+- [Data Retention and Deletion Policies](#data-retention-and-deletion-policies)
+- [Analytics Data Ownership Comparison](#analytics-data-ownership-comparison)
+- [Real Implementation: Migrating from Google Analytics](#real-implementation-migrating-from-google-analytics)
+- [Privacy Compliance Checklist](#privacy-compliance-checklist)
+- [Performance Impact Comparison](#performance-impact-comparison)
+- [Enterprise Deployment: Multi-Site Analytics Consolidation](#enterprise-deployment-multi-site-analytics-consolidation)
+
 Understanding data retention impacts compliance and user privacy:
 
 ### Plausible Data Retention

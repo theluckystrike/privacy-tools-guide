@@ -38,6 +38,25 @@ No browser is privacy-neutral out of the box. Every major browser makes differen
 - **This gives Brave users**: protection equivalent to or better than uBlock Origin, without installing extensions.
 - **Its "privacy-preserving product analytics"**: (called P3A) uses a randomized sampling method and is designed not to identify individuals.
 
+## Table of Contents
+
+- [The Browsers in This Comparison](#the-browsers-in-this-comparison)
+- [Telemetry and Data Collection](#telemetry-and-data-collection)
+- [Fingerprinting Resistance](#fingerprinting-resistance)
+- [Default Privacy Settings](#default-privacy-settings)
+- [Chromium vs Gecko Engine](#chromium-vs-gecko-engine)
+- [Extensions](#extensions)
+- [Configuration Checklist for Each Browser](#configuration-checklist-for-each-browser)
+- [Sync and Account Features](#sync-and-account-features)
+- [The Practical Choice](#the-practical-choice)
+- [WebGL Fingerprinting and Canvas Defense](#webgl-fingerprinting-and-canvas-defense)
+- [Tracking Cookies vs First-Party Cookies](#tracking-cookies-vs-first-party-cookies)
+- [DNS over HTTPS (DoH) Implementation](#dns-over-https-doh-implementation)
+- [Rendering Engine Security Patches](#rendering-engine-security-patches)
+- [Network Protocol Analysis](#network-protocol-analysis)
+- [Extension Ecosystem and Manifest V3 Impact](#extension-ecosystem-and-manifest-v3-impact)
+- [JavaScript Execution Context](#javascript-execution-context)
+
 ## The Browsers in This Comparison
 
 - **Firefox** (Mozilla, open source)
