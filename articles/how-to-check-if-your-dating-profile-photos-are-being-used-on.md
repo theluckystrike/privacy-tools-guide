@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Check If Your Dating Profile Photos Are Being Used"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -43,13 +45,6 @@ The legal remedies for photo theft remain limited in most jurisdictions. Cease-a
 - **This guide shows you**: how to detect unauthorized use of your dating profile photos using technical methods and developer-focused tools.
 - **The scale of this**: problem exceeds most people's awareness.
 - **Your images are particularly vulnerable because dating platform photos are optimized for catfishing**: clear, recent, social.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Why Your Dating Photos Get Stolen](#why-your-dating-photos-get-stolen)
-- [Tools Comparison](#tools-comparison)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

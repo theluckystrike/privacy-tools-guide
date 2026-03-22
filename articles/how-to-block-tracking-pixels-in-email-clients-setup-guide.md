@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How to Block Tracking Pixels in Email Clients: Setup Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -40,13 +42,6 @@ Email tracking pixels are invisible 1×1 images embedded in HTML emails that not
 - **Use the Python script**: above to analyze the email headers 4.
 - **For developers and power**: users who value privacy, blocking these pixels is essential.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced: Building a Custom Email Proxy](#advanced-building-a-custom-email-proxy)
-- [Best Practices for Email Privacy](#best-practices-for-email-privacy)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

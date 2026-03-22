@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Home Network Privacy Pihole Dns Filtering Guide 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -41,25 +43,6 @@ This guide walks through installing Pi-hole on a Raspberry Pi (or any Linux serv
 - **Choose network interface (eth0**: if ethernet connected) # 2.
 - **Choose blocklistss (default is**: fine) # 5.
 - **Query will block going**: forward If something you use is blocked: 1.
-
-## Table of Contents
-
-- [Understanding DNS and Privacy](#understanding-dns-and-privacy)
-- [Hardware Requirements](#hardware-requirements)
-- [Installation Steps](#installation-steps)
-- [Configuration](#configuration)
-- [Using Pi-hole](#using-pi-hole)
-- [Advanced Configuration](#advanced-configuration)
-- [Troubleshooting](#troubleshooting)
-- [Privacy Impact](#privacy-impact)
-- [Maintenance](#maintenance)
-- [Monitoring Impact](#monitoring-impact)
-- [Cost Analysis](#cost-analysis)
-- [Comparison: Pi-hole vs Alternatives](#comparison-pi-hole-vs-alternatives)
-- [Next Steps](#next-steps)
-- [Hardening Pi-hole Against Bypass](#hardening-pi-hole-against-bypass)
-- [Integrating Pi-hole with Unbound for Recursive DNS](#integrating-pi-hole-with-unbound-for-recursive-dns)
-- [Long-Term Blocklist Management](#long-term-blocklist-management)
 
 ## Understanding DNS and Privacy
 

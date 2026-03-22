@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How Browser Fingerprinting Works Explained"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,14 +41,6 @@ Browser fingerprinting tracks you by combining your screen resolution, installed
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The same APIs used**: for fingerprinting often have legitimate uses, so the challenge for developers is building applications that function properly while minimizing unnecessary information disclosure.
-
-## Table of Contents
-
-- [What Makes Fingerprinting Possible](#what-makes-fingerprinting-possible)
-- [Core Fingerprinting Techniques](#core-fingerprinting-techniques)
-- [Advanced Fingerprinting Vectors](#advanced-fingerprinting-vectors)
-- [Fingerprinting Resistance](#fingerprinting-resistance)
-- [The Privacy Implications](#the-privacy-implications)
 
 ## What Makes Fingerprinting Possible
 

@@ -11,7 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 ---
 layout: default
 title: "Guerrilla Mail vs Temp Mail vs Mailinator"
@@ -25,7 +26,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 
@@ -41,16 +43,6 @@ Disposable email services have become essential tools for developers testing aut
 - **user-selected
 - Message retention**: Seconds, minutes, or permanent
 - **Public vs.
-
-## Table of Contents
-
-- [How Disposable Email Services Work](#how-disposable-email-services-work)
-- [Guerrilla Mail](#guerrilla-mail)
-- [Temp Mail](#temp-mail)
-- [Mailinator](#mailinator)
-- [Comparative Analysis](#comparative-analysis)
-- [Which is Safest?](#which-is-safest)
-- [Security Best Practices](#security-best-practices)
 
 ## How Disposable Email Services Work
 

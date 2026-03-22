@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Google Analytics Tracking Alternatives That Respect User"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,16 +41,6 @@ As web analytics become increasingly regulated and user privacy expectations ris
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **As web analytics become**: increasingly regulated and user privacy expectations rise, developers seek Google Analytics alternatives that provide meaningful insights without compromising visitor trust.
-
-## Table of Contents
-
-- [Why Move Away from Traditional Analytics](#why-move-away-from-traditional-analytics)
-- [Quick Comparison](#quick-comparison)
-- [Self-Hosted Analytics Solutions](#self-hosted-analytics-solutions)
-- [Privacy-First Cloud Platforms](#privacy-first-cloud-platforms)
-- [Server-Side Analytics Approaches](#server-side-analytics-approaches)
-- [Choosing the Right Solution](#choosing-the-right-solution)
-- [Implementation Best Practices](#implementation-best-practices)
 
 ## Why Move Away from Traditional Analytics
 

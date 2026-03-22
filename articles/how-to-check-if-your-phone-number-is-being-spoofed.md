@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Check If Your Phone Number Is Being Spoofed"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -38,13 +40,6 @@ Phone number spoofing occurs when a caller deliberately falsifies the caller ID 
 - **Consider a new number**: - If spoofing persists, changing your number may be the only solution 4.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Detailed CDR Analysis for Spoofing Detection](#detailed-cdr-analysis-for-spoofing-detection)
-- [For Developers: Phone Verification Best Practices](#for-developers-phone-verification-best-practices)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

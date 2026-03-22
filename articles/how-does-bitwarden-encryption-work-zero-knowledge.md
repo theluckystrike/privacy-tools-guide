@@ -27,25 +27,6 @@ Bitwarden encrypts your vault with AES-256 using a key derived from your master 
 - **The self-hosted server still cannot read user data**: it provides storage and synchronization only.
 - **Server sends the user's**: salt 3.
 
-## Table of Contents
-
-- [The Encryption Foundation](#the-encryption-foundation)
-- [Zero-Knowledge Architecture](#zero-knowledge-architecture)
-- [Key Derivation and Authentication](#key-derivation-and-authentication)
-- [Practical Implications for Developers](#practical-implications-for-developers)
-- [Comparing Key Derivation Methods](#comparing-key-derivation-methods)
-- [What Bitwarden Actually Stores](#what-bitwarden-actually-stores)
-- [Self-Hosting Considerations](#self-hosting-considerations)
-- [Security Best Practices](#security-best-practices)
-- [Encryption Algorithm Deep Dive](#encryption-algorithm-deep-dive)
-- [Cross-Device Syncing Without Key Exposure](#cross-device-syncing-without-key-exposure)
-- [Master Password Strength and Key Derivation](#master-password-strength-and-key-derivation)
-- [What Happens During Account Recovery](#what-happens-during-account-recovery)
-- [Threat Modeling: What Can and Cannot Happen](#threat-modeling-what-can-and-cannot-happen)
-- [Emergency Access and Trusted Contacts](#emergency-access-and-trusted-contacts)
-- [Backup and Recovery Key Management](#backup-and-recovery-key-management)
-- [Performance Considerations](#performance-considerations)
-
 ## The Encryption Foundation
 
 Bitwarden uses AES-256 bit encryption for vault data, combined with PBKDF2 for key derivation. When you create a master password, your client generates an encryption key derived from that password. This key never leaves your device in plaintext form.
@@ -326,10 +307,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Bitwarden vs KeePassXC: Which to Pick in 2026](/privacy-tools-guide/bitwarden-vs-keepassxc-which-to-pick-2026/)
-- [Migrating from RoboForm to Bitwarden](/privacy-tools-guide/migrating-from-roboform-to-bitwarden-export-import-complete-/)
-- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
 - [Best Zero Knowledge Cloud Storage 2026](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
-- [Bitwarden vs 1Password 2026: Which Is Better for Developers](/privacy-tools-guide/bitwarden-vs-1password-2026-which-is-better/)
+- [Best Zero Knowledge Cloud Storage Enterprise](/privacy-tools-guide/best-zero-knowledge-cloud-storage-enterprise/)
+- [Zero Knowledge Proof Messaging How Future Protocols Will Pro](/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/)
+- [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
+- [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

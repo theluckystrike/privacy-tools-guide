@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,13 +26,6 @@ Your digital footprint is larger than you think. Your email appears in data brea
 - **Wayback Machine (archive.org) -**: Type your name or website - See snapshots of pages over time - Useful for finding very old digital footprints - Can request removal (though not guaranteed) 3.
 - **Removing the most sensitive**: data 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Advanced OSINT Techniques](#advanced-osint-techniques)
-- [Tools Summary](#tools-summary)
-- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

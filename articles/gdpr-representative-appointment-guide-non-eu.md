@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Gdpr Representative Appointment Guide Non"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -37,27 +39,6 @@ If your organization processes personal data of EU residents but operates outsid
 - **An US-based SaaS company**: serving European customers, an UK e-commerce platform shipping to EU addresses, or an app developer with EU users all fall within scope.
 - **However**: most commercial operations serving EU customers will need one.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
-## Table of Contents
-
-- [When Do You Need a GDPR Representative?](#when-do-you-need-a-gdpr-representative)
-- [Choosing Your Representative](#choosing-your-representative)
-- [Practical Implementation Steps](#practical-implementation-steps)
-- [Representative Appointment Agreement (Template)](#representative-appointment-agreement-template)
-- [Maintaining Compliance](#maintaining-compliance)
-- [Consequences of Non-Compliance](#consequences-of-non-compliance)
-- [Quick Reference Checklist](#quick-reference-checklist)
-- [Representative Service Providers and Costs](#representative-service-providers-and-costs)
-- [Documenting Representative Relationship](#documenting-representative-relationship)
-- [Appointment Details](#appointment-details)
-- [Responsibilities](#responsibilities)
-- [Contact Information](#contact-information)
-- [Scope of Processing](#scope-of-processing)
-- [Multi-Market Representative Strategy](#multi-market-representative-strategy)
-- [Data Flows and Representative Involvement](#data-flows-and-representative-involvement)
-- [Annual Review Process](#annual-review-process)
-- [Practical Data Subject Request Handling](#practical-data-subject-request-handling)
-- [Combining Representative with Data Protection Officer](#combining-representative-with-data-protection-officer)
 
 ## When Do You Need a GDPR Representative?
 

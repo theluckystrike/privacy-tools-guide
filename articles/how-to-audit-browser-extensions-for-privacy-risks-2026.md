@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, browser-security, extension-audit]---
+tags: [privacy-tools-guide, browser-security, extension-audit]
+---
 ---
 layout: default
 title: "How to Audit Browser Extensions for Privacy Risks 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, browser-security, extension-audit]---
+tags: [privacy-tools-guide, browser-security, extension-audit]
+---
 
 {% raw %}
 

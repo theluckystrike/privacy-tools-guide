@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
+---
 ---
 layout: default
 title: "Gamepad API Fingerprinting How Connected Controllers Reveal"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
+---
 
 {% raw %}
 
@@ -39,21 +41,6 @@ The Gamepad API enables web browsers to communicate with game controllers connec
 - **A user's gamepad preferences**: combined with screen resolution, installed fonts, and other attributes create a highly unique profile.
 - **Protection recommendations**: 1.
 - **Use a browser extension**: like uBlock Origin (provides gamepad filtering) 3.
-
-## Table of Contents
-
-- [Understanding the Gamepad API](#understanding-the-gamepad-api)
-- [How Gamepad Fingerprinting Works](#how-gamepad-fingerprinting-works)
-- [Code Example: Collecting Gamepad Data](#code-example-collecting-gamepad-data)
-- [Real-World Fingerprinting Techniques](#real-world-fingerprinting-techniques)
-- [Privacy Implications](#privacy-implications)
-- [Mitigation Strategies](#mitigation-strategies)
-- [Developer Considerations](#developer-considerations)
-- [Advanced Fingerprinting Combinations](#advanced-fingerprinting-combinations)
-- [Detecting Gamepad Fingerprinting Attacks](#detecting-gamepad-fingerprinting-attacks)
-- [Gamepad API in Legitimate Applications](#gamepad-api-in-legitimate-applications)
-- [Protection Recommendations by Risk Profile](#protection-recommendations-by-risk-profile)
-- [Building Privacy-Respectful Gaming Applications](#building-privacy-respectful-gaming-applications)
 
 ## Understanding the Gamepad API
 
