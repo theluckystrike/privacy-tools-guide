@@ -5,7 +5,7 @@ description: "How retail loyalty programs build detailed behavioral profiles, wh
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-loyalty-programs/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

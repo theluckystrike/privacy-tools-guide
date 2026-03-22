@@ -5,7 +5,7 @@ description: "How smart doorbells leak video, audio, and location data to vendor
 date: 2026-03-22
 author: theluckystrike
 permalink: /smart-doorbell-privacy-risks-mitigations/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
