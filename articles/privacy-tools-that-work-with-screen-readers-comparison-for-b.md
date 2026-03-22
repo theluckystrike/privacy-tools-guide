@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, accessibility]
+tags: [privacy-tools-guide, accessibility, privacy]
 ---
 
 {% raw %}

@@ -7,7 +7,7 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /privacy-tools-with-high-contrast-mode-for-users-with-low-vis/
 categories: [privacy, accessibility, guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, privacy]
 reviewed: true
 score: 8
 ---
