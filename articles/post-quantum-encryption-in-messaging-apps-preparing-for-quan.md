@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, encryption]---
 
 As quantum computing advances toward practical deployment, the cryptographic foundations protecting billions of messaging communications face an existential threat. Traditional asymmetric encryption algorithms like RSA and elliptic curve cryptography (ECC) rely on mathematical problems that quantum computers can solve efficiently using Shor's algorithm. This article explores how messaging applications are implementing post-quantum cryptography, what developers need to know, and how power users can prepare for the transition.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Their implementation uses a**: hybrid approach combining classical X25519 key exchange with ML-KEM.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **This article explores how**: messaging applications are implementing post-quantum cryptography, what developers need to know, and how power users can prepare for the transition.
+
 ## The Quantum Threat Timeline
 
 Researchers estimate that cryptographically relevant quantum computers could emerge within the next decade. While no such machines exist today, the "harvest now, decrypt later" attack vector already poses a risk. State-level actors and sophisticated adversaries currently capture encrypted traffic with the expectation that future quantum computers will enable decryption.
