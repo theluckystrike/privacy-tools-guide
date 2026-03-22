@@ -11,8 +11,21 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide]---
 ---
+layout: default
+title: "Verify Someone's Identity Before Meeting from a Dating App"
+description: "Meeting someone from a dating app in person requires trust, but blind trust can be dangerous. Catfishing—where someone creates a fake identity—remains"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-verify-someone-identity-before-meeting-from-dating-ap/
+categories: [guides, security]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -260,7 +273,6 @@ Once you've verified identity, take these additional precautions before your fir
 **Do dating apps verify identities themselves?** Tinder, Bumble, and Hinge offer optional photo verification (selfie match to uploaded photos). This confirms the person looks like their photos but does not verify their name, age, or any other claimed information.
 
 **What legal recourse exists for catfishing?** Catfishing itself is not uniformly illegal. However, if it involves impersonating a real person, financial fraud, or in some jurisdictions sexual deception, criminal statutes may apply. Civil remedies vary by jurisdiction. Practical recourse is limited; prevention is more reliable than legal remedy.
-
 
 ## Related Articles
 

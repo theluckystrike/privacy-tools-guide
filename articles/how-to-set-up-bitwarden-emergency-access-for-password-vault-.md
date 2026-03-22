@@ -11,8 +11,7 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 {% raw %}
 
@@ -306,23 +305,22 @@ For businesses managing shared credentials:
 # Tier 2: Infrastructure accounts (CTO + DevOps Lead)
 # Tier 3: Communications accounts (CEO + Communications Director)
 
-# Configure per-tier access
----
+# Configure per-tier access---
 org:
-  finance:
-    emergency_contacts: ["treasurer@company.com", "legal@company.com"]
-    waiting_period: 168  # 7 days
-    verification_type: "inheritance"
+ finance:
+ emergency_contacts: ["treasurer@company.com", "legal@company.com"]
+ waiting_period: 168 # 7 days
+ verification_type: "inheritance"
 
-  infrastructure:
-    emergency_contacts: ["devops-lead@company.com", "cto@company.com"]
-    waiting_period: 24   # 24 hours (faster for critical systems)
-    verification_type: "trusted"
+ infrastructure:
+ emergency_contacts: ["devops-lead@company.com", "cto@company.com"]
+ waiting_period: 24 # 24 hours (faster for critical systems)
+ verification_type: "trusted"
 
-  communications:
-    emergency_contacts: ["ceo@company.com", "pr-lead@company.com"]
-    waiting_period: 168
-    verification_type: "inheritance"
+ communications:
+ emergency_contacts: ["ceo@company.com", "pr-lead@company.com"]
+ waiting_period: 168
+ verification_type: "inheritance"
 ```
 
 ## Audit Trail and Compliance Logging
@@ -337,21 +335,21 @@ LOG_FILE="/var/log/bitwarden-emergency-access.log"
 
 # Query Bitwarden API for emergency access events
 curl -s \
-  -H "Authorization: Bearer $BW_TOKEN" \
-  "https://vault.bitwarden.com/api/emergency-access/requests" | \
-  jq '.[] | {
-    id: .id,
-    granteeEmail: .granteeEmail,
-    status: .status,
-    creationDate: .creationDate,
-    expirationDate: .expirationDate
-  }' >> $LOG_FILE
+ -H "Authorization: Bearer $BW_TOKEN" \
+ "https://vault.bitwarden.com/api/emergency-access/requests" | \
+ jq '.[] | {
+ id: .id,
+ granteeEmail: .granteeEmail,
+ status: .status,
+ creationDate: .creationDate,
+ expirationDate: .expirationDate
+ }' >> $LOG_FILE
 
 # Parse log for compliance reporting
 echo "Emergency Access Requests (30 days):"
 jq --arg now "$(date -d '30 days ago' +%Y-%m-%dT%H:%M:%S)" \
-  '.[] | select(.creationDate > $now)' $LOG_FILE | \
-  wc -l
+ '.[] | select(.creationDate > $now)' $LOG_FILE | \
+ wc -l
 ```
 
 ## Testing Emergency Access Procedure
@@ -415,10 +413,10 @@ cat > digital_estate_plan.md <<'EOF'
 1. Emergency contact initiates Bitwarden emergency access request
 2. Wait 7 days for access grant
 3. Access vault and locate:
-   - Bank account credentials
-   - Investment accounts
-   - Utility access
-   - Email accounts
+ - Bank account credentials
+ - Investment accounts
+ - Utility access
+ - Email accounts
 
 ## Critical Accounts Priority
 1. Bank accounts (within first 24 hours)
@@ -459,13 +457,13 @@ Plan for scenarios where the emergency contact predeceases you:
 
 # 1. Quarterly audit of emergency contact status
 check_emergency_contact_status() {
-    contact_email="$1"
+ contact_email="$1"
 
-    # Verify email is still valid
-    curl -I "mailto:$contact_email" 2>/dev/null
+ # Verify email is still valid
+ curl -I "mailto:$contact_email" 2>/dev/null
 
-    # Check if account still active
-    # (requires contact to confirm periodically)
+ # Check if account still active
+ # (requires contact to confirm periodically)
 }
 
 # 2. If emergency contact becomes unavailable
@@ -495,65 +493,57 @@ Different jurisdictions have different requirements for vault access after death
 # Jurisdiction-specific considerations
 ---
 united_states:
-  # No federal requirement, but consider state laws
-  # Some states recognize "digital assets" in wills
-  requirements:
-    - Include in will with explicit instructions
-    - Bitwarden emergency access provides technical solution
+ # No federal requirement, but consider state laws
+ # Some states recognize "digital assets" in wills
+ requirements:
+ - Include in will with explicit instructions
+ - Bitwarden emergency access provides technical solution
 
 united_kingdom:
-  # Digital assets part of estate
-  requirements:
-    - Include in will explicitly
-    - Provide executor with emergency access
-    - Consider Mental Capacity Act 2005
+ # Digital assets part of estate
+ requirements:
+ - Include in will explicitly
+ - Provide executor with emergency access
+ - Consider Mental Capacity Act 2005
 
 germany:
-  # Strong privacy rights even posthumously
-  requirements:
-    - Must explicitly authorize vault access
-    - May require court order in some cases
-    - GDPR "right to be forgotten" complicates access
+ # Strong privacy rights even posthumously
+ requirements:
+ - Must explicitly authorize vault access
+ - May require court order in some cases
+ - GDPR "right to be forgotten" complicates access
 
 canada:
-  # Varies by province
-  requirements:
-    - Include digital asset inventory in will
-    - Provide emergency access designation
-    - Update regularly for new accounts
+ # Varies by province
+ requirements:
+ - Include digital asset inventory in will
+ - Provide emergency access designation
+ - Update regularly for new accounts
 ```
 
 Emergency access configuration becomes meaningful only when integrated into digital estate planning with clear documentation and regular testing.
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Does Bitwarden offer a free tier?**
 
 Most major tools offer some form of free tier or trial period. Check Bitwarden's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 
@@ -564,4 +554,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

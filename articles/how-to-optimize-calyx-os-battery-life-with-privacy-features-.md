@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"
-description: "Learn how to optimize CalyxOS battery life while maintaining strong privacy features. Practical techniques for developers and power users to extend battery without compromising security."
+description: "Learn how to optimize CalyxOS battery life while maintaining strong privacy features. Practical techniques for developers and power users to extend"
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
@@ -10,8 +10,20 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [calyxos, android, privacy, battery-optimization]
+tags: [calyxos, android, privacy, battery-optimization]---
 ---
+layout: default
+title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"
+description: "Learn how to optimize CalyxOS battery life while maintaining strong privacy features. Practical techniques for developers and power users to extend"
+date: 2026-03-21
+author: theluckystrike
+permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
+categories: [guides, android, privacy]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [calyxos, android, privacy, battery-optimization]---
 
 {% raw %}
 
@@ -74,15 +86,15 @@ pm disable-user --user 0 com.google.android.gms/com.google.android.gms.auth.auth
 Using privacy-respecting DNS providers like Quad9 or Cloudflare's 1.1.1.1 adds encryption overhead. Consider these trade-offs:
 
 1. **Use a local DNS resolver** - Running a DNS resolver like dnsmasq on your device caches queries, reducing encryption overhead:
-   ```bash
+ ```bash
    # Install Termux and setup dnsmasq
    pkg install dnsmasq
    ```
 
 2. **Adjust DNS providers** - Some providers respond faster than others:
-   - Quad9 (9.9.9.9) - Blocks malicious domains
-   - Cloudflare (1.1.1.1) - Generally fastest
-   - AdGuard DNS (94.140.14.14) - Blocks ads and trackers
+ - Quad9 (9.9.9.9) - Blocks malicious domains
+ - Cloudflare (1.1.1.1) - Generally fastest
+ - AdGuard DNS (94.140.14.14) - Blocks ads and trackers
 
 ### Managing Network Firewall Rules
 
@@ -244,7 +256,7 @@ Combine several optimizations into a single script:
 settings put system screen_off_timeout 15000
 settings put system screen_brightness 120
 
-# Disable unnecessary features  
+# Disable unnecessary features
 settings put global bluetooth_on 0
 settings put secure nfc_enabled 0
 
@@ -283,7 +295,6 @@ Most battery apps require root or extensive permissions that compromise privacy.
 **What's the best balance between privacy and battery?**
 
 Network-based location (not GPS), VPN only when on public WiFi, and disabling unused radios provides strong privacy with minimal battery impact.
-
 
 ## Related Articles
 

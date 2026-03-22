@@ -11,8 +11,7 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]
----
+tags: [privacy-tools-guide, security]---
 
 
 ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access architecture so ProtonMail's own servers never store decryptable content, and client-side key generation so your private key never leaves your device in plaintext. This means ProtonMail cannot read your emails even if compelled by a court order or compromised by an attacker. Here is how each layer works in practice.
@@ -121,8 +120,8 @@ An often-overlooked aspect of ProtonMail's security model is its approach to pub
 
 When you add a new contact or receive their first email, ProtonMail automatically retrieves and validates their public key from the server. For security-conscious users, manual fingerprint verification remains available:
 
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
+```---
+--BEGIN PGP PUBLIC KEY BLOCK-----
 Version: OpenPGP.js
 
 mQINBF[...truncated for brevity...]
@@ -194,38 +193,38 @@ ProtonMail uses specific cryptographic implementations that developers should un
 ```javascript
 // Simplified ProtonMail encryption architecture
 class ProtonMailCrypto {
-  // Session key generation for each message
-  generateSessionKey() {
-    const sessionKey = crypto.getRandomValues(new Uint8Array(32)); // AES-256
-    return sessionKey;
-  }
+ // Session key generation for each message
+ generateSessionKey() {
+ const sessionKey = crypto.getRandomValues(new Uint8Array(32)); // AES-256
+ return sessionKey;
+ }
 
-  // Message encryption
-  encryptMessage(plaintext, sessionKey) {
-    const iv = crypto.getRandomValues(new Uint8Array(16));
-    const cipher = new AES256GCM(sessionKey);
-    const ciphertext = cipher.encrypt(plaintext, iv);
-    return { ciphertext, iv };
-  }
+ // Message encryption
+ encryptMessage(plaintext, sessionKey) {
+ const iv = crypto.getRandomValues(new Uint8Array(16));
+ const cipher = new AES256GCM(sessionKey);
+ const ciphertext = cipher.encrypt(plaintext, iv);
+ return { ciphertext, iv };
+ }
 
-  // Session key encryption with recipient's public key
-  encryptSessionKey(sessionKey, recipientPublicKey) {
-    const encrypted = RSA.encrypt(sessionKey, recipientPublicKey);
-    return encrypted;
-  }
+ // Session key encryption with recipient's public key
+ encryptSessionKey(sessionKey, recipientPublicKey) {
+ const encrypted = RSA.encrypt(sessionKey, recipientPublicKey);
+ return encrypted;
+ }
 
-  // Combined message structure
-  buildEncryptedMessage(plaintext, recipientPublicKey) {
-    const sessionKey = this.generateSessionKey();
-    const { ciphertext, iv } = this.encryptMessage(plaintext, sessionKey);
-    const encryptedKey = this.encryptSessionKey(sessionKey, recipientPublicKey);
+ // Combined message structure
+ buildEncryptedMessage(plaintext, recipientPublicKey) {
+ const sessionKey = this.generateSessionKey();
+ const { ciphertext, iv } = this.encryptMessage(plaintext, sessionKey);
+ const encryptedKey = this.encryptSessionKey(sessionKey, recipientPublicKey);
 
-    return {
-      encrypted_body: ciphertext,
-      iv: iv,
-      encrypted_key: encryptedKey
-    };
-  }
+ return {
+ encrypted_body: ciphertext,
+ iv: iv,
+ encrypted_key: encryptedKey
+ };
+ }
 }
 ```
 
@@ -278,35 +277,27 @@ For developers implementing similar systems, critically evaluate ProtonMail's se
 - Store sensitive communications locally rather than in ProtonMail (email is inherently a poor medium for security)
 - Rotate encryption keys periodically
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Does ProtonMail offer a free tier?**
 
 Most major tools offer some form of free tier or trial period. Check ProtonMail's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 

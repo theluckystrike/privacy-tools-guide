@@ -10,8 +10,7 @@ voice-checked: true
 intent-checked: true
 date: 2026-03-21
 permalink: /how-to-use-age-encryption-for-file-sharing-2026/
-tags: [privacy-tools-guide, encryption]
----
+tags: [privacy-tools-guide, encryption]---
 
 {% raw %}
 
@@ -205,8 +204,8 @@ age -r age1my_pubkey --armor secret.txt > secret.txt.age
 ```
 
 Output:
-```
------BEGIN AGE ENCRYPTED FILE-----
+```---
+--BEGIN AGE ENCRYPTED FILE-----
 YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvdUczSDg3YVN6RjJQRWgK
 aVFrcjBFaVRzQWF3ZHdzUWpMdEFXTDQycm1SQVEvQWd1YU55Vm5Jd0UKLS1EJmV3
 ...
@@ -266,14 +265,14 @@ PRIVKEY="$HOME/.age/key.txt"
 
 # Encrypt all .log files
 for file in *.log; do
-  age -r "$PUBKEY" "$file" > "$file.age"
-  echo "Encrypted $file"
+ age -r "$PUBKEY" "$file" > "$file.age"
+ echo "Encrypted $file"
 done
 
 # Decrypt all .log.age files
 for file in *.log.age; do
-  age -d -i "$PRIVKEY" "$file" > "${file%.age}"
-  echo "Decrypted $file"
+ age -d -i "$PRIVKEY" "$file" > "${file%.age}"
+ echo "Decrypted $file"
 done
 ```
 
@@ -313,13 +312,13 @@ age -d -i ~/.age/key.txt secret.yaml.age | kubectl apply -f -
 
 1. Generate a new key pair:
  ```bash
-   age-keygen > ~/.age/new-key.txt
-   ```
+ age-keygen > ~/.age/new-key.txt
+ ```
 
 2. Re-encrypt old files with new public key:
  ```bash
-   age -d -i ~/.age/old-key.txt secrets.age | age -r age1_new_pubkey > secrets.age
-   ```
+ age -d -i ~/.age/old-key.txt secrets.age | age -r age1_new_pubkey > secrets.age
+ ```
 
 3. Share new public key with colleagues; discard old key.
 
@@ -370,14 +369,14 @@ For most modern workflows, age is the better choice.
 
 1. **Never commit secret keys to Git.** Add `~/.age/key.txt` to `.gitignore` globally:
  ```bash
-   echo "~/.age/key.txt" >> ~/.gitignore_global
-   git config --global core.excludesfile ~/.gitignore_global
-   ```
+ echo "~/.age/key.txt" >> ~/.gitignore_global
+ git config --global core.excludesfile ~/.gitignore_global
+ ```
 
 2. **Protect key files.** Set proper permissions:
  ```bash
-   chmod 600 ~/.age/key.txt
-   ```
+ chmod 600 ~/.age/key.txt
+ ```
 
 3. **Use strong passphrases** (if encrypting keys with a passphrase). 20+ characters, mixed case, numbers, symbols.
 
@@ -385,34 +384,27 @@ For most modern workflows, age is the better choice.
 
 5. **Verify public keys.** For critical sharing, verify the public key with the recipient out-of-band (call them, check their website, compare in person).
 
-
 ## Frequently Asked Questions
-
 
 **How long does it take to use age encryption for file sharing?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 
@@ -421,4 +413,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Accessible Encrypted File Sharing Tool for Users With Cognitive Impairments 2026](/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

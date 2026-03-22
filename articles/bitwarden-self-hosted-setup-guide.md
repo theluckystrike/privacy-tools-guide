@@ -11,9 +11,21 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide]---
 ---
-
+layout: default
+title: "Bitwarden Self-Hosted Setup Guide"
+description: "Running your own Bitwarden instance gives you complete control over your password data. For developers and power users, self-hosting eliminates reliance on"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: "Privacy Tools Guide"
+permalink: /bitwarden-self-hosted-setup-guide/
+categories: [guides]
+intent-checked: true
+voice-checked: true
+reviewed: true
+score: 9
+tags: [privacy-tools-guide]---
 
 {% raw %}
 Running your own Bitwarden instance gives you complete control over your password data. For developers and power users, self-hosting eliminates reliance on third-party servers while providing customization options unavailable in the cloud version.
@@ -263,7 +275,6 @@ The community edition is free for unlimited users. Premium features (advanced 2F
 
 **Can I use the Bitwarden mobile app with a self-hosted server?**
 Yes. In the Bitwarden mobile app, tap the region selector on the login screen and choose "Self-hosted." Enter your server domain and proceed with login normally.
-
 
 ## Related Articles
 

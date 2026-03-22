@@ -1,14 +1,23 @@
 ---
 title: "How to Configure DNS Over HTTPS (DoH) for Privacy in 2026"
-description: "Complete setup guide for DNS over HTTPS on all platforms. Compare Cloudflare, NextDNS, Quad9, and Mullvad. Configuration examples for Windows, macOS, iOS, Android."
+description: "Complete setup guide for DNS over HTTPS on all platforms. Compare Cloudflare, NextDNS, Quad9, and Mullvad. Configuration examples for Windows, macOS, iOS,"
 author: Privacy Tools Guide
 date: 2026-03-22
 reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-permalink: /how-to-configure-dns-over-https-for-privacy-2026/
+permalink: /how-to-configure-dns-over-https-for-privacy-2026/---
 ---
+title: "How to Configure DNS Over HTTPS (DoH) for Privacy in 2026"
+description: "Complete setup guide for DNS over HTTPS on all platforms. Compare Cloudflare, NextDNS, Quad9, and Mullvad. Configuration examples for Windows, macOS, iOS,"
+author: Privacy Tools Guide
+date: 2026-03-22
+reviewed: true
+score: 8
+voice-checked: true
+intent-checked: true
+permalink: /how-to-configure-dns-over-https-for-privacy-2026/---
 
 {% raw %}
 
@@ -54,12 +63,12 @@ Cloudflare's 1.1.1.1 is the fastest public DoH resolver with strong privacy comm
 7. Toggle "IPv4" ON
 8. Delete existing DNS servers
 9. Add preferred DNS:
-   - Preferred: `1.1.1.1`
-   - Alternate: `1.0.0.1`
+ - Preferred: `1.1.1.1`
+ - Alternate: `1.0.0.1`
 10. Toggle "IPv6" ON
 11. Add preferred DNS:
-    - Preferred: `2606:4700:4700::1111`
-    - Alternate: `2606:4700:4700::1001`
+ - Preferred: `2606:4700:4700::1111`
+ - Alternate: `2606:4700:4700::1001`
 12. Click Save
 
 **Verify:** Open Command Prompt, run:
@@ -93,10 +102,10 @@ Get-DnsClientServerAddress
 5. Enter: `1.1.1.1`
 6. Click + again, add: `1.0.0.1`
 7. For IPv6 (same DNS tab):
-   - Click +
-   - Enter: `2606:4700:4700::1111`
-   - Click +
-   - Enter: `2606:4700:4700::1001`
+ - Click +
+ - Enter: `2606:4700:4700::1111`
+ - Click +
+ - Enter: `2606:4700:4700::1001`
 8. Click OK
 
 **Verify DNS over HTTPS:**
@@ -186,10 +195,10 @@ Alternate IPv6 DNS: 2a07:a8c1::0
 4. Tap "Install Configuration"
 5. Confirm with Face ID/password
 6. Select which features to enable:
-   - Block ads: Yes
-   - Block malware: Yes
-   - Block adult content: Yes
-   - Advanced threat protection: Optional (paid)
+ - Block ads: Yes
+ - Block malware: Yes
+ - Block adult content: Yes
+ - Advanced threat protection: Optional (paid)
 
 **4. Real Example: Create Custom Blocklist**
 
@@ -325,7 +334,7 @@ DoH adds minimal overhead (~1-5ms per query) but:
 - NextDNS: Varies by location, usually 10-20ms
 - Mullvad: ~20-30ms (conservative approach)
 
-**Real-world impact:** Unnoticeable for daily browsing. Page loads virtually identical.
+**Real-world impact:** Unnoticeable for daily browsing. Page loads nearly identical.
 
 ## Privacy Risks Still Remaining
 

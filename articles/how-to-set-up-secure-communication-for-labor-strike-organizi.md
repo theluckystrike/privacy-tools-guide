@@ -11,8 +11,21 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide]---
 ---
+layout: default
+title: "Set Up Secure Communication for Labor Strike Organizing"
+description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
+categories: [guides, security]
+reviewed: true
+score: 9
+voice-checked: true
+intent-checked: true
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -244,7 +257,6 @@ Email is better for asynchronous, document-heavy communication — attaching leg
 
 **Can the employer monitor Signal on a company-issued phone?**
 Yes, through MDM software that can log keystrokes or take screenshots at the OS level, regardless of app-level encryption. Never use company-issued devices for organizing communications. Use your personal device on mobile data, not workplace WiFi.
-
 
 ## Related Articles
 

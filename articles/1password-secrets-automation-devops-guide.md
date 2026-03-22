@@ -11,8 +11,7 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]
----
+tags: [privacy-tools-guide, automation]---
 
 
 {% raw %}
@@ -100,20 +99,19 @@ brew install --cask 1password-cli
 
 Use the shell command lookup in playbooks:
 
-```yaml
----
+```yaml---
 - name: Configure production database
-  hosts: db_servers
-  vars:
-    db_password: "{{ lookup('command', 'op item get Database --field password') }}"
-  tasks:
-    - name: Update database password
-      community.postgresql.postgresql_user:
-        name: app_user
-        password: "{{ db_password }}"
-        db: application
-        login_host: "{{ inventory_hostname }}"
-      no_log: true
+ hosts: db_servers
+ vars:
+ db_password: "{{ lookup('command', 'op item get Database --field password') }}"
+ tasks:
+ - name: Update database password
+ community.postgresql.postgresql_user:
+ name: app_user
+ password: "{{ db_password }}"
+ db: application
+ login_host: "{{ inventory_hostname }}"
+ no_log: true
 ```
 
 For production Ansible deployments, use the service account token approach with environment variables:
@@ -134,10 +132,10 @@ The simplest method generates Kubernetes secrets directly from 1Password:
 # generate-k8s-secrets.sh
 
 kubectl create secret generic app-secrets \
-  --from-literal=db-password=$(op item get "Production Database" --field password) \
-  --from-literal=redis-password=$(op item get "Redis Cache" --field password) \
-  --from-literal=api-key=$(op item get "External API" --field key) \
-  --dry-run=client -o yaml > k8s/secrets.yaml
+ --from-literal=db-password=$(op item get "Production Database" --field password) \
+ --from-literal=redis-password=$(op item get "Redis Cache" --field password) \
+ --from-literal=api-key=$(op item get "External API" --field key) \
+ --dry-run=client -o yaml > k8s/secrets.yaml
 ```
 
 For more sophisticated implementations, the External Secrets Operator supports 1Password as a provider. Install the operator and configure it to sync secrets automatically:
@@ -146,35 +144,35 @@ For more sophisticated implementations, the External Secrets Operator supports 1
 apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
-  name: onepassword-store
+ name: onepassword-store
 spec:
-  provider:
-    onepassword:
-      connectHost: "https://mycompany.1password.io"
-      auth:
-        secretRef:
-          opServiceAccountToken:
-            name: onepassword-credentials
-            namespace: external-secrets
-            key: token
+ provider:
+ onepassword:
+ connectHost: "https://mycompany.1password.io"
+ auth:
+ secretRef:
+ opServiceAccountToken:
+ name: onepassword-credentials
+ namespace: external-secrets
+ key: token
 ---
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: database-credentials
+ name: database-credentials
 spec:
-  refreshInterval: 1h
-  secretStoreRef:
-    name: onepassword-store
-    kind: ClusterSecretStore
-  target:
-    name: db-credentials
-    creationPolicy: Owner
-  data:
-    - secretKey: password
-      remoteRef:
-        key: "Production Database"
-        property: password
+ refreshInterval: 1h
+ secretStoreRef:
+ name: onepassword-store
+ kind: ClusterSecretStore
+ target:
+ name: db-credentials
+ creationPolicy: Owner
+ data:
+ - secretKey: password
+ remoteRef:
+ key: "Production Database"
+ property: password
 ```
 
 This approach automatically synchronizes secrets from 1Password into Kubernetes, refreshing them periodically without manual intervention.
@@ -185,41 +183,41 @@ GitLab CI/CD integrates smoothly with 1Password using the service account token:
 
 ```yaml
 stages:
-  - build
-  - deploy
+ - build
+ - deploy
 
 variables:
-  OP_SERVICE_ACCOUNT_TOKEN: $OP_SERVICE_ACCOUNT_TOKEN
+ OP_SERVICE_ACCOUNT_TOKEN: $OP_SERVICE_ACCOUNT_TOKEN
 
 before_script:
-  - |
-    if ! command -v op &> /dev/null; then
-      curl -sSf https://app-updates.agilebits.com/product_history/CLI2 | \
-      grep -E "op_.*\.pkg" | head -1 | \
-      awk -F'{print $4}' | \
-      xargs -I {} brew install {}
-    fi
-    echo "$OP_SERVICE_ACCOUNT_TOKEN" | op signin --stdin
+ - |
+ if ! command -v op &> /dev/null; then
+ curl -sSf https://app-updates.agilebits.com/product_history/CLI2 | \
+ grep -E "op_.*\.pkg" | head -1 | \
+ awk -F'{print $4}' | \
+ xargs -I {} brew install {}
+ fi
+ echo "$OP_SERVICE_ACCOUNT_TOKEN" | op signin --stdin
 
 build:
-  stage: build
-  script:
-    - echo "DB_PASSWORD=$(op item get ProductionDB --field password)" >> .env
-    - echo "API_KEY=$(op item get ExternalAPI --field key)" >> .env
-    - docker build --build-arg DB_PASSWORD="$(op item get ProductionDB --field password)" .
-  artifacts:
-    paths:
-      - .env
-    expire_in: 1 hour
+ stage: build
+ script:
+ - echo "DB_PASSWORD=$(op item get ProductionDB --field password)" >> .env
+ - echo "API_KEY=$(op item get ExternalAPI --field key)" >> .env
+ - docker build --build-arg DB_PASSWORD="$(op item get ProductionDB --field password)" .
+ artifacts:
+ paths:
+ - .env
+ expire_in: 1 hour
 
 deploy:
-  stage: deploy
-  script:
-    - |
-      export DEPLOY_KEY="$(op item get DeployKey --field private_key)"
-      echo "$DEPLOY_KEY" > deploy_key
-      chmod 600 deploy_key
-      ssh -i deploy_key deploy@production.example.com "./deploy.sh"
+ stage: deploy
+ script:
+ - |
+ export DEPLOY_KEY="$(op item get DeployKey --field private_key)"
+ echo "$DEPLOY_KEY" > deploy_key
+ chmod 600 deploy_key
+ ssh -i deploy_key deploy@production.example.com "./deploy.sh"
 ```
 
 This configuration installs the 1Password CLI in the job, authenticates using the service account token, retrieves secrets as needed, and uses them within each job without persisting them to logs or artifacts.
@@ -248,35 +246,27 @@ export PASSWORD=$(op item get "Item" --field password 2>/dev/null)
 
 Access auditing provides visibility into which automation systems accessed which secrets. Review the 1Password audit logs regularly to identify unusual access patterns or unauthorized attempts.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to complete this setup?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Will this work with my existing CI/CD pipeline?**
 
 The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 
@@ -287,4 +277,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Ios Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

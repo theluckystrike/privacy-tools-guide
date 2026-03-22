@@ -11,13 +11,25 @@ tags: [privacy-tools-guide, tools, best-of, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true
+intent-checked: true---
 ---
+layout: default
+title: "Linux Desktop Privacy Hardening Guide"
+description: "Ubuntu and Fedora privacy hardening: AppArmor, firewall, disk encryption, telemetry removal, browser sandboxing. CLI examples and step-by-step"
+date: 2026-03-20
+last_modified_at: 2026-03-20
+author: "Privacy Tools Guide"
+permalink: /linux-desktop-privacy-hardening-guide/
+categories: [guides]
+tags: [privacy-tools-guide, tools, best-of, privacy]
+reviewed: true
+score: 9
+voice-checked: true
+intent-checked: true---
 
 {% raw %}
 
 Linux desktops run on trust—you control the OS, applications, and permissions. But default installations leak data: Ubuntu's Amazon search suggestions, Fedora's automatic analytics, Firefox's default telemetry, and browser fingerprinting. This guide hardens a Linux desktop against data leaks with practical CLI commands and configuration changes. Expect 2-3 hours for a complete hardening. The result: a system that collects no data about you and refuses unauthorized network connections.
-
 
 ## The Privacy Baseline
 
@@ -43,7 +55,6 @@ Common culprits:
 - **Ubuntu**: `popularity-contest` (anonymously reports installed packages), `ubuntu-report` (submits hardware info), `apport` (crash reporting)
 - **Fedora**: `abrt` (automatic bug reporting), `dnf-plugins-core` (telemetry in some versions)
 - **All distros**: Firefox default telemetry, update checkers, automatic error reports
-
 
 ## Step 1: Disable Ubuntu Telemetry (Ubuntu Only)
 
@@ -75,7 +86,6 @@ sudo systemctl status ubuntu-report 2>&1 | grep -i inactive
 
 **Result:** Ubuntu no longer sends package data or hardware surveys to Canonical.
 
-
 ## Step 2: Disable Fedora Telemetry (Fedora Only)
 
 ```bash
@@ -97,7 +107,6 @@ grep "countme" /etc/dnf/dnf.conf  # Should show countme=0
 ```
 
 **Result:** Fedora stops sending package statistics and debug reports.
-
 
 ## Step 3: Harden the Firewall
 
@@ -161,7 +170,6 @@ nmap -p 1-10000 your-desktop-ip
 # Expected: All ports filtered or closed (good)
 ```
 
-
 ## Step 4: Enable Full Disk Encryption
 
 Unencrypted disks leak data even when powered off. Full disk encryption (LUKS) encrypts everything except the boot partition.
@@ -218,7 +226,6 @@ sudo nano /etc/crypttab
 
 **Result:** Disk is encrypted with AES-256. Removing the drive and powering it on elsewhere reveals no data.
 
-
 ## Step 5: Enable AppArmor (Ubuntu) or SELinux (Fedora)
 
 Mandatory Access Control (MAC) limits what each application can access. Even if an application is compromised, it can't access the rest of your system.
@@ -261,7 +268,6 @@ sudo journalctl -u setroubleshoot --no-pager | tail -20
 ```
 
 **Result:** Applications run in sandboxes. Firefox can't access your SSH keys, documents, or home directory outside its profile.
-
 
 ## Step 6: Harden Firefox
 
@@ -335,7 +341,6 @@ EOF
 # Ideal result: "Untrackable" (difficult to fingerprint)
 ```
 
-
 ## Step 7: Disable Unnecessary Services
 
 Disable services not needed on a desktop:
@@ -361,7 +366,6 @@ systemctl --user disable geoclue  # Location services
 ```bash
 sudo systemctl status bluetooth  # Should show "disabled"
 ```
-
 
 ## Step 8: Configure Automatic Security Updates
 
@@ -395,7 +399,6 @@ sudo systemctl start dnf-automatic.timer
 sudo systemctl status dnf-automatic.timer
 ```
 
-
 ## Step 9: Enable SSH Hardening (If Needed)
 
 If you use SSH, harden it:
@@ -421,7 +424,6 @@ sudo systemctl restart sshd  # Fedora
 sudo sshd -t  # Should output nothing if valid
 ```
 
-
 ## Step 10: Lock Down Permissions
 
 Restrict file permissions to prevent unauthorized access:
@@ -444,7 +446,6 @@ find ~ -type f -perm /077 -print | grep -E "ssh|gpg|key|token|password|secret"
 # Remove world-readable permissions
 find ~ -type f -perm /077 -exec chmod go-rwx {} \;
 ```
-
 
 ## Step 11: Enable Mandatory Security Monitoring
 
@@ -470,7 +471,6 @@ sudo ausearch -k shadow_access  # Shows attempts to modify passwords
 sudo nano /etc/audit/rules.d/hardening.rules
 # Add: -w /etc/shadow -p wa -k shadow_access
 ```
-
 
 ## Post-Hardening Verification Checklist
 
@@ -503,7 +503,6 @@ find ~ -type f -perm /077 | wc -l  # Should return 0
 grep "PasswordAuthentication no" /etc/ssh/sshd_config
 ```
 
-
 ## Security Hardening Maintenance
 
 Monthly:
@@ -518,7 +517,6 @@ Quarterly:
 
 This hardened Linux desktop now refuses telemetry, limits network exposure, encrypts sensitive data, and sandboxes applications. The trade-off: slightly more complex to manage, but vastly more privacy-respecting.
 
-
 ## Related Reading
 
 - [Pop Os Vs Fedora Vs Debian For Privacy Focused Linux Desktop](/privacy-tools-guide/pop-os-vs-fedora-vs-debian-for-privacy-focused-linux-desktop/)
@@ -529,33 +527,26 @@ This hardened Linux desktop now refuses telemetry, limits network exposure, encr
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-
 ## Frequently Asked Questions
-
 
 **How long does it take to complete this setup?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 {% endraw %}

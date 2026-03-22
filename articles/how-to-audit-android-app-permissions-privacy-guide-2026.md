@@ -8,8 +8,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]
----
+tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -188,7 +187,7 @@ def get_packages():
     """Get list of all user-installed packages"""
     result = subprocess.run(['adb', 'shell', 'pm', 'list', 'packages', '-3'],
                           capture_output=True, text=True)
-    packages = [line.replace('package:', '').strip() 
+    packages = [line.replace('package:', '').strip()
                 for line in result.stdout.strip().split('\n')
                 if line.startswith('package:')]
     return packages
@@ -197,14 +196,14 @@ def get_granted_perms(package):
     """Get list of granted dangerous permissions for package"""
     cmd = f"adb shell dumpsys package {package} | grep -A 200 'granted permissions:' | head -50"
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    
+
     granted = []
     for line in result.stdout.split('\n'):
         line = line.strip()
         if 'android.permission.' in line:
             perm = line.replace('android.permission.', '').strip()
             granted.append(perm)
-    
+
     return granted
 
 def get_app_label(package):
@@ -219,42 +218,42 @@ def get_app_label(package):
 def main():
     print("Android Permission Audit Report")
     print("=" * 80)
-    
+
     packages = get_packages()
     print(f"\nScanning {len(packages)} apps...\n")
-    
+
     suspicious_apps = defaultdict(list)
-    
+
     for package in packages:
         granted = get_granted_perms(package)
         dangerous_granted = [p for p in granted if f'android.permission.{p}' in DANGEROUS_PERMS]
-        
+
         if dangerous_granted:
             app_label = get_app_label(package)
             suspicious_apps[package] = {
                 'label': app_label,
                 'permissions': dangerous_granted
             }
-    
+
     # Print report
     print("APPS WITH DANGEROUS PERMISSIONS GRANTED:")
     print("-" * 80)
-    
+
     for i, (package, info) in enumerate(sorted(suspicious_apps.items()), 1):
         print(f"\n{i}. {info['label']}")
         print(f"   Package: {package}")
         print(f"   Permissions:")
         for perm in info['permissions']:
             print(f"     - {perm}")
-    
+
     # Summary
     print("\n" + "=" * 80)
     print(f"SUMMARY: {len(suspicious_apps)} apps have dangerous permissions granted")
-    
+
     # Export to JSON for further analysis
     with open('permission_audit.json', 'w') as f:
         json.dump(suspicious_apps, f, indent=2)
-    
+
     print(f"Full report saved to: permission_audit.json")
 
 if __name__ == '__main__':
@@ -274,29 +273,29 @@ Android Permission Audit Report
 
 Scanning 47 apps...
 
-APPS WITH DANGEROUS PERMISSIONS GRANTED:
---------------------------------------------------------------------------------
+APPS WITH DANGEROUS PERMISSIONS GRANTED:---
+-----------------------------------------------------------------------------
 
 1. Facebook
-   Package: com.facebook.katana
-   Permissions:
-     - ACCESS_FINE_LOCATION
-     - CAMERA
-     - RECORD_AUDIO
-     - READ_CONTACTS
+ Package: com.facebook.katana
+ Permissions:
+ - ACCESS_FINE_LOCATION
+ - CAMERA
+ - RECORD_AUDIO
+ - READ_CONTACTS
 
 2. WhatsApp
-   Package: com.whatsapp
-   Permissions:
-     - ACCESS_FINE_LOCATION
-     - CAMERA
-     - RECORD_AUDIO
+ Package: com.whatsapp
+ Permissions:
+ - ACCESS_FINE_LOCATION
+ - CAMERA
+ - RECORD_AUDIO
 
 3. Gmail
-   Package: com.google.android.gm
-   Permissions:
-     - READ_CONTACTS
-     - READ_CALENDAR
+ Package: com.google.android.gm
+ Permissions:
+ - READ_CONTACTS
+ - READ_CALENDAR
 
 ...
 ```
@@ -509,36 +508,27 @@ Schedule this quarterly:
 
 Run your permission audit now. You'll likely find 3-5 apps with suspicious permissions.
 
-
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to audit android app permissions privacy guide?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 
@@ -547,4 +537,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Privacy-Focused Home Assistant Setup Accessible for Users With Mobility Limitations"
+title: "Privacy-Focused Home Assistant Setup Accessible for Users"
 description: "A comprehensive guide to setting up Home Assistant with privacy-first principles while ensuring accessibility for users with mobility limitations."
 date: 2026-03-21
 author: theluckystrike
@@ -9,8 +9,19 @@ categories: [guides, home-automation, accessibility]
 tags: [home-assistant, privacy, accessibility, smart-home]
 reviewed: true
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
+layout: default
+title: "Privacy-Focused Home Assistant Setup Accessible for Users"
+description: "A guide to setting up Home Assistant with privacy-first principles while ensuring accessibility for users with mobility limitations."
+date: 2026-03-21
+author: theluckystrike
+permalink: /privacy-focused-home-assistant-setup-accessible-for-users-wi/
+categories: [guides, home-automation, accessibility]
+tags: [home-assistant, privacy, accessibility, smart-home]
+reviewed: true
+intent-checked: true
+voice-checked: true---
 
 {% raw %}
 
@@ -207,13 +218,4 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 ```
 
 Create a simple script that runs weekly to confirm no unexpected cloud connections have been enabled through updates or new integrations.
-
-## Conclusion
-
-A privacy-focused Home Assistant setup accessible for users with mobility limitations requires thoughtful configuration across multiple domains. Local processing, alternative input methods, network isolation, and privacy-first automation design all contribute to a system that protects user data while enabling independence.
-
-The initial setup investment pays dividends in control over your data and a truly accessible smart home that works when you need it. As voice processing models improve and hardware becomes more affordable, local-only smart home solutions will only become more capable.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -11,8 +11,21 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, browser-security, extension-audit]
+tags: [privacy-tools-guide, browser-security, extension-audit]---
 ---
+layout: default
+title: "How to Audit Browser Extensions for Privacy Risks 2026"
+description: "Review extension permissions, detect data exfiltration, use CRXcavator, analyze manifest.json for privacy risks."
+date: 2026-03-22
+last_modified_at: 2026-03-22
+author: "Privacy Tools Guide"
+permalink: /how-to-audit-browser-extensions-for-privacy-risks-2026/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide, browser-security, extension-audit]---
 
 {% raw %}
 
@@ -109,7 +122,7 @@ This extension runs only on Gmail and stores local data. Much more limited.
 
 **"content_scripts"** - JavaScript code that runs on web pages. Check which sites it runs on and what it does. Some extensions inject ads or change page behavior here.
 
-**"background"** - Background scripts run without a UI. They often contact external servers. Check if the manifest indicates what external services it contacts.
+**"background"** - Background scripts run without an UI. They often contact external servers. Check if the manifest indicates what external services it contacts.
 
 **"update_url"** - Where the extension gets updates. Most extensions use Google's update service. If this is a custom domain, be cautious (though some legitimate extensions do this).
 

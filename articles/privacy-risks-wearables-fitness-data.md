@@ -10,15 +10,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 # Privacy Risks of Fitness Trackers and Wearables
 
 A fitness tracker knows your resting heart rate, sleep patterns, menstrual cycle, stress levels, activity at 3am, and location throughout the day. This data is more revealing than most people realize — health insurers, employers, and data brokers have significant financial interest in it. This guide covers what each device collects, who accesses it, and what you can actually do.
-
 ---
 
 ## What Fitness Trackers Collect
@@ -237,4 +235,3 @@ This is the pattern-of-life analysis used by intelligence agencies — and avail
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

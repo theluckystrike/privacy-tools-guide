@@ -11,8 +11,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
----
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -188,10 +187,10 @@ restic -r /mnt/backup/restic-repo snapshots
 
 Output:
 ```
-ID        Time                 Host        Tags        Paths
------------------------------------------------------------------------
-3d8f2a1b  2026-03-21 02:00:00  myhost                  /home/user
-c7e9f4d2  2026-03-20 02:00:00  myhost                  /home/user
+ID        Time                 Host        Tags        Paths---
+--------------------------------------------------------------------
+3d8f2a1b 2026-03-21 02:00:00 myhost /home/user
+c7e9f4d2 2026-03-20 02:00:00 myhost /home/user
 ```
 
 Browse files inside a snapshot:
@@ -238,10 +237,10 @@ Keeping every snapshot forever wastes storage. Set a retention policy:
 
 ```bash
 restic -r /mnt/backup/restic-repo forget \
-  --keep-daily 7 \
-  --keep-weekly 4 \
-  --keep-monthly 6 \
-  --prune
+ --keep-daily 7 \
+ --keep-weekly 4 \
+ --keep-monthly 6 \
+ --prune
 ```
 
 This keeps:
@@ -377,7 +376,6 @@ Rotate your repository password annually or whenever a credential is exposed. Af
 
 **How does restic compare to Borg Backup?** Both are excellent. Borg has faster deduplication and is slightly more efficient for large repos, but only supports Linux/macOS natively. Restic supports Windows and has broader storage backend support. For cross-platform environments, restic is the safer choice.
 
-
 ## Related Articles
 
 - [Restic vs Borg Backup: Encrypted Comparison for Developers](/privacy-tools-guide/restic-vs-borg-backup-encrypted-comparison/)
@@ -387,4 +385,4 @@ Rotate your repository password annually or whenever a credential is exposed. Af
 - [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
