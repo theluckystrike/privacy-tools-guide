@@ -27,6 +27,16 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Choose tunnel interface routing if you need simultaneous access to local resources (printers, NAS, Docker networks) and VPN-protected resources -- it routes only specific subnets through the VPN while keeping everything else on your direct connection. Choose full tunnel routing if your organization mandates all traffic through the VPN for compliance, or if you need complete protection on untrusted networks like public WiFi. The core difference is control granularity: tunnel interface gives you precise per-subnet routing decisions, while full tunnel encrypts everything at the cost of added latency and lost local network access.

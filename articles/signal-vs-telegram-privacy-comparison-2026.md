@@ -221,6 +221,19 @@ The choice ultimately depends on threat model. For sensitive communications wher
 ---
 
 
+
+
+| Feature | Signal | Telegram |
+|---|---|---|
+| Encryption | End-to-end by default (Signal Protocol) | Optional Secret Chats only |
+| Open Source | Fully open source (client + server) | Client only, server closed |
+| Data Collection | Phone number only | Phone number, contacts, metadata |
+| Group Chat Limit | 1,000 members | 200,000 members |
+| Message Storage | Device-only (no cloud) | Cloud-based (non-secret chats) |
+| Disappearing Messages | Yes (custom timer) | Yes (Secret Chats only) |
+| Self-Destructing Media | Yes | Yes |
+| Best For | Maximum privacy | Large groups, channels, bots |
+
 ## Frequently Asked Questions
 
 **Can I use Signal and the second tool together?**

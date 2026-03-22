@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, privacy]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 ProtonMail Bridge is a local IMAP/SMTP proxy that lets Thunderbird, Apple Mail, and Outlook access your encrypted ProtonMail account while keeping your private keys on your device only. Install Bridge from protonmail.com, configure it with your ProtonMail credentials, then add your IMAP account in Thunderbird or your preferred client using localhost:1143 as the IMAP server. This guide covers installation, configuration with common clients, security considerations, and automation for power users who need desktop email integration without sacrificing end-to-end encryption.

@@ -25,6 +25,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, security]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Signal Desktop is a convenient way to use Signal on a computer, but it introduces security considerations that don't exist on mobile. Your desktop is more likely to be physically accessible to others, shared by multiple users, or compromised through software. Signal's end-to-end encryption protects data in transit — it does not protect the Signal database on your hard drive, notification content visible on your lock screen, or messages readable by anyone who sits down at your unlocked computer.

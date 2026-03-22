@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]---
 
+
+| Tool | Privacy Feature | Open Source | Platform | Pricing |
+|---|---|---|---|---|
+| Signal | End-to-end encrypted messaging | Yes | Mobile + Desktop | Free |
+| ProtonMail | Encrypted email, Swiss privacy | Partial | Web + Mobile | Free / $3.99/month |
+| Bitwarden | Password management, E2EE | Yes | All platforms | Free / $10/year |
+| Firefox | Tracking protection, containers | Yes | All platforms | Free |
+| Mullvad VPN | No-log VPN, anonymous payment | Yes | All platforms | $5.50/month |
+
+
 {% raw %}
 
 Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials or API keys, 1 hour-1 day for team communications, and 1 week-4 weeks for low-sensitivity ongoing conversations. Enable the feature in any conversation by tapping the contact name and selecting "Disappearing messages." Both participants must have the feature enabled -- the recipient's device performs the actual deletion via cryptographic key erasure, not simple file deletion. This guide covers timer strategy, programmatic configuration via Signal CLI, the cryptographic deletion mechanism, and enterprise deployment patterns.
