@@ -101,6 +101,8 @@ CryptPad employs a unique encryption architecture worth understanding before pro
 
 User accounts use a different mechanism. When users create accounts, CryptPad derives encryption keys from their password using Argon2id. The server stores authentication credentials separately from encryption keys. This separation ensures that compromising the database does not automatically expose document contents.
 
+Document types in CryptPad include CryptDrive (file manager), Pad (rich text), Code (code editor), Slide (presentations), Sheet (spreadsheets), Kanban, and Form. Each document type shares the same zero-knowledge guarantee. When a user opens a shared document link, the decryption key in the URL fragment never gets sent to the server because browsers do not transmit the fragment portion of a URL in HTTP requests.
+
 ## Configuration and Customization
 
 CryptPad stores configuration in `/var/cryptpad/customize` when using Docker. Key files include:
@@ -136,6 +138,16 @@ Set per-user storage limits in `customize/config.json`:
 ```
 
 This limits uploads to 50MB and grants each user 100MB by default.
+
+**Custom Branding:**
+
+For teams deploying CryptPad internally, you can replace the default logo and color scheme. Copy the customize template:
+
+```bash
+docker exec cryptpad cp -r /var/cryptpad/customize.dist/. /var/cryptpad/customize/
+```
+
+Then edit `customize/application_config.js` to set your organization name and logo path. The `customize/pages.js` file controls landing page content. These changes survive container updates because the customize directory is mounted as a volume.
 
 ## Security Hardening
 
@@ -181,6 +193,23 @@ networks:
   - cryptpad_net
 ```
 
+**Rate Limiting Nginx:**
+
+If you front CryptPad with nginx instead of Caddy, add rate limiting to prevent abuse:
+
+```nginx
+limit_req_zone $binary_remote_addr zone=cryptpad_api:10m rate=30r/m;
+
+server {
+    location /api/ {
+        limit_req zone=cryptpad_api burst=10 nodelay;
+        proxy_pass http://cryptpad:3000;
+    }
+}
+```
+
+This blocks brute-force login attempts and API abuse without affecting normal use patterns.
+
 ## Team User Management
 
 Self-hosted CryptPad offers several user management strategies:
@@ -225,6 +254,10 @@ docker exec cryptpad node bin/admin.js listusers
 docker exec cryptpad node bin/admin.js setquota user@domain.com 209715200
 ```
 
+**Teams Feature:**
+
+CryptPad's Teams functionality lets groups share a common drive with role-based permissions. Create a team from within the web interface by clicking your avatar and selecting "New Team." Teams have separate storage quotas from individual users and support Owner, Admin, Member, and Viewer roles. This makes CryptPad suitable for department-level document management without exposing individual drives.
+
 ## Backup and Recovery
 
 Implement regular backups of the CryptPad data volume:
@@ -253,6 +286,15 @@ docker run --rm -v cryptpad_data:/data -v $(pwd):/backup alpine tar xzf /backup/
 docker-compose up -d
 ```
 
+For off-site backups, pipe the tarball through `rclone` to push it to an S3-compatible bucket or Backblaze B2:
+
+```bash
+docker run --rm -v cryptpad_data:/data alpine tar czf - /data | \
+  rclone rcat s3:your-bucket/cryptpad-backup-$(date +%Y%m%d).tar.gz
+```
+
+This keeps your encrypted CryptPad data off-site without requiring decryption at rest on the backup host.
+
 ## Performance Considerations
 
 For teams exceeding 50 users, adjust these settings in `customize/config.json`:
@@ -267,7 +309,30 @@ For teams exceeding 50 users, adjust these settings in `customize/config.json`:
 
 Consider enabling Redis for session management in high-load scenarios by adding a Redis service to your compose file and configuring `customize/redis.json`.
 
+For very active teams, monitor resource usage with:
 
+```bash
+docker stats cryptpad --no-stream
+```
+
+If CPU usage spikes during peak hours, increase the Node.js worker pool by setting `UV_THREADPOOL_SIZE=16` in your compose environment block. Memory pressure usually indicates too many concurrent document sessions; raising your server to 4GB RAM resolves most scaling issues up to 200 concurrent users.
+
+## Updating CryptPad
+
+Pull the latest image and restart to apply updates:
+
+```bash
+docker-compose pull
+docker-compose up -d
+```
+
+CryptPad releases follow semantic versioning. Check the [CryptPad changelog](https://github.com/cryptpad/cryptpad/blob/main/CHANGELOG.md) before major version upgrades, as some releases require running migration scripts:
+
+```bash
+docker exec cryptpad node scripts/migrate.js
+```
+
+Run migrations with the container stopped from serving external traffic to avoid data corruption during schema changes.
 
 ## Frequently Asked Questions
 

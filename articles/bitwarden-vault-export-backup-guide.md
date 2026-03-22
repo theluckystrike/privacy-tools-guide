@@ -25,6 +25,8 @@ Bitwarden offers three primary export formats: JSON (unencrypted), CSV (unencryp
 
 The JSON export contains your complete vault structure including folder assignments, custom fields, and login URIs. CSV exports flatten this data into spreadsheet-compatible format but lose folder hierarchy and custom field information. The encrypted JSON option wraps your data in your master password-derived key, making it safe for cold storage.
 
+One important caveat: none of the standard export formats includes file attachments. If you store documents, SSH keys, or other binary files as Bitwarden attachments, you must handle those separately. The CLI's `bw get attachment` command retrieves individual attachments, and you can script a loop over all items to pull them down before running your main export.
+
 ## Exporting via Bitwarden CLI
 
 The Bitwarden CLI provides the most flexible export capabilities. Install it first if you haven't already:
@@ -110,6 +112,20 @@ If you prefer the web vault, export from Settings > Export Vault:
 
 The web interface offers the same three formats but requires manual download each time. For automated backups, use the CLI approach.
 
+## Exporting Organization Vaults
+
+If you manage a Bitwarden Organizations account, the personal vault export does not include shared items stored in organization collections. Export organization vaults separately with admin privileges:
+
+```bash
+# List organization IDs
+bw list organizations
+
+# Export a specific organization vault
+bw export --organizationid YOUR_ORG_ID --format json --output org-backup.json
+```
+
+Only organization Owners and Admins can export the organization vault. Members and Managers cannot, which is by design for access control. If you run automated org backups, use a dedicated service account with the minimum required role and store its credentials in a secrets manager like HashiCorp Vault or AWS Secrets Manager rather than in the cron script itself.
+
 ## Automated Backup Scripts
 
 For reliable disaster recovery, automate your exports with cron jobs. Here's a practical bash script:
@@ -149,6 +165,20 @@ Schedule this script in your crontab:
 0 2 * * * /path/to/backup-script.sh >> /var/log/bitwarden-backup.log 2>&1
 ```
 
+### Verifying Backup Integrity
+
+An unverified backup is not a backup. Add a checksum step to your script to detect silent corruption:
+
+```bash
+# After export, compute and store a SHA-256 checksum
+sha256sum "$BACKUP_DIR/vault-$DATE.enc.json" > "$BACKUP_DIR/vault-$DATE.sha256"
+
+# Later, verify with:
+sha256sum --check "$BACKUP_DIR/vault-$DATE.sha256"
+```
+
+Pair this with a monitoring alert (via a cron status mailer or a tool like Healthchecks.io) so you get notified if the backup job fails silently.
+
 ## Restore from Backup
 
 When disaster strikes, Bitwarden CLI can restore your exported data:
@@ -162,6 +192,24 @@ bw import --format csv --vault ./vault-backup.csv
 ```
 
 For encrypted backups, the import process automatically prompts for your master password to decrypt the file.
+
+### Testing Restores
+
+Do not wait for a disaster to discover your backup is broken. Test the restore process on a fresh Bitwarden account (you can use a free account on a different email address):
+
+```bash
+# 1. Log in to the test account
+bw login test-restore@example.com
+
+# 2. Import your encrypted backup
+export BW_SESSION=$(bw unlock --raw)
+bw import --format json --vault ~/path/to/vault-backup-encrypted.json
+
+# 3. Verify item count matches your production vault
+bw list items | jq length
+```
+
+Run this test every quarter. Set a calendar reminder so it does not slip.
 
 ## Security Considerations
 
@@ -178,6 +226,20 @@ Keep at least one backup copy on offline media like an encrypted USB drive or se
 New passwords added since your last backup won't exist in older exports. Weekly automated exports ensure minimal data loss.
 
 Periodically verify your backups work by restoring to a fresh vault. This catches format issues before you need the backup.
+
+### Off-Site Storage Options
+
+For off-site redundancy without trusting a cloud provider with plaintext data, use `rclone` to push encrypted exports to a provider of your choice:
+
+```bash
+# Configure rclone with your provider first (rclone config)
+rclone copy "$BACKUP_DIR/vault-$DATE.enc.json" remote:bitwarden-backups/
+
+# Or use rclone's built-in encryption layer (crypt remote) for an additional encryption layer
+rclone copy "$BACKUP_DIR/vault-$DATE.enc.json" encrypted-remote:bitwarden-backups/
+```
+
+Supported providers include Backblaze B2, Wasabi, S3-compatible storage, and self-hosted solutions like MinIO. Since the file is already encrypted with your master password, the rclone crypt layer is optional but adds defense in depth.
 
 ## Exporting Specific Items
 
@@ -203,8 +265,6 @@ bw send --file ~/secret-document.txt --max-access-count 1
 ```
 
 This generates a link that works once, then disappears—useful for sharing recovery keys or emergency credentials with trusted contacts.
-
-
 
 ## Frequently Asked Questions
 
