@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 ---
 layout: default
 title: "Best Encrypted Communication For Activists"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 {% raw %}
 

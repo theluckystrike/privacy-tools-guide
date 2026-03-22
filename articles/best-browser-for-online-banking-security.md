@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
+tags: [privacy-tools-guide, best-of, security]
+---
 ---
 layout: default
 title: "Best Browser for Online Banking Security 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
+tags: [privacy-tools-guide, best-of, security]
+---
 
 
 | Browser | Security Level | Sandboxing | Phishing Protection | Best For |

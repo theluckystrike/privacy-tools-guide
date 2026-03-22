@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
+tags: [privacy-tools-guide, best-of, security]
+---
 ---
 layout: default
 title: "Best Hardware Security Key for Developers: A Practical Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
+tags: [privacy-tools-guide, best-of, security]
+---
 
 
 | Key | Protocols | USB Type | NFC | Biometric | Price |

@@ -11,7 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, workflow]---
+tags: [privacy-tools-guide, workflow]
+---
 ---
 layout: default
 title: "Application Performance Monitoring Workflow Guide"
@@ -25,7 +26,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, workflow]---
+tags: [privacy-tools-guide, workflow]
+---
 
 {% raw %}
 

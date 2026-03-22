@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 intent-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Apple Digital Legacy Program How To Add Legacy Contacts"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 intent-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
