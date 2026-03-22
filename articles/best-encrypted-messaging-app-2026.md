@@ -37,6 +37,15 @@ Key management represents another critical distinction. Apps that hold copies of
 
 This guide evaluates the leading encrypted messaging platforms through a technical lens, focusing on aspects that matter to developers building integrations, self-hosting infrastructure, or requiring precise security guarantees. Each platform makes different architectural choices reflecting different threat models and use cases—no single choice proves optimal for every scenario.
 
+## Key Takeaways
+
+- **Choose Signal if you**: need the most battle-tested encryption with minimal setup and are comfortable with centralized infrastructure.
+- **For most developers in 2026**: Matrix provides the best balance of control, integration capability, and security.
+- **When selecting an encrypted**: messaging app in 2026, developers and power users need more than just "end-to-end encryption" marketing claims.
+- **The Signal Private Messenger**: itself is open source (licensed under GPLv3), but the server infrastructure and client libraries for building third-party clients require approval.
+- **Matrix uses the Olm**: and Megolm protocols for E2E encryption.
+- **Each user has a 64-character public key**: no phone number, no email, no personally identifiable information required for account creation.
+
 ## Understanding Encryption Architecture Trade-Offs
 
 Before looking at specific platforms, understanding the architectural choices that differentiate encrypted messaging helps you evaluate which platform serves your needs.

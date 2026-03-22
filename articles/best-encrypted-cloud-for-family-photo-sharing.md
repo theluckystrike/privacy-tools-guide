@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, best-of]---
 
 When storing family photos in the cloud, encryption is not just a marketing feature—it determines who can access your memories. For developers and power users, understanding the difference between encryption at rest, server-side encryption, and end-to-end encryption (E2EE) is essential for making informed decisions about where to store precious family moments.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **AWS S3**: Google Photos, and iCloud use variations of this model.
+- **Choose Tresorit or Proton**: if you prioritize ease of use, cross-platform support, and established trust with Swiss privacy laws.
+- **Use backup recovery key**: if available 2.
+- **Use exported recovery key**: to decrypt 3.
+
 ## Understanding Encryption Models
 
 Cloud storage providers typically offer three encryption models, each with different security properties.

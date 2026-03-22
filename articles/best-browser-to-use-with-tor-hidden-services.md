@@ -31,6 +31,22 @@ tags: [privacy-tools-guide, best-of]---
 
 The Tor Browser is the best browser for accessing Tor hidden services (.onion sites), providing the strongest anonymity defaults with circuit isolation, fingerprinting resistance, and native .onion support. Use Firefox configured with a Tor SOCKS proxy if you need full developer tools alongside hidden service access. This guide covers configuration, security trade-offs, and verification steps for each option.
 
+## Key Takeaways
+
+- **Use Firefox with Tor proxy for development**: better tooling integration
+3.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use Tor Browser for casual access**: it provides the best security defaults
+2.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Circuit isolation**: Each tab uses a separate Tor circuit, preventing correlation attacks
+2.
+- **Use persistent Tor circuits carefully**: avoid reusing circuits for different identities
+
+For operators running hidden services:
+
+1.
+
 ## Understanding Tor Hidden Services
 
 Tor hidden services are websites that operate on the Tor network and are accessible only through the Tor browser. Unlike traditional websites, hidden services route all traffic through at least three Tor relays, masking both the server's IP address and the client's IP address. The `.onion` domain is a cryptographic identifier derived from the service's public key, providing end-to-end encryption without relying on certificate authorities.

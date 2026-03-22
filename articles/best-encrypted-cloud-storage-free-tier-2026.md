@@ -33,6 +33,16 @@ When selecting encrypted cloud storage, developers need more than just a friendl
 
 This guide evaluates the best encrypted cloud storage options with free tiers, focusing on what matters for developer workflows: encryption implementation, command-line access, API capabilities, and storage limits.
 
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Use unique**: strong master passwords with a password manager
+2.
+- **The free tiers available**: in 2026 offer surprising capabilities for individual developers and small projects.
+- **The service uses AES-256 encryption with keys derived from your master password using Argon2id**: currently the strongest key derivation function available.
+- **Sync.com uses AES-256 with**: TLS 1.3 for transit.
+- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
+
 ## Understanding Client-Side Encryption
 
 Before examining specific services, understand what "encrypted cloud storage" actually means. True encrypted storage uses **client-side encryption**, where files are encrypted on your device before upload. The cloud provider never sees your unencrypted data—this differs from storage services that encrypt data at rest on their servers.
