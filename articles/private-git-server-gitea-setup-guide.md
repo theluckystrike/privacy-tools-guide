@@ -230,6 +230,43 @@ git clone git@git.yourdomain.com:yourusername/your-repo.git
 
 Gitea's SSH server runs through the system SSH daemon using authorized keys. The `git` system user handles authentication.
 
+### Hardening SSH on the Server
+
+Your git server is a public-facing machine. Reduce its SSH attack surface:
+
+```bash
+# /etc/ssh/sshd_config — key changes
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+AllowUsers git youradminuser
+MaxAuthTries 3
+LoginGraceTime 20
+ClientAliveInterval 300
+ClientAliveCountMax 2
+```
+
+Apply the changes:
+
+```bash
+sudo sshd -t           # test config before reloading
+sudo systemctl reload ssh
+```
+
+If you change the SSH port away from 22, update your Gitea `app.ini`:
+
+```ini
+[server]
+SSH_PORT = 2222
+```
+
+And update your git remote URLs accordingly:
+
+```bash
+git remote set-url origin ssh://git@git.yourdomain.com:2222/user/repo.git
+```
+
 ## Step 8: Set Up Automated Backups
 
 ```bash
@@ -254,6 +291,109 @@ echo "Backup completed: $BACKUP_DIR/gitea-dump-$TIMESTAMP.zip"
 chmod +x /usr/local/bin/gitea-backup
 echo "0 3 * * * root /usr/local/bin/gitea-backup" | sudo tee /etc/cron.d/gitea-backup
 ```
+
+### Offsite Backup with rclone
+
+Keeping backups on the same server provides no protection against hardware failure or server compromise. Offload to encrypted remote storage:
+
+```bash
+# Install rclone and configure a remote (Backblaze B2, S3, etc.)
+curl https://rclone.org/install.sh | sudo bash
+rclone config  # follow prompts for your provider
+
+# Add to the backup script, after the dump
+rclone copy "$BACKUP_DIR/gitea-dump-$TIMESTAMP.zip" remote:gitea-backups/ \
+  --b2-chunk-size 96M
+```
+
+For maximum privacy, encrypt the backup before uploading using rclone's built-in crypt backend. This means even your cloud storage provider cannot read the backup contents.
+
+## Setting Up Gitea Webhooks for Deployment
+
+Gitea supports webhooks that trigger on push, pull request, and release events. Use them to kick off deployments or notify external services without exposing your code:
+
+1. Go to your repository → Settings → Webhooks → Add Webhook
+2. Select **Gitea** as the type
+3. Set the Payload URL to your deployment endpoint (e.g., `https://deploy.yourdomain.com/hook`)
+4. Choose **application/json** as the content type
+5. Set a secret token — Gitea signs each payload with HMAC-SHA256 using this token
+
+On your deployment server, verify the signature before acting:
+
+```bash
+#!/bin/bash
+# verify-webhook.sh
+SIGNATURE="$HTTP_X_GITEA_SIGNATURE"
+BODY=$(cat /dev/stdin)
+EXPECTED=$(echo -n "$BODY" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $2}')
+
+if [ "$SIGNATURE" != "sha256=$EXPECTED" ]; then
+  echo "Signature mismatch — ignoring request" >&2
+  exit 1
+fi
+
+# Deploy
+git -C /var/www/myapp pull origin main
+systemctl restart myapp
+```
+
+This pattern lets you implement continuous deployment entirely within your own infrastructure, with no dependency on external CI services.
+
+## Using Gitea Actions for CI/CD
+
+Gitea 1.21+ includes a built-in CI/CD system compatible with GitHub Actions syntax. You can run your own runners without sending code to external services:
+
+```bash
+# Download the Gitea runner binary
+RUNNER_VERSION="0.2.6"
+wget "https://dl.gitea.com/act_runner/${RUNNER_VERSION}/act_runner-${RUNNER_VERSION}-linux-amd64"
+sudo mv "act_runner-${RUNNER_VERSION}-linux-amd64" /usr/local/bin/act_runner
+sudo chmod 755 /usr/local/bin/act_runner
+
+# Register the runner with your instance
+act_runner register \
+  --instance https://git.yourdomain.com \
+  --token YOUR_RUNNER_TOKEN \
+  --name my-runner \
+  --labels ubuntu-latest:docker://node:20-bullseye
+```
+
+Create a workflow file in any repository at `.gitea/workflows/test.yml`:
+
+```yaml
+name: Run Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run tests
+        run: |
+          npm install
+          npm test
+```
+
+This gives you a fully self-hosted CI pipeline. Your code, build artifacts, and test results never leave your infrastructure.
+
+## Access Control and Team Management
+
+Gitea's organization and team system gives granular control over who can read or write which repositories:
+
+- **Organizations** group repositories under a shared namespace (e.g., `git.yourdomain.com/myteam/repo`)
+- **Teams** within an organization hold members and define their permission level: Owner, Admin, Write, Read, or None
+- Repository visibility can be set to Public, Internal (organization members only), or Private per-repo
+
+For a solo developer or small team, the simplest approach is to create one organization, add all your repositories under it, and add collaborators as members of a Write-permission team. They get access to everything the team covers without requiring per-repo invitations.
+
+If you run Gitea for a development team with contractors or external contributors:
+
+1. Admin Panel → Organizations → New Organization
+2. Create teams: `core-devs` (Write), `contractors` (Read on specific repos), `ci-runners` (Read only)
+3. Add repositories to each team from the team's page
+4. Invite members by email or username
+
+This model keeps sensitive repositories invisible to contractors while sharing only the repositories they need.
 
 ## Migrating from GitHub/GitLab
 
