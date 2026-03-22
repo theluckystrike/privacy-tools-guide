@@ -8,10 +8,10 @@ author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-period-tracking-apps-after-dobbs-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, period-tracking, data-privacy, reproductive-health]
+tags: [privacy-tools-guide, period-tracking, data-privacy, reproductive-health, privacy]
 ---
 
 {% raw %}

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-physical-therapist-patient-exercise-data-p/
 categories: [guides]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy, api]---

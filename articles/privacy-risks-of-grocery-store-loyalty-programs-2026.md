@@ -5,11 +5,11 @@ author: "Privacy Tools Guide"
 date: "2026-03-22"
 updated: "2026-03-22"
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 category: "Privacy Guide"
-tags: ["Data Privacy", "Loyalty Programs", "Consumer Data", "Surveillance", "Data Brokers"]
+tags: [privacy-tools-guide, Data Privacy, Loyalty Programs, Consumer Data, Surveillance, Data Brokers, privacy]
 permalink: /privacy-risks-of-grocery-store-loyalty-programs-2026/
 ---
 ---

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]---

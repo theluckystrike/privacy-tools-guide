@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /privacy-risks-cloud-backups-explained/
 categories: [guides, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}
