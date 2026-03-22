@@ -6,7 +6,7 @@ description: "Learn vpn provider annual audit results independent security verif
 tags: [privacy-tools-guide, security, vpn]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

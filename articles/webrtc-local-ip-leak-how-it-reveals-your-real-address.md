@@ -6,7 +6,7 @@ description: "Learn webrtc local ip leak how it reveals your real address with p
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
