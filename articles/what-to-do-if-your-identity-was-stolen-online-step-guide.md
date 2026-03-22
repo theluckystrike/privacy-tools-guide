@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
 description: "Follow this guide to what to do if your identity was stolen online step guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "What To Do If Your Identity Was Stolen Online Step Guide"
 description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /windows-sandbox-privacy-testing-guide-2026/
 description: "Follow this guide to windows sandbox privacy testing guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Windows Sandbox Privacy Testing Guide 2026"
 description: "A practical guide for developers and power users to use Windows Sandbox for privacy testing, analyzing suspicious files, and safely exploring"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/
 description: "Compare wireguard dns configuration options explained resolv conf vs systemd with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "WireGuard DNS Configuration Options Explained"
 description: "Complete guide to WireGuard DNS configuration. Learn how to set DNS using resolv.conf, systemd-resolved, and wg-quick. Compare methods for Linux, Android, and"

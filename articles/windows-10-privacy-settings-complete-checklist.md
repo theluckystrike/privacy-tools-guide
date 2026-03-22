@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /windows-10-privacy-settings-complete-checklist/
 description: "Learn windows 10 privacy settings complete checklist with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"
 description: "Windows 10 collects significant telemetry data by default, and while Microsoft has softened some practices since its initial release, privacy-conscious users"

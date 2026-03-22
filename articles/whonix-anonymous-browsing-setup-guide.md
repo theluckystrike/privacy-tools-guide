@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /whonix-anonymous-browsing-setup-guide/
 description: "Follow this guide to whonix anonymous browsing setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "How to Use Whonix for Anonymous Browsing"
 description: "Set up Whonix Gateway and Workstation on VirtualBox or KVM, configure Tor routing for all traffic, and use Whonix safely for anonymous internet access"

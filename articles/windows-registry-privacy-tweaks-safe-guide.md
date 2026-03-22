@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /windows-registry-privacy-tweaks-safe-guide/
 description: "Follow this guide to windows registry privacy tweaks safe guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"
 description: "A practical guide to Windows registry privacy tweaks for developers and power users. Learn safe registry modifications to enhance your privacy without"

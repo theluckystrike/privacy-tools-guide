@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /what-to-do-if-your-personal-data-appears-on-people-search/
 description: "Learn what to do if your personal data appears on people search with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "What To Do If Your Personal Data Appears On People"
 description: "A practical guide for developers and power users on removing your personal information from people search sites. Includes automation scripts, legal"

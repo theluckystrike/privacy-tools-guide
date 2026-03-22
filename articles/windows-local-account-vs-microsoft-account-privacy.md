@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /windows-local-account-vs-microsoft-account-privacy/
 description: "Compare windows local account vs microsoft account privacy with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Windows Local Account Vs Microsoft Account"
 description: "A privacy comparison between Windows local accounts and Microsoft accounts. Learn what data each account type collects, how they affect"
