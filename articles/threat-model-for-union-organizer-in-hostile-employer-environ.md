@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Threat Model For Union Organizer In Hostile Employer"
-description: "A technical guide for union organizers to build threat models when operating in hostile employer environments. Includes practical"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /threat-model-for-union-organizer-in-hostile-employer-environ/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -39,6 +26,20 @@ Union organizers in hostile employer environments need a threat model that accou
 - **Use a strong passphrase**: - Minimum 20 characters, stored in password manager 3.
 - **Use a separate device**: - Dedicated phone and laptop for organizing work 5.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Understanding Your Adversary](#understanding-your-adversary)
+- [Building Your Threat Model](#building-your-threat-model)
+- [Practical Countermeasures](#practical-countermeasures)
+- [Incident Response Planning](#incident-response-planning)
+- [Continuous Assessment](#continuous-assessment)
+- [Advanced Counter-Surveillance Tradecraft](#advanced-counter-surveillance-tradecraft)
+- [Legal Defense Framework](#legal-defense-framework)
+- [Secure Information Sharing Infrastructure](#secure-information-sharing-infrastructure)
+- [Risk Assessment Matrix](#risk-assessment-matrix)
+- [Budgeting for Security](#budgeting-for-security)
+- [Incident Response During Active Threat](#incident-response-during-active-threat)
 
 ## Understanding Your Adversary
 
@@ -612,10 +613,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
 - [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
-- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
-- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
-- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
-
+- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

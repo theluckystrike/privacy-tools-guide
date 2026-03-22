@@ -42,6 +42,18 @@ This checklist is organized into eight areas. Work through each section, mark wh
 - **Third-Party Vendor Review Every**: SaaS tool you use is a potential breach vector.
 - **Most provide them on**: request or in their terms.
 
+## Table of Contents
+
+- [1. Data Inventory](#1-data-inventory)
+- [2. Access Controls](#2-access-controls)
+- [3. Third-Party Vendor Review](#3-third-party-vendor-review)
+- [4. Website Privacy](#4-website-privacy)
+- [5. Email Security](#5-email-security)
+- [6. Device and Endpoint Security](#6-device-and-endpoint-security)
+- [7. Incident Response Plan](#7-incident-response-plan)
+- [8. Employee Awareness](#8-employee-awareness)
+- [Audit Schedule](#audit-schedule)
+
 ## 1. Data Inventory
 
 You can't protect data you don't know you have. Start by mapping what personal data your business collects and where it lives.

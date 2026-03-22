@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
+---
 ---
 layout: default
 title: "Gamepad API Fingerprinting How Connected Controllers Reveal"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
+---
 
 {% raw %}
 

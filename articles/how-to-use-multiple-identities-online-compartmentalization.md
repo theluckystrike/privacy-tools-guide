@@ -40,6 +40,13 @@ Online compartmentalization is the practice of maintaining separate digital iden
 - **Cross-compartment linking becomes impossible**: because no two aliases point to the same domain.
 - **This is more convenient**: than switching browser profiles while maintaining strong isolation for most threat models.
 
+## Table of Contents
+
+- [Why Compartmentalize Your Online Identity?](#why-compartmentalize-your-online-identity)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Compartmentalize Your Online Identity?
 
 Every online activity leaves traces that can be correlated to build a profile of you. When you use the same identity for banking, social media, work, and personal communications, companies and attackers can assemble a complete picture of your life. Compartmentalization creates walls between these spheres.

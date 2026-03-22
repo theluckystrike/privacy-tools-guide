@@ -40,6 +40,20 @@ Choose ISO 27001 if you need a globally recognized information security framewor
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [What Privacy Seal Certifications Provide](#what-privacy-seal-certifications-provide)
+- [Major Certification Programs Compared](#major-certification-programs-compared)
+- [Comparing Certification Scope](#comparing-certification-scope)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [What Certification Doesn't Provide](#what-certification-doesnt-provide)
+- [Making Informed Decisions](#making-informed-decisions)
+- [Emerging Certification Standards](#emerging-certification-standards)
+- [Certification Cost-Benefit Analysis](#certification-cost-benefit-analysis)
+- [Certification Audit Preparation](#certification-audit-preparation)
+- [International Certification Requirements](#international-certification-requirements)
+- [Maintaining Certification](#maintaining-certification)
+
 ## What Privacy Seal Certifications Provide
 
 Privacy certifications serve three primary functions: they establish trust with users, meet compliance requirements, and provide a framework for security best practices. Unlike ad-hoc privacy policies, certifications require independent audits and ongoing verification.

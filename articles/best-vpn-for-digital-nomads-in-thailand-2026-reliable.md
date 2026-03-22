@@ -219,6 +219,14 @@ The right VPN setup enables productive remote work from Thailand while maintaini
 | Mullvad | Good | Linux, Windows, macOS | 5 devices | $5.50/month flat |
 | ProtonVPN | Moderate | All platforms | 10 devices | $4.99/month (annual) |
 
+## Table of Contents
+
+- [Bandwidth and Throughput Optimization for Thailand](#bandwidth-and-throughput-optimization-for-thailand)
+- [Troubleshooting Thailand-Specific Issues](#troubleshooting-thailand-specific-issues)
+- [Power Management for Remote Work](#power-management-for-remote-work)
+- [Seasonal Considerations](#seasonal-considerations)
+- [Cost-Effectiveness Analysis](#cost-effectiveness-analysis)
+
 ## Bandwidth and Throughput Optimization for Thailand
 
 Thailand's international bandwidth is limited. Optimize for best performance:

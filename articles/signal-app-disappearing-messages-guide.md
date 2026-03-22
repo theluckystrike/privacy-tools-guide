@@ -26,6 +26,14 @@ To enable disappearing messages in Signal, open any conversation, tap the contac
 - **Wait 30 seconds after**: recipient opens the message 5.
 - **Choose timer duration (affects**: all future messages) 5.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Advanced: Custom Timer Implementation](#advanced-custom-timer-implementation)
+- [Performance Impact and Storage Considerations](#performance-impact-and-storage-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -41,6 +41,15 @@ WebRTC (Real-Time Communication) is a browser feature that enables direct peer-t
 2.
 - **This happens because WebRTC**: queries STUN servers to establish peer-to-peer connections, and these queries occur outside the normal VPN routing.
 
+## Table of Contents
+
+- [What is a WebRTC Leak?](#what-is-a-webrtc-leak)
+- [Prerequisites](#prerequisites)
+- [Advanced Testing with tcpdump](#advanced-testing-with-tcpdump)
+- [VPN Provider Comparison for WebRTC Handling](#vpn-provider-comparison-for-webrtc-handling)
+- [Defense-in-Depth Strategy](#defense-in-depth-strategy)
+- [Troubleshooting](#troubleshooting)
+
 ## What is a WebRTC Leak?
 
 WebRTC leaks occur when browsers use the STUN (Session Traversal Utilities for NAT) protocol to discover your public IP address through UDP connections, bypassing your VPN tunnel. Both your real IP and your VPN-assigned IP can be exposed, compromising your anonymity. This happens because WebRTC queries STUN servers to establish peer-to-peer connections, and these queries occur outside the normal VPN routing.

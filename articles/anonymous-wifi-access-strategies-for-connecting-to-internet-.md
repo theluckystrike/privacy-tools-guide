@@ -27,6 +27,17 @@ Every time you connect to a WiFi network, your device reveals multiple identifie
 - **-o %i -p udp**: --dport 53 -j DROP; iptables -I OUTPUT !
 - **Always use MAC randomization**: for WiFi connections 2.
 
+## Table of Contents
+
+- [Device Identity at the Network Layer](#device-identity-at-the-network-layer)
+- [Strategy 1: MAC Address Randomization](#strategy-1-mac-address-randomization)
+- [Strategy 2: Network Segmentation with Separate Network Namespaces](#strategy-2-network-segmentation-with-separate-network-namespaces)
+- [Strategy 3: Tor Integration for Exit Node Anonymity](#strategy-3-tor-integration-for-exit-node-anonymity)
+- [Strategy 4: VPN Layering for Traffic Correlation Resistance](#strategy-4-vpn-layering-for-traffic-correlation-resistance)
+- [Strategy 5: DHCP and DNS Privacy](#strategy-5-dhcp-and-dns-privacy)
+- [Verification and Testing](#verification-and-testing)
+- [Practical Implementation Priority](#practical-implementation-priority)
+
 ## Device Identity at the Network Layer
 
 Before implementing anonymity strategies, you need to understand what your device reveals at each network layer. At layer 2, your MAC address serves as an unique hardware identifier that WiFi access points log immediately upon association. Even before authentication completes, your device transmits this 48-bit identifier in probe requests and association frames.

@@ -40,6 +40,21 @@ tags: [privacy-tools-guide, vpn]---
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Servers in Europe or**: Asia that aren't adjacent to Iran often provide more consistent connections because they face less traffic analysis from Iranian infrastructure.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Understanding Iran's Network Blocking](#understanding-irans-network-blocking)
+- [Protocol Selection for Telegram Access](#protocol-selection-for-telegram-access)
+- [Server Configuration for Iranian Connections](#server-configuration-for-iranian-connections)
+- [Client-Side Optimization](#client-side-optimization)
+- [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
+- [Advanced Techniques for Power Users](#advanced-techniques-for-power-users)
+- [Testing Connectivity Before Full Commitment](#testing-connectivity-before-full-commitment)
+- [Monitoring for Blocks and Adapting](#monitoring-for-blocks-and-adapting)
+- [Understanding the Cat-and-Mouse Game](#understanding-the-cat-and-mouse-game)
+- [Performance Expectations](#performance-expectations)
+- [Legal and Safety Considerations](#legal-and-safety-considerations)
+
 ## Introduction
 
 Using Telegram in Iran requires more than a basic VPN setup. The Iranian internet infrastructure employs deep packet inspection (DPI) and protocol blocking that can detect and terminate standard VPN connections. For developers and power users who rely on Telegram for communication, understanding the technical methods that maintain connectivity matters more than subscribing to premium services.

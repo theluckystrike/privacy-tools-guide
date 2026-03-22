@@ -64,6 +64,19 @@ Passkeys represent the biggest shift in digital authentication since the passwor
 - Choose device authentication method
 4.
 
+## Table of Contents
+
+- [What Are Passkeys?](#what-are-passkeys)
+- [Browser Support Overview](#browser-support-overview)
+- [Chrome Passkey Experience](#chrome-passkey-experience)
+- [Safari Passkey Experience](#safari-passkey-experience)
+- [Firefox Passkey Experience](#firefox-passkey-experience)
+- [Edge Passkey Experience](#edge-passkey-experience)
+- [Detailed Feature Comparison](#detailed-feature-comparison)
+- [User Experience Ratings](#user-experience-ratings)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Future Outlook](#future-outlook)
+
 ## What Are Passkeys?
 
 Passkeys are cryptographic credentials that replace passwords entirely. They're based on the FIDO2/WebAuthn standards and offer several advantages:

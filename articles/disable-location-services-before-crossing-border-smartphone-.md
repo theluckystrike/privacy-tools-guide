@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,6 +26,22 @@ Crossing international borders with a smartphone exposes your location history, 
 - **Pre-clearing all sensitive data**: from cloud accounts you use 4.
 - **Never use the device**: in high-trust environments (banking, work) 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Why Disable Location Services Before Border Crossing](#why-disable-location-services-before-border-crossing)
+- [Android: Location Disabling Methods](#android-location-disabling-methods)
+- [iOS: Location Services Control Methods](#ios-location-services-control-methods)
+- [Additional Privacy Measures](#additional-privacy-measures)
+- [Verification Steps](#verification-steps)
+- [After Crossing the Border](#after-crossing-the-border)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Network Location Data: The Hidden Exposure](#network-location-data-the-hidden-exposure)
+- [Pre-Border Data Cleaning Procedures](#pre-border-data-cleaning-procedures)
+- [Customs Authority Data Seizure Preparedness](#customs-authority-data-seizure-preparedness)
+- [Regional Variations in Location Privacy](#regional-variations-in-location-privacy)
+- [Post-Border Forensic Check](#post-border-forensic-check)
+- [Pre-Travel Checklist](#pre-travel-checklist)
 
 ## Why Disable Location Services Before Border Crossing
 

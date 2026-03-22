@@ -40,6 +40,15 @@ A Faraday bag blocks cellular, GPS, WiFi, Bluetooth, and NFC signals by surround
 - **They are designed for**: specific frequency ranges, typically from around 800 MHz to 6 GHz, which covers most consumer wireless technologies.
 - **Place your phone inside**: the bag with a running HTTP server, wait 30 seconds, then attempt to reach it from another device on the same network.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [When to Use a Faraday Bag](#when-to-use-a-faraday-bag)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Testing with RF Measurements](#advanced-testing-with-rf-measurements)
+- [Combining Faraday Bags with Other Security Practices](#combining-faraday-bags-with-other-security-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

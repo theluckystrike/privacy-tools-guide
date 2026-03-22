@@ -278,6 +278,14 @@ Run both. They use different detection methods and catch different things.
 
 ---
 
+## Related Articles
+
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
+- [How to Use Lynis for Linux Security Auditing](/privacy-tools-guide/lynis-linux-security-audit-guide/)
+- [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
+- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

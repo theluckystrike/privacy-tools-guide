@@ -40,6 +40,13 @@ Modern threat models require more than antivirus software and strong passwords. 
 - **Keep this minimal and**: delete files immediately after use.
 - **This prevents credential reuse**: attacks from compromising multiple aspects of your digital life.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Compartmentalization Techniques](#advanced-compartmentalization-techniques)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

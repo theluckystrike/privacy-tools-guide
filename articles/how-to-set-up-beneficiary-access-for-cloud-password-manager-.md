@@ -39,6 +39,13 @@ voice-checked: true---
 - **Choose providers with transparent**: security audits.
 - **Topics covered**: introduction, prerequisites, step 1: understand time-delayed release mechanisms
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Introduction
 
 Digital estate planning has become essential as more aspects of our lives move online. When you store credentials for banking, healthcare portals, and subscription services in a cloud password manager, those credentials can become inaccessible to family members if something happens to you. Beneficiary access with time-delayed release provides a secure mechanism to designate trusted individuals who can recover your vault after a configurable waiting period.

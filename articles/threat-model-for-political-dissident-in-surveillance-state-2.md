@@ -42,6 +42,16 @@ Build threat models for political dissidents against state-level adversaries usi
 Rate each asset by consequence if compromised.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [Understanding the Adversary](#understanding-the-adversary)
+- [Asset Inventory and Prioritization](#asset-inventory-and-prioritization)
+- [Network-Level Protections](#network-level-protections)
+- [Device Security Implementation](#device-security-implementation)
+- [Communication Security](#communication-security)
+- [Operational Security Patterns](#operational-security-patterns)
+- [Recovery and Incident Response](#recovery-and-incident-response)
+
 ## Understanding the Adversary
 
 State surveillance operates on multiple vectors that typical privacy tools don't address. Your threat model must account for:

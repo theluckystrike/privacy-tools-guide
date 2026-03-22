@@ -42,6 +42,23 @@ Poor user education causes support costs to spike when users forget recovery cod
 - **Mitigation**: Use HTTPS only, implement domain verification, use certificate pinning.
 - **Each approach offers different**: security properties and user experience trade-offs.
 
+## Table of Contents
+
+- [What Is Passwordless Authentication?](#what-is-passwordless-authentication)
+- [Advantages of Passwordless Authentication](#advantages-of-passwordless-authentication)
+- [Disadvantages and Challenges](#disadvantages-and-challenges)
+- [Implementation Considerations](#implementation-considerations)
+- [When to Choose Passwordless](#when-to-choose-passwordless)
+- [Security Key Configuration for Development](#security-key-configuration-for-development)
+- [Recovery Code Generation](#recovery-code-generation)
+- [Passkey Synchronization Across Devices](#passkey-synchronization-across-devices)
+- [Conditional UI for Passwordless](#conditional-ui-for-passwordless)
+- [Fallback Authentication Strategies](#fallback-authentication-strategies)
+- [User Education Materials](#user-education-materials)
+- [Passwordless Implementation Timeline](#passwordless-implementation-timeline)
+- [Threat Model for Passwordless Systems](#threat-model-for-passwordless-systems)
+- [Passwordless Authentication Decision Matrix](#passwordless-authentication-decision-matrix)
+
 ## What Is Passwordless Authentication?
 
 Passwordless authentication eliminates traditional passwords from the login process. Instead, users authenticate using one or more factors:

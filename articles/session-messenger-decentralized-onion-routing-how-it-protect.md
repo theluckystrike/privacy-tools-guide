@@ -41,6 +41,25 @@ Session Messenger protects metadata by routing all messages through a decentrali
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The system uses three key components**: the sender's device, the Oxen Service Node network, and the recipient's device.
 
+## Table of Contents
+
+- [The Metadata Problem in Traditional Messengers](#the-metadata-problem-in-traditional-messengers)
+- [How Onion Routing Works in Session](#how-onion-routing-works-in-session)
+- [The Oxen Service Node Network](#the-oxen-service-node-network)
+- [Practical Message Flow](#practical-message-flow)
+- [Code-Level Implementation Details](#code-level-implementation-details)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Service Node Network Security Economics](#service-node-network-security-economics)
+- [IP Obfuscation Threat Model](#ip-obfuscation-threat-model)
+- [Hybrid Threat Scenarios](#hybrid-threat-scenarios)
+- [Message Reliability and Retry Logic](#message-reliability-and-retry-logic)
+- [Key Rotation and Forward Secrecy](#key-rotation-and-forward-secrecy)
+- [Comparative Threat Model Analysis](#comparative-threat-model-analysis)
+- [Deployment in Hostile Environments](#deployment-in-hostile-environments)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Future Development Roadmap](#future-development-roadmap)
+
 ## The Metadata Problem in Traditional Messengers
 
 Even with end-to-end encryption, traditional messaging applications expose significant metadata. Consider a typical Signal or WhatsApp message: the server knows the sender's IP address, the recipient's identifier (phone number or account), timestamps of message delivery, and connection patterns. Intelligence agencies and sophisticated adversaries analyze this metadata to build communication graphs—mapping relationships, identifying influencers, and tracking individuals.

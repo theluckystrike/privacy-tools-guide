@@ -29,6 +29,22 @@ This guide explains how to configure and use Android Work Profile effectively, w
 - **Navigate to Work profile**: or Multiple users 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is Android Work Profile?](#what-is-android-work-profile)
+- [Why Use Work Profile for Privacy Isolation?](#why-use-work-profile-for-privacy-isolation)
+- [Setting Up Work Profile on Android 14-16](#setting-up-work-profile-on-android-14-16)
+- [Managing Apps Within Work Profile](#managing-apps-within-work-profile)
+- [Practical Example: Isolating a Banking App](#practical-example-isolating-a-banking-app)
+- [Advanced: Managing Work Profile via MDM](#advanced-managing-work-profile-via-mdm)
+- [Limitations to Understand](#limitations-to-understand)
+- [Practical Threat Model: When Work Profile Saves You](#practical-threat-model-when-work-profile-saves-you)
+- [Limitations to Understand](#limitations-to-understand)
+- [Performance Impact Assessment](#performance-impact-assessment)
+- [Advanced Troubleshooting](#advanced-troubleshooting)
+- [Alternatives and Complementary Tools](#alternatives-and-complementary-tools)
+- [Real-World Configuration Example: Developer Setup](#real-world-configuration-example-developer-setup)
+
 ## What Is Android Work Profile?
 
 Android Work Profile is a native Android feature introduced in Android 5.0 (Lollipop) that creates a separate profile on your device. Think of it as a partitioned container where work-related apps run independently from your personal apps. However, this same mechanism applies beautifully to privacy isolation.

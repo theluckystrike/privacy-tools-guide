@@ -52,6 +52,25 @@ The best hardware security key for most developers is the YubiKey 5 series -- it
 - **FIDO2 extends U2F with**: WebAuthn (browser standard) and resident credentials (keys store username, enabling passwordless login).
 - **For legacy systems requiring**: TOTP fallback, choose a key that supports both.
 
+## Table of Contents
+
+- [Understanding Hardware Security Key Standards](#understanding-hardware-security-key-standards)
+- [YubiKey 5 Series: The Developer Standard](#yubikey-5-series-the-developer-standard)
+- [SoloKeys: Open-Source Alternative](#solokeys-open-source-alternative)
+- [Security Considerations for Developers](#security-considerations-for-developers)
+- [Practical Setup for Developer Workflows](#practical-setup-for-developer-workflows)
+- [Making the Decision](#making-the-decision)
+- [Hardware vs Software Authenticators](#hardware-vs-software-authenticators)
+- [FIDO2 vs FIDO U2F vs OATH Differences](#fido2-vs-fido-u2f-vs-oath-differences)
+- [Elliptic Curve Cryptography vs RSA](#elliptic-curve-cryptography-vs-rsa)
+- [Security Key Registration and Backup Strategies](#security-key-registration-and-backup-strategies)
+- [SSH Authentication with Hardware Keys](#ssh-authentication-with-hardware-keys)
+- [TOTP on Hardware Keys for Backward Compatibility](#totp-on-hardware-keys-for-backward-compatibility)
+- [Windows Hello vs Third-Party Keys](#windows-hello-vs-third-party-keys)
+- [Audit Logging and Key Usage Tracking](#audit-logging-and-key-usage-tracking)
+- [Comparison Matrix: YubiKey vs SoloKeys vs Others](#comparison-matrix-yubikey-vs-solokeys-vs-others)
+- [Emergency Access and Account Recovery](#emergency-access-and-account-recovery)
+
 ## Understanding Hardware Security Key Standards
 
 The FIDO2/WebAuthn standard powers most modern hardware keys. When you authenticate with a hardware key, the private key never leaves the device. The server sends a challenge, your key signs it internally, and only the signature returns. This architectural guarantee means even if someone intercepts your login attempt or creates a perfect phishing site, they cannot replicate the cryptographic proof.

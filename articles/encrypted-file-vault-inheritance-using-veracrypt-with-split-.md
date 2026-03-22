@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Encrypted File Vault Inheritance Using Veracrypt With Split"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -40,6 +42,26 @@ VeraCrypt's hidden volume and split-password features enable secure digital esta
 - **Allocate at least 2-4**: GB for the container to accommodate hidden volume overhead 5.
 - Choose Hidden VeraCrypt volume
 3.
+
+## Table of Contents
+
+- [Why Split Password Authentication Matters](#why-split-password-authentication-matters)
+- [Setting Up Your VeraCrypt Inheritance Vault](#setting-up-your-veracrypt-inheritance-vault)
+- [Automating Mount with Split Passwords](#automating-mount-with-split-passwords)
+- [Implementing Shamir's Secret Sharing](#implementing-shamirs-secret-sharing)
+- [Recovery and Succession Planning](#recovery-and-succession-planning)
+- [Testing Your Setup](#testing-your-setup)
+- [Advanced Scenarios: Multiple Inheritance Layers](#advanced-scenarios-multiple-inheritance-layers)
+- [Implementing Time-Based Access Control](#implementing-time-based-access-control)
+- [Documenting Vault Access Procedures](#documenting-vault-access-procedures)
+- [Quick Start](#quick-start)
+- [Step-by-Step Mount Procedure](#step-by-step-mount-procedure)
+- [Troubleshooting](#troubleshooting)
+- [Post-Access](#post-access)
+- [Integration with Estate Planning Documents](#integration-with-estate-planning-documents)
+- [Auditing Access Attempts](#auditing-access-attempts)
+- [Key Rotation and Updates](#key-rotation-and-updates)
+- [Testing Without Revealing Contents](#testing-without-revealing-contents)
 
 ## Why Split Password Authentication Matters
 

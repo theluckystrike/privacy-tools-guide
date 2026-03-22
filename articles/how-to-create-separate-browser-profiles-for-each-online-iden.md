@@ -49,6 +49,13 @@ Make it executable and place it in your PATH for convenient access.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Managing multiple online identities**: has become essential for privacy-conscious developers and power users.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Temporary Profiles with incognito Mode](#advanced-temporary-profiles-with-incognito-mode)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

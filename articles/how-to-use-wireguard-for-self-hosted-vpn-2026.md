@@ -388,6 +388,16 @@ Repeat Steps 2-3 for each device:
 # Server: Generate client 2
 sudo wg genkey | sudo tee client2_privatekey | wg pubkey | sudo tee client2_publickey
 
+## Table of Contents
+
+- [Step 4: Add Multiple Clients (Scaling)](#step-4-add-multiple-clients-scaling)
+- [Step 5: Security Hardening](#step-5-security-hardening)
+- [Troubleshooting](#troubleshooting)
+- [Performance Benchmarks (2026)](#performance-benchmarks-2026)
+- [Privacy & Security Considerations](#privacy-security-considerations)
+- [Automated Setup Script](#automated-setup-script)
+- [Advanced: Site-to-Site VPN (Office Network)](#advanced-site-to-site-vpn-office-network)
+
 # Server: Add to wg0.conf
 sudo nano /etc/wireguard/wg0.conf
 # Add:

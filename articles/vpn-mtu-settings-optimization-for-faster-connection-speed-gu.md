@@ -40,6 +40,21 @@ Optimize VPN speed by reducing MTU from the standard 1500 bytes to 1400-1450 byt
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding MTU and VPN Overhead](#understanding-mtu-and-vpn-overhead)
+- [Diagnosing MTU Problems](#diagnosing-mtu-problems)
+- [Finding Your Optimal MTU Value](#finding-your-optimal-mtu-value)
+- [Configuring MTU in Common VPN Solutions](#configuring-mtu-in-common-vpn-solutions)
+- [Automating MTU Discovery at Connection Time](#automating-mtu-discovery-at-connection-time)
+- [Performance Verification](#performance-verification)
+- [Troubleshooting Black Hole Connections](#troubleshooting-black-hole-connections)
+- [Threat Model: MTU-Based Information Leakage](#threat-model-mtu-based-information-leakage)
+- [Real-World Performance Optimization Case Study](#real-world-performance-optimization-case-study)
+- [Diagnosing Fragmentation Issues](#diagnosing-fragmentation-issues)
+- [MTU Configuration for Mobile VPN Clients](#mtu-configuration-for-mobile-vpn-clients)
+- [Benchmarking MTU Changes](#benchmarking-mtu-changes)
+
 ## Understanding MTU and VPN Overhead
 
 The standard Ethernet MTU is 1500 bytes. When you establish a VPN tunnel, additional headers encapsulate your traffic. WireGuard adds 60 bytes overhead, OpenVPN adds approximately 50-70 bytes depending on configuration, and IPsec can add 50-80 bytes. If your MTU remains at 1500 while the tunnel overhead consumes header space, packets exceed the physical link limit and fragment into smaller units.

@@ -40,6 +40,20 @@ Domain names can be transferred after death by providing the registrar with a de
 - **Log into the deceased's**: registrar account (or have support unlock it) 2.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding Domain Name Transfer Mechanics](#understanding-domain-name-transfer-mechanics)
+- [Required Documentation for Death-Related Transfers](#required-documentation-for-death-related-transfers)
+- [Step-by-Step Transfer Process](#step-by-step-transfer-process)
+- [Hosting Account Transfers](#hosting-account-transfers)
+- [Prevention: Setting Up Transfers Before Death](#prevention-setting-up-transfers-before-death)
+- [Transfer Checklist for Executors](#transfer-checklist-for-executors)
+- [Registrar-Specific Procedures](#registrar-specific-procedures)
+- [Email and DNS Impact During Transfer](#email-and-dns-impact-during-transfer)
+- [Handling Subdomains and Email Services](#handling-subdomains-and-email-services)
+- [Cost Considerations](#cost-considerations)
+- [Long-Term Planning for Digital Assets](#long-term-planning-for-digital-assets)
+
 ## Understanding Domain Name Transfer Mechanics
 
 Domain name transfers involve moving registration from one registrar to another, or transferring control within the same registrar to a different account. The process requires authorization from the current registrant and cooperation from both the losing and gaining registrars.

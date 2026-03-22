@@ -42,6 +42,25 @@ This guide covers secure screen sharing tools that encrypt video streams end-to-
 - **The server helping the connection acts only as a relay**: it cannot decrypt your screen content because it never possesses the keys.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding End-to-End Encryption in Screen Sharing](#understanding-end-to-end-encryption-in-screen-sharing)
+- [Jitsi Meet: Self-Hosted E2EE Screen Sharing](#jitsi-meet-self-hosted-e2ee-screen-sharing)
+- [Signal: Maximum Security for Sensitive Screen Sharing](#signal-maximum-security-for-sensitive-screen-sharing)
+- [Matrix (Element): Federation with E2EE Screen Sharing](#matrix-element-federation-with-e2ee-screen-sharing)
+- [Jami: Decentralized E2EE Screen Sharing](#jami-decentralized-e2ee-screen-sharing)
+- [Practical Recommendations by Use Case](#practical-recommendations-by-use-case)
+- [Verifying Your Screen Share Remains Encrypted](#verifying-your-screen-share-remains-encrypted)
+- [Technical Verification of E2EE in Screen Sharing](#technical-verification-of-e2ee-in-screen-sharing)
+- [Performance Comparison: E2EE vs Standard Screen Sharing](#performance-comparison-e2ee-vs-standard-screen-sharing)
+- [Privacy During Key Exchange](#privacy-during-key-exchange)
+- [Measuring Privacy During Screen Sharing](#measuring-privacy-during-screen-sharing)
+- [Self-Hosted Screen Sharing with E2EE](#self-hosted-screen-sharing-with-e2ee)
+- [Privacy Comparison Table: All Screen Sharing Tools](#privacy-comparison-table-all-screen-sharing-tools)
+- [Legal Implications: Recording Encrypted Streams](#legal-implications-recording-encrypted-streams)
+- [Troubleshooting E2EE Connection Issues](#troubleshooting-e2ee-connection-issues)
+- [Best Practices for Sensitive Screen Sharing](#best-practices-for-sensitive-screen-sharing)
+
 ## Understanding End-to-End Encryption in Screen Sharing
 
 End-to-end encrypted screen sharing means that the encryption keys never leave your device. The server helping the connection acts only as a relay—it cannot decrypt your screen content because it never possesses the keys. This differs from transport-layer encryption (TLS), where the service provider holds decryption keys and can theoretically access your data.

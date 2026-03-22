@@ -27,6 +27,25 @@ European NFL fans face a significant hurdle: NFL Game Pass subscriptions purchas
 - **Most modern VPN clients**: handle this automatically, but verification is essential before attempting to access geo-restricted content.
 - **Check DNS servers in**: use cat /etc/resolv.conf # 3.
 
+## Table of Contents
+
+- [Understanding the Technical Challenge](#understanding-the-technical-challenge)
+- [VPN Protocol Selection for Streaming](#vpn-protocol-selection-for-streaming)
+- [DNS Configuration: Preventing DNS Leaks](#dns-configuration-preventing-dns-leaks)
+- [Split Tunneling Considerations](#split-tunneling-considerations)
+- [Browser Configuration for Streaming](#browser-configuration-for-streaming)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Optimization](#performance-optimization)
+- [Legal and Terms of Service Considerations](#legal-and-terms-of-service-considerations)
+- [Advanced DNS Configuration: Beyond Standard Settings](#advanced-dns-configuration-beyond-standard-settings)
+- [Detailed VPN Provider Comparison for Streaming](#detailed-vpn-provider-comparison-for-streaming)
+- [Network Optimization for Live Streaming](#network-optimization-for-live-streaming)
+- [Advanced WebRTC Blocking: Testing and Verification](#advanced-webrtc-blocking-testing-and-verification)
+- [Streaming Service Anti-VPN Detection: What to Expect](#streaming-service-anti-vpn-detection-what-to-expect)
+- [Performance Monitoring During Streaming](#performance-monitoring-during-streaming)
+- [Fallback Strategies](#fallback-strategies)
+
 ## Understanding the Technical Challenge
 
 NFL Game Pass uses geo-restriction mechanisms that identify your location through multiple signals:

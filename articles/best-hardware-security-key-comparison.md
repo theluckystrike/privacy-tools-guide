@@ -42,6 +42,20 @@ Hardware security keys provide the strongest protection against phishing and acc
 - **Budget-conscious teams or privacy-focused**: users might prefer open-source alternatives like SoloKeys or Nitrokey.
 - **- Budget constraints and**: no high-value accounts: If your potential loss from account takeover is under $5,000, the key investment might not ROI.
 
+## Table of Contents
+
+- [What Hardware Security Keys Offer](#what-hardware-security-keys-offer)
+- [Quick Comparison](#quick-comparison)
+- [Key Comparison Factors](#key-comparison-factors)
+- [Hardware Key Options](#hardware-key-options)
+- [Practical Implementation](#practical-implementation)
+- [Choosing the Right Key](#choosing-the-right-key)
+- [Backup and Recovery Strategy](#backup-and-recovery-strategy)
+- [Setup Complexity by Skill Level](#setup-complexity-by-skill-level)
+- [Platform-by-Platform Implementation Guide](#platform-by-platform-implementation-guide)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Future of Hardware Authentication](#future-of-hardware-authentication)
+
 ## What Hardware Security Keys Offer
 
 Hardware keys implement the FIDO2 (Fast Identity Online) standard, which combines WebAuthn (web authentication) and CTAP (Client to Authenticator Protocol). This architecture ensures private keys never leave the device—authentication happens entirely on the hardware module.

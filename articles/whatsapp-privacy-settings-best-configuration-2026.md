@@ -40,6 +40,17 @@ WhatsApp remains the most widely used messaging platform globally, with over 2 b
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Provide an email address**: for recovery (optional but recommended) The PIN prevents your account from being verified on a new device without this code.
 
+## Table of Contents
+
+- [Core Privacy Settings Configuration](#core-privacy-settings-configuration)
+- [Two-Step Verification: Your Primary Defense](#two-step-verification-your-primary-defense)
+- [Read Receipts and Typing Indicators](#read-receipts-and-typing-indicators)
+- [Group Privacy Controls](#group-privacy-controls)
+- [Disappearing Messages Configuration](#disappearing-messages-configuration)
+- [Live Location and Geographic Privacy](#live-location-and-geographic-privacy)
+- [Data Export and Account Management](#data-export-and-account-management)
+- [Lock and Additional Protections](#lock-and-additional-protections)
+
 ## Core Privacy Settings Configuration
 
 ### Last Seen and Online Status

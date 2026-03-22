@@ -48,6 +48,20 @@ This guide evaluates the leading encrypted messaging platforms through a technic
 - **Matrix uses the Olm**: and Megolm protocols for E2E encryption.
 - **Each user has a 64-character public key**: no phone number, no email, no personally identifiable information required for account creation.
 
+## Table of Contents
+
+- [Understanding Encryption Architecture Trade-Offs](#understanding-encryption-architecture-trade-offs)
+- [Signal: The Protocol Standard](#signal-the-protocol-standard)
+- [Element and Matrix: The Self-Hosted Standard](#element-and-matrix-the-self-hosted-standard)
+- [Session: Decentralized Without Phone Numbers](#session-decentralized-without-phone-numbers)
+- [Threema: Swiss Privacy, Minimal Metadata](#threema-swiss-privacy-minimal-metadata)
+- [SimpleX: Zero-Knowledge Architecture](#simplex-zero-knowledge-architecture)
+- [Interoperability and Vendor Lock-In Concerns](#interoperability-and-vendor-lock-in-concerns)
+- [Decision Framework for Developers](#decision-framework-for-developers)
+- [Implementation Considerations](#implementation-considerations)
+- [Common Misconceptions About Encrypted Messaging](#common-misconceptions-about-encrypted-messaging)
+- [Regulatory and Compliance Considerations](#regulatory-and-compliance-considerations)
+
 ## Understanding Encryption Architecture Trade-Offs
 
 Before looking at specific platforms, understanding the architectural choices that differentiate encrypted messaging helps you evaluate which platform serves your needs.

@@ -44,6 +44,20 @@ The passkey ecosystem in 2026 offers security for most use cases.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Built on the WebAuthn**: (Web Authentication) API and FIDO2 standards, passkeys use public-key cryptography to provide phishing-resistant authentication.
 
+## Table of Contents
+
+- [Understanding Passkey Technology](#understanding-passkey-technology)
+- [Major Platforms with Passkey Support in 2026](#major-platforms-with-passkey-support-in-2026)
+- [Implementation Patterns for Developers](#implementation-patterns-for-developers)
+- [Cross-Platform Considerations](#cross-platform-considerations)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Recommendations for Power Users](#recommendations-for-power-users)
+- [Passkey Storage and Syncing Architecture](#passkey-storage-and-syncing-architecture)
+- [Threat Models for Passkey Deployment](#threat-models-for-passkey-deployment)
+- [Passkey Adoption Statistics by Industry (2026)](#passkey-adoption-statistics-by-industry-2026)
+- [Troubleshooting Common Passkey Issues](#troubleshooting-common-passkey-issues)
+- [Passkey Best Practices Summary](#passkey-best-practices-summary)
+
 ## Understanding Passkey Technology
 
 Passkeys are cryptographic credentials that replace traditional passwords entirely. Built on the WebAuthn (Web Authentication) API and FIDO2 standards, passkeys use public-key cryptography to provide phishing-resistant authentication. When you create a passkey, your device generates a key pair: the private key stays securely on your authenticator (device, security key, or password manager), while the public key gets sent to the server.

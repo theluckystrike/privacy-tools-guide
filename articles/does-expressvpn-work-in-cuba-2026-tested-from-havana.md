@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 ---
 
 
@@ -27,7 +28,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
@@ -39,6 +41,18 @@ tags: [privacy-tools-guide, vpn]---
 - **The connection process typically**: took between 30 seconds and 3 minutes, which is longer than the typical 10-15 seconds we see in other locations.
 - **During peak evening hours**: (7 PM - 11 PM local time), speeds typically dropped by 30-40% compared to early morning tests.
 - **Use split tunneling**: If you only need VPN for specific applications, enable split tunneling to reduce bandwidth usage and improve performance.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Cuba's Internet Space in 2026](#cubas-internet-space-in-2026)
+- [ExpressVPN Havana Connection Test Results](#expressvpn-havana-connection-test-results)
+- [Technical Implementation Details](#technical-implementation-details)
+- [Alternative VPN Options](#alternative-vpn-options)
+- [Threat Model and Security Considerations](#threat-model-and-security-considerations)
+- [Testing Methodology and Verification](#testing-methodology-and-verification)
+- [DNS and Leak Testing](#dns-and-leak-testing)
+- [Practical Considerations](#practical-considerations)
 
 ## Introduction
 

@@ -40,6 +40,13 @@ Journalists operating in adversarial environments face sophisticated surveillanc
 - **Set `browser.download.useDownloadDir` to `false`**: to always prompt for save location 2.
 - **Create isolated user for**: sensitive work sudo useradd -m -s /bin/bash journalist # 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Circuit Analysis and Fingerprinting](#advanced-circuit-analysis-and-fingerprinting)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

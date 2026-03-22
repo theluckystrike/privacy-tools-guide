@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -22,6 +23,23 @@ Smart bulbs, thermostats, cameras, and voice assistants are computers running ou
 - **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **---
+
+## Table of Contents
+
+- [Step 5**: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Why IoT Devices Are a Risk](#why-iot-devices-are-a-risk)
+- [Architecture: Three-Network Model](#architecture-three-network-model)
+- [Prerequisites](#prerequisites)
+- [Step 1: Create the IoT VLAN in OpenWrt](#step-1-create-the-iot-vlan-in-openwrt)
+- [Step 2: Create IoT Network Interface](#step-2-create-iot-network-interface)
+- [Step 3: Create IoT Firewall Zone](#step-3-create-iot-firewall-zone)
+- [Step 4: Create IoT WiFi SSID](#step-4-create-iot-wifi-ssid)
+- [Step 5: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)
+- [Step 6: Assign IoT Devices to the VLAN](#step-6-assign-iot-devices-to-the-vlan)
+- [Monitor IoT Traffic](#monitor-iot-traffic)
+- [Block IoT Telemetry at DNS Level](#block-iot-telemetry-at-dns-level)
+- [Verify the Segmentation Works](#verify-the-segmentation-works)
+- [Related Reading](#related-reading)
 
 ## Step 5**: mDNS/Bonjour Forwarding (Optional)
 
@@ -308,6 +326,14 @@ for ip in main_lan_ips:
 - [OpenWrt VPN Router WireGuard Setup](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
 
 ---
+
+## Related Articles
+
+- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
+- [Iot Firmware Update Privacy Risks What Data Devices Send](/privacy-tools-guide/iot-firmware-update-privacy-risks-what-data-devices-send-dur/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

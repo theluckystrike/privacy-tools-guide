@@ -41,6 +41,19 @@ Zoosk positions itself as a "smart" dating platform that uses behavioral data to
 2.
 - **Avoid linking to social**: profiles unnecessarily # Don't use "Sign up with Facebook" or "Sign up with Google" # Instead: Create account with email + password # 5.
 
+## Table of Contents
+
+- [How Zoosk's Behavioral Matchmaking Actually Works](#how-zoosks-behavioral-matchmaking-actually-works)
+- [What Data Zoosk Collects and Stores](#what-data-zoosk-collects-and-stores)
+- [Technical Implementation of Behavioral Tracking](#technical-implementation-of-behavioral-tracking)
+- [Privacy Implications for Users](#privacy-implications-for-users)
+- [Practical Recommendations for Privacy-Conscious Users](#practical-recommendations-for-privacy-conscious-users)
+- [How Your Behavioral Profile Affects Match Quality](#how-your-behavioral-profile-affects-match-quality)
+- [Privacy Regulations and Your Rights](#privacy-regulations-and-your-rights)
+- [Third-Party Integrations and Data Leakage](#third-party-integrations-and-data-leakage)
+- [Account Security and Prevention](#account-security-and-prevention)
+- [The Privacy-Compatibility Trade-Off](#the-privacy-compatibility-trade-off)
+
 ## How Zoosk's Behavioral Matchmaking Actually Works
 
 Zoosk's algorithm tracks what you do on the platform, not just what you say you want. The system monitors swipe patterns, message timing, profile views, and interaction frequency to build a behavioral profile used for match recommendations.

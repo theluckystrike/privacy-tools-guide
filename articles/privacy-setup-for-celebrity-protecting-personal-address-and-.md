@@ -27,6 +27,16 @@ Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerifie
 - **However**: some states require LLC member names to be disclosed in annual reports, so consult with an attorney familiar with privacy-focused asset protection.
 - **Each alias can be**: routed to your primary inbox or used independently.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Techniques for High-Profile Individuals](#advanced-techniques-for-high-profile-individuals)
+- [Incident Response: If Your Address Is Exposed](#incident-response-if-your-address-is-exposed)
+- [Working with Security Professionals](#working-with-security-professionals)
+- [Ongoing Monitoring Systems](#ongoing-monitoring-systems)
+- [Balancing Privacy with Necessary Exposure](#balancing-privacy-with-necessary-exposure)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

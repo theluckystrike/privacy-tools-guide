@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How to Set Up a Password Manager for Home Server SSH"
-description: "A practical guide for developers on storing SSH keys in a password manager. Covers Bitwarden, 1Password, and KeePassXC with CLI examples and automation"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-password-manager-for-home-server-ssh-keys/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -38,6 +25,13 @@ Managing SSH keys for multiple home servers creates a security and organization 
 - **1Password offers the smoothest**: user experience but requires the desktop app running.
 - **KeePassXC suits users who**: need completely offline key storage.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
+## Table of Contents
+
+- [Why Store SSH Keys in a Password Manager](#why-store-ssh-keys-in-a-password-manager)
+- [Prerequisites](#prerequisites)
+- [Best Practices for SSH Key Management](#best-practices-for-ssh-key-management)
+- [Troubleshooting](#troubleshooting)
 
 ## Why Store SSH Keys in a Password Manager
 
@@ -342,11 +336,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
-- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [How To Set Up Beneficiary Access For Cloud Password Manager](/privacy-tools-guide/how-to-set-up-beneficiary-access-for-cloud-password-manager-/)
-- [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
-
+- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
+- [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
+- [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
+- [Password Manager Master Password Strength Guide](/privacy-tools-guide/password-manager-master-password-strength-guide/)
+- [How To Handle Password Manager When Switching Phones](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

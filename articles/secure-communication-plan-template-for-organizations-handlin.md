@@ -27,6 +27,18 @@ echo "3.
 - **Discounts of 25-50% are**: common for qualifying organizations.
 - **A documented communication plan**: defines what tools to use, when to use them, who has access, and how to handle incidents.
 
+## Table of Contents
+
+- [Why Your Organization Needs a Communication Security Plan](#why-your-organization-needs-a-communication-security-plan)
+- [The Secure Communication Plan Template](#the-secure-communication-plan-template)
+- [Security Onboarding Checklist](#security-onboarding-checklist)
+- [Implementation Strategy for Developers](#implementation-strategy-for-developers)
+- [Deployment Recommendations](#deployment-recommendations)
+- [Enforcing Tool Compliance Programmatically](#enforcing-tool-compliance-programmatically)
+- [Handling Metadata in Secure Communications](#handling-metadata-in-secure-communications)
+- [Quarterly Review Process](#quarterly-review-process)
+- [Q1 2026 Review Checklist](#q1-2026-review-checklist)
+
 ## Why Your Organization Needs a Communication Security Plan
 
 Every organization that handles sensitive information faces a common problem: communication happens across multiple channels—email, chat apps, video calls, file sharing services—with no consistent security posture. One team member might use Signal for personal conversations while emailing unencrypted attachments for work. Another might share credentials over Slack. This inconsistency creates exploitable gaps.

@@ -49,6 +49,24 @@ Linux desktops run on trust—you control the OS, applications, and permissions.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [The Privacy Baseline](#the-privacy-baseline)
+- [Step 1: Disable Ubuntu Telemetry (Ubuntu Only)](#step-1-disable-ubuntu-telemetry-ubuntu-only)
+- [Step 2: Disable Fedora Telemetry (Fedora Only)](#step-2-disable-fedora-telemetry-fedora-only)
+- [Step 3: Harden the Firewall](#step-3-harden-the-firewall)
+- [Step 4: Enable Full Disk Encryption](#step-4-enable-full-disk-encryption)
+- [Step 5: Enable AppArmor (Ubuntu) or SELinux (Fedora)](#step-5-enable-apparmor-ubuntu-or-selinux-fedora)
+- [Step 6: Harden Firefox](#step-6-harden-firefox)
+- [Step 7: Disable Unnecessary Services](#step-7-disable-unnecessary-services)
+- [Step 8: Configure Automatic Security Updates](#step-8-configure-automatic-security-updates)
+- [Step 9: Enable SSH Hardening (If Needed)](#step-9-enable-ssh-hardening-if-needed)
+- [Step 10: Lock Down Permissions](#step-10-lock-down-permissions)
+- [Step 11: Enable Mandatory Security Monitoring](#step-11-enable-mandatory-security-monitoring)
+- [Post-Hardening Verification Checklist](#post-hardening-verification-checklist)
+- [Security Hardening Maintenance](#security-hardening-maintenance)
+- [Related Reading](#related-reading)
+
 ## The Privacy Baseline
 
 Before hardening, understand what your system currently shares:

@@ -41,6 +41,20 @@ Password manager breach notification features check your stored credentials agai
 3.
 - **Check if the site**: uses the password elsewhere: Search your vault 5.
 
+## Table of Contents
+
+- [How Breach Notifications Function](#how-breach-notifications-function)
+- [Major Password Manager Implementations](#major-password-manager-implementations)
+- [API Integration Patterns](#api-integration-patterns)
+- [Practical Considerations](#practical-considerations)
+- [Beyond Password Managers](#beyond-password-managers)
+- [Comparative Feature Matrix: Breach Notification Capabilities](#comparative-feature-matrix-breach-notification-capabilities)
+- [Implementation Details: What Each Service Actually Checks](#implementation-details-what-each-service-actually-checks)
+- [Setting Up Breach Monitoring: Practical Configuration](#setting-up-breach-monitoring-practical-configuration)
+- [Responding to Breach Notifications: Workflow Best Practices](#responding-to-breach-notifications-workflow-best-practices)
+- [Avoiding False Alerts and Alert Fatigue](#avoiding-false-alerts-and-alert-fatigue)
+- [Infrastructure Credential Monitoring](#infrastructure-credential-monitoring)
+
 ## How Breach Notifications Function
 
 Breach notification features operate by comparing your stored credentials against databases of known data breaches. The primary data source is the Have I Been Pwned (HIBP) database, which aggregates credentials from thousands of documented breaches. Password managers implement this comparison using k-anonymity, a technique that prevents your actual passwords from being transmitted over the network.

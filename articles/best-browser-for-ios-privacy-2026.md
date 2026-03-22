@@ -42,6 +42,25 @@ Onion Browser offers the strongest iOS privacy by routing all traffic through To
 - **While features are solid**: customization options are limited compared to open-source alternatives.
 - **Privacy is personal**: the best browser is one that protects your data while supporting your work effectively.
 
+## Table of Contents
+
+- [Understanding iOS Browser Privacy Architecture](#understanding-ios-browser-privacy-architecture)
+- [Safari: Integrated Protection](#safari-integrated-protection)
+- [Firefox: Open-Source Flexibility](#firefox-open-source-flexibility)
+- [Brave: Maximum Blocking](#brave-maximum-blocking)
+- [Onion Browser: Tor Network Access](#onion-browser-tor-network-access)
+- [Firefox Focus: Minimalist Approach](#firefox-focus-minimalist-approach)
+- [Making an Informed Choice](#making-an-informed-choice)
+- [WebKit Engine Architecture and Privacy](#webkit-engine-architecture-and-privacy)
+- [Privacy Feature Comparison Matrix](#privacy-feature-comparison-matrix)
+- [Testing Privacy Features in Your Applications](#testing-privacy-features-in-your-applications)
+- [Performance Impact of Privacy Features](#performance-impact-of-privacy-features)
+- [Browser Configuration](#browser-configuration)
+- [Real-World Privacy Testing: Three Scenarios](#real-world-privacy-testing-three-scenarios)
+- [iOS-Specific Privacy Considerations](#ios-specific-privacy-considerations)
+- [Troubleshooting Privacy Features](#troubleshooting-privacy-features)
+- [Updating to 2026 Standards](#updating-to-2026-standards)
+
 ## Understanding iOS Browser Privacy Architecture
 
 iOS enforces strict sandboxing that limits what browsers can access compared to desktop platforms. Every browser on iOS must use WebKit as the rendering engine, meaning the underlying engine is consistent across Safari and third-party browsers. The privacy differences emerge in how each browser implements additional tracking protection, cookie handling, and data synchronization.

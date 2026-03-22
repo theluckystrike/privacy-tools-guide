@@ -11,21 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Run Zigbee2mqtt Locally For Smart Home"
-description: "A practical guide for developers and power users to run Zigbee2MQTT locally, eliminating vendor lock-in and cloud dependencies for your smart home setup"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -40,6 +27,13 @@ Running Zigbee2MQTT locally eliminates vendor cloud accounts and gives you compl
 3.
 - **This guide walks through**: setting up Zigbee2MQTT on a Raspberry Pi or dedicated Linux machine, configuring it for local-only operation, and integrating it with your home automation workflows.
 - **Zigbee channels 15**: 20, 25, and 26 avoid overlap with the most common WiFi channels (1, 6, 11).
+
+## Table of Contents
+
+- [Why Run Zigbee2MQTT Locally?](#why-run-zigbee2mqtt-locally)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
 
 ## Why Run Zigbee2MQTT Locally?
 
@@ -319,6 +313,14 @@ Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to 
 - [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
 - [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+
+## Related Articles
+
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [How To Replace Cloud Dependent Smart Switches With Local](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
+- [Smart Device Deregistration After Death How To Remove](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

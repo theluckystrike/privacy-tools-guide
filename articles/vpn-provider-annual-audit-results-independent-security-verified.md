@@ -27,6 +27,22 @@ Tests for DNS leaks**: WebRTC leaks, IPv6 leaks, and kill switch functionality e
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Encryption Implementation Security auditors**: review the actual encryption protocols in use, checking cipher suites, key exchange mechanisms, and certificate configurations.
 
+## Table of Contents
+
+- [What Independent VPN Audits Verify](#what-independent-vpn-audits-verify)
+- [Major Audit Firms in the VPN Industry](#major-audit-firms-in-the-vpn-industry)
+- [Understanding Audit Reports](#understanding-audit-reports)
+- [Interpreting 2026 Audit Results](#interpreting-2026-audit-results)
+- [Verifying Audit Claims Yourself](#verifying-audit-claims-yourself)
+- [What Audit Results Don't Guarantee](#what-audit-results-dont-guarantee)
+- [Making Informed Decisions](#making-informed-decisions)
+- [2026 Provider Audit Results Summary](#2026-provider-audit-results-summary)
+- [Audit Limitations You Should Know](#audit-limitations-you-should-know)
+- [Red Flags in Audit Reports](#red-flags-in-audit-reports)
+- [Audit Timeline Best Practices](#audit-timeline-best-practices)
+- [Practical Audit Checklist for Users](#practical-audit-checklist-for-users)
+- [Interpreting Encryption Standards from Audits](#interpreting-encryption-standards-from-audits)
+
 ## What Independent VPN Audits Verify
 
 Independent security audits examine several critical components of VPN infrastructure:

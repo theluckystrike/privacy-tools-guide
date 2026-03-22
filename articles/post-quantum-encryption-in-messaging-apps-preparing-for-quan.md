@@ -40,6 +40,16 @@ As quantum computing advances toward practical deployment, the cryptographic fou
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This article explores how**: messaging applications are implementing post-quantum cryptography, what developers need to know, and how power users can prepare for the transition.
 
+## Table of Contents
+
+- [The Quantum Threat Timeline](#the-quantum-threat-timeline)
+- [Current Messaging App Implementations](#current-messaging-app-implementations)
+- [Implementing Post-Quantum Key Exchange](#implementing-post-quantum-key-exchange)
+- [Hybrid Encryption for Existing Applications](#hybrid-encryption-for-existing-applications)
+- [Migration Strategies for Enterprise Messaging](#migration-strategies-for-enterprise-messaging)
+- [What Power Users Should Know](#what-power-users-should-know)
+- [Timeline and Expectations](#timeline-and-expectations)
+
 ## The Quantum Threat Timeline
 
 Researchers estimate that cryptographically relevant quantum computers could emerge within the next decade. While no such machines exist today, the "harvest now, decrypt later" attack vector already poses a risk. State-level actors and sophisticated adversaries currently capture encrypted traffic with the expectation that future quantum computers will enable decryption.
@@ -222,6 +232,227 @@ The transition from classical to post-quantum encryption mirrors previous crypto
 Early adopters of post-quantum cryptography gain competitive advantage and risk mitigation. As deployment increases, vulnerability of late adopters becomes more pronounced. Organizations that begin planning migrations now position themselves to complete transitions before quantum computers materialize—rather than rushing implementation under emergency conditions when threats become concrete.
 
 The research community continues evolving post-quantum cryptography. NIST expects to select additional algorithms for different use cases. Organizations building post-quantum systems should maintain flexibility to incorporate new standards as they emerge, rather than locking into today's selections as final solutions.
+
+## Testing Post-Quantum Implementations
+
+### Verifying Post-Quantum Encryption in Signal
+
+Signal's current implementation includes post-quantum support on newer versions. To verify:
+
+```bash
+# Check Signal's protocol version
+# Signal displays protocol information in chat info screens
+# Look for: "Additional security notifications"
+
+# For developers, inspect Signal's network traffic
+tcpdump -i any 'tcp port 443' -w signal-traffic.pcap
+
+# Analyze with Wireshark
+# Look for X3DH and ML-KEM key exchange patterns
+# Note: Encrypted, so you see handshake structure only
+```
+
+### Testing Hybrid Key Exchange
+
+Build a test harness to verify hybrid key exchange behavior:
+
+```python
+from oqs import KeyEncapsulation
+import os
+
+def test_hybrid_exchange():
+    """Test classical + post-quantum hybrid exchange."""
+
+    # Classical key exchange (X25519)
+    from cryptography.hazmat.primitives.asymmetric import x25519
+    alice_key = x25519.X25519PrivateKey.generate()
+    bob_key = x25519.X25519PrivateKey.generate()
+
+    alice_shared = alice_key.exchange(bob_key.public_key())
+
+    # Post-quantum key exchange (ML-KEM)
+    kem = KeyEncapsulation("ML-KEM-768")
+    bob_public = kem.generate_keypair()
+    ciphertext, bob_shared = kem.encaps_secret(bob_public)
+
+    # Combine both secrets
+    import hashlib
+    combined = hashlib.sha256(alice_shared + bob_shared).digest()
+
+    print(f"Hybrid secret length: {len(combined)} bytes")
+    print(f"Classical component: {alice_shared.hex()[:32]}...")
+    print(f"PQ component: {bob_shared.hex()[:32]}...")
+
+test_hybrid_exchange()
+```
+
+### Performance Benchmarking
+
+Measure the real performance impact of post-quantum algorithms:
+
+```python
+import time
+from oqs import KeyEncapsulation
+
+def benchmark_pq_crypto():
+    """Benchmark ML-KEM performance."""
+
+    algorithms = ["ML-KEM-512", "ML-KEM-768", "ML-KEM-1024"]
+
+    for alg in algorithms:
+        kem = KeyEncapsulation(alg)
+
+        # Benchmark keypair generation
+        start = time.time()
+        for _ in range(100):
+            kem.generate_keypair()
+        keygen_time = (time.time() - start) / 100
+
+        # Benchmark encapsulation
+        pub_key = kem.generate_keypair()
+        start = time.time()
+        for _ in range(100):
+            ciphertext, shared = kem.encaps_secret(pub_key)
+        encap_time = (time.time() - start) / 100
+
+        # Benchmark decapsulation
+        start = time.time()
+        for _ in range(100):
+            shared_dec = kem.decaps_secret(ciphertext)
+        decap_time = (time.time() - start) / 100
+
+        print(f"{alg}:")
+        print(f"  Keypair gen: {keygen_time*1000:.2f}ms")
+        print(f"  Encapsulate: {encap_time*1000:.2f}ms")
+        print(f"  Decapsulate: {decap_time*1000:.2f}ms")
+
+benchmark_pq_crypto()
+```
+
+## Organizational Post-Quantum Readiness Assessment
+
+### Crypto Inventory Checklist
+
+Assess your organization's current cryptographic posture:
+
+```bash
+#!/bin/bash
+# Create organization crypto inventory
+
+cat > crypto_inventory.md << 'EOF'
+# Cryptographic Assets Inventory
+
+## TLS/SSL Certificates
+- [ ] Identify all TLS endpoints (servers, APIs, IoT devices)
+- [ ] Check certificate key sizes (RSA 2048? 4096?)
+- [ ] Document expiration dates
+- [ ] Identify legacy algorithms (RSA, ECC vs PQC)
+
+## Key Exchange Mechanisms
+- [ ] Diffie-Hellman (classical)
+- [ ] ECDH (Elliptic Curve)
+- [ ] Post-quantum KEM (ML-KEM)
+
+## Signature Algorithms
+- [ ] RSA signatures
+- [ ] ECDSA
+- [ ] EdDSA (Ed25519)
+- [ ] Post-quantum signatures (ML-DSA)
+
+## Encryption Algorithms
+- [ ] AES-256 (symmetric - no change needed)
+- [ ] RSA encryption (NEEDS MIGRATION)
+- [ ] ECC-based encryption (NEEDS MIGRATION)
+
+## Data Storage
+- [ ] Encrypted-at-rest databases
+- [ ] Archive data retention period
+- [ ] Key management system (KMS)
+- [ ] Key rotation policy
+
+## Third-Party Dependencies
+- [ ] TLS libraries (OpenSSL version?)
+- [ ] Cryptographic libraries (libcrypto, BoringSSL, etc.)
+- [ ] Messaging SDKs
+- [ ] IoT frameworks
+EOF
+
+cat crypto_inventory.md
+```
+
+### Migration Timeline Template
+
+```yaml
+PQ-Migration-Timeline:
+  Phase-1-Assessment:
+    Duration: 3 months
+    Tasks:
+      - Inventory all cryptographic operations
+      - Identify external dependencies (vendors, libraries)
+      - Assess hybrid vs. full-PQ migration approach
+    Deliverables:
+      - Cryptographic asset register
+      - Risk assessment report
+      - Migration roadmap
+
+  Phase-2-Pilot:
+    Duration: 6 months
+    Tasks:
+      - Deploy post-quantum in test environments
+      - Test hybrid algorithms in staging
+      - Validate performance impact
+      - Conduct security audits
+    Deliverables:
+      - PQ test environment
+      - Performance benchmarks
+      - Security audit report
+
+  Phase-3-Rollout:
+    Duration: 12-18 months
+    Tasks:
+      - Deploy hybrid mode to production
+      - Monitor hybrid algorithm performance
+      - Maintain backward compatibility
+      - Document deployment procedures
+    Deliverables:
+      - Production hybrid deployment
+      - Monitoring dashboards
+      - Runbook documentation
+
+  Phase-4-Full-PQ:
+    Duration: 24+ months
+    Tasks:
+      - Deprecate classical algorithms
+      - Migrate entirely to post-quantum
+      - Retire legacy cryptography
+    Deliverables:
+      - Full post-quantum infrastructure
+      - Compliance certification
+```
+
+## Regulatory and Compliance Context
+
+### NIST Standardization Timeline
+
+NIST released final post-quantum cryptographic standards in August 2024:
+
+- **ML-KEM-512**: 128-bit security
+- **ML-KEM-768**: 192-bit security
+- **ML-KEM-1024**: 256-bit security
+- **ML-DSA-44, 65, 87**: Digital signatures
+- **SPHINCS+-SHA256**: Hash-based signatures (backup)
+
+Organizations should plan migration around these official standards rather than experimental algorithms.
+
+### Compliance Requirements by Jurisdiction
+
+**EU**: eIDAS Regulation (Electronic Identification and Trust Services) is being updated to include post-quantum requirements for qualified signatures by 2027.
+
+**US**: NIST SP 800-131B recommends transitioning to post-quantum cryptography by 2030.
+
+**Russia, China**: Unknown post-quantum cipher requirements—may mandate local algorithms.
+
+**Financial sector**: PCI DSS and bank regulators will likely mandate post-quantum migration for payment systems.
 
 ## Frequently Asked Questions
 

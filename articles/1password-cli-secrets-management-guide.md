@@ -46,6 +46,20 @@ This command opens your default browser where you complete the authentication pr
 - **On macOS with Touch ID configured**: subsequent commands can use biometric authentication automatically, removing the need to re-enter your master password repeatedly.
 - **For a login item**: common fields include `username`, `password`, and `notes`.
 
+## Table of Contents
+
+- [What is the 1Password CLI?](#what-is-the-1password-cli)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Comparing with Alternative Approaches](#comparing-with-alternative-approaches)
+- [Advanced: Using Templates](#advanced-using-templates)
+- [Getting Started](#getting-started)
+- [Advanced Usage: CI/CD Integration](#advanced-usage-cicd-integration)
+- [Audit and Compliance](#audit-and-compliance)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Optimization](#performance-optimization)
+- [Migrating from .env Files](#migrating-from-env-files)
+
 ## What is the 1Password CLI?
 
 The 1Password CLI (`op`) is a command-line tool that allows you to interact with your 1Password vault programmatically. Rather than manually copying passwords or API keys from the 1Password app, you can retrieve secrets directly within your terminal. This approach eliminates clipboard history risks and ensures that sensitive credentials never linger in your system memory longer than necessary.

@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Encrypted Cloud Storage Performance Benchmarks 2026"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,17 @@ Proton Drive and Filen achieve 80-90% of unencrypted cloud storage speeds for mo
 - **Large file uploads (100MB+)**: show the highest encryption overhead at 30-40% slowdown, while small file sync stays relatively fast.
 - **On a modern M2 MacBook**: encryption processing consumed 40-60% of one core during sync.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Benchmark Methodology](#benchmark-methodology)
+- [Small File Sync Performance](#small-file-sync-performance)
+- [Large File Upload Performance](#large-file-upload-performance)
+- [Folder Synchronization Speed](#folder-synchronization-speed)
+- [API Performance for Developers](#api-performance-for-developers)
+- [Mobile Performance Considerations](#mobile-performance-considerations)
+- [Performance Optimization Strategies](#performance-optimization-strategies)
+- [Recommendation Matrix](#recommendation-matrix)
 
 ## Benchmark Methodology
 

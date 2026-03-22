@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 
@@ -27,6 +28,13 @@ This guide walks through setting up each protocol with practical examples you ca
 - **When someone sends emails**: that appear to originate from your domain, they can phishing your users, damage your sender reputation, and compromise communications with your customers.
 - **Most providers give you**: the complete record to copy.
 - **Use `spf=aligned` in your**: DMARC record or ensure consistent domain usage.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
+- [Troubleshooting Authentication Failures](#troubleshooting-authentication-failures)
+- [Email Authentication Best Practices Summary](#email-authentication-best-practices-summary)
 
 ## Prerequisites
 

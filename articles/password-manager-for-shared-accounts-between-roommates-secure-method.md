@@ -203,6 +203,15 @@ Secure shared password management requires more thought than throwing credential
 
 ## Audit Trail and Access Logging
 
+## Table of Contents
+
+- [Audit Trail and Access Logging](#audit-trail-and-access-logging)
+- [Conflict Resolution: Password Change Disputes](#conflict-resolution-password-change-disputes)
+- [Onboarding New Roommates](#onboarding-new-roommates)
+- [Off-boarding When Roommates Leave](#off-boarding-when-roommates-leave)
+- [Cost-Benefit Analysis for Shared Vaults](#cost-benefit-analysis-for-shared-vaults)
+- [Alternative: Shared Secret Management Without Permanent Password Manager](#alternative-shared-secret-management-without-permanent-password-manager)
+
 When multiple people access shared credentials, tracking who changed what becomes essential:
 
 ```bash

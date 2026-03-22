@@ -40,6 +40,26 @@ Finding encrypted file sharing tools that balance security with accessibility fo
 - **Configure your tool so**: that password protection is always enabled, expiration always defaults to 7 days, and encryption strength uses the strongest option by default.
 - **Users should only need**: to make one decision: which file to share.
 
+## Table of Contents
+
+- [Why Accessibility Matters in Encrypted File Sharing](#why-accessibility-matters-in-encrypted-file-sharing)
+- [Key Accessibility Criteria for File Sharing Tools](#key-accessibility-criteria-for-file-sharing-tools)
+- [Top Accessible Encrypted File Sharing Tools](#top-accessible-encrypted-file-sharing-tools)
+- [Accommodating Different Cognitive Processing Styles](#accommodating-different-cognitive-processing-styles)
+- [Implementing Accessible Workflows](#implementing-accessible-workflows)
+- [Comparative Analysis](#comparative-analysis)
+- [Accessibility Compliance and Legal Considerations](#accessibility-compliance-and-legal-considerations)
+- [Testing for Real-World Usability](#testing-for-real-world-usability)
+- [Integration with Existing Workflows](#integration-with-existing-workflows)
+- [Privacy Implications of Accessibility Features](#privacy-implications-of-accessibility-features)
+- [Alternative Approaches for Special Cases](#alternative-approaches-for-special-cases)
+- [Long-Term Maintenance and Support](#long-term-maintenance-and-support)
+- [Reducing Cognitive Load Through Consistent Interaction Patterns](#reducing-cognitive-load-through-consistent-interaction-patterns)
+- [Evaluating Tools with Actual Users Before Deployment](#evaluating-tools-with-actual-users-before-deployment)
+- [Automation Scripts for Reducing Manual Steps](#automation-scripts-for-reducing-manual-steps)
+- [Managing Shared Links After the Fact](#managing-shared-links-after-the-fact)
+- [Choosing Between Managed Services and Self-Hosted Solutions](#choosing-between-managed-services-and-self-hosted-solutions)
+
 ## Why Accessibility Matters in Encrypted File Sharing
 
 Cognitive impairments affect how users process information, remember sequences, and navigate complex interfaces. For these users, encrypted file sharing tools must minimize cognitive load through consistent layouts, explicit feedback, and forgiving interaction patterns. Security tools that frustrate users often get abandoned, defeating the purpose of encryption entirely.

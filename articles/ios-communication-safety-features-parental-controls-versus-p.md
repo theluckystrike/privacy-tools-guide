@@ -42,6 +42,17 @@ Apple's Communication Safety balances parental controls with privacy through on-
 
 It depends on your background.
 
+## Table of Contents
+
+- [What Are Communication Safety Features?](#what-are-communication-safety-features)
+- [How Communication Safety Works Technically](#how-communication-safety-works-technically)
+- [Parental Controls Versus Privacy: The Core Trade-off](#parental-controls-versus-privacy-the-core-trade-off)
+- [Developer Implications](#developer-implications)
+- [What Power Users Need to Know](#what-power-users-need-to-know)
+- [Comparison with Android Parental Controls](#comparison-with-android-parental-controls)
+- [Configuring Communication Safety Step by Step](#configuring-communication-safety-step-by-step)
+- [Recommendations for Privacy-Conscious Parents](#recommendations-for-privacy-conscious-parents)
+
 ## What Are Communication Safety Features?
 
 Communication Safety in iOS encompasses a suite of tools designed to protect users, particularly minors, from potentially harmful content in messaging apps, FaceTime, and AirDrop. These features include:

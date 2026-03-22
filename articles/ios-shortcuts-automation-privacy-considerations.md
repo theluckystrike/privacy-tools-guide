@@ -40,6 +40,20 @@ The main privacy risks with iOS Shortcuts are over-permissioned automations acce
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Where possible**: choose local actions over those requiring network requests.
 
+## Table of Contents
+
+- [Understanding Shortcuts Data Access Permissions](#understanding-shortcuts-data-access-permissions)
+- [Personal Automation Triggers and Privacy](#personal-automation-triggers-and-privacy)
+- [Building Privacy-Conscious Shortcuts](#building-privacy-conscious-shortcuts)
+- [Practical Example: Privacy-Safe Location Reminder](#practical-example-privacy-safe-location-reminder)
+- [Sharing Shortcuts: What Recipients Should Know](#sharing-shortcuts-what-recipients-should-know)
+- [Security Best Practices for Developers](#security-best-practices-for-developers)
+- [Monitoring and Auditing Your Automations](#monitoring-and-auditing-your-automations)
+- [Advanced: Using Shortcuts with HomeKit and Siri](#advanced-using-shortcuts-with-homekit-and-siri)
+- [Real-World Threat Scenarios](#real-world-threat-scenarios)
+- [Practical: Auditing Your Shortcuts Library](#practical-auditing-your-shortcuts-library)
+- [Building Privacy-Safe Shortcuts: Real Example](#building-privacy-safe-shortcuts-real-example)
+
 ## Understanding Shortcuts Data Access Permissions
 
 When you run a shortcut, it operates with your explicit permissions. Each action within a shortcut may request access to specific data types. The key categories include:

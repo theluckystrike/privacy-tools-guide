@@ -41,6 +41,21 @@ Lockdown Mode is not a mainstream feature for typical users. It's designed speci
 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is iOS Lockdown Mode?](#what-is-ios-lockdown-mode)
+- [What Lockdown Mode Blocks](#what-lockdown-mode-blocks)
+- [How to Enable Lockdown Mode](#how-to-enable-lockdown-mode)
+- [Managing Exceptions](#managing-exceptions)
+- [Who Should Enable Lockdown Mode](#who-should-enable-lockdown-mode)
+- [Who Can Likely Skip This Feature](#who-can-likely-skip-this-feature)
+- [Practical Threat Assessment Framework](#practical-threat-assessment-framework)
+- [Compatibility and Performance Impact](#compatibility-and-performance-impact)
+- [Building Your Threat Model](#building-your-threat-model)
+- [Advanced Hardening Beyond Lockdown Mode](#advanced-hardening-beyond-lockdown-mode)
+- [What Lockdown Mode Does Not Protect Against](#what-lockdown-mode-does-not-protect-against)
+- [Ongoing Maintenance and Monitoring](#ongoing-maintenance-and-monitoring)
+
 ## What Is iOS Lockdown Mode?
 
 Lockdown Mode is an optional security feature that iPhones and iPads ship with starting from iOS 16. When enabled, it restricts several system capabilities that could potentially be exploited by sophisticated attackers, such as those working for state-sponsored spyware companies. This feature was originally designed for high-risk users including journalists, activists, business executives, and individuals who might be targeted by advanced persistent threats.

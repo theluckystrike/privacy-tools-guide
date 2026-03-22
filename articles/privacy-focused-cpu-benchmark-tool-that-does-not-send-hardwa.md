@@ -24,6 +24,21 @@ When you run a CPU benchmark, you expect performance metrics—not data exfiltra
 - **For privacy-conscious developers and**: power users, this telemetry creates several concerns.
 - **Phoronix supports tests like**: compress-7zip, branch-prediction, and simulatest to stress different CPU components.
 
+## Table of Contents
+
+- [The Problem with Mainstream CPU Benchmarks](#the-problem-with-mainstream-cpu-benchmarks)
+- [Privacy-Focused Alternatives](#privacy-focused-alternatives)
+- [Automating Local Benchmarks](#automating-local-benchmarks)
+- [Interpreting Results](#interpreting-results)
+- [Verifying Network Isolation](#verifying-network-isolation)
+- [Conclusion](#conclusion)
+- [Threat Model: Hardware Fingerprinting](#threat-model-hardware-fingerprinting)
+- [Advanced Benchmarking: Comparative Analysis](#advanced-benchmarking-comparative-analysis)
+- [Privacy-First Docker Benchmarking](#privacy-first-docker-benchmarking)
+- [CLI Benchmark Dashboard](#cli-benchmark-dashboard)
+- [Verifying Benchmark Isolation](#verifying-benchmark-isolation)
+- [Comparison Table: Local vs. Cloud Benchmarks](#comparison-table-local-vs-cloud-benchmarks)
+
 ## The Problem with Mainstream CPU Benchmarks
 
 Most consumer-grade benchmarking applications collect more than just CPU scores. Industry-standard tools like UserBenchmark, Geekbench, and others transmit detailed system specifications including processor model, motherboard BIOS versions, memory timings, and sometimes even unique hardware identifiers. This data builds hardware fingerprints that can be traced back to specific machines.

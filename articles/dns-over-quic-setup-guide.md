@@ -26,6 +26,26 @@ DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 
+## Table of Contents
+
+- [Why DoQ Over DoT or DoH](#why-doq-over-dot-or-doh)
+- [Public DoQ Resolvers](#public-doq-resolvers)
+- [Configuration on Linux (AdGuard Home)](#configuration-on-linux-adguard-home)
+- [Configuration on Linux (dnsproxy)](#configuration-on-linux-dnsproxy)
+- [Testing DoQ with q (Command-Line DNS Client)](#testing-doq-with-q-command-line-dns-client)
+- [Android Configuration](#android-configuration)
+- [Router-Level DoQ (OpenWrt)](#router-level-doq-openwrt)
+- [Verifying Encrypted DNS](#verifying-encrypted-dns)
+- [Selecting a DoQ Provider by Privacy Policy](#selecting-a-doq-provider-by-privacy-policy)
+- [macOS Configuration for DoQ](#macos-configuration-for-doq)
+- [Windows Configuration for DoQ](#windows-configuration-for-doq)
+- [iOS Configuration for DoQ](#ios-configuration-for-doq)
+- [Troubleshooting DoQ Connectivity Issues](#troubleshooting-doq-connectivity-issues)
+- [Performance Comparison: DoQ vs Other Protocols](#performance-comparison-doq-vs-other-protocols)
+- [Selecting Multiple DoQ Providers for Redundancy](#selecting-multiple-doq-providers-for-redundancy)
+- [Monitoring DoQ Usage and Performance](#monitoring-doq-usage-and-performance)
+- [Related Reading](#related-reading)
+
 ## Why DoQ Over DoT or DoH
 
 | Protocol | Transport | Port | Latency | Fingerprint risk |

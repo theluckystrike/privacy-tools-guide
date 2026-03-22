@@ -43,6 +43,22 @@ Choose Brave if you want the most aggressive tracker blocking, granular fingerpr
 # 2.
 - **Use Safari when**: Building for Apple ecosystems, needing consistent extension support, or prioritizing battery life and system integration.
 
+## Table of Contents
+
+- [Tracking Prevention Mechanisms](#tracking-prevention-mechanisms)
+- [Fingerprinting Resistance](#fingerprinting-resistance)
+- [Developer Tools and Extensions](#developer-tools-and-extensions)
+- [Network-Level Privacy](#network-level-privacy)
+- [Practical Recommendations](#practical-recommendations)
+- [Detailed Feature Comparison Matrix](#detailed-feature-comparison-matrix)
+- [Platform-Specific Considerations](#platform-specific-considerations)
+- [Real-World Privacy Auditing](#real-world-privacy-auditing)
+- [Extension Management and Security](#extension-management-and-security)
+- [iCloud Private Relay Nuances](#icloud-private-relay-nuances)
+- [Performance and System Resource Comparison](#performance-and-system-resource-comparison)
+- [Migration Paths](#migration-paths)
+- [Final Recommendation](#final-recommendation)
+
 ## Tracking Prevention Mechanisms
 
 ### Safari's Intelligent Tracking Prevention

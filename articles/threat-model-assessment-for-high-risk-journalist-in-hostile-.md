@@ -40,6 +40,19 @@ Create a threat model by assessing your adversaries' capabilities (state surveil
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Threat ecosystem](#understanding-the-threat-ecosystem)
+- [Building Your Threat Model](#building-your-threat-model)
+- [Practical Countermeasures](#practical-countermeasures)
+- [Incident Response Planning](#incident-response-planning)
+- [Signal Verification and Trust Models](#signal-verification-and-trust-models)
+- [Physical Countermeasures](#physical-countermeasures)
+- [Asset Categorization and Separation](#asset-categorization-and-separation)
+- [Emergency Preparation](#emergency-preparation)
+- [Long-Term Operational Sustainability](#long-term-operational-sustainability)
+- [Resources and Support](#resources-and-support)
+
 ## Understanding the Threat ecosystem
 
 Journalists operating in hostile countries face adversaries with significant resources, including state-level actors, intelligence agencies, and coordinated non-state groups. Your threat model must account for adversaries capable of:

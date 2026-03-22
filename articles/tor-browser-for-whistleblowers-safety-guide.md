@@ -40,6 +40,13 @@ Whistleblowers face unique challenges when attempting to report misconduct secur
 - **Resist Fingerprinting**: The `privacy.resistFingerprinting` preference should remain enabled.
 - **Use dedicated devices when possible**: A separate machine or TAILS USB for whistleblower activities prevents cross-contamination from your normal browsing patterns.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Endpoint Security Considerations](#endpoint-security-considerations)
+- [Advanced Attack Vectors Against Tor Users](#advanced-attack-vectors-against-tor-users)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

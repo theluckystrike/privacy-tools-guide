@@ -51,6 +51,24 @@ WireGuard is the best VPN protocol for most Linux desktop users in 2026, deliver
 - **Create namespace sudo ip**: netns add vpn_only # 2.
 - **Move to namespaces sudo**: ip link set veth_vpn netns vpn_only sudo ip netns exec vpn_only ip addr add 10.0.0.2/24 dev veth_vpn sudo ip addr add 10.0.0.1/24 dev veth_host # 4.
 
+## Table of Contents
+
+- [Why Linux Users Need a VPN](#why-linux-users-need-a-vpn)
+- [Protocol Options for Linux](#protocol-options-for-linux)
+- [Setting Up Your VPN](#setting-up-your-vpn)
+- [Evaluating VPN Providers for Development Work](#evaluating-vpn-providers-for-development-work)
+- [Self-Hosted VPN Options](#self-hosted-vpn-options)
+- [Performance Considerations](#performance-considerations)
+- [Advanced WireGuard Kernel Integration](#advanced-wireguard-kernel-integration)
+- [OpenVPN vs WireGuard Technical Comparison](#openvpn-vs-wireguard-technical-comparison)
+- [Linux Distribution-Specific Optimizations](#linux-distribution-specific-optimizations)
+- [Advanced Routing Configurations](#advanced-routing-configurations)
+- [VPN Provider Technical Evaluation](#vpn-provider-technical-evaluation)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Self-Hosting vs Commercial Trade-offs](#self-hosting-vs-commercial-trade-offs)
+- [Troubleshooting Common VPN Issues on Linux](#troubleshooting-common-vpn-issues-on-linux)
+- [Related Reading](#related-reading)
+
 ## Why Linux Users Need a VPN
 
 Linux users often have different privacy and security needs than mainstream desktop users. Many developers work with sensitive APIs, access cloud infrastructure, or handle proprietary code. A VPN adds a critical layer of protection when working from cafes, conferences, or hotels.

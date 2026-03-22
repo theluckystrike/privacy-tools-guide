@@ -40,6 +40,23 @@ This review examines Proton Pass passkeys support in 2026—its technical capabi
 - **If you require extensive**: automation or custom integrations, Bitwarden's architecture may better suit those needs.
 - **For localhost development**: use "localhost" (not "127.0.0.1").
 
+## Table of Contents
+
+- [Passkeys Implementation Overview](#passkeys-implementation-overview)
+- [Developer Integration Considerations](#developer-integration-considerations)
+- [Passkey Management via CLI](#passkey-management-via-cli)
+- [Security Model Analysis](#security-model-analysis)
+- [Practical Limitations](#practical-limitations)
+- [Comparison with Competing Managers](#comparison-with-competing-managers)
+- [Passkey Testing and Validation Framework](#passkey-testing-and-validation-framework)
+- [Troubleshooting Common Passkey Issues](#troubleshooting-common-passkey-issues)
+- [Migration Path from Passwords to Passkeys](#migration-path-from-passwords-to-passkeys)
+- [Passkey Backup and Recovery Strategies](#passkey-backup-and-recovery-strategies)
+- [Performance and Latency Considerations](#performance-and-latency-considerations)
+- [Compliance and Regulation](#compliance-and-regulation)
+- [Advanced: Building Custom Passkey Managers](#advanced-building-custom-passkey-managers)
+- [Future Roadmap Expectations](#future-roadmap-expectations)
+
 ## Passkeys Implementation Overview
 
 Proton Pass supports the FIDO2/WebAuthn standard for passwordless authentication, allowing users to replace traditional passwords with cryptographic credentials stored in the vault. As of 2026, the implementation covers both platform authenticators (Windows Hello, Touch ID, biometric unlock) and cross-platform synchronization via Proton's infrastructure.

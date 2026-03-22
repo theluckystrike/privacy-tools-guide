@@ -41,6 +41,20 @@ The Battery Status API exposes your device's battery level, charging status, and
 - **You can disable Battery**: API access by blocking JavaScript or using privacy extensions, though most modern browsers have restricted or removed this API due to privacy concerns.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is the Battery Status API?](#what-is-the-battery-status-api)
+- [How Battery API Enables Fingerprinting](#how-battery-api-enables-fingerprinting)
+- [Code Example: Battery Fingerprinting in Action](#code-example-battery-fingerprinting-in-action)
+- [Browser Implementation Differences](#browser-implementation-differences)
+- [Privacy Implications](#privacy-implications)
+- [Protecting Against Battery API Tracking](#protecting-against-battery-api-tracking)
+- [What Developers Should Consider](#what-developers-should-consider)
+- [Detecting Battery API Access in Your Codebase](#detecting-battery-api-access-in-your-codebase)
+- [Advanced: Reducing Fingerprinting Vectors Fully](#advanced-reducing-fingerprinting-vectors-fully)
+- [Testing Battery API Behavior Across Browsers](#testing-battery-api-behavior-across-browsers)
+- [Real-World Impact: Tracking Studies](#real-world-impact-tracking-studies)
+
 ## What Is the Battery Status API?
 
 The Battery Status API, also known as the Battery Manager API, provides JavaScript access to battery information on client devices. Implemented in most modern browsers, it exposes four key properties:
@@ -280,10 +294,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
-- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
-- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
-- [Gamepad Api Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
-
+- [Optimize CalyxOS Battery Life with Privacy Features Enabled](/privacy-tools-guide/how-to-optimize-calyx-os-battery-life-with-privacy-features-/)
+- [Device Memory API Fingerprinting How Ram Amount Narrows](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Wireguard Android Battery Optimization Settings: Breaking](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
+- [Topics API Chrome Replacement For Cookies How It Tracks](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
+- [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

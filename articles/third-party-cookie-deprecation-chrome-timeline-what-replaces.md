@@ -202,6 +202,15 @@ Monitor Google's official deprecation timeline and the W3C Privacy Community Gro
 
 ## Browser-Specific Cookie Handling in 2026
 
+## Table of Contents
+
+- [Browser-Specific Cookie Handling in 2026](#browser-specific-cookie-handling-in-2026)
+- [Deprecation Impact By Industry](#deprecation-impact-by-industry)
+- [Financial Impact Assessment](#financial-impact-assessment)
+- [A/B Testing Without Third-Party Cookies](#ab-testing-without-third-party-cookies)
+- [Cross-Browser Consistency Strategies](#cross-browser-consistency-strategies)
+- [Compliance and Consent With New Approaches](#compliance-and-consent-with-new-approaches)
+
 Different browsers implement privacy changes differently:
 
 ### Chrome: Privacy Sandbox APIs

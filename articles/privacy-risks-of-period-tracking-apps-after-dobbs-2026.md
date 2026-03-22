@@ -22,6 +22,21 @@ Period tracking apps are surveillance tools collecting intimate reproductive dat
 
 - **Limitation**: Loss of health tracking benefits; no data for your own medical decision-making
 
+## Table of Contents
+
+- [Checking Your Current Privacy Exposure](#checking-your-current-privacy-exposure)
+- [Why Period Tracking Requires Extreme Privacy Caution](#why-period-tracking-requires-extreme-privacy-caution)
+- [What Leading Apps Actually Collect and Retain](#what-leading-apps-actually-collect-and-retain)
+- [Known Law Enforcement Access and Legal Precedents](#known-law-enforcement-access-and-legal-precedents)
+- [Secure Alternatives](#secure-alternatives)
+- [Checking Your Current Privacy Exposure](#checking-your-current-privacy-exposure)
+- [Feature and Privacy Comparison](#feature-and-privacy-comparison)
+- [Data Subpoena and Law Enforcement Precedent](#data-subpoena-and-law-enforcement-precedent)
+- [Jurisdiction Lookup: Your Abortion Legal Risk](#jurisdiction-lookup-your-abortion-legal-risk)
+- [Practical Data Protection: Three Threat Models](#practical-data-protection-three-threat-models)
+- [Forced Data Deletion Checklist](#forced-data-deletion-checklist)
+- [Making Your Choice](#making-your-choice)
+
 ## Checking Your Current Privacy Exposure
 
 If you use Flo, Clue, or Natural Cycles:

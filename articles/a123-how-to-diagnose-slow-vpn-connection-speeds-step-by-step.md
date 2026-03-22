@@ -43,6 +43,18 @@ This guide walks you through a systematic, step-by-step diagnostic process to id
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding VPN Speed Fundamentals](#understanding-vpn-speed-fundamentals)
+- [Step 1: Establish Your Baseline Speed](#step-1-establish-your-baseline-speed)
+- [Step 2: Test Multiple Server Locations](#step-2-test-multiple-server-locations)
+- [Step 3: Analyze Protocol Performance](#step-3-analyze-protocol-performance)
+- [Step 4: Check for Packet Loss and Latency Issues](#step-4-check-for-packet-loss-and-latency-issues)
+- [Step 5: Monitor Bandwidth and Throttling](#step-5-monitor-bandwidth-and-throttling)
+- [Step 6: Optimize Your VPN Configuration](#step-6-optimize-your-vpn-configuration)
+- [Common Causes and Quick Fixes](#common-causes-and-quick-fixes)
+- [When to Contact Your VPN Provider](#when-to-contact-your-vpn-provider)
+
 ## Understanding VPN Speed Fundamentals
 
 Before examining diagnostics, it's essential to understand what affects VPN speed in the first place. When you connect to a VPN, your traffic is encrypted, encapsulated, and routed through an additional server. This process adds latency and reduces bandwidth compared to a direct connection.

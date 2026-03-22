@@ -40,6 +40,22 @@ Hidden tracking devices on vehicles represent a significant privacy concern for 
 - **Around the fuse box**: (if located in cabin) # 4.
 - **Whether you're protecting corporate**: assets, maintaining personal privacy, or conducting due diligence on a used vehicle, knowing how to detect and remove these devices is an essential skill.
 
+## Table of Contents
+
+- [Understanding GPS Tracking Devices](#understanding-gps-tracking-devices)
+- [Physical Inspection: The First Line of Defense](#physical-inspection-the-first-line-of-defense)
+- [Technical Detection Methods](#technical-detection-methods)
+- [Using Detection Apps](#using-detection-apps)
+- [Removing Tracking Devices](#removing-tracking-devices)
+- [Preventive Measures](#preventive-measures)
+- [Understanding Hardwired Tracker Installation](#understanding-hardwired-tracker-installation)
+- [Advanced Detection: RF Analysis Tools](#advanced-detection-rf-analysis-tools)
+- [Legal Implications of Detection and Removal](#legal-implications-of-detection-and-removal)
+- [Documented Removal Procedures](#documented-removal-procedures)
+- [Preventing Future Tracking](#preventing-future-tracking)
+- [Case Study: Professional Debugging Report](#case-study-professional-debugging-report)
+- [When to Seek Professional Help](#when-to-seek-professional-help)
+
 ## Understanding GPS Tracking Devices
 
 Modern tracking devices fall into several categories, each with different detection signatures. Passive GPS loggers record location data to internal storage and must be physically retrieved to access the data. Active GPS transmitters continuously broadcast location data via cellular networks, GPS/GNSS, or radio frequencies. OBD-II plug-in trackers connect directly to the vehicle's diagnostic port and draw power from the car's electrical system. Bluetooth trackers like Apple AirTags and Tile devices use short-range wireless protocols to report location.

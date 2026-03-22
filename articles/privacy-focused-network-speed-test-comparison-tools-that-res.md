@@ -25,6 +25,21 @@ When you run a speed test, your browser sends data to a remote server that measu
 - **This guide examines privacy-focused**: alternatives and shows you how to implement your own speed test infrastructure.
 - **This information builds detailed**: profiles used for targeted advertising and sold to network analysis companies.
 
+## Table of Contents
+
+- [Why Standard Speed Tests Collect Your Data](#why-standard-speed-tests-collect-your-data)
+- [Open-Source Speed Test Solutions](#open-source-speed-test-solutions)
+- [Building a Custom Speed Test Server](#building-a-custom-speed-test-server)
+- [Evaluating Privacy Policies](#evaluating-privacy-policies)
+- [Privacy-Preserving Alternatives](#privacy-preserving-alternatives)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Advanced Implementation: Distributed Testing Network](#advanced-implementation-distributed-testing-network)
+- [Threat Model: Speed Test Data Exposure](#threat-model-speed-test-data-exposure)
+- [Performance Comparison: Tools Tested](#performance-comparison-tools-tested)
+- [Building Measurement Dashboards](#building-measurement-dashboards)
+- [Speed Test Accuracy and Limitations](#speed-test-accuracy-and-limitations)
+- [Regulatory Compliance and Data Protection](#regulatory-compliance-and-data-protection)
+
 ## Why Standard Speed Tests Collect Your Data
 
 Commercial speed test providers operate on advertising revenue models. Your test results contain valuable metadata: your ISP, location, connection type, and performance metrics. This information builds detailed profiles used for targeted advertising and sold to network analysis companies. Some providers retain this data indefinitely, creating permanent records of your browsing patterns and network behavior.

@@ -38,6 +38,13 @@ This guide covers tools and workflows for teams ranging from 2 people to 50.
 - **The Teams plan (~$3/user/month)**: supports unlimited users with advanced sharing and audit logs.
 - **No plaintext over chat**: zero credentials sent via Slack, email, or SMS
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why This Matters](#why-this-matters)
+- [The Core Requirements](#the-core-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

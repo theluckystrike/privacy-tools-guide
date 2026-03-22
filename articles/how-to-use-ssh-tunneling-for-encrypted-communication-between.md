@@ -60,6 +60,14 @@ Firefox has built-in SOCKS proxy settings in Preferences.
 - **This is useful when**: the destination service exists on the remote network but isn't directly accessible to you.
 - **A practical use case**: running a webhook receiver locally during development.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting SSH Tunnels](#troubleshooting-ssh-tunnels)
+- [Advanced Pattern: Recursive Tunneling](#advanced-pattern-recursive-tunneling)
+- [Threat Model: SSH Tunneling Security Assumptions](#threat-model-ssh-tunneling-security-assumptions)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

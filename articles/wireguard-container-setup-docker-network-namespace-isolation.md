@@ -39,6 +39,19 @@ Container overhead is minimal**: typically under 1% throughput reduction compare
 - **The `DNS` field tells**: WireGuard to configure the container's resolver to use the VPN server's DNS, preventing queries from leaking to your ISP.
 - **Use the container network**: sharing approach to route different applications through different tunnels.
 
+## Table of Contents
+
+- [Why Run WireGuard in Docker?](#why-run-wireguard-in-docker)
+- [Prerequisites](#prerequisites)
+- [Basic WireGuard Container Setup](#basic-wireguard-container-setup)
+- [Network Namespace Isolation](#network-namespace-isolation)
+- [Routing Specific Traffic Through the VPN](#routing-specific-traffic-through-the-vpn)
+- [Using Docker Compose for Simplified Management](#using-docker-compose-for-simplified-management)
+- [Preventing DNS Leaks](#preventing-dns-leaks)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+- [Related Reading](#related-reading)
+
 ## Why Run WireGuard in Docker?
 
 Running WireGuard as a container offers several advantages. First, you gain process isolation — WireGuard runs in its own container environment, separated from your host system. Second, Docker's networking capabilities make it easy to route specific traffic through the VPN tunnel. Third, containerization simplifies deployment and migration across different systems.

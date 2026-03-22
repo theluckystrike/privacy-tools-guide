@@ -31,6 +31,19 @@ This comparison targets developers and power users who need CLI access, API inte
 
 It depends on your background.
 
+## Table of Contents
+
+- [Security Architecture Comparison](#security-architecture-comparison)
+- [CLI Tools: Developer Experience](#cli-tools-developer-experience)
+- [Self-Hosting and Enterprise Features](#self-hosting-and-enterprise-features)
+- [Pricing in 2026](#pricing-in-2026)
+- [Audit Trail and Compliance](#audit-trail-and-compliance)
+- [Threat Model: What Each Architecture Protects Against](#threat-model-what-each-architecture-protects-against)
+- [Migration Between Platforms](#migration-between-platforms)
+- [Two-Factor Authentication Integration](#two-factor-authentication-integration)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Verdict](#verdict)
+
 ## Security Architecture Comparison
 
 ### 1Password

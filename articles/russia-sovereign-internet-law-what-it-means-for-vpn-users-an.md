@@ -40,6 +40,22 @@ Russia's Sovereign Internet Law (2019) enables the government to block foreign w
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Use NaiveProxy**: Shadowsocks with obfuscation, or self-hosted Snowflake bridges to bypass DPI.
 
+## Table of Contents
+
+- [What is the Sovereign Internet Law?](#what-is-the-sovereign-internet-law)
+- [How the Law Affects VPN Functionality](#how-the-law-affects-vpn-functionality)
+- [Impact on Privacy for International Users](#impact-on-privacy-for-international-users)
+- [Practical Protections for VPN Users](#practical-protections-for-vpn-users)
+- [The Broader Regulatory Framework](#the-broader-regulatory-framework)
+- [What to Watch in 2026](#what-to-watch-in-2026)
+- [Advanced Evasion Techniques for 2026](#advanced-evasion-techniques-for-2026)
+- [Infrastructure-Level Considerations](#infrastructure-level-considerations)
+- [Pre-Positioning Credentials and Backups](#pre-positioning-credentials-and-backups)
+- [Staying Informed About Blocking Updates](#staying-informed-about-blocking-updates)
+- [Multi-Layer Protection for Critical Communications](#multi-layer-protection-for-critical-communications)
+- [Living Decentralized in Russia](#living-decentralized-in-russia)
+- [Assessing Your Specific Risk](#assessing-your-specific-risk)
+
 ## What is the Sovereign Internet Law?
 
 The Federal Law No. 90-FZ, commonly known as the Sovereign Internet Law, was enacted in Russia in November 2019. The legislation requires internet service providers (ISPs) to install technical equipment that allows the Russian authorities to filter web traffic and block access to certain resources. In essence, it creates the technical infrastructure for Russia to disconnect from the global internet if deemed necessary.

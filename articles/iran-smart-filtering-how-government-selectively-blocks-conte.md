@@ -11,7 +11,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,6 +26,18 @@ Iran operates one of the most sophisticated internet filtering systems in the wo
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [How Iran's Smart Filtering Works](#how-irans-smart-filtering-works)
+- [Detection Evasion Techniques](#detection-evasion-techniques)
+- [Building Resilient Applications](#building-resilient-applications)
+- [Technical Considerations](#technical-considerations)
+- [ISP-Level Monitoring and Metadata](#isp-level-monitoring-and-metadata)
+- [Bridge Selection and Server Rotation](#bridge-selection-and-server-rotation)
+- [Building Fault-Tolerant Applications](#building-fault-tolerant-applications)
+- [Ethical and Legal Considerations](#ethical-and-legal-considerations)
+- [Monitoring Policy Changes](#monitoring-policy-changes)
 
 ## How Iran's Smart Filtering Works
 
@@ -412,11 +425,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Iran Whatsapp Restrictions How Government Monitors](/privacy-tools-guide/iran-whatsapp-restrictions-how-government-monitors-and-limit/)
+- [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
+- [China Golden Shield Project How Censorship Detection Works](/privacy-tools-guide/china-golden-shield-project-how-censorship-detection-works-t/)
 - [Turkey Social Media Censorship How Government Blocks Twitter](/privacy-tools-guide/turkey-social-media-censorship-how-government-blocks-twitter/)
-- [Iran Whatsapp Restrictions How Government Monitors And Limit](/privacy-tools-guide/iran-whatsapp-restrictions-how-government-monitors-and-limit/)
-- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
-- [Privacy Badger Vs Ublock Origin Which Blocks More Trackers 2](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)
-- [Email Privacy Act Protections When Government Needs Warrant](/privacy-tools-guide/email-privacy-act-protections-when-government-needs-warrant-/)
-
+- [Vpn That Works In Iran 2026 Tested And Confirmed](/privacy-tools-guide/vpn-that-works-in-iran-2026-tested-and-confirmed/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

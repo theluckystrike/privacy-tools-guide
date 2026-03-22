@@ -31,6 +31,14 @@ bitcoin-cli getnetworkinfo | grep -A 5 "addr"
 
 Look for `.onion` addresses in the local addresses list, confirming Tor-only connectivity.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Limitations and Honest Assessment](#limitations-and-honest-assessment)
+- [Defense-in-Depth for Serious Privacy](#defense-in-depth-for-serious-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

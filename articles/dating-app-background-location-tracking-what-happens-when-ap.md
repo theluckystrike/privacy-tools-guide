@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Dating App Background Location Tracking What Happens When"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,16 @@ Dating apps track your location continuously in the background through permissio
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Location-aware apps use this**: mechanism to periodically request location updates even after you've moved on to other applications.
 - **Breaches of location databases**: have occurred repeatedly, exposing users to real-world tracking.
+
+## Table of Contents
+
+- [How Background Location Tracking Works](#how-background-location-tracking-works)
+- [Technical Mechanisms of Background Tracking](#technical-mechanisms-of-background-tracking)
+- [What Dating Apps Actually Collect](#what-dating-apps-actually-collect)
+- [Privacy Implications and Risks](#privacy-implications-and-risks)
+- [Auditing and Controlling Background Location Access](#auditing-and-controlling-background-location-access)
+- [Technical Approaches for Privacy-Conscious Users](#technical-approaches-for-privacy-conscious-users)
+- [What Developers Should Consider](#what-developers-should-consider)
 
 ## How Background Location Tracking Works
 

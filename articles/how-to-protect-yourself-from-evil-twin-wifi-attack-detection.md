@@ -40,6 +40,14 @@ An evil twin attack occurs when a malicious actor sets up a fraudulent WiFi acce
 - **For developers and power**: users who frequently work on-the-go, understanding how to detect and protect against these attacks is essential.
 - **Attackers use software like Fluxion**: WiFi-Pumpkin, or even basic tools such as `hostapd` to create fake access points that appear identical to legitimate ones.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Monitoring with Wireshark Deep Packet Inspection](#advanced-monitoring-with-wireshark-deep-packet-inspection)
+- [Threat Modeling for Different Environments](#threat-modeling-for-different-environments)
+- [Monitoring Tools Comparison](#monitoring-tools-comparison)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

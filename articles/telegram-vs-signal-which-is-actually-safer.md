@@ -53,6 +53,17 @@ Signal is the safer choice if privacy is your primary concern: it uses end-to-en
 - **Signal uses end-to-end encryption**: by default. Every message, call, and file transfer is encrypted with the Signal Protocol (formerly TextSecure), which implements the Double Ratchet Algorithm.
 - **Telegram uses client-server encryption**: by default. Messages are encrypted in transit to Telegram's servers, but Telegram can theoretically access message content.
 
+## Table of Contents
+
+- [Encryption Architecture: The Fundamental Difference](#encryption-architecture-the-fundamental-difference)
+- [Cryptographic Implementation Details](#cryptographic-implementation-details)
+- [Metadata Collection: What Gets Logged](#metadata-collection-what-gets-logged)
+- [Code Verification: Testing Encryption Claims](#code-verification-testing-encryption-claims)
+- [Group Chat Security](#group-chat-security)
+- [Developer Considerations](#developer-considerations)
+- [Making Your Choice](#making-your-choice)
+- [Related Reading](#related-reading)
+
 ## Encryption Architecture: The Fundamental Difference
 
 The core distinction between Telegram and Signal lies in their encryption approaches.

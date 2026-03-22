@@ -49,6 +49,24 @@ When evaluating browser-based ad blocking solutions, developers and power users 
 - Create user stylesheet
 // 4.
 
+## Table of Contents
+
+- [How Brave's Built-In Ad Blocking Works](#how-braves-built-in-ad-blocking-works)
+- [Quick Comparison](#quick-comparison)
+- [uBlock Origin: The Extension Approach](#ublock-origin-the-extension-approach)
+- [Performance Comparison](#performance-comparison)
+- [Filter List Management](#filter-list-management)
+- [Integration with Developer Workflows](#integration-with-developer-workflows)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Advanced Filter Customization for Each Solution](#advanced-filter-customization-for-each-solution)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Debugging Network Issues with Each Tool](#debugging-network-issues-with-each-tool)
+- [Blocking Evasion and Fingerprinting Techniques](#blocking-evasion-and-fingerprinting-techniques)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Testing Your Ad Blocker Effectiveness](#testing-your-ad-blocker-effectiveness)
+- [Migration Path: Switching Solutions](#migration-path-switching-solutions)
+- [Performance Monitoring Over Time](#performance-monitoring-over-time)
+
 ## How Brave's Built-In Ad Blocking Works
 
 Brave Browser ships with a built-in ad blocker called Shields, which operates at the network level using Rust-based request blocking. The engine compiles filter lists into efficient data structures, checking each network request against these rules before the request leaves your browser.

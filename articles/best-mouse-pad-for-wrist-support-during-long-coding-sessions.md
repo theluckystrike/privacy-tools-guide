@@ -49,6 +49,19 @@ Key features:
 - **A quality mouse pad with proper wrist support isn't just a nice-to-have**: it's an essential tool for protecting your health and maintaining productivity during long coding sessions.
 - **Memory Foam Wrist Rest**: Pads Memory foam mouse pads conform to your wrist's shape, providing personalized support.
 
+## Table of Contents
+
+- [Why Wrist Support Matters for Developers](#why-wrist-support-matters-for-developers)
+- [Types of Wrist-Support Mouse Pads](#types-of-wrist-support-mouse-pads)
+- [Top Recommendations for Developers](#top-recommendations-for-developers)
+- [How to Choose the Right Mouse Pad](#how-to-choose-the-right-mouse-pad)
+- [Additional Ergonomic Tips for Developers](#additional-ergonomic-tips-for-developers)
+- [Detailed Product Recommendations with Pricing](#detailed-product-recommendations-with-pricing)
+- [Measuring Your Desk for the Right Mouse Pad](#measuring-your-desk-for-the-right-mouse-pad)
+- [Wrist Pain Red Flags and When to Seek Help](#wrist-pain-red-flags-and-when-to-seek-help)
+- [Setup Configuration for Maximum Wrist Comfort](#setup-configuration-for-maximum-wrist-comfort)
+- [Durability and Maintenance](#durability-and-maintenance)
+
 ## Why Wrist Support Matters for Developers
 
 Programmers spend an average of 6-8 hours per day using a mouse. Without proper support, this repetitive motion can cause:

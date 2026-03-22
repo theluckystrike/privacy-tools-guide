@@ -39,6 +39,15 @@ Tor Browser implements multiple layers of cookie isolation designed to prevent c
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for Maximum Protection](#best-practices-for-maximum-protection)
+- [Advanced Configuration for Developers](#advanced-configuration-for-developers)
+- [Comparison: Cookie Protection Methods](#comparison-cookie-protection-methods)
+- [Migrating Away from Tracker-Heavy Sites](#migrating-away-from-tracker-heavy-sites)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

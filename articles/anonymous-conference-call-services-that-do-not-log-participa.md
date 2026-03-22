@@ -42,6 +42,21 @@ When organizing sensitive discussions—whether for business negotiations, whist
 - **Most mainstream services log caller IDs**: maintain call records, and store metadata that can be subpoenaed or breached.
 - **Use authentication mechanisms like**: JWT tokens for controlled access without exposing participant identities.
 
+## Table of Contents
+
+- [Understanding Conference Call Privacy Risks](#understanding-conference-call-privacy-risks)
+- [Signal Private Messenger: Voice and Video Calls](#signal-private-messenger-voice-and-video-calls)
+- [Jitsi Meet: Self-Hosted Conference Solutions](#jitsi-meet-self-hosted-conference-solutions)
+- [Wickr: Enterprise-Grade Secure Communications](#wickr-enterprise-grade-secure-communications)
+- [Element (Matrix Protocol): Decentralized Communications](#element-matrix-protocol-decentralized-communications)
+- [Practical Implementation: Building Anonymous Conference Links](#practical-implementation-building-anonymous-conference-links)
+- [Security Considerations](#security-considerations)
+- [Choosing the Right Service](#choosing-the-right-service)
+- [Getting Started](#getting-started)
+- [Automated Privacy Enforcement](#automated-privacy-enforcement)
+- [Secure Link Distribution](#secure-link-distribution)
+- [Verification Without Exposure](#verification-without-exposure)
+
 ## Understanding Conference Call Privacy Risks
 
 Traditional conference call services collect varying amounts of participant data. The most common privacy concerns include:

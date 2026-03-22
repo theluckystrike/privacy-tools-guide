@@ -38,6 +38,15 @@ When governments restrict or completely shut down internet access, maintaining c
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Hardware Requirements](#hardware-requirements)
+- [Operational Security Considerations](#operational-security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Redundancy: Multiple Satellite Providers](#advanced-redundancy-multiple-satellite-providers)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

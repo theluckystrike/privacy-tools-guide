@@ -40,6 +40,25 @@ Tor Browser stops font fingerprinting by normalizing fonts across all users—th
 - **This reduces the uniqueness**: of your browser fingerprint significantly but may cause some websites to display fallback fonts.
 - **Setting these to common**: values like 1024x768 or 1280x720 helps blend your browser with other users.
 
+## Table of Contents
+
+- [Understanding Font Fingerprinting](#understanding-font-fingerprinting)
+- [Font Restriction Levels](#font-restriction-levels)
+- [The Letterboxing Defense](#the-letterboxing-defense)
+- [Font Loading Restrictions](#font-loading-restrictions)
+- [Configuring Advanced Font Settings](#configuring-advanced-font-settings)
+- [Platform-Specific Considerations](#platform-specific-considerations)
+- [Testing Your Font Fingerprint](#testing-your-font-fingerprint)
+- [Best Practices for Maximum Protection](#best-practices-for-maximum-protection)
+- [Font Fingerprinting Attack Vectors](#font-fingerprinting-attack-vectors)
+- [Security Levels Comparison](#security-levels-comparison)
+- [Technical Deep Dive: Font Normalization](#technical-deep-dive-font-normalization)
+- [Identifying Font Fingerprinting Attempts](#identifying-font-fingerprinting-attempts)
+- [Testing Specific Font Protection](#testing-specific-font-protection)
+- [Complementary Protections](#complementary-protections)
+- [Font Configuration for Maximum Privacy](#font-configuration-for-maximum-privacy)
+- [Monitoring Font Fingerprinting Threats](#monitoring-font-fingerprinting-threats)
+
 ## Understanding Font Fingerprinting
 
 When a website loads text, the browser must render that text using available fonts. Each operating system ships with different fonts pre-installed, and users often install additional fonts for design work, programming, or personal preference. This creates a unique combination that can identify you across sessions and websites.

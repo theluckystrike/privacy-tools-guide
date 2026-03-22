@@ -40,6 +40,21 @@ Link decoration is a tracking technique where query parameters like `utm_source`
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is Link Decoration?](#what-is-link-decoration)
+- [UTM Parameters: The Marketing Tracking Standard](#utm-parameters-the-marketing-tracking-standard)
+- [Click IDs: The Advertising Ecosystem's Tracking Infrastructure](#click-ids-the-advertising-ecosystems-tracking-infrastructure)
+- [Identifying Link Decoration in the Wild](#identifying-link-decoration-in-the-wild)
+- [Mitigating Link Decoration Tracking](#mitigating-link-decoration-tracking)
+- [Advanced Detection: Identifying Hidden Tracking Parameters](#advanced-detection-identifying-hidden-tracking-parameters)
+- [Server-Side Parameter Cleaning Strategies](#server-side-parameter-cleaning-strategies)
+- [Privacy-Focused Link Shortener Alternatives](#privacy-focused-link-shortener-alternatives)
+- [Browser Extension Implementation Details](#browser-extension-implementation-details)
+- [Click ID Ecosystem Deep Dive](#click-id-ecosystem-deep-dive)
+- [Mitigating Tracking in Analytics Implementations](#mitigating-tracking-in-analytics-implementations)
+- [Documentation: Tracking Parameter Inventory](#documentation-tracking-parameter-inventory)
+
 ## What Is Link Decoration?
 
 Link decoration involves appending specific query parameters to URLs. These parameters serve no functional purpose for the destination resource—they exist solely to transmit information about the link's origin, the marketing campaign that generated it, or the user's journey across sites.

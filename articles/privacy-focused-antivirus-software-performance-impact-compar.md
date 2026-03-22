@@ -28,6 +28,18 @@ This article examines the system resource impact of leading privacy-focused anti
 - **Building..." $(MAKE) $(TARGET) ```**: The memory footprint remains remarkably low, making it suitable for containerized environments.
 - **A typical Docker scan**: container uses approximately 150MB RAM.
 
+## Table of Contents
+
+- [Understanding Antivirus Resource Consumption](#understanding-antivirus-resource-consumption)
+- [Benchmarking Methodology](#benchmarking-methodology)
+- [Privacy-Focused Solutions Tested](#privacy-focused-solutions-tested)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Configuration Recommendations](#configuration-recommendations)
+- [On-Access Scanning vs. On-Demand Scanning](#on-access-scanning-vs-on-demand-scanning)
+- [Privacy Data Collection by Antivirus Vendors](#privacy-data-collection-by-antivirus-vendors)
+- [Developer Workflow Integration Patterns](#developer-workflow-integration-patterns)
+- [Conclusion](#conclusion)
+
 ## Understanding Antivirus Resource Consumption
 
 Antivirus software impacts system resources in several ways:

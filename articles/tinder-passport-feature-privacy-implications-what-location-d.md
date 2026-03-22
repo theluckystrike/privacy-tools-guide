@@ -41,6 +41,24 @@ Tinder Passport is a premium feature that allows users to manually set their loc
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Tinder Passport is a**: premium feature that allows users to manually set their location to any city worldwide, effectively bypassing the app's automatic geolocation.
 
+## Table of Contents
+
+- [How Tinder Passport Technically Works](#how-tinder-passport-technically-works)
+- [Location Data Points Exposed Through Passport](#location-data-points-exposed-through-passport)
+- [Server-Side Data Retention](#server-side-data-retention)
+- [Privacy Implications for Different Threat Models](#privacy-implications-for-different-threat-models)
+- [Technical Methods to Limit Location Exposure](#technical-methods-to-limit-location-exposure)
+- [What Tinder Sees Versus What You Expect](#what-tinder-sees-versus-what-you-expect)
+- [Account Implications and Detection](#account-implications-and-detection)
+- [Recommendations for Privacy-Conscious Users](#recommendations-for-privacy-conscious-users)
+- [Data Retention and Cross-Platform Sharing](#data-retention-and-cross-platform-sharing)
+- [Advanced Privacy Compromise Scenarios](#advanced-privacy-compromise-scenarios)
+- [Technical Detection Methods](#technical-detection-methods)
+- [Data Export and GDPR Requests](#data-export-and-gdpr-requests)
+- [Comparative Risk Analysis by Use Case](#comparative-risk-analysis-by-use-case)
+- [Alternatives to Passport](#alternatives-to-passport)
+- [Recommendations for Different Threat Models](#recommendations-for-different-threat-models)
+
 ## How Tinder Passport Technically Works
 
 When you activate Tinder Passport, the app stops relying on your device's GPS coordinates and instead uses a manually selected location. This involves several technical processes that expose different types of location data.

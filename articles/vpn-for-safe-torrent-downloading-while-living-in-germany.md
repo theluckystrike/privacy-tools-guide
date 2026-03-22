@@ -40,6 +40,19 @@ To torrent safely in Germany, use a VPN with a kill switch, a verified no-logs p
 - **Verify DNS leaks -**: Use dnsleaktest.com to ensure DNS requests go through the VPN 3.
 - **Test for WebRTC leaks**: - Disable WebRTC in your browser or use an extension 4.
 
+## Table of Contents
+
+- [Understanding the German Copyright Enforcement Market](#understanding-the-german-copyright-enforcement-market)
+- [What Makes a VPN Suitable for Torrenting](#what-makes-a-vpn-suitable-for-torrenting)
+- [VPN Protocol Comparison for Torrenting](#vpn-protocol-comparison-for-torrenting)
+- [Torrent Client Configuration](#torrent-client-configuration)
+- [Network-Level Protection](#network-level-protection)
+- [Legal Considerations](#legal-considerations)
+- [Threat Model for German Torrent Users](#threat-model-for-german-torrent-users)
+- [Alternatives to Torrenting](#alternatives-to-torrenting)
+- [Advanced VPN Configuration for Torrenting](#advanced-vpn-configuration-for-torrenting)
+- [Provider Recommendations by Jurisdiction](#provider-recommendations-by-jurisdiction)
+
 ## Understanding the German Copyright Enforcement Market
 
 German copyright law (Urheberrecht) differs significantly from other jurisdictions. The key differences that affect torrent users:

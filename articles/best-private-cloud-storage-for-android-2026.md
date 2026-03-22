@@ -42,6 +42,22 @@ Proton Drive and Filen offer zero-knowledge encrypted cloud storage on Android w
 - **Best for privacy-conscious users**: preferring European jurisdiction.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What Makes Cloud Storage Private?](#what-makes-cloud-storage-private)
+- [Top Solutions for Android](#top-solutions-for-android)
+- [Comparing the Options](#comparing-the-options)
+- [Developer Integration Patterns](#developer-integration-patterns)
+- [Choosing Your Solution](#choosing-your-solution)
+- [Real-World Performance Testing on Android](#real-world-performance-testing-on-android)
+- [Setting Up Automatic Backup on Android](#setting-up-automatic-backup-on-android)
+- [Cross-Device Synchronization Strategy](#cross-device-synchronization-strategy)
+- [Privacy-First Configuration Checklist](#privacy-first-configuration-checklist)
+- [Handling Sensitive Data (Healthcare, Finance)](#handling-sensitive-data-healthcare-finance)
+- [Troubleshooting Common Sync Issues](#troubleshooting-common-sync-issues)
+- [Comparing Total Cost of Ownership](#comparing-total-cost-of-ownership)
+- [Migration from Google Drive to Private Cloud Storage](#migration-from-google-drive-to-private-cloud-storage)
+
 ## What Makes Cloud Storage Private?
 
 Before evaluating solutions, understand the core attributes that define "private" cloud storage:

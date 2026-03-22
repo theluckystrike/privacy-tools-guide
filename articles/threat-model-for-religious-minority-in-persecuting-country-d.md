@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Threat Model For Religious Minority In Persecuting Country"
-description: "A practical threat modeling guide for religious minorities facing digital persecution. Covers risk assessment, encryption strategies, communication"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /threat-model-for-religious-minority-in-persecuting-country-d/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -39,6 +26,24 @@ Religious minorities in persecuting countries face state-level surveillance incl
 - **Use screen lock with**: short timeout # 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Threat ecosystem for Religious Minorities](#threat-ecosystem-for-religious-minorities)
+- [Risk Assessment Framework](#risk-assessment-framework)
+- [Communications Security](#communications-security)
+- [Data Protection and Encryption](#data-protection-and-encryption)
+- [Network Operational Security](#network-operational-security)
+- [Incident Response Planning](#incident-response-planning)
+- [Defense in Depth](#defense-in-depth)
+- [Community Coordination](#community-coordination)
+- [Technology Trade-offs for Religious Communities](#technology-trade-offs-for-religious-communities)
+- [Practical Defense Layers for High-Risk Contexts](#practical-defense-layers-for-high-risk-contexts)
+- [Healthcare and Safety Concerns](#healthcare-and-safety-concerns)
+- [Educational Continuity](#educational-continuity)
+- [Psychological and Social Support](#psychological-and-social-support)
+- [Long-term Survival Strategies](#long-term-survival-strategies)
+- [Ethical Considerations](#ethical-considerations)
 
 ## Threat ecosystem for Religious Minorities
 
@@ -453,11 +458,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
-- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
-- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
-
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Threat Model For Activist In Authoritarian Country Digital](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
+- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

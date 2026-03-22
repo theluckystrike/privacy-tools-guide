@@ -45,6 +45,30 @@ Session compromise:
 - **Do you have technical**: capacity for self-hosting? YES → Self-host Matrix (best control) NO → Continue 4.
 - **Is internet access reliable?**: YES → Signal (best usability) NO → Briar (mesh fallback) 5.
 
+## Table of Contents
+
+- [Understanding the Threat Model](#understanding-the-threat-model)
+- [Signal: The Gold Standard for Usability](#signal-the-gold-standard-for-usability)
+- [Session: Decentralized and Phone-Number-Free](#session-decentralized-and-phone-number-free)
+- [Matrix: Self-Hosted and Federated](#matrix-self-hosted-and-federated)
+- [Briar: Offline-First and Mesh-Networking](#briar-offline-first-and-mesh-networking)
+- [Practical Deployment Strategy](#practical-deployment-strategy)
+- [Operational Security Beyond Encryption](#operational-security-beyond-encryption)
+- [Detailed Tool Comparison Table](#detailed-tool-comparison-table)
+- [Threat Model Decision Tree](#threat-model-decision-tree)
+- [Real-World Deployment Examples](#real-world-deployment-examples)
+- [Group Size Implications](#group-size-implications)
+- [Device Security Interdependencies](#device-security-interdependencies)
+- [Emergency Procedures](#emergency-procedures)
+- [Tool Combinations for Maximum Resilience](#tool-combinations-for-maximum-resilience)
+- [Testing Your Communication Setup](#testing-your-communication-setup)
+- [Practical Deployment Examples](#practical-deployment-examples)
+- [Technical Hardening for Activists](#technical-hardening-for-activists)
+- [Operational Security Beyond Encryption](#operational-security-beyond-encryption)
+- [Training Materials for Activists](#training-materials-for-activists)
+- [Legal Considerations](#legal-considerations)
+- [Common Deployment Mistakes](#common-deployment-mistakes)
+
 ## Understanding the Threat Model
 
 Before selecting tools, activists must identify what they are protecting against. Common adversaries include:

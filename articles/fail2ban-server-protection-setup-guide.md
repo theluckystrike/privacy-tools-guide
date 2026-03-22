@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,6 +26,13 @@ A Linux server with SSH exposed to the internet will have thousands of brute-for
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers how fail2ban works**: install fail2ban, basic configuration, with specific setup instructions
 - **Pricing starts at $6**: with options for different team sizes
+
+## Table of Contents
+
+- [How Fail2ban Works](#how-fail2ban-works)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## How Fail2ban Works
 

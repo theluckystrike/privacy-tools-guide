@@ -213,6 +213,14 @@ Your server's Johannesburg IP becomes your exit IP — a legitimate SA address t
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Provider-Specific Setup: NordVPN for South Africa](#provider-specific-setup-nordvpn-for-south-africa)
+- [Streaming Service Detection Workarounds](#streaming-service-detection-workarounds)
+- [Speedtest Optimization](#speedtest-optimization)
+- [Bandwidth Optimization](#bandwidth-optimization)
+- [Account Requirements and Payment](#account-requirements-and-payment)
+
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.

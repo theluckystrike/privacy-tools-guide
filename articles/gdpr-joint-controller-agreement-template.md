@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 8
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Gdpr Joint Controller Agreement Template"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 8
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

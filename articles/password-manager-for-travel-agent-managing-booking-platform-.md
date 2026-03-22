@@ -40,6 +40,18 @@ Travel agents managing multiple booking platforms face a unique password managem
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Travel Agent's Credential Challenge](#the-travel-agents-credential-challenge)
+- [Choosing a Password Manager](#choosing-a-password-manager)
+- [Setting Up Your Vault Structure](#setting-up-your-vault-structure)
+- [CLI Workflow for Booking Platform Management](#cli-workflow-for-booking-platform-management)
+- [Handling API Keys for Booking Integrations](#handling-api-keys-for-booking-integrations)
+- [Team Access Management](#team-access-management)
+- [Security Practices for Travel Agency Credentials](#security-practices-for-travel-agency-credentials)
+- [Integration with Travel Agency Software](#integration-with-travel-agency-software)
+- [Getting Started](#getting-started)
+
 ## The Travel Agent's Credential Challenge
 
 Booking platforms differ from typical web applications in several ways. Most require API keys alongside traditional passwords, often maintain separate credentials for test and production environments, and frequently involve team-based access where multiple agents need varying permission levels. A single missed credential rotation or an accidentally shared password can compromise client bookings or expose sensitive passenger data.

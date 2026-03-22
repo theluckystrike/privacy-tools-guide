@@ -41,6 +41,22 @@ When a company mishandles your personal data or suffers a breach that exposes yo
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding FTC Jurisdiction Over Data Breaches](#understanding-ftc-jurisdiction-over-data-breaches)
+- [Documenting the Violation](#documenting-the-violation)
+- [Filing the FTC Complaint](#filing-the-ftc-complaint)
+- [What Happens After Filing](#what-happens-after-filing)
+- [Complementary Actions for Developers](#complementary-actions-for-developers)
+- [Prevention and Monitoring Tools](#prevention-and-monitoring-tools)
+- [State-Level Alternatives](#state-level-alternatives)
+- [Building a Breach Documentation Package](#building-a-breach-documentation-package)
+- [Timing Your Complaint](#timing-your-complaint)
+- [Post-Filing Actions](#post-filing-actions)
+- [Advanced: CFAA (Computer Fraud and Abuse Act) Angle](#advanced-cfaa-computer-fraud-and-abuse-act-angle)
+- [using Class Actions](#using-class-actions)
+- [Prevention and Monitoring After Filing](#prevention-and-monitoring-after-filing)
+
 ## Understanding FTC Jurisdiction Over Data Breaches
 
 The FTC enforces Section 5 of the FTC Act, which prohibits unfair and deceptive trade practices. This extends to companies that fail to protect consumer data or misrepresent their security practices. While the FTC does not pursue individual disputes, it uses complaints to identify patterns of behavior that indicate broader violations.

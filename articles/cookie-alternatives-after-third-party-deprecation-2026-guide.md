@@ -43,6 +43,14 @@ This isn't a hypothetical—the deprecation is complete and final. Every applica
 - **Implement server-side sessions for**: critical user state 4.
 - **Since first-party cookies still**: work across page loads on your domain, you can maintain session state and user preferences without cross-site tracking.
 
+## Table of Contents
+
+- [Why Third-Party Cookies Disappeared](#why-third-party-cookies-disappeared)
+- [Prerequisites](#prerequisites)
+- [Privacy and Compliance Implications](#privacy-and-compliance-implications)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Third-Party Cookies Disappeared
 
 Starting with Safari and Firefox in 2023, browsers progressively blocked third-party cookies. Chrome completed the phase-out in early 2025. The reasoning was straightforward: third-party cookies enabled cross-site tracking without meaningful user consent, creating privacy concerns and regulatory pressure under GDPR, CCPA, and similar legislation.

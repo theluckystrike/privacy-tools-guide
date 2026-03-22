@@ -39,6 +39,14 @@ Disable Windows Activity History through Settings (Privacy & security → Activi
 - **For maximum assurance**: use a full-disk wiper after disabling Activity History, as deleted files may remain recoverable through unallocated space analysis.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What is Windows Activity History](#what-is-windows-activity-history)
+- [Prerequisites](#prerequisites)
+- [Method 2: Group Policy Configuration (Windows 10 Pro / 11 Pro / Enterprise)](#method-2-group-policy-configuration-windows-10-pro-11-pro-enterprise)
+- [Advanced Persistence and Forensic Techniques](#advanced-persistence-and-forensic-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## What is Windows Activity History
 
 Windows Activity History collects a timeline of your computing activities, storing data about apps used, files opened, websites visited, and even voice commands issued. This information syncs across your Microsoft account devices and serves as the backbone for features like Timeline, which allows you to resume activities on other devices.

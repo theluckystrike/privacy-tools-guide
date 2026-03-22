@@ -42,6 +42,13 @@ This guide walks through setting up iperf3 for VPN benchmarking, explaining each
 - **Use 30-second minimum durations**: for reliable measurements.
 - **Ignoring server CPU limits**: causes false conclusions.
 
+## Table of Contents
+
+- [Why iperf3 for VPN Testing](#why-iperf3-for-vpn-testing)
+- [Prerequisites](#prerequisites)
+- [Advanced Testing Techniques](#advanced-testing-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Why iperf3 for VPN Testing
 
 iperf3 is a network throughput testing tool that runs as a client-server application. Unlike commercial speed tests, iperf3 lets you control every testing variable: test duration, parallel streams, protocol selection, buffer sizes, and directional testing. This control matters for VPN testing because you need to isolate VPN overhead from network limitations.

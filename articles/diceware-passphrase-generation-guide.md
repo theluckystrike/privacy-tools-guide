@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Diceware Passphrase Generation Guide"
@@ -23,7 +24,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -37,6 +39,17 @@ A passphrase like `correct-horse-battery-staple` is both memorable and cryptogra
 - **Absurd images stick better**: than coherent ones.
 - **For situations where you want certainty, use the Python `secrets` module implementation above**: it uses the OS's CSPRNG which is audited and tested against bias.
 - **Use additional protections like**: time-locked encryption for long-term secrets.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [What You Need](#what-you-need)
+- [Entropy Comparison: Passphrases vs Passwords](#entropy-comparison-passphrases-vs-passwords)
+- [When to Use Passphrases vs Random Passwords](#when-to-use-passphrases-vs-random-passwords)
+- [Threat Model: When Diceware Isn't Enough](#threat-model-when-diceware-isnt-enough)
+- [Advanced: Diceware with Passphrase Stretching](#advanced-diceware-with-passphrase-stretching)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## Prerequisites
 

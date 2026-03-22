@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -28,6 +29,14 @@ This guide covers full-drive encryption, hidden volumes, keyfile setup, and cros
 - **Click Select Device →**: pick your USB drive (e.g., `/dev/sdb`) 5.
 - **Choose Encrypt partition in**: place if data already exists, or Create encrypted volume and format it for a blank drive 6.
 - **Set a strong passphrase**: (25+ characters) or use a keyfile 8.
+
+## Table of Contents
+
+- [What VeraCrypt Provides](#what-veracrypt-provides)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## What VeraCrypt Provides
 

@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Proton Drive Sharing Links Privacy Review"
-description: "A technical review of Proton Drive sharing links examining link security, access controls, expiration options, privacy implications, and practical"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /proton-drive-sharing-links-privacy-review/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -39,6 +26,22 @@ Proton Drive offers sharing functionality that extends its end-to-end encryption
 - **For developers building privacy-focused**: applications and power users managing sensitive documents, understanding the security model behind Proton Drive sharing links is essential.
 - **The sharing link contains**: an embedded encryption key that the recipient's browser uses to decrypt the file locally.
 - **These are useful for**: distributing non-sensitive files widely but offer no access tracking or revocation capability beyond link rotation.
+
+## Table of Contents
+
+- [Sharing Link Architecture](#sharing-link-architecture)
+- [Link Types and Access Controls](#link-types-and-access-controls)
+- [Privacy Implications for Power Users](#privacy-implications-for-power-users)
+- [Technical Implementation Details](#technical-implementation-details)
+- [Comparing Privacy Models](#comparing-privacy-models)
+- [Practical Security Recommendations](#practical-security-recommendations)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Implementing Share Link Workflows for Teams](#implementing-share-link-workflows-for-teams)
+- [Threat Models and Risk Assessment](#threat-models-and-risk-assessment)
+- [Comparing Proton Drive to Alternatives](#comparing-proton-drive-to-alternatives)
+- [Security Best Practices for Share Links](#security-best-practices-for-share-links)
+- [Mobile and Cross-Platform Considerations](#mobile-and-cross-platform-considerations)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
 
 ## Sharing Link Architecture
 
@@ -327,11 +330,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [CryptDrive vs ProtonDrive Comparison](/privacy-tools-guide/crypt-drive-vs-proton-drive-comparison/)
-- [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
-- [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
-- [Proton Drive Bridge Desktop Integration Guide](/privacy-tools-guide/proton-drive-bridge-desktop-integration-guide/)
 - [Proton Drive Encrypted Storage Review](/privacy-tools-guide/proton-drive-encrypted-storage-review/)
-
+- [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
+- [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
+- [Filen vs Proton Drive Comparison 2026](/privacy-tools-guide/filen-vs-proton-drive-comparison-2026/)
+- [Tresorit Vs Proton Drive Comparison 2026](/privacy-tools-guide/tresorit-vs-proton-drive-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

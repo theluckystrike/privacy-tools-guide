@@ -40,6 +40,22 @@ Most home routers ship with weak default settings and outdated firmware. Your ro
 - **Install OpenWrt ``` Router**: Admin Panel → Firmware Update → Choose File Select OpenWrt .bin file for your model Install → Reboot ``` 5.
 - **Most home routers ship**: with weak default settings and outdated firmware.
 
+## Table of Contents
+
+- [Why Router Privacy Matters](#why-router-privacy-matters)
+- [Step 1: Change Default Admin Credentials](#step-1-change-default-admin-credentials)
+- [Step 2: Update Firmware to Latest Version](#step-2-update-firmware-to-latest-version)
+- [Step 3: Harden Firewall Settings](#step-3-harden-firewall-settings)
+- [Step 4: Configure DNS for Privacy](#step-4-configure-dns-for-privacy)
+- [Step 5: Set Up Guest Network with Isolation](#step-5-set-up-guest-network-with-isolation)
+- [Step 6: Disable Unnecessary Services](#step-6-disable-unnecessary-services)
+- [Step 7: VPN at Router Level](#step-7-vpn-at-router-level)
+- [Step 8: Install OpenWrt for Maximum Privacy Control](#step-8-install-openwrt-for-maximum-privacy-control)
+- [Network Monitoring and Logging](#network-monitoring-and-logging)
+- [Common Router Privacy Mistakes](#common-router-privacy-mistakes)
+- [Real-World Setup Checklist](#real-world-setup-checklist)
+- [Ongoing Maintenance](#ongoing-maintenance)
+
 ## Why Router Privacy Matters
 
 Your router sees all traffic from your household devices:

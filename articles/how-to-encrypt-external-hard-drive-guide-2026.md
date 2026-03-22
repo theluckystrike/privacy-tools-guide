@@ -49,6 +49,17 @@ Setup for External Drive:
 
 1.
 
+## Table of Contents
+
+- [Why External Drive Encryption Is Essential](#why-external-drive-encryption-is-essential)
+- [Encryption Tool Comparison](#encryption-tool-comparison)
+- [Encryption Tool Comparison Table](#encryption-tool-comparison-table)
+- [Prerequisites](#prerequisites)
+- [Performance Testing](#performance-testing)
+- [Enterprise Considerations](#enterprise-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why External Drive Encryption Is Essential
 
 External drives present unique security challenges compared to fixed disks:

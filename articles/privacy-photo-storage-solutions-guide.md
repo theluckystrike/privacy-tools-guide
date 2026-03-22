@@ -28,6 +28,14 @@ Google Photos and Apple iCloud analyze every photo you upload — detecting face
 - **This is useful if**: you have years of photos already on disk and want browsing capabilities without restructuring.
 - **Ente also offers an**: open-source self-hosted backend (`ente-server`) with your own storage, but the server setup is complex.
 
+## Table of Contents
+
+- [What Photo Services Analyze](#what-photo-services-analyze)
+- [Prerequisites](#prerequisites)
+- [Comparison Summary](#comparison-summary)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## What Photo Services Analyze
 
 **Google Photos**:

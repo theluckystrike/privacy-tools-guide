@@ -42,6 +42,19 @@ Clicking a phishing link triggers Chrome to resolve the domain, establish HTTPS,
 - **Change the compromised account password immediately**: use a device you trust (your phone on cellular data if you suspect your primary machine is compromised)
 2.
 
+## Table of Contents
+
+- [What Actually Happens When You Click](#what-actually-happens-when-you-click)
+- [Immediate Steps If You Clicked a Link](#immediate-steps-if-you-clicked-a-link)
+- [Understanding the Attack Vectors](#understanding-the-attack-vectors)
+- [How Chrome Safe Browsing Works (and Where It Fails)](#how-chrome-safe-browsing-works-and-where-it-fails)
+- [What Attackers Can Access Without You Entering Anything](#what-attackers-can-access-without-you-entering-anything)
+- [Prevention Strategies for Developers](#prevention-strategies-for-developers)
+- [How to Analyze a Suspicious URL Before Clicking](#how-to-analyze-a-suspicious-url-before-clicking)
+- [Checking If Your Credentials Were Compromised](#checking-if-your-credentials-were-compromised)
+- [Recovering from a Successful Phishing Attack](#recovering-from-a-successful-phishing-attack)
+- [Building Detection into Your Applications](#building-detection-into-your-applications)
+
 ## What Actually Happens When You Click
 
 The moment you click a malicious link, Chrome initiates a request to the attacker's server. Here's the typical sequence:

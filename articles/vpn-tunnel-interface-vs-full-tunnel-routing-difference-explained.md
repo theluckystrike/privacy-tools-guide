@@ -37,6 +37,19 @@ When you connect to a VPN, one of the most critical configuration decisions invo
 - **When you connect to a VPN**: one of the most critical configuration decisions involves how your network traffic is routed.
 - **Full tunnel routing is**: simply one specific configuration of that interface where all traffic must use the pipe.
 
+## Table of Contents
+
+- [What is a VPN Tunnel Interface?](#what-is-a-vpn-tunnel-interface)
+- [Understanding Full Tunnel Routing](#understanding-full-tunnel-routing)
+- [What is Split Tunneling?](#what-is-split-tunneling)
+- [Key Differences Between Tunnel Interface and Full Tunnel Routing](#key-differences-between-tunnel-interface-and-full-tunnel-routing)
+- [Security Implications](#security-implications)
+- [Performance Considerations](#performance-considerations)
+- [When to Use Full Tunnel Routing](#when-to-use-full-tunnel-routing)
+- [When to Use Split Tunneling](#when-to-use-split-tunneling)
+- [Configuring Tunnel Interface Routing](#configuring-tunnel-interface-routing)
+- [Related Reading](#related-reading)
+
 ## What is a VPN Tunnel Interface?
 
 A VPN tunnel interface is a virtual network interface created on your device when a VPN connection is established. This interface acts as a logical pathway through which encrypted VPN traffic flows. Unlike your physical network interfaces (like Ethernet or Wi-Fi), the tunnel interface exists only while the VPN is active and handles all traffic between your device and the VPN server.

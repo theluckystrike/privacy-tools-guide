@@ -40,6 +40,16 @@ Sources communicating with journalists must assume potential state-level comprom
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Threat ecosystem](#understanding-the-threat-ecosystem)
+- [Building Your Defensive Architecture](#building-your-defensive-architecture)
+- [Operational Security Practices](#operational-security-practices)
+- [Recovery and Incident Response](#recovery-and-incident-response)
+- [Technical Detection Vectors and Countermeasures](#technical-detection-vectors-and-countermeasures)
+- [Operational Security Discipline](#operational-security-discipline)
+- [Detecting Investigative Surveillance](#detecting-investigative-surveillance)
+
 ## Understanding the Threat ecosystem
 
 Sources communicating with journalists encounter adversaries with significant resources. Understanding who might attempt to compromise your communication determines which defenses matter most.

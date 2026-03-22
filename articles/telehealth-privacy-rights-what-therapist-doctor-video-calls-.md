@@ -40,6 +40,20 @@ Telehealth has transformed how we access healthcare, connecting patients with th
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Legal Framework: HIPAA and State Laws](#the-legal-framework-hipaa-and-state-laws)
+- [What Healthcare Providers Can Legally Record](#what-healthcare-providers-can-legally-record)
+- [Understanding Telehealth Consent Forms](#understanding-telehealth-consent-forms)
+- [Your Rights Regarding Telehealth Recordings](#your-rights-regarding-telehealth-recordings)
+- [Technical Implementation for Developers](#technical-implementation-for-developers)
+- [Protecting Your Privacy in Telehealth Sessions](#protecting-your-privacy-in-telehealth-sessions)
+- [What Happens If Privacy Is Violated](#what-happens-if-privacy-is-violated)
+- [Comparing Telehealth Platforms for Privacy](#comparing-telehealth-platforms-for-privacy)
+- [Advanced Data Protection Techniques for Patients](#advanced-data-protection-techniques-for-patients)
+- [Data Minimization in Clinical Workflows](#data-minimization-in-clinical-workflows)
+- [Patient Rights Documentation Template](#patient-rights-documentation-template)
+
 ## The Legal Framework: HIPAA and State Laws
 
 The Health Insurance Portability and Accountability Act (HIPAA) governs how healthcare providers handle your protected health information (PHI). This includes video recordings from telehealth sessions. Under HIPAA, video recordings qualify as PHI when they contain identifiable health information.

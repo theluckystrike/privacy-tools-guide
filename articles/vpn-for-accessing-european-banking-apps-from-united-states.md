@@ -40,6 +40,22 @@ To access European banking apps from the US, connect via VPN with a European exi
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [VPN Protocol Configuration](#vpn-protocol-configuration)
+- [DNS Leak Prevention](#dns-leak-prevention)
+- [WebRTC Leak Testing](#webrtc-leak-testing)
+- [Split Tunneling Considerations](#split-tunneling-considerations)
+- [Testing Your Setup](#testing-your-setup)
+- [Security Considerations](#security-considerations)
+- [Advanced Techniques for Blocking-Resistant Access](#advanced-techniques-for-blocking-resistant-access)
+- [Monitoring VPN Performance](#monitoring-vpn-performance)
+- [Key Rotation and Security Maintenance](#key-rotation-and-security-maintenance)
+- [Banking-Specific Protocols](#banking-specific-protocols)
+- [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
+- [Legal and Compliance Considerations](#legal-and-compliance-considerations)
+
 ## Understanding the Problem
 
 European banks implement geographic restrictions through several mechanisms. The most common is IP-based geolocation, where the bank's server checks your connection's source IP against known EU IP ranges. Some banks also perform deeper inspection, analyzing TLS client hello messages for anomalies or checking for DNS leaks that might reveal your true location.

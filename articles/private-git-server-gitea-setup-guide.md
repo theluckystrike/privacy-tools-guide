@@ -40,6 +40,23 @@ Gitea is a lightweight, fast git service written in Go. It runs on minimal hardw
 - **Choose application/json as the**: content type 5.
 - **Invite members by email**: or username This model keeps sensitive repositories invisible to contractors while sharing only the repositories they need.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Install Gitea](#step-1-install-gitea)
+- [Step 2: Configure Gitea as a systemd Service](#step-2-configure-gitea-as-a-systemd-service)
+- [Step 3: Set Up a Reverse Proxy with Nginx and HTTPS](#step-3-set-up-a-reverse-proxy-with-nginx-and-https)
+- [Step 4: Initial Gitea Setup](#step-4-initial-gitea-setup)
+- [Step 5: Harden Gitea Configuration](#step-5-harden-gitea-configuration)
+- [Step 6: Enable Two-Factor Authentication](#step-6-enable-two-factor-authentication)
+- [Step 7: Configure SSH Access](#step-7-configure-ssh-access)
+- [Step 8: Set Up Automated Backups](#step-8-set-up-automated-backups)
+- [Setting Up Gitea Webhooks for Deployment](#setting-up-gitea-webhooks-for-deployment)
+- [Using Gitea Actions for CI/CD](#using-gitea-actions-for-cicd)
+- [Access Control and Team Management](#access-control-and-team-management)
+- [Migrating from GitHub/GitLab](#migrating-from-githubgitlab)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 - A Linux server (Debian/Ubuntu 22.04+ recommended) with a public IP

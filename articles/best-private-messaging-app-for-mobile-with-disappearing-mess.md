@@ -29,6 +29,20 @@ The stakes of choosing wrong are significant. A poorly chosen messaging app coul
 - **Purchase Threema from the**: official website or app store (it is not free) 2.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Understanding the Privacy Features That Matter](#understanding-the-privacy-features-that-matter)
+- [Signal: The Gold Standard for Metadata Minimalism](#signal-the-gold-standard-for-metadata-minimalism)
+- [Session: Anonymous Registration Without Phone Numbers](#session-anonymous-registration-without-phone-numbers)
+- [SimpleX: No User Identifiers Whatsoever](#simplex-no-user-identifiers-whatsoever)
+- [Threema: Swiss-Based Minimal Metadata](#threema-swiss-based-minimal-metadata)
+- [Choosing the Right App for Your Threat Model](#choosing-the-right-app-for-your-threat-model)
+- [Advanced Security Considerations](#advanced-security-considerations)
+- [Threat Model Examples](#threat-model-examples)
+- [Maintenance and Security Practices](#maintenance-and-security-practices)
+- [Practical Testing Checklist](#practical-testing-checklist)
+- [Long-Term Usage Practices](#long-term-usage-practices)
+
 ## Understanding the Privacy Features That Matter
 
 Not all privacy features provide equal protection. Before examining specific apps, focus on three capabilities that directly impact your security:

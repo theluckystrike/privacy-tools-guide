@@ -26,6 +26,17 @@ Social media impersonation occurs when someone creates an account using your nam
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **For developers and power users, this presents unique challenges**: your professional reputation, code contributions, and identity across platforms can all be weaponized.
 
+## Table of Contents
+
+- [Identifying Impersonation: Technical and Visual Signs](#identifying-impersonation-technical-and-visual-signs)
+- [Reporting on Major Platforms](#reporting-on-major-platforms)
+- [Developer-Specific Platforms](#developer-specific-platforms)
+- [Automating Documentation](#automating-documentation)
+- [Legal Remedies and DMCA](#legal-remedies-and-dmca)
+- [Evidence Preservation and Documentation](#evidence-preservation-and-documentation)
+- [Platform-Specific Escalation Paths](#platform-specific-escalation-paths)
+- [Prevention Strategies](#prevention-strategies)
+
 ## Identifying Impersonation: Technical and Visual Signs
 
 Impersonation manifests in several forms. The most obvious is a direct clone—someone copying your profile photo, username, and bio to deceive others. More sophisticated attacks involve subtle variations: slightly modified usernames, accounts that mimic your writing style, or bots that amplify fake content.

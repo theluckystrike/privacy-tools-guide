@@ -40,6 +40,21 @@ WebRTC (Web Real-Time Communication) is a powerful browser API that enables dire
 - **Bypassing NAT**: Attackers can use leaked local IPs to perform NAT punching attacks or identify devices behind network address translation.
 - **Alternatively**: use the `media.peerconnection` boolean preference to disable WebRTC entirely.
 
+## Table of Contents
+
+- [Understanding WebRTC and the Leak Mechanism](#understanding-webrtc-and-the-leak-mechanism)
+- [How the Exploit Works](#how-the-exploit-works)
+- [Practical Implications for Privacy](#practical-implications-for-privacy)
+- [Detecting WebRTC Leaks](#detecting-webrtc-leaks)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Development Considerations](#development-considerations)
+- [Testing Your Protection](#testing-your-protection)
+- [Advanced Leak Detection and Analysis](#advanced-leak-detection-and-analysis)
+- [VPN Provider Comparison for WebRTC Protection](#vpn-provider-comparison-for-webrtc-protection)
+- [Enterprise VPN Considerations](#enterprise-vpn-considerations)
+- [Browser-Specific Protection Guidance](#browser-specific-protection-guidance)
+- [Real-World Attack Scenarios](#real-world-attack-scenarios)
+
 ## Understanding WebRTC and the Leak Mechanism
 
 WebRTC was designed to help real-time communication without requiring plugin installations or server-side processing for media streams. To establish peer-to-peer connections, browsers must exchange network candidates—information about available network interfaces and potential connection paths.

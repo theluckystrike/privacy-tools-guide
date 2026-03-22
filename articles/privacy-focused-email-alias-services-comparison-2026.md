@@ -18,6 +18,17 @@ intent-checked: true
 
 ## Overview
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Why Email Aliases Matter](#why-email-aliases-matter)
+- [Top Email Alias Services](#top-email-alias-services)
+- [Detailed Comparison Table](#detailed-comparison-table)
+- [Use Case Decision Matrix](#use-case-decision-matrix)
+- [Practical Setup Guide: SimpleLogin for Maximum Privacy](#practical-setup-guide-simplelogin-for-maximum-privacy)
+- [Advanced Strategies](#advanced-strategies)
+- [Comparison: Which is Right for You?](#comparison-which-is-right-for-you)
+
 Email is the master key to your digital identity. Every website, service, and app asks for email. Giving your real email exposes you to spam, tracking, and data brokers. Email alias services solve this by generating unlimited temporary addresses that forward to your real inbox. This guide compares the best privacy-focused options: SimpleLogin, AnonAddy, Firefox Relay, and Apple Hide My Email.
 
 ## Why Email Aliases Matter

@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Email Provider Jurisdiction Comparison Which Countries"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -43,6 +45,22 @@ echo "Step 1**: Create new email account at $NEW_PROVIDER"
 # Manual step: Register and verify new account
 
 # 2.
+
+## Table of Contents
+
+- [Understanding Email Jurisdiction](#understanding-email-jurisdiction)
+- [Countries With Strong Email Privacy Protections](#countries-with-strong-email-privacy-protections)
+- [Countries With Problematic Jurisdiction](#countries-with-problematic-jurisdiction)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Server Location Matters](#server-location-matters)
+- [Making an Informed Choice](#making-an-informed-choice)
+- [Government Data Request Analysis by Jurisdiction](#government-data-request-analysis-by-jurisdiction)
+- [Metadata Exposure by Country](#metadata-exposure-by-country)
+- [Email Provider Audit: Checking Jurisdiction Claims](#email-provider-audit-checking-jurisdiction-claims)
+- [Jurisdiction-Aware Email Architecture](#jurisdiction-aware-email-architecture)
+- [Alternative Jurisdiction Strategies](#alternative-jurisdiction-strategies)
+- [Transitioning Between Providers](#transitioning-between-providers)
+- [Legal Considerations in Email Provider Choice](#legal-considerations-in-email-provider-choice)
 
 ## Understanding Email Jurisdiction
 

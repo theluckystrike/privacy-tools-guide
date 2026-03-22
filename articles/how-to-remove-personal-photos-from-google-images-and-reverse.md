@@ -26,6 +26,18 @@ Remove photos from Google Images using Search Console's removal tool and Google'
 ### A.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding How Google Images Indexes Your Photos](#understanding-how-google-images-indexes-your-photos)
+- [Step 1: Identify Where Your Photos Appear](#step-1-identify-where-your-photos-appear)
+- [Step 2: Remove Images from Google Search Results](#step-2-remove-images-from-google-search-results)
+- [Step 3: Remove from Reverse Image Search Databases](#step-3-remove-from-reverse-image-search-databases)
+- [Step 4: Prevent Future Indexing](#step-4-prevent-future-indexing)
+- [Step 5: Handle Social Media Platforms](#step-5-handle-social-media-platforms)
+- [Step 6: Automate Monitoring](#step-6-automate-monitoring)
+- [Step 7: Use Google's Personal Information Removal Policy](#step-7-use-googles-personal-information-removal-policy)
+- [Step 8: Long-Term Search Result Suppression](#step-8-long-term-search-result-suppression)
+
 ## Understanding How Google Images Indexes Your Photos
 
 Google Images indexes photos through multiple pathways: direct uploads to websites, social media platforms, cloud storage services, and reverse image search submissions. Each pathway represents a different removal challenge.

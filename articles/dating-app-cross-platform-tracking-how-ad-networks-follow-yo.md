@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -26,6 +27,17 @@ Ad networks track you across dating apps and social platforms using device finge
 - **User installs a dating app (Tinder**: Bumble, Hinge)
 2.
 - **User authenticates with email**: or phone number 4.
+
+## Table of Contents
+
+- [The Tracking Ecosystem Overview](#the-tracking-ecosystem-overview)
+- [Device Fingerprinting Techniques](#device-fingerprinting-techniques)
+- [Cross-Platform Identifier Synchronization](#cross-platform-identifier-synchronization)
+- [Real-World Tracking Flow](#real-world-tracking-flow)
+- [Server-Side Tracking and Pixel Implementation](#server-side-tracking-and-pixel-implementation)
+- [Privacy Implications](#privacy-implications)
+- [Practical Defenses for Developers and Power Users](#practical-defenses-for-developers-and-power-users)
+- [Building Privacy-First Applications](#building-privacy-first-applications)
 
 ## The Tracking Ecosystem Overview
 

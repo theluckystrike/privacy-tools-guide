@@ -11,7 +11,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Cloud DLP for Google Workspace Guide 2026"
@@ -25,7 +26,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,18 @@ Google Workspace administrators face increasing pressure to protect sensitive da
 - **This approach reduces unnecessary**: blocking while maintaining protection where it matters most.
 - **Test thoroughly with pilot**: users before broader deployment to ensure the logic matches intended behavior.
 - **Maintain clear communication with**: end users about monitoring policies to maintain trust.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration: Context-Aware Rules](#advanced-configuration-context-aware-rules)
+- [Compliance Reporting](#compliance-reporting)
+- [Advanced DLP Configuration Examples](#advanced-dlp-configuration-examples)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Integration Patterns for Enterprise Environments](#integration-patterns-for-enterprise-environments)
+- [Performance at Scale](#performance-at-scale)
+- [Best Practices for 2026](#best-practices-for-2026)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

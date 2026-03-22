@@ -40,6 +40,13 @@ A burner phone for protests provides separation between your protest participati
 - **Use default camera app**: (minimal metadata leakage) 2.
 - **Install VeraCrypt (open source**: disk encryption) 2.
 
+## Table of Contents
+
+- [Why Burner Phones Matter for Protest Safety](#why-burner-phones-matter-for-protest-safety)
+- [Prerequisites](#prerequisites)
+- [Cost Summary](#cost-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Burner Phones Matter for Protest Safety
 
 Law enforcement attends protests with cell-site simulators (Stingrays) that intercept signals from all phones in an area. This technology identifies which phones were present at a location and when. Police can later cross-reference this data against subscriber information to target specific participants.

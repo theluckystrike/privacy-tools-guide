@@ -33,6 +33,24 @@ Chrome:
 HTTP/3 is enabled by default in Chrome.
 - **Check email portal acceptance**: (often allows access after 20 seconds) 2.
 
+## Table of Contents
+
+- [Understanding Captive Portal Data Collection](#understanding-captive-portal-data-collection)
+- [Method 1: Pre-Authentication Probe](#method-1-pre-authentication-probe)
+- [Method 2: DNS Tunneling](#method-2-dns-tunneling)
+- [Method 3: HTTPS Tunnel with Port 443](#method-3-https-tunnel-with-port-443)
+- [Method 4: HTTP/3 (QUIC) Bypass](#method-4-http3-quic-bypass)
+- [Method 5: Mobile Hotspot from Another Device](#method-5-mobile-hotspot-from-another-device)
+- [Method 6: VPN with Obfuscation](#method-6-vpn-with-obfuscation)
+- [Defending Against WiFi Tracking](#defending-against-wifi-tracking)
+- [Selecting the Right Method](#selecting-the-right-method)
+- [Advanced Captive Portal Detection and Evasion](#advanced-captive-portal-detection-and-evasion)
+- [Captive Portal Threat Models](#captive-portal-threat-models)
+- [Building a Firewall-Based Captive Portal Blocker](#building-a-firewall-based-captive-portal-blocker)
+- [Captive Portal Bypass Legality and Ethics](#captive-portal-bypass-legality-and-ethics)
+- [Practical Bypass Hierarchy](#practical-bypass-hierarchy)
+- [Monitoring Captive Portal Attempts](#monitoring-captive-portal-attempts)
+
 ## Understanding Captive Portal Data Collection
 
 Captive portals operate at the network level by intercepting your initial HTTP requests and redirecting you to a login or splash page. While presented as authentication mechanisms, many serve primarily as data collection tools. The information requested ranges from annoying (email address for "free" access) to invasive (phone number verification, social media login via OAuth).

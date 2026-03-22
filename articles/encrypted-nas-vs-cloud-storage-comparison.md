@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 
@@ -27,6 +28,20 @@ NAS encryption (using TrueNAS, unRAID, or Linux md with LUKS) provides complete 
 - **Which is better for beginners**: the first tool or the second tool?
 
 It depends on your background.
+
+## Table of Contents
+
+- [Understanding the Core Difference](#understanding-the-core-difference)
+- [Encryption Models Compared](#encryption-models-compared)
+- [Performance Considerations](#performance-considerations)
+- [Access Patterns and Multi-Device Sync](#access-patterns-and-multi-device-sync)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Practical Recommendations](#practical-recommendations)
+- [Implementing a Hybrid Setup](#implementing-a-hybrid-setup)
+- [Advanced NAS Security Features](#advanced-nas-security-features)
+- [Cloud Storage Redundancy Strategy](#cloud-storage-redundancy-strategy)
+- [Performance Tuning for Real-World Use](#performance-tuning-for-real-world-use)
+- [Disaster Recovery Testing](#disaster-recovery-testing)
 
 ## Understanding the Core Difference
 

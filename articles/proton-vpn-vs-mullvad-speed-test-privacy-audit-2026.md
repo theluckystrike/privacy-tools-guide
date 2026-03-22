@@ -44,6 +44,23 @@ When evaluating VPN services for development workflows and privacy-conscious wor
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **This article provides a**: technical comparison of Proton VPN and Mullvad based on speed test results, protocol implementations, and privacy features relevant to developers and power users.
 
+## Table of Contents
+
+- [Testing Methodology](#testing-methodology)
+- [Speed Performance](#speed-performance)
+- [Privacy Architecture](#privacy-architecture)
+- [Developer-Friendly Features](#developer-friendly-features)
+- [Split Tunneling](#split-tunneling)
+- [Multi-Hop Capabilities](#multi-hop-capabilities)
+- [Network Performance for Development Tasks](#network-performance-for-development-tasks)
+- [Advanced Configuration and Hardening](#advanced-configuration-and-hardening)
+- [Leak Testing Protocol](#leak-testing-protocol)
+- [Account Security and Anonymity](#account-security-and-anonymity)
+- [Jurisdiction Comparison](#jurisdiction-comparison)
+- [Protocol Deep-Dive: WireGuard Implementation](#protocol-deep-dive-wireguard-implementation)
+- [Use Case Specific Recommendations](#use-case-specific-recommendations)
+- [Final Comparative Verdict](#final-comparative-verdict)
+
 ## Testing Methodology
 
 All tests were conducted in March 2026 using consistent network conditions. The baseline connection was a 500 Mbps symmetric fiber connection. Each VPN was tested across five server locations (US East, US West, Germany, Japan, and Australia) during peak and off-peak hours.

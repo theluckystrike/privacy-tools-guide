@@ -40,6 +40,13 @@ Cloud storage services offer convenience, but they also expose your data to thir
 - **- Strong Passphrases**: Use a password generator.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Client-Side Encryption Matters](#why-client-side-encryption-matters)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Client-Side Encryption Matters
 
 Cloud providers often advertise encryption at rest, but this typically means they hold the encryption keys—not you. Client-side encryption puts you in control. Your files are encrypted on your device, and the cloud provider only stores unreadable ciphertext. This approach protects against provider data breaches, insider threats, and lawful requests for your data.

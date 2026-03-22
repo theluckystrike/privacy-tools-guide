@@ -28,6 +28,24 @@ For developers who value open-source transparency and self-hosting, Bitwarden pr
 - **The underlying encryption uses**: AES-256 for data at rest and PBKDF2 with 600,000 iterations for key derivation.
 - **The free tier includes**: unlimited notes and basic custom fields.
 
+## Table of Contents
+
+- [What Makes Secure Notes Different from Standard Notes](#what-makes-secure-notes-different-from-standard-notes)
+- [Key Features to Evaluate](#key-features-to-evaluate)
+- [Bitwarden: Open-Source with Flexible Notes](#bitwarden-open-source-with-flexible-notes)
+- [1Password: Structured Notes and Document Storage](#1password-structured-notes-and-document-storage)
+- [Proton Pass: Privacy-Focused with Secure Notes](#proton-pass-privacy-focused-with-secure-notes)
+- [KeePassXC: Local Vault with Unlimited Flexibility](#keepassxc-local-vault-with-unlimited-flexibility)
+- [Practical Use Cases for Developers](#practical-use-cases-for-developers)
+- [Security Considerations](#security-considerations)
+- [Advanced CLI Integration Patterns](#advanced-cli-integration-patterns)
+- [Zero-Knowledge Architecture Verification](#zero-knowledge-architecture-verification)
+- [Synchronization and Conflict Resolution](#synchronization-and-conflict-resolution)
+- [Export and Backup Strategies](#export-and-backup-strategies)
+- [Extended Feature Comparison](#extended-feature-comparison)
+- [Migration Between Managers](#migration-between-managers)
+- [For Developers and Power Users](#for-developers-and-power-users)
+
 ## What Makes Secure Notes Different from Standard Notes
 
 Secure notes differ from regular notes in three critical ways: encryption at rest, access controls, and structured data handling. A standard note-taking app might encrypt data during transmission but store content with weaker protection on disk. Password managers with secure notes encrypt everything using the same master key protecting your vault—typically AES-256 with PBKDF2 or Argon2 for key derivation.

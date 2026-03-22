@@ -11,7 +11,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "How To Buy Bitcoin Without Kyc Verification Private Purchase"
@@ -25,7 +26,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 {% raw %}
@@ -26,6 +27,19 @@ FIDO2 is phishing-resistant, hardware-backed, and uses public-key cryptography w
 - **TOTP is simpler to implement**: requires no special hardware, and works with existing authenticator apps -- making it better for broad compatibility and low-friction deployments.
 - **This temporal constraint limits replay attacks but also introduces usability challenges**: users must enter codes quickly or request new ones.
 - **Instead of shared secrets**: FIDO2 uses public-key cryptography with private keys stored on dedicated hardware or platform authenticators.
+
+## Table of Contents
+
+- [How TOTP Works](#how-totp-works)
+- [How FIDO2 Works](#how-fido2-works)
+- [Security Comparison](#security-comparison)
+- [Implementation Considerations](#implementation-considerations)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Real Tools and Pricing (2026)](#real-tools-and-pricing-2026)
+- [Deployment Considerations for Developers](#deployment-considerations-for-developers)
+- [Attack Scenarios and Mitigations](#attack-scenarios-and-mitigations)
+- [Transition Strategy: Phasing Out TOTP](#transition-strategy-phasing-out-totp)
+- [Privacy Comparison: TOTP vs FIDO2](#privacy-comparison-totp-vs-fido2)
 
 ## How TOTP Works
 
@@ -328,11 +342,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [How To Use Password Manager Totp Authenticator Replace](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
-- [TOTP Backup Codes Best Practices: A Developer's Guide](/privacy-tools-guide/totp-backup-codes-best-practices/)
-- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
-- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
-- [Consent Receipt Specification Explained: A Developer Guide](/privacy-tools-guide/consent-receipt-specification-explained-guide/)
-
+- [ProtonMail Two-Factor Authentication Guide](/privacy-tools-guide/protonmail-two-factor-authentication-guide/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

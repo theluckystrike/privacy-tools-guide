@@ -40,6 +40,21 @@ The Device Memory API exposes your device's RAM amount to websites, allowing the
 - **When combined with other**: metrics like screen resolution, user agent, timezone, and installed fonts, it helps build a unique browser profile.
 - **Safari restricts it to**: Safari 15.4+ on macOS and iOS 15.4+, and even then only when the device has sufficient memory.
 
+## Table of Contents
+
+- [How the Device Memory API Works](#how-the-device-memory-api-works)
+- [Why RAM Amount Matters for Fingerprinting](#why-ram-amount-matters-for-fingerprinting)
+- [Browser Support and Availability](#browser-support-and-availability)
+- [Detecting Device Memory API Usage](#detecting-device-memory-api-usage)
+- [Mitigation Strategies](#mitigation-strategies)
+- [The Bigger Picture: Defense in Depth](#the-bigger-picture-defense-in-depth)
+- [Advanced: Fingerprinting with Memory as Part of a Larger Dataset](#advanced-fingerprinting-with-memory-as-part-of-a-larger-dataset)
+- [Memory API Fingerprinting: Real-World Scenarios](#memory-api-fingerprinting-real-world-scenarios)
+- [Browser Extension Implementation: Memory Spoofing](#browser-extension-implementation-memory-spoofing)
+- [Statistical Analysis: How Much Does Memory Contribute to Fingerprinting Uniqueness?](#statistical-analysis-how-much-does-memory-contribute-to-fingerprinting-uniqueness)
+- [Detection Tools and Testing](#detection-tools-and-testing)
+- [Prevention at the Platform Level](#prevention-at-the-platform-level)
+
 ## How the Device Memory API Works
 
 The Device Memory API provides a straightforward way for websites to query the approximate amount of device memory via JavaScript. The API exposes a single property through the `navigator` object:

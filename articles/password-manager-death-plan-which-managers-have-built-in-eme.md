@@ -203,6 +203,18 @@ The key action: configure emergency access today. The best time was when you cre
 
 ## Legal Considerations for Emergency Access
 
+## Table of Contents
+
+- [Legal Considerations for Emergency Access](#legal-considerations-for-emergency-access)
+- [Automated Emergency Access Testing](#automated-emergency-access-testing)
+- [Recovery Instructions Document](#recovery-instructions-document)
+- [Step 1: Initiate Emergency Access Request](#step-1-initiate-emergency-access-request)
+- [Step 2: Wait for Automatic Grant](#step-2-wait-for-automatic-grant)
+- [Step 3: Access the Vault](#step-3-access-the-vault)
+- [Step 4: Access Critical Accounts](#step-4-access-critical-accounts)
+- [Important Notes](#important-notes)
+- [Scenario: What If the Password Manager Company Ceases Operations?](#scenario-what-if-the-password-manager-company-ceases-operations)
+
 Digital inheritance laws vary by jurisdiction:
 
 ```

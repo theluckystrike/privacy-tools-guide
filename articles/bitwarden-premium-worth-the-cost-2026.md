@@ -42,6 +42,23 @@ Yes, Bitwarden Premium is worth the $10/year for developers and power users in 2
 - **This matters for developers**: because we tend to accumulate credentials across multiple projects, services, and personal accounts.
 - **Premium supports Yubikey OTP**: and FIDO2/WebAuthn credentials, enabling passwordless authentication to your vault itself.
 
+## Table of Contents
+
+- [What's Included in Bitwarden Premium](#whats-included-in-bitwarden-premium)
+- [TOTP Integration: The Developer Advantage](#totp-integration-the-developer-advantage)
+- [Vault Health Reports: Security Monitoring](#vault-health-reports-security-monitoring)
+- [Yubikey and Hardware Security Key Support](#yubikey-and-hardware-security-key-support)
+- [Encrypted Exports and Backup Strategies](#encrypted-exports-and-backup-strategies)
+- [Comparing Premium to Free: The Value Calculation](#comparing-premium-to-free-the-value-calculation)
+- [When Premium Makes Sense for Developers](#when-premium-makes-sense-for-developers)
+- [Detailed Feature Breakdown and Developer Use Cases](#detailed-feature-breakdown-and-developer-use-cases)
+- [Organization and Business Plans](#organization-and-business-plans)
+- [Comparison: Premium Feature ROI](#comparison-premium-feature-roi)
+- [When Premium Isn't Worth It](#when-premium-isnt-worth-it)
+- [Free Tier Features for Comparison](#free-tier-features-for-comparison)
+- [Annual Renewal and Cost Control](#annual-renewal-and-cost-control)
+- [Alternative: Can I Get Premium Features Elsewhere?](#alternative-can-i-get-premium-features-elsewhere)
+
 ## What's Included in Bitwarden Premium
 
 Premium builds on the free tier with several features that matter specifically to users with demanding security requirements:

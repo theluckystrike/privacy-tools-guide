@@ -42,6 +42,13 @@ Vaultwarden is a lightweight, open-source implementation of Bitwarden's password
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)
+- [System Requirements](#system-requirements)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Self-Host Vaultwarden?
 
 Bitwarden's SaaS offering is privacy-respecting, but self-hosting provides:

@@ -42,6 +42,15 @@ NaiveProxy disguises censorship circumvention traffic as legitimate HTTPS traffi
 - **Consider running NaiveProxy on port 443**: which is almost always open since it's required for normal web browsing.
 - **Use port 443 (standard**: HTTPS) # 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Performance Optimization](#performance-optimization)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Deployment Architecture](#advanced-deployment-architecture)
+- [Getting Started Today](#getting-started-today)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

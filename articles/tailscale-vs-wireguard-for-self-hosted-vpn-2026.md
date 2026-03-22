@@ -40,6 +40,18 @@ Use raw WireGuard when you need full control over key management, want zero exte
 - **Use raw WireGuard when**: you need full control over key management, want zero external dependencies, and are comfortable with manual peer configuration.
 - **Use Tailscale when you**: need a mesh VPN that works through NAT automatically, want a GUI for managing access policies, and value setup speed over configuration control.
 
+## Table of Contents
+
+- [Architecture Difference](#architecture-difference)
+- [Raw WireGuard: Full Server Setup](#raw-wireguard-full-server-setup)
+- [Tailscale: Self-Hosted via Headscale](#tailscale-self-hosted-via-headscale)
+- [Performance Comparison](#performance-comparison)
+- [Use Case Decision Matrix](#use-case-decision-matrix)
+- [Key Management Comparison](#key-management-comparison)
+- [Monitoring and Alerting for WireGuard Tunnels](#monitoring-and-alerting-for-wireguard-tunnels)
+- [Firewall Configuration for WireGuard](#firewall-configuration-for-wireguard)
+- [Choosing Between Tailscale SaaS and Headscale](#choosing-between-tailscale-saas-and-headscale)
+
 ## Architecture Difference
 
 Raw WireGuard is a kernel module and userspace tool. You manage keys, peer configs, and IP addressing manually. Every peer needs [Peer] blocks for every other peer it should reach. For a 10-node mesh, each node has 9 peer entries.

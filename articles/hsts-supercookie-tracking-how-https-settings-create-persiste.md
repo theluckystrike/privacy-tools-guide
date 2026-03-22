@@ -40,6 +40,23 @@ HSTS supercookies exploit the browser's HSTS preload list (which persists locall
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How HSTS Supercookies Work](#how-hsts-supercookies-work)
+- [Practical Example](#practical-example)
+- [Detecting HSTS Supercookies](#detecting-hsts-supercookies)
+- [Mitigation Strategies](#mitigation-strategies)
+- [The Broader Implications](#the-broader-implications)
+- [Testing Your Browser](#testing-your-browser)
+- [HSTS Preload Lists and Long-Term Persistence](#hsts-preload-lists-and-long-term-persistence)
+- [Developer Considerations](#developer-considerations)
+- [Practical Supercookie Detection](#practical-supercookie-detection)
+- [Browser-Specific HSTS Clearing](#browser-specific-hsts-clearing)
+- [HSTS Supercookie vs. Traditional Cookie Tracking](#hsts-supercookie-vs-traditional-cookie-tracking)
+- [Real-World Tracking Implementation Analysis](#real-world-tracking-implementation-analysis)
+- [Mitigation for Site Administrators](#mitigation-for-site-administrators)
+- [Future Browser Protections](#future-browser-protections)
+
 ## How HSTS Supercookies Work
 
 HSTS works through a header that servers send to browsers:

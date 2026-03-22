@@ -38,6 +38,19 @@ State attorneys general enforce privacy laws through data breach notification st
 - **This guide covers understanding**: state ag privacy enforcement powers, identifying applicable state laws, filing a complaint: step-by-step process, with specific setup instructions
 - **Pricing starts at $100**: with options for different team sizes
 
+## Table of Contents
+
+- [Understanding State AG Privacy Enforcement Powers](#understanding-state-ag-privacy-enforcement-powers)
+- [Identifying Applicable State Laws](#identifying-applicable-state-laws)
+- [Filing a Complaint: Step-by-Step Process](#filing-a-complaint-step-by-step-process)
+- [Following Up on Your Complaint](#following-up-on-your-complaint)
+- [Escalation and Multi-State Action](#escalation-and-multi-state-action)
+- [Technical Documentation for Privacy Violations](#technical-documentation-for-privacy-violations)
+- [When Legal Action Becomes Necessary](#when-legal-action-becomes-necessary)
+- [Building a Complaint Archive](#building-a-complaint-archive)
+- [Finding Pattern and Multi-Company Violations](#finding-pattern-and-multi-company-violations)
+- [Escalation When Initial Complaints Fail](#escalation-when-initial-complaints-fail)
+
 ## Understanding State AG Privacy Enforcement Powers
 
 Every U.S. state and territory has an attorney general office with authority to enforce consumer protection laws, including state-level privacy regulations. These offices can:

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Does Surfshark Work in Vietnam 2026: Tested on"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,26 @@ Testing VPN functionality in restrictive network environments requires a systema
 - **weekday****: Weekends show marginally better VPN performance (5-10% improvement), suggesting routing optimization during weekday business hours.
 - **The auto-select option attempts**: to choose the optimal protocol, but manual selection provides better control in challenging network conditions.
 - **IKEv2 success rates drop**: to approximately 50-60% as firewalls become more aggressive with rate limiting.
+
+## Table of Contents
+
+- [Understanding Vietnam's Network Environment](#understanding-vietnams-network-environment)
+- [Testing Methodology](#testing-methodology)
+- [Protocol Configuration Options](#protocol-configuration-options)
+- [Connection Success Rates](#connection-success-rates)
+- [Performance Characteristics](#performance-characteristics)
+- [Mobile-Specific Considerations](#mobile-specific-considerations)
+- [Alternative Approaches for Developers](#alternative-approaches-for-developers)
+- [Practical Recommendations](#practical-recommendations)
+- [Deep Protocol Analysis: Why IKEv2 Succeeds in Vietnam](#deep-protocol-analysis-why-ikev2-succeeds-in-vietnam)
+- [Real-World Performance Under Different Conditions](#real-world-performance-under-different-conditions)
+- [Cellular Network Specific Considerations](#cellular-network-specific-considerations)
+- [Advanced Configuration: Custom Protocol Wrapping](#advanced-configuration-custom-protocol-wrapping)
+- [Android-Specific Considerations](#android-specific-considerations)
+- [iOS-Specific Considerations](#ios-specific-considerations)
+- [Monitoring and Alerting Strategy](#monitoring-and-alerting-strategy)
+- [Fallback Strategies for Critical Applications](#fallback-strategies-for-critical-applications)
+- [Testing Methodology for Verification](#testing-methodology-for-verification)
 
 ## Understanding Vietnam's Network Environment
 

@@ -42,6 +42,26 @@ Signal is the best encrypted messaging app for Android in 2026 -- it provides op
 - **Additionally**: Signal's centralized architecture means service disruption affects all users.
 - **The lack of default**: E2EE and MTProto's relatively limited public cryptanalysis compared to Signal Protocol represent significant concerns.
 
+## Table of Contents
+
+- [Understanding SMS Encryption Fundamentals](#understanding-sms-encryption-fundamentals)
+- [Signal: The Gold Standard](#signal-the-gold-standard)
+- [WhatsApp: Ubiquity Meets Encryption](#whatsapp-ubiquity-meets-encryption)
+- [Telegram: Flexible but Complex](#telegram-flexible-but-complex)
+- [XMPP with OMEMO: The Decentralized Alternative](#xmpp-with-omemo-the-decentralized-alternative)
+- [Choosing Based on Threat Model](#choosing-based-on-threat-model)
+- [Practical Implementation Notes](#practical-implementation-notes)
+- [Advanced: Threat Model-Based Messaging Selection](#advanced-threat-model-based-messaging-selection)
+- [Signal Server Self-Hosting for Enterprise](#signal-server-self-hosting-for-enterprise)
+- [Encrypted Backup and Account Recovery](#encrypted-backup-and-account-recovery)
+- [Group Chat Security Considerations](#group-chat-security-considerations)
+- [Signal Groups](#signal-groups)
+- [XMPP MUC (Multi-User Chat) with OMEMO](#xmpp-muc-multi-user-chat-with-omemo)
+- [WhatsApp Groups](#whatsapp-groups)
+- [Fallback Communication Protocols](#fallback-communication-protocols)
+- [Android App Permissions Audit for Messaging Apps](#android-app-permissions-audit-for-messaging-apps)
+- [Comparing Messaging App Cryptographic Protocols](#comparing-messaging-app-cryptographic-protocols)
+
 ## Understanding SMS Encryption Fundamentals
 
 Standard SMS travels in plaintext through carrier networks. True encrypted SMS requires either: Over-the-Top (OTT) messaging apps that bypass SMS entirely, or RCS-based solutions that work within the messaging ecosystem. The distinction matters: app-based encryption protects against both carriers and app providers, while RCS encryption (as implemented by Google and carriers) primarily protects against interception but leaves metadata accessible.

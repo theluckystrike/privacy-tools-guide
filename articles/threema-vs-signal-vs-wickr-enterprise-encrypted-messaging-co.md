@@ -40,6 +40,20 @@ For enterprise encrypted messaging, Signal offers the strongest open-source priv
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **This comparison breaks down**: the technical differences in protocols, metadata handling, and deployment options to help you choose the right platform for your organization's threat model.
 
+## Table of Contents
+
+- [Protocol Architecture and Encryption](#protocol-architecture-and-encryption)
+- [Metadata Analysis](#metadata-analysis)
+- [Deployment and Integration Options](#deployment-and-integration-options)
+- [Developer Integration Considerations](#developer-integration-considerations)
+- [Performance Characteristics](#performance-characteristics)
+- [Decision Framework](#decision-framework)
+- [Deployment Case Studies: Which Platform Succeeded](#deployment-case-studies-which-platform-succeeded)
+- [Feature Comparison in Production Use](#feature-comparison-in-production-use)
+- [Hybrid Strategies: Using Multiple Tools](#hybrid-strategies-using-multiple-tools)
+- [Implementation Roadmap for Enterprise](#implementation-roadmap-for-enterprise)
+- [Evaluating for Your Organization](#evaluating-for-your-organization)
+
 ## Protocol Architecture and Encryption
 
 All three platforms use the Signal Protocol for end-to-end encryption, though implementation details vary significantly.

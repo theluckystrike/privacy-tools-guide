@@ -155,6 +155,19 @@ Finally, always clean up resources in your postdown scripts. Network interfaces,
 
 ## Verifying VPN Leak Protection
 
+## Table of Contents
+
+- [Verifying VPN Leak Protection](#verifying-vpn-leak-protection)
+- [Split Tunneling Configuration](#split-tunneling-configuration)
+- [Debugging PostUp and PostDown Scripts](#debugging-postup-and-postdown-scripts)
+- [Notification and Monitoring Integration](#notification-and-monitoring-integration)
+- [Advanced Firewall Integration](#advanced-firewall-integration)
+- [Policy Routing for Advanced Traffic Control](#policy-routing-for-advanced-traffic-control)
+- [Automatic MTU Discovery](#automatic-mtu-discovery)
+- [Persistent Logging for Audit Trails](#persistent-logging-for-audit-trails)
+- [Integration with Service Managers](#integration-with-service-managers)
+- [Performance Tuning with PostUp Scripts](#performance-tuning-with-postup-scripts)
+
 Before trusting any VPN for sensitive browsing, verify that DNS and WebRTC leaks are absent.
 
 ```bash

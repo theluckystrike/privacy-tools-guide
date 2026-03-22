@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
@@ -26,6 +27,13 @@ Understanding how VPN traffic interacts with firewall rules is essential for mai
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This distinction matters because**: it determines which rules actually apply to your VPN traffic and in what order.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations for VPN Firewall Rules](#security-considerations-for-vpn-firewall-rules)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## Prerequisites
 
@@ -348,5 +356,13 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 - [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 - [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+
+## Related Articles
+
+- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
+- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -26,6 +26,23 @@ Review every iOS privacy setting with step-by-step walkthrough: disable tracking
 - **Disable if you don't**: use Family Sharing or want complete location anonymity.
 - Disable for privacy-focused configurations.
 
+## Table of Contents
+
+- [Privacy & Security Overview](#privacy-security-overview)
+- [Safari Privacy Settings](#safari-privacy-settings)
+- [App Privacy Reports](#app-privacy-reports)
+- [Network Security Settings](#network-security-settings)
+- [Passwords & Security](#passwords-security)
+- [Sensitive Content Settings](#sensitive-content-settings)
+- [Emergency & Safety Features](#emergency-safety-features)
+- [Data & Privacy Apple Resources](#data-privacy-apple-resources)
+- [Verifying VPN Leak Protection](#verifying-vpn-leak-protection)
+- [Split Tunneling Configuration](#split-tunneling-configuration)
+- [Developer-Focused API Privacy Auditing](#developer-focused-api-privacy-auditing)
+- [Privacy Hardening for High-Risk Scenarios](#privacy-hardening-for-high-risk-scenarios)
+- [Testing Privacy Settings Effectiveness](#testing-privacy-settings-effectiveness)
+- [Privacy Configuration Backup](#privacy-configuration-backup)
+
 ## Privacy & Security Overview
 
 ### Tracking Settings

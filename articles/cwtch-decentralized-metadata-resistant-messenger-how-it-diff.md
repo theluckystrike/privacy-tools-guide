@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Cwtch Decentralized Metadata Resistant Messenger How It"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,22 @@ Cwtch uses decentralized peer-to-peer Tor-based routing to hide metadata (who ta
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Cwtch uses decentralized peer-to-peer**: Tor-based routing to hide metadata (who talks to whom, when), while Signal uses centralized servers but provides strong encryption and is more user-friendly.
+
+## Table of Contents
+
+- [Fundamental Architectural Differences](#fundamental-architectural-differences)
+- [Metadata Resistance in Practice](#metadata-resistance-in-practice)
+- [Encryption Implementation](#encryption-implementation)
+- [Practical Deployment Considerations](#practical-deployment-considerations)
+- [Code Example: Message Flow Comparison](#code-example-message-flow-comparison)
+- [Threat Model Suitability](#threat-model-suitability)
+- [Technical Limitations of Cwtch](#technical-limitations-of-cwtch)
+- [Installation and Configuration](#installation-and-configuration)
+- [Practical Threat Model Examples](#practical-threat-model-examples)
+- [Forensic Resilience and Data Destruction](#forensic-resilience-and-data-destruction)
+- [Performance Characteristics and Scaling](#performance-characteristics-and-scaling)
+- [Building on Cwtch: Developers and Integrations](#building-on-cwtch-developers-and-integrations)
+- [Comparison Matrix: Cwtch vs Signal vs Other Options](#comparison-matrix-cwtch-vs-signal-vs-other-options)
 
 ## Fundamental Architectural Differences
 

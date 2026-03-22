@@ -53,6 +53,18 @@ Real estate agents must encrypt client data using TLS 1.3 for all network commun
 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Data Risks](#understanding-the-data-risks)
+- [Encryption at Rest and in Transit](#encryption-at-rest-and-in-transit)
+- [Access Control Patterns](#access-control-patterns)
+- [Secure Email Handling](#secure-email-handling)
+- [Database Security for Client Records](#database-security-for-client-records)
+- [Audit Logging](#audit-logging)
+- [Data Retention and Disposal](#data-retention-and-disposal)
+- [Mobile Device Security](#mobile-device-security)
+- [Practical Implementation Checklist](#practical-implementation-checklist)
+
 ## Understanding the Data Risks
 
 Real estate transactions involve multiple parties exchanging sensitive documents through email, cloud storage, and property management systems. The attack surface includes client databases, email communications, digital signature platforms, and third-party listing services. A single breach can expose dozens of clients' financial histories.

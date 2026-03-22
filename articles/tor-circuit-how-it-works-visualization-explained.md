@@ -40,6 +40,17 @@ Tor circuits route your traffic through exactly three relays—the guard node (k
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Three-Hop Tor Circuit](#the-three-hop-tor-circuit)
+- [Circuit Construction Process](#circuit-construction-process)
+- [Visualizing Circuit Paths](#visualizing-circuit-paths)
+- [Circuit Lifetime and Renewal](#circuit-lifetime-and-renewal)
+- [Understanding Guard Nodes](#understanding-guard-nodes)
+- [Exit Node Considerations](#exit-node-considerations)
+- [Building Applications with Tor](#building-applications-with-tor)
+- [Security Considerations](#security-considerations)
+
 ## The Three-Hop Tor Circuit
 
 Every Tor connection passes through exactly three relays: the entry guard (or guard node), the middle node, and the exit node. This three-hop design provides a balance between anonymity and performance.

@@ -42,6 +42,20 @@ A botnet is a network of compromised computers that attackers control remotely t
 - **User training**: Recognize phishing and avoid suspicious downloads
 6.
 
+## Table of Contents
+
+- [What Is a Botnet and Why Should You Care?](#what-is-a-botnet-and-why-should-you-care)
+- [Warning Signs Your Computer Might Be in a Botnet](#warning-signs-your-computer-might-be-in-a-botnet)
+- [How to Check If Your Computer Is in a Botnet](#how-to-check-if-your-computer-is-in-a-botnet)
+- [What to Do If Your Computer Is in a Botnet](#what-to-do-if-your-computer-is-in-a-botnet)
+- [Advanced Detection Techniques Using Command Line Tools](#advanced-detection-techniques-using-command-line-tools)
+- [Behavioral Analysis: What Botnets Actually Do](#behavioral-analysis-what-botnets-actually-do)
+- [Forensic Collection if You Suspect Infection](#forensic-collection-if-you-suspect-infection)
+- [Botnet C2 Communication Patterns](#botnet-c2-communication-patterns)
+- [Post-Infection Recovery Checklist](#post-infection-recovery-checklist)
+- [Continuous Monitoring After Recovery](#continuous-monitoring-after-recovery)
+- [Prevention Strategies Moving Forward](#prevention-strategies-moving-forward)
+
 ## What Is a Botnet and Why Should You Care?
 
 Botnets are created when malware infects a vulnerable computer, allowing the attacker to remotely command that machine alongside thousands of others. The infected computer becomes a "bot" or "zombie" that follows instructions from a command-and-control (C2) server. According to cybersecurity research, botnets account for a significant portion of internet traffic, and many infected machines remain undetected for months or years.

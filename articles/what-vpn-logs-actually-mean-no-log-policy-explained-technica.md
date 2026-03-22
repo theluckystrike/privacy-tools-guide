@@ -29,6 +29,15 @@ When evaluating VPN providers, you'll encounter claims like "no-log policy" or "
 4.
 - **Understanding the variations helps**: you make better choices.
 
+## Table of Contents
+
+- [Understanding VPN Log Types](#understanding-vpn-log-types)
+- [What "No-Log" Actually Means](#what-no-log-actually-means)
+- [Technical Implementation of No-Log VPNs](#technical-implementation-of-no-log-vpns)
+- [Verifying No-Log Claims](#verifying-no-log-claims)
+- [Common Misconceptions](#common-misconceptions)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding VPN Log Types
 
 VPNs can log several categories of data, each with different privacy implications. The distinctions matter significantly for threat modeling.

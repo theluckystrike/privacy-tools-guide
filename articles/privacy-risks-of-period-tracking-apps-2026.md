@@ -40,6 +40,15 @@ Period tracking apps (Flo, Clue, Natural Cycles) collect intimate health data—
 - **In 2021, Flo admitted sharing user data with third parties**: including Facebook, Google, Amazon—without explicit consent.
 - **In 2022**: Clue announced end-to-end encryption for user data.
 
+## Table of Contents
+
+- [Why Period Tracking Data Is Sensitive](#why-period-tracking-data-is-sensitive)
+- [Major App Platforms and Their Data Practices](#major-app-platforms-and-their-data-practices)
+- [Legal Risks Post-Dobbs](#legal-risks-post-dobbs)
+- [Safe Tracking Practices](#safe-tracking-practices)
+- [Legal Advocacy](#legal-advocacy)
+- [Recommendations Summary](#recommendations-summary)
+
 ## Why Period Tracking Data Is Sensitive
 
 Period tracking apps record:

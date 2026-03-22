@@ -26,6 +26,21 @@ Both LUKS (Linux Unified Key Setup) and BitLocker protect data at rest by encryp
 - **Both tools target different**: user segments with distinct pricing and feature sets
 - **This guide covers architecture overview**: encryption algorithms, luks2, with specific setup instructions
 
+## Table of Contents
+
+- [Architecture Overview](#architecture-overview)
+- [Encryption Algorithms](#encryption-algorithms)
+- [TPM Integration](#tpm-integration)
+- [Key Management and Key Slots](#key-management-and-key-slots)
+- [Performance](#performance)
+- [Header Backup and Recovery](#header-backup-and-recovery)
+- [Side-by-Side Summary](#side-by-side-summary)
+- [Practical Setup Walkthrough: LUKS on Ubuntu](#practical-setup-walkthrough-luks-on-ubuntu)
+- [BitLocker on Windows: Full Setup](#bitlocker-on-windows-full-setup)
+- [Real-World Disaster Recovery Scenarios](#real-world-disaster-recovery-scenarios)
+- [When to Use LUKS vs BitLocker](#when-to-use-luks-vs-bitlocker)
+- [Related Reading](#related-reading)
+
 ## Architecture Overview
 
 **LUKS** stores an encrypted master key in a header on the disk, protected by one or more key slots. Each key slot holds a copy of the master key, encrypted with a different passphrase, key file, or TPM-bound key. The cipher and parameters are stored in the header.

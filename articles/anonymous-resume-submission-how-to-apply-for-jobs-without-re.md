@@ -44,6 +44,15 @@ This guide covers practical methods for developers and power users to submit app
 - **Anonymous submission protects your**: privacy during the initial screening phases where you receive the most exposure.
 - **Most companies eventually need**: your legal name, Social Security number, and verification documents.
 
+## Table of Contents
+
+- [Why Anonymous Resume Submission Matters](#why-anonymous-resume-submission-matters)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [When to Disclose Identity](#when-to-disclose-identity)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Anonymous Resume Submission Matters
 
 Several scenarios make anonymous job applications valuable. You might be currently employed and not ready to inform your employer about your job search. You could be concerned about recruitment agencies selling your data. Perhaps you want to avoid geographic bias or prevent your current company from learning you're looking.

@@ -43,6 +43,15 @@ This guide examines the data collection practices of three popular sleep tracker
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Oura Ring: Biometric Data Collection](#oura-ring-biometric-data-collection)
+- [Whoop 4.0: Continuous Monitoring Architecture](#whoop-40-continuous-monitoring-architecture)
+- [Eight Sleep: Smart Mattress Data Collection](#eight-sleep-smart-mattress-data-collection)
+- [Privacy Considerations for Developers](#privacy-considerations-for-developers)
+- [Comparing Data Retention Policies](#comparing-data-retention-policies)
+- [Recommendations for Privacy-Conscious Users](#recommendations-for-privacy-conscious-users)
+
 ## Oura Ring: Biometric Data Collection
 
 The Oura Ring captures biometric data through infrared sensors, red LED lights, and temperature sensors embedded in the titanium housing. The device continuously monitors heart rate, heart rate variability (HRV), skin temperature, and blood oxygen saturation.

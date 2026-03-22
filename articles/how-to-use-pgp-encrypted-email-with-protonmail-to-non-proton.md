@@ -40,6 +40,13 @@ ProtonMail provides built-in PGP support for encrypting emails, but the experien
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Programmatic Integration](#advanced-programmatic-integration)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

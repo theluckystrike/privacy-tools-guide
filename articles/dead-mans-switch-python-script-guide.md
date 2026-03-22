@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -27,6 +28,14 @@ This guide builds a Python-based DMS with configurable check-in periods, escalat
 - **For high-assurance use cases**: distribute the check-in across multiple independent servers.
 - **This guide covers design principles**: architecture, core dms script, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
+## Table of Contents
+
+- [Design Principles](#design-principles)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## Design Principles
 

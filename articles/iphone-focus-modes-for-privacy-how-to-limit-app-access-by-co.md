@@ -40,6 +40,15 @@ Use iPhone Focus Modes to limit app notifications and access by context—create
 - **Respecting Focus preferences in**: your app's notification delivery 3.
 - **Use "Only While Using"**: instead of "Always" for location access.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Using Shortcuts for Conditional App Access](#advanced-using-shortcuts-for-conditional-app-access)
+- [Best Practices for Privacy-Focused Focus Modes](#best-practices-for-privacy-focused-focus-modes)
+- [Threat Model: Context-Based Information Leakage](#threat-model-context-based-information-leakage)
+- [Advanced Focus Mode Configurations](#advanced-focus-mode-configurations)
+- [Troubleshooting Focus Mode Privacy](#troubleshooting-focus-mode-privacy)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

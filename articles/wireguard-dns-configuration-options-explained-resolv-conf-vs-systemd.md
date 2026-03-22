@@ -50,6 +50,17 @@ Configuring DNS properly with WireGuard is essential for privacy and functionali
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why DNS Configuration Matters with WireGuard](#why-dns-configuration-matters-with-wireguard)
+- [Method 1: Using wg-quick with the DNS Directive](#method-1-using-wg-quick-with-the-dns-directive)
+- [Method 2: Direct /etc/resolv.conf Configuration](#method-2-direct-etcresolvconf-configuration)
+- [Method 3: systemd-resolved Integration](#method-3-systemd-resolved-integration)
+- [Comparing resolv.conf and systemd-resolved](#comparing-resolvconf-and-systemd-resolved)
+- [DNS Configuration for Mobile and Router Setups](#dns-configuration-for-mobile-and-router-setups)
+- [Troubleshooting DNS Leaks](#troubleshooting-dns-leaks)
+- [Best Practices for WireGuard DNS](#best-practices-for-wireguard-dns)
+
 ## Why DNS Configuration Matters with WireGuard
 
 WireGuard operates at the kernel level, handling encrypted tunnel traffic efficiently. However, DNS resolution happens separately from the VPN tunnel itself. By default, your system continues using the DNS servers configured by your ISP or network manager. This creates a DNS leak—your traffic may go through the VPN tunnel, but your DNS queries remain visible to your ISP and potentially other observers.

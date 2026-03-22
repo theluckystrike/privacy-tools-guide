@@ -27,6 +27,13 @@ Baby monitors have evolved from simple audio devices to sophisticated WiFi-enabl
 - **Most modern routers support**: guest networks or can be configured with separate SSIDs.
 - **Use a password manager**: to generate and store these credentials rather than reusing passwords from other accounts.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Network Monitoring Techniques](#advanced-network-monitoring-techniques)
+- [Threat Model for Different Risk Profiles](#threat-model-for-different-risk-profiles)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -339,11 +346,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
-- [Tenant Privacy Rights: What Landlords Can Legally Monitor](/privacy-tools-guide/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
-- [Macos Siri Privacy Controls How To Prevent Voice Data From R](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
-- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
-- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
-
+- [Privacy & Security Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
+- [Windows Sandbox Privacy Testing Guide 2026](/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/)
+- [How to Create Enterprise Privacy Risk Register Template](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

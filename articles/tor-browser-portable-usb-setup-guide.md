@@ -41,6 +41,13 @@ Running Tor Browser from an USB drive provides a powerful layer of mobility and 
 - **Consider a high-quality USB**: drive with high IOPS ratings for better responsiveness.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Run Tor Browser Portably](#why-run-tor-browser-portably)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Run Tor Browser Portably
 
 Traditional browser installations write data to fixed system locations—your home directory on Linux, AppData on Windows, and various plist files on macOS. A portable setup keeps all browser data on the USB drive itself, leaving no residual files on the host machine.

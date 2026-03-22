@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]---
+tags: [privacy-tools-guide, comparison, encryption]
+---
 ---
 layout: default
 title: "Email Encryption Comparison Smime Vs Pgp Vs Automatic"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]---
+tags: [privacy-tools-guide, comparison, encryption]
+---
 
 {% raw %}
 
@@ -44,6 +46,20 @@ S/MIME uses certificate-based encryption, integrates with most email clients nat
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose S/MIME for enterprise**: requiring certificates, PGP for developers needing maximum privacy and control, or ProtonMail/Tutanota for users wanting transparent encryption without complexity.
+
+## Table of Contents
+
+- [Understanding Email Encryption Fundamentals](#understanding-email-encryption-fundamentals)
+- [S/MIME: Certificate-Based Encryption](#smime-certificate-based-encryption)
+- [PGP/GPG: Web of Trust Encryption](#pgpgpg-web-of-trust-encryption)
+- [Automatic Encryption Solutions](#automatic-encryption-solutions)
+- [Comparison Matrix](#comparison-matrix)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Setting Up Encrypted Email in Practice](#setting-up-encrypted-email-in-practice)
+- [Email Encryption Decision Matrix](#email-encryption-decision-matrix)
+- [Key Rotation and Management](#key-rotation-and-management)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
 
 ## Understanding Email Encryption Fundamentals
 

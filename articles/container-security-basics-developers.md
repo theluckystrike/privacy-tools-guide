@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 
@@ -25,6 +26,19 @@ Most container security issues come from a handful of avoidable mistakes: runnin
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Most container security issues**: come from a handful of avoidable mistakes: running as root, using bloated base images, baking secrets into layers, and leaving default network access open.
 - **If your app is exploited**: the attacker has root inside the container and a better chance of escaping.
+
+## Table of Contents
+
+- [The Basic Threat Model](#the-basic-threat-model)
+- [Use Minimal Base Images](#use-minimal-base-images)
+- [Never Run as Root](#never-run-as-root)
+- [Never Bake Secrets into Images](#never-bake-secrets-into-images)
+- [Scan Images for Vulnerabilities](#scan-images-for-vulnerabilities)
+- [Restrict Container Capabilities](#restrict-container-capabilities)
+- [Read-Only Filesystem](#read-only-filesystem)
+- [Network Policies](#network-policies)
+- [Runtime Security Monitoring](#runtime-security-monitoring)
+- [Quick Security Checklist](#quick-security-checklist)
 
 ## The Basic Threat Model
 

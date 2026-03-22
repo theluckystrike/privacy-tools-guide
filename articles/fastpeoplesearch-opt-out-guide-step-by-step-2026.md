@@ -11,7 +11,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Fastpeoplesearch Opt Out Guide Step By Step 2026"
@@ -25,7 +26,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 FastPeopleSearch aggregates public records to create detailed profiles containing names, addresses, phone numbers, and background information. If you value privacy, removing your data from these aggregator sites should be part of your personal security strategy. This guide walks through the FastPeopleSearch opt-out process with both manual and automated approaches suitable for developers and power users.

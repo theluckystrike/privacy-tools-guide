@@ -39,6 +39,14 @@ tags: [privacy-tools-guide]---
 - **This guide addresses the**: peripheral privacy concerns: network-level leakage, address reuse, and blockchain analysis vectors that persist regardless of key security.
 - **The challenge lies in**: consistently using new addresses and avoiding accidental reuse.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Advanced: PayJoin and CoinJoin](#advanced-payjoin-and-coinjoin)
+- [Device-Level Security Considerations](#device-level-security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Introduction
 
 Hardware wallets remain the gold standard for securing cryptocurrency keys, and Trezor devices from SatoshiLabs offer open-source firmware that developers can audit. However, default configurations prioritize convenience over privacy. This guide provides technical configurations to maximize transaction privacy while maintaining security.

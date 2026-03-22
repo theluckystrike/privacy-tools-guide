@@ -50,6 +50,24 @@ These settings and practices close those gaps.
 - **On Linux**: Signal's screen lock uses your system's D-Bus authentication.
 - **Anyone who had access to your phone at any point could have linked an additional device**: including Signal Desktop installations you no longer use.
 
+## Table of Contents
+
+- [Step 1: Enable Screen Lock in Signal Desktop](#step-1-enable-screen-lock-in-signal-desktop)
+- [Step 2: Configure Notification Privacy](#step-2-configure-notification-privacy)
+- [Step 3: Audit Linked Devices](#step-3-audit-linked-devices)
+- [Step 4: Protect the Local Signal Database](#step-4-protect-the-local-signal-database)
+- [Step 5: Use Signal Over a Proxy](#step-5-use-signal-over-a-proxy)
+- [Step 6: Note Permissions and Prevent Data Leaks](#step-6-note-permissions-and-prevent-data-leaks)
+- [Step 7: Keep Signal Desktop Updated](#step-7-keep-signal-desktop-updated)
+- [Step 8: Disappearing Messages Default](#step-8-disappearing-messages-default)
+- [Step 9: Monitor Signal Desktop for Updates Manually](#step-9-monitor-signal-desktop-for-updates-manually)
+- [Step 10: Network-Level Logging Considerations](#step-10-network-level-logging-considerations)
+- [Step 11: Backup and Export Considerations](#step-11-backup-and-export-considerations)
+- [Step 12: Disappearing Messages Timing](#step-12-disappearing-messages-timing)
+- [Step 13: Threat Modeling for Desktop Usage](#step-13-threat-modeling-for-desktop-usage)
+- [Step 14: Audit Your Signal Desktop Security Checklist](#step-14-audit-your-signal-desktop-security-checklist)
+- [Related Reading](#related-reading)
+
 ## Step 1: Enable Screen Lock in Signal Desktop
 
 Signal Desktop has a built-in screen lock that requires your system password after a period of inactivity. This is separate from your OS screen saver.

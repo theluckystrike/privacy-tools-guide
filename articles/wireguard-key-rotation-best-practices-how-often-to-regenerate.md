@@ -36,6 +36,18 @@ Rotate WireGuard keys every 3-6 months for personal use and every 1-3 months for
 - **Use the wg genkey**: command to generate new key pairs and wg set to update them on live interfaces without disrupting the tunnel; automate with cron jobs to regenerate keys on a schedule.
 - **Your public key is**: what your peers use to recognize you, and your private key signs the handshake.
 
+## Table of Contents
+
+- [Why Key Rotation Matters for WireGuard](#why-key-rotation-matters-for-wireguard)
+- [Recommended Rotation Intervals](#recommended-rotation-intervals)
+- [How to Manually Rotate WireGuard Keys](#how-to-manually-rotate-wireguard-keys)
+- [Automating Key Rotation](#automating-key-rotation)
+- [Security Considerations](#security-considerations)
+- [Coordinating Key Rotation Across Multiple Peers](#coordinating-key-rotation-across-multiple-peers)
+- [Key Rotation vs. Peer Removal: Knowing When to Do Each](#key-rotation-vs-peer-removal-knowing-when-to-do-each)
+- [Verifying Key Rotation](#verifying-key-rotation)
+- [Related Reading](#related-reading)
+
 ## Why Key Rotation Matters for WireGuard
 
 WireGuard uses Curve25519 elliptic curve cryptography for key exchange, which provides excellent security. However, even the strongest cryptographic keys can become vulnerable over time through various attack vectors:

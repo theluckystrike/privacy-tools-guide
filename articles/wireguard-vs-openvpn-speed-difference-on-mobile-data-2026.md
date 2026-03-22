@@ -213,6 +213,14 @@ For most mobile VPN scenarios in 2026, WireGuard provides superior performance. 
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Benchmarking on Your Actual Connection](#benchmarking-on-your-actual-connection)
+- [Real Device Battery Tests](#real-device-battery-tests)
+- [Choosing Protocol for Specific Scenarios](#choosing-protocol-for-specific-scenarios)
+- [Advanced Tuning for Mobile Optimization](#advanced-tuning-for-mobile-optimization)
+- [Diagnosing Speed Issues](#diagnosing-speed-issues)
+
 **Can I use WireGuard and the second tool together?**
 
 Yes, many users run both tools simultaneously. WireGuard and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.

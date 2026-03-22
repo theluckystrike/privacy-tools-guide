@@ -53,6 +53,23 @@ This guide shows how to build a fully local smart home using Home Assistant, loc
 
 ## Hardware Shopping List
 
+## Table of Contents
+
+- [Hardware Shopping List](#hardware-shopping-list)
+- [Step 1: Home Assistant Installation](#step-1-home-assistant-installation)
+- [Step 2: Add Zigbee Coordinator](#step-2-add-zigbee-coordinator)
+- [Step 3: Pair Zigbee Devices](#step-3-pair-zigbee-devices)
+- [Step 4: Network Isolation (VLAN)](#step-4-network-isolation-vlan)
+- [Step 5: Pi-hole (DNS Blocking)](#step-5-pi-hole-dns-blocking)
+- [Step 6: Automation Examples](#step-6-automation-examples)
+- [Step 7: Mobile Access (Secure)](#step-7-mobile-access-secure)
+- [Privacy Comparison: Cloud vs Local](#privacy-comparison-cloud-vs-local)
+- [Total Cost Breakdown](#total-cost-breakdown)
+- [Backup & Restore](#backup-restore)
+- [Troubleshooting](#troubleshooting)
+- [Expansion: What's Next](#expansion-whats-next)
+- [Related Reading](#related-reading)
+
 **Total Cost: ~$400-700 for complete setup**
 
 ### Core System

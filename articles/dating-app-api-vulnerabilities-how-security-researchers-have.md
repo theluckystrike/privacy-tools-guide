@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, api]---
+tags: [privacy-tools-guide, security, api]
+---
 ---
 layout: default
 title: "Dating App API Vulnerabilities How Security Researchers"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, api]---
+tags: [privacy-tools-guide, security, api]
+---
 
 {% raw %}
 
@@ -41,6 +43,18 @@ Common dating app API vulnerabilities include insecure direct object references 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Developers should implement proper**: authentication, validate all inputs, use HTTPS everywhere, implement rate limiting, and conduct security audits.
 - **2022 - Third-Party Data Sharing**: Investigations revealed dating apps were sharing user data with advertising networks and analytics providers without proper consent mechanisms.
+
+## Table of Contents
+
+- [Common API Vulnerability Patterns in Dating Apps](#common-api-vulnerability-patterns-in-dating-apps)
+- [Historical Cases of Dating App Data Exposure](#historical-cases-of-dating-app-data-exposure)
+- [Security Recommendations for Developers](#security-recommendations-for-developers)
+- [What Users Should Know](#what-users-should-know)
+- [Advanced Attack Scenarios and Real-World Cases](#advanced-attack-scenarios-and-real-world-cases)
+- [API Security Best Practices Implementation](#api-security-best-practices-implementation)
+- [Privacy-Focused Dating App Architecture](#privacy-focused-dating-app-architecture)
+- [Historical Vulnerabilities Summary](#historical-vulnerabilities-summary)
+- [Responsible Disclosure](#responsible-disclosure)
 
 ## Common API Vulnerability Patterns in Dating Apps
 

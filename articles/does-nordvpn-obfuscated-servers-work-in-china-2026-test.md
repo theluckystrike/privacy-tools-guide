@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 ---
 layout: default
 title: "Does NordVPN Obfuscated Servers Work in China? 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
@@ -39,6 +41,23 @@ Testing VPN connectivity from within China presents unique technical challenges.
 - **This article documents practical**: testing of NordVPN's obfuscated servers from mainland China in early 2026, with configuration examples for developers and power users.
 - **NordVPN achieves this through their OpenVPN configuration with obfuscation patches, routing traffic through TCP port 443**: the same port used by standard web traffic.
 - **Speed Trade-offs**: Obfuscation adds overhead, typically reducing connection speeds by 15-30% compared to standard VPN connections.
+
+## Table of Contents
+
+- [Understanding Obfuscated Servers](#understanding-obfuscated-servers)
+- [Testing Environment and Methodology](#testing-environment-and-methodology)
+- [Connection Success Rates](#connection-success-rates)
+- [Configuration for Developers](#configuration-for-developers)
+- [Technical Limitations and Considerations](#technical-limitations-and-considerations)
+- [Recommendations for Power Users](#recommendations-for-power-users)
+- [Real-World Testing Results and Success Metrics](#real-world-testing-results-and-success-metrics)
+- [Advanced: Custom Obfuscation Strategies](#advanced-custom-obfuscation-strategies)
+- [Machine Learning Detection and Evasion](#machine-learning-detection-and-evasion)
+- [Fallback Strategies When Obfuscated VPN Fails](#fallback-strategies-when-obfuscated-vpn-fails)
+- [Cost-Benefit Analysis: VPN vs Tor vs Hybrid](#cost-benefit-analysis-vpn-vs-tor-vs-hybrid)
+- [Temporary vs Long-Term Solutions](#temporary-vs-long-term-solutions)
+- [Monitoring Blocking Patterns Over Time](#monitoring-blocking-patterns-over-time)
+- [Security During VPN Disruptions](#security-during-vpn-disruptions)
 
 ## Understanding Obfuscated Servers
 

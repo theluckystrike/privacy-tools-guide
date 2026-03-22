@@ -40,6 +40,14 @@ Windows 11 includes Smart App Control (SAC), a security feature that monitors ap
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [What is Smart App Control](#what-is-smart-app-control)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Automating SAC Across Enterprise Devices](#automating-sac-across-enterprise-devices)
+
 ## What is Smart App Control
 
 Smart App Control represents Microsoft's evolution of Windows Defender Application Control (WDAC). It uses a combination of code integrity policies and artificial intelligence to block potentially harmful applications before they execute. When enabled, SAC checks every application against a database of known safe applications and blocks anything that appears suspicious.

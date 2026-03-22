@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Does Surfshark Obfuscation Work In China 2026 Mobile"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -44,6 +46,20 @@ Testing VPN obfuscation in China requires understanding both the technical imple
 The app's Kill Switch feature is critical.
 - Wait 2 seconds
 // 3.
+
+## Table of Contents
+
+- [Understanding Obfuscation Technology](#understanding-obfuscation-technology)
+- [Testing Methodology](#testing-methodology)
+- [Protocols Tested](#protocols-tested)
+- [Mobile-Specific Findings](#mobile-specific-findings)
+- [Connection Stability Observations](#connection-stability-observations)
+- [Protocol Performance Comparison Table](#protocol-performance-comparison-table)
+- [Network Environment Matters](#network-environment-matters)
+- [Optimizing Surfshark App Settings for China](#optimizing-surfshark-app-settings-for-china)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [Alternative Approaches](#alternative-approaches)
+- [Common Mistakes That Lead to Failed Connections](#common-mistakes-that-lead-to-failed-connections)
 
 ## Understanding Obfuscation Technology
 

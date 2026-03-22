@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Tor Consensus: How Directory Authorities"
-description: "A technical deep-dive into Tor network consensus mechanism and directory authorities. Learn how relay information is validated, how clients bootstrap"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-consensus-how-directory-authorities-work/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -40,6 +27,19 @@ The final consensus document is signed by at least 5 of 9 authorities (a quorum 
 - **Expired consensus**: If your client hasn't downloaded a fresh consensus (older than 24 hours), it will refuse to use it.
 - **The Tor network's security**: model depends on having at least 5 honest authorities.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [What Are Directory Authorities](#what-are-directory-authorities)
+- [The Consensus Mechanism Explained](#the-consensus-mechanism-explained)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Understanding Relay Flags](#understanding-relay-flags)
+- [Troubleshooting Network Issues](#troubleshooting-network-issues)
+- [Securing Your Bootstrap](#securing-your-bootstrap)
+- [Directory Authority Network Architecture](#directory-authority-network-architecture)
+- [Advanced Topics for Network Security](#advanced-topics-for-network-security)
+- [Network Monitoring and Analysis](#network-monitoring-and-analysis)
+- [Historical Consensus Issues](#historical-consensus-issues)
 
 ## What Are Directory Authorities
 
@@ -209,12 +209,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
-- [Russia Vpn Provider Compliance Which Services Handed.](/privacy-tools-guide/russia-vpn-provider-compliance-which-services-handed-user-data-to-authorities-2026-review/)
-- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
-- [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
-- [Best No Kyc Cryptocurrency Exchanges That Still Work In 2026](/privacy-tools-guide/best-no-kyc-cryptocurrency-exchanges-that-still-work-in-2026/)
-
+- [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
+- [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
+- [Best Tor Alternatives 2026: Privacy Browsing Guide](/privacy-tools-guide/best-tor-alternatives-2026-privacy-browsing/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
 ## Directory Authority Network Architecture
 
 The nine Tor directory authorities are geographically distributed to prevent coordinated attacks. Each authority maintains independently:

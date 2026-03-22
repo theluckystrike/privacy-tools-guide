@@ -42,6 +42,24 @@ Tor Browser offers stronger anonymity against network-level adversaries by routi
 
 It depends on your background.
 
+## Table of Contents
+
+- [How Tor Browser Works](#how-tor-browser-works)
+- [How VPNs Work](#how-vpns-work)
+- [Key Differences](#key-differences)
+- [When to Use Tor Browser](#when-to-use-tor-browser)
+- [When to Use a VPN](#when-to-use-a-vpn)
+- [Combining Tor and VPN](#combining-tor-and-vpn)
+- [Security Considerations](#security-considerations)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Threat Model Analysis](#threat-model-analysis)
+- [VPN Protocol Comparison](#vpn-protocol-comparison)
+- [Implementation Comparison Code](#implementation-comparison-code)
+- [Real-World Performance Comparison](#real-world-performance-comparison)
+- [Practical Decision Tree](#practical-decision-tree)
+- [Security Mistakes and Solutions](#security-mistakes-and-solutions)
+- [Testing Your Configuration](#testing-your-configuration)
+
 ## How Tor Browser Works
 
 Tor (The Onion Router) routes your traffic through a distributed network of relays operated by volunteers worldwide. Each relay only knows the previous hop and next hop, creating layers of encryption like an onion. Your traffic exits through a final relay (exit node) to reach the destination server.

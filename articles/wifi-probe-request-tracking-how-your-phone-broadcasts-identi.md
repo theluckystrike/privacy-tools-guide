@@ -40,6 +40,22 @@ Your phone continuously broadcasts WiFi probe requests containing its MAC addres
 - **Research from the University**: of Hamburg demonstrated that 90% of devices could still be tracked despite MAC randomization through these fingerprinting techniques.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Probe Requests Work](#how-probe-requests-work)
+- [Capturing Probe Requests](#capturing-probe-requests)
+- [What Your Phone Reveals](#what-your-phone-reveals)
+- [MAC Address Randomization](#mac-address-randomization)
+- [Practical Defense Strategies](#practical-defense-strategies)
+- [Building Privacy Tools](#building-privacy-tools)
+- [Real-World Implications](#real-world-implications)
+- [Advanced Technical Analysis: Fingerprinting Techniques](#advanced-technical-analysis-fingerprinting-techniques)
+- [Legal and Ethical Considerations for Researchers](#legal-and-ethical-considerations-for-researchers)
+- [Commercial Tracking Systems in Detail](#commercial-tracking-systems-in-detail)
+- [Practical Mitigation: Custom Device Configuration](#practical-mitigation-custom-device-configuration)
+- [Building Your Own Probe Monitoring System](#building-your-own-probe-monitoring-system)
+- [Standards Evolution: 802.11be and Beyond](#standards-evolution-80211be-and-beyond)
+
 ## How Probe Requests Work
 
 When your smartphone needs to connect to a WiFi network, it first checks whether known networks are in range. Rather than passively listening, the device actively probes the airwaves by sending out request frames containing the SSIDs (network names) it remembers. These are called probe request frames, defined in the IEEE 802.11 standard.

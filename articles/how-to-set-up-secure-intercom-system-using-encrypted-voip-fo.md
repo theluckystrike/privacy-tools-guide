@@ -43,6 +43,13 @@ This guide covers the architectural components, protocol choices, and implementa
 - **Both offer PoE powering, wide-angle cameras, and card reader inputs**: useful if you want to integrate access control with your intercom calls.
 - **For desktop clients**: Zoiper and MicroSIP offer better UI polish than Linphone on Windows, and both support mandatory SRTP.
 
+## Table of Contents
+
+- [Understanding the Security Requirements](#understanding-the-security-requirements)
+- [Prerequisites](#prerequisites)
+- [Network Security Considerations](#network-security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding the Security Requirements
 
 A secure intercom system for residential or commercial buildings must address several core security properties:

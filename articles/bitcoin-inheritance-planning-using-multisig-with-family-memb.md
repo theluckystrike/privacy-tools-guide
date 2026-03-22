@@ -46,6 +46,21 @@ Recommended Wallets for Inheritance Access:
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For developers and power**: users holding significant bitcoin, the complexity of self-custody creates real risk that heirs may lose access permanently.
 
+## Table of Contents
+
+- [Why Standard Seed Phrase Storage Fails for Inheritance](#why-standard-seed-phrase-storage-fails-for-inheritance)
+- [Configuring a Family Multisig Setup](#configuring-a-family-multisig-setup)
+- [Working with Estate Lawyers](#working-with-estate-lawyers)
+- [Time-Locked Recovery with CLTV](#time-locked-recovery-with-cltv)
+- [Documenting Everything for Your Executor](#documenting-everything-for-your-executor)
+- [Testing Your Setup Before It's Too Late](#testing-your-setup-before-its-too-late)
+- [Advanced: Shamir Secret Sharing for Key Distribution](#advanced-shamir-secret-sharing-for-key-distribution)
+- [Inheritance Access Triggers and Automated Release](#inheritance-access-triggers-and-automated-release)
+- [Wallet Software Compatibility for Heirs](#wallet-software-compatibility-for-heirs)
+- [Coordination Workflow for Executor and Keyholders](#coordination-workflow-for-executor-and-keyholders)
+- [Tax Implications and Estate Planning](#tax-implications-and-estate-planning)
+- [Recovery Testing Checklist](#recovery-testing-checklist)
+
 ## Why Standard Seed Phrase Storage Fails for Inheritance
 
 Leaving a written seed phrase for heirs creates several problems. First, a single point of failure means the paper could be destroyed, lost, or stolen. Second, heirs may lack the technical knowledge to import a seed phrase into wallet software correctly. Third, cryptocurrency held in a multisig setup is not recoverable through seed phrases alone—the signature threshold must be met.

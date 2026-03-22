@@ -42,6 +42,22 @@ Choose a local account for maximum privacy—it prevents Windows from linking yo
 It depends on your background.
 - **the first tool tends**: to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration.
 
+## Table of Contents
+
+- [Understanding the Two Account Types](#understanding-the-two-account-types)
+- [Data Collection Differences](#data-collection-differences)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Converting Between Account Types](#converting-between-account-types)
+- [Security Considerations](#security-considerations)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Advanced Privacy Hardening for Local Accounts](#advanced-privacy-hardening-for-local-accounts)
+- [Telemetry Analysis: Comparing Data Flows](#telemetry-analysis-comparing-data-flows)
+- [Microsoft Account Data Endpoints](#microsoft-account-data-endpoints)
+- [BitLocker Encryption: Local vs Microsoft Account Differences](#bitlocker-encryption-local-vs-microsoft-account-differences)
+- [Multi-User Scenarios: Hybrid Approach](#multi-user-scenarios-hybrid-approach)
+- [Migration Path: Switching Safely](#migration-path-switching-safely)
+- [VPN and Proxy Considerations](#vpn-and-proxy-considerations)
+
 ## Understanding the Two Account Types
 
 A **local account** operates independently of Microsoft's online services. Authentication happens entirely on your machine, using credentials stored locally in the Security Account Manager (SAM) database. There is no connection to Microsoft's cloud infrastructure for everyday login purposes.

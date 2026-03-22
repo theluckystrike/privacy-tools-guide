@@ -43,6 +43,21 @@ Understanding how Bumble determines and stores your location is essential for an
 4.
 - **A technically skilled user**: could exploit this by: 1.
 
+## Table of Contents
+
+- [How Bumble Determines Your Location](#how-bumble-determines-your-location)
+- [Technical Implementation Details](#technical-implementation-details)
+- [Privacy Risks and Considerations](#privacy-risks-and-considerations)
+- [Controlling Your Bumble Location Data](#controlling-your-bumble-location-data)
+- [Technical Deep Dive: Location Inference from Behavioral Patterns](#technical-deep-dive-location-inference-from-behavioral-patterns)
+- [Data Retention and Historical Analysis](#data-retention-and-historical-analysis)
+- [Defensive Measures Against Location Analysis](#defensive-measures-against-location-analysis)
+- [Privacy Comparison with Competitors](#privacy-comparison-with-competitors)
+- [Regulatory Field](#regulatory-field)
+- [Monitoring for Data Breaches](#monitoring-for-data-breaches)
+- [Real-World Exploitation Scenarios](#real-world-exploitation-scenarios)
+- [Long-term Privacy Best Practices](#long-term-privacy-best-practices)
+
 ## How Bumble Determines Your Location
 
 Bumble uses a combination of GPS, Wi-Fi positioning, and cellular tower triangulation to determine your location. When you create an account and enable location services, the app requests access to your device's GPS receiver. The precision you see in the app—often displayed as a distance in miles or kilometers—represents a calculated position derived from these multiple sources.

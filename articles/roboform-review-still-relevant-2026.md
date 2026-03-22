@@ -40,6 +40,23 @@ RoboForm has been a staple in the password manager space since 1999, making it o
 - **Competitors offer substantially more**: for technical workflows, often at lower cost or with open-source transparency.
 - **If you use this product daily for core tasks**: the cost usually pays for itself through time savings.
 
+## Table of Contents
+
+- [What Developers Actually Need From Password Managers](#what-developers-actually-need-from-password-managers)
+- [RoboForm's Current Feature Set for Power Users](#roboforms-current-feature-set-for-power-users)
+- [Practical Limitations for Developer Workflows](#practical-limitations-for-developer-workflows)
+- [When RoboForm Makes Sense in 2026](#when-roboform-makes-sense-in-2026)
+- [Comparative Take](#comparative-take)
+- [Security Considerations](#security-considerations)
+- [Final Assessment](#final-assessment)
+- [Detailed Feature Comparison Table](#detailed-feature-comparison-table)
+- [Password Manager Workflow Scenarios](#password-manager-workflow-scenarios)
+- [RoboForm's Browser Extension Architecture](#roboforms-browser-extension-architecture)
+- [Migration Path from RoboForm](#migration-path-from-roboform)
+- [Browser Extension Privacy Concerns](#browser-extension-privacy-concerns)
+- [When Not to Use RoboForm](#when-not-to-use-roboform)
+- [The Privacy Angle](#the-privacy-angle)
+
 ## What Developers Actually Need From Password Managers
 
 Before looking at RoboForm's specific capabilities, let's establish what matters for developers and power users. You need more than a GUI that fills website passwords. Your requirements typically include:

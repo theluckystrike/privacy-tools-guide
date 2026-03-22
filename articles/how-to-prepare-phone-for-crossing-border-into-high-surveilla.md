@@ -42,6 +42,13 @@ This security checklist covers practical steps to harden your device before cros
 - **For developers who use**: browser-based developer tools or local development servers, shut down all running local services and clear any localhost bindings that might expose internal services.
 - **Use SSH agent forwarding**: from a separate key that you can revoke remotely if needed.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Detailed Backup and Recovery Procedures](#detailed-backup-and-recovery-procedures)
+- [Advanced Threat Scenarios](#advanced-threat-scenarios)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

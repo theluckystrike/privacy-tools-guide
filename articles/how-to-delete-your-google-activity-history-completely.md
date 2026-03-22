@@ -51,6 +51,21 @@ All feeds into Google's ad targeting engine. Deleting it is both practical (recl
 
 ## Part 1: Backup Your Data (Optional but Recommended)
 
+## Table of Contents
+
+- [Part 1: Backup Your Data (Optional but Recommended)](#part-1-backup-your-data-optional-but-recommended)
+- [Part 2: Delete Search & Web Activity](#part-2-delete-search-web-activity)
+- [Part 3: Delete YouTube History](#part-3-delete-youtube-history)
+- [Part 4: Delete Location History](#part-4-delete-location-history)
+- [Part 5: Disable Ad Personalization](#part-5-disable-ad-personalization)
+- [Part 6: Google Account Settings (Ongoing Privacy)](#part-6-google-account-settings-ongoing-privacy)
+- [Part 7: Chrome Sync & Data Deletion](#part-7-chrome-sync-data-deletion)
+- [Part 8: Verification & Confirmation](#part-8-verification-confirmation)
+- [Part 9: Ongoing Privacy (Best Practices)](#part-9-ongoing-privacy-best-practices)
+- [Alternative: Delete Google Account Entirely](#alternative-delete-google-account-entirely)
+- [Troubleshooting](#troubleshooting)
+- [Privacy After Google Deletion](#privacy-after-google-deletion)
+
 Before deleting, export a copy via Google Takeout. This is your evidence that data existed and proof of deletion.
 
 ### Step 1: Access Google Takeout

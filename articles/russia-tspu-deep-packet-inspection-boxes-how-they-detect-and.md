@@ -40,6 +40,14 @@ TSPU boxes are deep packet inspection systems deployed at Russian ISP chokepoint
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What Are TSPU Deep Packet Inspection Boxes?](#what-are-tspu-deep-packet-inspection-boxes)
+- [How DPI Systems Detect VPN Traffic](#how-dpi-systems-detect-vpn-traffic)
+- [How TSPU Boxes Block VPN Connections](#how-tspu-boxes-block-vpn-connections)
+- [Building Resilient VPN Solutions](#building-resilient-vpn-solutions)
+- [Detecting If You're Behind DPI](#detecting-if-youre-behind-dpi)
+
 ## What Are TSPU Deep Packet Inspection Boxes?
 
 Deep packet inspection boxes are specialized network appliances that examine data packets beyond just header information. Unlike basic firewalls that look at source and destination IP addresses and ports, DPI systems inspect the payload—the actual data inside the packet.

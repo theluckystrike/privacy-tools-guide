@@ -44,6 +44,17 @@ The good news is that Android has built-in support for per-app VPN configuration
 - **This is great for privacy**: but it can slow down streaming apps, cause issues with local network devices, or waste bandwidth on apps that don't need protection.
 - **Per-app VPN solves this**: problem by letting you choose which apps use the VPN and which connect directly to the internet.
 
+## Table of Contents
+
+- [Understanding Per App VPN on Android](#understanding-per-app-vpn-on-android)
+- [Prerequisites for Per App VPN](#prerequisites-for-per-app-vpn)
+- [Configuring Per App VPN Using Android's Built-in Settings](#configuring-per-app-vpn-using-androids-built-in-settings)
+- [Using VPN Apps with Built-in Per-App Features](#using-vpn-apps-with-built-in-per-app-features)
+- [Advanced: Using Sharik for Android Network Sharing](#advanced-using-sharik-for-android-network-sharing)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+- [Which Apps Should Use VPN?](#which-apps-should-use-vpn)
+
 ## Understanding Per App VPN on Android
 
 Android's per-app VPN feature, introduced in Android 7 (Nougat) and improved in subsequent versions, allows you to create a VPN profile that only certain apps can use. This is different from a traditional VPN that routes everything through the tunnel.

@@ -42,6 +42,14 @@ This guide walks through practical methods to control Alexa skill permissions, f
 - **Choose the skill you**: want to manage 4.
 - **Use progressive permission requests**: ask for additional access only when the user triggers a feature that requires it.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Controlling Data Sharing at the Account Level](#advanced-controlling-data-sharing-at-the-account-level)
+- [Threat Modeling for Alexa Usage](#threat-modeling-for-alexa-usage)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

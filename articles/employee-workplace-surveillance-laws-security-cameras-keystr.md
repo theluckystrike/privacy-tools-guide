@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 
@@ -25,6 +26,17 @@ US federal law permits workplace surveillance for legitimate business purposes u
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Texas requires notice before**: installing GPS tracking devices on company vehicles used by employees.
+
+## Table of Contents
+
+- [Federal Baseline for Workplace Surveillance](#federal-baseline-for-workplace-surveillance)
+- [Security Camera Regulations](#security-camera-regulations)
+- [Keystroke Logging Laws](#keystroke-logging-laws)
+- [GPS Tracking Restrictions](#gps-tracking-restrictions)
+- [State-by-State Quick Reference](#state-by-state-quick-reference)
+- [Compliance Recommendations](#compliance-recommendations)
+- [Consent and Disclosure Best Practices](#consent-and-disclosure-best-practices)
+- [Future Considerations](#future-considerations)
 
 ## Federal Baseline for Workplace Surveillance
 

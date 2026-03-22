@@ -42,6 +42,23 @@ The best encrypted calendar app for developers in 2026 depends on your prioritie
 - **Power users who want**: programmatic access will favor solutions supporting CalDAV or offering CLI tools.
 - **Proton Calendar integrates with**: Proton Mail and Proton Drive, providing an unified privacy-focused ecosystem.
 
+## Table of Contents
+
+- [What Developers Need from Encrypted Calendars](#what-developers-need-from-encrypted-calendars)
+- [Why Calendar Privacy Matters](#why-calendar-privacy-matters)
+- [Proton Calendar](#proton-calendar)
+- [Tutanota Calendar](#tutanota-calendar)
+- [EteSync](#etesync)
+- [Self-Hosted Solutions](#self-hosted-solutions)
+- [Comparing Encryption Approaches](#comparing-encryption-approaches)
+- [Automating Calendar Tasks](#automating-calendar-tasks)
+- [Choosing Your Encrypted Calendar](#choosing-your-encrypted-calendar)
+- [Pricing Comparison and Feature Matrix](#pricing-comparison-and-feature-matrix)
+- [Implementing Client-Side Encryption with Radicale](#implementing-client-side-encryption-with-radicale)
+- [Automation and Integration](#automation-and-integration)
+- [Threat Model Matching](#threat-model-matching)
+- [Command-Line Calendar Tools](#command-line-calendar-tools)
+
 ## What Developers Need from Encrypted Calendars
 
 Calendar data reveals sensitive information—meeting patterns, travel plans, client calls, and personal appointments. Encrypting your calendar protects this metadata from surveillance, data breaches, and service provider access.

@@ -40,6 +40,20 @@ Accessibility in privacy tools remains a critical consideration for developers a
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **This comparison evaluates privacy-focused**: applications offering strong high contrast modes in 2026, focusing on technical implementation, customization options, and privacy guarantees.
 
+## Table of Contents
+
+- [Browser Extensions for High Contrast Privacy](#browser-extensions-for-high-contrast-privacy)
+- [Password Managers with Accessibility Features](#password-managers-with-accessibility-features)
+- [Terminal and CLI Privacy Tools](#terminal-and-cli-privacy-tools)
+- [Code Editors for Privacy Development](#code-editors-for-privacy-development)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Testing High Contrast Implementation](#testing-high-contrast-implementation)
+- [Advanced Customization Strategies](#advanced-customization-strategies)
+- [Performance Implications of High Contrast](#performance-implications-of-high-contrast)
+- [Inclusive Design Principles Beyond Contrast](#inclusive-design-principles-beyond-contrast)
+- [Color Blindness Considerations](#color-blindness-considerations)
+- [Enterprise Deployment of High Contrast](#enterprise-deployment-of-high-contrast)
+
 ## Browser Extensions for High Contrast Privacy
 
 Browser extensions provide the most accessible entry point for enhancing contrast in existing browsers. Three options stand out for privacy-conscious users:

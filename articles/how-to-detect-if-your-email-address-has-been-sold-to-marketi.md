@@ -40,6 +40,13 @@ Your email address is one of the most valuable pieces of personal data in the ad
 - **Integrates identity theft protection**: for an additional $99/year.
 - **Includes data breach notifications**: and credit monitoring in premium tier ($19.99/month).
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Broker Removal Services: Cost and Effectiveness Comparison](#broker-removal-services-cost-and-effectiveness-comparison)
+- [Advanced Detection: Email Tracking Networks](#advanced-detection-email-tracking-networks)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

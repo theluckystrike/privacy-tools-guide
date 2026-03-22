@@ -42,6 +42,18 @@ Choosing a privacy-focused custom ROM requires understanding the technical trade
 - **Apps that partially work with microG**: Many popular apps that use Firebase Cloud Messaging for notifications, basic location services, and some SafetyNet checks.
 - **For GrapheneOS users who**: need broad app compatibility, the sandboxed Google Play approach is pragmatic.
 
+## Table of Contents
+
+- [The ROMs at a Glance](#the-roms-at-a-glance)
+- [Security Architecture Comparison](#security-architecture-comparison)
+- [Privacy Feature Matrix](#privacy-feature-matrix)
+- [Network and Traffic Analysis](#network-and-traffic-analysis)
+- [Practical Recommendations](#practical-recommendations)
+- [Installation Considerations](#installation-considerations)
+- [Verified Boot and Its Privacy Implications](#verified-boot-and-its-privacy-implications)
+- [App Compatibility and the Google Play Services Gap](#app-compatibility-and-the-google-play-services-gap)
+- [Telemetry Comparison by Default Settings](#telemetry-comparison-by-default-settings)
+
 ## The ROMs at a Glance
 
 Four projects dominate the privacy-focused custom ROM space in 2026:

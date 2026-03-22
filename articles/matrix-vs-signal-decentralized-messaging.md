@@ -40,6 +40,20 @@ When choosing a messaging protocol for privacy-focused applications, developers 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Matrix and Signal represent**: two distinct approaches to encrypted communication, each with strengths that serve different use cases.
 
+## Table of Contents
+
+- [Architectural Fundamentals](#architectural-fundamentals)
+- [Encryption Implementation](#encryption-implementation)
+- [Protocol Feature Comparison](#protocol-feature-comparison)
+- [Federation and Decentralization](#federation-and-decentralization)
+- [Metadata Considerations](#metadata-considerations)
+- [Phone Number Dependency](#phone-number-dependency)
+- [Developer Integration](#developer-integration)
+- [When to Choose Each Protocol](#when-to-choose-each-protocol)
+- [Running Your Own Matrix Homeserver](#running-your-own-matrix-homeserver)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Related Reading](#related-reading)
+
 ## Architectural Fundamentals
 
 **Signal** operates as a centralized messaging service with end-to-end encryption as a core design principle. The Signal Protocol (Double Ratchet Algorithm) provides forward secrecy and deniable authentication. However, Signal's architecture requires users to trust the Signal Foundation as the service operator—metadata, contact lists, and message delivery flow through their servers.

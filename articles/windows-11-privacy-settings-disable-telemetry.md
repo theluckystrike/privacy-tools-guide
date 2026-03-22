@@ -40,6 +40,24 @@ Reduce Windows 11 telemetry by changing diagnostic data from Enhanced/Full to Ba
 - **For developers comfortable with scripts**: manually applying each setting provides better understanding and control.
 - **Tailored Experiences**: Disable personalized recommendations at Settings → Privacy & security → Diagnostics & feedback.
 
+## Table of Contents
+
+- [Understanding Windows 11 Telemetry Levels](#understanding-windows-11-telemetry-levels)
+- [Method 1: Using Settings App (Basic)](#method-1-using-settings-app-basic)
+- [Method 2: Using Group Policy Editor (Recommended for Pro/Enterprise)](#method-2-using-group-policy-editor-recommended-for-proenterprise)
+- [Method 3: Registry Modifications (All Editions)](#method-3-registry-modifications-all-editions)
+- [Method 4: PowerShell Automation Script](#method-4-powershell-automation-script)
+- [Method 5: Using Windows Spy Block or Similar Tools](#method-5-using-windows-spy-block-or-similar-tools)
+- [Additional Privacy Settings to Consider](#additional-privacy-settings-to-consider)
+- [Verifying Your Configuration](#verifying-your-configuration)
+- [Telemetry Service Hardening](#telemetry-service-hardening)
+- [Firewall Rules for Telemetry Endpoints](#firewall-rules-for-telemetry-endpoints)
+- [Monitoring Network Activity](#monitoring-network-activity)
+- [Application-Level Privacy Settings](#application-level-privacy-settings)
+- [Verifying Privacy Settings with Third-Party Tools](#verifying-privacy-settings-with-third-party-tools)
+- [Impact on Windows Features](#impact-on-windows-features)
+- [Trade-offs to Consider](#trade-offs-to-consider)
+
 ## Understanding Windows 11 Telemetry Levels
 
 Windows 11 offers four telemetry levels: Security, Basic, Enhanced, and Full. The default setting on most systems is Enhanced or Full, which sends substantial diagnostic data including crash reports, usage statistics, and app performance metrics.

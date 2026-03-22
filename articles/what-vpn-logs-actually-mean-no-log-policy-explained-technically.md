@@ -29,6 +29,20 @@ When VPN providers claim "no-log" policies, users expect complete privacy—yet 
 - **Swiss VPNs often best**: for privacy.
 - **Small teams can often**: implement changes faster because there are fewer people to coordinate.
 
+## Table of Contents
+
+- [Types of VPN Logs Explained](#types-of-vpn-logs-explained)
+- [Technical Implementation of Logless VPNs](#technical-implementation-of-logless-vpns)
+- [What Law Enforcement Can Actually Request](#what-law-enforcement-can-actually-request)
+- [Evaluating VPN Log Claims](#evaluating-vpn-log-claims)
+- [Common Misconceptions](#common-misconceptions)
+- [Best Practices for Privacy](#best-practices-for-privacy)
+- [VPN Provider No-Log Verification Checklist](#vpn-provider-no-log-verification-checklist)
+- [Demonstrating No-Log Claims](#demonstrating-no-log-claims)
+- [IPv6 and Split Tunneling Leaks](#ipv6-and-split-tunneling-leaks)
+- [Geolocation Verification and Spoofing](#geolocation-verification-and-spoofing)
+- [Payment and Logs Correlation](#payment-and-logs-correlation)
+
 ## Types of VPN Logs Explained
 
 VPN services categorize data collection into distinct log types, each with different privacy implications:

@@ -36,6 +36,15 @@ Check for email compromise immediately by verifying unfamiliar login locations i
 - **Quota Suddenly Full Hackers**: may use your email to send bulk spam, filling your storage quickly.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [🔴 Critical Warning Signs Your Email Has Been Hacked](#critical-warning-signs-your-email-has-been-hacked)
+- [🟡 Subtle Signs of Compromise](#subtle-signs-of-compromise)
+- [⚡ What To Do IMMEDIATELY If Your Email Is Hacked](#what-to-do-immediately-if-your-email-is-hacked)
+- [🔒 Prevention: Protecting Your Email Going Forward](#prevention-protecting-your-email-going-forward)
+- [Check Gmail for Hidden Forwarding Rules](#check-gmail-for-hidden-forwarding-rules)
+- [Quick Reference: How to Check Your Email Provider](#quick-reference-how-to-check-your-email-provider)
+
 ## 🔴 Critical Warning Signs Your Email Has Been Hacked
 
 ### 1. **Unrecognized Login Activity**

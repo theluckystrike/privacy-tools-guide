@@ -11,7 +11,9 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+<<<<<<< Updated upstream
+---
 ---
 layout: default
 title: "Decentraleyes vs Local CDN Comparison 2026"
@@ -25,7 +27,11 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -41,6 +47,25 @@ When building privacy-focused web applications or configuring your browsing envi
 - **Which is better for beginners**: the first tool or the second tool?
 
 It depends on your background.
+
+## Table of Contents
+
+- [What is Decentraleyes?](#what-is-decentraleyes)
+- [Quick Comparison](#quick-comparison)
+- [What is a Local CDN?](#what-is-a-local-cdn)
+- [Performance Comparison](#performance-comparison)
+- [Privacy Analysis](#privacy-analysis)
+- [Maintenance Considerations](#maintenance-considerations)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Combining Both Approaches](#combining-both-approaches)
+- [Library Coverage: What's Actually Cached](#library-coverage-whats-actually-cached)
+- [Implementing Local CDN with Docker](#implementing-local-cdn-with-docker)
+- [Network Traffic Comparison](#network-traffic-comparison)
+- [Size and Storage Analysis](#size-and-storage-analysis)
+- [Advanced Caching Strategy](#advanced-caching-strategy)
+- [Fallback Strategies](#fallback-strategies)
+- [Monitoring and Observability](#monitoring-and-observability)
+- [Migration Path from Decentraleyes](#migration-path-from-decentraleyes)
 
 ## What is Decentraleyes?
 
@@ -500,11 +525,10 @@ Phase 4: Optimization (Week 4)
 
 ## Related Articles
 
-- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
-- [How To Replace Cloud Dependent Smart Switches With Local Zig](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
-- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-
+- [Tor Browser vs VPN Comparison: Which Is Better for Privacy?](/privacy-tools-guide/tor-browser-vs-vpn-comparison-which-is-better/)
+- [Privacy-Focused Mobile Operating Systems Comparison](/privacy-tools-guide/privacy-mobile-operating-systems-comparison/)
+- [Self Hosted Cloud Storage Comparison Nextcloud vs](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
+- [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
+- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

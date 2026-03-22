@@ -50,6 +50,19 @@ This guide compares four privacy-focused alternatives: Standard Notes, Joplin, O
 
 ## Standard Notes (Best Overall Privacy)
 
+## Table of Contents
+
+- [Standard Notes (Best Overall Privacy)](#standard-notes-best-overall-privacy)
+- [Joplin (Best Open-Source Alternative)](#joplin-best-open-source-alternative)
+- [Obsidian (Most Powerful; Privacy Optional)](#obsidian-most-powerful-privacy-optional)
+- [Notesnook (Privacy-First; Newer)](#notesnook-privacy-first-newer)
+- [Comparison Table](#comparison-table)
+- [Quick Decision Matrix](#quick-decision-matrix)
+- [Cost Comparison (Annual)](#cost-comparison-annual)
+- [Real-World Setup](#real-world-setup)
+- [Migration Between Apps](#migration-between-apps)
+- [Final Verdict (2026)](#final-verdict-2026)
+
 **Pricing:** Free tier (limited), Plus plan $8/month ($96/year), Professional $20/month ($240/year).
 
 **Platforms:** Web, iOS, Android, macOS, Windows, Linux.

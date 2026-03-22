@@ -28,6 +28,13 @@ Automate kernel signing after updates using kernel hooks, and create encrypted b
 - **If you need to re-enroll from scratch**: you should use the same GUID to ensure key continuity across reinstallation.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Custom Keys Rather Than Default Secure Boot](#why-custom-keys-rather-than-default-secure-boot)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Boot Failures](#troubleshooting-common-boot-failures)
+- [Related Reading](#related-reading)
+
 ## Why Custom Keys Rather Than Default Secure Boot
 
 Most Linux distributions ship with Secure Boot support using keys from Microsoft and the distribution's own key exchange key. This works, but it has a critical limitation: your firmware trusts Microsoft's keys, which means any bootloader signed by Microsoft — including those used in certain well-known malware campaigns — can boot on your system.

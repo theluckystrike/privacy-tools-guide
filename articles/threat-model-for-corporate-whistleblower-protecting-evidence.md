@@ -40,6 +40,23 @@ A corporate whistleblower faces a unique security challenge: preserving evidence
 - **Signal ($0, free)**: End-to-end encrypted messaging.
 - **VeraCrypt ($0, free, open-source)**: Creates encrypted containers for sensitive evidence.
 
+## Table of Contents
+
+- [Understanding the Threat Market](#understanding-the-threat-market)
+- [Evidence Integrity: Cryptographic Verification](#evidence-integrity-cryptographic-verification)
+- [Secure Evidence Storage](#secure-evidence-storage)
+- [Identity Protection Architecture](#identity-protection-architecture)
+- [Secure Communication Channels](#secure-communication-channels)
+- [Metadata Stripping](#metadata-stripping)
+- [Operational Security Patterns](#operational-security-patterns)
+- [Emergency Protocols](#emergency-protocols)
+- [Verification and Testing](#verification-and-testing)
+- [Tools and Pricing for Whistleblower Operations](#tools-and-pricing-for-whistleblower-operations)
+- [Threat Model Analysis Template](#threat-model-analysis-template)
+- [Evidence Types and Handling](#evidence-types-and-handling)
+- [Jurisdiction-Specific Protections](#jurisdiction-specific-protections)
+- [Cold Start Testing](#cold-start-testing)
+
 ## Understanding the Threat Market
 
 Corporate whistleblowers typically face three distinct threat categories. Legal threats involve NDA violations, defamation claims, or criminal allegations. Technical threats include device compromise, communication interception, and digital forensics. Social threats encompass reputation damage, professional retaliation, and physical surveillance.

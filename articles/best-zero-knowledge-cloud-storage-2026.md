@@ -27,6 +27,24 @@ Proton Drive is the best zero-knowledge cloud storage for most users, offering s
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Choose Proton Drive for**: integrated ecosystem (mail, VPN), Filen for affordability, or Tresorit for business collaboration, knowing that all three guarantee the provider cannot access your data.
 
+## Table of Contents
+
+- [What Makes Cloud Storage Zero-Knowledge?](#what-makes-cloud-storage-zero-knowledge)
+- [Leading Zero-Knowledge Cloud Storage Solutions in 2026](#leading-zero-knowledge-cloud-storage-solutions-in-2026)
+- [Implementing Zero-Knowledge Storage: Developer Perspective](#implementing-zero-knowledge-storage-developer-perspective)
+- [Self-Hosted Alternatives](#self-hosted-alternatives)
+- [Key Management Considerations](#key-management-considerations)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Security Architecture Deep Dive](#security-architecture-deep-dive)
+- [Advanced Self-Hosted Implementation](#advanced-self-hosted-implementation)
+- [Pricing Comparison Table (2026)](#pricing-comparison-table-2026)
+- [Encryption Standards Verification](#encryption-standards-verification)
+- [Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)
+- [Disaster Recovery and Business Continuity](#disaster-recovery-and-business-continuity)
+- [Data Migration Between Providers](#data-migration-between-providers)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Archival and Long-Term Preservation](#archival-and-long-term-preservation)
+
 ## What Makes Cloud Storage Zero-Knowledge?
 
 Zero-knowledge encryption means the cloud provider stores your data in an encrypted format but never possesses the decryption keys. When you upload a file, it gets encrypted on your device before transmission. The server stores only encrypted blobs. When you retrieve data, decryption happens locally using a key that never leaves your control.

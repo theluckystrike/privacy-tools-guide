@@ -40,6 +40,23 @@ Email encryption remains a critical concern for organizations handling sensitive
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **It uses a web**: of trust model where users verify each other's keys directly or through trusted intermediaries.
 
+## Table of Contents
+
+- [Understanding the Standards](#understanding-the-standards)
+- [Key Differences at a Glance](#key-differences-at-a-glance)
+- [Implementation for Developers](#implementation-for-developers)
+- [Business Considerations](#business-considerations)
+- [Security Properties](#security-properties)
+- [Practical Example: Encrypting Email with Mutt](#practical-example-encrypting-email-with-mutt)
+- [Future Outlook](#future-outlook)
+- [Certificate Authority Pricing and Costs](#certificate-authority-pricing-and-costs)
+- [Client Support Matrix: Real-World Compatibility](#client-support-matrix-real-world-compatibility)
+- [Advanced Configuration: Mutt with Multiple Standards](#advanced-configuration-mutt-with-multiple-standards)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Enterprise Deployment Scenarios](#enterprise-deployment-scenarios)
+- [Performance Comparison: Key Generation and Encryption Speed](#performance-comparison-key-generation-and-encryption-speed)
+- [Maintenance Burden: Key and Certificate Renewal](#maintenance-burden-key-and-certificate-renewal)
+
 ## Understanding the Standards
 
 **OpenPGP** is an open standard based on Phil Zimmermann's Pretty Good Privacy (PGP). It uses a web of trust model where users verify each other's keys directly or through trusted intermediaries. The standard is defined in RFC 4880 and provides flexible public key cryptography for encrypting emails and files.

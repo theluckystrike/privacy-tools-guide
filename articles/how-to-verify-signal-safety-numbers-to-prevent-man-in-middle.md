@@ -41,6 +41,18 @@ In Signal, open a conversation with your contact, tap their name, and select "Vi
 - Use an independent channel.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding Safety Numbers](#understanding-safety-numbers)
+- [Accessing Safety Numbers](#accessing-safety-numbers)
+- [Verifying Safety Numbers: The Process](#verifying-safety-numbers-the-process)
+- [Automating Verification for Power Users](#automating-verification-for-power-users)
+- [Understanding Attack Scenarios](#understanding-attack-scenarios)
+- [When to Verify](#when-to-verify)
+- [Common Pitfalls](#common-pitfalls)
+- [Troubleshooting Mismatches](#troubleshooting-mismatches)
+- [Advanced: Fingerprint Comparison](#advanced-fingerprint-comparison)
+
 ## Understanding Safety Numbers
 
 Every Signal conversation generates a unique safety number based on the X3DH key agreement protocol and Double Ratchet algorithm. This number combines:

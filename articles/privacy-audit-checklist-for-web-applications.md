@@ -364,6 +364,14 @@ Run these checks periodically and maintain evidence of compliance for regulatory
 
 ## Third-Party Vendor Risk Assessment
 
+## Table of Contents
+
+- [Third-Party Vendor Risk Assessment](#third-party-vendor-risk-assessment)
+- [Cookie and Tracking Technology Audit](#cookie-and-tracking-technology-audit)
+- [Privacy Audit Automation and Scheduling](#privacy-audit-automation-and-scheduling)
+- [Handling Data Breach Preparedness](#handling-data-breach-preparedness)
+- [Data Breach Response Protocol](#data-breach-response-protocol)
+
 Your application likely integrates external services—analytics platforms, payment processors, authentication providers, CDN services, and error tracking tools. Each integration introduces privacy risk because these vendors receive user data. A rigorous privacy audit includes a vendor inventory.
 
 For each third-party integration, document what data it receives, where that data is stored, what the vendor does with it, and what their data retention practices are. This often surfaces surprises: analytics scripts capturing keystroke data, chat widgets storing conversation history indefinitely, A/B testing tools logging user behavior without clear consent.

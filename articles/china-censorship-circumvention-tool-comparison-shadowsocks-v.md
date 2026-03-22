@@ -42,6 +42,16 @@ Trojan offers the best balance of simplicity and evasion for personal use, while
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The most common implementation**: ShadowsocksR, added obfsproxy capabilities for traffic obfuscation.
 
+## Table of Contents
+
+- [Protocol Overview](#protocol-overview)
+- [Installation and Configuration](#installation-and-configuration)
+- [Traffic Obfuscation Comparison](#traffic-obfuscation-comparison)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Security Considerations](#security-considerations)
+- [Deployment Recommendations](#deployment-recommendations)
+- [Updating and Maintenance](#updating-and-maintenance)
+
 ## Protocol Overview
 
 ### Shadowsocks

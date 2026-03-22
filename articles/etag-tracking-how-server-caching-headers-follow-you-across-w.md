@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -207,6 +208,17 @@ The key takeaway: ETags are a legitimate caching optimization that becomes a tra
 
 
 ## Frequently Asked Questions
+
+## Table of Contents
+
+- [Real-World ETag Tracking Example](#real-world-etag-tracking-example)
+- [Detecting ETag Tracking on Your Own Sites](#detecting-etag-tracking-on-your-own-sites)
+- [Browser Protection Against ETag Tracking](#browser-protection-against-etag-tracking)
+- [Server-Side Defense Implementation](#server-side-defense-implementation)
+- [Client-Side: Service Worker Masking](#client-side-service-worker-masking)
+- [ETag Behavior Comparison: Browsers and Technologies](#etag-behavior-comparison-browsers-and-technologies)
+- [Audit: Finding Problematic ETags](#audit-finding-problematic-etags)
+- [Prevention Checklist for Developers](#prevention-checklist-for-developers)
 
 **Who is this article written for?**
 

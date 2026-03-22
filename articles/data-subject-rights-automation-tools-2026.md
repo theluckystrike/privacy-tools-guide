@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 ---
 layout: default
 title: "Data Subject Rights Automation Tools 2026: A Practical Guide"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, automation]---
+tags: [privacy-tools-guide, automation]
+---
 
 {% raw %}
 
@@ -39,6 +41,17 @@ Managing data subject rights requests has become one of the most resource-intens
 - **Managing data subject rights**: requests has become one of the most resource-intensive compliance obligations for organizations handling personal data.
 - **When scaled across thousands**: or millions of users, manually processing these requests becomes unsustainable.
 - **The platform uses machine**: learning to identify personal data, sensitive categories, and data subjects with high accuracy.
+
+## Table of Contents
+
+- [Understanding Data Subject Rights Under GDPR](#understanding-data-subject-rights-under-gdpr)
+- [Top Data Subject Rights Automation Tools in 2026](#top-data-subject-rights-automation-tools-in-2026)
+- [Implementing DSAR Automation: A Practical Approach](#implementing-dsar-automation-a-practical-approach)
+- [Code Example: Basic DSAR Request Handler](#code-example-basic-dsar-request-handler)
+- [Advanced Implementation: Custom DSAR Workflow](#advanced-implementation-custom-dsar-workflow)
+- [DSAR Compliance Verification Script](#dsar-compliance-verification-script)
+- [Tool Feature Comparison Matrix](#tool-feature-comparison-matrix)
+- [Regulatory Context: GDPR vs CCPA vs DPDP](#regulatory-context-gdpr-vs-ccpa-vs-dpdp)
 
 ## Understanding Data Subject Rights Under GDPR
 

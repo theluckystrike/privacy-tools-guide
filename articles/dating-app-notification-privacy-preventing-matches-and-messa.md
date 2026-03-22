@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Dating App Notification Privacy Preventing Matches"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -39,6 +41,18 @@ Lock screen privacy remains a critical concern for dating app users. When a matc
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Lock screen privacy remains**: a critical concern for dating app users.
 - **On iOS**: this is Apple Push Notification service (APNS), while Android uses Firebase Cloud Messaging (FCM).
+
+## Table of Contents
+
+- [Understanding Lock Screen Notification Channels](#understanding-lock-screen-notification-channels)
+- [iOS: Notification Privacy Settings](#ios-notification-privacy-settings)
+- [Android: Lock Screen and Notification Channels](#android-lock-screen-and-notification-channels)
+- [Custom ROM and LineageOS Considerations](#custom-rom-and-lineageos-considerations)
+- [Developer APIs for Notification Control](#developer-apis-for-notification-control)
+- [Automating Privacy Based on Context](#automating-privacy-based-on-context)
+- [Third-Party Launchers and Notification Management](#third-party-launchers-and-notification-management)
+- [Security Considerations](#security-considerations)
+- [Debugging Notification Issues](#debugging-notification-issues)
 
 ## Understanding Lock Screen Notification Channels
 

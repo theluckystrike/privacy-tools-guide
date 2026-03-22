@@ -46,6 +46,15 @@ For the frequently-used volumes (1 and 2), using SHA-512 with a moderate PIM (li
 - **Each method includes trade-off**: analysis so you can choose what works for your threat model.
 - **Derives the master key**: used to decrypt the volume The iteration count exists specifically to slow down brute-force attacks.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Optimizing a Development Workstation](#practical-example-optimizing-a-development-workstation)
+- [Conclusion](#conclusion)
+- [Advanced Optimization: Multi-Volume Mounting Strategy](#advanced-optimization-multi-volume-mounting-strategy)
+- [Performance Monitoring During Regular Use](#performance-monitoring-during-regular-use)
+- [Threat Model: Mount Time Side Channels](#threat-model-mount-time-side-channels)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

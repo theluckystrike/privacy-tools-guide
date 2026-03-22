@@ -42,6 +42,18 @@ Websites use browser permission prompts (for notifications, camera, microphone, 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is Permission Prompt Fingerprinting](#what-is-permission-prompt-fingerprinting)
+- [How the Notification API Enables Tracking](#how-the-notification-api-enables-tracking)
+- [Other Permission APIs Used for Fingerprinting](#other-permission-apis-used-for-fingerprinting)
+- [Combining Permission Signals for Unique Identification](#combining-permission-signals-for-unique-identification)
+- [Real-World Tracking Techniques](#real-world-tracking-techniques)
+- [How Browsers Are Responding](#how-browsers-are-responding)
+- [How to Protect Yourself](#how-to-protect-yourself)
+- [Detecting Permission-Based Tracking](#detecting-permission-based-tracking)
+- [Related Reading](#related-reading)
+
 ## What Is Permission Prompt Fingerprinting
 
 When a website requests access to browser features like notifications, camera, microphone, or location, the browser displays a permission prompt. This interaction creates several tracking opportunities:

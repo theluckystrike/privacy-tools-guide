@@ -40,6 +40,22 @@ NoScript remains one of the most powerful browser security extensions available,
 - **Understanding how to configure NoScript effectively in 2026 requires balancing security with usability**: a trade-off that developers and power users must navigate carefully.
 - **To use GitHub in**: Tor Browser without compromising security on other sites: 1.
 
+## Table of Contents
+
+- [Understanding NoScript in the Tor Browser Context](#understanding-noscript-in-the-tor-browser-context)
+- [Recommended NoScript Settings for 2026](#recommended-noscript-settings-for-2026)
+- [Practical Configuration Examples](#practical-configuration-examples)
+- [Security Tradeoffs to Consider](#security-tradeoffs-to-consider)
+- [Maintenance and Best Practices](#maintenance-and-best-practices)
+- [Advanced NoScript Configuration Examples](#advanced-noscript-configuration-examples)
+- [Browser Fingerprinting Beyond NoScript](#browser-fingerprinting-beyond-noscript)
+- [Integrating NoScript with Other Extensions](#integrating-noscript-with-other-extensions)
+- [Automation for Team Security](#automation-for-team-security)
+- [Troubleshooting Script-Related Issues](#troubleshooting-script-related-issues)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Security Updates and Rule Maintenance](#security-updates-and-rule-maintenance)
+- [Getting Started](#getting-started)
+
 ## Understanding NoScript in the Tor Browser Context
 
 Tor Browser ships with a hardened version of Firefox that includes the NoScript extension by default. Unlike standard browser configurations, Tor Browser's threat model assumes that adversaries can observe your traffic, perform fingerprinting attacks, and attempt to de-anonymize users through JavaScript execution. NoScript addresses these risks by giving you granular control over what scripts can run on each website you visit.

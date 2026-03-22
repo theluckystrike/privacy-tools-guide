@@ -41,6 +41,20 @@ VeraCrypt provides multiple encryption layers from full disk encryption to hidde
 - **Scenario 2**: VeraCrypt refuses to mount volume
 Cause: Corruption (rare) or wrong password (common).
 
+## Table of Contents
+
+- [Understanding VeraCrypt's Encryption Modes](#understanding-veracrypts-encryption-modes)
+- [Before You Start: Critical Preparation](#before-you-start-critical-preparation)
+- [Step 1: Download and Verify VeraCrypt](#step-1-download-and-verify-veracrypt)
+- [Step 2: Creating Full Disk Encryption on Linux](#step-2-creating-full-disk-encryption-on-linux)
+- [Step 3: System Encryption on Windows](#step-3-system-encryption-on-windows)
+- [Step 4: Creating Hidden Volumes](#step-4-creating-hidden-volumes)
+- [Step 5: Performance Impact Measurement](#step-5-performance-impact-measurement)
+- [Step 6: Recovery Planning](#step-6-recovery-planning)
+- [Advanced: Deniable Volumes](#advanced-deniable-volumes)
+- [Common Mistakes](#common-mistakes)
+- [Related Reading](#related-reading)
+
 ## Understanding VeraCrypt's Encryption Modes
 
 VeraCrypt offers distinct encryption approaches serving different scenarios:

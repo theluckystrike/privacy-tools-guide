@@ -200,6 +200,15 @@ For most users in 2026, WireGuard provides the best balance of speed, security, 
 
 ## Real-World Bandwidth Impact Analysis
 
+## Table of Contents
+
+- [Real-World Bandwidth Impact Analysis](#real-world-bandwidth-impact-analysis)
+- [Obfuscation Protocols and Their Overhead Trade-offs](#obfuscation-protocols-and-their-overhead-trade-offs)
+- [Latency Considerations Beyond Bandwidth](#latency-considerations-beyond-bandwidth)
+- [Protocol Selection Decision Tree](#protocol-selection-decision-tree)
+- [Measuring Protocol Overhead in Your Environment](#measuring-protocol-overhead-in-your-environment)
+- [Related Reading](#related-reading)
+
 The overhead percentages translate to tangible speed differences. For a user on a 50 Mbps connection:
 
 | Protocol | Expected Throughput | Data for 1GB Download |

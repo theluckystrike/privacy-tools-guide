@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -25,6 +26,13 @@ Control Facebook privacy through Settings > Privacy by restricting "Who can see 
 - **This tool is particularly**: useful for reviewing post audience defaults, checking profile visibility, adjusting tagging controls, and reviewing app permissions.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: AccountKit and Login API](#advanced-accountkit-and-login-api)
+- [Privacy Comparison: Facebook vs. Alternatives (2026)](#privacy-comparison-facebook-vs-alternatives-2026)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

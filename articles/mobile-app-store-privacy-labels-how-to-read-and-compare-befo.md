@@ -40,6 +40,13 @@ Mobile app store privacy labels have become the first line of defense for inform
 - **Consider open-source alternatives -**: F-Droid hosts apps with verifiable code 6.
 - **This might include usage data**: location information, or browsing history associated with a user profile.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Comparison Example](#practical-comparison-example)
+- [Advanced Privacy Label Analysis](#advanced-privacy-label-analysis)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

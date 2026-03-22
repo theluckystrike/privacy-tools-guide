@@ -38,6 +38,15 @@ Windows Sandbox (Pro/Enterprise only) creates an isolated, temporary virtual des
 - **For analyzing samples suspected**: of carrying kernel exploits, use a full VM on separate hardware or a dedicated cloud instance you can snapshot and discard.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Configuring Sandbox for Privacy Testing](#configuring-sandbox-for-privacy-testing)
+- [Practical Privacy Testing Workflows](#practical-privacy-testing-workflows)
+- [Security Considerations](#security-considerations)
+- [Cleanup and Best Practices](#cleanup-and-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

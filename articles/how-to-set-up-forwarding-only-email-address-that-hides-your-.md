@@ -44,6 +44,15 @@ echo "$(date)**: $COMPROMISED_ADDRESS compromised" >> forwarding_incidents.log
 - **Replacement**: Create a new address for future use with that service
 6.
 
+## Table of Contents
+
+- [Why Use a Forwarding-Only Email Address](#why-use-a-forwarding-only-email-address)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Forwarding-Only Email](#best-practices-for-forwarding-only-email)
+- [Advanced Domain Forwarding Strategy](#advanced-domain-forwarding-strategy)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Use a Forwarding-Only Email Address
 
 Your primary email address is your digital identity. Once it circulates across enough databases, it becomes nearly impossible to escape the constant stream of spam and unwanted communications. A forwarding-only email address solves this problem by creating an intermediary layer between your real inbox and the outside world.

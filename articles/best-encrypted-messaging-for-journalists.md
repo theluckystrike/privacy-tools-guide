@@ -42,6 +42,26 @@ Journalists face unique security challenges. Source protection, secure communica
 - **Enable sealed sender**: use disappearing messages, and verify safety numbers with sensitive sources.
 - **For news organizations**: Matrix with self-hosted infrastructure offers the most control.
 
+## Table of Contents
+
+- [The Threat Model for Journalists](#the-threat-model-for-journalists)
+- [Signal: The Gold Standard for Convenience](#signal-the-gold-standard-for-convenience)
+- [Matrix: Federation for Editorial Teams](#matrix-federation-for-editorial-teams)
+- [Session: Metadata Resistance](#session-metadata-resistance)
+- [SimpleX: Zero-Identity Architecture](#simplex-zero-identity-architecture)
+- [Comparative Analysis](#comparative-analysis)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Security Best Practices](#security-best-practices)
+- [Advanced Key Verification Techniques](#advanced-key-verification-techniques)
+- [Metadata Analysis and Reduction](#metadata-analysis-and-reduction)
+- [Building a Journalist Communication Network](#building-a-journalist-communication-network)
+- [Hardware Security Token Integration](#hardware-security-token-integration)
+- [Self-Hosted Infrastructure for News Organizations](#self-hosted-infrastructure-for-news-organizations)
+- [Archival and Legal Hold for Sources](#archival-and-legal-hold-for-sources)
+- [Incident Response Protocol](#incident-response-protocol)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
+- [Testing and Validation Checklist](#testing-and-validation-checklist)
+
 ## The Threat Model for Journalists
 
 Before evaluating tools, understand what you're protecting against. The primary threats include:

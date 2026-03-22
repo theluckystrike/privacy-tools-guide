@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Windows 11 Telemetry Disable Guide"
-description: "A guide to disabling Windows 11 telemetry for developers and power users. Learn multiple methods including Settings, Group Policy"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /windows-11-telemetry-disable-guide-step-by-step/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -39,6 +26,13 @@ Windows 11 collects significant telemetry data by default, sending information a
 - **Restart required for full**: effect." ``` Save this as `disable-telemetry.ps1` and execute with administrator privileges.
 - **Corporate users should verify**: their organization's policies before making changes, as some telemetry data supports security updates and compliance requirements.
 - **For advanced network monitoring**: use Wireshark or NetFlow to capture outbound traffic and verify that no connections are being made to Microsoft telemetry endpoints.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Method 5: Using Windows Terminal Services (Enterprise Environments)](#method-5-using-windows-terminal-services-enterprise-environments)
+- [Advanced: Group Policy for Domain-Joined Machines](#advanced-group-policy-for-domain-joined-machines)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
@@ -358,11 +352,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [How To Disable All Windows 11 Telemetry Endpoints](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
 - [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
-- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
-- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
-
+- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
+- [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
+- [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

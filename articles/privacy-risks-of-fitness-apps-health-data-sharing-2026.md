@@ -35,6 +35,21 @@ Your fitness app knows your heart rate, location, sleep patterns, and workout in
 - **Limit Profile Data -**: Don't fill in weight, body metrics, or health conditions - Use pseudonym instead of real name (if allowed) 3.
 - **Example**: A Strava user runs from their home at 7 AM daily.
 
+## Table of Contents
+
+- [The Fitness Data Economy](#the-fitness-data-economy)
+- [Strava — Location Privacy Problem](#strava-location-privacy-problem)
+- [Peloton — Data Broker Risks](#peloton-data-broker-risks)
+- [Apple Health — Ecosystem Advantage](#apple-health-ecosystem-advantage)
+- [Google Fit — Data Sharing Model](#google-fit-data-sharing-model)
+- [Fitbit (Amazon) — Data Acquisition Concern](#fitbit-amazon-data-acquisition-concern)
+- [HIPAA Gaps and Legal Exposure](#hipaa-gaps-and-legal-exposure)
+- [Data Broker Risks](#data-broker-risks)
+- [Actionable Privacy Steps](#actionable-privacy-steps)
+- [Opt-Out Services](#opt-out-services)
+- [Privacy-First Fitness Alternatives](#privacy-first-fitness-alternatives)
+- [Recommendations](#recommendations)
+
 ## The Fitness Data Economy
 
 Fitness data is monetized in ways most users never realize:

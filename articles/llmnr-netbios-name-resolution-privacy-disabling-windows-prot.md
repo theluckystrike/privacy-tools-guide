@@ -40,6 +40,15 @@ Disable LLMNR and NetBIOS on Windows to prevent hostname leakage: run `netsh int
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Alternatively**: use Group Policy (gpedit.msc) to disable both at the system level.
 
+## Table of Contents
+
+- [Understanding LLMNR and NetBIOS Name Resolution](#understanding-llmnr-and-netbios-name-resolution)
+- [Why These Protocols Create Privacy Risks](#why-these-protocols-create-privacy-risks)
+- [Checking Current Status on Your System](#checking-current-status-on-your-system)
+- [Disabling LLMNR and NetBIOS on Windows](#disabling-llmnr-and-netbios-on-windows)
+- [Verifying Your Configuration](#verifying-your-configuration)
+- [Enterprise Deployment Considerations](#enterprise-deployment-considerations)
+
 ## Understanding LLMNR and NetBIOS Name Resolution
 
 ### What is LLMNR?

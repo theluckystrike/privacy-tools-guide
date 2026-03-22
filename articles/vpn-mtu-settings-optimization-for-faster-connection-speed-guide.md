@@ -26,6 +26,16 @@ Understanding and optimizing MTU (Maximum Transmission Unit) settings is one of 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding and optimizing MTU**: (Maximum Transmission Unit) settings is one of the most overlooked aspects of VPN performance tuning.
 
+## Table of Contents
+
+- [What Is MTU and Why Does It Matter for VPNs?](#what-is-mtu-and-why-does-it-matter-for-vpns)
+- [Prerequisites](#prerequisites)
+- [Advanced MTU Optimization Techniques](#advanced-mtu-optimization-techniques)
+- [Quick Troubleshooting Checklist](#quick-troubleshooting-checklist)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## What Is MTU and Why Does It Matter for VPNs?
 
 MTU defines the largest packet size that can be transmitted over a network interface without fragmentation. The standard Ethernet MTU is 1500 bytes, but this value becomes more complex when using a VPN because your data gets encapsulated inside additional headers.

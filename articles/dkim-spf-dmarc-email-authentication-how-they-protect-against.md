@@ -11,7 +11,9 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+<<<<<<< Updated upstream
+---
 ---
 layout: default
 title: "Dkim Spf Dmarc Email Authentication How They Protect"
@@ -25,7 +27,11 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -40,6 +46,25 @@ Email spoofing is one of the most common attack vectors used by spammers, phishe
 You acquire a company that sends mail from domain.acquired.com but uses your mail servers.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Understanding Email Spoofing](#understanding-email-spoofing)
+- [SPF: Sender Policy Framework](#spf-sender-policy-framework)
+- [DKIM: DomainKeys Identified Mail](#dkim-domainkeys-identified-mail)
+- [DMARC: Domain-Based Message Authentication](#dmarc-domain-based-message-authentication)
+- [How These Protocols Work Together](#how-these-protocols-work-together)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Common Pitfalls](#common-pitfalls)
+- [Authentication Flow Diagrams](#authentication-flow-diagrams)
+- [Advanced Configuration: Subdomain Policy](#advanced-configuration-subdomain-policy)
+- [Forensic Reports and DMARC Debugging](#forensic-reports-and-dmarc-debugging)
+- [Real-World Failure Scenarios](#real-world-failure-scenarios)
+- [Monitoring Tools and Services](#monitoring-tools-and-services)
+- [Subdomain-Specific Configuration](#subdomain-specific-configuration)
+- [Automatic Policy Escalation Strategy](#automatic-policy-escalation-strategy)
+- [Email Forwarding and DMARC Alignment](#email-forwarding-and-dmarc-alignment)
+- [Implementation Priority](#implementation-priority)
 
 ## Understanding Email Spoofing
 
@@ -338,11 +363,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
-- [How To File Gdpr Complaint Against Company That Refuses To D](/privacy-tools-guide/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)
-- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
-- [GDPR Compliant User Authentication Design](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
-- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
-
+- [Email Security Headers Dmarc Dkim Spf Setup To Prevent](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [Email Header Analysis What Metadata Reveals About Your](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
+- [Someone Signed Up for Services Using My Email](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
+- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

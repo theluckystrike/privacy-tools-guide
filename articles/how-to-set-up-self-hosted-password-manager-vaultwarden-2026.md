@@ -34,6 +34,27 @@ Vaultwarden is a free, open-source password manager compatible with Bitwarden cl
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Self-Host Vaultwarden?](#why-self-host-vaultwarden)
+- [Prerequisites](#prerequisites)
+- [Step 1: Set Up VPS and SSH](#step-1-set-up-vps-and-ssh)
+- [Step 2: Create Vaultwarden Docker Compose](#step-2-create-vaultwarden-docker-compose)
+- [Step 3: Configure Reverse Proxy (Caddy)](#step-3-configure-reverse-proxy-caddy)
+- [Step 4: Launch Vaultwarden](#step-4-launch-vaultwarden)
+- [Step 5: Access Admin Panel](#step-5-access-admin-panel)
+- [Step 6: Add First User](#step-6-add-first-user)
+- [Step 7: Enable SMTP for Email Invitations](#step-7-enable-smtp-for-email-invitations)
+- [Step 8: Automated Backups](#step-8-automated-backups)
+- [Step 9: Enable Two-Factor Authentication (2FA)](#step-9-enable-two-factor-authentication-2fa)
+- [Step 10: Configure Organization (Optional)](#step-10-configure-organization-optional)
+- [Client Setup](#client-setup)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+- [Troubleshooting](#troubleshooting)
+- [Security Hardening Checklist](#security-hardening-checklist)
+- [Cost Breakdown](#cost-breakdown)
+- [Alternatives](#alternatives)
+
 ## Why Self-Host Vaultwarden?
 
 **Advantages:**

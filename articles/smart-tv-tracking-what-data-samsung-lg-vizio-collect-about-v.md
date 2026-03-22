@@ -293,6 +293,15 @@ If privacy is a priority, consider connecting your TV through a router with VPN 
 
 ## Smart TV Brand Comparison: Data Collection and Privacy (2026)
 
+## Table of Contents
+
+- [Smart TV Brand Comparison: Data Collection and Privacy (2026)](#smart-tv-brand-comparison-data-collection-and-privacy-2026)
+- [Real-World Network Traffic Analysis](#real-world-network-traffic-analysis)
+- [Network Isolation Implementation Guide](#network-isolation-implementation-guide)
+- [Smart TV Data Minimization Alternatives](#smart-tv-data-minimization-alternatives)
+- [Monitoring for Unauthorized Data Collection](#monitoring-for-unauthorized-data-collection)
+- [Legal Status of Blocking TV Tracking (2026)](#legal-status-of-blocking-tv-tracking-2026)
+
 Not all smart TVs track equally. Here's a detailed breakdown of current privacy practices:
 
 | Brand | ACR Tech | Voice Data | Cloud Sync | Ads/Tracking | Privacy Rating |

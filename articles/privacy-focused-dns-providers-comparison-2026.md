@@ -43,6 +43,22 @@ Settings > Privacy and Security > Security > Advanced > Use secure DNS.
 - **- Paid**: $0.99/month (ad/tracker blocking, parental control).
 - **Trade-off**: Slight latency increase (usually <10ms) for complete ISP anonymity.
 
+## Table of Contents
+
+- [DNS Fundamentals](#dns-fundamentals)
+- [Quad9](#quad9)
+- [NextDNS](#nextdns)
+- [Mullvad DNS](#mullvad-dns)
+- [Control D](#control-d)
+- [AdGuard DNS](#adguard-dns)
+- [Performance Benchmarks (Latency, 2026)](#performance-benchmarks-latency-2026)
+- [Comparison Table](#comparison-table)
+- [Recommendation by Use Case](#recommendation-by-use-case)
+- [Setup on OpenWrt/Home Network](#setup-on-openwrthome-network)
+- [VPN + DNS: Should You Combine?](#vpn-dns-should-you-combine)
+- [Switching Between Providers](#switching-between-providers)
+- [DNS Leaks](#dns-leaks)
+
 ## DNS Fundamentals
 
 DNS translates domain names (google.com) into IP addresses (142.251.32.46). Your device asks your DNS provider "what's the IP for google.com?" every time you visit a site. The provider sees all of it.

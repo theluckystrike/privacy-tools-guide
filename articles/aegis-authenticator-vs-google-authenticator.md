@@ -43,6 +43,25 @@ Choose Aegis Authenticator if you need open-source transparency, encrypted token
 5.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Open-Source Transparency](#open-source-transparency)
+- [Data Export and Portability](#data-export-and-portability)
+- [Security Features](#security-features)
+- [Developer Integration](#developer-integration)
+- [Platform Availability](#platform-availability)
+- [Use Cases and Recommendations](#use-cases-and-recommendations)
+- [Migration Between Authenticators](#migration-between-authenticators)
+- [Encryption Mechanisms Deep Dive](#encryption-mechanisms-deep-dive)
+- [Backup and Recovery Workflows](#backup-and-recovery-workflows)
+- [Multi-Device Synchronization](#multi-device-synchronization)
+- [Security Against Device Theft](#security-against-device-theft)
+- [TOTP Code Visibility and Clipboard Safety](#totp-code-visibility-and-clipboard-safety)
+- [Account Recovery Without Authenticator Access](#account-recovery-without-authenticator-access)
+- [Implementation for Service Providers](#implementation-for-service-providers)
+- [Compliance and Regulated Environments](#compliance-and-regulated-environments)
+- [Terminal-Based Alternatives](#terminal-based-alternatives)
+
 ## Open-Source Transparency
 
 **Aegis Authenticator** is fully open-source, with its codebase available on GitHub. This transparency allows security researchers and developers to audit the encryption implementation, verify that secrets are handled correctly, and identify potential vulnerabilities. For organizations requiring compliance with strict security policies, open-source software provides verifiable assurance about how sensitive data is processed.

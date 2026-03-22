@@ -42,6 +42,17 @@ Running email over Tor provides strong protection against network surveillance a
 - **Generate an app password**: from your email provider's security settings and use that in your client configuration.
 - **Send a test email**: to yourself with a unique subject line 2.
 
+## Table of Contents
+
+- [Why Route Email Through Tor?](#why-route-email-through-tor)
+- [Prerequisites](#prerequisites)
+- [Configuring Thunderbird for Tor](#configuring-thunderbird-for-tor)
+- [Using Command-Line Email with Tor](#using-command-line-email-with-tor)
+- [Connecting to Email Onion Services](#connecting-to-email-onion-services)
+- [Operational Security Considerations](#operational-security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Verification and Testing](#verification-and-testing)
+
 ## Why Route Email Through Tor?
 
 Tor encrypts your traffic through multiple relays, masking your IP address from email servers and network observers. This prevents ISPs, network administrators, and potentially adversarial servers from correlating your online activity with your physical location. For developers building privacy-focused applications or researchers requiring network anonymity, Tor provides a proven layer of protection.

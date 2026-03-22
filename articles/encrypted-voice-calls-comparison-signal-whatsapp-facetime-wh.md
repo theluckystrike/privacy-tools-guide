@@ -11,7 +11,9 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+<<<<<<< Updated upstream
+---
 ---
 layout: default
 title: "Encrypted Voice Calls Comparison"
@@ -25,7 +27,11 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -39,6 +45,20 @@ When evaluating privacy-focused communication tools, the encryption itself is on
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
+## Table of Contents
+
+- [Understanding Metadata in Voice Calls](#understanding-metadata-in-voice-calls)
+- [Signal: Minimal Metadata Architecture](#signal-minimal-metadata-architecture)
+- [WhatsApp: Substantial Metadata Collection](#whatsapp-substantial-metadata-collection)
+- [FaceTime: Apple's Ecosystem Approach](#facetime-apples-ecosystem-approach)
+- [Comparative Analysis](#comparative-analysis)
+- [Practical Recommendations for Developers](#practical-recommendations-for-developers)
+- [Real-World Metadata Collection Examples](#real-world-metadata-collection-examples)
+- [Privacy-Focused Call Recommendations by Use Case](#privacy-focused-call-recommendations-by-use-case)
+- [Testing Encryption Claims](#testing-encryption-claims)
+- [Server Architecture and Encryption Design](#server-architecture-and-encryption-design)
+- [Metadata Retention Policies](#metadata-retention-policies)
 
 ## Understanding Metadata in Voice Calls
 
@@ -313,11 +333,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [VPN for Using WhatsApp Calls in Saudi Arabia 2026](/privacy-tools-guide/vpn-for-using-whatsapp-calls-in-saudi-arabia-2026/)
-- [How To Protect Yourself From Ai Voice Cloning Scam Calls](/privacy-tools-guide/how-to-protect-yourself-from-ai-voice-cloning-scam-calls/)
-- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
-- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
-
+- [Encrypted Messaging Metadata Protection: A Developer's Guide](/privacy-tools-guide/encrypted-messaging-metadata-protection/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

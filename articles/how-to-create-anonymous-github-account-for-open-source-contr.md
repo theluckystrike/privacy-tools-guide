@@ -40,6 +40,18 @@ Contributing to open source projects is a rewarding way to improve your coding s
 - **Contributing to open source**: projects is a rewarding way to improve your coding skills, build a portfolio, and give back to the developer community.
 - **However**: there are legitimate reasons why you might want to maintain separation between your professional identity and your open source work.
 
+## Table of Contents
+
+- [Why Create an Anonymous GitHub Account](#why-create-an-anonymous-github-account)
+- [Step 1: Create an Anonymous Email Address](#step-1-create-an-anonymous-email-address)
+- [Step 2: Set Up Git with a Separate Identity](#step-2-set-up-git-with-a-separate-identity)
+- [Step 3: Generate New SSH Keys](#step-3-generate-new-ssh-keys)
+- [Step 4: Create the GitHub Account](#step-4-create-the-github-account)
+- [Step 5: Add Your Anonymous SSH Key](#step-5-add-your-anonymous-ssh-key)
+- [Step 6: Maintain Separation](#step-6-maintain-separation)
+- [Maintaining Compartmentalization in Practice](#maintaining-compartmentalization-in-practice)
+- [Understanding GitHub's Privacy Limitations](#understanding-githubs-privacy-limitations)
+
 ## Why Create an Anonymous GitHub Account
 
 Developers choose anonymous GitHub accounts for various reasons. Some contribute to projects related to privacy tools, security research, or advocacy work where identification could attract unwanted attention. Others maintain strict compartmentalization between their day job and personal projects. Whatever your motivation, the goal remains the same: participate in the open source ecosystem without exposing who you are.

@@ -27,6 +27,25 @@ Mullvad VPN and Private Internet Access (PIA) most reliably access Peacock from 
 - **Browser Fingerprinting - Timezone**: settings, language preferences, and WebRTC leaks can reveal your true location 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Peacock's Geo-Restriction Mechanism](#understanding-peacocks-geo-restriction-mechanism)
+- [VPN Protocol Selection for Streaming](#vpn-protocol-selection-for-streaming)
+- [DNS Configuration: Preventing Leaks](#dns-configuration-preventing-leaks)
+- [Browser Configuration for Streaming](#browser-configuration-for-streaming)
+- [Verifying Your Setup](#verifying-your-setup)
+- [Performance Optimization for Streaming](#performance-optimization-for-streaming)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced VPN Kill Switch Testing](#advanced-vpn-kill-switch-testing)
+- [IPv6 Leak Prevention](#ipv6-leak-prevention)
+- [DNS Configuration Deep Dive](#dns-configuration-deep-dive)
+- [Browser Fingerprinting Mitigation](#browser-fingerprinting-mitigation)
+- [Account Verification Without US Payment](#account-verification-without-us-payment)
+- [Streaming Quality Optimization](#streaming-quality-optimization)
+- [Troubleshooting Peacock Detection Evasion](#troubleshooting-peacock-detection-evasion)
+- [Additional Considerations](#additional-considerations)
+- [Performance Comparison Table](#performance-comparison-table)
+
 ## Understanding Peacock's Geo-Restriction Mechanism
 
 Peacock employs multiple methods to enforce geographic restrictions. Understanding these mechanisms helps you configure a more effective VPN setup.

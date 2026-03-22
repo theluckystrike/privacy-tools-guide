@@ -40,6 +40,18 @@ WireGuard offers one of the fastest and most secure VPN protocols available toda
 - **Scan from QR code**: - Use this if your server provides a QR code containing the configuration 2.
 - **Set persistent keepalive to**: 25 seconds (NAT traversal) 3.
 
+## Table of Contents
+
+- [Why WireGuard on iPhone](#why-wireguard-on-iphone)
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration: On-Demand Rules](#advanced-configuration-on-demand-rules)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+- [Advanced Networking: Dual Tunnels and Chaining](#advanced-networking-dual-tunnels-and-chaining)
+- [Performance Tuning for Different Network Types](#performance-tuning-for-different-network-types)
+- [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
+- [Related Reading](#related-reading)
+
 ## Why WireGuard on iPhone
 
 WireGuard provides several advantages over traditional VPN protocols on mobile devices. The protocol's minimal codebase—around 4,000 lines compared to hundreds of thousands in OpenVPN—reduces the attack surface and results in fewer security vulnerabilities. Connection times are dramatically faster, often completing in milliseconds rather than seconds.

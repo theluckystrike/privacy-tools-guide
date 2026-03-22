@@ -40,6 +40,20 @@ This guide walks through auditing your Linux system for permission-related priva
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 
+## Table of Contents
+
+- [Understanding Linux Permissions](#understanding-linux-permissions)
+- [Step 1: Audit Home Directory Permissions](#step-1-audit-home-directory-permissions)
+- [Step 2: Find World-Writable Files](#step-2-find-world-writable-files)
+- [Step 3: Audit SUID and SGID Binaries](#step-3-audit-suid-and-sgid-binaries)
+- [Step 4: Check SSH Key Permissions](#step-4-check-ssh-key-permissions)
+- [Step 5: Audit Configuration File Permissions](#step-5-audit-configuration-file-permissions)
+- [Step 6: Check Web Server File Permissions](#step-6-check-web-server-file-permissions)
+- [Step 7: Audit Cron Job Files](#step-7-audit-cron-job-files)
+- [Step 8: Generate a Permissions Baseline](#step-8-generate-a-permissions-baseline)
+- [Automated Auditing Tools](#automated-auditing-tools)
+- [Related Reading](#related-reading)
+
 ## Understanding Linux Permissions
 
 Every file and directory has three permission sets: owner, group, and others. Each set has three bits: read (r=4), write (w=2), execute (x=1).

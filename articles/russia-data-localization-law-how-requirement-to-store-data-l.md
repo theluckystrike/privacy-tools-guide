@@ -31,6 +31,24 @@ The legislation emerged from concerns about foreign surveillance and data access
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 
+## Table of Contents
+
+- [What Is Russia's Data Localization Law](#what-is-russias-data-localization-law)
+- [Technical Requirements and Scope](#technical-requirements-and-scope)
+- [Privacy Implications for Users](#privacy-implications-for-users)
+- [Impact on Application Architecture](#impact-on-application-architecture)
+- [Practical Strategies for Developers](#practical-strategies-for-developers)
+- [What This Means for User Privacy](#what-this-means-for-user-privacy)
+- [Russian Data Center Infrastructure Requirements](#russian-data-center-infrastructure-requirements)
+- [Regulatory Enforcement and Technical Verification](#regulatory-enforcement-and-technical-verification)
+- [Tension Between Localization and Privacy](#tension-between-localization-and-privacy)
+- [Cryptographic Approaches Under Localization](#cryptographic-approaches-under-localization)
+- [Compliance Auditing and Proof](#compliance-auditing-and-proof)
+- [Migration Strategy for Global Companies](#migration-strategy-for-global-companies)
+- [Economic Impact and Long-Term Viability](#economic-impact-and-long-term-viability)
+- [Future Developments and Trends](#future-developments-and-trends)
+- [Practical Privacy-Preserving Architecture](#practical-privacy-preserving-architecture)
+
 ## Technical Requirements and Scope
 
 The law specifically requires that databases containing Russian citizens' personal data must be located on servers within the Russian Federation. This includes primary storage, backup systems, and any redundant copies. Companies cannot simply mirror data internationally while maintaining a token local copy.

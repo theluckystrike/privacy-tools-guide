@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,6 +26,15 @@ To legally transfer personal data across borders in 2026, use the EU-US Data Pri
 - **- India's DPDPA**: Phased implementation continues through 2026; cross-border restrictions apply to certain "significant data fiduciaries" designated by the Indian government.
 - **For developers**: this means your application architecture must accommodate multiple legal bases for data transfers depending on user location.
 - **Can I use a**: VPN or Tor to route data transfers and avoid regulatory requirements? No.
+
+## Table of Contents
+
+- [The Regulatory Environment in 2026](#the-regulatory-environment-in-2026)
+- [Understanding the Legal Mechanisms](#understanding-the-legal-mechanisms)
+- [Technical Mechanisms for Secure Transfers](#technical-mechanisms-for-secure-transfers)
+- [Regional Transfer Hubs](#regional-transfer-hubs)
+- [Compliance Implementation Checklist](#compliance-implementation-checklist)
+- [Future Considerations](#future-considerations)
 
 ## The Regulatory Environment in 2026
 

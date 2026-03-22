@@ -40,6 +40,21 @@ Apple's App Tracking Transparency (ATT) framework represents one of the most sig
 - **Use TestFlight builds to**: test without affecting production data 4.
 - **Use apps from privacy-respecting**: companies that limit data collection regardless of ATT status.
 
+## Table of Contents
+
+- [What App Tracking Transparency Actually Does](#what-app-tracking-transparency-actually-does)
+- [Implementing ATT as a Developer](#implementing-att-as-a-developer)
+- [What Happens When Users Deny Tracking](#what-happens-when-users-deny-tracking)
+- [User Control Options in 2026](#user-control-options-in-2026)
+- [ATT and the Privacy Ecosystem](#att-and-the-privacy-ecosystem)
+- [Impact on the Advertising Industry](#impact-on-the-advertising-industry)
+- [Testing ATT Implementation](#testing-att-implementation)
+- [Real Tools and Implementation Examples](#real-tools-and-implementation-examples)
+- [ATT and Privacy Regulations](#att-and-privacy-regulations)
+- [Threat Model: What ATT Actually Prevents](#threat-model-what-att-actually-prevents)
+- [User Privacy Best Practices in 2026](#user-privacy-best-practices-in-2026)
+- [Historical Context: Why ATT Matters](#historical-context-why-att-matters)
+
 ## What App Tracking Transparency Actually Does
 
 App Tracking Transparency requires apps to obtain explicit user permission before tracking them across other apps, websites, or properties owned by other companies. The key distinction is between **first-party data collection** (which stays within the app itself) and **cross-app tracking** (which follows users across different apps and websites).

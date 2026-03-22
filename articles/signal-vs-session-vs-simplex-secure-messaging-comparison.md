@@ -41,6 +41,19 @@ Signal, Session, and SimpleX are the gold standard for encrypted messaging—but
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Quick Comparison Table](#quick-comparison-table)
+- [Deep Dive: Signal](#deep-dive-signal)
+- [Deep Dive: Session](#deep-dive-session)
+- [Deep Dive: SimpleX](#deep-dive-simplex)
+- [Detailed Comparison: Real-World Scenarios](#detailed-comparison-real-world-scenarios)
+- [Detailed Comparison: Encryption & Security](#detailed-comparison-encryption-security)
+- [Setup Comparison: Time Investment](#setup-comparison-time-investment)
+- [Switching Between Apps](#switching-between-apps)
+- [Recommendation by User Type](#recommendation-by-user-type)
+- [How to Get Contacts to Adopt](#how-to-get-contacts-to-adopt)
+
 ## Quick Comparison Table
 
 | Aspect | Signal | Session | SimpleX |

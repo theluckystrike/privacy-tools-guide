@@ -42,6 +42,14 @@ Psiphon is an open-source circumvention tool designed to help users in censored 
 4.
 - **For developers and power users**: understanding how Psiphon works under the hood provides valuable insights into building resilient systems that operate in adversarial network environments.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Obfuscation Techniques](#advanced-obfuscation-techniques)
+- [Performance Optimization](#performance-optimization)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

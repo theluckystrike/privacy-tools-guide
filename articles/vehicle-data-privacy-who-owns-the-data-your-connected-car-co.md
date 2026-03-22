@@ -40,6 +40,23 @@ Modern vehicles generate massive amounts of data. Your connected car records whe
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Connected Cars Collect Data](#how-connected-cars-collect-data)
+- [Who Owns Vehicle Data: The Legal Framework](#who-owns-vehicle-data-the-legal-framework)
+- [Technical Mechanisms for Data Access](#technical-mechanisms-for-data-access)
+- [Protecting Your Vehicle Data](#protecting-your-vehicle-data)
+- [What Developers Should Know](#what-developers-should-know)
+- [The Path Forward](#the-path-forward)
+- [Advanced OBD-II Access and Monitoring](#advanced-obd-ii-access-and-monitoring)
+- [Vehicle CAN Bus Architecture](#vehicle-can-bus-architecture)
+- [Manufacturer Telematics APIs and Permissions](#manufacturer-telematics-apis-and-permissions)
+- [Insurance Telematics Privacy Concerns](#insurance-telematics-privacy-concerns)
+- [Privacy-First Vehicle Configuration](#privacy-first-vehicle-configuration)
+- [Aftermarket Device Privacy Ratings](#aftermarket-device-privacy-ratings)
+- [Data Portability and Deletion](#data-portability-and-deletion)
+- [Vehicle Data Privacy by Jurisdiction](#vehicle-data-privacy-by-jurisdiction)
+
 ## How Connected Cars Collect Data
 
 Today's vehicles contain multiple data collection systems working simultaneously. The OBD-II port, typically located under the dashboard, serves as the primary gateway for diagnostic and telematics data. Every car sold in the United States since 1996 must have an OBD-II port, making it a standardized interface for accessing vehicle metrics.

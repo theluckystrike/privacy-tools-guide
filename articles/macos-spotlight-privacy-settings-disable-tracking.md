@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "macOS Spotlight Privacy Settings Disable Tracking"
-description: "Learn how to configure macOS Spotlight privacy settings to minimize tracking, prevent data leakage, and control what information is indexed and shared"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /macos-spotlight-privacy-settings-disable-tracking/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
@@ -39,6 +26,23 @@ Spotlight search on macOS is one of the most powerful built-in features for quic
 - **Spotlight search on macOS**: is one of the most powerful built-in features for quickly finding files, applications, and information across your system.
 - **However**: this convenience comes with privacy implications that many developers and power users overlook.
 - **This approach is preferable**: because it persists across system updates and provides a visual interface for management.
+
+## Table of Contents
+
+- [What macOS Spotlight Collects and Indexes](#what-macos-spotlight-collects-and-indexes)
+- [Privacy Concerns with Default Spotlight Behavior](#privacy-concerns-with-default-spotlight-behavior)
+- [Configuring Spotlight Privacy Settings](#configuring-spotlight-privacy-settings)
+- [Controlling Spotlight Suggestions](#controlling-spotlight-suggestions)
+- [Developer-Specific Privacy Considerations](#developer-specific-privacy-considerations)
+- [Verifying Your Privacy Configuration](#verifying-your-privacy-configuration)
+- [Balancing Privacy with Functionality](#balancing-privacy-with-functionality)
+- [Additional Privacy Layers](#additional-privacy-layers)
+- [Performance Impact of Disabling Spotlight](#performance-impact-of-disabling-spotlight)
+- [Siri Data Collection Through Spotlight](#siri-data-collection-through-spotlight)
+- [Mail Metadata Indexed by Spotlight](#mail-metadata-indexed-by-spotlight)
+- [Third-Party App Integration with Spotlight](#third-party-app-integration-with-spotlight)
+- [Regular Auditing of Spotlight Configuration](#regular-auditing-of-spotlight-configuration)
+- [Comparison: Spotlight vs Alfred vs Raycast](#comparison-spotlight-vs-alfred-vs-raycast)
 
 ## What macOS Spotlight Collects and Indexes
 
@@ -369,11 +373,10 @@ RAM/disk impact: Saves ~5GB of index data.
 
 ## Related Articles
 
-- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
-- [Macos Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
-- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
-- [Iphone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
-
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [macOS Privacy Hardening Checklist 2026](/privacy-tools-guide/macos-privacy-hardening-checklist-2026/)
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

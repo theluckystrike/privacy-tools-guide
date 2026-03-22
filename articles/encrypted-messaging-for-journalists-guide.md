@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -25,6 +26,13 @@ Journalist-source communication faces a specific threat model: state actors, cor
 - **Registration - Use a**: number that isn't publicly linked to you - Options: Google Voice, MySudo, prepaid SIM (cash-purchased) - Don't use your work or personal number 2.
 - **Scanning a QR code**: in person (most secure) 2.
 - **Signal's sealed sender encrypts the sender's identity**: Signal servers can verify that the message came from a Signal user but not which one.
+
+## Table of Contents
+
+- [Threat Model for Journalists](#threat-model-for-journalists)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## Threat Model for Journalists
 

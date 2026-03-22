@@ -31,6 +31,23 @@ This guide covers a systematic six-step audit process: reviewing privacy policie
 - **However, most providers claim "encryption" without specifying which model**: this audit process makes that distinction concrete.
 - **- Deleted file metadata**: Some providers include metadata for recently deleted files in the export — useful for confirming your deleted files are actually queued for deletion.
 
+## Table of Contents
+
+- [What Cloud Providers Can Access](#what-cloud-providers-can-access)
+- [Step 1: Review the Privacy Policy](#step-1-review-the-privacy-policy)
+- [Step 2: Request Your Data Export](#step-2-request-your-data-export)
+- [Step 3: Audit Connected Apps and OAuth Grants](#step-3-audit-connected-apps-and-oauth-grants)
+- [Step 4: Check Encryption Status](#step-4-check-encryption-status)
+- [Step 5: Review Shared Links](#step-5-review-shared-links)
+- [Step 6: Check Data Residency and Transparency Reports](#step-6-check-data-residency-and-transparency-reports)
+- [Remediation If You Find Problems](#remediation-if-you-find-problems)
+- [Step 7: Analyze Access Patterns from Your Data Export](#step-7-analyze-access-patterns-from-your-data-export)
+- [Step 8: File Scanning and Content Analysis](#step-8-file-scanning-and-content-analysis)
+- [Recommendations by Threat Model](#recommendations-by-threat-model)
+- [Implementation: Client-Side Encryption Layer](#implementation-client-side-encryption-layer)
+- [Audit Checklist](#audit-checklist)
+- [Related Reading](#related-reading)
+
 ## What Cloud Providers Can Access
 
 | Provider type | What they can see |
@@ -419,6 +436,14 @@ Complete this before storing sensitive data.
 - [Data Residency and Cloud Storage Legal Implications](/privacy-tools-guide/cloud-data-residency-legal/)
 
 ---
+
+## Related Articles
+
+- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
+- [Privacy Risks of Cloud Backups Explained](/privacy-tools-guide/privacy-risks-cloud-backups-explained/)
+- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
+- [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
+- [Encrypted NAS vs Cloud Storage Comparison: A Developer Guide](/privacy-tools-guide/encrypted-nas-vs-cloud-storage-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 
 {% raw %}
@@ -215,6 +216,15 @@ The choice depends on your threat model, technical requirements, and preference 
 
 
 ## Frequently Asked Questions
+
+## Table of Contents
+
+- [Breaking Down LastPass's Weaknesses](#breaking-down-lastpasss-weaknesses)
+- [Dashlane's Defensive Design](#dashlanes-defensive-design)
+- [Technical Comparison: Encryption Details](#technical-comparison-encryption-details)
+- [Master Password Strength Calculator](#master-password-strength-calculator)
+- [Safe Migration Path](#safe-migration-path)
+- [Long-Term Password Management Strategy](#long-term-password-management-strategy)
 
 **Can I use the first tool and the second tool together?**
 

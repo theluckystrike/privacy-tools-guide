@@ -29,6 +29,23 @@ The enterprise path often means less manual work for users—certificates may be
 - **Use current algorithm recommendations**: RSA 2048+ or ECC (Curve25519/Ed25519), AES-256 for symmetric encryption.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Protocol Foundations](#protocol-foundations)
+- [Key Management: The Core Difference](#key-management-the-core-difference)
+- [Cryptographic Features Comparison](#cryptographic-features-comparison)
+- [Client Support and Ecosystem](#client-support-and-ecosystem)
+- [Interoperability Considerations](#interoperability-considerations)
+- [Implementation Complexity](#implementation-complexity)
+- [Security Considerations](#security-considerations)
+- [Making Your Choice](#making-your-choice)
+- [Getting Started Today](#getting-started-today)
+- [Hybrid Workflow for Maximum Coverage](#hybrid-workflow-for-maximum-coverage)
+- [Cross-Organization Communication Challenges](#cross-organization-communication-challenges)
+- [Migration and Key Rotation](#migration-and-key-rotation)
+- [Security Hardening for Long-Term Use](#security-hardening-for-long-term-use)
+- [Getting Both Set Up This Week](#getting-both-set-up-this-week)
+
 ## Protocol Foundations
 
 **OpenPGP** is an open standard (RFC 4880) based on Phil Zimmermann's Pretty Good Privacy from 1991. It uses a decentralized trust model where users manage their own keypairs and verify correspondents through a web of trust or manual fingerprint verification.

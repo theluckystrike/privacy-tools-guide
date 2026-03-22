@@ -44,6 +44,23 @@ Note: Layering adds complexity without proportional security gains for most user
 - **Configure Tor to use**: I2P outproxy cat > /etc/tor/torrc.d/i2p-outproxy << EOF OutProxy 127.0.0.1:4444 OutProxyType SOCKS5 EOF # 3.
 - **Use only when threat**: model justifies overhead.
 
+## Table of Contents
+
+- [Why Consider Tor Alternatives?](#why-consider-tor-alternatives)
+- [I2P: The Invisible Internet Project](#i2p-the-invisible-internet-project)
+- [JonDonym: Java Anon Proxy](#jondonym-java-anon-proxy)
+- [Whonix: Workstation Isolation](#whonix-workstation-isolation)
+- [The Amnesic Incognito Live System (Tails)](#the-amnesic-incognito-live-system-tails)
+- [Nym: Next-Generation Mixnet](#nym-next-generation-mixnet)
+- [Comparative Analysis](#comparative-analysis)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Configuration Patterns](#advanced-configuration-patterns)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Monitoring Network Health](#monitoring-network-health)
+- [Practical Selection Criteria](#practical-selection-criteria)
+
 ## Why Consider Tor Alternatives?
 
 Tor uses onion routing through volunteer relays, which creates certain characteristics that may not suit every workflow. The network experiences variable latency due to its three-hop design. Some users require specific features like fixed circuits or SMTP tunneling. Others prefer networks with different threat models or operational structures.

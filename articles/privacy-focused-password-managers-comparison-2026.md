@@ -42,6 +42,21 @@ This guide compares four password managers focused on actual privacy, not market
 - $36/year is acceptable for convenience.
 - **Cost per day**: $0.03.
 
+## Table of Contents
+
+- [What Makes a Password Manager Private](#what-makes-a-password-manager-private)
+- [Bitwarden](#bitwarden)
+- [1Password](#1password)
+- [KeePassXC (Self-Hosted Desktop)](#keepassxc-self-hosted-desktop)
+- [Proton Pass](#proton-pass)
+- [Comparison Table](#comparison-table)
+- [Real-World Recommendation](#real-world-recommendation)
+- [Migration Path](#migration-path)
+- [What NOT to Do](#what-not-to-do)
+- [Features You Don't Need](#features-you-dont-need)
+- [Cost Analysis for Privacy](#cost-analysis-for-privacy)
+- [The Honest Assessment](#the-honest-assessment)
+
 ## What Makes a Password Manager Private
 
 **Zero-Knowledge**: Company cannot access your passwords. Even employees can't read your vault.

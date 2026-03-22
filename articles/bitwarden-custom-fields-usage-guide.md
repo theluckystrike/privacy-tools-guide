@@ -41,6 +41,17 @@ To use Bitwarden custom fields, open any vault item, scroll to the "Custom Field
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [What Are Custom Fields?](#what-are-custom-fields)
+- [Prerequisites](#prerequisites)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Security Considerations](#security-considerations)
+- [Advanced Field Patterns for Power Users](#advanced-field-patterns-for-power-users)
+- [Threat Modeling Custom Fields](#threat-modeling-custom-fields)
+- [Audit and Compliance](#audit-and-compliance)
+- [Troubleshooting](#troubleshooting)
+
 ## What Are Custom Fields?
 
 Custom fields are additional data points you can attach to any vault item in Bitwarden. Each field consists of a name and value, with optional attributes for masking (hiding the value) or marking the field as a protected note. This flexibility makes custom fields ideal for storing API keys, database credentials, server addresses, and other developer-specific information.

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]---
+tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
+---
 ---
 layout: default
 title: "GrapheneOS Travel Profile Border Crossing Minimal Data 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]---
+tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
+---
 
 {% raw %}
 

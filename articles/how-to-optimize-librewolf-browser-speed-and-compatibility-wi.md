@@ -39,6 +39,13 @@ LibreWolf is a privacy-focused fork of Firefox that strips out telemetry, DRM, a
 - **LibreWolf stores its additional**: preferences in a `librewolf.cfg` file and a `policies.json` under the application directory.
 - **Unlike Firefox user.js overrides**: that apply per-profile, these files apply globally to all profiles.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Performance Optimization Strategies](#performance-optimization-strategies)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Benchmarking](#performance-benchmarking)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

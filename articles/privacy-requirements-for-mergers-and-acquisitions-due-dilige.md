@@ -39,6 +39,22 @@ In M&A due diligence, conduct privacy assessments to identify data protection li
 - **The due diligence phase**: represents your best opportunity to identify these risks.
 - **Transfer mechanisms**: Determine whether the target uses Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), or adequacy decisions for international data transfers.
 
+## Table of Contents
+
+- [Understanding the Privacy Stakes in M&A Transactions](#understanding-the-privacy-stakes-in-ma-transactions)
+- [Technical Data Inventory Requirements](#technical-data-inventory-requirements)
+- [Compliance Verification Checklist](#compliance-verification-checklist)
+- [Cross-Border Data Transfer Assessment](#cross-border-data-transfer-assessment)
+- [Security Incident History Review](#security-incident-history-review)
+- [Integration Planning Considerations](#integration-planning-considerations)
+- [Documenting Findings for Legal Review](#documenting-findings-for-legal-review)
+- [Encryption Audit Procedures](#encryption-audit-procedures)
+- [Consent Audit Tools](#consent-audit-tools)
+- [Data Retention Policy Verification](#data-retention-policy-verification)
+- [Post-Acquisition Privacy Integration](#post-acquisition-privacy-integration)
+- [Tool Recommendations for Due Diligence](#tool-recommendations-for-due-diligence)
+- [Team Composition for Privacy Due Diligence](#team-composition-for-privacy-due-diligence)
+
 ## Understanding the Privacy Stakes in M&A Transactions
 
 Acquiring a company means inheriting its data protection liabilities. Under regulations like GDPR, CCPA, and sector-specific laws such as HIPAA, the acquiring entity can be held responsible for data protection violations that occurred before the acquisition. This concept, sometimes called "successor liability," means that privacy gaps in the target company's data handling practices become your problem post-acquisition.

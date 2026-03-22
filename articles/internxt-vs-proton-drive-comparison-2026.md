@@ -40,6 +40,17 @@ Choose Proton Drive for better CLI integration and API support, making it ideal 
 - **Choose Internxt for lower**: pricing and slightly faster upload speeds.
 - **Proton's encryption library is**: open-source, allowing independent verification of their claims.
 
+## Table of Contents
+
+- [Architecture and Encryption Models](#architecture-and-encryption-models)
+- [API Access and Developer Integration](#api-access-and-developer-integration)
+- [CLI Tools and Command-Line Usage](#cli-tools-and-command-line-usage)
+- [Pricing Structure](#pricing-structure)
+- [Performance and Sync Behavior](#performance-and-sync-behavior)
+- [Security Features Comparison](#security-features-comparison)
+- [When to Choose Each Service](#when-to-choose-each-service)
+- [Automation Example: Encrypted Backup Script](#automation-example-encrypted-backup-script)
+
 ## Architecture and Encryption Models
 
 Both services market themselves as zero-knowledge encrypted cloud storage, but their implementations differ in important ways.

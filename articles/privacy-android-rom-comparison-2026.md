@@ -27,6 +27,24 @@ Stock Android from Google and most OEM ROMs ship with pre-installed data collect
 - **It is the most**: accessible option but does the least for security.
 - **Banking apps that check**: for rooted devices or modified bootloaders will detect most ROMs except those with proper verified boot (GrapheneOS and CalyxOS on Pixels).
 
+## Table of Contents
+
+- [Quick Comparison](#quick-comparison)
+- [GrapheneOS](#grapheneos)
+- [CalyxOS](#calyxos)
+- [DivestOS](#divestos)
+- [LineageOS](#lineageos)
+- [Choosing Between Them](#choosing-between-them)
+- [Post-Install Hardening Steps (All ROMs)](#post-install-hardening-steps-all-roms)
+- [Verifying Your ROM Build](#verifying-your-rom-build)
+- [Real-World Performance Considerations](#real-world-performance-considerations)
+- [Threat Model Alignment](#threat-model-alignment)
+- [Flashing Verification Commands](#flashing-verification-commands)
+- [Post-Installation Hardening Deep Dive](#post-installation-hardening-deep-dive)
+- [Migrating Between ROMs](#migrating-between-roms)
+- [Supporting Your Chosen ROM](#supporting-your-chosen-rom)
+- [Related Reading](#related-reading)
+
 ## Quick Comparison
 
 | Feature | GrapheneOS | CalyxOS | DivestOS | LineageOS |

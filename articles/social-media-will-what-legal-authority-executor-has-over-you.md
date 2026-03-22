@@ -41,6 +41,20 @@ Executors have limited authority over social media accounts—most platforms don
 - **Add explicit digital asset provisions to your will**: use state-specific language and reference specific platforms
 4.
 
+## Table of Contents
+
+- [Understanding Fiduciary Access to Digital Assets](#understanding-fiduciary-access-to-digital-assets)
+- [Why Platform Terms of Service Override Executor Authority](#why-platform-terms-of-service-override-executor-authority)
+- [Platform-Specific Executor Access Methods](#platform-specific-executor-access-methods)
+- [State-by-State Considerations](#state-by-state-considerations)
+- [Estate Planning Software and Digital Asset Inventory Tools](#estate-planning-software-and-digital-asset-inventory-tools)
+- [Practical Implementation for Estate Planning](#practical-implementation-for-estate-planning)
+- [Special Categories: Cryptocurrency and Financial Accounts](#special-categories-cryptocurrency-and-financial-accounts)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Handling Two-Factor Authentication in Estate Planning](#handling-two-factor-authentication-in-estate-planning)
+- [Digital Estate Planning for Minor Children](#digital-estate-planning-for-minor-children)
+- [Getting Started](#getting-started)
+
 ## Understanding Fiduciary Access to Digital Assets
 
 Estate executors derive their authority from three sources: the deceased's will, state probate law, and the Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA), which most states have adopted in some form.

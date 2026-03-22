@@ -40,6 +40,14 @@ Disable WebRTC in Tor Browser by navigating to `about:config` and setting `media
 - **To establish these connections, WebRTC must discover the user's IP addresses**: including those not exposed through the standard VPN or Tor circuit.
 - **This occurs regardless of**: the Tor network's proxy settings, creating a potential information leak that can de-anonymize users.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Threat Model Assessment](#threat-model-assessment)
+- [Advanced Configuration with Hardened user.js](#advanced-configuration-with-hardened-userjs)
+- [Advanced: Virtual Machine Testing](#advanced-virtual-machine-testing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -40,6 +40,21 @@ As of 2026, passkey support is mature across all major platforms: Apple shipped 
 2.
 - **Direct user to legitimate-looking**: site 3.
 
+## Table of Contents
+
+- [What Are Passkeys?](#what-are-passkeys)
+- [Platform Adoption Timeline](#platform-adoption-timeline)
+- [Platform-Specific Implementation Details](#platform-specific-implementation-details)
+- [Current State and Recommendations](#current-state-and-recommendations)
+- [Looking Forward](#looking-forward)
+- [Server-Side Implementation: Verifying Passkey Credentials](#server-side-implementation-verifying-passkey-credentials)
+- [Passkey Security Considerations and Limitations](#passkey-security-considerations-and-limitations)
+- [Passkey Performance Characteristics](#passkey-performance-characteristics)
+- [Passkey Registration UX Patterns](#passkey-registration-ux-patterns)
+- [Enterprise Passkey Deployment](#enterprise-passkey-deployment)
+- [Monitoring and Troubleshooting Passkey Issues](#monitoring-and-troubleshooting-passkey-issues)
+- [Looking Ahead: Post-Passkey Authentication](#looking-ahead-post-passkey-authentication)
+
 ## What Are Passkeys?
 
 Passkeys are cryptographic credentials that replace traditional passwords entirely. Based on the FIDO2/WebAuthn standards, passkeys use public-key cryptography to authenticate users without transmitting secrets over the network. Each passkey consists of a private key stored securely on the user's device and a public key registered with the online service.

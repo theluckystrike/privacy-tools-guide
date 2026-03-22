@@ -40,6 +40,15 @@ Logging is essential for debugging, monitoring, and security analysis. However, 
 - **Truncation**: Log only the first three octets of an IPv4 address.
 - **Encrypt logs at rest**: Use filesystem encryption or database encryption for log storage.
 
+## Table of Contents
+
+- [Why Privacy-Preserving Logging Matters](#why-privacy-preserving-logging-matters)
+- [Prerequisites](#prerequisites)
+- [Log Level Best Practices](#log-level-best-practices)
+- [Compliance Checklist](#compliance-checklist)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Privacy-Preserving Logging Matters
 
 Application logs frequently contain more information than developers realize. IP addresses, email addresses, session tokens, and even payment data can end up in log files. When a breach occurs or when you're auditing for GDPR, CCPA, or SOC2 compliance, these logs become liabilities.

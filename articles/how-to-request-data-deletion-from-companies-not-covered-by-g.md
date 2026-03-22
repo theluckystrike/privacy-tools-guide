@@ -11,21 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How To Request Data Deletion From Companies Not Covered"
-description: "Learn practical methods to request data deletion from companies that fall outside GDPR and CCPA protections. Includes email templates, legal"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-request-data-deletion-from-companies-not-covered-by-g/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
@@ -37,6 +24,16 @@ Send formal deletion requests explicitly referencing applicable state laws (Virg
 - **If companies refuse**: escalate to state attorneys general, the FTC, or BBB.
 - **For developers and power users**: this means building automation around data deletion requests requires understanding both legal frameworks and practical API-driven approaches.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
+## Table of Contents
+
+- [Understanding the Data Protection Gap](#understanding-the-data-protection-gap)
+- [What Data Companies Typically Hold](#what-data-companies-typically-hold)
+- [Automating Data Discovery with Developer Tools](#automating-data-discovery-with-developer-tools)
+- [Step-by-Step Method to Request Data Deletion](#step-by-step-method-to-request-data-deletion)
+- [Alternative Strategies](#alternative-strategies)
+- [What to Do If They Refuse](#what-to-do-if-they-refuse)
+- [Template Collection](#template-collection)
 
 ## Understanding the Data Protection Gap
 
@@ -318,11 +315,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Request Algorithmic Transparency From Companies Makin](/privacy-tools-guide/how-to-request-algorithmic-transparency-from-companies-makin/)
-- [Ledger Data Breach Lessons How Hardware Wallet Companies Can](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
-- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
-- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
-- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
-
+- [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/privacy-tools-guide/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [India Data Protection Bill 2026 What It Means For Citizen](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

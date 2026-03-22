@@ -49,6 +49,19 @@ For operators running hidden services:
 
 1.
 
+## Table of Contents
+
+- [Understanding Tor Hidden Services](#understanding-tor-hidden-services)
+- [Tor Browser: The Standard Choice](#tor-browser-the-standard-choice)
+- [Firefox with Tor Proxy: Advanced Configuration](#firefox-with-tor-proxy-advanced-configuration)
+- [Browser Comparison for Hidden Service Access](#browser-comparison-for-hidden-service-access)
+- [Additional Security Considerations](#additional-security-considerations)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Circuit Management and Isolation](#advanced-circuit-management-and-isolation)
+- [Fingerprinting Attacks and Defenses](#fingerprinting-attacks-and-defenses)
+- [Debugging Hidden Service Issues](#debugging-hidden-service-issues)
+- [Protocol Comparison Table](#protocol-comparison-table)
+
 ## Understanding Tor Hidden Services
 
 Tor hidden services are websites that operate on the Tor network and are accessible only through the Tor browser. Unlike traditional websites, hidden services route all traffic through at least three Tor relays, masking both the server's IP address and the client's IP address. The `.onion` domain is a cryptographic identifier derived from the service's public key, providing end-to-end encryption without relying on certificate authorities.

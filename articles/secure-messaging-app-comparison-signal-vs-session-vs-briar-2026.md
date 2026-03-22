@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Messaging App Comparison Signal vs Session vs Briar 2026"
+title: "Signal vs Session vs Briar: Secure Messaging (2026)"
 description: "Compare Signal, Session, and Briar for secure messaging including encryption protocols, metadata protection, and anonymity features"
 date: 2026-03-22
 last_modified_at: 2026-03-22
@@ -17,6 +17,17 @@ intent-checked: true
 {% raw %}
 
 ## Secure Messaging in 2026: The Landscape
+
+## Table of Contents
+
+- [Secure Messaging in 2026: The Landscape](#secure-messaging-in-2026-the-landscape)
+- [Signal: The Gold Standard (With Trade-Offs)](#signal-the-gold-standard-with-trade-offs)
+- [Session: Anonymous Messaging (With Compromises)](#session-anonymous-messaging-with-compromises)
+- [Briar: Decentralized Mesh Messaging](#briar-decentralized-mesh-messaging)
+- [Comparison Table](#comparison-table)
+- [Decision Framework](#decision-framework)
+- [Real-World Deployment Strategy](#real-world-deployment-strategy)
+- [Technical Comparison: Encryption Depth](#technical-comparison-encryption-depth)
 
 Messaging apps are surveillance vectors. Traditional apps (WhatsApp, Telegram, iMessage) leak metadata: who talks to whom, when, from where. Some encrypt content but not metadata. Others don't encrypt at all.
 

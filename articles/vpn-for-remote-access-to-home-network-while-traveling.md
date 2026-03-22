@@ -40,6 +40,20 @@ Setting up a VPN for remote access to your home network while traveling solves a
 - **Let them use it for 2-3 weeks**: then gather their honest feedback.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why You Need Home Network VPN Access](#why-you-need-home-network-vpn-access)
+- [Option 1: WireGuard on a Home Server](#option-1-wireguard-on-a-home-server)
+- [Option 2: OpenVPN for Broader Compatibility](#option-2-openvpn-for-broader-compatibility)
+- [Option 3: Cloud Tunnel with Tailscale](#option-3-cloud-tunnel-with-tailscale)
+- [Security Considerations](#security-considerations)
+- [Performance Optimization](#performance-optimization)
+- [Choosing Your Approach](#choosing-your-approach)
+- [Advanced Security Hardening](#advanced-security-hardening)
+- [Handling Device Management and Revocation](#handling-device-management-and-revocation)
+- [Backup and Disaster Recovery](#backup-and-disaster-recovery)
+- [Multi-User VPN Scenarios](#multi-user-vpn-scenarios)
+
 ## Why You Need Home Network VPN Access
 
 When traveling, you likely encounter situations where accessing your home network would be valuable. Perhaps you need to grab a file from your NAS, check on home automation systems, or access a development server running on a Raspberry Pi. Public solutions exist, but they come with trade-offs: subscription costs, bandwidth limits, and reduced control over your data.

@@ -40,6 +40,15 @@ Password-based VPN authentication has become a significant vulnerability. As bru
 - **When you use a hardware token with your VPN**: the cryptographic private key never leaves the device.
 - **Understanding how hardware tokens**: fit into these protocols helps you choose the right configuration.
 
+## Table of Contents
+
+- [Why Hardware Tokens for VPN Authentication](#why-hardware-tokens-for-vpn-authentication)
+- [How Hardware Tokens Integrate with VPN Protocols](#how-hardware-tokens-integrate-with-vpn-protocols)
+- [Popular Hardware Tokens Compatible with VPN](#popular-hardware-tokens-compatible-with-vpn)
+- [Setting Up Hardware Token VPN Authentication](#setting-up-hardware-token-vpn-authentication)
+- [Performance Considerations](#performance-considerations)
+- [Backup and Recovery Strategies](#backup-and-recovery-strategies)
+
 ## Why Hardware Tokens for VPN Authentication
 
 Hardware security keys provide phishing-resistant authentication that differs fundamentally from passwords or even mobile authenticator apps. When you use a hardware token with your VPN, the cryptographic private key never leaves the device. Even if malware compromises your computer, the attacker cannot extract the credentials needed to access your VPN.

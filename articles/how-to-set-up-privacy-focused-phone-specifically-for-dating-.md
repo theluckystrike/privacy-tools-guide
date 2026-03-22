@@ -40,6 +40,13 @@ Set up a dedicated Android phone with CalyxOS (not GrapheneOS, since it's harder
 - **However, GrapheneOS does not support the Google Play Store directly**: you'll need to use the Aurora Store or sideload APKs.
 - **Install only the apps you need**: and enable Play Services only for specific applications that refuse to work otherwise.
 
+## Table of Contents
+
+- [Why a Dedicated Phone Matters](#why-a-dedicated-phone-matters)
+- [Prerequisites](#prerequisites)
+- [Advanced Operational Security](#advanced-operational-security)
+- [Troubleshooting](#troubleshooting)
+
 ## Why a Dedicated Phone Matters
 
 When you use your primary smartphone for dating apps, you grant those applications access to your entire digital identity. Location data reveals where you live and work. Contacts synchronization exposes your friends and family. Camera and microphone permissions enable continuous surveillance. By isolating dating activities to a separate device, you contain the blast radius of any potential data breach or privacy violation.

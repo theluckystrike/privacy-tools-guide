@@ -41,6 +41,24 @@ Proton Drive has evolved significantly since its initial release, emerging as a 
 - **The free tier provides 5GB of storage**: which is sufficient for basic document storage but quickly becomes limiting for developers working with code repositories or project files.
 - **Journalists**: researchers, and users handling sensitive personal documents will benefit most from the zero-knowledge encryption model.
 
+## Table of Contents
+
+- [Pricing and Value Proposition](#pricing-and-value-proposition)
+- [Encryption and Security Architecture](#encryption-and-security-architecture)
+- [Desktop and Mobile Client Performance](#desktop-and-mobile-client-performance)
+- [Developer Integration and API Access](#developer-integration-and-api-access)
+- [Sharing and Collaboration Features](#sharing-and-collaboration-features)
+- [Performance Considerations](#performance-considerations)
+- [Limitations and Trade-offs](#limitations-and-trade-offs)
+- [Who Should Use Proton Drive](#who-should-use-proton-drive)
+- [Detailed Performance Testing Across Environments](#detailed-performance-testing-across-environments)
+- [Detailed Security Analysis](#detailed-security-analysis)
+- [Workaround Strategies for API Limitations](#workaround-strategies-for-api-limitations)
+- [Comparison with Alternative Encrypted Storage Services](#comparison-with-alternative-encrypted-storage-services)
+- [Practical Migration Paths](#practical-migration-paths)
+- [Threat Model Assessment](#threat-model-assessment)
+- [Setting Up Proton Drive Securely](#setting-up-proton-drive-securely)
+
 ## Pricing and Value Proposition
 
 Proton Drive offers a tiered pricing structure that aligns with Proton's ecosystem approach. The free tier provides 5GB of storage, which is sufficient for basic document storage but quickly becomes limiting for developers working with code repositories or project files. The Plus plan at €4.99/month (approximately $5.50 USD) expands storage to 200GB and adds features like advanced sharing options and priority support.

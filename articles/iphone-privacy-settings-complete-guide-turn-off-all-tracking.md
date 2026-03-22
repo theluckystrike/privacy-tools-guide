@@ -40,6 +40,13 @@ Disable all iOS tracking by turning off the advertising identifier (IDFA), locat
 - **Disable Listen for "Hey**: Siri" if not used 3.
 - **This is meaningfully different from simply denying individual app requests**: apps cannot even prompt the user for permission, which removes the possibility that users will accidentally grant it.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Shortcuts for Privacy Automation](#advanced-shortcuts-for-privacy-automation)
+- [Lockdown Mode for Extreme Threat Models](#lockdown-mode-for-extreme-threat-models)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

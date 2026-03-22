@@ -40,6 +40,15 @@ If you are a developer or power user living in the UK but want to access Polish 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For the remaining factors**: you will need to adjust browser settings or use specialized tools.
 
+## Table of Contents
+
+- [Understanding Geographic Restrictions](#understanding-geographic-restrictions)
+- [VPN Protocol Selection](#vpn-protocol-selection)
+- [DNS Configuration for Streaming Services](#dns-configuration-for-streaming-services)
+- [Automation Scripts for Developers](#automation-scripts-for-developers)
+- [Browser Configuration](#browser-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Understanding Geographic Restrictions
 
 Polish streaming services use several methods to enforce geographic restrictions:

@@ -40,6 +40,23 @@ TLS fingerprinting (JA3) identifies browsers and clients by analyzing the TLS ha
 - **HTTP/3 and QUIC**: Newer protocols like HTTP/3 use QUIC, which has different handshake characteristics.
 - **Studies have shown that**: even with Tor Browser running, users can be uniquely identified when combining TLS fingerprints with other network-level signals.
 
+## Table of Contents
+
+- [How TLS Fingerprinting Works](#how-tls-fingerprinting-works)
+- [The ClientHello Message](#the-clienthello-message)
+- [JA3 Fingerprints in Practice](#ja3-fingerprints-in-practice)
+- [Real-World Applications](#real-world-applications)
+- [Defending Against TLS Fingerprinting](#defending-against-tls-fingerprinting)
+- [Advanced Fingerprinting Techniques](#advanced-fingerprinting-techniques)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Verifying Your Browser's TLS Fingerprint](#verifying-your-browsers-tls-fingerprint)
+- [Industry Applications of TLS Fingerprinting](#industry-applications-of-tls-fingerprinting)
+- [Building Fingerprint-Resistant Applications](#building-fingerprint-resistant-applications)
+- [TLS Fingerprinting in Zero-Trust Security](#tls-fingerprinting-in-zero-trust-security)
+- [Fingerprinting Across Protocol Versions](#fingerprinting-across-protocol-versions)
+- [Fingerprinting Resistance Through Tor Browser](#fingerprinting-resistance-through-tor-browser)
+- [Detection Evasion and Counter-Detection](#detection-evasion-and-counter-detection)
+
 ## How TLS Fingerprinting Works
 
 When your browser connects to an HTTPS server, it initiates a TLS handshake before any application data transfers. This handshake includes several messages where the client announces its capabilities: supported cipher suites, extensions, elliptic curve groups, and signature algorithms. The specific combination of these parameters varies between browsers, operating systems, and applications.

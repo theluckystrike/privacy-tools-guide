@@ -40,6 +40,20 @@ Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-laye
 - **Test your recovery procedure**: at least once per year by booting from a live USB and restoring access using the backup passphrase.
 - **An untested recovery plan is not a recovery plan**: discovering the backup is wrong during an actual incident causes permanent data loss.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Understanding the Security Architecture](#understanding-the-security-architecture)
+- [Step 1: Preparing Fedora Installation with Encryption](#step-1-preparing-fedora-installation-with-encryption)
+- [Step 2: Enrolling SecureBoot Keys](#step-2-enrolling-secureboot-keys)
+- [Step 3: Signing Custom Kernels and Bootloaders](#step-3-signing-custom-kernels-and-bootloaders)
+- [Step 4: Configuring TPM2-Based Unlocking](#step-4-configuring-tpm2-based-unlocking)
+- [Step 5: Verifying Your Security Configuration](#step-5-verifying-your-security-configuration)
+- [Step 6: Implementing Additional Hardening](#step-6-implementing-additional-hardening)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Maintenance and Recovery](#maintenance-and-recovery)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before proceeding, ensure you have:

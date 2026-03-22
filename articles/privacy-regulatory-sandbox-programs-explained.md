@@ -40,6 +40,21 @@ A privacy regulatory sandbox is a formal program run by a data protection author
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The core concept mirrors**: technology sandboxes used in software development, but with a regulatory twist.
 
+## Table of Contents
+
+- [What Are Privacy Regulatory Sandboxes?](#what-are-privacy-regulatory-sandboxes)
+- [How Sandbox Programs Operate](#how-sandbox-programs-operate)
+- [Prominent Sandbox Programs Around the World](#prominent-sandbox-programs-around-the-world)
+- [Technical Implementation Considerations](#technical-implementation-considerations)
+- [Benefits for Developers and Organizations](#benefits-for-developers-and-organizations)
+- [Applying for Sandbox Participation](#applying-for-sandbox-participation)
+- [Real-World Sandbox Case Studies](#real-world-sandbox-case-studies)
+- [Compliance Transition Pathways](#compliance-transition-pathways)
+- [Advanced Documentation for Sandbox Applications](#advanced-documentation-for-sandbox-applications)
+- [Regulatory Relationships During Sandbox Participation](#regulatory-relationships-during-sandbox-participation)
+- [Exit Strategies and Continuation](#exit-strategies-and-continuation)
+- [Emerging Sandbox Models](#emerging-sandbox-models)
+
 ## What Are Privacy Regulatory Sandboxes?
 
 A privacy regulatory sandbox is a formal framework established by data protection authorities that permits organizations to collect and process personal data under modified or relaxed rules. Unlike traditional compliance paths, sandbox programs grant participants temporary exemptions or allowances in exchange for enhanced oversight and specific safeguards.

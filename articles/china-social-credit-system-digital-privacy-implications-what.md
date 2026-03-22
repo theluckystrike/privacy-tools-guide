@@ -167,6 +167,14 @@ The China Social Credit System represents a particular implementation of behavio
 
 ## Practical Technical Defenses
 
+## Table of Contents
+
+- [Practical Technical Defenses](#practical-technical-defenses)
+- [Data Aggregation Risks in Other Contexts](#data-aggregation-risks-in-other-contexts)
+- [Building Privacy-Conscious Applications](#building-privacy-conscious-applications)
+- [International Data Transfer Considerations](#international-data-transfer-considerations)
+- [The Surveillance-as-a-Service Ecosystem](#the-surveillance-as-a-service-ecosystem)
+
 For developers and individuals concerned about behavioral surveillance in any jurisdiction, several approaches provide defense-in-depth:
 
 ### Device-Level Isolation
@@ -326,11 +334,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
+- [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [Insurance Company Data Collection Privacy What Health](/privacy-tools-guide/insurance-company-data-collection-privacy-what-health-life-auto/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/privacy-tools-guide/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
-- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
-- [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
-- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-
+- [Vehicle Data Privacy Who Owns The Data Your Connected Car](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
+- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

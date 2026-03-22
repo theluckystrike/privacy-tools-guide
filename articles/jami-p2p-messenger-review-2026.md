@@ -41,6 +41,25 @@ Jami is worth using in 2026 if you prioritize full architectural decentralizatio
 - **Free and basic plans**: typically get community forum support and documentation.
 - **For developers and power**: users who want complete control over their communication infrastructure, Jami remains one of the few messengers that truly eliminates intermediaries.
 
+## Table of Contents
+
+- [Architecture and Network Design](#architecture-and-network-design)
+- [Encryption and Security Model](#encryption-and-security-model)
+- [Installation and Platform Support](#installation-and-platform-support)
+- [CLI and Automation Possibilities](#cli-and-automation-possibilities)
+- [Self-Hosting and Network Relay](#self-hosting-and-network-relay)
+- [Practical Use Cases for Developers](#practical-use-cases-for-developers)
+- [Performance Characteristics](#performance-characteristics)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Multi-Device Challenges and Solutions](#multi-device-challenges-and-solutions)
+- [Group Messaging Limitations](#group-messaging-limitations)
+- [Integration with Other Tools](#integration-with-other-tools)
+- [Security Audit Status and Known Issues](#security-audit-status-and-known-issues)
+- [Performance Testing Results](#performance-testing-results)
+- [Comparison with Emerging Alternatives](#comparison-with-emerging-alternatives)
+- [When Jami Is the Right Choice](#when-jami-is-the-right-choice)
+- [Future Development and Roadmap](#future-development-and-roadmap)
+
 ## Architecture and Network Design
 
 Jami uses a distributed hash table (DHT) called GNU Name System for peer discovery. When you install Jami, your device becomes a node on this network. The application maintains connections to other nodes and uses these connections to discover contacts and relay messages when direct peer-to-peer connections aren't possible due to network topology.

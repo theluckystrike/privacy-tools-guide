@@ -38,6 +38,14 @@ Deploy Frigate on a Docker-capable computer (mini-PC, Intel NUC, or Raspberry Pi
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers why**: frigate for local-only security, hardware requirements, installing frigate, with specific setup instructions
 
+## Table of Contents
+
+- [Why Frigate for Local-Only Security](#why-frigate-for-local-only-security)
+- [Hardware Requirements](#hardware-requirements)
+- [Prerequisites](#prerequisites)
+- [Performance Optimization](#performance-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Frigate for Local-Only Security
 
 Frigate is a Docker-based NVR built specifically for Home Assistant but capable of standalone operation. It processes video streams locally using real-time object detection, distinguishing between people, vehicles, animals, and other motion. Unlike cloud services that upload your footage to remote servers, Frigate keeps everything on your network.

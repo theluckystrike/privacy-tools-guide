@@ -41,6 +41,18 @@ Stop screen sharing immediately using platform shortcuts (Cmd+Shift+E in Zoom, C
 - **For local recordings**: open the file and either delete it or use video editing software to remove the sensitive portion
 4.
 
+## Table of Contents
+
+- [Immediate Actions: The First 60 Seconds](#immediate-actions-the-first-60-seconds)
+- [Platform-Specific Recovery Steps](#platform-specific-recovery-steps)
+- [Assessing the Actual Risk](#assessing-the-actual-risk)
+- [Technical Containment for Developers](#technical-containment-for-developers)
+- [Preventing Future Accidents](#preventing-future-accidents)
+- [When to Escalate](#when-to-escalate)
+- [Forensic Analysis of Screen Share Exposure](#forensic-analysis-of-screen-share-exposure)
+- [Automated Detection of Sensitive Content](#automated-detection-of-sensitive-content)
+- [Platform-Specific Recording Protection](#platform-specific-recording-protection)
+
 ## Immediate Actions: The First 60 Seconds
 
 When you realize sensitive information is visible to others, act immediately. The goal is to minimize exposure time and prevent recording or caching of the content.

@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 ---
 layout: default
 title: "Does NordVPN Work in Russia? Tested from Moscow (2026)"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
@@ -39,6 +41,23 @@ Testing VPN connectivity from within Russia presents unique challenges. The Russ
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Connection success rate hovered**: around 40-60% depending on time of day.
 - **OpenVPN (UDP)**: Traditional OpenVPN connections succeeded approximately 25% of the time.
+
+## Table of Contents
+
+- [Understanding the Current Restrictions](#understanding-the-current-restrictions)
+- [Testing Methodology](#testing-methodology)
+- [NordVPN Connection Results](#nordvpn-connection-results)
+- [Configuration Recommendations](#configuration-recommendations)
+- [Performance Considerations](#performance-considerations)
+- [Alternative Approaches](#alternative-approaches)
+- [VPN Apps vs. Manual Configuration](#vpn-apps-vs-manual-configuration)
+- [Staying Compliant With Russian Law](#staying-compliant-with-russian-law)
+- [DPI Fingerprinting: How Russia Detects VPN Traffic](#dpi-fingerprinting-how-russia-detects-vpn-traffic)
+- [Building Obfuscated Tunnels Manually](#building-obfuscated-tunnels-manually)
+- [Timing Attack Mitigation](#timing-attack-mitigation)
+- [Testing VPN Connectivity in Real-Time](#testing-vpn-connectivity-in-real-time)
+- [Failover Strategy for Blocked Connections](#failover-strategy-for-blocked-connections)
+- [Threat Assessment: Current Russia Environment (March 2026)](#threat-assessment-current-russia-environment-march-2026)
 
 ## Understanding the Current Restrictions
 

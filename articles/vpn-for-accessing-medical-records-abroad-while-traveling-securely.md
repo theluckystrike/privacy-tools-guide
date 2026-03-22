@@ -27,6 +27,27 @@ Accessing your medical records while traveling abroad is increasingly important 
 - **Common patient portals include**: MyChart (used by hundreds of US health systems), Epic's patient portal, Cerner's HealtheLife, and Apple Health Records integration.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Medical Records Require Extra Protection While Traveling](#why-medical-records-require-extra-protection-while-traveling)
+- [Why You Need a VPN for Medical Records Access](#why-you-need-a-vpn-for-medical-records-access)
+- [How a VPN Protects Your Medical Data](#how-a-vpn-protects-your-medical-data)
+- [Choosing a VPN Specifically for Healthcare Data](#choosing-a-vpn-specifically-for-healthcare-data)
+- [Setting Up Your VPN for Healthcare Access](#setting-up-your-vpn-for-healthcare-access)
+- [Best Practices for Accessing Medical Records Securely](#best-practices-for-accessing-medical-records-securely)
+- [Accessing Different Types of Medical Records](#accessing-different-types-of-medical-records)
+- [Preparation Before You Travel](#preparation-before-you-travel)
+- [Legal Considerations](#legal-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Recommended VPN Features for Medical Access](#recommended-vpn-features-for-medical-access)
+- [VPN Protocol Selection for Healthcare](#vpn-protocol-selection-for-healthcare)
+- [Healthcare Portal Compatibility Matrix](#healthcare-portal-compatibility-matrix)
+- [Two-Factor Authentication Setup for Healthcare](#two-factor-authentication-setup-for-healthcare)
+- [Emergency Medical Record Access](#emergency-medical-record-access)
+- [VPN Kill Switch Verification](#vpn-kill-switch-verification)
+- [Cross-Border Data Protection Laws](#cross-border-data-protection-laws)
+- [Healthcare Data on Shared Devices](#healthcare-data-on-shared-devices)
+
 ## Why Medical Records Require Extra Protection While Traveling
 
 Medical records are among the most sensitive data categories that exist. They contain information about conditions, medications, mental health history, reproductive health, genetic data, and other details that can affect your insurance coverage, employment, legal situations, and personal relationships. Unlike financial credentials, which can be changed after a breach, your health history cannot be altered.

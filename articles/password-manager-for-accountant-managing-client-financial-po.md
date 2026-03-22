@@ -40,6 +40,23 @@ Use a password manager to organize client financial portal credentials by client
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Multi-Client Credential Problem](#the-multi-client-credential-problem)
+- [Structured Vault Organization](#structured-vault-organization)
+- [CLI-Based Credential Management](#cli-based-credential-management)
+- [Automating Portal Access Workflows](#automating-portal-access-workflows)
+- [Credential Sharing with Team Members](#credential-sharing-with-team-members)
+- [Two-Factor Authentication Integration](#two-factor-authentication-integration)
+- [Security Best Practices for Financial Portals](#security-best-practices-for-financial-portals)
+- [Credential Rotation Schedules](#credential-rotation-schedules)
+- [Implementing Vault Access Controls for Teams](#implementing-vault-access-controls-for-teams)
+- [Automated Credential Rotation Workflows](#automated-credential-rotation-workflows)
+- [Building Audit Trails for Compliance](#building-audit-trails-for-compliance)
+- [Disaster Recovery and Failover Procedures](#disaster-recovery-and-failover-procedures)
+- [Integration with Accounting Software APIs](#integration-with-accounting-software-apis)
+- [Client Onboarding Credential Template](#client-onboarding-credential-template)
+
 ## The Multi-Client Credential Problem
 
 Accountants typically manage access to dozens of distinct financial portals. Consider the credential inventory required for a small accounting practice:

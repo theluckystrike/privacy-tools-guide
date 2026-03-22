@@ -42,6 +42,20 @@ Under Russia's 2026 regulatory framework, Telegram now shares user metadata incl
 - **Prefer secret chats**: While metadata is exposed, content remains encrypted
 4.
 
+## Table of Contents
+
+- [The 2026 Regulatory Framework](#the-2026-regulatory-framework)
+- [What Data Telegram Shares](#what-data-telegram-shares)
+- [What's Still Protected](#whats-still-protected)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Mitigation Strategies for Power Users](#mitigation-strategies-for-power-users)
+- [What This Means for Russian Users](#what-this-means-for-russian-users)
+- [Technical Analysis: Telegram's Architecture Under 2026 Rules](#technical-analysis-telegrams-architecture-under-2026-rules)
+- [Comparison: Telegram vs. Alternatives for Russian Users](#comparison-telegram-vs-alternatives-for-russian-users)
+- [Developer Strategies for Telegram Bots in Russia](#developer-strategies-for-telegram-bots-in-russia)
+- [Compliance Calendar for Businesses](#compliance-calendar-for-businesses)
+- [Practical Mitigation for Power Users](#practical-mitigation-for-power-users)
+
 ## The 2026 Regulatory Framework
 
 Russia's Federal Security Service (FSB) now operates under updated requirements from Roskomnadzor (the communications regulator) that took effect in early 2026. These rules mandate that messaging services with more than 100,000 Russian users must:

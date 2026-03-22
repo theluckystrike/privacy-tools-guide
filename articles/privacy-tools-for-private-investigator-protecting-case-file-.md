@@ -40,6 +40,18 @@ Protect investigative case files using VeraCrypt encrypted volumes, GPG for encr
 - **For open-source options**: PDFtk and LibreOffice both offer proper redaction that removes the underlying text.
 - **Use secure deletion tools**: when disposing of case files after a case closes.
 
+## Table of Contents
+
+- [Understanding the Threat World](#understanding-the-threat-world)
+- [Encrypted Storage Solutions](#encrypted-storage-solutions)
+- [Secure Communication Channels](#secure-communication-channels)
+- [Case Management with Security in Mind](#case-management-with-security-in-mind)
+- [Handling Surveillance Media](#handling-surveillance-media)
+- [Document Protection Strategies](#document-protection-strategies)
+- [Network Security for Field Work](#network-security-for-field-work)
+- [Password Management](#password-management)
+- [Incident Response Preparation](#incident-response-preparation)
+
 ## Understanding the Threat World
 
 Private investigators face unique security challenges. Case files often contain:

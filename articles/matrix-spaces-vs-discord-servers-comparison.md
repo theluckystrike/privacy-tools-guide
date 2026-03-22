@@ -40,6 +40,22 @@ Choose Matrix Spaces if you need self-hosting, end-to-end encryption by default,
 - **For large communities (1000+**: users) with compliance needs, Matrix self-hosting breaks even in year 2.
 - **Choose Matrix Spaces if**: you need self-hosting, end-to-end encryption by default, federation across servers, or data sovereignty for compliance requirements.
 
+## Table of Contents
+
+- [Federation and Decentralization](#federation-and-decentralization)
+- [Quick Comparison](#quick-comparison)
+- [End-to-End Encryption](#end-to-end-encryption)
+- [Self-Hosting and Data Ownership](#self-hosting-and-data-ownership)
+- [API and Bot Integration](#api-and-bot-integration)
+- [Scalability and Performance](#scalability-and-performance)
+- [Community Management Features](#community-management-features)
+- [Making the Choice](#making-the-choice)
+- [Advanced Technical Comparisons](#advanced-technical-comparisons)
+- [Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Cost Analysis: Long-term Ownership](#cost-analysis-long-term-ownership)
+- [Security Incident Response](#security-incident-response)
+
 ## Federation and Decentralization
 
 The most significant difference lies in network architecture. Discord operates as a centralized service—all data flows through Discord's servers, and the company controls the entire infrastructure. There is no way to run your own Discord server that connects to the main network. This centralization simplifies moderation tools and feature development but creates a single point of failure and trust dependency.

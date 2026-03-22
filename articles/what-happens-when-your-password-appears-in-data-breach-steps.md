@@ -41,6 +41,15 @@ When your password appears in a data breach, automated credential stuffing bots 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Attackers use automated tools**: to try compromised credentials against banking sites, social media, email providers, and SaaS applications.
 
+## Table of Contents
+
+- [How Breached Passwords Get Exploited](#how-breached-passwords-get-exploited)
+- [What Actually Happens to Your Account](#what-actually-happens-to-your-account)
+- [Immediate Steps When Your Password Appears in a Breach](#immediate-steps-when-your-password-appears-in-a-breach)
+- [Long-Term Protection Strategies](#long-term-protection-strategies)
+- [Understanding Breach Notification Timelines](#understanding-breach-notification-timelines)
+- [The Bottom Line](#the-bottom-line)
+
 ## How Breached Passwords Get Exploited
 
 When a service suffers a data breach, attackers typically obtain more than just passwords. Depending on the breach, they may access:

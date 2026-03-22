@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
@@ -190,6 +191,22 @@ The era of frictionless cross-site tracking is ending. First Party Sets offer a 
 
 
 ## Testing First Party Sets Implementation
+
+## Table of Contents
+
+- [Testing First Party Sets Implementation](#testing-first-party-sets-implementation)
+- [Migration Strategies for Cross-Site Tracking](#migration-strategies-for-cross-site-tracking)
+- [Privacy Sandbox Integration](#privacy-sandbox-integration)
+- [Handling Sensitive Data with FPS](#handling-sensitive-data-with-fps)
+- [Compliance and Documentation](#compliance-and-documentation)
+- [Organization](#organization)
+- [Associated Sites](#associated-sites)
+- [Service Sites](#service-sites)
+- [Data Sharing Policy](#data-sharing-policy)
+- [Competitor Analysis and Market Market](#competitor-analysis-and-market-market)
+- [User Privacy Controls](#user-privacy-controls)
+- [Future Evolution of FPS](#future-evolution-of-fps)
+- [Common Implementation Mistakes](#common-implementation-mistakes)
 
 Developers can test FPS implementations using Chrome's debugging tools:
 
@@ -417,11 +434,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
-- [Cname Cloaking How Trackers Disguise As First Party Dns Expl](/privacy-tools-guide/cname-cloaking-how-trackers-disguise-as-first-party-dns-expl/)
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
-- [How To Create Burner Email Specifically For Dating Site Regi](/privacy-tools-guide/how-to-create-burner-email-specifically-for-dating-site-regi/)
-- [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
-
+- [How Browser Storage Partitioning Works Firefox Chrome](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+- [Cookie Alternatives After Third Party Deprecation 2026 Guide](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
+- [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
+- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

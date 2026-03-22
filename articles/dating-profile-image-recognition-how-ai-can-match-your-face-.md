@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 ---
 layout: default
 title: "Dating Profile Image Recognition How Ai Can Match Your Face"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -41,6 +43,17 @@ Dating apps use facial recognition through face embeddings (mathematical vectors
 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [How Facial Recognition Works in Dating Apps](#how-facial-recognition-works-in-dating-apps)
+- [Cross-Platform Image Matching](#cross-platform-image-matching)
+- [Technical Stack Behind These Systems](#technical-stack-behind-these-systems)
+- [Privacy Implications](#privacy-implications)
+- [Protecting Your Privacy](#protecting-your-privacy)
+- [Advanced Defense: Adversarial Perturbations](#advanced-defense-adversarial-perturbations)
+- [Federated Learning Approaches](#federated-learning-approaches)
+- [Future Directions](#future-directions)
 
 ## How Facial Recognition Works in Dating Apps
 

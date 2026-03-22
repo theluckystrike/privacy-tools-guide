@@ -26,6 +26,22 @@ Cloud backups protect your data from hardware failure. But most backup services 
 - **It does not protect you from the provider**: because the provider holds the key.
 - **Google Drive**: iCloud (default), Dropbox, OneDrive, and most backup services work this way.
 
+## Table of Contents
+
+- [The Encryption Spectrum](#the-encryption-spectrum)
+- [Metadata Exposure](#metadata-exposure)
+- [Government Access and Legal Requests](#government-access-and-legal-requests)
+- [Practical Secure Backup Setup](#practical-secure-backup-setup)
+- [What iCloud, Google, and Dropbox Can Access](#what-icloud-google-and-dropbox-can-access)
+- [Threat Model Questions to Answer First](#threat-model-questions-to-answer-first)
+- [Testing Your Backup Strategy](#testing-your-backup-strategy)
+- [Encryption Strength Analysis](#encryption-strength-analysis)
+- [Comparing Services Side by Side](#comparing-services-side-by-side)
+- [Migrating From Cloud Provider to Self-Hosted](#migrating-from-cloud-provider-to-self-hosted)
+- [Passphrase Security](#passphrase-security)
+- [Avoiding Common Mistakes](#avoiding-common-mistakes)
+- [Related Reading](#related-reading)
+
 ## The Encryption Spectrum
 
 Cloud storage encryption exists on a spectrum from "trust us" to "we cannot access your data under any circumstances."

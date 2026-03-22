@@ -42,6 +42,23 @@ The best encrypted cloud storage for developers in 2026 depends on your threat m
 - **However**: if your project requires compliance with GDPR, HIPAA, or Swiss data protection regulations, the service provides documented security guarantees that satisfy most audit requirements.
 - **Services like Wasabi**: Backblaze B2, or self-hosted MinIO work with rclone's encryption layer.
 
+## Table of Contents
+
+- [What Developers Need from Encrypted Storage](#what-developers-need-from-encrypted-storage)
+- [Zero-Knowledge Cloud Storage Services](#zero-knowledge-cloud-storage-services)
+- [Self-Hosted Alternatives](#self-hosted-alternatives)
+- [Comparing Storage Solutions](#comparing-storage-solutions)
+- [Choosing Your Storage Solution](#choosing-your-storage-solution)
+- [Encryption Deep Dive: Which Model Protects Against What](#encryption-deep-dive-which-model-protects-against-what)
+- [Practical Setup Guide: S3 with Client-Side Encryption](#practical-setup-guide-s3-with-client-side-encryption)
+- [Threat Modeling: When Each Service Fits](#threat-modeling-when-each-service-fits)
+- [Compliance Matrices for Different Industries](#compliance-matrices-for-different-industries)
+- [Performance Benchmarking Methodology](#performance-benchmarking-methodology)
+- [Backup and Disaster Recovery](#backup-and-disaster-recovery)
+- [API Access and Programmatic Integration](#api-access-and-programmatic-integration)
+- [Data Migration Between Services](#data-migration-between-services)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+
 ## What Developers Need from Encrypted Storage
 
 Developer requirements for cloud storage extend beyond basic file sync. Programmatic access through APIs and CLI tools enables automation workflows. Version control integration allows treating storage like code infrastructure. Cross-platform compatibility ensures consistent access across operating systems. Encryption key management becomes critical when building applications on top of storage services.

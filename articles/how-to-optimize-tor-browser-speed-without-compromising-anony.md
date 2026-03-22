@@ -38,6 +38,13 @@ Tor Browser remains the gold standard for anonymous web browsing, but its multi-
 - **The DNS cache reduction**: prevents stale entries while maintaining privacy because Tor handles DNS resolution through its exit nodes anyway.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Practical Example: Automated Circuit Rotation](#practical-example-automated-circuit-rotation)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

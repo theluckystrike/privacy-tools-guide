@@ -39,6 +39,19 @@ The privacy tool market is saturated with products making bold claims about secu
 - **AES-256 encryption is genuinely**: strong and used by governments and financial institutions worldwide.
 - **A VPN might use**: AES-256 for data transmission while logging everything in plaintext on their servers.
 
+## Table of Contents
+
+- [Understanding the Privacy Tool Marketing Problem](#understanding-the-privacy-tool-marketing-problem)
+- [The No-Logs Claim: Privacy Tool's Most Common Promise](#the-no-logs-claim-privacy-tools-most-common-promise)
+- [Encryption Claims: Military-Grade vs Reality](#encryption-claims-military-grade-vs-reality)
+- [The Free vs Paid Privacy Tool Calculus](#the-free-vs-paid-privacy-tool-calculus)
+- [Independent Verification Methods](#independent-verification-methods)
+- [Feature Evaluation: What Matters vs What's Marketing](#feature-evaluation-what-matters-vs-whats-marketing)
+- [Building Your Privacy Tool Evaluation Framework](#building-your-privacy-tool-evaluation-framework)
+- [Case Studies: Privacy Tool Claims Gone Wrong](#case-studies-privacy-tool-claims-gone-wrong)
+- [Real-World Verification Methods](#real-world-verification-methods)
+- [Critical Red Flag Summary](#critical-red-flag-summary)
+
 ## Understanding the Privacy Tool Marketing Problem
 
 Privacy tools occupy a unique position in the software market. Unlike most products where you can immediately verify performance, privacy and security tools operate largely invisible to users. You cannot see whether your VPN actually hides your traffic, whether your password manager truly encrypts your data, or whether your encrypted messaging app actually prevents surveillance. This opacity creates a massive information asymmetry that companies exploit through careful marketing.

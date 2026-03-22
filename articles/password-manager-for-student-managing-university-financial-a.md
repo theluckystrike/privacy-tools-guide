@@ -40,6 +40,21 @@ Secure university financial aid portal credentials (FAFSA, Sallie Mae, Banner) i
 - **Most financial aid systems**: support this through official authorization mechanisms.
 - **Settings → User Access**: Management 3.
 
+## Table of Contents
+
+- [Why Financial Aid Portals Need Special Attention](#why-financial-aid-portals-need-special-attention)
+- [CLI-Based Password Management for Power Users](#cli-based-password-management-for-power-users)
+- [Automating Login for Financial Portals](#automating-login-for-financial-portals)
+- [Hardening Your Password Manager for Sensitive Data](#hardening-your-password-manager-for-sensitive-data)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Migration Checklist for Existing Users](#migration-checklist-for-existing-users)
+- [Understanding Financial Aid Systems](#understanding-financial-aid-systems)
+- [Parent/Guardian Access Without Sharing Passwords](#parentguardian-access-without-sharing-passwords)
+- [Two-Factor Authentication Strategy for Financial Accounts](#two-factor-authentication-strategy-for-financial-accounts)
+- [Credential Rotation Schedule](#credential-rotation-schedule)
+- [Backup and Emergency Access](#backup-and-emergency-access)
+- [Common Security Mistakes to Avoid](#common-security-mistakes-to-avoid)
+
 ## Why Financial Aid Portals Need Special Attention
 
 University financial aid systems like FAFSA, Sallie Mae, and institutional portals such as Banner or PeopleSoft contain bank account numbers, Social Security digits, tax documents, and scholarship award details. Unlike your Netflix account, a breach here can result in direct financial loss and identity theft. Students typically access these portals infrequently—during enrollment periods or when checking award status—which means password fatigue leads to reuse or weak credential management.

@@ -43,6 +43,28 @@ Understanding what data Tinder collects is essential for any developer building 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Understanding what data Tinder**: collects is essential for any developer building integrations, a power user concerned about privacy, or someone evaluating the platform's data practices.
 
+## Table of Contents
+
+- [Data Tinder Collects Directly](#data-tinder-collects-directly)
+- [Data Shared with Third-Party Partners](#data-shared-with-third-party-partners)
+- [Understanding Tinder's Privacy Settings](#understanding-tinders-privacy-settings)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Hardening Your Tinder Privacy](#hardening-your-tinder-privacy)
+- [What Stays Private](#what-stays-private)
+- [Data Retention and Deletion Timelines](#data-retention-and-deletion-timelines)
+- [Location Data Granularity](#location-data-granularity)
+- [Behavioral Pattern Analysis](#behavioral-pattern-analysis)
+- [Minimizing Data Exposure Through Application Settings](#minimizing-data-exposure-through-application-settings)
+- [GDPR, CCPA, and International Compliance](#gdpr-ccpa-and-international-compliance)
+- [Developer Considerations for API Integration](#developer-considerations-for-api-integration)
+- [Practical Privacy Baseline](#practical-privacy-baseline)
+- [Tinder's Data Monetization Model](#tinders-data-monetization-model)
+- [Opt-Out Mechanisms and Their Limitations](#opt-out-mechanisms-and-their-limitations)
+- [Understanding Tinder's Match Algorithm](#understanding-tinders-match-algorithm)
+- [Account Reactivation and Data Restoration](#account-reactivation-and-data-restoration)
+- [Platform-Specific Considerations](#platform-specific-considerations)
+- [Red Flags: Signs You're Over-Exposed](#red-flags-signs-youre-over-exposed)
+
 ## Data Tinder Collects Directly
 
 When you create a Tinder account, the platform begins collecting data immediately. The most obvious category includes **account information**: your name, phone number, email address, date of birth, and gender identity. Tinder also stores your profile photos, bio, and preferences such as age range and distance settings.

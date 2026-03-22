@@ -10,7 +10,9 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+<<<<<<< Updated upstream
+---
 ---
 layout: default
 title: "DNS over TLS Setup on Linux"
@@ -23,7 +25,11 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -39,6 +45,14 @@ DoT is simpler than DNS over HTTPS (DoH) for system-level deployment: one dedica
 - **Use VPN DNS from**: provider that supports DoT # 2.
 - **Cloudflare offers better performance**: in many regions but retains some logs for up to 24 hours.
 - **Use these steps to confirm**: 1.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced DoT Configuration for Maximum Privacy](#advanced-dot-configuration-for-maximum-privacy)
+- [Performance Monitoring](#performance-monitoring)
+- [Troubleshooting DoT Issues](#troubleshooting-dot-issues)
+- [Related Reading](#related-reading)
 
 ## Prerequisites
 
@@ -465,6 +479,14 @@ journalctl -u systemd-resolved | grep "query" | \
 - [How to Set Up Encrypted DNS over HTTPS on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
+
+## Related Articles
+
+- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
+- [How to Configure DNS Over HTTPS (DoH) for Privacy in 2026](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

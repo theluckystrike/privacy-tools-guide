@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -26,6 +27,14 @@ To protect physical mail privacy, use a private mailbox service (UPS Store, mail
 - **Your mailbox (most vulnerable**: - street-side access) 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Threat Modeling Physical Address Exposure](#threat-modeling-physical-address-exposure)
+- [Advanced Address Obfuscation Techniques](#advanced-address-obfuscation-techniques)
+- [Mail Forwarding Service Comparison](#mail-forwarding-service-comparison)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

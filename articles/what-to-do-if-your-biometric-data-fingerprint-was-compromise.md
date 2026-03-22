@@ -42,6 +42,15 @@ This guide provides a technical action plan for developers and power users who d
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding the Risk: Why Fingerprint Compromise Is Different](#understanding-the-risk-why-fingerprint-compromise-is-different)
+- [Immediate Assessment: Confirming the Breach](#immediate-assessment-confirming-the-breach)
+- [Containment: Limiting the Damage](#containment-limiting-the-damage)
+- [Long-Term Mitigation Strategies](#long-term-mitigation-strategies)
+- [Legal and Regulatory Considerations](#legal-and-regulatory-considerations)
+- [Recovery and Monitoring](#recovery-and-monitoring)
+
 ## Understanding the Risk: Why Fingerprint Compromise Is Different
 
 Traditional security incidents involve credentials you can change. A password gets leaked? Rotate it. An API key is exposed? Revoke and regenerate. Fingerprint data operates under entirely different constraints.

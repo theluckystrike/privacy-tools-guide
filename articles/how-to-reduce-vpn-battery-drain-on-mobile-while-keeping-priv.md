@@ -42,6 +42,13 @@ This guide provides practical strategies and technical configurations to reduce 
 2.
 - **Enable "Pause background activity"**: for VPN apps when screen is off # 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Mobile Workstation Configuration](#practical-example-mobile-workstation-configuration)
+- [Advanced Tuning for Power Users](#advanced-tuning-for-power-users)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

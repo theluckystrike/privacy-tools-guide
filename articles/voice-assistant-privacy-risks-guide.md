@@ -26,6 +26,19 @@ Voice assistants listen continuously for wake words. That's the design — there
 - **Amazon uses recordings to train models**: you can opt out, but it requires manual action.
 - **This guide covers how**: voice assistants work, what the companies keep, amazon alexa, with specific setup instructions
 
+## Table of Contents
+
+- [How Voice Assistants Work](#how-voice-assistants-work)
+- [Prerequisites](#prerequisites)
+- [Risk Summary](#risk-summary)
+- [Troubleshooting](#troubleshooting)
+- [Third-Party Skills and Integrations: The Hidden Privacy Layer](#third-party-skills-and-integrations-the-hidden-privacy-layer)
+- [Integrations and Smart Home Data Leaks](#integrations-and-smart-home-data-leaks)
+- [Data Broker Selling](#data-broker-selling)
+- [Practical Defense Layers](#practical-defense-layers)
+- [The Local Assistant Alternative: Real Implementation](#the-local-assistant-alternative-real-implementation)
+- [Related Reading](#related-reading)
+
 ## How Voice Assistants Work
 
 Wake word detection runs locally on the device. A small neural network listens 24/7 for the trigger phrase. When detected, it starts recording and sends audio to the cloud.

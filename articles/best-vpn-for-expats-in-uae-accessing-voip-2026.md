@@ -40,6 +40,18 @@ For reliable VoIP calls in the UAE, use WireGuard with obfuscation or V2Ray to b
 - **For VoIP**: optimize for latency first and use a server within 80ms round-trip.
 - **Shadowsocks or V2Ray are**: proxy-based solutions designed specifically for circumventing censorship, and are popular among users in restrictive regions.
 
+## Table of Contents
+
+- [Understanding UAE's VoIP Restrictions](#understanding-uaes-voip-restrictions)
+- [Protocol Comparison for UAE VoIP Use](#protocol-comparison-for-uae-voip-use)
+- [Technical Requirements for VoIP VPNs](#technical-requirements-for-voip-vpns)
+- [Setting Up Your VoIP VPN](#setting-up-your-voip-vpn)
+- [Testing Your VoIP Connection](#testing-your-voip-connection)
+- [Alternative Approaches](#alternative-approaches)
+- [Performance Optimization](#performance-optimization)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Related Reading](#related-reading)
+
 ## Understanding UAE's VoIP Restrictions
 
 The Telecommunications and Digital Government Regulatory Authority (TDRA) restricts VoIP services that operate without local licensing. While some services have achieved compliance and operate legally, many popular VoIP applications remain blocked or degraded. The blocking typically occurs at the ISP level through DNS manipulation, IP address blacklisting, and deep packet inspection (DPI).

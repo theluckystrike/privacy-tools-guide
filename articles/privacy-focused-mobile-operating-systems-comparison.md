@@ -47,6 +47,20 @@ This guide covers five practical alternatives.
 
 It depends on your background.
 
+## Table of Contents
+
+- [Quick Comparison Table](#quick-comparison-table)
+- [GrapheneOS: Strongest Privacy](#grapheneos-strongest-privacy)
+- [CalyxOS: Balanced Privacy](#calyxos-balanced-privacy)
+- [LineageOS: Maximum Compatibility](#lineageos-maximum-compatibility)
+- [/e/OS: Privacy-Respecting Interface](#eos-privacy-respecting-interface)
+- [Ubuntu Touch: Linux on Phone](#ubuntu-touch-linux-on-phone)
+- [Recommendation Matrix](#recommendation-matrix)
+- [Cost Comparison (2-Year Scenario)](#cost-comparison-2-year-scenario)
+- [Migration Path](#migration-path)
+- [Bottom Line](#bottom-line)
+- [Related Reading](#related-reading)
+
 ## Quick Comparison Table
 
 | OS | Privacy | App Support | Banking Apps | Device Support | Learning Curve |

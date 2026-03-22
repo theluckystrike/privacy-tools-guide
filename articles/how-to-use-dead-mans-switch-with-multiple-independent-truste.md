@@ -40,6 +40,14 @@ Implement a dead man's switch using multiple independent trustees by dividing yo
 - **Wait until you have**: been contacted by at least {threshold} other trustees 2.
 - **Use your share to**: help reconstruct the master key 4.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Advanced: Encrypted Trustee Communication](#advanced-encrypted-trustee-communication)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

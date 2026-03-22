@@ -28,6 +28,16 @@ Tutanota (now rebranded as Tuta) encrypts email end-to-end between Tutanota user
 - **This lets you use**: `support@yourdomain.com`, `personal@yourdomain.com`, and similar addresses, all received in the same inbox.
 - **Store backups in an encrypted volume**: on macOS, use a disk image created with Disk Utility (Format: Mac OS Extended, Encryption: AES-256).
 
+## Table of Contents
+
+- [What Tutanota Encrypts](#what-tutanota-encrypts)
+- [Create an Account](#create-an-account)
+- [Prerequisites](#prerequisites)
+- [Comparison Table: Encrypted Email Providers 2026](#comparison-table-encrypted-email-providers-2026)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## What Tutanota Encrypts
 
 | Element | Tutanota-to-Tutanota | Tutanota-to-External |

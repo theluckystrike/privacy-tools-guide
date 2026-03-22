@@ -45,6 +45,25 @@ Most blacklists offer a delisting process:
 - **User password reset and**: account secured 2.
 - **User notified of compromise;**: additional security training provided 4.
 
+## Table of Contents
+
+- [What Is an Email Blacklist?](#what-is-an-email-blacklist)
+- [How to Check If Your Server Is Blacklisted](#how-to-check-if-your-server-is-blacklisted)
+- [Common Reasons for Blacklisting](#common-reasons-for-blacklisting)
+- [How to Get Removed from a Blacklist](#how-to-get-removed-from-a-blacklist)
+- [Preventing Future Blacklisting](#preventing-future-blacklisting)
+- [Quick Checklist](#quick-checklist)
+- [Automated Monitoring and Alert Systems](#automated-monitoring-and-alert-systems)
+- [Prevention Through Proactive Monitoring](#prevention-through-proactive-monitoring)
+- [Recovery Timeline and Expectations](#recovery-timeline-and-expectations)
+- [Legal and Regulatory Considerations](#legal-and-regulatory-considerations)
+- [Advanced Delisting Strategies](#advanced-delisting-strategies)
+- [Incident Details](#incident-details)
+- [Remediation Actions](#remediation-actions)
+- [Preventive Measures](#preventive-measures)
+- [Verification](#verification)
+- [Email Authentication as Prevention](#email-authentication-as-prevention)
+
 ## What Is an Email Blacklist?
 
 An email blacklist is a real-time database maintained by organizations, companies, and email service providers that tracks IP addresses known for sending spam, hosting malicious content, or engaging in abusive email practices. Major blacklist operators include Spamhaus, SORBS, SpamCop, Barracuda, and many others.

@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Dating App Data Breach History Which Platforms Have Leaked"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,14 @@ Dating apps have experienced multiple major data breaches exposing millions of u
 - **Use a dedicated email**: for dating apps (not your primary) 4.
 - **Apply principle of least**: privilege to data access 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Timeline of Major Dating App Data Breaches](#timeline-of-major-dating-app-data-breaches)
+- [Technical Analysis: Common Vulnerability Patterns](#technical-analysis-common-vulnerability-patterns)
+- [Checking If Your Data Was Exposed](#checking-if-your-data-was-exposed)
+- [Protecting Yourself: Actionable Strategies](#protecting-yourself-actionable-strategies)
+- [What Data Dating Apps Typically Collect](#what-data-dating-apps-typically-collect)
 
 ## Timeline of Major Dating App Data Breaches
 

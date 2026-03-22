@@ -41,6 +41,21 @@ Union organizers face unique challenges when protecting member communications. U
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [Understanding the Threat Environment](#understanding-the-threat-environment)
+- [Encrypted Messaging: Signal and Matrix](#encrypted-messaging-signal-and-matrix)
+- [Secure File Sharing for Membership Data](#secure-file-sharing-for-membership-data)
+- [Email Encryption: OpenPGP Implementation](#email-encryption-openpgp-implementation)
+- [Network-Level Protection](#network-level-protection)
+- [Device Security Fundamentals](#device-security-fundamentals)
+- [Implementing Incident Response](#implementing-incident-response)
+- [Device Compromise Response Protocol](#device-compromise-response-protocol)
+- [Building Member Privacy Culture](#building-member-privacy-culture)
+- [Operational Security Practices Beyond Tools](#operational-security-practices-beyond-tools)
+- [Threat Model Specifics for Union Organizing](#threat-model-specifics-for-union-organizing)
+- [Legal Considerations](#legal-considerations)
+
 ## Understanding the Threat Environment
 
 Before selecting tools, organizers must understand what they are protecting against. Employer surveillance has evolved beyond simple monitoring of company devices. Modern threats include:

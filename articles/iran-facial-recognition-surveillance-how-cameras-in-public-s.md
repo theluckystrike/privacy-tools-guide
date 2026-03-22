@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Iran Facial Recognition Surveillance How Cameras In Public"
-description: "A technical breakdown of facial recognition surveillance systems deployed in Iranian public spaces, how they work, and privacy protection strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /iran-facial-recognition-surveillance-how-cameras-in-public-s/
-categories: [guides]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -39,6 +26,19 @@ Iran deploys integrated facial recognition surveillance at airports, highways, a
 - **This uses convolutional neural networks (CNNs) trained to detect facial landmarks**: typically 68 or more key points mapping eyes, nose, mouth, and jawline.
 - **Studies show that printed**: glasses with specific patterns reduce recognition accuracy by 40-90%.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Technical Architecture of Public Surveillance Systems](#technical-architecture-of-public-surveillance-systems)
+- [Iranian Deployment Context](#iranian-deployment-context)
+- [Code Analysis: Facial Recognition System Components](#code-analysis-facial-recognition-system-components)
+- [Privacy Protection Strategies](#privacy-protection-strategies)
+- [Broader Implications](#broader-implications)
+- [Practical Tools for Users Under Surveillance](#practical-tools-for-users-under-surveillance)
+- [Network-Level Defenses](#network-level-defenses)
+- [Organizational and Legal Responses](#organizational-and-legal-responses)
+- [Understanding Threat Models](#understanding-threat-models)
+- [Monitoring and Alerting Systems](#monitoring-and-alerting-systems)
 
 ## Technical Architecture of Public Surveillance Systems
 
@@ -315,11 +315,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Smart City Surveillance: What Data Municipal Cameras](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [School Surveillance Technology Privacy](/privacy-tools-guide/school-surveillance-technology-privacy-student-rights-against/)
 - [Facebook Facial Recognition Opt Out Guide](/privacy-tools-guide/facebook-facial-recognition-opt-out-guide/)
-- [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
-- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
-- [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
-- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
-
+- [India Cctv Surveillance Expansion Privacy Implications](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
+- [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

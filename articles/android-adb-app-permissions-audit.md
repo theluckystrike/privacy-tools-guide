@@ -44,6 +44,19 @@ This guide covers extracting a full permissions audit, finding problematic grant
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [List All Installed Apps](#list-all-installed-apps)
+- [Dump All Permissions for All Apps](#dump-all-permissions-for-all-apps)
+- [Find Specific High-Risk Permissions](#find-specific-high-risk-permissions)
+- [Check a Specific App's Permissions](#check-a-specific-apps-permissions)
+- [Revoke Permissions via ADB](#revoke-permissions-via-adb)
+- [Use appops for Finer Control](#use-appops-for-finer-control)
+- [Bulk Audit Script](#bulk-audit-script)
+- [Monitor App Network Activity](#monitor-app-network-activity)
+- [Re-enable Debugging After Audit](#re-enable-debugging-after-audit)
+
 ## Prerequisites
 
 ### Enable USB Debugging on Android

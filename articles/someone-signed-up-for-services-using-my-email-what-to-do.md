@@ -40,6 +40,20 @@ Receiving an unsolicited verification email from a service you never signed up f
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **If the email claims**: to be from a service you use, navigate to that service directly through your browser rather than clicking any embedded links.
 
+## Table of Contents
+
+- [Identifying the Threat Level](#identifying-the-threat-level)
+- [Immediate Actions to Take](#immediate-actions-to-take)
+- [Taking Control of the Situation](#taking-control-of-the-situation)
+- [Preventive Measures for the Future](#preventive-measures-for-the-future)
+- [When to Escalate](#when-to-escalate)
+- [Analyzing Email Headers for Forensics](#analyzing-email-headers-for-forensics)
+- [Account Security Audit](#account-security-audit)
+- [Credential Stuffing Detection and Prevention](#credential-stuffing-detection-and-prevention)
+- [Setting Up Account Abuse Alerts](#setting-up-account-abuse-alerts)
+- [Using Email Forwarding Rules for Monitoring](#using-email-forwarding-rules-for-monitoring)
+- [Documenting Evidence for Potential Legal Action](#documenting-evidence-for-potential-legal-action)
+
 ## Identifying the Threat Level
 
 Before taking action, assess whether this is a simple mistake or something more serious. Some common scenarios include:

@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -26,6 +27,17 @@ Every email you send or receive contains a wealth of metadata hidden within its 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding email header analysis**: helps developers troubleshoot delivery issues, security researchers investigate phishing campaigns, and privacy-conscious users understand their digital footprint.
+
+## Table of Contents
+
+- [Anatomy of an Email Header](#anatomy-of-an-email-header)
+- [Extracting Location Data from Headers](#extracting-location-data-from-headers)
+- [Identifying Email Clients from Headers](#identifying-email-clients-from-headers)
+- [Privacy Implications and Protection](#privacy-implications-and-protection)
+- [Practical Header Analysis Tools](#practical-header-analysis-tools)
+- [Security Applications](#security-applications)
+- [Advanced Header Forensics](#advanced-header-forensics)
+- [Privacy-Preserving Email Header Practices](#privacy-preserving-email-header-practices)
 
 ## Anatomy of an Email Header
 
@@ -350,11 +362,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
-- [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
-- [How to Check What Your Browser Reveals: A Developer Guide](/privacy-tools-guide/how-to-check-what-your-browser-reveals/)
-- [WebRTC Local IP Leak: How It Reveals Your Real Address](/privacy-tools-guide/webrtc-local-ip-leak-how-it-reveals-your-real-address/)
-- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
-
+- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Someone Signed Up for Services Using My Email](/privacy-tools-guide/someone-signed-up-for-services-using-my-email-what-to-do/)
+- [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
+- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -48,6 +48,16 @@ Maintaining digital privacy is essential for all users, including blind and visu
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Maintaining digital privacy is**: essential for all users, including blind and visually impaired individuals who rely on screen readers.
 
+## Table of Contents
+
+- [Password Managers with Screen Reader Support](#password-managers-with-screen-reader-support)
+- [Privacy-Focused Browsers](#privacy-focused-browsers)
+- [Encrypted Messaging Applications](#encrypted-messaging-applications)
+- [Command-Line Privacy Tools](#command-line-privacy-tools)
+- [Email Privacy Tools](#email-privacy-tools)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Accessibility Testing Checklist](#accessibility-testing-checklist)
+
 ## Password Managers with Screen Reader Support
 
 ### Bitwarden

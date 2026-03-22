@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, gdpr, ccpa, privacy-compliance, enterprise, privacy]---
+tags: [privacy-tools-guide, gdpr, ccpa, privacy-compliance, enterprise, privacy]
+---
 
 {% raw %}
 
@@ -25,6 +26,14 @@ Building a strong privacy compliance stack requires understanding the tools that
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The platform supports over**: 100 pre-built regulatory templates and integrates with major data governance tools.
+
+## Table of Contents
+
+- [Understanding the Compliance Challenge](#understanding-the-compliance-challenge)
+- [Quick Comparison](#quick-comparison)
+- [Tool Comparison: Architecture and Integration](#tool-comparison-architecture-and-integration)
+- [Implementation Patterns for Developers](#implementation-patterns-for-developers)
+- [Selecting the Right Tools](#selecting-the-right-tools)
 
 ## Understanding the Compliance Challenge
 

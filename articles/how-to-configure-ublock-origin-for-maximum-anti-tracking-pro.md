@@ -41,6 +41,14 @@ uBlock Origin remains the gold standard for browser-based ad and tracker blockin
 - **Options**: 1) Accept the limitation, 2) Use a secondary browser without uBlock for that site, 3) File a complaint with the site owner.
 - **- Dynamic filtering**: Unlike most blockers, uBlock Origin supports per-site dynamic rules that give you firewall-level control over which domains load scripts, frames, and media.
 
+## Table of Contents
+
+- [Why uBlock Origin vs. Other Blockers](#why-ublock-origin-vs-other-blockers)
+- [Prerequisites](#prerequisites)
+- [Performance Considerations](#performance-considerations)
+- [Advanced Cosmetic Filtering](#advanced-cosmetic-filtering)
+- [Troubleshooting](#troubleshooting)
+
 ## Why uBlock Origin vs. Other Blockers
 
 Before looking at configuration, it's worth understanding why uBlock Origin stands out from alternatives like Adblock Plus, Privacy Badger, and Brave's built-in shields:

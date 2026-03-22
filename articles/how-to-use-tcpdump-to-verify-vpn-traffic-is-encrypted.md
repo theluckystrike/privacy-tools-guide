@@ -42,6 +42,17 @@ When you connect to a VPN, you expect all your internet traffic to be encrypted 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Verify VPN Encryption?](#why-verify-vpn-encryption)
+- [Prerequisites](#prerequisites)
+- [Capturing VPN Traffic](#capturing-vpn-traffic)
+- [Verifying Encryption with Specific Tests](#verifying-encryption-with-specific-tests)
+- [Detecting Common VPN Leaks](#detecting-common-vpn-leaks)
+- [Troubleshooting VPN Encryption Issues](#troubleshooting-vpn-encryption-issues)
+- [Advanced: Decrypting VPN Traffic (For Debugging)](#advanced-decrypting-vpn-traffic-for-debugging)
+- [Security Best Practices](#security-best-practices)
+
 ## Why Verify VPN Encryption?
 
 Even when using a reputable VPN service, several issues can cause encryption to fail or degrade:

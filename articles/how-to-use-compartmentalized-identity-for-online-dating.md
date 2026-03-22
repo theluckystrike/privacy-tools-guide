@@ -187,6 +187,14 @@ If a situation becomes dangerous:
 
 **
 
+## Table of Contents
+
+- [Advanced Device Compartmentalization](#advanced-device-compartmentalization)
+- [Payment and Subscription Privacy](#payment-and-subscription-privacy)
+- [Monitoring and Incident Response](#monitoring-and-incident-response)
+- [Legal and Policy Considerations](#legal-and-policy-considerations)
+- [Related Reading](#related-reading)
+
 ## Advanced Device Compartmentalization
 
 For users facing higher threat profiles, simple permission restrictions may be insufficient. Consider more aggressive compartmentalization strategies.

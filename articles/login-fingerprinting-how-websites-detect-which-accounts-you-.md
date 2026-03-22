@@ -40,6 +40,19 @@ Login fingerprinting is a technique that allows websites to identify user accoun
 - **This creates a measurable**: timing difference, typically 50-200 milliseconds depending on the password hashing algorithm used.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Login Fingerprinting](#understanding-login-fingerprinting)
+- [Timing Attacks](#timing-attacks)
+- [OAuth and Social Login Enumeration](#oauth-and-social-login-enumeration)
+- [Error Message Analysis](#error-message-analysis)
+- [Browser Fingerprinting Through Login Pages](#browser-fingerprinting-through-login-pages)
+- [Detection and Prevention](#detection-and-prevention)
+- [Advanced Enumeration Vectors](#advanced-enumeration-vectors)
+- [Distributed Fingerprinting at Scale](#distributed-fingerprinting-at-scale)
+- [Cookie and Session Fingerprinting](#cookie-and-session-fingerprinting)
+- [Practical Defense Implementation](#practical-defense-implementation)
+
 ## Understanding Login Fingerprinting
 
 When you attempt to log into a website, the server responds differently depending on whether the account exists. These subtle differences—in error messages, response times, or redirect behavior—form the basis of login fingerprinting. Attackers and data brokers exploit these differences to compile lists of valid email addresses and usernames.

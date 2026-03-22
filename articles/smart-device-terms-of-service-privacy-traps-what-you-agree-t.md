@@ -40,6 +40,19 @@ When you unbox a new smart device and rush through setup, that "Accept" button s
 - **A typical smart speaker**: fitness tracker, or IoT thermostat collects far more information than users anticipate.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [The Reality of Smart Device Data Collection](#the-reality-of-smart-device-data-collection)
+- [Common Privacy Traps in Terms of Service](#common-privacy-traps-in-terms-of-service)
+- [Practical Strategies for Developers and Power Users](#practical-strategies-for-developers-and-power-users)
+- [Reading Terms of Service Effectively](#reading-terms-of-service-effectively)
+- [Specific Privacy Clauses to Watch For in Device ToS](#specific-privacy-clauses-to-watch-for-in-device-tos)
+- [Building Privacy-Conscious Habits](#building-privacy-conscious-habits)
+- [Advanced Monitoring for Developer-Level Protections](#advanced-monitoring-for-developer-level-protections)
+- [When to Reconsider Device Purchases](#when-to-reconsider-device-purchases)
+- [Real-World Example: Comparing Two Smart Thermostat ToS](#real-world-example-comparing-two-smart-thermostat-tos)
+- [Updating Devices and Policy Changes](#updating-devices-and-policy-changes)
+
 ## The Reality of Smart Device Data Collection
 
 Smart devices have transformed from simple tools into sophisticated data collection platforms. A typical smart speaker, fitness tracker, or IoT thermostat collects far more information than users anticipate. The terms of service (ToS) documents that govern these relationships can span tens of thousands of words, deliberately designed to discourage careful reading.

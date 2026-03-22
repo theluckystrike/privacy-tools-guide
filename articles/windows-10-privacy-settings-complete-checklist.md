@@ -40,6 +40,17 @@ Windows 10 collects significant telemetry data by default, and while Microsoft h
 - **This prevents Windows from**: storing which applications you use and when.
 - **Most productivity applications have**: no legitimate reason to access your camera or microphone.
 
+## Table of Contents
+
+- [Disable Telemetry Through Settings](#disable-telemetry-through-settings)
+- [Disable Telemetry via Group Policy and Registry](#disable-telemetry-via-group-policy-and-registry)
+- [PowerShell Scripts for Complete Privacy](#powershell-scripts-for-complete-privacy)
+- [Network-Level Blocking](#network-level-blocking)
+- [Disable Cortana and Search Indexing](#disable-cortana-and-search-indexing)
+- [OneDrive and Cloud Sync Privacy](#onedrive-and-cloud-sync-privacy)
+- [Privacy Settings for Developers](#privacy-settings-for-developers)
+- [Verification and Ongoing Maintenance](#verification-and-ongoing-maintenance)
+
 ## Disable Telemetry Through Settings
 
 The first layer of privacy protection exists in Windows Settings. Open **Settings > Privacy & Security** and work through these critical areas:

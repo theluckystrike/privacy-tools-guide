@@ -34,6 +34,22 @@ Access: US users are subject to CLOUD Act requests.
 - **Life insurance**: John Hancock's Vitality program uses Apple Watch data to adjust life insurance premiums dynamically.
 - **A subpoena for Fitbit**: records has been used in US criminal cases to establish alibis and disprove them.
 
+## Table of Contents
+
+- [What Fitness Trackers Collect](#what-fitness-trackers-collect)
+- [Company Data Practices](#company-data-practices)
+- [Third-Party App Data Sharing](#third-party-app-data-sharing)
+- [Insurance and Employer Risks](#insurance-and-employer-risks)
+- [Practical Privacy Steps](#practical-privacy-steps)
+- [Data Your Device Reveals Even Without Apps](#data-your-device-reveals-even-without-apps)
+- [Related Reading](#related-reading)
+- [Analyzing Your Own Wearable Data](#analyzing-your-own-wearable-data)
+- [Building a Personal Metrics Server](#building-a-personal-metrics-server)
+- [Threat Model: De-anonymization Vectors](#threat-model-de-anonymization-vectors)
+- [GDPR and Legal Rights](#gdpr-and-legal-rights)
+- [Alternative: Open Source Fitness Tracking](#alternative-open-source-fitness-tracking)
+- [Regulatory Compliance: Healthcare Context](#regulatory-compliance-healthcare-context)
+
 ## What Fitness Trackers Collect
 
 ### Continuous Biometric Data

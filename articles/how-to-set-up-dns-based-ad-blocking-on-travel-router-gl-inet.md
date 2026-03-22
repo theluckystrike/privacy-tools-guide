@@ -42,6 +42,17 @@ This guide covers deploying AdGuard Home directly on GL-Inet routers and running
 - **Travel routers present a**: unique use case.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why DNS-Based Blocking Matters](#why-dns-based-blocking-matters)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Filter Management](#advanced-filter-management)
+- [Multi-Device Configuration and Testing](#multi-device-configuration-and-testing)
+- [Failover and Redundancy](#failover-and-redundancy)
+- [Privacy-First DNS Configuration](#privacy-first-dns-configuration)
+- [Maintenance and Update Management](#maintenance-and-update-management)
+
 ## Why DNS-Based Blocking Matters
 
 Every device on your network makes DNS queries to resolve domain names into IP addresses. Advertisers and trackers host their content on separate domains, and blocking those domains at the DNS level prevents the requests from ever reaching your devices. This method is efficient because a single DNS block eliminates multiple tracking scripts, pixel tags, and advertisement resources simultaneously.

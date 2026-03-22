@@ -39,6 +39,14 @@ Nextcloud Talk provides a self-hosted video conferencing solution that gives you
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Server Requirements and Installation](#server-requirements-and-installation)
+- [Monitoring and Troubleshooting](#monitoring-and-troubleshooting)
+- [Recording and Compliance](#recording-and-compliance)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

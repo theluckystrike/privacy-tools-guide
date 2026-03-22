@@ -11,7 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, workflow]---
+tags: [privacy-tools-guide, workflow]
+---
 ---
 layout: default
 title: "GitHub Pull Request Workflow For Distributed Teams"
@@ -25,7 +26,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, workflow]---
+tags: [privacy-tools-guide, workflow]
+---
 
 {% raw %}
 

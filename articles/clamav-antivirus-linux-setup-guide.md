@@ -31,6 +31,13 @@ This guide covers a complete ClamAV deployment: installation across major distri
 - **The `--remove` flag permanently deletes infected files without confirmation**: use `--move=/path/to/quarantine` if you want to review before destroying.
 - **`OnAccessExcludeUname clamav` and `OnAccessExcludeUname**: root` prevent `clamonacc` from scanning files accessed by the ClamAV process itself or root, which would cause recursive scan loops.
 
+## Table of Contents
+
+- [Install ClamAV](#install-clamav)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Install ClamAV
 
 ```bash

@@ -42,6 +42,20 @@ tags: [privacy-tools-guide, best-of]
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Bitwarden Bitwarden provides an**: excellent open-source alternative with solid Safari integration through its browser extension.
 
+## Table of Contents
+
+- [Understanding Safari Autofill Architecture](#understanding-safari-autofill-architecture)
+- [The Contenders](#the-contenders)
+- [Comparative Analysis for Power Users](#comparative-analysis-for-power-users)
+- [Security Considerations for Developers](#security-considerations-for-developers)
+- [Making the Decision](#making-the-decision)
+- [Advanced Developer Setup: Multi-Password-Manager Strategy](#advanced-developer-setup-multi-password-manager-strategy)
+- [Password Manager Integration with Development Tools](#password-manager-integration-with-development-tools)
+- [Migration Strategies: Switching Managers Safely](#migration-strategies-switching-managers-safely)
+- [Security: Protecting Your Master Password](#security-protecting-your-master-password)
+- [Biometric Authentication with Password Managers](#biometric-authentication-with-password-managers)
+- [Audit and Compliance Considerations](#audit-and-compliance-considerations)
+
 ## Understanding Safari Autofill Architecture
 
 Safari interacts with password managers through two primary mechanisms: the Password AutoFill API and browser extensions. The Password AutoFill API, introduced in macOS Monterey and iOS 15, allows password managers to register as system-wide credential providers. This means Safari can request passwords directly from your password manager without requiring manual copy-paste operations.

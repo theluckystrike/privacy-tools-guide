@@ -42,6 +42,21 @@ Bitwarden Free is the best password manager with no subscription fee for most de
 - **The free tier includes**: sync across all devices and uses end-to-end encryption.
 - **For pure password management**: specialized managers offer better user experience.
 
+## Table of Contents
+
+- [Why Free Password Managers Matter](#why-free-password-managers-matter)
+- [Bitwarden: Open-Source Excellence](#bitwarden-open-source-excellence)
+- [KeePass: Local-First Flexibility](#keepass-local-first-flexibility)
+- [Proton Pass: Privacy-Focused Free Tier](#proton-pass-privacy-focused-free-tier)
+- [Standard Notes: Encrypted Notes as Password Storage](#standard-notes-encrypted-notes-as-password-storage)
+- [Production API Keys](#production-api-keys)
+- [AWS Credentials](#aws-credentials)
+- [Database Backups](#database-backups)
+- [Comparing Feature Sets](#comparing-feature-sets)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Implementation Strategies](#implementation-strategies)
+- [Security Best Practices](#security-best-practices)
+
 ## Why Free Password Managers Matter
 
 For developers, password managers serve more than just storing website credentials. You likely need to manage SSH keys, API tokens, database passwords, and secrets for various environments. A good free solution should handle these use cases without artificially limiting storage or features.

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Encrypt Your Entire Digital Life: A Checklist"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -52,6 +54,22 @@ Setup:
    Firefox: About:preferences → Privacy → Saved passwords → Clear
 
 4.
+
+## Table of Contents
+
+- [The Encryption Pyramid](#the-encryption-pyramid)
+- [Phase 1: Device Encryption (Foundation)](#phase-1-device-encryption-foundation)
+- [Phase 2: Passwords & Secrets Management](#phase-2-passwords-secrets-management)
+- [Phase 3: Email Encryption (PGP/GPG)](#phase-3-email-encryption-pgpgpg)
+- [Phase 4: Messaging Encryption](#phase-4-messaging-encryption)
+- [Phase 5: Cloud Storage Encryption](#phase-5-cloud-storage-encryption)
+- [Phase 6: Email Service Replacement](#phase-6-email-service-replacement)
+- [Phase 7: File Encryption for Backups](#phase-7-file-encryption-for-backups)
+- [Phase 8: Backups & Recovery (Redundancy)](#phase-8-backups-recovery-redundancy)
+- [Phase 9: Two-Factor Authentication (2FA)](#phase-9-two-factor-authentication-2fa)
+- [Complete Encryption Checklist](#complete-encryption-checklist)
+- [Annual Maintenance](#annual-maintenance)
+- [Related Reading](#related-reading)
 
 ## The Encryption Pyramid
 

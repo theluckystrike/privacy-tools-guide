@@ -44,6 +44,14 @@ Never store both keys in the same location.
 - **Geographic IP restrictions -**: Only allow logins from specific countries - Alert on unexpected login locations 5.
 - **Call your carrier's fraud**: line (number on your bill) from another phone DO NOT use the number the "attacker" provides 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Protections for High-Risk Users](#advanced-protections-for-high-risk-users)
+- [Threat Model: Attack Scenarios Explained](#threat-model-attack-scenarios-explained)
+- [Advanced Hardware Security Key Configuration](#advanced-hardware-security-key-configuration)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

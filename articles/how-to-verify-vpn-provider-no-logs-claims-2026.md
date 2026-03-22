@@ -27,6 +27,18 @@ tags: [privacy-tools-guide, vpn, no-logs, privacy-audit]
 - **Spend the extra $20/year**: on a verifiable provider rather than gambling on marketing claims.
 - **Critical limitation**: Warrant canaries only work if providers have infrastructure preventing data disclosure.
 
+## Table of Contents
+
+- [Why "No-Logs" Claims Matter](#why-no-logs-claims-matter)
+- [Third-Party Audit Reports](#third-party-audit-reports)
+- [Warrant Canaries](#warrant-canaries)
+- [Infrastructure and Jurisdiction Analysis](#infrastructure-and-jurisdiction-analysis)
+- [Analysis: Real Providers Compared](#analysis-real-providers-compared)
+- [Verification Checklist](#verification-checklist)
+- [Advanced Verification: Technical Analysis](#advanced-verification-technical-analysis)
+- [Real-World Scenario: Evaluating a New VPN](#real-world-scenario-evaluating-a-new-vpn)
+- [Making Your Choice](#making-your-choice)
+
 ## Why "No-Logs" Claims Matter
 
 VPN providers occupy a trust position: they see all your internet traffic. Without logs, VPN companies cannot reveal your browsing habits, downloads, or streaming activity even if law enforcement demands it. With logs, a warrant forces companies to produce records of everything you've accessed during a VPN session.

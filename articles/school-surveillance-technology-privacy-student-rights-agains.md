@@ -43,6 +43,14 @@ This guide examines the technical architecture of school facial recognition syst
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Facial recognition technology in**: schools represents one of the most contentious intersections of security technology and student privacy rights.
 
+## Table of Contents
+
+- [How Facial Recognition Systems Work in Schools](#how-facial-recognition-systems-work-in-schools)
+- [Legal Framework for Student Privacy](#legal-framework-for-student-privacy)
+- [Privacy Risks for Students](#privacy-risks-for-students)
+- [Technical Privacy Protections](#technical-privacy-protections)
+- [What Students and Parents Can Do](#what-students-and-parents-can-do)
+
 ## How Facial Recognition Systems Work in Schools
 
 Modern school surveillance systems combine multiple technologies to create student tracking capabilities.

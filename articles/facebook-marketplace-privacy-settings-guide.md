@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Facebook Marketplace Privacy Settings Guide"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -39,6 +41,15 @@ Facebook Marketplace exposes your name, profile photo, location (city-level mini
 - **Mitigation**: Use Marketplace's integrated shipping, not third-party services.
 - **Use a Dedicated Email**: Consider using a separate email address for your Marketplace account distinct from your primary Facebook account.
 - **Phone Number Privacy**: Use a secondary phone number for Marketplace communications.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Privacy Strategies](#advanced-privacy-strategies)
+- [Marketplace Transaction Best Practices](#marketplace-transaction-best-practices)
+- [Threat Model Analysis for Marketplace Sellers](#threat-model-analysis-for-marketplace-sellers)
+- [Advanced Privacy Configuration for High-Risk Users](#advanced-privacy-configuration-for-high-risk-users)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 

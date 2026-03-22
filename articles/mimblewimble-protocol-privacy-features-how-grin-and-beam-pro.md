@@ -40,6 +40,23 @@ The Mimblewimble protocol achieves blockchain privacy by hiding transaction amou
 - **To verify that inputs**: equal outputs (the fundamental blockchain invariant), Mimblewimble uses range proofs to prove that `v` is positive without revealing its magnitude.
 - **For mining**: both use CPU-friendly algorithms (CuckatooPoW for Grin, BeamHash for Beam) to encourage decentralized mining rather than ASIC dominance.
 
+## Table of Contents
+
+- [Understanding Confidential Transactions](#understanding-confidential-transactions)
+- [The Mimblewimble Cut-Through Mechanism](#the-mimblewimble-cut-through-mechanism)
+- [History and Motivation Behind Mimblewimble](#history-and-motivation-behind-mimblewimble)
+- [Grin: The Rust Implementation](#grin-the-rust-implementation)
+- [Beam: The Commercial Implementation](#beam-the-commercial-implementation)
+- [Practical Use Cases and Limitations](#practical-use-cases-and-limitations)
+- [Mining and Emission Differences](#mining-and-emission-differences)
+- [Comparing Grin and Beam](#comparing-grin-and-beam)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Why Mimblewimble Differs from Bitcoin and Monero](#why-mimblewimble-differs-from-bitcoin-and-monero)
+- [Performance Characteristics and Blockchain Size](#performance-characteristics-and-blockchain-size)
+- [Practical Considerations for Using Grin or Beam](#practical-considerations-for-using-grin-or-beam)
+- [Technical Audit Considerations](#technical-audit-considerations)
+- [Comparison with Other Privacy Coin Approaches](#comparison-with-other-privacy-coin-approaches)
+
 ## Understanding Confidential Transactions
 
 At the core of Mimblewimble's privacy lies **Confidential Transactions** (CT), originally proposed by Greg Maxwell. In a standard cryptocurrency transaction, anyone can see the input amounts being spent and the output amounts being created. Confidential Transactions replace these plaintext amounts with **Pedersen Commitments**.

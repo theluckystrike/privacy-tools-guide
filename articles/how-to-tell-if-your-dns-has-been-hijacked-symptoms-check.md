@@ -43,6 +43,13 @@ Detect DNS hijacking by running `nslookup` or `dig` to verify which DNS server i
 - **Use online DNS checkers**: (DNS Leak Test) to confirm your ISP's DNS or a hijacking attempt.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Detection Methods](#advanced-detection-methods)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Detection: DNSSEC Validation](#advanced-detection-dnssec-validation)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

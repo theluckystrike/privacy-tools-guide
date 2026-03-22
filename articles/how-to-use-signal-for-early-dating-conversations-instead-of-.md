@@ -41,6 +41,13 @@ Use Signal's username feature to chat with dating matches without sharing your p
 - **Use Signal's note-to-self to**: send yourself credentials before copying elsewhere 3.
 - **Generate a Signal username**: in your profile bio 2.
 
+## Table of Contents
+
+- [Why Signal Beats Phone Numbers for Early Dating](#why-signal-beats-phone-numbers-for-early-dating)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Signal Security for Dating](#advanced-signal-security-for-dating)
+
 ## Why Signal Beats Phone Numbers for Early Dating
 
 Your phone number is a persistent identifier that links across multiple databases. When you give it to a dating match, you're providing:

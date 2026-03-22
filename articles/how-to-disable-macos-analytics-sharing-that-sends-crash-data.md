@@ -38,6 +38,14 @@ macOS collects and shares various types of diagnostic data with Apple, including
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Additional Analytics Vectors to Consider](#additional-analytics-vectors-to-consider)
+- [Performance Impact of Disabling Analytics](#performance-impact-of-disabling-analytics)
+- [Troubleshooting Failed Disables](#troubleshooting-failed-disables)
+- [Comparison: Full Analytics Disable vs Selective Privacy](#comparison-full-analytics-disable-vs-selective-privacy)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

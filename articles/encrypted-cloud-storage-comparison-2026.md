@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Encrypted Cloud Storage Comparison 2026: A Practical Guide"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -39,6 +41,17 @@ Proton Drive offers zero-knowledge encryption with strong UI and ecosystem integ
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose zero-knowledge for privacy**: assurances, server-side for compliance features, or self-hosted for complete control.
+
+## Table of Contents
+
+- [Encryption Models Explained](#encryption-models-explained)
+- [Service Comparison](#service-comparison)
+- [Detailed Service Specifications](#detailed-service-specifications)
+- [Encryption Comparison Table](#encryption-comparison-table)
+- [Decision Framework](#decision-framework)
+- [Security Considerations](#security-considerations)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Implementation Checklist](#implementation-checklist)
 
 ## Encryption Models Explained
 

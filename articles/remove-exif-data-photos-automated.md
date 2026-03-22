@@ -41,6 +41,19 @@ EXIF metadata in photos can expose your GPS coordinates, device model, serial nu
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - Use ExifTool for thorough stripping.
 
+## Table of Contents
+
+- [What's Inside EXIF Data](#whats-inside-exif-data)
+- [Tool 1: ExifTool (Most )](#tool-1-exiftool-most)
+- [Tool 2: mat2 (Documents and Images)](#tool-2-mat2-documents-and-images)
+- [Tool 3: ImageMagick (If You're Already Using It)](#tool-3-imagemagick-if-youre-already-using-it)
+- [Automated Removal with inotifywait (Linux)](#automated-removal-with-inotifywait-linux)
+- [Automated Removal on macOS with Folder Actions](#automated-removal-on-macos-with-folder-actions)
+- [Verify Before Sharing](#verify-before-sharing)
+- [Handling HEIC and RAW Formats](#handling-heic-and-raw-formats)
+- [What Metadata Stripping Does Not Remove](#what-metadata-stripping-does-not-remove)
+- [Integration with Photo Workflows](#integration-with-photo-workflows)
+
 ## What's Inside EXIF Data
 
 Run this on any photo to see what's stored:

@@ -40,6 +40,24 @@ Bitwarden, 1Password, or Dashlane with CLI access and folder organization is the
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Problem: Fragmented Credentials Across Platforms](#the-problem-fragmented-credentials-across-platforms)
+- [Organizing Streaming Credentials in a Password Manager](#organizing-streaming-credentials-in-a-password-manager)
+- [Using the CLI for Programmatic Access](#using-the-cli-for-programmatic-access)
+- [Automating Credential Rotation](#automating-credential-rotation)
+- [Integrating with CI/CD for Deployment Automation](#integrating-with-cicd-for-deployment-automation)
+- [Custom Fields for Service Metadata](#custom-fields-for-service-metadata)
+- [Security Considerations](#security-considerations)
+- [Emergency Recovery Planning](#emergency-recovery-planning)
+- [Complete Credential Audit Workflow](#complete-credential-audit-workflow)
+- [Building Multi-Tenant Support](#building-multi-tenant-support)
+- [API Integration for Automation](#api-integration-for-automation)
+- [Disaster Recovery Planning](#disaster-recovery-planning)
+- [Monitoring for Compromised Credentials](#monitoring-for-compromised-credentials)
+- [Industry-Specific Threats for Musicians](#industry-specific-threats-for-musicians)
+- [Long-Term Credential Strategy](#long-term-credential-strategy)
+
 ## The Problem: Fragmented Credentials Across Platforms
 
 Modern musicians interact with an ecosystem of distribution services that continues to expand. A typical independent artist might maintain accounts with:

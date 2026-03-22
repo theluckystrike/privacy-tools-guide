@@ -18,6 +18,18 @@ intent-checked: true
 
 ## Overview
 
+## Table of Contents
+
+- [Overview](#overview)
+- [What Data Brokers Know About You](#what-data-brokers-know-about-you)
+- [List of Major Data Brokers (2026)](#list-of-major-data-brokers-2026)
+- [Step-by-Step Removal Process](#step-by-step-removal-process)
+- [Monitoring for Re-Listing](#monitoring-for-re-listing)
+- [CCPA, GDPR, and Legal Rights](#ccpa-gdpr-and-legal-rights)
+- [Opt-Out Automation Tools](#opt-out-automation-tools)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Prevention: Stop Future Data Collection](#prevention-stop-future-data-collection)
+
 Your personal data is sold by hundreds of data brokers: Whitepages, PeopleFinders, Spokeo, BeenVerified, and dozens more. These companies aggregate and resell your phone number, address, email, age, and financial information. Removing your data requires systematic effort, but it's doable. This guide covers finding data brokers, submitting removal requests, and monitoring for re-listing.
 
 ## What Data Brokers Know About You

@@ -53,6 +53,25 @@ Accessing US healthcare portals from abroad presents unique technical challenges
 - **ExpressVPN ($12.95/month) offers a**: large US IP pool with 3000+ servers, native OpenVPN and IKEv2 support, and reliable compatibility with major healthcare systems.
 - **Epic EHR systems (used**: by ~60% of US hospitals) often require specific authentication tokens that may expire or trigger MFA during international access.
 
+## Table of Contents
+
+- [Why Healthcare Portals Block International Access](#why-healthcare-portals-block-international-access)
+- [Protocol Selection for Healthcare Portal Access](#protocol-selection-for-healthcare-portal-access)
+- [DNS Configuration: The Often-Overlooked Factor](#dns-configuration-the-often-overlooked-factor)
+- [IP Address Considerations and Server Selection](#ip-address-considerations-and-server-selection)
+- [Handling Two-Factor Authentication](#handling-two-factor-authentication)
+- [Network Diagnostics for Troubleshooting](#network-diagnostics-for-troubleshooting)
+- [Security Considerations for Healthcare Data](#security-considerations-for-healthcare-data)
+- [WireGuard Configuration Example](#wireguard-configuration-example)
+- [Recommended VPN Providers for Healthcare Access](#recommended-vpn-providers-for-healthcare-access)
+- [Testing Your VPN Configuration](#testing-your-vpn-configuration)
+- [Patient Portal Access Edge Cases](#patient-portal-access-edge-cases)
+- [Emergency Access Considerations](#emergency-access-considerations)
+- [Advanced Troubleshooting: Certificate Pinning](#advanced-troubleshooting-certificate-pinning)
+- [Geographic Blocking Bypass Techniques](#geographic-blocking-bypass-techniques)
+- [Mobile VPN Considerations](#mobile-vpn-considerations)
+- [Real-World Success Rates by Provider](#real-world-success-rates-by-provider)
+
 ## Why Healthcare Portals Block International Access
 
 US healthcare portals implement geo-blocking for multiple reasons beyond simple content licensing.HIPAA compliance requirements often mandate that patient data originates from approved geographic regions. Many healthcare providers use IP reputation databases to flag potentially suspicious login attempts, and international IP addresses frequently trigger additional security verification or outright blocks.

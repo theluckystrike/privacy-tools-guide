@@ -48,6 +48,17 @@ Setup:
 2.
 - **Use Authy only if**: your workplace requires it or you need desktop app sync; Authy is less private (Twilio collects device metadata).
 
+## Table of Contents
+
+- [Why 2FA App Privacy Matters](#why-2fa-app-privacy-matters)
+- [Aegis Authenticator: Maximum Privacy, Manual Backups](#aegis-authenticator-maximum-privacy-manual-backups)
+- [2FAS: Privacy with Optional Cloud Backup](#2fas-privacy-with-optional-cloud-backup)
+- [Raivo: Privacy on iOS, Encrypted Cloud Backup](#raivo-privacy-on-ios-encrypted-cloud-backup)
+- [Authy: Least Private, Avoid If Possible](#authy-least-private-avoid-if-possible)
+- [Comparison Table: Privacy and Features](#comparison-table-privacy-and-features)
+- [Setup Guide: Privacy-First 2FA](#setup-guide-privacy-first-2fa)
+- [Migration Between Authenticators](#migration-between-authenticators)
+
 ## Why 2FA App Privacy Matters
 
 Your 2FA authenticator stores the master secrets that unlock your email, bank account, and crypto wallets. If your authenticator's backup is compromised, attackers gain 2FA bypass access to every account. The difference between apps is stark:

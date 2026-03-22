@@ -41,6 +41,15 @@ To set up OMEMO encryption on XMPP, install an OMEMO-capable client (Gajim on de
 - **Trust your server**: Use servers run by organizations you trust (EFF-endorsed servers, institutional servers)
 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common OMEMO Issues](#troubleshooting-common-omemo-issues)
+- [Security Considerations](#security-considerations)
+- [Advanced: Server-Side Support and Protocol Requirements](#advanced-server-side-support-and-protocol-requirements)
+- [Threat Model and Limitations](#threat-model-and-limitations)
+- [Troubleshooting with Network Analysis Tools](#troubleshooting-with-network-analysis-tools)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

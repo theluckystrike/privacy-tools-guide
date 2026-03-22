@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Email Account Inheritance Can Executor Legally Access"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -41,6 +43,14 @@ This guide provides a technical overview of email account inheritance rights acr
 - **Most UK executors must**: 1.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Understanding Email as Digital Property](#understanding-email-as-digital-property)
+- [Jurisdiction-by-Jurisdiction Overview](#jurisdiction-by-jurisdiction-overview)
+- [Technical Approaches for Email Data Recovery](#technical-approaches-for-email-data-recovery)
+- [Best Practices for Executors](#best-practices-for-executors)
+- [Related Reading](#related-reading)
 
 ## Understanding Email as Digital Property
 

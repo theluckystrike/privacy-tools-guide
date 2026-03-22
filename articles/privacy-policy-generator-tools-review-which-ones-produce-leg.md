@@ -41,6 +41,20 @@ Use privacy policy generators that produce GDPR/CCPA-compliant output covering d
 - **Free and basic plans**: typically get community forum support and documentation.
 - **Use privacy policy generators**: that produce GDPR/CCPA-compliant output covering data collection, third-party sharing, retention, and user rights.
 
+## Table of Contents
+
+- [What Makes a Privacy Policy Legally Adequate](#what-makes-a-privacy-policy-legally-adequate)
+- [Open Source and Self-Hosted Options](#open-source-and-self-hosted-options)
+- [Commercial Generators with API Access](#commercial-generators-with-api-access)
+- [Key Evaluation Criteria](#key-evaluation-criteria)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Practical Integration Approach](#practical-integration-approach)
+- [Detailed Tool Comparison and Pricing](#detailed-tool-comparison-and-pricing)
+- [Regulatory Update Tracking](#regulatory-update-tracking)
+- [Testing Policy Compliance Programmatically](#testing-policy-compliance-programmatically)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Common Mistakes When Using Generators](#common-mistakes-when-using-generators)
+
 ## What Makes a Privacy Policy Legally Adequate
 
 Before examining tools, understanding what constitutes a legally adequate policy is essential. Under GDPR, California Consumer Privacy Act (CCPA), and emerging state laws, your policy must include:

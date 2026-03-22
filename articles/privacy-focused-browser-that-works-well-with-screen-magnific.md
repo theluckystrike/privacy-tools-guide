@@ -41,6 +41,14 @@ Finding a privacy-focused browser that works smoothly with screen magnification 
 - **Configure DNS-over-HTTPS**: Use a privacy-respecting resolver like Quad9 or Cloudflare
 3.
 
+## Table of Contents
+
+- [The Intersection of Privacy and Accessibility](#the-intersection-of-privacy-and-accessibility)
+- [Recommended Browsers for Privacy With Magnification Support](#recommended-browsers-for-privacy-with-magnification-support)
+- [Testing Your Browser with Magnification Software](#testing-your-browser-with-magnification-software)
+- [Privacy Considerations Specific to Magnified Browsing](#privacy-considerations-specific-to-magnified-browsing)
+- [Configuration Checklist for Maximum Privacy With Accessibility](#configuration-checklist-for-maximum-privacy-with-accessibility)
+
 ## The Intersection of Privacy and Accessibility
 
 Privacy browsers typically randomize or block various browser APIs to prevent fingerprinting. These same APIs are often essential for screen magnification software to function correctly. When you magnify a portion of your screen, the software needs to track cursor position, detect focus changes, and read DOM elements—capabilities that fingerprinting protection may deliberately block.

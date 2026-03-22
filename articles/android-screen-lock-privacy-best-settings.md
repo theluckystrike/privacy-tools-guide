@@ -27,6 +27,21 @@ For the strongest Android screen lock privacy, use a 6-digit PIN combined with f
 - **DivestOS provides legacy device**: support with privacy-focused modifications.
 - **Developer/Business User (Corporate Access,**: Sensitive Data): 12+ character alphanumeric password + fingerprint mandatory.
 
+## Table of Contents
+
+- [Lock Screen Type Selection](#lock-screen-type-selection)
+- [Lock Screen Notification Controls](#lock-screen-notification-controls)
+- [Secure Lock Screen Settings Checklist](#secure-lock-screen-settings-checklist)
+- [Advanced Settings: ADB Configuration](#advanced-settings-adb-configuration)
+- [Lock Screen Shortcuts and Quick Settings](#lock-screen-shortcuts-and-quick-settings)
+- [Work Profile Considerations](#work-profile-considerations)
+- [Custom ROM Recommendations](#custom-rom-recommendations)
+- [Threat Model: Who Should Use Which Lock Method?](#threat-model-who-should-use-which-lock-method)
+- [Real-World Attack Vectors on Android Lock Screens](#real-world-attack-vectors-on-android-lock-screens)
+- [Testing Your Lock Screen Configuration](#testing-your-lock-screen-configuration)
+- [Integration with Device Security Modules](#integration-with-device-security-modules)
+- [Practical Security Considerations](#practical-security-considerations)
+
 ## Lock Screen Type Selection
 
 Android offers multiple lock screen authentication methods, each with distinct security characteristics. The hierarchy from weakest to strongest includes:

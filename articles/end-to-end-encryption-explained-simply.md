@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 ---
 layout: default
 title: "End-to-End Encryption Explained Simply: A Developer's Guide"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 
@@ -41,6 +43,22 @@ End-to-end encryption (E2EE) means your data is encrypted on your device before 
 - **Review Open Source**: Is the crypto implementation auditable by independent researchers?
 4.
 - **This is the model Signal**: WhatsApp (with encryption enabled), and secure email providers use.
+
+## Table of Contents
+
+- [What End-to-End Encryption Actually Means](#what-end-to-end-encryption-actually-means)
+- [The Foundation: Asymmetric Key Exchange](#the-foundation-asymmetric-key-exchange)
+- [The Signal Protocol: Modern E2EE in Practice](#the-signal-protocol-modern-e2ee-in-practice)
+- [Cryptographic Foundations](#cryptographic-foundations)
+- [Implementing E2EE in Your Application](#implementing-e2ee-in-your-application)
+- [Verifying Encryption: Safety Numbers and Fingerprints](#verifying-encryption-safety-numbers-and-fingerprints)
+- [Common Misconceptions](#common-misconceptions)
+- [Perfect Forward Secrecy and Key Rotation](#perfect-forward-secrecy-and-key-rotation)
+- [Implementing E2EE: TweetNaCl Example](#implementing-e2ee-tweetnacl-example)
+- [E2EE in Different Application Domains](#e2ee-in-different-application-domains)
+- [Threat Models E2EE Solves and Doesn't Solve](#threat-models-e2ee-solves-and-doesnt-solve)
+- [Real-World Vulnerabilities in E2EE Systems](#real-world-vulnerabilities-in-e2ee-systems)
+- [Evaluating E2EE in Products](#evaluating-e2ee-in-products)
 
 ## What End-to-End Encryption Actually Means
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, sdk]---
+tags: [privacy-tools-guide, sdk]
+---
 ---
 layout: default
 title: "How To Audit Mobile App Sdks And Third Party Trackers"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, sdk]---
+tags: [privacy-tools-guide, sdk]
+---
 
 {% raw %}
 

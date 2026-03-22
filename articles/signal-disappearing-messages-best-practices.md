@@ -50,6 +50,19 @@ Set Signal disappearing messages to 30 seconds-5 minutes for sharing credentials
 - **Signal provides six preset intervals**: 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks.
 - **Signal's approach provides stronger**: guarantees because: 1.
 
+## Table of Contents
+
+- [Timer Selection Strategy](#timer-selection-strategy)
+- [Implementing Disappearing Messages](#implementing-disappearing-messages)
+- [Understanding the Cryptographic Deletion Mechanism](#understanding-the-cryptographic-deletion-mechanism)
+- [Automation Scripts for Power Users](#automation-scripts-for-power-users)
+- [Enterprise Deployment Considerations](#enterprise-deployment-considerations)
+- [Common Misconfigurations to Avoid](#common-misconfigurations-to-avoid)
+- [Advanced: Safety Number Verification](#advanced-safety-number-verification)
+- [Metadata Leakage and Disappearing Messages Limitations](#metadata-leakage-and-disappearing-messages-limitations)
+- [Integration with Device-Level Security](#integration-with-device-level-security)
+- [Organizational Deployment of Disappearing Messages](#organizational-deployment-of-disappearing-messages)
+
 ## Timer Selection Strategy
 
 Choosing the right disappearing message timer depends on your threat model and communication patterns. Signal provides six preset intervals: 30 seconds, 5 minutes, 1 hour, 1 day, 1 week, and 4 weeks.

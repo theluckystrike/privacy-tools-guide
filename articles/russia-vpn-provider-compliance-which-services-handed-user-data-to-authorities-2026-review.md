@@ -25,6 +25,21 @@ Avoid commercial VPN providers operating in Russia—many have handed user data 
 - **Instead**: use self-hosted Shadowsocks or NaiveProxy servers on VPS providers outside Russia jurisdiction.
 - **Providers that refuse to**: comply face being blocked and removed from app stores operating in Russia.
 
+## Table of Contents
+
+- [Understanding Russia's VPN Compliance Requirements](#understanding-russias-vpn-compliance-requirements)
+- [Major VPN Providers and Their Compliance Postures](#major-vpn-providers-and-their-compliance-postures)
+- [Technical Mechanisms of Data Requests](#technical-mechanisms-of-data-requests)
+- [What Users Should Know in 2026](#what-users-should-know-in-2026)
+- [Making Informed Privacy Decisions](#making-informed-privacy-decisions)
+- [Setting Up Tor for Russia](#setting-up-tor-for-russia)
+- [Testing VPN Against Sophisticated DPI](#testing-vpn-against-sophisticated-dpi)
+- [Provider Audit Tools](#provider-audit-tools)
+- [Practical Multi-Layer Setup](#practical-multi-layer-setup)
+- [Detecting Roskomnadzor Interference](#detecting-roskomnadzor-interference)
+- [Recovery If Caught](#recovery-if-caught)
+- [Related Reading](#related-reading)
+
 ## Understanding Russia's VPN Compliance Requirements
 
 Russia's approach to VPN regulation has evolved dramatically since 2019 when the country first began requiring VPN services to block access to prohibited websites. The legislation mandates that VPN providers must cooperate with Roskomnadzor, Russia's communications regulator, to filter content deemed illegal under Russian law.

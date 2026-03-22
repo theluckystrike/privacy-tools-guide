@@ -45,6 +45,18 @@ Restic is an open-source backup program that provides secure, efficient, and eas
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **It uses AES-256 encryption**: in CTR mode with authenticated encryption, ensuring both confidentiality and integrity.
 
+## Table of Contents
+
+- [Why Encryption Matters for Developer Backups](#why-encryption-matters-for-developer-backups)
+- [Threat Model for Developer Backups](#threat-model-for-developer-backups)
+- [Key Criteria for Evaluating Solutions](#key-criteria-for-evaluating-solutions)
+- [Top Encrypted Backup Solutions for Developers](#top-encrypted-backup-solutions-for-developers)
+- [Solution Comparison](#solution-comparison)
+- [Automating Backups with Cron](#automating-backups-with-cron)
+- [Protecting Backup Credentials](#protecting-backup-credentials)
+- [Best Practices for Developer Backups](#best-practices-for-developer-backups)
+- [Related Reading](#related-reading)
+
 ## Why Encryption Matters for Developer Backups
 
 Developer backups differ from typical user backups because they often contain sensitive credentials, API keys, private repositories, and environment-specific configurations. Standard cloud storage solutions like Google Drive or Dropbox offer encryption at rest, but they also hold the decryption keys—meaning a compromised account or insider threat could expose your entire backup history.

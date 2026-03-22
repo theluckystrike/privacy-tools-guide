@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -31,6 +32,14 @@ When a company's database is breached, the stolen data ends up on dark web marke
 - **Indexed by aggregators (HIBP**: DeHashed, etc.)
 
 ---
+
+## Table of Contents
+
+- [Have I Been Pwned (HIBP)](#have-i-been-pwned-hibp)
+- [Understanding Breach Data](#understanding-breach-data)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
 
 ## Have I Been Pwned (HIBP)
 

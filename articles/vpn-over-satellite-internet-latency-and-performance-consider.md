@@ -40,6 +40,16 @@ VPN over satellite internet adds roughly 15ms of overhead with WireGuard versus 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Satellite Internet Differs from Terrestrial Connections](#how-satellite-internet-differs-from-terrestrial-connections)
+- [VPN Protocol Selection for Satellite Networks](#vpn-protocol-selection-for-satellite-networks)
+- [MTU and Fragmentation Considerations](#mtu-and-fragmentation-considerations)
+- [TCP vs. UDP Performance](#tcp-vs-udp-performance)
+- [Compression and Encryption Overhead](#compression-and-encryption-overhead)
+- [Practical Network Architecture](#practical-network-architecture)
+- [Weather and Signal Degradation](#weather-and-signal-degradation)
+
 ## How Satellite Internet Differs from Terrestrial Connections
 
 Satellite internet operates by sending data between your dish and a geostationary satellite orbiting approximately 35,786 kilometers above Earth's equator. This distance creates a minimum one-way latency of around 240 milliseconds, though real-world performance typically ranges from 500ms to 800ms due to processing delays, atmospheric interference, and network congestion.

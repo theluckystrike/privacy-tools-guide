@@ -15,6 +15,23 @@ tags: [privacy-tools-guide]
 
 Everything you need to protect your digital privacy, organized by topic. Each guide is technically reviewed and scored for depth and accuracy.
 
+## Table of Contents
+
+- [Guides](#guides)
+- [Comparisons](#comparisons)
+- [**  Secret Key (Age Secret Key 1...)**: Keep Secret; It'S Used To Decrypt Files.](#secret-key-age-secret-key-1-keep-secret-its-used-to-decrypt-files)
+- [**  Mark $(Wg Show %I**: Fwmark)  M Addrtype !](#mark-wg-show-i-fwmark-m-addrtype)
+- [**Free Tiers Typically Have**: Usage Limits That Work For Evaluation But May Not Be Sufficient For Daily Professional Use.](#free-tiers-typically-have-usage-limits-that-work-for-evaluation-but-may-not-be-sufficient-for-daily-professional-use)
+- [**Keep Enabled**: Network, Internet (Usually Needed)](#keep-enabled-network-internet-usually-needed)
+- [Security](#security)
+- [Best-Of Lists](#best-of-lists)
+- [Cloud Storage](#cloud-storage)
+- [Privacy](#privacy)
+- [Security](#security)
+- [Troubleshooting](#troubleshooting)
+- [Vpn](#vpn)
+- [Uncategorized](#uncategorized)
+
 **1366 articles** organized by category.
 
 ## Guides

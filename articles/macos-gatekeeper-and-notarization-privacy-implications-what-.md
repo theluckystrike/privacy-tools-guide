@@ -40,6 +40,23 @@ When you distribute macOS applications outside the Mac App Store, Apple requires
 - **Verify no personally identifying**: information strings MyApp.app/Contents/MacOS/MyApp | grep -E "user@.*\.com|phone|address" # Remove any personal information from strings # 6.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Gatekeeper Works](#how-gatekeeper-works)
+- [The Notarization Pipeline](#the-notarization-pipeline)
+- [What Apple Collects and Stores](#what-apple-collects-and-stores)
+- [Privacy Implications for Developers](#privacy-implications-for-developers)
+- [Practical Examples](#practical-examples)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Threat Model: What Apple Learns About Your Application](#threat-model-what-apple-learns-about-your-application)
+- [Step-by-Step Notarization Process with Privacy Implications](#step-by-step-notarization-process-with-privacy-implications)
+- [Privacy-Preserving Distribution Alternatives](#privacy-preserving-distribution-alternatives)
+- [Analyzing Notarization Data Collection](#analyzing-notarization-data-collection)
+- [Gatekeeper Signature Verification Details](#gatekeeper-signature-verification-details)
+- [Mitigation Strategies for Privacy-Conscious Developers](#mitigation-strategies-for-privacy-conscious-developers)
+- [Compliance and Regulatory Considerations](#compliance-and-regulatory-considerations)
+- [Practical Notarization Privacy Checklist](#practical-notarization-privacy-checklist)
+
 ## How Gatekeeper Works
 
 Gatekeeper is Apple's first line of defense against malicious software. When a user attempts to open an application downloaded from the internet, Gatekeeper checks whether the app is signed with a valid Developer ID certificate issued by Apple. This signature verification ensures the app comes from an identified developer and hasn't been tampered with since signing.

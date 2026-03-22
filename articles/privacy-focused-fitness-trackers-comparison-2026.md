@@ -40,6 +40,19 @@ Fitness trackers collect intimate health data: heart rate, sleep patterns, menst
 - **The most privacy-conscious trackers**: encrypt data end-to-end, minimize cloud sync, and give you data ownership.
 - **Fitbit users effectively gave**: Google health data ownership.
 
+## Table of Contents
+
+- [Privacy Risks in Fitness Tracking](#privacy-risks-in-fitness-tracking)
+- [Tier 1: Privacy-First Design (No Cloud Sync Default)](#tier-1-privacy-first-design-no-cloud-sync-default)
+- [Tier 2: Privacy-Respecting With Caveats (Cloud Sync Default, But Transparent)](#tier-2-privacy-respecting-with-caveats-cloud-sync-default-but-transparent)
+- [Tier 3: Privacy Concerns (Owned by Large Tech, Data Sharing)](#tier-3-privacy-concerns-owned-by-large-tech-data-sharing)
+- [Tier 4: Privacy-Respecting for Specific Use Cases](#tier-4-privacy-respecting-for-specific-use-cases)
+- [Comparison Table: Privacy Scores](#comparison-table-privacy-scores)
+- [Selection Guide by Use Case](#selection-guide-by-use-case)
+- [Protecting Your Health Data](#protecting-your-health-data)
+- [Data Breach History (2024-2026)](#data-breach-history-2024-2026)
+- [Regulatory Space (2026)](#regulatory-space-2026)
+
 ## Privacy Risks in Fitness Tracking
 
 Before comparing trackers, understand what's at stake:

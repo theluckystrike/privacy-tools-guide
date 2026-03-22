@@ -29,6 +29,21 @@ This guide covers practical implementation strategies for real estate agents who
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Both Bitwarden and 1Password**: provide command-line interfaces that integrate with scripts and automation.
 
+## Table of Contents
+
+- [The Real Estate Credential Problem](#the-real-estate-credential-problem)
+- [Choosing the Right Password Manager Architecture](#choosing-the-right-password-manager-architecture)
+- [Structuring Your Credential Vault](#structuring-your-credential-vault)
+- [Implementing CLI-Based Workflows](#implementing-cli-based-workflows)
+- [Handling Shared Credentials](#handling-shared-credentials)
+- [Addressing MLS-Specific Requirements](#addressing-mls-specific-requirements)
+- [Emergency Access and Recovery](#emergency-access-and-recovery)
+- [Security Best Practices](#security-best-practices)
+- [Automation Opportunities](#automation-opportunities)
+- [Compliance and Regulatory Requirements](#compliance-and-regulatory-requirements)
+- [Integration with Existing Systems](#integration-with-existing-systems)
+- [Advanced Configuration for Power Users](#advanced-configuration-for-power-users)
+
 ## The Real Estate Credential Problem
 
 A typical active real estate agent maintains credentials for:

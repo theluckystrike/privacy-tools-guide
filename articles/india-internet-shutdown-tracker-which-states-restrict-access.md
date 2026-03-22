@@ -40,6 +40,23 @@ Track India's internet shutdowns using AccessNow's Shutdown Tracker, InternetShu
 - **use mesh networks -**: In areas with frequent shutdowns, local mesh networks can provide alternative communication channels 5.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Internet Shutdowns in India](#understanding-internet-shutdowns-in-india)
+- [States with Most Frequent Internet Shutdowns](#states-with-most-frequent-internet-shutdowns)
+- [Tools for Tracking Internet Shutdowns](#tools-for-tracking-internet-shutdowns)
+- [Building Your Own Shutdown Monitoring System](#building-your-own-shutdown-monitoring-system)
+- [Legal Framework and Your Rights](#legal-framework-and-your-rights)
+- [Practical Recommendations](#practical-recommendations)
+- [Regional Shutdown Patterns and Analysis](#regional-shutdown-patterns-and-analysis)
+- [International Coordination of Tracking Data](#international-coordination-of-tracking-data)
+- [Building Resilient Applications](#building-resilient-applications)
+- [Accessing Services During Shutdowns](#accessing-services-during-shutdowns)
+- [Legal Implications and Documentation](#legal-implications-and-documentation)
+- [Advanced Monitoring Techniques](#advanced-monitoring-techniques)
+- [Financial Impact Tracking](#financial-impact-tracking)
+- [Resources for Activists and Journalists](#resources-for-activists-and-journalists)
+
 ## Understanding Internet Shutdowns in India
 
 Internet shutdowns in India are typically ordered by state governments under Section 144 of the Code of Criminal Procedure, which authorizes authorities to restrict gatherings and communication. While the law was originally designed for public safety, it has increasingly been used to control internet access during protests, exams, and civil unrest.

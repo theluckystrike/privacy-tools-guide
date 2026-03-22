@@ -52,6 +52,21 @@ WebAuthn is the browser API for passwordless login, FIDO2 is the full protocol s
 - **Recovery codes**: Generate one-time use codes (like 2FA backup codes) during passkey setup
 3.
 
+## Table of Contents
+
+- [What Is WebAuthn?](#what-is-webauthn)
+- [What Is FIDO2?](#what-is-fido2)
+- [What Are Passkeys?](#what-are-passkeys)
+- [How They Connect](#how-they-connect)
+- [Practical Considerations for Developers](#practical-considerations-for-developers)
+- [Platform Implementation Differences](#platform-implementation-differences)
+- [Resident vs Non-Resident Keys](#resident-vs-non-resident-keys)
+- [Attestation Object Handling](#attestation-object-handling)
+- [Migration Strategies from Passwords](#migration-strategies-from-passwords)
+- [Recovery and Account Access](#recovery-and-account-access)
+- [Phishing Resistance and Threat Model](#phishing-resistance-and-threat-model)
+- [Standards Roadmap for 2026 and Beyond](#standards-roadmap-for-2026-and-beyond)
+
 ## What Is WebAuthn?
 
 WebAuthn is a web API standard developed by the World Wide Web Consortium (W3C) that enables web applications to use public-key cryptography for authentication. Launched in 2018, WebAuthn provides a standardized JavaScript API that browsers expose to web applications.

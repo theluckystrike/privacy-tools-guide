@@ -40,6 +40,16 @@ To set up S/MIME email encryption, generate a certificate with OpenSSL (or obtai
 - **This means you can**: obtain certificates from trusted CAs or generate self-signed certificates for internal use.
 - **Store keys on hardware tokens (YubiKey**: SmartCards) for production use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Advanced: Certificate Automation with ACME](#advanced-certificate-automation-with-acme)
+- [Email Client Configuration Comparison](#email-client-configuration-comparison)
+- [Troubleshooting S/MIME Issues](#troubleshooting-smime-issues)
+- [Migrating from PGP to S/MIME](#migrating-from-pgp-to-smime)
+- [Performance and Reliability Considerations](#performance-and-reliability-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

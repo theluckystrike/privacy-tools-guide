@@ -40,6 +40,19 @@ The EU-US Data Privacy Framework is a legal mechanism that allows US companies t
 - **Can I customize these**: recommendations for my specific situation? Absolutely.
 - **Test each recommendation on**: a small scale, observe results, and adjust the approach based on what actually works in your context.
 
+## Table of Contents
+
+- [What the Framework Actually Provides](#what-the-framework-actually-provides)
+- [Verifying Framework Certification](#verifying-framework-certification)
+- [Implementation Patterns for Developers](#implementation-patterns-for-developers)
+- [When the Framework Does Not Apply](#when-the-framework-does-not-apply)
+- [Monitoring and Compliance Maintenance](#monitoring-and-compliance-maintenance)
+- [Technical Recommendations](#technical-recommendations)
+- [Practical Compliance Implementation](#practical-compliance-implementation)
+- [Recent Developments and Future Considerations](#recent-developments-and-future-considerations)
+- [Alternative Approaches to Transatlantic Data](#alternative-approaches-to-transatlantic-data)
+- [Testing Your Compliance Approach](#testing-your-compliance-approach)
+
 ## What the Framework Actually Provides
 
 The EU-US Data Privacy Framework establishes that US companies can self-certify under the framework and receive an " adequacy determination" from the European Commission. This determination means that data transfers to certified US organizations are considered to provide an adequate level of data protection, similar to transfers within the EU.

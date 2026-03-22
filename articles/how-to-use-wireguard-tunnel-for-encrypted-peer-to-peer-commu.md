@@ -38,6 +38,13 @@ Set up WireGuard P2P by generating public/private key pairs for each peer, defin
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: wireguard for p2p communication, installation, key generation, with specific setup instructions
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Mesh Networking](#advanced-mesh-networking)
+- [Troubleshooting](#troubleshooting)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

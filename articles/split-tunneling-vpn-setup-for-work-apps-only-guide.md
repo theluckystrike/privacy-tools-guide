@@ -11,21 +11,8 @@ tags: [privacy-tools-guide, vpn, security, privacy, networking]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Split Tunneling VPN Setup for Work Apps Only Guide"
-description: "A practical guide to configuring split tunneling VPN to route only work applications through the VPN while keeping personal traffic on your regular"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /split-tunneling-vpn-setup-for-work-apps-only-guide/
-categories: [guides]
-tags: [privacy-tools-guide, vpn, security, privacy, networking]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Split tunneling routes only work applications through your corporate VPN while personal browsing, streaming, and video calls use your regular internet connection directly, improving bandwidth and reducing latency while maintaining secure access to corporate resources. Configure split tunneling at the application level using your VPN client's app list, or at the routing level using firewall rules and policy routing on Linux. This guide walks through setting up split tunneling for work-only applications on macOS, Windows, and Linux, plus discusses security implications and best practices for hybrid work environments.
@@ -39,6 +26,14 @@ Split tunneling routes only work applications through your corporate VPN while p
 - **In this example**: only traffic to the corporate network (10.0.0.0/24 and 192.168.100.0/24) goes through the VPN.
 - **Everything else uses your**: regular connection.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
+## Table of Contents
+
+- [Why Split Tunneling Matters](#why-split-tunneling-matters)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Split Tunneling](#troubleshooting-split-tunneling)
+- [Security Considerations](#security-considerations)
+- [Best Practices](#best-practices)
 
 ## Why Split Tunneling Matters
 
@@ -368,10 +363,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
-- [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-- [Best Vpn Protocols That Still Work Inside China After Deep P](/privacy-tools-guide/best-vpn-protocols-that-still-work-inside-china-after-deep-p/)
-- [Does Mullvad VPN Work in Egypt? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-vpn-work-in-egypt-2026-latest-report/)
-- [Does Proton VPN Stealth Work in Myanmar? 2026 Tested](/privacy-tools-guide/does-proton-vpn-stealth-work-in-myanmar-2026-tested/)
-
+- [How To Configure Per App Vpn On Android](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
+- [How To Run Concurrent Vpn Connections For Different Applicat](/privacy-tools-guide/how-to-run-concurrent-vpn-connections-for-different-applicat/)
+- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
+- [How to Configure VPN Exempt List for Local Network](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
+- [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

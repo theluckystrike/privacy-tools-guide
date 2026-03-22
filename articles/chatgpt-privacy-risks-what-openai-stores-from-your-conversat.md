@@ -27,6 +27,24 @@ ChatGPT has become a daily tool for developers, but many users operate under a f
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What OpenAI Actually Stores](#what-openai-actually-stores)
+- [Technical Deep Dive: Data Flow](#technical-deep-dive-data-flow)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [Privacy Controls Available](#privacy-controls-available)
+- [What Stays Private (And What Doesn't)](#what-stays-private-and-what-doesnt)
+- [Practical Recommendations](#practical-recommendations)
+- [The Enterprise Question](#the-enterprise-question)
+- [Understanding OpenAI's Data Processing Architecture](#understanding-openais-data-processing-architecture)
+- [The Hidden Cost of "Free" Conversations](#the-hidden-cost-of-free-conversations)
+- [Code-Specific Privacy Concerns](#code-specific-privacy-concerns)
+- [API Usage Patterns and Monitoring](#api-usage-patterns-and-monitoring)
+- [Alternative Language Models and Privacy](#alternative-language-models-and-privacy)
+- [Detecting ChatGPT Training Usage](#detecting-chatgpt-training-usage)
+- [Building Privacy-First AI Applications](#building-privacy-first-ai-applications)
+- [Legal and Compliance Considerations](#legal-and-compliance-considerations)
+
 ## What OpenAI Actually Stores
 
 When you send a message to ChatGPT, several categories of data get captured:

@@ -41,6 +41,18 @@ Signal's username feature is a meaningful privacy upgrade: it lets you communica
 4.
 - **Audit username-visible contacts. Signal**: distinguishes between contacts who know your phone number and contacts who only know your username.
 
+## Table of Contents
+
+- [How Signal Usernames Work](#how-signal-usernames-work)
+- [Privacy Implications](#privacy-implications)
+- [Configuration for Developers](#configuration-for-developers)
+- [Best Practices for Power Users](#best-practices-for-power-users)
+- [Comparison with Phone Numbers](#comparison-with-phone-numbers)
+- [Security Considerations for Developers](#security-considerations-for-developers)
+- [Privacy Threat Modeling: Usernames vs. Phone Numbers](#privacy-threat-modeling-usernames-vs-phone-numbers)
+- [Operational Security When Using Usernames](#operational-security-when-using-usernames)
+- [Common Pitfalls](#common-pitfalls)
+
 ## How Signal Usernames Work
 
 Unlike traditional messaging platforms that tie accounts to phone numbers, Signal usernames allow users to communicate without exposing their phone numbers. The system uses a unique identifier format that combines an username with a numeric suffix:

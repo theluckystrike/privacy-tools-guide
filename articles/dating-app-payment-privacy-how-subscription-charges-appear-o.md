@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Dating App Payment Privacy How Subscription Charges Appear"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
@@ -40,6 +42,16 @@ Dating app charges appear on your statement under company parent names like "MAT
 2.
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 - **Discounts of 25-50% are**: common for qualifying organizations.
+
+## Table of Contents
+
+- [How Payment Descriptors Work](#how-payment-descriptors-work)
+- [Merchant Category Codes and What They Reveal](#merchant-category-codes-and-what-they-reveal)
+- [Common Dating App Descriptor Patterns](#common-dating-app-descriptor-patterns)
+- [Privacy Implications for Subscribers](#privacy-implications-for-subscribers)
+- [Identifying Unknown Charges](#identifying-unknown-charges)
+- [Refunds and Chargeback Behavior](#refunds-and-chargeback-behavior)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
 
 ## How Payment Descriptors Work
 

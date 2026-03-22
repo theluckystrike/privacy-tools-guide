@@ -27,6 +27,18 @@ CalyxOS includes a powerful built-in firewall called Datura that lets you contro
 - **It runs as a privileged system service**: giving it more control over network packets than user-space firewall applications that rely on VPN-based routing.
 - **Find the application you**: want to restrict 4.
 
+## Table of Contents
+
+- [What is Datura Firewall?](#what-is-datura-firewall)
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration via ADB](#advanced-configuration-via-adb)
+- [Troubleshooting Connectivity Issues](#troubleshooting-connectivity-issues)
+- [Security Considerations](#security-considerations)
+- [Getting Started](#getting-started)
+- [Combining Datura with Android VPN Services](#combining-datura-with-android-vpn-services)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Troubleshooting Datura Connectivity Issues](#troubleshooting-datura-connectivity-issues)
+
 ## What is Datura Firewall?
 
 Datura is a netfilter-based firewall implementation designed specifically for CalyxOS. It uses Linux's native packet filtering capabilities to block or allow network traffic on a per-application basis. The firewall operates at the iptables level, meaning it can filter both IPv4 and IPv6 traffic without requiring special permissions or root access.

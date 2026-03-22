@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 9
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "GDPR Data Processing Agreement Template Guide"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 9
 categories: [guides]
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

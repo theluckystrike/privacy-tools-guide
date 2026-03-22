@@ -42,6 +42,16 @@ This guide covers the technical implementation of encrypted USB drives with reco
 - **Unlike proprietary solutions**: VeraCrypt is open-source, has undergone extensive security audits, and works on Windows, macOS, and Linux.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding the Threat Model](#understanding-the-threat-model)
+- [Choosing Your Encryption Method](#choosing-your-encryption-method)
+- [Creating the Encrypted USB Drive](#creating-the-encrypted-usb-drive)
+- [Implementing Recovery Mechanisms](#implementing-recovery-mechanisms)
+- [Automating Backup Verification](#automating-backup-verification)
+- [Documenting for Your Executor](#documenting-for-your-executor)
+- [Security Considerations](#security-considerations)
+
 ## Understanding the Threat Model
 
 Before implementing any solution, you need to understand what you're protecting against and who needs access. For estate executor scenarios, the threat model includes:

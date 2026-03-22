@@ -42,6 +42,24 @@ Choosing a Linux distribution for privacy-sensitive work requires understanding 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Telemetry and Data Collection](#telemetry-and-data-collection)
+- [Quick Comparison](#quick-comparison)
+- [Package Management and Update Cadence](#package-management-and-update-cadence)
+- [Security Hardening](#security-hardening)
+- [Systemd and Privacy](#systemd-and-privacy)
+- [Verification and Reproducibility](#verification-and-reproducibility)
+- [Decision Framework](#decision-framework)
+- [Detailed Privacy Comparison Matrix](#detailed-privacy-comparison-matrix)
+- [Container and Development Workflows](#container-and-development-workflows)
+- [Performance Profiling and Optimization](#performance-profiling-and-optimization)
+- [Audit and Compliance Logging](#audit-and-compliance-logging)
+- [Repository Trust and Signature Verification](#repository-trust-and-signature-verification)
+- [Physical Security and Hardware Verification](#physical-security-and-hardware-verification)
+- [Long-Term Support and Stability Guarantees](#long-term-support-and-stability-guarantees)
+- [Hands-On Configuration Workflow](#hands-on-configuration-workflow)
+
 ## Telemetry and Data Collection
 
 **Debian** collects no telemetry by default. The project operates under a social contract that explicitly prioritizes user freedom, and the base system sends nothing to external servers. When you install Debian, you receive the software exactly as maintained by upstream Debian developers with no added data collection.

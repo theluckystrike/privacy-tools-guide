@@ -28,6 +28,16 @@ Signal Messenger provides end-to-end encryption that protects communications fro
 - **Signal Messenger provides end-to-end**: encryption that protects communications from eavesdropping, making it the preferred tool for journalists handling sensitive source communications.
 - **This guide covers the**: practical setup process for developers and power users who need to maximize their operational security.
 
+## Table of Contents
+
+- [Why Signal for Journalism](#why-signal-for-journalism)
+- [Prerequisites](#prerequisites)
+- [Advanced: Note to Self for Secure Storage](#advanced-note-to-self-for-secure-storage)
+- [Advanced: Multi-Device Configuration](#advanced-multi-device-configuration)
+- [Signal Requirements](#signal-requirements)
+- [Device Requirements](#device-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Signal for Journalism
 
 Signal uses the Signal Protocol, which provides forward secrecy and deniability properties that distinguish it from typical messaging applications. Forward secrecy ensures that compromise of long-term keys does not expose past conversations. The protocol has undergone extensive cryptographic review and is considered modern for asynchronous messaging.

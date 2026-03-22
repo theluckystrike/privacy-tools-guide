@@ -55,6 +55,18 @@ Choosing between Whonix and Tails for anonymous browsing depends on your threat 
 
 It depends on your background.
 
+## Table of Contents
+
+- [Architecture Overview](#architecture-overview)
+- [Security Model Comparison](#security-model-comparison)
+- [Practical Use Cases](#practical-use-cases)
+- [Configuration Examples](#configuration-examples)
+- [Performance Considerations](#performance-considerations)
+- [Advanced Network Configuration for Privacy](#advanced-network-configuration-for-privacy)
+- [Comparison of Threat Models and Use Cases](#comparison-of-threat-models-and-use-cases)
+- [Hardware and Performance Considerations](#hardware-and-performance-considerations)
+- [Hybrid Approach: Using Both Systems](#hybrid-approach-using-both-systems)
+
 ## Architecture Overview
 
 ### Whonix: Isolation Through Virtualization

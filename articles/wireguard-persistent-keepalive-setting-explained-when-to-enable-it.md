@@ -40,6 +40,16 @@ The WireGuard persistent keepalive setting is one of those configuration options
 - **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
 
+## Table of Contents
+
+- [What Persistent Keepalive Does](#what-persistent-keepalive-does)
+- [How to Configure Persistent Keepalive](#how-to-configure-persistent-keepalive)
+- [When You Need Persistent Keepalive](#when-you-need-persistent-keepalive)
+- [When You Can Skip It](#when-you-can-skip-it)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting Tips](#troubleshooting-tips)
+- [Advanced Keepalive Configuration](#advanced-keepalive-configuration)
+
 ## What Persistent Keepalive Does
 
 WireGuard is designed to be minimal and efficient. By default, it operates as a stateless VPN protocol—if no traffic flows, no packets are sent. This design choice reduces overhead significantly. However, this efficiency becomes problematic when your VPN endpoint sits behind a Network Address Translation (NAT) device or a stateful firewall.

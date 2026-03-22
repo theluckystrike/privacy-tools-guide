@@ -42,6 +42,22 @@ AI sentiment analyzer Chrome extensions bring machine learning-powered emotional
 - **By default**: it uses local processing for text under 500 characters and provides the option to enable cloud processing for longer content.
 - **The privacy settings panel**: lets you completely disable cloud processing if you want 100% local analysis.
 
+## Table of Contents
+
+- [What is a Sentiment Analyzer Chrome Extension?](#what-is-a-sentiment-analyzer-chrome-extension)
+- [Why Privacy Matters for Sentiment Analysis](#why-privacy-matters-for-sentiment-analysis)
+- [Top Privacy-Focused Sentiment Analyzer Extensions](#top-privacy-focused-sentiment-analyzer-extensions)
+- [How Local Sentiment Analysis Works](#how-local-sentiment-analysis-works)
+- [Comparing Accuracy vs. Privacy](#comparing-accuracy-vs-privacy)
+- [Configuring Your Extension for Maximum Privacy](#configuring-your-extension-for-maximum-privacy)
+- [Use Cases for Privacy-Conscious Sentiment Analysis](#use-cases-for-privacy-conscious-sentiment-analysis)
+- [Advanced Configuration for Developers](#advanced-configuration-for-developers)
+- [Verifying Extension Behavior](#verifying-extension-behavior)
+- [Integration with Communication Tools](#integration-with-communication-tools)
+- [Performance Optimization](#performance-optimization)
+- [Limitations and Realistic Expectations](#limitations-and-realistic-expectations)
+- [Alternatives to Chrome Extensions](#alternatives-to-chrome-extensions)
+
 ## What is a Sentiment Analyzer Chrome Extension?
 
 A sentiment analyzer Chrome extension uses natural language processing (NLP) and machine learning models to determine the emotional tone behind text. Most extensions classify content as positive, negative, or neutral, while more sophisticated tools detect specific emotions like joy, anger, sadness, frustration, or excitement. The analysis happens either locally within your browser using WebAssembly or JavaScript models, or by sending text to cloud-based APIs for processing.
@@ -278,11 +294,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
-- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
-- [Browser Extension Permissions What To Watch](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
-- [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
-- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-
+- [Chrome Extension File Sharing Quick](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
+- [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
+- [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

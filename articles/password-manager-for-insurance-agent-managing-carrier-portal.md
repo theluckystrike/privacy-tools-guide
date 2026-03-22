@@ -40,6 +40,19 @@ Insurance agents managing multiple carrier portals face a unique credential mana
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Carrier Portal Credential Challenge](#the-carrier-portal-credential-challenge)
+- [Essential Password Manager Features for Insurance Agents](#essential-password-manager-features-for-insurance-agents)
+- [Implementing with Bitwarden](#implementing-with-bitwarden)
+- [Advanced Techniques for High-Volume Management](#advanced-techniques-for-high-volume-management)
+- [Security Considerations](#security-considerations)
+- [Advanced: Automation with Password Manager APIs](#advanced-automation-with-password-manager-apis)
+- [Carrier Portal Credential Patterns](#carrier-portal-credential-patterns)
+- [MFA Management for Multiple Portals](#mfa-management-for-multiple-portals)
+- [Handling Password Changes Across Portals](#handling-password-changes-across-portals)
+- [Compliance and Audit Logging](#compliance-and-audit-logging)
+
 ## The Carrier Portal Credential Challenge
 
 Insurance agents typically work with multiple carriers, each providing proprietary portals for policy management, claims submission, quoting, and commission tracking. A single agent might manage credentials for:

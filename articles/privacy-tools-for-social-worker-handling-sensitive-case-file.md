@@ -42,6 +42,23 @@ Secure social worker case files using encrypted DMG containers (macOS) or LUKS e
 - **Separate network for work**: # Use guest network or create dedicated VLAN # Isolate from personal devices # 2.
 - **Router security # Change**: default password # Disable WPS # Update firmware regularly # Use WPA3 encryption (or WPA2 at minimum) # 3.
 
+## Table of Contents
+
+- [Understanding the Privacy Stakes](#understanding-the-privacy-stakes)
+- [Encrypted Storage Solutions](#encrypted-storage-solutions)
+- [Secure Communication Platforms](#secure-communication-platforms)
+- [Authentication and Access Control](#authentication-and-access-control)
+- [Mobile Device Security](#mobile-device-security)
+- [Case Management Software Considerations](#case-management-software-considerations)
+- [Practical Workflow Example](#practical-workflow-example)
+- [Compliance Frameworks for Social Work Data](#compliance-frameworks-for-social-work-data)
+- [Building a Privacy-Focused Case Documentation System](#building-a-privacy-focused-case-documentation-system)
+- [Data Minimization Best Practices](#data-minimization-best-practices)
+- [Incident Response Protocol](#incident-response-protocol)
+- [Remote Work Security for Field Social Workers](#remote-work-security-for-field-social-workers)
+- [Mental Health and Burnout Prevention](#mental-health-and-burnout-prevention)
+- [Technology Stack Recommendation](#technology-stack-recommendation)
+
 ## Understanding the Privacy Stakes
 
 Social work involves collecting and storing personally identifiable information (PII), protected health information (PHI), and sensitive family dynamics data. A data breach can expose vulnerable clients to identity theft, stalking, or even physical danger. Unlike corporate environments where data stays in controlled office networks, social workers often access case files from home offices, field visits, client homes, and mobile devices.

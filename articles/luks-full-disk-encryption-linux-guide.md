@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
 ---
-layout: default
-title: "LUKS Full Disk Encryption on Linux"
-description: "How to set up LUKS2 full disk encryption on Linux from scratch, including partitioning, keyfile setup, crypttab configuration, and unlocking at boot"
-date: 2026-03-21
-author: theluckystrike
-permalink: /luks-full-disk-encryption-linux-guide/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 
 {% raw %}
 
@@ -252,6 +240,14 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [How to Evaluate AI Coding Tool Encryption Standards](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+
+## Related Articles
+
+- [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
+- [VeraCrypt Full Disk Encryption Setup Guide](/privacy-tools-guide/veracrypt-full-disk-encryption-setup-guide/)
+- [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
+- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [How to Create Encrypted Partitions with dm-crypt](/privacy-tools-guide/how-to-create-encrypted-partitions-with-dm-crypt/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

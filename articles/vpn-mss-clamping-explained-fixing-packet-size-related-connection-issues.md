@@ -26,6 +26,25 @@ If you've ever experienced a VPN connection that works for some websites but fai
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 - **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 
+## Table of Contents
+
+- [Understanding MSS and Packet Fragmentation](#understanding-mss-and-packet-fragmentation)
+- [How MSS Clamping Works](#how-mss-clamping-works)
+- [Implementing MSS Clamping](#implementing-mss-clamping)
+- [Diagnosing MSS Issues](#diagnosing-mss-issues)
+- [PMTUD Black Hole Problem](#pmtud-black-hole-problem)
+- [Common Configuration Values](#common-configuration-values)
+- [Advanced: IPv6 Considerations](#advanced-ipv6-considerations)
+- [Troubleshooting Checklist](#troubleshooting-checklist)
+- [Advanced Diagnostic Tools and Techniques](#advanced-diagnostic-tools-and-techniques)
+- [Wireshark Analysis for MTU Problems](#wireshark-analysis-for-mtu-problems)
+- [MTU Discovery and Configuration by VPN Type](#mtu-discovery-and-configuration-by-vpn-type)
+- [Persistent Configuration for Long-Term MSS Clamping](#persistent-configuration-for-long-term-mss-clamping)
+- [Understanding the TCP Window and MSS Relationship](#understanding-the-tcp-window-and-mss-relationship)
+- [Monitoring and Alerting for MSS-Related Issues](#monitoring-and-alerting-for-mss-related-issues)
+- [Performance Tuning with MSS Clamping](#performance-tuning-with-mss-clamping)
+- [Troubleshooting Specific Applications](#troubleshooting-specific-applications)
+
 ## Understanding MSS and Packet Fragmentation
 
 When data travels over a network, it gets broken down into smaller chunks called packets. Each packet has a maximum size determined by the network's Maximum Transmission Unit (MTU). For standard Ethernet connections, the default MTU is 1500 bytes.

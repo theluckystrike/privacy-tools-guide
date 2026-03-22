@@ -53,6 +53,25 @@ Tor Browser hides your IP through onion routing (traffic passes through three re
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **It does not route traffic through the Tor network**: instead, it relies on the user's network configuration for anonymity.
 
+## Table of Contents
+
+- [Understanding Tor Browser's Privacy Architecture](#understanding-tor-browsers-privacy-architecture)
+- [Understanding LibreWolf's Privacy Architecture](#understanding-librewolfs-privacy-architecture)
+- [Network-Level Privacy Comparison](#network-level-privacy-comparison)
+- [Fingerprint Resistance Analysis](#fingerprint-resistance-analysis)
+- [Practical Use Cases](#practical-use-cases)
+- [Performance Considerations](#performance-considerations)
+- [Security Features](#security-features)
+- [Developer Considerations](#developer-considerations)
+- [Combining Both Tools](#combining-both-tools)
+- [Installation and Setup Comparison](#installation-and-setup-comparison)
+- [Threat Model Analysis](#threat-model-analysis)
+- [CLI Access and Automation](#cli-access-and-automation)
+- [Security Audit Recommendations](#security-audit-recommendations)
+- [Hands-On Testing and Validation](#hands-on-testing-and-validation)
+- [Resource Consumption Comparison](#resource-consumption-comparison)
+- [Extension Compatibility](#extension-compatibility)
+
 ## Understanding Tor Browser's Privacy Architecture
 
 Tor Browser is built on Firefox ESR and routes all traffic through the Tor network, which uses onion routing to encrypt traffic through multiple relays. Each relay only knows the previous hop and next hop in the circuit, preventing anyone from tracing your connection from origin to destination.

@@ -88,6 +88,24 @@ exiftool -tagsfromfile source.jpg dest.jpg
 
 ## MAT2 (Metadata Anonymization Toolkit)
 
+## Table of Contents
+
+- [MAT2 (Metadata Anonymization Toolkit)](#mat2-metadata-anonymization-toolkit)
+- [ExifCleaner](#exifcleaner)
+- [Metapho](#metapho)
+- [Scrambled Exif](#scrambled-exif)
+- [Comparison Table](#comparison-table)
+- [CLI Examples (ExifTool)](#cli-examples-exiftool)
+- [Automation Workflows](#automation-workflows)
+- [Metadata Leakage Examples](#metadata-leakage-examples)
+- [Threat Model](#threat-model)
+- [Best Practices](#best-practices)
+- [Platform-Specific Recommendations](#platform-specific-recommendations)
+- [Batch Processing Comparison](#batch-processing-comparison)
+- [Verification (How to Confirm Metadata Removal)](#verification-how-to-confirm-metadata-removal)
+- [Bottom Line](#bottom-line)
+- [Related Reading](#related-reading)
+
 MAT2 is a Python-based metadata removal tool. It's simpler than ExifTool but less powerful.
 
 **How It Works:**

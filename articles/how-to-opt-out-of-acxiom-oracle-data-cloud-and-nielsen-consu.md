@@ -42,6 +42,17 @@ This guide provides direct opt-out procedures, practical examples, and considera
 - **For complete coverage**: repeat this process for each browser and device you use.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding the Data Broker Ecosystem](#understanding-the-data-broker-ecosystem)
+- [Opting Out of Acxiom](#opting-out-of-acxiom)
+- [Opting Out of Oracle Data Cloud](#opting-out-of-oracle-data-cloud)
+- [Opting Out of Nielsen](#opting-out-of-nielsen)
+- [Automating Opt-Out Confirmations](#automating-opt-out-confirmations)
+- [Implementing Privacy in Your Applications](#implementing-privacy-in-your-applications)
+- [Maintaining Your Opt-Out Status](#maintaining-your-opt-out-status)
+- [Additional Resources](#additional-resources)
+
 ## Understanding the Data Broker Ecosystem
 
 Acxiom, now part of IPG Mediabrands, maintains one of the largest consumer databases in the world, containing information on over 500 million consumers globally. Their data includes demographic details, purchasing behavior, lifestyle interests, and predictive scores used by marketers for targeting.

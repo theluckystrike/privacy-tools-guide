@@ -11,7 +11,9 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+<<<<<<< Updated upstream
+---
 ---
 layout: default
 title: "How to Detect if Your Email Is Compromised"
@@ -25,7 +27,11 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
+=======
+---
+>>>>>>> Stashed changes
 
 {% raw %}
 
@@ -48,6 +54,18 @@ site:rentry.co "your@email.com"
 ```
 
 Also search your username, not just email address.
+
+## Table of Contents
+
+- [Signs Your Email May Be Compromised](#signs-your-email-may-be-compromised)
+- [Step 1: Check Breach Databases](#step-1-check-breach-databases)
+- [Step 2: Review Active Sessions](#step-2-review-active-sessions)
+- [Step 3: Check for Email Forwarding Rules](#step-3-check-for-email-forwarding-rules)
+- [Step 4: Check Connected Apps and OAuth Grants](#step-4-check-connected-apps-and-oauth-grants)
+- [Step 5: Examine Recent Account Activity](#step-5-examine-recent-account-activity)
+- [Step 6: Check for Credential Leaks on Paste Sites](#step-6-check-for-credential-leaks-on-paste-sites)
+- [Step 7: Secure the Account](#step-7-secure-the-account)
+- [Ongoing Monitoring](#ongoing-monitoring)
 
 ## Signs Your Email May Be Compromised
 
@@ -278,12 +296,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Detect If Your Email Address Has Been Sold To Marketi](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
-- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
-- [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
-
+- [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

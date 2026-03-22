@@ -40,6 +40,13 @@ The easiest solution is sending password-protected ZIP archives—all operating 
 - **Recipients either lack the**: technical knowledge to set up encryption or simply refuse to install new software.
 - **If emailing a ZIP**: call the recipient with the password or use Signal.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for Recipient-Friendly Encryption](#best-practices-for-recipient-friendly-encryption)
+- [Comparison of Methods](#comparison-of-methods)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
