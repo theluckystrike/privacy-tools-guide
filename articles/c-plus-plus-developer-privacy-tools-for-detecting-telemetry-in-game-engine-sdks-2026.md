@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: false
-tags: [privacy-tools-guide, c++, game-development, telemetry, sdk, privacy]---
+tags: [privacy-tools-guide, c++, game-development, telemetry, sdk, privacy]
+---
 
 {% raw %}
 
