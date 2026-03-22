@@ -6,7 +6,7 @@ description: "Compare wireguard dns configuration options explained resolv conf 
 tags: [privacy-tools-guide, comparison]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
