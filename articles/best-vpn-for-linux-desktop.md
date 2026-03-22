@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 ---
 layout: default
 title: "Best VPN for Linux Desktop: A Developer Guide"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 
 
 | VPN Provider | Protocol Support | Privacy Policy | Speed | Price |

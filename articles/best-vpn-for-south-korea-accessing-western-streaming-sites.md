@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 ---
 layout: default
 title: "Best VPN for South Korea: Accessing Western Streaming"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 
 
 | VPN Provider | Obfuscation | Speed | Server Count | Price |

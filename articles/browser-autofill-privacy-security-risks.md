@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, privacy]---
+tags: [privacy-tools-guide, security, privacy]
+---
 ---
 layout: default
 title: "Browser Autofill Privacy Security"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, privacy]---
+tags: [privacy-tools-guide, security, privacy]
+---
 
 {% raw %}
 

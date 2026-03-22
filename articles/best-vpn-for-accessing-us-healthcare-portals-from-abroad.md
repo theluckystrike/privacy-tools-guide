@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 ---
 layout: default
 title: "Best Vpn For Accessing Us Healthcare Portals"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 
 
 | VPN Provider | Protocol Support | Privacy Policy | Speed | Price |
