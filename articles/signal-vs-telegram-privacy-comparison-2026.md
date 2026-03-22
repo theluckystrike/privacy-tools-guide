@@ -19,6 +19,15 @@ Choosing a messaging app in 2026 means evaluating not just features, but fundame
 
 This comparison examines encryption implementations, metadata exposure, developer APIs, and self-hosting possibilities.
 
+## Key Takeaways
+
+- **The Signal Server is open source**: but running your own instance isn't supported and would break interoperability with official Signal clients.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **For developers and power users**: the technical differences matter more than marketing claims.
+- **Default chats use client-server**: encryption (server can read messages) but the server doesn't share keys.
+- **Secret Chats use MTProto**: Telegram's custom protocol.
+
 ## Encryption Architecture
 
 ### Signal

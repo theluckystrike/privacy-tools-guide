@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user identifiers -- no phone numbers, no usernames, no cryptographic keys that serve as stable IDs. This eliminates correlation attacks, social graph harvesting, and account hijacking entirely. The trade-offs are real: initial contact requires out-of-band address exchange, and the user base is small. For journalists, activists, or anyone whose threat model includes communication metadata analysis, Simplex Chat provides architectural guarantees no other network-based messenger can match.
+
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **It is the only**: production messaging app that operates without any persistent user identifiers -- no phone numbers, no usernames, no cryptographic keys that serve as stable IDs.
+- **Free and basic plans**: typically get community forum support and documentation.
+- **The trade-offs are real**: initial contact requires out-of-band address exchange, and the user base is small.
+- **Your username creates a**: persistent handle.
+- **This creates several privacy**: vulnerabilities: Correlation attacks occur because your phone number or username links conversations across different groups, enabling mass surveillance.
 
 ## The Identifier Problem
 

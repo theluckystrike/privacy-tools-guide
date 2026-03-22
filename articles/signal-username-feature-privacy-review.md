@@ -27,7 +27,19 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]---
 
+
 Signal's username feature is a meaningful privacy upgrade: it lets you communicate without exposing your phone number, with usernames that require exact-match lookup (preventing enumeration attacks) and can be changed or deleted at any time. The main risks are cross-platform linkage if you reuse handles, and online status exposure to username-based contacts. For developers, store the full `username#1234` identifier (discriminators can change) and implement rate limiting on lookups. This review covers the privacy implications, attack vectors, configuration options, and developer integration patterns.
+
+## Key Takeaways
+
+- **For developers**: store the full `username#1234` identifier (discriminators can change) and implement rate limiting on lookups.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **Use Signal on a**: secondary device 3.
+- **Validate all inputs**: usernames have strict format requirements
+2.
+- **Cache responsibly**: usernames can change, implement TTL
+4.
+- **Audit username-visible contacts. Signal**: distinguishes between contacts who know your phone number and contacts who only know your username.
 
 ## How Signal Usernames Work
 

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Signal's relay calls feature represents a significant advancement in protecting user privacy during voice and video communications. When enabled, this feature routes all call traffic through Signal's servers, preventing the other party from discovering your IP address. This article explores the technical implementation, use cases, and configuration options for developers and power users who want maximum privacy.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **For most users**: this remains imperceptible during voice calls.
+- **For most users**: the privacy benefits outweigh these trade-offs.
+- **Does Signal offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Typical latency additions range**: from 20-80ms depending on server distance.
+
 ## How Signal Relay Calls Work
 
 When you make a standard VoIP call, the calling and receiving devices typically exchange IP addresses directly. This direct peer-to-peer connection enables low-latency communication but exposes sensitive network information. The other party can potentially:

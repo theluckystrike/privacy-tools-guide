@@ -31,6 +31,17 @@ tags: [privacy-tools-guide]---
 
 The Signal Protocol achieves end-to-end encryption by combining X3DH (Extended Triple Diffie-Hellman) for asynchronous initial key agreement with the Double Ratchet Algorithm for per-message forward and future secrecy -- meaning compromised keys reveal neither past nor future messages. For production use, integrate an established library like `libsignal` (Rust) or `libsignal-protocol-javascript` rather than implementing from scratch; the sections below walk through each cryptographic layer so you can audit implementations or understand the security guarantees you are depending on.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Signal offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The use of one-time**: prekeys prevents replay attacks and supports offline message delivery.
+- **It combines two ratcheting mechanisms**: ### Symmetric Ratchet
+
+Each message uses a unique message key derived from a chain key.
+
 ## Core Cryptographic Components
 
 The Signal Protocol combines three distinct cryptographic algorithms to achieve its security properties:

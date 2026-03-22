@@ -33,6 +33,15 @@ Small businesses often skip privacy audits because they seem like an enterprise 
 
 This checklist is organized into eight areas. Work through each section, mark what's done, and create a remediation task for anything that isn't.
 
+## Key Takeaways
+
+- **A single data breach**: at a small company can cost $50,000–$500,000 in recovery costs, regulatory fines, and lost customers.
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **Small businesses often skip**: privacy audits because they seem like an enterprise concern.
+- **Most breaches exploit simple**: fixable problems.
+- **Third-Party Vendor Review Every**: SaaS tool you use is a potential breach vector.
+- **Most provide them on**: request or in their terms.
+
 ## 1. Data Inventory
 
 You can't protect data you don't know you have. Start by mapping what personal data your business collects and where it lives.

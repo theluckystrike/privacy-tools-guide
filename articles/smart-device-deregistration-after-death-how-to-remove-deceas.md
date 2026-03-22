@@ -28,7 +28,24 @@ intent-checked: true
 tags: [privacy-tools-guide]---
 
 {% raw %}
+
 Remove a deceased person's accounts from smart devices by accessing administrator settings, changing WiFi passwords to lock out cloud-linked devices, and reaching out to manufacturers (Google Home, Amazon Alexa, Apple HomeKit) with a death certificate to remove their account. For your own estate planning, document all smart device credentials and specify whether you want devices factory-reset or transferred to family members. Include smart device management instructions in your digital legacy planning.
+
+## Key Takeaways
+
+- **For devices with Find My enabled**: you may need Apple ID credentials or proof of death
+
+Apple ID deletion through deceased user portal:
+
+Apple provides a specific process for deceased users:
+
+1.
+- **Open Settings > Users**: and Accounts 2.
+- Choose "Remove This Account"
+4.
+- **Use password managers with**: emergency access features 2.
+- **Contact Apple Support with**: case reference 3.
+- **Delete any Alexa routines**: associated with that account ### Smart Thermostats (Nest, Ecobee, Honeywell) These devices often maintain cloud connections after local logout.
 
 ## Understanding the Challenge
 
