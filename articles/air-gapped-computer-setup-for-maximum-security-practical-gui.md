@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, security]---
 
 To set up an air-gapped computer for maximum security, you need dedicated hardware with all wireless capabilities disabled, a hardened OS like Tails or Qubes, offline software updates, and strict data transfer procedures using USB drives and QR codes. Air-gapping physically isolates your system from networks to eliminate remote attack surfaces—the gold standard for protecting cryptographic keys, forensic evidence, and classified data. This guide provides practical implementation steps for developers and power users who require serious security without complete functional loss.
 
+## Key Takeaways
+
+- **Use a separate admin**: account with a strong, unique password for system modifications.
+- **This guide provides practical**: implementation steps for developers and power users who require serious security without complete functional loss.
+- **However**: an air-gapped system eliminates the most common attack surface: network connectivity.
+- **Data transfer requires deliberate**: action, software updates demand manual intervention, and the system cannot use cloud services.
+- **Store the machine in a secure location**: use a chassis lock or locked case, and establish procedures for access control.
+- **Verification Export public keys**: or signed artifacts back to the main workstation via read-only media 5.
+
 ## Why Air Gapping Matters in 2026
 
 Modern attack vectors have evolved beyond network-based intrusions. Supply chain compromises, firmware-level malware, and side-channel attacks demonstrate that network isolation alone does not guarantee security. However, an air-gapped system eliminates the most common attack surface: network connectivity. When properly implemented, even if an attacker gains remote access to your main workstation, they cannot reach the air-gapped machine without physical presence.

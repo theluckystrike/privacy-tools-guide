@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Veterinary practices handle sensitive information that deserves the same level of protection as human medical records. Pet owner contact details, medical histories, billing information, and even pet DNA data can be valuable to identity thieves and marketers. This guide walks veterinary practices through establishing privacy protections that meet client expectations and comply with evolving regulations.
 
+## Key Takeaways
+
+- **Look for AES-256 encryption standards**: which represent current best practices.
+- **Require password changes every 90 days**: and prohibit reuse of the previous ten passwords.
+- **Two-Factor Authentication Enable two-factor**: authentication (2FA) for all user accounts.
+- **SMS-based 2FA is better than nothing**: but authenticator apps or hardware security keys provide stronger protection.
+- **Some practices use password**: managers that support TOTP (Time-based One-Time Password) generation.
+- **Enterprise VPN solutions like**: NordVPN Teams, Perimeter 81, or OpenVPN Access Server provide appropriate security for business use.
+
 ## Understanding Veterinary Data Privacy Requirements
 
 Veterinary medicine occupies a unique position in data protection law. While the Health Insurance Portability and Accountability Act (HIPAA) does not directly cover veterinary practices, many states have enacted or are considering legislation that extends similar protections to animal medical records. The American Veterinary Medical Association (AVMA) recommends treating all client information with HIPAA-level confidentiality regardless of legal requirements.

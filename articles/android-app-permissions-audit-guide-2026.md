@@ -33,6 +33,13 @@ Android app permissions form the frontline defense between your personal data an
 
 This guide covers practical methods for auditing Android app permissions using built-in tools, ADB commands, and programmatic approaches. You'll learn how to identify overprivileged apps, understand permission groups, and implement automated audit workflows.
 
+## Key Takeaways
+
+- **Use "While Using" restrictions**: Prefer "Allow only while using" over "Allow all the time" for location and camera 3.
+- **Remove unused apps Uninstall**: applications no longer in use rather than leaving them installed 6.
+- **Modern Android versions display**: permission indicators in the status bar when apps actively use sensitive capabilities.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Android Permission System Overview
 
 Android organizes permissions into three protection levels that determine how users and developers interact with them:

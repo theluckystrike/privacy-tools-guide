@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Aegis Authenticator if you need open-source transparency, encrypted token storage (AES-256-GCM), flexible export formats, and screen capture protection on Android. Choose Google Authenticator if you want the simplest possible setup with tight Google ecosystem integration and do not require advanced security features. For developers and security-conscious users, Aegis is the stronger choice due to its auditable codebase and superior data protection.
 
+## Key Takeaways
+
+- **Choose Aegis Authenticator if**: you need open-source transparency, encrypted token storage (AES-256-GCM), flexible export formats, and screen capture protection on Android.
+- **Choose Google Authenticator if**: you want the simplest possible setup with tight Google ecosystem integration and do not require advanced security features.
+- **For manual backup, use QR code export**: 1.
+- **Instead, use manual backup/restore**: 1.
+- **On Device 2**: use "Scan a setup key" and scan the QR code
+5.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## Open-Source Transparency
 
 **Aegis Authenticator** is fully open-source, with its codebase available on GitHub. This transparency allows security researchers and developers to audit the encryption implementation, verify that secrets are handled correctly, and identify potential vulnerabilities. For organizations requiring compliance with strict security policies, open-source software provides verifiable assurance about how sensitive data is processed.

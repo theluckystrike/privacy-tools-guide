@@ -17,6 +17,17 @@ tags: [privacy-tools-guide, privacy]---
 
 Android hardware-backed attestation keys are cryptographic proofs stored in your device's Trusted Execution Environment (TEE) that verify a device is genuine, but they expose hardware serial numbers, OS version, security patch level, and device model to any app requesting attestation. These keys enable strong security verification for sensitive operations like mobile payments and account recovery, but developers and users must understand that attestation reveals device identifiers that could enable fingerprinting and tracking.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Only devices with hardware-backed**: Keystore (most flagship phones from Google, Samsung, and other major manufacturers) support full attestation.
+- **Quarterly verification is reasonable**: for most use cases.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Explicit disclosure**: Tell users when and why you're requesting attestation
+2.
+- **User control**: Provide alternatives for users who decline attestation
+4.
+
 ## What Is Hardware-Backed Attestation?
 
 Hardware-backed attestation uses cryptographic keys stored in a device's Trusted Execution Environment (TEE) or Hardware Security Module (HSM) to prove that a specific operation occurred on a genuine Android device. Unlike software-based keys, hardware-backed keys cannot be extracted or replicated, even if the device is rooted or compromised at the operating system level.
