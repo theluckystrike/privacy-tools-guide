@@ -6,7 +6,7 @@ description: "Learn smart tv tracking what data samsung lg vizio collect about v
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---

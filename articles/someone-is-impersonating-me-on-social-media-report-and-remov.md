@@ -6,7 +6,7 @@ description: "Learn someone is impersonating me on social media report and remov
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
