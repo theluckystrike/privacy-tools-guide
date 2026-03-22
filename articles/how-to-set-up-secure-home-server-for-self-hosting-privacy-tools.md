@@ -48,7 +48,17 @@ Third-party password managers, file storage, and VPN services trust companies no
 
 The tradeoff: You're responsible for updates, backups, and security.
 
-## Hardware Selection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Select Hardware
 
 ### Minimum Specs for Home Privacy Server
 
@@ -108,7 +118,7 @@ Specs:
 Best for: Budget-conscious, maximum power per dollar
 ```
 
-## Network Setup: Safe Remote Access
+### Step 2: Network Setup: Safe Remote Access
 
 Never expose your home IP directly. Use a VPN for remote access:
 
@@ -183,7 +193,7 @@ ssh -R 5000:localhost:3000 \
 
 **Limitation:** Requires remote VPS (adds cost and third-party dependency)
 
-## OS Hardening
+### Step 3: OS Hardening
 
 Your home server should be as locked-down as a production server.
 
@@ -228,7 +238,7 @@ sudo nano /etc/sysctl.conf
 # Add: net.ipv6.conf.all.disable_ipv6 = 1
 ```
 
-## Containerized Privacy Tools
+### Step 4: Containerized Privacy Tools
 
 Use Docker for isolated, easy-to-update services.
 
@@ -240,7 +250,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
 
-## Docker Compose Stack: Privacy Tools
+### Step 5: Docker Compose Stack: Privacy Tools
 
 **Create `/home/user/privacy-stack/docker-compose.yml`:**
 
@@ -346,7 +356,7 @@ networks:
         - subnet: 172.20.0.0/16
 ```
 
-## TLS Certificates (HTTPS)
+### Step 6: TLS Certificates (HTTPS)
 
 Self-signed certificates for internal access:
 
@@ -362,7 +372,7 @@ openssl req -x509 -nodes -days 3650 \
 mv privacy-tools.* ./certs/
 ```
 
-## Backup Strategy
+### Step 7: Backup Strategy
 
 Self-hosted servers are useless without backups.
 
@@ -400,7 +410,7 @@ crontab -e
 # Add: 2 3 * * * /home/user/privacy-stack/backup.sh
 ```
 
-## Monitoring and Maintenance
+### Step 8: Monitor and Maintenance
 
 ```bash
 # Check container health
@@ -420,7 +430,7 @@ du -sh ./data/*
 # Set up Prometheus + Grafana in same stack
 ```
 
-## Security Checklist
+### Step 9: Security Checklist
 
 - [ ] Firewall configured (ufw enabled, unnecessary ports closed)
 - [ ] SSH hardened (key-based auth only, non-standard port)

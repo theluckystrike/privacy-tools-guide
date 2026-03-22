@@ -43,7 +43,17 @@ Build a privacy-focused CRM by collecting only name and contact method (email or
 - **Collect by default, not by design**: Ask for information only when the customer provides it voluntarily
 2.
 
-## Understanding Data Minimization in CRM Design
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Data Minimization in CRM Design
 
 Data minimization means collecting only the personal data strictly necessary for your specific, explicit, and legitimate purposes. For a CRM, this typically means contact information required for communication, transaction data needed for service delivery, and interaction history that improves customer support.
 
@@ -57,7 +67,7 @@ Start by auditing what your current CRM collects. Most commercial CRMs collect f
 4. **Provide customer portability** — Store data in formats customers can export easily
 5. **Log access transparently** — Maintain audit trails that customers can review
 
-## Building a Minimal-Data CRM with Python and PostgreSQL
+### Step 2: Build a Minimal-Data CRM with Python and PostgreSQL
 
 For developers who want full control, building a privacy-focused CRM from scratch provides the most flexibility. Here's a practical implementation using Python (Django) and PostgreSQL with encryption.
 
@@ -201,7 +211,7 @@ class DataRetentionManager:
             customer.save()
 ```
 
-## Configuring Existing CRMs for Privacy
+### Step 3: Configure Existing CRMs for Privacy
 
 If you prefer using existing CRM platforms, most can be configured for better privacy. Here are key settings to adjust in popular platforms.
 
@@ -277,7 +287,7 @@ public class PrivacyControls {
 }
 ```
 
-## Customer Data Inventory Template
+### Step 4: Customer Data Inventory Template
 
 Maintain a clear inventory of what customer data you collect, why, and how long you keep it:
 
@@ -289,13 +299,28 @@ Maintain a clear inventory of what customer data you collect, why, and how long 
 | IP address | Fraud prevention | Legitimate interest | 90 days | Not stored |
 | Browser data | Analytics | Consent | None | N/A |
 
-## Practical Steps to Minimize Collection
+### Step 5: Practical Steps to Minimize Collection
 
 1. **Audit your forms** — Remove non-essential fields from intake forms
 2. **Disable third-party integrations** — Many CRMs auto-sync with analytics platforms
 3. **Implement consent management** — Track and honor preferences at the field level
 4. **Configure auto-expiration** — Set retention policies that delete data automatically
 5. **Enable field-level encryption** — Protect sensitive data even if the database is compromised
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

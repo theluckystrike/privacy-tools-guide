@@ -17,6 +17,15 @@ tags: [privacy-tools-guide]---
 
 Optimize WireGuard throughput for large file transfers by tuning MTU to 1400-1450 bytes to avoid fragmentation from WireGuard's UDP overhead, increasing kernel buffer sizes (net.core.rmem_max, net.core.wmem_max to 256MB+), and enabling TSO/GSO (TCP Segmentation Offload) for hardware acceleration of ChaCha20-Poly1305 encryption. Monitor actual throughput with iperf3 through the tunnel to identify bottlenecks, and configure TCP_NODELAY on application sockets to prevent buffering delays. WireGuard's modern cryptography and improved design provide excellent throughput, but default kernel settings assume interactive traffic—bulk transfers require explicit tuning to reach gigabit speeds.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **This adds overhead that**: can cause fragmentation if not properly accounted for.
+- **Check WireGuard's current pricing**: page for the latest free tier details, as these change frequently.
+
 ## Understanding WireGuard Performance Characteristics
 
 WireGuard uses modern cryptographic primitives and an improved codebase, typically achieving throughput that exceeds older VPN protocols. However, several factors can limit performance:

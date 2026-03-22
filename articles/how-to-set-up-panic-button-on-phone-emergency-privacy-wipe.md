@@ -30,7 +30,17 @@ Setting up a panic button on your phone enables rapid data destruction when you 
 - **Whether you're a journalist**: protecting sources, a developer handling sensitive credentials, or a power user prioritizing privacy, an emergency privacy wipe mechanism provides a critical safety net.
 - **Unlike standard factory resets**: a well-configured privacy wipe selectively targets the data that matters most: credentials, contacts, messages, photos, and application data.
 
-## Understanding Emergency Privacy Wipe
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Emergency Privacy Wipe
 
 A panic button triggers predefined actions that erase, hide, or secure sensitive data. Unlike standard factory resets, a well-configured privacy wipe selectively targets the data that matters most: credentials, contacts, messages, photos, and application data. The goal is speed and certainty—executing the wipe within seconds while minimizing the chance of partial execution.
 
@@ -42,7 +52,7 @@ The primary scenarios include:
 
 Modern mobile operating systems provide automation hooks that make panic button implementation accessible without specialized hardware.
 
-## Android Implementation with Tasker
+### Step 2: Android Implementation with Tasker
 
 Tasker is the most flexible automation tool for Android. It responds to hardware buttons, NFC tags, and gesture triggers. The following profile executes a privacy wipe when you press the volume-down button three times within two seconds.
 
@@ -128,7 +138,7 @@ class SecureWipeManager(private val context: Context) {
 }
 ```
 
-## iOS Implementation with Shortcuts
+### Step 3: iOS Implementation with Shortcuts
 
 iOS Shortcuts provides native automation without requiring a jailbroken device. While iOS restricts deep system access, you can still wipe app data, reset settings, and trigger remote lock.
 
@@ -187,7 +197,7 @@ class DeviceWipeManager {
 }
 ```
 
-## Network-Triggered Remote Wipe
+### Step 4: Network-Triggered Remote Wipe
 
 The most reliable panic button operates independently of the device itself. Configure a server-side endpoint that triggers wipe on connected devices.
 
@@ -288,6 +298,21 @@ Test your panic button implementation thoroughly before relying on it in actual 
 
 For developers integrating these features into privacy-focused applications, consider the legal implications in your jurisdiction. Some countries require lawful access capabilities; others prohibit backdoors. Building responsible security tools means understanding both the threat model and the regulatory environment.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

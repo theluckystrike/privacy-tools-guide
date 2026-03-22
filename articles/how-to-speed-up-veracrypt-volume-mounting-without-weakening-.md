@@ -46,7 +46,17 @@ For the frequently-used volumes (1 and 2), using SHA-512 with a moderate PIM (li
 - **Each method includes trade-off**: analysis so you can choose what works for your threat model.
 - **Derives the master key**: used to decrypt the volume The iteration count exists specifically to slow down brute-force attacks.
 
-## Understanding Why VeraCrypt Mounting Takes Time
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Why VeraCrypt Mounting Takes Time
 
 Before optimizing, you need to understand what happens during volume mounting. When you enter your password, VeraCrypt performs **key derivation** using the PBKDF2 (Password-Based Key Derivation Function 2) algorithm. This process:
 
@@ -56,7 +66,7 @@ Before optimizing, you need to understand what happens during volume mounting. W
 
 The iteration count exists specifically to slow down brute-force attacks. Higher iterations mean more security against password cracking—but also slower mounting. The default settings prioritize security over speed, which is exactly what you want for sensitive data.
 
-## Technique 1: Select a Faster Hash Algorithm
+### Step 2: Technique 1: Select a Faster Hash Algorithm
 
 VeraCrypt supports multiple hash algorithms (RIPEMD-160, SHA-256, SHA-512, Whirlpool, and others). SHA-512 is generally faster on 64-bit systems with hardware support, while RIPEMD-160 is the slowest option.
 
@@ -76,7 +86,7 @@ veracrypt --create --volume-type=normal \
 
 Using SHA-512 instead of the default RIPEMD-160 can reduce mounting time by 30-50% on modern hardware while maintaining security. AES encryption combined with SHA-512 is a solid, widely-audited combination.
 
-## Technique 2: Optimize the Personal Iterations Multiplier (PIM)
+### Step 3: Technique 2: Optimize the Personal Iterations Multiplier (PIM)
 
 VeraCrypt's **Personal Iterations Multiplier (PIM)** feature lets you customize the number of key iterations without manually calculating raw iteration counts. PIM was introduced in VeraCrypt 1.12 and provides a more intuitive way to balance speed and security.
 
@@ -97,7 +107,7 @@ For a balance between speed and security, many users find PIM values between 20-
 
 **Security note**: If your threat model includes sophisticated adversaries with GPU cracking rigs, stick with the default PIM or use higher values. The default settings are chosen carefully by the VeraCrypt developers.
 
-## Technique 3: Use Keyfiles Strategically
+### Step 4: Technique 3: Use Keyfiles Strategically
 
 Keyfiles add an additional layer of security but can also affect mounting performance. Understanding how VeraCrypt processes keyfiles helps you optimize:
 
@@ -115,7 +125,7 @@ veracrypt --mount /path/to/volume --keyfiles=/path/to/keyfile.bin
 veracrypt --mount /path/to/volume --keyfiles=
 ```
 
-## Technique 4: use Hardware Acceleration
+### Step 5: Technique 4: use Hardware Acceleration
 
 Modern CPUs include hardware acceleration for cryptographic operations. VeraCrypt automatically detects and uses these features when available.
 
@@ -135,7 +145,7 @@ sysctl -a | grep aes
 
 VeraCrypt doesn't currently use GPU acceleration for key derivation. However, keeping your GPU drivers updated ensures your system runs optimally, which can help with overall disk I/O performance when accessing mounted volumes.
 
-## Technique 5: Optimize Volume Settings for Your Use Case
+### Step 6: Technique 5: Optimize Volume Settings for Your Use Case
 
 ### Header Key Derivation Algorithm
 
@@ -159,7 +169,7 @@ The file system you choose for your VeraCrypt volume affects not just mounting t
 
 For developers frequently mounting and unmounting volumes, ext4 or exFAT typically offers the best balance.
 
-## Technique 6: Cache and Session Management
+### Step 7: Technique 6: Cache and Session Management
 
 ### TrueCrypt Mode Compatibility
 
@@ -191,7 +201,7 @@ veracrypt --mount /dev/sda1 --pim=50 --hash=SHA512
 veracrypt --mount /dev/sda2 --pim=50 --hash=SHA512
 ```
 
-## Balancing Speed and Security
+### Step 8: Balancing Speed and Security
 
 Here's a quick reference for making informed trade-offs:
 
@@ -250,7 +260,7 @@ echo "All volumes mounted successfully"
 
 This approach allows highly sensitive volumes (requiring maximum security) to mount slower while frequently accessed volumes optimize for speed.
 
-## Measuring Mount Performance Improvements
+### Step 9: Measuring Mount Performance Improvements
 
 Create a benchmarking suite to quantify improvements before and after optimization:
 
@@ -301,7 +311,7 @@ run_bench "100" "SHA512"     # Balanced
 run_bench "200" "RIPEMD160"  # Maximum security
 ```
 
-## Windows VeraCrypt Optimization
+### Step 10: Windows VeraCrypt Optimization
 
 Windows users can optimize using similar principles. The registry approach differs from Linux command-line:
 
@@ -332,7 +342,7 @@ for %%p in (20, 50, 100, 200) do (
 )
 ```
 
-## Managing Encryption Overhead
+### Step 11: Manage Encryption Overhead
 
 Different encryption algorithms have different CPU overhead. Understanding the trade-off helps with real-world performance:
 

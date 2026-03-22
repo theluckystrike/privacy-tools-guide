@@ -45,7 +45,17 @@ SSH keys are password equivalents—they grant access to your servers. Losing th
 
 The password manager approach solves several problems: encrypted backups happen automatically, you can retrieve keys from any device, and rotation becomes straightforward since you update one location.
 
-## Bitwarden: CLI-Based SSH Key Management
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Bitwarden: CLI-Based SSH Key Management
 
 Bitwarden offers a capable CLI that integrates well with automation. This approach works best if you already use Bitwarden or prefer open-source solutions.
 
@@ -159,7 +169,7 @@ mv ~/.ssh/id_ed25519_new.pub ~/.ssh/id_ed25519.pub
 echo "Key rotated and Bitwarden updated"
 ```
 
-## 1Password: SSH Agent Integration
+### Step 2: 1Password: SSH Agent Integration
 
 1Password provides deeper SSH integration through its agent, making key retrieval during normal SSH usage.
 
@@ -214,7 +224,7 @@ ssh user@home-server
 
 The first time you connect, 1Password asks to associate this key with the server. Future connections authenticate automatically.
 
-## KeePassXC: Local Password Manager Approach
+### Step 3: KeePassXC: Local Password Manager Approach
 
 KeePassXC works well for completely local, offline key management without cloud dependencies.
 
@@ -269,7 +279,7 @@ chmod 600 "$KEY_FILE"
 echo "Key available at $KEY_FILE"
 ```
 
-## Comparing the Approaches
+### Step 4: Comparing the Approaches
 
 | Feature | Bitwarden | 1Password | KeePassXC |
 |---------|------------|------------|-----------|
@@ -292,6 +302,21 @@ Regardless of your password manager choice, follow these practices:
 - **Monitor access** — Use password manager audit logs to track key retrievals
 
 Storing SSH keys in a password manager transforms scattered key management into a centralized, auditable system. The initial setup takes about 30 minutes, but the operational benefits of automatic backup, easy rotation, and cross-device access are substantial for anyone managing multiple servers.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

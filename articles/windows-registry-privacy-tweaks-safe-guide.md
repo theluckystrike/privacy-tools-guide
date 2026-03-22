@@ -31,6 +31,13 @@ tags: [privacy-tools-guide, privacy]---
 
 The Windows Registry serves as the central database for system configuration, storing settings that control everything from application behavior to network connectivity. For developers and power users seeking enhanced privacy, certain registry modifications can reduce telemetry, limit data collection, and minimize footprints left by the operating system. This guide presents practical registry tweaks that enhance privacy without compromising system stability.
 
+## Key Takeaways
+
+- **Changes to HKCU affect**: only your user account and typically require no administrator privileges.
+- **Use `Get-NetAdapter` in PowerShell**: to identify adapter names, then locate corresponding registry keys.
+- **Is it safe to**: set AllowTelemetry to 0 on Windows 11 Home? Microsoft officially supports this on Enterprise editions.
+- **Topics covered**: understanding registry safety, what registry privacy tweaks can and cannot do, reducing windows telemetry
+
 ## Understanding Registry Safety
 
 Before modifying the registry, you must understand the underlying structure. The registry contains five primary hives: `HKEY_CURRENT_USER` (HKCU) for user-specific settings, `HKEY_LOCAL_MACHINE` (HKLM) for machine-wide settings, `HKEY_CLASSES_ROOT`, `HKEY_USERS`, and `HKEY_CURRENT_CONFIG`. Changes to HKCU affect only your user account and typically require no administrator privileges. Changes to HKLM affect all users and usually require elevated permissions.

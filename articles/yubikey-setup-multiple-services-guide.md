@@ -29,6 +29,14 @@ tags: [privacy-tools-guide]---
 
 A YubiKey can serve multiple authentication roles simultaneously — SSH key, GPG signing key, TOTP generator, FIDO2/passkey authenticator, and password manager second factor. Most people configure it for only one or two of these. This guide covers setting up all major use cases on a single YubiKey 5 series device.
 
+## Key Takeaways
+
+- **Most people configure it**: for only one or two of these.
+- **This guide covers setting**: up all major use cases on a single YubiKey 5 series device.
+- **You can use all**: of them on one key.
+- **This is significantly more**: secure than Authy or Google Authenticator because the codes are generated on the hardware and disappear when the key is removed.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Prerequisites
 
 ```bash

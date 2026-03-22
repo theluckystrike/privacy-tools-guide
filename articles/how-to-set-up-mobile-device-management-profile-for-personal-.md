@@ -40,7 +40,17 @@ Mobile Device Management (MDM) profiles represent one of the most powerful yet u
 - **This is typically used**: for single-user devices where you want policy enforcement.
 - **Malicious profiles can restrict**: device functionality or exfiltrate data, so only install profiles from trusted sources.
 
-## Understanding MDM Profiles
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand MDM Profiles
 
 An MDM profile is a configuration file that, when installed on your device, instructs the operating system to enforce specific policies. On iOS, these are known as Configuration Profiles. On Android, Enterprise Device Management APIs serve a similar purpose through device owner or profile owner modes.
 
@@ -51,7 +61,7 @@ The key distinction for personal use involves understanding what these profiles 
 
 For personal privacy, the goal is not enterprise surveillance but rather self-imposed restrictions that prevent data leakage, limit tracking, and harden the device against unauthorized access.
 
-## iOS: Creating and Installing a Configuration Profile
+### Step 2: iOS: Creating and Installing a Configuration Profile
 
 Apple devices support Configuration Profiles through the Settings app. You can create one programmatically using a property list (plist) file or manually through Apple's Configurator tool.
 
@@ -114,7 +124,7 @@ Consider these specific restrictions for personal privacy hardening:
 
 Note that some restrictions require the device to be "supervised" through Apple Configurator, which erases the device during setup. For personal use without supervision, many restrictions remain available through standard Configuration Profiles.
 
-## Android: Device Owner and Work Profile Setup
+### Step 3: Android: Device Owner and Work Profile Setup
 
 Android provides more flexibility through its Enterprise APIs. The two primary approaches for personal privacy are:
 
@@ -156,7 +166,7 @@ if (dpm.isProfileOwnerApp(adminComponent.getPackageName())) {
 
 The critical advantage: Work Profile policies do not affect personal apps, giving you isolation without full device control.
 
-## Automating Profile Deployment
+### Step 4: Automate Profile Deployment
 
 For developers managing multiple personal devices, automation simplifies profile deployment across iOS and Android.
 
@@ -211,7 +221,7 @@ android {
 }
 ```
 
-## Managing and Removing Profiles
+### Step 5: Manage and Removing Profiles
 
 Both platforms allow profile inspection and removal through settings:
 
@@ -230,6 +240,21 @@ When implementing MDM for personal privacy, consider these trade-offs:
 - **Backup**: Profile configurations may not transfer between devices or survive factory resets
 
 Store your profile configurations in a secure location (encrypted external drive or password manager) to recreate them if needed.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
