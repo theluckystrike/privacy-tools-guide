@@ -22,22 +22,14 @@ Most people pick a cloud storage provider based on price and storage size, then 
 This guide covers a systematic six-step audit process: reviewing privacy policies for specific red flags, requesting and analyzing your data export, auditing OAuth grants, verifying encryption claims, finding stale shared links, and reading transparency reports. For each problem found, concrete remediation options are listed.
 ---
 
-## Table of Contents
+## Key Takeaways
 
-- [What Cloud Providers Can Access](#what-cloud-providers-can-access)
-- [Step 1: Review the Privacy Policy](#step-1-review-the-privacy-policy)
-- [Step 2: Request Your Data Export](#step-2-request-your-data-export)
-- [Step 3: Audit Connected Apps and OAuth Grants](#step-3-audit-connected-apps-and-oauth-grants)
-- [Step 4: Check Encryption Status](#step-4-check-encryption-status)
-- [Step 5: Review Shared Links](#step-5-review-shared-links)
-- [Step 6: Check Data Residency and Transparency Reports](#step-6-check-data-residency-and-transparency-reports)
-- [Remediation If You Find Problems](#remediation-if-you-find-problems)
-- [Step 7: Analyze Access Patterns from Your Data Export](#step-7-analyze-access-patterns-from-your-data-export)
-- [Step 8: File Scanning and Content Analysis](#step-8-file-scanning-and-content-analysis)
-- [Recommendations by Threat Model](#recommendations-by-threat-model)
-- [Implementation: Client-Side Encryption Layer](#implementation-client-side-encryption-layer)
-- [Audit Checklist](#audit-checklist)
-- [Related Reading](#related-reading)
+- **Zero-knowledge providers use client-side**: encryption before upload; the provider stores ciphertext only and provably cannot read the content.
+- **Revoke anything not used**: in the last 90 days unless you have a specific reason to keep it active.
+- **Run this check against the API endpoint, not just the main web domain**: some providers serve the web UI on TLS1.3 but use older configurations for their API backends.
+- **Configure your browser or**: desktop client to use an HTTP proxy (127.0.0.1:8080), install the mitmproxy CA certificate, then upload a file with known content.
+- **However, most providers claim "encryption" without specifying which model**: this audit process makes that distinction concrete.
+- **- Deleted file metadata**: Some providers include metadata for recently deleted files in the export — useful for confirming your deleted files are actually queued for deletion.
 
 ## What Cloud Providers Can Access
 
@@ -425,16 +417,8 @@ Complete this before storing sensitive data.
 - [Secure Cloud Storage Encryption Rclone](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
 - [GDPR Compliance Cloud Storage Requirements](/privacy-tools-guide/gdpr-cloud-storage-compliance/)
 - [Data Residency and Cloud Storage Legal Implications](/privacy-tools-guide/cloud-data-residency-legal/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
-## Related Articles
-
-- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
-- [Encrypted Cloud Storage Comparison 2026: A Practical Guide](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
-- [Privacy Risks of Cloud Backups Explained](/privacy-tools-guide/privacy-risks-cloud-backups-explained/)
-- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
-- [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

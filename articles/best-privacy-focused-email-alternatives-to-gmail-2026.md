@@ -20,18 +20,25 @@ Gmail's free model means you're the product—Google reads your email to serve t
 
 This guide compares privacy-first email services and shows how to migrate from Gmail while maintaining access to existing accounts.
 
-## Table of Contents
+## Key Takeaways
 
-- [Why Email Privacy Matters](#why-email-privacy-matters)
-- [ProtonMail](#protonmail)
-- [Tutanota](#tutanota)
-- [Fastmail](#fastmail)
-- [Comparison by Use Case](#comparison-by-use-case)
-- [Migration from Gmail](#migration-from-gmail)
-- [Comparison Matrix](#comparison-matrix)
-- [Best Practices with Privacy Email](#best-practices-with-privacy-email)
-- [When Privacy Email Isn't Enough](#when-privacy-email-isnt-enough)
-- [Recommendation](#recommendation)
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Keep Gmail alive**: - Use it only for password recovery
+ - Don't check it regularly
+ - Keep password strong and 2FA enabled
+ - Eventually it becomes dead account holding old data
+
+2.
+- **Use strong**: unique password
+ - Consider password manager (Bitwarden, 1Password, ProtonPass)
+ - Generate 20+ character passwords
+ - Store in password manager encrypted vault
+
+4.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- Create account (choose username)
+3.
+- **Download as MBOX format**: (importable to most email clients) 4.
 
 ## Why Email Privacy Matters
 
@@ -461,7 +468,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Anonymous Email Service 2026: A Privacy-Focused Guide](/privacy-tools-guide/best-anonymous-email-service-2026/)
 - [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
