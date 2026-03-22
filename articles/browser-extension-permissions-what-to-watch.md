@@ -31,6 +31,15 @@ voice-checked: true---
 
 The most dangerous browser extension permissions to watch are `<all_urls>` host access (grants read/write to every site you visit), `webRequestBlocking` (can intercept and modify all network traffic), and `debugger` (gives full DevTools-level control over your tabs). Before installing any extension, check whether its requested permissions actually match its stated functionality. This guide explains each permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This follows the principle of least privilege**: granting access only when needed.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **This guide explains each**: permission type, shows you how to audit installed extensions, and provides best practices for developers building extensions.
+
 ## How Browser Extension Permissions Work
 
 When you install a browser extension, it requests permissions through the `manifest.json` file. Chrome, Firefox, and Edge all use variations of this manifest format. The permissions declared determine what data the extension can access and what actions it can perform.

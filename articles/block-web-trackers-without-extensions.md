@@ -21,6 +21,13 @@ Browser extensions are the standard advice for blocking trackers, but they come 
 This guide covers five layers of tracker blocking — from DNS resolvers and local Pi-hole deployments, to browser-native privacy configuration, advanced Firefox preferences, and verification tools to confirm that blocking is actually working.
 ---
 
+## Key Takeaways
+
+- **The main limitation is**: lookup performance at scale: a hosts file with 130,000 entries creates a linear search on most systems.
+- **The mitmproxy inspection step**: is optional but recommended at least once to understand what is and is not being blocked on the sites you visit regularly.
+- **Misconfigured blocklists (too many**: rules) can add 50-100ms per query.
+- **DNS-level blocking**: system hosts files, and browser native settings catch most trackers without adding extensions to your browser.
+
 ## Layer 1: DNS-Level Blocking
 
 DNS blocking works by refusing to resolve tracker domains. When a page tries to load `googletagmanager.com`, your DNS resolver returns NXDOMAIN (no such domain) instead of the real IP. The request never leaves your network.

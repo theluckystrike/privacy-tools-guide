@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, comparison]---
 
 Migrating password managers requires careful handling of sensitive data. For developers and power users, the transition from LastPass to Bitwarden offers improved open-source transparency, self-hosting options, and better CLI tooling. This guide walks through the technical process using command-line tools for maximum control and automation.
 
+## Key Takeaways
+
+- **For developers and power users**: the transition from LastPass to Bitwarden offers improved open-source transparency, self-hosting options, and better CLI tooling.
+- **LastPass uses PBKDF2-SHA256 with**: a default of 600,000 iterations as of 2023, but older accounts may still use much lower iteration counts inherited from years ago.
+- **A Bitwarden account (free**: or premium) 2.
+- **Use a clean environment**: Run on a secure machine without malware
+2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Why Developers Choose Bitwarden Over LastPass
 
 Several technical factors make Bitwarden the preferred choice for developers:

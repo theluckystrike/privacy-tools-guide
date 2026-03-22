@@ -31,6 +31,19 @@ intent-checked: true---
 
 Browser fingerprinting is a tracking technique that identifies you based on your browser's unique configuration, not cookies or IP address. Your browser reveals thousands of identifying characteristics: fonts installed, screen resolution, audio playback capabilities, GPU rendering differences, browser plugins, timezone, language settings, and yes, even how your mouse moves. Combined, these characteristics create a unique fingerprint that persists across private browsing, cookie deletion, and IP changes. Websites use fingerprinting to track you, advertisers use it to build profiles, and malicious actors use it for fraud prevention and account linking. Defending against it requires understanding which fingerprints are visible, how they're collected, and which tools actually prevent identification.
 
+## Key Takeaways
+
+- **Screen resolution (1920x1080 narrows**: to ~30% of internet users) 5.
+- **Most users find they're**: unique among millions.
+- **Use in isolation (new**: session each time) This provides ~99% protection.
+- **OS indicators from User-Agent**: With 8-10 signals combined, your fingerprint is unique among millions.
+- **With 15+ signals**: uniqueness approaches 99.9%.
+- **What Google does**: - Restricts some font APIs
+- Partial canvas randomization (inconsistent)
+- Some WebGL blocking (but less than Firefox)
+
+Reality: Chrome is worse for privacy than Firefox or Tor.
+
 ## How Browser Fingerprinting Works
 
 Your browser is a complex piece of software with hundreds of configurable properties. Most of these properties are exposed to JavaScript running on websites, usually without your knowledge or consent.

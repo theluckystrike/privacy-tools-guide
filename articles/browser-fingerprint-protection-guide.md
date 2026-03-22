@@ -33,6 +33,15 @@ Browser fingerprinting tracks you without cookies. It builds a unique profile fr
 
 This guide covers the specific fingerprinting vectors, what each one exposes, and the techniques that actually reduce them.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **A 2023 study found**: that combining just 8-12 properties identified 99%+ of browsers uniquely.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Many users have 4-16 CPU cores, 8-32GB RAM, and standard screen resolutions**: but the combination narrows things.
+- **Limitations**: slow, not for everyday use.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## How Fingerprinting Works
 
 Fingerprinting combines many data points to create a unique identifier:
