@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure Database Connection Pooling Guide"
-description: "Configure PgBouncer and HikariCP with TLS, least-privilege credentials, connection limits, and auth passthrough to protect PostgreSQL from credential abuse and DoS"
+description: "Configure PgBouncer and HikariCP with TLS, least-privilege credentials, connection limits, and auth passthrough to protect PostgreSQL from credential."
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-database-connection-pooling-guide/

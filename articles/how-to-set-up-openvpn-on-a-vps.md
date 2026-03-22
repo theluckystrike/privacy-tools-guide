@@ -203,6 +203,81 @@ sudo cat /var/log/openvpn/status.log
 # From client: curl https://ifconfig.me (should show VPS IP)
 ```
 
+## Split Tunneling: Route Only Specific Traffic Through VPN
+
+Full tunnel (redirect-gateway) routes all client traffic through the VPS. Split tunneling sends only specific subnets through the VPN, leaving other traffic on the client's local internet.
+
+Remove the redirect-gateway push directive and replace it with specific routes:
+
+```conf
+# server.conf — split tunnel example
+# Do NOT push redirect-gateway
+
+# Route internal subnet through VPN
+push "route 10.0.0.0 255.255.0.0"
+push "route 192.168.1.0 255.255.255.0"
+
+# Push DNS only for internal resolution
+push "dhcp-option DNS 10.8.0.1"
+```
+
+On the client, the `.ovpn` file should NOT include `redirect-gateway`. Traffic to `10.0.0.0/16` goes through the VPN; everything else hits the client's ISP directly.
+
+Use split tunneling when:
+- Clients need access to internal services (home lab, office network) but want normal internet speed for other traffic
+- You want to minimize VPS bandwidth consumption
+- Full tunnel creates latency for services geographically close to the client
+
+Verify routing after connection:
+
+```bash
+# On client after connecting
+ip route show
+# Should see: 10.0.0.0/16 via 10.8.0.1 dev tun0
+# Default route should still point to local gateway, not tun0
+curl https://ifconfig.me  # Should show client's ISP IP, not VPS IP
+```
+
+## Hardening: Block DNS Leaks and IPv6
+
+A DNS leak occurs when the client resolves DNS through the ISP's resolver even while connected to VPN. Push DNS servers through the tunnel and disable IPv6 to prevent leaks:
+
+```conf
+# server.conf additions
+push "dhcp-option DNS 10.8.0.1"
+push "dhcp-option DNS 1.1.1.1"
+push "block-outside-dns"  # Windows only, prevents DNS leaks on Windows clients
+
+# Disable IPv6 pushing to prevent v6 leaks
+tun-ipv6 no
+```
+
+On the VPS, run an unbound or dnsmasq resolver that listens on `10.8.0.1` to handle DNS inside the tunnel:
+
+```bash
+sudo apt install unbound
+# /etc/unbound/unbound.conf.d/openvpn.conf
+cat <<'EOF' | sudo tee /etc/unbound/unbound.conf.d/openvpn.conf
+server:
+    interface: 10.8.0.1
+    access-control: 10.8.0.0/24 allow
+    access-control: 127.0.0.1/8 allow
+    do-ip4: yes
+    do-ip6: no
+    hide-identity: yes
+    hide-version: yes
+EOF
+sudo systemctl enable --now unbound
+```
+
+Clients verify there are no leaks with:
+
+```bash
+# Test on client after connecting
+dig +short whoami.akamai.net  # Should resolve through VPS IP
+# Or use https://dnsleaktest.com
+```
+
 ## Related Articles
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)

@@ -238,6 +238,91 @@ log {
 }
 ```
 
+## Forwarding to Elasticsearch or Loki
+
+syslog-ng can ship parsed logs directly to Elasticsearch or Grafana Loki for indexing and dashboards.
+
+**Elasticsearch destination:**
+
+```conf
+@version: 4.0
+@module elasticsearch-http
+
+destination d_elastic {
+    elasticsearch-http(
+        index("syslog-{YEAR}.{MONTH}.{DAY}")
+        type("")
+        url("https://elastic.example.com:9200/_bulk")
+        user("logstash")
+        password("YOUR_PASS")
+        tls(
+            ca-file("/etc/syslog-ng/tls/elastic-ca.crt")
+            peer-verify(required-trusted)
+        )
+        template("$(format-json date=${ISODATE} host=${HOST} program=${PROGRAM}
+                   severity=${LEVEL} message=${MESSAGE} facility=${FACILITY})\n")
+    );
+};
+
+log {
+    source(s_tls_clients);
+    destination(d_elastic);
+};
+```
+
+**Grafana Loki destination via HTTP:**
+
+```conf
+destination d_loki {
+    http(
+        url("http://loki.example.com:3100/loki/api/v1/push")
+        method("POST")
+        headers("Content-Type: application/json")
+        body("{ \"streams\": [{ \"stream\": { \"host\": \"${HOST}\",
+              \"program\": \"${PROGRAM}\" },
+              \"values\": [[\"${UNIXTIME}000000000\",
+              \"${MESSAGE}\"]] }] }")
+    );
+};
+```
+
+Install the Elasticsearch or HTTP module if not present:
+
+```bash
+sudo apt install syslog-ng-mod-http
+sudo systemctl restart syslog-ng
+```
+
+## Monitoring syslog-ng Health
+
+Track dropped messages and connection errors to catch log gaps before they become a problem:
+
+```bash
+# Statistics — shows message counters per source/destination
+syslog-ng-ctl stats | grep -E "(processed|dropped|queued)"
+
+# Watch for connection errors in real time
+sudo journalctl -u syslog-ng -f | grep -i "error\|warn"
+
+# Check TLS handshake failures (clients with expired certs)
+sudo journalctl -u syslog-ng | grep "SSL error"
+```
+
+Add a Prometheus metrics endpoint for automated monitoring:
+
+```conf
+# /etc/syslog-ng/conf.d/metrics.conf
+@version: 4.0
+source s_metrics {
+    metrics-probe();
+};
+```
+
+Then scrape `localhost:8080/metrics` with your Prometheus instance. Key metrics to alert on:
+- `syslogng_input_events_total` dropping to zero for a source (client stopped sending)
+- `syslogng_output_events_dropped_total` rising (destination overloaded or offline)
+- `syslogng_connections` for the TLS source dropping to zero (network partition or cert expiry)
+
 ## Related Articles
 
 - [How To Configure Postfix With Mandatory Tls Encryption](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)

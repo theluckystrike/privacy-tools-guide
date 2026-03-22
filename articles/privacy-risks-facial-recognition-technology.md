@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Risks of Facial Recognition Technology"
-description: "Understand how facial recognition is deployed in surveillance, retail, and hiring, what data is collected, your legal rights, and technical countermeasures that actually work"
+description: "Understand how facial recognition is deployed in surveillance, retail, and hiring, what data is collected, your legal rights, and technical."
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-facial-recognition-technology/

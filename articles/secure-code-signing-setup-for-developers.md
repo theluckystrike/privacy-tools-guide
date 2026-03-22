@@ -180,6 +180,85 @@ vault kv put secret/cosign-key key=@cosign.key
 # gpg --card-edit → admin → generate
 ```
 
+## Enforcing Signed Commits on GitHub
+
+Signing commits is only half the solution. You also need to enforce that unsigned commits cannot be merged into protected branches.
+
+**Branch protection rule (GitHub UI):**
+
+```
+Repository → Settings → Branches → Add branch protection rule
+Branch name pattern: main
+✅ Require signed commits
+✅ Require status checks to pass before merging
+```
+
+**Verify policy in GitHub Actions:**
+
+```yaml
+# .github/workflows/verify-signatures.yml
+name: Verify commit signatures
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check all PR commits are signed
+        run: |
+          git log origin/main..HEAD --format="%H %G?" | while read hash status; do
+            if [ "$status" != "G" ] && [ "$status" != "U" ]; then
+              echo "UNSIGNED commit: $hash (status: $status)"
+              exit 1
+            fi
+          done
+          echo "All commits signed"
+```
+
+For teams, store trusted public keys in the repository and verify against them:
+
+```bash
+# .github/trusted-signers
+# One entry per trusted contributor
+alice@example.com namespaces="git" ssh-ed25519 AAAA...
+bob@example.com namespaces="git" ssh-ed25519 AAAA...
+```
+
+## Key Rotation and Expiry Management
+
+Signing keys should expire. Plan for rotation before expiry to avoid gaps:
+
+```bash
+# Check key expiry
+gpg --list-keys --with-colons | grep "^pub" | cut -d: -f7
+# Output is Unix timestamp of expiry; compare to $(date +%s)
+
+# Extend expiry before it lapses
+gpg --edit-key 3AA5C34371567BD2
+gpg> expire
+# Set new expiry: 2y
+gpg> save
+
+# Re-publish updated key
+gpg --keyserver keys.openpgp.org --send-keys 3AA5C34371567BD2
+```
+
+For cosign keys, rotation means:
+1. Generate a new key pair: `cosign generate-key-pair`
+2. Sign new images with the new key
+3. Verify old images still pass with the old public key (do not discard it)
+4. Update CI secrets: replace `COSIGN_PRIVATE_KEY` with new key value
+5. Document the rotation date and keep the old `cosign.pub` for historical verification
+
+A key rotation schedule — annually at minimum, quarterly for high-security projects — should be part of your supply chain security policy, not a reaction to a compromise.
+
 ## Related Reading
 
 - [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)

@@ -206,6 +206,88 @@ borg check --verify-data /mnt/backup/myrepo
 
 Run `borg check` at least monthly. A backup you have never verified may not be restorable.
 
+## Monitoring Backup Success and Alerting on Failure
+
+A backup that runs silently and fails silently is worse than no backup. Add monitoring to detect failures before you need to restore.
+
+**Email notification on failure:**
+
+```bash
+#!/bin/bash
+# Add to the backup script after the borg create block
+
+MAILTO="alerts@example.com"
+HOSTNAME=$(hostname -s)
+
+if [ $? -ne 0 ]; then
+    echo "Borg backup failed on $HOSTNAME at $(date)" | \
+        mail -s "BACKUP FAILURE: $HOSTNAME" "$MAILTO"
+    exit 1
+fi
+```
+
+**Healthchecks.io integration** (free tier available — pings a URL to confirm backup ran):
+
+```bash
+# Add at the END of your backup script
+# Create a check at healthchecks.io, get the ping URL
+HEALTHCHECK_URL="https://hc-ping.com/your-uuid-here"
+
+curl -fsS --retry 3 "${HEALTHCHECK_URL}" > /dev/null 2>&1
+```
+
+If the cron job does not run or the script exits early, the healthchecks.io check goes stale and sends an alert. No ping = something went wrong.
+
+**Prometheus metrics for Borg:**
+
+```bash
+# After successful backup, write metrics to node_exporter textfile dir
+STATS=$(borg info "${BORG_REPO}::${ARCHIVE_NAME}" --json 2>/dev/null)
+ORIGINAL=$(echo "$STATS" | python3 -c "import sys,json; d=json.load(sys.stdin)['cache']['stats']; print(d['total_size'])")
+
+cat > /var/lib/node_exporter/textfile_collector/borg.prom <<EOF
+# HELP borg_backup_last_success_timestamp Unix timestamp of last successful backup
+# TYPE borg_backup_last_success_timestamp gauge
+borg_backup_last_success_timestamp $(date +%s)
+# HELP borg_backup_original_size_bytes Original data size in bytes
+# TYPE borg_backup_original_size_bytes gauge
+borg_backup_original_size_bytes ${ORIGINAL}
+EOF
+```
+
+Alert in Prometheus if `time() - borg_backup_last_success_timestamp > 86400` (no backup in 24 hours).
+
+## Offsite Replication to Backblaze B2
+
+Borg native repositories can be mirrored to Backblaze B2 using rclone after the local backup completes:
+
+```bash
+# Install rclone
+curl https://rclone.org/install.sh | sudo bash
+
+# Configure B2 backend
+rclone config
+# Type: b2, account ID: your_key_id, key: your_application_key
+
+# Sync the Borg repo directory to B2
+rclone sync /mnt/backup/myrepo \
+  b2:my-backup-bucket/myhost \
+  --fast-list \
+  --transfers 4 \
+  --b2-hard-delete
+
+# Add to backup script after borg compact:
+rclone sync "${LOCAL_BORG_DIR}" "b2:my-bucket/${HOSTNAME}" \
+  --fast-list --transfers 4 >> "$LOG" 2>&1
+```
+
+Borg's data blocks are already AES-256 encrypted before rclone uploads them — Backblaze never sees plaintext data. This gives you:
+- Local copy for fast restores
+- Offsite encrypted copy in B2 for disaster recovery
+- B2 versioning enabled at the bucket level for additional snapshot retention
+
+Keep B2 costs low: enable B2's lifecycle rules to delete files older than your longest retention period.
+
 ## Related Articles
 
 - [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)

@@ -132,7 +132,7 @@ PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j A
 - Address `10.0.0.1/24`: Internal VPN subnet (10.0.0.0 to 10.0.0.255)
 - ListenPort `51820`: WireGuard listens on UDP 51820 (change if desired)
 - PostUp/PostDown: Enable IP forwarding and NAT (allows VPN clients to access internet)
-{% endraw %}
+
 
 ### Enable IP Forwarding
 
@@ -192,7 +192,7 @@ For each device connecting to the VPN, generate a unique key pair.
 
 ### Generate Client 1 Keys
 
-{% raw %}
+
 ```bash
 # On server, generate keys for first client
 cd /etc/wireguard

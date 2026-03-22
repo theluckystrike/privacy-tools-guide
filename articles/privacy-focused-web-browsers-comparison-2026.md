@@ -124,11 +124,11 @@ privacy.resistFingerprinting = true
 dom.disable_beforeunload = true
 network.cookie.cookieBehavior = 4  # Reject all third-party cookies
 ```
-{% endraw %}
+
 
 **Privacy Testing:**
 
-{% raw %}
+
 Test: Privacy dashboard (Firefox built-in)
 - Shows blocked trackers per site
 - Example: nytimes.com = 127 trackers blocked

@@ -274,6 +274,108 @@ docker logs authelia -f | grep -E "(authentication|access_control|banned)"
 docker logs authelia | grep "alice" | tail -20
 ```
 
+## Migrating from File-Based to LDAP Authentication
+
+The flat `users_database.yml` works for small self-hosted setups. When you need centralized user management across multiple services, switch to LDAP. This lets you add and remove users in one place rather than editing YAML files.
+
+Replace the `authentication_backend` block in `configuration.yml`:
+
+```yaml
+authentication_backend:
+  ldap:
+    url: ldap://lldap:3890
+    base_dn: DC=yourdomain,DC=com
+    username_attribute: uid
+    additional_users_dn: OU=people
+    users_filter: "(&({username_attribute}={input})(objectClass=person))"
+    additional_groups_dn: OU=groups
+    groups_filter: "(member={dn})"
+    group_name_attribute: cn
+    mail_attribute: mail
+    display_name_attribute: displayName
+    user: CN=readonly,OU=people,DC=yourdomain,DC=com
+    password: "readonly-bind-password"
+```
+
+`lldap` (Lightweight LDAP) is a popular Docker container for self-hosted LDAP:
+
+```yaml
+# Add to docker-compose.yml
+lldap:
+  image: lldap/lldap:stable
+  container_name: lldap
+  restart: unless-stopped
+  environment:
+    - LLDAP_JWT_SECRET=your-jwt-secret
+    - LLDAP_LDAP_USER_PASS=admin-password
+    - LLDAP_LDAP_BASE_DN=dc=yourdomain,dc=com
+  volumes:
+    - ./lldap-data:/data
+  networks:
+    - proxy
+```
+
+Once lldap is running, use its web UI at port 17170 to manage users and groups. Authelia reads the LDAP directory without a local file to manage.
+
+## Authelia with OAuth2 / OpenID Connect
+
+Authelia 4.35+ supports acting as an OpenID Connect provider. This means applications that support OIDC (Nextcloud, Gitea, Grafana) can delegate login to Authelia rather than requiring `forwardAuth`.
+
+Add to `configuration.yml`:
+
+```yaml
+identity_providers:
+  oidc:
+    hmac_secret: "your-hmac-secret-32-chars-minimum"
+    issuer_private_key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      (generate with: openssl genrsa 4096)
+      -----END RSA PRIVATE KEY-----
+
+    clients:
+      - id: nextcloud
+        description: Nextcloud
+        secret: "client-secret-here"
+        public: false
+        authorization_policy: two_factor
+        redirect_uris:
+          - https://nextcloud.yourdomain.com/apps/user_oidc/code
+        scopes:
+          - openid
+          - profile
+          - email
+          - groups
+        userinfo_signing_algorithm: none
+
+      - id: grafana
+        description: Grafana
+        secret: "another-client-secret"
+        public: false
+        authorization_policy: one_factor
+        redirect_uris:
+          - https://grafana.yourdomain.com/login/generic_oauth
+        scopes:
+          - openid
+          - profile
+          - email
+```
+
+In Grafana's `grafana.ini`, configure:
+
+```ini
+[auth.generic_oauth]
+enabled = true
+name = Authelia
+client_id = grafana
+client_secret = another-client-secret
+scopes = openid profile email groups
+auth_url = https://auth.yourdomain.com/api/oidc/authorization
+token_url = https://auth.yourdomain.com/api/oidc/token
+api_url = https://auth.yourdomain.com/api/oidc/userinfo
+```
+
+OIDC is more secure than forwardAuth for apps that support it — the application handles the token exchange directly rather than relying on proxy headers.
+
 ## Related Articles
 
 - [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
