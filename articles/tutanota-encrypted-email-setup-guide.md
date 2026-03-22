@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -18,15 +19,6 @@ tags: [privacy-tools-guide]---
 
 Tutanota (now rebranded as Tuta) encrypts email end-to-end between Tutanota users automatically, and can encrypt to external recipients using a shared password. Unlike ProtonMail, Tutanota also encrypts subject lines — a meaningful privacy detail since subject lines are often more revealing than message bodies.
 ---
-
-## Key Takeaways
-
-- **--- ## Create an**: Account Tutanota's free plan includes 1GB storage and one email address.
-- **The Revolutionary plan at**: €6/month includes 20 custom domains and up to 100 aliases, which is useful if you want compartmentalized identities for different purposes.
-- **Go to `tuta.com` →**: Create free account 2.
-- **Choose your `@tuta.com` or**: `@tutanota.com` address 3.
-- **This lets you use**: `support@yourdomain.com`, `personal@yourdomain.com`, and similar addresses, all received in the same inbox.
-- **Store backups in an encrypted volume**: on macOS, use a disk image created with Disk Utility (Format: Mac OS Extended, Encryption: AES-256).
 
 ## Table of Contents
 

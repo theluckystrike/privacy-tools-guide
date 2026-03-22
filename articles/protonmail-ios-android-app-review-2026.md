@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 ProtonMail's 2026 iOS and Android apps are worth it for developers and power users who need reliable encrypted email with full-text search, biometric lock, offline access, and IMAP integration via ProtonMail Bridge. The apps deliver solid performance on mid-range devices, feature parity across platforms, and a sound OpenPGP-based security architecture -- though search on large mailboxes can be slow and full API access requires the desktop Bridge application.
 
-## Key Takeaways
-
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **Free plans cap attachments at 25MB**: with higher limits on paid tiers.
-- **Free and basic plans**: typically get community forum support and documentation.
-- **The apps use the OpenPGP standard**: which provides interoperability with other encrypted email systems.
-- **For teams requiring encrypted**: email with cross-platform mobile support, ProtonMail's open-standards foundation and active development keep it a mature option in 2026.
-- **If you use ProtonMail daily for core tasks**: the cost usually pays for itself through time savings.
-
 ## Table of Contents
 
 - [Application Architecture and Security Model](#application-architecture-and-security-model)

@@ -11,18 +11,12 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
 Reproductive healthcare providers in restricted states must encrypt patient data at rest and in transit, minimize documentation of specific procedures while maintaining clinical safety records, implement legal holds for appropriate records retention, establish attorney-client privilege for sensitive communications, and train staff on protecting themselves from personal legal liability. Anticipate warrantless data requests, out-of-state litigation, and aggressive law enforcement inquiries. This guide provides actionable technical implementations for patient data protection, staff communications hardening, access controls, and operational security tailored to the 2026 restrictive legal environment.
-
-## Key Takeaways
-
-- **If you must use them**: implement additional encryption layer using tools like Cryptomator.
-- **The goal is raising**: the cost of data access beyond what most adversaries can sustain while maintaining the ability to provide essential healthcare services.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Prerequisites
 

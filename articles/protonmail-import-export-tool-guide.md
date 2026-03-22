@@ -11,34 +11,12 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "ProtonMail Import Export Tool Guide"
-description: "Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (brew install --cask"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /protonmail-import-export-tool-guide/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (`brew install --cask proton-mail-bridge`) for continuous desktop client sync, or the Proton Mail API for automated developer integrations. For imports, upload MBOX files through the web interface or push messages via IMAP. This guide covers step-by-step configuration for each method, including Python automation scripts and cron-based backup scheduling.
-
-## Key Takeaways
-
-- **The export generates a**: MBOX file that works with most email clients.
-- **To use the API**: you need to create an app in your Proton Mail account settings and obtain OAuth credentials.
-- **Note that Proton's API uses a custom authentication flow**: standard OAuth libraries need adaptation.
-- **However**: for automated or bulk imports, IMAP remains the most practical approach.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Prerequisites
 

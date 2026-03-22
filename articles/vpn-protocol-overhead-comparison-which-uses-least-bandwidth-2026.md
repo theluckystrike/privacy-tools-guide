@@ -15,23 +15,13 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 
 {% raw %}
 
 WireGuard uses the least bandwidth (4% overhead) with modern cryptography and minimal headers, followed by IKEv2 (8-10%) and OpenVPN (15-25% depending on settings). For metered connections or slow networks, use WireGuard. For censorship resistance where protocols get detected, use obfuscated Shadowsocks or NaiveProxy (slight bandwidth penalty but essential in restrictive environments). The choice depends on your threat model: bandwidth-critical scenarios favor WireGuard, while censorship-heavy regions require obfuscation despite overhead costs.
-
-## Key Takeaways
-
-- **WireGuard uses the least**: bandwidth (4% overhead) with modern cryptography and minimal headers, followed by IKEv2 (8-10%) and OpenVPN (15-25% depending on settings).
-- **Choose WireGuard whenever possible**: It consistently uses the least bandwidth
-2.
-- **For censorship resistance where**: protocols get detected, use obfuscated Shadowsocks or NaiveProxy (slight bandwidth penalty but essential in restrictive environments).
-- **Prefer UDP over TCP**: If using OpenVPN or IKEv2
-3.
-- **With 4-15% overhead compared to 15-30% for OpenVPN, you'll notice the difference**: especially on slower connections or when transferring large amounts of data.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
 ## Understanding VPN Protocol Overhead
 
@@ -262,7 +252,7 @@ hosts = [*]
 action = block
 ```
 
-NaiveProxy adds minimal overhead (2-5%) because it leverages existing HTTP/HTTPS infrastructure, but works best for censorship resistance rather than pure speed.
+NaiveProxy adds minimal overhead (2-5%) because it uses existing HTTP/HTTPS infrastructure, but works best for censorship resistance rather than pure speed.
 
 ## Latency Considerations Beyond Bandwidth
 

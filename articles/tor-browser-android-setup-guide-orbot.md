@@ -11,20 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Tor Browser on Android provides powerful privacy protection, but configuring it correctly with Orbot requires understanding how these tools work together. This guide covers the complete setup process for developers and power users who want to maximize their mobile privacy.
-
-## Key Takeaways
-
-- **This is the recommended**: setup for most users.
-- **Choose obfs4 for obfuscated**: bridges 4.
-- **This guide covers the**: complete setup process for developers and power users who want to maximize their mobile privacy.
-- **For maximum privacy**: F-Droid is recommended as it provides reproducible builds.
-- **The app provides an**: one-tap connect option, but power users should access advanced settings for optimal configuration.
-- **Configure app-specific routing if**: needed This creates a system-wide VPN that forces all applications to use Tor, not just the browser.
 
 ## Prerequisites
 

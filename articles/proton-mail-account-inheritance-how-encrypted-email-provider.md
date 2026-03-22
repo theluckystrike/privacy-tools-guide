@@ -11,22 +11,13 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}
 
 Proton Mail accounts cannot be inherited because encryption keys are destroyed when you die—even Proton itself cannot access your emails. Plan for this by designating a legacy contact in Proton account settings, exporting encrypted backups with a password shared in your will, or directing heirs to your dead man's switch credentials. For long-term family email access, consider using emergency contacts within Proton's recovery system, but understand that truly encrypted email is incompatible with traditional inheritance.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Proton does have a**: deceased user process, but its scope is limited.
-- **Google can technically fulfill such requests because they hold the decryption keys for their encrypted-at-rest storage**: a fundamentally different security model than true E2EE.
-- **For users with significant**: digital assets stored in encrypted email, consider these practical steps: 1.
-- **Separating roles**: Use personal Proton Mail for truly private communications, separate business email (potentially non-encrypted) for matters that need succession
-2.
 
 ## Table of Contents
 
@@ -469,7 +460,7 @@ create_estate_document()
 | State | UFADAA Adopted | Key Provision | Encrypted Account Handling |
 |-------|---|---|---|
 | California | Yes | Full support for digital assets | Requires credentials to access |
-| New York | Yes | Comprehensive fiduciary access | Balanced with privacy expectations |
+| New York | Yes | fiduciary access | Balanced with privacy expectations |
 | Texas | Yes | Broad fiduciary authority | Limited by encryption |
 | Florida | Yes | Covers social media, email | E2EE limits practical enforcement |
 | Massachusetts | Yes | Privacy-protective | Encrypted accounts may be unrecoverable |

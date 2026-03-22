@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Every search query to Google, Bing, or DuckDuckGo is logged, profiled, and used to build a behavioral record. Self-hosting a meta search engine means your queries pass through your server to multiple search backends — no account, no persistent profile, no tracking cookie. This guide covers SearXNG and Whoogle, the two strongest self-hosted options.
 
-## Key Takeaways
-
-- **Topics covered**: searxng vs whoogle, option 1: searxng with docker, searxng configuration deep dive
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## SearXNG vs Whoogle
 
 | Feature | SearXNG | Whoogle |

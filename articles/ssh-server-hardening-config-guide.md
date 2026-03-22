@@ -11,36 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "SSH Server Hardening Config Guide"
-description: "Step-by-step guide to hardening sshd_config on Linux servers. Disable root login, enforce key auth, restrict ciphers, and set up fail2ban"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: ssh-server-hardening-config-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 A default SSH installation accepts password logins, allows root access, and supports legacy ciphers that have known weaknesses. Every internet-facing server running stock SSH config is one brute-force attempt away from disaster.
 
 This guide walks through locking down `sshd_config` to a minimal, defensible state — key-only authentication, no root login, restricted algorithms, and basic rate limiting.
-
-## Key Takeaways
-
-- **If you must use**: RSA for compatibility with older systems, use RSA-4096 at minimum.
-- **The `curve25519` options are preferred when both sides support them**: they are faster and resist attacks that target traditional finite-field DH.
-- **Older `hmac-sha2-512` without `etm`**: uses MAC-Then-Encrypt, which enables padding oracle attacks.
-- **Group 14 uses 2048-bit**: DH which is borderline acceptable, but groups 16 (4096-bit) and 18 (8192-bit) with SHA-512 are definitively modern.
-- **A default SSH installation**: accepts password logins, allows root access, and supports legacy ciphers that have known weaknesses.
-- **This guide walks through locking down `sshd_config` to a minimal, defensible state**: key-only authentication, no root login, restricted algorithms, and basic rate limiting.
 
 ## Prerequisites
 
@@ -416,11 +394,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
-- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
-- [Complete Guide To Operating System Hardening For Extreme Pri](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
-- [How To Use Ssh Tunneling For Encrypted Communication Between](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
-- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
-
+- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
+- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
+- [How To Prepare Ssh Key And Server Access Documentation](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

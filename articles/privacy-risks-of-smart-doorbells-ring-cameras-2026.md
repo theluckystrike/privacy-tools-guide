@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, smart-home, surveillance, privacy, ring-camera, secu
 
 Ring, Google Nest, and Arlo sell doorbell and camera footage to law enforcement without warrants. Ring provided video to police 12,000+ times in 2023 with minimal user consent. Footage is retained indefinitely on company servers, creating permanent surveillance records. Default privacy settings expose footage to family members, neighbors, and company employees. Ring offers minimal encryption, lacks end-to-end encryption, and sends video through Amazon servers. This guide analyzes data flows, government access patterns, privacy settings, alternatives, and risk mitigation strategies.
 
-## Key Takeaways
-
-- **Ring partnerships**: Works with 2000+ police departments. Provides video without warrant in 90%+ of requests. No push notification when police access footage.
-- **Data retention**: Ring stores footage on AWS servers indefinitely. Deleted locally doesn't delete from cloud. Arlo retains 30-90 days. Nest retains 30 days (free) to unlimited (paid).
-- **Default settings leak**: Ring family members can see live stream. Neighbors can see package deliveries. Employees can access footage for "training purposes."
-- **Encryption**: Ring uses HTTPS (transport encryption only, not end-to-end). Arlo uses better encryption but still cloud-stored. Nest balances security with Google convenience.
-- **Privacy alternatives**: Wyze (no police partnerships, local storage option), Logitech Logi Circle View (local-first), Reolink (no cloud required, local NVR/PoE).
-- **Risk level**: High for Ring. Medium for Arlo. Medium-Low for Nest. Depends on threat model.
-
 ## Table of Contents
 
 - [Understanding Smart Doorbell Architecture](#understanding-smart-doorbell-architecture)
@@ -657,12 +648,11 @@ Option 3: Local recording only (tech-forward)
 
 ## Related Articles
 
-- [Smart Home Privacy: Securing IoT Devices From Surveillance](/privacy-tools-guide/smart-home-privacy-iot-devices/)
-- [How to Opt Out of Smart Camera Police Partnerships](/privacy-tools-guide/opt-out-smart-camera-police-partnerships/)
-- [Local vs Cloud Video Recording: Privacy Comparison](/privacy-tools-guide/local-vs-cloud-video-recording-privacy/)
-- [Protecting Your Family's Privacy in Smart Homes](/privacy-tools-guide/protecting-family-privacy-smart-homes/)
-- [Your Rights When Police Request Doorbell Camera Footage](/privacy-tools-guide/your-rights-police-doorbell-camera-footage/)
-
+- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
 {% endraw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -11,23 +11,14 @@ tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 {% raw %}
 ## Overview
 
 
 Activist communication faces unique threats: state surveillance, device seizure, network monitoring. This guide covers four secure messaging platforms—Signal, Briar, Session, and Cwtch—each designed for different threat models. No messaging app is perfect; this guide helps you choose based on your specific risks.
 
-
-## Key Takeaways
-
-- **Or use biometric unlock**: that can't be forced (in some jurisdictions) --- ### Step 3: Session Session is a fork of Signal that removes the phone number requirement.
-- **Use disappearing messages. Signal**: supports disappearing messages (24 hours default).
-- **Use weak password (so**: "I forgot it" is plausible) 2.
-- **Download Cwtch (currently beta**: limited mobile support)
-2.
-- **Use trusted contacts only**: (mutual OG relationships) Before Arrest (Briar): 1.
-- **Use strong password (but**: memorizable) 2.
 
 ## Threat Model Spectrum
 

@@ -11,35 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
 ---
-layout: default
-title: "Xmpp Omemo Encryption Setup Guide"
-description: "A practical guide to setting up OMEMO encryption for XMPP messaging. Learn how to configure your client, manage identity keys, and achieve end-to-end"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /xmpp-omemo-encryption-setup-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 
 {% raw %}
 
 To set up OMEMO encryption on XMPP, install an OMEMO-capable client (Gajim on desktop: `sudo apt install gajim gajim-omemo`, or Conversations on Android), enable the OMEMO plugin in your account settings, then verify your contact's fingerprint through a separate trusted channel. Once enabled, your client automatically generates identity keys and handles per-message encryption with forward secrecy -- the detailed steps for each client, key management, and troubleshooting follow below.
-
-## Key Takeaways
-
-- **Use onion-only XMPP servers**: if available # Example: xmpp5u7z6zzq3x5r.onion (Conversations' server over Tor) # 3.
-- **The protocol offers forward**: secrecy—even if your long-term keys are compromised, past conversations remain secure because each message uses an unique session key.
-- **Most modern XMPP clients support OMEMO**: including Conversations (Android), Gajim (desktop), Dino (Linux), and Psi+ (cross-platform).
-- **You can register on servers like `xmpp.jp`**: `jabber.de`, or `conversations.im`—all of which support the required XEP-0384 extension.
-- **Most clients handle this automatically**: but periodic manual verification of critical contacts remains good practice.
-- **Trust your server**: Use servers run by organizations you trust (EFF-endorsed servers, institutional servers)
-2.
 
 ## Table of Contents
 

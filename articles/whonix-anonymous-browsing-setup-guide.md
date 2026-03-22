@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -18,16 +19,6 @@ tags: [privacy-tools-guide]---
 
 Whonix is a two-VM anonymity system: the Gateway routes all traffic through Tor; the Workstation is completely isolated from the internet and can only communicate through the Gateway. Even if the Workstation is compromised — by malware, an exploit, or user error — the attacker cannot discover your real IP because the Workstation has no direct internet access.
 ---
-
-## Key Takeaways
-
-- **"Configure" → Tor settings
-   - Default**: Connect directly to Tor (works in most countries)
-   - Restricted: Add bridges if Tor is blocked in your country
-3.
-- **Even if the Workstation is compromised**: by malware, an exploit, or user error — the attacker cannot discover your real IP because the Workstation has no direct internet access.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Topics covered**: architecture, option 1: virtualbox (easiest), download and import
 
 ## Table of Contents
 

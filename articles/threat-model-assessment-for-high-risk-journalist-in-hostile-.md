@@ -11,34 +11,11 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Threat Model Assessment For High Risk Journalist In Hostile"
-description: "A practical guide to security threat modeling for journalists operating in hostile environments. Includes actionable frameworks and technical"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /threat-model-assessment-for-high-risk-journalist-in-hostile-/
-reviewed: true
-score: 8
-voice-checked: true
-categories: [guides]
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 
 Create a threat model by assessing your adversaries' capabilities (state surveillance, ISP monitoring, physical targeting), identifying attack vectors (device seizure, source compromise, metadata exposure), and implementing layered defenses: separate reporting device with clean OS, Tor for communications, encrypted storage with plausible deniability, and operational security protocols (regular pattern-breaking, location variation). Document your threat model, update it as conditions change, and maintain emergency exfiltration plans with trusted international contacts.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Burner device**: Cheap phone with prepaid SIM, used only for travel
-3.
-- **Document time and indicators**: echo "$(date): Emergency activation - suspicious network activity" >> ~/.emergency_log # 4.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Table of Contents
 

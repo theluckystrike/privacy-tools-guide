@@ -461,11 +461,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [iOS Journal App Privacy Settings Explained: A Complete Guide](/privacy-tools-guide/ios-journal-app-privacy-settings-explained/)
-- [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
-- [Freelancer Privacy Protecting Client Data On Personal Comput](/privacy-tools-guide/freelancer-privacy-protecting-client-data-on-personal-comput/)
-- [Tinder Passport Feature Privacy Implications What Location D](/privacy-tools-guide/tinder-passport-feature-privacy-implications-what-location-d/)
-- [EA App Origin Replacement Privacy Data Collection Review.](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
-
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
+- [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
+- [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

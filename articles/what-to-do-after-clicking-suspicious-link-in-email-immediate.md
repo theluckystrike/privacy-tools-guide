@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Immediately disconnect from the network, force-quit your browser, and do not enter any credentials or interact with the page that loaded. Once isolated, check your downloads folder for unexpected files, scan for unusual processes, and rotate passwords for any accounts where you use the same credentials. Acting within the first 60 seconds prevents ongoing communication with attacker-controlled servers and stops potential data exfiltration before it starts.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Acting within the first**: 60 seconds prevents ongoing communication with attacker-controlled servers and stops potential data exfiltration before it starts.
-- **Use a password manager to generate new**: unique passwords.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Immediate Actions (First 60 Seconds)](#immediate-actions-first-60-seconds)

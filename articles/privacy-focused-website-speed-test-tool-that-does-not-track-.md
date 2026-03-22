@@ -10,22 +10,12 @@ voice-checked: true
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Most mainstream website speed test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics. For developers and power users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks. This guide covers privacy-focused alternatives that measure website performance without tracking or logging tested URLs.
-
-## Key Takeaways
-
-- **GTmetrix retains test results**: and associated URLs for up to 90 days by default on free accounts.
-- **Check network traffic**: Use Wireshark or your browser's network inspector to confirm no unexpected requests go to analytics endpoints
-2.
-- **Review source code**: Open-source tools allow you to verify no URL exfiltration occurs
-3.
-- **Most mainstream website speed**: test tools collect and store the URLs you test, often sharing them with third parties or using them for analytics.
-- **For developers and power**: users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks.
-- **This guide covers privacy-focused**: alternatives that measure website performance without tracking or logging tested URLs.
 
 ## Table of Contents
 
@@ -339,15 +329,9 @@ When evaluating any speed testing tool, verify its privacy claims:
 3. **Test with a unique URL**: Create an URL with a distinctive subdomain, then search for it in public databases to see if it was logged
 4. **Read the privacy policy**: Look for explicit statements about URL retention and third-party sharing
 
-## Conclusion
-
-Privacy-focused website speed testing requires moving away from public services that log URLs. Self-hosted solutions like WebPageTest, CLI tools using curl or Puppeteer, and custom scripts all provide accurate performance data while keeping your tested URLs private. Choose the approach that matches your technical requirements and infrastructure capabilities.
-
-For teams regularly testing multiple sites, investing in a self-hosted WebPageTest instance or building a custom dashboard pays dividends in both privacy and control over your testing workflow.
-
 ## Advanced Metrics: Beyond Basic Speed
 
-Modern web performance includes metrics that simple curl tests miss. Implement comprehensive measurement:
+Modern web performance includes metrics that simple curl tests miss. Implement measurement:
 
 ```javascript
 // comprehensive-metrics.js - Full page performance analysis

@@ -11,25 +11,14 @@ tags: [privacy-tools-guide, tools, best-of]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Traditional file sharing (Dropbox, Google Drive, OneDrive) logs server-side metadata. Even with password protection, service providers see file names, access patterns, and IP addresses. For sensitive documents (medical records, legal files, financial data, NDAs), end-to-end encryption is required.
 
 This guide compares five E2E encrypted file sharing tools: OnionShare, Tresorit Send, Wormhole (Magic Wormhole), Firefox Send alternatives, and open-source options. We focus on security implementation, usability, CLI support, file size limits, and pricing.
-
-## Key Takeaways
-
-- **Best Alternative**: CryptDrop
-
-CryptDrop is a privacy-focused file sharing service (uses Mozilla's older Firefox Send code).
-- **This guide compares five**: E2E encrypted file sharing tools: OnionShare, Tresorit Send, Wormhole (Magic Wormhole), Firefox Send alternatives, and open-source options.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **We focus on security implementation**: usability, CLI support, file size limits, and pricing.
-- **Optional**: Add password, set download limit
-5.
 
 ## OnionShare
 

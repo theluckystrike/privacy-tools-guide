@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Windows Group Policy provides granular control over system behavior, including privacy-related settings that affect data collection and telemetry. For developers and power users, understanding these settings is essential for building privacy-respecting systems or hardening workstations against unnecessary data exfiltration.
 
-## Key Takeaways
-
-- **What telemetry level 0 actually stops**: Required diagnostic data (crash reports, device compatibility data, error reports) continues even at level 0 on some editions.
-- **Use this on machines**: where you are confident the hardware is not needed by any app.
-- **Most privacy settings reside**: under Administrative Templates within each section.
-- **Only Enterprise and Education**: editions can fully disable required telemetry.
-- **If you do not use Timeline**: disabling this has no functional cost.
-- **Microsoft has a history**: of resetting user preferences on major updates.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

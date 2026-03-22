@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security, pri
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Privacy Risks of Period Tracking Apps 2026"
-description: "Data collection by Flo, Clue, Natural Cycles. Legal risks post-Dobbs, privacy-preserving alternatives, data deletion guides."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /privacy-risks-of-period-tracking-apps-2026/
-categories: [guides]
-tags: [privacy-tools-guide, reproductive-health, data-privacy, app-security, privacy]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 Period tracking apps (Flo, Clue, Natural Cycles) collect intimate health data—menstrual cycle timing, flow, symptoms, sexual activity, contraceptive use—and share it with advertisers, data brokers, and third-party analytics. Post-Dobbs decision, this data is legally exploitable by law enforcement in states criminalizing abortion. Flo has admitted sharing data without consent; Clue recently encrypted data by default but collects anyway; Natural Cycles' failure to protect users resulted in lawsuits. For privacy, use open-source tools (Gnome Calendar with local tracking, Drip, or Periodica), offline-first apps, or simple calendar notation. Understand each app's data practices before use. Delete accounts and request data erasure from companies. Consider periodic in-app anonymization: use aliases, track minimal data, avoid sharing with apps and platforms.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **For privacy**: use open-source tools (Gnome Calendar with local tracking, Drip, or Periodica), offline-first apps, or simple calendar notation.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The legal environment is evolving**: 14 states have explicit protections for reproductive health data, but most states lack protection.
-- **In 2021, Flo admitted sharing user data with third parties**: including Facebook, Google, Amazon—without explicit consent.
-- **In 2022**: Clue announced end-to-end encryption for user data.
 
 ## Table of Contents
 

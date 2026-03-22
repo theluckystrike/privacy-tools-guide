@@ -11,34 +11,12 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Setup for Immigration Activist"
-description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Immigration activists and organizers face unique security challenges when working with undocumented community members. Beyond standard privacy practices, you must protect people whose safety depends on operational security. This guide provides technical implementation details for setting up a privacy-respecting infrastructure tailored to immigration advocacy work.
-
-## Key Takeaways
-
-- **A basic Faraday bag**: costs under $20 and is effective when the phone is fully powered down or in airplane mode with the bag sealed.
-- **It uses the Signal**: protocol over an onion routing network.
-- **Receive documents only through**: encrypted channels 2.
-- **Use secure deletion (shred)**: when disposing of documents ### VeraCrypt for Community Member Document Vaults VeraCrypt hidden volumes are particularly valuable for immigration casework.
-- **The correct approach is**: to work with your attorney to identify which categories of records fall under hold requirements, then apply aggressive deletion only to communications not covered by the hold.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Threat Modeling Before You Configure Anything
 

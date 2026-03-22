@@ -19,21 +19,6 @@ tags: [privacy-tools-guide, privacy]
 A fitness tracker knows your resting heart rate, sleep patterns, menstrual cycle, stress levels, activity at 3am, and location throughout the day. This data is more revealing than most people realize — health insurers, employers, and data brokers have significant financial interest in it. This guide covers what each device collects, who accesses it, and what you can actually do.
 ---
 
-## Key Takeaways
-
-- **Discounts of $100-300/year in**: exchange for continuous health monitoring.
-- **This data is more revealing than most people realize**: health insurers, employers, and data brokers have significant financial interest in it.
-- **What Google/Fitbit stores**: - Full sensor history
-- Sleep logs
-- GPS routes
-- Connected apps data
-- Google account tied to all of it
-
-Access: US users are subject to CLOUD Act requests.
-- **Oura also worked with the NBA and employers during COVID to use ring data for health monitoring**: raising concerns about employer access to health data.
-- **Life insurance**: John Hancock's Vitality program uses Apple Watch data to adjust life insurance premiums dynamically.
-- **A subpoena for Fitbit**: records has been used in US criminal cases to establish alibis and disprove them.
-
 ## Table of Contents
 
 - [What Fitness Trackers Collect](#what-fitness-trackers-collect)

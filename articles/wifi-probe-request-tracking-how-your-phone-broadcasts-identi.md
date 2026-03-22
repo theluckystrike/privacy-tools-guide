@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Wifi Probe Request Tracking How Your Phone Broadcasts"
-description: "Learn how WiFi probe requests work, what data your phone broadcasts, and how developers can capture and analyze these signals for privacy research"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /wifi-probe-request-tracking-how-your-phone-broadcasts-identi/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 Your phone continuously broadcasts WiFi probe requests containing its MAC address and the names (SSIDs) of previously connected networks, which anyone with a basic wireless adapter and tools like Wireshark or airodump-ng can capture to track your location and movement patterns. While modern iOS and Android devices use MAC address randomization to mitigate this, the randomization is imperfect—devices often revert to their real MAC when connecting, and the list of probed SSIDs itself creates a unique fingerprint. To reduce exposure, disable WiFi when not actively connected, periodically clear saved network lists, and use a device that supports full probe request suppression.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **IPhone X sends requests every 10-20 seconds**: while Android 11 devices use different intervals.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **To reduce exposure**: disable WiFi when not actively connected, periodically clear saved network lists, and use a device that supports full probe request suppression.
-- **Research from the University**: of Hamburg demonstrated that 90% of devices could still be tracked despite MAC randomization through these fingerprinting techniques.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Table of Contents
 

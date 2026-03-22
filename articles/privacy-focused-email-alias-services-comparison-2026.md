@@ -49,7 +49,7 @@ Email is the master key to your digital identity. Every website, service, and ap
 
 ### SimpleLogin
 
-**Website:** simplelogin.io  
+**Website:** simplelogin.io 
 **Pricing:** Free ($0), Pro ($30/year), Family ($99/year for 5 people)
 
 **Strengths:**
@@ -84,7 +84,7 @@ Email is the master key to your digital identity. Every website, service, and ap
 
 ### AnonAddy (Anonymous Addymail)
 
-**Website:** anonaddy.com  
+**Website:** anonaddy.com 
 **Pricing:** Free ($0), Lite ($1–$4/month), Standard ($5/month), Plus ($10/month)
 
 **Strengths:**
@@ -119,7 +119,7 @@ Email is the master key to your digital identity. Every website, service, and ap
 
 ### Firefox Relay (Firefox Private Relay)
 
-**Website:** relay.firefox.com  
+**Website:** relay.firefox.com 
 **Pricing:** Free ($0), Premium ($1/month, $11.99/year)
 
 **Strengths:**
@@ -153,12 +153,12 @@ Email is the master key to your digital identity. Every website, service, and ap
 
 ### Apple Hide My Email
 
-**Website:** iCloud.com (Settings → Privacy)  
+**Website:** iCloud.com (Settings → Privacy) 
 **Pricing:** Included with iCloud+ subscription ($0.99–$9.99/month)
 
 **Strengths:**
 - Integrated into Apple ecosystem (Mail, Safari autofill)
-- Works on iPhone, Mac, iPad seamlessly
+- Works on iPhone, Mac, iPad 
 - One-click alias generation on any email field
 - Tied to Apple security (two-factor authentication)
 
@@ -186,7 +186,7 @@ Email is the master key to your digital identity. Every website, service, and ap
 
 ### Proton Mail (Legacy)
 
-**Website:** protonmail.com  
+**Website:** protonmail.com 
 **Status:** Being phased out in favor of Proton Mail + Proton Pass combo
 
 **Alternative:** Use Proton Mail + Proton Pass ($119.88/year for all Proton services)

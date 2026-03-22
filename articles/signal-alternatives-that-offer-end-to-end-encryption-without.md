@@ -16,15 +16,6 @@ tags: [privacy-tools-guide, encryption]
 
 {% raw %}
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **While it doesn't require phone numbers**: it does require choosing a homeserver—picking who hosts your data.
-- **Use Matrix for team**: collaboration—federation and bridges provide the most flexibility 2.
-- **Use Session for direct**: messaging where metadata resistance is paramount 3.
-- **Use SimpleX for threat**: models requiring zero-identifier architecture 4.
-
 ## Table of Contents
 
 - [Introduction](#introduction)

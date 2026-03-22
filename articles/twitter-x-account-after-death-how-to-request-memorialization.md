@@ -11,29 +11,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}
 
 When a loved one passes away, their digital footprint requires attention just like their physical belongings. Twitter X (formerly Twitter) provides mechanisms for family members and authorized representatives to request either memorialization or complete removal of deceased user accounts. This guide covers the technical and procedural aspects for developers building tools around this process and power users handling these situations directly.
-
-## Key Takeaways
-
-- **Twitter X (formerly Twitter)**: provides mechanisms for family members and authorized representatives to request either memorialization or complete removal of deceased user accounts.
-- **This guide covers the**: technical and procedural aspects for developers building tools around this process and power users handling these situations directly.
-- **For deceased user matters**: you cannot access the account through the API without proper authorization.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
-### Step 1: Understand Twitter X's Deceased User Policies
-
-Twitter X offers two primary options for handling deceased user accounts:
-
-1. **Memorialization**: Converts the account into a memorial state where it remains visible but read-only. The account cannot be logged into, and profile information is preserved for friends and family to view.
-
-2. **Deactivation (Removal)**: Completely removes the account and all associated data from Twitter X's servers.
-
-Neither option provides access to the account's content for family members. If you need to preserve tweets, you must request a data archive before the account is memorialized or deactivated.
 
 ## Prerequisites for Submission
 

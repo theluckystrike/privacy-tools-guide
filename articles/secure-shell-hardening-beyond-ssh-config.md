@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 SSH configuration (`/etc/ssh/sshd_config`) is the first step — key-only auth, no root login, specific ciphers. But the session that follows SSH authentication has its own attack surface. This guide covers what happens after the connection is established: PAM controls, sudo hardening, session logging, and reducing SSH exposure entirely.
 
-## Key Takeaways
-
-- **Topics covered**: pam: restrict who can log in, time-based login restrictions, session timeouts and idle lockout
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## PAM: Restrict Who Can Log In
 
 PAM (Pluggable Authentication Modules) controls authentication and session setup.
@@ -162,7 +155,7 @@ EOF
 sudo cp /etc/issue.net /etc/issue
 ```
 
-## Comprehensive SSH Session Logging with script
+## SSH Session Logging with script
 
 Every command run in an SSH session can be recorded:
 

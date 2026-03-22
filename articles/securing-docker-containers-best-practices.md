@@ -17,13 +17,6 @@ tags: [privacy-tools-guide]
 
 Docker containers share the host kernel, so a misconfigured container can expose the host to privilege escalation, data exfiltration, or full compromise. This guide covers the practical controls that meaningfully reduce attack surface in production deployments.
 
-## Key Takeaways
-
-- **Use Minimal Base Images**: Fewer packages means fewer CVEs.
-- **Topics covered**: 1. run as a non-root user, 2. use read-only filesystems, 3. drop linux capabilities
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## 1. Run as a Non-Root User
 
 The single highest-impact change: never run processes as root inside a container.

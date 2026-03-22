@@ -11,33 +11,13 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Setup For Someone Leaving Abusive Relationship"
-description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Help abuse survivors immediately by enabling full-disk encryption on their device, securing their email and primary accounts with new strong passwords and two-factor authentication, removing any location-sharing features and checking for installed tracking apps, and establishing secure communications channels using Signal or Tor. Change account recovery methods, remove the abuser from all shared accounts, and document threatening communications for legal purposes. This guide provides practical implementation patterns for securing devices, communications, and accounts during the critical transition period, with actionable steps for technically-minded supporters.
 
-## Key Takeaways
-
-- **DO NOT import full**: old password database ``` For users uncomfortable with technical tools, even writing passwords on paper (stored securely) is better than reusing passwords across accounts.
-- **Remove any sharing with**: the abuser's Apple ID # 3.
-- **Use a privacy-respecting provider**: (ProtonMail, Tutanota) # 2.
-- **Review and remove any**: connected devices/sessions ``` The new email should be used exclusively for security-critical communications.
-- **For high-risk situations**: ```bash
 # Recommended password manager setup:
 # 1.
 - **Create NEW master password**: - never reuse any old password # 3.

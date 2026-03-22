@@ -231,17 +231,18 @@ AIDE provides cryptographic verification that survives system reboots and can be
 - [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
 - [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
 - [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)
+- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
 ## Related Articles
 
-- [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
 - [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
 - [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
 - [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-
+- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

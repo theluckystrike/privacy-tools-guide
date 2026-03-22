@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -19,10 +20,6 @@ tags: [privacy-tools-guide]---
 Zoom sends meeting metadata to Amazon, Google Meet processes video through Google's infrastructure, and Microsoft Teams is tied to a Microsoft account. Self-hosted video calling gives you control over who has access to call data, recordings, and participant information. This guide covers three options: Jitsi Meet (easiest to deploy), Matrix + Element (federated, persistent rooms), and Galene (minimal, for small groups).
 ---
 
-## Key Takeaways
-
-- **Galene requires almost no maintenance after setup**: the binary has no external dependencies and uses minimal server resources.
-- **---
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -11,21 +11,14 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 7
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
 Location data represents one of the most critical privacy vulnerabilities for domestic abuse survivors. When a survivor accesses support services, their device can inadvertently reveal their physical location through dozens of data points: GPS coordinates, cell tower connections, WiFi networks, app telemetry, and metadata. For shelter staff and developers building privacy-respecting tools, understanding how to minimize this exposure is essential.
 
 This guide provides practical, technical approaches to protecting location privacy. The strategies work whether you're hardening your own devices or architecting systems for an organization serving survivors.
-
-## Key Takeaways
-
-- **Location data represents one**: of the most critical privacy vulnerabilities for domestic abuse survivors.
-- **The most obvious is GPS**: which provides precise coordinates.
-- **Consider enabling "While Using"**: instead of "Always" for most apps.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Prerequisites
 

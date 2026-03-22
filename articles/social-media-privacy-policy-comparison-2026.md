@@ -11,21 +11,12 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
 Meta (Facebook/Instagram) collects indefinitely with the broadest scope including biometric data; X (Twitter) retains data for 18 months of inactivity; TikTok collects device and clipboard data with variable retention; Mastodon is the most privacy-friendly as a decentralized platform with instance-specific policies. Choose platforms based on your data retention tolerance—X offers full archive download, Meta provides download-all exports, Mastodon allows JSON export, while TikTok requires form requests. This guide compares data collection practices, retention periods, export options, and provides practical code examples for developers building privacy-conscious applications and understanding social media data handling in 2026.
-
-## Key Takeaways
-
-- **Staying informed about data**: practices helps you make better architectural decisions and protect your users' privacy.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Choose platforms based on your data retention tolerance**: X offers full archive download, Meta provides download-all exports, Mastodon allows JSON export, while TikTok requires form requests.
-- **It uses the ActivityPub**: protocol for cross-instance following, stores data in a JSON-native format, applies no algorithmic amplification by default, and leaves moderation policy to each instance.
-- **Request minimum scopes**: Only ask for permissions you need
-2.
 
 ## Data Collection Practices Overview
 

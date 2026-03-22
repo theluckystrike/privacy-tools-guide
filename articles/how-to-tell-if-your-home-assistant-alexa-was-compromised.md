@@ -11,12 +11,37 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide]---
 ---
+layout: default
+title: "Tell If Your Home Assistant or Alexa Was Compromised"
+description: "A technical guide to detecting if your smart home voice assistants have been compromised. Learn to identify signs of unauthorized access, audit logs"
+date: 2026-03-17
+last_modified_at: 2026-03-22
+author: "Privacy Tools Guide"
+permalink: /how-to-tell-if-your-home-assistant-alexa-was-compromised/
+categories: [guides]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Smart home assistants like Amazon Alexa and Home Assistant have become central to our digital lives, controlling lights, locks, thermostats, and accessing sensitive information. Knowing how to detect if these devices have been compromised is essential for maintaining your privacy and security. This guide covers the key indicators of compromise, how to audit your devices, and practical steps to secure them.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Disable skills you no**: longer use ### Check for Unrecognized Routines 1.
+- **Review the automation trace**: history for unexpected triggers ### Audit Users and Permissions 1.
+- **Navigate to Configuration >**: Users 2.
+- **Review all users, paying attention to**: - Unknown or newly added users
+ - Users with administrator privileges you did not create
+ - Service accounts with broad access
+3.
 
 ## Prerequisites
 
@@ -264,12 +289,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
-- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
-- [How To Set Up Home Assistant Esphome For Completely Local Sm](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
-- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
-- [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
 - [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-
+- [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Setup For Psychologist Telehealth Sessions Encrypted"
-description: "Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Use Jitsi Meet or Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content. Self-host these platforms on your own infrastructure or use privacy-focused providers that explicitly don't record sessions without explicit patient consent. Enable E2EE encryption, disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history. This guide covers practical setups for HIPAA-compliant telehealth infrastructure with full encryption control.
-
-## Key Takeaways
-
-- **For most use cases**: keeping WebRTC enabled with the E2EE option provides adequate protection while allowing video functionality.
-- **Jitsi Meet provides an**: open-source foundation that supports E2EE through the Matrix protocol.
-- **Use Jitsi Meet or**: Nextcloud Talk for end-to-end encrypted psychotherapy sessions instead of Zoom or Google Meet, which only provide transport encryption and allow server access to unencrypted content.
-- **Enable E2EE encryption**: disable automatic recording, minimize metadata collection, and implement access controls limiting patient visibility to only their own session history.
-- **Setting up a basic**: Jitsi deployment requires a VPS with at least 2 CPU cores and 4GB RAM.
-- **Both participants must use compatible browsers**: Chrome, Firefox, and Edge support this natively.
 
 ## Table of Contents
 

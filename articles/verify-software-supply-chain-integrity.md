@@ -256,14 +256,13 @@ fi
 rm -f "$TMPFILE"
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
+- [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
+- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

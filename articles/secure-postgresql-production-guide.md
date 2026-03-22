@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 A default PostgreSQL installation is not production-ready from a security perspective. The superuser is trusted locally without a password, network access may be open, and logging is minimal. This guide takes a fresh PostgreSQL 16 install and makes it fit for production.
 
-## Key Takeaways
-
-- **Topics covered**: step 1: lock down network access, step 2: change the default superuser password, step 3: enforce ssl/tls
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Step 1: Lock Down Network Access
 
 ```bash

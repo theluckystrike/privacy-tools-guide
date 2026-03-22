@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Cloud backups protect your data from hardware failure. But most backup services can read your files, hand them to law enforcement, and analyze your content for advertising. Understanding the threat model lets you choose when a commercial service is acceptable and when you need client-side encryption.
 
-## Key Takeaways
-
-- **Understanding the threat model**: lets you choose when a commercial service is acceptable and when you need client-side encryption.
-- **But most backup services can read your files**: hand them to law enforcement, and analyze your content for advertising.
-- **It does not protect you from the provider**: because the provider holds the key.
-- **Google Drive**: iCloud (default), Dropbox, OneDrive, and most backup services work this way.
-
 ## Table of Contents
 
 - [The Encryption Spectrum](#the-encryption-spectrum)

@@ -17,16 +17,6 @@ tags: [privacy-tools-guide]
 
 Traditional phone calls route through carrier infrastructure, exposing metadata including call duration, phone numbers, and often recording capabilities. For developers and power users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative. This guide walks through building a private VoIP system that operates entirely independent of telecom carriers while maintaining strong encryption and privacy properties.
 
-## Key Takeaways
-
-- **The coturn project provides**: a free implementation: ```bash apt-get install coturn ``` Configure it in `/etc/turnserver.conf` and point your Asterisk to use it.
-- **Register your client with**: your server using username/password 2.
-- **Dial the other user's SIP URI**: `sip:bob@your-server.example.com`
-3.
-- **For developers and power**: users seeking complete control over their voice communications, self-hosted VoIP infrastructure offers a compelling alternative.
-- **Users can register using arbitrary identifiers**: usernames, email-style addresses, or cryptographic keys—rather than government-issued phone numbers.
-- **This provides significant privacy**: benefits for users in adversarial situations.
-
 ## Why Go Carrier-Free?
 
 Carrier-based phone systems collect extensive metadata. Your mobile carrier knows every number you call, when you called, how long you talked, and often retains these records for years. Law enforcement routinely requests this data without requiring a warrant in many jurisdictions. By running your own VoIP infrastructure, you eliminate this metadata exposure while gaining full control over call recording policies, encryption implementation, and network architecture.

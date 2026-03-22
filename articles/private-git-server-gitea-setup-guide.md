@@ -10,35 +10,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Self-Hosted Private Git Server with Gitea"
-description: "Set up a private Gitea git server on a VPS or home server with HTTPS, SSH key auth, and access controls to keep your code off GitHub and GitLab's servers"
-date: 2026-03-21
-author: theluckystrike
-permalink: /private-git-server-gitea-setup-guide/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 GitHub and GitLab are convenient but they hold your code. GitHub (owned by Microsoft) scans repositories for content policy violations, sells data for Copilot training, and is subject to US legal requests. If your code contains unreleased work, personal projects, sensitive configurations, or anything you'd prefer to keep private, a self-hosted git server gives you complete control.
 
 Gitea is a lightweight, fast git service written in Go. It runs on minimal hardware — a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
-
-## Key Takeaways
-
-- **It runs on minimal hardware**: a Raspberry Pi or a $5/month VPS handles dozens of repositories and users comfortably.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use them to kick**: off deployments or notify external services without exposing your code: 1.
-- **Choose application/json as the**: content type 5.
-- **Invite members by email**: or username This model keeps sensitive repositories invisible to contractors while sharing only the repositories they need.
 
 ## Table of Contents
 

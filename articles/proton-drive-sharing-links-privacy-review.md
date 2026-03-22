@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 Proton Drive offers sharing functionality that extends its end-to-end encryption philosophy to file distribution. For developers building privacy-focused applications and power users managing sensitive documents, understanding the security model behind Proton Drive sharing links is essential. This review analyzes the privacy implications, technical controls, and practical usage patterns for Proton Drive's sharing system.
 
-## Key Takeaways
-
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **Use password-protected shares with**: short expiration windows (24 hours).
-- **Free and basic plans**: typically get community forum support and documentation.
-- **For developers building privacy-focused**: applications and power users managing sensitive documents, understanding the security model behind Proton Drive sharing links is essential.
-- **The sharing link contains**: an embedded encryption key that the recipient's browser uses to decrypt the file locally.
-- **These are useful for**: distributing non-sensitive files widely but offer no access tracking or revocation capability beyond link rotation.
-
 ## Table of Contents
 
 - [Sharing Link Architecture](#sharing-link-architecture)

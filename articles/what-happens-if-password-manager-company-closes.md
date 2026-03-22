@@ -11,34 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "What Happens If Password Manager Company"
-description: "If your password manager company shuts down, you lose access to cloud sync and web interfaces, but your locally cached vault remains intact and your passwords"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /what-happens-if-password-manager-company-closes/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 If your password manager company shuts down, you lose access to cloud sync and web interfaces, but your locally cached vault remains intact and your passwords stay encrypted with a key only you hold -- the company never stores your master password. The critical protection is maintaining regular encrypted local backups using your provider's export tool (e.g., `op vault export` for 1Password or `bw export` for Bitwarden) so you can restore your credentials regardless of whether the service survives.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Most password managers use**: client-side encryption: 1.
-- **Most password managers offer export features**: but these may become unavailable if the service shuts down before you use them.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Most password managers support**: encrypted export formats.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Table of Contents
 

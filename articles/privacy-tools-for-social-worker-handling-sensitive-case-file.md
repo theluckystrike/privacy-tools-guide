@@ -11,36 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Tools For Social Worker Handling Sensitive Case"
-description: "A guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /privacy-tools-for-social-worker-handling-sensitive-case-file/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Secure social worker case files using encrypted DMG containers (macOS) or LUKS encryption (Linux) for case storage, Signal for client communications, and secure agency workflows. Use automatic screen lock, separate work and personal devices, implement access controls per client sensitivity, and maintain audit logs of all data access for HIPAA and state law compliance.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Access case files**: Use agency VPN to connect to case management system
-3.
-- **Client communication**: Use Signal for time-sensitive matters, Proton Mail for formal correspondence
-5.
-- **Separate network for work**: # Use guest network or create dedicated VLAN # Isolate from personal devices # 2.
-- **Router security # Change**: default password # Disable WPS # Update firmware regularly # Use WPA3 encryption (or WPA2 at minimum) # 3.
 
 ## Table of Contents
 

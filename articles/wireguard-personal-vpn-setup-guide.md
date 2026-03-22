@@ -11,36 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
 ---
-layout: default
-title: "Set Up a Personal VPN with WireGuard"
-description: "Build a personal WireGuard VPN on a cheap VPS. Covers server setup, key generation, client configs for Linux, macOS, Windows, iOS, and Android."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: wireguard-personal-vpn-setup-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 
 {% raw %}
 
 WireGuard is a VPN protocol that is faster, simpler, and more auditable than OpenVPN or IPSec. A personal WireGuard VPN on a $5/month VPS costs less than any commercial VPN subscription, and you own the server — no logging policy to trust.
 
 This guide builds a complete WireGuard server from scratch with clients for every platform.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **A personal WireGuard VPN on a $5/month VPS costs less than any commercial VPN subscription, and you own the server**: no logging policy to trust.
-- **Does WireGuard offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Choose Ubuntu 22.04 or**: Debian 12 as the OS.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Prerequisites
 

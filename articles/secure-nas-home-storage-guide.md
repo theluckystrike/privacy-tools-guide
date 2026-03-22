@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -18,13 +19,6 @@ tags: [privacy-tools-guide]---
 
 A home NAS holding photos, documents, and backups is a high-value target. By default, most NAS systems ship with permissive configurations, outdated security defaults, and services exposed to the local network that don't need to be. This guide covers encryption, access control, network hardening, and monitoring for Synology DSM, QNAP QTS, and TrueNAS.
 ---
-
-## Key Takeaways
-
-- **By default**: most NAS systems ship with permissive configurations, outdated security defaults, and services exposed to the local network that don't need to be.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-- **This guide covers the default problem**: section 1: account and authentication, disable the default admin account, with specific setup instructions
 
 ## Table of Contents
 

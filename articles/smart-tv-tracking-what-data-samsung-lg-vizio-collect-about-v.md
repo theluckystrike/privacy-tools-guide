@@ -11,20 +11,15 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Samsung TVs use ACR (Automatic Content Recognition) to track everything displayed, even on external HDMI devices, and collect voice command recordings; LG TVs collect viewing habits and send them to third-party advertisers; Vizio TVs engage in the most aggressive tracking including ACR and co-viewing data sales to data brokers. Limit tracking by disabling voice features and ACR in settings, using a firewall rule to block TV internet connectivity, routing your TV through a VPN, or choosing brands like some models from manufacturers with privacy-first policies. This guide details exactly what Samsung, LG, and Vizio collect from your viewing habits, how they use this data, and practical steps to disable tracking features.
 
-## Key Takeaways
-
-- **Buy basic "smart TV"**: without smart features (Samsung/LG 50" 4K: ~$300) # OR use older TV you already own # 2.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **In 2017**: Vizio was fined $2.2 million by the FTC for secretly collecting viewing data from 11 million TVs.
-- **Disable WiFi in TV settings
-#    Result**: TV cannot transmit any data
-#    Downside: Cannot use streaming apps
+# Result**: TV cannot transmit any data
+# Downside: Cannot use streaming apps
 
 # 2.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.

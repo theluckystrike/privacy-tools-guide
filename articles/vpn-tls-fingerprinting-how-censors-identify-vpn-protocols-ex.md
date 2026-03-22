@@ -11,20 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
 Censors identify VPN protocols like OpenVPN and WireGuard by analyzing TLS ClientHello messages, which reveal fingerprints in the cipher suite list, TLS extensions (SNI, ALPN), TLS version, and random bytes—even though the message is encrypted, these metadata elements match known VPN patterns. The Great Firewall of China uses this technique to block VPN connections; mitigation requires obfuscation tools (obfs4, Stealth VPN) that randomize the ClientHello to look like regular HTTPS traffic, or alternative protocols like QUIC that don't expose the same fingerprinting vectors.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Understanding how fingerprinting works**: is essential for developers building privacy tools and for users who need to circumvent network restrictions.
-- **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
 ## How TLS Fingerprinting Works
 

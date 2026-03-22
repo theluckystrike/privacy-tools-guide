@@ -11,20 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
 This checklist covers data collection practices, consent mechanisms, storage security, and regulatory compliance, with implementation examples for each.
-
-## Key Takeaways
-
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **Each integration introduces privacy**: risk because these vendors receive user data.
-- **This often surfaces surprises**: analytics scripts capturing keystroke data, chat widgets storing conversation history indefinitely, A/B testing tools logging user behavior without clear consent.
-- **If a vendor refuses to sign a DPA**: using them with EU user data creates regulatory exposure.
-- **Everything else**: analytics, personalization, marketing—requires explicit user consent before placement.
-- **Check if your alerting**: catches anomalous API call patterns, such as a single user downloading thousands of records.
 
 ## 1. Data Collection Audit
 

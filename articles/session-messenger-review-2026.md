@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Session messenger has carved out a distinctive position in the privacy-focused messaging space. Unlike mainstream alternatives that tie accounts to phone numbers, Session eliminates this requirement entirely while maintaining end-to-end encryption. This review examines Session's technical architecture, practical limitations, and considerations for developers integrating it into privacy-conscious workflows.
 
-## Key Takeaways
-
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **Message delivery typically completes**: within 2-5 seconds under normal network conditions.
-- **The onion routing adds latency compared to direct server delivery**: approximately 500ms per hop in practice.
-- **Configure message delivery timeouts**: # Session messages queue on Service Nodes for up to 14 days # Tune cleanup based on user requirements # 2.
-- **Optimize group message handling**: # Groups use broadcast model: sender sends to each member # For large groups (100+ members), use session-bots for aggregation # 3.
-- **Workaround**: Use IPFS integration or reference external encrypted storage with Session for key distribution.
-
 ## Table of Contents
 
 - [Architecture Overview](#architecture-overview)

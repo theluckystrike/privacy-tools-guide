@@ -20,15 +20,6 @@ tags: [privacy-tools-guide]
 Smart TVs are advertising terminals that also show video. Automatic Content Recognition (ACR) technology watches what you're watching and sends fingerprints to ad servers. Voice remotes with "always-on" mics are common. Telemetry runs constantly. This guide covers what to disable and how to block the rest at the network level.
 ---
 
-## Key Takeaways
-
-- **This catches DoH (DNS-over-HTTPS) only if you also block port 443 to known DoH endpoints**: but most smart TVs use plain DNS, not DoH.
-- **The FTC fined Vizio**: $2.2M in 2017 for collecting viewing data without consent.
-- **Consider using the TV without an LG account**: most features work without one.
-- **The voice data is**: used to improve voice recognition models, and may be stored for months.
-- **This includes timestamps of**: when you turn the TV on and off, which apps you use and for how long, and what buttons you press on the remote.
-- **Vizio was capturing ACR**: data and selling it to data brokers without adequately disclosing this to users.
-
 ## Table of Contents
 
 - [What Smart TVs Collect](#what-smart-tvs-collect)

@@ -11,36 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Privacy Audit Checklist for Small Businesses"
-description: "A practical privacy audit checklist for small businesses. Covers data inventory, vendor review, employee access, and basic compliance steps."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: small-business-privacy-audit-checklist
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Small businesses often skip privacy audits because they seem like an enterprise concern. They're not. A single data breach at a small company can cost $50,000–$500,000 in recovery costs, regulatory fines, and lost customers. Most breaches exploit simple, fixable problems.
 
 This checklist is organized into eight areas. Work through each section, mark what's done, and create a remediation task for anything that isn't.
-
-## Key Takeaways
-
-- **A single data breach**: at a small company can cost $50,000–$500,000 in recovery costs, regulatory fines, and lost customers.
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **Small businesses often skip**: privacy audits because they seem like an enterprise concern.
-- **Most breaches exploit simple**: fixable problems.
-- **Third-Party Vendor Review Every**: SaaS tool you use is a potential breach vector.
-- **Most provide them on**: request or in their terms.
 
 ## Table of Contents
 

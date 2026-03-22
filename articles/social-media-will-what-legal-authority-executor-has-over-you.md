@@ -11,35 +11,12 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Social Media Will What Legal Authority Executor Has Over"
-description: "A guide for developers and power users on how estate executors can access and manage digital accounts across different U.S. states"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /social-media-will-what-legal-authority-executor-has-over-you/
-reviewed: true
-score: 8
-voice-checked: true
-categories: [guides]
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Executors have limited authority over social media accounts—most platforms don't transfer login credentials even with a death certificate. Instead, designate legacy contacts directly in platform settings (Facebook, Instagram, TikTok, LinkedIn) to memorialize or delete your account. Create a digital will documenting all account usernames, where credentials are stored, and explicit instructions for each platform. U.S. states have varying laws; check your state's fiduciary access laws. Executors should contact platforms' legal teams with a death certificate and will copy to request account memorialization.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use platform-native tools**: Google Inactive Account Manager, Apple Legacy Contact, Facebook Legacy Contact provide the most reliable access paths.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Executors have limited authority over social media accounts**: most platforms don't transfer login credentials even with a death certificate.
-- **Users can designate up**: to 10 people who receive access after account inactivity periods (3-18 months).
-- **Add explicit digital asset provisions to your will**: use state-specific language and reference specific platforms
-4.
 
 ## Table of Contents
 

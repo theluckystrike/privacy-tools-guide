@@ -11,34 +11,12 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide, privacy, api]---
+tags: [privacy-tools-guide, privacy, api]
 ---
-layout: default
-title: "Telehealth Privacy Rights What Therapist Doctor Video Calls"
-description: "A practical guide for developers and power users on telehealth privacy rights. Learn what healthcare providers can legally record, consent"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /telehealth-privacy-rights-what-therapist-doctor-video-calls-/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 9
-tags: [privacy-tools-guide, privacy, api]---
 
 {% raw %}
 
 Telehealth has transformed how we access healthcare, connecting patients with therapists and doctors through video calls. However, many people wonder about the privacy implications: Can your therapist record your session? What happens to video recordings? Who can access them? This guide breaks down the legal framework and practical considerations for telehealth privacy.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Your home network with**: WPA2/WPA3 encryption provides better protection than coffee shop connections.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **DATA STORAGE AND SECURITY**: Provider confirms: ☐ End-to-end encryption is used ☐ Data is encrypted at rest ☐ Backups are encrypted ☐ Access is logged and auditable 3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Table of Contents
 

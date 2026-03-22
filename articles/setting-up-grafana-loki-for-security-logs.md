@@ -299,11 +299,10 @@ clients:
 ## Related Articles
 
 - [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
 - [What VPN Logs Actually Mean No Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
 - [What VPN Logs Actually Mean: No-Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
-- [GDPR Compliant Logging Practices for Developers](/privacy-tools-guide/gdpr-compliant-logging-practices-developers/)
-
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

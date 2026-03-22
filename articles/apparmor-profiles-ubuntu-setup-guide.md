@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 AppArmor restricts what a process can do by defining explicit rules about which files it can read, write, or execute, which network operations it can perform, and which capabilities it can use. When a program is compromised, AppArmor limits what the attacker can reach. Ubuntu ships with AppArmor enabled and includes profiles for common daemons — this guide covers writing custom profiles and enforcing them.
 
+## Key Takeaways
+
+- **This guide covers understanding**: apparmor modes, tools you need, step 1: generate a profile with aa-genprof, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+- **Practical recommendations**: Specific use-case guidance based on team size and requirements
+- **Feature comparison**: Side-by-side analysis of capabilities and limitations
+
 ## Understanding AppArmor Modes
 
 AppArmor runs profiles in two modes:
@@ -265,14 +272,13 @@ sudo aa-status | grep "enforce mode" -A 50 | grep "   /"
 sudo aa-status --json | jq '.processes | to_entries[] | {profile: .key, pids: .value}'
 ```
 
-## Related Reading
+## Related Articles
 
-- [Linux AppArmor vs SELinux](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Android Work Profile for Isolating Apps That Require](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

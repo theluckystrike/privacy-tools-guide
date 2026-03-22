@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Tripwire takes a cryptographic snapshot of your filesystem — hashing files, recording permissions, and noting ownership. When run again later, it compares the current state to that baseline and reports every change. This detects rootkit installations, unauthorized file modifications, and configuration drift.
 
-## Key Takeaways
-
-- **Topics covered**: installation, configuration files, understanding the policy file
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Installation
 
 ```bash

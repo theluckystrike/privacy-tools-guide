@@ -20,6 +20,15 @@ CalyxOS provides a privacy-focused Android distribution that excludes Google Pla
 
 This guide walks through setting up microG on CalyxOS, configuring signature spoofing, and getting popular Google apps working without sending data to Google's servers.
 
+## Key Takeaways
+
+- **Install an app that**: supports microG push notifications and check the logs: ```bash adb logcat -s GcmService:d | grep -i token ``` The output displays a registration token you can use for testing.
+- **This works with many**: open-source applications and provides real-time notifications without Google infrastructure.
+- **Configure it to use**: microG as the backend 3.
+- **CalyxOS provides a privacy-focused**: Android distribution that excludes Google Play Services by default.
+- **MicroG bridges this gap**: by implementing a free and open-source replacement for Google's proprietary Play Services, allowing you to run Google-dependent apps while maintaining your privacy.
+- **Install Aurora Store and**: try a few applications you regularly use.
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -455,11 +464,10 @@ Keep your microG setup current:
 
 ## Related Articles
 
-- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
-- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
-- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
-
+- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [How To Access Google Services From China Without Getting](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
+- [Privacy-Focused Android ROM Comparison 2026](/privacy-tools-guide/privacy-android-rom-comparison-2026/)
+- [Android Google Account Privacy Settings: Complete Guide to](/privacy-tools-guide/android-google-account-privacy-settings-complete-guide-to-li/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

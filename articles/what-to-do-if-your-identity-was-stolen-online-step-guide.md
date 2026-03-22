@@ -11,34 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "What To Do If Your Identity Was Stolen Online Step Guide"
-description: "A practical guide for developers and power users on how to respond when your identity has been stolen online. Covers immediate actions, account"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /what-to-do-if-your-identity-was-stolen-online-step-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Secure your email account immediately (this is the master key to resetting all other services), revoke all active sessions, change passwords for all critical accounts (banking, email, social media), and enable two-factor authentication. File a fraud report with the FTC (identity theft.gov) and place fraud alerts with credit bureaus (Equifax, Experian, TransUnion). Monitor credit reports monthly for unauthorized accounts, set up breach monitoring services like Have I Been Pwned alerts, and consider a credit freeze to prevent new accounts opened in your name. For developers: audit all API tokens and SSH keys with access to repositories or infrastructure, assume any stored credentials are compromised, and rotate them across all services.
-
-## Key Takeaways
-
-- **If you've been locked out**: use account recovery options and prepare documentation for each service's support team.
-- **Monitor credit reports monthly**: for unauthorized accounts, set up breach monitoring services like Have I Been Pwned alerts, and consider a credit freeze to prevent new accounts opened in your name.
-- **Most major services offer**: this option in security settings.
-- **For stronger protection**: consider a credit freeze, which completely blocks new credit inquiries.
-- **Use different email addresses**: different password managers if possible, and avoid storing development credentials alongside personal ones.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 

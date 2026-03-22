@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -18,15 +19,6 @@ Running a VPN on each device individually means constant maintenance. A router-l
 
 This guide covers WireGuard setup on OpenWrt (the best modern option) and briefly covers OpenVPN for routers that don't support WireGuard.
 ---
-
-## Key Takeaways
-
-- **This guide covers WireGuard**: setup on OpenWrt (the best modern option) and briefly covers OpenVPN for routers that don't support WireGuard.
-- **ProtonVPN provides WireGuard configs**: for router use and supports Secure Core (routing through Switzerland or Iceland before the VPN exit).
-- **Avoid providers that only offer proprietary apps without WireGuard config download**: those cannot be used on OpenWrt.
-- **This is the most**: common privacy failure in router VPN setups.
-- **WireGuard's ChaCha20 cipher is**: hardware-friendly, but you may still see throughput limitations on budget routers.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 

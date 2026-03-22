@@ -11,33 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Wireguard Container Setup Docker Network Namespace Isolation"
-description: "A practical guide to running WireGuard inside Docker containers with network namespace isolation for enhanced privacy and security"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /wireguard-container-setup-docker-network-namespace-isolation/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Running WireGuard inside Docker provides process isolation while preserving the VPN protocol's performance benefits. This guide covers network namespace isolation, DNS leak prevention, kill switch implementation, and ensuring only designated containers route through the tunnel.
-
-## Key Takeaways
-
-- **What is the performance overhead of running WireGuard in Docker?
-Container overhead is minimal**: typically under 1% throughput reduction compared to a native WireGuard install.
-- **This approach separates the**: WireGuard interface from the host's default network namespace, giving you precise control over which processes use the VPN tunnel.
-- **The `DNS` field tells**: WireGuard to configure the container's resolver to use the VPN server's DNS, preventing queries from leaking to your ISP.
-- **Use the container network**: sharing approach to route different applications through different tunnels.
 
 ## Table of Contents
 

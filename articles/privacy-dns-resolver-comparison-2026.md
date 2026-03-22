@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, privacy]
 
 Your DNS resolver knows every domain you visit — even over HTTPS. Most ISPs log this data for years. Switching to a privacy-focused resolver with encrypted transport hides your queries from your ISP and limits what the resolver itself can log. This guide compares the leading options on the factors that matter for privacy.
 
-## Key Takeaways
-
-- **The resolver requires no account**: you just configure your device to use it.
-- **What encryption protocols does**: it support? (DoH, DoT, DoQ) 5.
-- **Topics covered**: what to evaluate, comparison table, mullvad dns
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## What to Evaluate
 
 Before choosing a resolver, answer these questions:
