@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
 description: "Follow this guide to how to set up self hosted matrix synapse server for private  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Self Hosted Matrix Synapse Server For Private"
 description: "Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-vpn-failover-between-two-providers-automatical/
 description: "Follow this guide to how to set up vpn failover between two providers automatical with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "How To Set Up Vpn Failover Between Two Providers Automatical"
 description: "A practical guide for developers and power users to implement automatic VPN failover between two providers using open-source tools and scripts"

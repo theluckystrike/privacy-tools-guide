@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-password-manager-for-new-employee-onboarding/
 description: "Follow this guide to how to set up password manager for new employee onboarding with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "How to Set Up Password Manager for New Employee Onboarding"
 description: "Deploy 1Password or Bitwarden with team vaults during onboarding: provision employees with pre-populated shared vaults containing their role-specific"

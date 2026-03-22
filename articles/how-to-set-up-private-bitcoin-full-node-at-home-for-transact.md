@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-private-bitcoin-full-node-at-home-for-transact/
 description: "Follow this guide to how to set up private bitcoin full node at home for transact with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Set Up Private Bitcoin Full Node At Home For Transact"
 description: "A practical guide for developers and power users to run a Bitcoin full node for private transaction verification. Covers hardware requirements"

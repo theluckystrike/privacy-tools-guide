@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
 description: "Follow this guide to how to set up secure communication for labor strike organizing with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Set Up Secure Communication For Labor Strike: Practical"
 description: "A practical technical guide for developers and power users to build secure communication infrastructure for labor strike organizing. Covers encryption"
