@@ -19,13 +19,6 @@ tags: [privacy-tools-guide, security]
 
 Lynis is an open-source security auditing tool for Linux, macOS, and BSD systems. It checks hundreds of security controls — SSH config, kernel parameters, file permissions, installed software, authentication settings — and gives you a hardening index score. It runs locally as the user you specify (usually root), which means it can find misconfigurations that a remote scanner would miss.
 
-## Key Takeaways
-
-- **It runs locally as**: the user you specify (usually root), which means it can find misconfigurations that a remote scanner would miss.
-- **This guide covers installation**: running a full audit, understanding the output, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## Installation
 
 ```bash

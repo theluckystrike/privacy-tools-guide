@@ -11,35 +11,12 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Set Up Jitsi Meet Self Hosted Encrypted Video"
-description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 8
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Deploying a self-hosted Jitsi Meet instance with end-to-end encryption gives you complete control over your video conferencing infrastructure. This guide walks through setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
-
-## Key Takeaways
-
-- **For organizations requiring E2EE**: communicate these limitations to users before deployment.
-- **Jitsi Meet can use coturn**: an open-source TURN server.
-- **Rate limiting**: Prevent abuse through nginx rate limits
-4.
-- **This guide walks through**: setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
-- **Jitsi Meet supports E2EE**: using the WebRTC Insertable Streams API, which allows JavaScript to process media frames before transmission.
-- **Guests can still join**: meetings started by authenticated users, but they cannot initiate new conferences.
 
 ## Table of Contents
 

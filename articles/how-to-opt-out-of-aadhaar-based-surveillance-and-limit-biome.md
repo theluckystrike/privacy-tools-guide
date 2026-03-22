@@ -11,33 +11,11 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Opt Out of Aadhaar-Based Surveillance and Limit Biometric"
-description: "A practical guide for developers and power users to reduce Aadhaar surveillance exposure. Learn to lock biometrics, revoke consents, and minimize biometric"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/
-categories: [guides]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 
 You can minimize Aadhaar surveillance exposure by locking biometrics on the UIDAI portal, generating a Virtual ID proxy, auditing authentication history, revoking optional service provider consents, and monitoring for breaches. This guide provides concrete steps to reduce your biometric data footprint within India's centralized identification system while acknowledging that complete opt-out is impossible due to mandatory linkages for banking and telecom.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Can I use alternative**: identification? # 3.
-- **UIDAI must respond within**: 30 days ``` Use RTI requests to understand the full scope of data collection before deciding on mitigation strategies.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Prerequisites
 

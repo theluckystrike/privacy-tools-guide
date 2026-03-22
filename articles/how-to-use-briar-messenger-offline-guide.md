@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How to Use Briar Messenger Offline: A Developer's Guide"
-description: "A technical guide to using Briar messenger for offline-first, decentralized communication via Bluetooth and Wi-Fi Direct"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-use-briar-messenger-offline-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. For a technical deep explore Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
-
-## Key Takeaways
-
-- **You can specify whether**: Briar uses internet transport automatically, on-demand, or only when Wi-Fi is available.
-- **The app will automatically**: discover and connect to nearby Briar users when Bluetooth is active.
-- **Briar uses a store-and-forward**: mechanism where each device stores messages until it can forward them to another connected device.
-- **If you move through**: an area with Briar users, your device will sync with theirs, picking up any messages transmitted while you were out of range.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Table of Contents
 

@@ -18,12 +18,6 @@ tags: [privacy-tools-guide]
 Smart bulbs, thermostats, cameras, and voice assistants are computers running outdated firmware with no security update guarantee. Putting them on the same network as your laptops means a compromised smart plug can sniff your banking traffic. VLANs are the standard way to isolate IoT devices — they get internet access but can't reach your main network.
 ---
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **---
-
 ## Table of Contents
 
 - [Step 5**: mDNS/Bonjour Forwarding (Optional)](#step-5-mdnsbonjour-forwarding-optional)

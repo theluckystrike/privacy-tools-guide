@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Iran deploys integrated facial recognition surveillance at airports, highways, and public spaces connected to centralized government databases, primarily targeting women's clothing violations and political opposition. Defeat recognition by wearing sunglasses, face masks, and hats that disrupt facial landmarks; use hairline-altering makeup or prosthetics. For developers, advocate for on-device processing that doesn't transmit biometric data to servers. If targeted, use Signal without phone number verification and document surveillance instances for international human rights organizations.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Modern systems use cameras**: with infrared capabilities for low-light operation, ensuring 24/7 surveillance capability.
-- **This uses convolutional neural networks (CNNs) trained to detect facial landmarks**: typically 68 or more key points mapping eyes, nose, mouth, and jawline.
-- **Studies show that printed**: glasses with specific patterns reduce recognition accuracy by 40-90%.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Technical Architecture of Public Surveillance Systems](#technical-architecture-of-public-surveillance-systems)

@@ -11,20 +11,12 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Immediately reduce your attack surface by making social media profiles private, removing photos from public galleries, and stripping EXIF metadata from any shared images using tools like ExifTool. Proactively set up reverse image search alerts using Google Alerts and TinEye to detect when your photos appear on dating platforms, and if impersonation occurs, report profiles directly to the platform and file a DMCA takedown notice. For ongoing protection, limit photo sharing publicly and use privacy settings across all platforms to reduce available materials for impersonation.
-
-## Key Takeaways
-
-- **Taking these steps gives**: you the best chance of catching misuse early and minimizing harm.
-- **For ongoing protection**: limit photo sharing publicly and use privacy settings across all platforms to reduce available materials for impersonation.
-- **Your defense therefore focuses**: on reducing your attack surface and detecting misuse quickly.
-- **Run periodically to detect**: unauthorized use.
-- **Use them defensively and**: understand the legal implications in your jurisdiction.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 

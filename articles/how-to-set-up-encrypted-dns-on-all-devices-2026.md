@@ -11,47 +11,10 @@ tags: [privacy-tools-guide, dns, encryption, networking]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
 
-
-layout: default
-title: "How to Set Up Encrypted DNS on All Devices 2026"
-description: "Step-by-step guide to configuring DNS over HTTPS and DNS over TLS on Windows, macOS, iOS, Android, and Linux with provider comparison"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-encrypted-dns-on-all-devices-2026/
-categories: [guides]
-tags: [privacy-tools-guide, dns, encryption, networking]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
-
 {% raw %}
-
-## Key Takeaways
-
-- **Choose provider:
- - Cloudflare**: `https://1.1.1.1/dns-query`
- - Quad9: `https://dns.quad9.net/dns-query`
- - NextDNS: `https://dns.nextdns.io` (requires account)
-
-4.
-- **Choose provider: - Cloudflare**: (1.1.1.1) - Quad9 - NextDNS 6.
-- **Set system DNS to 127.0.0.1
-
-### Step 6**: Set Up : Linux
-
-### Method 1: systemd-resolved (Modern)
-
-Most Linux distros use systemd-resolved for DNS.
-- **Download DNSCloak (App Store**: free)
-2.
-- **Download Nebulo (Play Store**: free with ads)
-2.
-- **Reality**: Negligible performance difference (0-5ms added latency).
 
 ## Table of Contents
 

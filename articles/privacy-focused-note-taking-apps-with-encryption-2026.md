@@ -404,9 +404,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
-- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-focused-note-taking-apps-comparison/)
-- [Comparison Of Encrypted Note Taking Apps For Sensitive](/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)
-
+- [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Comparison Of Encrypted Note Taking Apps For Sensitive](/privacy-tools-guide/comparison-of-encrypted-note-taking-apps-for-sensitive-infor/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
+- [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/privacy-tools-guide/nextcloud-app-ecosystem-best-privacy-apps-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

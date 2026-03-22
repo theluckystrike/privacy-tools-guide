@@ -11,21 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Iran's government monitors and restricts WhatsApp through flow-based Deep Packet Inspection that analyzes traffic signatures, TLS handshakes, and SNI values rather than just IP blocking. The system identifies WhatsApp's characteristic port patterns, packet size distributions, and timing intervals to throttle or block connections, making traditional VPNs less effective. Developers and power users can counteract this through SNI obfuscation, traffic shaping to disguise packet patterns, and stealth VPN configurations that hide encrypted tunnel signatures.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Unlike simple IP blocking**: Iran's approach to WhatsApp restriction uses flow-based filtering that analyzes traffic patterns rather than just destination addresses.
-- **Use domain fronting**: Route traffic through CDNs to mask destination
-3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Understanding Iran's Traffic Management Infrastructure
 

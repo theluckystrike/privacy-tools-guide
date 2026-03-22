@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How to Tell if Your Bluetooth Is Being Intercepted"
-description: "Bluetooth interception—also known as Bluetooth eavesdropping or BlueBorne-style attacks—occurs when an unauthorized party captures or manipulates Bluetooth"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
@@ -33,14 +20,6 @@ Bluetooth interception—also known as Bluetooth eavesdropping or BlueBorne-styl
 
 This guide covers practical methods to detect whether your Bluetooth traffic is being intercepted or your device is being targeted.
 
-## Key Takeaways
-
-- **Use Bluetooth 5.0+ devices**: with Secure Connections - Older Bluetooth 2.0 and 3.0 are vulnerable - Bluetooth 4.0+ LE is better but still needs careful config 2.
-- **Use air-gapped Bluetooth devices**: # Only connect Bluetooth devices in isolated VMs or separate machines # 3.
-- **Use Bluetooth 5.0+ devices**: with Secure Connections pairing (LE Secure Connections).
-- **On Linux**: disable unused Bluetooth protocols:
-
-```bash
 # Edit /etc/bluetooth/main.conf
 [Policy]
 AutoEnable=false
@@ -115,25 +94,25 @@ import time
 import re
 
 def get_rssi(interface='hci0'):
-    try:
-        result = subprocess.run(
-            ['hcitool', 'rssi', interface],
-            capture_output=True, text=True
-        )
-        # Parse RSSI value from output
-        match = re.search(r'RSSI return value: (-?\d+)', result.stderr)
-        if match:
-            return int(match.group(1))
-    except Exception:
-        pass
-    return None
+ try:
+ result = subprocess.run(
+ ['hcitool', 'rssi', interface],
+ capture_output=True, text=True
+ )
+ # Parse RSSI value from output
+ match = re.search(r'RSSI return value: (-?\d+)', result.stderr)
+ if match:
+ return int(match.group(1))
+ except Exception:
+ pass
+ return None
 
 # Monitor for 30 seconds
 for _ in range(30):
-    rssi = get_rssi()
-    if rssi:
-        print(f"RSSI: {rssi} dBm")
-    time.sleep(1)
+ rssi = get_rssi()
+ if rssi:
+ print(f"RSSI: {rssi} dBm")
+ time.sleep(1)
 ```
 
 Sudden drops below -70 dBm or erratic fluctuations (jumping 20+ dBm within seconds) may indicate an interfering device. Legitimate devices typically show stable, gradual changes as you move.
@@ -236,51 +215,51 @@ BLE Security Analysis - Identifying vulnerable characteristics
 """
 
 class BLESecurityAudit:
-    def __init__(self, device_mac):
-        self.device_mac = device_mac
-        self.vulnerabilities = []
+ def __init__(self, device_mac):
+ self.device_mac = device_mac
+ self.vulnerabilities = []
 
-    def check_legacy_pairing(self):
-        """Check if device uses legacy pairing (less secure)"""
-        # Legacy pairing uses PIN exchange in plaintext
-        # Vulnerable to passive eavesdropping
-        print("[!] Device may support legacy pairing")
-        print("    Recommendation: Force LE Secure Connections")
-        self.vulnerabilities.append("legacy_pairing")
+ def check_legacy_pairing(self):
+ """Check if device uses legacy pairing (less secure)"""
+ # Legacy pairing uses PIN exchange in plaintext
+ # Vulnerable to passive eavesdropping
+ print("[!] Device may support legacy pairing")
+ print(" Recommendation: Force LE Secure Connections")
+ self.vulnerabilities.append("legacy_pairing")
 
-    def check_unencrypted_characteristics(self):
-        """Check for unencrypted Bluetooth characteristics"""
-        # Some devices broadcast data without encryption
-        # Example: Fitness tracker broadcasting heart rate
-        vulnerable_services = [
-            "00002a37-0000-1000-8000-00805f9b34fb",  # Heart Rate
-            "00002a38-0000-1000-8000-00805f9b34fb",  # Body Sensor Location
-            "00002a3f-0000-1000-8000-00805f9b34fb"   # Alert Level
-        ]
-        print("[!] Check for unencrypted broadcast of sensitive data")
-        self.vulnerabilities.append("unencrypted_broadcast")
+ def check_unencrypted_characteristics(self):
+ """Check for unencrypted Bluetooth characteristics"""
+ # Some devices broadcast data without encryption
+ # Example: Fitness tracker broadcasting heart rate
+ vulnerable_services = [
+ "00002a37-0000-1000-8000-00805f9b34fb", # Heart Rate
+ "00002a38-0000-1000-8000-00805f9b34fb", # Body Sensor Location
+ "00002a3f-0000-1000-8000-00805f9b34fb" # Alert Level
+ ]
+ print("[!] Check for unencrypted broadcast of sensitive data")
+ self.vulnerabilities.append("unencrypted_broadcast")
 
-    def check_blesa_vulnerability(self):
-        """Check if device vulnerable to BLESA (BLE Spoofing Attack)"""
-        # BLESA exploits reconnection without re-pairing
-        # Attacker can spoof device and connect
-        print("[!] Device may vulnerable to BLESA attacks")
-        print("    Mitigation: Look for re-pairing requirement after disconnect")
-        self.vulnerabilities.append("blesa")
+ def check_blesa_vulnerability(self):
+ """Check if device vulnerable to BLESA (BLE Spoofing Attack)"""
+ # BLESA exploits reconnection without re-pairing
+ # Attacker can spoof device and connect
+ print("[!] Device may vulnerable to BLESA attacks")
+ print(" Mitigation: Look for re-pairing requirement after disconnect")
+ self.vulnerabilities.append("blesa")
 
-    def check_leap_attack(self):
-        """Check for LEAP vulnerability in legacy connections"""
-        # Least Accepted Power - attacker forces lower encryption
-        print("[!] Potential LEAP vulnerability in legacy mode")
-        print("    Recommendation: Use Bluetooth 5.0+ with Secure Connections")
-        self.vulnerabilities.append("leap")
+ def check_leap_attack(self):
+ """Check for LEAP vulnerability in legacy connections"""
+ # Least Accepted Power - attacker forces lower encryption
+ print("[!] Potential LEAP vulnerability in legacy mode")
+ print(" Recommendation: Use Bluetooth 5.0+ with Secure Connections")
+ self.vulnerabilities.append("leap")
 
-    def report(self):
-        print(f"\nBLE Security Audit Results for {self.device_mac}")
-        print("=" * 50)
-        print(f"Potential vulnerabilities found: {len(self.vulnerabilities)}")
-        for vuln in self.vulnerabilities:
-            print(f"  - {vuln}")
+ def report(self):
+ print(f"\nBLE Security Audit Results for {self.device_mac}")
+ print("=" * 50)
+ print(f"Potential vulnerabilities found: {len(self.vulnerabilities)}")
+ for vuln in self.vulnerabilities:
+ print(f" - {vuln}")
 
 # Usage
 audit = BLESecurityAudit("AA:BB:CC:DD:EE:FF")
@@ -359,20 +338,20 @@ echo "Connect only to air-gapped devices"
 
 ```
 1. Use Bluetooth 5.0+ devices with Secure Connections
-   - Older Bluetooth 2.0 and 3.0 are vulnerable
-   - Bluetooth 4.0+ LE is better but still needs careful config
+ - Older Bluetooth 2.0 and 3.0 are vulnerable
+ - Bluetooth 4.0+ LE is better but still needs careful config
 
 2. Enable PIN-based or numeric comparison pairing
-   - Don't use "Just Works" pairing (no verification)
-   - Use 6-digit numeric comparison when available
+ - Don't use "Just Works" pairing (no verification)
+ - Use 6-digit numeric comparison when available
 
 3. Verify pairing keys match on both devices
-   - After pairing, compare shown keys
-   - If mismatch, abort pairing (man-in-middle detected)
+ - After pairing, compare shown keys
+ - If mismatch, abort pairing (man-in-middle detected)
 
 4. Regular re-pairing
-   - Periodically unpair and repair devices
-   - Removes cached keys that might be compromised
+ - Periodically unpair and repair devices
+ - Removes cached keys that might be compromised
 ```
 
 ### Step 12: Detection Software and Tools

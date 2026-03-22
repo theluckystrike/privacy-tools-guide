@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -20,15 +21,6 @@ LUKS full-disk encryption protects everything on a disk. But sometimes you need 
 
 This guide walks through creating a LUKS2 container from scratch, including choosing the right cipher and key derivation function, managing keyslots, backing up the header, resizing the container, and using convenience scripts for daily use.
 ---
-
-## Key Takeaways
-
-- **Key differences**: LUKS2 uses Argon2id for key derivation (LUKS1 used PBKDF2), supports up to 32 keyslots (LUKS1 had 8), and stores the header in two locations with checksums to detect corruption.
-- **By default**: `luksFormat` uses AES-256-XTS with SHA-256.
-- **`--pbkdf-memory 524288` sets Argon2id's memory cost to 512 MB**: this makes brute-force attacks on your passphrase expensive because each attempt requires 512 MB of RAM.
-- **`ext4` is the right choice for Linux-only vaults**: it supports extended attributes, Unix permissions, and large files without overhead.
-- **The `dd if=/dev/urandom` approach**: is slower because it reads from the kernel's random device.
-- **In that case, use `openssl rand` which uses OpenSSL's PRNG seeded from the kernel entropy pool**: it produces cryptographically indistinguishable output and is much faster.
 
 ## Table of Contents
 

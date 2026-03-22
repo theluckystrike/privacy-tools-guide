@@ -11,20 +11,12 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
 GBoard sends keystrokes to Google servers for predictions and emoji suggestions. SwiftKey, Gboard, and many keyboards transmit keystroke data to cloud services for personalization. Use locally-processing keyboards (Heliboard, OpenBoard) or analyze network traffic with Burp Suite to verify no data leaves your device before choosing.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use local dictionary and**: personal learning only 3.
-- **Seaboard Rise ($300)**: Premium Bluetooth keyboard with customizable firmware.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Developers can use Xcode's**: Network Instrument or third-party tools like Charles Proxy (requires certificate installation) to observe traffic: 1.
-- **Configure your iOS device**: to use Charles as a proxy 3.
 
 ## Table of Contents
 

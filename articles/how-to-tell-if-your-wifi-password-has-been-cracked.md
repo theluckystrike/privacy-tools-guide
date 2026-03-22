@@ -18,17 +18,6 @@ tags: [privacy-tools-guide]
 
 Check your router's connected devices list (usually at 192.168.1.1 or 192.168.0.1) and compare against known devices—unknown MAC addresses indicate unauthorized access. Monitor your internet speed and bandwidth usage; unauthorized users downloading large files will cause noticeable slowdowns. Enable router logging to track connection attempts and failed authentications. If you find unknown devices, change your WiFi password to a strong, randomly-generated one and use WPA3 encryption instead of WPA2 if supported.
 
-## Key Takeaways
-
-- **If you find unknown devices**: change your WiFi password to a strong, randomly-generated one and use WPA3 encryption instead of WPA2 if supported.
-- **Use strong passwords**: Minimum 16 characters with random characters, or use your password manager's generator
-2.
-- **Change WPA2/WPA3 password -**: do NOT reuse your previous password 3.
-- **Monitor your internet speed**: and bandwidth usage; unauthorized users downloading large files will cause noticeable slowdowns.
-- **Tools like Wireshark or**: `tcpdump` on a monitoring interface can reveal patterns indicating unauthorized use.
-- **Enable WPA3**: If your hardware supports it, WPA3 provides protection against offline dictionary attacks
-3.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

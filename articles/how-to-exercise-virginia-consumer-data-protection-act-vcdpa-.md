@@ -11,35 +11,11 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How To Exercise Virginia Consumer Data Protection Act Vcdpa"
-description: "Learn how to exercise your privacy rights under the Virginia Consumer Data Protection Act (VCDPA). This guide covers data access requests, deletion"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 The Virginia Consumer Data Protection Act (VCDPA) grants Virginia residents the right to access, delete, and correct personal data held by companies, with a 45-day response requirement. You can request data access, demand deletion, opt out of data sales, and correct inaccurate information using formal requests. If companies refuse, escalate to the Virginia Attorney General's office. The VCDPA applies to for-profit businesses collecting data from Virginia residents or selling their data.
-
-## Key Takeaways
-
-- **Use email aliases to**: limit data collection going forward 6.
-- **The law applies to businesses that meet certain thresholds**: such as collecting data from more than 100,000 consumers or 25,000 consumers while deriving over 50% of revenue from data sales.
-- **Response Type 3**: "We don't have your data"
-Possible if you truly never used their services, but many companies track you without your interaction (ad networks, data brokers).
-- **File an appeal**: Use their appeal process with additional documentation
-4.
-- **If companies refuse**: escalate to the Virginia Attorney General's office.
-- **Unlike older consumer protection laws**: the VCDPA focuses specifically on data privacy and gives individuals concrete tools to control their information.
 
 ## What Is VCDPA and Who Does It Protect?
 

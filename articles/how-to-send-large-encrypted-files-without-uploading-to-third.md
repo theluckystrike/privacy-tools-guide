@@ -11,38 +11,12 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Send Large Encrypted Files Without Uploading"
-description: "A guide for developers and power users on sending large encrypted files peer-to-peer without relying on cloud services. Covers age"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-send-large-encrypted-files-without-uploading-to-third/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 8
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Use OnionShare for encrypted peer-to-peer file transfer without intermediaries: it creates a Tor onion address that the recipient accesses directly from your machine, keeping files off all servers. Alternatively, use age encryption combined with SFTP or rsync to send encrypted files directly to the recipient's server, or use the age-encrypted-backup pattern for offline transfer via USB drives. All three methods avoid cloud services entirely while keeping data encrypted end-to-end.
-
-## Key Takeaways
-
-- **For CLI usage with specific options**: ```bash
-onionshare --persistent --title "Secure Transfer" --schedule 1h largefile.zip
-```
-
-This creates a link valid for one hour that can be used multiple times.
-- **Use OnionShare for encrypted**: peer-to-peer file transfer without intermediaries: it creates a Tor onion address that the recipient accesses directly from your machine, keeping files off all servers.
-- **Alternatively**: use age encryption combined with SFTP or rsync to send encrypted files directly to the recipient's server, or use the age-encrypted-backup pattern for offline transfer via USB drives.
-- **When dealing with sensitive documents**: backups, code repositories, or personal media, you deserve better control over your data.
-- **It's designed as a**: replacement for age-old PGP with simpler syntax and better defaults.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 

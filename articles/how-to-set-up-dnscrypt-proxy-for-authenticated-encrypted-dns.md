@@ -11,40 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted"
-description: "DNS encryption is a critical layer of privacy infrastructure. While DoH (DNS over HTTPS) and DoT (DNS over TLS) have gained popularity, DNSCrypt offers an"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 DNS encryption is a critical layer of privacy infrastructure. While DoH (DNS over HTTPS) and DoT (DNS over TLS) have gained popularity, DNSCrypt offers an alternative that predates both and provides strong authentication through the DNSCrypt protocol. This guide walks you through setting up DNSCrypt Proxy on Linux, configuring it for authenticated encrypted DNS queries, and verifying that your setup works correctly.
-
-## Key Takeaways
-
-- **Unlike DoH which wraps**: DNS queries in HTTPS traffic, DNSCrypt uses its own encryption layer with Ed25519 public key authentication.
-- **To use a specific resolver**: edit your configuration file:
-
-```toml
-server_names = ['cloudflare', 'google', 'quad9']
-```
-
-For authenticated resolvers, you need to specify the resolver's public key.
-- **You can use a different port if needed**: for example `127.0.0.1:5353` to avoid conflicts with other services.
-- **The DNSCrypt resolver's website**: provides testing methods, or you can query the DNS stamp of your resolver to confirm the protocol in use.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Table of Contents
 

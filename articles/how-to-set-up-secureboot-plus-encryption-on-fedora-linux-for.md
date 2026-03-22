@@ -11,28 +11,12 @@ tags: [privacy-tools-guide, tools, encryption]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How To Set Up Secureboot Plus Encryption On Fedora Linux"
-description: "Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/
-categories: [guides]
-tags: [privacy-tools-guide, tools, encryption]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 Combine SecureBoot with LUKS full disk encryption on Fedora to create multi-layer security protecting against bootkits and physical theft. SecureBoot verifies bootloader signatures before execution, while TPM2 integration allows automatic decryption without compromising security. This guide covers key enrollment, kernel signing, automatic signing via hooks, and recovery planning for production Linux systems.
 
-## Key Takeaways
-
-- Choose "Custom" partitioning
 # 2.
 - **SecureBoot verifies bootloader signatures**: before execution, while TPM2 integration allows automatic decryption without compromising security.
 - **If any component is modified**: firmware, bootloader, or kernel—PCR values change and the TPM refuses to release the decryption key, keeping the drive locked against unauthorized boot paths.

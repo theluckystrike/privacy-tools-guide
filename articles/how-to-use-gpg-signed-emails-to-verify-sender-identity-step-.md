@@ -11,20 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Generate a GPG key pair with `gpg --gen-key`, export your public key with `gpg --armor --export [email]`, and share it with contacts. To sign an email, use `gpg --clearsign email.txt` which generates a signed version others can verify with `gpg --verify email.txt.asc`. Recipients obtain your public key, verify it against your key fingerprint (check over a trusted channel), and then verify your signatures automatically. This proves the message came from you and wasn't altered in transit.
-
-## Key Takeaways
-
-- **Most email clients use**: clear-signed format for automatic verification.
-- **To sign an email**: use `gpg --clearsign email.txt` which generates a signed version others can verify with `gpg --verify email.txt.asc`.
-- **Choose a strong passphrase**: to protect your private key.
-- **Key management**: Use hardware security modules (HSMs) for sensitive private keys, especially for automated signing systems.
-- **Keyserver reliability**: Use multiple keyserver sources and implement fallback logic in your verification scripts.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 

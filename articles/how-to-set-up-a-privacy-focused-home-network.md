@@ -11,21 +11,14 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Most home networks leak data relentlessly. Your ISP logs all DNS queries (every website you visit), intercepts unencrypted traffic, and sells this information to data brokers. Smart home devices (thermostats, doorbells, TVs) exfiltrate telemetry constantly. Mobile devices on your WiFi betray your location to advertising networks. Even encryption between your device and websites doesn't prevent your ISP from seeing which sites you access.
 
 Building a privacy-hardened home network requires layered controls: DNS filtering (blocking trackers before they load), VLAN segmentation (isolating untrusted devices), encrypted DNS (preventing ISP snooping), and a home VPN (encrypting all traffic). This guide covers the complete setup using open-source tools: Pi-hole (DNS filtering), pfSense or OPNsense (firewall), VLAN segmentation, and WireGuard (VPN).
-
-## Key Takeaways
-
-- **Most home networks leak**: data relentlessly.
-- **Smart home devices (thermostats**: doorbells, TVs) exfiltrate telemetry constantly.
-- **This guide covers the**: complete setup using open-source tools: Pi-hole (DNS filtering), pfSense or OPNsense (firewall), VLAN segmentation, and WireGuard (VPN).
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Privacy Network Architecture Overview
 

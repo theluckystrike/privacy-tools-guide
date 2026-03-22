@@ -130,8 +130,8 @@ A vault is an encrypted folder that lives in your cloud storage.
 **Behind the scenes:**
 - Cryptomator creates folder: ~/Dropbox/Cryptomator/Personal Files.cryptomator
 - This folder contains:
-  - masterkey.cryptomator (your encrypted encryption key, protected by password)
-  - d folder (encrypted file storage)
+ - masterkey.cryptomator (your encrypted encryption key, protected by password)
+ - d folder (encrypted file storage)
 
 **Important:** The folder name on cloud storage is random (d/), not "Personal Files". Cloud provider sees no meaningful names.
 
@@ -320,17 +320,17 @@ Alternative: Set auto-lock to 30 minutes instead of 5
 **For Large Vaults (> 50 GB):**
 
 1. **Exclude vault from antivirus scans**
-   - Scanning encrypted files repeatedly is slow
-   - Windows: Defender → Virus & threat protection → Manage exceptions → Add vault path
-   - macOS: System Preferences → Security & Privacy → Antivirus → Exclude path
+ - Scanning encrypted files repeatedly is slow
+ - Windows: Defender → Virus & threat protection → Manage exceptions → Add vault path
+ - macOS: System Preferences → Security & Privacy → Antivirus → Exclude path
 
 2. **Store vault on fastest drive**
-   - Encrypted drives (M.2 SSD > External SSD > HDD)
-   - Example: Vault on internal SSD, cloud sync to Dropbox on external
+ - Encrypted drives (M.2 SSD > External SSD > HDD)
+ - Example: Vault on internal SSD, cloud sync to Dropbox on external
 
 3. **Batch operations**
-   - Don't encrypt 1 file at a time
-   - Instead: Copy all files to vault folder, let Cryptomator encrypt batch
+ - Don't encrypt 1 file at a time
+ - Instead: Copy all files to vault folder, let Cryptomator encrypt batch
 
 ---
 

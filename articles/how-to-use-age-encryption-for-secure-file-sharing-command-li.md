@@ -11,38 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
 ---
-layout: default
-title: "How To Use Age Encryption For Secure File Sharing Command"
-description: "Install age (brew install age on macOS, apt install age on Linux), generate recipient keys with age-keygen, then encrypt files using age -r [public-key]"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-use-age-encryption-for-secure-file-sharing-command-li/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 
 {% raw %}
 
 Install age (`brew install age` on macOS, `apt install age` on Linux), generate recipient keys with `age-keygen`, then encrypt files using `age -r [public-key] file.txt > file.txt.age` and decrypt with `age -d file.txt.age`. For best results, share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key. Age is simpler than GPG, works with modern cryptography (ChaCha20-Poly1305), and requires no key servers or complex configuration.
-
-## Key Takeaways
-
-- **On macOS, use Homebrew**: ```bash
-brew install age
-```
-
-On Linux, age is available through most package managers.
-- **For most use cases**: generating a dedicated identity file provides the best balance of security and convenience.
-- **Age chooses sane defaults**: modern algorithms, no configuration required—and focuses on the most common use case: encrypting files for yourself or specific recipients.
-- **The symmetric encryption uses**: ChaCha20-Poly1305, providing authenticated encryption that detects tampering.
-- **Key derivation uses Argon2id**: resistant to both GPU and ASIC-based attacks when password-protected.
-- **For best results**: share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key.
 
 ## Table of Contents
 

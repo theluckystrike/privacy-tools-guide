@@ -272,12 +272,13 @@ sudo systemctl start filebeat
 
 Kibana provides pre-built dashboards for Suricata that show alert trends, top sources, protocol breakdowns, and DNS analysis.
 
-## Related Reading
+## Related Articles
 
-- [Wireshark Basics for Privacy Network Analysis](/wireshark-privacy-network-analysis-guide/)
-- [How to Set Up a Privacy-Focused Home Server](/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
-- [Pi-hole DNS Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
-
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -229,12 +229,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
 - [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
-- [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
-- [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
-
+- [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
+- [Dating App Background Location Tracking What Happens When](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
+- [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
+- [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 ## Data Retention and Cross-Platform Sharing
 
 Tinder's parent company Match Group owns numerous dating platforms and shares data across them. Understanding this ecosystem is critical:

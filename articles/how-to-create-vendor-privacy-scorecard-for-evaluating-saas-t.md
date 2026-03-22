@@ -11,20 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
 Evaluating SaaS vendors for privacy and data protection is a critical step before committing to any tool. A well-structured vendor privacy scorecard gives you a systematic way to compare options, identify red flags, and make informed decisions. This guide walks you through building a scorecard that works for developers and power users evaluating tools for personal projects or enterprise deployments.
-
-## Key Takeaways
-
-- **The following example uses**: a 100-point scale, but you should adjust weights to match your priorities.
-- **Under what jurisdictions does**: your company operate? ### User Rights 4.
-- **Can users export all**: their data? In what formats? 5.
-- **Do you sell user**: data to third parties? 8.
-- **This guide walks you**: through building a scorecard that works for developers and power users evaluating tools for personal projects or enterprise deployments.
-- **Each category deserves weighted**: scoring based on how critical it is for your use case.
 
 ## Why You Need a Vendor Privacy Scorecard
 

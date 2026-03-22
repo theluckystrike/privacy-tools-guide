@@ -11,20 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append an HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
-
-## Key Takeaways
-
-- **Modern protocols like Signal**: and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
-- **Ed25519 is the recommended algorithm for new implementations**: it offers fast verification, small signature sizes, and strong security guarantees.
-- **Reuse of nonces with AEAD modes completely breaks security**: ensure nonces are unique per message.
-- **Always use `hmac.compare_digest()` for**: timing-safe comparison to prevent timing attacks.
-- **This is useful for**: encrypting a message while authenticating metadata like headers or sequence numbers.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 

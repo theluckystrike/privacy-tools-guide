@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How to Destroy Data on Device Before Border Crossing Guide"
-description: "A practical guide for developers and power users on securely destroying data on devices before crossing borders. Learn command-line tools, techniques"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Crossing international borders with sensitive data requires careful preparation. Border agents in many countries have broad legal authority to examine devices, request passwords, and sometimes copy or retain device contents. Rather than surrendering access to your data, you may choose to securely destroy sensitive information before reaching the border. This guide covers practical methods for developers and power users to permanently erase data from devices while understanding the underlying security considerations.
-
-## Key Takeaways
-
-- **Transfer only what you genuinely need**: and ensure the backup itself uses strong encryption.
-- **Rather than surrendering access**: to your data, you may choose to securely destroy sensitive information before reaching the border.
-- **This guide covers practical**: methods for developers and power users to permanently erase data from devices while understanding the underlying security considerations.
-- **For cloud backups**: ensure you use services with strong end-to-end encryption where you control the keys.
-- **For external drives**: use LUKS encryption on Linux, FileVault on macOS, or BitLocker on Windows with strong passphrases.
-- **The `shred` command comes**: pre-installed on most Linux systems.
 
 ## Prerequisites
 

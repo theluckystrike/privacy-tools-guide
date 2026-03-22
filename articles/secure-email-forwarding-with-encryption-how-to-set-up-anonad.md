@@ -317,11 +317,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Set Up Forwarding Only Email Address That Hides Your](/privacy-tools-guide/how-to-set-up-forwarding-only-email-address-that-hides-your-/)
-- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 - [Privacy-Focused Email Forwarding Services Comparison](/privacy-tools-guide/privacy-focused-email-forwarding-services-comparison/)
-- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [Best Email Encryption Plugin Thunderbird](/privacy-tools-guide/best-email-encryption-plugin-thunderbird/)
-
+- [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
+- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

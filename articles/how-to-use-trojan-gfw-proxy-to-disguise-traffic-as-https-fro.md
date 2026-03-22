@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Use Trojan Gfw Proxy To Disguise Traffic As Https"
-description: "A practical guide for developers and power users on configuring Trojan GFW proxy to mask traffic as HTTPS for use from China"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Trojan GFW proxy represents a sophisticated approach to network traffic obfuscation, designed specifically to bypass the Great Firewall of China (GFW). Unlike traditional VPN protocols that rely on known signatures, Trojan imitates regular HTTPS traffic, making it significantly harder for deep packet inspection (DPI) systems to detect and block. This guide walks you through the complete setup process, from server configuration to client installation, with practical code examples you can implement immediately.
-
-## Key Takeaways
-
-- **The GFW cannot distinguish**: between legitimate HTTPS traffic and Trojan-encrypted data because both use the same port (443) and identical TLS handshakes.
-- **What differentiates Trojan from**: earlier protocols like Shadowsocks or V2Ray VMess is its use of authentic TLS certificates issued by trusted certificate authorities.
-- **When the GFW probes a Trojan server, it receives a valid TLS handshake and then sees what appears to be normal HTTPS responses**: because the server also runs a real web server on the fallback port 80.
-- **For developers who prefer**: command-line tools or need to integrate Trojan into scripts, use the trojan-go client.
-- **This makes active probing**: by censors significantly harder than with protocols that use custom encryption schemes.
-- **For browsers**: both Firefox and Chrome support SOCKS5 proxy configuration.
 
 ## Table of Contents
 

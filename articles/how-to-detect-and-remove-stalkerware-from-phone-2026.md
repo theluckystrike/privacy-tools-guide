@@ -18,14 +18,6 @@ tags: [privacy-tools-guide, stalkerware, mobile-security, privacy, safety, cyber
 
 Stalkerware (also called spy apps, spyware, monitoring software) runs silently on phones, sending real-time location, text messages, call logs, and app usage to abusers. Detection requires checking for unusual battery drain, data usage spikes, suspicious apps, high temperatures, and slow performance. iOS offers better protection than Android due to stricter app controls. Removal means factory reset (nuclear option) or using dedicated removal tools (iMazing for iOS, AVG Cleaner for Android). Before removal, gather evidence, plan safe exit, and contact domestic violence resources. This guide covers technical detection, removal methods, safety planning, and resources.
 
-## Key Takeaways
-
-- **Common stalkerware apps**: mSpy, FlexiSPY, SpyBubble, PhoneSpector (Android). Fewer iOS options due to restrictions.
-- **Detection signs**: Unusual battery drain (>20%/hour idle), data usage spikes (100MB+ unexpected), phone warm when idle, delays during calls, crashes, unfamiliar apps, missing battery icons.
-- **iOS removal**: Factory reset (full wipe) most reliable. Alternative: Apple's Domestic Violence app toolkit for evidence preservation.
-- **Android removal**: Boot safe mode, remove suspicious apps, run antivirus (Malwarebytes), factory reset if necessary.
-- **Safety first**: Stalkerware removal is domestic violence indicator. Contact National Domestic Violence Hotline (1-800-799-7233) before removing, have safe exit plan.
-
 ## Table of Contents
 
 - [Understanding Stalkerware: What It Is and How It Works](#understanding-stalkerware-what-it-is-and-how-it-works)

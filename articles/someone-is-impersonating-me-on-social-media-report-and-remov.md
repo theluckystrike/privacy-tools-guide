@@ -351,11 +351,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
-- [How to Block Social Media Share Button Tracking on Websites](/privacy-tools-guide/how-to-block-social-media-share-button-tracking-on-websites/)
-- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
-- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
-- [How To Prepare Social Media Accounts For Memorialization Com](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-
+- [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
+- [Protect Yourself from Doxxing After Meeting Someone](/privacy-tools-guide/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
+- [How To Safely Exchange Social Media Handles With Dating](/privacy-tools-guide/how-to-safely-exchange-social-media-handles-with-dating-matc/)
+- [Register Social Media Accounts Without Providing Real Phone](/privacy-tools-guide/how-to-register-social-media-accounts-without-providing-real/)
+- [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

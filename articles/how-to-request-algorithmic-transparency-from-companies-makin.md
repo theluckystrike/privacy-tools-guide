@@ -11,22 +11,14 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Automated decision-making systems influence everything from credit approvals and hiring decisions to social media content ranking and insurance premiums. If you've ever been denied a loan, rejected for a job, or noticed your content feed mysteriously changed, you may have wondered: *why did this happen*? The answer often lies in proprietary algorithms that companies are under no obligation to explain.
 
 That is beginning to change. Regulatory frameworks in the European Union, consumer protection laws in the United States, and emerging privacy regulations worldwide are creating new rights for individuals to request transparency about automated decisions. This guide shows you how to exercise those rights effectively.
-
-## Key Takeaways
-
-- **EU AI Act (2025)**: While primarily focused on high-risk AI systems, this regulation increases transparency requirements for providers of AI systems that interact with individuals.
-- **The categories of personal**: data used in making such decisions.
-- **The specific criteria and**: thresholds used in the decision-making process.
-- **Access to my personal**: data used for these purposes.
-- **Whether the business uses**: automated decision-making, including profiling, to make decisions about me.
-- **The categories of personal**: information used in automated decision-making.
 
 ## Prerequisites
 

@@ -20,12 +20,6 @@ You pay for a VPN monthly and assume it's protecting your traffic. But VPN compa
 
 This guide walks through eight verification tests you can run right now to confirm your VPN is actually working. No technical background required. All tools are free.
 
-## Key Takeaways
-
-- **- Use VPN kill switch**: If VPN doesn't fully support IPv6, kill switch should block all IPv6 traffic.
-- **A 2016 study found**: 38% of VPNs leaked DNS.
-- **---
-
 ## Table of Contents
 
 - [Test 1**: DNS Leak Detection (Most Common)](#test-1-dns-leak-detection-most-common)

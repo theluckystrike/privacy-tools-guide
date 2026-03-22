@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Replace Google Home with Local Voice Assistant"
-description: "Replace Google Home with Rhasspy or Mycroft to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /how-to-replace-google-home-with-local-voice-assistant-using-/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 Replace Google Home with **Rhasspy** or **Mycroft** to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives offer full voice assistant capabilities, custom wake words, and integration with home automation systems—all running privately on modest hardware like a Raspberry Pi. This guide walks through installing, configuring, and deploying each solution with practical examples for developers and power users.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **For English-only home automation**: commands, the `base.en` model gives roughly 90% accuracy of the full model at 4x the speed.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Both open-source alternatives offer full voice assistant capabilities, custom wake words, and integration with home automation systems**: all running privately on modest hardware like a Raspberry Pi.
 
 ## Table of Contents
 

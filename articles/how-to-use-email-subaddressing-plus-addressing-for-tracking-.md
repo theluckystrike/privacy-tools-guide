@@ -11,32 +11,13 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Use Email Subaddressing Plus Addressing For Tracking Which"
-description: "A practical guide to using email subaddressing and addressing techniques to track which services leak your email address. Perfect for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-which-services-leak-your-address/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Email subaddressing (also known as plus addressing or tagged addressing) is a powerful technique that lets you create infinite email variations using a single inbox. When combined with strategic addressing patterns, you can not only organize your email but also detect which services leak or sell your personal information. This guide covers practical implementations for developers and power users who want to maintain control over their inbox and track data handling practices.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Branding**: Use professional domain names
-
-```bash
 # Cloudflare Email Routing (free) setup example
 # 1.
 - **This RFC 5233 compliant**: feature works with Gmail, Outlook, iCloud, Proton Mail, and most modern email services.

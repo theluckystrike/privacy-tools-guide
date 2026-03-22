@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Set Up Self Hosted Matrix Synapse Server For Private"
-description: "Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance gives you complete control over your messaging infrastructure, end-to-end encryption keys, and data retention policies. This guide walks through deploying a production-ready Synapse server using Docker, configuring essential security settings, and connecting your first clients.
-
-## Key Takeaways
-
-- **Choose "Advanced" and enter**: your homeserver URL: `https://matrix.yourdomain.com` 3.
-- **For a production deployment**: use a reverse proxy like Caddy or Nginx with automatic SSL certificates.
-- This user has administrator privileges.
-- **For client connections**: you can use Element (formerly Riot.im), the reference Matrix client.
-- **Log in with the**: credentials you created above For mobile users, Element is available on Android via F-Droid (preferred for privacy) and both iOS and Android through their respective app stores.
-- **The SchildiChat client on**: Android provides additional privacy-focused defaults including automatic room key backup and improved notification handling.
 
 ## Prerequisites
 

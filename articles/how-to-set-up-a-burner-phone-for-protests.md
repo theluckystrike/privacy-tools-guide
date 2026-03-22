@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Set Up a Burner Phone for Protests"
-description: "Practical guide to setting up a burner phone for protests. Covers phone selection, communication tools, digital evidence protection, and operational security."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-a-burner-phone-for-protests/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 A burner phone for protests provides separation between your protest participation and your primary identity, reducing law enforcement tracking risk and protecting contacts. This guide covers selecting appropriate hardware, configuring secure messaging, protecting evidence of police conduct, and operational security practices that minimize law enforcement surveillance during demonstrations.
-
-## Key Takeaways
-
-- **Use encryption on entire**: phone filesystem (SlimRoms, Graphene OS on supported models) Better approach: Don't store sensitive evidence on the phone long-term.
-- **Activate minimal data plan**: ($5-10/month prepaid) Note: US carriers are increasingly requiring ID verification for activation.
-- **Target older models (2-3**: years old) because they're cheaper used and less likely to have biometric authentication that law enforcement could force you to unlock.
-- **Use a generic name**: if system requires one ("John Smith" with birth date 01/01/1950) 4.
-- **Use default camera app**: (minimal metadata leakage) 2.
-- **Install VeraCrypt (open source**: disk encryption) 2.
 
 ## Table of Contents
 

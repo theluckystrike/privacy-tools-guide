@@ -11,39 +11,11 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How To Set Up Deltachat Encrypted Messenger Over Existing"
-description: "A practical guide for developers and power users to configure DeltaChat for end-to-end encrypted messaging using your existing email infrastructure"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-deltachat-encrypted-messenger-over-existing-em/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Set up DeltaChat by installing the application, adding your existing email account, and enabling Autocrypt encryption to create end-to-end encrypted messaging over email infrastructure. DeltaChat works with any IMAP-compatible email provider without server setup, making it ideal for developers who want encryption without infrastructure maintenance. The email-based architecture means you retain access through any email client and avoid vendor lock-in, though metadata (subject lines, sender/recipient addresses) remains visible to email providers.
-
-## Key Takeaways
-
-- **Create user accounts sudo**: useradd -m -s /usr/sbin/nologin user@example.com echo "user@example.com:$(openssl passwd -crypt password)" | sudo tee -a /etc/dovecot/users # 6.
-- **Most providers**: including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work with DeltaChat.
-- **Start a chat with**: a contact who also uses DeltaChat 2.
-- **Rather than maintaining its own network**: DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption.
-- **This architecture provides several**: advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
-- **For advanced users configuring**: custom servers, tap the three-dot menu and select "Manual Settings" to access advanced configuration options.
-
-### Step 1: Understand DeltaChat's Architecture
-
-DeltaChat operates on a decentralized model by using email protocols with automatic encryption. Rather than maintaining its own network, DeltaChat uses your existing email provider as the transport layer while implementing Autocrypt to handle key management and message encryption. This approach means you retain full ownership of your communication without depending on a single service provider.
-
-When you send a message through DeltaChat, it travels as an encrypted email to your recipient's email address. The recipient's DeltaChat client automatically detects and decrypts incoming messages. This architecture provides several advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
 
 ## Table of Contents
 

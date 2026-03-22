@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Abine Blur is a privacy-focused service that provides masked contact details—creating throwaway email addresses, phone numbers, and credit card numbers that forward to your real information. This allows you to sign up for services, make purchases, and communicate without exposing your actual identity. For developers and power users who value digital privacy, understanding how to use Blur effectively can significantly reduce your attack surface across the web.
 
-## Key Takeaways
-
-- **Multi-use cards work like**: traditional credit cards but with customizable spending limits and the ability to freeze or cancel them instantly through the Blur dashboard.
-- **The free tier provides**: limited masking capabilities, while premium tiers offer unlimited masked emails, phone numbers, and credit cards.
-- **The practical use case**: for developers involves integrating Blur into applications where users need temporary communication channels.
-- **Switch to a different**: virtual card number (multi-use cards generate new numbers) 3.
-- **This routing adds minimal**: latency (typically <1 second) but operates best on reliable internet.
-- **Abine Blur is a privacy-focused service that provides masked contact details**: creating throwaway email addresses, phone numbers, and credit card numbers that forward to your real information.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

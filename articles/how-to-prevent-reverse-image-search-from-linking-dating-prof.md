@@ -17,15 +17,6 @@ intent-checked: true
 
 Reverse image search poses a significant risk to dating profile privacy. When someone uploads your profile photo to services like Google Images, TinEye, or Yandex, these platforms can match it against billions of indexed images—including photos from social media, professional websites, and other sources linked to your real identity. This guide covers practical techniques to break that link and maintain separation between your dating identity and your real-world presence.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **While this data often**: gets stripped during upload to most platforms, some dating services preserve certain tags or re-embed data that could aid identification.
-- **If your photo returns**: matches to your real identity, don't use it.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

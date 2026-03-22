@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
 ---
-layout: default
-title: "Stop Alexa From Recording Conversations and Sending Audio"
-description: "A technical guide for developers and power users to prevent Alexa from recording and transmitting audio data to Amazon servers. Includes code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /how-to-stop-alexa-from-recording-conversations-and-sending-a/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of]---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |
@@ -40,15 +27,6 @@ tags: [privacy-tools-guide, best-of]---
 {% raw %}
 
 Amazon Alexa devices are designed to listen for their wake word continuously, which means they constantly process audio from your environment. Understanding how to minimize what Alexa records and where that data goes is essential for privacy-conscious users. This guide provides practical methods to reduce Alexa's data collection, from basic settings adjustments to more advanced techniques suitable for developers and power users.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mycroft (completely open source)**: apt-get install mycroft-core # Runs locally on Raspberry Pi # No cloud recording by default # Full control over what's shared # 2.
-- **Use incognito/privacy mode (minimal**: recording) 3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Table of Contents
 

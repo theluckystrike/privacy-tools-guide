@@ -11,45 +11,14 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices"
-description: "Step-by-step DoH setup: macOS, Windows, Linux, iOS, Android, routers. Provider comparison (Cloudflare, NextDNS, Quad9). Verification steps included"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 DNS (Domain Name System) queries reveal every website you visit. Without encryption, your ISP, network administrators, and anyone monitoring traffic sees a complete log: "User visited reddit.com at 3:47pm, github.com at 4:02pm, banking.example.com at 4:15pm." DNS-over-HTTPS (DoH) encrypts these queries, protecting your browsing privacy from ISPs and network snoopers.
 
 This guide covers step-by-step setup for all devices—macOS, Windows, Linux, iOS, Android, and routers. DoH is the most impactful privacy improvement you can make with minimal effort. Implementing it across your devices costs nothing and takes 1-2 hours.
-
-## Key Takeaways
-
-- **HTTPS adds ~10-50ms to**: initial queries (amortized across all browsing because results are cached).
-- **Best for**: Individuals wanting free, fast DoH without account management.
-- **Best for**: Users wanting detailed filtering and analytics.
-- **Verify**: ```bash
-systemctl status systemd-resolved
-resolvectl status
-```
-
-### Method 2: stubby (Dedicated DoH Resolver, Recommended)
-
-Stubby is a dedicated DNS resolver supporting DoH:
-
-1.
-- **Enter provider details Not**: all versions support this directly; iOS 15+ is most reliable.
-- **For DNS-only encryption**: use Method 1 or official app.
 
 ## Prerequisites
 

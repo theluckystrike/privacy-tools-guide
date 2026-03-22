@@ -11,22 +11,14 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Replace manufacturer Secure Boot keys with your own custom keys to gain complete authority over boot trust chains. Generate a three-tier key hierarchy (Platform Key, Key Exchange Key, and Signature Database key) using OpenSSL, enroll them in UEFI firmware, then sign all bootloaders and kernels. This approach prevents firmware-level tampering and ensures only your signed code executes at boot time.
 
 Automate kernel signing after updates using kernel hooks, and create encrypted backups of your keys for recovery purposes. This guide includes step-by-step enrollment procedures for different firmware types and troubleshooting for common boot failures.
-
-## Key Takeaways
-
-- **Store your private keys**: in a location accessible only to root rather than in a user home directory.
-- **The most common issues**: Signature verification failed: The kernel or bootloader was updated without re-signing.
-- **Use `efibootmgr` to add**: an entry pointing to your signed bootloader after enrollment.
-- **Document the GUID used**: when creating your EFI signature lists.
-- **If you need to re-enroll from scratch**: you should use the same GUID to ensure key continuity across reinstallation.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 

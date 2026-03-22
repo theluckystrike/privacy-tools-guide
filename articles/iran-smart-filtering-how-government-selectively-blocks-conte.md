@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Iran operates one of the most sophisticated internet filtering systems in the world. Unlike simple IP blocking or DNS blackholing, the country's "Smart Filtering" (also called Intelligent Filtering) employs deep packet inspection (DPI), Server Name Indication (SNI) analysis, and behavioral traffic classification to selectively block content while maintaining network performance for compliant traffic. Understanding these mechanisms is essential for developers and power users who need to build resilient systems or maintain access to blocked resources.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [How Iran's Smart Filtering Works](#how-irans-smart-filtering-works)

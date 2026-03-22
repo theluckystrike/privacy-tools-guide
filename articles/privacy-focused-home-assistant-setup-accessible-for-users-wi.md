@@ -490,6 +490,14 @@ automation:
 
 This configuration provides rapid emergency response alongside accessible normal operation.
 
+## Related Articles
+
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+- [How To Set Up Home Assistant Esphome For Completely Local](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
+- [How To Use Tailscale To Access Home Assistant Remotely](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

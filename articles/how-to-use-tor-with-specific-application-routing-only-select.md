@@ -11,34 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Use Tor With Specific Application Routing Only"
-description: "When you need onion routing for specific tasks without routing your entire system through Tor, selective application routing provides the solution. This"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-tor-with-specific-application-routing-only-select/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 When you need onion routing for specific tasks without routing your entire system through Tor, selective application routing provides the solution. This approach lets you route only designated applications through the Tor network while maintaining direct connections for everything else. Developers and power users commonly need this setup for tasks like testing Tor-hidden services, accessing .onion domains, or anonymizing particular application traffic without sacrificing performance on other operations.
 
 This guide covers multiple methods to achieve per-application Tor routing on Linux, macOS, and Windows systems.
-
-## Key Takeaways
-
-- **DNS leaks**: Configure applications to use Tor's DNS resolver (port 5353).
-- **IPv6 leaks**: Disable IPv6 entirely or ensure your application only makes IPv4 connections.
-- **Tor supports IPv6 but**: many applications handle it poorly.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 

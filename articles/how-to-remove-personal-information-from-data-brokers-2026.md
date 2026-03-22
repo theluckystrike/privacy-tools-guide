@@ -56,14 +56,14 @@ Your personal data is sold by hundreds of data brokers: Whitepages, PeopleFinder
 | Broker | Website | Opt-Out Method | Time Required | Notes |
 |--------|---------|---|---|---|
 | Spokeo | spokeo.com | Online form | 5 min | Covers phone, address lookup |
-| Whitepages | whitepages.com | Online form | 5 min | Most comprehensive US coverage |
+| Whitepages | whitepages.com | Online form | 5 min | Most US coverage |
 | BeenVerified | beenverified.com | Online form | 5 min | Criminal records, dating verification |
 | PeopleFinder | peoplefinder.com | Online form | 5 min | Background checks, people search |
 | Intelius | intelius.com | Online form | 5 min | Requires account access to remove |
 | ZoomInfo | zoominfo.com | Email opt-out | 10 min | B2B focus, harder to reach |
 | TruthFinder | truthfinder.com | Online form | 5 min | Similar to BeenVerified |
 | PeopleFindFast | peoplefindfast.com | Online form | 5 min | International coverage |
-| Radaris | radaris.com | Online form | 5 min | Emerging broker, comprehensive |
+| Radaris | radaris.com | Online form | 5 min | Emerging broker, |
 | MyLife | mylife.com | Online form + appeal | 10 min | Reputation scores, may need follow-up |
 | BlackBook | blackbookglobe.com | Email request | 10 min | Niche, requires proof of identity |
 | Surepeople | surepeople.com | Online form | 5 min | International people search |
@@ -80,7 +80,7 @@ Before removing, identify which brokers have your data.
 - Bing People Search: bing.com/people
 - Pinterest People Search: pinterest.com (check if profile exists)
 
-**Paid comprehensive check:**
+**Paid check:**
 - Privacy.com's Data Broker Report ($50–$150): Shows which brokers list you
 - Experian SafeGuard: Shows data brokers + credit inquiries
 - ReputationDefender: Professional audit
@@ -229,7 +229,7 @@ Alerts trigger if new pages mention you (catches re-listing)
 - Enforcement: National Data Protection Authorities
 
 **US Non-CCPA Residents:**
-- Limited legal leverage (varies by state)
+- Limited legal uses (varies by state)
 - Vermont, Nevada: Data broker registration required (broker must honor removal)
 - Other states: Request "do not sell" option if available
 - Legal basis: Terms of service violation claims

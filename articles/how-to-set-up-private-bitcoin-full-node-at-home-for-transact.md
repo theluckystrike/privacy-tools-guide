@@ -362,10 +362,9 @@ A full node validates blocks and transactions but does not produce new blocks. A
 ## Related Articles
 
 - [How To Buy Bitcoin Without Kyc Verification Private Purchase](/privacy-tools-guide/how-to-buy-bitcoin-without-kyc-verification-private-purchase/)
-- [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/privacy-tools-guide/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)
-- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
-- [Set Up Casa Multisig Bitcoin Inheritance Plan](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
-- [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-
+- [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
+- [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
+- [Anonymous Bitcoin Wallet Setup Using Tor And Coin Mixing](/privacy-tools-guide/anonymous-bitcoin-wallet-setup-using-tor-and-coin-mixing-services/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

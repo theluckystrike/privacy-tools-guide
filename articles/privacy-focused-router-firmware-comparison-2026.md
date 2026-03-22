@@ -449,14 +449,13 @@ OPNsense: Automatic monthly updates recommended
 
 **Device can't reach other local devices**: Check firewall rules, verify device on same subnet, disable guest network isolation if needed.
 
-## Related Reading
+## Related Articles
 
-- [How to Encrypt External Hard Drive Guide 2026](/privacy-tools-guide/how-to-encrypt-external-hard-drive-guide-2026/)
-- [Best Browser for Avoiding Google Tracking](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
-- [Anonymous WiFi Access Strategies](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-
+- [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [How to Secure Your Home Router for Privacy in 2026](/privacy-tools-guide/how-to-secure-home-router-for-privacy-2026/)
+- [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
+- [How to Set Up a VPN on Your Router](/privacy-tools-guide/vpn-on-router-setup-guide/)
+- [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Regular TLS authenticates the server to the client (the client verifies the server's certificate). Mutual TLS (mTLS) adds client authentication — the server also verifies the client's certificate. For microservices, this means only services with a valid certificate from your private CA can call each other, even if an attacker reaches your internal network.
 
-## Key Takeaways
-
-- **Topics covered**: how mtls works, step 1: set up a private certificate authority, step 2: issue service certificates
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## How mTLS Works
 
 ```

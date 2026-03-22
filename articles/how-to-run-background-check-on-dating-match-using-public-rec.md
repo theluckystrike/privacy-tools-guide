@@ -11,34 +11,12 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Run Background Check On Dating Match Using Public"
-description: "A practical guide for developers and power users on verifying dating matches through public records while respecting privacy laws and ethical boundaries"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /how-to-run-background-check-on-dating-match-using-public-rec/
-categories: [guides]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 You can verify dating matches using public records by searching county court records, state criminal databases, sex offender registries (NSOPW), property assessor records, and professional licensing boards. This guide covers legal methods for conducting background checks using PACER, state-specific court systems, and publicly available information to confirm identity, check for criminal history, and verify professional credentials while respecting FCRA compliance and ethical boundaries.
-
-## Key Takeaways
-
-- **State-Level Searches Many states**: maintain centralized databases for certain records: Criminal History: Most states offer statewide criminal history searches, though access may be restricted.
-- **Property Records County assessor**: and recorder websites provide property ownership information: ```bash # Most county assessor sites follow similar patterns: # 1.
-- **Property Ownership**: Real estate records show property ownership history in most jurisdictions.
-- **Intended Use**: Public records checks for personal safety verification differ from commercial background checks.
-- **County Clerk and Court**: Records Most criminal and civil court records are maintained at the county level.
-- Uses the NSOPW API endpoints.
 
 ## Prerequisites
 
