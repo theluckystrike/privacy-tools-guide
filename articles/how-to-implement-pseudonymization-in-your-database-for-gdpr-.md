@@ -39,7 +39,17 @@ Pseudonymize data using deterministic encryption (same input always produces sam
 - **This approach provides excellent**: security because the token has no mathematical relationship to the original value.
 - **If you need to**: look up a user by their original email (for login, for example), you must either retain the salt and recompute the hash for comparison, or store the token mapping separately.
 
-## Understanding Pseudonymization Under GDPR
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Pseudonymization Under GDPR
 
 GDPR explicitly recognizes pseudonymization in Article 4(5) as a processing safeguard. The regulation distinguishes between pseudonymized data (still considered personal data) and truly anonymized data (no longer personal data). This distinction matters because pseudonymized data remains subject to GDPR requirements, but the Article 32 security measures become significantly easier to satisfy.
 
@@ -63,7 +73,7 @@ True anonymization — where re-identification is irreversible — is extremely 
 
 Using pseudonymization can broaden what you are permitted to do with data. Recital 29 of GDPR states that applying pseudonymization to personal data can reduce the risks to the data subjects and help controllers and processors meet their data protection obligations. Practically, this means pseudonymized data is more defensible when used for secondary purposes such as internal analytics, fraud detection model training, or cross-team data sharing.
 
-## Database-Level Pseudonymization Techniques
+### Step 2: Database-Level Pseudonymization Techniques
 
 ### Column-Level Encryption with Application Keys
 
@@ -148,7 +158,7 @@ ADD COLUMN email_salt VARCHAR(32);
 
 Note that hash-based pseudonymization is one-way without the salt. If you need to look up a user by their original email (for login, for example), you must either retain the salt and recompute the hash for comparison, or store the token mapping separately. Hash-based approaches work best for analytics use cases where you want to count or group by a pseudonymous identifier without ever needing to resolve it back to the original.
 
-## Key Management Considerations
+### Step 3: Key Management Considerations
 
 Effective pseudonymization relies on proper key management. Keys should never be stored alongside encrypted data. Consider these practices:
 
@@ -160,7 +170,7 @@ Effective pseudonymization relies on proper key management. Keys should never be
 
 **Key Separation Across Environments**: Use entirely separate keys in development, staging, and production environments. Production keys must never exist in development environments. This prevents accidental exposure through developer tooling and log aggregation systems.
 
-## Implementation Patterns
+### Step 4: Implementation Patterns
 
 ### On-Insert Pseudonymization
 
@@ -212,7 +222,7 @@ def pseudonymize_existing_users(db_connection):
 
 Run batch jobs during low-traffic windows and monitor for lock contention on large tables. On PostgreSQL, consider using `SELECT ... FOR UPDATE SKIP LOCKED` to safely parallelize the batch job across multiple workers.
 
-## Handling the Right to Erasure
+### Step 5: Handling the Right to Erasure
 
 GDPR Article 17 grants data subjects the right to request erasure of their personal data. Pseudonymization makes this significantly easier to implement technically: delete the mapping entry (or the encryption key) and the pseudonymized data in your main tables becomes effectively unresolvable.
 
@@ -230,7 +240,7 @@ DELETE FROM token_mapping WHERE token_id = (
 
 Document this erasure pattern in your Records of Processing Activities (RoPA) required under GDPR Article 30. Data protection authorities expect to see a clear procedure for handling erasure requests, and a pseudonymization-based approach is straightforward to describe and audit.
 
-## Testing Your Implementation
+### Step 6: Test Your Implementation
 
 Verify pseudonymization effectiveness through these validation steps:
 
@@ -248,6 +258,21 @@ def verify_pseudonymization(user_id):
 **Security Testing**: Attempt re-identification using compromised credentials or database access to ensure pseudonymized values remain protected. Specifically, test what an attacker who has read access to the main `users` table but not the `token_mapping` table can learn. They should see only UUIDs with no path to the original PII.
 
 **Audit Logging Verification**: Confirm that access to the token mapping table is logged. Any query against the mapping table represents a de-pseudonymization event and should appear in your audit trail for later review.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

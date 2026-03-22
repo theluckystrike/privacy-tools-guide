@@ -46,7 +46,17 @@ Windows collects significant telemetry data by default, including keystroke patt
 
 Popular privacy-focused Linux distributions include Fedora (with its tight SELinux integration), Debian (minimal default packages), and Arch Linux (complete manual control). Choose based on your maintenance preferences rather than assuming one distribution provides inherently better privacy—all major distributions can be hardened effectively.
 
-## Essential Tool Replacements for Windows Applications
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Essential Tool Replacements for Windows Applications
 
 Your productivity depends on having equivalent tools for common workflows. Here are tested replacements that maintain feature parity:
 
@@ -90,7 +100,7 @@ sudo apt install keepassxc
 
 Export your existing passwords to a CSV file, then import into your chosen Linux password manager. This eliminates the friction of recreating credentials manually.
 
-## Preserving Your Development Workflow
+### Step 2: Preserving Your Development Workflow
 
 ### Dotfiles and Configuration
 
@@ -142,7 +152,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-## Data Migration Strategy
+### Step 3: Data Migration Strategy
 
 ### Backing Up Personal Files
 
@@ -169,7 +179,7 @@ Browser bookmarks, history, and passwords can transfer between operating systems
 
 Import these files in your Linux browser. Consider switching to a privacy-focused browser during migration—**Firefox** with arkenfox hardening, **Brave** with its built-in tracker blocking, or **LibreWolf** for maximum privacy.
 
-## Privacy Hardening After Migration
+### Step 4: Privacy Hardening After Migration
 
 Linux provides privacy advantages by default, but configuration remains necessary:
 
@@ -258,7 +268,7 @@ sudo dpkg -i PlayOnLinux_4.3.4.deb
 sudo apt-get install -f
 ```
 
-## Maintaining Your Linux Environment
+### Step 5: Maintaining Your Linux Environment
 
 A successful migration requires ongoing maintenance:
 
