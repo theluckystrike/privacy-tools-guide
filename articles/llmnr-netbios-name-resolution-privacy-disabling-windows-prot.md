@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy, llm]---
 
 Disable LLMNR and NetBIOS on Windows to prevent hostname leakage: run `netsh int ipv4 set global unicastif=enabled` to disable LLMNR, then disable NetBIOS through Network Settings → Advanced → Wins/NetBIOS tab. Alternatively, use Group Policy (gpedit.msc) to disable both at the system level. These protocols broadcast your device name across the network, allowing attackers to discover system information and launch targeted attacks. Disabling them removes this exposure while leaving DNS-based name resolution intact for normal connectivity.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **LLMNR operates on UDP**: port 5355 and uses IPv4 multicast address 224.0.0.252 or IPv6 multicast group ff02::1.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Alternatively**: use Group Policy (gpedit.msc) to disable both at the system level.
+
 ## Understanding LLMNR and NetBIOS Name Resolution
 
 ### What is LLMNR?

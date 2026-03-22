@@ -19,6 +19,15 @@ The 2024 Ledger data breach exposed a fundamental truth that developers building
 
 For developers and power users, this incident provides concrete lessons about data minimization, identity linkage attacks, and the gap between device security and organizational security.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a separate email**: specifically for hardware wallet purchases 2.
+- **Use a shipping address**: that doesn't reveal your home (PO box, mail forwarding) 3.
+- **Generate new addresses for**: each transaction to avoid address reuse analysis 5.
+
 ## What Happened in the Ledger Breach
 
 In December 2024, a former Ledger employee leaked a database containing customer information from 2020 and 2021. The exposed data included:

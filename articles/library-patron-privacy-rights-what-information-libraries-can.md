@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Libraries serve as one of the last true public spaces where anyone can access information anonymously. Yet many patrons do not realize that this privacy protection has limits when law enforcement becomes involved. Understanding what information your library can and cannot disclose helps you make informed decisions about how you use library services.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Best practices**: use pseudonymous library cards, access research through secure library sessions, consider using Tor through library computers.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use Firefox Private Browsing**: # 2.
+- **Use temporary operating system**: (Tails live USB) if possible # 4.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## The Legal Framework Behind Library Privacy
 
 Library patron privacy in the United States rests on a complex layering of federal and state laws. The primary federal law protecting library records is the USA PATRIOT Act, which amended the Electronic Communications Privacy Act (ECPA). Under these laws, libraries can be compelled to turn over certain records if law enforcement presents a valid subpoena, court order, or warrant.

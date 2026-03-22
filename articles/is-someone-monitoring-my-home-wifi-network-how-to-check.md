@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Detecting unauthorized access to your home network requires a combination of router inspection, network scanning, and traffic analysis. This guide walks through practical methods to determine if someone is monitoring your home WiFi network.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **For developers**: Wireshark + nmap combination covers 95% of detection scenarios.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most modern routers display**: device names, MAC addresses, and IP addresses.
+
 ## Check Your Router's Connected Devices List
 
 The first step is reviewing what devices are connected to your network. Access your router's admin interface—typically at `192.168.0.1` or `192.168.1.1`—and look for a "Connected Devices," "DHCP Clients," or "Wireless Clients" section. Most modern routers display device names, MAC addresses, and IP addresses.
