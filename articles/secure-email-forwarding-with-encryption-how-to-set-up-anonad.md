@@ -1,5 +1,7 @@
 ---
 permalink: /secure-email-forwarding-with-encryption-how-to-set-up-anonad/
+description: "Follow this guide to secure email forwarding with encryption how to set up anonad with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 layout: default
 title: "Secure Email Forwarding With Encryption How To Set Up"

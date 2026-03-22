@@ -1,5 +1,7 @@
 ---
 permalink: /russia-yarovaya-law-mass-surveillance-requirements-what-tele/
+description: "Learn russia yarovaya law mass surveillance requirements what tele with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Russia Yarovaya Law Mass Surveillance Requirements What"

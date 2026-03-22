@@ -1,5 +1,7 @@
 ---
 permalink: /russia-tspu-deep-packet-inspection-boxes-how-they-detect-and/
+description: "Learn russia tspu deep packet inspection boxes how they detect and with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Russia Tspu Deep Packet Inspection Boxes How They Detect"

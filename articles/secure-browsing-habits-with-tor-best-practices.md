@@ -1,5 +1,7 @@
 ---
 permalink: /secure-browsing-habits-with-tor-best-practices/
+description: "Discover the best secure browsing habits with tor best practices with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, best-of]
 ---
 layout: default
 title: "Secure Browsing Habits With Tor Best Practices"
