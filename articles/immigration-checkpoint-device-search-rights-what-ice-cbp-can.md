@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 At U.S. borders, CBP/ICE can search your devices without a warrant, warrant, probable cause, or reasonable suspicion under the "border search exception"—this applies to basic device searches. More intensive searches theoretically require suspicion but enforcement is inconsistent. They can view files, copy data, and retain information you have. Protections: encrypt sensitive files with tools CBP cannot easily access, consider leaving sensitive devices at home and using a travel phone, know your right to consult an attorney upon return, and keep travel logs documenting what devices you carried.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Scenario 3**: Encryption and Privacy Tools
+You use encryption software like VeraCrypt or FileVault.
+- **Consider whether traveling with**: a fully populated password manager is advisable, or use a travel-specific instance with only essential credentials.
+- **Restrict devices to minimal credentials**: use VPN connections rather than stored auth tokens, and separate work/personal data across devices.
+
 ## The Legal Framework: Border Search Exception
 
 The Fourth Amendment protects against unreasonable searches, but U.S. borders operate under a different legal standard known as the "border search exception." This exception grants Customs and Border Protection (CBP) and Immigration and Customs Enforcement (ICE) broad authority to search travelers and their belongings without a warrant, probable cause, or even reasonable suspicion in most cases.

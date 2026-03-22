@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 HSTS supercookies exploit the browser's HSTS preload list (which persists locally) to encode tracking identifiers: a site sends HSTS headers that instruct the browser to remember dozens of related domains, and the pattern of which domains are recorded in HSTS creates a unique fingerprint. This persists across private browsing, cookie deletion, and even browser resets. Mitigation: regularly clear your HSTS cache (though most modern browsers reset it in private mode), use privacy extensions that block HSTS state storage, or switch to Tor Browser which isolates HSTS per-session.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **A 32-subdomain setup provides over 4 billion unique combinations**: enough to track users indefinitely without traditional cookies.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **When a user visited different websites**: the tracker queried these subdomains and observed which had HSTS enabled, reconstructing the user's unique identifier.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## How HSTS Supercookies Work
 
 HSTS works through a header that servers send to browsers:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Understanding the fundamental differences between I2P and Tor is essential for developers building privacy-preserving applications. Both networks provide anonymity, but their architectures, threat models, and optimal use cases differ significantly.
 
+## Key Takeaways
+
+- **Tor's consensus-based relay network**: costs the Tor Project approximately $1.5 million annually to operate.
+- **However**: the latency impact is severe (100-2000ms vs normal 100-500ms), making this practical only for non-interactive applications.
+- **I2P uses garlic routing**: (an extension of onion routing) that bundles multiple messages together, making traffic analysis more difficult.
+- **I2P uses variable message**: sizes and garlic routing, making traffic patterns harder to recognize.
+- **If you operate infrastructure**: supporting either network strengthens privacy for all users.
+- **Tor continues steady growth**: with approximately 2.5 million daily users.
+
 ## Network Architecture
 
 Tor uses a centralized directory authority model with approximately 7,000+ relays worldwide. Clients connect through a three-hop circuit, with the entry node knowing the client IP, the middle node being blind to both ends, and the exit node knowing the destination but not the origin. This design prioritizes web browsing and supports exit nodes—making Tor suitable for accessing clearnet services anonymously.

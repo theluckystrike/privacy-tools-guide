@@ -33,6 +33,14 @@ Intelius operates one of the largest people-search databases in the United State
 
 This guide covers the Intelius opt-out process, verification techniques, and automation strategies for managing your data removal across multiple data broker platforms.
 
+## Key Takeaways
+
+- **For developers and power**: users concerned about digital privacy, understanding how to opt out of Intelius and remove your personal data is essential for maintaining control over your online presence.
+- **Use a dedicated email**: address for privacy requests to track communications and avoid cluttering your primary inbox.
+- **If you have multiple profiles**: common when you have lived in several states or used different name variations — you must submit a separate removal request for each record.
+- **Use manual verification or**: official removal verification tools when available.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## What Intelius Actually Shows About You
 
 Before opting out, it helps to understand the scope of data Intelius holds. A typical Intelius profile includes full legal name and known aliases, current and historical home addresses going back 10 or more years, phone numbers (landline and mobile), email addresses, relatives' names and contact information, estimated age and birth year, employment and educational history, and in some cases court records and property ownership data.

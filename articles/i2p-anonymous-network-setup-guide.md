@@ -14,9 +14,15 @@ tags: [privacy-tools-guide]---
 
 {% raw %}
 
-
 I2P (Invisible Internet Project) is a garlic-routing network designed for internal anonymous communication — hidden services, encrypted email, file sharing, and messaging within the I2P network itself. Unlike Tor, I2P isn't primarily designed for accessing the clearnet anonymously. Each peer routes traffic for others, making every participant a relay by default.
 ---
+
+## Key Takeaways
+
+- **Use Tor when**: accessing clearnet sites anonymously, .onion services.
+- **Wait for the router**: to integrate (shows "Integrated" status, ~5-10 minutes) 3.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers i2p vs tor**: when to use which, install i2p, initial configuration (java i2p), with specific setup instructions
 
 ## I2P vs Tor: When to Use Which
 
