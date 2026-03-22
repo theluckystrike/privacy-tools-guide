@@ -322,14 +322,13 @@ jobs:
           path: /tmp/lynis-report.dat
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up AppArmor Profiles on Ubuntu](/privacy-tools-guide/apparmor-profiles-ubuntu-setup-guide/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-
----
-
+- [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
+- [VPN Provider Annual Audit Results: Independent Security](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
+- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

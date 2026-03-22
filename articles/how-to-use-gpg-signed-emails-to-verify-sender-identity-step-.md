@@ -260,10 +260,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
-- [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
-- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
-- [Verify Someone's Identity Before Meeting from a Dating App](/privacy-tools-guide/how-to-verify-someone-identity-before-meeting-from-dating-ap/)
-- [How To Use Abine Blur For Masked Emails Phone Numbers And Cr](/privacy-tools-guide/how-to-use-abine-blur-for-masked-emails-phone-numbers-and-cr/)
-
+- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
+- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
+- [GPG Key Management Best Practices](/privacy-tools-guide/gpg-key-management-best-practices/)
+- [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -371,14 +371,13 @@ openssl rand -base64 32
 | Storing backup on ISP's server | ISP breach = data exposure | Use commercial provider or self-hosted |
 | Unencrypted backup metadata | Metadata alone reveals patterns | Use full metadata encryption |
 
-## Related Reading
+## Related Articles
 
-- [Privacy-Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
-- [Secure Cloud Storage Encryption with rclone](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
-- [Disk Encryption Comparison: LUKS vs BitLocker](/privacy-tools-guide/disk-encryption-luks-vs-bitlocker-comparison/)
-
----
-
+- [Privacy Focused Cloud Backup Services Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-backup-services-comparison-2026/)
+- [Privacy Risks of Cloud Gaming Services in 2026](/privacy-tools-guide/privacy-risks-of-cloud-gaming-services-2026/)
+- [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
+- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
+- [How to Set Up Encrypted Cloud Storage with Cryptomator 2026](/privacy-tools-guide/how-to-set-up-encrypted-cloud-storage-with-cryptomator-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

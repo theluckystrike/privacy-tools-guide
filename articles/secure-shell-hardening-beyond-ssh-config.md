@@ -300,14 +300,13 @@ sudo journalctl -u ssh --since "24 hours ago" | grep -E "(Accepted|Failed|Invali
 sudo grep "Failed password" /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -rn | head -20
 ```
 
-## Related Reading
+## Related Articles
 
+- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
 - [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [How to Set Up a SOCKS5 Proxy with SSH](/privacy-tools-guide/socks5-proxy-ssh-setup-guide/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-
----
-
+- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

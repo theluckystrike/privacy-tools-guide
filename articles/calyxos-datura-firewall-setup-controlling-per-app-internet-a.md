@@ -459,11 +459,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
-- [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-- [Dating App Two Factor Authentication Setup Protecting Accoun](/privacy-tools-guide/dating-app-two-factor-authentication-setup-protecting-accoun/)
-- [How To Make Instagram Story Viewers List Private Controlling](/privacy-tools-guide/how-to-make-instagram-story-viewers-list-private-controlling/)
-- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
-
+- [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [Configure Firewall Rules on OPNsense to Block Known](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Calyxos Microg Setup Guide Getting Google Apps Working](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
+- [How To Bypass China Great Firewall Using Shadowsocks](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

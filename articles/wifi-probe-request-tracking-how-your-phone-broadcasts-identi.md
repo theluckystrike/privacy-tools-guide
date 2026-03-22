@@ -359,11 +359,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
-- [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [How To Use Mac Address Randomization On Linux To Prevent](/privacy-tools-guide/how-to-use-mac-address-randomization-on-linux-to-prevent-wif/)
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
-- [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
-- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
-
+- [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

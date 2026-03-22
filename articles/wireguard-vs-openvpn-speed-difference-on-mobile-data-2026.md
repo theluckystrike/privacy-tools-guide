@@ -434,11 +434,10 @@ echo "  CPU: <5% for WireGuard, <15% for OpenVPN"
 
 ## Related Articles
 
-- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
-- [Openvpn Data Channel Offload Explained Performance](/privacy-tools-guide/openvpn-data-channel-offload-explained-performance-improvement-2026/)
-- [Mobile Photo Metadata Exif Location Data How To Strip Before](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [Proton VPN vs Mullvad Speed Test and Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
-
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [Wireguard Android Battery Optimization Settings](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
+- [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -437,10 +437,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
-- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
-- [Browser History Privacy Risks Explained: A Developer Guide](/privacy-tools-guide/browser-history-privacy-risks-explained/)
-- [How Browser Storage Partitioning Works Firefox Chrome Privac](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
+- [How Browser Storage Partitioning Works Firefox Chrome](/privacy-tools-guide/how-browser-storage-partitioning-works-firefox-chrome-privac/)
 - [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
-
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

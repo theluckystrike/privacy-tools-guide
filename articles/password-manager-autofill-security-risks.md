@@ -272,11 +272,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Browser Autofill Privacy Security Risks](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 - [Best Password Manager For Safari Autofill](/privacy-tools-guide/best-password-manager-for-safari-autofill/)
-- [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
 - [Password Manager Security Model Explained Simply](/privacy-tools-guide/password-manager-security-model-explained-simply/)
-- [Passkey vs Password Security Comparison: A Developer Guide](/privacy-tools-guide/passkey-vs-password-security-comparison/)
-
+- [Browser Autofill Privacy Security](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
+- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
+- [Privacy Risks of Browser Autofill and How to Mitigate 2026](/privacy-tools-guide/privacy-tools-guide/privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

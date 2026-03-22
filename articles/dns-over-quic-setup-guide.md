@@ -493,14 +493,13 @@ jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
   | sort | uniq -c | sort -rn | head -10
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
+- [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)
-- [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
-
----
-
+- [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -447,11 +447,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
-- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
-- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
-- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
-- [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
-
+- [Gdpr Right To Erasure How To Force Companies To Delete All](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [How To File Ftc Complaint For Privacy Violation By Company](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
+- [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [GDPR Article 17 Erasure Implementation](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

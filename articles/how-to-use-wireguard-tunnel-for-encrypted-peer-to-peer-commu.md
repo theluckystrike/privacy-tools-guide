@@ -324,11 +324,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Create Encrypted Mailing List For Private Group Commu](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
-- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
-- [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
-- [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
-- [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
-
+- [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
+- [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [How To Configure Wireguard With Obfuscation To Bypass](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
+- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

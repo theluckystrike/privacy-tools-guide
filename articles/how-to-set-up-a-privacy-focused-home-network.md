@@ -853,13 +853,12 @@ The patterns shown here follow standard practices, but production deployments ne
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## Related Reading
+## Related Articles
 
-- [Set Up VLAN Isolation for IoT Devices on Home Network 2026](/privacy-tools-guide/how-to-set-up-vlan-isolation-for-iot-devices-on-home-network/)
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
-- [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
-- [How To Set Up Privacy Focused Crm That Minimizes Customer Da](/privacy-tools-guide/how-to-set-up-privacy-focused-crm-that-minimizes-customer-da/)
-- [How To Set Up Privacy Focused Phone Specifically For Dating](/privacy-tools-guide/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
-
+- [How to Secure Your Home Router for Privacy in 2026](/privacy-tools-guide/how-to-secure-home-router-for-privacy-2026/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

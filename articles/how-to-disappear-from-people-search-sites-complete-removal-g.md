@@ -295,10 +295,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
-- [How To Remove Yourself From True People Search Instant Check](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
-- [What To Do If Your Personal Data Appears On People Search](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
+- [How To Remove Yourself From True People Search Instant](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
+- [What To Do If Your Personal Data Appears On People](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
 - [Data Broker Removal Diy Complete Guide To Opting Out Of Top](/privacy-tools-guide/data-broker-removal-diy-complete-guide-to-opting-out-of-top-/)
-- [Linkedin Deceased Member Profile Removal How To Report And M](/privacy-tools-guide/linkedin-deceased-member-profile-removal-how-to-report-and-m/)
-
+- [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

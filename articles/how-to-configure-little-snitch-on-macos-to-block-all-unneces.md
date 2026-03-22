@@ -377,10 +377,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Configure Firewall Rules on OPNsense to Block Known](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
-- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [Restrict Alexa Skills From Accessing Unnecessary Personal](/privacy-tools-guide/how-to-restrict-alexa-skills-from-accessing-unnecessary-personal-data-permissions-guide/)
-- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
-- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
-
+- [How to Configure macOS Privacy Settings 2026](/privacy-tools-guide/how-to-configure-macos-privacy-settings-2026/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [macOS Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -359,11 +359,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Vehicle Data Privacy Who Owns The Data Your Connected Car Co](/privacy-tools-guide/vehicle-data-privacy-who-owns-the-data-your-connected-car-co/)
-- [How to Create Enterprise Privacy Risk Register Template.](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
-- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
 - [Signal Username Feature Privacy Review](/privacy-tools-guide/signal-username-feature-privacy-review/)
-- [Tinder Passport Feature Privacy Implications What Location D](/privacy-tools-guide/tinder-passport-feature-privacy-implications-what-location-d/)
-
+- [Signal Relay Calls Privacy Feature](/privacy-tools-guide/signal-relay-calls-privacy-feature/)
+- [How to Create Enterprise Privacy Risk Register Template](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
+- [Tinder Passport Feature Privacy Implications What Location](/privacy-tools-guide/tinder-passport-feature-privacy-implications-what-location-d/)
+- [Social Media Privacy For Teenagers Guide 2026](/privacy-tools-guide/social-media-privacy-for-teenagers-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

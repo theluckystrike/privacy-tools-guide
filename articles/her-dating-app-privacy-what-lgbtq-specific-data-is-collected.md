@@ -272,10 +272,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
-- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
-- [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
-- [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)
-- [Dating App Payment Privacy How Subscription Charges Appear O](/privacy-tools-guide/dating-app-payment-privacy-how-subscription-charges-appear-o/)
-
+- [How To Detect If Dating App Is Selling Your Data To Third](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
+- [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
+- [Tinder Privacy Settings What Personal Data The App Collects](/privacy-tools-guide/tinder-privacy-settings-what-personal-data-the-app-collects-/)
+- [EA App Origin Replacement Privacy Data Collection Review](/privacy-tools-guide/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

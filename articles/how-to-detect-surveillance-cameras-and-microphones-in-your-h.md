@@ -362,11 +362,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Smart City Surveillance: What Data Municipal Cameras](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 - [Media Devices Enumeration Fingerprinting Cameras Microphones](/privacy-tools-guide/media-devices-enumeration-fingerprinting-cameras-microphones/)
-- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
-- [Employee Workplace Surveillance Laws Security Cameras Keystr](/privacy-tools-guide/employee-workplace-surveillance-laws-security-cameras-keystr/)
-- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
-- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
-
+- [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [How To Detect And Remove Stalkerware From Android Phone](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

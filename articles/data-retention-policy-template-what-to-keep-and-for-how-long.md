@@ -268,11 +268,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
 - [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
-- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [Coffee Meets Bagel Data Retention Policy How Long The App](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
+- [Social Media Privacy Policy Comparison 2026](/privacy-tools-guide/social-media-privacy-policy-comparison-2026/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

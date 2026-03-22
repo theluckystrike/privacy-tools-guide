@@ -250,14 +250,13 @@ GDPR-compliant logging starts with intentional, privacy-aware design rather than
 
 The effort pays dividends beyond compliance — cleaner logs are easier to search, cheaper to store, and less risky to maintain.
 
-## Related Reading
+## Related Articles
 
 - [Privacy Preserving Logging Guide for Developers 2026](/privacy-tools-guide/privacy-preserving-logging-guide-for-developers-2026/)
-- [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
-- [GDPR Compliant Contact Form Implementation](/privacy-tools-guide/gdpr-compliant-contact-form-implementation/)
+- [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
+- [GDPR Compliant User Authentication](/privacy-tools-guide/gdpr-compliant-user-authentication-design/)
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
-- [GDPR Compliant Email Marketing Guide 2026: A Developer](/privacy-tools-guide/gdpr-compliant-email-marketing-guide-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

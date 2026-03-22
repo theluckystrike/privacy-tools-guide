@@ -284,14 +284,13 @@ kubectl run mtls-test --image=curlimages/curl --rm -it --restart=Never -- \
   --cacert /path/to/ca.crt https://user-service/health
 ```
 
-## Related Reading
+## Related Articles
 
-- [Threat Modeling Basics for Developers](/privacy-tools-guide/threat-modeling-basics-developers/)
-- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
+- [Mumble Encrypted Voice Chat Server Setup For Private Team](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [iCloud Private Relay: How It Works vs](/privacy-tools-guide/ios-private-relay-how-it-works-vs-vpn/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

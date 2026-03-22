@@ -341,12 +341,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
+- [Firefox Total Cookie Protection How It Isolates Trackers](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
+- [First Party Sets Chrome Proposal How It Affects Cross Site](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
-- [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
-- [How To Detect And Block Hidden Third Party Trackers On Websi](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
-- [Cookie Consent Tools Comparison for Developers 2026](/privacy-tools-guide/cookie-consent-tools-comparison-for-developers-2026/)
-
+- [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

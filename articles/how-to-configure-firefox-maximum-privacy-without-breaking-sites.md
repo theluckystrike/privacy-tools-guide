@@ -450,11 +450,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Configure Element Matrix Client For Maximum Privacy A](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
-- [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
-- [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
-- [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)
-- [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
-
+- [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
+- [How to Harden Firefox for Privacy (2026)](/privacy-tools-guide/how-to-harden-firefox-for-privacy-2026/---)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
+- [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -360,9 +360,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Chrome Privacy Sandbox Explained What It Means For Tracking](/privacy-tools-guide/chrome-privacy-sandbox-explained-what-it-means-for-tracking-/)
 - [Privacy Regulatory Sandbox Programs Explained](/privacy-tools-guide/privacy-regulatory-sandbox-programs-explained/)
-- [Privacy Compliance Testing Automation Guide 2026](/privacy-tools-guide/privacy-compliance-testing-automation-guide-2026/)
-- [Workplace Drug Testing Privacy Rights](/privacy-tools-guide/workplace-drug-testing-privacy-rights-what-employers-can-and/)
-- [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
-
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

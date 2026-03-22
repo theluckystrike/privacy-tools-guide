@@ -551,11 +551,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup for Domestic Abuse Shelter Staff](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
-- [Privacy Setup For Domestic Abuse Shelter Staff.](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
-- [Privacy Setup for Political Campaign Worker](/privacy-tools-guide/privacy-setup-for-political-campaign-worker-protecting-voter/)
-- [Privacy Tools For Adoption Agency Worker Protecting Birth Pa](/privacy-tools-guide/privacy-tools-for-adoption-agency-worker-protecting-birth-pa/)
-- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
-
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Domestic Abuse Shelter Staff: Protecting](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -289,11 +289,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
+- [How VPN Reconnection Works After Network Switch: Detecting](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
-- [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
-- [How to Configure VPN Exempt List for Local Network Access](/privacy-tools-guide/how-to-configure-vpn-exempt-list-for-local-network-access/)
-- [Tor vs VPN vs I2P: Anonymity Network Comparison 2026](/privacy-tools-guide/tor-vs-vpn-vs-i2p-anonymity-comparison-2026/)
-
+- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
+- [VPN Kill Switch: How It Works and Which VPNs Have Real](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
+- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

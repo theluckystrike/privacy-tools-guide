@@ -409,11 +409,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
-- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
-- [Gamepad Api Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
-- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
-
+- [Battery API Fingerprinting How Battery Status Tracks You](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
+- [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
+- [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Audio Context Fingerprinting How Websites Use Sound API](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -338,9 +338,10 @@ Network-based location (not GPS), VPN only when on public WiFi, and disabling un
 
 ## Related Articles
 
-- [CalyxOS Installation Guide for Privacy-Conscious Users](/privacy-tools-guide/calyxos-installation-privacy-setup/)
-- [MicroG vs Google Play Services: Privacy Comparison](/privacy-tools-guide/microg-vs-google-play-services-privacy/)
-- [Android Privacy-First App Recommendations](/privacy-tools-guide/android-privacy-first-apps/)
-
+- [Battery API Fingerprinting How Battery Status Tracks You](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
+- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Best Browser For Privacy Android 2026](/privacy-tools-guide/best-browser-for-privacy-android-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

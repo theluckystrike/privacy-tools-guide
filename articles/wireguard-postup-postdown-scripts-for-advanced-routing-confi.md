@@ -256,11 +256,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
-- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [Ios Advanced Data Protection For Icloud End To End.](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
-- [How To Set Up Onion Routing For Email Using Tor Hidden Servi](/privacy-tools-guide/how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/)
-- [How To Use Tor With Specific Application Routing Only Select](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
-
+- [WireGuard Postup Postdown Scripts For Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
+- [WireGuard Performance Tuning for Large File Transfer](/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
+- [Wireguard Android Battery Optimization Settings](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

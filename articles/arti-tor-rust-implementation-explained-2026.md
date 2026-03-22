@@ -297,11 +297,12 @@ Arti supports the pluggable transport API. You can configure Snowflake or obfs4 
 **Does embedding Arti expose my application to Tor's legal considerations?**
 Embedding Arti makes your application a Tor client, not a relay. The legal considerations are the same as using the Tor Browser or any other Tor client software — predominantly your application routes traffic through the Tor network, it does not carry others' traffic.
 
-## Related Reading
+## Related Articles
 
-- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
-- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
-
+- [Nym Mixnet vs Tor Comparison Explained: A Technical Guide](/privacy-tools-guide/nym-mixnet-vs-tor-comparison-explained/)
+- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [Tor Network Censorship Resistance Explained](/privacy-tools-guide/tor-network-censorship-resistance-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

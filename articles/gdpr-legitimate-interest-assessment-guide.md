@@ -337,11 +337,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
-- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
-- [Data Privacy Maturity Model Assessment Guide](/privacy-tools-guide/data-privacy-maturity-model-assessment-guide/)
-- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
-- [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
-
+- [GDPR Legitimate Interest: What Companies Can Do](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
+- [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
+- [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [Gdpr Representative Appointment Guide Non](/privacy-tools-guide/gdpr-representative-appointment-guide-non-eu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

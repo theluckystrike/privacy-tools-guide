@@ -328,12 +328,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 {% endraw %}
 
-## Related Reading
+## Related Articles
 
-- [How To Use Multiple Identities Online Compartmentalization C](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
-- [Use Dead Man's Switch with Multiple Independent Trustees](/privacy-tools-guide/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
+- [How To Use Multiple Identities Online Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
-- [Anonymous Online Shopping How To Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
-- [Anonymous Payment Methods For Online Services When You Canno](/privacy-tools-guide/anonymous-payment-methods-for-online-services-when-you-canno/)
-
+- [How To Create Anonymous Online Identity That Cannot Be](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

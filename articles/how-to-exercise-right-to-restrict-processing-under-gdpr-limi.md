@@ -254,11 +254,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Exercise Right To Rectification Correcting Inaccurate](/privacy-tools-guide/how-to-exercise-right-to-rectification-correcting-inaccurate/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
+- [How To Revoke Previously Given Consent For Data Processing](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
-- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
-- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
-
+- [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

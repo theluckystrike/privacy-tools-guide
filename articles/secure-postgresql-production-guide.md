@@ -279,14 +279,13 @@ aws secretsmanager put-secret-value \
 echo "Password rotated. Restart application to pick up new credentials."
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-
----
-
+- [Secure Redis Deployment Without Exposure](/privacy-tools-guide/secure-redis-deployment-without-exposure/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [How to Secure NAS Storage for Home Use](/privacy-tools-guide/secure-nas-home-storage-guide/)
+- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
+- [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

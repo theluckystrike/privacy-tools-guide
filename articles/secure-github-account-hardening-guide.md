@@ -255,12 +255,12 @@ gh api /user/personal-access-tokens --jq '.[] | "\(.name) expires:\(.expires_at)
   || echo "Use UI for classic tokens: github.com/settings/tokens"
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Create an Anonymous GitHub Account](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
+- [How To Create Anonymous GitHub Account For Open Source](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
 - [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
----
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

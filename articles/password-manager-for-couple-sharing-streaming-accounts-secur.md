@@ -390,11 +390,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Password Manager For Musician Managing Streaming Platform Di](/privacy-tools-guide/password-manager-for-musician-managing-streaming-platform-di/)
+- [Password Manager For Musician Managing Streaming Platform](/privacy-tools-guide/password-manager-for-musician-managing-streaming-platform-di/)
+- [Password Manager For Shared Accounts Between Roommates](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Password Manager for Family of Four with Kids Accounts Guide](/privacy-tools-guide/password-manager-for-family-of-four-with-kids-accounts-guide/)
-- [Password Manager For Shared Accounts Between Roommates.](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
-- [Privacy Focused Password Sharing for Families Guide](/privacy-tools-guide/privacy-focused-password-sharing-for-families-guide/)
-- [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
-
+- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [How to Set Up Password Manager for New Employee Onboarding](/privacy-tools-guide/how-to-set-up-password-manager-for-new-employee-onboarding/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

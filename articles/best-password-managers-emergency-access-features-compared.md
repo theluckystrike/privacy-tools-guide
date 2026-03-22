@@ -372,11 +372,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
-- [How To Set Up Emergency Access For Password Manager Spouse](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
+- [How To Set Up Emergency Access For Password Manager](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
 - [Password Manager Death Plan](/privacy-tools-guide/password-manager-death-plan-which-managers-have-built-in-eme/)
-- [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
-
+- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
+- [How To Create Tiered Access Plan Giving Executor Immediate](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

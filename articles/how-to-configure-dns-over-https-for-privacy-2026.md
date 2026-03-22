@@ -411,12 +411,11 @@ Privacy improvement: Eliminates ISP DNS logging (significant)
 
 ## Related Articles
 
-- [VPN vs DNS Privacy: Which Do You Really Need](/articles/vpn-vs-dns-privacy-2026.md)
-- [DNSSEC Validation and Your Privacy](/articles/dnssec-validation-privacy-2026.md)
-- [How ISPs Track Your Browsing Without VPN](/articles/isp-tracking-without-vpn-2026.md)
-- [Best Privacy-Focused VPN Providers 2026](/articles/best-privacy-vpn-2026.md)
-- [Network-Wide Ad Blocking with Pi-hole and DoH](/articles/pihole-doh-blocking-2026.md)
-
+- [How to Configure DNS over HTTPS Inside a VPN](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
+- [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -455,9 +455,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Configure Little Snitch On Macos To Block All Unnecessary](/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
-- [Harden Macos Sequoia Privacy Settings Beyond Default](/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [macOS Network Privacy Settings Complete Guide 2026](/macos-network-privacy-settings-complete-guide/)
-
+- [macOS Privacy Hardening Checklist 2026](/privacy-tools-guide/macos-privacy-hardening-checklist-2026/)
+- [Harden macOS Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -373,10 +373,9 @@ DANE uses DNSSEC-signed TLSA records to publish certificate fingerprints; remote
 
 ## Related Articles
 
-- [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
-- [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
-- [Linux Apparmor Vs Selinux Which Mandatory Access Control Pro](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
-- [Tls Fingerprinting How Your Browser Handshake Identifies You](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
-
+- [Tls Fingerprinting How Your Browser Handshake Identifies](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
+- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

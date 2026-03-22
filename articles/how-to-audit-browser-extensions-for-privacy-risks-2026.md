@@ -346,11 +346,10 @@ Yes, adblockers reduce your tracking exposure and improve performance. uBlock Or
 
 ## Related Articles
 
-- [Comparing Password Managers: Security and Privacy Analysis](/privacy-tools-guide/comparing-password-managers-security-privacy-analysis/)
-- [How to Find and Remove Tracking Pixels and Spyware](/privacy-tools-guide/how-to-find-and-remove-tracking-pixels-and-spyware-2026/)
-- [Best Privacy-Focused Web Browsers Compared](/privacy-tools-guide/best-privacy-focused-web-browsers-compared-2026/)
-- [DNS Privacy: DoH, DoT, and Local DNS Solutions](/privacy-tools-guide/dns-privacy-doh-dot-and-local-dns-solutions-2026/)
-- [How to Identify and Block Tracking Cookies and Scripts](/privacy-tools-guide/how-to-identify-and-block-tracking-cookies-and-scripts/)
-
+- [How to Audit Your Browser Extensions for Privacy](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
+- [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
+- [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
+- [Browser Extension Permissions What](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

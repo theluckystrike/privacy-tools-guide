@@ -282,11 +282,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
-- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
-- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
-- [How To Configure Google Analytics Alternative For Gdpr Compl](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
-- [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
-
+- [Google Analytics Tracking Alternatives That Respect User](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [Privacy-Focused Analytics: Self-Hosted Options](/privacy-tools-guide/privacy-analytics-self-hosted-setup/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

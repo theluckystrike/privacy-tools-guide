@@ -402,10 +402,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
+- [Wireguard Android Battery Optimization Settings: Breaking](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
-- [VPN MTU Settings Optimization for Faster Connection Speed](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
-- [Vpn Mtu Settings Optimization For Faster Connection.](/privacy-tools-guide/vpn-mtu-settings-optimization-for-faster-connection-speed-guide/)
-- [Android Screen Lock Privacy Best Settings](/privacy-tools-guide/android-screen-lock-privacy-best-settings/)
-
+- [WireGuard Performance Tuning for Large File Transfer](/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/)
+- [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

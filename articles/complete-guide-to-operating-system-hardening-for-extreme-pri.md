@@ -350,10 +350,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Use Tails Operating System for Extreme Privacy Daily](/privacy-tools-guide/how-to-use-tails-operating-system-for-extreme-privacy-daily/)
-- [How to Use Live Operating System to Leave No Forensic Trace](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)
-- [Google Analytics Tracking Alternatives That Respect User Pri](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
-- [Living Without Smartphone Digital Privacy Extreme Approach P](/privacy-tools-guide/living-without-smartphone-digital-privacy-extreme-approach-p/)
 - [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
-
+- [How to Use Live Operating System to Leave No Forensic](/privacy-tools-guide/how-to-use-live-operating-system-to-leave-no-forensic-trace/)
+- [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
+- [macOS Privacy Hardening Checklist 2026](/privacy-tools-guide/macos-privacy-hardening-checklist-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

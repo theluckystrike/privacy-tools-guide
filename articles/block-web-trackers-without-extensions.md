@@ -427,15 +427,12 @@ HTMLCanvasElement.prototype.toDataURL = () => {
 </script>
 ```
 
-## Related Reading
+## Related Articles
 
-- [Android Privacy Dashboard How to Use It](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
-- [Audio Context Fingerprinting How Websites Use Sound API to Track](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [Browser Fingerprinting Detection and Prevention Guide](/privacy-tools-guide/browser-fingerprinting-detection/)
-- [DNS Leaks How To Test and Prevent](/privacy-tools-guide/dns-leaks-test-prevent/)
-
----
-
+- [How to Audit Your Browser Extensions for Privacy](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
+- [How To Detect And Block Hidden Third Party Trackers On](/privacy-tools-guide/how-to-detect-and-block-hidden-third-party-trackers-on-websi/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
+- [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
+- [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -344,11 +344,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Audit Your Digital Footprint And Find All Accounts Li](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [How To Audit Your Digital Footprint And Find All Accounts](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [How To Configure iPhone To Minimize Data Shared With Apple](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
 - [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
-- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
-- [Iran Vpn Usage Risks Legal Consequences And How To Minimize](/privacy-tools-guide/iran-vpn-usage-risks-legal-consequences-and-how-to-minimize-/)
-- [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
-
+- [Researcher Participant Data Privacy Irb Compliance Digital](/privacy-tools-guide/researcher-participant-data-privacy-irb-compliance-digital-t/)
+- [How To Make Payments Without Creating Digital Transaction](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -337,11 +337,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
-- [Threat Model For Human Rights Worker In Conflict Zone Guide](/privacy-tools-guide/threat-model-for-human-rights-worker-in-conflict-zone-guide/)
-- [First Party Sets Chrome Proposal How It Affects Cross Site T](/privacy-tools-guide/first-party-sets-chrome-proposal-how-it-affects-cross-site-t/)
-- [How Vpn Affects Gaming Latency Actual Measurements And.](/privacy-tools-guide/how-vpn-affects-gaming-latency-actual-measurements-and-explanation/)
-- [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
-
+- [Challenge Automated Credit Decision Using GDPR Right](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
+- [How To Request Algorithmic Transparency From Companies](/privacy-tools-guide/how-to-request-algorithmic-transparency-from-companies-makin/)
+- [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
+- [Instagram Memorialization Request Process What Happens](/privacy-tools-guide/instagram-memorialization-request-process-what-happens-to-ph/)
+- [How To Submit Subject Access Request To Employer For All](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

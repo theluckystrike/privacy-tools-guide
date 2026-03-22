@@ -267,11 +267,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [How To Use Adb To Disable Android System Apps That Spy On](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
-- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
-- [Complete Guide To Removing Yourself From Internet Databases](/privacy-tools-guide/complete-guide-to-removing-yourself-from-internet-databases-/)
-- [Privacy Setup for Survivor of Revenge Porn](/privacy-tools-guide/privacy-setup-for-survivor-of-revenge-porn-removing-images-g/)
-
+- [How To Detect And Remove Stalkerware From Android Phone](/privacy-tools-guide/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
+- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [How to Detect Hidden Trackers in Android](/privacy-tools-guide/detect-hidden-trackers-android-apps/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

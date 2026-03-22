@@ -289,11 +289,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [How To Exercise Right To Restrict Processing Under Gdpr](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-- [How To Exercise Right To Restrict Processing Under Gdpr Limi](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
-- [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
-- [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
-- [How To Revoke Previously Given Consent For Data Processing U](/privacy-tools-guide/how-to-revoke-previously-given-consent-for-data-processing-u/)
-
+- [Gdpr Compliance Tools For Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
+- [Gdpr Penalties Fines Database Case Examples](/privacy-tools-guide/gdpr-penalties-fines-database-case-examples/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -346,4 +346,12 @@ Users with partial vision often benefit from additional organizational strategie
 
 **Font and spacing adjustments**: For low-vision users who benefit from enlarged text, self-hosted solutions allow custom CSS injection. A simple override like `body { font-size: 1.4em; line-height: 1.8; }` in your user stylesheet dramatically improves readability without requiring separate magnification software.
 
+## Related Articles
+
+- [Best Accessible Privacy-Focused Keyboard App for Users with](/privacy-tools-guide/best-accessible-privacy-focused-keyboard-app-for-users-with-/)
+- [Privacy Tools That Work with Screen Readers: Comparison for](/privacy-tools-guide/privacy-tools-that-work-with-screen-readers-comparison-for-b/)
+- [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [Privacy Tools With High Contrast Mode For Users With Low](/privacy-tools-guide/privacy-tools-with-high-contrast-mode-for-users-with-low-vis/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

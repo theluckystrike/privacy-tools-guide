@@ -276,10 +276,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
-- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
+- [GDPR Legitimate Interest: What Companies Can Do](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
 - [Data Processing Agreement Template for Third Party Vendors](/privacy-tools-guide/data-processing-agreement-template-for-third-party-vendors-g/)
-- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 - [GDPR Lawful Basis for Processing Explained](/privacy-tools-guide/gdpr-lawful-basis-for-processing-explained/)
-
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

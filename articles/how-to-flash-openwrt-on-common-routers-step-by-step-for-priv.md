@@ -407,11 +407,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
-- [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
-- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
-- [Tor Browser Common Mistakes to Avoid in 2026](/privacy-tools-guide/tor-browser-common-mistakes-to-avoid-2026/)
-- [Nixos Declarative System Configuration For Reproducible Priv](/privacy-tools-guide/nixos-declarative-system-configuration-for-reproducible-priv/)
-
+- [How to Secure Your Home Router for Privacy in 2026](/privacy-tools-guide/how-to-secure-home-router-for-privacy-2026/)
+- [Privacy-Focused Router Firmware Comparison 2026](/privacy-tools-guide/privacy-focused-router-firmware-comparison-2026/)
+- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

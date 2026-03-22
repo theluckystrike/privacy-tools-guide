@@ -251,10 +251,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Postup Postdown Scripts For Advanced Routing.](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
-- [Openvpn Compression Vulnerability Voracle Attack Explained A](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)
-- [Openvpn Data Channel Offload Explained Performance](/privacy-tools-guide/openvpn-data-channel-offload-explained-performance-improvement-2026/)
-- [Vpn Tunnel Interface Vs Full Tunnel Routing Difference.](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
-- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-
+- [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
+- [How To Use Tor With Specific Application Routing Only](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
+- [VPN Tunnel Interface Vs Full Tunnel Routing Difference](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [VPN Tunnel Interface vs Full Tunnel Routing](/privacy-tools-guide/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
+- [Openvpn Compression Vulnerability Voracle Attack Explained](/privacy-tools-guide/openvpn-compression-vulnerability-voracle-attack-explained-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

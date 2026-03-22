@@ -580,9 +580,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
-- [Cloud DLP for Google Workspace Guide 2026](/cloud-dlp-for-google-workspace-guide-2026/)
-- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
-
+- [Secure Document Collaboration Alternatives to Google](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [Android Google Account Privacy Settings: Complete Guide to](/privacy-tools-guide/android-google-account-privacy-settings-complete-guide-to-li/)
+- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
+- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

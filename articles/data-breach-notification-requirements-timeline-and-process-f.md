@@ -305,10 +305,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
-- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [Password Manager Breach Notification Features](/privacy-tools-guide/password-manager-breach-notification-features/)
-- [Dating App Data Breach History Which Platforms Have Leaked U](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
-- [How To Set Up Incident Response Plan For Data Breach Busines](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)
-
+- [What Happens When Your Password Appears In Data Breach](/privacy-tools-guide/what-happens-when-your-password-appears-in-data-breach-steps/)
+- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-californi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -419,12 +419,11 @@ arp-scan -l
 
 ## Related Articles
 
-- [Best Home Network Security Tools and Practices](/home-network-security-tools-practices-2026/)
-- [DNS Privacy: How to Prevent ISP Snooping](/dns-privacy-prevent-isp-snooping-2026/)
-- [Guide to Setting Up WireGuard VPN at Home](/wireguard-vpn-home-setup-guide-2026/)
-- [Privacy-Focused WiFi Router Recommendations 2026](/privacy-focused-wifi-router-recommendations-2026/)
-- [Home Network Surveillance Detection Methods](/home-network-surveillance-detection-2026/)
-
+- [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
+- [Privacy-Focused Router Firmware Comparison 2026](/privacy-tools-guide/privacy-focused-router-firmware-comparison-2026/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
+- [How to Set Up a Privacy Focused Home](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

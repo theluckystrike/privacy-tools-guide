@@ -285,11 +285,10 @@ Retention requirements vary by jurisdiction and case type. Most PI licensing boa
 
 ## Related Articles
 
-- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
-- [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
-- [Gdpr Penalties Fines Database Case Examples](/privacy-tools-guide/gdpr-penalties-fines-database-case-examples/)
-- [How To File Ftc Complaint For Privacy Violation By Company D](/privacy-tools-guide/how-to-file-ftc-complaint-for-privacy-violation-by-company-d/)
+- [Privacy Tools For Social Worker Handling Sensitive Case](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
 - [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
-
+- [Privacy Tools For Whistle Blower Preparing Disclosure](/privacy-tools-guide/privacy-tools-for-whistle-blower-preparing-disclosure-protec/)
+- [Privacy Tools For Union Organizer Protecting Member Communic](/privacy-tools-guide/privacy-tools-for-union-organizer-protecting-member-communic/)
+- [Privacy Tools For Election Observer Protecting Witness](/privacy-tools-guide/privacy-tools-for-election-observer-protecting-witness-testimony/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

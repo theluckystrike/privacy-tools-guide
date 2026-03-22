@@ -292,11 +292,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Gdpr Data Breach Notification Rights What Company Must.](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
-- [How To Tell If Someone Has Access To Your Apple Id](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)
-- [How To Tell If Someone Installed Spyware On Your Iphone](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
-- [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
-- [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
-
+- [Detect If Smart Home Devices Have Hidden Microphones](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Smart Device Deregistration After Death How To Remove](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
+- [How To Replace Cloud Dependent Smart Switches With Local](/privacy-tools-guide/how-to-replace-cloud-dependent-smart-switches-with-local-zig/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
