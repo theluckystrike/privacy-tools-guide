@@ -25,7 +25,17 @@ Digital estate planning requires separating executor access from heir access wit
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: the tiered access model, core components of the system, implementation architecture, with specific setup instructions
 
-## Understanding the Tiered Access Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Tiered Access Model
 
 A tiered access plan separates digital assets into layers based on when they should become accessible. The executor layer grants immediate access to accounts needed for funeral arrangements, debt payment, and estate administration. The heir layer delays access to sentimental items, inheritance accounts, and less critical digital property.
 
@@ -39,7 +49,7 @@ The implementation requires three main components:
 2. **Encrypted Vault** — Secure storage for credentials with conditional decryption
 3. **Notification System** — Mechanisms to alert parties when access conditions are met
 
-## Implementation Architecture
+### Step 2: Implementation Architecture
 
 ### The Access Controller
 
@@ -194,7 +204,7 @@ class AccessVerifier {
 }
 ```
 
-## Practical Deployment Strategies
+### Step 3: Practical Deployment Strategies
 
 ### Using Password Manager Enterprise Features
 
@@ -297,6 +307,21 @@ When implementing a tiered access system, consider these developer recommendatio
 
 A well-designed tiered access system provides the flexibility to manage digital estates according to family needs and legal requirements. The key is balancing security with practicality—ensuring executors can act quickly while respecting the intended timeline for heir access.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

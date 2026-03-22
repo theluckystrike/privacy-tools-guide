@@ -40,7 +40,17 @@ Removing yourself from the internet requires a systematic approach. Most people 
 - **If you prefer a hands-on approach**: maintain a spreadsheet tracking each broker's opt-out status and renewal requirements, as some require annual re-submission.
 - **Review all services sending**: emails to your inbox and systematically close unused accounts.
 
-## Understanding Your Digital Footprint
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your Digital Footprint
 
 Before taking action, you need to understand what data exists about you online. Your digital footprint includes social media profiles, forum accounts, data broker listings, cached search results, and data stored in breached databases.
 
@@ -54,7 +64,7 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
 
 Create an inventory of all accounts tied to your identity. Search your name in major search engines and note every result.
 
-## Data Broker Removal
+### Step 2: Data Broker Removal
 
 Data brokers compile and sell personal information without consent. These companies operate background check services, people-search directories, and marketing profiling systems. Removing yourself requires submitting opt-out requests to each broker individually.
 
@@ -70,7 +80,7 @@ Address: Your Address" | mail -s "Privacy Opt-Out Request" privacy@spokeo.com
 
 For automated removal, consider tools like [DeleteMe](https://www.abine.com/deleteme/) or [OneRep](https://onerep.com/), which handle the繁琐 process for you. If you prefer a hands-on approach, maintain a spreadsheet tracking each broker's opt-out status and renewal requirements, as some require annual re-submission.
 
-## Social Media Account Deletion
+### Step 3: Social Media Account Deletion
 
 Social media platforms retain your data even after account deactivation. True deletion requires understanding the difference between deactivation and permanent deletion.
 
@@ -102,7 +112,7 @@ def delete_all_tweets(bearer_token, user_id):
         requests.delete(delete_url, headers=headers)
 ```
 
-## Email and Account Cleanup
+### Step 4: Email and Account Cleanup
 
 Your email address connects most online accounts. Review all services sending emails to your inbox and systematically close unused accounts.
 
@@ -115,7 +125,7 @@ from:(registration OR signup OR confirm OR welcome) newer_than:1y
 
 For Gmail users, Google's [Inactive Account Manager](https://myaccount.google.com/activitycontrols) allows you to set automatic data deletion after inactivity periods.
 
-## Search Engine Result Removal
+### Step 5: Search Engine Result Removal
 
 Google and Bing cache versions of webpages that may contain your personal information. Use official removal tools to request delisting:
 
@@ -125,7 +135,7 @@ Google and Bing cache versions of webpages that may contain your personal inform
 
 For cached pages on sites you control, update the content and request recrawling. For third-party sites, contact webmasters directly requesting removal.
 
-## Removing Yourself from People Search Sites
+### Step 6: Remove Yourself from People Search Sites
 
 People search engines aggregate public records and display addresses, phone numbers, and relatives. Common sites include:
 
@@ -164,7 +174,7 @@ for email in "${EMAILS[@]}"; do
 done
 ```
 
-## Public Records and Background Check Sites
+### Step 7: Public Records and Background Check Sites
 
 Beyond data brokers, public records databases compile courthouse data, property records, and voter registration information. These sites often have separate opt-out procedures:
 
@@ -258,7 +268,7 @@ remover.submit_removal("Spokeo", "https://www.spokeo.com/optout")
 remover.save_removal_log()
 ```
 
-## Monitoring Your Digital Absence
+### Step 8: Monitor Your Digital Absence
 
 After removing yourself, verify the removal worked:
 
@@ -287,7 +297,7 @@ for email in "${EMAILS[@]}"; do
 done
 ```
 
-## Handling Cached and Archived Content
+### Step 9: Handling Cached and Archived Content
 
 Google Cache and Archive.org sometimes retain deleted content:
 
@@ -304,7 +314,7 @@ User-agent: ia_archiver
 Disallow: /
 ```
 
-## Maintaining Privacy Going Forward
+### Step 10: Maintaining Privacy Going Forward
 
 After reducing your footprint, adopt privacy-preserving practices:
 
@@ -318,6 +328,21 @@ After reducing your footprint, adopt privacy-preserving practices:
 8. Set up email forwarding rules to minimize primary email exposure
 9. Periodically audit your social media account privacy settings
 10. Subscribe to breach notification services for proactive monitoring
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

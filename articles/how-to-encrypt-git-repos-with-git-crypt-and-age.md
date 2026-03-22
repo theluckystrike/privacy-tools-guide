@@ -40,7 +40,17 @@ git-crypt transparently encrypts files in a Git repository -- they are encrypted
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Install git-crypt
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install git-crypt
 
 ```bash
 # macOS
@@ -53,7 +63,7 @@ sudo apt install git-crypt
 git-crypt --version
 ```
 
-## Initialize git-crypt in a Repository
+### Step 2: Initialize git-crypt in a Repository
 
 ```bash
 cd /path/to/your-repo
@@ -66,7 +76,7 @@ git-crypt export-key ~/backup/git-crypt-key.bin
 chmod 600 ~/backup/git-crypt-key.bin
 ```
 
-## Configure Which Files Get Encrypted
+### Step 3: Configure Which Files Get Encrypted
 
 Edit or create .gitattributes in the repo root:
 
@@ -100,7 +110,7 @@ git show HEAD:secrets/api-keys.json  # Shows encrypted binary
 git-crypt status                      # Shows which files are encrypted
 ```
 
-## Add Team Members via GPG Keys
+### Step 4: Add Team Members via GPG Keys
 
 git-crypt multi-user model uses GPG: each team member GPG public key can unlock the repo.
 
@@ -128,7 +138,7 @@ git-crypt unlock  # Uses her GPG private key automatically
 cat secrets/api-keys.json  # Now readable
 ```
 
-## GPG-Free Workflow: Use a Shared Key File
+### Step 5: GPG-Free Workflow: Use a Shared Key File
 
 For teams that want to avoid GPG complexity, share the symmetric key via a secrets manager:
 
@@ -143,7 +153,7 @@ git-crypt unlock /tmp/git-crypt-key.bin
 shred -u /tmp/git-crypt-key.bin
 ```
 
-## CI/CD Integration
+### Step 6: Configure CI/CD Integration
 
 Store the git-crypt key as a base64 CI secret and unlock during the pipeline:
 
@@ -185,7 +195,7 @@ unlock_and_deploy:
     - ./deploy.sh
 ```
 
-## Encrypt Individual Files with age
+### Step 7: Encrypt Individual Files with age
 
 For files you want to keep out of the repo entirely, encrypt them with age before committing:
 
@@ -212,7 +222,7 @@ git commit -m "Add encrypted production secrets"
 age -d -i ~/.age/key.txt -o secrets/prod-env.txt secrets/prod-env.age
 ```
 
-## Multi-Recipient age Encryption for Teams
+### Step 8: Multi-Recipient age Encryption for Teams
 
 Encrypt to multiple recipients -- anyone with their private key can decrypt:
 
@@ -245,7 +255,7 @@ age $(grep -v '^#' recipients.txt | sed 's/^/-r /') \
     -o secrets/prod-env.age secrets/prod-env.txt
 ```
 
-## Audit and Rotate Keys
+### Step 9: Audit and Rotate Keys
 
 ```bash
 # List all git-crypt encrypted files
@@ -263,7 +273,7 @@ git-crypt init
 # All remaining users must re-add themselves
 ```
 
-## Preventing Accidental Plaintext Commits
+### Step 10: Preventing Accidental Plaintext Commits
 
 The biggest failure mode for git-crypt is committing a secret file before adding the filter attribute to `.gitattributes`. Once the plaintext is in history, you need a history rewrite — expensive and disruptive. Add a pre-commit hook to catch this before it happens:
 
@@ -331,7 +341,7 @@ git push --force-with-lease origin main
 
 Alert all collaborators to re-clone after a history rewrite. Any stale clones can re-introduce the purged files if pushed again.
 
-## Using age-plugin-yubikey for Hardware Key Protection
+### Step 11: Use age-plugin-yubikey for Hardware Key Protection
 
 For higher-assurance environments, the `age-plugin-yubikey` plugin lets you store age private keys on a YubiKey rather than on disk:
 
@@ -352,7 +362,7 @@ age -d -i age-plugin-yubikey: secrets/prod.age
 
 YubiKey-backed age identities are particularly useful for repository administrators who hold the master encryption key. Day-to-day CI pipelines use the shared symmetric git-crypt key, while the YubiKey-secured age identity protects the key export itself.
 
-## Team Offboarding: Revoking Access Without Rekeying
+### Step 12: Team Offboarding: Revoking Access Without Rekeying
 
 When a team member leaves, git-crypt has no native revocation — you cannot simply remove their GPG key and have them locked out of future commits, because they already have a copy of the decrypted history. The correct procedure:
 
@@ -393,6 +403,21 @@ git commit -m "Rekey git-crypt after team member departure"
 4. Rotate the actual secret values (API keys, passwords) as an independent step — assume the departing person has copies of the plaintext values regardless of repository access.
 
 The combination of key rotation and secret rotation is the only complete offboarding. Repository access removal alone is insufficient.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

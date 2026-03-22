@@ -49,7 +49,17 @@ Make it executable and place it in your PATH for convenient access.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Managing multiple online identities**: has become essential for privacy-conscious developers and power users.
 
-## Understanding Browser Profile Compartmentalization
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Browser Profile Compartmentalization
 
 Browser profiles store cookies, local storage, extensions, bookmarks, and browsing history in isolated directories. When you create separate profiles, you effectively create separate browser identities that share nothing by default.
 
@@ -59,7 +69,7 @@ This isolation prevents:
 - Extension conflicts when testing different configurations
 - Accidental login to personal accounts during professional browsing
 
-## Creating Profiles in Firefox
+### Step 2: Create Profiles in Firefox
 
 Firefox offers the most developer-friendly profile management through both GUI and CLI.
 
@@ -93,7 +103,7 @@ firefox -P "work" -no-remote
 
 The `-no-remote` flag prevents this instance from connecting to an existing Firefox process, allowing multiple profile instances simultaneously.
 
-## Creating Profiles in Chrome/Chromium
+### Step 3: Create Profiles in Chrome/Chromium
 
 Chrome uses a different profile mechanism based on directory paths.
 
@@ -120,7 +130,7 @@ Common profile locations:
 - macOS: `~/Library/Application Support/Google/Chrome/`
 - Windows: `%USERPROFILE%\AppData\Local\Google\Chrome\User Data\`
 
-## Automating Profile Management
+### Step 4: Automate Profile Management
 
 For developers who frequently switch between profiles, automation saves significant time.
 
@@ -168,7 +178,7 @@ google-chrome --incognito --temp-profile
 
 These create isolated sessions that discard all data after closing. Useful for testing or one-off browsing tasks.
 
-## Profile-Specific Browser Extensions
+### Step 5: Profile-Specific Browser Extensions
 
 Extensions enhance profile isolation when configured correctly.
 
@@ -226,7 +236,7 @@ rm -rf ~/.config/google-chrome/ProfileWork
 
 Always back up important data before deletion.
 
-## Use Cases for Developers
+### Step 6: Use Cases for Developers
 
 Browser profiles solve common developer scenarios:
 
@@ -254,7 +264,7 @@ const puppeteer = require('puppeteer');
 
 This launches Puppeteer using your existing "work" profile, preserving your logged-in session.
 
-## Quick Reference Commands
+### Step 7: Quick Reference Commands
 
 ### Firefox
 | Action | Command |
@@ -270,6 +280,21 @@ This launches Puppeteer using your existing "work" profile, preserving your logg
 | Launch profile | `chrome --profile-directory="ProfileName"` |
 | Incognito | `chrome --incognito` |
 | New profile | Use Chrome's built-in "Add profile" feature |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

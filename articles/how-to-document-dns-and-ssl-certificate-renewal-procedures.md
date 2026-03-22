@@ -30,7 +30,17 @@ SSL certificate expirations resulting from poor documentation cost businesses mi
 
 Beyond preventing outages, thorough documentation enables team continuity. When someone leaves or during incident response with unfamiliar team members, well-documented procedures mean anyone can execute renewals correctly. Documentation also supports compliance audits by demonstrating that certificate management follows defined processes.
 
-## Essential DNS Documentation Components
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Essential DNS Documentation Components
 
 Your DNS documentation should cover the complete infrastructure picture with enough detail for any team member to understand and make changes confidently.
 
@@ -96,7 +106,7 @@ Include DNSSEC key information if implemented:
 example.com. IN DS 12345 8 2 ABCDEF1234567890...
 ```
 
-## SSL Certificate Documentation
+### Step 2: SSL Certificate Documentation
 
 SSL certificate documentation must track every certificate, its scope, renewal schedule, and the complete chain.
 
@@ -214,7 +224,7 @@ Document how you monitor certificate expiration:
 
 Include your monitoring tool configuration, whether usingNagios, Zabbix, cloud-native monitoring, or a certificate monitoring service like CertSpotter or SSL Labs.
 
-## Creating Runbooks
+### Step 3: Create Runbooks
 
 Transform your documentation into actionable runbooks that anyone can follow during an incident.
 
@@ -299,7 +309,7 @@ T-PLUS 1 DAY
 [ ] Close maintenance ticket
 ```
 
-## Documentation Maintenance
+### Step 4: Documentation Maintenance
 
 Documentation requires ongoing maintenance to remain useful.
 
@@ -333,7 +343,7 @@ git commit -m "Add new subdomain for api.example.com
 git push origin main
 ```
 
-## Tools and Automation
+### Step 5: Tools and Automation
 
 Consider these tools to improve documentation and reduce manual effort:
 
@@ -357,6 +367,21 @@ Consider these tools to improve documentation and reduce manual effort:
 - **Datadog**: infrastructure monitoring
 - **UptimeRobot**: Simple uptime monitoring with SSL checks
 - **Checkmk**: Open-source monitoring with SSL checks
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

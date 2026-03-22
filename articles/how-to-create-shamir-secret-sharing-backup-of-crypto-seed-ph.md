@@ -41,13 +41,23 @@ Shamir Secret Sharing (SSS) provides a mathematically elegant solution for secur
 - **Uses the reference implementation**: from trezor/trezor-crypto.
 - **Use a hardware wallet**: to generate your seed initially, then export it in hex format for SSS processing.
 
-## Understanding the Mathematics Behind SSS
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Mathematics Behind SSS
 
 The mathematical foundation relies on polynomial interpolation over a finite field. To create K shares from a secret, you construct a random polynomial of degree K-1 where the constant term equals your seed phrase (encoded as a number). Evaluating this polynomial at K different points produces the shares. Any K points uniquely determine the polynomial, while K-1 or fewer points remain information-theoretically secure.
 
 This property makes SSS particularly valuable for inheritance scenarios: you might create a 3-of-5 scheme where any three family members together can recover the seed, but two share holders alone cannot access the funds. The cryptographic guarantees are provable—you cannot shortcut the security without obtaining sufficient shares.
 
-## Implementing SSS with the Python SSS Library
+### Step 2: Implementing SSS with the Python SSS Library
 
 The Python `ssss` library provides a straightforward implementation. Install it:
 
@@ -116,7 +126,7 @@ Run the script:
 python sss_split.py a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6 3 5
 ```
 
-## Converting BIP39 Seed Phrases to Hex
+### Step 3: Converting BIP39 Seed Phrases to Hex
 
 Your cryptocurrency wallet likely uses BIP39 seed phrases (12 or 24 words). Convert these to hex for SSS processing:
 
@@ -154,7 +164,7 @@ if __name__ == "__main__":
     print(f"Hex seed: {hex_seed}")
 ```
 
-## Practical Inheritance Planning: The 2-of-3 Strategy
+### Step 4: Practical Inheritance Planning: The 2-of-3 Strategy
 
 For inheritance planning, a common and secure configuration uses three shares with a two-share threshold. This provides redundancy (losing one share doesn't lock you out) while requiring collaboration to access funds.
 
@@ -184,7 +194,7 @@ python3 sss_split.py <your-hex-seed> 2 3
 
 Disconnect your machine from all networks before entering seed phrases. Use a hardware wallet to generate your seed initially, then export it in hex format for SSS processing. Some hardware wallets like Ledger and Trezor now include native SSS support—verify your model supports this before purchasing.
 
-## Integrating with Existing Wallets
+### Step 5: Integrate with Existing Wallets
 
 After recovering your seed from shares, import it into your wallet software:
 
@@ -202,13 +212,13 @@ For Ethereum and EVM-compatible chains, use Metamask or similar wallets:
 
 Always verify the recovered wallet shows your expected balance before transferring any significant funds.
 
-## Alternative: Multi-Sig Wallets
+### Step 6: Alternative: Multi-Sig Wallets
 
 Shamir Secret Sharing isn't your only option for inheritance planning. Multi-signature wallets require multiple private keys to authorize transactions—different from SSS in that the blockchain itself enforces the requirement rather than cryptographic splitting.
 
 Consider multi-sig for larger estates where you want ongoing control requiring multiple approvals for large transactions. SSS works better when you want an one-time backup that becomes active only after triggering conditions (death, incapacity).
 
-## Security Trade-offs and Risks
+### Step 7: Security Trade-offs and Risks
 
 Weigh these considerations before implementing SSS for inheritance:
 
@@ -220,7 +230,7 @@ Estate coordination requires clear documentation. Your will or trust should spec
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
 
-## Implementing Time-Locked Recovery
+### Step 8: Implementing Time-Locked Recovery
 
 Add time-locked conditions to prevent premature access:
 
@@ -294,7 +304,7 @@ bitcoin-cli createmultisig 2 '["key1_pubkey","key2_pubkey","key3_pubkey"]'
 
 This creates a system where both key recovery AND transaction signing require multiple parties.
 
-## Testing Your SSS Setup
+### Step 9: Test Your SSS Setup
 
 Before relying on SSS for production, thoroughly test recovery:
 
@@ -360,7 +370,7 @@ How to physically secure your shares:
 - Encrypted USB drives: vulnerable if lost, needs backup
 - Avoid: unencrypted digital storage, cloud services with SSS shares
 
-## Verifying Share Integrity
+### Step 10: Verify Share Integrity
 
 Over time, shares might become damaged or altered. Implement verification:
 
@@ -398,7 +408,7 @@ class ShareVerification:
         return report
 ```
 
-## Comparing SSS with Hardware Wallets
+### Step 11: Comparing SSS with Hardware Wallets
 
 Modern hardware wallets offer native SSS support:
 
@@ -413,7 +423,7 @@ Modern hardware wallets offer native SSS support:
 
 Consider using a hardware wallet's native SSS if you prioritize ease of use. DIY SSS provides more transparency but requires careful implementation.
 
-## Post-Recovery Key Management
+### Step 12: Post-Recovery Key Management
 
 After recovering your seed from shares:
 
@@ -447,6 +457,21 @@ transfer_funds_incremental() {
 ```
 
 This staged approach ensures your recovery process works before committing all funds.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

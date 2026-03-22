@@ -28,7 +28,17 @@ This guide covers three practical approaches to network isolation: VLAN-based se
 - **Most consumer routers support**: "guest networks" or multiple DHCP pools.
 - **MTU mismatches can also cause throughput issues**: test with different MTU values (1500, 1492, 1480).
 
-## Understanding Network Segmentation Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Network Segmentation Fundamentals
 
 Network segmentation splits a single physical network into multiple logical networks. Each segment operates as its own broadcast domain, meaning devices on one segment cannot directly discover or communicate with devices on another unless explicitly permitted. This is the foundation of the "zero trust" model applied at the network layer.
 
@@ -40,7 +50,7 @@ For smart home isolation, you typically work with two or three segments:
 
 The isolation works by enforcing rules at layer 3 (IP) and layer 4 (port). Devices on the IoT segment can initiate connections to the internet but cannot ping, scan, or connect to your personal computers unless you explicitly allow it.
 
-## Method 1: VLAN-Based Segmentation
+### Step 2: Method 1: VLAN-Based Segmentation
 
 Most modern consumer routers and all enterprise-grade equipment support VLANs (Virtual Local Area Networks). A VLAN tags network traffic with a numeric ID, allowing a single physical switch or router to carry multiple logical networks simultaneously.
 
@@ -79,7 +89,7 @@ set interfaces ethernet eth0 vif 10 firewall in name BLOCK_IOT_TO_TRUSTED
 
 This firewall rule applies to incoming traffic on VLAN 10 (IoT). It permits return traffic for connections initiated from the IoT side, but drops all other attempts to reach the trusted network.
 
-## Method 2: Linux Gateway with iptables/nftables
+### Step 3: Method 2: Linux Gateway with iptables/nftables
 
 If you run a Linux machine as your home router—common among developers who use Raspberry Pi, old desktops, or virtual machine instances—you can implement segmentation directly with firewall rules. This method requires only one network interface on the router, using NAT and firewall rules to create logical separation.
 
@@ -126,7 +136,7 @@ nft add rule ip trusted forward ct state established,related counter accept
 
 Save this script, make it executable with `chmod +x`, and invoke it from your network configuration or systemd service. The key rule is the third `nft add rule` line, which drops all traffic from the IoT subnet heading toward the trusted subnet.
 
-## Method 3: IoT Subnet with Pi-hole DNS Filtering
+### Step 4: Method 3: IoT Subnet with Pi-hole DNS Filtering
 
 For users without managed switches or Linux routing experience, you can achieve a functional isolation with a consumer router and a Pi-hole instance. While this does not provide true network-level isolation, it adds a meaningful security layer by blocking device-to-device communication attempts at the DNS level.
 
@@ -162,7 +172,7 @@ services:
 
 Configure your IoT devices to use the Adguard Home instance as their DNS server. This allows you to log every DNS query from your smart devices, revealing which domains they attempt to contact. You can then block outbound connections to known telemetry endpoints or suspicious IPs.
 
-## Verifying Your Isolation
+### Step 5: Verify Your Isolation
 
 After implementing any method, verify that isolation is functioning. From a device on your IoT subnet, test connectivity to a device on your trusted subnet:
 
@@ -183,7 +193,7 @@ nft list chain ip iot forward
 # Look for non-zero counters on the drop rule
 ```
 
-## Practical Considerations
+### Step 6: Practical Considerations
 
 When you isolate your smart home devices, some functionality may break. Cloud-dependent devices such as Google Home, Amazon Echo, or Philips Hue require internet access to function. They will work on the isolated segment, but you lose the ability to directly access them from your trusted network. This is a trade-off: you gain security but may lose features like local LAN control or direct device-to-device communication.
 
@@ -273,7 +283,7 @@ Successful isolation shows zero responses and zero neighbor entries.
 
 **Performance degradation**: Check QoS and rate limiting settings. MTU mismatches can also cause throughput issues—test with different MTU values (1500, 1492, 1480).
 
-## Scaling Network Segmentation
+### Step 7: Scaling Network Segmentation
 
 As your network grows, managing segmentation complexity increases. Implement automation and documentation.
 

@@ -44,7 +44,17 @@ Stalkerware operates with these design principles:
 
 Professional stalkerware (Pegasus, Spymax, mSpy) is indistinguishable from legitimate apps at first glance. Detection requires technical analysis, not just observation.
 
-## Initial Suspicious Signs
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Initial Suspicious Signs
 
 If you notice these patterns, investigate further:
 
@@ -73,7 +83,7 @@ If you notice these patterns, investigate further:
 
 **None of these alone proves stalkerware.** Combined, they warrant investigation.
 
-## Method 1: Battery and Data Analysis (Non-Technical)
+### Step 2: Method 1: Battery and Data Analysis (Non-Technical)
 
 ### Detailed Battery Analysis
 
@@ -117,7 +127,7 @@ If you notice these patterns, investigate further:
  - Upon waking: check if data changed (indicates background activity)
  - Repeat 3 nights; if data increases 50MB+ nightly, investigate
 
-## Method 2: Android Debug Bridge (ADB) Analysis
+### Step 3: Method 2: Android Debug Bridge (ADB) Analysis
 
 **ADB** is Android's command-line tool. It requires:
 - USB cable
@@ -236,7 +246,7 @@ Stalkerware often logs:
 
 Look for repeated log entries from unknown processes.
 
-## Method 3: Permission Audit
+### Step 4: Method 3: Permission Audit
 
 ### Check Individual App Permissions
 
@@ -271,7 +281,7 @@ adb shell dumpsys package | grep "grant_id=READ_SMS"
 
 If an app you don't recognize has 3+ of these, investigate further.
 
-## Method 4: Recommended Scanning Tools
+### Step 5: Method 4: Recommended Scanning Tools
 
 ### Exodus Privacy (Free, Web-Based)
 
@@ -333,7 +343,7 @@ adb shell ls -la /data/data/com.malwarebytes.android/cache/quarantine/
 # Files here were flagged; examine names for confirmation
 ```
 
-## Method 5: Manual App Removal
+### Step 6: Method 5: Manual App Removal
 
 ### Identify the Problem App
 
@@ -387,7 +397,7 @@ adb shell pm list packages | grep suspicious
 
 3. Restart and verify removal
 
-## After Removal: Verification
+### Step 7: After Removal: Verification
 
 ### Re-Scan
 
@@ -429,7 +439,7 @@ Stalkerware sometimes reinstalls itself:
 3. Settings → Security → Google Play Protect
 4. Enable scanning
 
-## If You Suspect Ongoing Abuse
+### Step 8: If You Suspect Ongoing Abuse
 
 If stalkerware was found, or you believe you're being monitored:
 
@@ -454,7 +464,7 @@ If stalkerware was found, or you believe you're being monitored:
  - Timing of incidents (messages that arrived late, unexpected contact)
  - This may be useful for legal action
 
-## Technical Reality: Some Stalkerware is Undetectable
+### Step 9: Technical Reality: Some Stalkerware is Undetectable
 
 Professional-grade stalkerware (Pegasus, deployed by nation-states) is designed to be undetectable. The ADB-based methods in this guide will catch most consumer stalkerware (mSpy, Spyrix, SpyBubble) but may miss:
 
@@ -466,7 +476,7 @@ If you suspect nation-state or professional monitoring, the only reliable defens
 
 For typical domestic abuse situations, the ADB methods and scanning tools in this guide catch 95% of active stalkerware.
 
-## Prevention: Make Monitoring Harder
+### Step 10: Prevention: Make Monitoring Harder
 
 1. **Strong lock screen** (PIN or pattern, not biometric)
 2. **Two-factor authentication** on accounts
@@ -475,6 +485,21 @@ For typical domestic abuse situations, the ADB methods and scanning tools in thi
 5. **Review installed apps weekly**
 6. **Check permissions monthly** for suspicious grants
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

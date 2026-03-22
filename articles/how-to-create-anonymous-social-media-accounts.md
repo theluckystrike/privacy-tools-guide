@@ -40,13 +40,23 @@ Creating anonymous social media accounts requires more than simply using a fake 
 - **Check WebRTC leaks #**: Use Firefox Extension: WebRTC Leak Prevent # 4.
 - **This guide walks through**: practical steps for developers and power users who need to maintain separate online identities without compromising their primary accounts or exposing personal information.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before implementing anonymity, identify what you're protecting against. Social media platforms collect extensive metadata—IP addresses, device fingerprints, behavioral patterns, and cross-platform correlation. Even with a fake name, your browser characteristics, posting times, or writing style can link accounts to your real identity.
 
 For developers, the stakes include protecting source code contributions, professional reputation, and personal safety. The techniques below address these concerns while remaining practical for daily use.
 
-## Email Isolation: The Foundation
+### Step 2: Email Isolation: The Foundation
 
 Every anonymous account needs an isolated email address. Never reuse email addresses across anonymous and primary accounts.
 
@@ -69,7 +79,7 @@ For maximum privacy, use a dedicated email provider with no phone number require
 
 For accounts you expect to use briefly, temporary email services like **Guerrilla Mail** or **33Mail** work, though they carry higher risk of platform detection. These are useful for verification codes but not for sustained anonymous identities.
 
-## Device Isolation Strategies
+### Step 3: Device Isolation Strategies
 
 Your device configuration reveals information that can de-anonymize you. Consider these hardening steps:
 
@@ -110,7 +120,7 @@ qemu-system-x86_64 -m 4096 -cdrom tails.iso -boot d \
   -net user -net nic -nographic
 ```
 
-## Network-Level Protection
+### Step 4: Network-Level Protection
 
 Your IP address is a primary identifier. Anonymous accounts require IP addresses unrelated to your primary identity.
 
@@ -190,7 +200,7 @@ const alias = {
 };
 ```
 
-## Operational Security: Maintaining Anonymity Over Time
+### Step 5: Operational Security: Maintaining Anonymity Over Time
 
 Creating an anonymous account is only the beginning. Maintaining anonymity requires ongoing discipline:
 
@@ -209,7 +219,7 @@ Creating an anonymous account is only the beginning. Maintaining anonymity requi
 - **Using the same pseudonym** across multiple platforms
 - **Engaging with personal contacts**: Anonymous accounts should have no connection to real-world identity
 
-## Quick Reference: Account Setup Checklist
+### Step 6: Quick Reference: Account Setup Checklist
 
 - [ ] Create new email alias (Proton, Tuta, or SimpleLogin)
 - [ ] Configure dedicated browser profile or VM
@@ -315,7 +325,7 @@ Some platforms analyze behavioral patterns: typing speed, mouse movements, touch
 - Occasionally make typos and correct them
 - Use different devices for different accounts when possible
 
-## Legal and Ethical Considerations
+### Step 7: Legal and Ethical Considerations
 
 ### Jurisdictional Differences in Anonymous Accounts
 
@@ -341,7 +351,7 @@ Most platforms prohibit using anonymous accounts to:
 
 Using anonymity for whistleblowing, privacy, or expressing unpopular opinions is generally acceptable. Using it for spam or abuse is not—and platforms actively de-anonymize bad actors.
 
-## Testing Your Anonymity
+### Step 8: Test Your Anonymity
 
 ### Anonymity Audit
 
@@ -383,7 +393,7 @@ Schedule quarterly audits of your anonymous accounts:
 4. Verify two-factor authentication is still active
 5. Test account recovery options to ensure they still work
 
-## Common De-Anonymization Vectors and Defenses
+### Step 9: Common De-Anonymization Vectors and Defenses
 
 | De-Anonymization Vector | What Happens | Defense |
 |---|---|---|
@@ -396,6 +406,21 @@ Schedule quarterly audits of your anonymous accounts:
 | **Browser Fingerprint** | Browser characteristics remain consistent | Use Tor Browser or Firefox Containers |
 
 Being aware of these vectors helps you defend against them systematically.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

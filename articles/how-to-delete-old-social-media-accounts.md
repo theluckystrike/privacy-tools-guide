@@ -44,7 +44,17 @@ Your online presence grows with every account you create. That MySpace profile f
 
 Every dormant social media account represents a liability. Data breaches affect platforms regularly, and abandoned accounts often have outdated security settings. Attackers target these accounts because users are unlikely to notice unauthorized access. Beyond security, deleting unused accounts reduces the data companies hold about you, limiting exposure to future privacy violations.
 
-## Direct Deletion Methods for Major Platforms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Direct Deletion Methods for Major Platforms
 
 Each platform has different deletion processes. Here are the specific steps for major social networks:
 
@@ -68,7 +78,7 @@ LinkedIn requires navigating to **Settings → Account Preferences → Close Acc
 
 TikTok offers deletion through **Settings and Privacy → Account → Delete account**. The process requires re-entering your password and completing a CAPTCHA. Deletion completes within 30 days.
 
-## Automating Account Discovery
+### Step 2: Automate Account Discovery
 
 If you cannot remember all your old accounts, several tools help track them down:
 
@@ -80,7 +90,7 @@ The [Have I Been Pwned](https://haveibeenpwned.com/) service tracks data breache
 
 Search your email inbox for registration confirmations from social platforms. Use your password manager to find saved credentials for old accounts. Most password managers synchronize across devices and can reveal forgotten accounts.
 
-## Programmatic Account Management with Selenium
+### Step 3: Implement Programmatic Account Management with Selenium
 
 For developers managing multiple accounts or testing deletion flows, Selenium provides browser automation:
 
@@ -169,7 +179,7 @@ def bulk_account_deletion(accounts_file: str):
 
 This approach logs each deletion attempt for verification later.
 
-## Verifying Complete Deletion
+### Step 4: Verify Complete Deletion
 
 After requesting deletion, verify the process completed:
 
@@ -181,7 +191,7 @@ After requesting deletion, verify the process completed:
 
 4. **Monitor email**: Some platforms send confirmation emails during the deletion process. Keep these for records.
 
-## Requesting Data Removal Under Privacy Regulations
+### Step 5: Requesting Data Removal Under Privacy Regulations
 
 GDPR, CCPA, and similar regulations grant you the right to request complete data deletion. If a platform makes deletion difficult or unresponsive, submit a formal data deletion request:
 
@@ -195,7 +205,7 @@ curl -X POST "https://api.example-platform.com/v1/account/delete" \
 
 Contact platform privacy teams directly if no self-service deletion option exists. Reference specific legal articles in your request—companies are legally required to respond within mandated timeframes (typically 30 days under GDPR).
 
-## Alternative: Account Takeover Services
+### Step 6: Alternative: Account Takeover Services
 
 Services like JustDelete.me and AccountKiller provide direct links to deletion pages for hundreds of services. These aggregators maintain current deletion URLs and difficulty ratings:
 
@@ -207,7 +217,7 @@ Services like JustDelete.me and AccountKiller provide direct links to deletion p
 
 These tools are particularly useful for obscure platforms where deletion instructions are not immediately obvious.
 
-## Preventing Future Account Accumulation
+### Step 7: Preventing Future Account Accumulation
 
 Reduce future cleanup burden by adopting these practices:
 
@@ -259,7 +269,7 @@ Several tools smooth out account management at scale:
 | LastPass | $3/month | Emergency contact access, account deletion workflows |
 | Privacy.com | Free | Virtual card numbers to track merchants, limit exposure |
 
-## Understanding Data Persistence
+### Step 8: Understand Data Persistence
 
 Even after account deletion, data may persist in multiple locations:
 
@@ -280,7 +290,7 @@ Some accounts may be replicated across data broker networks. Consider contacting
 
 Each requires individual removal requests, but tools like DeleteMe ($129/year) automate this process across 100+ data brokers.
 
-## Handling Persistent Platform Issues
+### Step 9: Handling Persistent Platform Issues
 
 Some platforms resist deletion requests:
 
@@ -291,6 +301,21 @@ Some platforms resist deletion requests:
 4. Engage with platform's legal team if deletion is legally required but not provided
 
 Document all correspondence for regulatory complaints or potential litigation.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

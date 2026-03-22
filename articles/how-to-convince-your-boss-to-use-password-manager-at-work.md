@@ -44,13 +44,23 @@ This guide walks you through building a compelling case for password manager ado
 - **For a 50-person company**: that's roughly $2,000-5,000 annually.
 - $4.45M average breach cost.
 
-## Start with Their Priorities, Not Yours
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Start with Their Priorities, Not Yours
 
 Security professionals often lead with technical arguments—entropy, hashing algorithms, credential stuffing. Your boss likely doesn't care about any of this. Instead, focus on what they do care about: business continuity, legal liability, and operational efficiency.
 
 Before your first conversation, research your company's existing compliance requirements. Are you subject to SOC 2? HIPAA? PCI-DSS? Most frameworks require some form of access control and credential management. A password manager provides documented evidence of these controls.
 
-## Build Your Case with Concrete Risks
+### Step 2: Build Your Case with Concrete Risks
 
 抽象的安全概念很难推销。 Instead, quantify the actual threats:
 
@@ -65,13 +75,13 @@ Frame the conversation around your company's specific vulnerabilities:
 
 These questions often reveal gaps that leadership didn't know existed.
 
-## The Cost Argument
+### Step 3: The Cost Argument
 
 Password managers aren't free for teams, but the cost is minor compared to breach costs. Most enterprise password managers cost between $3-8 per user monthly. For a 50-person company, that's roughly $2,000-5,000 annually.
 
 Compare this to the cost of a single security incident: legal fees, forensic investigation, notification costs, regulatory fines, and lost business. The math is straightforward.
 
-## Show, Don't Just Tell
+### Step 4: Show, Don't Just Tell
 
 Developers and power users respond to demonstrations. Show your boss what password manager workflows actually look like:
 
@@ -102,7 +112,7 @@ op item share "Production API Key" --vault "Engineering" --users developer@compa
 
 These capabilities solve real operational problems while improving security.
 
-## Address Common Objections
+### Step 5: Address Common Objections
 
 ### "We already have a password spreadsheet"
 
@@ -122,7 +132,7 @@ Careful employees still reuse passwords. Studies consistently show that 65% of p
 
 Enterprise password managers are designed for deployment without user training. Most integrate with existing identity providers (Google Workspace, Azure AD, Okta). Users sign in once and access credentials through browser extensions or CLI tools.
 
-## Propose a Pilot Program
+### Step 6: Propose a Pilot Program
 
 Rather than asking for company-wide adoption immediately, propose a pilot:
 
@@ -134,7 +144,7 @@ Rather than asking for company-wide adoption immediately, propose a pilot:
 
 This approach reduces perceived risk for leadership while demonstrating value.
 
-## Frame the Proposal
+### Step 7: Frame the Proposal
 
 Structure your request like this:
 
@@ -145,7 +155,7 @@ Structure your request like this:
 5. **Pilot plan**: A low-risk implementation approach
 6. **Success metrics**: How you'll measure effectiveness
 
-## Security Metrics That Matter to Leadership
+### Step 8: Security Metrics That Matter to Leadership
 
 When presenting, focus on measurable outcomes:
 
@@ -157,7 +167,7 @@ When presenting, focus on measurable outcomes:
 
 A password manager provides visibility into all of these metrics.
 
-## Competitive Benchmarking by Company Size
+### Step 9: Competitive Benchmarking by Company Size
 
 Present actual costs and ROI for companies similar to yours:
 
@@ -167,7 +177,7 @@ Present actual costs and ROI for companies similar to yours:
 
 **1000+ person company**: $50,000+/year investment becomes trivial compared to incident response costs. Most enterprise password managers include compliance features like audit logs and session analysis.
 
-## Real-World Adoption Case Studies
+### Step 10: Real-World Adoption Case Studies
 
 When pitching, reference companies in your industry that adopted password managers successfully:
 
@@ -179,7 +189,7 @@ When pitching, reference companies in your industry that adopted password manage
 
 Present one specific case study relevant to your company's industry. Your boss responds better to "Healthcare company like us implemented this" than generic statistics.
 
-## Password Manager Selection Criteria for Teams
+### Step 11: Password Manager Selection Criteria for Teams
 
 Help your boss evaluate options with specific technical criteria:
 
@@ -207,7 +217,7 @@ Dashlane:
 
 Presenting multiple options removes the "you're trying to sell us X product" objection.
 
-## Incident Response Improvement
+### Step 12: Plan Incident Response Improvement
 
 One of the strongest arguments: password managers reduce incident response time by hours or days.
 
@@ -226,7 +236,7 @@ With a password manager:
 
 This speed reduction is worth thousands in incident costs and reduces the window of vulnerability where attackers might use stolen credentials.
 
-## Building Internal Support
+### Step 13: Build Internal Support
 
 Before presenting to leadership, secure support from:
 
@@ -237,7 +247,7 @@ Before presenting to leadership, secure support from:
 
 Getting buy-in from these departments strengthens your pitch to leadership. When you present, you can reference "our DevOps team supports this" or "our legal team confirms it meets our compliance requirements."
 
-## Addressing the "We'll Get Hacked Anyway" Objection
+### Step 14: Addressing the "We'll Get Hacked Anyway" Objection
 
 Some managers believe that if attackers target the company, a password manager doesn't help. Respond with specifics:
 
@@ -245,7 +255,7 @@ Some managers believe that if attackers target the company, a password manager d
 
 This reframes password managers from "prevents breaches" to "limits blast radius," which is more credible.
 
-## What to Avoid
+### Step 15: What to Avoid
 
 Don't make your pitch about:
 
@@ -255,7 +265,7 @@ Don't make your pitch about:
 - **Specific products without alternatives**: Present options, not a sales pitch
 - **Comparing to personal password manager security**: Enterprise tools have different threat models
 
-## Vendor Evaluation Scorecard
+### Step 16: Vendor Evaluation Scorecard
 
 Create a structured evaluation document to guide leadership:
 
@@ -279,7 +289,7 @@ Dashlane: 4.3 (strong compliance, smaller vendor)
 
 This structured evaluation removes emotions from the decision and documents the reasoning for leadership.
 
-## Implementation Timeline Example
+### Step 17: Implementation Timeline Example
 
 Provide a concrete, lower-risk rollout plan:
 
@@ -310,13 +320,28 @@ Month 4-6: Optimization
 
 This timeline shows you've thought through logistics, not just "let's buy this tool." Include measurement milestones to demonstrate success.
 
-## Long-term Password Manager Value
+### Step 18: Long-term Password Manager Value
 
 Frame this not as an one-time expense but as continuous infrastructure improvement:
 
 "A password manager becomes more valuable over time. After 6 months, you have complete credential inventory. After 1 year, you have rotation history and audit trails. By 2 years, you're preventing incidents because you can rapidly rotate compromised credentials."
 
 This long-term framing appeals to leadership thinking about multi-year planning.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

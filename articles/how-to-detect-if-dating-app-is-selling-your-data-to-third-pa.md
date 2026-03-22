@@ -40,7 +40,17 @@ Dating apps monetize user data through third-party broker networks, making techn
 - **Dating apps monetize user**: data through third-party broker networks, making technical investigation necessary to verify actual privacy practices.
 - **The primary monetization strategy**: involves aggregating user data and sharing it with third-party brokers who specialize in audience targeting, advertising optimization, and profile enrichment.
 
-## How Dating Apps Monetize Your Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Dating Apps Monetize Your Data
 
 Dating platforms generate revenue through multiple channels beyond subscription fees. The primary monetization strategy involves aggregating user data and sharing it with third-party brokers who specialize in audience targeting, advertising optimization, and profile enrichment.
 
@@ -55,7 +65,7 @@ Common data points shared include:
 - Social media connections
 - Photos and facial recognition templates
 
-## Network Traffic Analysis
+### Step 2: Network Traffic Analysis
 
 The most direct method for detecting data sharing involves analyzing network traffic between the dating app and external servers. This approach requires intercepting HTTPS traffic to observe which endpoints receive your data.
 
@@ -99,7 +109,7 @@ def request(flow: http.HTTPFlow):
         print(f"Body: {flow.request.get_text(strict=False)}")
 ```
 
-## APK Analysis and SDK Auditing
+### Step 3: APK Analysis and SDK Auditing
 
 For Android devices, extracting and analyzing the app's APK reveals embedded SDKs and libraries that handle data sharing. This method works without network interception and provides a complete picture of potential data distribution channels.
 
@@ -139,7 +149,7 @@ cat extracted/assets/*analytics*.json
 
 Modern dating apps frequently bundle multiple advertising and analytics SDKs. Each SDK typically includes its own data collection mechanisms that operate independently of the app's primary functionality.
 
-## Privacy Policy Analysis
+### Step 4: Privacy Policy Analysis
 
 While privacy policies often contain dense legal language, they reveal important information about data sharing practices. Look for specific sections discussing "third-party partners," "data brokers," "advertising partners," and "analytics providers."
 
@@ -152,7 +162,7 @@ Key phrases indicating data selling include:
 
 Under regulations like GDPR and CCPA, you have the right to know exactly who receives your data. Send a formal inquiry to the app's privacy team requesting a complete list of third-party data recipients. Companies must respond within 30-45 days depending on jurisdiction.
 
-## Exercising Your Regulatory Rights
+### Step 5: Exercising Your Regulatory Rights
 
 Multiple privacy regulations provide tools to compel transparency from dating apps.
 
@@ -200,7 +210,7 @@ Please cease selling my personal data to third parties and confirm within 45 day
 [California Address]
 ```
 
-## Interpreting Network Analysis Results
+### Step 6: Interpreting Network Analysis Results
 
 When analyzing network traffic, understanding what you're seeing matters:
 
@@ -246,7 +256,7 @@ When examining mitmproxy captures, look for these data patterns:
 
 The difference is whether the data preserves identity. Personal identifiers (names, locations, explicit interests) should never flow to marketing networks.
 
-## Understanding Data Broker Techniques
+### Step 7: Understand Data Broker Techniques
 
 Data brokers employ sophisticated collection methods:
 
@@ -258,7 +268,7 @@ Data brokers employ sophisticated collection methods:
 
 If a dating app sells your email to brokers, expect your complete profile across all platforms to become known to advertisers within weeks.
 
-## Building a Personal Data Audit Trail
+### Step 8: Build a Personal Data Audit Trail
 
 For power users wanting thorough visibility:
 
@@ -292,7 +302,7 @@ fi
 
 Run this script after app updates to identify new data collection vectors.
 
-## Practical Countermeasures
+### Step 9: Practical Countermeasures
 
 While complete data protection requires avoiding dating apps entirely, several measures reduce exposure:
 
@@ -310,7 +320,7 @@ While complete data protection requires avoiding dating apps entirely, several m
 
 7. **Consider a dedicated email**: Create a separate email address used only for dating apps. If this email appears in data broker databases, you know the source.
 
-## Long-Term Data Tracking
+### Step 10: Long-Term Data Tracking
 
 For serious privacy advocates, implement ongoing monitoring:
 
@@ -345,6 +355,21 @@ self.addEventListener('fetch', event => {
 ```
 
 This enables automatic detection of unexpected data flows without manual network monitoring.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

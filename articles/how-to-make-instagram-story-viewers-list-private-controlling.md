@@ -42,13 +42,23 @@ When you watch a story, your username becomes visible to the story creator.
 - **The only workaround involves**: creating a secondary "lurker" account, though this approach has limitations and ethical considerations.
 - **Close Friends List**: Use the Close Friends feature strategically.
 
-## Understanding Instagram's Viewing Activity Visibility
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Instagram's Viewing Activity Visibility
 
 When you view someone's Instagram story, your username appears in their viewers list. This visibility works bidirectionally—when others view your stories, you see exactly who checked out your content. However, Instagram provides limited controls over this visibility, and the platform's approach to viewing activity remains somewhat opaque compared to other social networks.
 
 The key distinction to understand is between **story viewers** and **activity status**. Your presence in someone else's story viewers list depends on their account privacy settings and your relationship with that account. Unlike LinkedIn's viewing profiles feature, Instagram hasn't provided a straightforward "private mode" for story viewing.
 
-## Controlling Your Story Viewers List
+### Step 2: Control Your Story Viewers List
 
 Your own story viewers list operates under straightforward rules based on your account privacy:
 
@@ -64,7 +74,7 @@ With a private account, only approved followers can view your stories. This crea
 
 Instagram allows you to remove followers, which prevents them from seeing future stories. Navigate to your profile, tap followers, and remove specific accounts. This action blocks future story visibility but does not notify the removed user.
 
-## Managing Your Viewing Activity Footprint
+### Step 3: Manage Your Viewing Activity Footprint
 
 The more complex privacy challenge involves controlling what others see when you view their content. Here's what you need to know:
 
@@ -80,7 +90,7 @@ Instagram shows when you're active or recently active. To manage this:
 
 2. **Close Friends List**: Use the Close Friends feature strategically. Stories shared exclusively with Close Friends remain visible only to that selected group, giving you finer control over content distribution.
 
-## Developer Considerations: Instagram API Limitations
+### Step 4: Developer Considerations: Instagram API Limitations
 
 For developers building privacy-focused tools or integrations, the Instagram Graph API provides limited access to viewing activity data. Here's what the API currently supports:
 
@@ -111,7 +121,7 @@ Instagram enforces strict rate limits on API endpoints:
 - **Review process**: Apps require Facebook review before accessing any story-related data
 - **Consent requirements**: Users must explicitly authorize data access
 
-## Power User Strategies for 2026
+### Step 5: Power User Strategies for 2026
 
 ### Strategic Account Management
 
@@ -156,7 +166,7 @@ async function safeViewStory(viewer, targetUser) {
 
 Automated tools face significant restrictions, and Instagram actively detects and penalizes accounts using unauthorized automation.
 
-## Limitations and Platform Constraints
+### Step 6: Limitations and Platform Constraints
 
 It's essential to understand what Instagram does not allow:
 
@@ -219,7 +229,7 @@ Account 3 (Consumption):
 
 These patterns make correlation analysis more difficult if all accounts are discovered.
 
-## Detecting If You're Being Tracked Through Stories
+### Step 7: Detecting If You're Being Tracked Through Stories
 
 Power users should understand signals indicating they might be tracked through story viewing.
 
@@ -257,7 +267,7 @@ If all your accounts access Instagram from the same IP address, sophisticated tr
 
 Use VPN for Account 3 (consumption account) to obscure IP address linking.
 
-## Automation Tools and Account Linking Detection
+### Step 8: Automation Tools and Account Linking Detection
 
 Instagram actively detects and penalizes account linking attempts. Understanding detection mechanisms prevents account bans.
 
@@ -308,7 +318,7 @@ Multiple accounts technically violate Instagram's terms, which state "You agree.
 - Hundreds of accounts for coordination purposes trigger enforcement
 - Modest multi-accounting (2-3 accounts) is tolerated if not obviously coordinated
 
-## Monitoring Third-Party Story Analytics
+### Step 9: Monitor Third-Party Story Analytics
 
 Third-party tools claiming to provide story analytics or viewer information should be treated with suspicion.
 
@@ -335,7 +345,7 @@ Only Instagram's native analytics for creator/business accounts provide reliable
 
 These metrics don't identify viewers, only aggregate statistics. No legitimate tool identifies specific viewers on personal accounts.
 
-## Privacy-Focused Content Alternatives to Instagram Stories
+### Step 10: Privacy-Focused Content Alternatives to Instagram Stories
 
 Users requiring strong privacy guarantees might consider alternatives to Instagram entirely.
 
@@ -371,6 +381,21 @@ BeReal emphasizes authentic sharing without metrics or viewing lists:
 - Decentralized friend network
 
 Trade-offs: Different purpose (time-based rather than topical), smaller network.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

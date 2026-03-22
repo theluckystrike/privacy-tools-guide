@@ -44,7 +44,17 @@ Some Android versions require additional commands to prevent apps from triggerin
 - **Both scanning types occur**: automatically in the background, often without explicit user notification.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Android Scanning Behavior
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Android Scanning Behavior
 
 Android performs WiFi scanning primarily to assist GPS positioning through WiFi-based positioning systems (WPS). When your device scans for networks, it records BSSIDs (MAC addresses of access points) along with signal strength data. This information gets uploaded to Google's location services and can be used to determine your approximate location even when GPS is disabled.
 
@@ -52,7 +62,7 @@ Bluetooth scanning works similarly, detecting nearby Bluetooth devices to enable
 
 Both scanning types occur automatically in the background, often without explicit user notification. Disabling them requires a combination of system settings, developer options, and in some cases, ADB commands.
 
-## Disabling WiFi Scanning Through System Settings
+### Step 2: Disable WiFi Scanning Through System Settings
 
 The most accessible method involves adjusting Android settings. On most devices running Android 10 or later, navigate to **Settings > Location > WiFi Scanning** and toggle the scanning option off. However, this setting alone may not completely disable all scanning behavior, as some apps can still trigger scans independently.
 
@@ -60,7 +70,7 @@ For more control, access **Settings > Apps > Special app access > Location** and
 
 On Samsung devices, additional controls exist under **Settings > Connections > WiFi** or **Settings > Privacy**, where you can disable "Improve location" and "Send WiFi diagnostic data" options.
 
-## Disabling Bluetooth Scanning
+### Step 3: Disable Bluetooth Scanning
 
 Bluetooth scanning controls appear in **Settings > Connections > Bluetooth** on most devices. Toggle off any "Nearby device scanning" or "Bluetooth scanning" options. However, Android may still perform periodic scans for system features.
 
@@ -98,7 +108,7 @@ adb shell pm revoke com.example.app android.permission.ACCESS_FINE_LOCATION
 
 Replace `com.example.app` with the package name of the app you want to restrict.
 
-## Application-Level Solutions for Developers
+### Step 4: Application-Level Solutions for Developers
 
 If you're developing an Android app, you can implement scanning detection and prevention in your own applications. Use the following code to detect when WiFi scanning occurs:
 
@@ -128,7 +138,7 @@ if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCA
 }
 ```
 
-## Handling Location Services Alternatives
+### Step 5: Handling Location Services Alternatives
 
 Disabling WiFi scanning affects location accuracy, particularly indoors where GPS signals weaken. Consider these alternatives to maintain functionality while preserving privacy:
 
@@ -138,7 +148,7 @@ Disabling WiFi scanning affects location accuracy, particularly indoors where GP
 
 For developers building location-aware applications, consider using the Fused Location Provider, which intelligently manages power consumption and provides privacy-preserving location updates without requiring constant scanning.
 
-## Testing Your Configuration
+### Step 6: Test Your Configuration
 
 After implementing changes, verify scanning behavior using apps like "WiFi Analyzer" or "Bluetooth Scanner" from trusted developers. These apps display whether your device actively scans for networks or Bluetooth devices.
 
@@ -223,7 +233,7 @@ data class ScanningStatus(
 )
 ```
 
-## System-Level Scanning Commands Reference
+### Step 7: System-Level Scanning Commands Reference
 
 Complete ADB commands for scanning control:
 
@@ -254,7 +264,7 @@ adb shell settings get global ble_scan_always_enabled
 adb shell settings get secure location_mode
 ```
 
-## Blocklist Approach: Preventing Scanning Apps
+### Step 8: Blocklist Approach: Preventing Scanning Apps
 
 Alternative to system settings: block scanning at the network level.
 
@@ -289,7 +299,7 @@ local-data: "maps.googleapis.com A 0.0.0.0"
 EOF
 ```
 
-## Alternative: Fused Location Provider for Developers
+### Step 9: Alternative: Fused Location Provider for Developers
 
 For apps that need location but want minimal scanning:
 
@@ -330,7 +340,7 @@ class EfficientLocationProvider(private val context: Context) {
 
 This approach provides location data while minimizing background scanning.
 
-## Monitoring Background Activity
+### Step 10: Monitor Background Activity
 
 After disabling scanning, monitor to ensure apps aren't re-enabling it:
 
@@ -368,7 +378,7 @@ while true; do
 done
 ```
 
-## Hardening: Kernel-Level Scanning Prevention
+### Step 11: Hardening: Kernel-Level Scanning Prevention
 
 For the most security-conscious users with custom ROMs:
 
@@ -385,7 +395,7 @@ adb shell "cat /proc/cmdline" | grep wifi
 
 This requires root and custom ROM modifications, beyond typical user capabilities.
 
-## Recovery: Re-enabling Scanning When Needed
+### Step 12: Recovery: Re-enabling Scanning When Needed
 
 Some apps genuinely need location services for legitimate purposes:
 
@@ -402,7 +412,7 @@ adb shell settings get global wifi_scan_always_enabled
 
 Consider creating device profiles: one privacy-hardened configuration for personal use, another with normal permissions for navigation or location-based apps.
 
-## Privacy vs. Functionality Trade-Offs
+### Step 13: Privacy vs. Functionality Trade-Offs
 
 Complete scanning disablement comes with costs:
 
@@ -419,6 +429,21 @@ Complete scanning disablement comes with costs:
 - Use alternative location services that don't require scanning
 
 The choice depends on your threat model and location accuracy requirements.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

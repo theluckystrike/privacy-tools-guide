@@ -41,7 +41,17 @@ Creating an untraceable email account requires understanding how email services 
 - **Creating an untraceable email**: account requires understanding how email services track users and how to systematically obscure identifying information.
 - **This guide covers the**: technical methods developers and power users can employ to create email accounts with minimal traceability.
 
-## Understanding Email Tracking Mechanisms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Email Tracking Mechanisms
 
 Email services collect multiple data points that can identify users:
 
@@ -57,7 +67,7 @@ To create an untraceable account, you must address each of these vectors.
 
 Even after creating an account anonymously, every email you send carries metadata in its headers. The `Received` chain shows each mail server that handled the message. If you send from a webmail interface over Tor, only the sending mail server's IP appears — your Tor exit node. But if you use a mail client like Thunderbird connected over IMAP, your client's IP (or exit node IP) appears in the headers too. Services like ProtonMail strip identifying IP information from outbound headers by default. Tutanota also strips this. Gmail does not — it embeds your IP in `X-Originating-IP` or `X-Forwarded-To` headers. This alone is a strong reason to choose a privacy-first provider.
 
-## Setting Up Your Anonymous Environment
+### Step 2: Set Up Your Anonymous Environment
 
 ### Using Tor Browser for Network Isolation
 
@@ -92,7 +102,7 @@ iptables -A OUTPUT -o eth0 -j DROP
 
 Chain Tor over VPN or VPN over Tor depending on your threat model. For email registration, Tor alone typically suffices.
 
-## Anonymous Registration Strategies
+### Step 3: Anonymous Registration Strategies
 
 ### Email Services That Accept Anonymous Registration
 
@@ -135,7 +145,7 @@ openssl rand -base64 32
 
 Never reuse passwords across your anonymous and regular accounts.
 
-## Technical Implementation
+### Step 4: Technical Implementation
 
 ### Browser Fingerprint Randomization
 
@@ -200,7 +210,7 @@ gpg --encrypt --armor --recipient recipient@example.com message.txt
 
 Never generate PGP keys tied to your anonymous identity on a machine that is also used for your real identity. The key generation process records the system clock, which may correlate with other activity.
 
-## Operational Security Practices
+### Step 5: Operational Security Practices
 
 ### Maintaining Anonymity Over Time
 
@@ -227,7 +237,7 @@ openssl s_client -connect protonmail.com:993 -quiet
 
 Avoid including any identifying information in email content or subject lines.
 
-## Compartmentalizing Your Anonymous Email Use
+### Step 6: Compartmentalizing Your Anonymous Email Use
 
 A single anonymous account becomes less anonymous over time if you use it carelessly. Compartmentalization means creating distinct accounts for distinct purposes rather than one catch-all anonymous address:
 
@@ -249,6 +259,21 @@ Perfect anonymity is practically impossible. Consider your actual threat model:
 - **Human error**: Slip-ups in operational security compromise everything
 
 For most users, following these practices provides sufficient privacy. For high-risk scenarios (journalists, activists, whistleblowers), pair these techniques with specialized operational security training. The Tor Project and EFF both publish updated guides for high-risk individuals.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

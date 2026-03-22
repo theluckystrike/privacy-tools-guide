@@ -40,13 +40,23 @@ Dating app conversations often contain sensitive personal information that users
 - **Use disappearing messages****: Configure disappearing messages on platforms that support them (Signal, Snapchat).
 - **Understand platform limitations****: Realize that most dating apps offer no screenshot protection.
 
-## The Reality of Screenshot Prevention
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Reality of Screenshot Prevention
 
 The fundamental challenge with screenshot prevention is that the recipient ultimately controls their device. Once content displays on someone's screen, they can photograph it with another device, use screen recording software, or simply remember the information. No technical solution provides complete protection against someone determined to share your conversations.
 
 That said, several platform-level and app-level protections reduce casual screenshot sharing. These measures work against accidental or opportunistic sharing but won't stop someone committed to leaking your conversations.
 
-## Platform-Level Protections
+### Step 2: Platform-Level Protections
 
 ### iOS (Secure Screen API)
 
@@ -102,7 +112,7 @@ However, these APIs have gaps. They detect system-level screen capture but miss 
 | WhatsApp | No | Limited | Third-party apps |
 | Signal | No | Limited | Screen recording |
 
-## App-Level Protections
+### Step 3: App-Level Protections
 
 ### Android FLAG_SECURE
 
@@ -139,7 +149,7 @@ const messageConfig = {
 
 Signal's philosophy acknowledges that perfect screenshot prevention is impossible. Instead, they minimize the value of screenshots by reducing what persists on devices.
 
-## What Popular Dating Apps Actually Do
+### Step 4: What Popular Dating Apps Actually Do
 
 Most dating apps provide minimal screenshot protection:
 
@@ -151,7 +161,7 @@ Most dating apps provide minimal screenshot protection:
 
 This world means you cannot rely on app-level protections alone for sensitive dating conversations.
 
-## Building Privacy-Conscious Messaging
+### Step 5: Build Privacy-Conscious Messaging
 
 For developers building dating or messaging features, consider these implementation strategies:
 
@@ -218,7 +228,7 @@ class EphemeralMessage(models.Model):
 </style>
 ```
 
-## Practical Steps for Protection
+### Step 6: Practical Steps for Protection
 
 For users concerned about dating conversation screenshots:
 
@@ -232,9 +242,24 @@ For users concerned about dating conversation screenshots:
 
 **5. Request mutual privacy agreements**: Communicating expectations with matches about privacy builds trust and reduces incentive to screenshot.
 
-## Legal Considerations
+### Step 7: Legal Considerations
 
 While technical solutions are limited, some jurisdictions have laws addressing non-consensual intimate image sharing. These laws typically cover intimate photos, not text conversations, but evolve as technology changes. Consult legal resources specific to your jurisdiction for current protections.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

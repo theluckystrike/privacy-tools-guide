@@ -44,7 +44,17 @@ Armed with diagnostic techniques like baseline testing, packet loss analysis, MT
 4.
 - **Use a reputable speed**: test service or CLI alternatives like `speedtest-cli`: ```bash pip install speedtest-cli speedtest ``` Note your download and upload speeds, ping latency, and server location.
 
-## Understanding VPN Throttling
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand VPN Throttling
 
 VPN throttling occurs when your ISP intentionally slows down traffic using specific protocols—typically OpenVPN (UDP/TCP port 1194), WireGuard, or IKEv2. ISPs may target VPN traffic for several reasons: bandwidth management during peak hours, enforcement of data caps, or in some jurisdictions, compliance with regulatory requirements.
 
@@ -73,7 +83,7 @@ done
 
 Compare the averages to determine whether the speed reduction exceeds expected VPN overhead.
 
-## Method 2: Packet Loss Analysis
+### Step 2: Method 2: Packet Loss Analysis
 
 Throttling often introduces packet loss, particularly for UDP-based VPN protocols. The `ping` utility provides a simple diagnostic:
 
@@ -97,7 +107,7 @@ traceroute <VPN_SERVER_IP>
 
 If your ISP's local nodes show increased latency or packet loss only when the VPN is active, throttling is likely occurring at their infrastructure level.
 
-## Method 3: Protocol-Specific Testing
+### Step 3: Method 3: Protocol-Specific Testing
 
 Different VPN protocols exhibit varying susceptibility to throttling. Testing multiple protocols isolates whether your ISP targets specific protocols rather than VPN traffic generally.
 
@@ -116,7 +126,7 @@ sudo iked -s
 
 If WireGuard performs significantly better than OpenVPN or IKEv2, your ISP likely performs deep packet inspection (DPI) to identify and throttle specific VPN protocols. Some ISPs throttle based on DPI signatures rather than port numbers, making protocol switching an effective workaround.
 
-## Method 4: Port-Based Detection
+### Step 4: Method 4: Port-Based Detection
 
 ISPs often throttle traffic based on port numbers. Test your connection speed across different ports:
 
@@ -131,7 +141,7 @@ wait
 
 If certain ports show dramatically reduced performance while others remain fast, your ISP implements port-based throttling. This differs from protocol-based throttling and may respond to port switching or obfuscation techniques.
 
-## Method 5: Using MTR for Continuous Monitoring
+### Step 5: Method 5: Using MTR for Continuous Monitoring
 
 The `mtr` utility combines ping and traceroute, providing continuous network path analysis:
 
@@ -146,7 +156,7 @@ mtr -c 100 --report-wide <VPN_SERVER_IP>
 
 Look for patterns: increased packet loss at specific hops, latency spikes that correlate with VPN activation, or routing anomalies that only appear when tunneling. Persistent issues at early hops (typically within your ISP's network) strongly indicate ISP-level throttling.
 
-## Automating Detection with Scripts
+### Step 6: Automate Detection with Scripts
 
 For ongoing monitoring, consider a simple detection script that runs periodic tests:
 
@@ -176,7 +186,7 @@ Schedule this with cron for continuous monitoring:
 0 * * * * /path/to/vpn_throttle_detector.sh
 ```
 
-## What to Do If You Detect Throttling
+### Step 7: What to Do If You Detect Throttling
 
 Once you confirm throttling, several approaches may help:
 
@@ -186,7 +196,7 @@ Once you confirm throttling, several approaches may help:
 4. **Contact your ISP**: Request clarification on their traffic management policies
 5. **Document findings**: Keep logs and speed tests as evidence if pursuing complaints
 
-## Deep Packet Inspection (DPI) Detection
+### Step 8: Deep Packet Inspection (DPI) Detection
 
 If your ISP uses DPI to identify VPN traffic, certain markers reveal their approach. OpenVPN uses specific handshake patterns that DPI systems can recognize without decrypting content. The TLS version, certificate size, and timing information provide fingerprints.
 
@@ -218,7 +228,7 @@ test_protocol "udp" "443" "Custom UDP port 443"
 
 If port 443 shows significantly better performance than port 1194, your ISP likely recognizes VPN traffic by port number. If all VPN protocols show degradation, DPI-based identification is occurring.
 
-## ISP Throttling Mitigation Strategies
+### Step 9: ISP Throttling Mitigation Strategies
 
 Once you've confirmed throttling, several technical approaches may improve performance.
 
@@ -293,7 +303,7 @@ Gateway=10.8.0.1
 
 This reduces VPN throughput pressure on ISP throttling, though it exposes non-VPN traffic to ISP monitoring.
 
-## Regulatory Context
+### Step 10: Regulatory Context
 
 In several jurisdictions, ISP throttling of specific traffic types has legal implications. The FCC's 2015 Open Internet rules prohibited blocking and throttling, though the rules faced legal challenges. In Europe, the Specialised Services Framework allows ISP traffic management but requires transparency.
 
@@ -312,6 +322,21 @@ Document throttling for potential complaints to regulatory bodies:
 
 **Conclusion**: Selective throttling of non-standard ports indicates deliberate VPN targeting
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

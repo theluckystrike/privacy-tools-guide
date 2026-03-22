@@ -38,7 +38,17 @@ The key requirements for a secure throwaway email setup include:
 - **No personal information**: The email address itself shouldn't reveal your identity
 - **Easy disposal**: Creating and destroying addresses should be frictionless
 
-## Method 1: Email Alias Services
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Email Alias Services
 
 Email alias services sit between your real email and the outside world. You create unique aliases for each service, and all email flows through to your real inbox. If one service compromises your alias or starts spamming you, you disable that specific alias.
 
@@ -74,7 +84,7 @@ Services like Forward Email, DuckDuckGo's forwarding service, or SimpleLogin (ac
 
 The trade-off involves trusting a third party with your forwarding rules. For high-threat scenarios, self-hosting provides more control.
 
-## Method 2: Dedicated Forwarding Addresses
+### Step 2: Method 2: Dedicated Forwarding Addresses
 
 Create a separate email account specifically for one-time use. This approach works well when you need something more than aliases but don't want to set up a full alias infrastructure.
 
@@ -94,7 +104,7 @@ If you use Gmail, you can use the plus-addressing feature combined with filters:
 
 This approach requires no additional services, but Gmail still sees all your email traffic, which matters for high-threat models.
 
-## Method 3: Command-Line Alias Generation
+### Step 3: Method 3: Command-Line Alias Generation
 
 For developers comfortable with the terminal, generating email aliases programmatically provides maximum flexibility. Here's a Python script that generates unique aliases for each service:
 
@@ -140,7 +150,7 @@ python3 alias_gen.py mydomain.com github
 
 Store the secret in your password manager—you'll need it if you ever want to regenerate the same alias or verify it's yours.
 
-## Method 4: Burner Email for Maximum Disposability
+### Step 4: Method 4: Burner Email for Maximum Disposability
 
 When you need an email that truly disappears after use, burner email services provide temporary addresses that self-destruct. These work for quick verifications but shouldn't be used for anything requiring future access.
 
@@ -155,7 +165,7 @@ Deploy your own temporary email service using Mailcow or similar:
 
 The advantage of self-hosting is knowing exactly how long data persists. Commercial burner services may log more than you expect.
 
-## Automating Alias Creation
+### Step 5: Automate Alias Creation
 
 For power users who sign up for services frequently, automating alias creation saves time. Here's a bash script using a simple alias service API:
 
@@ -197,7 +207,7 @@ Regardless of which method you choose, follow these practices:
 
 5. **Rotate regularly**: Periodically disable old aliases to reduce your attack surface.
 
-## Choosing the Right Method
+### Step 6: Choose the Right Method
 
 Your threat model determines which approach works best:
 
@@ -208,6 +218,21 @@ Your threat model determines which approach works best:
 
 For most developers and power users, a combination works well: an alias service for ongoing one-time signups and a temporary email service for quick verifications.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

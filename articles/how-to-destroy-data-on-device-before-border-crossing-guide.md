@@ -40,13 +40,23 @@ Crossing international borders with sensitive data requires careful preparation.
 - **For external drives**: use LUKS encryption on Linux, FileVault on macOS, or BitLocker on Windows with strong passphrases.
 - **The `shred` command comes**: pre-installed on most Linux systems.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Border crossing scenarios differ from typical data security situations. You face two primary risks: forced decryption under duress and forensic examination of device contents. Full disk encryption with a strong password provides protection against the latter, but border agents may demand the password under legal authority. Secure data destruction offers a different approach—ensuring sensitive data no longer exists on the device when you reach the border.
 
 Different countries have varying legal frameworks regarding password disclosure. Some can compel you to provide decryption keys, while others cannot. However, the practical reality is that refusing to comply may result in device seizure, denial of entry, or criminal charges. Planning ahead by removing sensitive data eliminates these concerns entirely.
 
-## Preparing Your Data Strategy
+### Step 2: Preparing Your Data Strategy
 
 Before destroying any data, establish a secure backup location. You need a reliable way to restore your data after crossing the border. Options include encrypted cloud storage with strong authentication, an encrypted external drive kept with a trusted party, or a secure file transfer to a home server you control.
 
@@ -54,7 +64,7 @@ For cloud backups, ensure you use services with strong end-to-end encryption whe
 
 The backup process itself creates data that needs protection. Transfer only what you genuinely need, and ensure the backup itself uses strong encryption. Consider using age, GPG, or your operating system's native encryption tools.
 
-## Secure Data Destruction on Linux
+### Step 3: Secure Data Destruction on Linux
 
 Linux provides several command-line tools for secure file deletion. The core principle involves overwriting file contents with patterns or random data multiple times before removing the file.
 
@@ -85,7 +95,7 @@ srm -rv /path/to/secret_project/
 
 The `srm` command performs multiple passes and handles metadata removal.
 
-## Secure Data Destruction on macOS
+### Step 4: Secure Data Destruction on macOS
 
 macOS includes the `rm` command for basic file removal, but it does not securely overwrite data. The `srm` command on macOS provides secure deletion:
 
@@ -109,7 +119,7 @@ diskutil secureErase freespace 2 /dev/disk2s1
 
 Note that macOS FileVault encryption provides the strongest protection. Enable FileVault in System Preferences > Security & Privacy > FileVault. When FileVault is enabled, simply deleting the encryption key (by reformatting or securely erasing the drive) makes data effectively unrecoverable.
 
-## Windows Data Destruction
+### Step 5: Windows Data Destruction
 
 Windows provides the `cipher` command for basic secure deletion, though its capabilities are limited. The most reliable approach involves using third-party tools or built-in encryption combined with secure formatting.
 
@@ -135,7 +145,7 @@ sdelete -p 3 -s C:\Path\To\Directory\
 
 The `-p` flag specifies the number of overwrite passes.
 
-## SSD and Flash Storage Considerations
+### Step 6: SSD and Flash Storage Considerations
 
 Solid-state drives (SSDs) and USB flash drives present unique challenges for secure deletion. Unlike traditional hard drives, SSDs use wear leveling and may remap data to different physical locations, meaning standard overwrite commands may not reach all stored data.
 
@@ -151,7 +161,7 @@ Use this with caution—it permanently erases all data on the drive. Some SSDs a
 
 For USB drives, physical destruction remains the most reliable option if you need absolute certainty. Small USB drives can be destroyed with pliers or a hammer after logically erasing them.
 
-## Workflow for Border Crossing Preparation
+### Step 7: Workflow for Border Crossing Preparation
 
 Establish a consistent workflow for preparing devices before border crossing:
 
@@ -184,7 +194,7 @@ rm -rf ~/.cache/mozilla ~/.cache/google-chrome ~/.cache/chromium
 history -c && history -w
 ```
 
-## Cryptographic Considerations for Destruction
+### Step 8: Cryptographic Considerations for Destruction
 
 Beyond overwriting files, consider the cryptographic state of your device:
 
@@ -204,7 +214,7 @@ rm -rf ~/.config/chromium/Default/Code\ Cache
 
 **Memory Forensics**: If border agents immediately seize your device, data in RAM might be recoverable. Ensure your device is powered off completely—not in sleep mode—before the crossing. Sleep mode leaves data in RAM even with the display off.
 
-## Vehicle and Personal Device Considerations
+### Step 9: Vehicle and Personal Device Considerations
 
 Border crossing preparation extends beyond your primary laptop:
 
@@ -220,7 +230,7 @@ exiftool -all= photo.jpg
 exiftool -all= -r /path/to/photos/  # Remove from all photos in directory
 ```
 
-## Legal Implications in Different Jurisdictions
+### Step 10: Legal Implications in Different Jurisdictions
 
 Data destruction strategies vary based on which countries you're crossing between:
 
@@ -234,7 +244,7 @@ Data destruction strategies vary based on which countries you're crossing betwee
 
 Research current legal standards for the specific countries you're crossing. Consult with a lawyer familiar with border crossing law in those jurisdictions.
 
-## Post-Border Data Recovery
+### Step 11: Post-Border Data Recovery
 
 Once you've safely crossed borders, restoring your data should be straightforward if properly backed up:
 
@@ -262,7 +272,7 @@ find /home/user -type f | wc -l
 md5sum -c /home/user/backup_checksums.txt
 ```
 
-## Threat Scenarios and Appropriate Responses
+### Step 12: Threat Scenarios and Appropriate Responses
 
 Different scenarios warrant different preparation levels:
 
@@ -278,7 +288,7 @@ Different scenarios warrant different preparation levels:
 
 Assess your actual threat model honestly. Overly paranoid preparations create suspicion, while insufficient precautions create genuine risk.
 
-## Final Security Checklist
+### Step 13: Final Security Checklist
 
 Before any border crossing, complete this checklist:
 
@@ -294,6 +304,21 @@ Before any border crossing, complete this checklist:
 10. Research local laws for the countries you're crossing
 
 The goal isn't paranoia but informed preparation. With proper planning, you can travel securely while maintaining access to important information and protecting your privacy.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

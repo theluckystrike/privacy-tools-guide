@@ -41,13 +41,23 @@ Encryption serves as your last line of defense when attackers bypass other secur
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Encryption at Rest versus in Transit
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Encryption at Rest versus in Transit
 
 Encryption at rest protects stored data—when someone gains physical or filesystem access to your servers or databases. Encryption in transit safeguards data moving between client applications and servers, protecting against network sniffing and man-in-the-middle attacks. Both layers work together to create defense in depth, and you should implement both rather than choosing one over the other.
 
 Many compliance frameworks require both protections. The PCI DSS standard explicitly mandates encryption for cardholder data at rest and in transit. GDPR doesn't prescribe specific encryption methods but requires "appropriate technical measures" including encryption for personal data.
 
-## Implementing Encryption at Rest
+### Step 2: Implementing Encryption at Rest
 
 ### Database-Level Encryption
 
@@ -137,7 +147,7 @@ sudo mount /dev/mapper/encrypted_volume /mnt/protected
 
 For cloud environments, enable encryption at rest provided by your cloud provider. AWS EBS, Azure Disk Storage, and Google Cloud Persistent Disk all offer encryption by default using KMS-managed keys.
 
-## Implementing Encryption in Transit
+### Step 3: Implementing Encryption in Transit
 
 ### TLS/SSL Configuration
 
@@ -242,6 +252,21 @@ Encryption strength depends entirely on key management. Follow these practices:
 3. **Use separate keys for different purposes**: Separate encryption keys from signing keys
 4. **Implement key backup and recovery**: Store encrypted backups of keys in secure locations
 5. **Monitor key usage**: Log and monitor key access patterns for anomaly detection
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

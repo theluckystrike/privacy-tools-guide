@@ -38,13 +38,23 @@ Russian DPI systems block WireGuard by fingerprinting its distinctive packet pat
 - **This uses SSH's established**: presence in enterprise networks.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem
 
 WireGuard uses a fixed header structure and specific UDP ports that DPI systems can fingerprint. The protocol's handshake initialization packets have recognizable characteristics, making it trivial for state-level filtering to block connections. When WireGuard traffic enters a DPI-monitored network, the system can identify it within milliseconds and either drop the packets or throttle the connection.
 
 To circumvent this, you need to disguise your WireGuard traffic to look like normal HTTPS traffic or other hard-to-block protocols. Several techniques accomplish this without sacrificing WireGuard's performance advantages.
 
-## Technique 1: UDP Port Rotation
+### Step 2: Technique 1: UDP Port Rotation
 
 The simplest first step involves changing WireGuard from its default port (51820) to a port that DPI systems typically allow. Ports 443 (HTTPS), 80 (HTTP), or 53 (DNS) are often whitelisted by default networks.
 
@@ -87,7 +97,7 @@ PersistentKeepalive = 25
 
 This technique alone may bypass basic DPI, but sophisticated systems will still identify the WireGuard handshake pattern.
 
-## Technique 2: UDP to TCP Obfuscation
+### Step 3: Technique 2: UDP to TCP Obfuscation
 
 For deeper obfuscation, you can wrap WireGuard traffic inside a TCP tunnel. This makes your VPN traffic appear as standard HTTPS connections.
 
@@ -155,7 +165,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 25
 ```
 
-## Technique 3: WireGuard over SSH Tunnel
+### Step 4: Technique 3: WireGuard over SSH Tunnel
 
 Another effective method involves tunneling WireGuard through an SSH connection. This uses SSH's established presence in enterprise networks.
 
@@ -189,7 +199,7 @@ ssh -N -L 51820:localhost:51820 user@your-server-ip -p 443
 
 Keep this terminal session running. Then configure WireGuard to use localhost:51820 as the endpoint.
 
-## Technique 4: Cloaking with stunnel
+### Step 5: Technique 4: Cloaking with stunnel
 
  stunnel provides another layer of obfuscation by wrapping WireGuard traffic in TLS. This makes your traffic indistinguishable from regular HTTPS.
 
@@ -250,7 +260,7 @@ For environments with aggressive DPI, combine multiple techniques. A setup might
 
 This layered approach creates multiple obstacles for DPI systems to overcome.
 
-## Testing Your Configuration
+### Step 6: Test Your Configuration
 
 Verify your setup works by testing from a Russian VPN or through a proxy located in Russia. Several online tools can help verify your connection:
 

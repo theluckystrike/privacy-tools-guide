@@ -39,13 +39,23 @@ You can minimize Aadhaar surveillance exposure by locking biometrics on the UIDA
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
-## Understanding the Aadhaar Authentication Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Aadhaar Authentication Ecosystem
 
 The Unique Identification Authority of India (UIDAI) operates the Aadhaar system. When you authenticate— whether for banking, mobile SIM activation, or government services—you transmit biometric data to a central server. Each transaction generates an authentication log that persists indefinitely.
 
 The core problem: you cannot see who has access to your authentication history, and the system does not provide meaningful opt-out mechanisms for services you previously enrolled with. However, several controls can reduce your attack surface and limit future data collection.
 
-## Locking Biometric Authentication
+### Step 2: Locking Biometric Authentication
 
 The most effective single action is locking your biometric data. When locked, fingerprint and iris authentication fails, forcing fallback to one-time passwords. This prevents unauthorized use of your biometrics and reduces the data footprint.
 
@@ -77,7 +87,7 @@ The mobile application offers the same functionality with slightly better UX:
 
 The application stores a virtual ID that masks your actual Aadhaar number during authentication—use this instead of sharing your full number when possible.
 
-## Managing Authentication History
+### Step 3: Manage Authentication History
 
 UIDAI provides limited visibility into authentication records through the "Authentication History" section. Access this to identify unexpected or unauthorized authentications.
 
@@ -91,7 +101,7 @@ UIDAI provides limited visibility into authentication records through the "Authe
 
 Document any suspicious authentications. While UIDAI does not provide direct dispute resolution through this interface, you can file complaints through their grievance portal.
 
-## Revoking Service Provider Consents
+### Step 4: Revoking Service Provider Consents
 
 Many private services obtained Aadhaar authentication under questionable consent models. Unlike financial services where linkage is mandatory, many optional services collected Aadhaar data unnecessarily.
 
@@ -118,7 +128,7 @@ Telecom operators used Aadhaar for SIM verification extensively. While you canno
 - Request your operator provide authentication alternatives
 - Consider obtaining a new SIM with alternative ID if your current operator refuses
 
-## Virtual ID: A Developer's Approach
+### Step 5: Virtual ID: A Developer's Approach
 
 UIDAI introduced Virtual ID (VID) to reduce direct Aadhaar number exposure. Generate a VID that functions as a proxy for authentication without revealing your actual number.
 
@@ -135,7 +145,7 @@ UIDAI introduced Virtual ID (VID) to reduce direct Aadhaar number exposure. Gene
 
 Developers building systems that interact with Aadhaar should exclusively accept VID rather than Aadhaar numbers. This shifts privacy burden away from users and demonstrates the architectural alternative UIDAI should have prioritized.
 
-## Protecting Against Downstream Data Breaches
+### Step 6: Protecting Against Downstream Data Breaches
 
 Your Aadhaar data may exist in hundreds of private databases. When these databases breach—as has happened repeatedly—your biometrics become exposed. Assume your Aadhaar data is compromised and plan accordingly.
 
@@ -171,7 +181,7 @@ Every service linked to your Aadhaar creates additional surveillance points. Aud
 
 Services requiring Aadhaar by law include banking, telecom, and certain government benefits. Optional services—insurance policies, investment accounts, loyalty programs—may permit alternative identification.
 
-## Architectural Defenses for Developers
+### Step 7: Architectural Defenses for Developers
 
 If you build systems that interact with Aadhaar, implement privacy-preserving patterns:
 
@@ -195,7 +205,7 @@ function processAadhaarAuth(authData) {
 }
 ```
 
-## Behavioral Surveillance Through Authentication Patterns
+### Step 8: Behavioral Surveillance Through Authentication Patterns
 
 Beyond the biometric data itself, authentication patterns create a behavioral profile. Every time you authenticate, you leave a record:
 
@@ -241,7 +251,7 @@ To minimize behavioral surveillance:
 2. **Vary times**: If possible, authenticate at different times rather than establishing a pattern
 3. **Minimize optional authentications**: Use alternative ID when available for optional services
 
-## Regulatory and Legal Frameworks
+### Step 9: Regulatory and Legal Frameworks
 
 Understanding the legal field helps contextualize your options:
 
@@ -271,7 +281,7 @@ As of 2026, several court cases challenge Aadhaar's constitutionality:
 
 Track these cases through legal resource websites. If landmark rulings occur, they may provide additional opt-out opportunities.
 
-## Limitations and Realistic Expectations
+### Step 10: Limitations and Realistic Expectations
 
 Complete opt-out from Aadhaar is impossible for Indian residents. The system is woven into essential services, and many linkages have no deletion mechanism. However, significant reduction in exposure is achievable:
 
@@ -285,7 +295,7 @@ Complete opt-out from Aadhaar is impossible for Indian residents. The system is 
 
 The deeper solution requires regulatory reform: mandatory data retention limits, individual access to deletion requests, and authentication history transparency. Until then, these technical measures provide meaningful privacy improvement.
 
-## Advocacy and Policy Engagement
+### Step 11: Advocacy and Policy Engagement
 
 Beyond personal protection, consider engaging with privacy advocacy organizations:
 
@@ -294,6 +304,21 @@ Beyond personal protection, consider engaging with privacy advocacy organization
 - **Data Security Council of India**: Develops privacy frameworks
 
 Supporting these organizations amplifies your individual efforts and contributes to systemic change. Individual technical defenses matter, but collective policy action creates lasting protection.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

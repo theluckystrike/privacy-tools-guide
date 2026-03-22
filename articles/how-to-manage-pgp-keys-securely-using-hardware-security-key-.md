@@ -55,7 +55,7 @@ Select option 2 to unblock the PIN.
 - **Hardware security keys like**: YubiKey 5 series support the OpenPGP standard, allowing you to store encryption, signing, and authentication subkeys on the device.
 - **This process sets up**: the card with your preferences and creates three slots for different key types.
 
-## Understanding the Security Model
+### Step 1: Understand the Security Model
 
 When you store PGP keys on your computer, they remain vulnerable to various attack vectors. Malware can scan for private keys, keyloggers can capture passphrases, and physical access to your machine exposes unencrypted keys. A hardware security key solves these problems by keeping cryptographic operations isolated in secure hardware.
 
@@ -83,7 +83,7 @@ sudo apt install gnupg
 
 On Windows, download Gpg4win from the official GnuPG website.
 
-## Initializing Your Hardware Security Key
+### Step 2: Initializing Your Hardware Security Key
 
 The first step involves configuring the OpenPGP application on your YubiKey. This process sets up the card with your preferences and creates three slots for different key types.
 
@@ -111,7 +111,7 @@ name (enter your name)
 lang (your language code, e.g., en)
 ```
 
-## Generating Keys Directly on the YubiKey
+### Step 3: Generate Keys Directly on the YubiKey
 
 For maximum security, generate your encryption and signing keys directly on the hardware device. This ensures the private key material never exists in software memory.
 
@@ -154,7 +154,7 @@ gpg --delete-secret-keys your@email.com
 
 Keep a paper backup of your revocation certificate in a secure location before deleting software keys.
 
-## Using Your Hardware-Protected Keys
+### Step 4: Use Your Hardware-Protected Keys
 
 Once your keys are on the YubiKey, using them works similarly to software keys, with one important difference: every operation requires physical touch confirmation.
 
@@ -187,7 +187,7 @@ admin
 forcesignature
 ```
 
-## Managing Multiple Keys and Backups
+### Step 5: Manage Multiple Keys and Backups
 
 For professional use, consider a backup strategy. Generate a revocation certificate before transferring keys:
 

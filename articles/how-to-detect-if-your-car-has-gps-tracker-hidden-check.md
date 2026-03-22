@@ -32,7 +32,17 @@ GPS trackers have become remarkably cheap and accessible. A quick search reveals
 
 The challenge is that modern trackers are small, battery-powered, and often magnetic. Finding them requires systematic effort and sometimes technical tools. This guide walks through detection methods in order of complexity, starting with the simplest.
 
-## Physical Inspection: Your First Line of Defense
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Physical Inspection: Your First Line of Defense
 
 Before reaching for technical equipment, perform a thorough physical search. Most consumer GPS trackers have physical signatures you can identify with careful observation.
 
@@ -81,7 +91,7 @@ Real GPS trackers are small—typically 2-4 inches long, 1-2 inches wide, and ha
 
 If you find an unknown device, don't simply remove it. Consider documenting its exact location, photographing it, and potentially involving law enforcement if you believe the placement was illegal.
 
-## Technical Detection: RF Analysis
+### Step 2: Technical Detection: RF Analysis
 
 Physical inspection catches many trackers, but sophisticated devices may escape visual detection. RF (radio frequency) analysis detects the wireless transmissions that GPS trackers use to send location data.
 
@@ -182,7 +192,7 @@ This script provides a starting point. Adjust the threshold based on your enviro
 - **Compare readings** between your vehicle and a similar parked vehicle without a tracker
 - **Look for periodic patterns**—many trackers transmit at regular intervals (every 30 seconds, every minute)
 
-## Network-Based Detection
+### Step 3: Network-Based Detection
 
 Modern connected vehicles present another detection vector. Some "trackers" aren't physical devices at all—they're apps installed on your vehicle's built-in telematics system.
 
@@ -215,7 +225,7 @@ print('Connected devices:', connection.status())
 
 If an unknown device responds on the OBD bus, this could indicate aftermarket telematics.
 
-## Building a Detection Routine
+### Step 4: Build a Detection Routine
 
 Effective tracker detection isn't an one-time effort—it requires periodic checks. Here's a practical routine:
 
@@ -230,6 +240,21 @@ If you find a tracker you didn't place, your legal options depend on jurisdictio
 
 For those in high-risk situations—activists, journalists, individuals escaping abusive relationships—consider professional security consultations. The techniques in this guide detect consumer-grade devices but may not identify government-level surveillance.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

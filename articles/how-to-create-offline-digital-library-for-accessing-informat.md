@@ -45,7 +45,17 @@ Internet shutdowns have become increasingly common worldwide, with governments r
 
 The core principle involves downloading content in formats that remain accessible without network connectivity. This means everything from Wikipedia articles to technical documentation, from educational videos to entire book collections gets stored locally on your devices.
 
-## Essential Tools for Offline Content
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Essential Tools for Offline Content
 
 Several open-source tools excel at downloading and organizing web content for offline use.
 
@@ -65,7 +75,7 @@ httrack "https://example.com" -O ./offline-copy "+example.com/*" -v
 
 **SingleFile** browser extension captures web pages as self-contained HTML files, inlining all CSS, images, and JavaScript. This approach works well for preserving individual articles or tutorials you reference frequently.
 
-## Building Your Library Structure
+### Step 2: Build Your Library Structure
 
 Organizing content systematically improves retrieval when you need information urgently. Consider creating directories by category: reference materials, technical documentation, educational content, news archives, and entertainment.
 
@@ -91,7 +101,7 @@ For a practical folder structure on Linux or macOS:
 
 Naming conventions matter when searching offline. Use descriptive filenames with dates for news content, version numbers for software documentation, and consistent categorization across your library.
 
-## Practical Implementation Steps
+### Step 3: Practical Implementation Steps
 
 Start building your offline library with these concrete actions:
 
@@ -117,7 +127,7 @@ httrack "https://your-priority-site.com" -O "./docs/your-priority-site" "+your-p
 
 **Step 5: Verify integrity.** Periodically test that your offline content remains accessible. Corrupted downloads or outdated links become apparent only when you attempt to use them.
 
-## Device Considerations
+### Step 4: Device Considerations
 
 Different devices serve different purposes in your offline strategy. A dedicated laptop with large storage works as your primary research station. External SSDs attached to this machine hold the bulkier collections.
 
@@ -188,7 +198,7 @@ sudo apt-get install zotero
 # Access Settings > Sync to configure offline libraries
 ```
 
-## Backup and Redundancy Strategies
+### Step 5: Backup and Redundancy Strategies
 
 A digital library is only valuable if you can still access it during emergencies:
 
@@ -212,7 +222,7 @@ veracrypt --text --mount /path/to/library.vc /mnt/library
 veracrypt --text --dismount /path/to/library.vc
 ```
 
-## Specialized Content Collections
+### Step 6: Specialized Content Collections
 
 Beyond Wikipedia and general websites:
 
@@ -241,7 +251,7 @@ Beyond Wikipedia and general websites:
 - LibreTexts (free textbook content)
 - Open Courseware from major universities
 
-## Building a Kiwix Server
+### Step 7: Build a Kiwix Server
 
 For households with multiple devices, run Kiwix as a server:
 
@@ -257,7 +267,7 @@ kiwix-serve --port 8080 /path/to/zim-files/*.zim
 
 This allows all devices in your home to access the offline library without storing copies on each device.
 
-## Maintenance and Updates
+### Step 8: Perform Maintenance and Updates
 
 **Creating an update schedule**:
 
@@ -301,7 +311,7 @@ When downloading content for offline storage:
 - **Metadata removal**: Use exiftool to strip identifying metadata from sensitive documents
 - **Encrypted storage**: Store sensitive content in encrypted containers, especially if using cloud backup
 
-## Testing Your Offline Setup
+### Step 9: Test Your Offline Setup
 
 Before relying on your offline library:
 
@@ -328,7 +338,7 @@ Before committing storage:
 
 A well-curated offline library for a household typically requires 200-500GB of storage.
 
-## Practical Scenario: Using Your Offline Library
+### Step 10: Practical Scenario: Using Your Offline Library
 
 **During an internet outage**:
 1. Power on offline laptop or device with local library
@@ -350,6 +360,21 @@ A well-curated offline library for a household typically requires 200-500GB of s
 Building an offline library requires ongoing maintenance. Schedule regular updates to ensure your content remains current, particularly for rapidly evolving technical documentation. The initial investment of time and storage pays dividends when network access becomes unreliable or unavailable.
 
 {% raw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

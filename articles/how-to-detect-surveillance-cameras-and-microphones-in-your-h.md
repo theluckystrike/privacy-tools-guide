@@ -39,7 +39,17 @@ You can detect hidden surveillance cameras and microphones in your home using ne
 - **The device's MAC address**: and any traffic captured are useful to investigators.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Network Discovery for Camera Detection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Network Discovery for Camera Detection
 
 Modern IP cameras and smart devices frequently broadcast on your local network. Scanning your network reveals connected devices that may include hidden cameras.
 
@@ -75,7 +85,7 @@ The `arp-scan` tool provides an alternative method for discovering network devic
 sudo arp-scan --localnet | grep -i camera
 ```
 
-## Detecting Wireless Cameras with RF Analysis
+### Step 2: Detecting Wireless Cameras with RF Analysis
 
 Hidden wireless cameras transmit RF signals. Software-defined radio (SDR) tools help identify these transmissions.
 
@@ -101,7 +111,7 @@ brew install inspectrum
 inspectrum recording.iq -s 2.4e6
 ```
 
-## Microphone Detection Methods
+### Step 3: Microphone Detection Methods
 
 Detecting hidden microphones requires different approaches depending on their power source and transmission method.
 
@@ -170,7 +180,7 @@ sudo nethogs -v 3
 sudo tcpdump -i en0 -n | grep -E "(amazon|google|apple)"
 ```
 
-## Thermal Imaging Detection
+### Step 4: Thermal Imaging Detection
 
 Active electronic devices generate heat. Hidden cameras and microphones produce thermal signatures visible through thermal imaging cameras:
 
@@ -191,7 +201,7 @@ def capture_thermal():
 # Hotspots may indicate hidden electronics
 ```
 
-## Physical Inspection Checklist
+### Step 5: Physical Inspection Checklist
 
 Technical tools complement physical searches. Perform these checks:
 
@@ -201,7 +211,7 @@ Technical tools complement physical searches. Perform these checks:
 4. **Light fixtures**: Examine bulbs and fixtures
 5. **Books and decorations**: Small lenses may hide in unexpected places
 
-## Building a Detection Toolkit
+### Step 6: Build a Detection Toolkit
 
 Create a portable detection kit:
 
@@ -217,7 +227,7 @@ pip install sounddevice numpy scipy
 brew install rtl-sdr cubicsdr
 ```
 
-## Detecting Cameras with Lens Reflection Scanning
+### Step 7: Detecting Cameras with Lens Reflection Scanning
 
 Hidden camera lenses reflect light in a distinctive way. Camera lenses are made of glass with a specific refractive index that reflects a small amount of incoming light back toward the source, even when the device is turned off. This optical property makes cameras detectable with a bright light source even when they have no network presence and emit no RF signal.
 
@@ -262,7 +272,7 @@ log_room_scan("hotel_room_214", positions)
 
 Systematic documentation is useful when staying in accommodations repeatedly, or when a concern needs to be reported to a property manager or law enforcement with specific locations noted.
 
-## Hardening Against Smart Device Surveillance
+### Step 8: Hardening Against Smart Device Surveillance
 
 Many homes now contain dozens of connected devices: smart TVs, voice assistants, robot vacuums, baby monitors, and security cameras. These devices present a different challenge from covert surveillance equipment—they are openly installed but may be collecting more data than their owners realize.
 
@@ -297,7 +307,7 @@ VLAN 20 - IoT/Smart devices
 
 This network segmentation means a compromised smart device cannot access your computer's file shares, your NAS, or your other trusted devices, even if it is actively running surveillance software.
 
-## What to Do if You Find a Device
+### Step 9: What to Do if You Find a Device
 
 Discovering a hidden surveillance device in a rented space (hotel room, Airbnb, rental property) requires specific steps. How you handle the discovery affects both your ability to pursue legal remedies and the safety of any evidence.
 
@@ -312,6 +322,21 @@ Discovering a hidden surveillance device in a rented space (hotel room, Airbnb, 
 If law enforcement will not respond or the property manager is unresponsive, contact local data protection authorities. In the EU, national DPAs (Data Protection Authorities) have jurisdiction over surveillance privacy violations. In the US, contact local police and the FBI's IC3 for internet crimes.
 
 Post public reviews on the booking platform documenting what you found and that you reported it. This creates accountability and protects future guests.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,13 +40,23 @@ Switching from Android to iPhone presents a unique challenge for password manage
 - **Document migration in audit**: log echo "[$(date)] Password manager migration started" >> migration.log # 5.
 - **Switching from Android to**: iPhone presents a unique challenge for password manager users.
 
-## Understanding the Cross-Platform Migration Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Cross-Platform Migration Challenge
 
 Password managers store sensitive data in encrypted vaults. The encryption key typically derives from your master password, which means the vault itself remains portable across platforms—but the import/export mechanisms differ significantly between Android apps and their iOS counterparts.
 
 Most password managers support standard export formats like CSV or encrypted JSON, but the devil lies in the details. Certain fields may not transfer correctly, and some exporters intentionally exclude TOTP seeds or secure notes for security reasons. Understanding these nuances prevents data loss during migration.
 
-## Method 1: Cloud Sync (Simplest Approach)
+### Step 2: Method 1: Cloud Sync (Simplest Approach)
 
 The easiest path involves using your password manager's built-in cloud synchronization. If you already use 1Password, Bitwarden, or similar services with cross-platform support, simply install the iOS app and sign in.
 
@@ -63,7 +73,7 @@ Before factory resetting your Android device, confirm that all items appear in t
 
 For developers, cloud sync provides the most reliable experience because it handles encryption consistently across platforms. The major password managers all support this workflow, though some require paid subscriptions for mobile sync.
 
-## Method 2: Encrypted Export/Import
+### Step 3: Method 2: Encrypted Export/Import
 
 When cloud sync isn't available—or you prefer manual control—exporting your vault directly offers maximum transparency. This method works across all password managers that support encrypted exports.
 
@@ -104,7 +114,7 @@ op export --format json --vaults Personal > 1password-export.json
 
 1Password's export includes all item types but requires the 1Password subscription for CLI access. The exported JSON maintains field relationships that some CSV conversions lose.
 
-## Method 3: CSV Migration (Universal Compatibility)
+### Step 4: Method 3: CSV Migration (Universal Compatibility)
 
 For maximum compatibility, CSV exports work across nearly all password managers. However, CSV strips encryption and may lose custom fields.
 
@@ -119,7 +129,7 @@ awk -F',' 'NR>1 {print $1","$2","$3","$5}' bitwarden-export.csv > import-ready.c
 
 This approach requires field mapping between exporters and importers. Most password managers accept CSV with columns like `url`, `username`, `password`, `totp`, `note`, and `name`. Test with a small subset before migrating your entire vault.
 
-## Handling TOTP Seeds During Migration
+### Step 5: Handling TOTP Seeds During Migration
 
 Time-based one-time passwords (TOTP) present a specific challenge. Many export tools exclude these by default, requiring explicit opt-in:
 
@@ -133,7 +143,7 @@ op export --include-otp
 
 If your password manager doesn't export TOTP seeds, you'll need to manually transfer each 2FA code by scanning the QR code again. This process becomes tedious with dozens of accounts but remains necessary for full credential access on your new device.
 
-## Android-Specific Export Steps
+### Step 6: Android-Specific Export Steps
 
 On Android, most password managers store exports in app-specific directories. Access these through Android's file manager:
 
@@ -145,7 +155,7 @@ On Android, most password managers store exports in app-specific directories. Ac
 
 For Bitwarden Android app, the export appears in `/Download/Bitwarden/` by default. Use Android's share functionality to send the file to yourself via email or cloud storage.
 
-## iOS Import Process
+### Step 7: iOS Import Process
 
 Once your export file reaches iPhone, import through the password manager's settings:
 
@@ -163,7 +173,7 @@ bw list items | jq 'length'  # Count items in vault
 
 Compare the count against your original vault to ensure complete transfer.
 
-## Command-Line Automation for Developers
+### Step 8: Command-Line Automation for Developers
 
 For developers managing multiple accounts or performing migrations frequently, CLI automation reduces repetition:
 
@@ -312,7 +322,7 @@ else
 fi
 ```
 
-## Emergency Recovery from Migration Failure
+### Step 9: Emergency Recovery from Migration Failure
 
 If migration fails partway through, recovery requires careful sequencing:
 
@@ -354,7 +364,7 @@ restore_from_backup "vault-backup-2026-03-20.json.gpg"
 verify_recovery
 ```
 
-## Device-Specific Migration Quirks
+### Step 10: Device-Specific Migration Quirks
 
 ### Android Quirks
 
@@ -368,7 +378,7 @@ verify_recovery
 - iOS forces you to choose a system password manager; switching later requires manual verification
 - Some password managers don't support app extensions on older iOS versions (requiring manual entry)
 
-## Security Practices Throughout Migration
+### Step 11: Security Practices Throughout Migration
 
 Maintain these practices during the transition:
 
@@ -399,7 +409,7 @@ shred -vfz -n 7 bitwarden-export.json  # 7-pass overwrite
 # (If your password manager has emergency access sharing)
 ```
 
-## Post-Migration: Ongoing Verification
+### Step 12: Post-Migration: Ongoing Verification
 
 After successful migration, continue verifying integrity:
 

@@ -301,7 +301,17 @@ diskutil mount /path/to/drive
 | BitLocker | Windows only | Low | Excellent (0-2% overhead) | Windows Pro/Enterprise | Included |
 | FileVault | macOS only | Low | Excellent (0-2% overhead) | macOS only | Included |
 
-## Password Management and Recovery
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Password Management and Recovery
 
 ### Password Strength for Encryption
 
@@ -386,7 +396,7 @@ Expected results:
 - Older SSD: 5-10% overhead
 - Mechanical drive: 10-20% overhead
 
-## Cross-Platform Usage
+### Step 2: Cross-Platform Usage
 
 For drives used across multiple operating systems, encryption considerations change:
 
@@ -408,7 +418,7 @@ For drives used across multiple operating systems, encryption considerations cha
 - VeraCrypt only option for true cross-platform compatibility
 - Use exFAT file system for maximum compatibility
 
-## Disaster Recovery Procedures
+### Step 3: Disaster Recovery Procedures
 
 ### Scenario 1: Forgotten Encryption Password
 
@@ -493,7 +503,7 @@ gpedit.msc
 
 Organizations deploy FileVault encryption via MDM profiles, enforcing encryption on all organization-owned machines.
 
-## Testing Encryption Security
+### Step 4: Test Encryption Security
 
 Verify encryption actually works:
 
@@ -512,6 +522,21 @@ mount /dev/sdb1 /mnt/test
 # - No filesystem recognized
 # - No recovery without password/key
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

@@ -40,13 +40,23 @@ Running a private group communication channel requires more than just a shared e
 - **This approach works when**: all participants use GPG and configure their email clients accordingly.
 - **If a member loses access or leaves**: having revocation certificates ready prevents unauthorized future use.
 
-## Understanding the Threat Model
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat Model
 
 Before selecting tools, identify what you're protecting against. Email encryption addresses different threats than messaging app encryption. For mailing lists, consider three attack vectors: content interception (someone reading emails in transit), list compromise (an attacker gaining access to the list server), and metadata analysis (knowing who communicates with whom, even without reading content).
 
 End-to-end encryption solves the first two by ensuring only list members can decrypt messages. The list server handles message distribution but never sees plaintext. This matters because mailing list archives often become targets—once compromised, unencrypted archives expose years of communications.
 
-## Option 1: Mailman with GPG Encryption
+### Step 2: Option 1: Mailman with GPG Encryption
 
 Mailman remains the standard open-source mailing list manager. While Mailman itself doesn't encrypt, you can combine it with GPG-encrypted message processing. This approach works when all participants use GPG and configure their email clients accordingly.
 
@@ -64,7 +74,7 @@ gpg --full-generate-key
 gpg --armor --export list-key@yourdomain.com > list-public-key.asc
 ```
 
-## Option 2: Secure Distribution Lists with Delta Chat
+### Step 3: Option 2: Secure Distribution Lists with Delta Chat
 
 Delta Chat implements a decentralized approach using email as the transport but adding automatic GPG or E2EE encryption. It works over standard email servers but adds Chatmail protocols for improved security. Groups in Delta Chat function like mailing lists but with automatic end-to-end encryption.
 
@@ -77,7 +87,7 @@ To set up a Delta Chat group acting as a secure mailing list:
 3. Create a group and add the dedicated address
 4. Enable "Verify Vertically" in group settings for full E2EE
 
-## Option 3: Self-Hosted Listmonk with PGP Middleware
+### Step 4: Option 3: Self-Hosted Listmonk with PGP Middleware
 
 Listmonk is a modern, self-hosted newsletter and mailing list manager. While primarily designed for broadcast newsletters, you can adapt it for group communication by restricting subscriptions and adding PGP encryption middleware.
 
@@ -101,7 +111,7 @@ def encrypt_and_send(message, recipient_email):
 
 This approach gives you a polished web interface for managing subscribers while maintaining encryption. The setup complexity suits teams with DevOps capability.
 
-## Option 4: Simple GPG-Protected Archives with Mutt and Procmail
+### Step 5: Option 4: Simple GPG-Protected Archives with Mutt and Procmail
 
 For smaller groups preferring simplicity over features, use standard email tools with procmail filters to create encrypted archives. Each member sends to the list address, procmail delivers to a Maildir, and a cron job encrypts the archive using GPG symmetric encryption nightly.
 
@@ -127,7 +137,7 @@ Regardless of tool choice, apply consistent key management practices:
 
 **Maintain revocation certificates.** Generate and securely store revocation certificates for all keys. If a member loses access or leaves, having revocation certificates ready prevents unauthorized future use.
 
-## Step-by-Step Setup: Mailman 3 with GPG (Recommended for Developers)
+### Step 6: Step-by-Step Setup: Mailman 3 with GPG (Recommended for Developers)
 
 For a developer team, here's a concrete implementation:
 
@@ -172,7 +182,7 @@ gpg --edit-key list@domain.com  # Sign the key locally
 - Create filter rules that automatically decrypt incoming list messages
 - When composing, use "Write & Encrypt" for list messages
 
-## Privacy-First Community Mailing Lists
+### Step 7: Privacy-First Community Mailing Lists
 
 For activist groups, journalists, or other communities prioritizing privacy:
 
@@ -240,7 +250,7 @@ def route_message_to_sublist(message, sender, recipient_list):
 
 This approach allows mixed-sensitivity groups to coexist while ensuring critical communications get appropriate encryption.
 
-## Testing Your Encrypted Mailing List
+### Step 8: Test Your Encrypted Mailing List
 
 Before deployment to production:
 
@@ -254,7 +264,7 @@ Before deployment to production:
 
 5. **Backup and recovery**: Test restoring list from backups. Ensure encrypted archives restore intact.
 
-## Migration from Unencrypted Lists
+### Step 9: Migration from Unencrypted Lists
 
 If moving an existing mailing list to encryption:
 
@@ -264,7 +274,7 @@ If moving an existing mailing list to encryption:
 4. **Create new encrypted list**: Don't retrofit encryption on existing list
 5. **Archive old list as read-only**: Keep for historical reference but migrate new discussions
 
-## Monitoring and Auditing Your List
+### Step 10: Monitor and Auditing Your List
 
 Regular security practices for encrypted lists:
 
@@ -285,13 +295,28 @@ mailq | grep -v "Mail queue is empty"
 grep "failed to decrypt" /var/log/mailman3/mailman.log
 ```
 
-## Choosing the Right Solution
+### Step 11: Choose the Right Solution
 
 For developer teams already using GPG, Mailman with GPG encryption provides the most control. For broader groups wanting friction-free encryption, Delta Chat offers the best user experience. For organizations needing a web interface, listmonk with PGP middleware balances usability with security.
 
 Test your chosen solution with a small group before deploying widely. Verify that all members can send and receive encrypted messages successfully, and document the procedure for onboarding new members.
 
 For activists, journalists, and others facing adversarial conditions, Signal Groups may provide better threat-model alignment than traditional mailing lists, despite their different UI.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -41,7 +41,17 @@ Stalkerware disguises as legitimate apps but secretly records location, messages
 - **Restore data from cloud**: backup (NOT from previous backup) # If stalkerware as user app: 1.
 - **Use VPN to prevent**: location tracking 7.
 
-## Understanding Stalkerware vs Legitimate Monitoring
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Stalkerware vs Legitimate Monitoring
 
 Legitimate monitoring (parental controls, corporate MDM):
 - Installed with user knowledge and consent
@@ -58,7 +68,7 @@ Stalkerware (illegal in most jurisdictions):
 
 Stalkerware is illegal in the US, EU, UK, Canada, Australia, and many other countries. If you suspect stalkerware, you have legal options: contact police, file a restraining order, or work with organizations like NNEDV (National Network to End Domestic Violence).
 
-## iOS Stalkerware Detection
+### Step 2: iOS Stalkerware Detection
 
 ### Method 1: Check for Jailbreak
 
@@ -172,7 +182,7 @@ Real stalkerware names to check: If you see any of these, they're definitely mal
 - MoniMaster
 - Spyier
 
-## Android Stalkerware Detection
+### Step 3: Android Stalkerware Detection
 
 Android is more vulnerable because it allows sideloading (installing apps from sources other than Google Play).
 
@@ -292,7 +302,7 @@ adb shell su -c "ls -la /data/data/ | grep -v com.android"
 # - /data/data/device.monitor
 ```
 
-## Preservation of Evidence
+### Step 4: Preservation of Evidence
 
 If you suspect stalkerware, preserve evidence for legal proceedings:
 
@@ -338,7 +348,7 @@ adb shell tcpdump -i any -w /sdcard/capture.pcap
 # Transfer file: adb pull /sdcard/capture.pcap
 ```
 
-## Removal and Recovery
+### Step 5: Removal and Recovery
 
 ### iOS Removal
 
@@ -389,7 +399,7 @@ adb shell tcpdump -i any -w /sdcard/capture.pcap
 4. Update contact list (stalker may have stolen it)
 ```
 
-## Get Help and Report
+### Step 6: Get Help and Report
 
 Organizations assisting stalkerware victims:
 
@@ -400,7 +410,7 @@ Organizations assisting stalkerware victims:
 
 Document everything for law enforcement: installation date, capabilities, duration, data stolen.
 
-## Prevention Going Forward
+### Step 7: Prevention Going Forward
 
 After removal:
 
@@ -414,6 +424,21 @@ After removal:
 7. Disable location history on Google/Apple accounts
 8. Review Privacy Dashboard regularly (iOS 15+, Android 12+)
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

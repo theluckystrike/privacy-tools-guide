@@ -57,7 +57,17 @@ Fingerprinting poses significant privacy risks because it operates largely outsi
 - **Fraud detection**: But also enabling invasive behavioral profiling
 - **Targeted advertising**: Creating detailed interest profiles without consent
 
-## What Data Mobile Apps Collect for Fingerprinting
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Data Mobile Apps Collect for Fingerprinting
 
 Mobile apps have access to an extensive range of data points that contribute to device fingerprinting. Understanding what information your device reveals is the first step toward protecting yourself.
 
@@ -113,7 +123,7 @@ Beyond static identifiers, apps also track behavioral patterns:
 - Location history and movement patterns
 - Sensor patterns during specific activities
 
-## How to Prevent Mobile App Fingerprinting
+### Step 2: How to Prevent Mobile App Fingerprinting
 
 While achieving complete fingerprinting prevention on mobile devices is challenging due to the deep system access apps require, you can significantly reduce your fingerprint surface through a combination of OS settings, app choices, and privacy tools.
 
@@ -259,7 +269,7 @@ Android's Work Profile creates a separate, sandboxed environment:
 3. Use personal profile for everyday apps
 4. Disable work profile when not needed
 
-## Checking Your Fingerprinting Exposure
+### Step 3: Checking Your Fingerprinting Exposure
 
 To understand your current exposure, you can test how trackable your device is:
 
@@ -274,6 +284,21 @@ Several tools can analyze app tracking:
 - **Exodus Privacy**: Analyzes Android app permissions and trackers
 - **Guardian**: iOS app that monitors network requests
 - **Privacy grade calculators**: Various services that rate app privacy
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

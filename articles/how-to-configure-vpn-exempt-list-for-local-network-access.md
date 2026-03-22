@@ -31,7 +31,17 @@ This guide covers how to configure VPN exempt lists across common VPN protocols 
 - **This guide covers how**: to configure VPN exempt lists across common VPN protocols and clients, with practical examples for developers and power users managing local network infrastructure.
 - **Third-party clients like Tunnelblick**: (OpenVPN) or WireGuard for macOS offer better exempt list functionality.
 
-## Understanding VPN Exempt Lists
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand VPN Exempt Lists
 
 A VPN exempt list specifies IP addresses, CIDR ranges, or hostnames that should not traverse the VPN tunnel. Instead, these destinations are accessed through your local network interface directly. This is the inverse of a split-tunnel include list, which specifies only certain traffic to route through the VPN.
 
@@ -46,7 +56,7 @@ The most common use case is accessing local area network resources:
 
 Without an exempt list, your VPN client treats all traffic as VPN-only, effectively placing your entire network behind the VPN server's network topology.
 
-## Configuring Exempt Lists by VPN Type
+### Step 2: Configure Exempt Lists by VPN Type
 
 ### WireGuard Exempt Lists
 
@@ -164,7 +174,7 @@ Add-VpnConnectionRoute -ConnectionName "YourVPNName" `
 
 Windows also supports forcing specific applications to bypass the VPN, which is useful for local network tools.
 
-## Common Exempt List Patterns
+### Step 3: Common Exempt List Patterns
 
 ### Home Network (Typical Consumer Router)
 
@@ -197,7 +207,7 @@ Corporate networks often use multiple subnets:
 172.16.5.0/24    # Printer VLAN
 ```
 
-## Testing Your Exempt List
+### Step 4: Test Your Exempt List
 
 After configuring your exempt list, verify it works correctly:
 

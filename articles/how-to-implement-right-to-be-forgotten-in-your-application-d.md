@@ -42,7 +42,17 @@ The right to be forgotten, formally established under GDPR Article 17, gives ind
 - **By building these capabilities**: into your application from the start, you ensure compliance while respecting user privacy.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Scope of Data Deletion
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Scope of Data Deletion
 
 Before writing any deletion code, you must identify all locations where user data exists. A complete implementation requires removing data from:
 
@@ -55,7 +65,7 @@ Before writing any deletion code, you must identify all locations where user dat
 
 Create a data inventory by auditing your application's data flow. This prevents incomplete deletions that leave residual data.
 
-## SQL Database Deletion Patterns
+### Step 2: SQL Database Deletion Patterns
 
 For relational databases, the challenge lies in maintaining referential integrity while deleting user data. Use cascading deletes where appropriate, or implement soft deletes for audit requirements.
 
@@ -88,7 +98,7 @@ WHERE id = 'user-uuid-here';
 
 This approach preserves aggregate data for analytics while removing personally identifiable information.
 
-## MongoDB Deletion Patterns
+### Step 3: MongoDB Deletion Patterns
 
 MongoDB's flexible schema requires a different approach. Use bulk operations for efficient deletion across collections:
 
@@ -114,7 +124,7 @@ async function deleteUserData(userId) {
 }
 ```
 
-## Implementing the Deletion Request Handler
+### Step 4: Implementing the Deletion Request Handler
 
 Create a dedicated endpoint to handle deletion requests. This endpoint should:
 
@@ -159,7 +169,7 @@ async def delete_user_data_async(user_id):
     await notify_third_party_services(user_id)
 ```
 
-## Handling Cascade Deletes
+### Step 5: Handling Cascade Deletes
 
 User data rarely exists in isolation. Implement a cascade deletion service that tracks relationships:
 
@@ -180,7 +190,7 @@ async def delete_user_data_async(user_id):
     await db.users.delete_one({'_id': user_id})
 ```
 
-## Verifying Complete Deletion
+### Step 6: Verify Complete Deletion
 
 After deletion, verify that all user data has been removed:
 
@@ -224,7 +234,7 @@ DATA_CLASSIFICATION = {
 
 For non-deletable data, implement anonymization that preserves analytical value while removing personal identifiers.
 
-## Testing Your Implementation
+### Step 7: Test Your Implementation
 
 Thoroughly test your deletion implementation:
 
@@ -252,6 +262,21 @@ async def test_user_deletion_removes_all_data():
 ```
 
 Implementing the right to be forgotten requires careful attention to data architecture, cascade relationships, and verification processes. By building these capabilities into your application from the start, you ensure compliance while respecting user privacy.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

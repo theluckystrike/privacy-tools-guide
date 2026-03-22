@@ -24,7 +24,17 @@ Targeted advertising relies on collecting and processing personal data to delive
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## State Privacy Laws Overview
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: State Privacy Laws Overview
 
 Several states have enacted privacy legislation that includes opt-out rights for targeted advertising:
 
@@ -36,7 +46,7 @@ Several states have enacted privacy legislation that includes opt-out rights for
 
 These laws apply to businesses meeting certain revenue or data processing thresholds, typically requiring businesses to honor universal opt-out signals sent through browsers or applications.
 
-## Technical Mechanisms for Opt-Out
+### Step 2: Technical Mechanisms for Opt-Out
 
 ### Global Privacy Control (GPC)
 
@@ -121,7 +131,7 @@ class PrivacyRequestHandler:
         return {'status': 'opt-out-complete'}
 ```
 
-## Platform-Specific Opt-Out Instructions
+### Step 3: Platform-Specific Opt-Out Instructions
 
 ### Meta (Facebook and Instagram)
 
@@ -188,7 +198,7 @@ Several data brokers maintain consumer profiles used for advertising. Opting out
 
 Many states maintain registry services where you can opt out of multiple brokers simultaneously.
 
-## Automating Opt-Out Requests
+### Step 4: Automate Opt-Out Requests
 
 For power users managing opt-outs across many services, automation tools provide efficiency. The following Python script demonstrates the concept of sending a formal privacy request:
 
@@ -237,7 +247,7 @@ class PrivacyOptOut:
         return (datetime.utcnow() + timedelta(days=45)).isoformat()
 ```
 
-## Verifying Your Opt-Out Status
+### Step 5: Verify Your Opt-Out Status
 
 After submitting opt-out requests, verify compliance through:
 
@@ -277,7 +287,7 @@ for domain in "${DOMAINS[@]}"; do
 done
 ```
 
-## For Developers: Building Privacy-Compliant Systems
+### Step 6: For Developers: Building Privacy-Compliant Systems
 
 If you're building applications that serve users in privacy-law states, implement these patterns:
 
@@ -354,6 +364,21 @@ State privacy law opt-outs have boundaries:
 
 Regularly review and resubmit opt-out requests, as businesses may collect new data or update their practices.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -49,7 +49,17 @@ Beyond breach risks, dating sites frequently share user data with third-party ad
 
 A burner email strategy mitigates these risks by creating isolation between your dating activity and your real-world identity.
 
-## Method 1: Email Aliasing Services
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Email Aliasing Services
 
 Email aliasing services provide the most solution for managing multiple identities while maintaining usability. Services like Simplelogin (now part of Proton), DuckDuckGo's Email Protection, and Firefox Relay offer alias generation without requiring separate mailbox management.
 
@@ -74,7 +84,7 @@ The alias forwards to your primary Proton inbox, eliminating the need to check m
 
 For a free alternative, DuckDuckGo's Email Protection generates `@duck.com` aliases through their browser extension or by visiting https://email-protection.duckduckgo.com. These aliases forward to your existing inbox and support reply functionality for site communications.
 
-## Method 2: Custom Domain with catch-all Configuration
+### Step 2: Method 2: Custom Domain with catch-all Configuration
 
 For maximum control, run your own mail server with a custom domain and configure catch-all routing. This approach allows infinite alias creation using any format without manual configuration.
 
@@ -120,7 +130,7 @@ bumble@yourdomain.com    yourrealemail@gmail.com
 
 Reload Postfix after configuration: `postmap /etc/postfix/virtual && postfix reload`
 
-## Method 3: Temporary Disposable Email Services
+### Step 3: Method 3: Temporary Disposable Email Services
 
 Temporary email services suit one-time registrations where you need immediate access but don't require long-term mailbox validity. Services like Guerrilla Mail, 33Mail, and TempMail provide throwaway addresses.
 
@@ -160,7 +170,7 @@ emails = check_guerrilla_mail(mail['token'])
 
 For dating sites specifically, avoid purely temporary services—they often block verification emails, and the addresses expire quickly, preventing account recovery.
 
-## Method 4: Gmail/Outlook Aliases
+### Step 4: Method 4: Gmail/Outlook Aliases
 
 Your existing email provider may support alias creation without additional services. Gmail allows appending `+` and random characters to your address: `yourname+datingtinder123@gmail.com` delivers to your inbox but appears as a distinct address to recipients.
 
@@ -191,7 +201,7 @@ echo $(generate_gmail_alias "bumble")   # yourname+bumble202603@ gmail.com
 
 **Consider two-factor authentication** on your email forwarding destination. The burner email protects your identity, but compromising your real email still exposes everything forwarded through it.
 
-## Automation Script for Managing Multiple Aliases
+### Step 5: Automation Script for Managing Multiple Aliases
 
 Power users managing multiple dating platforms benefit from alias tracking scripts:
 
@@ -249,6 +259,21 @@ manager.add_alias("bumble", "bumble2026@yourdomain.com", "Created after Tinder b
 print("Active aliases:", manager.list_sites())
 print("Tinder alias:", manager.get_alias("tinder"))
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -55,7 +55,17 @@ Public key servers expose your key metadata to the internet. Your email address,
 
 Internal key servers also solve the key freshness problem. When team members rotate keys or revoke compromised certificates, you need immediate propagation. Public servers may take hours or days to sync. An internal server provides instant key distribution within your network.
 
-## Choosing Your Key Server Software
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Choose Your Key Server Software
 
 Three primary options exist for self-hosted OpenPGP key servers:
 
@@ -67,7 +77,7 @@ Three primary options exist for self-hosted OpenPGP key servers:
 
 For most organizations, Hockeypuck strikes the best balance between features and simplicity.
 
-## Deploying Hockeypuck
+### Step 2: Deploy Hockeypuck
 
 Hockeypuck requires PostgreSQL and a Go runtime. Install dependencies on Ubuntu:
 
@@ -118,7 +128,7 @@ The keyserver now runs on port 11371. Test it locally:
 curl http://localhost:11371/pks/lookup?op=index&search=yourname@yourcompany.com
 ```
 
-## Configuring Client Access
+### Step 3: Configure Client Access
 
 Your team needs to configure their GnuPG installations to query your internal server. Edit each user's `~/.gnupg/gpg.conf` or create a `dirmngr` configuration file:
 
@@ -138,7 +148,7 @@ tls-ca-file /path/to/your-ca-cert.pem
 EOF
 ```
 
-## Populating Your Key Server
+### Step 4: Populating Your Key Server
 
 Upload keys to your new server using GnuPG:
 
@@ -158,7 +168,7 @@ You can also pull keys from the public network and mirror them internally. This 
 hockeypuck -sync yourname@yourcompany.com
 ```
 
-## Setting Up Synchronization
+### Step 5: Set Up Synchronization
 
 If you run multiple key server nodes, configure SKS-style synchronization. Each node maintains a connection to peers and exchanges key updates. Add peers to your configuration:
 
@@ -172,7 +182,7 @@ peers = [
 
 Synchronization uses port 11370 by default. Ensure firewall rules permit this traffic between your nodes but block external access.
 
-## Automating Key Management
+### Step 6: Automate Key Management
 
 Organizations benefit from automated key expiration and rotation policies. Create a cron job that checks for expiring keys and sends notifications:
 
@@ -376,7 +386,7 @@ jobs:
 
 This ensures every commit in production branches is cryptographically signed by an authorized developer. It prevents unauthorized code from being merged.
 
-## Disaster Recovery and Key Escrow
+### Step 7: Disaster Recovery and Key Escrow
 
 Organizations must plan for scenarios where key owners are unavailable:
 

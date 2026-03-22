@@ -38,7 +38,17 @@ Third-party trackers have become ubiquitous across the web, collecting user data
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: third-party trackers, detecting trackers with network analysis, using browser devtools, with specific setup instructions
 
-## Understanding Third-Party Trackers
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Third-Party Trackers
 
 Third-party trackers are scripts embedded by external domains that collect browsing behavior, device information, and user interactions. Common tracker categories include:
 
@@ -49,7 +59,7 @@ Third-party trackers are scripts embedded by external domains that collect brows
 
 These trackers often load via third-party domains, making them harder to spot than first-party analytics. The challenge lies in identifying requests to known tracker domains and detecting novel tracking techniques.
 
-## Detecting Trackers with Network Analysis
+### Step 2: Detecting Trackers with Network Analysis
 
 The most reliable method for detecting trackers involves analyzing network requests using browser developer tools or dedicated analysis tools.
 
@@ -130,7 +140,7 @@ Instead of blocking everything, you can create a targeted blocklist based on you
 ||*.googlesyndication.com^
 ```
 
-## Blocking Trackers at Different Levels
+### Step 3: Blocking Trackers at Different Levels
 
 ### Browser-Level Blocking
 
@@ -170,7 +180,7 @@ pihole -w doubleclick.net
 
 Network-level blocking protects all devices on your network without requiring browser extensions.
 
-## Detecting Fingerprinting Scripts
+### Step 4: Detecting Fingerprinting Scripts
 
 Beyond traditional trackers, fingerprinting scripts collect device characteristics to create unique identifiers without cookies. Detection requires analyzing script behavior:
 
@@ -201,7 +211,7 @@ fingerprintingAPIs.forEach(api => {
 
 Tools like CanvasBlocker and Tor Browser provide built-in fingerprinting protection by adding noise to API responses or blocking suspicious access patterns.
 
-## Practical Implementation: Building a Tracker Detector
+### Step 5: Practical Implementation: Building a Tracker Detector
 
 Here's a complete example of a detection module you can integrate into your projects:
 
@@ -283,6 +293,21 @@ const detector = new TrackerDetector({
   onDetect: (url) => console.log('Blocked tracker:', url)
 });
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
