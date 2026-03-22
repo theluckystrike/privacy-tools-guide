@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /best-mouse-pad-for-wrist-support-during-long-coding-sessions/
 categories: [guides, productivity]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]
