@@ -44,7 +44,7 @@ Tor hidden services (.onion addresses) allow you to host websites or APIs that a
 
 Before you begin, ensure you have access to a Linux server (Debian, Ubuntu, or Fedora are all well-supported) and the Tor software. You will need root or sudo access to configure the service. This guide assumes you are comfortable working from the command line and understand basic networking concepts.
 
-## Installing Tor
+### Step 1: Install Tor
 
 Most Linux distributions include Tor in their default repositories. On Ubuntu or Debian:
 
@@ -67,7 +67,7 @@ tor --version
 
 You should see output indicating Tor is installed. If you need a newer version, consider using the Tor Project's official repository.
 
-## Configuring Your First Hidden Service
+### Step 2: Configure Your First Hidden Service
 
 The Tor configuration file is located at `/etc/tor/torrc` on most Linux systems. Open this file with your preferred text editor:
 
@@ -92,7 +92,7 @@ Save the file and restart Tor:
 sudo systemctl restart tor
 ```
 
-## Retrieving Your Onion Address
+### Step 3: Retrieve Your Onion Address
 
 After Tor restarts, check the hidden service directory for the generated hostname:
 
@@ -102,7 +102,7 @@ sudo cat /var/lib/tor/my_hidden_service/hostname
 
 This command returns a string ending in `.onion` — your service's public address. Share this address with users who have Tor Browser installed. They can access your service by entering the .onion address directly in the Tor Browser address bar.
 
-## Running a Web Server for Your Hidden Service
+### Step 4: Run a Web Server for Your Hidden Service
 
 Your hidden service needs a local web server to serve content. A simple Python HTTP server works well for testing:
 
@@ -113,7 +113,7 @@ python3 -m http.server 8080 --directory /var/www/html
 
 For production deployments, consider using nginx or Apache. Configure your web server to listen only on localhost (127.0.0.1) to prevent accidental exposure of your content outside the Tor network.
 
-## Security Hardening for Hidden Services
+### Step 5: Security Hardening for Hidden Services
 
 Running a hidden service requires additional security considerations beyond a standard web server.
 
@@ -177,7 +177,7 @@ docker run -d -p 127.0.0.1:9050:9050 --name my-tor-service tor-hidden-service
 
 This approach keeps your Tor installation isolated from your host system.
 
-## Automating Deployment with Systemd
+### Step 6: Automate Deployment with Systemd
 
 Create a systemd service to manage your web application alongside Tor:
 
@@ -206,7 +206,7 @@ sudo systemctl enable myapp
 sudo systemctl start myapp
 ```
 
-## Testing Your Hidden Service
+### Step 7: Test Your Hidden Service
 
 From your local machine, install Tor Browser and navigate to your .onion address. Verify that:
 - The page loads without errors
@@ -228,6 +228,21 @@ Hidden services introduce latency because traffic bounces through multiple Tor n
 - Enable HTTP keep-alive connections
 - Consider static site generation over dynamic server-side rendering
 - Monitor circuit build times and rotate to faster relays if needed
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

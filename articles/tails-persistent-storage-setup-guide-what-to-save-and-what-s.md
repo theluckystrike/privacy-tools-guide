@@ -40,7 +40,17 @@ Tails is a privacy-focused operating system that runs from an USB stick, routing
 - **By default, Tails leaves no trace on the computer you use**: but this anonymity comes with a trade-off: every shutdown wipes your session clean.
 - **This partition uses LUKS**: (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup.
 
-## How Persistent Storage Works in Tails
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Persistent Storage Works in Tails
 
 When you activate persistent storage, Tails creates an encrypted partition alongside the operating system on your USB stick. This partition uses LUKS (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup. The encryption key is derived from your passphrase using PBKDF2, making it resistant to brute-force attacks.
 
@@ -54,7 +64,7 @@ ls -la /home/amnesia/Persistent
 
 If the folder exists and contains your files after a restart, your persistent storage is working correctly.
 
-## Setting Up Persistent Storage
+### Step 2: Set Up Persistent Storage
 
 Setting up persistent storage requires administrative access within Tails and takes approximately 10-15 minutes. Follow these steps:
 
@@ -77,7 +87,7 @@ The configuration tool offers these persistent directory options:
 
 Enable only the directories you need. Each enabled directory increases your attack surface if the USB is compromised.
 
-## What Belongs in Persistent Storage
+### Step 3: What Belongs in Persistent Storage
 
 Certain data should survive reboots because recreating it manually each session is impractical or impossible. For developers and power users, these categories make sense in persistent storage:
 
@@ -131,7 +141,7 @@ cd /home/amnesia/Persistent
 git clone git@github.com:yourusername/project.git
 ```
 
-## What Must Remain Ephemeral
+### Step 4: What Must Remain Ephemeral
 
 Some data should never persist for security reasons. Understanding what Tails intentionally wipes protects your anonymity.
 
@@ -225,7 +235,7 @@ chmod 700 /home/amnesia/Persistent/.gnupg
 ls -la /home/amnesia/Persistent/
 ```
 
-## Monitoring Persistent Storage Usage
+### Step 5: Monitor Persistent Storage Usage
 
 Track how much persistent storage you're using to avoid filling the USB drive:
 
@@ -296,7 +306,7 @@ threat_models = {
 }
 ```
 
-## Backup Strategy for Persistent Storage
+### Step 6: Backup Strategy for Persistent Storage
 
 While Tails provides no internet by default, backups of persistent storage are essential:
 
@@ -331,7 +341,7 @@ openssl enc -aes-256-cbc -d -salt \
     tar -xzf - -C /home/amnesia/
 ```
 
-## Recovery Scenarios and Persistent Storage
+### Step 7: Recovery Scenarios and Persistent Storage
 
 Understanding recovery options helps inform your persistent storage decisions:
 
@@ -379,6 +389,21 @@ cp -r /mnt/ramdisk/projects /home/amnesia/Persistent/
 ```
 
 Understanding what persists and what disappears is fundamental to using Tails effectively. By strategically selecting what survives reboots, you maintain both operational convenience and the strong anonymity guarantees that make Tails valuable.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

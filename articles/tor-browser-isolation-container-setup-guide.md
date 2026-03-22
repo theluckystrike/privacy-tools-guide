@@ -47,7 +47,17 @@ Tor Browser routes traffic through the Tor network, masking your IP address and 
 - **Ephemeral environment**: Each session starts fresh, reducing persistent tracking
 - **Resource containment**: Malicious code cannot easily escape to affect other processes
 
-## Docker-Based Tor Browser Isolation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Docker-Based Tor Browser Isolation
 
 Docker provides the most flexible container setup. You'll need Docker Desktop or the Docker Engine installed. Create a Dockerfile that builds an ephemeral Tor Browser environment:
 
@@ -105,7 +115,7 @@ docker run --rm -it \
 
 Replace `host.docker.internal` with your host IP on Linux or use `docker.for.mac.localhost` on macOS.
 
-## Firejail Sandbox Configuration
+### Step 2: Firejail Sandbox Configuration
 
 Firejail provides lightweight sandboxing without full container overhead. It works directly with your installed Tor Browser, applying seccomp filters and namespace isolation. Install Firejail from your distribution's package manager:
 
@@ -161,7 +171,7 @@ ipTables -t nat -A OUTPUT -p tcp --dport 443 -j REDIRECT --to-ports 8118
 # Note: Requires Privoxy or similar HTTP proxy running on ports 8118/8119
 ```
 
-## Network Namespace Isolation
+### Step 3: Network Namespace Isolation
 
 For advanced users, Linux network namespaces provide fine-grained control over network interfaces accessible to Tor Browser. This approach creates a separate network stack isolated from the host.
 
@@ -210,7 +220,7 @@ Container isolation significantly reduces attack surface, but consider these add
 - **Disable JavaScript selectively**: Consider enabling NoScript with strict policies for high-security sessions
 - **Update regularly**: Container images and browser versions must stay current
 
-## Verifying Isolation
+### Step 4: Verify Isolation
 
 Test that your isolation works correctly. Inside your container or sandbox, verify the network configuration:
 
@@ -223,6 +233,21 @@ tcpdump -i any port 53 | grep tor
 ```
 
 The exit node IP should differ from your host's public IP, and DNS queries should originate from your Tor proxy rather than your ISP's resolvers.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -42,7 +42,17 @@ This guide focuses on what actually matters for day-to-day safe Tor usage.
 - **Test download safety echo**: "Download safety scan..." # Use VirusTotal or similar (accessed via Tor) # 5.
 - **This guide focuses on**: what actually matters for day-to-day safe Tor usage.
 
-## Download and Verify Tor Browser
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Download and Verify Tor Browser
 
 Always download from the official source: `https://www.torproject.org/download/`
 
@@ -63,7 +73,7 @@ gpg: Good signature from "Tor Browser Developers (signing key) <torbrowser@torpr
 
 Do not skip verification. Fake Tor Browser downloads exist and contain malware.
 
-## First Launch: Choose the Right Security Level
+### Step 2: First Launch: Choose the Right Security Level
 
 After installing, set the security level before browsing:
 
@@ -75,7 +85,7 @@ Shield icon (top-right) > Change > choose one:
 
 Most users should start at **Safer**. Switch to **Safest** if you're accessing sensitive material or sites that might try to exploit browser vulnerabilities.
 
-## Connection: Bridges and Censorship Circumvention
+### Step 3: Connection: Bridges and Censorship Circumvention
 
 In countries where Tor is blocked (China, Russia, Iran, etc.), use bridges — unlisted relays that don't appear in the public Tor directory.
 
@@ -91,7 +101,7 @@ For custom bridges (obtained from `https://bridges.torproject.org`):
 1. Request bridges (solve CAPTCHA or use email request)
 2. Enter them in "Provide a bridge I know"
 
-## What Tor Protects and What It Doesn't
+### Step 4: What Tor Protects and What It Doesn't
 
 **Tor protects:**
 - Your IP address from the destination website
@@ -108,7 +118,7 @@ For custom bridges (obtained from `https://bridges.torproject.org`):
 - Your identity if you share personal details in the browser
 - Metadata in files you upload (EXIF, document properties)
 
-## The Golden Rules for Tor Usage
+### Step 5: The Golden Rules for Tor Usage
 
 **1. Never log into personal accounts**
 
@@ -144,7 +154,7 @@ Extensions change your browser fingerprint. Tor Browser already includes uBlock 
 
 Exit nodes can read unencrypted HTTP traffic. Always use HTTPS — look for the padlock. Tor Browser includes HTTPS-Everywhere to enforce this, but check manually for sensitive sites.
 
-## Managing Circuits
+### Step 6: Manage Circuits
 
 Tor assigns you a circuit (path through three relays) per tab. You can view and change circuits:
 
@@ -157,13 +167,13 @@ This shows your three relay hops. If a site is slow or blocked by the exit node'
 
 Use "New Identity" between different browsing sessions (e.g., between researching Topic An and Topic B) to prevent circuit correlation.
 
-## Guard Nodes and Anonymity
+### Step 7: Guard Nodes and Anonymity
 
 Tor uses a "guard" (entry) node that stays fixed for 2-3 months. This is intentional — changing the entry node frequently increases the chance that an adversary who controls entry and exit nodes can correlate your traffic.
 
 Don't worry about your guard node. Don't try to change it manually. The Tor Project's research shows this design improves anonymity over time.
 
-## Using Tor Browser on Mobile
+### Step 8: Use Tor Browser on Mobile
 
 The official Tor Browser for Android is available on Google Play and as an APK from the Tor Project website.
 
@@ -191,7 +201,7 @@ curl -O https://download.tails.net/tails/stable/tails-amd64-6.2/tails-amd64-6.2.
 # Verify via https://tails.net/install/download/
 ```
 
-## Common Mistakes and How to Avoid Them
+### Step 9: Common Mistakes and How to Avoid Them
 
 | Mistake | Why It's a Problem | Fix |
 |---------|-------------------|-----|
@@ -202,7 +212,7 @@ curl -O https://download.tails.net/tails/stable/tails-amd64-6.2/tails-amd64-6.2.
 | Discussing unique personal details | Content deanonymizes you | Keep browsing impersonal |
 | Running Tor in a VM on a shared host | Host can monitor VM traffic | Not sufficient for high-risk use |
 
-## Fingerprinting and Circuit Isolation
+### Step 10: Fingerprinting and Circuit Isolation
 
 Browser fingerprinting exploits unique characteristics to identify users. Tor Browser resists this, but understanding the mechanics helps you use Tor more effectively:
 
@@ -314,7 +324,7 @@ Tails advantages for Tor usage:
 - Built-in tools for document analysis (metadata removal)
 - Amnesic: leaves no traces on host computer
 
-## Monitoring Your Tor Connection Health
+### Step 11: Monitor Your Tor Connection Health
 
 Verify Tor is functioning correctly:
 
@@ -401,7 +411,7 @@ echo "Cross-reference with known good sources"
 tor --version
 ```
 
-## Building Tor from Source for Maximum Security
+### Step 12: Build Tor from Source for Maximum Security
 
 For users concerned about binary distribution integrity:
 
@@ -429,7 +439,7 @@ sudo make install
 tor --version
 ```
 
-## Emergency Procedures
+### Step 13: Emergency Procedures
 
 If you suspect your Tor session is compromised:
 
@@ -462,6 +472,21 @@ echo "System isolated. Secure wipe in progress..."
 read -p "Press Enter after ensuring backups are safe, then system will reboot"
 sudo reboot -h now
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

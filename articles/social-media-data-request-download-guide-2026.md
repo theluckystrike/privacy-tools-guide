@@ -46,13 +46,23 @@ export TWITTER_BEARER="your_bearer_token"
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Free tier access provides**: limited endpoints, while Academic Research or Enterprise access offers data exports.
 
-## Understanding Data Requests
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Data Requests
 
 Most social media platforms provide two types of data access: self-service downloads through account settings and formal data requests under privacy regulations. Self-service downloads typically include your posts, media, and basic account information. Formal requests under GDPR Article 15 or CCPA can yield more data, including algorithmic predictions, behavioral profiles, and inferred attributes.
 
 The distinction matters for developers. Self-service downloads use web interfaces or APIs you can access with standard authentication. Formal requests go through legal or privacy teams and may take 30-45 days to fulfill.
 
-## Platform-Specific Data Request Methods
+### Step 2: Platform-Specific Data Request Methods
 
 ### Facebook/Meta
 
@@ -182,7 +192,7 @@ def get_reddit_data(username):
  return submissions
 {% endhighlight %}
 
-## Automating Cross-Platform Data Collection
+### Step 3: Automate Cross-Platform Data Collection
 
 For developers managing data across multiple platforms, an unified approach helps:
 
@@ -290,7 +300,7 @@ def save_data_secure(data, filename, encryption_key=None):
 0 2 * * 0 cd /path/to/project && python sync_social_data.py >> /var/log/data_sync.log 2>&1
 {% endhighlight %}
 
-## Legal Considerations
+### Step 4: Legal Considerations
 
 When collecting data through formal privacy requests, platforms typically provide ZIP archives containing all data they hold. These archives can include:
 - Account activity logs
@@ -324,6 +334,21 @@ for f in pathlib.Path('download').rglob('*.json'):
         print(f'{f.name}: {len(data)} entries')
 "
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

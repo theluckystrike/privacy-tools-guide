@@ -46,7 +46,17 @@ Carrier-based phone systems collect extensive metadata. Your mobile carrier know
 
 Self-hosted VoIP also enables calling capabilities without any phone number association. Users can register using arbitrary identifiers—usernames, email-style addresses, or cryptographic keys—rather than government-issued phone numbers. This provides significant privacy benefits for users in adversarial situations.
 
-## Core Components
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Components
 
 A private VoIP system requires several functional layers:
 
@@ -58,7 +68,7 @@ A private VoIP system requires several functional layers:
 
 **Encryption Layer:** Protects call content from eavesdropping. SRTP (Secure Real-time Transport Protocol) encrypts media streams, while TLS encrypts SIP signaling.
 
-## Setting Up Asterisk
+### Step 2: Set Up Asterisk
 
 Asterisk provides a complete, flexible PBX implementation. Install it on a Linux server—Debian or Ubuntu work well for this purpose:
 
@@ -97,7 +107,7 @@ exten => bob,1,Dial(SIP/bob)
 
 This creates a simple dial plan where users can call each other by username.
 
-## Implementing SRTP Encryption
+### Step 3: Implementing SRTP Encryption
 
 SRTP encrypts the actual audio payload, preventing eavesdropping even if someone intercepts network traffic. Asterisk handles SRTP through the `res_srtp` module. First, verify it's loaded:
 
@@ -125,7 +135,7 @@ sip set debug on
 
 You should see `SRTP` in the exchange when both endpoints support it.
 
-## WebRTC Integration
+### Step 4: WebRTC Integration
 
 For browser-based clients or mobile apps without native SIP support, WebRTC provides a JavaScript API for real-time communication. The `asterisk-res_pjsip` module handles WebRTC registration.
 
@@ -174,7 +184,7 @@ const userAgent = new SIP.UserAgent({
 userAgent.start();
 ```
 
-## Network Considerations
+### Step 5: Network Considerations
 
 The server needs specific ports open: 5060 (SIP), 5061 (SIP over TLS), and a range for RTP media (typically 10000-20000). For WebRTC, port 8089 (or 443) must be accessible.
 
@@ -193,7 +203,7 @@ apt-get install coturn
 
 Configure it in `/etc/turnserver.conf` and point your Asterisk to use it.
 
-## Client Selection
+### Step 6: Client Selection
 
 Several clients work well with self-hosted Asterisk:
 
@@ -207,7 +217,7 @@ Several clients work well with self-hosted Asterisk:
 
 All these clients support TLS encryption and SRTP. Configure them to require encrypted connections—rejecting unencrypted calls ensures metadata and content remain protected.
 
-## Authentication and Security Hardening
+### Step 7: Authentication and Security Hardening
 
 Password-based authentication provides basic security, but key-based authentication offers stronger guarantees. Asterisk supports RSA authentication through the `res_crypto` module.
 
@@ -228,7 +238,7 @@ iptables -A INPUT -p udp --dport 5060 -m hashlimit \
     -j DROP
 ```
 
-## Practical Usage Example
+### Step 8: Practical Usage Example
 
 Once configured, calling works like standard VoIP:
 
@@ -240,7 +250,7 @@ For maximum privacy, use usernames unrelated to real identities. Instead of "ali
 
 You can also bridge to existing VoIP networks using gateways. An FXO gateway connects to traditional phone lines if you need to reach non-VoIP contacts, though this reintroduces carrier metadata exposure.
 
-## Maintenance and Monitoring
+### Step 9: Perform Maintenance and Monitoring
 
 Regularly rotate passwords and audit logs:
 
@@ -255,6 +265,21 @@ Keep Asterisk updated—the project releases security patches regularly:
 ```bash
 apt-get update && apt-get upgrade asterisk
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

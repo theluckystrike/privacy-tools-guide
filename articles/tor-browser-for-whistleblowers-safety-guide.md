@@ -40,13 +40,23 @@ Whistleblowers face unique challenges when attempting to report misconduct secur
 - **Resist Fingerprinting**: The `privacy.resistFingerprinting` preference should remain enabled.
 - **Use dedicated devices when possible**: A separate machine or TAILS USB for whistleblower activities prevents cross-contamination from your normal browsing patterns.
 
-## How Tor Provides Anonymity for Sources
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Tor Provides Anonymity for Sources
 
 Tor encrypts traffic through a circuit of at least three relays—the entry guard, middle relay, and exit node. Each relay only knows its predecessor and successor, never the complete path. Your ISP sees encrypted traffic to a Tor relay but cannot determine what you're accessing or with whom you're communicating. The destination website sees traffic from a Tor exit node, not your actual IP address.
 
 However, anonymity is not invisibility. Correlation attacks can deanonymize users who behave inconsistently across Tor and regular connections. Browser fingerprinting can identify users based on unique characteristics even without cookies or IP addresses. Understanding these limitations is critical before using Tor for sensitive communications.
 
-## Secure Installation and Verification
+### Step 2: Secure Installation and Verification
 
 Always verify Tor Browser signatures before first use. Attackers may distribute compromised versions through third-party download sites:
 
@@ -65,7 +75,7 @@ gpg --verify tor-browser-linux-x86_64-13.5.tar.xz.asc tor-browser-linux-x86_64-1
 
 For whistleblowers in high-risk environments, consider downloading Tor Browser over a trusted VPN or through a network that doesn't log your activities. Your initial Tor connection should not trace back to your real location.
 
-## Browser Configuration for Maximum Protection
+### Step 3: Browser Configuration for Maximum Protection
 
 Tor Browser ships with reasonable defaults, but several settings require attention for sensitive use:
 
@@ -93,7 +103,7 @@ webgl.disabled = true
 // Use before starting sensitive sessions
 ```
 
-## Network Configuration for Threat Environments
+### Step 4: Network Configuration for Threat Environments
 
 Standard Tor connections can be blocked or monitored in some networks. Tor bridges help circumvent censorship and hide the fact that you're using Tor:
 
@@ -107,7 +117,7 @@ Bridge obfs4 <IP>:<PORT> <FINGERPRINT> <CERT> <NODE-ID>
 
 For maximum operational security, use pluggable transports that obfuscate Tor traffic as HTTPS or other protocols. This prevents simple blocking and makes Tor usage harder to detect through deep packet inspection.
 
-## Operational Security Practices
+### Step 5: Operational Security Practices
 
 Configuration alone does not guarantee anonymity. Behavioral patterns matter equally:
 
@@ -128,7 +138,7 @@ exiftool -all= document.pdf
 mat2 document.docx
 ```
 
-## Secure Communication Patterns
+### Step 6: Secure Communication Patterns
 
 When contacting journalists or lawyers through Tor, prefer end-to-end encrypted protocols over the Tor network itself. Tor protects metadata but doesn't encrypt message content beyond the circuit—the exit node can see unencrypted HTTP traffic.
 
@@ -163,7 +173,7 @@ Understanding the sophisticated attacks whistleblowers face informs defensive pr
 
 **Browser Fingerprinting Resistance**: Tor Browser normalizes browser characteristics (window size, timezone, font availability) to prevent identification based on unique browser configurations. However, plugins and extensions can reintroduce fingerprinting vectors.
 
-## Compartmentalization Strategy for Sensitive Work
+### Step 7: Compartmentalization Strategy for Sensitive Work
 
 The most sophisticated whistleblowers practice complete compartmentalization:
 
@@ -189,7 +199,7 @@ The most sophisticated whistleblowers practice complete compartmentalization:
 
 This compartmentalization approach adds operational security layers beyond Tor's technical guarantees.
 
-## Metadata Preservation in Downloaded Documents
+### Step 8: Metadata Preservation in Downloaded Documents
 
 Documents often contain metadata revealing system information:
 
@@ -219,7 +229,7 @@ Document metadata includes:
 
 Always strip metadata before uploading to SecureDrop or contacting journalists.
 
-## Secure Communication Patterns Beyond Tor
+### Step 9: Secure Communication Patterns Beyond Tor
 
 Tor protects your IP, but additional measures improve security:
 
@@ -239,7 +249,7 @@ gpg --encrypt --recipient "journalist@news.org" sensitive_document.pdf
 
 **Dead Drops**: For maximum security, consider submitting documents through physical dead drops or USB devices rather than digital channels. This eliminates digital trails entirely.
 
-## TAILS Operating System Deep Dive
+### Step 10: TAILS Operating System Deep Dive
 
 TAILS (The Amnesic Incognito Live System) provides stronger guarantees than Tor Browser alone:
 
@@ -255,7 +265,7 @@ For high-risk whistleblowing (government corruption, corporate crimes), TAILS pr
 
 Access TAILS at https://tails.boum.org (via Tor for maximum security).
 
-## Behavior Analysis and Correlation
+### Step 11: Behavior Analysis and Correlation
 
 Sophisticated adversaries use behavioral analysis to identify whistleblowers:
 
@@ -267,7 +277,7 @@ Sophisticated adversaries use behavioral analysis to identify whistleblowers:
 
 **Communication Frequency**: Regular submissions create patterns. Irregular, unpredictable submission timing is safer than weekly reports.
 
-## Safe Submission to SecureDrop Instances
+### Step 12: Safe Submission to SecureDrop Instances
 
 Major news organizations run SecureDrop instances (Tor onion services) specifically for whistleblower submissions:
 
@@ -284,7 +294,7 @@ Before submitting through any SecureDrop instance:
 3. Use the organization's PGP key to encrypt submissions
 4. Submit documents incrementally (multiple small submissions) rather than one large dump
 
-## Counter-Surveillance Awareness
+### Step 13: Counter-Surveillance Awareness
 
 In addition to technical measures, maintain operational security:
 
@@ -295,7 +305,7 @@ In addition to technical measures, maintain operational security:
 
 Technical security (Tor Browser, encryption) protects against remote surveillance. Physical and behavioral awareness protects against local surveillance.
 
-## Warning Signs of Compromise
+### Step 14: Warning Signs of Compromise
 
 Watch for these indicators that something may be wrong:
 
@@ -307,6 +317,21 @@ Watch for these indicators that something may be wrong:
 - Unusual interest in your schedules or access patterns
 
 If you suspect compromise, stop using the system immediately. Do not attempt to investigate while continuing to use the same device for sensitive activities. Consider consulting with a lawyer or civil liberties organization before taking further action.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

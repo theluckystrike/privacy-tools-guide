@@ -54,7 +54,17 @@ This approach serves several practical scenarios:
 
 The tradeoff is straightforward: USB drives can be lost or stolen, and their performance depends on the drive's speed and the machine's USB port version.
 
-## Downloading and Verifying the Package
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Downloading and Verifying the Package
 
 Always download Tor Browser directly from the official project. For portable use, you need the archive format—not the installer.
 
@@ -77,7 +87,7 @@ For Windows users, download the portable `.exe` version which extracts to a fold
 Invoke-WebRequest -Uri "https://www.torproject.org/dist/torbrowser/14.0.4/torbrowser-install-14.0.4_en-US.exe" -OutFile "tor-browser-portable.exe"
 ```
 
-## Setting Up on the USB Drive
+### Step 2: Set Up on the USB Drive
 
 Create a dedicated folder on your USB drive and extract the contents there. Organize the drive to separate the Tor Browser folder from any personal files:
 
@@ -102,7 +112,7 @@ Launch Tor Browser from the USB drive. On first run, the configuration wizard ap
 
 Avoid changing the Data Directory to a system location, which defeats the portable purpose.
 
-## Security Hardening for Portable Use
+### Step 3: Security Hardening for Portable Use
 
 The default Tor Browser configuration provides solid baseline protection, but portable usage benefits from additional hardening.
 
@@ -142,7 +152,7 @@ privacy.resistFingerprinting.forceSeparator = true
 
 This prevents correlation attacks where the same entry guard sees multiple connections to different services.
 
-## Practical Automation Examples
+### Step 4: Practical Automation Examples
 
 Developers can integrate portable Tor Browser into automated workflows using the control port.
 
@@ -222,7 +232,7 @@ def test_tor_connection():
     driver.quit()
 ```
 
-## Maintenance and Recovery
+### Step 5: Perform Maintenance and Recovery
 
 Portable Tor Browser requires the same update cadence as installed versions. The updater works normally when launched from the USB drive.
 
@@ -248,7 +258,7 @@ If the USB drive becomes corrupted or lost:
 3. Your previous identities and bookmarks cannot be recovered without the original `TorBrowser/Data` folder
 4. Consider exporting bookmarks periodically to an encrypted location
 
-## Common Pitfalls
+### Step 6: Common Pitfalls
 
 Several mistakes undermine portable security:
 
@@ -262,6 +272,21 @@ Several mistakes undermine portable security:
 USB 2.0 ports severely limit Tor Browser performance due to latency in every circuit operation. USB 3.0 or newer provides acceptable experience. Consider a high-quality USB drive with high IOPS ratings for better responsiveness.
 
 For extremely sensitive operations, bootable distributions like Tails provide stronger guarantees, but sacrifice the convenience of persistent configurations.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
