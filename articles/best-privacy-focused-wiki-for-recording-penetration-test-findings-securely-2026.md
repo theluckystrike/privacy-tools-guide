@@ -11,6 +11,7 @@ score: 8
 categories: [security, guides]
 intent-checked: true
 voice-checked: true
+tags: [privacy-tools-guide, best-of, privacy]
 ---
 
 {% raw %}

@@ -9,7 +9,7 @@ permalink: /best-vpn-for-accessing-peacock-streaming-from-outside-us/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 tags: [privacy-tools-guide, best-of, vpn]
 ---
