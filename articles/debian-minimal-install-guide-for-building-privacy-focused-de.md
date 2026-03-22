@@ -51,7 +51,17 @@ The minimal install option in Debian downloads only essential system packages du
 
 Debian's commitment to free software means no proprietary blobs unless you explicitly add them. The distribution's security team responds quickly to vulnerabilities, and its stable release cycle ensures your system remains predictable and auditable.
 
-## Downloading and Preparing the Installer
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Downloading and Preparing the Installer
 
 Start by downloading the Debian netinst image from the official website. The netinst (network installer) is approximately 400MB and downloads packages during installation. This keeps the ISO small while still providing the complete installer.
 
@@ -70,7 +80,7 @@ sudo dd if=debian-testing-amd64-netinst.iso of=/dev/sdX bs=4M status=progress
 
 Replace `/dev/sdX` with your actual USB device path. Check `lsblk` to identify the correct device.
 
-## The Minimal Installation Process
+### Step 2: The Minimal Installation Process
 
 Boot from the USB and select "Advanced options" then "Expert install." This gives you granular control over every installation decision.
 
@@ -94,7 +104,7 @@ When asked about software to install, deselect everything. You want:
 
 This gives you a command-line base system of approximately 700MB. The installer finishes in minutes rather than the hours a full installation requires.
 
-## Initial System Configuration
+### Step 3: Initial System Configuration
 
 After the first boot, update the package lists and upgrade existing packages:
 
@@ -126,7 +136,7 @@ sudo ufw enable
 
 This blocks all incoming connections while allowing outgoing traffic. Adjust rules based on your specific needs.
 
-## Privacy Hardening Steps
+### Step 4: Privacy Hardening Steps
 
 ### Network Configuration
 
@@ -173,7 +183,7 @@ sudo systemctl disable cups.service
 sudo systemctl mask cups.service
 ```
 
-## Installing a Privacy-Respecting Desktop
+### Step 5: Install a Privacy-Respecting Desktop
 
 ### Window Manager vs Desktop Environment
 
@@ -203,7 +213,7 @@ Install tools that respect your privacy from the start:
 
 Configure these applications to store all data locally when possible. Cloud sync introduces attack surface and trust dependencies.
 
-## Automated Security Updates
+### Step 6: Automated Security Updates
 
 Configure unattended security upgrades:
 
@@ -214,7 +224,7 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 This ensures critical security patches apply automatically without manual intervention.
 
-## Verification and Maintenance
+### Step 7: Verification and Maintenance
 
 After setup, verify your system's privacy posture:
 
@@ -239,13 +249,28 @@ sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## Building on This Foundation
+### Step 8: Build on This Foundation
 
 With a minimal Debian base, you have complete control over your computing environment. Every component gets installed deliberately, every network connection gets made consciously, and every piece of data stays where you decide.
 
 This foundation scales from a simple web-browsing machine to a full development workstation. Add programming languages through version managers, set up development environments as needed, and extend functionality through containers or virtual machines when isolation becomes necessary.
 
 The privacy you achieve comes from understanding your system rather than trusting defaults. Debian minimal install provides the canvas—you paint the picture.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

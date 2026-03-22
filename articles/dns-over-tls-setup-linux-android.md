@@ -40,7 +40,17 @@ DoT is simpler than DNS over HTTPS (DoH) for system-level deployment: one dedica
 - **Cloudflare offers better performance**: in many regions but retains some logs for up to 24 hours.
 - **Use these steps to confirm**: 1.
 
-## How DoT Compares to DoH
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How DoT Compares to DoH
 
 Both protocols encrypt DNS, but they differ in deployment:
 
@@ -53,7 +63,7 @@ Both protocols encrypt DNS, but they differ in deployment:
 
 DoT on port 853 is easier for network administrators to identify and optionally block. If you're in a restrictive environment where port 853 is blocked, DoH is the better choice. For most privacy use cases (ISP snooping prevention, protecting queries on public Wi-Fi), DoT is simpler and sufficient.
 
-## Choosing a DoT Resolver
+### Step 2: Choose a DoT Resolver
 
 Your encrypted queries still end up at a resolver that can see them. Choose carefully:
 
@@ -67,7 +77,7 @@ Your encrypted queries still end up at a resolver that can see them. Choose care
 
 For most users, Quad9 provides a good balance: no logging, malware blocking, and operated by a non-profit. Cloudflare offers better performance in many regions but retains some logs for up to 24 hours. If you use Mullvad VPN, their resolver is the most privacy-preserving option since it operates entirely within their no-log infrastructure.
 
-## Linux: systemd-resolved Configuration
+### Step 3: Linux: systemd-resolved Configuration
 
 `systemd-resolved` is the default DNS resolver on Ubuntu 20.04+, Fedora, Arch, and most modern Linux distributions.
 
@@ -203,7 +213,7 @@ sudo resolvectl dns wg0 9.9.9.9
 sudo resolvectl dnsovertls wg0 yes
 ```
 
-## Android: Built-In Private DNS
+### Step 4: Android: Built-In Private DNS
 
 Android 9 (Pie) and later include native DoT support called "Private DNS."
 
@@ -244,7 +254,7 @@ NextDNS deserves special mention for Android users who want both DoT privacy and
 
 This gives you per-device DNS filtering without requiring a separate DNS server or VPN, all running through standard Android DoT.
 
-## Limitations of DoT
+### Step 5: Limitations of DoT
 
 **DoT encrypts DNS queries but not the SNI (Server Name Indication)** in TLS connections. When you connect to an HTTPS site, the hostname is visible in the TLS ClientHello even if DNS is encrypted. Encrypted Client Hello (ECH) addresses this but is not yet universally deployed.
 
@@ -424,7 +434,7 @@ resolvectl status
 # 3. Or use separate network namespace for DoT
 ```
 
-## Monitoring DNS Queries
+### Step 6: Monitor DNS Queries
 
 Log which sites are being resolved for privacy audits:
 

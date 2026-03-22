@@ -42,7 +42,17 @@ Content encryption (Signal, PGP) addresses the first. Metadata protection requir
 
 ---
 
-## Signal: Best Default Choice
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Signal: Best Default Choice
 
 Signal provides:
 - End-to-end encryption (Signal Protocol, open standard)
@@ -89,7 +99,7 @@ For high-risk sources: 1 day or 1 hour
 
 ---
 
-## Signal's Sealed Sender
+### Step 2: Signal's Sealed Sender
 
 Standard messaging reveals sender identity to the service provider (even for E2EE). Signal's sealed sender encrypts the sender's identity — Signal servers can verify that the message came from a Signal user but not which one.
 
@@ -102,7 +112,7 @@ This is enabled by default for existing contacts. "Allow from anyone" lets sourc
 
 ---
 
-## Briar: Peer-to-Peer, Works Without Internet
+### Step 3: Briar: Peer-to-Peer, Works Without Internet
 
 Briar is a messaging app that routes messages over Tor and can work over Bluetooth or WiFi when internet is unavailable — useful in situations where network surveillance is likely or connectivity is cut.
 
@@ -133,7 +143,7 @@ Briar setup:
 
 ---
 
-## SecureDrop: Whistleblower Submission System
+### Step 4: SecureDrop: Whistleblower Submission System
 
 SecureDrop is for initial contact from anonymous sources, not ongoing conversation. Sources access it via Tor Browser — they never reveal their identity.
 
@@ -166,7 +176,7 @@ onionshare --receive
 
 ---
 
-## PGP for Email
+### Step 5: PGP for Email
 
 When sources prefer email, PGP provides content encryption. Metadata (sender, recipient, timestamp) remains visible to email providers.
 
@@ -200,7 +210,7 @@ Enable encryption by default for new messages
 
 ---
 
-## Device Hygiene for Source Communications
+### Step 6: Device Hygiene for Source Communications
 
 ### Separate Device
 
@@ -232,7 +242,7 @@ Set timer so it auto-deletes
 
 ---
 
-## Metadata Protection: What Each Tool Leaks
+### Step 7: Metadata Protection: What Each Tool Leaks
 
 | Tool | Content | Who you talked to | When | How often |
 |------|---------|------------------|------|----------|
@@ -247,7 +257,7 @@ For high-risk sources: Briar or SecureDrop are the only options that approach tr
 
 ---
 
-## Legal Considerations
+### Step 8: Legal Considerations
 
 In the US, journalists may have limited shield law protection for source identity — but this varies by state and is not absolute. Federal investigations often override state shield laws.
 
@@ -267,6 +277,21 @@ Practical implications:
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

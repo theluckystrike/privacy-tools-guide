@@ -40,7 +40,17 @@ Migrating between encrypted cloud storage providers presents unique challenges t
 - **This guide provides a**: systematic approach for developers and power users switching providers without sacrificing security.
 - **Identify which model your**: current provider uses.
 
-## Understanding Your Current Encryption Setup
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your Current Encryption Setup
 
 Before initiating any migration, document your current encryption configuration. Most encrypted cloud storage services use one of three models: provider-managed keys (where the service holds encryption keys), customer-managed keys (CMK) with your own key management service, or zero-knowledge encryption where only you hold the decryption key.
 
@@ -57,7 +67,7 @@ Document your current encryption configuration in detail:
 
 This documentation ensures you understand what you're migrating from and can replicate necessary security properties in your new provider.
 
-## Preparing for Migration
+### Step 2: Preparing for Migration
 
 Create an inventory of your stored data. Run a script to catalog all files with their sizes, modification dates, and folder structure:
 
@@ -89,7 +99,7 @@ find /path/to/encrypted/vault -type f -exec bash -c '
 
 This inventory allows verification that every file transferred correctly and hasn't been corrupted during migration.
 
-## Exporting Data from Your Current Provider
+### Step 3: Exporting Data from Your Current Provider
 
 Most encrypted cloud storage services offer data export options. Check your provider's settings for bulk export or API access. For services that expose WebDAV or S3-compatible APIs, you can automate exports with standard tools.
 
@@ -130,7 +140,7 @@ done < migration_inventory.csv
 
 This prevents proceeding with migration when export integrity is compromised.
 
-## Handling Encryption Keys During Transition
+### Step 4: Handling Encryption Keys During Transition
 
 This section requires careful attention. If your current provider uses zero-knowledge encryption, you need your master password or recovery key to decrypt files for re-encryption with the new provider. Never export encrypted data without decryption if your new provider uses a different encryption scheme.
 
@@ -167,7 +177,7 @@ aws kms create-grant \
 
 This process maintains key separation and prevents the old provider from retaining unnecessary cryptographic access after migration.
 
-## Configuring Your New Provider
+### Step 5: Configure Your New Provider
 
 Set up your new encrypted cloud storage account before importing data. Configure encryption settings to match or exceed your previous setup. If the new provider supports it, use the same encryption algorithm for compatibility, though this isn't always possible across different services.
 
@@ -193,7 +203,7 @@ Test with files containing various data types—images, documents, videos. Diffe
 
 For providers using hybrid encryption (encrypted filename + encrypted content), verify both components encrypt and decrypt correctly.
 
-## Importing and Re-encrypting Data
+### Step 6: Importing and Re-encrypting Data
 
 With verification complete, begin the bulk transfer. Use parallel transfers to maximize bandwidth but monitor system resources. For large migrations, consider running transfers during off-peak hours to minimize impact on other operations.
 
@@ -224,7 +234,7 @@ rclone copy /local/backup newremote:/data/ \
 
 Monitor progress in real-time and keep detailed logs for troubleshooting if issues arise during transfer.
 
-## Post-Migration Verification
+### Step 7: Post-Migration Verification
 
 After transfer completes, perform thorough verification. Compare your migration manifest against the new provider's file listing. Run checksums on a statistical sample of files to confirm decryption works correctly:
 
@@ -273,6 +283,21 @@ Implement a secure key backup strategy for zero-knowledge encryption:
 4. **Regular key rotation testing**: Periodically verify recovery keys work without compromising security
 
 For enterprise migrations, implement audit logging of all access to encrypted data during the migration window. This creates accountability and detects unauthorized access attempts.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

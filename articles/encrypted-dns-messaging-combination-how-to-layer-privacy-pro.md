@@ -39,7 +39,17 @@ Combine encrypted DNS with secure messaging (Signal, Matrix) to create defense-i
 - **Trusting "free" VPN services****: If a VPN service is free, your data is the product.
 - **Combine encrypted DNS with**: a reputable paid VPN or use Tor for sensitive activities.
 
-## Understanding the Privacy Gaps
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Privacy Gaps
 
 DNS queries reveal your browsing activity even when you use HTTPS. Every time your device resolves a domain name, it sends a request that can be logged, analyzed, or intercepted. Traditional DNS uses plaintext UDP on port 53, making it trivial for network observers to build a complete picture of your internet usage.
 
@@ -47,7 +57,7 @@ Encrypted DNS protocols—DoH (DNS over HTTPS) and DoT (DNS over TLS)—encrypt 
 
 Secure messaging apps encrypt the content of your communications, but they often leak metadata: who you contacted, when, and how frequently. Combining both technologies addresses different threat vectors simultaneously.
 
-## Layer 1: Encrypted DNS Configuration
+### Step 2: Layer 1: Encrypted DNS Configuration
 
 Setting up encrypted DNS requires choosing a provider and configuring your system or application. For developers, configuring at the application level provides granular control.
 
@@ -116,7 +126,7 @@ Recommended providers for privacy-focused users:
 
 For maximum privacy, self-hosting an encrypted DNS resolver using software like Unbound with DoH support eliminates reliance on any third-party.
 
-## Layer 2: Secure Messaging Configuration
+### Step 3: Layer 2: Secure Messaging Configuration
 
 Encrypted DNS protects your DNS queries, but your communication metadata still needs protection. Signal provides strong encryption with minimal metadata retention.
 
@@ -281,6 +291,21 @@ Encrypted DNS adds minimal latency—typically 10-30ms for well-optimized provid
 For most users, the privacy benefits outweigh the modest performance cost. Measure your baseline performance and test after each layer to understand the impact on your specific use case.
 
 When combining multiple layers, prioritize based on your threat model. A journalist communicating with sources needs the full stack. A developer wanting to prevent ISP profiling might only need encrypted DNS and Signal's defaults. Calibrate your configuration to the actual risks you face rather than implementing maximum security theater.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

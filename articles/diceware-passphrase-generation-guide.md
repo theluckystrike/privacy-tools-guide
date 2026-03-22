@@ -38,7 +38,17 @@ A passphrase like `correct-horse-battery-staple` is both memorable and cryptogra
 - **For situations where you want certainty, use the Python `secrets` module implementation above**: it uses the OS's CSPRNG which is audited and tested against bias.
 - **Use additional protections like**: time-locked encryption for long-term secrets.
 
-## What Makes Diceware Secure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Makes Diceware Secure
 
 Diceware's strength comes from genuine randomness — physical dice rolls — combined with a known wordlist. Because the wordlist and the number of dice rolls are public, you can calculate exactly how hard the passphrase is to crack.
 
@@ -68,7 +78,7 @@ curl -O https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
 
 The EFF wordlist was created specifically for Diceware and contains common, readable English words that are easier to memorize than the original list.
 
-## Generating a Passphrase Offline
+### Step 2: Generate a Passphrase Offline
 
 Roll all five dice simultaneously (or sequentially — the order matters). Write down the five numbers in the order they land, left to right, to get a five-digit number.
 
@@ -92,7 +102,7 @@ grep "^35142" eff_large_wordlist.txt
 # 35142	laden
 ```
 
-## Generating Passphrases Digitally
+### Step 3: Generate Passphrases Digitally
 
 If physical dice aren't available, use a trusted tool that sources randomness from the OS's cryptographically secure RNG:
 
@@ -186,7 +196,7 @@ A 12-character random password is strong but nearly impossible to memorize. A 6-
 - API keys and tokens (never typed by humans)
 - Any credential where a password manager handles entry
 
-## Memorizing a Diceware Passphrase
+### Step 4: Memorizing a Diceware Passphrase
 
 The key technique is **spaced repetition** combined with a memory device:
 
@@ -200,7 +210,7 @@ Example: `laden corral mulch scone gusto tweed`
 
 Mental image: A farmer **laden** with bags walks into a **corral**, steps in **mulch**, tries to eat a **scone**, but chokes from **gusto**, and is wearing **tweed**. Absurd images stick better than coherent ones.
 
-## When Physical Dice Are Compromised
+### Step 5: When Physical Dice Are Compromised
 
 A common question: if dice can be loaded, is this method secure?
 
@@ -264,7 +274,7 @@ print(f"Salt: {salt}")
 
 Use stretched passphrases in applications where you control the stretching function. For applications like LUKS disk encryption, use the application's built-in key stretching (which it does automatically).
 
-## Verifying Randomness Quality
+### Step 6: Verify Randomness Quality
 
 Before committing a generated passphrase to long-term use, verify the randomness source:
 
@@ -285,7 +295,7 @@ ent /tmp/random.bin
 
 Entropy close to 8 bits per byte and chi-square values near 256 indicate high-quality randomness. Values significantly different may suggest problems with your random source.
 
-## Diceware for Multiple Languages
+### Step 7: Diceware for Multiple Languages
 
 The EFF wordlist exists in English, but multiple language implementations are available:
 
@@ -298,6 +308,21 @@ The EFF wordlist exists in English, but multiple language implementations are av
 | French | 7776 | Phonetically distinct | French EFF equivalent |
 
 For international teams, coordinating on a single language (typically English) prevents confusion. Translated wordlists offer benefits for teams in non-English speaking regions who struggle to memorize English word sequences.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

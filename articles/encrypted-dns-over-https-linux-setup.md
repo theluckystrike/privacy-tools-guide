@@ -42,7 +42,17 @@ This guide covers three approaches: the built-in `systemd-resolved` (no extra so
 - **The `#hostname` part is**: used to verify the TLS certificate.
 - **Good for households or**: small networks.
 
-## Method 1: systemd-resolved with DoH
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: systemd-resolved with DoH
 
 Most modern Debian/Ubuntu and Fedora systems already use `systemd-resolved`. Check:
 
@@ -107,7 +117,7 @@ dig example.com
 
 You should see no port 53 traffic if DoH is working correctly. All queries should appear on port 443.
 
-## Method 2: dnscrypt-proxy
+### Step 2: Method 2: dnscrypt-proxy
 
 `dnscrypt-proxy` supports DoH, DNSCrypt, and ODoH (Oblivious DoH). It runs as a local resolver on `127.0.0.1:53` and proxies queries through encrypted channels.
 
@@ -206,7 +216,7 @@ Check which server is actually being used:
 dnscrypt-proxy -resolve example.com
 ```
 
-## Method 3: AdGuard Home (Self-Hosted)
+### Step 3: Method 3: AdGuard Home (Self-Hosted)
 
 AdGuard Home is a DNS server with DoH support, ad blocking, and a web interface. Good for households or small networks.
 
@@ -253,7 +263,7 @@ Lock the file against NetworkManager overwrites:
 sudo chattr +i /etc/resolv.conf
 ```
 
-## Choosing a DoH Provider
+### Step 4: Choose a DoH Provider
 
 | Provider | Logs | DNSSEC | Filtering | Notes |
 |----------|------|--------|-----------|-------|
@@ -264,7 +274,7 @@ sudo chattr +i /etc/resolv.conf
 
 Avoid using your ISP's or Google's DNS for privacy — they log queries.
 
-## Verify the Full Setup
+### Step 5: Verify the Full Setup
 
 Check DNS resolution is working:
 

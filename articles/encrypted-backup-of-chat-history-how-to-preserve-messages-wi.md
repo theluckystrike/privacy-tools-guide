@@ -46,7 +46,17 @@ Cloud-based chat backups offer convenience but introduce significant risks. Data
 
 This approach aligns with privacy-first principles. Your chat history may contain sensitive conversations, personal information, or proprietary business communications. Keeping these locally encrypted provides defense-in-depth against unauthorized access.
 
-## Understanding Encryption Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Encryption Fundamentals
 
 Before implementing backups, understand the core encryption concepts you will use. For chat backups, you typically work with symmetric encryption for bulk data and potentially asymmetric encryption for secure key storage.
 
@@ -58,7 +68,7 @@ Your encryption strategy should include:
 - Secure storage of the encryption key separately from the backup
 - Verification that decryption produces original data
 
-## Exporting Chat Data
+### Step 2: Exporting Chat Data
 
 Most modern chat applications provide export functionality. Signal offers export options through its settings menu. Telegram allows exporting individual chats or entire histories via the desktop client. WhatsApp includes backup export in its settings, though Android and iOS handle this differently.
 
@@ -66,7 +76,7 @@ For developers building custom solutions, the Signal protocol library provides p
 
 When exporting, consider the format. JSON provides flexibility but increases file size. Protocol buffers offer compact storage but require more complex parsing code. Choose based on your downstream processing needs.
 
-## Implementing Encrypted Backups with GPG
+### Step 3: Implementing Encrypted Backups with GPG
 
 GNU Privacy Guard (GPG) provides a straightforward approach for encrypting chat backups without custom code. This method works across platforms and uses well-audited cryptographic implementations.
 
@@ -103,7 +113,7 @@ gpg --decrypt --output decrypted-chat.json \
 
 GPG handles key derivation automatically using S2K (String-to-Key) specifications, which repeatedly hashes your passphrase with a salt to derive the encryption key.
 
-## Automating Backups with Python
+### Step 4: Automate Backups with Python
 
 For programmatic control, Python provides excellent encryption libraries. The `cryptography` package offers modern, secure implementations:
 
@@ -206,7 +216,7 @@ lsattr encrypted-backup.bin
 
 **Decoy Backups**: For the paranoid, maintain decoy backups with false information. If someone forces decryption of a backup, they access false data while your real backup remains hidden.
 
-## Chat Platform-Specific Export Recommendations
+### Step 5: Chat Platform-Specific Export Recommendations
 
 ### Signal Export
 
@@ -242,7 +252,7 @@ Telegram's export includes extensive metadata:
 # More detailed than other platforms
 ```
 
-## Decryption Verification and Testing
+### Step 6: Decryption Verification and Testing
 
 Before relying on encrypted backups, verify they actually work:
 
@@ -264,7 +274,7 @@ sha256sum decrypted-file.json > decrypted.sha256
 diff original.sha256 decrypted.sha256
 ```
 
-## Long-Term Storage Considerations
+### Step 7: Long-Term Storage Considerations
 
 Chat backups may need to remain secure for decades. Consider:
 
@@ -279,7 +289,7 @@ For long-term archival, consider migrating backups to new media every 5-7 years.
 
 **Algorithm Longevity**: AES-256-GCM is considered secure through 2040+. For backups intended to remain private longer, consider upgrading to post-quantum algorithms as they become standardized (though this is premature for most users).
 
-## Verifying Backup Integrity
+### Step 8: Verify Backup Integrity
 
 Always verify that your encrypted backups can actually be decrypted. After creating a backup, immediately test decryption and compare checksums against the original data:
 
@@ -299,13 +309,28 @@ def verify_backup(original_path: str, password: str, backup_path: str):
 
 Run verification on a different machine than where you created the backup. This confirms that your documented recovery process actually works in practice.
 
-## Backup Rotation and Storage
+### Step 9: Backup Rotation and Storage
 
 Implement a rotation strategy to manage backup size while maintaining history. Daily incremental backups work well for active conversations, with weekly full backups. Only keep full encrypted copies, as incremental restores become complex.
 
 For storage media, consider the 3-2-1 rule: three copies, on two different media types, with one copy offsite. A combination of external SSD storage and encrypted cloud upload (using your own encryption, not the cloud provider's) satisfies this requirement.
 
 Rotate your encryption passwords periodically. Document the rotation process so recovery remains possible if you become unavailable.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

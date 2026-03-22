@@ -39,13 +39,23 @@ SaaS accounts, API keys, domains, and cloud infrastructure represent significant
 - **Use secure methods such as**: 1.
 - **This guide covers the**: practical steps developers and power users need to handle digital business asset inheritance properly.
 
-## Understanding Your Digital Business Asset Portfolio
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your Digital Business Asset Portfolio
 
 Every developer accumulates digital assets that have real business value. These include cloud hosting accounts, SaaS subscriptions, API credentials, domain names, source code repositories, and automated deployment pipelines. Without proper documentation and transfer procedures, these assets become inaccessible or worse, get terminated due to non-renewal.
 
 The first step is creating an inventory of all digital business assets. Document each service, the associated credentials, and the criticality to your operations. This inventory serves as the foundation for any inheritance planning.
 
-## SaaS Account Transfer Procedures
+### Step 2: SaaS Account Transfer Procedures
 
 Transferring SaaS accounts requires understanding each platform's specific policies. Most enterprise SaaS platforms support account transfer through their administrative interfaces, but the process varies significantly between providers.
 
@@ -77,7 +87,7 @@ gh repo list your-username --json name,visibility,url
 
 Several password managers now include inheritance or emergency access features. 1Password offers Family plans where designated individuals can access shared vaults. Bitwarden provides emergency access allowing trusted contacts to request vault access after a specified waiting period. These features provide a secure mechanism for credential transfer.
 
-## API Key Management and Transfer
+### Step 3: API Key Management and Transfer
 
 API keys represent critical business assets that require careful handling. Unlike passwords, many API keys cannot be easily rotated without breaking existing integrations.
 
@@ -116,7 +126,7 @@ When transferring API keys, avoid sending them through unencrypted channels. Use
 
 For production API keys, consider implementing a key rotation schedule before inheritance transfer. This ensures your heir can manage the keys without inheriting potentially compromised credentials.
 
-## Domain Name Transfer Process
+### Step 4: Domain Name Transfer Process
 
 Domain transfers involve specific ICANN procedures and typically require a 60-day waiting period after registration or previous transfer. The process includes:
 
@@ -154,7 +164,7 @@ domains:
         value: "api.herokudns.com"
 ```
 
-## Building an Inheritance-Ready Documentation System
+### Step 5: Build an Inheritance-Ready Documentation System
 
 Effective digital asset inheritance requires maintaining current documentation. Consider implementing a documentation system that includes:
 
@@ -172,7 +182,7 @@ Create a master document containing:
 
 Update your documentation quarterly or whenever you add significant new assets. Test access procedures periodically to ensure everything works as expected.
 
-## Legal Considerations
+### Step 6: Legal Considerations
 
 Digital business assets have legal implications. Consider:
 
@@ -181,7 +191,7 @@ Digital business assets have legal implications. Consider:
 - Consulting with an estate planning attorney familiar with digital assets
 - Understanding that some SaaS terms of service may restrict transfer
 
-## Tool Recommendations for Asset Documentation
+### Step 7: Tool Recommendations for Asset Documentation
 
 **1Password Families** ($14.99/month for 5 users): Provides Emergency Access feature where designated family members can request vault access after 30 days of inactivity. Supports sharing of specific items with defined expiration.
 
@@ -189,7 +199,7 @@ Digital business assets have legal implications. Consider:
 
 **LastPass Family** ($17.99/month): Has designated emergency contacts who can access shared vaults. Note: LastPass has had security issues historically—current version is improved but verify current status before using.
 
-## Digital Asset Inventory Template
+### Step 8: Digital Asset Inventory Template
 
 Create a detailed spreadsheet documenting all digital assets:
 
@@ -236,7 +246,7 @@ digital_assets:
     expiration_date: "2027-03-15"
 ```
 
-## API Key Inventory and Rotation
+### Step 9: API Key Inventory and Rotation
 
 Document every API key with rotation schedule:
 
@@ -266,7 +276,7 @@ Document every API key with rotation schedule:
 }
 ```
 
-## SaaS Platforms with Built-In Succession Features
+### Step 10: SaaS Platforms with Built-In Succession Features
 
 Several platforms have native successor or emergency access features:
 
@@ -280,7 +290,7 @@ Several platforms have native successor or emergency access features:
 
 **Zapier**: Create a shared organization account where your heir is co-owner. Important integrations shouldn't depend on your personal account.
 
-## Inheritance Testing Protocol
+### Step 11: Inheritance Testing Protocol
 
 Before finalizing your documentation, test that your heir can actually access critical systems:
 
@@ -311,7 +321,7 @@ echo "All critical systems accessible from heir account"
 
 Run this test quarterly to ensure everything still works as inheritance systems change.
 
-## Post-Inheritance Priorities
+### Step 12: Post-Inheritance Priorities
 
 If you're inheriting digital assets from someone:
 
@@ -320,6 +330,21 @@ If you're inheriting digital assets from someone:
 3. **Rotate critical API keys**: Even if passwords are changed, old API keys may exist
 4. **Update contact information**: Email, phone, recovery methods should reflect new owner
 5. **Review third-party integrations**: Deactivate any services the previous owner used
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

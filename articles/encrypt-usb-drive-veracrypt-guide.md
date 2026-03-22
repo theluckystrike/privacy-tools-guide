@@ -40,7 +40,17 @@ For an USB drive used only for sensitive files, an encrypted partition is the be
 
 ---
 
-## Install VeraCrypt
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install VeraCrypt
 
 **Ubuntu/Debian:**
 
@@ -70,7 +80,7 @@ brew install --cask veracrypt
 
 ---
 
-## Identify Your USB Drive
+### Step 2: Identify Your USB Drive
 
 Before formatting, identify the correct device:
 
@@ -91,7 +101,7 @@ lsblk -o NAME,SIZE,MODEL,SERIAL /dev/sdb
 
 ---
 
-## Create a Fully Encrypted USB Partition
+### Step 3: Create a Fully Encrypted USB Partition
 
 ### Using the VeraCrypt GUI
 
@@ -127,7 +137,7 @@ veracrypt --text -d /mnt/usb
 
 ---
 
-## Set Up a Hidden Volume
+### Step 4: Set Up a Hidden Volume
 
 A hidden volume lets you reveal a decoy passphrase under duress while protecting the real data. The outer volume contains believable but non-sensitive files. The inner hidden volume (at the end of the drive) holds the real data.
 
@@ -152,7 +162,7 @@ When you mount with passphrase A, you see decoys. With passphrase B, you see rea
 
 ---
 
-## Use Keyfiles for Stronger Authentication
+### Step 5: Use Keyfiles for Stronger Authentication
 
 A keyfile is a file (image, binary, anything) that acts as a second factor. Without it, even the correct passphrase fails.
 
@@ -170,7 +180,7 @@ veracrypt --text /dev/sdb /mnt/usb \
 
 ---
 
-## Cross-Platform Access
+### Step 6: Cross-Platform Access
 
 **exFAT** formatted encrypted volumes work on Linux, macOS, and Windows.
 
@@ -196,7 +206,7 @@ On Windows, VeraCrypt integrates as a system tray app. Use **Select Device** →
 
 ---
 
-## Traveler Mode (Windows-Only)
+### Step 7: Traveler Mode (Windows-Only)
 
 If you need to use the encrypted USB on a Windows machine without installing VeraCrypt, use Traveler mode:
 
@@ -210,7 +220,7 @@ The drive auto-runs VeraCrypt when inserted (if autorun is enabled). On modern W
 
 ---
 
-## Maintenance and Recovery
+### Step 8: Perform Maintenance and Recovery
 
 ```bash
 # Change passphrase (without re-encrypting data)
@@ -242,6 +252,21 @@ veracrypt --text --test
 On any CPU with AES-NI, you'll see 400–800 MB/s throughput — faster than most USB drives. On older CPUs without AES-NI, AES is still the best choice (Serpent or Twofish are slower).
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

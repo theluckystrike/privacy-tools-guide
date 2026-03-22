@@ -42,7 +42,17 @@ If something happens to you—death, injury, incapacity—your family needs acce
 - **Once used**: mark as consumed.
 - **If spouse has vault**: access but doesn't know master password, she still can't log in.
 
-## The Problem: The Inaccessible Digital Estate
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Problem: The Inaccessible Digital Estate
 
 Scenario: You die. Your spouse discovers:
 - Bank account locked (you were the sole manager)
@@ -55,7 +65,7 @@ Even with a will, it takes months to get court orders to access accounts. Crypto
 
 **Solution**: Pre-authorize emergency access encrypted at rest, but accessible to trusted family under clear conditions.
 
-## The Three Approaches
+### Step 2: The Three Approaches
 
 ### Approach 1: Password Manager Emergency Access (Easiest)
 
@@ -114,7 +124,7 @@ Use lawyer + legal power of attorney structure.
 - No ambiguity about who can access what
 - Backup for password manager (if company fails)
 
-## Method 1: 1Password Emergency Access (Easiest for Most People)
+### Step 3: Method 1: 1Password Emergency Access (Easiest for Most People)
 
 1Password has built-in "emergency contact" system. This is the simplest path.
 
@@ -200,7 +210,7 @@ Risk 4: Email is compromised
   Solution: Use 1Password login with biometric, not email password
 ```
 
-## Method 2: Bitwarden Emergency Access (Free Alternative)
+### Step 4: Method 2: Bitwarden Emergency Access (Free Alternative)
 
 Bitwarden is free and has emergency access similar to 1Password.
 
@@ -248,7 +258,7 @@ Best value: Bitwarden for pure emergency access
 Best experience: 1Password for daily use + emergency access
 ```
 
-## Method 3: Sealed Envelope System (Backup + Privacy)
+### Step 5: Method 3: Sealed Envelope System (Backup + Privacy)
 
 For maximum privacy and no company dependency, use encrypted document + sealed envelope.
 
@@ -354,7 +364,7 @@ Scenario 4: You're in accident, need account access immediately
   ✓ Can access all critical accounts within 30 minutes
 ```
 
-## 2FA Problem: Recovery Codes
+### Step 6: 2FA Problem: Recovery Codes
 
 Here's a critical security gap: 2FA codes. Even with password, can't access account if 2FA phone is lost.
 
@@ -420,7 +430,7 @@ Note: These are single-use. Once used, mark as consumed.
 Print a physical copy and keep with sealed envelope.
 ```
 
-## The 1Password Master Password Problem
+### Step 7: The 1Password Master Password Problem
 
 1Password vault is encrypted. If spouse has vault access but doesn't know master password, she still can't log in.
 
@@ -451,7 +461,7 @@ Option 3: Write it down + lawyer
 
 **Recommendation**: Use 1Password's built-in Trusted Contact feature (Option 2). It's designed exactly for this.
 
-## Real Implementation: A Complete Setup
+### Step 8: Real Implementation: A Complete Setup
 
 ```
 PATRICK'S SETUP (married, 2 kids, age 38)
@@ -495,7 +505,7 @@ Time to set up: 2 hours
 Peace of mind: Invaluable
 ```
 
-## Annual Maintenance
+### Step 9: Annual Maintenance
 
 ```
 Every January:
@@ -507,7 +517,7 @@ Every January:
   6. Test: Have spouse see she still has emergency access
 ```
 
-## Warning: What NOT to Do
+### Step 10: Warning: What NOT to Do
 
 ```
 ❌ Don't use same password for everything
@@ -532,7 +542,7 @@ Every January:
 ✓ DO update will to reference emergency setup
 ```
 
-## Final Checklist
+### Step 11: Final Checklist
 
 ```
 Setup complete when you can answer YES to:
@@ -548,6 +558,21 @@ Setup complete when you can answer YES to:
 ✓ Updated will to reference emergency vault
 ✓ Test done annually (access still works)
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

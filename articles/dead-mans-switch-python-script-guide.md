@@ -54,7 +54,17 @@ A good DMS has:
 
 ---
 
-## Core DMS Script
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core DMS Script
 
 ```python
 #!/usr/bin/env python3
@@ -204,7 +214,7 @@ if __name__ == "__main__":
 
 ---
 
-## Check-In Server (Simple HTTP Endpoint)
+### Step 2: Check-In Server (Simple HTTP Endpoint)
 
 ```python
 #!/usr/bin/env python3
@@ -252,7 +262,7 @@ gunicorn -b 127.0.0.1:5000 checkin_server:app
 
 ---
 
-## Encrypt the Payload
+### Step 3: Encrypt the Payload
 
 ```bash
 # Create your payload (credentials, instructions, etc.)
@@ -278,7 +288,7 @@ shred -uz /tmp/dms-payload.txt
 
 ---
 
-## Crontab Setup
+### Step 4: Crontab Setup
 
 ```bash
 # Create DMS directory with restricted permissions
@@ -294,7 +304,7 @@ crontab -e
 
 ---
 
-## Check-In from Anywhere
+### Step 5: Check-In from Anywhere
 
 ```bash
 # Check in via curl (save this as a shell alias)
@@ -309,7 +319,7 @@ curl "https://yourserver.com/dms/checkin?token=YOUR_TOKEN"
 
 ---
 
-## Reset After Release
+### Step 6: Reset After Release
 
 If the DMS fires and you're fine:
 
@@ -323,7 +333,7 @@ echo "{}" > /var/dms/state.json
 # Contact trusted contacts to confirm you're OK
 ```
 
-## Hardening the Check-In Server
+### Step 7: Hardening the Check-In Server
 
 The simple Flask check-in server works for personal use, but a production deployment on an internet-facing server needs additional hardening to prevent the token from being brute-forced or the server from being disrupted.
 
@@ -385,7 +395,7 @@ location /dms/checkin {
 
 This provides defense-in-depth: even if your token is compromised, attackers from unknown IPs cannot use it to reset the DMS state.
 
-## Distributing DMS Across Multiple Servers
+### Step 8: Distributing DMS Across Multiple Servers
 
 A single-server DMS has a significant failure mode: if that server goes down—due to payment lapse, infrastructure failure, or targeted attack—the DMS stops checking and either fires prematurely or fails to fire at all. For high-assurance use cases, distribute the check-in across multiple independent servers.
 
@@ -430,6 +440,21 @@ if __name__ == "__main__":
 Run this script as your check-in command instead of a raw `curl` call. The console output tells you immediately if a server failed to receive the check-in, giving you time to investigate the issue before the DMS timer expires.
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

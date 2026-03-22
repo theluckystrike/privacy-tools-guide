@@ -40,7 +40,17 @@ Dating app photos contain embedded EXIF metadata including GPS coordinates, came
 - **Whether you use command-line tools**: Python scripts, or mobile apps, making metadata removal part of your photo-sharing workflow protects your personal information on platforms you may not fully trust.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding EXIF Data in Photos
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand EXIF Data in Photos
 
 EXIF (Exchangeable Image File Format) metadata sits inside your image files. When you take a photo with a smartphone, the camera automatically embeds information that can include:
 
@@ -52,7 +62,7 @@ EXIF (Exchangeable Image File Format) metadata sits inside your image files. Whe
 
 Dating apps may display this data to other users, or the platform itself may store and use it for purposes you didn't intend. In worst-case scenarios, malicious actors could extract this metadata to track your location or gather device fingerprints.
 
-## Method 1: Using exiftool (Command Line)
+### Step 2: Method 1: Using exiftool (Command Line)
 
 The most powerful and flexible tool for metadata manipulation is exiftool, written by Phil Harvey. It works on Linux, macOS, and Windows.
 
@@ -107,7 +117,7 @@ exiftool photo.jpg
 
 A clean file will show minimal or no EXIF output.
 
-## Method 2: Python Script for Developers
+### Step 3: Method 2: Python Script for Developers
 
 For developers building applications that handle user-uploaded images, Python provides excellent libraries for metadata manipulation.
 
@@ -202,7 +212,7 @@ def batch_strip_metadata(directory, output_dir):
 batch_strip_metadata("./uploads", "./clean_uploads")
 ```
 
-## Method 3: Using ImageMagick
+### Step 4: Method 3: Using ImageMagick
 
 ImageMagick provides another command-line option that's widely available on servers.
 
@@ -236,7 +246,7 @@ For more control, use the mogrify tool:
 mogrify -strip *.jpg
 ```
 
-## Method 4: Mobile Solutions
+### Step 5: Method 4: Mobile Solutions
 
 For users who need to process photos directly on their phones, several options exist.
 
@@ -269,7 +279,7 @@ pkg update && pkg install exiftool
 exiftool -all= -overwrite_original ~/storage/dcim/Camera/*.jpg
 ```
 
-## Automating the Workflow
+### Step 6: Automate the Workflow
 
 For power users who want automatic processing, consider these approaches:
 
@@ -313,7 +323,7 @@ Create an Automator workflow that runs an exiftool shell command on imported pho
 3. Paste: `for f in "$@"; do exiftool -all= -overwrite_original "$f"; done`
 4. Save and attach to your Screenshots or Photos folder
 
-## Verification and Testing
+### Step 7: Verification and Testing
 
 After stripping metadata, verify your results:
 
@@ -348,6 +358,21 @@ For developers building dating platforms:
 - Log metadata stripping operations for security auditing
 
 Stripping EXIF metadata from your dating app photos is a straightforward privacy measure that prevents unintended location sharing and device fingerprinting. Whether you use command-line tools, Python scripts, or mobile apps, making metadata removal part of your photo-sharing workflow protects your personal information on platforms you may not fully trust.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -41,7 +41,17 @@ Dating app accounts hold sensitive personal data—messages, location history, p
 - **If using an authenticator app**: scan the QR code with your preferred app
 5.
 
-## Understanding Two-Factor Authentication Methods
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Two-Factor Authentication Methods
 
 Before configuring 2FA, understand the security properties of each authentication method available on dating applications.
 
@@ -109,7 +119,7 @@ def generate_totp(secret, time_step=30):
 
 For maximum security, hardware keys like YubiKey or Titan provide phishing-resistant authentication. Few dating apps currently support FIDO2/WebAuthn standards, but this is changing as major platforms adopt passwordless authentication.
 
-## Configuring Two-Factor Authentication on Major Dating Platforms
+### Step 2: Configure Two-Factor Authentication on Major Dating Platforms
 
 ### Tinder
 
@@ -135,7 +145,7 @@ Bumble offers SMS-based 2FA with optional backup via email. Configure 2FA throug
 
 OkCupid provides authenticator app support, making it one of the better options for security-conscious users. Navigate to **Settings** → **Privacy** → **Two-Factor Authentication** to configure either SMS or an authenticator app. OkCupid uses standard TOTP, allowing you to use any compatible authenticator.
 
-## Developer Integration: Adding 2FA to Dating Applications
+### Step 3: Developer Integration: Adding 2FA to Dating Applications
 
 For developers building dating platforms, implementing 2FA correctly requires careful attention to security best practices.
 
@@ -241,6 +251,21 @@ curl -H "Authorization: Bearer $API_TOKEN" \
 ### Password Manager Integration
 
 Generate unique, complex passwords for each dating application using a password manager. Combine this with TOTP-based 2FA stored in the same manager for centralized credential management. For sensitive accounts, consider keeping 2FA seeds separate from passwords in dedicated hardware security keys.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
