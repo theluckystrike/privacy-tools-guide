@@ -236,6 +236,68 @@ If you want voice control without cloud dependency, local alternatives exist:
 
 ---
 
+## Voice Assistants and Legal Access to Your Data
+
+Law enforcement can and does request voice assistant data. The process differs by company and jurisdiction, but all three major providers have compliance teams that respond to valid legal orders.
+
+**Amazon**: In 2023 Amazon disclosed it received thousands of government requests for Alexa data. The company complies with valid legal process and in many cases does not notify users. Ring camera audio tied to Alexa routines has also been subject to law enforcement requests.
+
+**Google**: Google publishes a transparency report showing government request volumes by country. Requests include Google Assistant interaction history. Data tied to a Google account is subject to requests without requiring a device seizure.
+
+**Apple**: Apple's approach differs structurally. Because Siri uses random identifiers rather than Apple IDs for most requests, Apple claims it cannot link recordings to a specific user — making targeted Siri data requests less useful to law enforcement. However, if Siri data is tied to an iCloud account (for features like Siri cross-device learning), that data is accessible.
+
+The practical implication: if a voice assistant is always on in a space where sensitive conversations happen, those conversations may be accessible to parties beyond the company — through legal process, data breaches, or contractor access.
+
+---
+
+## Children and Voice Assistants
+
+COPPA (the US Children's Online Privacy Protection Act) places restrictions on collecting data from children under 13, but enforcement in the voice assistant space has been inconsistent. The FTC fined Amazon $25 million in 2023 specifically for retaining children's Alexa recordings and location data contrary to parents' deletion requests.
+
+If children use voice assistants in your home:
+
+```
+Amazon: Settings → Alexa Privacy → Kids profiles
+→ Enable auto-deletion
+→ Review Kids features enabled
+
+Google: Settings → Digital Wellbeing → Filters for kids
+→ SafeSearch on
+→ Restrict explicit music
+
+Apple: Screen Time parental controls limit Siri access to specific apps
+```
+
+The safest approach: disable voice assistants in children's rooms entirely, or use a local Home Assistant setup that keeps audio on-network.
+
+---
+
+## Evaluating Newer Devices: 2025-2026 Models
+
+Amazon's Echo devices now offer optional on-device processing for a subset of commands — primarily smart home controls and timers — which do not leave the device. This is marketed as "Ultra privacy mode."
+
+Google's Nest Audio and Nest Hub (2nd gen) introduced on-device speech recognition for common commands in late 2024. The on-device processing is faster and reduces cloud dependency, but complex queries and third-party integrations still require cloud processing.
+
+Apple's "Hey Siri" wake word detection has been fully on-device since the A12 chip (2018 iPhones). Siri responses for many common request types moved to on-device processing with the Neural Engine on A17 and M-series chips.
+
+The trend toward on-device processing is positive for privacy, but "on-device for some commands" is very different from "no cloud transmission ever." Review the specific capabilities for your device model — the privacy story varies significantly even within a manufacturer's lineup.
+
+---
+
+## What Disabling a Voice Assistant Actually Does
+
+When you say "Hey Alexa, stop listening" or disable a voice assistant via the app, the behavior is not what most people assume:
+
+- **Software disable via app**: The device still monitors for the wake word. The microphone circuit remains active. The software disable means the assistant won't respond to your requests, but the underlying audio monitoring continues in some implementations.
+
+- **Physical mute button**: Cuts power to the microphone on Echo and Google Nest devices. This is the only reliable method for stopping audio capture. The orange ring (Alexa) and orange indicator (Google Nest) confirm the hardware mute is active.
+
+- **Unplugging the device**: Obvious but effective. For devices you only use occasionally, keeping them unplugged when not in use is a reasonable privacy practice.
+
+- **Factory reset + no account setup**: If you have an old device and want to ensure no retained data, factory reset it before disposal. Data associated with your account persists on company servers even after device reset unless you explicitly delete it.
+
+---
+
 ## Related Reading
 
 - [How to Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)

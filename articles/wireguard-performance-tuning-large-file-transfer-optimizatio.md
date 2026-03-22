@@ -273,6 +273,108 @@ sudo iftop -i wg0
 sudo watch -n1 'sudo wg show wg0'
 ```
 
+## Troubleshooting Common Throughput Problems
+
+Even after applying the standard tuning, you may still see disappointing throughput. Here are the most common culprits and how to diagnose them.
+
+### Fragmentation Causing Retransmissions
+
+If throughput is low but CPU usage is also low, fragmentation is the likely culprit. Check with:
+
+```bash
+# Look for IP fragment reassembly activity
+cat /proc/net/snmp | grep -i frag
+
+# Check interface statistics for errors
+ip -s link show wg0
+```
+
+If the `ReasmOKs` counter is non-zero, packets are being fragmented. Lower your MTU in 10-byte increments until fragmentation stops.
+
+### IRQ and CPU Affinity
+
+On servers with multiple cores, network interrupts may all land on a single CPU, creating a bottleneck while other cores sit idle:
+
+```bash
+# Check IRQ distribution across CPUs
+cat /proc/interrupts | grep eth0
+
+# Identify which CPU handles which queue
+ls /sys/class/net/eth0/queues/
+
+# Set IRQ affinity manually if needed (replace X with IRQ number)
+echo 3 > /proc/irq/X/smp_affinity   # Route to CPUs 0 and 1 (bitmask)
+```
+
+For sustained transfers, enabling `irqbalance` is usually sufficient on most hardware:
+
+```bash
+sudo apt install irqbalance
+sudo systemctl enable --now irqbalance
+```
+
+### TCP Congestion Algorithm
+
+The default Linux congestion algorithm (`cubic`) is designed for long-haul links with some packet loss. For local or LAN transfers through WireGuard, `bbr` often performs better:
+
+```bash
+# Check current algorithm
+sysctl net.ipv4.tcp_congestion_control
+
+# Enable BBR (requires kernel 4.9+)
+echo 'net.ipv4.tcp_congestion_control = bbr' | sudo tee -a /etc/sysctl.conf
+echo 'net.core.default_qdisc = fq' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
+# Verify
+sysctl net.ipv4.tcp_congestion_control
+```
+
+BBR improves throughput on paths with any latency because it models the bottleneck bandwidth directly rather than relying on loss signals.
+
+## WireGuard on Windows and macOS
+
+The tuning principles are the same across platforms, but the implementation differs.
+
+### Windows
+
+Windows WireGuard uses the official `wireguard.exe` or the `WireGuardNT` kernel driver introduced in 2021, which significantly improved throughput over the earlier WinTun implementation:
+
+```powershell
+# Check if WireGuardNT driver is installed (PowerShell admin)
+Get-NetAdapter | Where-Object {$_.InterfaceDescription -like "*WireGuard*"}
+
+# MTU is set per interface via the config file — same INI syntax as Linux
+# Check actual MTU:
+netsh interface ipv4 show subinterfaces
+```
+
+For Windows bulk transfers, also check TCP Auto-Tuning:
+
+```powershell
+# Verify TCP auto-tuning is enabled
+netsh interface tcp show global
+# Should show "Receive Window Auto-Tuning Level: normal"
+
+# Enable if disabled
+netsh interface tcp set global autotuninglevel=normal
+```
+
+### macOS
+
+macOS WireGuard uses the userspace implementation (`wireguard-go`). It is notably slower than the Linux kernel module — typically 50–70% of equivalent Linux throughput on the same hardware. This is a fundamental limitation of the userspace architecture.
+
+```bash
+# Install via Homebrew or the Mac App Store
+brew install wireguard-tools
+
+# MTU setting via config file — same syntax
+# macOS does not expose sysctl knobs for rmem/wmem in the same way
+# Focus on correct MTU and let macOS handle the rest
+```
+
+If maximum throughput matters on macOS, consider running WireGuard in a Linux VM and bridging the network — this may sound counterproductive but can deliver full kernel-module performance for sustained bulk transfers.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**
