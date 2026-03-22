@@ -285,6 +285,107 @@ sudo systemctl enable wg-quick@mullvad-se
 
 ---
 
+## Multihop (Double VPN) Configuration
+
+Mullvad supports multihop routing, where your traffic enters one server and exits through a different server in another country. This adds a layer of separation — the entry server knows your IP but not your destination, while the exit server knows your destination but not your real IP.
+
+```bash
+# Enable multihop
+mullvad relay set tunnel-protocol wireguard
+mullvad relay set wireguard --use-multihop on
+
+# Set entry and exit locations separately
+mullvad relay set entry location se      # Entry: Sweden
+mullvad relay set location us nyc        # Exit: New York
+
+# Verify multihop is active
+mullvad status
+# Should show: Connected to [exit-server] via [entry-server]
+```
+
+Multihop increases latency by 20–60ms depending on geographic distance between entry and exit nodes. Use it when you need to obscure which VPN provider's exit IP you're using, or when operating in environments where known Mullvad IP ranges are monitored.
+
+---
+
+## Configuring Mullvad with a Firewall (nftables)
+
+On headless servers running Mullvad's manual WireGuard setup, you may want explicit firewall rules rather than relying solely on the `wg-quick` AllowedIPs mechanism. The following nftables configuration enforces that all outbound traffic routes through the WireGuard interface:
+
+```bash
+# /etc/nftables-mullvad.conf
+table inet mullvad_firewall {
+    chain output {
+        type filter hook output priority 0; policy drop;
+
+        # Allow traffic on WireGuard interface
+        oifname "mullvad-se" accept
+
+        # Allow loopback
+        oifname "lo" accept
+
+        # Allow DHCP (to maintain LAN connectivity)
+        udp dport 67 accept
+
+        # Allow WireGuard handshake to the endpoint
+        ip daddr 185.0.0.0/8 udp dport 51820 accept
+    }
+}
+```
+
+Apply with:
+
+```bash
+sudo nft -f /etc/nftables-mullvad.conf
+```
+
+This kill switch approach operates at the firewall layer independently of the VPN client, meaning it survives application crashes and provides protection before the VPN process starts on boot.
+
+---
+
+## Troubleshooting Common Linux Issues
+
+**Problem: DNS leaks despite VPN being connected**
+
+Check whether your system is using `systemd-resolved` and whether it respects the DNS pushed by WireGuard:
+
+```bash
+resolvectl status
+# Look for: DNS Servers line on the WireGuard interface
+
+# If wrong DNS is showing, force it:
+sudo resolvectl dns mullvad-se 10.64.0.1
+sudo resolvectl domain mullvad-se "~."
+```
+
+**Problem: VPN connects but traffic still routes through physical interface**
+
+Verify routing table priorities:
+
+```bash
+ip route show table main | grep default
+# Should point to the WireGuard interface when connected
+
+# If not, check AllowedIPs in your config:
+sudo wg show
+# AllowedIPs should include 0.0.0.0/0 for full tunnel routing
+```
+
+**Problem: High latency or packet loss on WireGuard tunnel**
+
+WireGuard is sensitive to MTU mismatches across different network paths. Try reducing the MTU on your WireGuard interface:
+
+```bash
+# In /etc/wireguard/mullvad-se.conf, add to [Interface]:
+MTU = 1380
+
+# Then restart:
+sudo wg-quick down mullvad-se && sudo wg-quick up mullvad-se
+```
+
+A value of 1380 works reliably across most networks, including those with PPPoE encapsulation that reduce effective MTU below the standard 1500.
+
+---
+
 ## Related Reading
 
 - [Proton VPN vs Mullvad Speed Test Privacy Audit 2026](/privacy-tools-guide/proton-vpn-vs-mullvad-speed-test-privacy-audit-2026/)
