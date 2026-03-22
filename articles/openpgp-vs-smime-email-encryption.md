@@ -7,7 +7,7 @@ last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /openpgp-vs-smime-email-encryption/
 reviewed: true
-score: 8
+score: 7
 categories: [guides]
 intent-checked: true
 voice-checked: true

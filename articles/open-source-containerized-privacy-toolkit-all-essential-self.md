@@ -9,7 +9,7 @@ categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, self-hosted, docker, containerization, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 ---
 {% raw %}

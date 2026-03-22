@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
