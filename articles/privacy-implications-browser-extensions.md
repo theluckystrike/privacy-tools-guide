@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-implications-browser-extensions/
 description: "Learn privacy implications browser extensions with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "Privacy Implications of Browser Extensions"
 description: "What browser extensions can technically access, how extension stores get compromised, what malicious extensions actually collect, and how to assess the"

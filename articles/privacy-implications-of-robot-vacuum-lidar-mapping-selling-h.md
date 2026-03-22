@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/
 description: "Learn privacy implications of robot vacuum lidar mapping selling h with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Privacy Implications Of Robot Vacuum Lidar Mapping Selling"
 description: "Explore how robot vacuums with LIDAR mapping collect, store, and potentially sell your home layout data. Technical analysis for developers and power users"
