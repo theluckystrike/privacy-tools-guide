@@ -3,7 +3,7 @@ layout: default
 title: "Bitwarden vs LastPass Migration Guide"
 description: "Migrating password managers requires careful handling of sensitive data. For developers and power users, the transition from LastPass to Bitwarden offers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /bitwarden-vs-lastpass-migration-guide/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, comparison]
 
 {% raw %}
 
-# Bitwarden vs LastPass Migration Guide: Complete Technical Walkthrough
 
 Migrating password managers requires careful handling of sensitive data. For developers and power users, the transition from LastPass to Bitwarden offers improved open-source transparency, self-hosting options, and better CLI tooling. This guide walks through the technical process using command-line tools for maximum control and automation.
 

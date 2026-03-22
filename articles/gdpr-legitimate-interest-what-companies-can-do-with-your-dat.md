@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Legitimate Interest: What Companies Can Do"
 description: "A practical guide explaining GDPR legitimate interest basis - how companies process your data without consent, the three-part test, and what it means"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gdpr-legitimate-interest-what-companies-can-do-with-your-dat/
 categories: [guides]
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# GDPR Legitimate Interest: What Companies Can Do With Your Data Without Consent Explained
 
 When you visit a website or use an application, you likely see consent banners asking you to accept cookies or agree to data processing. However, companies can process your personal data under GDPR without obtaining your consent—through a legal basis called "legitimate interest." Understanding how this works helps you recognize what data practices are legal and what rights you actually have.
 

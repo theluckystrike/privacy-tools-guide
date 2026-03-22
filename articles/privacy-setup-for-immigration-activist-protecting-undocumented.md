@@ -3,7 +3,7 @@ layout: default
 title: "Privacy Setup for Immigration Activist"
 description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
 categories: [guides]
@@ -17,7 +17,6 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# Privacy Setup for Immigration Activist: Protecting Undocumented Community Members
 
 Immigration activists and organizers face unique security challenges when working with undocumented community members. Beyond standard privacy practices, you must protect people whose safety depends on operational security. This guide provides technical implementation details for setting up a privacy-respecting infrastructure tailored to immigration advocacy work.
 

@@ -3,7 +3,7 @@ layout: default
 title: "VPN Connection Drops Troubleshooting Guide"
 description: "To fix VPN connection drops, start by checking your network stability with ping -i 0.2 8.8.8.8, then examine your VPN logs for recurring errors like TLS"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /vpn-connection-drops-troubleshooting-guide/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, vpn]
 
 
 {% raw %}
-# VPN Connection Drops Troubleshooting Guide
 
 To fix VPN connection drops, start by checking your network stability with `ping -i 0.2 8.8.8.8`, then examine your VPN logs for recurring errors like `TLS handshake failed` or `inactivity timeout`. The most common causes are firewall interference (open UDP port 1194 or TCP port 443), DNS leak misconfiguration, and MTU mismatches (try setting `tun-mtu 1400` in your OpenVPN config). The sections below walk through each diagnostic step and fix in detail.
 

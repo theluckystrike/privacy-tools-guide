@@ -3,7 +3,7 @@ layout: default
 title: "Replace Google Home with Local Voice Assistant"
 description: "Replace Google Home with Rhasspy or Mycroft to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-replace-google-home-with-local-voice-assistant-using-/
 categories: [guides]
@@ -16,7 +16,6 @@ voice-checked: true
 
 {% raw %}
 
-# How to Replace Google Home with Local Voice Assistant Using Rhasspy or Mycroft
 
 Replace Google Home with **Rhasspy** or **Mycroft** to process voice commands entirely on your local hardware without cloud connectivity. Both open-source alternatives offer full voice assistant capabilities, custom wake words, and integration with home automation systems—all running privately on modest hardware like a Raspberry Pi. This guide walks through installing, configuring, and deploying each solution with practical examples for developers and power users.
 

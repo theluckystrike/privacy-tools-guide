@@ -193,7 +193,6 @@ Fourth, document accessibility features explicitly. Many privacy tools include a
 
 Fifth, accept community contributions. Open-source projects benefit from users submitting accessibility improvements, particularly from the communities most affected by design decisions.
 
-<<<<<<< HEAD
 ## Summary
 
 The privacy tool ecosystem in 2026 offers multiple high contrast options across browser extensions, password managers, CLI tools, and development environments. Bitwarden and KeePassXC lead password manager accessibility, while Dark Reader and Lumina provide the most flexible browser extensions. Terminal tools increasingly respect system accessibility settings, and modern editors like VS Code and Neovim offer extensive theming capabilities.
@@ -207,7 +206,5 @@ For teams implementing accessibility, prioritizing high contrast support from th
 - [Android Guest Mode For Lending Phone Without Exposing](/android-guest-mode-for-lending-phone-without-exposing-person/)
 - [Best Accessible Encrypted File Sharing Tool for Users With Cognitive Impairments 2026](/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 
-=======
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

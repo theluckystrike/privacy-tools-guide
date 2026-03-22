@@ -3,7 +3,7 @@ layout: default
 title: "Request Human Review of AI Automated Decision That Affects"
 description: "A practical guide for developers and power users on exercising your right to human review of AI-mediated decisions. Includes templates, legal basis"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-request-human-review-of-ai-automated-decision-that-affects-you/
 categories: [guides]
@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-# How to Request Human Review of AI Automated Decision That Affects You Legally
 
 Automated decision-making systems increasingly influence significant aspects of daily life, from credit approvals and employment screening to insurance underwriting and housing applications. When these AI systems make decisions that legally impact you, you have the right to request human review. This guide provides practical strategies for exercising that right, with templates and technical context for developers building compliant systems.
 

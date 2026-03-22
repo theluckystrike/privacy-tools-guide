@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Lawful Basis for Processing Explained"
 description: "A technical guide explaining GDPR lawful bases for processing personal data. Covers all 6 bases with code examples, practical implementation patterns"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /gdpr-lawful-basis-for-processing-explained/
 categories: [guides]
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-# GDPR Lawful Basis for Processing Explained: A Developer Guide
 
 Every piece of personal data your application processes requires a valid legal foundation under GDPR. This foundation is called the "lawful basis for processing," and selecting the correct one is not optional—it's a fundamental requirement that affects every subsequent data handling decision. This guide breaks down all six lawful bases with practical implementation patterns for developers building privacy-conscious applications.
 

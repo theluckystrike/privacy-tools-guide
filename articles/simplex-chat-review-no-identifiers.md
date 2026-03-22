@@ -3,7 +3,7 @@ layout: default
 title: "Simplex Chat Review: No Identifiers Architecture Analysis"
 description: "Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /simplex-chat-review-no-identifiers/
 categories: [guides]
@@ -14,7 +14,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-# Simplex Chat Review: No Identifiers Architecture Analysis
 
 Simplex Chat is worth it if metadata protection is your top priority. It is the only production messaging app that operates without any persistent user identifiers -- no phone numbers, no usernames, no cryptographic keys that serve as stable IDs. This eliminates correlation attacks, social graph harvesting, and account hijacking entirely. The trade-offs are real: initial contact requires out-of-band address exchange, and the user base is small. For journalists, activists, or anyone whose threat model includes communication metadata analysis, Simplex Chat provides architectural guarantees no other network-based messenger can match.
 

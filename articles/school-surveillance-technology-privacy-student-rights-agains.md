@@ -3,7 +3,7 @@ layout: default
 title: "School Surveillance Technology Privacy"
 description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /school-surveillance-technology-privacy-student-rights-against/
 reviewed: true
@@ -16,7 +16,6 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-# School Surveillance Technology Privacy: Student Rights Against Facial Recognition Tracking in Schools
 
 Facial recognition technology in schools represents one of the most contentious intersections of security technology and student privacy rights. As school districts across the United States deploy increasingly sophisticated surveillance systems, students, parents, and developers need to understand both the technical capabilities of these systems and the legal frameworks that protect—or fail to protect—student privacy.
 

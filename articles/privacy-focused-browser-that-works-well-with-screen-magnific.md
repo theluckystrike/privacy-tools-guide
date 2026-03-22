@@ -226,7 +226,6 @@ Example configuration script for Firefox:
 })
 ```
 
-<<<<<<< HEAD
 ## Conclusion
 
 Privacy-focused browsing with screen magnification software requires careful browser selection and configuration. Firefox with custom settings provides the best balance, while Brave and LibreWolf offer viable alternatives with proper adjustment. Test any browser thoroughly with your magnification tool before committing to daily use.
@@ -240,7 +239,5 @@ The key is accepting a slight reduction in fingerprinting protection in exchange
 - [Browser Fingerprinting How It Works and How to Prevent It](/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser First-Party Isolation: What It Does and How It Works](/browser-first-party-isolation-what-it-does/)
 
-=======
->>>>>>> b900bdda56765d71068413d810978b9f118b0721
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

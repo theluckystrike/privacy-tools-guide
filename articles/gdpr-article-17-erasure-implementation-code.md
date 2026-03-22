@@ -3,7 +3,7 @@ layout: default
 title: "GDPR Article 17 Erasure Implementation"
 description: "Practical implementation guide for GDPR Article 17 right to erasure. Code examples for handling data deletion requests in your applications"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /gdpr-article-17-erasure-implementation-code/
 intent-checked: true
@@ -15,7 +15,6 @@ tags: [privacy-tools-guide]
 ---
 
 {% raw %}
-# GDPR Article 17 Erasure Implementation Code: A Developer Guide
 
 The European Union's General Data Protection Regulation grants individuals the right to request deletion of their personal data. Article 17, formally titled "Right to Erasure," creates specific obligations for organizations handling EU residents' data. For developers building compliance-minded applications, implementing these requirements requires careful architectural planning and well-tested code.
 
