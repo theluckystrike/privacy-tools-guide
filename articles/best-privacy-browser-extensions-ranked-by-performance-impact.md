@@ -6,7 +6,7 @@ description: "Discover the best best privacy browser extensions ranked by perfor
 tags: [privacy-tools-guide, best-of, privacy]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [guides]
 ---
