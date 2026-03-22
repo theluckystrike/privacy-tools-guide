@@ -40,6 +40,20 @@ Install these seven Firefox privacy add-ons for a hardened browsing setup in 202
 - **Privacy Badger Developed by**: the Electronic Frontier Foundation, Privacy Badger uses machine learning to detect and block invisible tracking pixels.
 - **Privacy Badger automatically blocks invisible tracking pixels, needs no configuration for basic use, and uses color-coded indicators**: red for blocked, yellow for partially blocked, green for allowed.
 
+## Table of Contents
+
+- [Why Firefox for Privacy?](#why-firefox-for-privacy)
+- [Essential Privacy Add-ons](#essential-privacy-add-ons)
+- [Setting Up a Privacy-Focused Firefox Profile](#setting-up-a-privacy-focused-firefox-profile)
+- [Performance Considerations](#performance-considerations)
+- [Advanced uBlock Origin Configuration](#advanced-ublock-origin-configuration)
+- [Privacy Extension Interaction Testing](#privacy-extension-interaction-testing)
+- [Fingerprinting Resistance Testing](#fingerprinting-resistance-testing)
+- [Firefox about:config Privacy Settings Deep Dive](#firefox-aboutconfig-privacy-settings-deep-dive)
+- [Managing Extension Updates and Security](#managing-extension-updates-and-security)
+- [Browser Profile Hardening Checklist](#browser-profile-hardening-checklist)
+- [Performance Tuning for Privacy Extensions](#performance-tuning-for-privacy-extensions)
+
 ## Why Firefox for Privacy?
 
 Firefox offers several advantages over Chromium-based browsers. The browser runs on Gecko, Mozilla's rendering engine, which provides better isolation between web pages through its multi-process architecture. Firefox does not tie you to Google's ecosystem, and Mozilla's privacy policies are more transparent than most commercial browser vendors.

@@ -44,6 +44,18 @@ The most thorough approach disables the feature completely:
 - **Restrict apps to `when**: in use` unless they have legitimate reasons for `always` access.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Are Significant Locations?](#what-are-significant-locations)
+- [How Apple Stores Significant Locations Data](#how-apple-stores-significant-locations-data)
+- [Checking Significant Locations Settings](#checking-significant-locations-settings)
+- [How to Delete Significant Locations History](#how-to-delete-significant-locations-history)
+- [Understanding the Privacy Implications](#understanding-the-privacy-implications)
+- [Wi-Fi and Bluetooth Assisted Location](#wi-fi-and-bluetooth-assisted-location)
+- [Advanced: Exporting Your Data](#advanced-exporting-your-data)
+- [Location Privacy Best Practices](#location-privacy-best-practices)
+- [Long-Term Privacy Strategy](#long-term-privacy-strategy)
+
 ## What Are Significant Locations?
 
 Significant Locations is an on-device machine learning system that identifies locations meaningful to you. Your iPhone analyzes GPS data, Wi-Fi connections, and timestamps to determine places you visit repeatedly—your home, workplace, gym, or favorite coffee shop. This differs from continuous location tracking; instead, Apple stores only the locations your device deems significant based on visit frequency and duration.

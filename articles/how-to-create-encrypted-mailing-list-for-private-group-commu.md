@@ -40,6 +40,15 @@ Running a private group communication channel requires more than just a shared e
 - **This approach works when**: all participants use GPG and configure their email clients accordingly.
 - **If a member loses access or leaves**: having revocation certificates ready prevents unauthorized future use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Key Management Best Practices](#key-management-best-practices)
+- [Comparison Table: Encrypted Mailing List Solutions](#comparison-table-encrypted-mailing-list-solutions)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
+- [Advanced: Splitting the Mailing List into Encrypted Subgroups](#advanced-splitting-the-mailing-list-into-encrypted-subgroups)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

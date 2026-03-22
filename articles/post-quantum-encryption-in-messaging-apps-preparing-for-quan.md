@@ -40,6 +40,16 @@ As quantum computing advances toward practical deployment, the cryptographic fou
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This article explores how**: messaging applications are implementing post-quantum cryptography, what developers need to know, and how power users can prepare for the transition.
 
+## Table of Contents
+
+- [The Quantum Threat Timeline](#the-quantum-threat-timeline)
+- [Current Messaging App Implementations](#current-messaging-app-implementations)
+- [Implementing Post-Quantum Key Exchange](#implementing-post-quantum-key-exchange)
+- [Hybrid Encryption for Existing Applications](#hybrid-encryption-for-existing-applications)
+- [Migration Strategies for Enterprise Messaging](#migration-strategies-for-enterprise-messaging)
+- [What Power Users Should Know](#what-power-users-should-know)
+- [Timeline and Expectations](#timeline-and-expectations)
+
 ## The Quantum Threat Timeline
 
 Researchers estimate that cryptographically relevant quantum computers could emerge within the next decade. While no such machines exist today, the "harvest now, decrypt later" attack vector already poses a risk. State-level actors and sophisticated adversaries currently capture encrypted traffic with the expectation that future quantum computers will enable decryption.

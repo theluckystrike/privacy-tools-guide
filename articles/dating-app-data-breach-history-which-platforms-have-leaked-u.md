@@ -42,6 +42,14 @@ Dating apps have experienced multiple major data breaches exposing millions of u
 - **Apply principle of least**: privilege to data access 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Timeline of Major Dating App Data Breaches](#timeline-of-major-dating-app-data-breaches)
+- [Technical Analysis: Common Vulnerability Patterns](#technical-analysis-common-vulnerability-patterns)
+- [Checking If Your Data Was Exposed](#checking-if-your-data-was-exposed)
+- [Protecting Yourself: Actionable Strategies](#protecting-yourself-actionable-strategies)
+- [What Data Dating Apps Typically Collect](#what-data-dating-apps-typically-collect)
+
 ## Timeline of Major Dating App Data Breaches
 
 ### 2015: AdultFriendFinder Breach

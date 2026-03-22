@@ -42,6 +42,20 @@ The best password manager for macOS developers in 2026 is 1Password for the most
 - **Choose Proton Pass if**: privacy-first architecture under Swiss jurisdiction is your priority, and stick with Apple Keychain only for basic website password storage without developer features.
 - **The integration with Apple**: Watch and Touch ID feels genuinely useful rather than gimmicky.
 
+## Table of Contents
+
+- [Why macOS Developers Need Dedicated Password Managers](#why-macos-developers-need-dedicated-password-managers)
+- [Essential Features for Developer Workflows](#essential-features-for-developer-workflows)
+- [Evaluating the Top Options](#evaluating-the-top-options)
+- [Making Your Decision](#making-your-decision)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Pricing Comparison and Total Cost of Ownership](#pricing-comparison-and-total-cost-of-ownership)
+- [Advanced CLI Usage Patterns](#advanced-cli-usage-patterns)
+- [Hardware Security Key Integration](#hardware-security-key-integration)
+- [MacOS-Specific Integration Features](#macos-specific-integration-features)
+- [Password Generation Strategies](#password-generation-strategies)
+- [Migration from One Manager to Another](#migration-from-one-manager-to-another)
+
 ## Why macOS Developers Need Dedicated Password Managers
 
 Developers working on macOS handle more than website credentials. You manage SSH keys, API tokens, database connection strings, cloud service credentials, and TLS certificates. A generic password manager treats these as afterthoughts. The right tool for developers treats cryptographic secrets as first-class citizens.

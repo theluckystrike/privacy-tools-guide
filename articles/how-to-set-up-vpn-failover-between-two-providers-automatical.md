@@ -39,6 +39,13 @@ Set up automatic VPN failover by configuring two WireGuard tunnels (wg0 and wg1)
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Automatic Failover Matters](#why-automatic-failover-matters)
+- [Prerequisites](#prerequisites)
+- [Additional Considerations](#additional-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Automatic Failover Matters
 
 VPN connections serve as critical infrastructure for remote access, site-to-site networking, and privacy. Network interruptions happen—provider outages, ISP issues, or hardware failures can disconnect your tunnel. Manual switching wastes time and introduces human error. An automatic failover system detects connectivity loss within seconds and restores your connection through an alternate provider.

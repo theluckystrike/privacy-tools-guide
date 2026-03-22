@@ -40,6 +40,26 @@ Choose Firefox's Strict mode if you want maximum one-click tracker blocking and 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 
+## Table of Contents
+
+- [Understanding Firefox's Tracking Protection](#understanding-firefoxs-tracking-protection)
+- [Quick Comparison](#quick-comparison)
+- [The Strict Setting](#the-strict-setting)
+- [Building a Custom Configuration](#building-a-custom-configuration)
+- [Advanced about:config Settings](#advanced-aboutconfig-settings)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Common Compatibility Issues](#common-compatibility-issues)
+- [Performance Considerations](#performance-considerations)
+- [When to Use Strict vs Custom](#when-to-use-strict-vs-custom)
+- [Deep-Dive: Tracker List Management](#deep-dive-tracker-list-management)
+- [Fingerprinting Resistance in Detail](#fingerprinting-resistance-in-detail)
+- [Cookie Handling Deep-Dive](#cookie-handling-deep-dive)
+- [HTTPS-Only Mode Integration](#https-only-mode-integration)
+- [Phishing and Malware Protection Interaction](#phishing-and-malware-protection-interaction)
+- [Extension Interaction and Conflicts](#extension-interaction-and-conflicts)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Custom Rules for Enterprise Environments](#custom-rules-for-enterprise-environments)
+
 ## Understanding Firefox's Tracking Protection
 
 Firefox's Enhanced Tracking Protection (ETP) blocks known trackers across three levels: Standard, Strict, and Custom. The Strict setting provides one-click protection, while Custom mode lets you pick individual blocking categories.

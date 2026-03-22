@@ -42,6 +42,21 @@ Choose 1Password if you want the password manager that survived its breach with 
 - **Convert to 1Password format**: # Use 1Password's CSV importer tool # 3.
 - **Enable 2FA on 1Password**: account with hardware key # Use yubikey, solokey, or similar # 6.
 
+## Table of Contents
+
+- [LastPass Breach History](#lastpass-breach-history)
+- [1Password's Breach Experience](#1passwords-breach-experience)
+- [Security Architecture Comparison](#security-architecture-comparison)
+- [What Developers Should Consider](#what-developers-should-consider)
+- [Cost Comparison and Pricing in 2026](#cost-comparison-and-pricing-in-2026)
+- [Password Manager Feature Matrix](#password-manager-feature-matrix)
+- [Post-Breach Behavior and Corporate Transparency](#post-breach-behavior-and-corporate-transparency)
+- [Master Password Entropy and Brute-Force Resistance](#master-password-entropy-and-brute-force-resistance)
+- [Vault Segmentation Strategies](#vault-segmentation-strategies)
+- [Alternative Approach: Self-Hosted Solutions](#alternative-approach-self-hosted-solutions)
+- [Migration Path: LastPass to 1Password](#migration-path-lastpass-to-1password)
+- [Recommendations for Developers](#recommendations-for-developers)
+
 ## LastPass Breach History
 
 LastPass has experienced multiple security incidents over the years, with the most significant breaches occurring in 2022 and 2023. Understanding these incidents reveals important details about how password manager security works under pressure.

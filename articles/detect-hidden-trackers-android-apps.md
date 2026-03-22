@@ -45,6 +45,19 @@ Most users have no idea this happens. The official permission system doesn't dis
 - **The official permission system**: doesn't distinguish between legitimate uses and tracking uses.
 - **Users must actively audit**: apps to understand what data is being collected and transmitted.
 
+## Table of Contents
+
+- [Why Trackers Matter and What They Collect](#why-trackers-matter-and-what-they-collect)
+- [Method 1: Exodus Privacy — Static Analysis](#method-1-exodus-privacy-static-analysis)
+- [Method 2: TrackerControl — Runtime Analysis](#method-2-trackercontrol-runtime-analysis)
+- [Method 3: ADB Permission Audit](#method-3-adb-permission-audit)
+- [Method 4: Network Traffic Capture](#method-4-network-traffic-capture)
+- [Method 5: ClassyShark3xodus — On-Device Static Analysis](#method-5-classyshark3xodus-on-device-static-analysis)
+- [Interpreting Results: What to Do About Trackers](#interpreting-results-what-to-do-about-trackers)
+- [Removing and Blocking Identified Trackers](#removing-and-blocking-identified-trackers)
+- [Building Your Own Tracker Detection Workflow](#building-your-own-tracker-detection-workflow)
+- [Related Reading](#related-reading)
+
 ## Why Trackers Matter and What They Collect
 
 Before auditing trackers, understand what they actually do with your data. Different trackers collect different information and serve different purposes.

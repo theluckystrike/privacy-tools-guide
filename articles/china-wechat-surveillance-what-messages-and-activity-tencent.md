@@ -29,6 +29,21 @@ Tencent collects all WeChat messages, metadata, location data, and payment infor
 Requires network operators to store user data within China and cooperate with security investigations.
 - **User profiling - Communication**: patterns with known activists - International contacts analyzed - Network mapping of connected users 3.
 
+## Table of Contents
+
+- [What Data Tencent Collects](#what-data-tencent-collects)
+- [Legal Framework: How Government Requests Work](#legal-framework-how-government-requests-work)
+- [What Activity Triggers Data Sharing](#what-activity-triggers-data-sharing)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Technical Deep Dive: How Requests Are Processed](#technical-deep-dive-how-requests-are-processed)
+- [What Users Can Do](#what-users-can-do)
+- [Technical Deep Dive: WeChat Message Analysis](#technical-deep-dive-wechat-message-analysis)
+- [Comparison: Chinese Messaging Apps](#comparison-chinese-messaging-apps)
+- [Detection Methods: What Triggers Investigation](#detection-methods-what-triggers-investigation)
+- [Geopolitical Implications: WeChat as Surveillance Infrastructure](#geopolitical-implications-wechat-as-surveillance-infrastructure)
+- [Practical Mitigation Architecture](#practical-mitigation-architecture)
+- [Long-Term Strategic Assessment](#long-term-strategic-assessment)
+
 ## What Data Tencent Collects
 
 Tencent's data collection on WeChat is extensive and operates at multiple levels. When you use WeChat, the following categories of data are collected:

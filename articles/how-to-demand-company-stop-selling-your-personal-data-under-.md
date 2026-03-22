@@ -50,6 +50,13 @@ The California Consumer Privacy Act (CCPA) and its successor, the California Pri
 - **Global Privacy Control (GPC)**: a browser signal you can enable, automatically transmits opt-out preferences to websites.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Verifying Opt-Out Compliance](#verifying-opt-out-compliance)
+- [Additional Considerations](#additional-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

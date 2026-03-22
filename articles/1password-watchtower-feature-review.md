@@ -41,6 +41,20 @@ tags: [privacy-tools-guide]
 - **Beyond these core checks**: Watchtower monitors expiration dates, particularly useful for API tokens and service accounts that often have built-in expiry windows.
 - **If you previously used**: a compromised password but updated it, Watchtower won't flag your history.
 
+## Table of Contents
+
+- [What Watchtower Actually Monitors](#what-watchtower-actually-monitors)
+- [Accessing Watchtower](#accessing-watchtower)
+- [Practical Examples for Developer Workflows](#practical-examples-for-developer-workflows)
+- [Watchtower Limitations](#watchtower-limitations)
+- [Integration with Development Tools](#integration-with-development-tools)
+- [Best Practices for Developers](#best-practices-for-developers)
+- [Advanced Watchtower Usage Patterns](#advanced-watchtower-usage-patterns)
+- [Watchtower Integration with Development Tools](#watchtower-integration-with-development-tools)
+- [Watchtower for Compliance and Auditing](#watchtower-for-compliance-and-auditing)
+- [Watchtower Limitations and Workarounds](#watchtower-limitations-and-workarounds)
+- [Best Practices Checklist](#best-practices-checklist)
+
 ## What Watchtower Actually Monitors
 
 Watchtower continuously scans your vault and presents findings in three categories: compromised passwords, weak passwords, and items requiring updates. The compromised items check draws from known data breach databases—If your credentials appear in a known breach, Watchtower flags them immediately.

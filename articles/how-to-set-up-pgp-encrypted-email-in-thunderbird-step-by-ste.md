@@ -41,6 +41,24 @@ Email encryption remains one of the most effective ways to protect sensitive com
 - **Use "Gpg4Win" for Windows**: or Thunderbird.
 - **For maximum compatibility**: Thunderbird remains the strongest open-source option with built-in PGP support.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Generate Your PGP Key Pair](#step-1-generate-your-pgp-key-pair)
+- [Step 2: Configure Thunderbird for OpenPGP](#step-2-configure-thunderbird-for-openpgp)
+- [Step 3: Export and Share Your Public Key](#step-3-export-and-share-your-public-key)
+- [Step 4: Sending Encrypted Emails](#step-4-sending-encrypted-emails)
+- [Step 5: Receiving and Decrypting Emails](#step-5-receiving-and-decrypting-emails)
+- [Key Management Best Practices](#key-management-best-practices)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Integrating with GnuPG Directly](#advanced-integrating-with-gnupg-directly)
+- [Advanced Key Management at Scale](#advanced-key-management-at-scale)
+- [Using GnuPG in Bash Scripts](#using-gnupg-in-bash-scripts)
+- [Troubleshooting Advanced PGP Issues](#troubleshooting-advanced-pgp-issues)
+- [Email Encryption Workflow](#email-encryption-workflow)
+- [Integration with Other Email Clients](#integration-with-other-email-clients)
+- [Performance and Usability Trade-offs](#performance-and-usability-trade-offs)
+
 ## Prerequisites
 
 Before beginning, ensure you have:

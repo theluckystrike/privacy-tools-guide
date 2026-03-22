@@ -39,6 +39,13 @@ A privacy risk register is a living document that tracks, assesses, and mitigate
 - **This guide covers why**: quarterly privacy reviews matter, core components of a privacy risk register, building the template structure, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Why Quarterly Privacy Reviews Matter](#why-quarterly-privacy-reviews-matter)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Quarterly Privacy Reviews Matter
 
 Privacy regulations like GDPR, CCPA, and emerging frameworks demand systematic risk assessments. Quarterly reviews provide a cadence for identifying new risks, measuring mitigation progress, and maintaining compliance posture. Without structured reviews, privacy debt accumulates quietly until a breach or audit reveals the gaps.

@@ -42,6 +42,13 @@ Stop mobile games from collecting your location data using app permission contro
 - **Look for `NSLocationWhenInUseUsageDescription` or**: `NSLocationAlwaysUsageDescription` keys.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Advanced SDK Analysis Techniques](#advanced-sdk-analysis-techniques)
+- [Comparison of Location Privacy Approaches](#comparison-of-location-privacy-approaches)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

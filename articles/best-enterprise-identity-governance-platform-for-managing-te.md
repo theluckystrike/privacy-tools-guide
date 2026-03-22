@@ -37,6 +37,22 @@ Managing team access reviews at scale represents one of the most challenging asp
 - **Managing team access reviews**: at scale represents one of the most challenging aspects of enterprise security.
 - **As organizations grow**: the number of applications, permissions, and user accounts explodes, making manual access certification impractical and risky.
 
+## Table of Contents
+
+- [Understanding Identity Governance and Access Reviews](#understanding-identity-governance-and-access-reviews)
+- [Core Features of Enterprise Identity Governance Platforms](#core-features-of-enterprise-identity-governance-platforms)
+- [Technical Integration Patterns](#technical-integration-patterns)
+- [Implementation Considerations](#implementation-considerations)
+- [Common Challenges and Solutions](#common-challenges-and-solutions)
+- [Command-Line Privacy Audit](#command-line-privacy-audit)
+- [Filesystem Encryption Verification](#filesystem-encryption-verification)
+- [Planning Your Identity Governance Deployment](#planning-your-identity-governance-deployment)
+- [Leading Platform Comparisons](#leading-platform-comparisons)
+- [Threat Model Considerations for Access Reviews](#threat-model-considerations-for-access-reviews)
+- [Measuring Success and ROI](#measuring-success-and-roi)
+- [Implementation Strategies](#implementation-strategies)
+- [Technical Debt from Poor Access Governance](#technical-debt-from-poor-access-governance)
+
 ## Understanding Identity Governance and Access Reviews
 
 Identity governance encompasses the policies, processes, and technologies that control who can access what within an organization. Access reviews specifically refer to the periodic verification that existing access rights remain appropriate—employees who changed roles should lose old permissions, departing employees should have all access revoked, and temporary access should expire automatically.

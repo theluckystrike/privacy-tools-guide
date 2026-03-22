@@ -42,6 +42,14 @@ Browser fingerprinting is a sophisticated tracking technique that identifies use
 - **Fingerprinting bypasses these defenses entirely because nothing is stored on your device**: the identification happens purely through passive data collection.
 - **This technique is particularly**: concerning because: Fingerprinting works across sessions without any persistent storage, and private browsing modes provide minimal protection.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why Fingerprinting Matters for Privacy](#why-fingerprinting-matters-for-privacy)
+- [Advanced Fingerprinting Vectors You May Not Know About](#advanced-fingerprinting-vectors-you-may-not-know-about)
+- [Performance Impact of Fingerprinting Defenses](#performance-impact-of-fingerprinting-defenses)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

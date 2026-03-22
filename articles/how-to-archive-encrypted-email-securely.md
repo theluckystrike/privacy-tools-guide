@@ -38,6 +38,16 @@ To archive encrypted email securely, export your messages to MBOX or Maildir for
 - **Maintain your key backups carefully**: because there is no recovery path without them.
 - **Verification procedures to confirm**: successful restoration Test recovery on a clean system at least once to ensure your documentation is accurate.
 
+## Table of Contents
+
+- [Understanding the Encryption Challenge](#understanding-the-encryption-challenge)
+- [Method 1: Local MBOX Archive with Key Management](#method-1-local-mbox-archive-with-key-management)
+- [Method 2: GPG-Mailroom for Systematic Archiving](#method-2-gpg-mailroom-for-systematic-archiving)
+- [Method 3: Maildir with Per-Message Encryption](#method-3-maildir-with-per-message-encryption)
+- [Verification and Integrity Checking](#verification-and-integrity-checking)
+- [Storage Recommendations](#storage-recommendations)
+- [Recovery Procedures](#recovery-procedures)
+
 ## Understanding the Encryption Challenge
 
 Standard email archiving tools assume they can read message content. Encrypted email breaks this assumption. When you archive a PGP-encrypted message, you must preserve:

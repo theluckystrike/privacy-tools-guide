@@ -206,6 +206,19 @@ Understanding these rights enables both patients seeking access to their data an
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [HIPAA Violations: Case Studies and Outcomes](#hipaa-violations-case-studies-and-outcomes)
+- [Your Right to Breach Notification](#your-right-to-breach-notification)
+- [Advanced Patient Portal Features](#advanced-patient-portal-features)
+- [HIPAA vs Non-Covered Entities](#hipaa-vs-non-covered-entities)
+- [State Privacy Laws Exceeding HIPAA](#state-privacy-laws-exceeding-hipaa)
+- [Requesting Corrections Example](#requesting-corrections-example)
+- [Bringing Records to Another Provider](#bringing-records-to-another-provider)
+- [Building a Personal Health Record](#building-a-personal-health-record)
+- [Challenges and Solutions](#challenges-and-solutions)
+- [Enforcement Mechanism](#enforcement-mechanism)
+
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.

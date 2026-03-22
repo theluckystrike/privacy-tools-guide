@@ -40,6 +40,17 @@ To migrate from RoboForm to Bitwarden, export your RoboForm vault as CSV from Fi
 - **Select "All Items" or**: choose specific folders 4.
 - **Choose CSV format (avoid**: the encrypted RoboForm format for migration) 5.
 
+## Table of Contents
+
+- [Why Migrate from RoboForm to Bitwarden](#why-migrate-from-roboform-to-bitwarden)
+- [Exporting Your RoboForm Data](#exporting-your-roboform-data)
+- [Preparing Data for Bitwarden Import](#preparing-data-for-bitwarden-import)
+- [Importing into Bitwarden](#importing-into-bitwarden)
+- [Handling Complex Data](#handling-complex-data)
+- [Post-Migration Checklist](#post-migration-checklist)
+- [Security Considerations During Migration](#security-considerations-during-migration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Why Migrate from RoboForm to Bitwarden
 
 RoboForm served many users well for years, but several factors drive developers and power users toward Bitwarden:

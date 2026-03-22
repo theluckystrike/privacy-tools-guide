@@ -40,6 +40,20 @@ Below is a ready-to-use data retention policy template for startups, with recomm
 - **Small teams can often**: implement changes faster because there are fewer people to coordinate.
 - **Track them weekly for**: at least a month to see trends.
 
+## Table of Contents
+
+- [Why Startups Need a Data Retention Policy](#why-startups-need-a-data-retention-policy)
+- [Core Components of a Retention Policy](#core-components-of-a-retention-policy)
+- [Implementing Automated Data Retention](#implementing-automated-data-retention)
+- [Handling Data Subject Requests](#handling-data-subject-requests)
+- [Documentation and Compliance Evidence](#documentation-and-compliance-evidence)
+- [Purpose](#purpose)
+- [Policy Owner](#policy-owner)
+- [Last Updated](#last-updated)
+- [Data Categories](#data-categories)
+- [Enforcement](#enforcement)
+- [Key Implementation Steps](#key-implementation-steps)
+
 ## Why Startups Need a Data Retention Policy
 
 Without a documented retention policy, startups often accumulate data indefinitely. Every database table, log file, and backup becomes a liability. When regulators like the FTC, state attorneys general, or international authorities request data for investigations, you must produce what you have—irrespective of whether retaining that data was justified.

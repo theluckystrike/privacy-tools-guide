@@ -29,6 +29,23 @@ Android hardware-backed attestation keys are cryptographic proofs stored in your
 - **User control**: Provide alternatives for users who decline attestation
 4.
 
+## Table of Contents
+
+- [What Is Hardware-Backed Attestation?](#what-is-hardware-backed-attestation)
+- [How Attestation Keys Work](#how-attestation-keys-work)
+- [What Information Attestation Keys Reveal](#what-information-attestation-keys-reveal)
+- [Privacy Implications for Users](#privacy-implications-for-users)
+- [Best Practices for Developers](#best-practices-for-developers)
+- [Technical Limitations and Considerations](#technical-limitations-and-considerations)
+- [Attestation Chain Verification](#attestation-chain-verification)
+- [User Consent and Attestation Abuse](#user-consent-and-attestation-abuse)
+- [Bypasses and Limitations in Practice](#bypasses-and-limitations-in-practice)
+- [Alternatives to Attestation for Security Decisions](#alternatives-to-attestation-for-security-decisions)
+- [Privacy Impact of Regular Attestation Collection](#privacy-impact-of-regular-attestation-collection)
+- [Attestation Across Different Android Device Types](#attestation-across-different-android-device-types)
+- [Attestation in the Broader Security World](#attestation-in-the-broader-security-world)
+- [Future of Android Attestation](#future-of-android-attestation)
+
 ## What Is Hardware-Backed Attestation?
 
 Hardware-backed attestation uses cryptographic keys stored in a device's Trusted Execution Environment (TEE) or Hardware Security Module (HSM) to prove that a specific operation occurred on a genuine Android device. Unlike software-based keys, hardware-backed keys cannot be extracted or replicated, even if the device is rooted or compromised at the operating system level.

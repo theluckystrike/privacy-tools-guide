@@ -42,6 +42,16 @@ Understanding the history of cloud storage security breaches helps developers an
 - **Use IAM roles instead**: of long-term access keys 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Breach History Matters for Your Storage Decisions](#why-breach-history-matters-for-your-storage-decisions)
+- [Major Breaches That Defined Cloud Security (2019-2026)](#major-breaches-that-defined-cloud-security-2019-2026)
+- [Choosing Privacy-Respecting Cloud Storage After Reviewing Breach History](#choosing-privacy-respecting-cloud-storage-after-reviewing-breach-history)
+- [Security Checklist for Cloud Storage](#security-checklist-for-cloud-storage)
+- [Incident Response Framework](#incident-response-framework)
+- [Common Questions About Cloud Storage Breach History](#common-questions-about-cloud-storage-breach-history)
+- [Emerging Threats in 2026](#emerging-threats-in-2026)
+
 ## Why Breach History Matters for Your Storage Decisions
 
 Before examining specific incidents, consider why historical breach analysis should directly influence which cloud storage services you trust with sensitive data. Most cloud breaches do not result from zero-day exploits or nation-state attackers using sophisticated custom malware. They result from misconfigurations, weak credentials, missing multi-factor authentication, and over-permissive access policies — mistakes that are entirely preventable.

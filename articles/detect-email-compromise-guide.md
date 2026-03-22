@@ -51,6 +51,18 @@ site:rentry.co "your@email.com"
 
 Also search your username, not just email address.
 
+## Table of Contents
+
+- [Signs Your Email May Be Compromised](#signs-your-email-may-be-compromised)
+- [Step 1: Check Breach Databases](#step-1-check-breach-databases)
+- [Step 2: Review Active Sessions](#step-2-review-active-sessions)
+- [Step 3: Check for Email Forwarding Rules](#step-3-check-for-email-forwarding-rules)
+- [Step 4: Check Connected Apps and OAuth Grants](#step-4-check-connected-apps-and-oauth-grants)
+- [Step 5: Examine Recent Account Activity](#step-5-examine-recent-account-activity)
+- [Step 6: Check for Credential Leaks on Paste Sites](#step-6-check-for-credential-leaks-on-paste-sites)
+- [Step 7: Secure the Account](#step-7-secure-the-account)
+- [Ongoing Monitoring](#ongoing-monitoring)
+
 ## Signs Your Email May Be Compromised
 
 - Contacts report receiving spam or phishing messages from you

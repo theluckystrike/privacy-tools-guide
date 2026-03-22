@@ -51,6 +51,13 @@ Casa's collaborative custody model extends this concept by distributing keys acr
 
 For inheritance scenarios, the configuration typically uses a 3-of-3 or 2-of-3 threshold, ensuring that no single party can access funds unilaterally while providing clear recovery paths for beneficiaries.
 
+## Table of Contents
+
+- [Prerequisites and Security Considerations](#prerequisites-and-security-considerations)
+- [Security Best Practices for Long-Term Storage](#security-best-practices-for-long-term-storage)
+- [Advanced Multisig Threshold Design](#advanced-multisig-threshold-design)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites and Security Considerations
 
 Before configuring your Casa multisig setup, ensure you meet these requirements:

@@ -40,6 +40,14 @@ Browser fingerprinting tracks you by combining your screen resolution, installed
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The same APIs used**: for fingerprinting often have legitimate uses, so the challenge for developers is building applications that function properly while minimizing unnecessary information disclosure.
 
+## Table of Contents
+
+- [What Makes Fingerprinting Possible](#what-makes-fingerprinting-possible)
+- [Core Fingerprinting Techniques](#core-fingerprinting-techniques)
+- [Advanced Fingerprinting Vectors](#advanced-fingerprinting-vectors)
+- [Fingerprinting Resistance](#fingerprinting-resistance)
+- [The Privacy Implications](#the-privacy-implications)
+
 ## What Makes Fingerprinting Possible
 
 Every browser exposes a range of information when visiting websites. This includes installed fonts, screen resolution, timezone, hardware concurrency, and installed plugins. When combined, these attributes create a unique signature that can identify users across sessions and even across different browsers on the same device.

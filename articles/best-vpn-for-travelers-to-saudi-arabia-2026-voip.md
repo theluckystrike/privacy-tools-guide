@@ -50,6 +50,20 @@ Mullvad VPN with obfuscation protocol enabled is the most reliable VoIP solution
 - **Adjust MTU in your VPN configuration**: 1420 works for most networks and prevents fragmentation.
 - **Check your employment agreement**: some companies explicitly permit VPN use while others restrict it.
 
+## Table of Contents
+
+- [Understanding Saudi Arabia's VoIP ecosystem](#understanding-saudi-arabias-voip-ecosystem)
+- [Technical Requirements for VoIP VPNs in Saudi Arabia](#technical-requirements-for-voip-vpns-in-saudi-arabia)
+- [Configuring Your VoIP VPN](#configuring-your-voip-vpn)
+- [Testing Your VoIP Connection](#testing-your-voip-connection)
+- [Monitoring VPN Health and Performance](#monitoring-vpn-health-and-performance)
+- [Performance Optimization](#performance-optimization)
+- [Testing Before Critical Calls](#testing-before-critical-calls)
+- [Backup Strategies](#backup-strategies)
+- [Alternative Strategies When VPNs Fail](#alternative-strategies-when-vpns-fail)
+- [VPN Performance Troubleshooting](#vpn-performance-troubleshooting)
+- [Legal Considerations](#legal-considerations)
+
 ## Understanding Saudi Arabia's VoIP ecosystem
 
 Saudi Arabia maintains strict regulations on VoIP services. The Communications, Space, and Technology Commission (CST) controls which services operate legally within the Kingdom. While some international VoIP providers have achieved local licensing, many popular services remain restricted or operate with degraded performance.

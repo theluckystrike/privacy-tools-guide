@@ -53,6 +53,27 @@ Android privacy has evolved significantly, and 2026 brings new challenges and to
 - **This guide covers practical**: techniques for developers building privacy-conscious applications and power users who want granular control over their device's data exposure.
 - **Dangerous permissions**: those accessing sensitive data like contacts, location, camera, and microphone—require explicit user approval at runtime.
 
+## Table of Contents
+
+- [Understanding Android's Permission System](#understanding-androids-permission-system)
+- [App Sandbox and Profile Isolation](#app-sandbox-and-profile-isolation)
+- [Network Security and Traffic Monitoring](#network-security-and-traffic-monitoring)
+- [Package Visibility and Minimum SDK Requirements](#package-visibility-and-minimum-sdk-requirements)
+- [Backup and Data Export Controls](#backup-and-data-export-controls)
+- [Scoped Storage and Media Access](#scoped-storage-and-media-access)
+- [Lockdown Mode and Advanced Protection](#lockdown-mode-and-advanced-protection)
+- [Regular Privacy Audits](#regular-privacy-audits)
+- [Advanced Permission Model: Restricted Access Levels](#advanced-permission-model-restricted-access-levels)
+- [Intent-Based Data Sharing and Data Leakage](#intent-based-data-sharing-and-data-leakage)
+- [File Descriptor Leakage and Process Inspection](#file-descriptor-leakage-and-process-inspection)
+- [Memory Permissions and Code Execution Risk](#memory-permissions-and-code-execution-risk)
+- [Secure Enclave and Hardware Key Storage](#secure-enclave-and-hardware-key-storage)
+- [Network Security Configuration and Certificate Pinning](#network-security-configuration-and-certificate-pinning)
+- [Detecting Instrumentation and Debug Hooks](#detecting-instrumentation-and-debug-hooks)
+- [Data at Rest in Shared Preferences](#data-at-rest-in-shared-preferences)
+- [Process and Thread Isolation](#process-and-thread-isolation)
+- [Third-Party SDK Privacy Auditing](#third-party-sdk-privacy-auditing)
+
 ## Understanding Android's Permission System
 
 Android's permission model forms the foundation of user privacy. The system categorizes permissions into normal, signature, and dangerous levels. Dangerous permissions—those accessing sensitive data like contacts, location, camera, and microphone—require explicit user approval at runtime.

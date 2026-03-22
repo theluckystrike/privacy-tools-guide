@@ -42,6 +42,16 @@ Finding the best encrypted voice call app requires understanding the underlying 
 - **You must use the**: official applications or implement the protocol independently.
 - **The platform has matured significantly**: supporting E2EE through the Insertable Streams API.
 
+## Table of Contents
+
+- [Understanding Voice Call Encryption Requirements](#understanding-voice-call-encryption-requirements)
+- [Signal: The Gold Standard for Encrypted Voice](#signal-the-gold-standard-for-encrypted-voice)
+- [Jitsi Meet: Self-Hosted Encrypted Voice](#jitsi-meet-self-hosted-encrypted-voice)
+- [Linphone: Open-Source VoIP Stack for Custom Apps](#linphone-open-source-voip-stack-for-custom-apps)
+- [Wire: Enterprise Encrypted Voice](#wire-enterprise-encrypted-voice)
+- [Comparing Encrypted Voice Solutions](#comparing-encrypted-voice-solutions)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+
 ## Understanding Voice Call Encryption Requirements
 
 True encrypted voice calling requires specific technical components:

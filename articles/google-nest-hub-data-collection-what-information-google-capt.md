@@ -40,6 +40,21 @@ The Google Nest Hub represents one of the most data-intensive smart displays ava
 - **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What the Nest Hub Collects by Default](#what-the-nest-hub-collects-by-default)
+- [Voice Recording Handling](#voice-recording-handling)
+- [Smart Home Device Data](#smart-home-device-data)
+- [Display and Camera Considerations](#display-and-camera-considerations)
+- [Network Traffic Analysis for Privacy Auditing](#network-traffic-analysis-for-privacy-auditing)
+- [Data Retention and Google Account Linkage](#data-retention-and-google-account-linkage)
+- [Mitigation Strategies for Privacy-Conscious Users](#mitigation-strategies-for-privacy-conscious-users)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [Network Isolation Techniques for Nest Hub](#network-isolation-techniques-for-nest-hub)
+- [Threat Model: What Nest Hub Exposure Means](#threat-model-what-nest-hub-exposure-means)
+- [Open Source Alternatives](#open-source-alternatives)
+- [Understanding the Tradeoffs](#understanding-the-tradeoffs)
+
 ## What the Nest Hub Collects by Default
 
 Upon initial setup and during normal operation, the Nest Hub captures several categories of data. Voice interactions trigger audio recordings sent to Google's speech processing infrastructure. These recordings include the wake word ("Hey Google" or "OK Google"), the subsequent command, and ambient sounds the device's microphones detect.

@@ -61,6 +61,13 @@ When you store PGP keys on your computer, they remain vulnerable to various atta
 
 Hardware security keys like YubiKey 5 series support the OpenPGP standard, allowing you to store encryption, signing, and authentication subkeys on the device. The private key material never leaves the hardware, and all signing/decryption operations happen inside the secure element.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Migrating Existing Keys to Hardware](#migrating-existing-keys-to-hardware)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations and Best Practices](#security-considerations-and-best-practices)
+
 ## Prerequisites
 
 Before you begin, gather the following:

@@ -42,6 +42,21 @@ This guide walks you through finding and deleting forgotten accounts systematica
 - **Wait 6 months before**: account is fully deleted ### Services With No Obvious Deletion Page Quora, Wix, Weebly, old services: Use JustDeleteMe or: 1.
 - **Use password manager notes.**: When signing up, add a note: "Using for X, delete after 1 year if not active." Review these notes quarterly.
 
+## Table of Contents
+
+- [Step 1: Audit Your Email](#step-1-audit-your-email)
+- [Step 2: Cross-Reference with Password Manager](#step-2-cross-reference-with-password-manager)
+- [Step 3: Use Account Deletion Services](#step-3-use-account-deletion-services)
+- [Step 4: Manual Deletion Process](#step-4-manual-deletion-process)
+- [Step 5: Handle Difficult Deletions](#step-5-handle-difficult-deletions)
+- [Step 6: Track Deletions](#step-6-track-deletions)
+- [Step 7: Prevent Future Accumulation](#step-7-prevent-future-accumulation)
+- [Special Cases](#special-cases)
+- [Timeline](#timeline)
+- [Privacy Benefits](#privacy-benefits)
+- [Tools Summary](#tools-summary)
+- [Final Checklist](#final-checklist)
+
 ## Step 1: Audit Your Email
 
 Your email is the master key to finding accounts. You received a confirmation email when you signed up.

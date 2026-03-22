@@ -42,6 +42,13 @@ GDPR is broader and stricter: it applies to any organization with EU users regar
 - **Users can request their**: data in a commonly used electronic format, and you must respond within one month.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Quick Comparison](#quick-comparison)
+- [Consent Requirements](#consent-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

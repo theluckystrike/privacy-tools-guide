@@ -27,6 +27,14 @@ Building a strong privacy compliance stack requires understanding the tools that
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The platform supports over**: 100 pre-built regulatory templates and integrates with major data governance tools.
 
+## Table of Contents
+
+- [Understanding the Compliance Challenge](#understanding-the-compliance-challenge)
+- [Quick Comparison](#quick-comparison)
+- [Tool Comparison: Architecture and Integration](#tool-comparison-architecture-and-integration)
+- [Implementation Patterns for Developers](#implementation-patterns-for-developers)
+- [Selecting the Right Tools](#selecting-the-right-tools)
+
 ## Understanding the Compliance Challenge
 
 GDPR and CCPA share foundational requirements but differ in critical areas. GDPR mandates explicit consent, data minimization, and a 30-day response window for data subject access requests (DSARs). CCPA provides consumers the right to know, delete, and opt out of data sales, with a 45-day response window. Both regulations require documented processes and audit trails.

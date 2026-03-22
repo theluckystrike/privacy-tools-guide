@@ -40,6 +40,20 @@ Choose Keeper if your team needs extensive CLI automation, full REST API access 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Architecture and Security Model](#architecture-and-security-model)
+- [Command-Line Interface and Automation](#command-line-interface-and-automation)
+- [API Capabilities and Developer Integration](#api-capabilities-and-developer-integration)
+- [Directory Integration and SSO](#directory-integration-and-sso)
+- [Audit Logging and Compliance](#audit-logging-and-compliance)
+- [Developer-Focused Feature Comparison](#developer-focused-feature-comparison)
+- [Advanced Threat Modeling for Password Managers](#advanced-threat-modeling-for-password-managers)
+- [Fine-Grained Access Control Patterns](#fine-grained-access-control-patterns)
+- [Backup and Recovery Considerations](#backup-and-recovery-considerations)
+- [Performance and Scalability for Large Teams](#performance-and-scalability-for-large-teams)
+- [Which Platform Suits Your Workflow](#which-platform-suits-your-workflow)
+
 ## Architecture and Security Model
 
 Both Keeper and Dashlane offer zero-knowledge encryption, meaning the server never sees plaintext passwords. However, the implementation details differ in ways that matter for technical teams.

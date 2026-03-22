@@ -44,6 +44,16 @@ Choose 1Password if you prioritize polished user experience, strong secret key a
 It depends on your background.
 - **1Password tends to work**: well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration.
 
+## Table of Contents
+
+- [Security Architecture Comparison](#security-architecture-comparison)
+- [Encryption and Key Derivation](#encryption-and-key-derivation)
+- [Developer Tools and CLI](#developer-tools-and-cli)
+- [Secrets Management for DevOps](#secrets-management-for-devops)
+- [Audit and Monitoring](#audit-and-monitoring)
+- [Pricing for Developers](#pricing-for-developers)
+- [Decision Factors](#decision-factors)
+
 ## Security Architecture Comparison
 
 ### 1Password

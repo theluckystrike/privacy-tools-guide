@@ -40,6 +40,15 @@ Executors must systematically identify, document, and manage hundreds of online 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding the Scope of Digital Estate](#understanding-the-scope-of-digital-estate)
+- [Systematic Discovery Methods](#systematic-discovery-methods)
+- [Building the Inventory Template](#building-the-inventory-template)
+- [Automating Documentation with Custom Scripts](#automating-documentation-with-custom-scripts)
+- [Priority Actions by Account Type](#priority-actions-by-account-type)
+- [Security Considerations](#security-considerations)
+
 ## Understanding the Scope of Digital Estate
 
 Modern digital life encompasses far more than most people realize. The average user maintains over 100 online accounts across various services. For executors, this means tracking:

@@ -43,6 +43,14 @@ Tails OS is a live operating system that routes all internet traffic through Tor
 5.
 - **Create or import a**: GPG key (used for encryption) Sending encrypted email: 1.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Hardware Requirements](#hardware-requirements)
+- [Security Considerations and Limitations](#security-considerations-and-limitations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Getting Started: The Checklist](#getting-started-the-checklist)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

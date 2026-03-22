@@ -40,6 +40,14 @@ Your online presence grows with every account you create. That MySpace profile f
 - **Attackers target these accounts**: because users are unlikely to notice unauthorized access.
 - **Select "Delete your account"**: and choose a reason.
 
+## Table of Contents
+
+- [Why Deleting Old Accounts Matters](#why-deleting-old-accounts-matters)
+- [Prerequisites](#prerequisites)
+- [Advanced Deletion Verification Techniques](#advanced-deletion-verification-techniques)
+- [Tool Comparison: Account Management Systems](#tool-comparison-account-management-systems)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Deleting Old Accounts Matters
 
 Every dormant social media account represents a liability. Data breaches affect platforms regularly, and abandoned accounts often have outdated security settings. Attackers target these accounts because users are unlikely to notice unauthorized access. Beyond security, deleting unused accounts reduces the data companies hold about you, limiting exposure to future privacy violations.

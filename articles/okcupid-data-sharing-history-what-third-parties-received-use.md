@@ -44,6 +44,15 @@ OkCupid, one of the earliest major dating platforms to embrace algorithmic match
 - **Unified advertising infrastructure**: Adtech systems served users across multiple dating platforms
 3.
 
+## Table of Contents
+
+- [Historical Context of OkCupid Data Practices](#historical-context-of-okcupid-data-practices)
+- [Third Parties Receiving User Data](#third-parties-receiving-user-data)
+- [Data Sharing Mechanisms](#data-sharing-mechanisms)
+- [Match Group Corporate Data Practices](#match-group-corporate-data-practices)
+- [What Developers Should Learn from OkCupid's History](#what-developers-should-learn-from-okcupids-history)
+- [Current State and User Recommendations](#current-state-and-user-recommendations)
+
 ## Historical Context of OkCupid Data Practices
 
 OkCupid launched in 2004 and became known for its detailed personality questionnaires and algorithmic approach to matchmaking. The platform collected extensive personal information including:

@@ -30,6 +30,17 @@ Emergency access (also called legacy contact access) lets you designate trusted 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Emergency Access Matters](#why-emergency-access-matters)
+- [The Security Tradeoff](#the-security-tradeoff)
+- [Best Password Managers With Emergency Access](#best-password-managers-with-emergency-access)
+- [Comparison Table: Emergency Access Features](#comparison-table-emergency-access-features)
+- [Building Your Emergency Access Plan](#building-your-emergency-access-plan)
+- [Real-World Scenario: Using Emergency Access](#real-world-scenario-using-emergency-access)
+- [Legal Considerations](#legal-considerations)
+- [Checklist: Emergency Access Setup](#checklist-emergency-access-setup)
+
 ## Why Emergency Access Matters
 
 Without emergency access, passwords disappear with you:

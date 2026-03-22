@@ -42,6 +42,23 @@ Jitsi Meet is the best secure video calling app in 2026 for developers who want 
 - **It offers a complete**: stack that you can self-host or use via public instances.
 - **Call streams use MLS**: encryption by default.
 
+## Table of Contents
+
+- [What Secure Video Calling Actually Requires](#what-secure-video-calling-actually-requires)
+- [Jitsi Meet: The Open-Source Standard](#jitsi-meet-the-open-source-standard)
+- [Matrix Video Rooms (VoIP)](#matrix-video-rooms-voip)
+- [Signal: When Privacy Is Non-Negotiable](#signal-when-privacy-is-non-negotiable)
+- [BigBlueButton: Self-Hosted for Education and Teams](#bigbluebutton-self-hosted-for-education-and-teams)
+- [Comparison at a Glance](#comparison-at-a-glance)
+- [Implementation Recommendations](#implementation-recommendations)
+- [TURN Server Considerations for NAT Traversal](#turn-server-considerations-for-nat-traversal)
+- [Call Metadata Privacy](#call-metadata-privacy)
+- [Recording and Transcript Privacy](#recording-and-transcript-privacy)
+- [Mobile App Comparison](#mobile-app-comparison)
+- [End-to-End Encryption Algorithm Comparison](#end-to-end-encryption-algorithm-comparison)
+- [Threat Model: Who Should Use What](#threat-model-who-should-use-what)
+- [Call Quality vs Privacy Tradeoff](#call-quality-vs-privacy-tradeoff)
+
 ## What Secure Video Calling Actually Requires
 
 True secure video calling goes beyond TLS encryption. You need to understand what you're actually protecting:

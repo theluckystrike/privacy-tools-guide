@@ -26,6 +26,15 @@ Stalkerware (also called spy apps, spyware, monitoring software) runs silently o
 - **Android removal**: Boot safe mode, remove suspicious apps, run antivirus (Malwarebytes), factory reset if necessary.
 - **Safety first**: Stalkerware removal is domestic violence indicator. Contact National Domestic Violence Hotline (1-800-799-7233) before removing, have safe exit plan.
 
+## Table of Contents
+
+- [Understanding Stalkerware: What It Is and How It Works](#understanding-stalkerware-what-it-is-and-how-it-works)
+- [Detection Methods: How to Spot Stalkerware](#detection-methods-how-to-spot-stalkerware)
+- [Removal Methods: Step-by-Step](#removal-methods-step-by-step)
+- [Post-Removal: Securing Your Phone Going Forward](#post-removal-securing-your-phone-going-forward)
+- [Safety Planning Resources](#safety-planning-resources)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+
 ## Understanding Stalkerware: What It Is and How It Works
 
 Stalkerware is commercial spyware marketed as "parental monitoring" or "employee tracking" but used to spy on intimate partners. Unlike typical malware that steals money or data, stalkerware's purpose is control and harassment.

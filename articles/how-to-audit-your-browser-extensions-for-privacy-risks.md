@@ -46,6 +46,16 @@ This guide teaches you to audit your extensions yourself. You'll learn to read p
 - Most users have no idea.
 - **Cost**: $5–15/month (varies by provider).
 
+## Table of Contents
+
+- [What Permissions Actually Mean](#what-permissions-actually-mean)
+- [Step 1: Audit Your Current Extensions](#step-1-audit-your-current-extensions)
+- [Step 2: Monitor Network Traffic](#step-2-monitor-network-traffic)
+- [Step 3: Analyze the Source Code (Advanced)](#step-3-analyze-the-source-code-advanced)
+- [Privacy-Safe Alternatives to Common Risky Extensions](#privacy-safe-alternatives-to-common-risky-extensions)
+- [Ongoing Monitoring](#ongoing-monitoring)
+- [Privacy Extensions Worth Considering](#privacy-extensions-worth-considering)
+
 ## What Permissions Actually Mean
 
 Browser extension permissions are deceptive. The manifest says `tabs` and `activeTab`; in reality, one reads every site you visit, the other reads only the current site. Knowing the difference is step one.

@@ -43,6 +43,25 @@ You acquire a company that sends mail from domain.acquired.com but uses your mai
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Email Spoofing](#understanding-email-spoofing)
+- [SPF: Sender Policy Framework](#spf-sender-policy-framework)
+- [DKIM: DomainKeys Identified Mail](#dkim-domainkeys-identified-mail)
+- [DMARC: Domain-Based Message Authentication](#dmarc-domain-based-message-authentication)
+- [How These Protocols Work Together](#how-these-protocols-work-together)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Common Pitfalls](#common-pitfalls)
+- [Authentication Flow Diagrams](#authentication-flow-diagrams)
+- [Advanced Configuration: Subdomain Policy](#advanced-configuration-subdomain-policy)
+- [Forensic Reports and DMARC Debugging](#forensic-reports-and-dmarc-debugging)
+- [Real-World Failure Scenarios](#real-world-failure-scenarios)
+- [Monitoring Tools and Services](#monitoring-tools-and-services)
+- [Subdomain-Specific Configuration](#subdomain-specific-configuration)
+- [Automatic Policy Escalation Strategy](#automatic-policy-escalation-strategy)
+- [Email Forwarding and DMARC Alignment](#email-forwarding-and-dmarc-alignment)
+- [Implementation Priority](#implementation-priority)
+
 ## Understanding Email Spoofing
 
 Email protocols were designed in the early days of the internet when trust was assumed. The SMTP protocol allows any server to send email claiming to be from any sender address. This fundamental design flaw enables attackers to forge the "From" header and impersonate legitimate senders.

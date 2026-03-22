@@ -49,6 +49,14 @@ Instagram collects the content you create (photos, videos, stories, reels, and c
 - **Block Meta Pixel**: Use browser extensions to block Meta tracking across websites
 8.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Migrating Content Before Deletion](#migrating-content-before-deletion)
+- [Privacy Score Comparison Before and After](#privacy-score-comparison-before-and-after)
+- [Best Practices for Data Privacy](#best-practices-for-data-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

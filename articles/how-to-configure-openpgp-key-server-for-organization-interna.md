@@ -49,6 +49,16 @@ Synchronization uses port 11370 by default.
 - **This guide walks through**: configuring an internal OpenPGP key server tailored for organizational use.
 - **Developed by the same**: team behind the GnuPG project, SKS pioneered the mesh synchronization model that public servers use.
 
+## Table of Contents
+
+- [Why Run an Internal Key Server](#why-run-an-internal-key-server)
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Key Management Workflows](#advanced-key-management-workflows)
+- [Integration with Code Signing Requirements](#integration-with-code-signing-requirements)
+- [Monitoring and Compliance Auditing](#monitoring-and-compliance-auditing)
+
 ## Why Run an Internal Key Server
 
 Public key servers expose your key metadata to the internet. Your email address, key fingerprints, and signing history become searchable by anyone. Organizations in regulated industries or those handling sensitive data often cannot tolerate this exposure. An internal key server keeps your key infrastructure private while still providing the discovery and synchronization features that make PGP practical.

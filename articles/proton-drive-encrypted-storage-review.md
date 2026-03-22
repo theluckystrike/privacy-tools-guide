@@ -40,6 +40,26 @@ Proton Drive represents Proton's entry into the encrypted cloud storage market, 
 - **For developers and power**: users evaluating encrypted storage solutions, the technical implementation matters as much as the user experience.
 - **This is particularly important**: for power users who may store highly sensitive data.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Password-Based Key Derivation](#password-based-key-derivation)
+- [Client-Side Implementation](#client-side-implementation)
+- [CLI and Automation](#cli-and-automation)
+- [Versioning and Recovery](#versioning-and-recovery)
+- [Limitations for Power Users](#limitations-for-power-users)
+- [Security Considerations](#security-considerations)
+- [Performance in Practice](#performance-in-practice)
+- [Pricing and Value](#pricing-and-value)
+- [Comparing Proton Drive with Competitors](#comparing-proton-drive-with-competitors)
+- [Advanced Integration Scenarios](#advanced-integration-scenarios)
+- [Sharing Encrypted Content Securely](#sharing-encrypted-content-securely)
+- [Self-Hosted Alternative: Nextcloud with Proton](#self-hosted-alternative-nextcloud-with-proton)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Sync Strategy for Multiple Devices](#sync-strategy-for-multiple-devices)
+- [Compliance and Legal Considerations](#compliance-and-legal-considerations)
+- [Migration Path: From Unencrypted Cloud Storage](#migration-path-from-unencrypted-cloud-storage)
+
 ## Encryption Architecture
 
 Proton Drive employs client-side encryption using AES-256 for file encryption and RSA-4096 for key exchange. Every file uploaded to Proton Drive gets encrypted on your device before transmission, meaning the server never sees unencrypted data. This is a fundamental difference from mainstream cloud providers that encrypt data at rest but maintain the ability to access your files.

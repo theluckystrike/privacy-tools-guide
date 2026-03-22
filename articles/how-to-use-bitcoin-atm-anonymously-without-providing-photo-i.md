@@ -40,6 +40,14 @@ Find no-KYC Bitcoin ATMs using CoinATMRadar filtered for "No verification" opera
 - **Use public WiFi with**: a VPN or the Tor network.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding Bitcoin ATM KYC Requirements](#understanding-bitcoin-atm-kyc-requirements)
+- [Prerequisites](#prerequisites)
+- [Threat Model-Specific Guidance](#threat-model-specific-guidance)
+- [Regulatory Compliance Checklist](#regulatory-compliance-checklist)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding Bitcoin ATM KYC Requirements
 
 Most Bitcoin ATM operators fall under regulatory frameworks that mandate identity verification. The requirements typically fall into three categories:

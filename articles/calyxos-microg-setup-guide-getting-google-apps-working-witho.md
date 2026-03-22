@@ -29,6 +29,23 @@ This guide walks through setting up microG on CalyxOS, configuring signature spo
 - **MicroG bridges this gap**: by implementing a free and open-source replacement for Google's proprietary Play Services, allowing you to run Google-dependent apps while maintaining your privacy.
 - **Install Aurora Store and**: try a few applications you regularly use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance and Battery Considerations](#performance-and-battery-considerations)
+- [Advanced Configuration](#advanced-configuration)
+- [Getting Started](#getting-started)
+- [Debugging microG Issues with Logcat](#debugging-microg-issues-with-logcat)
+- [Optimizing microG for Performance](#optimizing-microg-for-performance)
+- [Advanced microG Configuration](#advanced-microg-configuration)
+- [Testing Specific Google APIs](#testing-specific-google-apis)
+- [Handling App Compatibility Issues](#handling-app-compatibility-issues)
+- [Comparison: microG vs Google Play Services](#comparison-microg-vs-google-play-services)
+- [Building a Privacy-Optimized Stack](#building-a-privacy-optimized-stack)
+- [Remote Testing and ADB Best Practices](#remote-testing-and-adb-best-practices)
+- [Long-term Maintenance](#long-term-maintenance)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -43,6 +43,25 @@ Understanding what happens during a Bumble video call requires examining the dat
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This article provides a**: technical breakdown for developers and power users who want to understand the privacy implications of in-app video calling.
 
+## Table of Contents
+
+- [How Bumble Video Calls Work](#how-bumble-video-calls-work)
+- [Data Transmitted During Video Calls](#data-transmitted-during-video-calls)
+- [What Bumble Stores](#what-bumble-stores)
+- [Encryption and Security](#encryption-and-security)
+- [Privacy Implications for Power Users](#privacy-implications-for-power-users)
+- [Requesting Your Data](#requesting-your-data)
+- [Comparison with Other Platforms](#comparison-with-other-platforms)
+- [Practical Recommendations](#practical-recommendations)
+- [Analyzing Bumble's WebRTC Implementation](#analyzing-bumbles-webrtc-implementation)
+- [Network-Level Privacy During Video Calls](#network-level-privacy-during-video-calls)
+- [Screen Sharing Risks During Video Calls](#screen-sharing-risks-during-video-calls)
+- [Legal and Regulatory Implications](#legal-and-regulatory-implications)
+- [Testing Your Video Call Privacy](#testing-your-video-call-privacy)
+- [Comparison: Bumble vs Dedicated Encrypted Video Apps](#comparison-bumble-vs-dedicated-encrypted-video-apps)
+- [Post-Call Privacy Cleanup](#post-call-privacy-cleanup)
+- [Recommendations for Developers Building Dating Apps](#recommendations-for-developers-building-dating-apps)
+
 ## How Bumble Video Calls Work
 
 Bumble's video calling feature uses WebRTC (Web Real-Time Communication) as its underlying technology. When you initiate a video call, the app establishes a peer-to-peer connection between devices, though some routing through Bumble's servers may occur for signaling and NAT traversal.

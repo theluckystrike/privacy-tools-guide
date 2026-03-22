@@ -41,6 +41,13 @@ Using Tor in jurisdictions where it is restricted or illegal presents unique cha
 - **Don't explain your Tor**: usage (it's not illegal to use Tor) 4.
 - **This guide provides practical**: techniques for developers and power users who need to access Tor network securely in such environments.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Bridge Acquisition Methods](#advanced-bridge-acquisition-methods)
+- [Advanced Evasion Techniques](#advanced-evasion-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -50,6 +50,13 @@ Amazon Alexa devices are designed to listen for their wake word continuously, wh
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Methods: Network-Level Blocking](#advanced-methods-network-level-blocking)
+- [Advanced Network Isolation for Alexa](#advanced-network-isolation-for-alexa)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

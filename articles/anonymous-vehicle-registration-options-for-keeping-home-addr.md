@@ -39,6 +39,16 @@ Anonymous vehicle registration uses state-specific privacy laws (California, Nev
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding these variations is**: essential for choosing the most protective jurisdiction.
 
+## Table of Contents
+
+- [Why Your DMV Records Are Public Information](#why-your-dmv-records-are-public-information)
+- [State-Specific Privacy Protections](#state-specific-privacy-protections)
+- [LLC Registration Strategies](#llc-registration-strategies)
+- [Privacy-Priority Registration Services](#privacy-priority-registration-services)
+- [Technical Implementation for Developers](#technical-implementation-for-developers)
+- [Additional Privacy Layers](#additional-privacy-layers)
+- [Practical Trade-offs](#practical-trade-offs)
+
 ## Why Your DMV Records Are Public Information
 
 Most states operate under transparency laws that make vehicle registration information publicly available. These records serve legitimate purposes: enabling background checks, helping debt collection, and supporting law enforcement investigations. However, the accessibility of this data creates significant privacy vulnerabilities.

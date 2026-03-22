@@ -25,6 +25,13 @@ Android notifications provide convenient real-time updates, but they can expose 
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: android lock screen notification controls, system settings configuration, conversation-specific privacy, with specific setup instructions
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Enterprise and MDN Solutions](#enterprise-and-mdn-solutions)
+- [Practical Privacy Recommendations](#practical-privacy-recommendations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -42,6 +42,13 @@ This guide covers practical methods for achieving concurrent VPN connections on 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

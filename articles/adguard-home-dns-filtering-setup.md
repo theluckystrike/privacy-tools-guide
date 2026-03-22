@@ -26,6 +26,27 @@ AdGuard Home is a self-hosted DNS server that blocks ads, trackers, and malware 
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Initial Configuration via Web UI](#initial-configuration-via-web-ui)
+- [Configure Encrypted Upstream DNS](#configure-encrypted-upstream-dns)
+- [Blocklists](#blocklists)
+- [Per-Client Rules](#per-client-rules)
+- [Custom Rules (Allowlist/Blocklist)](#custom-rules-allowlistblocklist)
+- [DNS Rewrites for Local Services](#dns-rewrites-for-local-services)
+- [Point Your Router to AdGuard Home](#point-your-router-to-adguard-home)
+- [Setting Up DNS-over-HTTPS for Remote Devices](#setting-up-dns-over-https-for-remote-devices)
+- [Query Log Analysis](#query-log-analysis)
+- [Statistics Export](#statistics-export)
+- [Advanced Filtering Rules and Regex](#advanced-filtering-rules-and-regex)
+- [Detecting Over-Blocking Issues](#detecting-over-blocking-issues)
+- [Multi-Device Client Rules Setup](#multi-device-client-rules-setup)
+- [Monitoring Query Patterns](#monitoring-query-patterns)
+- [Backup and Restore Strategy](#backup-and-restore-strategy)
+- [Performance Tuning](#performance-tuning)
+- [Related Reading](#related-reading)
+
 ## Installation
 
 ```bash
@@ -444,6 +465,14 @@ upstream_mode: fastest  # Use fastest upstream, not load-balanced
 - [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
 
 ---
+
+## Related Articles
+
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
+- [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
+- [Privacy-Focused DNS over QUIC Setup](/privacy-tools-guide/dns-over-quic-setup-guide/)
+- [How to Set Up a Privacy Focused Home](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

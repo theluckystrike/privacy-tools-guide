@@ -40,6 +40,14 @@ Creating anonymous social media accounts requires more than simply using a fake 
 - **Check WebRTC leaks #**: Use Firefox Extension: WebRTC Leak Prevent # 4.
 - **This guide walks through**: practical steps for developers and power users who need to maintain separate online identities without compromising their primary accounts or exposing personal information.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Account Creation Best Practices](#account-creation-best-practices)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Anonymity Techniques](#advanced-anonymity-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

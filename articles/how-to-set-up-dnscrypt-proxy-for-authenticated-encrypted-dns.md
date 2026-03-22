@@ -46,6 +46,13 @@ For authenticated resolvers, you need to specify the resolver's public key.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [What is DNSCrypt?](#what-is-dnscrypt)
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration: Authentication](#advanced-configuration-authentication)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## What is DNSCrypt?
 
 DNSCrypt is a protocol that encrypts and authenticates DNS traffic between your client and resolver. Unlike DoH which wraps DNS queries in HTTPS traffic, DNSCrypt uses its own encryption layer with Ed25519 public key authentication. This means you can verify that responses actually come from your chosen resolver and haven't been tampered with in transit.

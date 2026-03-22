@@ -40,6 +40,21 @@ Deploy Collabora Online with your Nextcloud instance to enable real-time documen
 - **Generate a strong password**: for the admin user.
 - **By default**: multiple users opening the same document each get independent sessions.
 
+## Table of Contents
+
+- [Why Collabora Office with Nextcloud](#why-collabora-office-with-nextcloud)
+- [Prerequisites](#prerequisites)
+- [Architecture Overview](#architecture-overview)
+- [Step 1: Deploy Collabora Online via Docker](#step-1-deploy-collabora-online-via-docker)
+- [Step 2: Configure nginx Reverse Proxy](#step-2-configure-nginx-reverse-proxy)
+- [Step 3: Install and Configure the Nextcloud App](#step-3-install-and-configure-the-nextcloud-app)
+- [Step 4: Security Hardening](#step-4-security-hardening)
+- [Step 5: Verify the Integration](#step-5-verify-the-integration)
+- [Multi-User and Team Configuration](#multi-user-and-team-configuration)
+- [Backup and Update Strategy](#backup-and-update-strategy)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Performance Optimization](#performance-optimization)
+
 ## Why Collabora Office with Nextcloud
 
 Collabora Online provides a self-hosted alternative to Google Docs or Microsoft 365. When integrated with Nextcloud, you gain full control over your documents without sending data to third-party services. The integration supports real-time collaboration, version history, and the full LibreOffice feature set.

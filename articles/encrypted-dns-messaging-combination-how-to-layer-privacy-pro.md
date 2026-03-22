@@ -39,6 +39,15 @@ Combine encrypted DNS with secure messaging (Signal, Matrix) to create defense-i
 - **Trusting "free" VPN services****: If a VPN service is free, your data is the product.
 - **Combine encrypted DNS with**: a reputable paid VPN or use Tor for sensitive activities.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Combining Both Layers](#combining-both-layers)
+- [Advanced: DNS over Tor](#advanced-dns-over-tor)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

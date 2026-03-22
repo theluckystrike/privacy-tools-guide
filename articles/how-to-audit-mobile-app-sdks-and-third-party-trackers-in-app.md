@@ -44,6 +44,13 @@ Configure your device or emulator to use the proxy.
 - **Once traffic flows through the proxy**: use the app and examine requests.
 - **Start with static analysis**: to identify obvious trackers, then use network monitoring to confirm data transmission.
 
+## Table of Contents
+
+- [Why SDK Auditing Matters](#why-sdk-auditing-matters)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Why SDK Auditing Matters
 
 Third-party SDKs can transmit sensitive user data to remote servers without clear disclosure. Common data points include device identifiers, location information, installation details, browsing behavior, and contact lists. Some SDKs share data with advertising networks, data brokers, or analytics platforms. By auditing the SDKs embedded in an app, you can identify privacy risks, ensure compliance with regulations like GDPR and CCPA, and make informed decisions about which apps to use or distribute.

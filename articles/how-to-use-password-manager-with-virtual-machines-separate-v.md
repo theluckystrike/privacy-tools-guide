@@ -40,6 +40,13 @@ Using a password manager alongside virtual machines requires careful architectur
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Separate Vaults for Virtual Machines?](#why-separate-vaults-for-virtual-machines)
+- [Prerequisites](#prerequisites)
+- [Security Best Practices](#security-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Separate Vaults for Virtual Machines?
 
 Virtual machines create distinct attack surfaces. A development VM running untrusted code, a testing environment with vulnerable applications, or a browsing VM used for risky sites each present different threat profiles. If all your passwords live in a single vault accessed from every VM, a compromise in one environment exposes credentials for everything.

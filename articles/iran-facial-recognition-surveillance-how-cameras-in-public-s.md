@@ -40,6 +40,19 @@ Iran deploys integrated facial recognition surveillance at airports, highways, a
 - **Studies show that printed**: glasses with specific patterns reduce recognition accuracy by 40-90%.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Technical Architecture of Public Surveillance Systems](#technical-architecture-of-public-surveillance-systems)
+- [Iranian Deployment Context](#iranian-deployment-context)
+- [Code Analysis: Facial Recognition System Components](#code-analysis-facial-recognition-system-components)
+- [Privacy Protection Strategies](#privacy-protection-strategies)
+- [Broader Implications](#broader-implications)
+- [Practical Tools for Users Under Surveillance](#practical-tools-for-users-under-surveillance)
+- [Network-Level Defenses](#network-level-defenses)
+- [Organizational and Legal Responses](#organizational-and-legal-responses)
+- [Understanding Threat Models](#understanding-threat-models)
+- [Monitoring and Alerting Systems](#monitoring-and-alerting-systems)
+
 ## Technical Architecture of Public Surveillance Systems
 
 Modern facial recognition surveillance networks consist of several integrated components working in concert. The typical deployment includes high-resolution cameras positioned at strategic locations—traffic intersections, metro stations, commercial centers, and government buildings. These cameras capture continuous video feeds that feed into centralized processing systems.

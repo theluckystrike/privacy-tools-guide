@@ -42,6 +42,19 @@ Testing VPN connectivity in regions with network restrictions requires a systema
 - **When it failed initially**: retrying after 30 seconds succeeded.
 - **TCP port 443 is**: particularly useful because it mimics standard HTTPS traffic.
 
+## Table of Contents
+
+- [Understanding the Current State](#understanding-the-current-state)
+- [Testing Methodology](#testing-methodology)
+- [Protocol Testing Results](#protocol-testing-results)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Technical Troubleshooting](#technical-troubleshooting)
+- [Connection Script for Automation](#connection-script-for-automation)
+- [Performance Considerations](#performance-considerations)
+- [Understanding Turkey's DPI Infrastructure](#understanding-turkeys-dpi-infrastructure)
+- [Fallback Options When ExpressVPN Fails](#fallback-options-when-expressvpn-fails)
+- [Recommendations for Developers](#recommendations-for-developers)
+
 ## Understanding the Current State
 
 Turkey has maintained its VPN blocking infrastructure since the early 2020s. The government employs deep packet inspection (DPI) to identify and throttle VPN protocols. However, ExpressVPN has continued to adapt its infrastructure with obfuscated servers and protocol modifications designed to bypass these restrictions.

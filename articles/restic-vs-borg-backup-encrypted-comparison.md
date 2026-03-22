@@ -41,6 +41,19 @@ When selecting a backup solution for sensitive data, encryption becomes the deci
 - **Restic and Borg are both open-source**: deduplicating backup programs, but their encryption approaches differ significantly.
 - **Supported backends include local filesystem**: SFTP, REST server, Amazon S3, Backblaze B2, Microsoft Azure Blob Storage, and Google Cloud Storage.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Deduplication and Storage Efficiency](#deduplication-and-storage-efficiency)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Repository Management](#repository-management)
+- [Remote and Cloud Backends](#remote-and-cloud-backends)
+- [Automation and Scheduling](#automation-and-scheduling)
+- [Key Management: The Most Overlooked Risk](#key-management-the-most-overlooked-risk)
+- [Compression Options](#compression-options)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Security Considerations](#security-considerations)
+
 ## Encryption Architecture
 
 ### Restic's Encryption

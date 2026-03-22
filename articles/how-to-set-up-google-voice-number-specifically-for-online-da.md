@@ -43,6 +43,20 @@ This guide walks through setting up Google Voice specifically for online dating 
 - **This proves useful if**: you ever need documentation of conversations for safety reasons.
 - **This prevents someone from transferring your forwarding number to another carrier**: a technique used in SIM swapping attacks.
 
+## Table of Contents
+
+- [Why Use Google Voice for Dating Apps](#why-use-google-voice-for-dating-apps)
+- [Setting Up Your Google Voice Number](#setting-up-your-google-voice-number)
+- [Best Practices for Dating Communication](#best-practices-for-dating-communication)
+- [Advanced Privacy Configuration](#advanced-privacy-configuration)
+- [Alternative Phone Number Services](#alternative-phone-number-services)
+- [Advanced: Programmers Building Dating Apps](#advanced-programmers-building-dating-apps)
+- [Google Voice Advanced Features](#google-voice-advanced-features)
+- [Security Concerns with Google Voice](#security-concerns-with-google-voice)
+- [Integration with Dating App Best Practices](#integration-with-dating-app-best-practices)
+- [When to Share Your Real Number](#when-to-share-your-real-number)
+- [When to Discontinue Use](#when-to-discontinue-use)
+
 ## Why Use Google Voice for Dating Apps
 
 Google Voice provides a free second phone number that routes calls and texts through Google's infrastructure. Your actual phone number remains hidden, and you control what happens when someone dials your Google Voice number. The service works on both iOS and Android through the Google Voice app, or you can access it through any web browser.

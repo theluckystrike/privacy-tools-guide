@@ -42,6 +42,22 @@ As digital privacy becomes increasingly important, elderly users need tools that
 - **Create account together (use**: a memorable, simple password) 3.
 - **Show how to use**: the password generator ### Phase 4: Browsing Protection (Week 4) 1.
 
+## Table of Contents
+
+- [Why Simplified Interfaces Matter for Senior Users](#why-simplified-interfaces-matter-for-senior-users)
+- [Password Managers with Senior-Friendly Modes](#password-managers-with-senior-friendly-modes)
+- [VPN Services with Simple Setup](#vpn-services-with-simple-setup)
+- [Browser Extensions for Privacy Protection](#browser-extensions-for-privacy-protection)
+- [Communication Apps with Privacy Focus](#communication-apps-with-privacy-focus)
+- [Encrypted Backup Solutions](#encrypted-backup-solutions)
+- [Comparison Summary](#comparison-summary)
+- [Setting Up Privacy Tools: A Family Guide](#setting-up-privacy-tools-a-family-guide)
+- [Recommendations for Elderly Users](#recommendations-for-elderly-users)
+- [Remote Support for Elderly Users](#remote-support-for-elderly-users)
+- [Warning Signs That Help is Needed](#warning-signs-that-help-is-needed)
+- [Security vs. Simplicity Trade-offs](#security-vs-simplicity-trade-offs)
+- [Getting Help](#getting-help)
+
 ## Why Simplified Interfaces Matter for Senior Users
 
 Many privacy tools assume users are comfortable navigating complex settings menus, configuring advanced options, and understanding technical terminology. For elderly users—particularly those who may be less familiar with technology—these assumptions create barriers that can lead to either abandoning privacy tools entirely or accidentally misconfiguring security settings.

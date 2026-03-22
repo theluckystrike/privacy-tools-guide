@@ -40,6 +40,13 @@ To install Arkenfox user.js, download the latest `user.js` file from the Arkenfo
 - **Use Firefox Focus or**: the standard Firefox Android with uBlock Origin and strict Enhanced Tracking Protection as the best alternative.
 - **To install Arkenfox user.js**: download the latest `user.js` file from the Arkenfox GitHub repository and place it in your Firefox profile directory (find your profile path at `about:support`).
 
+## Table of Contents
+
+- [What is Arkenfox user.js?](#what-is-arkenfox-userjs)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
+
 ## What is Arkenfox user.js?
 
 Arkenfox is a community-maintained project that provides a heavily optimized `user.js` file — a configuration file that overrides Firefox's default settings. Unlike standard browser preferences, user.js entries persist across updates and can enforce settings that are otherwise hidden or reset by Mozilla.

@@ -40,6 +40,13 @@ Credential stuffing remains one of the most effective attack vectors used by mal
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **The success rate typically**: ranges from 0.1% to 2% per site, but when scaled across numerous targets, even a small success rate yields significant results.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Building a Defense-in-Depth Strategy](#building-a-defense-in-depth-strategy)
+- [Advanced Threat Modeling for Credential Stuffing](#advanced-threat-modeling-for-credential-stuffing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

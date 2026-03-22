@@ -40,6 +40,13 @@ Storing sensitive estate planning documents, password vaults, and financial inst
 - **Use LUKS (Linux) or**: FileVault (macOS) encryption with a strong passphrase separate from your everyday passwords.
 - **Consider a time-locked approach**: where keys become accessible after a specified period of inactivity, or use a safe deposit box that your executor can access with proper documentation after your death.
 
+## Table of Contents
+
+- [Why Encrypt Estate Documents in GitHub?](#why-encrypt-estate-documents-in-github)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Encrypt Estate Documents in GitHub?
 
 Estate planning documents contain some of the most sensitive information a person can store digitally: master passwords to password managers, bank account credentials, locations of safety deposit keys, social security numbers, medical directives, and funeral preferences. Storing unencrypted versions of these documents in any cloud service creates a single point of failure that hackers, data breaches, or government subpoenas can exploit. Encryption before commit transforms your GitHub repository from a liability into a secure, version-controlled vault that your executor or family members can access using keys you've separately provided.

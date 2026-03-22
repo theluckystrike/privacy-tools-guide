@@ -39,6 +39,17 @@ HTTP/2 connection pooling creates a fingerprinting vector that websites exploit 
 - **This works because**: 1.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Browser Connection Pooling Works](#how-browser-connection-pooling-works)
+- [The Fingerprinting Mechanism](#the-fingerprinting-mechanism)
+- [Real-World Fingerprinting Techniques](#real-world-fingerprinting-techniques)
+- [Privacy Implications](#privacy-implications)
+- [HTTP/3 and QUIC: Does It Change the Threat?](#http3-and-quic-does-it-change-the-threat)
+- [Cross-Origin Fingerprinting via Shared Resources](#cross-origin-fingerprinting-via-shared-resources)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Testing Your Application's Fingerprint Surface](#testing-your-applications-fingerprint-surface)
+
 ## How Browser Connection Pooling Works
 
 When your browser visits a website, it doesn't establish a fresh TCP connection for every request. Instead, it maintains a **connection pool**—a small cache of persistent connections reused across multiple requests to the same origin.

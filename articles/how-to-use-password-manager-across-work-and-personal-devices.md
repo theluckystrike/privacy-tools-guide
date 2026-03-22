@@ -44,6 +44,13 @@ Built by theluckystrike — More at zovo.one
 - **- Use unique**: randomly generated passwords for every service.
 - **Use a separate business**: account 3.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations for Cross-Device Usage](#security-considerations-for-cross-device-usage)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Sync Architecture and Cryptography](#advanced-sync-architecture-and-cryptography)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

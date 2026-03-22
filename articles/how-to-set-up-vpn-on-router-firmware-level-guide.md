@@ -40,6 +40,15 @@ Running a VPN at the router level provides network-wide protection without insta
 - **Consider router hardware upgrades**: or switch to WireGuard for better performance on limited hardware.
 - **Use privacy-focused DNS providers**: like 1.1.1.1 or 9.9.9.9.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Configurations for Power Users](#advanced-configurations-for-power-users)
+- [Performance Considerations](#performance-considerations)
+- [Advanced Routing Scenarios](#advanced-routing-scenarios)
+- [Troubleshooting Advanced Issues](#troubleshooting-advanced-issues)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

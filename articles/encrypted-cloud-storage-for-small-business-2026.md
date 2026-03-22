@@ -44,6 +44,27 @@ Provider-Based Encryption: Third-party zero-knowledge services range from $5-$30
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **This guide covers the**: technical aspects of encrypted cloud storage, implementation strategies, and practical considerations for developers and power users evaluating solutions in 2026.
 
+## Table of Contents
+
+- [Understanding Encryption Models](#understanding-encryption-models)
+- [Key Technical Considerations](#key-technical-considerations)
+- [Practical Implementation Examples](#practical-implementation-examples)
+- [Deployment Strategies for Small Business](#deployment-strategies-for-small-business)
+- [Evaluating Providers](#evaluating-providers)
+- [Costs and Pricing Models](#costs-and-pricing-models)
+- [Scalability and Growth Planning](#scalability-and-growth-planning)
+- [Incident Response and Disaster Recovery](#incident-response-and-disaster-recovery)
+- [Team Adoption and Training](#team-adoption-and-training)
+- [Regulatory Compliance Integration](#regulatory-compliance-integration)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+- [Decision Framework for Your Business](#decision-framework-for-your-business)
+- [Real-World Implementation Case Studies](#real-world-implementation-case-studies)
+- [Encryption Performance Impact on User Experience](#encryption-performance-impact-on-user-experience)
+- [Testing Your Encryption Implementation](#testing-your-encryption-implementation)
+- [Supply Chain Considerations](#supply-chain-considerations)
+- [Gradual Rollout Strategy](#gradual-rollout-strategy)
+- [Vendor Lock-In and Exit Strategy](#vendor-lock-in-and-exit-strategy)
+
 ## Understanding Encryption Models
 
 Not all cloud storage offers the same level of protection. The critical distinction lies in who controls the encryption keys.

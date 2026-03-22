@@ -40,6 +40,19 @@ Installing a VPN creates a false sense of security if you don't verify it's actu
 - **WebRTC Leaks**: Real-time communication protocols used by browsers can leak your local and real IP addresses even through a VPN connection.
 - **A VPN providing false**: security is worse than no VPN, as it creates unwarranted confidence in protection that isn't actually occurring.
 
+## Table of Contents
+
+- [What VPN Leaks Actually Mean](#what-vpn-leaks-actually-mean)
+- [Step 1: Verify Your Public IP Has Changed](#step-1-verify-your-public-ip-has-changed)
+- [Step 2: Test for DNS Leaks](#step-2-test-for-dns-leaks)
+- [Step 3: Test for WebRTC Leaks](#step-3-test-for-webrtc-leaks)
+- [Step 4: Check Encryption Status](#step-4-check-encryption-status)
+- [VPN Verification Checklist](#vpn-verification-checklist)
+- [VPN Configuration Best Practices](#vpn-configuration-best-practices)
+- [Comparison Table: VPN Testing Methods](#comparison-table-vpn-testing-methods)
+- [Footer](#footer)
+- [Related Reading](#related-reading)
+
 ## What VPN Leaks Actually Mean
 
 A VPN leak occurs when traffic destined for encrypted tunneling bypasses the tunnel and travels on your regular network connection. Three main leak types affect different layers:

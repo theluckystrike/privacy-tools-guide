@@ -44,6 +44,15 @@ The MCDPA gives you real power over your personal information.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding Your Rights Under MCDPA](#understanding-your-rights-under-mcdpa)
+- [How to Request Data Deletion](#how-to-request-data-deletion)
+- [How to Opt Out of Data Sales](#how-to-opt-out-of-data-sales)
+- [Handling Request Denials](#handling-request-denials)
+- [Tracking Your Requests](#tracking-your-requests)
+- [Best Practices for Montana Residents](#best-practices-for-montana-residents)
+
 ## Understanding Your Rights Under MCDPA
 
 The MCDPA grants Montana residents several fundamental privacy rights:

@@ -39,6 +39,18 @@ permalink: /privacy-risks-of-ai-chatbots-data-collection-2026/---
 - **Don't include personal identifiers**: Instead of "My employee Alice makes $120k", say "A team member makes $120k"
 2.
 
+## Table of Contents
+
+- [The Chatbot Privacy Trap](#the-chatbot-privacy-trap)
+- [ChatGPT (OpenAI)](#chatgpt-openai)
+- [Claude (Anthropic)](#claude-anthropic)
+- [Gemini (Google)](#gemini-google)
+- [Comparison Table](#comparison-table)
+- [Self-Hosted Alternatives](#self-hosted-alternatives)
+- [Practical Privacy Recommendations](#practical-privacy-recommendations)
+- [Data Minimization Practices](#data-minimization-practices)
+- [Legal Context](#legal-context)
+
 ## The Chatbot Privacy Trap
 
 ChatGPT, Claude, and Gemini are convenient. Type a question, get an answer instantly. Behind the scenes, your conversation is transmitted to distant servers, processed by AI models, and stored indefinitely.

@@ -26,6 +26,16 @@ Teams handling sensitive data—financial records, health information, legal doc
 - **Configure encryption (optional but**: recommended) sudo -u www-data php occ encryption:enable sudo -u www-data php occ encryption:select-encryption-module # 3.
 - **Set up user accounts**: from LDAP sudo -u www-data php occ ldap:create-empty-config sudo -u www-data php occ ldap:set-config s01 ldapHost ldap.company.com # 4.
 
+## Table of Contents
+
+- [Why Consumer Tools Fail for Sensitive Data](#why-consumer-tools-fail-for-sensitive-data)
+- [Enterprise Secure File Sharing Platforms](#enterprise-secure-file-sharing-platforms)
+- [Comparison Table: Secure File Sharing Platforms](#comparison-table-secure-file-sharing-platforms)
+- [Compliance Recommendations by Industry](#compliance-recommendations-by-industry)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Footer](#footer)
+- [Related Reading](#related-reading)
+
 ## Why Consumer Tools Fail for Sensitive Data
 
 Dropbox, Google Drive, and OneDrive use encryption in transit (TLS) and at rest on their servers, but the provider holds encryption keys. This means:

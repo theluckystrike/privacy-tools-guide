@@ -47,6 +47,16 @@ This guide covers how masked cards work, practical integration methods for devel
 - **Start with low-value cards**: Test the integration before relying on it
 4.
 
+## Table of Contents
+
+- [What Are Masked Credit Cards?](#what-are-masked-credit-cards)
+- [Why Masked Cards Matter for Privacy](#why-masked-cards-matter-for-privacy)
+- [Prerequisites](#prerequisites)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Configuration: DevOps Perspective](#advanced-configuration-devops-perspective)
+- [Privacy Trade-offs Summary](#privacy-trade-offs-summary)
+
 ## What Are Masked Credit Cards?
 
 A masked credit card generates a unique 16-digit number tied to your real account but usable only for specific merchants or time periods. When you make a purchase, the merchant sees the virtual number instead of your actual card details. Charges still appear on your real statement, but the merchant cannot retain your card number for future charges, subscription renewals, or data breaches.

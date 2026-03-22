@@ -39,6 +39,13 @@ This guide covers practical techniques to extend CalyxOS battery life while keep
 - **The privacy features in**: CalyxOS that affect battery consumption include: - MicroG - A free software reimplementation of Google Play Services.
 - **- Privacy-focused DNS -**: Using DNS-over-HTTPS or DNS-over-TLS increases cryptographic operations for every DNS query.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Privacy Battery Optimization](#advanced-privacy-battery-optimization)
+- [Performance Tuning Script](#performance-tuning-script)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

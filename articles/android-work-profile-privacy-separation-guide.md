@@ -42,6 +42,19 @@ Android Work Profiles provide a powerful mechanism for separating work and perso
 - **Audit installed work apps**: regularly and remove unused applications to maintain battery performance.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What Is a Work Profile?](#what-is-a-work-profile)
+- [Prerequisites](#prerequisites)
+- [Enterprise Considerations](#enterprise-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Limitations](#security-limitations)
+- [Advanced Work Profile Configurations](#advanced-work-profile-configurations)
+- [Threat Models and Work Profile Suitability](#threat-models-and-work-profile-suitability)
+- [Work Profile with File-Based Encryption](#work-profile-with-file-based-encryption)
+- [Monitoring Work Profile Activity](#monitoring-work-profile-activity)
+- [Work Profile vs. Separate Device Comparison](#work-profile-vs-separate-device-comparison)
+
 ## What Is a Work Profile?
 
 A Work Profile is a managed container that creates a distinct security boundary within Android. When you enable a Work Profile, Android creates a second user environment that shares the same physical device but maintains complete data isolation from your personal space.

@@ -51,6 +51,19 @@ Accessing Google services from China requires VPN solutions that evade Deep Pack
 - **DNS leak testing**: Ensure DNS queries route through your VPN tunnel, not your ISP's servers (use tools like dnsleaktest.com)
 3.
 
+## Table of Contents
+
+- [Understanding China's VPN Detection Mechanisms](#understanding-chinas-vpn-detection-mechanisms)
+- [Protocol Selection for Maximum Stealth](#protocol-selection-for-maximum-stealth)
+- [Server Configuration Strategies](#server-configuration-strategies)
+- [Client Configuration for Power Users](#client-configuration-for-power-users)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Advanced Traffic Obfuscation Techniques](#advanced-traffic-obfuscation-techniques)
+- [Device-Specific VPN Configuration](#device-specific-vpn-configuration)
+- [Monitoring for Unintended Leaks](#monitoring-for-unintended-leaks)
+- [Recovery from Detected Connection](#recovery-from-detected-connection)
+- [Additional Considerations](#additional-considerations)
+
 ## Understanding China's VPN Detection Mechanisms
 
 China's network filtering system employs multiple detection layers beyond simple IP blocking. Understanding these mechanisms helps you choose the right VPN configuration.

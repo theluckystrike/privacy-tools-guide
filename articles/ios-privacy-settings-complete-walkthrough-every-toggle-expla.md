@@ -41,6 +41,20 @@ Understanding iOS privacy settings is essential for developers building privacy-
 - **Options include "From Trackers**: Only" (recommended) or "From Trackers and Websites" (more private but may affect some web functionality).
 - **Use app-specific passwords rather**: than copy-pasting your primary password 2.
 
+## Table of Contents
+
+- [Location Services: Granular Control Architecture](#location-services-granular-control-architecture)
+- [App Tracking Transparency: Controlling Cross-App Data](#app-tracking-transparency-controlling-cross-app-data)
+- [Safari Privacy Features](#safari-privacy-features)
+- [Privacy Auditing with App Privacy Report](#privacy-auditing-with-app-privacy-report)
+- [Advanced: Developer Privacy Settings](#advanced-developer-privacy-settings)
+- [Notification Privacy and Message Preview](#notification-privacy-and-message-preview)
+- [Microphone and Camera Management](#microphone-and-camera-management)
+- [Health and Fitness Data Privacy](#health-and-fitness-data-privacy)
+- [DNS and Network Settings Privacy](#dns-and-network-settings-privacy)
+- [Lockdown Mode for Sensitive Deployments](#lockdown-mode-for-sensitive-deployments)
+- [Configuration Recommendations](#configuration-recommendations)
+
 ## Location Services: Granular Control Architecture
 
 Location Services represents one of the most complex permission systems in iOS. The settings panel provides multiple access levels that developers must handle correctly in their applications.

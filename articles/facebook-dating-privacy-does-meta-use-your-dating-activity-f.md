@@ -43,6 +43,20 @@ Facebook Dating represents Meta's attempt to compete in the crowded online datin
 - **Use separate identity**: Create an Instagram account specifically for Dating to minimize cross-contamination
 3.
 
+## Table of Contents
+
+- [How Facebook Dating Works](#how-facebook-dating-works)
+- [Data Collection Scope](#data-collection-scope)
+- [Does Dating Activity Influence Ad Targeting?](#does-dating-activity-influence-ad-targeting)
+- [Privacy Controls for Power Users](#privacy-controls-for-power-users)
+- [Technical Privacy Considerations](#technical-privacy-considerations)
+- [What Has Changed in 2026](#what-has-changed-in-2026)
+- [Recommendations for Privacy-Conscious Users](#recommendations-for-privacy-conscious-users)
+- [Advanced Privacy Auditing for Dating Features](#advanced-privacy-auditing-for-dating-features)
+- [Privacy by Regulation](#privacy-by-regulation)
+- [Comparison: Facebook Dating vs Dedicated Apps](#comparison-facebook-dating-vs-dedicated-apps)
+- [Data Portability and Deletion](#data-portability-and-deletion)
+
 ## How Facebook Dating Works
 
 Facebook Dating integrates directly into the main Facebook app, requiring a separate profile distinct from your social media presence. When you enable the feature, Facebook asks for additional permissions and collects different data points than standard app usage.

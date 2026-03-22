@@ -46,6 +46,20 @@ For developers, understanding these attack vectors matters because the same prin
 - **High user counts and positive ratings provide no assurance of safety**: malicious developers generate fake reviews and install counts through botnets.
 - **The core principle**: never trust an extension's store listing or user reviews.
 
+## Table of Contents
+
+- [Why Chrome Web Store Vetting Fails](#why-chrome-web-store-vetting-fails)
+- [Understanding Chrome Extension Permissions](#understanding-chrome-extension-permissions)
+- [Step 1: Audit Installed Extensions](#step-1-audit-installed-extensions)
+- [Step 2: Monitor Network Requests from Extensions](#step-2-monitor-network-requests-from-extensions)
+- [Step 3: Read the Source Code](#step-3-read-the-source-code)
+- [Step 4: Evaluate the Extension's Provenance](#step-4-evaluate-the-extensions-provenance)
+- [Step 5: Use CRXcavator or Similar Tools](#step-5-use-crxcavator-or-similar-tools)
+- [Extension Risk Assessment Methodology](#extension-risk-assessment-methodology)
+- [Minimum Viable Extension List](#minimum-viable-extension-list)
+- [Removing Malicious Extensions](#removing-malicious-extensions)
+- [Related Reading](#related-reading)
+
 ## Why Chrome Web Store Vetting Fails
 
 The Chrome Web Store claims to vet all extensions before publication, but this vetting has proven repeatedly inadequate. The store's review process is largely automated—checking manifest syntax, basic code structure, and comparing against known malware signatures. Complex malicious behavior passes detection because reviewers can't meaningfully audit thousands of extensions daily.

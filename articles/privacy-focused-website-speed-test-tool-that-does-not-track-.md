@@ -27,6 +27,21 @@ Most mainstream website speed test tools collect and store the URLs you test, of
 - **For developers and power**: users working with sensitive projects, client websites, or confidential web applications, this data collection poses real privacy risks.
 - **This guide covers privacy-focused**: alternatives that measure website performance without tracking or logging tested URLs.
 
+## Table of Contents
+
+- [Why URL Tracking Matters in Speed Testing](#why-url-tracking-matters-in-speed-testing)
+- [Self-Hosted Speed Testing with WebPageTest](#self-hosted-speed-testing-with-webpagetest)
+- [Command-Line Speed Testing Tools](#command-line-speed-testing-tools)
+- [Building a Custom Speed Test Dashboard](#building-a-custom-speed-test-dashboard)
+- [Comparing Public Speed Test Privacy Policies](#comparing-public-speed-test-privacy-policies)
+- [Integrating Speed Testing Into CI/CD Pipelines](#integrating-speed-testing-into-cicd-pipelines)
+- [Privacy Verification Tips](#privacy-verification-tips)
+- [Conclusion](#conclusion)
+- [Advanced Metrics: Beyond Basic Speed](#advanced-metrics-beyond-basic-speed)
+- [Threat Model: What URL Testing Leaks](#threat-model-what-url-testing-leaks)
+- [Building a Monitoring Dashboard](#building-a-monitoring-dashboard)
+- [Continuous Integration: CI/CD Speed Testing](#continuous-integration-cicd-speed-testing)
+
 ## Why URL Tracking Matters in Speed Testing
 
 When you run a speed test on a client website or internal application through a public service, that URL enters someone else's database. Popular speed testing platforms may retain these records indefinitely, creating several concerns:

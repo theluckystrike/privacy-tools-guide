@@ -38,6 +38,14 @@ This guide covers a privacy-focused Home Assistant setup designed with accessibi
 - **The Home Assistant Operating**: System running on dedicated hardware provides the best foundation.
 - **Home Assistant will prompt you to choose between local and cloud options**: always choose local when available.
 
+## Table of Contents
+
+- [Why Privacy and Accessibility Matter Together](#why-privacy-and-accessibility-matter-together)
+- [Prerequisites](#prerequisites)
+- [Conclusion](#conclusion)
+- [Advanced: Custom Integration Development](#advanced-custom-integration-development)
+- [Hardware Requirements for Privacy](#hardware-requirements-for-privacy)
+
 ## Why Privacy and Accessibility Matter Together
 
 Traditional smart home solutions often route data through cloud services, creating privacy concerns and introducing dependencies that can break accessibility features when internet connectivity fails. For users with mobility limitations, this represents a double problem: their sensitive habits get transmitted to third parties, and they lose control over their environment when services go down.

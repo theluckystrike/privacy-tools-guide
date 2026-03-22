@@ -26,6 +26,18 @@ When you visit a website or use an application, you likely see consent banners a
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is Legitimate Interest Under GDPR?](#what-is-legitimate-interest-under-gdpr)
+- [What Companies Can Legally Do Without Your Consent](#what-companies-can-legally-do-without-your-consent)
+- [What Companies Cannot Do With Legitimate Interest](#what-companies-cannot-do-with-legitimate-interest)
+- [Your Rights Under Legitimate Interest](#your-rights-under-legitimate-interest)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [How to Check if Legitimate Interest Applies to You](#how-to-check-if-legitimate-interest-applies-to-you)
+- [Challenging Legitimate Interest Claims](#challenging-legitimate-interest-claims)
+- [Filing DPA Complaints About Illegitimate Interest](#filing-dpa-complaints-about-illegitimate-interest)
+- [Recent DPA Decisions on Legitimate Interest](#recent-dpa-decisions-on-legitimate-interest)
+
 ## What Is Legitimate Interest Under GDPR?
 
 Legitimate interest is one of six lawful bases for processing personal data under GDPR Article 6(1)(f). It allows companies to process your data when they have a "legitimate interest" that is not overridden by your rights and freedoms.

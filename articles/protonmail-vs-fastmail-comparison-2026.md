@@ -40,6 +40,19 @@ Choose ProtonMail if zero-knowledge encryption is non-negotiable and you need a 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **This is a trade-off**: less privacy from the provider, but better usability.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [What Zero-Knowledge Encryption Actually Means in Practice](#what-zero-knowledge-encryption-actually-means-in-practice)
+- [Email Protocol Access](#email-protocol-access)
+- [JMAP vs IMAP: Why It Matters for Developers](#jmap-vs-imap-why-it-matters-for-developers)
+- [Security Headers and Deliverability](#security-headers-and-deliverability)
+- [Developer Experience](#developer-experience)
+- [Pricing Comparison (2026)](#pricing-comparison-2026)
+- [Jurisdiction and Legal Exposure](#jurisdiction-and-legal-exposure)
+- [What Each Service Does Better](#what-each-service-does-better)
+- [Migration Considerations](#migration-considerations)
+
 ## Encryption Architecture
 
 ### ProtonMail

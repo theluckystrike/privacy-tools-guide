@@ -29,6 +29,14 @@ This guide builds a Python-based DMS with configurable check-in periods, escalat
 - **This guide covers design principles**: architecture, core dms script, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Design Principles](#design-principles)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Design Principles
 
 A good DMS has:

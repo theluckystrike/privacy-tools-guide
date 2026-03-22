@@ -52,6 +52,22 @@ Firefox is the best browser for developers who prioritize privacy in 2026, offer
 - **Tor is useful for**: testing your application's behavior on restricted networks and verifying that your site works for users with maximum privacy requirements.
 - **Brave is the top**: alternative if you prefer Chromium-based DevTools with aggressive ad and tracker blocking out of the box.
 
+## Table of Contents
+
+- [What Developers Need From a Privacy Browser](#what-developers-need-from-a-privacy-browser)
+- [Browser Options for Privacy-Conscious Developers](#browser-options-for-privacy-conscious-developers)
+- [Extension Strategy for Developer Privacy](#extension-strategy-for-developer-privacy)
+- [Configuration for Development Workflows](#configuration-for-development-workflows)
+- [Making Your Choice](#making-your-choice)
+- [Advanced Fingerprinting Defenses](#advanced-fingerprinting-defenses)
+- [Development Workflow: Browser Profiles for Different Tasks](#development-workflow-browser-profiles-for-different-tasks)
+- [Detecting and Blocking Tracking Attempts](#detecting-and-blocking-tracking-attempts)
+- [Building Privacy-Conscious Web Applications](#building-privacy-conscious-web-applications)
+- [Privacy Extension Recommendations](#privacy-extension-recommendations)
+- [Testing Your Browser's Privacy Configuration](#testing-your-browsers-privacy-configuration)
+- [Performance vs. Privacy Trade-Offs](#performance-vs-privacy-trade-offs)
+- [Conclusion: Privacy-First Development](#conclusion-privacy-first-development)
+
 ## What Developers Need From a Privacy Browser
 
 Developers have unique requirements that differ from typical users. You need full developer tools, the ability to test web applications across different environments, and access to experimental web features. At the same time, your browsing habits may expose sensitive information—API keys in logs, authentication tokens, and proprietary code snippets.

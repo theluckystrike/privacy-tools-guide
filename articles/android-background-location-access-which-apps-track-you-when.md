@@ -27,6 +27,22 @@ Many Android apps track your location in the background even when closed, includ
 - **This distinction matters because**: background tracking consumes significantly more data about your movements and often occurs without explicit user awareness.
 - **While this provides genuine convenience**: the continuous access generates detailed location histories that may extend beyond what users expect.
 
+## Table of Contents
+
+- [Background Location vs Foreground Location](#background-location-vs-foreground-location)
+- [Common Categories of Background Location Trackers](#common-categories-of-background-location-trackers)
+- [Technical Implementation of Background Tracking](#technical-implementation-of-background-tracking)
+- [Auditing Which Apps Track Your Location](#auditing-which-apps-track-your-location)
+- [Practical Mitigation Strategies](#practical-mitigation-strategies)
+- [What Developers Need to Know](#what-developers-need-to-know)
+- [Detecting Hidden Location Access](#detecting-hidden-location-access)
+- [Deep Dive: Popular Apps and Their Location Behaviors](#deep-dive-popular-apps-and-their-location-behaviors)
+- [Audit Process](#audit-process)
+- [Advanced Mitigation Strategies Beyond Permission Denial](#advanced-mitigation-strategies-beyond-permission-denial)
+- [Building Privacy-First Location Workflows](#building-privacy-first-location-workflows)
+- [Detecting Deceptive Location Claims](#detecting-deceptive-location-claims)
+- [Permission Regression and Monitoring](#permission-regression-and-monitoring)
+
 ## Background Location vs Foreground Location
 
 Android differentiates between foreground location access (when the app is actively displayed on screen) and background location access (when the app runs without visible interaction). Apps with background location permission can access your coordinates even when minimized, in the app drawer, or completely closed. This distinction matters because background tracking consumes significantly more data about your movements and often occurs without explicit user awareness.

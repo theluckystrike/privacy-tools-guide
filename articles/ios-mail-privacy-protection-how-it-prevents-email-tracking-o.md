@@ -40,6 +40,27 @@ Email tracking has become ubiquitous in modern email marketing. When you open an
 - **Preferences → Accounts →**: Security 2.
 - **Understanding how Mail Privacy**: Protection affects them helps you choose compatible services.
 
+## Table of Contents
+
+- [Understanding Email Tracking and Open Receipts](#understanding-email-tracking-and-open-receipts)
+- [How iOS Mail Privacy Protection Works](#how-ios-mail-privacy-protection-works)
+- [What iOS Mail Privacy Protection Blocks](#what-ios-mail-privacy-protection-blocks)
+- [Practical Examples for Developers and Power Users](#practical-examples-for-developers-and-power-users)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Advanced Configuration Options](#advanced-configuration-options)
+- [Comparing Mail Privacy Protection with Alternatives](#comparing-mail-privacy-protection-with-alternatives)
+- [Using Mail Privacy Protection with Email Marketing Tools](#using-mail-privacy-protection-with-email-marketing-tools)
+- [Testing Your Protection in the Field](#testing-your-protection-in-the-field)
+- [Privacy Stacking with Mail Privacy Protection](#privacy-stacking-with-mail-privacy-protection)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Combining Mail Privacy with Email Encryption](#combining-mail-privacy-with-email-encryption)
+- [Mail Privacy Protection in Enterprise Settings](#mail-privacy-protection-in-enterprise-settings)
+- [Mail Privacy Protection and Third-Party Services](#mail-privacy-protection-and-third-party-services)
+- [Troubleshooting Mail Privacy Protection Issues](#troubleshooting-mail-privacy-protection-issues)
+- [Mail Privacy Protection and Corporate Email](#mail-privacy-protection-and-corporate-email)
+- [International Privacy Implications](#international-privacy-implications)
+- [Advanced Mail Privacy Testing](#advanced-mail-privacy-testing)
+
 ## Understanding Email Tracking and Open Receipts
 
 Email trackers operate through tiny invisible images—typically 1×1 pixel GIFs—embedded in HTML emails. When your email client downloads these images, it requests them from the sender's server, revealing your IP address, email client version, and the exact time you opened the message.

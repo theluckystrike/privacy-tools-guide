@@ -49,6 +49,19 @@ echo "=== GDPR Deletion Verification ==="
 - **> > If you**: do not respond within one month or refuse to delete my data, I will file a complaint with the relevant supervisory authority.
 - **Use email aliases**: Create aliases like `service+eraser@gmail.com` for each service.
 
+## Table of Contents
+
+- [Understanding Your Rights Under Article 17](#understanding-your-rights-under-article-17)
+- [Step 1: Identify What Data Companies Hold](#step-1-identify-what-data-companies-hold)
+- [Step 2: Send Formal Erasure Requests](#step-2-send-formal-erasure-requests)
+- [Step 3: Escalate When Companies Ignore You](#step-3-escalate-when-companies-ignore-you)
+- [How to Verify Deletion](#how-to-verify-deletion)
+- [Special Cases and Limitations](#special-cases-and-limitations)
+- [Practical Tips for Power Users](#practical-tips-for-power-users)
+- [Automating Erasure Requests at Scale](#automating-erasure-requests-at-scale)
+- [Verifying Deletion Beyond Account Removal](#verifying-deletion-beyond-account-removal)
+- [Escalation Decision Tree](#escalation-decision-tree)
+
 ## Understanding Your Rights Under Article 17
 
 The GDPR right to erasure isn't absolute, but it covers most situations where you'd reasonably want your data gone. You can request deletion when:

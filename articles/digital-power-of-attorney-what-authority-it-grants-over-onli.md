@@ -27,6 +27,15 @@ As developers and power users, we accumulate digital assets that have real-world
 - **As developers and power users**: we accumulate digital assets that have real-world value.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [Understanding Digital Power of Attorney](#understanding-digital-power-of-attorney)
+- [Authority Over Online Accounts](#authority-over-online-accounts)
+- [Authority Over Cryptocurrency Wallets](#authority-over-cryptocurrency-wallets)
+- [Drafting Your Digital Power of Attorney](#drafting-your-digital-power-of-attorney)
+- [Implementation Tools and Templates](#implementation-tools-and-templates)
+- [Best Practices for Implementation](#best-practices-for-implementation)
+
 ## Understanding Digital Power of Attorney
 
 A digital power of attorney is a legal document that authorizes a designated agent to access and manage your digital accounts and online assets. Unlike traditional power of attorney documents that cover physical property and finances, a DPOA specifically addresses the unique challenges of digital asset management.

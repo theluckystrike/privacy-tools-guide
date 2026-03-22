@@ -42,6 +42,15 @@ To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC cli
 - **Even if you use a VPN**: the VPN provider sees your traffic and can be compelled to hand over logs.
 - **Tor's layered encryption with**: circuit rotation provides meaningfully stronger anonymity because no single node ever sees both who you are and what you're sending.
 
+## Table of Contents
+
+- [Why Standard IRC Leaks Your Identity](#why-standard-irc-leaks-your-identity)
+- [Prerequisites](#prerequisites)
+- [Operational Security Best Practices](#operational-security-best-practices)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Running Your Own Tor-Enabled IRC Server](#advanced-running-your-own-tor-enabled-irc-server)
+- [Security Considerations](#security-considerations)
+
 ## Why Standard IRC Leaks Your Identity
 
 Before looking at configuration, it helps to understand exactly what IRC exposes. When you connect to a standard IRC server, every person in every channel can see your hostmask — typically a string that includes your IP address or your ISP's reverse DNS. Network operators and IRC staff see your full IP. Many IRC networks log connection data for months.

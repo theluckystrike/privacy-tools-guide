@@ -42,6 +42,19 @@ Choose Bitwarden if you need self-hosting, open-source transparency, or a free t
 - **Bitwarden uses PBKDF2 with 600**:000 iterations by default for key derivation.
 - **1Password uses PBKDF2-HMAC-SHA256 with**: 100,000 iterations for account passwords, but their secret key system adds an additional layer.
 
+## Table of Contents
+
+- [Security Architecture](#security-architecture)
+- [Command-Line Interface](#command-line-interface)
+- [Self-Hosting Options](#self-hosting-options)
+- [Developer Features](#developer-features)
+- [Pricing Comparison](#pricing-comparison)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Vault Sharing and Team Collaboration](#vault-sharing-and-team-collaboration)
+- [Incident Response: Compromised Credentials](#incident-response-compromised-credentials)
+- [Security Auditing and Compliance](#security-auditing-and-compliance)
+- [Migration Decision Framework](#migration-decision-framework)
+
 ## Security Architecture
 
 Both managers use AES-256 encryption, but their approach to key derivation and zero-knowledge architecture differs.

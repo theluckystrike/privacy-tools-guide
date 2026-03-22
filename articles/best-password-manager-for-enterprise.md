@@ -42,6 +42,18 @@ Choosing the best password manager for enterprise requires understanding securit
 - **The key derivation uses PBKDF2 with 100**:000 iterations for master password protection.
 - **For production use, ensure you have solid backup procedures**: the SQLite database at `/vw-data/db.sqlite3` contains all vault data.
 
+## Table of Contents
+
+- [Why Enterprise Password Management Is a Privacy Problem, Not Just a Security Problem](#why-enterprise-password-management-is-a-privacy-problem-not-just-a-security-problem)
+- [Core Requirements for Enterprise Password Management](#core-requirements-for-enterprise-password-management)
+- [1Password: The Developer-Friendly Enterprise Choice](#1password-the-developer-friendly-enterprise-choice)
+- [Bitwarden: Open Source and Self-Hosted Flexibility](#bitwarden-open-source-and-self-hosted-flexibility)
+- [Keeper: Security-First Enterprise Architecture](#keeper-security-first-enterprise-architecture)
+- [Vaultwarden: Self-Hosted Bitwarden Alternative](#vaultwarden-self-hosted-bitwarden-alternative)
+- [Choosing Based on Your Requirements](#choosing-based-on-your-requirements)
+- [Migration Considerations](#migration-considerations)
+- [Implementation Recommendations](#implementation-recommendations)
+
 ## Why Enterprise Password Management Is a Privacy Problem, Not Just a Security Problem
 
 Most organizations frame password management as a security concern — preventing credential theft, reducing phishing success rates, eliminating password reuse. These are valid goals. But enterprise password management is equally a privacy concern, specifically around what data the password manager vendor can access about your organization.

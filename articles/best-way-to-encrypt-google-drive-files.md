@@ -42,6 +42,17 @@ Cryptomator and rclone (with AES-256 GCM encryption) are the best tools for encr
 - **Use only when other**: options aren't available.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Understanding Google Drive's Encryption Limitations](#understanding-google-drives-encryption-limitations)
+- [Method 1: rclone with Encryption](#method-1-rclone-with-encryption)
+- [Method 2: Cryptomator](#method-2-cryptomator)
+- [Method 3: age (Modern CLI Encryption)](#method-3-age-modern-cli-encryption)
+- [Method 4: gocryptfs (FUSE-Based Encryption)](#method-4-gocryptfs-fuse-based-encryption)
+- [Method 5: EncFS (Legacy Option)](#method-5-encfs-legacy-option)
+- [Security Considerations](#security-considerations)
+- [Comparing Methods](#comparing-methods)
+
 ## Understanding Google Drive's Encryption Limitations
 
 Google Drive encrypts your files at rest using AES-256, but Google holds the encryption keys. This means:

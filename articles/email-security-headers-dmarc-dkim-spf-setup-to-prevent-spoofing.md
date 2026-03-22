@@ -29,6 +29,13 @@ This guide walks through setting up each protocol with practical examples you ca
 - **Most providers give you**: the complete record to copy.
 - **Use `spf=aligned` in your**: DMARC record or ensure consistent domain usage.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
+- [Troubleshooting Authentication Failures](#troubleshooting-authentication-failures)
+- [Email Authentication Best Practices Summary](#email-authentication-best-practices-summary)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

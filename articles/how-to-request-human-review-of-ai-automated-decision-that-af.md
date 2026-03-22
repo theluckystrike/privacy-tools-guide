@@ -40,6 +40,15 @@ Automated decision-making systems increasingly influence significant aspects of 
 - **Ask for human review**: if you believe the AI made an error ### Insurance Premium Increase Insurers increasingly use algorithms to set premiums: 1.
 - **Request the data used**: in the calculation ## What Organizations Must Provide When you request human review, the organization must: 1.
 
+## Table of Contents
+
+- [Legal Framework: Your Right to Human Review](#legal-framework-your-right-to-human-review)
+- [How to Submit a Human Review Request](#how-to-submit-a-human-review-request)
+- [Technical Implementation: Building Request Handling Systems](#technical-implementation-building-request-handling-systems)
+- [Common Scenarios and How to Handle Them](#common-scenarios-and-how-to-handle-them)
+- [What Organizations Must Provide](#what-organizations-must-provide)
+- [Building This Into Your Applications](#building-this-into-your-applications)
+
 ## Legal Framework: Your Right to Human Review
 
 Under GDPR Article 22, individuals have the right not to be subject to decisions based solely on automated processing that produce legal or similarly significant effects. This includes decisions made through profiling. Similar protections exist in CCPA/CPRA (California), VCDPA (Virginia), and other privacy regulations worldwide.

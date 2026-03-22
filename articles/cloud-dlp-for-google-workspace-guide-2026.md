@@ -42,6 +42,18 @@ Google Workspace administrators face increasing pressure to protect sensitive da
 - **Test thoroughly with pilot**: users before broader deployment to ensure the logic matches intended behavior.
 - **Maintain clear communication with**: end users about monitoring policies to maintain trust.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration: Context-Aware Rules](#advanced-configuration-context-aware-rules)
+- [Compliance Reporting](#compliance-reporting)
+- [Advanced DLP Configuration Examples](#advanced-dlp-configuration-examples)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Integration Patterns for Enterprise Environments](#integration-patterns-for-enterprise-environments)
+- [Performance at Scale](#performance-at-scale)
+- [Best Practices for 2026](#best-practices-for-2026)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

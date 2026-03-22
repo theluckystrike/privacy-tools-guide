@@ -41,6 +41,20 @@ This guide examines privacy tools with native text to speech readout, explores i
 - **For users preferring native**: text to speech, the Bitwarden mobile applications integrate with platform accessibility APIs on iOS and Android.
 - **The Android application provides**: TalkBack support for most configuration options, including notification settings, privacy defaults, and relay configuration options.
 
+## Table of Contents
+
+- [Why Text to Speech Matters for Privacy Configuration](#why-text-to-speech-matters-for-privacy-configuration)
+- [Password Managers With Built-in TTS Support](#password-managers-with-built-in-tts-support)
+- [VPN Clients With Audio Configuration Feedback](#vpn-clients-with-audio-configuration-feedback)
+- [Encrypted Messaging: Signal and Privacy Dashboard](#encrypted-messaging-signal-and-privacy-dashboard)
+- [Developer Tools: GPG and Encryption Utilities](#developer-tools-gpg-and-encryption-utilities)
+- [Building Accessible Privacy Tool Interfaces](#building-accessible-privacy-tool-interfaces)
+- [Custom TTS Integration Strategies](#custom-tts-integration-strategies)
+- [Privacy Considerations in TTS Implementation](#privacy-considerations-in-tts-implementation)
+- [Testing TTS Accessibility](#testing-tts-accessibility)
+- [Community Resources and Standards](#community-resources-and-standards)
+- [Organizational Support for Accessibility](#organizational-support-for-accessibility)
+
 ## Why Text to Speech Matters for Privacy Configuration
 
 Blind developers and security professionals need the same level of control over their privacy settings as sighted users. When privacy tools provide audio feedback for configuration changes, users can verify that encryption settings are correctly applied, confirm that VPN kill switches are enabled, or ensure that two-factor authentication is properly configured.

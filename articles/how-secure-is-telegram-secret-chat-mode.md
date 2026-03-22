@@ -40,6 +40,17 @@ Telegram Secret Chat is genuinely end-to-end encrypted with forward secrecy, mea
 - **The protocol uses a**: combination of RSA-2048 for key exchange, AES-256-IGE for symmetric encryption, and SHA-256 for message integrity.
 - **Use strong device lock**: (PIN/biometric) to prevent physical access to decrypted messages 6.
 
+## Table of Contents
+
+- [Understanding Telegram's MTProto Protocol](#understanding-telegrams-mtproto-protocol)
+- [Security Properties of Secret Chat](#security-properties-of-secret-chat)
+- [What Secret Chat Does NOT Protect](#what-secret-chat-does-not-protect)
+- [Comparing Secret Chat to Alternatives](#comparing-secret-chat-to-alternatives)
+- [Advanced MTProto 2.0 Technical Details](#advanced-mtproto-20-technical-details)
+- [Understanding MTProto Vulnerabilities and Strengths](#understanding-mtproto-vulnerabilities-and-strengths)
+- [Practical Security Considerations](#practical-security-considerations)
+- [Comparing with Signal for High-Security Use Cases](#comparing-with-signal-for-high-security-use-cases)
+
 ## Understanding Telegram's MTProto Protocol
 
 Telegram uses MTProto 2.0, a custom protocol designed for speed and security. Unlike Signal or WhatsApp which rely on established protocols like Signal Protocol, MTProto implements its own encryption layer. The protocol uses a combination of RSA-2048 for key exchange, AES-256-IGE for symmetric encryption, and SHA-256 for message integrity.

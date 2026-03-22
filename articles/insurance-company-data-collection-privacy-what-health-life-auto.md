@@ -26,6 +26,16 @@ Health insurers collect medical history, prescription records, genetic testing r
 - **They use this to**: price premiums and determine eligibility.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [The Legal Framework Governing Insurance Data Collection](#the-legal-framework-governing-insurance-data-collection)
+- [Health Insurance Data Collection](#health-insurance-data-collection)
+- [Life Insurance Data Collection](#life-insurance-data-collection)
+- [Auto Insurance Data Collection](#auto-insurance-data-collection)
+- [What Insurers Cannot Legally Collect](#what-insurers-cannot-legally-collect)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Minimizing Your Insurance Data Footprint](#minimizing-your-insurance-data-footprint)
+
 ## The Legal Framework Governing Insurance Data Collection
 
 Insurance companies operate under a complex web of federal and state regulations that define what they can collect and how they use it. The primary laws include the Health Insurance Portability and Accountability Act (HIPAA) for health insurers, the Gramm-Leach-Bliley Act (GLBA) for all insurers, and state-specific insurance privacy laws.

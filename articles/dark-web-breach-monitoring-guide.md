@@ -33,6 +33,14 @@ When a company's database is breached, the stolen data ends up on dark web marke
 
 ---
 
+## Table of Contents
+
+- [Have I Been Pwned (HIBP)](#have-i-been-pwned-hibp)
+- [Understanding Breach Data](#understanding-breach-data)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Have I Been Pwned (HIBP)
 
 HIBP is the most reliable public breach index, operated by Troy Hunt.

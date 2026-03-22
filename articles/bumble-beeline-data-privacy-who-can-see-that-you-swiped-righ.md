@@ -45,6 +45,24 @@ Beeline shows you users who have swiped right on you, but your own swipes are ne
 - **You can hide from**: Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest.
 - **Both free and premium**: users have data collection risks.
 
+## Table of Contents
+
+- [What Is Bumble Beeline?](#what-is-bumble-beeline)
+- [How Beeline Works: Technical Overview](#how-beeline-works-technical-overview)
+- [Who Can See Your Swipes Through Beeline?](#who-can-see-your-swipes-through-beeline)
+- [Data Bumble Collects About Your Swipes](#data-bumble-collects-about-your-swipes)
+- [Practical Privacy Recommendations](#practical-privacy-recommendations)
+- [What Happens When You Match?](#what-happens-when-you-match)
+- [Common Misconceptions](#common-misconceptions)
+- [Data Retention and Deletion](#data-retention-and-deletion)
+- [Verifying Beeline Visibility Setting Changes](#verifying-beeline-visibility-setting-changes)
+- [Beeline and Search Visibility Correlation](#beeline-and-search-visibility-correlation)
+- [Profile Deletion and Data Retention](#profile-deletion-and-data-retention)
+- [Advanced: Account-Level Privacy Audit](#advanced-account-level-privacy-audit)
+- [Blocking and Reporting for Privacy Violations](#blocking-and-reporting-for-privacy-violations)
+- [Third-Party Data Aggregation Risk](#third-party-data-aggregation-risk)
+- [Premium vs Free User Privacy Gap](#premium-vs-free-user-privacy-gap)
+
 ## What Is Bumble Beeline?
 
 Beeline is Bumble's premium feature that displays a curated list of users who have already swiped right on your profile. Instead of blindly swiping through potential matches, you can see who has already expressed interest. Think of it as a "who likes me" viewer that Bumble has monetized—you cannot access this information without a paid subscription (Bumble Premium or Bumble For Friends).

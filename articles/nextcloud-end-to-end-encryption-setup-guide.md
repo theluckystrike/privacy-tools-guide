@@ -43,6 +43,15 @@ End-to-end encryption (E2EE) in Nextcloud ensures that your data remains encrypt
 - **Verify encryption on server-side**: # SSH into server and check file storage ls -la /var/www/nextcloud/data/testuser/files_encryption/ # 4.
 - **End-to-end encryption (E2EE) in**: Nextcloud ensures that your data remains encrypted on the server and can only be decrypted on your client devices.
 
+## Table of Contents
+
+- [Prerequisites and Server Requirements](#prerequisites-and-server-requirements)
+- [Practical Example: Encrypting a Development Directory](#practical-example-encrypting-a-development-directory)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Key Recovery and Backup Strategies](#advanced-key-recovery-and-backup-strategies)
+- [Performance Optimization for Large Encrypted Vaults](#performance-optimization-for-large-encrypted-vaults)
+- [Compliance and Audit Logging](#compliance-and-audit-logging)
+
 ## Prerequisites and Server Requirements
 
 Before enabling E2EE, ensure your Nextcloud instance meets these requirements:

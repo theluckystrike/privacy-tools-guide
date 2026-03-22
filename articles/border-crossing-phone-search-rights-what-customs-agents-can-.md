@@ -43,6 +43,22 @@ Crossing international borders with a smartphone containing sensitive code, API 
 # 2.
 - **I refuse to provide**: encryption keys on the grounds that: 1.
 
+## Table of Contents
+
+- [United States: Broad Powers with Limits](#united-states-broad-powers-with-limits)
+- [European Union: GDPR Provides Some Protection](#european-union-gdpr-provides-some-protection)
+- [United Kingdom: Investigatory Powers Act extends to Borders](#united-kingdom-investigatory-powers-act-extends-to-borders)
+- [Canada: Growing Digital Search Authority](#canada-growing-digital-search-authority)
+- [Australia: Strict Border Controls for Digital Devices](#australia-strict-border-controls-for-digital-devices)
+- [Technical Protection Strategies](#technical-protection-strategies)
+- [Preparing for Device Examination](#preparing-for-device-examination)
+- [Advanced Encryption and Plausible Deniability Strategies](#advanced-encryption-and-plausible-deniability-strategies)
+- [Digital Forensics Resistance Techniques](#digital-forensics-resistance-techniques)
+- [Cross-Border Data Transfer Considerations](#cross-border-data-transfer-considerations)
+- [Legal Documentation to Carry](#legal-documentation-to-carry)
+- [Travel Insurance and Legal Protection](#travel-insurance-and-legal-protection)
+- [Post-Crossing Device Assessment](#post-crossing-device-assessment)
+
 ## United States: Broad Powers with Limits
 
 US Customs and Border Protection (CBP) operates under Section 311 of the Tariff Act, which grants officers authority to search electronic devices without a warrant at the border. This applies to both US citizens and foreign nationals entering the country.

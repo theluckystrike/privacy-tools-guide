@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Secure Messaging App Comparison Signal vs Session vs Briar 2026"
+title: "Signal vs Session vs Briar: Secure Messaging (2026)"
 description: "Compare Signal, Session, and Briar for secure messaging including encryption protocols, metadata protection, and anonymity features"
 date: 2026-03-22
 last_modified_at: 2026-03-22

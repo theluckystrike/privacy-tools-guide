@@ -27,6 +27,24 @@ First-party isolation is a browser security mechanism that separates data on a p
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **OAuth redirects that depend**: on sharing cookies across domains need updating to use token-based approaches instead.
 
+## Table of Contents
+
+- [How First-Party Isolation Differs from Standard Cookie Behavior](#how-first-party-isolation-differs-from-standard-cookie-behavior)
+- [Browser Implementation Patterns](#browser-implementation-patterns)
+- [Technical Deep Dive: Storage Partitioning](#technical-deep-dive-storage-partitioning)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Security Benefits](#security-benefits)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Enabling First-Party Isolation](#enabling-first-party-isolation)
+- [Measuring Isolation Effectiveness](#measuring-isolation-effectiveness)
+- [Testing Browser Isolation in Your Setup](#testing-browser-isolation-in-your-setup)
+- [Firefox Configuration for Maximum Isolation](#firefox-configuration-for-maximum-isolation)
+- [Chrome/Chromium Isolation Status](#chromechromium-isolation-status)
+- [Real-World Impact: Tracking Examples](#real-world-impact-tracking-examples)
+- [Debugging Broken Features](#debugging-broken-features)
+- [Migration Checklist for Service Providers](#migration-checklist-for-service-providers)
+- [Performance Impact](#performance-impact)
+
 ## How First-Party Isolation Differs from Standard Cookie Behavior
 
 In standard browser configurations, cookies set by `analytics.example.com` can be read by `news-site.com` when embedded as a third-party resource. This is the mechanism that allows ad networks to build browsing profiles across thousands of sites. First-party isolation changes this by effectively creating separate cookie jars for each origin, even when the same third-party script loads across multiple sites.

@@ -39,6 +39,20 @@ Configure Postfix with mandatory TLS encryption using `smtp_tls_mandatory_cipher
 - **Use `verify` or `dane`**: for specific high-value partner domains.
 - **This is the correct behavior for mandatory encryption**: failed delivery is preferable to unencrypted delivery.
 
+## Table of Contents
+
+- [Why Mandatory TLS Matters for Email Privacy](#why-mandatory-tls-matters-for-email-privacy)
+- [Prerequisites](#prerequisites)
+- [Understanding TLS Modes in Postfix](#understanding-tls-modes-in-postfix)
+- [Step 1: Generate or Obtain TLS Certificates](#step-1-generate-or-obtain-tls-certificates)
+- [Step 2: Configure Postfix TLS Parameters](#step-2-configure-postfix-tls-parameters)
+- [Step 3: Configure the Submission Port](#step-3-configure-the-submission-port)
+- [Step 4: Configure Granular TLS Policies per Destination](#step-4-configure-granular-tls-policies-per-destination)
+- [Step 5: Enable DANE and MTA-STS](#step-5-enable-dane-and-mta-sts)
+- [Step 6: Test and Verify Configuration](#step-6-test-and-verify-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+
 ## Why Mandatory TLS Matters for Email Privacy
 
 SMTP was designed before encryption was a consideration. Without TLS enforcement, mail traverses the internet in plaintext — readable by any network observer. STARTTLS upgrades connections to encrypted ones, but opportunistic TLS is vulnerable to downgrade attacks: an adversary can strip the STARTTLS advertisement from server responses, forcing both parties into cleartext.

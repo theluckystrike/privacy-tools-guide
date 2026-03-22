@@ -39,6 +39,14 @@ Use an eSIM-based virtual number like Google Fi or Airalo (not VoIP, which Whats
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+- [Comparison: Virtual Number Providers for WhatsApp](#comparison-virtual-number-providers-for-whatsapp)
+- [Advanced Verification Troubleshooting](#advanced-verification-troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

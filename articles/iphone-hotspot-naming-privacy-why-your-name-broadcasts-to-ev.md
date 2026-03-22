@@ -29,6 +29,21 @@ Your iPhone hotspot broadcasts your personal device name (e.g., "John's iPhone")
 - **Disable hotspot when not in use**: Reduces exposure window to zero
 4.
 
+## Table of Contents
+
+- [How iPhone Hotspot Naming Works](#how-iphone-hotspot-naming-works)
+- [What Information Gets Exposed](#what-information-gets-exposed)
+- [Real-World Privacy Risks Beyond the Obvious](#real-world-privacy-risks-beyond-the-obvious)
+- [Changing Your iPhone Device Name](#changing-your-iphone-device-name)
+- [Additional Privacy Hardening Beyond the Name](#additional-privacy-hardening-beyond-the-name)
+- [Technical Deep Dive: iOS Personal Hotspot Architecture](#technical-deep-dive-ios-personal-hotspot-architecture)
+- [Developer Considerations](#developer-considerations)
+- [Best Practices Summary](#best-practices-summary)
+- [Advanced Detection and Testing](#advanced-detection-and-testing)
+- [Situational Awareness and Threat Modeling](#situational-awareness-and-threat-modeling)
+- [Organizational Deployment Considerations](#organizational-deployment-considerations)
+- [Long-Term Privacy Hygiene](#long-term-privacy-hygiene)
+
 ## How iPhone Hotspot Naming Works
 
 Every iOS device has a system-wide name that appears in several contexts: AirDrop, AirPlay, personal hotspot, and Bluetooth device listings. By default, Apple sets this name based on your iPhone model or a name you entered during setup — often something like "John's iPhone" or your actual name if you customized it.

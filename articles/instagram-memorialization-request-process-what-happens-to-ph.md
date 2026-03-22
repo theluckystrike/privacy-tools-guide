@@ -41,6 +41,15 @@ To memorialize a deceased Instagram account, submit a request through Instagram'
 - **Immediate family members - Spouse**: parent, adult child, or sibling
 3.
 
+## Table of Contents
+
+- [What Is Instagram Memorialization?](#what-is-instagram-memorialization)
+- [Who Can Request Memorialization?](#who-can-request-memorialization)
+- [The Memorialization Request Process](#the-memorialization-request-process)
+- [What Happens to Content After Memorialization?](#what-happens-to-content-after-memorialization)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Proactive Steps for Users](#proactive-steps-for-users)
+
 ## What Is Instagram Memorialization?
 
 Instagram memorialization is a status applied to accounts of deceased users. Unlike account deletion, memorialization preserves content while preventing certain interactions. The account becomes read-only: no new posts can be made, login is disabled, and the profile displays "Remembering" above the username.

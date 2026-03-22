@@ -123,6 +123,13 @@ Default privacy (Firefox 124+):
 - Third-party cookie blocking: Enabled
 - Privacy-first DNS resolution: Option for Firefox DNS
 
+## Table of Contents
+
+- [Comparison Matrix (All Browsers)](#comparison-matrix-all-browsers)
+- [Choosing Your Browser](#choosing-your-browser)
+- [Security Audit History (2026)](#security-audit-history-2026)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+
 Advanced privacy settings (about:config):
 ```
 privacy.trackingprotection.enabled = true

@@ -29,6 +29,20 @@ This guide walks through setting up encrypted email for company teams. You'll le
 - **Two dominant standards exist**: - OpenPGP: The open-source implementation of PGP (Pretty Good Privacy).
 - **The YubiKey 5 supports**: OpenPGP and provides hardware-backed key storage.
 
+## Table of Contents
+
+- [Understanding Email Encryption Options](#understanding-email-encryption-options)
+- [Setting Up PGP Encryption for Team Use](#setting-up-pgp-encryption-for-team-use)
+- [Implementing S/MIME for Enterprise](#implementing-smime-for-enterprise)
+- [Deploying Hosted Encrypted Email](#deploying-hosted-encrypted-email)
+- [Automating Key Management](#automating-key-management)
+- [Team Policy Implementation](#team-policy-implementation)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Monitoring and Auditing Encrypted Email](#monitoring-and-auditing-encrypted-email)
+- [Advanced Key Management for Large Organizations](#advanced-key-management-for-large-organizations)
+- [Integration with Modern Email Platforms](#integration-with-modern-email-platforms)
+- [Training and User Adoption](#training-and-user-adoption)
+
 ## Understanding Email Encryption Options
 
 Before implementing a solution, understand the three primary approaches to email encryption:

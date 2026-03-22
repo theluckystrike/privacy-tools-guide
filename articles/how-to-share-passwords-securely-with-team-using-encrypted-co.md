@@ -40,6 +40,14 @@ Sharing passwords across a team without proper security measures creates signifi
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - **Even if the platform**: uses TLS for transit, messages often persist in databases, backups, and log files.
 
+## Table of Contents
+
+- [Why Standard Communication Channels Fail](#why-standard-communication-channels-fail)
+- [Prerequisites](#prerequisites)
+- [Key Management Best Practices](#key-management-best-practices)
+- [Legal and Compliance Aspects](#legal-and-compliance-aspects)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Standard Communication Channels Fail
 
 Email, Slack, Discord, and similar platforms store messages on servers that you don't control. Even if the platform uses TLS for transit, messages often persist in databases, backups, and log files. A compromised employee account, server breach, or legal request can expose credentials that were shared carelessly. The solution is end-to-end encryption combined with ephemeral messaging—ensuring that credentials exist only on the sender's and recipient's devices.

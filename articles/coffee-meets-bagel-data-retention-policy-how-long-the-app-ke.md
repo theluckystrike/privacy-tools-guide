@@ -46,6 +46,22 @@ This guide examines CMB's documented data retention practices, explains the tech
 - **Some platforms offer more aggressive deletion policies**: Bumble, for instance, automatically deletes user data after 30 days of account inactivity.
 - **The key differentiator for**: privacy-focused users is typically API availability and data export capabilities, where CMB currently offers limited options compared to some competitors.
 
+## Table of Contents
+
+- [How Coffee Meets Bagel Stores User Data](#how-coffee-meets-bagel-stores-user-data)
+- [Account Deletion vs. Account Deactivation](#account-deletion-vs-account-deactivation)
+- [Technical Implications for Developers](#technical-implications-for-developers)
+- [What Happens to Your Data When You Stop Using the App](#what-happens-to-your-data-when-you-stop-using-the-app)
+- [Privacy Controls Available to Users](#privacy-controls-available-to-users)
+- [Practical Steps for Data Minimization](#practical-steps-for-data-minimization)
+- [Comparing Retention Practices Across Dating Apps](#comparing-retention-practices-across-dating-apps)
+- [Detailed Retention Policy Analysis](#detailed-retention-policy-analysis)
+- [Backup and Disaster Recovery Implications](#backup-and-disaster-recovery-implications)
+- [Regulatory Compliance and Data Localization](#regulatory-compliance-and-data-localization)
+- [What Third Parties Know About You from CMB](#what-third-parties-know-about-you-from-cmb)
+- [Practical Data Minimization Strategies](#practical-data-minimization-strategies)
+- [Right to Deletion Under GDPR/CCPA](#right-to-deletion-under-gdprccpa)
+
 ## How Coffee Meets Bagel Stores User Data
 
 Coffee Meets Bagel collects several categories of personal information during account creation and ongoing use:

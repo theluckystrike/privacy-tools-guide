@@ -42,6 +42,22 @@ Research data requires protection beyond simple file sync. Academic institutions
 - **Most providers offer 30-day**: version history, but this may exceed grant requirements or fall short for long-term projects.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Privacy Threat Model for Research Data](#understanding-the-privacy-threat-model-for-research-data)
+- [Self-Hosted Solutions: Maximum Control](#self-hosted-solutions-maximum-control)
+- [Zero-Knowledge Cloud Providers](#zero-knowledge-cloud-providers)
+- [Platform-Specific Considerations for Academic Work](#platform-specific-considerations-for-academic-work)
+- [Practical Recommendations by Use Case](#practical-recommendations-by-use-case)
+- [Implementation Checklist](#implementation-checklist)
+- [Data Classification Framework for Research Teams](#data-classification-framework-for-research-teams)
+- [Key Management Practices for Encrypted Storage](#key-management-practices-for-encrypted-storage)
+- [Comparative Feature Matrix for Research Environments](#comparative-feature-matrix-for-research-environments)
+- [Integration with Research Workflows](#integration-with-research-workflows)
+- [Disaster Recovery and Business Continuity](#disaster-recovery-and-business-continuity)
+- [Migration Planning for Existing Research Data](#migration-planning-for-existing-research-data)
+- [Compliance and Institutional Requirements](#compliance-and-institutional-requirements)
+
 ## Understanding the Privacy Threat Model for Research Data
 
 Before selecting a storage solution, define your threat model. Academic researchers typically face three distinct risks: unauthorized access by third parties, platform vendor data mining, and jurisdictional data exposure. Cloud storage operates under shared responsibility models where encryption keys may be held by the provider, giving them technical access to your plaintext data.

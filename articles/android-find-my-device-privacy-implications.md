@@ -43,6 +43,21 @@ Android's Find My Device service is a powerful tool for locating lost or stolen 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Find My Device Works Under the Hood](#how-find-my-device-works-under-the-hood)
+- [Privacy Implications for Power Users](#privacy-implications-for-power-users)
+- [Technical Mitigations for Privacy-Conscious Users](#technical-mitigations-for-privacy-conscious-users)
+- [Battery and Network Considerations](#battery-and-network-considerations)
+- [Data Retention and Deletion Policies](#data-retention-and-deletion-policies)
+- [Third-Party Tracking Alternatives](#third-party-tracking-alternatives)
+- [Impact on Device Battery](#impact-on-device-battery)
+- [Network Traffic Analysis](#network-traffic-analysis)
+- [Geofencing and Security Implications](#geofencing-and-security-implications)
+- [Enterprise Device Management](#enterprise-device-management)
+- [Comparative Privacy Approaches](#comparative-privacy-approaches)
+- [Recommendation for Privacy-Conscious Users](#recommendation-for-privacy-conscious-users)
+
 ## How Find My Device Works Under the Hood
 
 When you enable Find My Device on Android, several background services activate to enable location tracking, remote locking, and data erasure capabilities. Understanding these mechanisms helps you make informed decisions about your privacy posture.

@@ -40,6 +40,21 @@ The Gamepad API enables web browsers to communicate with game controllers connec
 - **Protection recommendations**: 1.
 - **Use a browser extension**: like uBlock Origin (provides gamepad filtering) 3.
 
+## Table of Contents
+
+- [Understanding the Gamepad API](#understanding-the-gamepad-api)
+- [How Gamepad Fingerprinting Works](#how-gamepad-fingerprinting-works)
+- [Code Example: Collecting Gamepad Data](#code-example-collecting-gamepad-data)
+- [Real-World Fingerprinting Techniques](#real-world-fingerprinting-techniques)
+- [Privacy Implications](#privacy-implications)
+- [Mitigation Strategies](#mitigation-strategies)
+- [Developer Considerations](#developer-considerations)
+- [Advanced Fingerprinting Combinations](#advanced-fingerprinting-combinations)
+- [Detecting Gamepad Fingerprinting Attacks](#detecting-gamepad-fingerprinting-attacks)
+- [Gamepad API in Legitimate Applications](#gamepad-api-in-legitimate-applications)
+- [Protection Recommendations by Risk Profile](#protection-recommendations-by-risk-profile)
+- [Building Privacy-Respectful Gaming Applications](#building-privacy-respectful-gaming-applications)
+
 ## Understanding the Gamepad API
 
 The Gamepad API is a W3C standard that allows web applications to detect and interact with game controllers. When a user connects a controller to their computer or pairs it via Bluetooth, websites can access detailed information about the device through JavaScript.

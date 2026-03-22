@@ -51,6 +51,21 @@ This guide shows you how to:
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 
+## Table of Contents
+
+- [Why Android Permissions Audit Matters](#why-android-permissions-audit-matters)
+- [Android Permissions: The Surveillance Surface](#android-permissions-the-surveillance-surface)
+- [Prerequisites](#prerequisites)
+- [Part 1: Manual Permission Audit](#part-1-manual-permission-audit)
+- [Part 2: Restrict Permissions](#part-2-restrict-permissions)
+- [Part 3: Verify Restricted Apps Work](#part-3-verify-restricted-apps-work)
+- [Part 4: Automate Permission Monitoring](#part-4-automate-permission-monitoring)
+- [Part 5: Decision Framework](#part-5-decision-framework)
+- [Part 6: Automation via Device Policy](#part-6-automation-via-device-policy)
+- [Dangerous Permission Categories Explained](#dangerous-permission-categories-explained)
+- [Troubleshooting Restricted Apps](#troubleshooting-restricted-apps)
+- [Privacy Best Practices Summary](#privacy-best-practices-summary)
+
 ## Prerequisites
 
 - Android device (6.0 Marshmallow or later)

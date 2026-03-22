@@ -40,6 +40,16 @@ Choose Cookiebot or Osano for small sites needing simple, low-overhead GDPR cons
 - **Choose OneTrust or TrustArc**: for enterprise environments requiring multi-jurisdiction compliance and vendor risk assessment.
 - **This comparison breaks down**: each platform's script-blocking approach, API capabilities, performance impact, and implementation code so you can pick the right CMP for your stack.
 
+## Table of Contents
+
+- [Why Consent Management Matters for Developers](#why-consent-management-matters-for-developers)
+- [Quick Comparison](#quick-comparison)
+- [Key Technical Criteria for Comparison](#key-technical-criteria-for-comparison)
+- [Platform Comparison](#platform-comparison)
+- [Practical Implementation Patterns](#practical-implementation-patterns)
+- [Performance Considerations](#performance-considerations)
+- [Making Your Choice](#making-your-choice)
+
 ## Why Consent Management Matters for Developers
 
 Under GDPR, websites must obtain explicit consent before collecting personal data. This requirement extends to analytics, marketing trackers, third-party scripts, and even essential cookies. For developers, implementing a CMP means adding a layer that blocks tracking scripts until users provide consent, then passes that consent status to downstream tools.

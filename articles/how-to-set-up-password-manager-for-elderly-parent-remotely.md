@@ -41,6 +41,13 @@ Use Bitwarden or 1Password family plans to remotely manage your parent's passwor
 If they use Google for everything, a password manager that integrates with Google Chrome (like Bitwarden) feels familiar.
 - **Use low-pressure video calls**: Record a 3-minute video showing setup steps.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Password Manager Comparison for Elderly Users](#password-manager-comparison-for-elderly-users)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

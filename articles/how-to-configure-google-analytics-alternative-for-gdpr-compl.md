@@ -40,6 +40,15 @@ If you operate a website serving European visitors, Google Analytics requires si
 - **The most popular options include Matomo**: Plausible, Fathom, and Umami.
 - **Matomo provides the most**: feature-complete alternative, offering goals, funnels, heatmaps, and custom events.
 
+## Table of Contents
+
+- [Understanding GDPR Requirements for Analytics](#understanding-gdpr-requirements-for-analytics)
+- [Quick Comparison](#quick-comparison)
+- [Prerequisites](#prerequisites)
+- [Configuring Matomo for GDPR Compliance](#configuring-matomo-for-gdpr-compliance)
+- [Verifying GDPR Compliance](#verifying-gdpr-compliance)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding GDPR Requirements for Analytics
 
 The General Data Protection Regulation imposes strict requirements on how you collect and process personal data. Under GDPR, IP addresses constitute personal data, and analytics tools that collect this information without proper consent violate the regulation unless you implement specific technical safeguards.

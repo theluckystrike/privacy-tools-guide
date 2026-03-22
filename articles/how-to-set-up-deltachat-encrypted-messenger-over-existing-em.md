@@ -45,6 +45,13 @@ DeltaChat operates on a decentralized model by using email protocols with automa
 
 When you send a message through DeltaChat, it travels as an encrypted email to your recipient's email address. The recipient's DeltaChat client automatically detects and decrypts incoming messages. This architecture provides several advantages: your messages are accessible from any email client, you can communicate with non-DeltaChat users via regular email, and there's no vendor lock-in.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration Options](#advanced-configuration-options)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before configuring DeltaChat, ensure you have access to an email account that supports IMAP and SMTP. Most providers—including Gmail, ProtonMail, self-hosted solutions like Mailu or DockerMail, and standard email services—work with DeltaChat.

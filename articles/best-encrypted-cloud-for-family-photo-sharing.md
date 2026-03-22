@@ -27,6 +27,22 @@ When storing family photos in the cloud, encryption is not just a marketing feat
 - **Use backup recovery key**: if available 2.
 - **Use exported recovery key**: to decrypt 3.
 
+## Table of Contents
+
+- [Understanding Encryption Models](#understanding-encryption-models)
+- [Top Encrypted Cloud Options for Family Photos](#top-encrypted-cloud-options-for-family-photos)
+- [Self-Hosting: The Ultimate Control](#self-hosting-the-ultimate-control)
+- [Comparing Encryption Implementations](#comparing-encryption-implementations)
+- [Practical Considerations for Families](#practical-considerations-for-families)
+- [Code Example: Verifying Encryption](#code-example-verifying-encryption)
+- [Making Your Decision](#making-your-decision)
+- [Technical Deep Dive: Zero-Knowledge Architecture](#technical-deep-dive-zero-knowledge-architecture)
+- [Attack Surface Analysis](#attack-surface-analysis)
+- [Family Photo Organization Strategies](#family-photo-organization-strategies)
+- [Photo Backup Verification](#photo-backup-verification)
+- [Multi-Device Synchronization Strategy](#multi-device-synchronization-strategy)
+- [Disaster Recovery Scenarios](#disaster-recovery-scenarios)
+
 ## Understanding Encryption Models
 
 Cloud storage providers typically offer three encryption models, each with different security properties.

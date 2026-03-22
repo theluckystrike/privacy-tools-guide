@@ -41,6 +41,13 @@ This guide covers practical methods for developers and power users to create and
 - **Use a password manager**: to store both the burner email and associated dating site credentials.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Dating Sites Require Special Handling](#why-dating-sites-require-special-handling)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Dating Site Email Management](#best-practices-for-dating-site-email-management)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Dating Sites Require Special Handling
 
 Dating platforms present unique privacy challenges that distinguish them from other online services. The personal nature of conversations, the sensitivity of shared information, and the social stigma potentially associated with platform usage all demand enhanced privacy measures. When a dating site experiences a data breach, your email address becomes part of exposed databases that may be sold or leaked across the dark web.

@@ -42,6 +42,15 @@ GDPR requires notifying authorities within 72 hours of discovering a breach, whi
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This tight timeline applies**: to breaches likely to result in a risk to individuals' rights and freedoms.
 
+## Table of Contents
+
+- [GDPR Breach Notification Requirements](#gdpr-breach-notification-requirements)
+- [CCPA Breach Notification Requirements](#ccpa-breach-notification-requirements)
+- [Comparative Timeline Overview](#comparative-timeline-overview)
+- [Practical Implementation for Developers](#practical-implementation-for-developers)
+- [Automating Notification Workflows](#automating-notification-workflows)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## GDPR Breach Notification Requirements
 
 Under GDPR Articles 33 and 34, organizations must notify the relevant supervisory authority within **72 hours** of becoming aware of a personal data breach. This tight timeline applies to breaches likely to result in a risk to individuals' rights and freedoms.

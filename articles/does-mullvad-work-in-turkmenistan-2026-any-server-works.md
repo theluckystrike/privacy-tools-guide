@@ -41,6 +41,15 @@ Turkmenistan maintains one of the most restrictive internet environments globall
 - **As of 2026**: users report mixed results depending on location, time, and configuration choices.
 - **Turkmenistan maintains one of**: the most restrictive internet environments globally.
 
+## Table of Contents
+
+- [Understanding Turkmenistan's Network Restrictions](#understanding-turkmenistans-network-restrictions)
+- [Protocol Configuration Strategies](#protocol-configuration-strategies)
+- [Automated Testing Script](#automated-testing-script)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Alternative Solutions for Critical Connectivity](#alternative-solutions-for-critical-connectivity)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding Turkmenistan's Network Restrictions
 
 The Turkmen government operates a centralized internet gateway that performs deep packet inspection on all outbound traffic. This infrastructure targets several attack surfaces:

@@ -40,6 +40,15 @@ If you're a developer or power user looking to lock down your Facebook presence,
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding Facebook's Privacy Architecture](#understanding-facebooks-privacy-architecture)
+- [Method 1: Using the Facebook Graph API](#method-1-using-the-facebook-graph-api)
+- [Method 2: Browser Automation with Playwright](#method-2-browser-automation-with-playwright)
+- [Method 3: Manual Settings for Maximum Privacy](#method-3-manual-settings-for-maximum-privacy)
+- [Security Hardening Beyond Privacy](#security-hardening-beyond-privacy)
+- [Automating Privacy Audits](#automating-privacy-audits)
+
 ## Understanding Facebook's Privacy Architecture
 
 Facebook organizes privacy settings across several categories: profile visibility, audience selection, tagging controls, and connection visibility. The platform uses a tiered audience system: Public, Friends, Friends Except Acquaintances, Specific Friends, and Only Me. Understanding these layers is essential for developers building tools that interact with Facebook's privacy controls.

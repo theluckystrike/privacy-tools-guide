@@ -42,6 +42,13 @@ Use the 1Password CLI (`op`) to pull secrets directly into your shell scripts, C
 - **Personal Authentication The `op**: signin` flow works well for local development and interactive use, but automated pipelines require a non-interactive authentication method.
 - **Create a service account**: through the 1Password web console under Integrations > Service Accounts.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Best Practices](#security-best-practices)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

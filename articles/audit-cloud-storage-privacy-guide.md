@@ -31,6 +31,23 @@ This guide covers a systematic six-step audit process: reviewing privacy policie
 - **However, most providers claim "encryption" without specifying which model**: this audit process makes that distinction concrete.
 - **- Deleted file metadata**: Some providers include metadata for recently deleted files in the export — useful for confirming your deleted files are actually queued for deletion.
 
+## Table of Contents
+
+- [What Cloud Providers Can Access](#what-cloud-providers-can-access)
+- [Step 1: Review the Privacy Policy](#step-1-review-the-privacy-policy)
+- [Step 2: Request Your Data Export](#step-2-request-your-data-export)
+- [Step 3: Audit Connected Apps and OAuth Grants](#step-3-audit-connected-apps-and-oauth-grants)
+- [Step 4: Check Encryption Status](#step-4-check-encryption-status)
+- [Step 5: Review Shared Links](#step-5-review-shared-links)
+- [Step 6: Check Data Residency and Transparency Reports](#step-6-check-data-residency-and-transparency-reports)
+- [Remediation If You Find Problems](#remediation-if-you-find-problems)
+- [Step 7: Analyze Access Patterns from Your Data Export](#step-7-analyze-access-patterns-from-your-data-export)
+- [Step 8: File Scanning and Content Analysis](#step-8-file-scanning-and-content-analysis)
+- [Recommendations by Threat Model](#recommendations-by-threat-model)
+- [Implementation: Client-Side Encryption Layer](#implementation-client-side-encryption-layer)
+- [Audit Checklist](#audit-checklist)
+- [Related Reading](#related-reading)
+
 ## What Cloud Providers Can Access
 
 | Provider type | What they can see |

@@ -40,6 +40,21 @@ Arti is a memory-safe Rust rewrite of the Tor anonymity protocol, replacing the 
 - **The `arti-client` crate provides**: the simplest integration path for most applications.
 - **You can then configure applications**: browsers, curl, wget — to use `127.0.0.1:9150` as their SOCKS proxy.
 
+## Table of Contents
+
+- [Why Rust for Tor](#why-rust-for-tor)
+- [Arti Architecture Overview](#arti-architecture-overview)
+- [Installing and Setting Up Arti](#installing-and-setting-up-arti)
+- [Basic Integration Example](#basic-integration-example)
+- [Understanding Circuit Management](#understanding-circuit-management)
+- [Directory Authority Interaction](#directory-authority-interaction)
+- [Working with Hidden Services](#working-with-hidden-services)
+- [Performance Considerations](#performance-considerations)
+- [Arti vs C Tor: Key Differences](#arti-vs-c-tor-key-differences)
+- [Security Best Practices](#security-best-practices)
+- [Error Handling Patterns](#error-handling-patterns)
+- [Related Reading](#related-reading)
+
 ## Why Rust for Tor
 
 The original Tor implementation relies on C, a language prone to memory safety issues. Rust's ownership model and borrow checker eliminate entire classes of bugs, including buffer overflows and use-after-free vulnerabilities. These security properties are critical for anonymity software, where a single vulnerability could deanonymize users.

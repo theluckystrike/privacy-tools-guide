@@ -40,6 +40,21 @@ Most mainstream email apps scan your inbox content to serve targeted advertiseme
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **The company's revenue comes**: exclusively from premium subscriptions, aligning their interests with user privacy.
 
+## Table of Contents
+
+- [Why Email App Privacy Matters](#why-email-app-privacy-matters)
+- [Proton Mail: Zero-Access Encryption Pioneer](#proton-mail-zero-access-encryption-pioneer)
+- [Tutanota: German Precision for Privacy](#tutanota-german-precision-for-privacy)
+- [Hey Email: Privacy with Premium Features](#hey-email-privacy-with-premium-features)
+- [Canary Mail: Feature-Rich Privacy](#canary-mail-feature-rich-privacy)
+- [Comparing Privacy-Focused iOS Email Apps](#comparing-privacy-focused-ios-email-apps)
+- [Additional Privacy-Focused Options](#additional-privacy-focused-options)
+- [Making Your Choice](#making-your-choice)
+- [Implementation Tips](#implementation-tips)
+- [Technical Deep Dive: Zero-Access Encryption Architecture](#technical-deep-dive-zero-access-encryption-architecture)
+- [Email Metadata Privacy Considerations](#email-metadata-privacy-considerations)
+- [Migration Checklist](#migration-checklist)
+
 ## Why Email App Privacy Matters
 
 Your email inbox contains some of your most sensitive information: medical records, financial documents, work communications, personal relationships, and countless other private details. When an email app scans this content, it creates a detailed profile of your life that can be used for advertising, sold to data brokers, or potentially breached in a security incident.

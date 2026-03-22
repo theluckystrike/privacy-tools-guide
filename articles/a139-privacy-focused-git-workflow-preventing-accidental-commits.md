@@ -28,6 +28,24 @@ Accidentally committing sensitive information to a public repository is one of t
 - **All credentials must be**: stored in environment variables or secret management systems 2.
 - **Pre-commit hooks must be**: installed on all developer workstations 3.
 
+## Table of Contents
+
+- [The Gravity of Accidental Commits](#the-gravity-of-accidental-commits)
+- [Pre-Commit Hooks: Your First Line of Defense](#pre-commit-hooks-your-first-line-of-defense)
+- [Detect-Screts: Enterprise-Grade Secret Detection](#detect-screts-enterprise-grade-secret-detection)
+- [Git-Secrets: AWS-Focused Credential Protection](#git-secrets-aws-focused-credential-protection)
+- [Gitleak: Scanning for Exposed Secrets](#gitleak-scanning-for-exposed-secrets)
+- [Environment Variables: Keep Secrets Out of Code](#environment-variables-keep-secrets-out-of-code)
+- [.gitignore: Foundation of Repository Hygiene](#gitignore-foundation-of-repository-hygiene)
+- [Branch Protection and Code Review Requirements](#branch-protection-and-code-review-requirements)
+- [Credential Scanning in IDEs](#credential-scanning-in-ides)
+- [Emergency Response: When Prevention Fails](#emergency-response-when-prevention-fails)
+- [Building a Culture of Security](#building-a-culture-of-security)
+- [Required Practices](#required-practices)
+- [Prohibited Practices](#prohibited-practices)
+- [Incident Response](#incident-response)
+- [Summary](#summary)
+
 ## The Gravity of Accidental Commits
 
 Unlike traditional file deletion, Git's distributed nature means that once you commit and push sensitive data, it exists in every clone of the repository. Even after removing the file from subsequent commits, the original commit remains in the history. Attackers actively scan public repositories for exposed credentials, using automated tools that can detect API keys, passwords, and other secrets within minutes of publication.

@@ -40,6 +40,24 @@ India's Digital Personal Data Protection Act (DPDPA) 2026 grants citizens rights
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What the India Data Protection Bill 2026 Actually Does](#what-the-india-data-protection-bill-2026-actually-does)
+- [What Developers Need to Implement](#what-developers-need-to-implement)
+- [Practical Implications for Power Users](#practical-implications-for-power-users)
+- [Timeline and Enforcement](#timeline-and-enforcement)
+- [What This Means for the Future](#what-this-means-for-the-future)
+- [DPDPA vs. GDPR: Key Differences](#dpdpa-vs-gdpr-key-differences)
+- [Exemptions Under DPDPA: What's Not Covered](#exemptions-under-dpdpa-whats-not-covered)
+- [Step-by-Step: Filing a Data Subject Access Request (DSAR)](#step-by-step-filing-a-data-subject-access-request-dsar)
+- [Non-Compliance Penalties: What Companies Face](#non-compliance-penalties-what-companies-face)
+- [Building a Data Inventory for Your Privacy Audit](#building-a-data-inventory-for-your-privacy-audit)
+- [Consent Management Under DPDPA](#consent-management-under-dpdpa)
+- [Government Agencies and Data Security Concerns](#government-agencies-and-data-security-concerns)
+- [Financial Data and Sector-Specific Requirements](#financial-data-and-sector-specific-requirements)
+- [Cross-Border Data Transfer Rules](#cross-border-data-transfer-rules)
+- [DPDPA Enforcement Timeline and Current Status](#dpdpa-enforcement-timeline-and-current-status)
+
 ## What the India Data Protection Bill 2026 Actually Does
 
 The DPDPA establishes a legal framework for data fiduciaries—entities that determine the purpose and means of processing personal data. Unlike the European GDPR, which takes a prescriptive approach to data processing, India's legislation strikes a balance between consumer protection and allowing businesses to innovate.

@@ -42,6 +42,19 @@ Managing privacy on Chromebooks requires a multi-layered approach combining brow
 - **Enable "Prefer Maximum Privacy"**: mode for additional restrictions For developers testing cookie behavior, use Chrome DevTools Application tab to inspect cookie origins.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [ChromeOS Privacy Architecture](#chromeos-privacy-architecture)
+- [Browser-Level Privacy Configuration](#browser-level-privacy-configuration)
+- [Network-Level Privacy](#network-level-privacy)
+- [Extension Permission Management](#extension-permission-management)
+- [Management Console Policies (For IT Administrators)](#management-console-policies-for-it-administrators)
+- [Advanced: Command-Line Privacy Tools](#advanced-command-line-privacy-tools)
+- [Privacy Checklist for Students](#privacy-checklist-for-students)
+- [Application-Level Privacy: Going Deeper](#application-level-privacy-going-deeper)
+- [Advanced Privacy with Linux Container](#advanced-privacy-with-linux-container)
+- [Privacy Monitoring Script](#privacy-monitoring-script)
+
 ## ChromeOS Privacy Architecture
 
 ChromeOS operates on a sandboxed architecture where the browser kernel and user-space processes maintain strict boundaries. Understanding this separation helps when configuring privacy settings—many controls exist at the browser level while others require management console access or command-line intervention.

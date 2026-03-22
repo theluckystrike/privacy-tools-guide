@@ -40,6 +40,25 @@ Choose Obsidian Vault for offline-first note storage with client-side encryption
 - **Cryptee**: Free tier offers 100MB storage.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Evaluation Criteria](#evaluation-criteria)
+- [Standard Notes](#standard-notes)
+- [Obsidian with Encrypted Notes](#obsidian-with-encrypted-notes)
+- [Tomb](#tomb)
+- [Cryptee](#cryptee)
+- [Vim with GPG](#vim-with-gpg)
+- [Security Considerations](#security-considerations)
+- [Recommendation Matrix](#recommendation-matrix)
+- [Threat Model Considerations](#threat-model-considerations)
+- [Encryption Verification Methods](#encryption-verification-methods)
+- [Advanced Usage: Encrypted Archive Backup](#advanced-usage-encrypted-archive-backup)
+- [Performance Characteristics](#performance-characteristics)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Cost Analysis and Selection Matrix](#cost-analysis-and-selection-matrix)
+- [Real-World Scenario: Security Researcher Workflow](#real-world-scenario-security-researcher-workflow)
+- [Evaluation Checklist for Choosing Tools](#evaluation-checklist-for-choosing-tools)
+
 ## Evaluation Criteria
 
 The following criteria determine this comparison:

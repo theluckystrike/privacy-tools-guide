@@ -44,6 +44,17 @@ Dating apps use facial recognition through face embeddings (mathematical vectors
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Facial Recognition Works in Dating Apps](#how-facial-recognition-works-in-dating-apps)
+- [Cross-Platform Image Matching](#cross-platform-image-matching)
+- [Technical Stack Behind These Systems](#technical-stack-behind-these-systems)
+- [Privacy Implications](#privacy-implications)
+- [Protecting Your Privacy](#protecting-your-privacy)
+- [Advanced Defense: Adversarial Perturbations](#advanced-defense-adversarial-perturbations)
+- [Federated Learning Approaches](#federated-learning-approaches)
+- [Future Directions](#future-directions)
+
 ## How Facial Recognition Works in Dating Apps
 
 Dating platforms typically use a technique called face embedding or face vectorization. When you upload a profile photo, the system converts your facial features into a numerical representation—a vector of floating-point numbers that captures unique characteristics like eye spacing, jawline shape, nose proportions, and other distinguishing features.

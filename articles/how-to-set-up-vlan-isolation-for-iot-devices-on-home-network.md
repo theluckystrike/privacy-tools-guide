@@ -40,6 +40,13 @@ Your smart thermostat, doorbell camera, and wireless bulbs all connect to the sa
 - **If your router doesn't**: support VLANs natively, you can use a Linux machine as a gateway between your VLANs with iptables or nftables rules controlling inter-VLAN traffic.
 - **Most routers support static**: leases through their DHCP configuration.
 
+## Table of Contents
+
+- [Why VLAN Isolation Matters for Home Networks](#why-vlan-isolation-matters-for-home-networks)
+- [Prerequisites and Hardware Requirements](#prerequisites-and-hardware-requirements)
+- [Common Pitfalls and Troubleshooting](#common-pitfalls-and-troubleshooting)
+- [Troubleshooting](#troubleshooting)
+
 ## Why VLAN Isolation Matters for Home Networks
 
 IoT devices consistently rank among the weakest links in home network security. Manufacturers often ship devices with default credentials, limited firmware update cycles, and cloud-dependent architectures that phone home continuously. A compromised smart plug can serve as a pivot point to attack your NAS, workstations, and anything else on your network.

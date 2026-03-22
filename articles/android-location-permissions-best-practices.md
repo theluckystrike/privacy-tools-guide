@@ -52,6 +52,17 @@ Android location permission best practices require requesting fine location thro
 - **Use this when your**: app needs exact positioning, such as navigation apps, fitness trackers, or location-based AR experiences.
 - **Users can revoke permissions**: at any time through system settings, so apps must handle permission denials gracefully.
 
+## Table of Contents
+
+- [Understanding Location Permission Types](#understanding-location-permission-types)
+- [Runtime Permission Requests](#runtime-permission-requests)
+- [Privacy-Preserving Strategies](#privacy-preserving-strategies)
+- [Handling Permission Denials](#handling-permission-denials)
+- [Privacy Disclosure Requirements](#privacy-disclosure-requirements)
+- [Location Data on the Server Side](#location-data-on-the-server-side)
+- [Testing Location Permissions](#testing-location-permissions)
+- [Platform Compliance](#platform-compliance)
+
 ## Understanding Location Permission Types
 
 Android distinguishes between several location permission types, each with different privacy implications and user experience requirements.

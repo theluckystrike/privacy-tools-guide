@@ -44,6 +44,20 @@ Browser history represents one of the most detailed records of user behavior acc
 3.
 - **If you want recommendations**: without history storage, use incognito mode exclusively, accepting that recommendations become unavailable.
 
+## Table of Contents
+
+- [How Browsers Store History](#how-browsers-store-history)
+- [Privacy Risk Vectors](#privacy-risk-vectors)
+- [Querying History Programmatically](#querying-history-programmatically)
+- [Mitigating Browser History Exposure](#mitigating-browser-history-exposure)
+- [For Developers: Building Privacy-Respecting Applications](#for-developers-building-privacy-respecting-applications)
+- [Threat Modeling Browser History Exposure](#threat-modeling-browser-history-exposure)
+- [History Privacy and Legal Risk](#history-privacy-and-legal-risk)
+- [History Privacy Implementation Differences](#history-privacy-implementation-differences)
+- [Technical Methods for History Verification](#technical-methods-for-history-verification)
+- [Practical Privacy Workflow for Sensitive Research](#practical-privacy-workflow-for-sensitive-research)
+- [Browser History and Machine Learning](#browser-history-and-machine-learning)
+
 ## How Browsers Store History
 
 Modern browsers maintain history databases that go far beyond simple URL lists. Chrome uses SQLite to store history at `~/Library/Application Support/Google/Chrome/Default/History` on macOS. The database includes:

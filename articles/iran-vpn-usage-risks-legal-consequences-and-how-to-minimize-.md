@@ -40,6 +40,15 @@ VPN usage in Iran carries legal penalties ranging from fines to imprisonment und
 - **This technique uses the**: trusted status of major cloud providers.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for Minimal Detection Exposure](#best-practices-for-minimal-detection-exposure)
+- [Operational Security Considerations](#operational-security-considerations)
+- [Advanced Obfuscation Techniques](#advanced-obfuscation-techniques)
+- [Threat Model: Who Is Actually at Risk?](#threat-model-who-is-actually-at-risk)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

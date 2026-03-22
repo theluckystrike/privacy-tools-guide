@@ -27,6 +27,15 @@ To prepare a PGP key revocation certificate, generate it immediately after creat
 - **Create a test key for this purpose**: or use a secondary key that you can afford to revoke temporarily.
 - **The verification process ensures**: you have the correct certificate and know how to use it.
 
+## Table of Contents
+
+- [Why You Need a Revocation Certificate Now](#why-you-need-a-revocation-certificate-now)
+- [Prerequisites](#prerequisites)
+- [Revocation Certificate Storage Best Practices](#revocation-certificate-storage-best-practices)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Revocation Scenarios](#advanced-revocation-scenarios)
+- [Troubleshooting](#troubleshooting)
+
 ## Why You Need a Revocation Certificate Now
 
 Every PGP key pair should have a revocation certificate generated at creation time, not after a crisis. If you lose access to your private key before generating a revocation certificate, you cannot invalidate your key. Anyone who finds or steals that key can continue impersonating you indefinitely.

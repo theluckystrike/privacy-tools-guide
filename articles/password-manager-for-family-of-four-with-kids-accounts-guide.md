@@ -40,6 +40,21 @@ Set up a family password manager with separate vaults for each member or a share
 - **A password manager helps**: us use different passwords for everything, which is safer." ### Teen Conversation (Age 14+) "Here's how password hashing works.
 - **Without a centralized system**: password reuse becomes inevitable, and the consequences of a single breach can affect everyone.
 
+## Table of Contents
+
+- [Why Families Need Structured Password Management](#why-families-need-structured-password-management)
+- [Choosing the Right Architecture](#choosing-the-right-architecture)
+- [Implementation Steps](#implementation-steps)
+- [Teaching Kids Password Hygiene](#teaching-kids-password-hygiene)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Cost Comparison for Family Plans (2026)](#cost-comparison-for-family-plans-2026)
+- [Device-Specific Setup Instructions](#device-specific-setup-instructions)
+- [Parent-to-Parent Communication and Conflict Prevention](#parent-to-parent-communication-and-conflict-prevention)
+- [Age-Specific Account Management Examples](#age-specific-account-management-examples)
+- [Teaching Moments and Conversations](#teaching-moments-and-conversations)
+- [Passkey Migration for Family Accounts](#passkey-migration-for-family-accounts)
+- [Disaster Recovery and Death Planning](#disaster-recovery-and-death-planning)
+
 ## Why Families Need Structured Password Management
 
 When four people share digital services—streaming platforms, school portals, gaming accounts, and banking apps—the attack surface expands significantly. Each family member likely has between 20 and 50 credentials across various platforms. Without a centralized system, password reuse becomes inevitable, and the consequences of a single breach can affect everyone.

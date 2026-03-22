@@ -41,6 +41,13 @@ Use privacy-focused cryptocurrencies (Monero, Zcash) instead of Bitcoin to elimi
 - **Each address should ideally**: be used for a single transaction.
 - **Make unlimited payments within**: channel 3.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Traceability Analysis](#advanced-traceability-analysis)
+- [Privacy Coin Technical Comparison](#privacy-coin-technical-comparison)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

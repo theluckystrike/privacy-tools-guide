@@ -51,6 +51,17 @@ Cloud gaming streams are processed on company servers, creating unprecedented vi
 Note**: PlayStation doesn't have explicit account closure—only user deletion.
 - **This guide explains what's collected**: how it's used, and privacy-conscious alternatives.
 
+## Table of Contents
+
+- [What Cloud Gaming Services Collect](#what-cloud-gaming-services-collect)
+- [Input Logging — The Hidden Risk](#input-logging-the-hidden-risk)
+- [Data Retention Policies](#data-retention-policies)
+- [Usage Analytics and Targeted Advertising](#usage-analytics-and-targeted-advertising)
+- [Opt-Out and Privacy Mitigation Steps](#opt-out-and-privacy-mitigation-steps)
+- [Privacy-Conscious Cloud Gaming Alternatives](#privacy-conscious-cloud-gaming-alternatives)
+- [Data Deletion and Account Closure](#data-deletion-and-account-closure)
+- [Real-World Privacy Scenarios](#real-world-privacy-scenarios)
+
 ## What Cloud Gaming Services Collect
 
 Unlike playing locally on your console or PC, cloud gaming streams all your input and receives video from remote servers. This creates data collection opportunities traditional gaming lacks.

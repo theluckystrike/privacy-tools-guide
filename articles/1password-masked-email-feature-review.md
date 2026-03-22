@@ -42,6 +42,22 @@ tags: [privacy-tools-guide]
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding Email Masking in 1Password](#understanding-email-masking-in-1password)
+- [Setting Up Email Masking](#setting-up-email-masking)
+- [Practical Implementation Patterns](#practical-implementation-patterns)
+- [Advanced Configuration Options](#advanced-configuration-options)
+- [Security and Privacy Trade-offs](#security-and-privacy-trade-offs)
+- [Performance and Reliability](#performance-and-reliability)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Configuration for Power Users](#advanced-configuration-for-power-users)
+- [Comparison: Other Email Masking Solutions](#comparison-other-email-masking-solutions)
+- [Email Header Analysis for Privacy](#email-header-analysis-for-privacy)
+- [Use Case Recommendations](#use-case-recommendations)
+
 ## Understanding Email Masking in 1Password
 
 1Password's email masking primarily manifests through its integration with Apple's Hide My Email feature for iCloud+ subscribers, combined with 1Password's own forwarding infrastructure. The implementation allows users to generate unique, forwardable email addresses that hide their actual inbox while maintaining communication continuity.

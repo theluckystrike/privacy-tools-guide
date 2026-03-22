@@ -26,6 +26,24 @@ Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you a
 - **The filesystem also generates**: a unique public folder where you can share files with specific Keybase users or teams.
 - **Free and basic plans**: typically get community forum support and documentation.
 
+## Table of Contents
+
+- [What is Keybase Filesystem?](#what-is-keybase-filesystem)
+- [Installation and Initial Setup](#installation-and-initial-setup)
+- [How KBFS Encryption Works](#how-kbfs-encryption-works)
+- [Practical Usage Patterns](#practical-usage-patterns)
+- [Version History and Recovery](#version-history-and-recovery)
+- [Security Model Analysis](#security-model-analysis)
+- [Team Collaboration Features](#team-collaboration-features)
+- [Performance Considerations](#performance-considerations)
+- [Advanced Deployment Patterns](#advanced-deployment-patterns)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Cryptographic Implementation Details](#cryptographic-implementation-details)
+- [Comparison with Alternative Solutions](#comparison-with-alternative-solutions)
+- [Advanced: Multi-Device Key Synchronization](#advanced-multi-device-key-synchronization)
+- [KBFS Integration with Development Workflow](#kbfs-integration-with-development-workflow)
+- [Disaster Recovery Procedures](#disaster-recovery-procedures)
+
 ## What is Keybase Filesystem?
 
 Keybase Filesystem (KBFS) is a cryptographic filesystem that provides end-to-end encrypted storage using the same encryption technology that protects Keybase's messaging platform. Unlike traditional cloud storage solutions where the provider holds encryption keys, KBFS ensures that only you—and those you explicitly share with—can access your data.

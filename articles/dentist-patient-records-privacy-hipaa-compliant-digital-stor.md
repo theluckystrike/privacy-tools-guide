@@ -42,6 +42,19 @@ Storing dentist patient records digitally requires careful attention to HIPAA re
 - **Dental records fall squarely**: under PHI definition because they contain patient names, treatment histories, billing information, and identifying details.
 - **Use a key management**: service (KMS) or hardware security module (HSM) for production systems.
 
+## Table of Contents
+
+- [HIPAA Requirements for Dental Records](#hipaa-requirements-for-dental-records)
+- [Encryption Implementation](#encryption-implementation)
+- [Access Control Architecture](#access-control-architecture)
+- [Audit Logging Requirements](#audit-logging-requirements)
+- [Secure Development Practices](#secure-development-practices)
+- [Data Backup and Recovery](#data-backup-and-recovery)
+- [Choosing HIPAA-Compliant Solutions](#choosing-hipaa-compliant-solutions)
+- [Handling X-Ray and Imaging Data](#handling-x-ray-and-imaging-data)
+- [Incident Response Planning for Dental Practices](#incident-response-planning-for-dental-practices)
+- [Common Mistakes in Dental Record Security](#common-mistakes-in-dental-record-security)
+
 ## HIPAA Requirements for Dental Records
 
 The Health Insurance Portability and Accountability Act (HIPAA) establishes baseline protections for protected health information (PHI). Dental records fall squarely under PHI definition because they contain patient names, treatment histories, billing information, and identifying details.

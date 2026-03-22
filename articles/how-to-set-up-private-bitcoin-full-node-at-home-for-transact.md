@@ -40,6 +40,13 @@ Running your own Bitcoin full node gives you independent verification of transac
 - **Power users who value**: financial privacy gain significant advantages by broadcasting transactions directly from their own infrastructure rather than submitting them through a third-party API.
 - **For personal use**: verifying your own transactions — pruning works fine.
 
+## Table of Contents
+
+- [Why Run Your Own Node](#why-run-your-own-node)
+- [Prerequisites](#prerequisites)
+- [Hardware Requirements](#hardware-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Run Your Own Node
 
 When you use a wallet connected to someone else's node, you trust that node to report accurate information. Your IP address gets linked to your Bitcoin addresses, and transaction queries travel through servers you do not control. A block explorer like Blockstream.info or mempool.space receives your transaction IDs and can correlate them with your IP address. Over time, this creates a metadata trail that undermines the pseudonymous nature of Bitcoin.

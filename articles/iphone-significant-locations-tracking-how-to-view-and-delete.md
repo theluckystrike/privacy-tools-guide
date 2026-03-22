@@ -43,6 +43,14 @@ Apple enforces these principles through App Store review guidelines.
 - **Apple designed this to**: improve user experience rather than for tracking purposes.
 - **However, the privacy implications remain substantial**: the ability to reconstruct your daily movements from this dataset concerns many users.
 
+## Table of Contents
+
+- [What Are Significant Locations on iPhone](#what-are-significant-locations-on-iphone)
+- [Prerequisites](#prerequisites)
+- [Additional Location Privacy Controls](#additional-location-privacy-controls)
+- [Threat Model Analysis for Location Privacy](#threat-model-analysis-for-location-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## What Are Significant Locations on iPhone
 
 Significant Locations is an iOS system service that automatically identifies and records locations you visit repeatedly. The feature exists to enhance other Apple services—providing context for Photos memories, calendar event suggestions, and Siri recommendations. Apple designed this to improve user experience rather than for tracking purposes.

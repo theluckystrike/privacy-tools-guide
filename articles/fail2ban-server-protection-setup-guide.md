@@ -27,6 +27,13 @@ A Linux server with SSH exposed to the internet will have thousands of brute-for
 - **This guide covers how fail2ban works**: install fail2ban, basic configuration, with specific setup instructions
 - **Pricing starts at $6**: with options for different team sizes
 
+## Table of Contents
+
+- [How Fail2ban Works](#how-fail2ban-works)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## How Fail2ban Works
 
 1. A daemon monitors log files (e.g., `/var/log/auth.log`)

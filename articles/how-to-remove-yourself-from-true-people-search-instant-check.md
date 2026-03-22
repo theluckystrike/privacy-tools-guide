@@ -41,6 +41,14 @@ This guide covers the manual opt-out processes for major people search sites and
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Data Broker Removal Service Comparison](#data-broker-removal-service-comparison)
+- [Advanced Removal Automation with API Calls](#advanced-removal-automation-with-api-calls)
+- [Additional Privacy Measures](#additional-privacy-measures)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

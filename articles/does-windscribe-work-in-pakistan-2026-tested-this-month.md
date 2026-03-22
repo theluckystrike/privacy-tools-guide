@@ -40,6 +40,21 @@ Yes, Windscribe works in Pakistan as of March 2026. The Stealth protocol deliver
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Pakistan's Internet Regulatory Environment](#understanding-pakistans-internet-regulatory-environment)
+- [Testing Windscribe in Pakistan: March 2026 Results](#testing-windscribe-in-pakistan-march-2026-results)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Server Recommendations for Pakistan Users](#server-recommendations-for-pakistan-users)
+- [Alternative Considerations](#alternative-considerations)
+- [Security Considerations](#security-considerations)
+- [Deep Packet Inspection Evasion Techniques](#deep-packet-inspection-evasion-techniques)
+- [VPN Kill Switch Implementation](#vpn-kill-switch-implementation)
+- [Connection Reliability in High-Blocking Environments](#connection-reliability-in-high-blocking-environments)
+- [Network Traffic Analysis](#network-traffic-analysis)
+- [Server-Side VPN Configuration](#server-side-vpn-configuration)
+- [Monitoring and Alerts](#monitoring-and-alerts)
+
 ## Understanding Pakistan's Internet Regulatory Environment
 
 The Pakistan Telecommunications Authority (PTA) maintains a blocking system that restricts access to numerous platforms. VPNs face ongoing challenges as the regulator periodically updates its blocking mechanisms. Windscribe, as a service with obfuscation capabilities and a global server network, presents a viable option for users seeking to maintain connectivity.

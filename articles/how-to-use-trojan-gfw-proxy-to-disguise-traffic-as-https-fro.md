@@ -40,6 +40,13 @@ Trojan GFW proxy represents a sophisticated approach to network traffic obfuscat
 - **This makes active probing**: by censors significantly harder than with protocols that use custom encryption schemes.
 - **For browsers**: both Firefox and Chrome support SOCKS5 proxy configuration.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Performance Optimization](#performance-optimization)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Security Considerations](#security-considerations)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

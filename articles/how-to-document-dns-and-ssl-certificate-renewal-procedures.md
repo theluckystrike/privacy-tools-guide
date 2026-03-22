@@ -24,6 +24,13 @@ Documenting DNS and SSL certificate renewal procedures is essential for maintain
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Documentation Matters for Renewals](#why-documentation-matters-for-renewals)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Documentation Matters for Renewals
 
 SSL certificate expirations resulting from poor documentation cost businesses millions annually in downtime and emergency remediation. When certificates expire, browsers display security warnings that drive visitors away, and some applications refuse connections entirely. DNS documentation gaps mean that during emergencies, teams waste critical time tracing which records control which services rather than fixing the problem.

@@ -55,6 +55,19 @@ Signal and Matrix are the two leading privacy-focused messaging platforms, but t
 
 3.
 
+## Table of Contents
+
+- [Core Architectural Differences](#core-architectural-differences)
+- [Feature Comparison](#feature-comparison)
+- [End-to-End Encryption: Implementation Details](#end-to-end-encryption-implementation-details)
+- [Metadata Privacy: Detailed Comparison](#metadata-privacy-detailed-comparison)
+- [Self-Hosting: Practical Setup](#self-hosting-practical-setup)
+- [Use Cases and Recommendations](#use-cases-and-recommendations)
+- [Detailed Cost Comparison](#detailed-cost-comparison)
+- [Real-World Comparison: Team of 10 Remote Workers](#real-world-comparison-team-of-10-remote-workers)
+- [Security Considerations](#security-considerations)
+- [Migration Path: Signal to Matrix](#migration-path-signal-to-matrix)
+
 ## Core Architectural Differences
 
 ### Signal: Centralized, Phone-Number-Based

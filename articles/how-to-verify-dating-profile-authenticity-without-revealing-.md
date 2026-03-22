@@ -40,6 +40,13 @@ Verifying whether a dating profile is authentic represents a common privacy chal
 - **This guide provides practical**: techniques for developers and power users to verify dating profiles while maintaining operational security.
 - Use these skills responsibly.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Verification Techniques](#advanced-verification-techniques)
+- [Privacy-Respecting Verification Summary](#privacy-respecting-verification-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

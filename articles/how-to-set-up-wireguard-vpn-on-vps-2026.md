@@ -65,6 +65,21 @@ This guide assumes Ubuntu 22.04 LTS (most common, easiest setup).
 
 ## 2. Server-Side Setup
 
+## Table of Contents
+
+- [2. Server-Side Setup](#2-server-side-setup)
+- [3. Client Setup (Linux/Mac)](#3-client-setup-linuxmac)
+- [4. Client Setup (Windows)](#4-client-setup-windows)
+- [5. Mobile Setup (Android/iOS)](#5-mobile-setup-androidios)
+- [6. DNS Leak Prevention (Critical)](#6-dns-leak-prevention-critical)
+- [7. Kill Switch (Prevent Leaks When VPN Drops)](#7-kill-switch-prevent-leaks-when-vpn-drops)
+- [8. Multi-Client Setup](#8-multi-client-setup)
+- [9. Server Monitoring](#9-server-monitoring)
+- [10. Troubleshooting](#10-troubleshooting)
+- [11. Maintenance](#11-maintenance)
+- [Cost Analysis](#cost-analysis)
+- [Security Considerations](#security-considerations)
+
 ### Step 1: SSH Into VPS
 
 ```bash

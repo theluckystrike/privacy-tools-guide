@@ -39,6 +39,15 @@ Enable Developer Mode on your Android device, connect it to a computer via USB w
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [What is ADB and Why Use It?](#what-is-adb-and-why-use-it)
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting](#troubleshooting)
+- [Performance and Privacy Benefits](#performance-and-privacy-benefits)
+- [Getting Started](#getting-started)
+
 ## What is ADB and Why Use It?
 
 ADB is a command-line tool from the Android SDK that creates a communication bridge between your computer and Android device. It allows you to execute shell commands, transfer files, and modify system settings that are normally hidden from users.

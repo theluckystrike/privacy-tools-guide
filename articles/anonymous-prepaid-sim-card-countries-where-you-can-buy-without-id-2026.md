@@ -51,6 +51,19 @@ You can still buy anonymous prepaid SIM cards without ID in several countries, p
 - **Cost**: 4,000-8,000 Cambodian Riel ($1-2).
 - **Cost**: 100-300 Philippine Peso ($1.80-5.40) in Philippines, 30,000-100,000 Indonesian Rupiah ($2-6.50) in Indonesia.
 
+## Table of Contents
+
+- [Understanding the ecosystem in 2026](#understanding-the-ecosystem-in-2026)
+- [Countries Where Anonymous SIM Purchase Remains Possible](#countries-where-anonymous-sim-purchase-remains-possible)
+- [Practical Strategies for Anonymous Acquisition](#practical-strategies-for-anonymous-acquisition)
+- [Important Considerations and Risks](#important-considerations-and-risks)
+- [Alternatives to Physical SIMs](#alternatives-to-physical-sims)
+- [Practical Acquisition Workflow](#practical-acquisition-workflow)
+- [Regional Deep Dives: Current Status (2026)](#regional-deep-dives-current-status-2026)
+- [Technical Verification When SIM Arrives](#technical-verification-when-sim-arrives)
+- [Cost-Benefit Analysis for Your Situation](#cost-benefit-analysis-for-your-situation)
+- [Recovery If SIM is Blocked or Flagged](#recovery-if-sim-is-blocked-or-flagged)
+
 ## Understanding the ecosystem in 2026
 
 The global regulatory environment for SIM card purchases has evolved considerably. Following international pressure to combat terrorism and fraud, many countries that once allowed anonymous purchases now require some form of identification. However, practical workarounds remain available in certain regions, and understanding these options is essential for privacy-conscious individuals.

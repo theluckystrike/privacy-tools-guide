@@ -46,6 +46,18 @@ Lesson: Cancellation must be as easy as signup.
 5.
 - **Making it difficult for**: users under 13 to opt out of data sharing.
 
+## Table of Contents
+
+- [What Are Dark Patterns in Consent Interfaces?](#what-are-dark-patterns-in-consent-interfaces)
+- [Key Regulations Banning Dark Patterns in 2026](#key-regulations-banning-dark-patterns-in-2026)
+- [Implementing Compliant Consent Systems](#implementing-compliant-consent-systems)
+- [Enforcement and Penalties](#enforcement-and-penalties)
+- [Dark Pattern Case Studies from 2025-2026](#dark-pattern-case-studies-from-2025-2026)
+- [Technical Audit: Measuring Dark Pattern Severity](#technical-audit-measuring-dark-pattern-severity)
+- [Accessibility and Dark Patterns Overlap](#accessibility-and-dark-patterns-overlap)
+- [Future Regulations Expected in 2026-2027](#future-regulations-expected-in-2026-2027)
+- [Compliance Testing Checklist](#compliance-testing-checklist)
+
 ## What Are Dark Patterns in Consent Interfaces?
 
 Dark patterns are design elements that trick users into making choices they would not otherwise make. In the context of consent interfaces, this includes:

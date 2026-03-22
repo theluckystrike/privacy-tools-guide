@@ -42,6 +42,13 @@ Protecting your identity as a confidential informant requires a multi-layered ap
 # 3.
 - **Communication verification - Out-of-band**: key verification performed - Safety numbers verified in person - Challenge-response authentication used 5.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Threat Modeling for CI Protection](#advanced-threat-modeling-for-ci-protection)
+- [Tails OS Configuration for Maximum Anonymity](#tails-os-configuration-for-maximum-anonymity)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

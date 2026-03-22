@@ -42,6 +42,27 @@ Choose a dedicated password manager if you need CLI access, cross-browser sync, 
 - **The main limitation is**: that the free tier doesn't support organization/team features.
 - **LastPass ($3/month for individuals)**: offers convenient autofill and family sharing.
 
+## Table of Contents
+
+- [The Security Model: Where Your Data Lives](#the-security-model-where-your-data-lives)
+- [Quick Comparison](#quick-comparison)
+- [Command-Line Access: The Developer Requirement](#command-line-access-the-developer-requirement)
+- [API Keys and Secret Management](#api-keys-and-secret-management)
+- [Browser Extension Limitations](#browser-extension-limitations)
+- [Practical Integration Patterns](#practical-integration-patterns)
+- [When Browser Managers Make Sense](#when-browser-managers-make-sense)
+- [Decision Framework for Developers](#decision-framework-for-developers)
+- [Comparing Popular Dedicated Password Managers](#comparing-popular-dedicated-password-managers)
+- [Session Management and Timeout Security](#session-management-and-timeout-security)
+- [Team Collaboration and Audit Trails](#team-collaboration-and-audit-trails)
+- [Performance Considerations](#performance-considerations)
+- [Migration Strategies](#migration-strategies)
+- [The Economics of Password Manager Selection](#the-economics-of-password-manager-selection)
+- [Advanced Features: Distinguishing Premium Managers](#advanced-features-distinguishing-premium-managers)
+- [Security Incident Response Patterns](#security-incident-response-patterns)
+- [Regulatory and Compliance Considerations](#regulatory-and-compliance-considerations)
+- [Integration with Infrastructure Automation](#integration-with-infrastructure-automation)
+
 ## The Security Model: Where Your Data Lives
 
 Browser password managers store credentials within the browser's encrypted vault. Chrome uses OS-level encryption through the Data Protection API on Windows and Keychain on macOS. Firefox employs a master password system that encrypts your logins using AES-256 before storage. The encryption key derivation typically uses PBKDF2 with a configurable iteration count.

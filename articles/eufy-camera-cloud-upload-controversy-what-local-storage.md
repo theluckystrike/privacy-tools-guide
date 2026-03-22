@@ -43,6 +43,19 @@ The Eufy camera cloud upload controversy sparked significant concern among priva
 - **Home Server Integration Advanced**: users can integrate cameras with home server solutions for complete control.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Eufy Cloud Upload Controversy](#understanding-the-eufy-cloud-upload-controversy)
+- [What Data Do Eufy Cameras Actually Upload?](#what-data-do-eufy-cameras-actually-upload)
+- [Local Storage Alternatives for Security Cameras](#local-storage-alternatives-for-security-cameras)
+- [Recommended Privacy-First Security Camera Systems](#recommended-privacy-first-security-camera-systems)
+- [How to Configure Eufy Cameras for Maximum Privacy](#how-to-configure-eufy-cameras-for-maximum-privacy)
+- [Advanced: Capturing RTSP Streams with Wireshark](#advanced-capturing-rtsp-streams-with-wireshark)
+- [Privacy Camera Comparison Table](#privacy-camera-comparison-table)
+- [Setting Up IP Whitelisting](#setting-up-ip-whitelisting)
+- [Network Segmentation for Smart Home](#network-segmentation-for-smart-home)
+- [Related Reading](#related-reading)
+
 ## Understanding the Eufy Cloud Upload Controversy
 
 ### What Happened

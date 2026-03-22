@@ -40,6 +40,21 @@ Ideally, latency should be under 100ms.
 5.
 - **Most voice mode issues**: stem from microphone permission conflicts or outdated software.
 
+## Table of Contents
+
+- [Common Causes of ChatGPT Voice Mode Issues](#common-causes-of-chatgpt-voice-mode-issues)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Advanced Solutions](#advanced-solutions)
+- [Prevention Tips](#prevention-tips)
+- [When to Contact Support](#when-to-contact-support)
+- [Systematic Troubleshooting Flowchart](#systematic-troubleshooting-flowchart)
+- [Advanced Diagnostic Tools](#advanced-diagnostic-tools)
+- [Operating System-Specific Troubleshooting](#operating-system-specific-troubleshooting)
+- [Performance Optimization](#performance-optimization)
+- [API Alternative for Developers](#api-alternative-for-developers)
+- [Comparison: Web Voice vs API Transcription](#comparison-web-voice-vs-api-transcription)
+- [Prevention: Maintaining Voice Mode Health](#prevention-maintaining-voice-mode-health)
+
 ## Common Causes of ChatGPT Voice Mode Issues
 
 Voice mode problems typically stem from a handful of causes:

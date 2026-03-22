@@ -42,6 +42,17 @@ Proton Drive and Filen achieve 80-90% of unencrypted cloud storage speeds for mo
 - **On a modern M2 MacBook**: encryption processing consumed 40-60% of one core during sync.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Benchmark Methodology](#benchmark-methodology)
+- [Small File Sync Performance](#small-file-sync-performance)
+- [Large File Upload Performance](#large-file-upload-performance)
+- [Folder Synchronization Speed](#folder-synchronization-speed)
+- [API Performance for Developers](#api-performance-for-developers)
+- [Mobile Performance Considerations](#mobile-performance-considerations)
+- [Performance Optimization Strategies](#performance-optimization-strategies)
+- [Recommendation Matrix](#recommendation-matrix)
+
 ## Benchmark Methodology
 
 Tests were conducted on a 100Mbps symmetric fiber connection with average latency of 15ms to US-East servers. Each service was tested using official desktop clients with default settings. File sets included: 1,000 small files (1-5MB each), 10 large files (100MB each), and a mixed folder structure totaling 2GB.

@@ -43,6 +43,19 @@ Create completely separate digital identities by using distinct email addresses 
 5.
 - **Never cross-pollinate data between identities**: don't use your work email on personal accounts, don't access personal accounts from work devices.
 
+## Table of Contents
+
+- [Why Identity Compartmentalization Matters](#why-identity-compartmentalization-matters)
+- [Core Components of Identity Separation](#core-components-of-identity-separation)
+- [Device Isolation Strategies](#device-isolation-strategies)
+- [Network-Level Compartmentalization](#network-level-compartmentalization)
+- [Operational Security Practices](#operational-security-practices)
+- [Implementation Checklist](#implementation-checklist)
+- [Metadata Correlation Attacks](#metadata-correlation-attacks)
+- [Advanced: State Inference Attacks](#advanced-state-inference-attacks)
+- [Monitoring Compartmentalization Integrity](#monitoring-compartmentalization-integrity)
+- [Compartmentalization Failure Recovery](#compartmentalization-failure-recovery)
+
 ## Why Identity Compartmentalization Matters
 
 Every data point you share online contributes to a profile that can be used against you. When your real name, email, phone number, and location are connected across platforms, attackers can build dossiers through correlation attacks. A single breach at one service can expose your entire digital life.

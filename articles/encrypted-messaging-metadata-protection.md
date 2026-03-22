@@ -40,6 +40,21 @@ Encrypted messaging metadata -- who contacted whom, when, how often, and from wh
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Understanding Messaging Metadata](#understanding-messaging-metadata)
+- [Metadata Protection Mechanisms](#metadata-protection-mechanisms)
+- [Practical Implementation Considerations](#practical-implementation-considerations)
+- [Tools and Libraries for Metadata Protection](#tools-and-libraries-for-metadata-protection)
+- [Implementing Constant-Rate Padding for Metadata Hiding](#implementing-constant-rate-padding-for-metadata-hiding)
+- [Cover Traffic for Traffic Analysis Resistance](#cover-traffic-for-traffic-analysis-resistance)
+- [Comparing Metadata Protection Techniques](#comparing-metadata-protection-techniques)
+- [Real-World Metadata Leakage Examples](#real-world-metadata-leakage-examples)
+- [Migrating from Non-Metadata-Protected Systems](#migrating-from-non-metadata-protected-systems)
+- [Evaluating Messenger Claims About Metadata Protection](#evaluating-messenger-claims-about-metadata-protection)
+- [Integrating Metadata Protection into Applications](#integrating-metadata-protection-into-applications)
+- [Legal and Regulatory Implications of Metadata Protection](#legal-and-regulatory-implications-of-metadata-protection)
+
 ## Understanding Messaging Metadata
 
 Metadata in messaging contexts encompasses far more than most users realize. It includes:

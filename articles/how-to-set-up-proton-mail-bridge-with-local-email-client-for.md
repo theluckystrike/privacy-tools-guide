@@ -47,6 +47,15 @@ Click Sign In and Apple Mail will connect through Bridge to Proton Mail.
 - **Generate your IMAP/SMTP credentials**: then configure your preferred email client using the settings provided.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What is Proton Mail Bridge?](#what-is-proton-mail-bridge)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Connection Issues](#troubleshooting-connection-issues)
+- [Security Considerations](#security-considerations)
+- [Performance Tips](#performance-tips)
+- [Getting Started](#getting-started)
+
 ## What is Proton Mail Bridge?
 
 Proton Mail Bridge runs locally on your machine and acts as an intermediary between your email client and Proton's servers. It handles the encryption and decryption automatically, meaning your email client communicates with Bridge using standard IMAP and SMTP protocols while Bridge manages the complex encryption layer.

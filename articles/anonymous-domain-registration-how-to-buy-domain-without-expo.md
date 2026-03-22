@@ -44,6 +44,24 @@ Domain registration privacy requires enabling WHOIS protection through registrar
 - **Management**: Use VPN for all domain settings access
 7.
 
+## Table of Contents
+
+- [Understanding WHOIS and Why Privacy Matters](#understanding-whois-and-why-privacy-matters)
+- [Method 1: Registrar-Provided Privacy Protection](#method-1-registrar-provided-privacy-protection)
+- [Method 2: Privacy-Focused Registrars](#method-2-privacy-focused-registrars)
+- [Method 3: Anonymous Registration with Proton Mail and VPN](#method-3-anonymous-registration-with-proton-mail-and-vpn)
+- [Method 4: Domain Proxy Services](#method-4-domain-proxy-services)
+- [Practical Considerations for Developers](#practical-considerations-for-developers)
+- [Limitations to Understand](#limitations-to-understand)
+- [Advanced Privacy-First Registrar Comparison](#advanced-privacy-first-registrar-comparison)
+- [Detailed Registrar Comparison](#detailed-registrar-comparison)
+- [2026 Domain Pricing Analysis](#2026-domain-pricing-analysis)
+- [Payment Methods and Anonymity Comparison](#payment-methods-and-anonymity-comparison)
+- [Additional Anonymization Layers](#additional-anonymization-layers)
+- [Automation and Bulk Domain Privacy](#automation-and-bulk-domain-privacy)
+- [TLD Considerations for Privacy](#tld-considerations-for-privacy)
+- [Recommended Workflow for Maximum Privacy (2026 Updated)](#recommended-workflow-for-maximum-privacy-2026-updated)
+
 ## Understanding WHOIS and Why Privacy Matters
 
 Every domain registration requires accurate contact information under ICANN regulations. This data gets stored in the WHOIS database, which anyone can query using tools like `whois` on Linux/macOS or online WHOIS lookup services.

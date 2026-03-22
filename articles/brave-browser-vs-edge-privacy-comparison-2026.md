@@ -44,6 +44,16 @@ Brave and Microsoft Edge have diverged significantly in their privacy approaches
 
 It depends on your background.
 
+## Table of Contents
+
+- [Tracking Protection Mechanisms](#tracking-protection-mechanisms)
+- [Cookie and Storage Management](#cookie-and-storage-management)
+- [Network Request Analysis](#network-request-analysis)
+- [Extension API Access](#extension-api-access)
+- [Developer Tools and Privacy](#developer-tools-and-privacy)
+- [Practical Configuration Recommendations](#practical-configuration-recommendations)
+- [Performance Implications](#performance-implications)
+
 ## Tracking Protection Mechanisms
 
 ### Brave Browser: Aggressive Blocking by Default

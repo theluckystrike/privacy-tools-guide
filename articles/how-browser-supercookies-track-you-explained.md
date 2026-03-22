@@ -40,6 +40,20 @@ Browser developers have invested significant effort into blocking traditional tr
 - **By serving different favicons**: based on a user's unique identifier and using the browser's favicon cache, trackers can identify users across sessions without any traditional cookie storage.
 - **Use HSTS pins to**: encode a secondary identifier 4.
 
+## Table of Contents
+
+- [What Are Supercookies?](#what-are-supercookies)
+- [Storage Mechanisms Used by Supercookies](#storage-mechanisms-used-by-supercookies)
+- [The Evercookie Approach](#the-evercookie-approach)
+- [Detection and Prevention](#detection-and-prevention)
+- [Implications for Developers](#implications-for-developers)
+- [Advanced Supercookie Techniques](#advanced-supercookie-techniques)
+- [Supercookies in Real-World Exploits](#supercookies-in-real-world-exploits)
+- [Browser-Specific Defenses](#browser-specific-defenses)
+- [Detecting Your Own Supercookies](#detecting-your-own-supercookies)
+- [Building Tracker-Resistant Web Applications](#building-tracker-resistant-web-applications)
+- [The Futurescape of Supercookies](#the-futurescape-of-supercookies)
+
 ## What Are Supercookies?
 
 The term "supercookie" refers to any tracking mechanism that mimics standard HTTP cookies but operates through alternative browser storage channels. Unlike regular cookies, which operate under strict browser security policies, supercookies exploit caching mechanisms, service workers, and other web platform features to persist beyond user deletion attempts.

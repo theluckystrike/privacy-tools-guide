@@ -42,6 +42,22 @@ Canvas fingerprinting is one of the most persistent tracking techniques used by 
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding Canvas Fingerprinting](#understanding-canvas-fingerprinting)
+- [How Canvas Blocker Extensions Work](#how-canvas-blocker-extensions-work)
+- [Performance Impact Analysis](#performance-impact-analysis)
+- [Testing Effectiveness](#testing-effectiveness)
+- [Implementation Considerations for Developers](#implementation-considerations-for-developers)
+- [Popular Canvas Blocker Extensions](#popular-canvas-blocker-extensions)
+- [Building Your Own Canvas Blocker](#building-your-own-canvas-blocker)
+- [Performance Profiling](#performance-profiling)
+- [Allowlist Management](#allowlist-management)
+- [Detection Evasion Techniques](#detection-evasion-techniques)
+- [Integration with Other Privacy Tools](#integration-with-other-privacy-tools)
+- [Browser Compatibility Considerations](#browser-compatibility-considerations)
+- [Maintenance and Updates](#maintenance-and-updates)
+
 ## Understanding Canvas Fingerprinting
 
 Before examining blockers, you need to understand what canvas fingerprinting actually does. When a website renders text or graphics to an HTML5 canvas element, the browser produces a unique image based on your operating system, GPU, installed fonts, driver version, and rendering pipeline. The website then converts this image to a hash string that serves as a persistent identifier.

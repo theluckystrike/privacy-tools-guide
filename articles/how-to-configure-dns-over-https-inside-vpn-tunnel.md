@@ -48,6 +48,15 @@ When your VPN connects, it may override your DNS settings.
 - **dnsleaktest.com**: Run the extended test to check which DNS servers are being used
 2.
 
+## Table of Contents
+
+- [Understanding DNS Leaks and Why DoH Inside VPN Matters](#understanding-dns-leaks-and-why-doh-inside-vpn-matters)
+- [Configuring DoH Inside Different VPN Setups](#configuring-doh-inside-different-vpn-setups)
+- [Verifying Your DoH Inside VPN Configuration](#verifying-your-doh-inside-vpn-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Split DNS with DoH](#advanced-split-dns-with-doh)
+- [Related Reading](#related-reading)
+
 ## Understanding DNS Leaks and Why DoH Inside VPN Matters
 
 ### What is a DNS Leak?

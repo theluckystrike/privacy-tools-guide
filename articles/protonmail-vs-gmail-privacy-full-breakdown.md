@@ -40,6 +40,20 @@ Choose ProtonMail if you need true end-to-end encryption where the provider cann
 - **Email delivery**: typically <2 seconds between Gmail servers.
 - **Email delivery**: typically 5-10 seconds due to encryption overhead.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Data Collection and Scanning](#data-collection-and-scanning)
+- [SMTP, IMAP, and Developer Access](#smtp-imap-and-developer-access)
+- [Self-Hosting and Portability](#self-hosting-and-portability)
+- [Security Features Comparison](#security-features-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Pricing and Plan Comparison](#pricing-and-plan-comparison)
+- [Performance and Reliability Metrics](#performance-and-reliability-metrics)
+- [Implementation Challenges](#implementation-challenges)
+- [Data Residency and Legal Jurisdiction](#data-residency-and-legal-jurisdiction)
+- [Real-World Usage Patterns](#real-world-usage-patterns)
+
 ## Encryption Architecture
 
 ### ProtonMail's Encryption Model

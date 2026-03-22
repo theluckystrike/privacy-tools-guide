@@ -52,6 +52,13 @@ Bitwarden CLI is the best overall password manager CLI tool for most developers,
 - **Choose 1Password CLI for**: polished team workflows, gopass for multi-store organization, or HashiCorp Vault for enterprise secrets management.
 - **The tool is open-source**: and supports all major Bitwarden features through the terminal.
 
+## Table of Contents
+
+- [Why Use a CLI Password Manager](#why-use-a-cli-password-manager)
+- [Top CLI Password Managers](#top-cli-password-managers)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Integrating CLI Password Managers into Your Workflow](#integrating-cli-password-managers-into-your-workflow)
+
 ## Why Use a CLI Password Manager
 
 Command-line password managers appeal to developers for several reasons. First, they integrate naturally with shell scripts and automation pipelines. You can fetch credentials programmatically without leaving your terminal or switching contexts. Second, CLI tools typically have minimal resource overhead compared to full GUI applications. Third, they work identically across different operating systems, making them ideal for developers who work in mixed environments or remote servers.

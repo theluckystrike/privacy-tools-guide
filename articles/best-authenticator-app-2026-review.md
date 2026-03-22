@@ -52,6 +52,16 @@ The best authenticator app for developers in 2026 is Bitwarden's built-in TOTP g
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **For terminal-focused workflows**: `oathtool` or `pass-totp` let you generate codes directly from the command line without a mobile device.
 
+## Table of Contents
+
+- [What Developers Need from Authenticator Apps](#what-developers-need-from-authenticator-apps)
+- [Standalone Authenticator Options](#standalone-authenticator-options)
+- [Password Managers with Built-in TOTP](#password-managers-with-built-in-totp)
+- [Command-Line TOTP Tools](#command-line-totp-tools)
+- [Self-Hosted and Advanced Options](#self-hosted-and-advanced-options)
+- [Backup and Recovery Strategies](#backup-and-recovery-strategies)
+- [Choosing Your Authenticator](#choosing-your-authenticator)
+
 ## What Developers Need from Authenticator Apps
 
 Developer-focused authenticator requirements differ from casual users. Command-line generation allows scripting 2FA into automation pipelines. Programmability through APIs enables integration with password managers, secret management systems, and custom tooling. Cross-platform synchronization ensures access across desktop and mobile devices. Backup and export capabilities protect against device loss.

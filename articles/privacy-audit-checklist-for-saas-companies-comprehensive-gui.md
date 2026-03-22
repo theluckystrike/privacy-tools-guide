@@ -40,6 +40,21 @@ Running a privacy audit for your SaaS product requires systematic evaluation acr
 - **Can I customize these**: recommendations for my specific situation? Absolutely.
 - **Test each recommendation on**: a small scale, observe results, and adjust the approach based on what actually works in your context.
 
+## Table of Contents
+
+- [1. Data Inventory and Classification](#1-data-inventory-and-classification)
+- [2. Consent and Legal Basis](#2-consent-and-legal-basis)
+- [3. Data Subject Rights Implementation](#3-data-subject-rights-implementation)
+- [4. Security Controls Assessment](#4-security-controls-assessment)
+- [5. Third-Party Vendor Assessment](#5-third-party-vendor-assessment)
+- [Vendor Security Assessment](#vendor-security-assessment)
+- [6. Incident Response Preparation](#6-incident-response-preparation)
+- [7. Documentation Requirements](#7-documentation-requirements)
+- [8. Regular Review Cadence](#8-regular-review-cadence)
+- [Quarterly Reviews](#quarterly-reviews)
+- [Annual Reviews](#annual-reviews)
+- [Event-Triggered Reviews](#event-triggered-reviews)
+
 ## 1. Data Inventory and Classification
 
 Before implementing any privacy controls, document what data flows through your systems.

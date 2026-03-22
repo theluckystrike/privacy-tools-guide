@@ -209,6 +209,16 @@ Understanding these technical dynamics helps developers and power users make inf
 
 **Note**: The effectiveness of any countermeasure varies based on current filtering rules, infrastructure upgrades, and geographic location within Iran. Users should assess local conditions and legal implications before implementing any of these techniques.
 
+## Table of Contents
+
+- [Advanced DPI Evasion Techniques](#advanced-dpi-evasion-techniques)
+- [Domain Fronting Implementation](#domain-fronting-implementation)
+- [Practical Circumvention Tools](#practical-circumvention-tools)
+- [Detecting Surveillance](#detecting-surveillance)
+- [Legal and Safety Considerations](#legal-and-safety-considerations)
+- [Detection Methods and Countermeasures](#detection-methods-and-countermeasures)
+- [Supporting Circumvention Research](#supporting-circumvention-research)
+
 ## Advanced DPI Evasion Techniques
 
 ### Packet Size Randomization

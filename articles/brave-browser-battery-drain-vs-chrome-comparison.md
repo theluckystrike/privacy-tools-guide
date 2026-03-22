@@ -42,6 +42,15 @@ Brave uses 20-30% less battery than Chrome during equivalent browsing sessions b
 - **Open identical test pages**: - Use a standardized set of websites including text-heavy pages, media content, and web applications 4.
 - **Measure over identical time**: periods - Run each browser for at least 30 minutes under the same workload 5.
 
+## Table of Contents
+
+- [Architectural Differences](#architectural-differences)
+- [Measuring Battery Drain](#measuring-battery-drain)
+- [Benchmarking Methodology](#benchmarking-methodology)
+- [Expected Battery Impact](#expected-battery-impact)
+- [Power User Optimization Strategies](#power-user-optimization-strategies)
+- [Developer Considerations](#developer-considerations)
+
 ## Architectural Differences
 
 Both Brave and Chrome share the Chromium rendering engine, yet their default configurations and feature sets diverge substantially. Chrome ships with numerous background processes and sync services that run continuously, even when the browser appears idle. Brave takes a different approach by blocking ads and trackers by default—a feature that reduces network requests and JavaScript execution overhead.

@@ -40,6 +40,24 @@ intent-checked: true---
 - **In 2019**: investigators used GEDmatch (a different platform) to identify the Golden State Killer, demonstrating how genetic databases can be used for criminal investigations.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [How Genetic Testing Companies Process Your Data](#how-genetic-testing-companies-process-your-data)
+- [What 23andMe Can Legally Do With Your DNA](#what-23andme-can-legally-do-with-your-dna)
+- [What AncestryDNA Can Do With Your DNA](#what-ancestrydna-can-do-with-your-dna)
+- [Your Legal Rights Under Current Regulations](#your-legal-rights-under-current-regulations)
+- [How to Exercise Your Data Rights](#how-to-exercise-your-data-rights)
+- [Technical Considerations for Developers](#technical-considerations-for-developers)
+- [Alternatives to Commercial Genetic Testing](#alternatives-to-commercial-genetic-testing)
+- [Genetic Privacy Tool Comparison](#genetic-privacy-tool-comparison)
+- [Understanding Re-Identification Risks](#understanding-re-identification-risks)
+- [Genetic Discrimination Concerns](#genetic-discrimination-concerns)
+- [Requesting Regulatory Oversight](#requesting-regulatory-oversight)
+- [Managing Genetic Data Across Services](#managing-genetic-data-across-services)
+- [Scenario: Genetic Testing and Career Security](#scenario-genetic-testing-and-career-security)
+- [When Genetic Testing Makes Sense](#when-genetic-testing-makes-sense)
+- [Open-Source Genetic Analysis](#open-source-genetic-analysis)
+
 ## How Genetic Testing Companies Process Your Data
 
 When you mail a saliva sample to 23andMe or AncestryDNA, you are not just getting ancestry reports. The laboratory extracts your DNA, genotypes hundreds of thousands of genetic markers (single nucleotide polymorphisms or SNPs), and stores that genetic profile indefinitely. Your genetic data becomes a valuable asset that companies can use in ways you may not expect.

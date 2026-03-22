@@ -46,6 +46,16 @@ Built by theluckystrike — More at zovo.one
 
 
 
+## Table of Contents
+
+- [What Modern Cars Collect](#what-modern-cars-collect)
+- [Who Collects What? By Manufacturer](#who-collects-what-by-manufacturer)
+- [Insurance Companies & Usage-Based Pricing](#insurance-companies-usage-based-pricing)
+- [Federal Privacy Regulations (Emerging)](#federal-privacy-regulations-emerging)
+- [How to Disable Telematics (Full Guide)](#how-to-disable-telematics-full-guide)
+- [What Data Brokers Buy From Automakers](#what-data-brokers-buy-from-automakers)
+- [Real Example: Privacy-First Driving Setup](#real-example-privacy-first-driving-setup)
+
 ## What Modern Cars Collect
 
 ### The Data Stream (Real-Time)

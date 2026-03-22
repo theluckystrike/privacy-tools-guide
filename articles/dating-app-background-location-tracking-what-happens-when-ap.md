@@ -42,6 +42,16 @@ Dating apps track your location continuously in the background through permissio
 - **Location-aware apps use this**: mechanism to periodically request location updates even after you've moved on to other applications.
 - **Breaches of location databases**: have occurred repeatedly, exposing users to real-world tracking.
 
+## Table of Contents
+
+- [How Background Location Tracking Works](#how-background-location-tracking-works)
+- [Technical Mechanisms of Background Tracking](#technical-mechanisms-of-background-tracking)
+- [What Dating Apps Actually Collect](#what-dating-apps-actually-collect)
+- [Privacy Implications and Risks](#privacy-implications-and-risks)
+- [Auditing and Controlling Background Location Access](#auditing-and-controlling-background-location-access)
+- [Technical Approaches for Privacy-Conscious Users](#technical-approaches-for-privacy-conscious-users)
+- [What Developers Should Consider](#what-developers-should-consider)
+
 ## How Background Location Tracking Works
 
 When you grant location permission to a dating app, you're typically agreeing to more than just active tracking during app use. Mobile operating systems distinguish between several location permission types, and understanding these distinctions reveals the scope of background tracking.

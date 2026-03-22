@@ -40,6 +40,18 @@ Mandatory Access Control (MAC) systems represent a critical layer of Linux secur
 - **The extensive default policies**: enterprise support contracts, and documented best practices make SELinux the natural choice for organizations standardized on these platforms.
 - **The learning mode proves**: particularly valuable for containerized applications because administrators can observe application behavior before enforcing restrictions.
 
+## Table of Contents
+
+- [Understanding Mandatory Access Control Fundamentals](#understanding-mandatory-access-control-fundamentals)
+- [Quick Comparison](#quick-comparison)
+- [SELinux: The Enterprise-Grade Security Framework](#selinux-the-enterprise-grade-security-framework)
+- [AppArmor: Simplicity Through Path-Based Controls](#apparmor-simplicity-through-path-based-controls)
+- [Comparing Security Models](#comparing-security-models)
+- [Decision Framework: Choosing Your MAC System](#decision-framework-choosing-your-mac-system)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Command-Line Privacy Audit](#command-line-privacy-audit)
+- [Filesystem Encryption Verification](#filesystem-encryption-verification)
+
 ## Understanding Mandatory Access Control Fundamentals
 
 Traditional Linux permissions operate on a simple owner-group-others model with read, write, and execute bits. This Discretionary Access Control approach means that if you own a file, you can decide who else can access it. However, this model provides limited protection against privilege escalation, compromised processes, or malicious administrators.

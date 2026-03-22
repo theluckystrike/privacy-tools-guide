@@ -44,6 +44,15 @@ On Linux, age is available through most package managers.
 - **Key derivation uses Argon2id**: resistant to both GPU and ASIC-based attacks when password-protected.
 - **For best results**: share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Comparison with GPG](#comparison-with-gpg)
+- [Performance and Scalability](#performance-and-scalability)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

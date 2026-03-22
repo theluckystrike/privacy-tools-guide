@@ -50,6 +50,20 @@ This guide covers the key management architecture used by security professionals
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
+## Table of Contents
+
+- [The Master Key / Subkey Architecture](#the-master-key-subkey-architecture)
+- [Setting Up the Master Key](#setting-up-the-master-key)
+- [Adding Subkeys](#adding-subkeys)
+- [Create a Revocation Certificate](#create-a-revocation-certificate)
+- [Back Up the Master Key](#back-up-the-master-key)
+- [Export Subkeys for Daily Use](#export-subkeys-for-daily-use)
+- [Setting Trust Level](#setting-trust-level)
+- [Extending or Renewing Subkey Expiry](#extending-or-renewing-subkey-expiry)
+- [Rotating a Compromised Subkey](#rotating-a-compromised-subkey)
+- [Publishing Your Public Key](#publishing-your-public-key)
+- [Related Reading](#related-reading)
+
 ## The Master Key / Subkey Architecture
 
 **Master key (certification key)**:

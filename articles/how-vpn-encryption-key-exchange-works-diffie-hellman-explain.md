@@ -26,6 +26,22 @@ Diffie-Hellman key exchange enables two parties to establish a shared encryption
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding DH mechanics helps**: developers and users evaluate VPN security and make informed choices about protocol selection.
 
+## Table of Contents
+
+- [The Key Distribution Problem](#the-key-distribution-problem)
+- [The Mathematics Behind Diffie-Hellman](#the-mathematics-behind-diffie-hellman)
+- [Implementing Diffie-Hellman in Python](#implementing-diffie-hellman-in-python)
+- [Diffie-Hellman in VPN Protocols](#diffie-hellman-in-vpn-protocols)
+- [Security Considerations](#security-considerations)
+- [Practical Implications for VPN Users](#practical-implications-for-vpn-users)
+- [Elliptic Curve Diffie-Hellman (ECDH) for Modern VPNs](#elliptic-curve-diffie-hellman-ecdh-for-modern-vpns)
+- [Post-Quantum Cryptography Concerns](#post-quantum-cryptography-concerns)
+- [Practical Implementation Issues](#practical-implementation-issues)
+- [Analyzing VPN Protocols for Key Exchange](#analyzing-vpn-protocols-for-key-exchange)
+- [Verifying Key Exchange in Production](#verifying-key-exchange-in-production)
+- [Future Directions in Key Exchange](#future-directions-in-key-exchange)
+- [Debugging Key Exchange Issues](#debugging-key-exchange-issues)
+
 ## The Key Distribution Problem
 
 Traditional encryption requires both parties to share a secret key. If Alice wants to send encrypted messages to Bob, they must first agree on a key. The problem: how do they exchange this key without an eavesdropper (Eve) intercepting it?

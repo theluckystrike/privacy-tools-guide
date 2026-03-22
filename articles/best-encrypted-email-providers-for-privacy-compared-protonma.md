@@ -43,6 +43,26 @@ When selecting an encrypted email provider, developers and power users need more
 - **ProtonMail uses OpenPGP with**: AES-256 for message encryption and RSA-4096 for key exchange.
 - **Tutanota uses AES-128 for**: symmetric encryption and RSA-2048 for key exchange, with plans to upgrade to post-quantum resistant algorithms.
 
+## Table of Contents
+
+- [Encryption Architecture](#encryption-architecture)
+- [Quick Comparison](#quick-comparison)
+- [Developer Features and API Access](#developer-features-and-api-access)
+- [Self-Hosting Considerations](#self-hosting-considerations)
+- [Security Audits and Transparency](#security-audits-and-transparency)
+- [Performance and Usability](#performance-and-usability)
+- [Migration Capabilities](#migration-capabilities)
+- [Making the Choice](#making-the-choice)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Hands-On Technical Comparison](#hands-on-technical-comparison)
+- [Integration with Existing Workflows](#integration-with-existing-workflows)
+- [Key Management for Organizations](#key-management-for-organizations)
+- [Practical Data Migration](#practical-data-migration)
+- [Supplementary Privacy Measures](#supplementary-privacy-measures)
+- [Compliance and Audit Scenarios](#compliance-and-audit-scenarios)
+- [Email Security Best Practices Beyond Encryption](#email-security-best-practices-beyond-encryption)
+- [Performance Considerations at Scale](#performance-considerations-at-scale)
+
 ## Encryption Architecture
 
 Both providers offer end-to-end encryption, but their implementations differ significantly.

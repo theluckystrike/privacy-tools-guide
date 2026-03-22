@@ -42,6 +42,15 @@ Signal is the best encrypted VoIP app for personal calls in 2026, offering unmat
 - **VoIP calls use end-to-end**: encryption by default.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [What Encryption Standards Matter for VoIP](#what-encryption-standards-matter-for-voip)
+- [Signal: The Gold Standard for Consumer VoIP](#signal-the-gold-standard-for-consumer-voip)
+- [Jitsi Meet: Self-Hosted VoIP Infrastructure](#jitsi-meet-self-hosted-voip-infrastructure)
+- [Matrix (Element): Decentralized VoIP with Federation](#matrix-element-decentralized-voip-with-federation)
+- [Linphone: Open-Source VoIP for Custom Applications](#linphone-open-source-voip-for-custom-applications)
+- [Choosing Your VoIP Encryption Solution](#choosing-your-voip-encryption-solution)
+
 ## What Encryption Standards Matter for VoIP
 
 Before examining specific applications, you need to understand the encryption primitives that matter:

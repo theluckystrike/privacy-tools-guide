@@ -216,6 +216,18 @@ For high-risk users—journalists, activists, researchers handling sensitive dat
 
 ## Frequently Asked Questions
 
+## Table of Contents
+
+- [Testing Advanced Data Protection Manually](#testing-advanced-data-protection-manually)
+- [Data Accessibility Across Devices](#data-accessibility-across-devices)
+- [Recovery Scenario: Lost Device](#recovery-scenario-lost-device)
+- [iCloud Keychain and Advanced Data Protection](#icloud-keychain-and-advanced-data-protection)
+- [Backup Strategy with Advanced Data Protection](#backup-strategy-with-advanced-data-protection)
+- [Performance and Storage Impact](#performance-and-storage-impact)
+- [Migrating Existing Data](#migrating-existing-data)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Enterprise Deployment](#enterprise-deployment)
+
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.

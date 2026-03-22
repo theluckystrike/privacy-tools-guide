@@ -42,6 +42,15 @@ Every time you use a computer—whether at a library, hotel business center, or 
 - Access only essential services
 4.
 
+## Table of Contents
+
+- [What Is a Live Operating System?](#what-is-a-live-operating-system)
+- [Why Live OS Leaves No Forensic Trace](#why-live-os-leaves-no-forensic-trace)
+- [Prerequisites](#prerequisites)
+- [Getting Started with Tails](#getting-started-with-tails)
+- [Advanced Techniques](#advanced-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is a Live Operating System?
 
 A live operating system is a complete OS that runs from an USB drive, SD card, or DVD without installation. It loads into RAM, uses the computer's existing hardware, and leaves no permanent changes when powered off. The original operating system remains untouched, and upon reboot, the machine returns to its previous state.

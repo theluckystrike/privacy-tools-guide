@@ -40,6 +40,16 @@ Steganography combined with encryption provides two distinct layers of security.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why Combine Encryption with Steganography](#why-combine-encryption-with-steganography)
+- [Choosing Your Toolchain](#choosing-your-toolchain)
+- [Setting Up Your Environment](#setting-up-your-environment)
+- [Implementing the Complete Workflow](#implementing-the-complete-workflow)
+- [Advanced: Using OpenCV for Higher Capacity](#advanced-using-opencv-for-higher-capacity)
+- [Practical Considerations](#practical-considerations)
+- [Complete Example Script](#complete-example-script)
+
 ## Why Combine Encryption with Steganography
 
 Using encryption alone draws attention. Encrypted files stand out because they appear as random data with no recognizable structure. Steganography solves this problem by embedding the encrypted data within ordinary-looking cover files—typically images—that pass unnoticed through most surveillance systems.

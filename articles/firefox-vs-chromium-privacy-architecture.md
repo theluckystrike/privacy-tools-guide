@@ -40,6 +40,21 @@ When selecting a browser for privacy-sensitive development work or daily browsin
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The `privacy.firstparty.isolate` preference provides**: additional first-party isolation, treating each top-level domain as a distinct security context.
 
+## Table of Contents
+
+- [Process Architecture and Site Isolation](#process-architecture-and-site-isolation)
+- [Quick Comparison](#quick-comparison)
+- [Cookie Handling and Storage Partitioning](#cookie-handling-and-storage-partitioning)
+- [Network Layer Privacy Features](#network-layer-privacy-features)
+- [Extension Permission Models](#extension-permission-models)
+- [Developer Tools for Privacy Testing](#developer-tools-for-privacy-testing)
+- [Performance Considerations](#performance-considerations)
+- [Practical Privacy Configuration Comparison](#practical-privacy-configuration-comparison)
+- [Security Comparison: Exploit Mitigations](#security-comparison-exploit-mitigations)
+- [Memory and Resource Comparison](#memory-and-resource-comparison)
+- [Privacy-Respecting Alternatives](#privacy-respecting-alternatives)
+- [Testing Your Browser's Privacy Settings](#testing-your-browsers-privacy-settings)
+
 ## Process Architecture and Site Isolation
 
 Chromium's multi-process architecture treats each tab, extension, and renderer as separate processes with IPC (Inter-Process Communication) boundaries. This design provides process-level isolation between sites, preventing a crash in one tab from affecting others. The browser maintains a broker process that mediates all renderer-to-system interactions.

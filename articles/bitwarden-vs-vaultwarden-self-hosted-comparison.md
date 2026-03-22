@@ -42,6 +42,23 @@ Running your own password manager gives you full control over your data, elimina
 - **Or use Bitwarden CLI**: bw login your@email.com bw export --output vault_export.json # 3.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [What Are You Self-Hosting?](#what-are-you-self-hosting)
+- [Feature Comparison](#feature-comparison)
+- [Installation and Setup](#installation-and-setup)
+- [Performance and Resource Usage](#performance-and-resource-usage)
+- [Security Considerations](#security-considerations)
+- [Accessing Your Vault](#accessing-your-vault)
+- [When to Choose Each Option](#when-to-choose-each-option)
+- [Detailed Feature Matrix with Real-World Use Cases](#detailed-feature-matrix-with-real-world-use-cases)
+- [Deployment Architecture Comparison](#deployment-architecture-comparison)
+- [Installation Walkthrough with Production Hardening](#installation-walkthrough-with-production-hardening)
+- [Migration Between Implementations](#migration-between-implementations)
+- [Cost Analysis (Annual, 2026 Pricing)](#cost-analysis-annual-2026-pricing)
+- [Performance and Scaling](#performance-and-scaling)
+- [Backup and Disaster Recovery](#backup-and-disaster-recovery)
+
 ## What Are You Self-Hosting?
 
 **Bitwarden** offers an official self-hosted deployment through Docker. The full implementation includes all features from their cloud service: password generation, secure sharing, collections, organization policies, and the Bitwarden Send feature. The official image requires significant resources but provides feature parity with the hosted version.

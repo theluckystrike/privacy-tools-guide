@@ -40,6 +40,22 @@ Choose iCloud Private Relay if you primarily use Safari on Apple devices and wan
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 
+## Table of Contents
+
+- [How iCloud Private Relay Works](#how-icloud-private-relay-works)
+- [Comparing Private Relay to Traditional VPNs](#comparing-private-relay-to-traditional-vpns)
+- [When to Use Each Solution](#when-to-use-each-solution)
+- [Technical Limitations and Considerations](#technical-limitations-and-considerations)
+- [Threat Model Analysis](#threat-model-analysis)
+- [Advanced Configuration: Private Relay with Safari Settings](#advanced-configuration-private-relay-with-safari-settings)
+- [VPN Configuration Comparison](#vpn-configuration-comparison)
+- [Performance Testing: Private Relay vs VPN](#performance-testing-private-relay-vs-vpn)
+- [Network Monitoring and Debugging](#network-monitoring-and-debugging)
+- [Privacy Comparison Matrix](#privacy-comparison-matrix)
+- [Building Applications with Private Relay Awareness](#building-applications-with-private-relay-awareness)
+- [Corporate Environment Considerations](#corporate-environment-considerations)
+- [Making an Informed Choice](#making-an-informed-choice)
+
 ## How iCloud Private Relay Works
 
 Private Relay is Apple's implementation of proxy-based privacy, available to iCloud+ subscribers on iOS 15, iPadOS 15, and macOS Monterey or later. When enabled, it routes Safari traffic and DNS queries through two separate relays:

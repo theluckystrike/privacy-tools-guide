@@ -39,6 +39,19 @@ FastPeopleSearch aggregates public records to create detailed profiles containin
 - **Use a dedicated number**: or temporary phone service if you prefer not to expose your primary number.
 - **Even minor differences like**: abbreviations in addresses can cause failures.
 
+## Table of Contents
+
+- [Understanding FastPeopleSearch Data Collection](#understanding-fastpeoplesearch-data-collection)
+- [Manual Opt-Out Process](#manual-opt-out-process)
+- [Automated Opt-Out with Python](#automated-opt-out-with-python)
+- [Handling Verification Challenges](#handling-verification-challenges)
+- [Multi-Broker Opt-Out Strategy](#multi-broker-opt-out-strategy)
+- [Automated Multi-Broker Removal](#automated-multi-broker-removal)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+- [Data Broker Removal Strategy](#data-broker-removal-strategy)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced: Using Removal Services vs. Manual Opt-Out](#advanced-using-removal-services-vs-manual-opt-out)
+
 ## Understanding FastPeopleSearch Data Collection
 
 FastPeopleSearch operates as a people-search engine that pulls information from public records, social media profiles, and data brokers. The platform makes this data freely searchable, which creates privacy risks including unwanted contact, swatting incidents, and identity theft. While you cannot stop FastPeopleSearch from collecting public data, you can request removal through their opt-out process.

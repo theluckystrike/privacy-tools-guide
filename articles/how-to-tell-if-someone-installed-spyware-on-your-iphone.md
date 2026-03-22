@@ -42,6 +42,14 @@ Watch for behavioral red flags: unusual battery drain, unexpected data usage spi
 - **Use the iPhone's Activity**: Monitor (developer mode) to check for background processes consuming unusual resources, and periodically restart your phone in Safe Mode.
 - **If you suspect sophisticated**: spyware like Pegasus, fully backup your data and reset your device as the most reliable detection/removal method.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Advanced Detection Techniques for Developers](#advanced-detection-techniques-for-developers)
+- [When to Escalate](#when-to-escalate)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

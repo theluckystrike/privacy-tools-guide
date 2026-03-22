@@ -693,6 +693,15 @@ Protect client photos by using zero-knowledge encrypted cloud storage (Proton Dr
 - **Remediation**: Work with cybersecurity professionals to prevent future incidents
 5.
 
+## Table of Contents
+
+- [Understanding the Privacy Risks for Client Photographs](#understanding-the-privacy-risks-for-client-photographs)
+- [Choosing Privacy-Focused Cloud Storage for Photography](#choosing-privacy-focused-cloud-storage-for-photography)
+- [Essential Privacy Practices for Photographers](#essential-privacy-practices-for-photographers)
+- [Secure Backup Strategies for Photo Archives](#secure-backup-strategies-for-photo-archives)
+- [Handling Client Data Requests](#handling-client-data-requests)
+- [What to Do If a Breach Occurs](#what-to-do-if-a-breach-occurs)
+
 ## Understanding the Privacy Risks for Client Photographs
 
 Client photographs represent some of the most sensitive data you'll handle as a photographer. Unlike casual smartphone snapshots, professional client work often includes:

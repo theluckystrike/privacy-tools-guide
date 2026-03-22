@@ -40,6 +40,13 @@ You can buy Bitcoin without KYC verification through peer-to-peer platforms like
 - **Use escrow services provided**: by the platform 3.
 - **While most DEXs trade ERC-20 tokens**: several allow direct Bitcoin trading through atomic swaps or wrapped tokens.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Privacy Best Practices](#privacy-best-practices)
+- [Advanced Privacy Techniques](#advanced-privacy-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

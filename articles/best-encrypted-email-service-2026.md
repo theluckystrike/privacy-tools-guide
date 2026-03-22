@@ -30,6 +30,25 @@ Proton Mail is the best encrypted email service for most developers in 2026, com
 3.
 - **Choose Mailfence if you**: need native OpenPGP interoperability with external partners, or go self-hosted with Docker-Mailserver for complete infrastructure control.
 
+## Table of Contents
+
+- [What Developers Actually Need from Encrypted Email](#what-developers-actually-need-from-encrypted-email)
+- [Understanding Zero-Knowledge Architecture](#understanding-zero-knowledge-architecture)
+- [Service Comparison](#service-comparison)
+- [Key Management for Developers](#key-management-for-developers)
+- [Threat Model Alignment](#threat-model-alignment)
+- [Recovery Considerations](#recovery-considerations)
+- [Making Your Decision](#making-your-decision)
+- [Security Hygiene Reminders](#security-hygiene-reminders)
+- [Enterprise and Team Deployment](#enterprise-and-team-deployment)
+- [Threat Model Evaluation for Email Encryption](#threat-model-evaluation-for-email-encryption)
+- [Decentralized Email Alternatives](#decentralized-email-alternatives)
+- [Evaluating Privacy Claims](#evaluating-privacy-claims)
+- [Compliance Considerations](#compliance-considerations)
+- [Practical Migration Path](#practical-migration-path)
+- [Monitoring Email Security](#monitoring-email-security)
+- [Long-term Key Management Strategy](#long-term-key-management-strategy)
+
 ## What Developers Actually Need from Encrypted Email
 
 The criteria that matter for developers and power users: PGP/OpenPGP support (native integration or at minimum, compatible with standard encryption protocols), SMTP/IMAP access that works with standard email clients and self-hosted solutions, API availability for automation and integration, control over your own keys with transparent key handling, and no vendor lock-in so you can export your data and keys if you switch providers.

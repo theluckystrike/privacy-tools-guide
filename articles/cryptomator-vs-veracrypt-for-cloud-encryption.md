@@ -42,6 +42,21 @@ When storing sensitive data in cloud services like Google Drive, Dropbox, or One
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Two popular open-source solutions**: emerge: Cryptomator and VeraCrypt.
 
+## Table of Contents
+
+- [How Cryptomator Works](#how-cryptomator-works)
+- [How VeraCrypt Works](#how-veracrypt-works)
+- [Performance Comparison](#performance-comparison)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Security Considerations](#security-considerations)
+- [Use Cases Where Each Excels](#use-cases-where-each-excels)
+- [Advanced Configuration: Cryptomator Command-Line Options](#advanced-configuration-cryptomator-command-line-options)
+- [Advanced Configuration: VeraCrypt Scripting and Automation](#advanced-configuration-veracrypt-scripting-and-automation)
+- [Cryptomator Vault Structure and Metadata Leakage](#cryptomator-vault-structure-and-metadata-leakage)
+- [VeraCrypt Container Management at Scale](#veracrypt-container-management-at-scale)
+- [Performance and Resource Considerations](#performance-and-resource-considerations)
+- [Implementation Recommendations](#implementation-recommendations)
+
 ## How Cryptomator Works
 
 Cryptomator uses a transparent, file-level encryption model that works directly with your cloud sync folder. It creates encrypted "vaults" that appear as regular folders containing ciphertext files. Each file gets encrypted individually using AES-256 with scrypt key derivation.

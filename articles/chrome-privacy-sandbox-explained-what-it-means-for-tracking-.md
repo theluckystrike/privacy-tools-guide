@@ -40,6 +40,22 @@ Chrome's Privacy Sandbox represents the most significant shift in web tracking t
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Is the Privacy Sandbox?](#what-is-the-privacy-sandbox)
+- [Key Privacy Sandbox APIs](#key-privacy-sandbox-apis)
+- [What This Means for Tracking](#what-this-means-for-tracking)
+- [Developer Migration Strategies](#developer-migration-strategies)
+- [Power User Privacy Controls](#power-user-privacy-controls)
+- [Looking Ahead](#looking-ahead)
+- [Implications for Different Stakeholders](#implications-for-different-stakeholders)
+- [Privacy Sandbox Implementation Checklist](#privacy-sandbox-implementation-checklist)
+- [Technical Deep Dive: Aggregated Reporting](#technical-deep-dive-aggregated-reporting)
+- [Fallback Strategies](#fallback-strategies)
+- [Regulatory Considerations](#regulatory-considerations)
+- [Browser Adoption and Timeline](#browser-adoption-and-timeline)
+- [For Power Users and Privacy Advocates](#for-power-users-and-privacy-advocates)
+
 ## What Is the Privacy Sandbox?
 
 The Privacy Sandbox is Google's initiative to create web standards that enable personalized experiences while reducing cross-site tracking. Launched in response to increasing regulatory pressure and user privacy expectations, it replaces third-party cookies with browser-level APIs that process data locally on users' devices.

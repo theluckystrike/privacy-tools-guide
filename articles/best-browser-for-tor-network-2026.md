@@ -50,6 +50,17 @@ Use Tor Browser for the most secure and recommended option with integrated priva
 - **Tor Browser's defaults are**: deliberately designed to make all users look identical to surveillance systems.
 - **You can route any**: browser through the Tor network by configuring it to use the SOCKS proxy.
 
+## Table of Contents
+
+- [Tor Browser: The Official Implementation](#tor-browser-the-official-implementation)
+- [Using the Tor SOCKS Proxy with Other Browsers](#using-the-tor-socks-proxy-with-other-browsers)
+- [Verifying Tor Connectivity Programmatically](#verifying-tor-connectivity-programmatically)
+- [Onion Services and Hidden Web Applications](#onion-services-and-hidden-web-applications)
+- [Performance Considerations](#performance-considerations)
+- [Advanced: Tor Control Protocol Integration](#advanced-tor-control-protocol-integration)
+- [Security Recommendations](#security-recommendations)
+- [Related Reading](#related-reading)
+
 ## Tor Browser: The Official Implementation
 
 Tor Browser remains the most recommended option for accessing the Tor network. It is built on Firefox ESR with privacy-hardened configurations and includes the Tor daemon (tor) integrated directly into the application.

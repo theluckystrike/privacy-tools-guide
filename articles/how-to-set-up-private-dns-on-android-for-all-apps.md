@@ -43,6 +43,16 @@ Android's Private DNS feature, introduced in Android 9 (Pie), implements DNS-ove
 - **Several methods exist depending**: on your technical preferences.
 - **Network Switching**: When switching between WiFi and mobile data, re-negotiation of the TLS connection may cause brief delays.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration for Developers](#advanced-configuration-for-developers)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Threat Model Analysis for DNS Privacy](#threat-model-analysis-for-dns-privacy)
+- [Provider Comparison: Privacy and Performance](#provider-comparison-privacy-and-performance)
+- [Advanced Configuration with DNS Blocking](#advanced-configuration-with-dns-blocking)
+- [Troubleshooting Unresponsive DNS Providers](#troubleshooting-unresponsive-dns-providers)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

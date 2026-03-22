@@ -52,6 +52,19 @@ tags: [privacy-tools-guide, best-of]
 - **Test travel mode on**: every device and platform you use before relying on it.
 - **For Bitwarden**: the CLI tool (`bw`) also works with vault-level access restrictions.
 
+## Table of Contents
+
+- [Understanding Travel Mode](#understanding-travel-mode)
+- [Key Features Developers Should Look For](#key-features-developers-should-look-for)
+- [Implementing Travel Mode in Your Workflow](#implementing-travel-mode-in-your-workflow)
+- [Practical Considerations for Developers](#practical-considerations-for-developers)
+- [Threat Models and Border Security Scenarios](#threat-models-and-border-security-scenarios)
+- [Comparing Password Managers With Travel Mode](#comparing-password-managers-with-travel-mode)
+- [Security Trade-offs](#security-trade-offs)
+- [Auditing and Monitoring Your Travel Configuration](#auditing-and-monitoring-your-travel-configuration)
+- [Alternative and Complementary Approaches](#alternative-and-complementary-approaches)
+- [Prevention Best Practices](#prevention-best-practices)
+
 ## Understanding Travel Mode
 
 Travel mode is a security feature that removes certain vaults or categories from your password manager when activated. When you enable travel mode before departing, your vault syncs with only the items you explicitly mark as "safe for travel." Any items not designated for travel become inaccessible on your local devices until you disable travel mode upon reaching your destination.

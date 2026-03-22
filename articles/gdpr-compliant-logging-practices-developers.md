@@ -40,6 +40,18 @@ Make your application logs GDPR-compliant by applying three core practices: mini
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the GDPR Framework for Logs](#understanding-the-gdpr-framework-for-logs)
+- [Data Minimization: Log Only What You Need](#data-minimization-log-only-what-you-need)
+- [Anonymization and Pseudonymization Techniques](#anonymization-and-pseudonymization-techniques)
+- [Implementing Consent-Aware Logging](#implementing-consent-aware-logging)
+- [Retention Policies and Automated Cleanup](#retention-policies-and-automated-cleanup)
+- [Secure Storage and Access Controls](#secure-storage-and-access-controls)
+- [Responding to Data Subject Requests](#responding-to-data-subject-requests)
+- [Common GDPR Logging Pitfalls](#common-gdpr-logging-pitfalls)
+- [Related Reading](#related-reading)
+
 ## Understanding the GDPR Framework for Logs
 
 GDPR treats personal data broadly. Any information that can directly or indirectly identify a natural person falls under its scope. In logging terms, this includes IP addresses, email addresses, user IDs, session tokens, and even certain behavioral patterns that could be linked back to an individual.

@@ -42,6 +42,23 @@ Maintaining financial privacy when paying for online services presents real chal
 - **Use generated number for**: online purchase # 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Privacy Field](#understanding-the-privacy-field)
+- [Prepaid Cards and Gift Cards](#prepaid-cards-and-gift-cards)
+- [Virtual Credit Cards](#virtual-credit-cards)
+- [Privacy-Focused Financial Services](#privacy-focused-financial-services)
+- [Cash-Based Funding Methods](#cash-based-funding-methods)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Risk Assessment and Trade-offs](#risk-assessment-and-trade-offs)
+- [Advanced Tracking Prevention: Payment Correlation](#advanced-tracking-prevention-payment-correlation)
+- [Cryptocurrency as Non-Anonymous Alternative](#cryptocurrency-as-non-anonymous-alternative)
+- [Merchant Acceptance Matrix](#merchant-acceptance-matrix)
+- [Complete Privacy Payment Stack for Developers](#complete-privacy-payment-stack-for-developers)
+- [Merchant Dispute Resolution for Anonymous Payments](#merchant-dispute-resolution-for-anonymous-payments)
+- [Regulatory Landscape Changes (2024-2026)](#regulatory-landscape-changes-2024-2026)
+- [Building Your Payment Privacy Strategy](#building-your-payment-privacy-strategy)
+
 ## Understanding the Privacy Field
 
 When you pay for online services traditionally, financial institutions capture extensive data. Transaction records link directly to your identity, location, and purchasing behavior. For users requiring pseudonymity or operational security, this creates significant exposure. The goal is breaking the link between your real identity and the payment instrument.

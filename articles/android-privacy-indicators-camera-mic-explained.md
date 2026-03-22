@@ -43,6 +43,21 @@ Android privacy indicators provide real-time visual feedback when apps access yo
 - **Introduced in Android 12**: these indicators address long-standing privacy concerns by making hidden surveillance attempts visible to users.
 - **The implementation uses three**: key components: 1.
 
+## Table of Contents
+
+- [Understanding the Privacy Indicator System](#understanding-the-privacy-indicator-system)
+- [Technical Implementation: How Android Tracks Sensor Access](#technical-implementation-how-android-tracks-sensor-access)
+- [Detecting Camera and Microphone Access Programmatically](#detecting-camera-and-microphone-access-programmatically)
+- [Practical Security Implications](#practical-security-implications)
+- [Configuration and Troubleshooting](#configuration-and-troubleshooting)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Specific App Analysis: Which Apps Legitimately Use Camera and Microphone](#specific-app-analysis-which-apps-legitimately-use-camera-and-microphone)
+- [Custom ROMs and Privacy Indicators](#custom-roms-and-privacy-indicators)
+- [Building a Privacy-Conscious App (For Developers)](#building-a-privacy-conscious-app-for-developers)
+- [System-Level Monitoring for Developers](#system-level-monitoring-for-developers)
+- [Responding to Suspicious Indicator Activity](#responding-to-suspicious-indicator-activity)
+- [Privacy Indicator Limitations and Future Directions](#privacy-indicator-limitations-and-future-directions)
+
 ## Understanding the Privacy Indicator System
 
 Android displays privacy indicators in the status bar as colored dots when camera or microphone access occurs. A green dot appears in the top-right corner whenever any app or system service activates these hardware components. This system operates at the framework level, making it difficult for malicious apps to bypass the notification.

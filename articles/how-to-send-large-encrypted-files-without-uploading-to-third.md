@@ -44,6 +44,13 @@ This creates a link valid for one hour that can be used multiple times.
 - **It's designed as a**: replacement for age-old PGP with simpler syntax and better defaults.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Avoid Third-Party File Sharing Services](#why-avoid-third-party-file-sharing-services)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Secure File Transfer](#best-practices-for-secure-file-transfer)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Avoid Third-Party File Sharing Services
 
 Cloud file sharing services create multiple attack surfaces. The service operator can read your files, their servers can be breached, and metadata about your communications remains visible. Additionally, many services impose file size limits or require account creation. When dealing with sensitive documents, backups, code repositories, or personal media, you deserve better control over your data.

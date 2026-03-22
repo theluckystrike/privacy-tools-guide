@@ -42,6 +42,20 @@ China's exit ban system automatically triggers when authorities detect specific 
 - **Use burner SIM card**: (local China SIM) # - Separate from home country identity # - Don't associate with personal data # 6.
 - **Password changes # -**: Change all important passwords # - Do this on different network (not home/work) # - Use new password manager # 3.
 
+## Table of Contents
+
+- [Understanding the Exit Ban Mechanism](#understanding-the-exit-ban-mechanism)
+- [How Authorities Monitor Online Activity](#how-authorities-monitor-online-activity)
+- [Technical Implications for Developers](#technical-implications-for-developers)
+- [Practical Mitigation Strategies](#practical-mitigation-strategies)
+- [VPN Detection and Blocking in China](#vpn-detection-and-blocking-in-china)
+- [Application-Level Surveillance Evasion](#application-level-surveillance-evasion)
+- [Social Network Graph Analysis](#social-network-graph-analysis)
+- [Practical Risk Assessment Before Travel](#practical-risk-assessment-before-travel)
+- [Device Preparation for Border Crossing](#device-preparation-for-border-crossing)
+- [Post-Border-Crossing Security](#post-border-crossing-security)
+- [The Broader Technical Ecosystem](#the-broader-technical-ecosystem)
+
 ## Understanding the Exit Ban Mechanism
 
 China's "chujing zheng" (exit permit) system allows authorities to restrict citizens from leaving the country. What makes this particularly relevant for technical users is how these bans are triggered—not through explicit court orders alone, but through automated analysis of online activity, communications metadata, and behavioral patterns.

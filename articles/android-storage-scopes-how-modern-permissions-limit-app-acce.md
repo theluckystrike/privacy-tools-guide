@@ -42,6 +42,22 @@ Scoped storage (introduced in Android 10 and mandatory since Android 12) limits 
 - **The system acts as an intermediary**: presenting only files the app has legitimately created or that users have explicitly selected.
 - **Android 13 introduced photo**: and video picker, eliminating the need for storage permissions in many scenarios.
 
+## Table of Contents
+
+- [The Evolution of Android Storage Permissions](#the-evolution-of-android-storage-permissions)
+- [Understanding Scoped Storage Architecture](#understanding-scoped-storage-architecture)
+- [Storage Permissions by Android Version](#storage-permissions-by-android-version)
+- [Practical Code Examples](#practical-code-examples)
+- [Best Practices for Developers](#best-practices-for-developers)
+- [Implications for Users](#implications-for-users)
+- [Deep Dive: Scoped Storage Implementation](#deep-dive-scoped-storage-implementation)
+- [Permission Checking and Handling](#permission-checking-and-handling)
+- [Understanding MediaStore Limitations](#understanding-mediastore-limitations)
+- [The Permission Transition Challenge](#the-permission-transition-challenge)
+- [Privacy Impact Assessment](#privacy-impact-assessment)
+- [Enterprise and IT Management](#enterprise-and-it-management)
+- [The Future: Further Granularity](#the-future-further-granularity)
+
 ## The Evolution of Android Storage Permissions
 
 Before Android 10, apps could request broad storage permissions that granted read and write access to nearly all files on external storage. The `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE` permissions provided nearly unrestricted access to the device's shared storage, including other apps' data directories. This open model created significant privacy risks—apps could potentially read sensitive documents, photos, and downloaded files without explicit user awareness.

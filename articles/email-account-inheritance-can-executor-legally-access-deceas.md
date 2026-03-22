@@ -44,6 +44,14 @@ This guide provides a technical overview of email account inheritance rights acr
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Email as Digital Property](#understanding-email-as-digital-property)
+- [Jurisdiction-by-Jurisdiction Overview](#jurisdiction-by-jurisdiction-overview)
+- [Technical Approaches for Email Data Recovery](#technical-approaches-for-email-data-recovery)
+- [Best Practices for Executors](#best-practices-for-executors)
+- [Related Reading](#related-reading)
+
 ## Understanding Email as Digital Property
 
 Email accounts are fundamentally different from physical property. When you "own" an email account, you typically own a license to use the service, not the data itself. Most email providers (Google, Microsoft, Proton Mail, Fastmail) retain ownership of the data stored on their servers, granting users a revocable right to access their account.

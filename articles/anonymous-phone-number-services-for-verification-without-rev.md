@@ -28,6 +28,20 @@ Phone number verification has become ubiquitous across web services, from social
 - **Limitations**: Numbers are shared among users, meaning some services reject them.
 - **While not free**: the service provides reliable delivery and webhook integration for automated processing.
 
+## Table of Contents
+
+- [Why Anonymous Verification Numbers Matter](#why-anonymous-verification-numbers-matter)
+- [Categories of Anonymous Phone Numbers](#categories-of-anonymous-phone-numbers)
+- [Popular Services and Implementation](#popular-services-and-implementation)
+- [Self-Hosted Solutions](#self-hosted-solutions)
+- [Practical Usage Patterns](#practical-usage-patterns)
+- [Security Considerations](#security-considerations)
+- [Advanced Technical Integration](#advanced-technical-integration)
+- [Geographic Number Selection Strategy](#geographic-number-selection-strategy)
+- [Avoiding Account Linking Detection](#avoiding-account-linking-detection)
+- [Number Reputation Management](#number-reputation-management)
+- [Enterprise Considerations](#enterprise-considerations)
+
 ## Why Anonymous Verification Numbers Matter
 
 Every time you provide your real phone number to a service, you create a permanent link between your identity and that account. Data brokers aggregate this information, making it trivial for anyone to correlate your online activities with your real-world identity. Anonymous phone numbers act as a protective barrier, allowing verification without exposing your primary contact information.

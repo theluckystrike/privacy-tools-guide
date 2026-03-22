@@ -212,6 +212,18 @@ For those building privacy-conscious applications or evaluating mobile security 
 
 *
 
+## Table of Contents
+
+- [Installing GrapheneOS: Technical Walkthrough](#installing-grapheneos-technical-walkthrough)
+- [App Installation and Sideloading on GrapheneOS](#app-installation-and-sideloading-on-grapheneos)
+- [Enabling Sandboxed Google Play (Optional)](#enabling-sandboxed-google-play-optional)
+- [Real-World Limitations](#real-world-limitations)
+- [Performance Metrics: Privacy vs User Experience](#performance-metrics-privacy-vs-user-experience)
+- [Migration: From Stock Pixel to GrapheneOS](#migration-from-stock-pixel-to-grapheneos)
+- [Messaging and Communications on GrapheneOS](#messaging-and-communications-on-grapheneos)
+- [Threat Model Alignment](#threat-model-alignment)
+- [Related Reading](#related-reading)
+
 ## Installing GrapheneOS: Technical Walkthrough
 
 For Pixel devices (supported models), installation is straightforward:

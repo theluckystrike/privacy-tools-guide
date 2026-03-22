@@ -48,6 +48,26 @@ WireGuard has become the preferred protocol for most scenarios.
 - **Why standard VPN advice**: fails in Indonesia: Most VPN guides assume stable internet connectivity, standard corporate firewalls, and unrestricted access to services.
 - **Mobile data networks have**: expanded significantly, with 4G coverage reaching most tourist areas and major population centers.
 
+## Table of Contents
+
+- [Understanding Bali's Internet Environment](#understanding-balis-internet-environment)
+- [Indonesia Internet Regulations and VPN Legality](#indonesia-internet-regulations-and-vpn-legality)
+- [Protocol Selection for Developers](#protocol-selection-for-developers)
+- [Server Selection Strategy](#server-selection-strategy)
+- [Network Configuration for Development](#network-configuration-for-development)
+- [Performance Optimization](#performance-optimization)
+- [Self-Hosted Options](#self-hosted-options)
+- [Security Considerations](#security-considerations)
+- [Quick Setup Recommendations](#quick-setup-recommendations)
+- [Coworking Space Integration](#coworking-space-integration)
+- [ISP Throttling and Bandwidth Management](#isp-throttling-and-bandwidth-management)
+- [Emergency Access and Backup Plans](#emergency-access-and-backup-plans)
+- [Testing and Validation](#testing-and-validation)
+- [Weather and Power Considerations](#weather-and-power-considerations)
+- [Cost Optimization for Long-Term Stays](#cost-optimization-for-long-term-stays)
+- [Indonesian Internet Regulations and VPN Status](#indonesian-internet-regulations-and-vpn-status)
+- [Performance Benchmarking Automation](#performance-benchmarking-automation)
+
 ## Understanding Bali's Internet Environment
 
 Bali's primary internet providers include PT Telekomunikasi Seluler (Telkomsel), Indosat Ooredoo Hutchison, and XL Axiata. Mobile data networks have expanded significantly, with 4G coverage reaching most tourist areas and major population centers. However, speeds fluctuate dramatically based on location, time of day, and network congestion.

@@ -39,6 +39,13 @@ Encrypted DNS protocolsâ€”primarily DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT)â
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: dns poisoning, dns-over-https (doh) configuration, using curl for doh testing, with specific setup instructions
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Obfsproxy for Additional Obfuscation](#advanced-obfsproxy-for-additional-obfuscation)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

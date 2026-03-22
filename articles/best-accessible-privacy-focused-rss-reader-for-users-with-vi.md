@@ -35,6 +35,16 @@ Users with visual impairments require RSS readers that work with screen readers 
 - **Privacy-focused RSS readers minimize**: attack surface by processing everything locally, avoiding cloud dependencies, and providing clear data export controls.
 - **The ideal solution combines**: three properties: local-first architecture, open-source transparency, and keyboard accessibility.
 
+## Table of Contents
+
+- [Why Privacy Matters for Accessibility Tooling](#why-privacy-matters-for-accessibility-tooling)
+- [Top Privacy-Focused RSS Readers for Visual Impairment Access](#top-privacy-focused-rss-readers-for-visual-impairment-access)
+- [Privacy Architecture Considerations](#privacy-architecture-considerations)
+- [Building an Accessible RSS Workflow](#building-an-accessible-rss-workflow)
+- [Evaluating Cloud RSS Services: What to Avoid](#evaluating-cloud-rss-services-what-to-avoid)
+- [Screen Reader Testing Methodology](#screen-reader-testing-methodology)
+- [Feed Management for Low-Vision Workflows](#feed-management-for-low-vision-workflows)
+
 ## Why Privacy Matters for Accessibility Tooling
 
 Screen reader users often interact with applications in ways that create unique data exposure risks. Text-to-speech engines may process content through cloud APIs depending on configuration, and third-party RSS services can log reading patterns, feed subscriptions, and usage metadata. For users in restrictive environments — journalists, activists, or individuals in countries with surveillance infrastructure — these logs can have serious consequences.

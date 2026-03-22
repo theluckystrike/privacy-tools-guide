@@ -27,6 +27,21 @@ Android privacy-focused browsers have matured significantly in 2026. The ecosyst
 - **Available exclusively through F-Droid**: Mull represents the most privacy-respecting option for users willing to sidestep the Play Store.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What Defines Privacy Excellence in 2026](#what-defines-privacy-excellence-in-2026)
+- [Top Privacy Browsers for Android](#top-privacy-browsers-for-android)
+- [Testing Privacy Features Programmatically](#testing-privacy-features-programmatically)
+- [DNS Configuration for Additional Privacy](#dns-configuration-for-additional-privacy)
+- [Choosing Your Privacy Browser](#choosing-your-privacy-browser)
+- [Advanced Filter List Configuration](#advanced-filter-list-configuration)
+- [Comparative Privacy Score](#comparative-privacy-score)
+- [Browser Extension Recommendations](#browser-extension-recommendations)
+- [Mobile-Specific Privacy Configuration](#mobile-specific-privacy-configuration)
+- [Testing Privacy Protection Effectiveness](#testing-privacy-protection-effectiveness)
+- [Workflow Optimization for Privacy Browsing](#workflow-optimization-for-privacy-browsing)
+- [Hardware Acceleration and Performance](#hardware-acceleration-and-performance)
+
 ## What Defines Privacy Excellence in 2026
 
 A privacy browser must address several threat vectors. Tracking scripts follow you across websites, fingerprinting techniques create unique device profiles, and DNS queries reveal your browsing history to ISPs. The best browsers for Android in 2026 handle all three vectors while maintaining the performance and extension ecosystem that power users require.

@@ -41,6 +41,13 @@ Verify your VPN isn't leaking DNS requests using online test tools like dnsleakt
 4.
 - **Enable DNS Leak Protection**: in Your VPN Most reputable VPN apps have built-in DNS leak protection.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why Do DNS Leaks Happen?](#why-do-dns-leaks-happen)
+- [Best Practices for DNS Privacy](#best-practices-for-dns-privacy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

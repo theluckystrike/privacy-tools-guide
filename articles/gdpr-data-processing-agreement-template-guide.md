@@ -40,6 +40,13 @@ When you build applications that process personal data for other organizations, 
 - **Keep your subprocessor list current**: define specific response times for data subject requests, and include a termination clause specifying what happens to data when the agreement ends.
 - **Running a DPA that describes a data model you no longer use creates legal exposure**: the agreement is meant to accurately represent what you actually do.
 
+## Table of Contents
+
+- [What Is a Data Processing Agreement?](#what-is-a-data-processing-agreement)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is a Data Processing Agreement?
 
 A Data Processing Agreement is a legally binding contract between a data controller (the organization deciding *why* and *what* data to process) and a data processor (the organization handling the actual processing). Under GDPR Article 28, this agreement must specify the subject matter, duration, nature, and purpose of processing, along with the types of personal data and data subjects involved.

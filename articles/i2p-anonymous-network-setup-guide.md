@@ -24,6 +24,13 @@ I2P (Invisible Internet Project) is a garlic-routing network designed for intern
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers i2p vs tor**: when to use which, install i2p, initial configuration (java i2p), with specific setup instructions
 
+## Table of Contents
+
+- [I2P vs Tor: When to Use Which](#i2p-vs-tor-when-to-use-which)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## I2P vs Tor: When to Use Which
 
 | Characteristic | I2P | Tor |

@@ -194,6 +194,16 @@ Attach:
 - Signed copy of this request
 ```
 
+## Table of Contents
+
+- [Step 2: Formal Removal Requests (Credit Reporting Agencies)](#step-2-formal-removal-requests-credit-reporting-agencies)
+- [Step 3: Automated Removal Tools (Do It Once, Tools Handle It)](#step-3-automated-removal-tools-do-it-once-tools-handle-it)
+- [Step 4: Verification (Confirm Removal Actually Happened)](#step-4-verification-confirm-removal-actually-happened)
+- [Real-World Timeline: Complete Removal (1-3 Months)](#real-world-timeline-complete-removal-1-3-months)
+- [Common Challenges + Solutions](#common-challenges-solutions)
+- [State-Specific Laws (US)](#state-specific-laws-us)
+- [Recommended Workflow](#recommended-workflow)
+
 ## Step 2: Formal Removal Requests (Credit Reporting Agencies)
 
 Credit agencies require more formal legal process.

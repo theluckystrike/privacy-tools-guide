@@ -44,6 +44,14 @@ These features require your device to broadcast to iCloud, allowing Apple to kno
 
 This gives you visibility into what changes between iOS versions before they're applied.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Configuration](#advanced-configuration)
+- [Practical Examples](#practical-examples)
+- [Advanced: Using MDM for Enterprise Privacy Policy](#advanced-using-mdm-for-enterprise-privacy-policy)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

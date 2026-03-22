@@ -40,6 +40,24 @@ Bitcoin inheritance planning remains one of the most overlooked aspects of crypt
 - **This non-custodial approach means**: users retain full control over their Bitcoin while benefitting from collaborative security.
 - **The setup process guides**: users through generating cryptographic keys that will be distributed to different key holders.
 
+## Table of Contents
+
+- [Understanding Casa Multisig Architecture](#understanding-casa-multisig-architecture)
+- [Collaborative Custody Model for Inheritance](#collaborative-custody-model-for-inheritance)
+- [Implementation Steps](#implementation-steps)
+- [Security Considerations](#security-considerations)
+- [Verification and Testing](#verification-and-testing)
+- [Advanced Configurations](#advanced-configurations)
+- [Real-World Casa Setup: Complete Walkthrough](#real-world-casa-setup-complete-walkthrough)
+- [Collaborative Custody Best Practices](#collaborative-custody-best-practices)
+- [Handling Key Holder Incapacity or Death](#handling-key-holder-incapacity-or-death)
+- [Verifying Casa's Security Model](#verifying-casas-security-model)
+- [Cost-Benefit Analysis: Self-Hosted vs Casa](#cost-benefit-analysis-self-hosted-vs-casa)
+- [Integration with Legal Estate Planning](#integration-with-legal-estate-planning)
+- [Bitcoin Inheritance Plan](#bitcoin-inheritance-plan)
+- [Advanced: Custom Smart Contract Integration](#advanced-custom-smart-contract-integration)
+- [Monitoring and Annual Maintenance](#monitoring-and-annual-maintenance)
+
 ## Understanding Casa Multisig Architecture
 
 Casa provides multi-signature wallet solutions that require multiple private keys to authorize transactions. Their key strength is separating key custody across different locations and parties, eliminating single points of failure. For inheritance planning, this architecture ensures that Bitcoin transfers can only occur when multiple authorized parties agree.

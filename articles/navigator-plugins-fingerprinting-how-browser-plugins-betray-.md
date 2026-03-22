@@ -40,6 +40,21 @@ Modern web development demands awareness of browser fingerprinting techniques, a
 - **Modern web development demands**: awareness of browser fingerprinting techniques, and the `navigator.plugins` API represents one of the most effective methods trackers use to uniquely identify users.
 - **Chameleon (Chrome/Firefox, free)**: Randomizes your browser fingerprint on every page load—changes user agent, screen resolution, and plugin list.
 
+## Table of Contents
+
+- [Understanding the navigator.plugins API](#understanding-the-navigatorplugins-api)
+- [Why Plugin Lists Create Unique Fingerprints](#why-plugin-lists-create-unique-fingerprints)
+- [Browser Implementation Differences](#browser-implementation-differences)
+- [Mitigation Strategies for Developers](#mitigation-strategies-for-developers)
+- [Thearms Race: Browser Changes and Evasion Techniques](#thearms-race-browser-changes-and-evasion-techniques)
+- [Practical Implications for Privacy](#practical-implications-for-privacy)
+- [Quantifying Plugin Fingerprint Entropy](#quantifying-plugin-fingerprint-entropy)
+- [Extension Privacy Fingerprinting Services](#extension-privacy-fingerprinting-services)
+- [Developer Tooling for Plugin Detection Testing](#developer-tooling-for-plugin-detection-testing)
+- [Browser-Specific Mitigation](#browser-specific-mitigation)
+- [Real-World Fingerprinting Example in the Wild](#real-world-fingerprinting-example-in-the-wild)
+- [Practical Plugin Audit Steps](#practical-plugin-audit-steps)
+
 ## Understanding the navigator.plugins API
 
 The `navigator.plugins` property returns a `PluginArray` containing details about plugins installed in the browser. Each plugin object exposes properties including the plugin name, description, filename, and version information. Web developers access this data through straightforward JavaScript:

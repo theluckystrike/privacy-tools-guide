@@ -29,6 +29,24 @@ This guide covers five layers of tracker blocking — from DNS resolvers and loc
 - **Misconfigured blocklists (too many**: rules) can add 50-100ms per query.
 - **DNS-level blocking**: system hosts files, and browser native settings catch most trackers without adding extensions to your browser.
 
+## Table of Contents
+
+- [Layer 1: DNS-Level Blocking](#layer-1-dns-level-blocking)
+- [Layer 2: System-Wide Hosts File](#layer-2-system-wide-hosts-file)
+- [Layer 3: Browser Native Privacy Settings](#layer-3-browser-native-privacy-settings)
+- [Layer 4: Firefox Advanced Config](#layer-4-firefox-advanced-config)
+- [Layer 5: Verify Tracker Blocking](#layer-5-verify-tracker-blocking)
+- [HTTPS Inspection for Full Visibility](#https-inspection-for-full-visibility)
+- [What This Approach Misses](#what-this-approach-misses)
+- [Putting It Together: Coverage by Layer](#putting-it-together-coverage-by-layer)
+- [Layer 6: Advanced DNS Techniques](#layer-6-advanced-dns-techniques)
+- [Layer 7: Content Security Policy Inspection](#layer-7-content-security-policy-inspection)
+- [Layer 8: Monitoring Your Success](#layer-8-monitoring-your-success)
+- [ISP-Level Visibility You Cannot Block](#isp-level-visibility-you-cannot-block)
+- [Performance Impact of DNS Blocking](#performance-impact-of-dns-blocking)
+- [Bypassing Advanced Tracker Evasion](#bypassing-advanced-tracker-evasion)
+- [Related Reading](#related-reading)
+
 ## Layer 1: DNS-Level Blocking
 
 DNS blocking works by refusing to resolve tracker domains. When a page tries to load `googletagmanager.com`, your DNS resolver returns NXDOMAIN (no such domain) instead of the real IP. The request never leaves your network.

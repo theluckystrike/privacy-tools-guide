@@ -26,6 +26,13 @@ Your digital footprint is larger than you think. Your email appears in data brea
 - **Removing the most sensitive**: data 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced OSINT Techniques](#advanced-osint-techniques)
+- [Tools Summary](#tools-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

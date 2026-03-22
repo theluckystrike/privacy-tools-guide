@@ -54,6 +54,17 @@ Some devices support multiple wake words.
 - **There's no competitive advantage**: so significant that it justifies the privacy trade-off for most users.
 - **Set auto-delete to 3**: months (the most privacy-friendly option).
 
+## Table of Contents
+
+- [How Voice Assistants Work (And What Gets Recorded)](#how-voice-assistants-work-and-what-gets-recorded)
+- [Amazon Alexa: Aggressive Data Retention](#amazon-alexa-aggressive-data-retention)
+- [Google Home: Slightly Better Defaults, Still Privacy-Invasive](#google-home-slightly-better-defaults-still-privacy-invasive)
+- [Apple Siri: Privacy-Friendly By Default, But Limited](#apple-siri-privacy-friendly-by-default-but-limited)
+- [Comparison Table: Privacy Practices](#comparison-table-privacy-practices)
+- [Real Privacy Risks You Should Know About](#real-privacy-risks-you-should-know-about)
+- [How to Minimize Risk](#how-to-minimize-risk)
+- [Protecting Your Privacy: Practical Steps](#protecting-your-privacy-practical-steps)
+
 ## How Voice Assistants Work (And What Gets Recorded)
 
 **Wake Word Detection (Local)**

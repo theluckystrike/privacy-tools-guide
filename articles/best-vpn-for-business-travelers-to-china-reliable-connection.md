@@ -54,6 +54,21 @@ description: "Business travel to China presents unique connectivity challenges.
 - **This guide focuses on**: technical implementation rather than product recommendations.
 - **WireGuard has emerged as**: a popular choice because its encrypted packets appear similar to normal HTTPS traffic.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Understanding the Technical Space](#understanding-the-technical-space)
+- [Protocol Configuration for China](#protocol-configuration-for-china)
+- [Server Architecture Recommendations](#server-architecture-recommendations)
+- [Client-Side Implementation Patterns](#client-side-implementation-patterns)
+- [Deployment Considerations](#deployment-considerations)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [VPN Service Comparisons for China](#vpn-service-comparisons-for-china)
+- [Deep Packet Inspection (DPI) Detection and Evasion](#deep-packet-inspection-dpi-detection-and-evasion)
+- [Legal and Regulatory Considerations](#legal-and-regulatory-considerations)
+- [Pre-Travel Testing and Validation](#pre-travel-testing-and-validation)
+- [Real-Time Blocking Detection](#real-time-blocking-detection)
+
 ## Introduction
 
 Business travel to China presents unique connectivity challenges. The country's internet infrastructure operates behind the Great Firewall, blocking many Western services that developers and business professionals rely on daily. Email providers, cloud platforms, version control systems, and communication tools may be inaccessible or severely degraded without proper configuration.

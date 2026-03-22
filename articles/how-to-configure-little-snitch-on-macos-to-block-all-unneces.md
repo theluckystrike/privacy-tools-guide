@@ -41,6 +41,14 @@ Network monitoring remains a critical skill for developers and power users who v
 2.
 - **Choose Deny as the**: action 5.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Connectivity Issues](#troubleshooting-connectivity-issues)
+- [Advanced Rule Priority and Ordering](#advanced-rule-priority-and-ordering)
+- [Performance Optimization](#performance-optimization)
+- [Enterprise Deployment](#enterprise-deployment)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

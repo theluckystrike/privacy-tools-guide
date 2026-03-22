@@ -40,6 +40,19 @@ Password manager browser extensions expose four primary attack vectors: extensio
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Extension Attack Surface](#understanding-the-extension-attack-surface)
+- [Common Attack Vectors](#common-attack-vectors)
+- [Real-World Considerations](#real-world-considerations)
+- [Defensive Strategies for Users](#defensive-strategies-for-users)
+- [Security Best Practices for Extension Developers](#security-best-practices-for-extension-developers)
+- [Password Manager Extension Risk Comparison](#password-manager-extension-risk-comparison)
+- [Measuring Extension Permission Footprint](#measuring-extension-permission-footprint)
+- [Content Security Policy Enforcement](#content-security-policy-enforcement)
+- [Sandboxing Strategy for High-Value Credentials](#sandboxing-strategy-for-high-value-credentials)
+- [Extension Development: Security Best Practices](#extension-development-security-best-practices)
+
 ## Understanding the Extension Attack Surface
 
 Browser extensions operate within the browser's security context but maintain significant privileges that differentiate them from standard web content. A password manager extension typically requires permissions including:

@@ -40,6 +40,13 @@ Deploy mesh networking using BATMAN-Adv for WiFi-based mesh (100-200m range) or 
 - **Babel Babel is a**: loop-free distance-vector routing protocol that converges quickly and handles networks with varying link costs effectively.
 - **Wireless Pirate Box For**: simpler use cases, Pirate Box implements a decentralized communication platform that works without internet.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Considerations](#security-considerations)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

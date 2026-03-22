@@ -39,6 +39,14 @@ OpenWRT is a Linux-based firmware distribution that replaces the proprietary sof
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Why OpenWRT Matters for Privacy](#why-openwrt-matters-for-privacy)
+- [Prerequisites](#prerequisites)
+- [Common Troubleshooting](#common-troubleshooting)
+- [Advanced Privacy Features](#advanced-privacy-features)
+- [Troubleshooting](#troubleshooting)
+
 ## Why OpenWRT Matters for Privacy
 
 Commercial routers typically ship with closed-source firmware that may include telemetry, remote management features, and limited security updates. OpenWRT addresses these concerns by providing:

@@ -27,6 +27,16 @@ Tresorit and Virtru (for email) are the top zero-knowledge solutions for enterpr
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Zero-knowledge architecture means the provider stores encrypted data but never holds the encryption keys**: even if subpoenaed or breached, your data remains unreadable to anyone except authorized users.
 
+## Table of Contents
+
+- [Understanding Zero-Knowledge Architecture](#understanding-zero-knowledge-architecture)
+- [Key Enterprise Considerations](#key-enterprise-considerations)
+- [Practical Solutions for Enterprise](#practical-solutions-for-enterprise)
+- [Building Your Own Zero-Knowledge Layer](#building-your-own-zero-knowledge-layer)
+- [Making the Decision](#making-the-decision)
+- [Key Management Strategy: The Weakest Link](#key-management-strategy-the-weakest-link)
+- [Compliance Mapping: Which Provider Fits Which Requirement](#compliance-mapping-which-provider-fits-which-requirement)
+
 ## Understanding Zero-Knowledge Architecture
 
 Zero-knowledge proof systems allow one party to prove to another that a statement is true without revealing any information beyond the validity of the statement itself. In cloud storage contexts, this means your data is encrypted client-side before it leaves your devices. The cloud provider stores only encrypted blobs and never sees the plaintext.

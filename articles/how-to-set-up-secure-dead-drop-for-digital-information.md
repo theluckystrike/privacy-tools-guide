@@ -42,6 +42,13 @@ This guide covers three approaches to building secure dead drops: GPG-based encr
 - Let's Encrypt provides free certificates.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Best Practices](#security-best-practices)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

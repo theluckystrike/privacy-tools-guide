@@ -52,6 +52,21 @@ Accessing German streaming platforms like ARD Mediathek, ZDF Mediathek, and Deut
 - **Test for at least**: 2 weeks before committing 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Technical Challenge](#understanding-the-technical-challenge)
+- [Core Requirements for German Streaming Access](#core-requirements-for-german-streaming-access)
+- [Configuration Examples for Power Users](#configuration-examples-for-power-users)
+- [Verifying Your Setup](#verifying-your-setup)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Alternative Approaches](#alternative-approaches)
+- [Advanced Detection Evasion Techniques](#advanced-detection-evasion-techniques)
+- [Testing Specific Streaming Services](#testing-specific-streaming-services)
+- [Regional German VPN Server Locations](#regional-german-vpn-server-locations)
+- [Automating German VPN Connection Management](#automating-german-vpn-connection-management)
+- [Understanding Streaming Content Restrictions](#understanding-streaming-content-restrictions)
+- [Long-Term Reliability Assessment](#long-term-reliability-assessment)
+
 ## Understanding the Technical Challenge
 
 German streaming services implement geo-blocking at multiple layers. At the most basic level, they check your IP address to determine geographic location. However, sophisticated services also perform DNS leak tests, analyze WebRTC traffic, and monitor TLS handshake metadata to identify VPN connections.

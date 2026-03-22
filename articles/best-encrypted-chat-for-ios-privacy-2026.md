@@ -42,6 +42,19 @@ Signal is the best encrypted chat app for iOS in 2026, offering audited end-to-e
 - **However**: Signal's much larger user base makes it more practical for actual communication.
 - **Threema suits users who**: prefer paying upfront over being the product, with the benefit of Swiss privacy laws.
 
+## Table of Contents
+
+- [What Makes a Chat App Secure on iOS](#what-makes-a-chat-app-secure-on-ios)
+- [Signal: The Gold Standard](#signal-the-gold-standard)
+- [Session: Privacy Without Phone Numbers](#session-privacy-without-phone-numbers)
+- [Threema: Swiss Privacy](#threema-swiss-privacy)
+- [iMessage: Apple's Option](#imessage-apples-option)
+- [WhatsApp: The Popular Choice with Trade-offs](#whatsapp-the-popular-choice-with-trade-offs)
+- [Telegram: Caveats Apply](#telegram-caveats-apply)
+- [Comparative Analysis](#comparative-analysis)
+- [iOS Configuration Guide](#ios-configuration-guide)
+- [Making Your Choice](#making-your-choice)
+
 ## What Makes a Chat App Secure on iOS
 
 iOS presents unique security considerations that differ from Android. The platform's closed nature provides some inherent protections, but also limits your choices and control. Understanding these factors helps you make informed decisions about which apps to trust with your conversations.

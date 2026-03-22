@@ -28,6 +28,20 @@ Proton Mail accounts cannot be inherited because encryption keys are destroyed w
 - **Separating roles**: Use personal Proton Mail for truly private communications, separate business email (potentially non-encrypted) for matters that need succession
 2.
 
+## Table of Contents
+
+- [Understanding Proton Mail's Encryption Architecture](#understanding-proton-mails-encryption-architecture)
+- [Proton Mail's Official Position on Account Inheritance](#proton-mails-official-position-on-account-inheritance)
+- [Available Workarounds for Power Users](#available-workarounds-for-power-users)
+- [Legal and Practical Considerations](#legal-and-practical-considerations)
+- [Password Reset and Recovery Key Management](#password-reset-and-recovery-key-management)
+- [Alternative: Proton for Business and Legacy Access](#alternative-proton-for-business-and-legacy-access)
+- [Implementing Shamir's Secret Sharing for Account Access](#implementing-shamirs-secret-sharing-for-account-access)
+- [Jurisdictional Considerations for Digital Estate Planning](#jurisdictional-considerations-for-digital-estate-planning)
+- [Cloud Storage Integration and Workarounds](#cloud-storage-integration-and-workarounds)
+- [Building a Digital Estate Strategy](#building-a-digital-estate-strategy)
+- [Timeline and Notification Planning](#timeline-and-notification-planning)
+
 ## Understanding Proton Mail's Encryption Architecture
 
 Proton Mail implements end-to-end encryption (E2EE) by default for all messages stored on their servers. When you compose an email, it's encrypted on your device using your private key before transmission. The server only ever sees encrypted ciphertext. Your private key itself is derived from your password through Proton Mail's zero-knowledge architecture — meaning Proton never stores or has access to the actual key material.

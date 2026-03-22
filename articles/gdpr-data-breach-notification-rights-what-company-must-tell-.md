@@ -26,6 +26,19 @@ Under the GDPR (General Data Protection Regulation), organizations handling EU r
 - **Use hardware security keys (YubiKey**: Titan) where available, FIDO2 where not, TOTP as fallback.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The 72-Hour Notification Window](#the-72-hour-notification-window)
+- [What Companies Must Disclose in Breach Notifications](#what-companies-must-disclose-in-breach-notifications)
+- [Verifying Breach Notification Authenticity](#verifying-breach-notification-authenticity)
+- [Your Rights After a Data Breach](#your-rights-after-a-data-breach)
+- [Understanding Supervisory Authority Responses](#understanding-supervisory-authority-responses)
+- [Building Your Own Data Breach Response Toolkit](#building-your-own-data-breach-response-toolkit)
+- [Threat Model: Who Should Be Most Concerned?](#threat-model-who-should-be-most-concerned)
+- [The 72-Hour Window in Practice](#the-72-hour-window-in-practice)
+- [Practical Steps When You Receive a Breach Notification](#practical-steps-when-you-receive-a-breach-notification)
+- [Complaint Filing Timeline](#complaint-filing-timeline)
+
 ## The 72-Hour Notification Window
 
 The GDPR's Article 33 establishes the 72-hour notification requirement. This countdown begins when the data controller "becomes aware" that a personal data breach has occurred. However, the regulation acknowledges that determining the full scope of a breach may take time, so companies must provide an initial notification and can follow up with additional details.

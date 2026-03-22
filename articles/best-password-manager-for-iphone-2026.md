@@ -47,6 +47,14 @@ App Extension support varies**: 1Password provides the most Safari integration w
 - **Selecting the best password**: manager for iPhone in 2026 requires evaluating how each option handles security, cross-platform synchronization, CLI access, and developer tooling.
 - **Use "Get TOTP for**: Item" action # 4.
 
+## Table of Contents
+
+- [What Developers Need from iPhone Password Managers](#what-developers-need-from-iphone-password-managers)
+- [Top Password Manager Options for iPhone](#top-password-manager-options-for-iphone)
+- [Feature Comparison for Developers](#feature-comparison-for-developers)
+- [iOS-Specific Considerations](#ios-specific-considerations)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+
 ## What Developers Need from iPhone Password Managers
 
 Developer requirements extend beyond storing passwords. You need SSH key management, TOTP generation, secure note storage for API keys, and CLI access for automation. Cross-platform support matters if you switch between macOS, Linux, or Windows. Self-hosting options provide data sovereignty without sacrificing mobile convenience.

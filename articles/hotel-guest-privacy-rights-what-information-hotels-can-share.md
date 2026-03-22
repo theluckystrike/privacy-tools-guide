@@ -39,6 +39,16 @@ When you check into a hotel, you surrender more personal information than you mi
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The law requires meaningful**: consent for data collection and use, but includes exceptions for law enforcement requests.
 
+## Table of Contents
+
+- [What Hotels Collect: The Data Landscape](#what-hotels-collect-the-data-landscape)
+- [Legal Framework: When Hotels Must Disclose Data](#legal-framework-when-hotels-must-disclose-data)
+- [Types of Legal Requests Hotels Receive](#types-of-legal-requests-hotels-receive)
+- [Practical Privacy Strategies for Guests](#practical-privacy-strategies-for-guests)
+- [What Hotels Cannot Share](#what-hotels-cannot-share)
+- [International Considerations](#international-considerations)
+- [Building Privacy-Respecting Hotel Systems](#building-privacy-respecting-hotel-systems)
+
 ## What Hotels Collect: The Data Landscape
 
 Modern hotels collect a range of guest information during booking and check-in:
