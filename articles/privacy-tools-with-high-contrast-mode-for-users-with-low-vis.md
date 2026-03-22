@@ -355,7 +355,7 @@ For organizations deploying privacy tools to users with low vision:
 
 The privacy tool ecosystem in 2026 offers multiple high contrast options across browser extensions, password managers, CLI tools, and development environments. Bitwarden and KeePassXC lead password manager accessibility, while Dark Reader and Lumina provide the most flexible browser extensions. Terminal tools increasingly respect system accessibility settings, and modern editors like VS Code and Neovim offer extensive theming capabilities.
 
-For teams implementing accessibility, prioritizing high contrast support from the start reduces technical debt. Users with low vision deserve privacy tools that protect their data without sacrificing usability. High contrast is one component of broader accessibility; comprehensive support requires addressing color blindness, font flexibility, and other accessibility dimensions.
+For teams implementing accessibility, prioritizing high contrast support from the start reduces technical debt. Users with low vision deserve privacy tools that protect their data without sacrificing usability. High contrast is one component of broader accessibility; thorough support requires addressing color blindness, font flexibility, and other accessibility dimensions.
 
 
 

@@ -85,7 +85,7 @@ class RatchetState:
 
 ## Why Forward Secrecy Matters in 2026
 
-The threat world has evolved significantly. Nation-state actors, sophisticated criminal groups, and security researchers regularly demonstrate that long-term key compromise is a real threat:
+The threat environment has evolved significantly. Nation-state actors, sophisticated criminal groups, and security researchers regularly demonstrate that long-term key compromise is a real threat:
 
 - **Device seizures**: Law enforcement can extract keys from seized devices
 - **Software vulnerabilities**: Remote exploits can expose keys in memory

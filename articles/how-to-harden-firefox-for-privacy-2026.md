@@ -2,8 +2,8 @@
 title: "How to Harden Firefox for Privacy (2026)"
 description: "Firefox privacy hardening guide: about:config tweaks, uBlock Origin setup, container tabs, arkenfox user.js, DNS settings, tracking prevention."
 author: "Privacy Tools Guide"
-date: "2026-03-22"
-updated: "2026-03-22"
+date: 2026-03-22
+updated: 2026-03-22
 reviewed: true
 score: 8
 voice-checked: true

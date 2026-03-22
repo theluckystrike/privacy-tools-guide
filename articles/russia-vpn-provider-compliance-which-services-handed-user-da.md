@@ -28,7 +28,7 @@ For developers building applications that route traffic through VPNs, understand
 
 ## Which Providers Handled Data Requests
 
-Based on public records, transparency reports, and court documents released through 2026, the compliance world varies significantly:
+Based on public records, transparency reports, and court documents released through 2026, the compliance environment varies significantly:
 
 **Providers That Exited the Market:**
 - ExpressVPN withdrew completely in early 2025, citing inability to comply with log retention requirements

@@ -18,7 +18,7 @@ voice-checked: true
 
 Protect investigative case files using VeraCrypt encrypted volumes, GPG for encrypted communications, and encrypted USB drives for offline storage. Store surveillance photos with GPS stripped, segregate client data from investigation notes, implement role-based access controls, and maintain audit logs of all case file access.
 
-## Understanding the Threat Landscape
+## Understanding the Threat World
 
 Private investigators face unique security challenges. Case files often contain:
 - Personal identifiers of subjects and witnesses

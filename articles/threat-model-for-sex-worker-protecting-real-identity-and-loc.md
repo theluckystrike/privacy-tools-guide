@@ -19,7 +19,7 @@ voice-checked: true
 
 Separate your professional and personal identities completely: use dedicated devices, distinct email addresses, separate phone numbers, and different payment methods for work. Enable VPN/Tor for location protection, use data brokers removal services, compartmentalize devices to prevent cross-contamination, and maintain strict operational security to prevent doxxing and physical threats.
 
-## Threat World Assessment
+## Threat Environment Assessment
 
 Before implementing protections, identify what you're defending against:
 

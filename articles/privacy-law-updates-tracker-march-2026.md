@@ -147,7 +147,7 @@ user_recourse:
   - monetary_damages_available
 ```
 
-The DPF requires that transfer impact assessments be reviewed annually and updated whenever a receiving country's legal landscape changes materially. Document your assessment methodology — the Office of the Privacy Commissioner can request it during investigations.
+The DPF requires that transfer impact assessments be reviewed annually and updated whenever a receiving country's legal market changes materially. Document your assessment methodology — the Office of the Privacy Commissioner can request it during investigations.
 
 ### Brazil LGPD Amendments
 
@@ -290,7 +290,7 @@ The Online Safety Bill creates obligations for online services to assess and mit
 1. **System of governance**: How you identify and address privacy risks
 2. **Risk assessment**: Documented evaluation of potential harms
 3. **Audit trails**: Proof that you followed your own policies
-4. **User empowerment**: Tools for users to manage their privacy
+4. **User capability**: Tools for users to manage their privacy
 
 ```yaml
 # Example governance framework required by UK law

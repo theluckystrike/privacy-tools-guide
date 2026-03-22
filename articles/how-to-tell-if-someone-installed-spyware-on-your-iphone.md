@@ -282,7 +282,7 @@ Organizations working with journalists, activists, or human rights defenders sho
 - **Hardware security key manufacturers**: For critical account protection
 - **Open-source security tools communities**: For ongoing defense improvements
 
-The threat world changes constantly. Maintaining awareness through security research communities, following updates from organizations like Amnesty Tech, and understanding emerging attack vectors helps keep defensive measures current.
+The threat environment changes constantly. Maintaining awareness through security research communities, following updates from organizations like Amnesty Tech, and understanding emerging attack vectors helps keep defensive measures current.
 
 
 
