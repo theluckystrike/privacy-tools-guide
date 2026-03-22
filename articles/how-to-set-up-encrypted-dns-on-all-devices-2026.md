@@ -33,7 +33,17 @@ intent-checked: true---
 
 Standard DNS (Domain Name System) broadcasts every website you visit to your ISP, router, and network administrators. Encrypted DNS (DoH/DoT) encrypts DNS queries, preventing surveillance of your browsing. This guide shows how to configure encrypted DNS on all major devices and provides provider comparison with privacy ratings.
 
-## The DNS Privacy Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The DNS Privacy Problem
 
 When you visit example.com:
 
@@ -68,7 +78,7 @@ ISP sees: "Encrypted DNS traffic to 1.1.1.1"
 
 **Privacy benefit:** ISP cannot identify sites you visit. DNS provider sees queries (choose provider carefully).
 
-## DNS Encryption Standards
+### Step 2: DNS Encryption Standards
 
 ### DNS over HTTPS (DoH)
 
@@ -88,7 +98,7 @@ ISP sees: "Encrypted DNS traffic to 1.1.1.1"
 
 **Practical difference:** Negligible for consumers. DoH recommended for ease.
 
-## Encrypted DNS Providers Compared
+### Step 3: Encrypted DNS Providers Compared
 
 ### 1. Cloudflare (1.1.1.1)
 
@@ -214,7 +224,7 @@ ISP sees: "Encrypted DNS traffic to 1.1.1.1"
 
 **Recommendation:** Cloudflare (speed + privacy) or Quad9 (non-profit, security focus).
 
-## Setup: macOS
+### Step 4: Set Up : macOS
 
 ### Method 1: System Preferences (Easiest)
 
@@ -286,7 +296,7 @@ listen_addresses:
 
 **Advantage:** Encrypts DNS all the way to provider, more secure than DoH in some scenarios.
 
-## Setup: Windows 10/11
+### Step 5: Set Up : Windows 10/11
 
 ### Method 1: Built-in Settings (Windows 11)
 
@@ -342,7 +352,7 @@ Set DNS servers to DoH provider addresses.
 
 4. Set system DNS to 127.0.0.1
 
-## Setup: Linux
+### Step 6: Set Up : Linux
 
 ### Method 1: systemd-resolved (Modern)
 
@@ -407,7 +417,7 @@ sudo systemctl enable stubby
 dig @127.0.0.1 google.com
 ```
 
-## Setup: iOS
+### Step 7: Set Up : iOS
 
 ### Native DoH Support (iOS 14+)
 
@@ -433,7 +443,7 @@ Alternative app for more control:
 
 **Advantage:** Works across WiFi and cellular automatically.
 
-## Setup: Android
+### Step 8: Set Up : Android
 
 ### Native DoH Support (Android 9+)
 
@@ -474,7 +484,7 @@ Nebulo provides GUI and additional features:
 
 **Advantage:** Works across WiFi and cellular, shows query log.
 
-## Verification: All Platforms
+### Step 9: Verification: All Platforms
 
 ### DNS Leak Test
 
@@ -568,7 +578,7 @@ Resolve-DnsName -Name google.com
 - Use VPN to bypass corporate firewall
 - Use Mullvad VPN ($5.99/mo) combines DNS encryption + VPN
 
-## Privacy Considerations
+### Step 10: Privacy Considerations
 
 **Choosing Between Providers:**
 
@@ -586,7 +596,7 @@ Resolve-DnsName -Name google.com
 - **Mullvad:** VPN provider, maximalist privacy
 - **NextDNS:** Privacy startup, advanced controls
 
-## Complete Setup Checklist
+### Step 11: Complete Setup Checklist
 
 - [ ] Choose DNS provider (recommend: Cloudflare or Quad9)
 - [ ] Set up on all devices (macOS, Windows, iOS, Android)

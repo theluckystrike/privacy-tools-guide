@@ -52,7 +52,17 @@ DNSCrypt is a protocol that encrypts and authenticates DNS traffic between your 
 
 The protocol supports both anonymous resolvers (which provide encryption without authentication) and authenticated resolvers (which verify the server's identity through cryptographic keys). For maximum privacy, authenticated DNSCrypt ensures that even the resolver operator cannot forge DNS responses.
 
-## Installing DNSCrypt Proxy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install DNSCrypt Proxy
 
 Most Linux distributions include DNSCrypt Proxy in their package managers. On Debian-based systems:
 
@@ -81,7 +91,7 @@ curl -sL https://github.com/DNSCrypt/dnscrypt-proxy/releases/latest/download/dns
 
 Replace `arm64` with `x86_64` for 64-bit Intel/AMD systems.
 
-## Configuring DNSCrypt Proxy
+### Step 2: Configure DNSCrypt Proxy
 
 The default configuration works out of the box for many use cases, but for authenticated encrypted DNS queries, you'll want to customize the setup. The main configuration file is typically located at `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` on installations via package managers, or `dnscrypt-proxy.toml` in the same directory as the binary for manual installations.
 
@@ -128,7 +138,7 @@ cache_max_ttl = 86400
 
 The cache stores DNS responses locally, reducing round trips to the upstream resolver for frequently accessed domains.
 
-## Switching Your System to Use DNSCrypt
+### Step 3: Switching Your System to Use DNSCrypt
 
 Once DNSCrypt Proxy is running, you need to direct your system's DNS queries to it. The method depends on your Linux distribution and setup.
 
@@ -164,7 +174,7 @@ sudo nmcli connection down <connection-name> && sudo nmcli connection up <connec
 
 Replace `<connection-name>` with your active network connection name (use `nmcli connection` to list them).
 
-## Starting and Enabling the Service
+### Step 4: Starting and Enabling the Service
 
 With systemd:
 
@@ -185,7 +195,7 @@ If you installed manually, you can run DNSCrypt Proxy directly:
 sudo ./dnscrypt-proxy -config dnscrypt-proxy.toml
 ```
 
-## Verifying Your Setup
+### Step 5: Verify Your Setup
 
 After configuration, verify that DNS queries are actually going through DNSCrypt.
 

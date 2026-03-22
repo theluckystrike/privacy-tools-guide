@@ -48,7 +48,17 @@ Consider the scenarios:
 
 Emergency access planning prevents your spouse from facing these situations unprepared and panicked.
 
-## Understanding Emergency Access Mechanisms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Emergency Access Mechanisms
 
 Password managers implement emergency access through two primary methods: designated emergency contacts and vault sharing with expiration timers. Each approach offers different security trade-offs, and understanding these differences helps you choose the right configuration for your household.
 
@@ -58,7 +68,7 @@ Password managers implement emergency access through two primary methods: design
 
 Both methods require the emergency contact to have their own password manager account. This requirement ensures that vault access remains tied to authenticated identities rather than shared passwords.
 
-## Setting Up Emergency Access in Bitwarden
+### Step 2: Set Up Emergency Access in Bitwarden
 
 Bitwarden offers the most straightforward emergency access implementation among major password managers. The feature works across Free, Premium, and Family plans.
 
@@ -87,7 +97,7 @@ Bitwarden requires the emergency contact to provide a verification code known on
 VERIFICATION_CODE_EMERGENCY=your-shared-code-here
 ```
 
-## Setting Up Emergency Access in 1Password
+### Step 3: Set Up Emergency Access in 1Password
 
 1Password implements emergency access through its Families and Teams plans, calling the feature "Emergency Kit" and "Family Vault Sharing."
 
@@ -115,7 +125,7 @@ VERIFICATION_CODE_EMERGENCY=your-shared-code-here
 
 Unlike Bitwarden's automatic waiting period, 1Password's sharing model provides immediate access but limits it to specific items rather than full vault access.
 
-## Implementing Custom Emergency Access Scripts
+### Step 4: Implementing Custom Emergency Access Scripts
 
 For developers seeking more control, programmatic solutions using password manager CLIs provide flexible emergency access configurations.
 
@@ -158,7 +168,7 @@ Regardless of which password manager you use, maintain an offline document listi
 
 ```markdown
 # Emergency Access Documentation
-## Storage: Physical safe, not digital
+### Step 5: Storage: Physical safe, not digital
 
 ### Primary Access Method
 - Password Manager: [Bitwarden/1Password/LastPass]
@@ -202,7 +212,7 @@ Implementing emergency access introduces attack surface that requires careful ma
 
 **Document Expiration Policies**: If using time-limited sharing, maintain a calendar reminder to renew access before expiration. An expired emergency access configuration provides zero benefit during actual emergencies.
 
-## When Emergency Access Activates
+### Step 6: When Emergency Access Activates
 
 When you become unavailable, your spouse initiates emergency access by requesting vault access through your password manager's interface. After the waiting period elapses, they receive access to your shared items.
 
@@ -217,7 +227,7 @@ During an actual emergency, your spouse should:
 
 The emergency access system provides peace of mind that digital barriers won't prevent your family from managing critical responsibilities during difficult times.
 
-## Handling Relationship Changes and Access Revocation
+### Step 7: Handling Relationship Changes and Access Revocation
 
 Emergency access relationships change with life circumstances. Divorce, separation, estrangement, or changes in trust require immediate revocation of designated contacts. Password managers make this process straightforward, but many users neglect to update emergency access configurations during relationship transitions.
 
@@ -227,7 +237,7 @@ Some password managers allow time-limited emergency access designations. Rather 
 
 If you suspect your emergency contact has become unreliable or untrustworthy, revoke their access immediately. Create new emergency contact designations with different trusted individuals. Most password managers support multiple designated emergency contacts, providing redundancy and ensuring at least one trusted person retains access.
 
-## Emergency Access for Aging Parents and End-of-Life Planning
+### Step 8: Emergency Access for Aging Parents and End-of-Life Planning
 
 As parents age, considering their digital assets becomes part of end-of-life planning. Discuss emergency access with aging parents and help them set up appropriate designations. Adult children frequently become executors for aging parents—formal emergency access configurations simplify the process when parental incapacity occurs.
 
@@ -235,7 +245,7 @@ Some families prefer a tiered approach: adult children receive emergency access 
 
 Documentation becomes especially important for aging parents. Create detailed instructions about where emergency access credentials are stored, which family members have access rights, and what actions should be taken if the parent becomes incapacitated. Store this documentation with a copy of the will and other critical documents.
 
-## Testing and Disaster Recovery
+### Step 9: Test and Disaster Recovery
 
 Emergency access systems should be tested periodically. With your designated contact's knowledge, initiate a test emergency access request. Verify that notifications arrive, waiting periods function correctly, and access actually grants the intended permissions. Better to discover problems during a test than during an actual emergency.
 
@@ -243,6 +253,21 @@ After testing, document what worked and what didn't. If the waiting period was t
 
 Finally, ensure your designated emergency contact knows what to do if you become incapacitated. They shouldn't be discovering access procedures for the first time during actual emergencies. Provide them with detailed instructions, verification codes, and contact information for relevant password manager support teams. Some password managers provide emergency contact guides specifically for this purpose—share these with your designees.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

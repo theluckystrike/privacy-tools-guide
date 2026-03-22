@@ -51,7 +51,17 @@ Stubby is a dedicated DNS resolver supporting DoH:
 - **Enter provider details Not**: all versions support this directly; iOS 15+ is most reliable.
 - **For DNS-only encryption**: use Method 1 or official app.
 
-## Understanding DNS Encryption
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand DNS Encryption
 
 Standard DNS queries travel unencrypted over UDP port 53. Any device on your network—including your router, ISP infrastructure, or network sniffer—can see every query. Schools, workplaces, and ISPs routinely log DNS queries for monitoring or control purposes.
 
@@ -147,7 +157,7 @@ Quad9 prioritizes privacy and security, audited by independent researchers.
 
 **Best for:** Privacy advocates prioritizing non-profit governance and Swiss jurisdiction over additional features.
 
-## macOS Setup
+### Step 2: macOS Setup
 
 ### Method 1: System Settings (iOS 14+ and macOS Monterey+, Easiest)
 
@@ -188,7 +198,7 @@ sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.dnssd.pli
 
 This method requires creating a configuration profile (XML file) and installing it system-wide. Use GUI methods unless you're comfortable with macOS configuration.
 
-## Windows Setup
+### Step 3: Windows Setup
 
 ### Method 1: Network Settings (Windows 11, Easiest)
 
@@ -227,7 +237,7 @@ Get-DnsClientDohServerAddress
 
 Repeat for multiple providers or additional DNS servers.
 
-## Linux Setup
+### Step 4: Linux Setup
 
 ### Method 1: systemd-resolved Configuration (Modern Linux)
 
@@ -320,7 +330,7 @@ sudo systemctl restart systemd-resolved
 2. Run and authenticate with account
 3. App handles all configuration automatically
 
-## iOS Setup
+### Step 5: iOS Setup
 
 ### Method 1: Settings (iOS 14+, System-Wide)
 
@@ -361,7 +371,7 @@ This installs provider-specific encryption settings.
 2. Enable in settings
 3. Automatic encryption on all networks
 
-## Android Setup
+### Step 6: Android Setup
 
 ### Method 1: System Settings (Android 9+)
 
@@ -385,7 +395,7 @@ For DNS-only encryption, use Method 1 or official app.
 3. Enable "Connect" in app
 4. App encrypts all DNS queries
 
-## Router Configuration (Network-Wide DoH)
+### Step 7: Router Configuration (Network-Wide DoH)
 
 Setting DoH on your router encrypts DNS for all connected devices automatically.
 
@@ -437,7 +447,7 @@ config dnscrypt_proxy
 /etc/init.d/dnscrypt-proxy restart
 ```
 
-## Verification: Confirm DoH is Working
+### Step 8: Verification: Confirm DoH is Working
 
 ### Test 1: DNS Query Encryption Check
 
@@ -487,7 +497,7 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 - Enable DoH on both phone and connected device
 - Use dedicated mobile router with DoH support instead
 
-## Privacy Considerations
+### Step 9: Privacy Considerations
 
 **DoH doesn't encrypt destination IP:** ISPs still see which servers you connect to (by IP address). DoH protects domain names only, not destination addresses. For complete privacy, combine DoH with VPN.
 
@@ -498,7 +508,7 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 - NextDNS: Good privacy, but retains logs
 - Avoid suspicious providers claiming privacy without audits
 
-## Implementation Timeline
+### Step 10: Implementation Timeline
 
 **Day 1:** Set up DoH on primary device (phone or laptop) using official app or system settings.
 

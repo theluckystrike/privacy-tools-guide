@@ -48,7 +48,17 @@ GitHub's own security features protect repositories against unauthorized access,
 
 Beyond security, using Git for estate documents provides powerful version control that paper documents cannot match. You can track when you added a new bank account, see the history of changes to your funeral preferences, and revert mistakes without physically managing multiple versions of spreadsheets or PDFs. The Git history becomes an audit trail of your estate planning evolution, valuable for resolving disputes among heirs or proving that specific instructions were added at specific times.
 
-## Method 1: Age Encryption (Recommended)
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Age Encryption (Recommended)
 
 Age is a modern encryption tool written in Go, endorsed by the Tor Project for bridging relaying, and designed for simplicity without sacrificing security. It uses X25519 for key exchange and ChaCha20-Poly1305 for encryption, meeting modern cryptographic standards while remaining approachable for non-cryptographers. Age's design philosophy prioritates clear security boundaries, making it easier to reason about what is protected and what is not.
 
@@ -168,7 +178,7 @@ git config filter.agecrypt.smudge "python3 .git/hooks/filter-age smudge"
 
 Now files matching your `.gitattributes` patterns encrypt automatically when you `git add` them and decrypt when you `git checkout`. The plaintext never leaves your local machine, but GitHub stores only encrypted versions.
 
-## Method 2: Git-Crypt for Transparent Encryption
+### Step 2: Method 2: Git-Crypt for Transparent Encryption
 
 Git-crypt provides Git-aware encryption that works smoothly with standard Git workflows. Unlike age, which requires manual encryption and decryption commands, git-crypt encrypts files transparently—committed files appear as ciphertext in Git, but checkout automatically decrypts them if you possess the correct GPG key. This approach suits teams or families comfortable with GPG key management.
 
@@ -247,7 +257,7 @@ To unlock:
 git-crypt unlock
 ```
 
-## Method 3: SOPS for Encrypted Secret Management
+### Step 3: Method 3: SOPS for Encrypted Secret Management
 
 SOPS (Secrets OPerationS), developed by Mozilla and used by companies like Discord and embedded in the Cloudflare CDN infrastructure, encrypts YAML, JSON, INI, and Terraform files while preserving their structure. Unlike age or git-crypt which encrypt entire files, SOPS encrypts individual values within files, making it ideal for configuration files that mix sensitive and non-sensitive data. For estate planning, SOPS excels when your documents include both public information (like beneficiary names) and sensitive data (like account numbers) in the same file.
 
@@ -337,7 +347,7 @@ sops -d --extract '["accounts"][0]["account_number"]' estate-config.yaml
 
 This ability to decrypt individual values without exposing the entire file makes SOPS powerful for CI/CD pipelines where only specific secrets need injection.
 
-## Key Management for Estate Planning
+### Step 4: Key Management for Estate Planning
 
 Encryption is only as strong as key management. For estate documents, key management has unique requirements: keys must survive you, be accessible to your executor, and remain secure against unauthorized access during your lifetime. The following strategies address these competing needs.
 
@@ -367,6 +377,21 @@ Test your recovery procedures before relying on them. Create a test repository w
 - How to verify decryption succeeded (e.g., checking file hashes or comparing known content)
 
 Store this documentation alongside the keys or with your estate planning documents.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
