@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Migrating between encrypted cloud storage providers presents unique challenges that differ significantly from standard file transfers. When you move data between services that use client-side encryption, you must handle encryption keys carefully, ensure data integrity, and maintain access controls throughout the process. This guide provides a systematic approach for developers and power users switching providers without sacrificing security.
 
+## Key Takeaways
+
+- **Most services allow you**: to choose between AES-256, ChaCha20, or other encryption schemes.
+- **If you're moving hundreds of gigabytes**: consider whether your internet connection can handle the load or whether you need to use physical media shipping if the provider supports it.
+- **If the new provider supports it**: use the same encryption algorithm for compatibility, though this isn't always possible across different services.
+- **When you move data**: between services that use client-side encryption, you must handle encryption keys carefully, ensure data integrity, and maintain access controls throughout the process.
+- **This guide provides a**: systematic approach for developers and power users switching providers without sacrificing security.
+- **Identify which model your**: current provider uses.
+
 ## Understanding Your Current Encryption Setup
 
 Before initiating any migration, document your current encryption configuration. Most encrypted cloud storage services use one of three models: provider-managed keys (where the service holds encryption keys), customer-managed keys (CMK) with your own key management service, or zero-knowledge encryption where only you hold the decryption key.

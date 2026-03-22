@@ -31,6 +31,17 @@ intent-checked: true---
 
 If something happens to you—death, injury, incapacity—your family needs access to critical accounts: bank accounts, insurance, property deeds, digital assets. But you don't want passwords lying around in plain text. This guide shows how to set up encrypted emergency access: your family gets temporary decryption keys only if something happens, using password managers, encrypted document vaults, and legal frameworks.
 
+## Key Takeaways
+
+- **You grant a trusted contact (spouse**: sibling) access rights
+2.
+- **Store encryption password in**: sealed envelope (spouse holds) 4.
+- **All critical accounts in**: 'Family Shared' vault." ``` ### What Your Spouse Gets After 90 + 14 Days = 104 Days ``` 1Password shows emergency contact: "Patrick hasn't accessed this account in 104 days.
+- **Tell spouse**: "Emergency vault updated"
+  6.
+- **Once used**: mark as consumed.
+- **If spouse has vault**: access but doesn't know master password, she still can't log in.
+
 ## The Problem: The Inaccessible Digital Estate
 
 Scenario: You die. Your spouse discovers:

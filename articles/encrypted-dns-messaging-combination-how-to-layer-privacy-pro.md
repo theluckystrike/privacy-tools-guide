@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Combine encrypted DNS with secure messaging (Signal, Matrix) to create defense-in-depth privacy protection. Encrypted DNS (DoH/DoT) hides your browsing destinations from network observers, while secure messaging protects communication content and metadata—together addressing different threat vectors for complete privacy.
+
+## Key Takeaways
+
+- **For most users**: the privacy benefits outweigh the modest performance cost.
+- **Traditional DNS uses plaintext**: UDP on port 53, making it trivial for network observers to build a complete picture of your internet usage.
+- **The Tor network**: however, can slow connections significantly (200-500ms or more).
+- **However**: note that federation metadata remains visible to your server operator unless you use the Tor bridge.
+- **Trusting "free" VPN services****: If a VPN service is free, your data is the product.
+- **Combine encrypted DNS with**: a reputable paid VPN or use Tor for sensitive activities.
 
 ## Understanding the Privacy Gaps
 

@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, encryption]---
 
 End-to-end encryption (E2EE) means your data is encrypted on your device before it leaves, and only the intended recipient's device can decrypt it -- the server in the middle never holds the keys and cannot read your messages, even if compromised. It works through public-key cryptography: you encrypt with the recipient's public key, and only their private key can decrypt it, with modern protocols like Signal's Double Ratchet advancing keys after every message for forward secrecy.
 
+## Key Takeaways
+
+- **E2EE uses both**: asymmetric encryption to securely share session keys, then symmetric encryption for bulk message encryption.
+- **Any application handling sensitive**: data can benefit: file storage, note-taking, password managers, and video calls all use E2EE principles.
+- **File Storage**: Tresorit, Sync.com, and Proton Drive use E2EE to store files on untrusted servers.
+- **Check Protocol**: Does it use Signal Protocol, TLS 1.3 with perfect forward secrecy, or a custom implementation?
+2.
+- **Review Open Source**: Is the crypto implementation auditable by independent researchers?
+4.
+- **This is the model Signal**: WhatsApp (with encryption enabled), and secure email providers use.
+
 ## What End-to-End Encryption Actually Means
 
 In traditional encryption models, data is encrypted between you and the server, then decrypted on the server, then re-encrypted to the recipient. This means the service provider holds the keys. With E2EE, the encryption keys never leave your device. The server acts only as a relay—it cannot decrypt anything.

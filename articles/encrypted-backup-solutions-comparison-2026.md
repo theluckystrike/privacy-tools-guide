@@ -31,6 +31,24 @@ intent-checked: true---
 
 Regular backups protect against ransomware, hardware failure, and accidental deletion. Encrypted backups additionally protect your privacy: even if a backup is stolen, the data remains unreadable without the encryption key. This guide compares five encrypted backup solutions with different architectures, use cases, and pricing models.
 
+## Key Takeaways
+
+- **Choose destination**: - Amazon S3
+   - Backblaze B2 (often $0.01/GB/month)
+   - Google Cloud Storage
+   - Dropbox, Box, OneDrive, etc
+4.
+- **Cheap cloud storage ($0.006/GB/month**: at Wasabi).
+- **Choose destination (local drive**: S3, Backblaze B2, Google Drive, etc)
+4.
+- **Choose schedule (daily**: weekly, monthly)
+7.
+- **Folders to backup**: - /home/user/Documents
+   - /home/user/Pictures
+   - /home/user/Desktop
+6.
+- **Linux server (1TB+)**: Use Borg or Restic.
+
 ## Why Encrypted Backups Matter
 
 Standard backups without encryption expose your data:

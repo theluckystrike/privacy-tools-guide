@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 When evaluating privacy-focused communication tools, the encryption itself is only part of the equation. Metadata—what gets logged, stored, and potentially shared with third parties—can reveal as much about your communications as the content itself. This analysis examines what metadata Signal, WhatsApp, and FaceTime collect during voice calls, providing developers and power users with practical recommendations for minimizing exposure.
 
+## Key Takeaways
+
+- **Session provides phone-number-free calls**: but with smaller user adoption.
+- **When evaluating privacy-focused communication**: tools, the encryption itself is only part of the equation.
+- **Verify TLS is in**: use (should see valid certificates) # 5.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Understanding Metadata in Voice Calls
 
 Before examining specific platforms, it is useful to understand what metadata actually gets collected during a typical voice call:

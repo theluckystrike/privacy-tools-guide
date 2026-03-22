@@ -33,6 +33,15 @@ By default, DNS queries on Linux go to your ISP's resolver in plaintext on UDP p
 
 This guide covers three approaches: the built-in `systemd-resolved` (no extra software), `dnscrypt-proxy` (flexible, supports filters), and `AdGuard Home` (self-hosted with a web UI).
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **The `#hostname` part is**: used to verify the TLS certificate.
+- **Good for households or**: small networks.
+
 ## Method 1: systemd-resolved with DoH
 
 Most modern Debian/Ubuntu and Fedora systems already use `systemd-resolved`. Check:

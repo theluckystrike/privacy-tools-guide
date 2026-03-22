@@ -31,6 +31,28 @@ tags: [privacy-tools-guide]---
 
 Encryption is not paranoia—it's basic digital hygiene. Yet most people encrypt nothing. Your emails are readable by your provider. Your photos live unencrypted in cloud storage. Your passwords are managed by browsers. This guide walks through encrypting everything: devices, email, messages, files, passwords, and backups. It's neither impossible nor expensive. With 2 hours of setup time and free tools, you can achieve military-grade encryption across your digital life.
 
+## Key Takeaways
+
+- **2FA prevents this**: ### Hardware Security Keys (Strongest)
+
+```
+Purchase: YubiKey 5 ($45-60)
+- Supports FIDO2, U2F, TOTP
+- Works with most major services
+- Requires physical key + biometric
+
+Setup:
+1.
+- **Store backup key in**: safe deposit box ``` Cost: $45-60 per key ### Authenticator Apps (Good Alternative) ``` Download: Microsoft Authenticator or Google Authenticator 1.
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **With 2 hours of**: setup time and free tools, you can achieve military-grade encryption across your digital life.
+- **Device encryption gives you**: 80% security with 5 minutes of setup.
+- **Delete browser-saved passwords**: Chrome: Settings → Autofill → Passwords → Delete all
+   Safari: Passwords → Delete
+   Firefox: About:preferences → Privacy → Saved passwords → Clear
+
+4.
+
 ## The Encryption Pyramid
 
 ```

@@ -33,6 +33,15 @@ Remote teams need collaboration tools that protect sensitive discussions without
 
 This guide examines encrypted collaboration tools that give teams zero-knowledge privacy, self-hosting capabilities, and transparent security architectures suitable for developers and power users.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Session uses the Signal**: Protocol for end-to-end encryption but extends it with features that limit metadata retention.
+- **Each user verifies their**: identity with a recovery phrase or password # 3.
+- **Users verify each other's**: devices through a challenge-response # 4.
+
 ## Understanding Zero-Knowledge Architecture
 
 Zero-knowledge encryption means the service provider cannot access your plaintext data. The encryption keys never leave your control. When you encrypt a message, only the intended recipients can decrypt it—everyone else, including the service operator, sees only opaque ciphertext.
