@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Your Cloud Storage Privacy"
-description: "Systematically audit what your cloud storage provider stores, shares, and exposes — covering access logs, third-party data sharing, encryption gaps, and"
+description: "Audit your cloud storage provider: access logs, third-party data sharing, encryption gaps, and legal exposure points systematically reviewed."
 date: 2026-03-22
 author: theluckystrike
 permalink: /audit-cloud-storage-privacy-guide/

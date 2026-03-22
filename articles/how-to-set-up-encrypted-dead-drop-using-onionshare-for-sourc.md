@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Encrypted Dead Drop Using Onionshare"
-description: "A practical guide for developers and power users to create secure, anonymous drop boxes using OnionShare"
+description: "Build an anonymous file drop box with OnionShare over Tor. Step-by-step setup for journalists and whistleblowers needing secure submissions."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

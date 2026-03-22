@@ -97,6 +97,26 @@ Before installing any apps or connecting to networks, configure the phone for pr
 2. Install apps via USB without connecting to Google Play (prevents tracking via app install)
 3. Alternative: Use F-Droid app store (open source, privacy-focused)
 
+Use ADB to install apps directly from your computer without touching Google Play:
+
+```bash
+# Verify the burner phone is connected via USB
+adb devices
+
+# Install Signal APK downloaded from signal.org
+adb install Signal-Android-7.5.2.apk
+
+# Install F-Droid app store for future installs
+adb install F-Droid-1.20.0.apk
+
+# Disable Google Play Services to prevent tracking
+adb shell pm disable-user --user 0 com.google.android.gms
+adb shell pm disable-user --user 0 com.android.vending
+
+# Verify disabled packages
+adb shell pm list packages -d
+```
+
 ## Communication Apps
 
 Select messaging apps that use end-to-end encryption and don't require phone verification.
@@ -147,6 +167,26 @@ Protect photos and videos of police conduct with automatic encryption and secure
 2. Create encrypted volume for evidence storage
 3. Mount only when backing up evidence
 4. Keep volume unmounted during protest (evidence protected even if phone seized)
+
+You can also encrypt evidence files directly on the phone using the `age` encryption tool via Termux:
+
+```bash
+# Install Termux from F-Droid, then install age
+pkg install age
+
+# Generate an encryption key pair
+age-keygen -o protest-key.txt
+
+# Encrypt a photo or video file
+age -r age1yourpublickeyhere -o evidence_encrypted.age DCIM/Camera/IMG_20260322.jpg
+
+# Encrypt all photos from today's protest
+find DCIM/Camera -name "*.jpg" -newer /tmp/protest_start \
+  -exec age -r age1yourpublickeyhere -o {}.age {} \;
+
+# Securely delete the unencrypted originals
+shred -u DCIM/Camera/IMG_20260322.jpg
+```
 
 ## Operational Security During Protest
 
@@ -205,6 +245,18 @@ One week later:
 2. Remove SIM
 3. Destroy SIM card (cut into pieces, burn)
 4. Sell phone back via Facebook Marketplace (different seller than purchase to create distance)
+
+Before factory reset, overwrite free space to make data recovery harder:
+
+```bash
+# Connect via ADB and fill free space with random data
+adb shell dd if=/dev/urandom of=/sdcard/wipe_fill bs=1M
+# Wait until "No space left on device" error appears
+adb shell rm /sdcard/wipe_fill
+
+# Then perform factory reset via ADB
+adb shell am broadcast -a android.intent.action.MASTER_CLEAR
+```
 
 ## Legal Context
 

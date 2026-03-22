@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Signal Disappearing Messages Best Practices: Sensitive"
-description: "A guide to Signal disappearing messages best practices for developers and power users. Learn how to configure timers, implement proper"
+description: "Configure Signal disappearing messages for sensitive conversations. Timer settings, screenshot risks, backup implications, and group chat strategies."
 date: 2026-03-16
 last_modified_at: 2026-03-22
 author: theluckystrike

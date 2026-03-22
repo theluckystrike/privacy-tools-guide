@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Facebook Marketplace Privacy Settings Guide"
-description: "A guide to Facebook Marketplace privacy settings for developers and power users. Learn to control your profile visibility, secure"
+description: "Control your Facebook Marketplace exposure: hide profile details, limit location sharing, block buyer tracking, and manage listing visibility."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

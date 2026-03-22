@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Browser Extensions for Privacy Risks 2026"
-description: "Review extension permissions, detect data exfiltration, use CRXcavator, analyze manifest.json for privacy risks."
+description: "Audit Chrome and Firefox extensions for data exfiltration: CRXcavator scans, manifest.json analysis, and permission risk scoring methods."
 date: 2026-03-22
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

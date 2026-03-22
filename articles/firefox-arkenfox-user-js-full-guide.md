@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Arkenfox User Js Full Guide"
-description: "A guide to Arkenfox user.js for Firefox. Learn how to configure privacy settings, disable telemetry, and harden your browser against"
+description: "Configure Arkenfox user.js for Firefox: disable telemetry, harden fingerprint resistance, manage site breakage overrides, and update safely."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

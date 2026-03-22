@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused Email Providers Comparison 2026"
-description: "Compare ProtonMail, Tutanota, Mailfence, and Posteo for encryption, jurisdiction, pricing, and privacy features"
+description: "ProtonMail vs Tutanota vs Mailfence vs Posteo: encryption protocols, jurisdiction analysis, pricing tiers, and feature matrix for 2026."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
@@ -48,6 +48,22 @@ Privacy email providers use:
 5. **Minimal metadata:** Some encrypt metadata (subject line, recipient list). Others don't.
 
 **Important limitation:** Email headers and routing data are never fully encrypted. Metadata like "who emailed who" can be seen by your provider. True anonymity requires additional tools (Tor, VPN, etc).
+
+You can verify whether your email provider actually encrypts messages in transit by checking the headers of a received email:
+
+```bash
+# View raw email headers to check encryption in transit
+# Look for TLS version in the "Received:" headers
+grep -i "tls\|starttls\|encrypted" email_headers.txt
+
+# Test whether a mail server supports STARTTLS
+openssl s_client -connect mail.protonmail.ch:587 -starttls smtp
+
+# Check the DKIM and SPF records for a privacy email domain
+dig txt protonmail.com +short
+dig txt _dmarc.protonmail.com +short
+dig txt default._domainkey.protonmail.com +short
+```
 
 ## ProtonMail
 

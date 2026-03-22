@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Qubes OS for Maximum Compartmentalization 2026"
-description: "Qubes OS setup and usage guide. Include VM templates, networking, USB isolation, split-GPG, disposable VMs."
+description: "Qubes OS setup from install to daily use: VM templates, split-GPG, USB isolation, disposable VMs, and networking compartmentalization explained."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"

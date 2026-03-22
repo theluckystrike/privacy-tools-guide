@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Implement Pseudonymization In Your Database For Gdpr"
-description: "A practical guide for developers on implementing pseudonymization techniques in databases to achieve GDPR compliance"
+description: "Implement GDPR-compliant pseudonymization in PostgreSQL and MySQL. Covers tokenization, format-preserving encryption, and reversibility patterns."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

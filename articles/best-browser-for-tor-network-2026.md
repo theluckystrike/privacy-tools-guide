@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser for Tor Network 2026: A Technical Guide"
-description: "A technical guide for developers and power users selecting the best browser for Tor network in 2026"
+description: "Tor Browser vs Brave vs Mullvad Browser for onion routing in 2026. Fingerprint resistance, leak tests, and performance benchmarks compared."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

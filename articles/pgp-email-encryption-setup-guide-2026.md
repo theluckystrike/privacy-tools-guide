@@ -245,6 +245,79 @@ save
 
 The master signing key stays in cold storage; the encryption subkey goes on your device.
 
+### Moving a Subkey to YubiKey
+
+Once you have created a subkey, move it to a YubiKey for hardware-backed protection:
+
+```bash
+gpg --edit-key your-key-id
+key 1          # select the subkey
+keytocard      # move to smartcard/YubiKey
+# Choose slot 2 (encryption) or slot 3 (authentication)
+save
+```
+
+After transferring, the private subkey material exists only on the hardware token. GPG operations will prompt for a YubiKey PIN rather than a passphrase typed at the keyboard — eliminating keylogger risk for private key access.
+
+## Troubleshooting Common PGP Problems
+
+### No Public Key Error When Encrypting
+
+This error means you have not imported the recipient's public key. Search for it on a key server:
+
+```bash
+gpg --keyserver keys.openpgp.org --search-keys recipient@example.com
+```
+
+If the key is not on a key server, ask the recipient to send their public key file directly and import it:
+
+```bash
+gpg --import received-key.asc
+```
+
+### Passphrase Prompt on Every Operation
+
+GPG caches passphrases through the gpg-agent daemon. If you are prompted on every operation, the agent may not be running. Start it manually:
+
+```bash
+gpg-agent --daemon
+```
+
+On modern Linux systems with systemd, the agent typically starts automatically. Verify it is active with:
+
+```bash
+gpgconf --list-dirs agent-socket
+```
+
+### Expired Key Handling
+
+When a recipient's key has expired, GPG refuses to encrypt to it. You have two options: ask the recipient to extend their key expiry and re-publish it, or extend it locally only when you can verify the key is still valid through a trusted channel:
+
+```bash
+gpg --edit-key recipient-key-id
+expire
+save
+```
+
+Note that you can only extend expiry on keys you own. For others' keys, the extension must come from the key owner.
+
+## PGP for Git Commit Signing
+
+Beyond email, PGP is widely used to sign Git commits, providing cryptographic proof that commits came from a specific key holder. Configure Git to sign commits automatically:
+
+```bash
+git config --global user.signingkey your-key-id
+git config --global commit.gpgsign true
+```
+
+Verify a signed commit with:
+
+```bash
+git log --show-signature -1
+```
+
+Platforms like GitHub, GitLab, and Sourcehut display a verified badge next to commits signed with a registered GPG key, giving collaborators confidence in commit authenticity even across public repositories.
+
 ## Frequently Asked Questions
 
 **How long does it take to guide?**

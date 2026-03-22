@@ -78,6 +78,19 @@ But this only deletes the visible history. OpenAI's backup systems may retain co
 
 This prevents your messages from being used to train future models, but doesn't delete existing copies.
 
+You can also request data deletion programmatically through the OpenAI API:
+
+```bash
+# Request your data export from OpenAI
+curl -X POST https://api.openai.com/v1/organization/data-export \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Content-Type: application/json"
+
+# Check your current data retention settings
+curl https://api.openai.com/v1/organization/settings \
+  -H "Authorization: Bearer $OPENAI_API_KEY"
+```
+
 ### Enterprise ChatGPT (GPT-4 for Business)
 
 OpenAI offers "ChatGPT Enterprise" with different terms:
@@ -322,10 +335,41 @@ Use Ollama or LocalGPT with local models.
 Cost: $0/month. Requires decent hardware (8GB+ RAM).
 
 **Setup:**
-1. Download Ollama
-2. Run `ollama run llama2`
-3. Start chatting
-4. Zero data leaves your computer
+
+Install Ollama and run a local model with zero data leaving your machine:
+
+```bash
+# Install Ollama (macOS or Linux)
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull and run a model locally
+ollama pull llama3
+ollama run llama3
+
+# For a lighter model on limited hardware (3B parameters)
+ollama pull phi3
+ollama run phi3
+```
+
+You can also use Ollama as a local API replacement for OpenAI, so existing scripts work without sending data to the cloud:
+
+```python
+import requests
+
+# Ollama exposes an OpenAI-compatible API on localhost
+response = requests.post(
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "llama3",
+        "prompt": "Summarize this contract clause for legal review.",
+        "stream": False
+    }
+)
+
+result = response.json()
+print(result["response"])
+# All processing happens locally — no data transmitted externally
+```
 
 ### Avoid
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Protection Officer Role Responsibilities Guide"
-description: "A guide to the Data Protection Officer role under GDPR. Learn about DPO responsibilities, required skills, reporting structures, and how"
+description: "GDPR Data Protection Officer duties: mandatory appointment triggers, daily responsibilities, required skills, and reporting structure requirements."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

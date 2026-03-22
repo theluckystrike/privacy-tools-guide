@@ -221,6 +221,40 @@ Several privacy-focused voice assistant projects exist:
 
 **Self-hosted FOSS assistants** - Run voice assistants on a Raspberry Pi with local processing. More control, less capability.
 
+You can set up a privacy-respecting local voice assistant using Home Assistant with the Whisper speech-to-text engine:
+
+```yaml
+# Home Assistant configuration.yaml — local voice pipeline
+# No audio leaves your network
+
+assist_pipeline:
+  - name: "Local Private Assistant"
+    language: "en"
+    conversation_engine: home_assistant
+    stt_engine: whisper
+    tts_engine: piper
+
+whisper:
+  model: "base.en"    # Runs on a Raspberry Pi 4
+  language: "en"
+  beam_size: 5
+
+piper:
+  voice: "en_US-lessac-medium"
+```
+
+```bash
+# Install Whisper for local speech-to-text on a Raspberry Pi
+pip install openai-whisper
+
+# Test local transcription — audio never leaves your device
+whisper recording.wav --model base.en --output_format txt
+
+# Install Piper for local text-to-speech
+pip install piper-tts
+echo "Your lights are now off" | piper --model en_US-lessac-medium --output_file response.wav
+```
+
 **Option 4: Disable Always-Listening**
 
 For Alexa and Google Home, disable the microphone when you're not using them. Many devices have a physical mute button. Some users unplug devices when not in use.

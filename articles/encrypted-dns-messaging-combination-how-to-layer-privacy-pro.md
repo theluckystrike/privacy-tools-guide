@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Dns Messaging Combination How To Layer Privacy Pro"
-description: "Learn how combining encrypted DNS with secure messaging creates privacy protections for developers and power users"
+description: "Layer encrypted DNS with Signal or Session messaging for defense in depth. Configuration steps for DoH, DoT, and DNSSEC on every platform."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

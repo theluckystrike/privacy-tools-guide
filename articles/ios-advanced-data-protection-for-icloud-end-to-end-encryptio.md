@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iOS Advanced Data Protection For Icloud End To End"
-description: "A guide to enabling and configuring iOS Advanced Data Protection for iCloud. Learn how to secure your cloud data with end-to-end"
+description: "Enable iOS Advanced Data Protection for iCloud: end-to-end encryption setup, recovery key configuration, and which data categories it covers."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

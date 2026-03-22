@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools For Private Investigator Protecting Case File"
-description: "A guide to digital privacy tools and security practices for private investigators handling sensitive case files"
+description: "Encrypted storage, secure messaging, and VPN setups for private investigators. Protect digital case files from subpoenas and data breaches."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

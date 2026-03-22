@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN Tunnel Interface vs Full Tunnel Routing"
-description: "A practical guide explaining tunnel interfaces and full tunnel routing differences for developers and power users"
+description: "Tunnel interface vs full tunnel VPN routing: packet flow differences, split tunneling tradeoffs, and when each approach protects your traffic."
 date: 2026-03-16
 last_modified_at: 2026-03-22
 author: theluckystrike

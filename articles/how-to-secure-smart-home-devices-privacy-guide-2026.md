@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Secure Smart Home Devices Privacy Guide 2026"
-description: "Network isolation, firmware updates, and privacy settings for smart speakers, cameras, thermostats, and IoT devices"
+description: "Isolate smart home devices on separate VLANs, audit firmware, disable cloud telemetry, and configure privacy settings for IoT gear in 2026."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"
