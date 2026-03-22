@@ -33,6 +33,16 @@ Email forwarding hides your real inbox from spammers and services. When signing 
 
 This guide compares 5 privacy-focused forwarding services. Choose SimpleLogin if you want maximum features and self-hosting. Choose addy.io if you prefer open-source and don't need advanced customization. Choose Firefox Relay if you use Mozilla products. Choose DuckDuckGo Email if you want the simplest one-click setup. Choose ForwardEmail if you want to self-host with minimal configuration.
 
+## Key Takeaways
+
+- **The $0.99/month price is**: unbeatable for unlimited aliases.
+- **Choose addy.io if you**: prefer open-source and don't need advanced customization.
+- **This guide compares 5**: privacy-focused forwarding services.
+- **If you use Firefox**: accounts.firefox.com, and Mozilla services, Relay integrates .
+- **Use strong primary email**: ```
+Your real email should be strong password + 2FA.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## The Email Forwarding Problem
 
 Your email address is your digital identity. Every service you join—banks, shopping sites, newsletters, random accounts—receives your email. Services leak, sell, or misuse addresses. One email address can generate 200+ pieces of spam annually.

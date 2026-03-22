@@ -31,6 +31,18 @@ Your DNS provider sees every domain you visit, every API call your phone makes, 
 
 This guide compares five privacy-first DNS providers, covers setup on every platform, performance benchmarks, and filtering configurations. By the end, you'll understand which provider matches your threat model.
 
+## Key Takeaways
+
+- **Switching to a privacy-focused**: DNS provider is the fastest privacy win: it costs nothing, takes 5 minutes, and immediately hides your browsing from ISP snooping.
+- **- Paid**: $20/year per profile (unlimited queries).
+- **Select "Control D" from dropdown**: or custom: `https://freedns.controld.com/p0`
+
+Chrome:
+Settings > Privacy and Security > Security > Advanced > Use secure DNS.
+- **- Paid**: $2/month (ad/tracker blocking), $5/month (advanced features).
+- **- Paid**: $0.99/month (ad/tracker blocking, parental control).
+- **Trade-off**: Slight latency increase (usually <10ms) for complete ISP anonymity.
+
 ## DNS Fundamentals
 
 DNS translates domain names (google.com) into IP addresses (142.251.32.46). Your device asks your DNS provider "what's the IP for google.com?" every time you visit a site. The provider sees all of it.

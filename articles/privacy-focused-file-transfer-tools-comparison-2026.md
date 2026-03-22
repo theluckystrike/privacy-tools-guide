@@ -21,6 +21,32 @@ If you need to send a sensitive file (medical records, legal documents, password
 
 This guide compares four privacy-focused file transfer tools: OnionShare, Magic Wormhole, Croc, and Send (Firefox Send fork). We tested them on real-world scenarios: sharing sensitive documents, large files, and ephemeral transfers.
 
+## Key Takeaways
+
+- **Downsides**: - Command-line only (less user-friendly than GUI tools)
+- Newer than Wormhole (less battle-tested)
+- Smaller community = fewer security audits
+
+Cost: Free.
+- **Downsides**: - Slow (Tor overhead)
+- Setup requires installing Tor
+- Not user-friendly for non-technical people
+- Files must fit in your computer's disk (no cloud relay)
+
+Cost: Free.
+- **[████████████████] 100% Saved to**: lab_results.pdf ``` Encryption detail: Wormhole uses SPAKE2 (a secure password protocol).
+- **Speed test (50MB file over Tor)**: - OnionShare upload: 12 seconds
+- Tor latency: 8 seconds per request
+- Download: 85 seconds (total)
+- vs.
+- **direct HTTP**: 8 seconds
+- Tor adds ~10x latency
+
+When OnionShare is overkill:
+
+If you're sending a family photo to your sibling, OnionShare is paranoid.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
 ## The Threat Model
 
 Before choosing a tool, understand what you're protecting against:

@@ -16,6 +16,14 @@ intent-checked: true---
 
 When you run a CPU benchmark, you expect performance metrics—not data exfiltration. Unfortunately, many popular benchmarking tools quietly transmit detailed hardware information to third-party servers. This guide covers privacy-focused CPU benchmark alternatives that run entirely locally, giving you accurate performance data without the surveillance.
 
+## Key Takeaways
+
+- **The solution**: use open-source benchmarking tools designed from the ground up for local-only operation.
+- **Results saved to $OUTPUT_DIR"**: ``` Run this script periodically to track performance over time without any data leaving your machine.
+- **This guide covers privacy-focused**: CPU benchmark alternatives that run entirely locally, giving you accurate performance data without the surveillance.
+- **For privacy-conscious developers and**: power users, this telemetry creates several concerns.
+- **Phoronix supports tests like**: compress-7zip, branch-prediction, and simulatest to stress different CPU components.
+
 ## The Problem with Mainstream CPU Benchmarks
 
 Most consumer-grade benchmarking applications collect more than just CPU scores. Industry-standard tools like UserBenchmark, Geekbench, and others transmit detailed system specifications including processor model, motherboard BIOS versions, memory timings, and sometimes even unique hardware identifiers. This data builds hardware fingerprints that can be traced back to specific machines.

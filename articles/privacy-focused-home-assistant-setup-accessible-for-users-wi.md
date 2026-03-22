@@ -29,6 +29,15 @@ Building a smart home ecosystem that respects user privacy while remaining acces
 
 This guide covers a privacy-focused Home Assistant setup designed with accessibility as a primary consideration. The recommendations target developers and power users who want full control over their data while ensuring the system remains usable for everyone in the household.
 
+## Key Takeaways
+
+- **For users with mobility limitations**: this represents a double problem: their sensitive habits get transmitted to third parties, and they lose control over their environment when services go down.
+- **Building a smart home**: ecosystem that respects user privacy while remaining accessible represents a significant technical challenge.
+- **This guide covers a**: privacy-focused Home Assistant setup designed with accessibility as a primary consideration.
+- **The recommendations target developers**: and power users who want full control over their data while ensuring the system remains usable for everyone in the household.
+- **The Home Assistant Operating**: System running on dedicated hardware provides the best foundation.
+- **Home Assistant will prompt you to choose between local and cloud options**: always choose local when available.
+
 ## Why Privacy and Accessibility Matter Together
 
 Traditional smart home solutions often route data through cloud services, creating privacy concerns and introducing dependencies that can break accessibility features when internet connectivity fails. For users with mobility limitations, this represents a double problem: their sensitive habits get transmitted to third parties, and they lose control over their environment when services go down.

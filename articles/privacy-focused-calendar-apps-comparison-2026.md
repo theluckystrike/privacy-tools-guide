@@ -15,8 +15,16 @@ intent-checked: true---
 
 {% raw %}
 
-
 Google Calendar, Outlook, and Apple Calendar sync your schedule to corporate servers. They track meeting attendees, analyze content, and use data for advertising targeting. Privacy-focused alternatives encrypt your data end-to-end, keep schedules private, and offer self-hosting options. This guide compares Proton Calendar, Tutanota, EteSync, Nextcloud Calendar, and self-hosted solutions.
+
+## Key Takeaways
+
+- **Share link with other**: Proton users (they see encrypted event) 6.
+- **Share with other Nextcloud**: users (optional) 6.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **They track meeting attendees**: analyze content, and use data for advertising targeting.
+- **Privacy-focused alternatives encrypt your**: data end-to-end, keep schedules private, and offer self-hosting options.
 
 ## Why Privacy Matters for Calendars
 

@@ -14,9 +14,19 @@ voice-checked: true---
 
 
 {% raw %}
+
 For developers and power users, antivirus software is often a necessary evil. Traditional security suites can introduce significant overhead, slowing down compilation times, increasing battery drain on laptops, and consuming valuable RAM that could be used for development environments. Privacy-focused antivirus solutions offer an alternative, but understanding their actual performance characteristics is crucial for making informed decisions.
 
 This article examines the system resource impact of leading privacy-focused antivirus solutions in 2026, with practical benchmarks and guidance for developers who need security without sacrificing performance.
+
+## Key Takeaways
+
+- **Enabling on-access scanning increases**: build times by approximately 15-20%, which is manageable for most workflows.
+- **ClamAV (Open Source) ClamAV**: remains the go-to open-source solution for privacy-conscious users.
+- **Sophos Home (Free Tier)**: Sophos offers a privacy-focused approach with cloud-assisted detection that minimizes local resource usage.
+- **Bitdefender Free Edition Bitdefender's**: free tier provides solid protection with minimal resource consumption, though it's Windows-focused.
+- **Building..." $(MAKE) $(TARGET) ```**: The memory footprint remains remarkably low, making it suitable for containerized environments.
+- **A typical Docker scan**: container uses approximately 150MB RAM.
 
 ## Understanding Antivirus Resource Consumption
 
