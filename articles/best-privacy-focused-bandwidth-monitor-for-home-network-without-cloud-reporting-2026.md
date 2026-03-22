@@ -230,6 +230,13 @@ The critical point: all these tools keep your network data on your hardware. You
 
 ---
 
+
+## Related Articles
+
+- [How to Set Up a Privacy Focused Home](/how-to-set-up-a-privacy-focused-home-network/)
+- [How to Set up Local Network Storage for Security](/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

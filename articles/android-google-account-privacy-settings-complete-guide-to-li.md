@@ -159,4 +159,11 @@ Controlling Google account privacy settings requires ongoing attention, but the 
 
 The settings in this guide represent the most impactful changes you can make without abandoning Google services entirely. For those seeking even greater privacy, alternatives to Google's ecosystem exist, but they come with significant trade-offs in convenience and functionality.
 
+
+## Related Articles
+
+- [Google Nest Hub Data Collection](/google-nest-hub-data-collection-what-information-google-capt/)
+- [Prevent Android Keyboard From Sending Typing Data To Google](/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
+- [Set Up Google Inactive Account Manager for Automatic Data](/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
