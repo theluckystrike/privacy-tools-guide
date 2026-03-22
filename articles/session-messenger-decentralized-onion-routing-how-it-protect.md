@@ -1,5 +1,7 @@
 ---
 permalink: /session-messenger-decentralized-onion-routing-how-it-protect/
+description: "Learn session messenger decentralized onion routing how it protect with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Session Messenger Decentralized Onion Routing How It"

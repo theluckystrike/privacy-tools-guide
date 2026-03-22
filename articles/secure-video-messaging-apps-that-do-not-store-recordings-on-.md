@@ -1,5 +1,7 @@
 ---
 permalink: /secure-video-messaging-apps-that-do-not-store-recordings-on-/
+description: "Learn secure video messaging apps that do not store recordings on  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Secure Video Messaging Apps That Do Not Store Recordings On"

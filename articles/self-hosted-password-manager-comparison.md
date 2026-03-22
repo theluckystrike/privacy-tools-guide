@@ -1,5 +1,7 @@
 ---
 permalink: /self-hosted-password-manager-comparison/
+description: "Learn self hosted password manager comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Self-Hosted Password Manager Comparison"

@@ -1,5 +1,7 @@
 ---
 permalink: /secure-nas-home-storage-guide/
+description: "Follow this guide to secure nas home storage guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Secure NAS Storage for Home Use"

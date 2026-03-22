@@ -1,5 +1,7 @@
 ---
 permalink: /secure-screen-sharing-tools-that-encrypt-video-stream-end-to/
+description: "Learn secure screen sharing tools that encrypt video stream end to with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Secure Screen Sharing Tools That Encrypt Video Stream End"

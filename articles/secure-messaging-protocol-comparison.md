@@ -1,5 +1,7 @@
 ---
 permalink: /secure-messaging-protocol-comparison/
+description: "Learn secure messaging protocol comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Secure Messaging Protocol Comparison"

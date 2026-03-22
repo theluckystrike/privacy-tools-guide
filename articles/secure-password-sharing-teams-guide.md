@@ -1,5 +1,7 @@
 ---
 permalink: /secure-password-sharing-teams-guide/
+description: "Follow this guide to secure password sharing teams guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Secure Password Sharing for Teams"
