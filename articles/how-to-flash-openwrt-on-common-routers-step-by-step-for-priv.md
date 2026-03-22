@@ -51,7 +51,17 @@ Commercial routers typically ship with closed-source firmware that may include t
 
 Before proceeding, verify your router is supported by checking the [OpenWRT hardware database](https://openwrt.org/toh/start).
 
-## Supported Router Models
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Supported Router Models
 
 These popular models have well-documented flashing processes and strong community support:
 
@@ -62,7 +72,7 @@ These popular models have well-documented flashing processes and strong communit
 | Netgear R7800 | Qualcomm IPQ8065 | 256MB | 512MB | Intermediate |
 | Raspberry Pi 4 | ARM Cortex-A72 | MicroSD | 1-8GB | Beginner |
 
-## Preparation Steps
+### Step 2: Preparation Steps
 
 ### 1. Backup Current Configuration
 
@@ -105,7 +115,7 @@ wget https://downloads.openwrt.org/releases/23.05.5/targets/ar71xx/tiny/sha256su
 sha256sum openwrt-23.05.5-ar71xx-tiny-tl-wr841n-v14-squashfs-factory.bin
 ```
 
-## Flashing Methods
+### Step 3: Flashing Methods
 
 ### Method 1: Web Interface Flash (Beginner)
 
@@ -164,7 +174,7 @@ mtd -r write /tmp/openwrt-factory.bin firmware
 # Router will reboot automatically
 ```
 
-## Post-Flash Configuration
+### Step 4: Post-Flash Configuration
 
 ### Initial Access
 
@@ -313,7 +323,7 @@ uci commit network firewall
 /etc/init.d/network restart
 ```
 
-## Verifying Your Privacy Setup
+### Step 5: Verify Your Privacy Setup
 
 After configuration, verify your setup:
 
@@ -331,7 +341,7 @@ iptables -L -n
 # Visit https://ipv6leaktest.com
 ```
 
-## Maintaining Your OpenWRT Router
+### Step 6: Maintaining Your OpenWRT Router
 
 Keep your router secure with regular maintenance:
 
@@ -349,6 +359,21 @@ sysupgrade -b /tmp/backup.tar.gz
 # Transfer backup to your computer
 scp root@192.168.1.1:/tmp/backup.tar.gz ./
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

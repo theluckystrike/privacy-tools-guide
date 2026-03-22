@@ -39,13 +39,23 @@ Use Standard Contractual Clauses (SCCs) supplemented by Transfer Impact Assessme
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding the Current Legal Framework
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Current Legal Framework
 
 The EU-US Data Privacy Framework (DPF) emerged as the successor to Privacy Shield, but organizations cannot rely solely on this certification. Additional technical and organizational measures are often required to supplement the framework. The key mechanisms available include Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), and supplementary measures such as end-to-end encryption.
 
 Standard Contractual Clauses remain the most commonly implemented solution. The European Commission adopted new SCCs in 2021 that account for the Schrems II requirements, including the requirement to conduct Transfer Impact Assessments (TIAs). These clauses must be accompanied by technical safeguards that ensure equivalent protection to EU data protection standards.
 
-## Implementing Standard Contractual Clauses
+### Step 2: Implementing Standard Contractual Clauses
 
 When using SCCs, organizations must execute the clauses between the data exporter (typically your EU entity) and the data importer (your US entity or service provider). The implementation requires several technical components.
 
@@ -76,7 +86,7 @@ const dataProcessingAddendum = {
 
 Second, conduct a Transfer Impact Assessment. This evaluation examines the legal environment in the destination country and determines what supplementary measures are necessary. For US transfers, assess whether US surveillance laws could access the data and implement encryption that renders the data unreadable to US authorities.
 
-## Encryption as a Supplementary Measure
+### Step 3: Encryption as a Supplementary Measure
 
 End-to-end encryption provides the strongest supplementary measure for cross-border transfers. When you encrypt data before transmission and maintain control of the decryption keys, the data remains protected regardless of where it resides or who accesses it.
 
@@ -126,7 +136,7 @@ class CrossBorderEncryption:
 
 This approach ensures that even if data passes through US infrastructure, it remains encrypted with keys held only by the EU entity.
 
-## Pseudonymization Techniques
+### Step 4: Pseudonymization Techniques
 
 Pseudonymization reduces the risk associated with cross-border transfers by replacing direct identifiers with artificial identifiers. Unlike encryption, pseudonymization is reversible through a separate key or mapping table.
 
@@ -150,7 +160,7 @@ pseudonymizationKeys.set('user_id_123', {
 
 Keep the mapping database in the EU while the pseudonymized data can flow to US systems. This creates technical separation that supports your compliance argument.
 
-## Technical Architecture for Compliant Transfers
+### Step 5: Technical Architecture for Compliant Transfers
 
 Design your architecture to minimize data exposure during cross-border transfers. Consider the following approaches:
 
@@ -230,6 +240,21 @@ Regularly test your cross-border transfer controls to ensure they remain effecti
 3. **Legal Review Updates**: Monitor changes in US surveillance laws and update your Transfer Impact Assessments accordingly.
 
 4. **Breach Response Testing**: Simulate scenarios where data is accessed inappropriately and verify your response procedures.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

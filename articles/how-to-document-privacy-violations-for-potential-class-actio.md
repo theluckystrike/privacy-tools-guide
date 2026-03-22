@@ -48,7 +48,17 @@ For privacy violations to support a class action, evidence must be **authentic**
 
 Screen captures alone rarely suffice. You need reproducible, timestamped evidence that can be independently verified.
 
-## Capture Network Traffic
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Capture Network Traffic
 
 One of the most compelling forms of evidence comes from observing actual data transmissions. Developers can use tools like Wireshark or mitmproxy to capture and analyze network traffic.
 
@@ -72,7 +82,7 @@ mitmproxy -n -r capture_file.mitm --set flow_detail=3 > network_analysis.txt
 
 This creates a permanent record showing exactly what data leaves your device and where it goes.
 
-## Document API Calls and Data Leaks
+### Step 2: Document API Calls and Data Leaks
 
 For web applications, browser developer tools provide immediate evidence of privacy issues. Documenting API calls reveals what information gets sent to external servers.
 
@@ -120,7 +130,7 @@ def log_request(method, url, headers, body):
 #                 flow.request.headers, flow.request.get_text(strict=False))
 ```
 
-## Screenshot Documentation with Metadata
+### Step 3: Screenshot Documentation with Metadata
 
 Screenshots provide visual evidence but require careful handling. Always capture full-page screenshots that include URL bars and timestamps.
 
@@ -133,7 +143,7 @@ chrome --headless --screenshot=evidence_$(date +%Y%m%d_%H%M%S).png \
 
 For timestamp verification, use services that embed metadata or capture browser console output alongside screenshots.
 
-## Preserving Web Archives
+### Step 4: Preserving Web Archives
 
 Internet Archive's Wayback Machine provides immutable snapshots. Submit suspicious pages before they change:
 
@@ -154,7 +164,7 @@ wget --mirror --convert-links --adjust-extension \
 
 The log file becomes part of your evidence chain, showing exactly when content was retrieved.
 
-## Cookie and Storage Analysis
+### Step 5: Configure Cookie and Storage Analysis
 
 Privacy violations often involve unauthorized tracking. Document cookies and local storage:
 
@@ -178,7 +188,7 @@ sqlite3 cookies.sqlite "SELECT host, name, value, expiry FROM moz_cookies" \
   > cookies_export.txt
 ```
 
-## Hashing and Chain of Custody
+### Step 6: Hashing and Chain of Custody
 
 Raw evidence files are only as credible as your ability to prove they have not been modified since collection. Generate cryptographic hashes immediately after saving any evidence file:
 
@@ -202,7 +212,7 @@ curl -H "Content-Type: application/timestamp-query" \
 
 The `.tsr` file cryptographically binds your evidence manifest to the timestamp authority's signed assertion of the date and time, providing court-admissible proof of when your evidence was collected.
 
-## Mobile App Traffic Analysis
+### Step 7: Mobile App Traffic Analysis
 
 Many privacy violations originate in mobile applications that transmit data without visible browser tooling. Analyze mobile app traffic using a rooted Android device or iOS with SSL Kill Switch:
 
@@ -218,7 +228,7 @@ For iOS, use the iOS Simulator with mitmproxy or Charles Proxy configured as the
 
 Document any transmission of device identifiers (IDFA, IDFV, Android Advertising ID), location data, contact lists, or health information that the app's privacy policy does not disclose. Cross-reference against the app's stated data practices in the App Store or Play Store listing as of the date you captured the traffic — archive those listing pages before examining traffic so you have evidence of what was claimed at the relevant time.
 
-## Building an Evidence Package
+### Step 8: Build an Evidence Package
 
 Organize collected evidence systematically:
 
@@ -257,7 +267,7 @@ Create a manifest file documenting each piece:
 }
 ```
 
-## Static Analysis of Application Code
+### Step 9: Static Analysis of Application Code
 
 When a violation stems from an application rather than a website, static analysis can reveal behaviors that traffic capture might miss — especially for obfuscated or certificate-pinned apps.
 
@@ -286,7 +296,7 @@ grep -r "SharedPreferences\|SQLiteDatabase\|ContentProvider" decompiled/
 
 Evidence from static analysis can demonstrate that the application was designed to collect specific data categories, reinforcing network capture evidence showing that data being transmitted. When an app's privacy policy claims no location data is collected but the decompiled source contains explicit GPS coordinate serialization to a third-party domain, that contradiction is compelling evidence of a knowing misrepresentation.
 
-## Documenting Third-Party Data Sharing
+### Step 10: Documenting Third-Party Data Sharing
 
 Class actions involving advertising ecosystems require documenting the chain of data sharing, not just collection from the user. Identify which third-party SDKs are embedded in an application:
 
@@ -298,7 +308,7 @@ find decompiled/smali -name "*.smali" | sed 's|decompiled/smali/||' | \
 
 Common advertising and analytics SDK packages to document include com/facebook/ads, com/google/firebase, com/amplitude, com/mixpanel, com/braze, and com/appsflyer. Cross-reference detected SDKs against the privacy policy's disclosure of third-party data processors. Any SDK present in the binary but absent from the privacy policy disclosures is a potential violation of transparency requirements under CCPA and similar laws.
 
-## Legal Considerations
+### Step 11: Legal Considerations
 
 Preserve evidence properly from the start. Chain of custody matters:
 - Use write-once storage when possible
@@ -309,6 +319,21 @@ Preserve evidence properly from the start. Chain of custody matters:
 When engaging with attorneys, prepare a technical summary that translates your findings for non-technical readers. Courts and juries do not read HAR files or JSONL logs. Describe in plain language what data was collected, what the privacy policy said about that data, and why the technical evidence proves a discrepancy. Attorneys experienced in data privacy litigation — particularly those familiar with CCPA, GDPR, or BIPA class actions — will guide you on jurisdiction-specific admissibility requirements.
 
 Consult with an attorney before initiating any formal action. This guide provides technical documentation methods, not legal advice.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

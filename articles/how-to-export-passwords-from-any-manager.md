@@ -46,7 +46,17 @@ Several legitimate scenarios require password export. Switching to a different p
 
 Whatever your reason, the export process should preserve your data in an usable format while maintaining security during transfer.
 
-## 1Password Export Methods
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: 1Password Export Methods
 
 1Password offers several export pathways depending on your plan and preferences.
 
@@ -80,7 +90,7 @@ The JSON output includes item UUIDs, titles, usernames, passwords, URLs, and cus
 
 Navigate to your vault in the web interface, select items, and choose "Export" from the actions menu. You can select CSV or 1PIF (1Password Interchange Format) as output formats. The CSV option provides broader compatibility, while 1PIF preserves more metadata.
 
-## Bitwarden Export Options
+### Step 2: Bitwarden Export Options
 
 Bitwarden's open-source nature makes export straightforward.
 
@@ -117,7 +127,7 @@ bw unlock --passwordenv BW_PASSWORD
 
 The exported JSON includes login items, secure notes, identities, and cards—each with full field data.
 
-## LastPass Export Procedures
+### Step 3: LastPass Export Procedures
 
 LastPass provides export functionality through its web interface and CLI tools.
 
@@ -142,7 +152,7 @@ lpass export --json > passwords.json
 
 Note that LastPass requires your master password for export. Some enterprise accounts may have export disabled by administrators.
 
-## KeePass and KeePassXC Export
+### Step 4: KeePass and KeePassXC Export
 
 As open-source, local password managers, KeePass variants offer the most direct access to your data.
 
@@ -186,7 +196,7 @@ with open('export.json', 'w') as f:
 
 This approach gives you complete control over the export format and allows filtering or transformation before saving.
 
-## Dashlane Export
+### Step 5: Dashlane Export
 
 Dashlane provides export through its web interface and desktop applications.
 
@@ -215,7 +225,7 @@ Regardless of which manager you export from, handle the exported file carefully:
 
 Encrypt the exported file immediately—convert CSV output to GPG or a password-protected ZIP before storing it anywhere. Remove the plaintext file from disk after transferring to secure storage, and never send an unencrypted password export over an unencrypted channel. After migrating, generate new passwords for critical accounts and confirm that the export contains all expected entries before deleting source data.
 
-## Automating Regular Backups
+### Step 6: Automate Regular Backups
 
 For developers wanting automated exports, create a scheduled script:
 
@@ -249,6 +259,21 @@ Schedule this with cron for regular automated backups:
 ```
 
 Most modern password managers support CLI export, which gives the most control over output format and automation. Encrypt the file immediately after export and verify it contains all expected entries before removing source data.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

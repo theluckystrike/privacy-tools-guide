@@ -40,7 +40,17 @@ Losing your phone is stressful enough without worrying about the password manage
 - **For users of 1Password**: Bitwarden, or similar services, log into your account from another device and navigate to the security settings.
 - **Export activity - Check**: if any bulk exports occurred For 1Password users, the Activity Log provides detailed information about vault access.
 
-## Assess the Situation Immediately
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Assess the Situation Immediately
 
 The first step is determining whether your phone is truly lost or simply misplaced. Most modern password managers include mobile apps with biometric authentication or PIN protection. However, if your phone is unlocked or the authentication method is bypassed, your vault becomes vulnerable.
 
@@ -48,7 +58,7 @@ Check if your password manager offers a "remote lock" feature. Most major passwo
 
 For users of 1Password, Bitwarden, or similar services, log into your account from another device and navigate to the security settings. Look for options to force-logout all sessions or specifically target the lost device. Bitwarden users can access this through Settings > Security > Sessions and revoke active sessions.
 
-## Disable Device Access and Sync
+### Step 2: Disable Device Access and Sync
 
 Modern password managers sync across devices, which means your vault data exists on your phone alongside your computer. The critical action is preventing the lost phone from syncing any changes or accessing fresh data.
 
@@ -80,7 +90,7 @@ sqlite3 vaultwarden.db "SELECT * FROM devices WHERE last_activity > datetime('no
 
 Revoke suspicious sessions directly in the database or through the admin panel.
 
-## Rotate Critical Credentials
+### Step 3: Rotate Critical Credentials
 
 While you're securing your password manager, begin rotating credentials for your most sensitive accounts. This step is crucial for accounts that weren't protected by two-factor authentication or those using SMS-based 2FA.
 
@@ -101,7 +111,7 @@ bw generate --length 24 --includeNumber --includeSpecial --includeUppercase
 
 Store the new credentials immediately and update relevant configuration files or environment variables.
 
-## Check for Unauthorized Access
+### Step 4: Check for Unauthorized Access
 
 After securing your vault, monitor for signs of compromise. Most password managers provide security dashboards that show login history and access patterns.
 
@@ -116,7 +126,7 @@ Check these areas within your password manager:
 
 For 1Password users, the Activity Log provides detailed information about vault access. Bitwarden offers similar functionality in the web vault under "Vault Health Reports."
 
-## Enable Additional Security Measures
+### Step 5: Enable Additional Security Measures
 
 Once you've handled the immediate crisis, strengthen your security posture for the future.
 
@@ -141,7 +151,7 @@ bw get item "API Key" --pretty | jq '.login.totp'
 
 Use hardware security keys like YubiKey for highest security, or authenticator apps that support TOTP (Time-based One-Time Password) rather than SMS.
 
-## Prevent Future Incidents
+### Step 6: Prevent Future Incidents
 
 The best defense is preparation. Implement these practices before you need them:
 
@@ -150,7 +160,7 @@ The best defense is preparation. Implement these practices before you need them:
 3. **Encrypted backups** - Maintain offline backups of your vault in a secure location
 4. **Device encryption** - Ensure your phone's storage is fully encrypted
 
-## Recovery Timeline
+### Step 7: Recovery Timeline
 
 After a lost phone incident, follow this recovery schedule:
 
@@ -159,7 +169,7 @@ After a lost phone incident, follow this recovery schedule:
 - **Medium-term (1-7 days)**: Monitor accounts for suspicious activity, enable additional 2FA
 - **Long-term (ongoing)**: Regular security audits, update emergency contacts
 
-## Forensic Investigation Protocol
+### Step 8: Forensic Investigation Protocol
 
 After immediate response, investigate whether your vault was actually compromised. Most lost phones never reach attackers, but verification matters.
 
@@ -221,7 +231,7 @@ Event details:
 - Last known device unlock: [time]
 ```
 
-## Device-Specific Recovery Steps
+### Step 9: Device-Specific Recovery Steps
 
 Different password manager apps require specific steps to secure your vault.
 
@@ -283,7 +293,7 @@ openssl rand -base64 32 > keyfile.key
 rsync -av --exclude=sync-old.kdbx keyfile.key backup-location/
 ```
 
-## Post-Incident Hardening
+### Step 10: Post-Incident Hardening
 
 After handling the immediate crisis, strengthen your security to prevent recurrence.
 
@@ -324,7 +334,7 @@ Test recovery annually to ensure backups actually restore:
 gpg --decrypt vault-backup.json.gpg | jq '.items | length'
 ```
 
-## Credential Rotation Strategy
+### Step 11: Credential Rotation Strategy
 
 Not all credentials require immediate rotation. Prioritize systematically:
 
@@ -355,7 +365,7 @@ Not all credentials require immediate rotation. Prioritize systematically:
 
 Document this priority list in your incident response plan. Most password managers allow tagging entries with sensitivity levels—use these to quickly identify which credentials need rotation.
 
-## Ongoing Monitoring and Detection
+### Step 12: Ongoing Monitoring and Detection
 
 Implement continuous monitoring to detect actual unauthorized access:
 
@@ -378,7 +388,7 @@ lastpass-cli --lastpass-id [ID] recent-access
 
 Set this to run weekly via cron. Unusual findings trigger manual investigation.
 
-## Legal and Insurance Considerations
+### Step 13: Legal and Insurance Considerations
 
 Some incidents trigger insurance or legal reporting requirements:
 
@@ -394,6 +404,21 @@ Document your incident timeline meticulously:
 - Results of post-incident audits
 
 This documentation protects you legally and helps insurers validate claims.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

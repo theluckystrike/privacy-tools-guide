@@ -33,7 +33,17 @@ Firefox is the privacy browser. Unlike Chromium-based browsers (Chrome, Edge, Br
 
 Real hardening requires about:config tweaks, uBlock Origin, container tabs, and DNS over HTTPS. This guide shows how to go from "Firefox default" to "corporate security standard."
 
-## Phase 1: Built-in Privacy Settings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Phase 1: Built-in Privacy Settings
 
 Open Firefox Preferences (about:preferences).
 
@@ -82,7 +92,7 @@ Check: **Send websites a "Do Not Track" signal** - Yes
 
 DNT is ignored by most sites, but it costs nothing and some privacy-conscious sites honor it.
 
-## Phase 2: DNS over HTTPS
+### Step 2: Phase 2: DNS over HTTPS
 
 DNS leaks expose your browsing history. When you visit example.com, your ISP's DNS server logs the query. They know you visited example.com (even if traffic is HTTPS-encrypted).
 
@@ -106,7 +116,7 @@ To select a custom provider, choose "Max Protection" and configure a specific IP
 
 For most users, Cloudflare's DoH is fine. They explicitly log nothing.
 
-## Phase 3: about:config Tweaks
+### Step 3: Phase 3: about:config Tweaks
 
 This is where real hardening happens. about:config is Firefox's deep settings.
 
@@ -171,7 +181,7 @@ Firefox collects usage data (what features you use, crash reports). Disable if p
 
 These are optional. Mozilla's telemetry is privacy-respecting (no personally identifying information). But if you want zero data sharing, disable them.
 
-## Phase 4: Extensions
+### Step 4: Phase 4: Extensions
 
 ### uBlock Origin (Essential)
 
@@ -220,7 +230,7 @@ This prevents ISP/network snooping of page content. Combined with DoH, your enti
 
 Install from addons.mozilla.org. No configuration needed.
 
-## Phase 5: Container Tabs (Multi-Account Containers)
+### Step 5: Phase 5: Container Tabs (Multi-Account Containers)
 
 Container Tabs isolate cookies by container. Each container is a separate browsing context.
 
@@ -260,7 +270,7 @@ When you visit these sites, they automatically open in the assigned container. C
 
 This is more powerful than incognito mode. Incognito is temporary (cleared on close). Containers are persistent per-container.
 
-## Phase 6: Arkenfox user.js (Advanced)
+### Step 6: Phase 6: Arkenfox user.js (Advanced)
 
 Arkenfox is a Firefox hardening project. They maintain a `user.js` file with 500+ security settings.
 
@@ -303,7 +313,7 @@ Not for most users. The about:config tweaks in Phase 3 cover 95% of hardening. A
 
 If you use online banking, shopping, streaming, Arkenfox will break things. The Phase 3 tweaks are more practical.
 
-## Phase 7: Verification and Testing
+### Step 7: Phase 7: Verification and Testing
 
 After hardening, verify your setup works:
 
@@ -327,7 +337,7 @@ Visit ipleak.net. Your real IP should NOT be exposed.
 
 Visit a few regular sites (Gmail, Twitter, YouTube). If they work, your hardening is compatible.
 
-## Common Breakage and Fixes
+### Step 8: Common Breakage and Fixes
 
 ### Issue: Site won't load
 
@@ -357,7 +367,7 @@ Often caused by disabling WebRTC or DRM (Encrypted Media Extensions).
 
 **Fix:** Check if site uses DRM (Netflix, Disney+, Amazon Prime). Temporarily enable `media.eme.enabled`. Refresh.
 
-## Recommended Setup (Practical)
+### Step 9: Recommended Setup (Practical)
 
 For most users, this setup balances privacy and usability:
 
@@ -393,7 +403,7 @@ This setup achieves:
 
 Setup time: 30 minutes. Ongoing maintenance: 0 hours.
 
-## Desktop vs Mobile
+### Step 10: Desktop vs Mobile
 
 Firefox Desktop (above) supports all tweaks.
 
@@ -408,6 +418,21 @@ Setup is simpler but less powerful. Android Firefox still leaks some data.
 For maximum mobile privacy, consider:
 - **Android:** Firefox + uBlock Origin + Mullvad VPN
 - **iOS:** Safari (built-in privacy features) or Firefox (limited addon support)
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

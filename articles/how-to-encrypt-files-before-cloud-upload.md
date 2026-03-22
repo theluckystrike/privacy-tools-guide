@@ -44,7 +44,17 @@ Cloud storage services offer convenience, but they also expose your data to thir
 
 Cloud providers often advertise encryption at rest, but this typically means they hold the encryption keys—not you. Client-side encryption puts you in control. Your files are encrypted on your device, and the cloud provider only stores unreadable ciphertext. This approach protects against provider data breaches, insider threats, and lawful requests for your data.
 
-## Using Age for File Encryption
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use Age for File Encryption
 
 Age is a modern, minimal encryption tool that excels at single-file encryption. It's designed for simplicity without sacrificing security, using ChaCha20-Poly1305 for symmetric encryption and X25519 for key exchange.
 
@@ -103,7 +113,7 @@ Or with a specific key file:
 age -d -i ~/.age-keys/my-key -o document.pdf document.pdf.age
 ```
 
-## Encrypting Directories with Gocryptfs
+### Step 2: Encrypt Directories with Gocryptfs
 
 Gocryptfs provides transparent filesystem encryption, making it ideal for cloud-synced directories. Files are encrypted individually, so synchronization remains efficient.
 
@@ -155,7 +165,7 @@ Point your cloud sync client (Dropbox, Google Drive, OneDrive) to the backing di
 
 This way, only encrypted files ever leave your device.
 
-## Using OpenSSL for Manual Encryption
+### Step 3: Use OpenSSL for Manual Encryption
 
 OpenSSL provides low-level encryption primitives for those who need maximum control or integration with existing systems.
 
@@ -194,7 +204,7 @@ openssl enc -aes-256-gcm -salt -pbkdf2 -iter 100000 \
 
 Store `encryption.key` securely—losing it means losing access to your files.
 
-## Automating Encryption Workflows
+### Step 4: Automate Encryption Workflows
 
 For regular backups or CI/CD pipelines, automation is essential.
 
@@ -246,7 +256,7 @@ jobs:
 
 Store your public key as a GitHub secret (`PUBLIC_KEY`), and keep your private key offline or in a secure secrets manager.
 
-## Choosing the Right Tool
+### Step 5: Choose the Right Tool
 
 | Tool | Best For | Key Features |
 |------|----------|---------------|
@@ -262,6 +272,21 @@ For most use cases, age provides the best balance of security and simplicity. If
 - **Strong Passphrases**: Use a password generator. A 20+ character passphrase with high entropy is recommended.
 - **Verify Decryption**: Always test decryption after encrypting critical files.
 - **Secure Deletion**: After encrypting and uploading, securely delete original files using `shred` or similar tools.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
