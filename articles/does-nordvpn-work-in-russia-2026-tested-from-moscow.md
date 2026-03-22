@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 Testing VPN connectivity from within Russia presents unique challenges. The Russian Federation maintains an extensive internet filtering system, and as of 2026, many VPN services face intermittent or blocked connectivity. This article documents practical testing of NordVPN from Moscow, providing actionable guidance for developers and power users who need reliable encrypted connections.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **This is the single**: most effective change for users in Russia.
+- **Does NordVPN offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Connection success rate hovered**: around 40-60% depending on time of day.
+- **OpenVPN (UDP)**: Traditional OpenVPN connections succeeded approximately 25% of the time.
+
 ## Understanding the Current Restrictions
 
 Russia's internet regulatory framework has evolved significantly. The Roskomnadzor (Russian Federal Service for Supervision of Communications, Information Technology and Mass Media) employs deep packet inspection (DPI) and maintains active blocking lists for known VPN server IPs. The blocking mechanism targets both the VPN protocol headers and the IP addresses associated with major VPN providers.

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, vpn]---
 
 Testing VPN functionality in regions with network restrictions requires a systematic approach. Oman implements deep packet inspection (DPI) and maintains a blocklist of known VPN protocols and server IPs. This guide provides practical testing methods and configuration recommendations based on March 2026 testing conditions.
 
+## Key Takeaways
+
+- **TCP mode showed roughly**: 20% lower throughput due to TCP-over-TCP overhead, but remained usable for most workflows.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Express offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This guide provides practical**: testing methods and configuration recommendations based on March 2026 testing conditions.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding Oman's Network Restrictions
 
 The Telecommunications Regulatory Authority (TRA) of Oman maintains active blocking of VPN traffic. The restriction targets both protocol signatures and known VPN server IP ranges. However, modern VPN protocols with proper obfuscation can still establish connections.

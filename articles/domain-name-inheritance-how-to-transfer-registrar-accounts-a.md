@@ -31,6 +31,15 @@ intent-checked: true---
 
 Domain names can be transferred after death by providing the registrar with a death certificate, letter of testamentary or administration, and court order appointing you as personal representative, then obtaining the AUTH code to complete the ICANN transfer process (typically 5-7 days). For web hosting, you'll need to transfer cPanel backups, export databases, and manage SSL certificates separately. This guide covers the technical and procedural steps developers and power users need to transfer domain names and hosting after death, including preventing transfer delays with advance planning.
 
+## Key Takeaways
+
+- **Use FTP/SFTP to download**: public_html contents 2.
+- **Export databases via phpMyAdmin**: or command line: ```bash mysqldump -u username -p database_name > backup.sql ``` 3.
+- **Developers and power users**: can take several proactive steps: ### Enable Transfer-on-Death Provisions Some registrars (notably GoDaddy and certain TLDs) support transfer-on-death designations.
+- **This guide covers the**: technical and procedural steps developers and power users need to transfer domain names and hosting after death, including preventing transfer delays with advance planning.
+- **Log into the deceased's**: registrar account (or have support unlock it) 2.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Domain Name Transfer Mechanics
 
 Domain name transfers involve moving registration from one registrar to another, or transferring control within the same registrar to a different account. The process requires authorization from the current registrant and cooperation from both the losing and gaining registrars.

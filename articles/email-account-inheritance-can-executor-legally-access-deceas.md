@@ -33,6 +33,15 @@ When a person dies, their digital assets—including email accounts—become par
 
 This guide provides a technical overview of email account inheritance rights across major jurisdictions, practical workflows for executors, and code examples for automating parts of the data recovery process.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Most email providers (Google**: Microsoft, Proton Mail, Fastmail) retain ownership of the data stored on their servers, granting users a revocable right to access their account.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most UK executors must**: 1.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding Email as Digital Property
 
 Email accounts are fundamentally different from physical property. When you "own" an email account, you typically own a license to use the service, not the data itself. Most email providers (Google, Microsoft, Proton Mail, Fastmail) retain ownership of the data stored on their servers, granting users a revocable right to access their account.

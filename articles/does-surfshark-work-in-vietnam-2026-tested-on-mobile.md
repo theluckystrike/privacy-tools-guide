@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Testing VPN functionality in restrictive network environments requires a systematic approach. Vietnam maintains significant internet filtering, and verifying whether a particular VPN service operates reliably demands concrete methodology rather than theoretical analysis. This guide documents actual testing procedures and results for Surfshark on mobile platforms, providing developers and power users with actionable configuration insights.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For Vietnam specifically**: IKEv2 often provides better initial success rates due to its use of standard IPSec traffic patterns that blend more effectively with regular network traffic.
+- **IKEv2 connections averaged 15-25**: Mbps download speeds on 4G networks, sufficient for most mobile use cases including video streaming and video conferencing.
+- **weekday****: Weekends show marginally better VPN performance (5-10% improvement), suggesting routing optimization during weekday business hours.
+- **The auto-select option attempts**: to choose the optimal protocol, but manual selection provides better control in challenging network conditions.
+- **IKEv2 success rates drop**: to approximately 50-60% as firewalls become more aggressive with rate limiting.
+
 ## Understanding Vietnam's Network Environment
 
 Vietnam's internet infrastructure operates under government oversight with blocking mechanisms that target specific domains and protocols. The Ministry of Information and Communications maintains the infrastructure, and recent years have seen increased DPI (Deep Packet Inspection) capabilities deployed at ISP level. This creates specific challenges for VPN services that rely on standard protocol signatures.

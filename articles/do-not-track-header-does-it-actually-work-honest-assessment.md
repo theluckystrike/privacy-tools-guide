@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 The DNT (Do Not Track) header has been around since 2010, promoted as a simple way for users to signal that they don't want to be tracked across websites. Nearly two decades later, the question remains: does it actually work? The honest answer is more nuanced than a simple yes or no.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Research from Stanford University**: found that only about 5-10% of websites actually respect the DNT header.
+- **Violations can result in**: fines of up to $7,500 per incident.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **The DNT (Do Not**: Track) header has been around since 2010, promoted as a simple way for users to signal that they don't want to be tracked across websites.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## How the DNT Header Works
 
 The Do Not Track header is an HTTP header that browsers can send with every request. When enabled, your browser includes one of two values:

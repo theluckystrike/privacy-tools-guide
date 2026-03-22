@@ -31,6 +31,16 @@ tags: [privacy-tools-guide, vpn]---
 
 NordVPN connection success from Uzbekistan is moderate with obfuscation protocol, achieving approximately 60-70% uptime during testing in 2026, while standard protocols fail completely due to ISP-level DPI blocking. Uzbekistan's state-owned ISPs aggressively block VPN protocols, requiring obfuscated protocols (Obfsproxy, WireGuard) that disguise traffic as regular HTTPS to maintain connectivity. For best results, use NordVPN's obfuscated servers, enable Protocol Obfuscation, disable IPv6, and test before relying on the connection for critical tasks.
 
+## Key Takeaways
+
+- **For best results**: use NordVPN's obfuscated servers, enable Protocol Obfuscation, disable IPv6, and test before relying on the connection for critical tasks.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does NordVPN offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Peak hours (8 AM**: - 11 AM local time) show approximately 15-20% lower success rates compared to off-peak hours.
+- **Protocol**: Use NordLynx (WireGuard) when possible
+2.
+
 ## Testing Methodology
 
 We tested NordVPN connectivity from multiple locations within Uzbekistan using various protocols and server configurations. The testing period spanned February-March 2026, evaluating connection success rates, latency, and stability across different time periods.
