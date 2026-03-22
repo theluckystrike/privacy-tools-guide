@@ -50,7 +50,17 @@ Cloud file sharing services create multiple attack surfaces. The service operato
 
 Peer-to-peer encrypted file transfer keeps your data on your machines until the exact moment of transfer. No cloud storage, no intermediate servers, and no persistent copies anywhere except on the intended recipient's device.
 
-## Using age Encryption for File Transfer
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use age Encryption for File Transfer
 
 The `age` encryption tool (age-encryption.org) provides modern, secure file encryption using X25519 public keys or passphrase-based encryption. It's designed as a replacement for age-old PGP with simpler syntax and better defaults.
 
@@ -100,7 +110,7 @@ age -d -o decrypted_largefile.zip largefile.zip.encrypted
 
 The encrypted file can now be sent through any channel—email attachment, USB drive, or temporary file hosting—without exposing the contents.
 
-## Using OpenPGP for Large File Encryption
+### Step 2: Use OpenPGP for Large File Encryption
 
 OpenPGP remains the standard for encrypted file transfer. Modern implementations handle large files efficiently with proper streaming.
 
@@ -129,7 +139,7 @@ For streaming very large files without buffering everything in memory, GPG handl
 gpg --symmetric --cipher-algo AES256 largefile.iso
 ```
 
-## Onion Share: Peer-to-Peer Through Tor
+### Step 3: Onion Share: Peer-to-Peer Through Tor
 
 Onion Share creates a temporary Tor hidden service that lets recipients download files directly from your computer. The file never touches a third-party server—transfers occur entirely peer-to-peer through the Tor network.
 
@@ -154,7 +164,7 @@ onionshare --persistent --title "Secure Transfer" --schedule 1h largefile.zip
 
 This creates a link valid for one hour that can be used multiple times.
 
-## Building Custom Transfer Scripts
+### Step 4: Build Custom Transfer Scripts
 
 For automated workflows or integration into applications, build custom peer-to-peer transfer solutions.
 
@@ -251,6 +261,21 @@ sha256sum largefile.zip > checksums.txt
 **Set expiration on transfers.** When using Onion Share or similar tools, configure automatic link expiration. The recipient should download and verify immediately.
 
 **Consider forward secrecy.** Tools like Signal and similar messaging apps provide automatic forward secrecy—the same file sent through these channels gets new encryption keys for each session. For files, age with ephemeral keys or GPG with proper key management provides similar properties when keys rotate.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

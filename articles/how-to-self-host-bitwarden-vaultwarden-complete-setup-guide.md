@@ -72,7 +72,17 @@ Trade-off: You manage infrastructure, backups, SSL certificates, and server upda
 - Home server (Raspberry Pi 4, old laptop, NAS)
 - Synology NAS (Docker support built-in)
 
-## Installation: Docker Compose Setup
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install ation: Docker Compose Setup
 
 **Step 1: Install Docker**
 
@@ -227,7 +237,7 @@ docker-compose logs -f vaultwarden
 
 Vaultwarden is now running on `http://localhost:8080` (local access only).
 
-## Reverse Proxy: Nginx Configuration
+### Step 2: Reverse Proxy: Nginx Configuration
 
 Running Vaultwarden directly on the internet is risky. Use Nginx as a reverse proxy to:
 - Add SSL/TLS encryption
@@ -374,7 +384,7 @@ Update `docker-compose.yml`:
       - vaultwarden-network
 ```
 
-## SSL Certificates: Let's Encrypt Setup
+### Step 3: SSL Certificates: Let's Encrypt Setup
 
 **Option 1: Certbot (recommended for dynamic DNS)**
 
@@ -423,7 +433,7 @@ Add to docker-compose.yml:
       CERTBOT_EMAIL: "admin@example.com"
 ```
 
-## Backups: Automated Daily Backups
+### Step 4: Backups: Automated Daily Backups
 
 Create backup script `backup.sh`:
 
@@ -482,7 +492,7 @@ tar -xzf ./backups/vaultwarden_backup_20260320_030000.tar.gz
 ls -la ./data/
 ```
 
-## Security Hardening
+### Step 5: Security Hardening
 
 **1. Disable signups (if self-hosted for one user):**
 
@@ -552,7 +562,7 @@ docker-compose logs -f vaultwarden
 docker-compose logs vaultwarden | grep -i "error\|invalid\|unauthorized"
 ```
 
-## Maintenance and Updates
+### Step 6: Perform Maintenance and Updates
 
 **Updating Vaultwarden:**
 
@@ -588,7 +598,7 @@ find ./backups -name "*.tar.gz" -mtime -1 -exec du -sh {} \; | awk '{print $1}'
 docker-compose exec vaultwarden sqlite3 /data/db.sqlite3 "VACUUM;"
 ```
 
-## Client Setup
+### Step 7: Client Setup
 
 **Bitwarden Web Vault:** https://vault.example.com
 
@@ -646,7 +656,7 @@ rm ./data/db.sqlite3-wal ./data/db.sqlite3-shm 2>/dev/null
 docker-compose start vaultwarden
 ```
 
-## Cost and Alternatives
+### Step 8: Cost and Alternatives
 
 **Self-hosted Vaultwarden:**
 - Cost: $0-5/month (VPS) + your time

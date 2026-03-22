@@ -40,13 +40,23 @@ The easiest solution is sending password-protected ZIP archives—all operating 
 - **Recipients either lack the**: technical knowledge to set up encryption or simply refuse to install new software.
 - **If emailing a ZIP**: call the recipient with the password or use Signal.
 
-## The Problem with Traditional Encryption
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Problem with Traditional Encryption
 
 PGP encryption has been the standard for decades, but it requires recipients to install software like Gpg4win, GPGTools, or browser extensions. For sending documents to lawyers, clients, family members, or colleagues who aren't cryptography experts, this approach often fails. Recipients either lack the technical knowledge to set up encryption or simply refuse to install new software.
 
 Modern alternatives like Signal or encrypted messaging apps solve this for text and small files, but they impose size limits and create metadata. You need solutions that work with any file size, don't require account creation, and use tools the recipient already possesses.
 
-## Method 1: Password-Protected ZIP Archives
+### Step 2: Method 1: Password-Protected ZIP Archives
 
 The most universally accessible approach uses password-protected ZIP archives. Every major operating system includes native support for creating and opening encrypted ZIP files:
 
@@ -96,7 +106,7 @@ Recipients simply double-click the ZIP file—Windows Explorer, macOS Finder, an
 - Password must be communicated through a separate channel
 - No built-in key recovery or expiration
 
-## Method 2: Browser-Based Client-Side Encryption
+### Step 3: Method 2: Browser-Based Client-Side Encryption
 
 Services like PrivateBin, Pastebin.run, or secure file sharing platforms encrypt files entirely in the browser before transmission. The server never sees the decryption key—it's generated locally and typically shared via the URL fragment.
 
@@ -154,7 +164,7 @@ function decrypt() {{
 
 This generates a self-contained HTML file the recipient opens in any browser. They click a button to decrypt and download—no software installation needed.
 
-## Method 3: Self-Decrypting Archives
+### Step 4: Method 3: Self-Decrypting Archives
 
 For Windows recipients, you can create self-decrypting executables using 7-Zip. The recipient runs the `.exe`, enters the password, and the contents extract automatically:
 
@@ -164,7 +174,7 @@ For Windows recipients, you can create self-decrypting executables using 7-Zip. 
 
 **Note:** This method requires the recipient to run an executable, which raises security concerns in corporate environments. Only use this for trusted recipients.
 
-## Method 4: Cloud Storage with Client-Side Encryption
+### Step 5: Method 4: Cloud Storage with Client-Side Encryption
 
 Services like Proton Drive, Tresorit, or Cryptomator provide zero-knowledge encryption where files encrypt locally before upload. Recipients access through browser or mobile apps:
 
@@ -229,6 +239,21 @@ If using browser-based services, configure link expiration to prevent long-term 
 | Browser encryption | Browser only | Varies | High (client-side) |
 | Self-decrypting EXE | Windows + trust | Unlimited | Moderate |
 | Cloud encryption | Service app | Limited by service | High |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

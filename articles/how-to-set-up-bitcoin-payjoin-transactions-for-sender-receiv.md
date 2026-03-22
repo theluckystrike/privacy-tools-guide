@@ -40,7 +40,7 @@ Bitcoin PayJoin (BIP 78) lets the receiver contribute inputs to a transaction, m
 - **Replay Protection**: Ensure each PayJoin session uses fresh UTXOs to prevent transaction replay.
 - **Use a fee estimator**: that accounts for additional inputs.
 
-## Understanding PayJoin Fundamentals
+### Step 1: Understand PayJoin Fundamentals
 
 In a standard Bitcoin transaction, blockchain observers can confidently identify which party is sending and receiving based on input/output patterns. PayJoin disrupts this by having the receiver contribute inputs to the transaction, making the flow of funds ambiguous.
 
@@ -70,7 +70,7 @@ Before implementing PayJoin, ensure you have:
 - Python 3.9+ or a Bitcoin library like `bitcoinlib` or `btcpy`
 - Tor for receiver endpoints (recommended for privacy)
 
-## Implementing the Sender (Payee-Initiated)
+### Step 2: Implementing the Sender (Payee-Initiated)
 
 The sender initiates the PayJoin by requesting a PayJoin URL from the receiver. Here's a Python implementation using the `btcpy` library:
 
@@ -124,7 +124,7 @@ class PayjoinSender:
         pass
 ```
 
-## Implementing the Receiver (Payee)
+### Step 3: Implementing the Receiver (Payee)
 
 The receiver must set up an endpoint to receive PayJoin requests. Here's a Flask-based implementation:
 
@@ -196,7 +196,7 @@ class PayjoinReceiver:
         return True
 ```
 
-## PayJoin URL Format
+### Step 4: PayJoin URL Format
 
 The PayJoin protocol uses a specific URL scheme defined in BIP 78:
 
@@ -211,7 +211,7 @@ Parameters include:
 - `expire`: Expiration duration in seconds
 - `signature`: Signature proving the receiver controls the endpoint
 
-## Privacy Considerations
+### Step 5: Privacy Considerations
 
 When implementing PayJoin, consider these privacy-critical aspects:
 
@@ -225,7 +225,7 @@ When implementing PayJoin, consider these privacy-critical aspects:
 
 5. **Replay Protection**: Ensure each PayJoin session uses fresh UTXOs to prevent transaction replay.
 
-## Testing Your Implementation
+### Step 6: Test Your Implementation
 
 Test PayJoin on Bitcoin's testnet before production use:
 
@@ -256,7 +256,7 @@ def test_payjoin_compliance():
     assert result.is_valid(), f"Compliance errors: {result.errors}"
 ```
 
-## Common Implementation Mistakes
+### Step 7: Common Implementation Mistakes
 
 Avoid these frequent errors when implementing PayJoin:
 
@@ -284,6 +284,21 @@ Before deploying PayJoin in production:
 - [ ] Set up key rotation procedures
 
 PayJoin represents one of the most effective practical improvements in Bitcoin transaction privacy. By carefully implementing both sender and receiver components, you can significantly reduce on-chain analysis effectiveness while maintaining full Bitcoin security guarantees.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

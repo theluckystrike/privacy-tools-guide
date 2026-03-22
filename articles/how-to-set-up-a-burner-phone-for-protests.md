@@ -48,7 +48,17 @@ Additionally, if police confiscate your primary phone, burner phone separation p
 
 Burner phones also prevent protest participation from appearing on your digital timeline. Your primary phone's location data, if searched by law enforcement, won't show protest attendance if you're not carrying it.
 
-## Phone Selection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Phone Selection
 
 Buy a used phone in cash from a private seller to avoid purchase records. Avoid brand-new phones whose serial numbers are registered to you. Target older models (2-3 years old) because they're cheaper used and less likely to have biometric authentication that law enforcement could force you to unlock.
 
@@ -66,7 +76,7 @@ Buy a used phone in cash from a private seller to avoid purchase records. Avoid 
 
 **Purchasing approach**: Search local Facebook Marketplace, Craigslist, or OfferUp. Negotiate by text before meeting. Meet in a location with security cameras (retail stores, busy areas) to provide alibi if police question the purchase later. Pay cash. Do not provide your real name or contact info beyond the phone number you're using.
 
-## SIM Card Setup
+### Step 2: SIM Card Setup
 
 Use a prepaid SIM card purchased with cash. Bring only your burner phone and cash to the store—no ID, no wallet with identification.
 
@@ -85,7 +95,7 @@ Use a prepaid SIM card purchased with cash. Bring only your burner phone and cas
 
 **Note**: US carriers are increasingly requiring ID verification for activation. Some states require ID for any SIM purchase. Research your state's requirements beforehand. If ID is required, use the burner phone setup as one-time protection with assumption that you're identified but messages remain private.
 
-## Operating System Configuration
+### Step 3: Configure the Operating System Configuration
 
 Before installing any apps or connecting to networks, configure the phone for privacy.
 
@@ -126,7 +136,7 @@ adb shell pm disable-user --user 0 com.android.vending
 adb shell pm list packages -d
 ```
 
-## Communication Apps
+### Step 4: Communication Apps
 
 Select messaging apps that use end-to-end encryption and don't require phone verification.
 
@@ -156,7 +166,7 @@ Select messaging apps that use end-to-end encryption and don't require phone ver
 
 **Apps to avoid**: WhatsApp (Facebook owned, metadata logged), Telegram (not fully end-to-end encrypted by default), Google Messages, Facebook Messenger.
 
-## Evidence Collection Setup
+### Step 5: Evidence Collection Setup
 
 Protect photos and videos of police conduct with automatic encryption and secure backup.
 
@@ -197,7 +207,7 @@ find DCIM/Camera -name "*.jpg" -newer /tmp/protest_start \
 shred -u DCIM/Camera/IMG_20260322.jpg
 ```
 
-## Operational Security During Protest
+### Step 6: Operational Security During Protest
 
 **Phone Management**:
 - Carry only the burner phone (leave primary phone at home)
@@ -226,7 +236,7 @@ shred -u DCIM/Camera/IMG_20260322.jpg
 - Police cannot legally force you to unlock via fingerprint/face (5th Amendment protects against self-incrimination by password; courts split on biometrics)
 - Even if phone is unlocked, encrypted apps (Signal, Briar) remain inaccessible without passwords
 
-## Digital Forensics Protection
+### Step 7: Digital Forensics Protection
 
 If law enforcement images your phone (forensic copy), maximize time between protest and forensic examination.
 
@@ -238,7 +248,7 @@ If law enforcement images your phone (forensic copy), maximize time between prot
 
 **Better approach**: Don't store sensitive evidence on the phone long-term. Back up evidence to encrypted cloud storage immediately after protest, then delete from phone.
 
-## Post-Protest Procedures
+### Step 8: Post-Protest Procedures
 
 After protest:
 1. Back up evidence photos/videos to encrypted Nextcloud
@@ -267,7 +277,7 @@ adb shell rm /sdcard/wipe_fill
 adb shell am broadcast -a android.intent.action.MASTER_CLEAR
 ```
 
-## Legal Context
+### Step 9: Legal Context
 
 Using a burner phone is legal. Burner phones have legitimate uses: protecting privacy, separating work/personal contexts, preventing identity theft. Simply possessing a burner phone is not illegal.
 
@@ -283,6 +293,21 @@ If arrested, your attorney will advise you whether to produce the phone or asser
 - Total: ~$80
 
 The cost is low relative to legal expenses if you're identified and charged. Even if you never use the burner phone setup, understanding these practices reduces anxiety about protest attendance and government surveillance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -28,7 +28,7 @@ Password vault inheritance remains one of the most overlooked aspects of digital
 - **The emergency contact needs their own Bitwarden account**: you cannot designate a non-Bitwarden user
 3.
 
-## Understanding Bitwarden Emergency Access Architecture
+### Step 1: Understand Bitwarden Emergency Access Architecture
 
 Bitwarden implements emergency access through a delegated trust model that integrates with its zero-knowledge encryption framework. The feature allows you to designate another Bitwarden user as an emergency contact who can request access to your vault after a configurable waiting period.
 
@@ -49,7 +49,7 @@ Before configuring emergency access, ensure both parties meet the technical requ
 
 For developers managing organizational credentials, consider whether emergency access should point to a personal account or a dedicated service account owned by the organization.
 
-## Step-by-Step Configuration
+### Step 2: Step-by-Step Configuration
 
 ### Initiating Emergency Access Designation
 
@@ -113,7 +113,7 @@ For automated monitoring of emergency access requests, consider a scheduled cron
 # 0 * * * * /path/to/emergency-access-monitor.sh >> /var/log/bw-emergency.log 2>&1
 ```
 
-## Integrating with Digital Estate Planning
+### Step 3: Integrate with Digital Estate Planning
 
 Vault inheritance works best when integrated into a broader digital estate strategy. Consider the following complementary measures:
 
@@ -123,7 +123,7 @@ Maintain a physical or air-gapped digital document that includes:
 
 ```
 # Digital Estate Access Guide
-## Password Manager Emergency Access
+### Step 4: Password Manager Emergency Access
 
 - Primary: Bitwarden
 - Account: user@example.com
@@ -131,7 +131,7 @@ Maintain a physical or air-gapped digital document that includes:
 - Waiting Period: 7 days
 - Verification Code: [SHARED_CODE_HERE]
 
-## Vault Inheritance Priority
+### Step 5: Vault Inheritance Priority
 
 1. Financial Accounts (banks, investments, crypto wallets)
 2. Business Infrastructure (cloud consoles, server access)
@@ -139,7 +139,7 @@ Maintain a physical or air-gapped digital document that includes:
 4. Subscriptions and recurring services
 5. Personal data (photos, documents)
 
-## Secondary Access Methods
+### Step 6: Secondary Access Methods
 
 - Hardware wallet location: [PHYSICAL_LOCATION]
 - Safe combination: [COMBINATION]
@@ -166,7 +166,7 @@ Emergency access introduces attack surface that requires careful management:
 
 **Regular Audits**: Review your emergency access configuration quarterly. Verify the contact's email remains valid and their account remains active.
 
-## When Emergency Access Activates
+### Step 7: When Emergency Access Activates
 
 Upon your death or incapacitation, the emergency access process unfolds as follows:
 
@@ -283,7 +283,7 @@ audit = manager.audit_emergency_access()
 print(json.dumps(audit, indent=2))
 ```
 
-## Vault Encryption and Rotation
+### Step 8: Vault Encryption and Rotation
 
 Understanding the cryptographic properties of emergency access:
 
@@ -306,7 +306,7 @@ bw export --format csv > vault_backup_$(date +%Y%m%d).csv
 bw export --format json > vault_backup_$(date +%Y%m%d).json
 ```
 
-## Organizational Emergency Access Configuration
+### Step 9: Organizational Emergency Access Configuration
 
 For businesses managing shared credentials:
 
@@ -363,7 +363,7 @@ jq --arg now "$(date -d '30 days ago' +%Y-%m-%dT%H:%M:%S)" \
  wc -l
 ```
 
-## Testing Emergency Access Procedure
+### Step 10: Test Emergency Access Procedure
 
 Validate your configuration works before an actual emergency:
 
@@ -402,7 +402,7 @@ Corrective Actions: [None/List actions]
 EOF
 ```
 
-## Physical Inheritance Planning Integration
+### Step 11: Physical Inheritance Planning Integration
 
 Connect emergency access to broader estate planning:
 
@@ -413,14 +413,14 @@ Connect emergency access to broader estate planning:
 cat > digital_estate_plan.md <<'EOF'
 # Digital Estate Plan
 
-## Password Manager Access (Bitwarden)
+### Step 12: Password Manager Access (Bitwarden)
 - Primary Account: [email@example.com]
 - Emergency Contact: [spouse@example.com]
 - Waiting Period: 7 days
 - Verification Code: [CODE_IN_SEPARATE_SECURE_LOCATION]
 - Last Updated: [DATE]
 
-## Account Access Sequence
+### Step 13: Account Access Sequence
 1. Emergency contact initiates Bitwarden emergency access request
 2. Wait 7 days for access grant
 3. Access vault and locate:
@@ -429,7 +429,7 @@ cat > digital_estate_plan.md <<'EOF'
  - Utility access
  - Email accounts
 
-## Critical Accounts Priority
+### Step 14: Critical Accounts Priority
 1. Bank accounts (within first 24 hours)
 2. Email account (grants access to password resets)
 3. Investment accounts
@@ -437,17 +437,17 @@ cat > digital_estate_plan.md <<'EOF'
 5. Property accounts
 6. Social media accounts
 
-## Document Locations
+### Step 15: Document Locations
 - Paper copy of this plan: [Safe deposit box location]
 - Encrypted digital copy: [Cloud storage location]
 - USB backup: [Physical safe location]
 
-## Contact Information
+### Step 16: Contact Information
 - Family lawyer: [Phone/Email]
 - Financial advisor: [Phone/Email]
 - Insurance agent: [Phone/Email]
 
-## Annual Review Checklist
+### Step 17: Annual Review Checklist
 - [ ] Verify emergency contact email still active
 - [ ] Confirm all critical accounts remain in vault
 - [ ] Update account access priority if needed
@@ -458,7 +458,7 @@ EOF
 echo "Digital estate plan created: $(date)"
 ```
 
-## Recovery Procedures If Emergency Contact Dies
+### Step 18: Recovery Procedures If Emergency Contact Dies
 
 Plan for scenarios where the emergency contact predeceases you:
 
@@ -533,6 +533,21 @@ canada:
 ```
 
 Emergency access configuration becomes meaningful only when integrated into digital estate planning with clear documentation and regular testing.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
