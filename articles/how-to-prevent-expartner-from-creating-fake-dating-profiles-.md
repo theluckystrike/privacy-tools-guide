@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
 description: "Follow this guide to how to prevent expartner from creating fake dating profiles  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Prevent Expartner From Creating Fake Dating Profiles"
 description: "Immediately reduce your attack surface by making social media profiles private, removing photos from public galleries, and stripping EXIF metadata from any"

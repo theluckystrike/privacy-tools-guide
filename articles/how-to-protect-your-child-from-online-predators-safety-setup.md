@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-protect-your-child-from-online-predators-safety-setup/
 description: "Follow this guide to how to protect your child from online predators safety setup with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "How To Protect Your Child From Online Predators Safety Setup"
 description: "A practical technical guide for developers and power users to protect children from online predators. Learn device configuration, network-level"

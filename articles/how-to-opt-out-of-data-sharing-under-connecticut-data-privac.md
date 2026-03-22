@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/
 description: "Follow this guide to how to opt out of data sharing under connecticut data privac with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"
 description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal data"
