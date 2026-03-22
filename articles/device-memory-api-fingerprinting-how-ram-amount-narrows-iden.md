@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 The Device Memory API exposes your device's RAM amount to websites, allowing them to narrow your identity across sessions when combined with other fingerprinting signals. The API's innocuous-seeming information becomes powerful in fingerprinting chains—revealing RAM alongside screen resolution, CPU counts, and battery status creates a nearly unique device signature. Developers should disable this API or randomize responses in privacy-critical applications, while users can restrict API access through browser extensions.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For users and privacy professionals**: awareness of these fingerprinting vectors enables better defensive choices.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Developers should disable this**: API or randomize responses in privacy-critical applications, while users can restrict API access through browser extensions.
+- **When combined with other**: metrics like screen resolution, user agent, timezone, and installed fonts, it helps build a unique browser profile.
+- **Safari restricts it to**: Safari 15.4+ on macOS and iOS 15.4+, and even then only when the device has sufficient memory.
 
 ## How the Device Memory API Works
 

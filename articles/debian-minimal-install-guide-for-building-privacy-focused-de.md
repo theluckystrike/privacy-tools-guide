@@ -31,6 +31,18 @@ tags: [privacy-tools-guide, privacy]---
 
 Building a privacy-focused desktop from scratch starts with the operating system installation. Debian provides an excellent foundation because of its package stability, minimal default installation, and transparent development process. This guide walks through creating a privacy-respecting Debian desktop without unnecessary bloatware or telemetry.
 
+## Key Takeaways
+
+- **Create a strong passphrase**: at least 25 characters from a passphrase generator.
+- **Building a privacy-focused desktop**: from scratch starts with the operating system installation.
+- **Debian provides an excellent**: foundation because of its package stability, minimal default installation, and transparent development process.
+- **Debian's commitment to free**: software means no proprietary blobs unless you explicitly add them.
+- **You want**: - Only "Standard system utilities"
+- Nothing else
+
+This gives you a command-line base system of approximately 700MB.
+- **Create a standard user**: with sudo privileges: ```bash sudo adduser username sudo usermod -aG sudo username ``` Replace `username` with your preferred identifier.
+
 ## Why Choose Debian Minimal for Privacy
 
 Commercial operating systems collect significant user data by default. Windows and macOS send telemetry data to their respective companies, include pre-installed applications you cannot remove, and make reversing these decisions difficult. Debian offers a different approach: you control what enters your system.

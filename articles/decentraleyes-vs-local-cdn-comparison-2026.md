@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, comparison]---
 
 When building privacy-focused web applications or configuring your browsing environment, you have two main approaches for reducing dependency on third-party content delivery networks: the Decentraleyes browser extension and self-hosted local CDN solutions. This comparison examines both options from a developer's perspective, helping you choose the right approach for your use case.
 
+## Key Takeaways
+
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **This comparison examines both**: options from a developer's perspective, helping you choose the right approach for your use case.
+- **However**: the extension only includes a limited set of popular libraries, and updating to newer versions depends on extension maintainers.
+- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
+- **Which is better for beginners**: the first tool or the second tool?
+
+It depends on your background.
+
 ## What is Decentraleyes?
 
 Decentraleyes is a browser extension available for Firefox, Chrome, and Edge that intercepts requests to known third-party CDN domains and serves those resources locally from a bundled collection. The extension maps common JavaScript libraries and CSS frameworks to local copies, effectively blocking the tracking that occurs when your browser connects to external CDN servers.

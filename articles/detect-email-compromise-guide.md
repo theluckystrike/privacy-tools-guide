@@ -33,6 +33,22 @@ A compromised email account is a skeleton key. Attackers use it to reset passwor
 
 This guide gives you concrete methods to detect compromise, investigate the extent of damage, and lock things down.
 
+## Key Takeaways
+
+- **Change your password immediately**: use a password manager to generate a 20+ character random password
+2.
+- **Check other accounts**: if the same password was used elsewhere, change all of them
+9.
+- **Attackers use it to**: reset passwords on every other account, read private correspondence, and impersonate you.
+- **Most breaches go unnoticed**: for weeks or months.
+- **Your credentials may have**: been leaked from a third-party service you used the same password on.
+- **Use Google dorking**: ```
+site:pastebin.com "your@email.com"
+site:rentry.co "your@email.com"
+```
+
+Also search your username, not just email address.
+
 ## Signs Your Email May Be Compromised
 
 - Contacts report receiving spam or phishing messages from you

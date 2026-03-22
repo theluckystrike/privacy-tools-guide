@@ -29,6 +29,15 @@ tags: [privacy-tools-guide]---
 
 A passphrase like `correct-horse-battery-staple` is both memorable and cryptographically strong. A password like `P@ssw0rd!23` is neither. Diceware is the method for generating random passphrases with precisely calculable entropy — you roll physical dice and look up words in a numbered wordlist. The result is provably random, requires no trust in any software, and produces passphrases strong enough for full disk encryption master keys.
 
+## Key Takeaways
+
+- **For high-value keys that**: will persist for decades, use 7 or 8 words.
+- **For Diceware**: this means the least-likely word appears with probability ~0.998^5 ≈ 0.99 of normal and the most likely with probability ~1.002^5 ≈ 1.01 of normal.
+- **Because the wordlist and**: the number of dice rolls are public, you can calculate exactly how hard the passphrase is to crack.
+- **Absurd images stick better**: than coherent ones.
+- **For situations where you want certainty, use the Python `secrets` module implementation above**: it uses the OS's CSPRNG which is audited and tested against bias.
+- **Use additional protections like**: time-locked encryption for long-term secrets.
+
 ## What Makes Diceware Secure
 
 Diceware's strength comes from genuine randomness — physical dice rolls — combined with a known wordlist. Because the wordlist and the number of dice rolls are public, you can calculate exactly how hard the passphrase is to crack.
