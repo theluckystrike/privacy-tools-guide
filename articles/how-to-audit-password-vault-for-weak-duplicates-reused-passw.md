@@ -40,13 +40,23 @@ Regularly auditing your password vault helps maintain strong security hygiene. W
 - **Generate new passwords using**: your password manager's built-in generator, targeting at least 16 characters with a mix of character types.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## Understanding Password Vault Auditing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Password Vault Auditing
 
 Password managers store credentials in encrypted vaults, but they cannot automatically detect when you use weak or reused passwords. A weak password lacks entropy—complexity that makes brute-force attacks impractical. Duplicate passwords mean a single breach compromises multiple accounts. Auditing your vault periodically surfaces these issues so you can remediate them before attackers exploit them.
 
 Most password managers provide built-in security dashboards. However, these tools often lack customization, export capabilities, or integration with automation workflows. Using CLI tools and scripts gives you deeper insight and the ability to build custom auditing pipelines.
 
-## Exporting Your Vault for Analysis
+### Step 2: Exporting Your Vault for Analysis
 
 Before auditing, you need to export your vault data. Most password managers support encrypted exports that you can process locally. The exact method depends on your password manager, but the general approach involves authenticating and requesting a structured export.
 
@@ -70,7 +80,7 @@ keepassx-cli info database.kdbx
 
 Handle exported data carefully. These files contain sensitive credentials in plaintext. Process them in an ephemeral environment, delete them immediately after auditing, and never commit them to version control.
 
-## Detecting Weak Passwords
+### Step 3: Detecting Weak Passwords
 
 Weak password detection requires analyzing entropy and checking against known weak patterns. Several approaches exist: using dedicated tools, calculating entropy mathematically, or comparing against wordlists.
 
@@ -158,7 +168,7 @@ weak = [item for item in vault
 print(f"Found {len(weak)} passwords below {ENTROPY_THRESHOLD} bits entropy")
 ```
 
-## Finding Duplicate and Reused Passwords
+### Step 4: Finding Duplicate and Reused Passwords
 
 Duplicate detection is straightforward: group passwords by their hash or value and identify groups with more than one entry.
 
@@ -187,7 +197,7 @@ for password, titles in duplicates.items():
 
 This script identifies every password appearing more than once. For each duplicate, review whether sharing a password across accounts is necessary or whether you should generate unique passwords for each service.
 
-## Automating the Audit Pipeline
+### Step 5: Automate the Audit Pipeline
 
 Build a complete auditing script that combines all checks into a single report:
 
@@ -284,7 +294,7 @@ if __name__ == '__main__':
 
 Run this script against your exported vault to generate a report. Schedule regular runs to track improvements over time.
 
-## Interpreting Results and Taking Action
+### Step 6: Interpreting Results and Taking Action
 
 After auditing, prioritize remediation based on risk. Accounts with reused passwords tied to high-value services—email, banking, or code repositories—require immediate attention. Generate new passwords using your password manager's built-in generator, targeting at least 16 characters with a mix of character types.
 
@@ -292,7 +302,7 @@ For weak passwords, either strengthen them if the service allows or switch to a 
 
 Document your audit findings if working within an organization. Track remediation progress and set recurring audit schedules—monthly for high-security environments, quarterly for personal use.
 
-## Securing the Audit Process
+### Step 7: Secure the Audit Process
 
 Never store vault exports permanently. Create them in a temporary directory, process them, then delete immediately:
 
@@ -304,6 +314,21 @@ rm vault_export.json
 ```
 
 Consider using a dedicated machine or container for auditing to isolate the process from your daily workflow. Disable network access during processing if possible to prevent accidental exfiltration.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

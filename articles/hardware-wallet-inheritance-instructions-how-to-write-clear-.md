@@ -26,13 +26,23 @@ Hardware wallet inheritance planning remains one of the most overlooked aspects 
 - **BitBox02 and certain Coldcard**: configurations support this feature.
 - **Your heirs will thank**: you not for teaching them cryptocurrency, but for giving them a simple path forward when it matters most.
 
-## Understanding the Inheritance Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Inheritance Problem
 
 Hardware wallets like Ledger, Trezor, and Coldcard provide excellent security for cryptocurrency holdings. However, the very features that protect your funds from theft create enormous barriers for beneficiaries. A 24-word seed phrase means nothing to someone who has never interacted with cryptocurrency. PIN codes and passphrase options add additional layers of complexity that compound the problem.
 
 The solution involves creating documentation that bridges the gap between technical security and human readability. Your goal is not to teach your heirs cryptocurrency fundamentals, but to provide a step-by-step playbook they can follow when the time comes.
 
-## Essential Components of Inheritance Documentation
+### Step 2: Essential Components of Inheritance Documentation
 
 Effective hardware wallet inheritance instructions must cover several critical areas. Each component should exist as a standalone section that your executor can reference independently.
 
@@ -94,7 +104,7 @@ actively restoring a wallet you own. Never share this phrase with
 anyone claiming to be support or asking for verification.
 ```
 
-## Technical Considerations for Power Users
+### Step 3: Technical Considerations for Power Users
 
 Developers and advanced users should implement additional security measures beyond basic documentation.
 
@@ -138,7 +148,7 @@ age -p -a -i age.key recovery-instructions.txt -o recovery-instructions.txt.age
 age -d -i age.key -o recovered.txt recovery-instructions.txt.age
 ```
 
-## Testing Your Documentation
+### Step 4: Test Your Documentation
 
 Never assume your instructions work without verification. Test the entire recovery process using a small amount of funds or testnet cryptocurrency. Have someone unfamiliar with cryptocurrency attempt to follow your written guide. Note where they struggle and revise accordingly.
 
@@ -148,7 +158,7 @@ Common failure points include:
 - Skipping intermediate steps that seem obvious
 - Not accounting for software updates and interface changes
 
-## Legal Considerations
+### Step 5: Legal Considerations
 
 Your technical documentation should complement, not replace, proper legal estate planning. Consult with an attorney familiar with digital assets in your jurisdiction. Ensure your will or trust explicitly covers cryptocurrency holdings and references your technical documentation. Provide your executor with authorization to access digital assets according to local law.
 
@@ -157,7 +167,7 @@ Regularly update your inheritance documentation when acquiring new wallets, chan
 
 Creating clear hardware wallet inheritance instructions requires translating your technical expertise into accessible language. The effort you invest now prevents impossible confusion later. Your heirs will thank you not for teaching them cryptocurrency, but for giving them a simple path forward when it matters most.
 
-## Specific Recovery Instructions by Wallet Type
+### Step 6: Specific Recovery Instructions by Wallet Type
 
 Generic instructions don't work—your heirs need step-by-step guidance for each device.
 
@@ -258,7 +268,7 @@ Different wallets have different recovery complexities. When choosing a wallet, 
 
 For inheritance purposes, simpler wallets with shorter seed phrases reduce confusion.
 
-## Alternative Inheritance Approaches for Technical Users
+### Step 7: Alternative Inheritance Approaches for Technical Users
 
 Developers and advanced users have additional options beyond simple hardware wallet recovery.
 
@@ -297,7 +307,7 @@ Casa specifically offers inheritance planning tools:
 
 This reduces documentation burden on the deceased while ensuring proper inheritance procedures.
 
-## Legal Integration with Estate Planning
+### Step 8: Legal Integration with Estate Planning
 
 Technical documentation should complement formal legal documents.
 
@@ -311,7 +321,7 @@ Work with an attorney to include in your will:
 
 Ensure your financial power of attorney specifically includes digital assets. Standard POAs may not provide sufficient authority over cryptocurrency accounts.
 
-## Updating Inheritance Documentation
+### Step 9: Updating Inheritance Documentation
 
 Cryptocurrency holdings change frequently. Maintain current documentation:
 
@@ -322,7 +332,7 @@ Cryptocurrency holdings change frequently. Maintain current documentation:
 
 Create calendar reminders for annual inheritance documentation reviews.
 
-## Professional Assistance and Services
+### Step 10: Professional Assistance and Services
 
 For technical or complex scenarios, professional services can help:
 
@@ -332,6 +342,21 @@ For technical or complex scenarios, professional services can help:
 - **Cryptocurrency recovery services** (Unchained, Casa) provide professional recovery assistance
 
 The cost ($500-2,000 for professional planning) prevents infinitely more expensive confusion and loss later.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

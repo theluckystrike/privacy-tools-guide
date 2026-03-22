@@ -44,13 +44,23 @@ echo "" >> "${REPORT_FILE}"
 echo "## Findings" >> "${REPORT_FILE}"
 # ...
 
-## Understanding End-to-End Encryption Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand End-to-End Encryption Basics
 
 True end-to-end encryption means only the communicating parties can read messages—not the app provider, not servers, not anyone intercepting traffic. The encryption keys should exist only on the devices of the sender and recipient. When you audit a messaging app, you verify this property through multiple layers of investigation.
 
 Modern E2EE protocols like Signal Protocol use the Double Ratchet Algorithm combined with X3DH (Extended Triple Diffie-Hellman) key agreement. Understanding these fundamentals helps you identify what to look for during your audit.
 
-## Network Traffic Analysis
+### Step 2: Network Traffic Analysis
 
 The first practical audit step involves capturing and analyzing network traffic to confirm encryption in transit.
 
@@ -82,7 +92,7 @@ echo | openssl s_client -connect messaging-server.example.com:443 2>/dev/null | 
 
 The server should present valid certificates from trusted Certificate Authorities. Self-signed certificates or mismatched domains indicate potential security issues.
 
-## Protocol Analysis
+### Step 3: Protocol Analysis
 
 ### Examining App Behavior with strace and ltrace
 
@@ -112,7 +122,7 @@ otool -L /Applications/MessagingApp.app/Contents/MacOS/MessagingApp | grep -i "c
 
 Applications using established crypto libraries like OpenSSL, libsodium, or CommonCrypto demonstrate more trust than those using custom implementations.
 
-## Source Code Verification
+### Step 4: Source Code Verification
 
 ### Reviewing Open Source Implementations
 
@@ -143,7 +153,7 @@ Legitimate E2EE apps publish detailed protocol specifications. Look for:
 
 Signal Protocol documentation, for example, explicitly describes X3DH key agreement and Double Ratchet usage. Apps with vague or missing documentation should raise concerns.
 
-## Practical Verification Tests
+### Step 5: Practical Verification Tests
 
 ### Safety Number Verification
 
@@ -185,7 +195,7 @@ sudo tcpdump -i any -nn -A 'tcp' 2>/dev/null | grep -E "GET |POST |Host:"
 
 Compare the collected metadata against the app's stated practices.
 
-## Red Flags to Watch For
+### Step 6: Red Flags to Watch For
 
 Several warning signs indicate questionable encryption claims:
 
@@ -199,7 +209,7 @@ Several warning signs indicate questionable encryption claims:
 
 **Inconsistent encryption** — Some apps encrypt messages only in certain modes (e.g., "secret chats") while default conversations remain unencrypted or server-accessible.
 
-## Building Your Audit Toolkit
+### Step 7: Build Your Audit Toolkit
 
 Essential tools for messaging app encryption audits:
 
@@ -276,7 +286,7 @@ hashcat -m 10500 -a 0 hash.txt wordlist.txt
 
 Strong KDFs use Argon2, bcrypt, or scrypt with appropriate cost parameters.
 
-## Encryption Audit Checklist
+### Step 8: Encryption Audit Checklist
 
 Use this checklist when evaluating any messaging app's encryption:
 
@@ -316,7 +326,7 @@ Metadata:
 ☐ Deletion is permanent, not soft-deleted
 ```
 
-## Cross-Platform Verification
+### Step 9: Cross-Platform Verification
 
 When auditing, test encryption across platforms:
 
@@ -332,7 +342,7 @@ When auditing, test encryption across platforms:
 
 Inconsistent encryption between iOS and Android indicates incomplete security implementation.
 
-## Vulnerability Disclosure Pathways
+### Step 10: Vulnerability Disclosure Pathways
 
 Before publishing audit findings:
 
@@ -343,7 +353,7 @@ Before publishing audit findings:
 
 This gives developers time to respond without giving attackers zero-day information.
 
-## Building an Audit Workflow
+### Step 11: Build an Audit Workflow
 
 Create a repeatable audit process:
 
@@ -378,6 +388,21 @@ echo "## Findings" >> "${REPORT_FILE}"
 
 echo "Audit complete. Report: ${REPORT_FILE}"
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

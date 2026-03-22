@@ -38,7 +38,17 @@ Android apps request permissions to access sensitive data: camera, microphone, l
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Android Permission Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Android Permission Architecture
 
 Android permissions operate through permission groups. Apps declare required permissions in their manifest; Android groups related permissions together. When an app requests camera access, you can grant or deny it. Unlike older Android versions, you can revoke permissions after installation without uninstalling the app.
 
@@ -56,7 +66,7 @@ Android permissions operate through permission groups. Apps declare required per
 
 Each group contains related permissions. Granting "Camera" permission grants both CAMERA and associated image recording permissions.
 
-## Method 1: Using Android Settings (Manual)
+### Step 2: Method 1: Using Android Settings (Manual)
 
 The graphical approach works for systematic audits of all installed apps.
 
@@ -113,7 +123,7 @@ Don't allow: Complete denial
 
 For most apps, "Allow only while using the app" is the safest middle ground.
 
-## Method 2: Using ADB (Android Debug Bridge)
+### Step 3: Method 2: Using ADB (Android Debug Bridge)
 
 ADB provides command-line access to detailed permission information and control.
 
@@ -194,7 +204,7 @@ adb shell pm grant com.instagram.android android.permission.CAMERA
 adb shell dumpsys package com.instagram.android | grep "FINE_LOCATION"
 ```
 
-## Method 3: Permission Audit Script
+### Step 4: Method 3: Permission Audit Script
 
 Automate permission auditing with a shell script:
 
@@ -258,7 +268,7 @@ chmod +x permission-audit.sh
 cat permissions_report.txt
 ```
 
-## Method 4: Using Exodus Privacy
+### Step 5: Method 4: Using Exodus Privacy
 
 Exodus Privacy is a web tool that analyzes APK files and shows which permissions apps request and why.
 
@@ -290,7 +300,7 @@ Trackers: 12 identified
 Recommendation: Revoke RECORD_AUDIO, monitor trackers
 ```
 
-## Recommended Permission Strategy by App Type
+### Step 6: Recommended Permission Strategy by App Type
 
 **Social media apps** (Instagram, TikTok, Snapchat):
 - Camera: Allow while using app ✓
@@ -332,7 +342,7 @@ Recommendation: Revoke RECORD_AUDIO, monitor trackers
 - Health/fitness data: Allow ✓
 - Contacts: Don't allow ✗
 
-## Detecting Permission Abuse
+### Step 7: Detecting Permission Abuse
 
 Apps sometimes request suspicious permissions. Signs of abuse:
 
@@ -351,7 +361,7 @@ Apps sometimes request suspicious permissions. Signs of abuse:
 - App claiming to need contacts for "improving search" (suspicious)
 - App using multiple trackers beyond necessity
 
-## Automated Permission Monitoring
+### Step 8: Automated Permission Monitoring
 
 Enable Google Play Protect:
 
@@ -361,7 +371,7 @@ Settings → Security → Google Play Protect → Enable
 
 Google Play Protect automatically scans apps for malicious behavior and permission abuse. It won't catch all issues but provides baseline protection.
 
-## Complete Permission Audit Checklist
+### Step 9: Complete Permission Audit Checklist
 
 [ ] Install ADB and connect phone
 [ ] Run permission audit script or manual review
