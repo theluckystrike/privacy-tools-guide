@@ -299,6 +299,107 @@ Online tools for verification (for spot-checks):
 - `https://www.metadata2go.com`
 - `https://exifdata.com`
 
+## Handling HEIC and RAW Formats
+
+HEIC (the default iPhone format since iOS 11) and camera RAW files carry metadata just like JPEG, but some tools handle them poorly.
+
+### HEIC Files
+
+ExifTool handles HEIC fully:
+
+```bash
+# Strip all metadata from HEIC
+exiftool -all= -overwrite_original photo.heic
+
+# Batch process HEIC files
+exiftool -all= -overwrite_original -ext heic /path/to/photos/
+
+# Convert HEIC to JPEG while stripping metadata
+exiftool -all= -o cleaned.jpg photo.heic
+```
+
+Note: mat2 and ImageMagick have incomplete HEIC support on some platforms. Stick with ExifTool for HEIC.
+
+### Camera RAW Formats (CR2, NEF, ARW, DNG)
+
+RAW files contain extensive embedded metadata — camera settings, GPS, lens profiles, and in some cases the photographer's name from camera registration:
+
+```bash
+# Check what's in a RAW file
+exiftool photo.cr2 | grep -E "GPS|Owner|Artist|Copyright|Serial"
+
+# Strip from Canon CR2
+exiftool -all= -overwrite_original photo.cr2
+
+# Strip from Nikon NEF
+exiftool -all= -overwrite_original photo.nef
+
+# Strip from Sony ARW
+exiftool -all= -overwrite_original photo.arw
+
+# Batch: all RAW formats in a directory
+exiftool -all= -overwrite_original -ext cr2 -ext nef -ext arw -ext dng /path/to/photos/
+```
+
+One important caveat: stripping RAW metadata removes lens correction profiles and color calibration data that editing software uses. Strip RAW files only after editing is complete, or export a stripped JPEG/TIFF for sharing instead of the RAW file.
+
+## What Metadata Stripping Does Not Remove
+
+Metadata stripping removes EXIF, IPTC, and XMP tags embedded in the file. It does not remove:
+
+**Steganographic data**: Some apps embed invisible watermarks in pixel data that survive metadata removal. These are used by stock photo agencies and some social platforms. ExifTool cannot detect or remove these.
+
+**Platform-added metadata**: Some social platforms re-add metadata when you download a photo from their site. A photo you uploaded stripped of EXIF may have location data re-embedded by the platform based on your account information. Always verify after downloading from platforms.
+
+**Image content itself**: If a photo shows street signs, landmarks, or recognizable locations, metadata removal doesn't help. The image content is the data.
+
+**Thumbnails embedded in EXIF**: Some cameras embed a full-resolution thumbnail inside the EXIF data. ExifTool removes these by default when you strip all metadata with `-all=`, but targeted removals (like only removing GPS) may leave the thumbnail intact with its own embedded GPS:
+
+```bash
+# Explicitly remove thumbnails when doing partial strips
+exiftool -GPS:all= -ThumbnailImage= -overwrite_original photo.jpg
+```
+
+## Integration with Photo Workflows
+
+### Lightroom / Capture One Export
+
+Both Lightroom and Capture One can strip metadata at export time without a separate tool:
+
+In Lightroom: File → Export → Metadata section → uncheck "Include: All Metadata" → select "Copyright Only" or "Copyright & Contact Info Only"
+
+In Capture One: Export → Metadata → "Strip All Metadata" or custom selection
+
+This is the cleanest approach for photographers — strip at the point of export rather than as a post-processing step.
+
+### Git Pre-Commit Hook for Developers
+
+If you commit images to a repository, add a pre-commit hook to catch unstripped photos:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+# Check staged image files for GPS metadata
+
+staged_images=$(git diff --cached --name-only --diff-filter=A | grep -iE '\.(jpg|jpeg|png|heic)$')
+
+for img in $staged_images; do
+  gps=$(exiftool -GPS:all "$img" 2>/dev/null | grep -c "GPS")
+  if [ "$gps" -gt 0 ]; then
+    echo "ERROR: $img contains GPS metadata. Strip before committing."
+    exit 1
+  fi
+done
+
+exit 0
+```
+
+```bash
+chmod +x .git/hooks/pre-commit
+```
+
+This blocks commits containing GPS-tagged images, which is particularly relevant for repositories with location-sensitive content.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**
