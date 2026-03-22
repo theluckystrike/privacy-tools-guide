@@ -42,7 +42,17 @@ This guide covers the specific fingerprinting vectors, what each one exposes, an
 - **Limitations**: slow, not for everyday use.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## How Fingerprinting Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Fingerprinting Works
 
 Fingerprinting combines many data points to create a unique identifier:
 
@@ -65,7 +75,7 @@ const fingerprint = {
 
 No single property is unique. The combination is. A 2023 study found that combining just 8-12 properties identified 99%+ of browsers uniquely.
 
-## Test Your Current Fingerprint
+### Step 2: Test Your Current Fingerprint
 
 Before making changes, establish a baseline:
 
@@ -75,7 +85,7 @@ Before making changes, establish a baseline:
 
 Note your uniqueness score, then test again after each change to see improvement.
 
-## Vector 1: Canvas Fingerprinting
+### Step 3: Vector 1: Canvas Fingerprinting
 
 Canvas fingerprinting asks your browser to draw text/shapes on an invisible canvas. Subtle differences in font rendering, anti-aliasing, and GPU compositing produce a value unique to your browser+OS+hardware combination.
 
@@ -110,7 +120,7 @@ This enables Firefox's fingerprinting resistance mode, which includes canvas ran
 
 **Brave Browser**: Reports a randomized canvas fingerprint per site per session.
 
-## Vector 2: WebGL Fingerprinting
+### Step 4: Vector 2: WebGL Fingerprinting
 
 WebGL exposes your GPU model and renderer string — a specific combination that narrows down hardware considerably.
 
@@ -134,7 +144,7 @@ webgl.disabled = true           # Disables WebGL entirely (breaks some sites)
 webgl.enable-webgl2 = false     # Disables WebGL 2 specifically
 ```
 
-## Vector 3: Font Enumeration
+### Step 5: Vector 3: Font Enumeration
 
 Your browser can be asked to measure text rendered in various fonts. If a font is installed, the text dimensions differ from the fallback font. This reveals which fonts you have installed — a stable, OS-dependent fingerprint.
 
@@ -157,7 +167,7 @@ function isFontAvailable(font) {
 
 There is no good way to install many custom fonts while preventing fingerprinting. If privacy matters, use a browser with built-in resistance rather than trying to manage fonts manually.
 
-## Vector 4: Audio Context Fingerprinting
+### Step 6: Vector 4: Audio Context Fingerprinting
 
 The Web Audio API processes audio through your hardware. Tiny differences in floating-point operations produce a unique value per device.
 
@@ -189,7 +199,7 @@ In Firefox `about:config`:
 media.webaudio.enabled = false
 ```
 
-## Vector 5: Timezone and Language
+### Step 7: Vector 5: Timezone and Language
 
 Your system timezone and browser language are stable identifiers that correlate with your location.
 
@@ -213,7 +223,7 @@ javascript.options.wasm = false    # Doesn't help with timezone
 
 Better approach: use a browser profile with `privacy.resistFingerprinting` enabled, or use Tor Browser for sensitive browsing.
 
-## Vector 6: Hardware and Browser Properties
+### Step 8: Vector 6: Hardware and Browser Properties
 
 ```javascript
 navigator.hardwareConcurrency   // Number of CPU cores
@@ -229,7 +239,7 @@ These are stable across sessions. Many users have 4-16 CPU cores, 8-32GB RAM, an
 - Firefox `privacy.resistFingerprinting`: Reports hardwareConcurrency as 2, deviceMemory as 8
 - Tor Browser: Reports standard values
 
-## Which Browser Provides the Best Protection?
+### Step 9: Which Browser Provides the Best Protection?
 
 ### Tor Browser
 
@@ -265,7 +275,7 @@ Go to `brave://settings/shields` to configure:
 
 No meaningful fingerprinting protection. Do not use these for privacy-sensitive browsing.
 
-## Test After Hardening
+### Step 10: Test After Hardening
 
 After applying protections, re-run the fingerprint tests:
 
@@ -281,7 +291,7 @@ Visit `https://coveryourtracks.eff.org` and look for:
 - "Strong protection against Web tracking" — indicates fingerprinting resistance is working
 - Randomized canvas hash — changes on each page reload if protection is active
 
-## Realistic Expectations
+### Step 11: Realistic Expectations
 
 No browser is completely un-fingerprintable on the open web. The goal is to:
 1. Blend into a larger crowd (Tor Browser approach)
@@ -289,6 +299,21 @@ No browser is completely un-fingerprintable on the open web. The goal is to:
 3. Reduce the number of unique signals so fingerprint confidence is lower
 
 Combining good browser choice with a VPN or Tor removes the network-layer correlation that would otherwise link your anonymized fingerprint to your real IP.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

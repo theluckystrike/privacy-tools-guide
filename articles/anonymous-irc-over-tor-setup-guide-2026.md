@@ -46,7 +46,17 @@ Before looking at configuration, it helps to understand exactly what IRC exposes
 
 Even if you use a VPN, the VPN provider sees your traffic and can be compelled to hand over logs. Tor's layered encryption with circuit rotation provides meaningfully stronger anonymity because no single node ever sees both who you are and what you're sending.
 
-## Installing and Configuring the Tor Daemon
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install and Configuring the Tor Daemon
 
 The foundation of anonymous IRC is a properly configured Tor installation. On Linux, install the Tor daemon:
 
@@ -98,7 +108,7 @@ netstat -an | grep 9050
 # Expected: tcp 0.0.0.0:9050 LISTEN
 ```
 
-## IRC Client Configuration
+### Step 2: IRC Client Configuration
 
 Several IRC clients support Tor natively. This guide focuses on three popular options: HexChat (GUI), WeeChat (terminal), and Irssi (terminal).
 
@@ -170,7 +180,7 @@ For minimal resource usage, configure Irssi with Tor. Irssi requires the proxy p
 
 Irssi's configuration is stored in `~/.irssi/config`. Back this file up securely — it contains your server list, and losing it means reconfiguring all your anonymous connections.
 
-## Connecting to Tor-Based IRC Networks
+### Step 3: Connecting to Tor-Based IRC Networks
 
 Several IRC networks operate Tor hidden services, providing inherent protection against IP-based attacks.
 
@@ -195,7 +205,7 @@ Libera.Chat (the successor to Freenode) supports Tor connections through their h
 
 Many networks allow connections through Tor exits. Use caution — exit nodes can be monitored for unencrypted traffic. Always use SSL/TLS on port 6697 rather than plaintext port 6667, even when routing through Tor, to protect against malicious exit nodes.
 
-## Verifying Anonymity
+### Step 4: Verify Anonymity
 
 After connecting, verify your anonymity:
 

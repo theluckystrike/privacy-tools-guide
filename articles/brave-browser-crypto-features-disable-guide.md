@@ -40,7 +40,17 @@ To disable Brave's crypto features, go to `brave://settings`, toggle off Brave R
 - **IPFS**: for instance, has legitimate non-crypto uses for decentralized content delivery that can improve resilience against content censorship.
 - **Contact your system administrator**: for access or use policy-based configuration instead.
 
-## Understanding Brave's Crypto Features
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Brave's Crypto Features
 
 Brave includes the following crypto-related components by default:
 
@@ -53,7 +63,7 @@ Brave includes the following crypto-related components by default:
 
 Each of these can be disabled individually through configuration. The level of control depends on your technical access and deployment scenario.
 
-## Method 1: Disable via Brave Settings (GUI)
+### Step 2: Method 1: Disable via Brave Settings (GUI)
 
 The easiest approach uses Brave's internal settings panel without requiring administrative access:
 
@@ -65,7 +75,7 @@ The easiest approach uses Brave's internal settings panel without requiring admi
 
 This handles basic disabling but leaves residual code in the browser executable. Features may reappear after browser updates or can be re-enabled by users with access to the settings panel.
 
-## Method 2: Disable via Configuration Flags
+### Step 3: Method 2: Disable via Configuration Flags
 
 For granular control beyond the standard settings, Brave provides experimental flags accessible at `brave://flags`. These offer deeper control over individual features:
 
@@ -77,7 +87,7 @@ For granular control beyond the standard settings, Brave provides experimental f
 
 These flags apply immediately and persist across sessions. However, they may reset with major browser updates and require re-application.
 
-## Method 3: Disable via Command Line Arguments
+### Step 4: Method 3: Disable via Command Line Arguments
 
 For deployment scenarios, automated setups, or enterprise deployments, use launch arguments applied at runtime:
 
@@ -141,7 +151,7 @@ System administrators managing multiple workstations can deploy registry or plis
 
 These policies override user settings and prevent re-enabling through the UI. The machine-wide configurations take precedence over per-user settings and require administrative privileges to modify.
 
-## Method 5: Compile Custom Build
+### Step 5: Method 5: Compile Custom Build
 
 For maximum control and minimal attack surface, build Brave from source with crypto features disabled entirely:
 
@@ -177,7 +187,7 @@ ninja -C out/Default brave
 
 This approach requires significant build infrastructure including approximately 100GB of disk space and build dependencies. The resulting binary contains no crypto functionality, making it ideal for security research or high-security deployments.
 
-## Verification: Confirming Disabled Status
+### Step 6: Verification: Confirming Disabled Status
 
 After applying your chosen method, verify the features are properly disabled:
 

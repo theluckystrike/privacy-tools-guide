@@ -44,7 +44,17 @@ Browser fingerprinting is a tracking technique that identifies you based on your
 
 Reality: Chrome is worse for privacy than Firefox or Tor.
 
-## How Browser Fingerprinting Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Browser Fingerprinting Works
 
 Your browser is a complex piece of software with hundreds of configurable properties. Most of these properties are exposed to JavaScript running on websites, usually without your knowledge or consent.
 
@@ -206,7 +216,7 @@ If you visit site-a.com and site-b.com, trackers can correlate:
 
 Even without cookies, trackers identify you as the same person across different sites.
 
-## Measuring Your Fingerprint Uniqueness
+### Step 2: Measuring Your Fingerprint Uniqueness
 
 ### Online Fingerprinting Tests
 
@@ -232,7 +242,7 @@ https://fingerprint.com/
 
 Running these tools is eye-opening. Most users find they're unique among millions.
 
-## How to Prevent and Mitigate Fingerprinting
+### Step 3: How to Prevent and Mitigate Fingerprinting
 
 ### Browser-Level Defenses
 
@@ -406,7 +416,7 @@ async function testFingerprinting() {
 
 This helps you understand what your users' browsers reveal.
 
-## Practical Strategy: Balancing Privacy and Usability
+### Step 4: Practical Strategy: Balancing Privacy and Usability
 
 **For most users:**
 1. Use Firefox with `privacy.resistFingerprinting = true`
@@ -433,7 +443,7 @@ This provides ~95% protection (some trade-offs with usability).
 
 This provides ~99% protection.
 
-## What Sites Are Actually Using Fingerprinting?
+### Step 5: What Sites Are Actually Using Fingerprinting?
 
 According to research studies:
 
@@ -444,7 +454,7 @@ According to research studies:
 - **Paywalls:** Some news sites use fingerprinting to bypass subscription paywalls
 - **Financial institutions:** Some use fingerprinting for account verification (bad UX when you change devices)
 
-## Limitations of Fingerprinting Defense
+### Step 6: Limitations of Fingerprinting Defense
 
 Even perfect fingerprinting defense (Tor Browser) has limitations:
 
@@ -458,7 +468,7 @@ Even perfect fingerprinting defense (Tor Browser) has limitations:
 
 The best defense is behavioral: don't voluntarily identify yourself (login to identifying accounts), and assume you're somewhat identifiable if your browsing pattern is distinctive.
 
-## Testing Your Defenses
+### Step 7: Test Your Defenses
 
 After implementing defenses, test them:
 
@@ -473,6 +483,21 @@ Good results:
 - WebGL shows "blocked"
 - WebRTC shows no local IP leak
 - Sites you care about still work
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

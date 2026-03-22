@@ -45,7 +45,17 @@ Custom fields are additional data points you can attach to any vault item in Bit
 
 To access custom fields, open any vault item in the Bitwarden web vault, desktop app, or browser extension. Scroll past the standard login fields to find the "Custom Fields" section. Click "Add Item" to create your first custom field.
 
-## Field Types and Their Applications
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Field Types and Their Applications
 
 Bitwarden supports three distinct field types, each serving different use cases:
 
@@ -110,7 +120,7 @@ Custom Fields:
 
 This approach keeps all SSH configuration details accessible alongside your credentials, eliminating the need to search through documentation or configuration files.
 
-## Automating with the Bitwarden CLI
+### Step 2: Automate with the Bitwarden CLI
 
 The Bitwarden command-line interface (CLI) provides programmatic access to custom fields, enabling automation scripts and integration with development workflows.
 
@@ -159,7 +169,7 @@ bw create item login '{
 
 Field type `0` represents text, while `1` represents hidden fields.
 
-## Organizing Large Vaults
+### Step 3: Organizing Large Vaults
 
 Custom fields shine when organizing vault entries for large projects or multiple environments. Create consistent field naming conventions across items:
 
@@ -230,7 +240,7 @@ Custom Fields:
 
 This allows scripts to select credentials based on deployment context.
 
-## Integration with Infrastructure-as-Code
+### Step 4: Integration with Infrastructure-as-Code
 
 Connect Bitwarden credentials to Terraform or other IaC tools:
 
@@ -278,7 +288,7 @@ bw export --format json | jq '.items[].fields[] | select(.type == 2) | .value'
 
 Use Protected fields for anything you absolutely don't want leaving your Bitwarden vault, even in encrypted exports.
 
-## Field Naming Conventions at Scale
+### Step 5: Field Naming Conventions at Scale
 
 Establish consistent field naming to support large vaults:
 
@@ -318,6 +328,21 @@ Track credential usage for compliance:
 ```
 
 Document this in custom fields for regulatory audits.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

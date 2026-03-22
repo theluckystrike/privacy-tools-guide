@@ -27,11 +27,21 @@ Ordering physical goods online typically requires shipping to a real address, wh
 3.
 - **This guide covers practical**: methods for anonymous online shopping, from mail forwarding services to pickup alternatives.
 
-## Understanding the Privacy Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Privacy Problem
 
 Every online order reveals your shipping address to the merchant, their payment processors, and potentially data brokers who aggregate this information. Your purchasing history, combined with your physical location, creates a detailed profile that can be sold, breached, or used in ways you never intended. The goal is separating your online purchasing activity from your physical identity.
 
-## Mail Forwarding Services
+### Step 2: Mail Forwarding Services
 
 Private mail forwarding services receive packages at their address and reship them to your actual location. This adds a layer between you and the merchant.
 
@@ -61,7 +71,7 @@ City, State ZIP
 
 Many services let you create multiple "accounts" with different names, enabling you to order under aliases.
 
-## General Delivery at Carrier Locations
+### Step 3: General Delivery at Carrier Locations
 
 Major shipping carriers offer general delivery or hold-for-pickup services that let you collect packages from their facilities.
 
@@ -90,7 +100,7 @@ Both carriers offer package hold services:
 
 These services typically cost $0-5 per package and require ID matching the delivery name.
 
-## Private Mailboxes (PMBs)
+### Step 4: Private Mailboxes (PMBs)
 
 Private mailbox services like Postal Annex or The UPS Store provide street addresses that look like regular addresses:
 
@@ -108,7 +118,7 @@ Advantages over PO Boxes:
 - Often includes mail scanning services
 - Can be registered under a business name
 
-## Anonymous Payment Methods
+### Step 5: Anonymous Payment Methods
 
 Payment method privacy is equally important. Even with a hidden shipping address, your payment card links purchases to your identity.
 
@@ -158,7 +168,7 @@ Services like Privacy.com create virtual card numbers linked to your actual acco
 - Merchant locking after single use
 - Ability to freeze or close instantly
 
-## Building a System
+### Step 6: Build a System
 
 For power users, combining multiple techniques creates privacy:
 
@@ -234,7 +244,7 @@ config = AnonymousOrderConfig.get_config("amazon")
 print(f"Use {config['address']} address with {config['payment']}")
 ```
 
-## Important Considerations
+### Step 7: Important Considerations
 
 Legal considerations vary by jurisdiction. Some states require ID for package pickup. International shipping can trigger customs requirements. Certain products may have shipping restrictions that make anonymous ordering impractical.
 
@@ -242,6 +252,21 @@ Always verify that your chosen methods comply with:
 - Merchant shipping policies
 - Carrier terms of service
 - Local and federal laws
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
