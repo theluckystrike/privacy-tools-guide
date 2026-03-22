@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best VPN for Linux Desktop: A Developer Guide"
-description: "A practical guide to choosing and setting up VPNs on Linux for developers and power users"
+description: "WireGuard, OpenVPN, and Mullvad CLI tested on Ubuntu, Fedora, and Arch. Speed benchmarks, kill switch configs, and DNS leak results."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

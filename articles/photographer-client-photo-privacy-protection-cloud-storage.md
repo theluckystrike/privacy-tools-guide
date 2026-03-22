@@ -477,7 +477,7 @@
 
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
-description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"
+description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 type: article

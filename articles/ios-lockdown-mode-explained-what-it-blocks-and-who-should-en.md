@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iOS Lockdown Mode Explained"
-description: "A comprehensive guide to Apple's Lockdown Mode on iOS—what it blocks, how to enable it, and whether it's right for your threat model."
+description: "Apple Lockdown Mode blocks message attachments, web APIs, and USB connections. Who needs it, what breaks, and how to enable it on iOS."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /ios-lockdown-mode-explained-what-it-blocks-and-who-should-en/
@@ -263,6 +263,26 @@ For users with extreme threat models, Lockdown Mode alone is insufficient. Consi
 - Use a firewall at your network level to block known tracking domains
 - Monitor which servers your device connects to using packet analysis tools
 
+You can audit which domains your iOS device contacts by monitoring DNS queries on your local network:
+
+```bash
+# Install Pi-hole on a Raspberry Pi or Linux server to monitor DNS
+curl -sSL https://install.pi-hole.net | bash
+
+# After setup, watch DNS queries from your iOS device in real time
+pihole -t | grep "192.168.1.50"
+
+# Block known spyware and tracking domains
+pihole -b analytics.suspected-tracker.example.com
+pihole -b telemetry.adnetwork.example.com
+
+# Review the last 24 hours of queries from your device
+sqlite3 /etc/pihole/pihole-FTL.db \
+  "SELECT timestamp, domain, status FROM queries
+   WHERE client='192.168.1.50'
+   ORDER BY timestamp DESC LIMIT 50;"
+```
+
 ### Data Compartmentalization
 
 - Keep sensitive applications on separate devices when possible
@@ -288,6 +308,41 @@ If you enable Lockdown Mode, maintain it properly:
 - **Update iOS promptly**: Security updates are critical when running maximum-restriction mode.
 - **Test functionality regularly**: Confirm that critical apps and websites still work as expected.
 - **Document your configuration**: Keep notes on why each exception was added for future reference.
+
+Use Apple Configurator or a configuration profile to enforce Lockdown Mode across managed devices:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.security.lockdownmode</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.org.lockdown.profile</string>
+      <key>PayloadUUID</key>
+      <string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+      <key>LockdownModeEnabled</key>
+      <true/>
+    </dict>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Enforce Lockdown Mode</string>
+  <key>PayloadIdentifier</key>
+  <string>com.org.lockdown</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
+```
 
 Lockdown Mode requires active management but provides unmatched security for those who need it.
 

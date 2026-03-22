@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Password Manager Breach Notification Features"
-description: "A guide to password manager breach notification features for developers and power users. Learn how breach alerts work, API integrations"
+description: "How 1Password, Bitwarden, and Dashlane detect breached credentials. Watchtower vs Vault Health vs Dark Web Monitoring features compared."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

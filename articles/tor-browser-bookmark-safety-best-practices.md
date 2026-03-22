@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tor Browser Bookmark Safety Best Practices"
-description: "Learn essential bookmark security practices for Tor Browser to protect your privacy and avoid metadata leaks"
+description: "Avoid deanonymization through Tor Browser bookmarks. Covers metadata risks, safe bookmark practices, and why syncing bookmarks breaks anonymity."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike

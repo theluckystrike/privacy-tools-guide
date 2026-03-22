@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iOS Shortcuts Automation Privacy Considerations"
-description: "Learn about privacy implications when using iOS Shortcuts automation. Discover security best practices, data access permissions, and how to build"
+description: "iOS Shortcuts can access photos, contacts, location, and clipboard silently. Audit automation permissions and restrict data exposure per workflow."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

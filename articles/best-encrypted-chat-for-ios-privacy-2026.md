@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Chat for iOS Privacy 2026: A Technical Guide"
-description: "A guide to the most secure messaging apps for iPhone in 2026, comparing Signal, Session, Threema, and iMessage with technical details on encryption"
+description: "Signal vs Session vs Threema vs iMessage for iPhone privacy in 2026. Encryption protocols, metadata exposure, and disappearing message features."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

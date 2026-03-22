@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Children's Online Privacy Protection Act"
-description: "Learn what rights parents have under COPPA and what companies must do to protect children's privacy online"
+description: "COPPA parental rights explained: what data companies must delete, consent requirements, and how to file complaints with the FTC in 2026."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

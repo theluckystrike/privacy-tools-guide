@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Openvpn Push Route Configuration Selective Routing Explained"
-description: "A guide to configuring OpenVPN push route directives for selective routing, allowing you to control which traffic goes through the VPN"
+description: "Configure OpenVPN push route directives for split tunneling. Route specific subnets through the VPN while keeping other traffic direct."
 date: 2026-03-17
 last_modified_at: 2026-03-17
 author: theluckystrike

@@ -49,6 +49,42 @@ This guide compares four password managers focused on actual privacy, not market
 
 Password managers claim privacy but don't all deliver it. Let's test the ones that actually do.
 
+You can self-host Bitwarden (via Vaultwarden) to keep all password data on your own server:
+
+```bash
+# Run Vaultwarden (lightweight Bitwarden-compatible server) with Docker
+docker run -d --name vaultwarden \
+  -v /opt/vaultwarden/data:/data \
+  -e ROCKET_PORT=8080 \
+  -e SIGNUPS_ALLOWED=false \
+  -e ADMIN_TOKEN=$(openssl rand -base64 48) \
+  -p 8080:8080 \
+  vaultwarden/server:latest
+
+# Verify the server is running
+curl -s http://localhost:8080/alive
+# Expected output: {"status":"ok"}
+```
+
+For KeePassXC users, you can sync your encrypted vault across devices using Git:
+
+```bash
+# Initialize a private Git repo for your vault
+mkdir -p ~/keepass-vault && cd ~/keepass-vault
+git init
+cp ~/Documents/passwords.kdbx .
+
+# Commit and push to a private remote
+git add passwords.kdbx
+git commit -m "vault sync"
+git remote add origin git@github.com:youruser/keepass-vault.git
+git push -u origin main
+
+# On another machine, clone and open the vault
+git clone git@github.com:youruser/keepass-vault.git
+keepassxc-cli open keepass-vault/passwords.kdbx
+```
+
 ## Bitwarden
 
 **Price**: Free, $10/year individual, $40/year family (5 people), $3/user/month teams

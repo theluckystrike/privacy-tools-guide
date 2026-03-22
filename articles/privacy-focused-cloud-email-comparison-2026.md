@@ -305,6 +305,40 @@ Moving email is straightforward:
 
 Migration takes 1-2 weeks. The important step is the forwarding period—you'll discover accounts you forgot about.
 
+If you choose a provider supporting IMAP (Mailfence, Posteo, Disroot), you can migrate your Gmail archive using `imapsync`:
+
+```bash
+# Install imapsync
+sudo apt install imapsync    # Debian/Ubuntu
+brew install imapsync        # macOS
+
+# Migrate all mail from Gmail to your new privacy provider
+imapsync \
+  --host1 imap.gmail.com --port1 993 --ssl1 \
+  --user1 yourname@gmail.com --password1 "gmail-app-password" \
+  --host2 mail.mailfence.com --port2 993 --ssl2 \
+  --user2 yourname@mailfence.com --password2 "mailfence-password" \
+  --automap --exclude "All Mail|Spam|Trash"
+
+# For Proton Mail, use the Proton Mail Import-Export app instead
+# (Proton does not support IMAP directly)
+```
+
+To send encrypted email from the command line using GPG with any IMAP-capable provider:
+
+```bash
+# Generate a GPG key pair for encrypted email
+gpg --full-generate-key
+
+# Export your public key to share with contacts
+gpg --armor --export yourname@mailfence.com > publickey.asc
+
+# Send an encrypted email via command line
+echo "Confidential project update attached." | \
+  gpg --encrypt --armor --recipient recipient@protonmail.com | \
+  mail -s "Encrypted: Project Update" recipient@protonmail.com
+```
+
 ## Realistic Privacy
 
 None of these providers prevent government access through legal warrants. If law enforcement demands your email, the provider must comply. However, encryption ensures that even with legal access, investigators see only encrypted content. This is stronger protection than Gmail, where encrypted content is still decryptable by Google.

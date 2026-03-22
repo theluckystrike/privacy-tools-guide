@@ -2,7 +2,7 @@
 
 layout: default
 title: "Local Game Server Setup for LAN Parties"
-description: "A guide to setting up local game servers for LAN parties that keep your gaming activity private and away from online data collection."
+description: "Host LAN game servers that keep player data off the internet. Setup guides for Minecraft, CS2, and Valheim with zero cloud telemetry."
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /local-game-server-lan-parties-avoid-online-data-collection/

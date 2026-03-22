@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows Group Policy Privacy Settings Guide"
-description: "A guide to configuring Windows Group Policy privacy settings for developers and power users. Learn to disable telemetry, manage data"
+description: "Disable Windows telemetry, manage diagnostic data, and block tracking via Group Policy. Registry keys and GPO templates included for IT admins."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

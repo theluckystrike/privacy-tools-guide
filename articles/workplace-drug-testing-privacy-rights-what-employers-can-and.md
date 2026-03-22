@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Workplace Drug Testing Privacy Rights"
-description: "A guide to workplace drug testing privacy rights. Learn what substances employers can test for, state-by-state variations, and legal protections for employees"
+description: "Employee drug testing privacy rights by state: which substances employers can test, consent requirements, and legal protections that apply to you."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

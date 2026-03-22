@@ -108,6 +108,51 @@ Standard Notes is the privacy winner. If encryption is your primary concern, cho
 Joplin Server on DigitalOcean droplet: ~$5/month (droplet) + storage.
 DIY setup requires Linux knowledge; takes 1–2 hours.
 
+Deploy a self-hosted Joplin Server with Docker for complete data ownership:
+
+```bash
+# Create a docker-compose.yml for Joplin Server
+mkdir -p ~/joplin-server && cd ~/joplin-server
+
+cat > docker-compose.yml << 'YAML'
+version: '3'
+services:
+  joplin:
+    image: joplin/server:latest
+    container_name: joplin-server
+    ports:
+      - "22300:22300"
+    environment:
+      - APP_PORT=22300
+      - APP_BASE_URL=https://notes.yourdomain.com
+      - DB_CLIENT=pg
+      - POSTGRES_PASSWORD=secure_password_here
+      - POSTGRES_DATABASE=joplin
+      - POSTGRES_USER=joplin
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    container_name: joplin-db
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=secure_password_here
+      - POSTGRES_USER=joplin
+      - POSTGRES_DB=joplin
+    restart: unless-stopped
+YAML
+
+# Start the server
+docker compose up -d
+
+# Verify it is running
+curl -s http://localhost:22300/api/ping
+```
+
 ### Verdict
 
 Best for privacy + frugality. If you're willing to self-host or tolerate slower UI, Joplin is unbeatable. All notes remain yours; no subscription lock-in.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail Two-Factor Authentication Guide"
-description: "A guide to setting up and using two-factor authentication with ProtonMail for enhanced email security"
+description: "Set up TOTP and U2F security keys on ProtonMail step by step. Covers backup codes, recovery options, and common 2FA lockout fixes."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

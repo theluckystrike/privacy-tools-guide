@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chromebook Privacy Settings for Students 2026"
-description: "A guide to hardening ChromeOS privacy settings for students. Covers management console policies, DNS configuration, extension"
+description: "Lock down ChromeOS for student privacy: management console policies, encrypted DNS, extension controls, and Google sync restrictions in 2026."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

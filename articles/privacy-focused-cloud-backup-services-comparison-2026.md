@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Focused Cloud Backup Services Comparison 2026"
-description: "Compare zero-knowledge encrypted cloud backup services including pricing, encryption methods, and jurisdiction analysis"
+description: "Zero-knowledge cloud backups compared: Tresorit, SpiderOak, and Filen tested on encryption, jurisdiction, pricing, and restore speed in 2026."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"

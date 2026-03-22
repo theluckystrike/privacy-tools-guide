@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused CPU Benchmark Tool That Does Not Send"
-description: "A comprehensive guide for developers and power users looking for CPU benchmark tools that run entirely offline without transmitting hardware telemetry."
+description: "CPU benchmark tools that run offline without transmitting hardware telemetry. Geekbench alternatives, CLI options, and self-hosted dashboards."
 date: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /privacy-focused-cpu-benchmark-tool-that-does-not-send-hardwa/

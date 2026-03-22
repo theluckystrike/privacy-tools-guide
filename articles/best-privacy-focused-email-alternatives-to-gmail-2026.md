@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Privacy-Focused Email Alternatives to Gmail 2026"
-description: "comparison of encrypted email providers including ProtonMail, Tutanota, and others with feature and pricing analysis"
+description: "ProtonMail, Tutanota, Startmail, and Posteo tested as Gmail replacements. Encryption, storage limits, custom domain support, and pricing compared."
 date: 2026-03-20
 last_modified_at: 2026-03-22
 author: theluckystrike

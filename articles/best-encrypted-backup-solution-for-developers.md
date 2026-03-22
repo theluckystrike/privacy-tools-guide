@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Backup Solution For Developers"
-description: "A guide to encrypted backup solutions for developers. Compare tools, learn implementation patterns, and protect your code and credentials"
+description: "Encrypted backup tools for developers compared: Restic, Borg, and Duplicati tested on speed, deduplication, encryption, and CI/CD integration."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Tools For Social Worker Handling Sensitive Case"
-description: "A guide to privacy tools for social workers handling sensitive case files digitally. Learn about encrypted storage, secure communication"
+description: "Encrypted storage, secure messaging, and file sharing tools for social workers. Protect sensitive case files from unauthorized access and breaches."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App API Vulnerabilities How Security Researchers"
-description: "A guide to dating app API vulnerabilities and how security researchers have discovered and reported data exposure flaws in popular platforms"
+description: "Documented API vulnerabilities in Tinder, Bumble, Grindr, and Hinge. Location leaks, profile scraping, and authentication bypasses exposed."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Social Media Privacy For Teenagers Guide 2026"
-description: "A guide to social media privacy for teenagers in 2026. Learn essential protection strategies, privacy settings, and security best"
+description: "Protect teen accounts on Instagram, TikTok, Snapchat, and Discord. Privacy settings, data minimization, and parental monitoring options for 2026."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

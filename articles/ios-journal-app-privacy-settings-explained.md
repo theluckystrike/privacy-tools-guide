@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iOS Journal App Privacy Settings Explained: A Complete Guide"
-description: "A technical breakdown of iOS Journal app privacy settings for developers and power users"
+description: "Control what iOS Journal collects about you: disable suggestions, limit Discoverable by Others, and audit data access per-app."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike
