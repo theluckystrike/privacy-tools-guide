@@ -246,6 +246,267 @@ python3 analyze-email-headers.py suspicious.eml
 | Received chain starts from unknown IP | Did not originate from claimed domain |
 | Multiple X-Originating-IP hops through unfamiliar countries | Routing through proxy/VPS |
 
+## Advanced Email Forensics
+
+### Full Header Analysis for Complex Spoofing
+
+Some sophisticated phishing attempts spoof multiple headers. Here's a forensic approach:
+
+```bash
+#!/bin/bash
+# Advanced email header forensics
+
+email_file="suspicious.eml"
+
+echo "=== Email Header Forensics ==="
+echo ""
+
+# Extract all Received headers
+echo "--- Received Chain (bottom to top = originating first) ---"
+grep "^Received:" "$email_file" | tac | nl
+
+echo ""
+echo "--- Authentication Results ---"
+grep -E "^(SPF|DKIM|DMARC|Authentication-Results):" "$email_file"
+
+echo ""
+echo "--- Sender Information ---"
+grep -E "^(From|Reply-To|Return-Path|Sender):" "$email_file"
+
+echo ""
+echo "--- X-Headers (Debugging Info) ---"
+grep "^X-" "$email_file"
+
+echo ""
+echo "--- IP Address Reverse Lookup ---"
+# Extract IPs from Received headers and perform reverse DNS
+grep "Received:" "$email_file" | grep -oE "\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\]" | \
+    sed 's/[\[\]]//g' | while read ip; do
+    echo "IP: $ip"
+    dig +short -x "$ip"
+done
+```
+
+### Building a Phishing Email Database
+
+Track patterns across multiple phishing attempts:
+
+```python
+#!/usr/bin/env python3
+"""Build searchable database of phishing attempts."""
+
+import sqlite3
+import email
+import hashlib
+from datetime import datetime
+
+class PhishingDatabase:
+    def __init__(self, db_file="phishing.db"):
+        self.conn = sqlite3.connect(db_file)
+        self.init_schema()
+
+    def init_schema(self):
+        """Create database tables."""
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS phishing_emails (
+                id INTEGER PRIMARY KEY,
+                timestamp DATETIME,
+                from_domain TEXT,
+                claimed_sender TEXT,
+                real_sender TEXT,
+                subject TEXT,
+                sender_ip TEXT,
+                sender_country TEXT,
+                spf_result TEXT,
+                dkim_result TEXT,
+                dmarc_result TEXT,
+                phishing_type TEXT,
+                content_hash TEXT UNIQUE
+            )
+        """)
+
+        self.conn.execute("""
+            CREATE TABLE IF NOT EXISTS indicators (
+                email_id INTEGER,
+                indicator_type TEXT,
+                indicator_value TEXT,
+                severity TEXT,
+                FOREIGN KEY(email_id) REFERENCES phishing_emails(id)
+            )
+        """)
+        self.conn.commit()
+
+    def analyze_email(self, filepath: str) -> dict:
+        """Parse email and extract phishing indicators."""
+        with open(filepath, 'rb') as f:
+            msg = email.message_from_bytes(f.read())
+
+        analysis = {
+            "from_domain": msg.get('From', '').split('@')[-1].rstrip('>'),
+            "claimed_sender": msg.get('From', ''),
+            "real_sender": msg.get('Return-Path', '').split('@')[-1].rstrip('>'),
+            "subject": msg.get('Subject', ''),
+            "spf": msg.get('Received-SPF', 'none'),
+            "dkim": msg.get('DKIM-Signature', 'none'),
+            "dmarc": msg.get('Authentication-Results', 'none'),
+            "content_hash": hashlib.sha256(str(msg).encode()).hexdigest()
+        }
+
+        # Identify indicators
+        indicators = []
+        if analysis["from_domain"] != analysis["real_sender"]:
+            indicators.append({
+                "type": "Domain Mismatch",
+                "value": f"{analysis['from_domain']} != {analysis['real_sender']}",
+                "severity": "HIGH"
+            })
+
+        if "fail" in analysis["spf"].lower():
+            indicators.append({
+                "type": "SPF Failure",
+                "value": analysis["spf"],
+                "severity": "HIGH"
+            })
+
+        return {
+            "analysis": analysis,
+            "indicators": indicators
+        }
+
+    def record_email(self, filepath: str, phishing_type: str = "unknown"):
+        """Record analyzed email in database."""
+        result = self.analyze_email(filepath)
+        analysis = result["analysis"]
+
+        try:
+            cursor = self.conn.execute("""
+                INSERT INTO phishing_emails
+                (timestamp, from_domain, claimed_sender, real_sender, subject,
+                 spf_result, dkim_result, dmarc_result, phishing_type, content_hash)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                datetime.now(),
+                analysis["from_domain"],
+                analysis["claimed_sender"],
+                analysis["real_sender"],
+                analysis["subject"],
+                analysis["spf"],
+                analysis["dkim"],
+                analysis["dmarc"],
+                phishing_type,
+                analysis["content_hash"]
+            ))
+
+            email_id = cursor.lastrowid
+
+            # Record indicators
+            for indicator in result["indicators"]:
+                self.conn.execute("""
+                    INSERT INTO indicators
+                    (email_id, indicator_type, indicator_value, severity)
+                    VALUES (?, ?, ?, ?)
+                """, (
+                    email_id,
+                    indicator["type"],
+                    indicator["value"],
+                    indicator["severity"]
+                ))
+
+            self.conn.commit()
+            return email_id
+        except sqlite3.IntegrityError:
+            print("Email already in database (duplicate)")
+            return None
+
+# Usage
+db = PhishingDatabase()
+email_id = db.record_email("suspicious.eml", "spoofing")
+print(f"Recorded email ID: {email_id}")
+```
+
+## Integration with Email Clients
+
+### Thunderbird Email Analysis Setup
+
+Create a filter to automatically extract headers:
+
+```javascript
+/* Thunderbird addon to auto-extract headers */
+
+mailListener.onStartHeaders = function() {
+    // Get current message
+    const message = GetSelectedMessage();
+
+    if (message) {
+        // Extract headers
+        const messenger = Components.classes["@mozilla.org/messenger;1"]
+            .createInstance(Components.interfaces.nsIMessenger);
+
+        // Display in console
+        console.log("From: " + message.author);
+        console.log("Subject: " + message.subject);
+        console.log("Date: " + message.date);
+    }
+};
+```
+
+### Gmail Label-Based Automation
+
+Create a label filter to mark suspicious emails:
+
+```javascript
+// Gmail script to flag emails with authentication failures
+
+function checkAuthenticationResults() {
+    const threads = GmailApp.search('has:nouserlabels');
+
+    threads.forEach(thread => {
+        const messages = thread.getMessages();
+        messages.forEach(msg => {
+            const headers = msg.getHeaders();
+            const authResults = headers['Authentication-Results'] || '';
+
+            if (authResults.includes('dkim=fail') || authResults.includes('dmarc=fail')) {
+                thread.addLabel(GmailApp.getUserLabelByName('Auth-Failed'));
+                thread.markAsSpam();
+            }
+        });
+    });
+}
+
+// Schedule to run hourly
+ScriptApp.newTrigger('checkAuthenticationResults')
+    .timeBased()
+    .everyHours(1)
+    .create();
+```
+
+## Industry-Specific Phishing Patterns
+
+### Banking Phishing Common Headers
+
+| Spoofed Bank | Common Fake Domain | Real Domain Pattern | Detection Signal |
+|---|---|---|---|
+| Chase Bank | chase-secure.com | chase.com | Domain mismatch + SPF fail |
+| Wells Fargo | secure-wellsfargo.net | wellsfargo.com | Reply-To differs |
+| PayPal | paypal-verify.com | paypal.com | DKIM fail |
+| Amazon | amazon-verify.net | amazon.com | Return-Path mismatch |
+
+### Government Impersonation Patterns
+
+IRS and tax-related phishing commonly spoof with:
+
+```
+From: "IRS" <irs@irs-verify-account.com>
+Return-Path: <noreply@government-tax-system.net>
+Reply-To: <tax-support@verify-identity.com>
+```
+
+**Red flags:**
+- Real IRS uses irs.gov only
+- Will never email without first mailing notice
+- Always uses official .gov domains
+
 ## Related Reading
 
 - [What to Do If You Click a Phishing Link](/privacy-tools-guide/what-happens-if-you-click-a-phishing-link-on-chrome-steps/)

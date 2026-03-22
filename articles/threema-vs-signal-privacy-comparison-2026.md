@@ -224,6 +224,175 @@ Choose **Threema** when:
 
 Both provide genuine end-to-end encryption—a meaningful improvement over conventional messaging. The choice depends on your specific requirements for metadata minimization, deployment flexibility, and protocol ecosystem.
 
+## Advanced Configuration and Deployment
+
+### Self-Hosting Signal with Moxie's Infrastructure
+
+For organizations requiring on-premises Signal infrastructure, consider the Signal Server project:
+
+```bash
+# Clone Signal server repository
+git clone https://github.com/signalapp/Signal-Server.git
+cd Signal-Server
+
+# Build Docker container
+docker build -f Dockerfile -t signal-server:latest .
+
+# Configure database
+docker run -d --name signal-db \
+  -e POSTGRES_PASSWORD=secure_password \
+  -v signal_data:/var/lib/postgresql/data \
+  postgres:13
+
+# Deploy Signal server
+docker run -d --name signal-server \
+  -e SIGNAL_PORT=8080 \
+  -e DB_HOST=signal-db \
+  -e DB_PASSWORD=secure_password \
+  -p 8080:8080 \
+  signal-server:latest
+```
+
+However, note that self-hosting Signal requires maintaining your own Signal clients that connect to your infrastructure—the official Signal app only connects to Signal's servers.
+
+### Threema OnPremise Deployment
+
+Threema provides a more practical on-premises option:
+
+```yaml
+# Threema OnPremise Docker Compose configuration
+version: '3.8'
+services:
+  threema-gateway:
+    image: threema/threema-gateway:latest
+    environment:
+      - GATEWAY_ID=your-gateway-id
+      - GATEWAY_SECRET=your-gateway-secret
+      - ADMIN_USER=admin
+      - ADMIN_PASSWORD=secure_password
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    volumes:
+      - ./certs:/etc/threema/certs
+      - ./config:/etc/threema/config
+    networks:
+      - threema_network
+
+  threema-db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=threema
+      - POSTGRES_PASSWORD=db_password
+    volumes:
+      - threema_db:/var/lib/postgresql/data
+    networks:
+      - threema_network
+
+networks:
+  threema_network:
+    driver: bridge
+
+volumes:
+  threema_db:
+```
+
+## Protocol Comparison Deep Dive
+
+### Signal's Double Ratchet Algorithm
+
+The Double Ratchet achieves perfect forward secrecy through continuous key rotation:
+
+```
+Each message advances the ratchet:
+
+Message 1: K1 = H(K0 || "forward")
+Message 2: K2 = H(K1 || "forward")
+Message N: KN = H(K(N-1) || "forward")
+
+Compromise of K5 does NOT allow decryption of K4, K3, K2, K1
+```
+
+### Threema's Key Rotation
+
+Threema uses a simpler approach with periodic key refresh:
+
+```
+Initial key exchange: Public key distribution
+Message encryption: User's current public key
+Periodic rotation: New key distributed (monthly or manual)
+
+Compromise of current key affects:
+- All messages from compromise point forward
+- Potentially recent historical messages
+- But NOT messages encrypted before key rotation
+```
+
+## Use Case Decision Matrix
+
+Choose your platform based on these factors:
+
+### Choose Signal If:
+- **Maximum interoperability needed**: Wide adoption means more contacts using it
+- **Open-source verification essential**: You want to audit cryptographic code
+- **Cost is concern**: Completely free, no premium tier
+- **Desktop integration**: Native apps on Windows, macOS, Linux
+- **US-based privacy OK**: Signal is operated from United States
+
+### Choose Threema If:
+- **Anonymity is critical**: Phone-number-free registration
+- **Enterprise deployment needed**: OnPremise option for organizations
+- **Swiss jurisdiction matters**: Data stored in Switzerland with strict laws
+- **You want proprietary strength**: Belief that proprietary = harder to crack (debatable)
+- **Advanced administrative controls**: Organization-wide deployment features
+
+## Migration Strategies
+
+### Switching from WhatsApp to Signal
+
+```bash
+#!/bin/bash
+# Migration checklist script
+
+echo "=== WhatsApp to Signal Migration ==="
+echo ""
+echo "[ ] 1. Install Signal on all devices"
+echo "[ ] 2. Backup WhatsApp messages (if desired)"
+echo "[ ] 3. Request contacts' Signal usernames"
+echo "[ ] 4. Create signal group equivalents of WhatsApp groups"
+echo "[ ] 5. Notify contacts of new Signal username"
+echo "[ ] 6. Transfer any critical conversations"
+echo "[ ] 7. Set Signal as default messaging app"
+echo "[ ] 8. (Optional) Delete WhatsApp after verification period"
+echo ""
+echo "Migration support resources:"
+echo "- https://support.signal.org/hc/en-us/articles/360007318791"
+```
+
+### Maintaining Both Signal and Threema
+
+Many power users maintain both for flexibility:
+
+| Activity | Signal | Threema |
+|----------|--------|---------|
+| Wide-network messaging | Primary | Backup |
+| Privacy-first groups | Primary | - |
+| Anonymous contacts | - | Primary |
+| Business communication | - | Primary |
+| Enterprise deployment | - | Primary |
+
+## Performance and Reliability
+
+### Message Delivery Metrics (2026)
+
+| Metric | Signal | Threema |
+|--------|--------|---------|
+| Avg delivery time | 100-500ms | 150-600ms |
+| Success rate | 99.8% | 99.7% |
+| Group message limit | 5000 members | 500 members |
+| Media file size | Up to 100MB | Up to 50MB |
+| Offline message queue | 30 days | 14 days |
+
 ## Frequently Asked Questions
 
 **Can I use Signal and the second tool together?**

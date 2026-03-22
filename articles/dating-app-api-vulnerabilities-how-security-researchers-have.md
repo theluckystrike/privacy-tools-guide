@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, api]---
+tags: [privacy-tools-guide, security, api]
+---
 ---
 layout: default
 title: "Dating App API Vulnerabilities How Security Researchers"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security, api]---
+tags: [privacy-tools-guide, security, api]
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, collaboration]---
+tags: [privacy-tools-guide, collaboration]
+---
 ---
 layout: default
 title: "Cryptpad Encrypted Collaboration Suite Self Hosting Setup"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, collaboration]---
+tags: [privacy-tools-guide, collaboration]
+---
 
 {% raw %}
 

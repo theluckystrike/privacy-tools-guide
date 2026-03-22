@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, remote-work, collaboration]---
+tags: [privacy-tools-guide, remote-work, collaboration]
+---
 ---
 layout: default
 title: "Encrypted Collaboration Tools For Remote Teams That Respect"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, remote-work, collaboration]---
+tags: [privacy-tools-guide, remote-work, collaboration]
+---
 
 {% raw %}
 

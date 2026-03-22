@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Dark Pattern Regulations Which Privacy Laws Ban Manipulative"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

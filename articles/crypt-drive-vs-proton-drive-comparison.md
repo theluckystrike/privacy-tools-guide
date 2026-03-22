@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 ---
 layout: default
 title: "CryptDrive vs ProtonDrive Comparison"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 

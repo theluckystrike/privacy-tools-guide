@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 ---
 layout: default
 title: "Dating Profile Image Recognition How Ai Can Match Your Face"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 
 {% raw %}
 

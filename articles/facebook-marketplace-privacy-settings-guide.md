@@ -11,7 +11,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 ---
 layout: default
 title: "Facebook Marketplace Privacy Settings Guide"
@@ -25,7 +26,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

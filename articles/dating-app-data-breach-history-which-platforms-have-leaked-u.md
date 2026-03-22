@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Dating App Data Breach History Which Platforms Have Leaked"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

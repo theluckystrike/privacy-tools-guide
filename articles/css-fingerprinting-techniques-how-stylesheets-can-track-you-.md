@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 CSS fingerprinting detects installed fonts, screen resolution, and browser capabilities through stylesheet cascading and HTTP requests, enabling tracking without JavaScript by observing which CSS rules the browser applies. Trackers use @font-face to detect fonts, CSS media queries to identify screen properties, and selectors that trigger requests only when specific conditions match. Defend against CSS fingerprinting by disabling web fonts (use system fonts), blocking external stylesheet resources with privacy extensions, or using browsers with CSS fingerprinting protections built-in.
