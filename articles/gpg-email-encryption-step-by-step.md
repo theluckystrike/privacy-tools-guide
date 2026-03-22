@@ -33,6 +33,21 @@ GPG-encrypted email means only the intended recipient can read the message — n
 
 This guide covers the complete workflow: generating a key pair, exchanging keys, encrypting and decrypting messages, and setting up Thunderbird for everyday use.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Import your key into Thunderbird**: - Account Settings > End-To-End Encryption > Add Key
+ - Choose "Use your external key" or import the `.asc` file
+
+2.
+- **Set default behavior**: - Require encryption: enable if all your contacts use GPG
+ - Sign unencrypted messages: enables recipients to verify identity
+
+3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Install GPG
 
 ```bash

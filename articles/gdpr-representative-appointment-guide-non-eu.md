@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 If your organization processes personal data of EU residents but operates outside the European Union, the GDPR may still apply to you. Under Article 27, non-EU organizations that offer goods or services to people in the EU or monitor their behavior must appoint a representative in one of the EU member states. This guide covers the legal requirements, practical steps, and code examples for managing this compliance obligation.
 
+## Key Takeaways
+
+- **If you use a support ticketing system**: create routing rules or dedicated channels.
+- **An US-based SaaS company**: serving European customers, an UK e-commerce platform shipping to EU addresses, or an app developer with EU users all fall within scope.
+- **However**: most commercial operations serving EU customers will need one.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## When Do You Need a GDPR Representative?
 
 The GDPR applies to organizations outside the EU when they either offer goods or services to individuals in the EU or monitor their behavior. The representative requirement specifically kicks in when you meet both of these conditions:

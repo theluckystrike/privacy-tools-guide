@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Pseudonymization replaces identifiers with tokens while keeping a reversible mapping, so the data remains personal data under GDPR. Anonymization irreversibly transforms data so individuals cannot be re-identified, placing it outside GDPR's scope entirely. Choose pseudonymization when you need to preserve data relationships for internal analytics; choose anonymization when sharing data publicly or with untrusted parties. This guide covers implementation code for both approaches, including tokenization, k-anonymity, and differential privacy.
 
+## Key Takeaways
+
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose pseudonymization when you**: need to preserve data relationships for internal analytics; choose anonymization when sharing data publicly or with untrusted parties.
+- **Choose anonymization when you**: need to share data publicly or with untrusted parties, publish research datasets, or comply with data minimization principles where later identification is unnecessary.
+- **Key compromise defeats the**: entire protection mechanism, so use hardware security modules (HSMs) or dedicated key management services.
+- **When pseudonymizing across multiple**: tables, use consistent mapping to preserve relationships.
+
 ## What GDPR Says About These Terms
 
 The General Data Protection Regulation (GDPR) explicitly addresses both concepts in Article 4 and Article 32. Pseudonymization is defined as processing personal data in a manner that prevents attribution to a specific data subject without additional information kept separately. Anonymization goes further—the data must be irreversibly transformed so the individual can no longer be identified.
