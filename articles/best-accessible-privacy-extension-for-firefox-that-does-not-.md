@@ -5,7 +5,7 @@ description: "Find the best accessible privacy extension for Firefox that works 
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-privacy-extension-for-firefox-that-does-not-/
-categories: [guides, security]
+categories: [guides]
 reviewed: true
 score: 9
 intent-checked: true
@@ -22,13 +22,15 @@ Privacy extensions typically work by intercepting network requests, modifying pa
 
 The ideal privacy extension for screen reader users must preserve DOM semantics, not interfere with focus management, and avoid injecting content that creates confusing announcements.
 
+Historically, many privacy extension developers have not prioritized accessibility testing. The result is that blocking tools may hide elements using CSS `display: none` or `visibility: hidden`, which screen readers handle inconsistently across platforms. Extensions that inject shadow DOM content also create navigation dead zones for keyboard-only and screen reader users. Knowing which extensions avoid these patterns saves significant debugging time.
+
 ## Recommended Privacy Extensions
 
 ### 1. uBlock Origin
 
 uBlock Origin remains the most compatible privacy extension for screen reader users. It blocks network requests without modifying page content, preserving DOM semantics that assistive technologies depend on.
 
-**Installation:** Search "uBlock Origin" in Firefox Add-ons or visit the official GitHub repository.
+**Installation:** Search "uBlock Origin" in Firefox Add-ons or visit the official GitHub repository at github.com/gorhill/uBlock.
 
 **Recommended configuration for accessibility:**
 
@@ -48,17 +50,25 @@ uBlock Origin remains the most compatible privacy extension for screen reader us
 
 This configuration ensures that accessibility testing tools and live region updates continue functioning while still blocking trackers and advertisements.
 
+**Why uBlock Origin works for screen reader users:** It operates at the network layer rather than modifying the DOM. When uBlock Origin blocks a request, the element that would have loaded simply never appears — the DOM is not manipulated retroactively. This is fundamentally different from cosmetic filtering tools that inject CSS to hide elements after they load, which can confuse screen readers that have already announced the content.
+
+If cosmetic filters cause issues, open the uBlock Origin dashboard and check "Disable cosmetic filtering" under the Filter Lists tab. This keeps network-level blocking active while eliminating any DOM manipulation.
+
 ### 2. Privacy Badger
 
 Privacy Badger from the Electronic Frontier Foundation learns to block invisible trackers based on tracking behavior rather than predefined lists. Its DOM-preserving approach works well with screen readers.
 
 **Installation:** Available through Firefox Add-ons or at eff.org/privacybadger.
 
-**Verification:** Test that Privacy Badger does not interfere with screen readers by navigating to a page with dynamic content and confirming that live region announcements still work.
+Privacy Badger starts in learning mode and blocks trackers only after detecting cross-site tracking behavior. This adaptive approach means it rarely blocks resources that legitimate accessibility services need, because accessibility infrastructure does not typically engage in cross-site tracking patterns.
+
+**Verification:** Test that Privacy Badger does not interfere with screen readers by navigating to a page with dynamic content and confirming that live region announcements still work. The EFF provides a tracker test page at coveryourtracks.eff.org that you can use to confirm the extension is functioning.
 
 ### 3. ClearURLs
 
 ClearURLs removes tracking parameters from URLs without modifying page structure. This extension operates entirely at the URL level, making it one of the safest options for screen reader compatibility.
+
+ClearURLs strips parameters like `utm_source`, `fbclid`, and `gclid` from links as you click them. Because it rewrites URLs before navigation rather than modifying the DOM, it has essentially zero impact on screen reader functionality.
 
 **Configuration example:**
 
@@ -78,7 +88,7 @@ ClearURLs removes tracking parameters from URLs without modifying page structure
 
 ### 4. Firefox Enhanced Tracking Protection
 
-Firefox's built-in Enhanced Tracking Protection provides privacy without requiring external extensions. This option offers the best compatibility since it is integrated into the browser.
+Firefox's built-in Enhanced Tracking Protection provides privacy without requiring external extensions. This option offers the best compatibility since it is integrated into the browser and has been accessibility-tested by Mozilla's own QA team.
 
 **Enable Enhanced Tracking Protection:**
 
@@ -86,7 +96,15 @@ Firefox's built-in Enhanced Tracking Protection provides privacy without requiri
 2. Navigate to Privacy & Security
 3. Under Enhanced Tracking Protection, select "Strict"
 
-The Strict setting blocks known trackers while maintaining full accessibility support.
+The Strict setting blocks known trackers, cross-site cookies, fingerprinters, and cryptominers while maintaining full accessibility support. Because it is browser-native, it has no extension UI to navigate and no pop-ups or notifications that might create unexpected screen reader announcements.
+
+### 5. Skip Redundant Extensions: What to Avoid
+
+Some extensions are popular for privacy but problematic for screen reader users:
+
+- **Ghostery** — injects UI overlays and counters onto pages that can create spurious announcements
+- **Privacy Possum** — modifies response headers and page content in ways that occasionally break focus management
+- **NoScript** — blocking JavaScript aggressively breaks ARIA live regions and dynamic content that screen readers depend on to announce updates
 
 ## Testing Extension Compatibility
 
@@ -104,6 +122,8 @@ npm install -g pa11y
 pa11y https://example.com --runner axe --runner violation-levels
 ```
 
+Run these tests with extensions active and again with extensions disabled. Differences in the report indicate that an extension is altering the accessibility tree.
+
 ### Manual Testing Checklist
 
 1. Navigate through page content using screen reader quick navigation
@@ -112,6 +132,7 @@ pa11y https://example.com --runner axe --runner violation-levels
 4. Test that modal dialogs receive focus properly
 5. Check that heading hierarchy remains intact
 6. Ensure link text accurately describes destination
+7. Confirm that extension-injected UI elements (popups, badges) do not steal keyboard focus
 
 ### Screen Reader Specific Tests
 
@@ -123,12 +144,18 @@ For NVDA users:
 # Test with various page interactions
 ```
 
+Enable NVDA's speech viewer (NVDA menu → Tools → Speech Viewer) while browsing with privacy extensions active. Watch for unexpected announcements like "blocked content" or "tracking protection" that extensions might inject.
+
 For VoiceOver users on macOS:
 
 ```bash
 # Use VoiceOver Utility to enable detailed diagnostics
 # Test with VoiceOver rotor to navigate by headings, links, and form fields
 ```
+
+Use VO+U to open the VoiceOver rotor and navigate by headings. If a privacy extension has modified the heading hierarchy, orphaned or missing headings will appear.
+
+For JAWS users on Windows, enable the JAWS verbosity settings to maximum and navigate forms. JAWS is particularly sensitive to changes in form label associations that some extensions can disrupt.
 
 ## Configuration for Developer Workflows
 
@@ -183,16 +210,22 @@ Ensure extensions are not blocking the services that power ARIA live region upda
 @@||firebase.com^$third-party
 ```
 
+### Issue: Form Autocomplete Broken
+
+If autofill or autocomplete stops working after enabling a privacy extension, the extension may be blocking the autocomplete endpoint. Check the browser console for blocked network requests and add exceptions for your autocomplete service.
+
 ## Extension Combinations
 
 For maximum privacy without breaking accessibility, consider this stack:
 
 - **uBlock Origin** for network-level blocking
-- **Privacy Badger** for behavioral tracking prevention 
+- **Privacy Badger** for behavioral tracking prevention
 - **ClearURLs** for parameter cleaning
 - **Firefox Enhanced Tracking Protection** (strict mode)
 
-This combination provides defense in depth while maintaining screen reader compatibility. Each extension operates at a different layer without interfering with DOM semantics.
+This combination provides defense in depth while maintaining screen reader compatibility. Each extension operates at a different layer without interfering with DOM semantics. The key principle is that all four tools intercept or modify network-level behavior rather than page content, which is what makes them safe for screen reader users.
+
+Test this full stack against your own web applications using axe-core or pa11y before deploying to users who depend on assistive technologies.
 
 
 ## Frequently Asked Questions
