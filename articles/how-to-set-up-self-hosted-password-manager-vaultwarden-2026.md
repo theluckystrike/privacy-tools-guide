@@ -3,7 +3,7 @@ title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
 date: 2026-03-21
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
