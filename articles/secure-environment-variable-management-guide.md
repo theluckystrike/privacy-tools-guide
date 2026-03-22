@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure Environment Variable Management"
-description: "Stop leaking secrets in environment variables by using encrypted secret stores, runtime injection, and audit patterns for Docker, Kubernetes, and CI/CD pipelines"
+description: "Stop leaking secrets in environment variables by using encrypted secret stores, runtime injection, and audit patterns for Docker, Kubernetes, and CI/CD"
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-environment-variable-management-guide/
@@ -308,6 +308,8 @@ done
 - [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
 - [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
 - [Secure Database Connection Pooling Guide](/privacy-tools-guide/secure-database-connection-pooling-guide/)
+- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

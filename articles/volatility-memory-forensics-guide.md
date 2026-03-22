@@ -289,6 +289,8 @@ print("\n[+] Triage complete.")
 - [How to Use Cuckoo Sandbox for Malware Analysis](/privacy-tools-guide/cuckoo-sandbox-malware-analysis-guide/)
 - [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
 - [How to Use Zeek for Network Monitoring](/privacy-tools-guide/zeek-network-monitoring-guide/)
+- [1Password Families Plan Review 2026: Is It Worth It](/privacy-tools-guide/1password-families-plan-review-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

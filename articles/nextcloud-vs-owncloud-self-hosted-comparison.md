@@ -213,6 +213,217 @@ Choose **OwnCloud** if you:
 - Prefer simpler initial configuration
 - Are evaluating for organizational use with potential Enterprise migration
 
+## Advanced Storage Backend Configuration
+
+For deployments beyond basic local storage, both platforms support object storage backends that improve scalability significantly. This separation of storage from compute enables independent scaling:
+
+**Nextcloud with S3-Compatible Storage:**
+
+```yaml
+version: '3.8'
+services:
+  nextcloud:
+    image: nextcloud:latest
+    environment:
+      NEXTCLOUD_ADMIN_USER: admin
+      NEXTCLOUD_ADMIN_PASSWORD: secure_password
+      NEXTCLOUD_TRUSTED_DOMAINS: cloud.example.com
+      # S3 Configuration
+      OBJECTSTORE_S3_HOST: storage.googleapis.com
+      OBJECTSTORE_S3_BUCKET: my-nextcloud-bucket
+      OBJECTSTORE_S3_KEY: ${AWS_ACCESS_KEY}
+      OBJECTSTORE_S3_SECRET: ${AWS_SECRET_KEY}
+      OBJECTSTORE_S3_REGION: us-east-1
+      OBJECTSTORE_S3_SSL: "true"
+    volumes:
+      - nextcloud_config:/var/www/html/config
+      - nextcloud_cache:/var/www/html/data
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  nextcloud_config:
+  nextcloud_cache:
+  postgres_data:
+```
+
+Object storage removes the requirement for large local storage volumes while improving throughput for large file operations.
+
+**OwnCloud with MinIO:**
+
+```yaml
+services:
+  owncloud:
+    image: owncloud/server:latest
+    environment:
+      OWNCLOUD_OBJECTSTORE_CLASS: "\\OCP\\Files\\ObjectStore\\S3ObjectStore"
+      OWNCLOUD_OBJECTSTORE_S3_HOST: minio:9000
+      OWNCLOUD_OBJECTSTORE_S3_BUCKET: owncloud
+      OWNCLOUD_OBJECTSTORE_S3_USE_SSL: "false"
+      OWNCLOUD_OBJECTSTORE_S3_KEY: minioadmin
+      OWNCLOUD_OBJECTSTORE_S3_SECRET: minioadmin
+  minio:
+    image: minio/minio:latest
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - minio_data:/data
+volumes:
+  minio_data:
+```
+
+MinIO provides S3-compatible storage that can run on-premise, useful for teams requiring complete infrastructure control.
+
+## Scaling Beyond Single-Server Deployment
+
+Production deployments handling hundreds of users require load balancing and separate database servers:
+
+```yaml
+version: '3.8'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - nextcloud1
+      - nextcloud2
+
+  nextcloud1:
+    image: nextcloud:latest
+    environment:
+      POSTGRES_HOST: postgres
+      REDIS_HOST: redis
+    volumes:
+      - nextcloud_config:/var/www/html/config
+      - nextcloud_data:/var/www/html/data
+    depends_on:
+      - postgres
+      - redis
+
+  nextcloud2:
+    image: nextcloud:latest
+    environment:
+      POSTGRES_HOST: postgres
+      REDIS_HOST: redis
+    volumes:
+      - nextcloud_config:/var/www/html/config
+      - nextcloud_data:/var/www/html/data
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+
+volumes:
+  nextcloud_config:
+  nextcloud_data:
+  postgres_data:
+  redis_data:
+```
+
+This configuration distributes load across multiple Nextcloud instances with a centralized database and cache layer.
+
+## User and Permission Management at Scale
+
+Both platforms handle user management differently when dealing with large organizations:
+
+**Nextcloud LDAP Integration:**
+
+```bash
+# Enable LDAP app
+occ app:enable user_ldap
+
+# Configure LDAP connection
+occ ldap:create-empty-config
+occ ldap:set-config s01 ldapHost ldap.example.com
+occ ldap:set-config s01 ldapPort 389
+occ ldap:set-config s01 ldapAgentName "cn=admin,dc=example,dc=com"
+occ ldap:set-config s01 ldapAgentPassword "password"
+occ ldap:set-config s01 ldapBase "ou=users,dc=example,dc=com"
+occ ldap:set-config s01 ldapUserFilter "(&(uid=*)(objectClass=inetOrgPerson))"
+
+# Test connection
+occ ldap:test-config s01
+```
+
+Nextcloud can sync users from existing LDAP/Active Directory directories, eliminating duplicate user management.
+
+**OwnCloud LDAP Configuration:**
+
+OwnCloud supports LDAP similarly but with slightly different configuration paths. The administrative interface provides UI-driven configuration, though command-line options also exist.
+
+## Backup and Disaster Recovery Strategy
+
+Self-hosted solutions place backup responsibility on operators. Develop automated backup procedures:
+
+```bash
+#!/bin/bash
+# Daily backup script for Nextcloud
+
+BACKUP_DIR="/backups/nextcloud"
+DATE=$(date +%Y%m%d_%H%M%S)
+NEXTCLOUD_PATH="/var/www/nextcloud"
+
+# Create backup directory
+mkdir -p "${BACKUP_DIR}/${DATE}"
+
+# Put Nextcloud in maintenance mode
+docker exec nextcloud occ maintenance:mode --on
+
+# Backup database
+docker exec nextcloud-postgres pg_dump -U nextcloud nextcloud | \
+  gzip > "${BACKUP_DIR}/${DATE}/database.sql.gz"
+
+# Backup configuration
+tar czf "${BACKUP_DIR}/${DATE}/config.tar.gz" \
+  "${NEXTCLOUD_PATH}/config/"
+
+# Backup data (if not using S3)
+if [ "$USE_S3" != "true" ]; then
+  tar czf "${BACKUP_DIR}/${DATE}/data.tar.gz" \
+    "${NEXTCLOUD_PATH}/data/" \
+    --exclude="${NEXTCLOUD_PATH}/data/.ocdata"
+fi
+
+# Exit maintenance mode
+docker exec nextcloud occ maintenance:mode --off
+
+# Delete backups older than 30 days
+find "${BACKUP_DIR}" -type d -mtime +30 -exec rm -rf {} \;
+
+# Sync to remote backup location
+aws s3 sync "${BACKUP_DIR}/${DATE}" \
+  s3://backup-bucket/nextcloud/${DATE}/
+```
+
+Automate backups to execute daily with retention policies that balance storage costs against recovery needs.
+
 For most developers and self-hosting enthusiasts, Nextcloud's fully open model and larger community provide clearer advantages. The ability to inspect the entire stack, customize without restrictions, and use extensive documentation accelerates development workflows and troubleshooting.
 
 Test both platforms with your specific use case—file types, user count, and integration requirements—before committing. Containerized deployment makes this evaluation straightforward with minimal infrastructure investment.

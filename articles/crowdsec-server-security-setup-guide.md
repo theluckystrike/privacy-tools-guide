@@ -301,6 +301,7 @@ curl http://127.0.0.1:6060/metrics | grep crowdsec
 - [How to Set Up ModSecurity WAF with Nginx](/privacy-tools-guide/modsecurity-waf-nginx-setup-guide/)
 - [How to Set Up age Encryption for Teams](/privacy-tools-guide/age-encryption-team-setup-guide/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

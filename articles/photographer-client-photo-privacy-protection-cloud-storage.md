@@ -1,5 +1,7 @@
 ---
 
+<<<<<<< HEAD
+
 
 
 
@@ -571,6 +573,8 @@
 
 
 
+=======
+>>>>>>> a3ac0d8ac55f191f5e46887ee954ff07553ece65
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "Protect client photographs with encrypted cloud storage. Veracrypt containers, Cryptomator vaults, and access-controlled delivery workflows."
@@ -607,6 +611,8 @@ author: "Privacy Tools Guide"
 
 
 
+<<<<<<< HEAD
+
 
 
 
@@ -701,6 +707,8 @@ author: "Privacy Tools Guide"
 
 
 
+=======
+>>>>>>> a3ac0d8ac55f191f5e46887ee954ff07553ece65
 layout: default
 title: "Protect Client Photos: Privacy Best Practices"
 description: "A guide to securing client photographs using encrypted cloud storage. Learn about privacy risks, encryption methods, and best practices"
@@ -931,3 +939,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Privacy Setup For Financial Advisor Client Portfolio Data](/privacy-tools-guide/privacy-setup-for-financial-advisor-client-portfolio-data-pr/)
 - [AI-Powered Cloud Cost Analyzer Tools Compared](https://theluckystrike.github.io/ai-tools-compared/ai-cloud-cost-analyzer-tools-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+

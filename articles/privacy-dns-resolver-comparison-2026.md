@@ -239,6 +239,87 @@ for resolver_entry in "${RESOLVERS[@]}"; do
 done
 ```
 
+## Implementing Resolver Rotation for Redundancy
+
+Power users can implement client-side resolver rotation to combine the benefits of multiple resolvers:
+
+```bash
+#!/bin/bash
+# rotate-dns.sh — rotate between multiple resolvers for redundancy
+
+RESOLVERS=(
+  "194.242.2.2"     # Mullvad
+  "9.9.9.9"         # Quad9
+  "1.1.1.1"         # Cloudflare
+)
+
+CURRENT_INDEX=0
+
+# Update DNS resolver every 24 hours
+while true; do
+  resolver=${RESOLVERS[$CURRENT_INDEX]}
+
+  # Update systemd-resolved
+  echo "[Resolve]" | sudo tee /etc/systemd/resolved.conf > /dev/null
+  echo "DNS=$resolver" | sudo tee -a /etc/systemd/resolved.conf > /dev/null
+  echo "FallbackDNS=1.1.1.1 9.9.9.9" | sudo tee -a /etc/systemd/resolved.conf > /dev/null
+
+  sudo systemctl restart systemd-resolved
+
+  # Log the change
+  echo "$(date): Switched to resolver $resolver"
+
+  # Wait 24 hours before rotating
+  sleep 86400
+
+  # Advance to next resolver
+  CURRENT_INDEX=$(( (CURRENT_INDEX + 1) % ${#RESOLVERS[@]} ))
+done
+```
+
+This approach prevents any single resolver operator from building a complete picture of your browsing habits. Even if a resolver is compromised or forced to log data, the logs are fragmented across multiple operators.
+
+## Validating Your DNS Configuration
+
+After switching resolvers, verify that your configuration is actually working:
+
+```bash
+# Test that you're using the correct resolver
+nslookup example.com
+
+# Check resolver via TXT record
+dig +short TXT whoami.ds.akahelp.net
+
+# Verify encrypted DNS is in use
+curl -v https://dns.mullvad.net/dns-query
+
+# Test DNSSEC validation
+dig +dnssec google.com | grep -i "ad"
+```
+
+All of these should show your chosen resolver's IP (or the encrypted DNS endpoint working correctly), not your ISP's resolver.
+
+## Corporate and ISP Considerations
+
+If you're behind a corporate network or ISP that requires specific DNS settings, you may encounter constraints when switching resolvers:
+
+- **Corporate proxies** often intercept DNS queries and redirect them to corporate servers
+- **ISP-level blocking** may prevent connecting to external resolvers
+- **Captive portals** sometimes require specific DNS configurations to function
+
+For these scenarios:
+
+```bash
+# Use DNS over HTTPS with cURL to bypass ISP blocking
+curl --doh-url https://dns.quad9.net/dns-query https://example.com
+
+# Or use a VPN to tunnel DNS alongside all other traffic
+# The VPN encrypts DNS before it reaches the ISP
+
+# For corporate networks, check if your IT allows exceptions
+# Some enterprises whitelist privacy-respecting DNS for compliance
+```
+
 ## Related Reading
 
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)

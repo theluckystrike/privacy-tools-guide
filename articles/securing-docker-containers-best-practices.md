@@ -241,6 +241,173 @@ docker pull myimage:latest
 ```
 
 ## Related Articles
+## Image Signing and Provenance
+
+For production systems, implement content-based security:
+
+```bash
+# Sign images with Notary
+docker trust signer add --key notary-keys/root_keys/root_key.key \
+  mycompany-signer myregistry/myimage:latest
+
+# Verify signature before pulling
+docker pull myregistry/myimage:latest
+# Docker verifies Notary signatures automatically with DOCKER_CONTENT_TRUST=1
+
+# For CI/CD, automatically sign images during build
+docker build -t myregistry/myimage:latest .
+docker trust sign myregistry/myimage:latest
+docker push myregistry/myimage:latest
+```
+
+## Runtime Security Monitoring
+
+Implement continuous runtime monitoring to detect anomalies:
+
+```bash
+# Use tools like Falco for runtime threat detection
+sudo falco -c /etc/falco/falco.yaml
+
+# Example Falco rules for Docker containers
+- rule: Suspicious Container Activity
+  desc: Detect unusual syscalls
+  condition: spawned_process and (
+    container and (
+      proc.name in (curl, wget, nc) or
+      proc.args contains "/dev/shm"
+    )
+  )
+  output: "Suspicious process in container (user=%user.name proc=%proc.name)"
+
+# Monitor for:
+# - Process execution from unexpected parents
+# - Network connections to unusual destinations
+# - File modifications in unexpected directories
+# - Privilege escalation attempts
+```
+
+## Container Vulnerability Scanning in CI/CD
+
+Integrate security scanning into your build pipeline:
+
+```bash
+#!/bin/bash
+# ci-pipeline-security.sh
+
+IMAGE="myregistry/myapp:${CI_COMMIT_SHA}"
+
+# Build image
+docker build -t $IMAGE .
+
+# Scan with multiple tools
+echo "Running Trivy scan..."
+trivy image --exit-code 1 --severity HIGH,CRITICAL $IMAGE
+
+echo "Running Grype scan..."
+grype $IMAGE -f json > grype-report.json
+
+echo "Running Snyk scan..."
+snyk container test $IMAGE --exit-code=1
+
+# Only push if all scans pass
+if [ $? -eq 0 ]; then
+  docker push $IMAGE
+  echo "Image $IMAGE passed all security scans and pushed to registry"
+else
+  echo "Security scans failed, image not pushed"
+  exit 1
+fi
+```
+
+## Network Policies and Microsegmentation
+
+For Kubernetes deployments, implement strict network policies:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: app-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: myapp
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          role: frontend
+    ports:
+    - protocol: TCP
+      port: 8080
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          role: database
+    ports:
+    - protocol: TCP
+      port: 5432
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: kube-system
+    ports:
+    - protocol: UDP
+      port: 53  # DNS only
+```
+
+This policy ensures the container can only receive traffic from frontend pods and only send traffic to database pods plus DNS for domain resolution.
+
+## Secrets Management Best Practices
+
+Never embed secrets in container images:
+
+```bash
+# Bad approach: secrets in Dockerfile
+# ENV DATABASE_PASSWORD=secret123
+
+# Good approach: use Docker secrets
+echo "dbpassword" | docker secret create db_password -
+
+docker run --secret db_password \
+  --env DATABASE_PASSWORD_FILE=/run/secrets/db_password \
+  myimage:latest
+
+# Inside container:
+cat /run/secrets/db_password
+
+# Or with Kubernetes:
+kubectl create secret generic db-credentials \
+  --from-literal=password=dbpassword
+
+# Mount as volume:
+# volumeMounts:
+# - name: db-credentials
+#   mountPath: /etc/secrets
+#   readOnly: true
+```
+
+## Performance vs Security Trade-offs
+
+Security hardening adds overhead. Profile your applications:
+
+```bash
+# Benchmark read-only filesystem impact
+time docker run --read-only myapp:test /bin/sh -c "heavy_workload"
+time docker run myapp:test /bin/sh -c "heavy_workload"
+
+# Seccomp profile impact
+time docker run --security-opt seccomp=default myapp:test workload
+time docker run --security-opt seccomp=unconfined myapp:test workload
+
+# Expected overhead: 2-5% performance decrease for significant security gain
+```
+
+## Related Reading
 
 - [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)

@@ -270,6 +270,7 @@ Run both. They use different detection methods and catch different things.
 - [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
 - [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best AI Tools for Automated API Rate Limiting and Abuse](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
 
 ---
 

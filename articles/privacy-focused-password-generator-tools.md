@@ -169,6 +169,7 @@ chmod +x passgen.sh
 - [Privacy-Focused Cloud Email Providers Compared](/privacy-tools-guide/privacy-focused-cloud-email-providers-compared/)
 - [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 ---
 
