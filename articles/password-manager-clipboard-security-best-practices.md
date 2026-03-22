@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /password-manager-clipboard-security-best-practices/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, security]---

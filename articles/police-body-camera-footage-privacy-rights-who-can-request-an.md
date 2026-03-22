@@ -9,7 +9,7 @@ permalink: /police-body-camera-footage-privacy-rights-who-can-request-an/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true---
 ---
