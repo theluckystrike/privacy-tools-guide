@@ -223,18 +223,82 @@ adb shell am start -n com.google.android.gms/.auth.accounts.safetynet.SafetyNetF
 # microG provides SafetyNet-compatible implementations
 ```
 
+## microG: A Drop-In Replacement for Google Play Services
+
+For users who need some Google-dependent apps to function but still want to avoid proprietary Google components, microG provides a free-software reimplementation of Google Play Services. It implements the key APIs that apps call at runtime, including device attestation stubs, push messaging, and location services, without reporting back to Google.
+
+### Installing microG
+
+microG requires a custom ROM that supports signature spoofing — a low-level Android permission that allows microG to impersonate Google's package signatures. GrapheneOS implements a sandboxed version of microG that does not require signature spoofing, making it the safest option.
+
+On CalyxOS, microG comes pre-installed. On LineageOS for microG builds, install from the dedicated repository:
+
+```bash
+# Add microG repository to F-Droid
+# Repository URL: https://microg.org/fdroid/repo
+
+# Required microG packages (install in order):
+# 1. GmsCore (com.google.android.gms)
+# 2. GsfProxy (com.google.android.gsf)
+# 3. FakeStore (com.android.vending) — optional Play Store stub
+```
+
+### Configuring microG After Installation
+
+After installation, open the microG Settings app and configure each module:
+
+1. **Google device registration**: Enable to allow apps to register for cloud messaging
+2. **Cloud Messaging**: Enable if you need push notifications for apps using FCM
+3. **Google SafetyNet**: Enable the compatibility shim if banking apps require attestation
+4. **Exposure Notifications**: Disable unless you need COVID-19 contact tracing APIs
+
+Test by launching an app that previously required Google Play Services. If it loads and receives notifications, microG is working.
+
+## Managing Background Data Without Google
+
+One underappreciated benefit of removing Google Play Services is the elimination of Google's background data collection. However, you must configure remaining services to avoid creating new data collection points.
+
+### Replacing Google DNS
+
+Most stock Android firmware uses Google's DNS by default. After degoogling, explicitly set your DNS provider:
+
+- **Settings → Network & Internet → Private DNS**
+- Enter `dns.quad9.net` for Quad9 (privacy-focused, blocks malware domains)
+- Or use `base.dns.mullvad.net` for Mullvad's ad-blocking resolver
+
+For apps that bypass system DNS, install RethinkDNS from F-Droid. It runs as a local VPN, intercepting all DNS traffic and routing it through your chosen resolver so no app can circumvent system-level DNS.
+
+## Custom ROM Selection Guide
+
+Choosing the right custom ROM depends on your threat model and how much convenience you are willing to trade.
+
+| ROM | Google Services | Target User | SafetyNet |
+|-----|----------------|-------------|-----------|
+| GrapheneOS | Sandboxed (optional) | High-risk journalists, activists | Passes via Auditor |
+| CalyxOS | microG pre-installed | Privacy-conscious general users | Partial via microG |
+| DivestOS | None by default | Privacy maximalists | Fails |
+| LineageOS | None by default | Developers, tinkerers | Fails |
+
+**GrapheneOS** supports hardware attestation via its Auditor app, which verifies the integrity of the OS and bootloader at the hardware level. This is the only degoogled ROM that can pass attestation for demanding apps like some banking applications.
+
+**CalyxOS** includes the Mozilla Location Service as a Google Location alternative and ships with F-Droid and Aurora Store out of the box, making the initial setup much smoother for new users.
+
+Always verify a custom ROM image before flashing by checking the SHA-256 checksum against the official release page — a tampered image can silently install spyware with root-level access.
+
 ## Recommended App Stack for De-Googled Android
 
 Build a privacy-respecting app ecosystem:
 
-- **Browser**: Firefox, Brave, or Mullvad Browser
+- **Browser**: Firefox (with uBlock Origin), Brave, or Mullvad Browser
 - **Keyboard**: AnySoftKeyboard or FlorisBoard
-- **Maps**: OsmAnd+ or MapComplete
-- **Email**: K-9 Mail or Thunderbird
+- **Maps**: OsmAnd+ or Organic Maps (offline-first, no account required)
+- **Email**: K-9 Mail or Thunderbird for Android
 - **Calendar**: Etar or DAVx⁵ with self-hosted CalDAV
-- **Contacts**: Simple Contacts or Pure Contact
-- **Files**: Solid Explorer or Files by Google (open source)
-- **VPN**: WireGuard (built into GrapheneOS) or OpenVPN
+- **Contacts**: Simple Contacts Pro (F-Droid) or GNOME Contacts with CardDAV sync
+- **2FA Authenticator**: Aegis Authenticator (encrypted local backup support)
+- **Password Manager**: KeePassDX (local) or Bitwarden (self-hostable)
+- **VPN**: WireGuard (built into GrapheneOS) or OpenVPN for Android
+- **File Manager**: Material Files or Amaze (both on F-Droid, no tracking)
 
 
 
