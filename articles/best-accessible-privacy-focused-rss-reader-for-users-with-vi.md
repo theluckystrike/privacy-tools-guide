@@ -6,7 +6,7 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /best-accessible-privacy-focused-rss-reader-for-users-with-visual-impairments/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, best-of, privacy, accessibility, rss]
