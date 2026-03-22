@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-encrypted-communication-for-activists/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true

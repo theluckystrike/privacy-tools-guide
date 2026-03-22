@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /best-accessible-encrypted-file-sharing-tool-for-users-with-c/
 categories: [guides, accessibility]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing]
+tags: [privacy-tools-guide, accessibility, cognitive-impairments, encrypted-file-sharing, best-of]
 ---
 
 {% raw %}
