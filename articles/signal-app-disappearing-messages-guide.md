@@ -1,5 +1,7 @@
 ---
 permalink: /signal-app-disappearing-messages-guide/
+description: "Follow this guide to signal app disappearing messages guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Signal App Disappearing Messages Guide"

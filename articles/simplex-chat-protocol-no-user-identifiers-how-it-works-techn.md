@@ -1,5 +1,7 @@
 ---
 permalink: /simplex-chat-protocol-no-user-identifiers-how-it-works-techn/
+description: "Learn simplex chat protocol no user identifiers how it works techn with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Simplex Chat Protocol No User Identifiers How It Works"

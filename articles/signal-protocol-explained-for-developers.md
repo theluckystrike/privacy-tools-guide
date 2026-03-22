@@ -1,5 +1,7 @@
 ---
 permalink: /signal-protocol-explained-for-developers/
+description: "Learn signal protocol explained for developers with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Signal Protocol Explained for Developers"

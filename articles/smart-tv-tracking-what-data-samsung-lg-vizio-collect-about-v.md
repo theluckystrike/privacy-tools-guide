@@ -1,5 +1,7 @@
 ---
 permalink: /smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/
+description: "Learn smart tv tracking what data samsung lg vizio collect about v with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Smart Tv Tracking What Data Samsung Lg Vizio Collect About"

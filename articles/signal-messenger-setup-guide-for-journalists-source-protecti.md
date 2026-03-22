@@ -1,5 +1,7 @@
 ---
 permalink: /signal-messenger-setup-guide-for-journalists-source-protecti/
+description: "Follow this guide to signal messenger setup guide for journalists source protecti with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Signal Messenger Setup Guide for Journalists: Source"

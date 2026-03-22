@@ -1,5 +1,7 @@
 ---
 permalink: /social-media-data-request-download-guide-2026/
+description: "Follow this guide to social media data request download guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Using curl for LinkedIn API"

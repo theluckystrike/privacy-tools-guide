@@ -1,5 +1,7 @@
 ---
 permalink: /smart-city-surveillance-privacy-rights-what-data-municipal-c/
+description: "Learn smart city surveillance privacy rights what data municipal c with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Smart City Surveillance: What Data Municipal Cameras"

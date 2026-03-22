@@ -1,5 +1,7 @@
 ---
 permalink: /signal-desktop-security-best-practices/
+description: "Discover the best signal desktop security best practices with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, best-of, security]
 ---
 layout: default
 title: "Signal Desktop Security Best Practices"
