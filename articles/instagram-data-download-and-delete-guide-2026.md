@@ -49,7 +49,17 @@ Instagram collects the content you create (photos, videos, stories, reels, and c
 - **Block Meta Pixel**: Use browser extensions to block Meta tracking across websites
 8.
 
-## Downloading Your Instagram Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Downloading Your Instagram Data
 
 Instagram provides a built-in tool to download all your data. Here's how to use it:
 
@@ -105,7 +115,7 @@ def download_instagram_data(access_token, user_id):
 # Note: Requires Instagram Basic Display permission
 ```
 
-## Deleting Your Instagram Account
+### Step 2: Delete Your Instagram Account
 
 If you've decided to leave Instagram, you have two options:
 
@@ -150,7 +160,7 @@ After clicking delete, your account enters a **30-day grace period**. During thi
 
 Even after permanent deletion, some residual data may remain in Meta's backup systems for "legal reasons, security, and system integrity purposes." This is standard practice among tech companies and is disclosed in Meta's privacy policy.
 
-## Alternatives to Full Deletion
+### Step 3: Alternatives to Full Deletion
 
 If you're concerned about privacy but aren't ready to leave entirely:
 
@@ -169,7 +179,7 @@ Consider moving to privacy-focused alternatives:
 - **Mastodon with Fediverse**: Decentralized social network
 - **Own your data**: Use self-hosted solutions like PhotoPrism for personal archives
 
-## Analyzing Your Instagram Data Download
+### Step 4: Analyzing Your Instagram Data Download
 
 Once you receive your data download, analyzing it reveals what Meta collects:
 
@@ -283,7 +293,7 @@ find ~/instagram-archive -type f | wc -l
 du -sh ~/instagram-archive
 ```
 
-## Decentralized Instagram Alternatives
+### Step 5: Decentralized Instagram Alternatives
 
 After deleting Instagram, these platforms offer similar functionality with better privacy:
 
@@ -330,7 +340,7 @@ docker run -d \
     photoprism/photoprism:latest
 ```
 
-## Understanding Instagram's Legal Basis for Retention
+### Step 6: Understand Instagram's Legal Basis for Retention
 
 Meta claims legal basis for retaining data after deletion:
 
@@ -395,6 +405,21 @@ The improvement is significant: stopping active data collection is the primary b
 6. **Monitor other Meta properties**: Facebook, WhatsApp continue collecting data
 7. **Block Meta Pixel**: Use browser extensions to block Meta tracking across websites
 8. **Consider complete Meta exit**: Delete all Meta accounts (Instagram, Facebook, WhatsApp) simultaneously if privacy is your goal
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

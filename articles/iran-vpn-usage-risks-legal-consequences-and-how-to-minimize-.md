@@ -40,7 +40,17 @@ VPN usage in Iran carries legal penalties ranging from fines to imprisonment und
 - **This technique uses the**: trusted status of major cloud providers.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Legal Framework and Risks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Legal Framework and Risks
 
 Iran's cybersecurity laws have evolved significantly, with the Countering Cybercrimes Act and subsequent amendments establishing strict controls on circumvention tools. Using or distributing VPN services without government approval can result in penalties ranging from fines to imprisonment. The regulatory environment continues to tighten, with the Communications Regulatory Authority (CRA) actively blocking known VPN protocols and servers.
 
@@ -52,7 +62,7 @@ The primary risks include:
 
 Power users must weigh these risks against their operational needs. For many developers, the question is not whether to use privacy tools, but how to minimize detection exposure while understanding the technical and legal implications.
 
-## Network-Level Detection Methods
+### Step 2: Network-Level Detection Methods
 
 Understanding how detection works helps in developing effective countermeasures. Iranian internet infrastructure uses multiple detection methods:
 
@@ -68,7 +78,7 @@ Each VPN protocol has distinct fingerprints. WireGuard, while newer, generates r
 
 The CRA maintains blocklists of known VPN server IP addresses. This list is continuously updated based on traffic analysis and international cooperation with other jurisdictions.
 
-## Technical Countermeasures
+### Step 3: Technical Countermeasures
 
 ### Obfuscated VPN Configurations
 
@@ -187,7 +197,7 @@ dig +short myip.opendns.com @resolver1.opendns.com
 # Compare with and without VPN active
 ```
 
-## Real-World VPN Pricing and Tools (2026)
+### Step 4: Real-World VPN Pricing and Tools (2026)
 
 Understanding your options helps make informed choices:
 
@@ -207,7 +217,7 @@ Cost-benefit note: In Iran, using commercial VPN services may actually increase 
 
 For Iran specifically, V2Ray has better reputation for evading DPI than standard VPN protocols.
 
-## Legal World Evolution
+### Step 5: Legal World Evolution
 
 Iran's approach to VPN enforcement has evolved:
 
@@ -292,7 +302,7 @@ Understanding your actual threat level helps determine appropriate tools:
 
 For high-risk scenarios, consult with organizations like Committee to Protect Journalists or Access Now who provide regional guidance. Consumer VPN services alone are insufficient for individuals facing serious state opposition.
 
-## Operational Security Beyond VPN
+### Step 6: Operational Security Beyond VPN
 
 Technical tools are only part of OpSec:
 
@@ -304,6 +314,21 @@ Technical tools are only part of OpSec:
 - **Contact discipline**: Limit who has your contact information
 
 VPN provides transport security. OpSec provides the broader protection against surveillance and forensic analysis.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -47,7 +47,17 @@ This shows all metadata including previously unknown tags, confirming removal.
 5.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding iPhone Photo Metadata
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand iPhone Photo Metadata
 
 When you capture a photo on an iPhone, iOS embeds extensive EXIF data within each image file. The most privacy-sensitive fields include:
 
@@ -59,7 +69,7 @@ When you capture a photo on an iPhone, iOS embeds extensive EXIF data within eac
 
 This data persists even when you share photos through messaging apps or upload to cloud services. Removing metadata before sharing prevents unintended location exposure.
 
-## Method 1: Using exiftool (Command Line)
+### Step 2: Method 1: Using exiftool (Command Line)
 
 The industry-standard tool for metadata manipulation is Phil Harvey's exiftool. Install it via Homebrew:
 
@@ -87,7 +97,7 @@ exiftool -all= -overwrite_original *.jpg
 
 The `-overwrite_original` flag modifies files in place without creating backup copies. Remove this flag if you need backup versions.
 
-## Method 2: Python Script with Pillow
+### Step 3: Method 2: Python Script with Pillow
 
 For developers building automated workflows, Python provides programmatic metadata removal. Install the required libraries:
 
@@ -144,7 +154,7 @@ Run the script on a directory of photos:
 python strip_gps.py /path/to/photos
 ```
 
-## Method 3: Using ImageMagick
+### Step 4: Method 3: Using ImageMagick
 
 ImageMagick offers another command-line approach for batch processing:
 
@@ -163,7 +173,7 @@ mogrify -sampling-factor 4:2:0 -strip -auto-orient \
 
 The `-define jpeg:remove-gps=true` flag specifically targets GPS data while preserving color profiles and orientation.
 
-## Method 4: Shortcuts App (No-Code Solution)
+### Step 5: Method 4: Shortcuts App (No-Code Solution)
 
 For users preferring a native iOS solution, the Shortcuts app provides automation without scripting:
 
@@ -175,7 +185,7 @@ For users preferring a native iOS solution, the Shortcuts app provides automatio
 
 This shortcut can be run manually or scheduled via automation.
 
-## Method 5: macOS Automator Workflow
+### Step 6: Method 5: macOS Automator Workflow
 
 Build a drag-and-drop solution using Automator:
 
@@ -185,7 +195,7 @@ Build a drag-and-drop solution using Automator:
 4. Save as an app
 5. Drag photos onto the app icon to process them
 
-## Verification: Checking Removed Metadata
+### Step 7: Verification: Checking Removed Metadata
 
 After processing, verify that GPS data is gone:
 
@@ -201,7 +211,7 @@ exiftool -a -u photo.jpg | head -50
 
 This shows all metadata including previously unknown tags, confirming removal.
 
-## Integration Examples
+### Step 8: Integration Examples
 
 ### GitHub Actions Pipeline
 
@@ -250,6 +260,21 @@ for file in *.jpg *.jpeg; do
 done
 ```
 
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
+
 ## Frequently Asked Questions
 
 **How long does it take to developers?**
@@ -280,7 +305,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
 - [How To Use Bitcoin Atm Anonymously Without Providing Photo I](/privacy-tools-guide/how-to-use-bitcoin-atm-anonymously-without-providing-photo-i/)
 
-## Preventing Metadata at Capture Time
+### Step 9: Preventing Metadata at Capture Time
 
 Stripping metadata after the fact works, but preventing collection at capture time is cleaner. On iOS, disable location access for the Camera app: **Settings** > **Privacy and Security** > **Location Services** > **Camera** > **Never**.
 
@@ -332,7 +357,7 @@ exiftool -gps:all= -overwrite_original *.heic
 exiftool -o output_dir/ -all= -ext heic .
 ```
 
-## Integrating Metadata Stripping into Upload Pipelines
+### Step 10: Integrate Metadata Stripping into Upload Pipelines
 
 If you build applications that accept user photo uploads, enforce metadata stripping server-side as defense in depth. Users may upload photos from older apps or devices that ignore client-side stripping:
 

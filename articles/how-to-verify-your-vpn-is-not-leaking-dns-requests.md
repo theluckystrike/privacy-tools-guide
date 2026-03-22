@@ -41,7 +41,17 @@ Verify your VPN isn't leaking DNS requests using online test tools like dnsleakt
 4.
 - **Enable DNS Leak Protection**: in Your VPN Most reputable VPN apps have built-in DNS leak protection.
 
-## What Exactly is a DNS Leak?
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Exactly is a DNS Leak?
 
 Every time you visit a website, your computer needs to translate a human-readable domain name (like example.com) into an IP address. This translation happens through DNS (Domain Name System) servers. Normally, when you're not using a VPN, your device sends DNS queries to your ISP's DNS servers, giving them a complete log of every website you visit.
 
@@ -61,7 +71,7 @@ Several factors can cause DNS leaks:
 
 **VPN Protocol Weaknesses**: Some VPN protocols have known issues that can cause leaks under certain network conditions.
 
-## How to Test for DNS Leaks
+### Step 2: How to Test for DNS Leaks
 
 Testing for DNS leaks is straightforward. Here's how to do it:
 
@@ -116,7 +126,7 @@ dig @dns-server-ip example.com
 cat /etc/resolv.conf
 ```
 
-## Fixing DNS Leaks
+### Step 3: Fixing DNS Leaks
 
 If you've detected a DNS leak, here's how to fix it:
 
@@ -197,7 +207,7 @@ Some protocols are more prone to leaks than others. Try switching:
 
 Avoid PPTP or older protocols that have known security issues.
 
-## Testing After Fixes
+### Step 4: Test After Fixes
 
 After implementing fixes, verify your VPN is no longer leaking:
 
@@ -208,7 +218,7 @@ After implementing fixes, verify your VPN is no longer leaking:
 
 Repeat tests at different times of day and on different networks to ensure the fix is consistent.
 
-## What to Do If Your VPN Still Leaks
+### Step 5: What to Do If Your VPN Still Leaks
 
 If you've tried everything and your VPN still leaks:
 
@@ -225,6 +235,21 @@ Beyond fixing leaks, consider these additional measures:
 - **Use a privacy-respecting DNS provider**: Services like Cloudflare (1.1.1.1), Quad9, or NextDNS don't log your queries
 - **Regularly test your VPN**: Network changes, app updates, or OS updates can introduce new leak vectors
 - **Keep your VPN app updated**: Providers frequently release patches for security issues
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

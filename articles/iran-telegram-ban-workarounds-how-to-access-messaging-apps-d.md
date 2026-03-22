@@ -41,13 +41,23 @@ Access Telegram in Iran using Tor Browser (circumvents DNS blocks), WireGuard wi
 - **Use MTProxy with obfuscated**: configuration to disguise traffic as regular HTTPS, or deploy Shadowsocks with custom plugins.
 - **Avoid centralized VPN apps**: that Iran's DPI systems target; Briar Messenger offers better resilience when internet becomes completely unavailable.
 
-## Understanding the Blocking Mechanism
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Blocking Mechanism
 
 Iran's internet filtering operates at multiple levels. The Telecommunications Infrastructure Company (TIC) blocks access to Telegram's IP addresses and domain names through DNS manipulation and deep packet inspection. The filtering system uses a combination of IP range blocking, SNI inspection, and keyword-based traffic analysis to identify and block encrypted messaging traffic.
 
 For developers building applications that need to function in Iran, understanding these mechanisms is essential. The blocking is not monolithic—it varies by region, internet service provider, and time of day. This variability means that solutions must be adaptable and resilient.
 
-## VPN Solutions for Developers
+### Step 2: VPN Solutions for Developers
 
 A properly configured VPN remains the most reliable method for accessing blocked services. For developers, the choice of VPN protocol matters significantly.
 
@@ -88,7 +98,7 @@ socks-proxy-retry
 
 This configuration runs OpenVPN through a SOCKS proxy that obfsproxy manages, making traffic appear as random obfuscated data rather than VPN traffic.
 
-## Protocol-Specific Workarounds
+### Step 3: Protocol-Specific Workarounds
 
 ### MTProxy for Telegram
 
@@ -140,7 +150,7 @@ server {
 
 This technique makes traffic appear to be legitimate HTTPS requests to Cloudflare-protected domains, bypassing SNI-based filtering.
 
-## Building Custom Relay Infrastructure
+### Step 4: Build Custom Relay Infrastructure
 
 For organizations requiring reliable access, self-hosted relay solutions provide the most control.
 
@@ -207,7 +217,7 @@ docker run -d \
 
 Users inside Iran can then connect to Signal through `https://your-proxy-server:8080`.
 
-## Network-Level Implementation
+### Step 5: Network-Level Implementation
 
 For developers managing multiple users or devices, network-level solutions provide centralized control.
 
@@ -230,7 +240,7 @@ PreUp = "iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACC
 
 Setting MTU to 1280 ensures packets work with fragmented connections commonly seen on Iranian infrastructure.
 
-## Emergency Communication Plans
+### Step 6: Emergency Communication Plans
 
 Developers should implement offline fallback systems:
 
@@ -256,6 +266,21 @@ All bypass methods carry risks. Users in Iran face potential legal consequences 
 - Avoid storing identifying information on devices
 
 For developers building tools for Iranian users, prioritize security and anonymity. The most effective approaches combine multiple techniques and remain flexible as filtering methods evolve.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

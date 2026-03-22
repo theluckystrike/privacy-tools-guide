@@ -50,7 +50,17 @@ In practice, many VPNs leak your real IP address through other protocols (DNS, W
 
 You cannot verify the inner workings of a commercial VPN. You can only verify observable behavior. These tests show you whether your VPN is actually doing what it claims.
 
-## What Encryption Looks Like: Baseline Testing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Encryption Looks Like: Baseline Testing
 
 Before testing your VPN, establish what encrypted and unencrypted traffic looks like.
 
@@ -108,7 +118,7 @@ Result: Cannot see destination, content, or what you're doing
 
 The key observation: your real IP is gone, replaced by VPN server IP. The destination website is unknown. The payload is gibberish.
 
-## Test 1: DNS Leak Detection (Most Common Failure)
+### Step 2: Test 1: DNS Leak Detection (Most Common Failure)
 
 DNS is the protocol that translates domain names into IP addresses. Many VPNs encrypt your traffic but leak DNS requests—your ISP can see what websites you visit by watching DNS lookups, even though they cannot see the content.
 
@@ -198,7 +208,7 @@ Frame X: Your IP → VPN Server IP (OpenVPN port 443)
 | DNS fallback | Falls back to system DNS | App queries system DNS after VPN one fails | Configure VPN with multiple DNS servers |
 | Split tunnel mode | DNS not encrypted | VPN client doesn't encrypt certain traffic | Disable split tunneling |
 
-## Test 2: WebRTC Leak Detection (Sneaky but Preventable)
+### Step 3: Test 2: WebRTC Leak Detection (Sneaky but Preventable)
 
 WebRTC is a protocol for real-time communication (video calls, screen sharing). When WebRTC connects, it leaks your real IP address even when a VPN is active. This is a known vulnerability, not a misconfiguration.
 
@@ -301,7 +311,7 @@ Chrome:
 
 Most modern VPNs now prevent WebRTC leaks if configured correctly.
 
-## Test 3: Kill Switch Verification (Critical for Security)
+### Step 4: Test 3: Kill Switch Verification (Critical for Security)
 
 A kill switch is a VPN feature that blocks all internet traffic if the VPN connection drops. Without a kill switch, traffic reverts to your real IP unencrypted.
 
@@ -401,7 +411,7 @@ Expected without kill switch:
 - Device B sees unencrypted DNS queries or HTTP requests
 ```
 
-## Test 4: IPv6 Leak Detection
+### Step 5: Test 4: IPv6 Leak Detection
 
 IPv6 is the new internet protocol. Many VPNs only encrypt IPv4 traffic, leaving IPv6 traffic unencrypted. A website using IPv6 can see your real IPv6 address even when you think the VPN is protecting you.
 
@@ -474,7 +484,7 @@ networksetup -setv6automatic Wi-Fi  # macOS
 echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6  # Linux
 ```
 
-## Test 5: Packet Inspection with Wireshark (Complete Verification)
+### Step 6: Test 5: Packet Inspection with Wireshark (Complete Verification)
 
 For complete verification, inspect the actual packets your VPN sends:
 
@@ -534,7 +544,7 @@ Frame 3: Client IP:random_port → example.com:443 [TLS encrypted]
          (Bad - leaking real IP as source)
 ```
 
-## VPN Verification Checklist
+### Step 7: VPN Verification Checklist
 
 Run these tests to completely verify your VPN:
 
@@ -579,7 +589,7 @@ If all tests pass: VPN is properly encrypting your traffic
 If any tests fail: VPN has a leak, contact support or switch providers
 ```
 
-## Common VPN Failures and What They Indicate
+### Step 8: Common VPN Failures and What They Indicate
 
 | Test That Fails | What It Means | Severity |
 |-----------------|----------|----------|
@@ -589,6 +599,21 @@ If any tests fail: VPN has a leak, contact support or switch providers
 | IPv6 leak | VPN only handles IPv4 | High |
 | Kill switch fails | Vulnerable if VPN drops | High |
 | Traffic not encrypted (Wireshark) | No actual encryption | Critical |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

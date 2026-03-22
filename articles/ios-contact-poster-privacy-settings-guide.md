@@ -46,7 +46,17 @@ Introduced in iOS 16, Contact Posters function as personalized identity cards th
 
 The system maintains separate poster configurations for different contexts. You can customize how your name and photo appear to different contacts, though the default poster serves as your universal identity across most communication scenarios.
 
-## Accessing Contact Poster Settings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Access Contact Poster Settings
 
 Navigate to **Settings → Contacts → Contact Poster** to access the primary configuration interface. Alternatively, open the Phone app, select your own contact card, and tap "Edit" to reveal poster customization options.
 
@@ -68,7 +78,7 @@ The contacts-only option provides a reasonable privacy baseline. When enabled, u
 
 A separate toggle controls whether your contact information shares during active calls. This setting affects both cellular and FaceTime calls. When disabled, your caller receives your phone number or email without associated name or photo data, even if they have your contact card saved.
 
-## Technical Implementation Details
+### Step 2: Technical Implementation Details
 
 For developers working with iOS contact integration, understanding how Contact Poster data flows through the system matters for building privacy-respecting applications.
 
@@ -97,13 +107,13 @@ func fetchContactPoster(for identifier: String) -> (name: String, hasPoster: Boo
 
 The example above demonstrates checking poster availability without accessing the actual image data, which requires requesting the more sensitive `CNContactImageDataKey` descriptor.
 
-## Third-Party App Considerations
+### Step 3: Third-Party App Considerations
 
 Several categories of iOS applications interact with Contact Poster data beyond the native Phone and FaceTime apps. Messaging applications like WhatsApp and Telegram may display your poster when initiating calls. VoIP applications using CallKit integrate with the same poster system. Business communication platforms often expose poster information within their contact directories.
 
 Before granting any third-party app Contacts access, evaluate whether the application's functionality genuinely requires this permission. Some apps request full contact access when they only need limited poster display capabilities. In iOS 18 and later, you can grant "Partial Access" to specific contact groups, limiting which contacts—and their associated posters—the application can read.
 
-## Strategic Configuration Recommendations
+### Step 4: Strategic Configuration Recommendations
 
 For maximum privacy without sacrificing usability, use a layered approach to your Contact Poster configuration.
 
@@ -113,7 +123,7 @@ Reserve your actual name and personal photo for a secondary poster configuration
 
 Disable automatic poster sharing during calls if you frequently receive unwanted calls. This prevents your information from propagating to unknown parties who might harvest contact details for marketing or malicious purposes.
 
-## Managing Poster Changes Across Devices
+### Step 5: Manage Poster Changes Across Devices
 
 iOS synchronizes Contact Poster changes across your devices through your Apple ID. Modifying your poster on iPhone automatically updates the display on your iPad and Mac, provided all devices sign into the same Apple ID with Contacts sync enabled.
 
@@ -291,6 +301,21 @@ echo ""
 ```
 
 Regularly review your poster settings, especially after iOS updates that may introduce new sharing options or modify default behaviors. After major iOS updates (e.g., iOS 17, iOS 18), check your poster settings to ensure new features align with your privacy preferences.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

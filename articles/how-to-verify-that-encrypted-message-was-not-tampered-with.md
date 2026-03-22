@@ -26,7 +26,17 @@ Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically de
 - **This is useful for**: encrypting a message while authenticating metadata like headers or sequence numbers.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Integrity Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Integrity Problem
 
 When you encrypt a message, you transform plaintext into ciphertext that unreadable without the decryption key. However, encryption schemes like AES in ECB or CBC mode do not protect against manipulation. An attacker can flip bits in the ciphertext, and the decrypted result will change—potentially in ways that benefit the attacker.
 
@@ -34,7 +44,7 @@ Consider this scenario: you send a banking transaction encoded as JSON. Without 
 
 Three primary approaches solve this problem: Message Authentication Codes (MACs), digital signatures, and Authenticated Encryption with Associated Data (AEAD).
 
-## HMAC: Hash-Based Message Authentication
+### Step 2: HMAC: Hash-Based Message Authentication
 
 HMAC combines a cryptographic hash function with a secret key to produce a tag that verifies both integrity and authenticity. The sender computes HMAC over the message using a shared secret key, then sends both the ciphertext and the HMAC tag. The recipient recomputes the HMAC and compares it to the received tag.
 
@@ -86,7 +96,7 @@ def decrypt_with_hmac(ciphertext: bytes, tag: bytes, key: bytes, iv: bytes) -> b
 
 The critical detail is computing HMAC over the IV concatenated with ciphertext—this prevents attackers from modifying the IV. Always use `hmac.compare_digest()` for timing-safe comparison to prevent timing attacks.
 
-## Digital Signatures: Asymmetric Integrity Verification
+### Step 3: Digital Signatures: Asymmetric Integrity Verification
 
 When parties do not share a secret key, digital signatures provide integrity verification using asymmetric cryptography. The sender signs the message with their private key, and anyone with the corresponding public key can verify the signature.
 
@@ -126,7 +136,7 @@ else:
 
 Digital signatures also provide non-repudiation—the sender cannot claim they did not sign the message. This differs from HMAC, where both parties share the same key and either could have produced the tag.
 
-## Authenticated Encryption (AEAD): Integrated Protection
+### Step 4: Authenticated Encryption (AEAD): Integrated Protection
 
 AEAD algorithms combine encryption and integrity verification into a single primitive, eliminating the risk of implementing them incorrectly. AES-GCM and ChaCha20-Poly1305 are the standard choices.
 
@@ -172,7 +182,7 @@ ciphertext = aesgcm.encrypt(nonce, plaintext, associated_data=b"header:1")
 
 The recipient must provide the same AAD during decryption; otherwise, authentication fails.
 
-## Choosing the Right Approach
+### Step 5: Choose the Right Approach
 
 For symmetric scenarios where both parties share a secret key, AEAD modes like AES-GCM or ChaCha20-Poly1305 are the recommended choice—they're simpler to implement correctly and faster than combining separate encryption and HMAC steps.
 
@@ -180,7 +190,7 @@ When using asymmetric encryption, apply digital signatures to the encrypted mess
 
 For legacy systems using unauthenticated encryption modes like CBC, always add HMAC over the ciphertext (not just the plaintext) using a separately derived key.
 
-## Key Security Principles
+### Step 6: Key Security Principles
 
 Never use the same key for encryption and authentication. Derive separate keys using HKDF or a similar key derivation function. Always include the IV or nonce in the authenticated data. Reuse of nonces with AEAD modes completely breaks security—ensure nonces are unique per message.
 
@@ -188,7 +198,7 @@ The verification step is not optional. Always validate integrity before processi
 
 By implementing proper integrity verification, you ensure that encrypted messages remain trustworthy—even when transported through hostile networks.
 
-## Real-World Protocol Examples
+### Step 7: Real-World Protocol Examples
 
 Understanding how real-world protocols implement integrity verification provides practical insights.
 
@@ -323,7 +333,7 @@ auth_tag = hmac_with_key(ciphertext, auth_key)
 
 Key separation prevents attacks where weaknesses in one operation compromise both.
 
-## Common Implementation Mistakes
+### Step 8: Common Implementation Mistakes
 
 Real-world systems often make subtle mistakes:
 
@@ -395,7 +405,7 @@ except Exception as e:
 
 Distinguish between integrity failures (log, reject) and other errors (fail safely).
 
-## Testing Your Implementation
+### Step 9: Test Your Implementation
 
 Proper testing catches integrity verification bugs before deployment:
 
@@ -425,6 +435,21 @@ def test_timing_resistance():
 
 Include tampering tests in your test suite. If tampered messages are accepted, your implementation has a critical flaw.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions
