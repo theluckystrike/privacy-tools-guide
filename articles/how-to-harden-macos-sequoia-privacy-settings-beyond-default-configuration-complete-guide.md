@@ -6,7 +6,7 @@ date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/
-categories: [guides, security]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -27,6 +27,8 @@ The most effective privacy improvements on macOS Sequoia require Terminal access
 sudo tar -czf ~/tcc_backup.tar.gz ~/Library/Application\ Support/com.apple.TCC/
 ```
 
+Start by auditing what you currently have. Run `system_profiler SPInstallHistoryDataType` to see what software has been installed, and review `/var/log/system.log` for any recent privacy-relevant events. This baseline helps you verify that hardening commands take effect.
+
 ## Disabling macOS Telemetry at the System Level
 
 Apple collects diagnostic data even when Analytics sharing appears disabled. The following commands provide deeper telemetry reduction:
@@ -42,6 +44,21 @@ defaults write com.apple.Coreadiod mrtcDisabled -bool true
 ```
 
 Some telemetry runs through other system services. Audit these services in System Settings → Privacy & Security → Analytics & Improvements. Uncheck every option, including "Share iCloud Analytics" and "Improve Crash Detection."
+
+Additional telemetry sources that the GUI does not fully expose:
+
+```bash
+# Disable Siri data sharing
+defaults write com.apple.assistant.support "Siri Data Sharing Opt-In Status" -int 2
+
+# Disable Spotlight usage data collection
+defaults write com.apple.spotlight UsageDataOptOut -bool true
+
+# Disable Game Center telemetry
+defaults write com.apple.gamed Disabled -bool true
+```
+
+After applying these commands, restart your Mac. Many telemetry daemons cache their settings and only read preferences on boot.
 
 ## Deep Explore TCC Permissions
 
@@ -69,6 +86,24 @@ After modification, restart the TCC service:
 sudo pkill -f tccd
 ```
 
+**Understanding TCC auth_value codes:**
+
+- `0` — Denied
+- `1` — Allowed
+- `2` — Limited
+- `3` — Unknown (requires user decision)
+
+Focus your audit on any entry with `auth_value = 1` that belongs to an application you do not recognize or no longer use. Common offenders include old development tools, abandoned productivity apps, and applications installed by IT departments.
+
+### Per-App Permission Hardening
+
+Beyond the TCC database, review per-app permissions through System Settings → Privacy & Security. The following categories deserve particular attention:
+
+- **Full Disk Access** — only backup tools like Time Machine and explicitly trusted applications should appear here
+- **Screen Recording** — video conferencing apps accumulate here and rarely clean up after themselves
+- **Contacts, Calendars, Reminders** — marketing and social apps often request these unnecessarily
+- **Location Services** — review all entries and set non-navigation apps to "Never"
+
 ## Network Privacy Hardening
 
 macOS Sequoia includes built-in firewall capabilities that deserve configuration beyond the default "allow all" state.
@@ -94,6 +129,12 @@ Create application-specific rules:
 /usr/libexec/ApplicationFirewall/socketfilterfw --blockapp /Applications/SensitiveApp.app
 ```
 
+### DNS Over HTTPS Configuration
+
+macOS Sequoia supports DNS over HTTPS (DoH) natively through Network Settings, but third-party tools give more control. Little Snitch (from Objective-See) provides per-process network monitoring and can alert you when any application attempts an unexpected outbound connection. At $69 for a lifetime license, it is a worthwhile investment for any developer handling sensitive data.
+
+For a free alternative, configure your router to use a DoH-compatible DNS resolver like Cloudflare's 1.1.1.1 or Quad9's 9.9.9.9. This protects all devices on your network rather than requiring per-device configuration.
+
 ## Spotlight and Search Privacy
 
 Sequoia's Spotlight indexing can expose sensitive file contents to system-wide search. Configure Spotlight to exclude sensitive directories:
@@ -118,6 +159,8 @@ Restart Spotlight after making changes:
 killall Spotlight
 ```
 
+Spotlight sends queries to Apple servers when suggestions are enabled. Even with Spotlight suggestions disabled, the local indexer still stores metadata about every file it processes. For highly sensitive directories — project source code, client documents, SSH keys — exclusion from Spotlight indexing is the safest approach.
+
 ## Hardening Safari for Privacy
 
 Developers and power users often use Safari alongside other browsers. Configure Safari's privacy settings through Terminal for options not exposed in Preferences:
@@ -135,6 +178,8 @@ defaults write com.apple.Safari WebKitIntelligentTrackingPreventionEnabled -bool
 # Disable autofill for credit cards (security trade-off)
 defaults write com.apple.Safari AutoFillCreditCard -bool false
 ```
+
+For developer workflows, consider using Firefox with uBlock Origin for daily browsing and Safari exclusively for Apple services and testing. This separation reduces cross-site tracking surface area.
 
 ## Terminal and Developer Privacy
 
@@ -156,6 +201,14 @@ Review your shell's environment variables for data that might leak:
 env | grep -i -E '(token|secret|key|password)'
 ```
 
+**SSH key management:** Store SSH private keys in the macOS Keychain using `ssh-add --apple-use-keychain ~/.ssh/id_ed25519`. This avoids passphrase prompts while keeping keys out of memory between reboots. Never store SSH keys in unencrypted project directories or cloud synced folders like iCloud Drive or Dropbox.
+
+**Homebrew privacy:** Homebrew sends anonymous analytics by default. Disable this permanently:
+
+```bash
+brew analytics off
+```
+
 ## FileVault and Encrypted Storage
 
 Enable FileVault for full-disk encryption. While this seems basic, many users skip this critical step:
@@ -175,6 +228,8 @@ For additional encryption beyond FileVault, consider creating encrypted disk ima
 hdiutil create -size 500m -fs APFS -encryption AES-256 \
   -volname "SecureVault" ~/SecureVault.dmg
 ```
+
+VeraCrypt (free, open-source) also works on macOS and creates cross-platform encrypted containers useful for sharing sensitive files between macOS and Linux systems.
 
 ## Advanced: System Integrity Protection Considerations
 
@@ -198,6 +253,10 @@ Review these settings periodically to maintain privacy hardening:
 - [ ] FileVault enabled
 - [ ] Safari privacy settings hardened
 - [ ] Terminal history cleared or disabled for sensitive sessions
+- [ ] Homebrew analytics disabled
+- [ ] SSH keys stored in macOS Keychain
+- [ ] No sensitive environment variables exported in shell profiles
+- [ ] Little Snitch or equivalent network monitor active
 
 These hardening steps transform macOS Sequoia from a consumer-oriented operating system into a privacy-conscious workstation suitable for developers handling sensitive projects or power users who demand control over their data.
 
