@@ -1,5 +1,7 @@
 ---
 permalink: /vpn-mss-clamping-explained-fixing-packet-size-related-connection-issues/
+description: "Fix vpn mss clamping explained fixing packet size related connection issues with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, troubleshooting, vpn]
 ---
 layout: default
 title: "VPN MSS Clamping Explained: Fixing Packet Size Related"

@@ -1,5 +1,7 @@
 ---
 permalink: /vpn-for-using-viber-in-countries-where-voip-blocked/
+description: "Learn vpn for using viber in countries where voip blocked with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "Vpn For Using Viber In Countries Where Voip Blocked"

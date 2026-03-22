@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /vpn-nat-traversal-how-it-works-behind-carrier-grade-nat/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]

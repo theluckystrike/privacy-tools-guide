@@ -1,5 +1,7 @@
 ---
 permalink: /vpn-on-router-setup-guide/
+description: "Follow this guide to vpn on router setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "How to Set Up a VPN on Your Router"

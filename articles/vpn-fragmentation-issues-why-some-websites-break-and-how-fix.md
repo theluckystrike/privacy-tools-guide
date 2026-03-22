@@ -9,7 +9,7 @@ permalink: /vpn-fragmentation-issues-why-some-websites-break-and-how-fix/
 categories: [guides]
 tags: [privacy-tools-guide, vpn, troubleshooting, networking, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

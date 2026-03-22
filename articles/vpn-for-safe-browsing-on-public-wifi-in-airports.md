@@ -1,5 +1,7 @@
 ---
 permalink: /vpn-for-safe-browsing-on-public-wifi-in-airports/
+description: "Learn vpn for safe browsing on public wifi in airports with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "VPN for Safe Browsing on Public WiFi in Airports"
