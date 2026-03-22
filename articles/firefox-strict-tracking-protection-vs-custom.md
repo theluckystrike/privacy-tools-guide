@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Firefox's Strict mode if you want maximum one-click tracker blocking and can tolerate occasional site breakage. Choose Custom mode if you need granular control over individual blocking categories—particularly useful for developers who must test their own sites while still blocking cross-site cookies, fingerprinters, and cryptominers. Below, we break down exactly what each approach blocks and provide ready-to-use about:config settings for power users.
 
+## Key Takeaways
+
+- **Most power users benefit**: from a Custom setup that enables cross-site cookie blocking and fingerprinting protection while allowing exceptions for development and critical web applications.
+- **{% endraw %} ##**: Frequently Asked Questions Can I use the first tool and the second tool together? Yes, many users run both tools simultaneously.
+- **It normalizes many browser**: characteristics that fingerprinting scripts use to create unique device identifiers.
+- **Strict protection typically reduces**: page weight by 20-50% on tracker-heavy sites.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+
 ## Understanding Firefox's Tracking Protection
 
 Firefox's Enhanced Tracking Protection (ETP) blocks known trackers across three levels: Standard, Strict, and Custom. The Strict setting provides one-click protection, while Custom mode lets you pick individual blocking categories.

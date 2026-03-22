@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 To install Arkenfox user.js, download the latest `user.js` file from the Arkenfox GitHub repository and place it in your Firefox profile directory (find your profile path at `about:support`). Use Firefox ESR for best compatibility, create a `user-overrides.js` file for personal exceptions, and run the included diagnostic tool to verify your configuration. This guide covers the full setup process, key privacy settings Arkenfox enforces, how it compares to alternatives, and how to troubleshoot common breakage.
 
+## Key Takeaways
+
+- **Use Firefox ESR for best compatibility**: create a `user-overrides.js` file for personal exceptions, and run the included diagnostic tool to verify your configuration.
+- **Understanding the alternatives helps**: you choose the right level of hardening: Arkenfox: Most and actively maintained Firefox hardening configuration.
+- **Best for power users**: comfortable with occasional site breakage.
+- **For most users who**: want strong privacy without the overhead of Tor Browser, Arkenfox with a `user-overrides.js` for site exceptions is the best balance.
+- **Use Firefox Focus or**: the standard Firefox Android with uBlock Origin and strict Enhanced Tracking Protection as the best alternative.
+- **To install Arkenfox user.js**: download the latest `user.js` file from the Arkenfox GitHub repository and place it in your Firefox profile directory (find your profile path at `about:support`).
+
 ## What is Arkenfox user.js?
 
 Arkenfox is a community-maintained project that provides a heavily optimized `user.js` file — a configuration file that overrides Firefox's default settings. Unlike standard browser preferences, user.js entries persist across updates and can enforce settings that are otherwise hidden or reset by Mozilla.

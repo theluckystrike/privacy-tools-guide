@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose Proton Drive for integrated email+storage ecosystem and strong UI, Filen for affordability and flexible storage. Both offer zero-knowledge encryption, but Proton Drive provides open-source crypto libraries for verification, while Filen offers more storage for the price. For developers, Proton Drive has better API documentation, Filen lacks advanced API features. Neither provides true command-line access like Nextcloud, but both work with rclone for programmatic access.
 
+## Key Takeaways
+
+- **Does either service support**: file versioning? Both offer file versioning with limited version history on free tiers.
+- **Choose Proton Drive for**: integrated email+storage ecosystem and strong UI, Filen for affordability and flexible storage.
+- **Proton Drive uses AES-256-GCM**: for file encryption with RSA-2048 for key derivation.
+- **Both offer zero-knowledge encryption**: but Proton Drive provides open-source crypto libraries for verification, while Filen offers more storage for the price.
+- **For developers**: Proton Drive has better API documentation, Filen lacks advanced API features.
+- **Proton's encryption library is**: open-source (OpenPGP.js), allowing verification of the implementation.
+
 ## Why Zero-Knowledge Encryption Matters for Storage
 
 Standard cloud storage — Google Drive, Dropbox, OneDrive — encrypts your data at rest and in transit, but the provider holds the encryption keys. This means they can access your files, hand them to law enforcement, and expose them if their key management is compromised. Zero-knowledge storage means the encryption key never leaves your device. The provider receives only ciphertext they cannot read.
