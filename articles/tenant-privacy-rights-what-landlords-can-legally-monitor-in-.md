@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tenant-privacy-rights-what-landlords-can-legally-monitor-in-/
 description: "Learn tenant privacy rights what landlords can legally monitor in  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"
 description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples"

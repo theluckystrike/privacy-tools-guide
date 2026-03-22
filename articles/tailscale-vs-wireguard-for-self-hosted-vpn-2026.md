@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /tailscale-vs-wireguard-for-self-hosted-vpn-2026/
 description: "Compare tailscale vs wireguard for self hosted vpn 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "Tailscale vs WireGuard for Self-Hosted VPN 2026"
 description: "Compare Tailscale and raw WireGuard for self-hosted VPN. Setup configs, performance benchmarks, use cases, and when each is the right choice in 2026"

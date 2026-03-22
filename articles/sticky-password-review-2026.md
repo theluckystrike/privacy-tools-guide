@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /sticky-password-review-2026/
 description: "Learn sticky password review 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Sticky Password Review 2026: A Developer's Perspective"
 description: "An in-depth analysis of Sticky Password for developers and power users. Covers CLI access, secure sharing, API integration, and technical"
