@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy, artificial-intelligence, chatgpt]---
+tags: [privacy-tools-guide, privacy, artificial-intelligence, chatgpt]
+---
 
 {% raw %}
 

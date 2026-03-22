@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 
 {% raw %}
 

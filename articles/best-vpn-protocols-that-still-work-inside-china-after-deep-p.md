@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [guides]
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 ---
 layout: default
 title: "Best Vpn Protocols That Still Work Inside China After Deep"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [guides]
-tags: [privacy-tools-guide, best-of, vpn]---
+tags: [privacy-tools-guide, best-of, vpn]
+---
 
 {% raw %}
 

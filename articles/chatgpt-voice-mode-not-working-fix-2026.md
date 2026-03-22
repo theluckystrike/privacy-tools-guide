@@ -14,7 +14,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide, troubleshooting, chatgpt]---
+tags: [privacy-tools-guide, troubleshooting, chatgpt]
+---
 
 
 categories: [troubleshooting]

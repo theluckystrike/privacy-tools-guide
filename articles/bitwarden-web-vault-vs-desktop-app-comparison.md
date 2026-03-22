@@ -11,7 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, best-of]---
+tags: [privacy-tools-guide, comparison, best-of]
+---
 ---
 layout: default
 title: "Bitwarden Web Vault vs Desktop App Comparison"
@@ -25,7 +26,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, best-of]---
+tags: [privacy-tools-guide, comparison, best-of]
+---
 
 {% raw %}
 

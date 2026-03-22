@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 ---
 layout: default
 title: "Bitwarden Self-Hosted Setup Guide"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

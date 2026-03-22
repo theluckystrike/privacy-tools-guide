@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, encryption]---
+tags: [privacy-tools-guide, best-of, encryption]
+---
 ---
 layout: default
 title: "Best Voip App With Encryption 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, encryption]---
+tags: [privacy-tools-guide, best-of, encryption]
+---
 
 {% raw %}
 

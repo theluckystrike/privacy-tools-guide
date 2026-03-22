@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn, remote-work]---
+tags: [privacy-tools-guide, best-of, vpn, remote-work]
+---
 ---
 layout: default
 title: "Best VPN for Remote Workers in Bali, Indonesia (2026)"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, vpn, remote-work]---
+tags: [privacy-tools-guide, best-of, vpn, remote-work]
+---
 
 {% raw %}
 
