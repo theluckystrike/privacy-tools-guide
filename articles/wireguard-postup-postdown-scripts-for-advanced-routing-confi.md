@@ -221,5 +221,4 @@ PostUp and PostDown scripts run with root privileges, making security critical:
 - [How To Use Tor With Specific Application Routing Only Select](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "IOS Privacy Settings: Complete Walkthrough"
+title: "iOS Privacy Settings: Complete Walkthrough"
 description: "A technical guide to iOS privacy settings covering Location Services, App Tracking Transparency, Safari privacy features, and advanced"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -280,5 +280,4 @@ For users seeking optimal privacy without sacrificing functionality:
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

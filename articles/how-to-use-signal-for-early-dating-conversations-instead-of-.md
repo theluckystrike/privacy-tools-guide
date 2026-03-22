@@ -205,5 +205,4 @@ If you've lost access to your old number:
 - [Encrypted Push Notifications How Signal Protects Notificatio](/privacy-tools-guide/encrypted-push-notifications-how-signal-protects-notificatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

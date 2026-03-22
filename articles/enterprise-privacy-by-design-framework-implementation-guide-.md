@@ -232,5 +232,4 @@ This pattern supports both security monitoring and regulatory audits while maint
 - [Enterprise Privacy Tool Deployment Checklist for.](/privacy-tools-guide/enterprise-privacy-tool-deployment-checklist-for-multi-cloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

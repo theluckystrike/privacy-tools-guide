@@ -334,5 +334,4 @@ Browser password managers fundamentally cannot support this workflow. They were 
 - [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

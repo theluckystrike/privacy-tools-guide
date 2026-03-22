@@ -374,5 +374,4 @@ After `luksErase`, the encrypted data becomes mathematically irretrievable—no 
 - [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

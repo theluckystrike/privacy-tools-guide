@@ -245,5 +245,4 @@ When deploying encrypted webhooks in production, ensure you address these items:
 - [Application Performance Monitoring Workflow Guide](/privacy-tools-guide/application-performance-monitoring-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

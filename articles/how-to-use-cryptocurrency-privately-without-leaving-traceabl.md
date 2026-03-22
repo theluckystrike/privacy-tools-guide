@@ -403,5 +403,4 @@ xmrig --cpu-affinity 0 -t $(nproc)  # Mine with all cores
 - [Best No Kyc Cryptocurrency Exchanges That Still Work In 2026](/privacy-tools-guide/best-no-kyc-cryptocurrency-exchanges-that-still-work-in-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Macos Spotlight Privacy Settings Disable Tracking"
+title: "macOS Spotlight Privacy Settings Disable Tracking"
 description: "Learn how to configure macOS Spotlight privacy settings to minimize tracking, prevent data leakage, and control what information is indexed and shared"
 date: 2026-03-15
 last_modified_at: 2026-03-15

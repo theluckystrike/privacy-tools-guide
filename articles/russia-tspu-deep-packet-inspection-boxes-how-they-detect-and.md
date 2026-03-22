@@ -215,5 +215,4 @@ sudo tcpdump -i any -c 100 -A | grep -i "tls|https"
 - [ProtonMail Security Model Explained: A Technical Deep-Dive](/privacy-tools-guide/protonmail-security-model-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

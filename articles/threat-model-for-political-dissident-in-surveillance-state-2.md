@@ -259,5 +259,4 @@ if should_trigger():
 - [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

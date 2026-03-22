@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Configure Iphone To Minimize Data Shared With Apple"
+title: "How To Configure iPhone To Minimize Data Shared With Apple"
 description: "A guide for developers and power users to minimize data shared with Apple servers through iOS settings, configurations, and network-level"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -208,5 +208,4 @@ Balance your privacy requirements against convenience. Most users find disabling
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

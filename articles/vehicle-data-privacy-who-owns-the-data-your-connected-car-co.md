@@ -299,20 +299,20 @@ Before enrolling in UBI programs, request the insurer's data sharing policy in w
 If you own a vehicle with connected services:
 
 1. **Disable onboard cellular** if the vehicle has a built-in modem
-   - Varies by manufacturer; check vehicle settings
-   - May disable real-time traffic updates but prevents constant connectivity
+ - Varies by manufacturer; check vehicle settings
+ - May disable real-time traffic updates but prevents constant connectivity
 
 2. **Use minimal infotainment features**
-   - Avoid smartphone integration (CarPlay, Android Auto) if privacy is critical
-   - These duplicate smartphone location tracking
+ - Avoid smartphone integration (CarPlay, Android Auto) if privacy is critical
+ - These duplicate smartphone location tracking
 
 3. **Opt out of data collection programs**
-   - Manufacturer websites have data sharing preferences
-   - Requires account login; policies are often buried
+ - Manufacturer websites have data sharing preferences
+ - Requires account login; policies are often buried
 
 4. **Disable software update features** that transmit diagnostic data
-   - Manufacturers collect diagnostics during updates
-   - You can manually check for updates instead
+ - Manufacturers collect diagnostics during updates
+ - You can manually check for updates instead
 
 Example (varies by manufacturer):
 
@@ -391,5 +391,4 @@ Most countries lack specific vehicle privacy laws, leaving manufacturers with br
 - [How to Detect if Your Car Has GPS Tracker Hidden Check](/privacy-tools-guide/how-to-detect-if-your-car-has-gps-tracker-hidden-check/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

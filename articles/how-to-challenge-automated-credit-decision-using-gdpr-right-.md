@@ -241,5 +241,4 @@ Failure to comply can result in enforcement action and fines. The ICO has issued
 - [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

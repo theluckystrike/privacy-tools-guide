@@ -354,6 +354,7 @@ KeePassXC is for people who don't trust the cloud with anything. Justifiable but
 
 Pick one, set it up today, and stop reusing passwords.
 
+<<<<<<< HEAD
 
 ## Related Articles
 
@@ -364,4 +365,7 @@ Pick one, set it up today, and stop reusing passwords.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+=======
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+>>>>>>> b900bdda56765d71068413d810978b9f118b0721
 {% endraw %}

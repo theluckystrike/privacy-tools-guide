@@ -379,5 +379,4 @@ When third parties require vault access:
 - [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

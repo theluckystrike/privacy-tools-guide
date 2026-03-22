@@ -184,7 +184,7 @@ For developers building privacy-focused applications or organizations with stric
 - [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 - [Best VPN for Accessing French TV Abroad](/privacy-tools-guide/best-vpn-for-accessing-french-tv-abroad-free-servers/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Advanced Technical Comparisons
 
@@ -450,4 +450,6 @@ For small communities (under 100 users), Discord is cheaper. For large communiti
 - Server compromised → you can restore from backup
 - Full audit trail available → trace attacker's actions
 - Ability to fork/migrate if homeserver is compromised
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

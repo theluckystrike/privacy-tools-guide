@@ -290,5 +290,4 @@ Windows Sandbox automatically deletes all data when closed. However, follow thes
 - [Llmnr Netbios Name Resolution Privacy Disabling Windows Prot](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

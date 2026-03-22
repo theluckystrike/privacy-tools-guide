@@ -173,7 +173,7 @@ Your university network likely provides its own VPN service for remote access—
 - [Best Vpn For Accessing Us Healthcare Portals From Abroad](/privacy-tools-guide/best-vpn-for-accessing-us-healthcare-portals-from-abroad/)
 - [VPN for Accessing Local Bank Account from Abroad Safely](/privacy-tools-guide/vpn-for-accessing-local-bank-account-from-abroad-safely/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## University VPN Bypass Techniques
 
@@ -256,9 +256,9 @@ Choose VPS providers that universities typically whitelist:
 1. **Linode, DigitalOcean, AWS** - Widely used for legitimate services
 2. **Avoid**: Cheap providers associated with VPNs (Hetzner, OVH sometimes flagged)
 3. **Criteria**:
-   - Residential IP address pool (not datacenter-only)
-   - Good reviews from university network admins
-   - Stable ASN reputation
+ - Residential IP address pool (not datacenter-only)
+ - Good reviews from university network admins
+ - Stable ASN reputation
 
 ### Optimized Configuration for High Latency Networks
 
@@ -400,4 +400,6 @@ course materials while traveling in [country]. Is this permitted?"
 ```
 
 Getting explicit approval prevents misunderstandings later.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -213,5 +213,4 @@ Your email infrastructure now operates under your terms, free from algorithmic p
 - [Set Up a Secure Home Server for Self-Hosting Privacy Tools.](/privacy-tools-guide/how-to-set-up-secure-home-server-for-self-hosting-privacy-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

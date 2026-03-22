@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Privacy Settings Complete Guide Turn Off All Tracking"
+title: "iPhone Privacy Settings Complete Guide Turn Off All Tracking"
 description: "A technical guide for developers and power users to disable all tracking features on iPhone. Includes Settings app navigation, Shortcuts"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -45,10 +45,10 @@ Location data reveals significant personal information. Review and restrict:
 1. **Settings** → **Privacy & Security** → **Location Services**
 2. Review each app's location access — set to **Never** for apps that don't need it
 3. Tap **System Services** at the bottom:
-   - Disable **Location-Based Suggestions**
-   - Disable **Location-Based Alerts**
-   - Disable **Significant Locations** (clear history first)
-   - Disable **Product Improvement**
+ - Disable **Location-Based Suggestions**
+ - Disable **Location-Based Alerts**
+ - Disable **Significant Locations** (clear history first)
+ - Disable **Product Improvement**
 
 **What "Significant Locations" stores:** Apple builds a private semantic map of places you visit frequently — your home, office, gym, and so on. This data is used to power features like predictive routing in Maps. The data is stored encrypted on-device and synced to iCloud Keychain. Even so, disabling it entirely prevents the database from being built.
 
@@ -117,13 +117,13 @@ iOS requires apps to disclose data collection in App Store listings. To review o
 1. **Settings** → **Privacy & Security** → **App Privacy Report** (iOS 15+)
 2. Enable the feature and use apps normally for 24 hours
 3. Review which apps are accessing:
-   - Location
-   - Contacts
-   - Calendars
-   - Photos
-   - Microphone
-   - Camera
-   - Network activity
+ - Location
+ - Contacts
+ - Calendars
+ - Photos
+ - Microphone
+ - Camera
+ - Network activity
 
 ### Reading the App Privacy Report Effectively
 
@@ -153,10 +153,10 @@ Apple collects usage data from iCloud:
 
 1. **Settings** → **[Your Name]** → **iCloud** → **Manage Account Storage**
 2. Scroll to **iCloud+** features and disable:
-   - **Share My Location** (if not needed)
+ - **Share My Location** (if not needed)
 3. **Settings** → **Privacy & Security** → **Analytics & Improvements**
-   - Disable **Share iPhone Analytics**
-   - Disable **Share iCloud Analytics**
+ - Disable **Share iPhone Analytics**
+ - Disable **Share iCloud Analytics**
 
 ### What iPhone Analytics Sends
 
@@ -263,5 +263,4 @@ Lockdown Mode severely restricts the attack surface: it blocks most message atta
 - [IOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

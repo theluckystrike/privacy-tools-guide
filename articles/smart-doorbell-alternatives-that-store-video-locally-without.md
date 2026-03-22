@@ -276,5 +276,4 @@ With local storage, losing internet connectivity has no effect on recording. Clo
 - [How To Store Otp Codes In Password Manager](/privacy-tools-guide/how-to-store-otp-codes-in-password-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

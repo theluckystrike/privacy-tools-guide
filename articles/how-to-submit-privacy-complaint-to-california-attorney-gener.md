@@ -299,6 +299,7 @@ class CCPARequestProcessor:
 
 Ensure your systems respond to consumer requests within the mandated 45-day window. Implement automated tracking for request deadlines to avoid unintentional violations. Set up calendar alerts at day 30 and day 40 to ensure you don't miss deadlines.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

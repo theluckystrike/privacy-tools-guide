@@ -226,5 +226,4 @@ The EA app represents the broader trend of always-connected gaming platforms. As
 - [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

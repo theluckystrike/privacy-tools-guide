@@ -162,8 +162,8 @@ Location history is stored separately and requires explicit deletion.
 1. Go to https://myactivity.google.com
 2. Click **"Delete activity by"**
 3. Select:
-   - Date range: **All time**
-   - Products: **Location**
+ - Date range: **All time**
+ - Products: **Location**
 4. Click **"Delete"** → Confirm
 
 ### Step 3: Disable Location Tracking
@@ -262,18 +262,18 @@ If you use Chrome, it syncs browsing history, passwords, and extensions to Googl
 2. Click **"Sync and Google services"** (or Chrome menu → Settings → Sync and Google services)
 3. Toggle **OFF** "Sync everything" or
 4. Manually toggle off:
-   - [ ] History
-   - [ ] Passwords
-   - [ ] Extensions
-   - [ ] Settings
+ - [ ] History
+ - [ ] Passwords
+ - [ ] Extensions
+ - [ ] Settings
 
 ### Step 2: Clear Local Chrome Data
 
 1. Chrome menu → **Settings** → **Privacy and security**
 2. Click **"Clear browsing data"** (or Cmd+Shift+Delete on Mac)
 3. Select:
-   - Time range: **All time**
-   - Checkboxes: Select all (Cookies, history, cached images, etc.)
+ - Time range: **All time**
+ - Checkboxes: Select all (Cookies, history, cached images, etc.)
 4. Click **"Clear data"**
 
 ### Step 3: Turn Off Chrome Sync Completely
@@ -356,9 +356,9 @@ If you want to completely remove yourself from Google:
 1. Go to https://myaccount.google.com/
 2. Click **"Delete your account and data"** (or "Data & privacy" → "Delete your Google Account")
 3. Follow steps:
-   - Verify you own the account (re-enter password)
-   - Review what will be deleted (Gmail, Photos, Drive, Calendar, etc.)
-   - Click **"Delete Google Account"**
+ - Verify you own the account (re-enter password)
+ - Review what will be deleted (Gmail, Photos, Drive, Calendar, etc.)
+ - Click **"Delete Google Account"**
 
 **Warning**: This is permanent. Gmail address becomes inactive, you lose access to Play Store purchases, etc.
 
@@ -460,5 +460,4 @@ print(f'Total activity entries: {len(entries)}')
 - [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

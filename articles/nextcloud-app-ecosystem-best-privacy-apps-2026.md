@@ -276,5 +276,4 @@ For critical updates, subscribe to the Nextcloud security mailing list and confi
 - [Privacy-Focused Note-Taking Apps Comparison 2026](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

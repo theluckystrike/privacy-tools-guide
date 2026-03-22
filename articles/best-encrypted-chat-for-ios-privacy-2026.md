@@ -391,5 +391,4 @@ WhatsApp's metadata collection makes it unsuitable for privacy-conscious users, 
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

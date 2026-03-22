@@ -272,16 +272,16 @@ File sync tools must support recovery from catastrophic failures:
 
 **Data Loss Scenarios**:
 1. **Hardware failure**: Device dies, data not synced
-   - Solution: Tools with versioning and backup (Nextcloud, Tresorit)
-   - Prevention: Regular cloud backups to multiple locations
+ - Solution: Tools with versioning and backup (Nextcloud, Tresorit)
+ - Prevention: Regular cloud backups to multiple locations
 
 2. **Ransomware attack**: Sync replicates encrypted files to all devices
-   - Solution: Immutable backups (off-site, read-only snapshots)
-   - Prevention: Offline backups disconnected from sync network
+ - Solution: Immutable backups (off-site, read-only snapshots)
+ - Prevention: Offline backups disconnected from sync network
 
 3. **Accidental deletion**: Whole folder deleted, sync propagates deletion
-   - Solution: Version history allows recovery from point-in-time backup
-   - Prevention: Require administrative approval for bulk deletions
+ - Solution: Version history allows recovery from point-in-time backup
+ - Prevention: Require administrative approval for bulk deletions
 
 **Recovery time objectives (RTO)**:
 - **Nextcloud**: Minutes (restore from database snapshot)
@@ -420,5 +420,4 @@ For development teams, SyncThing or Nextcloud are essential. SpiderOak is unsuit
 - [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

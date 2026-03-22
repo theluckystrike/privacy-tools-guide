@@ -351,5 +351,4 @@ This approach ensures consistent security across distributions.
 - [Protonmail Bridge Setup For Desktop Email Clients Privacy Co](/privacy-tools-guide/protonmail-bridge-setup-for-desktop-email-clients-privacy-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

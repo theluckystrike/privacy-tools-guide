@@ -365,5 +365,4 @@ handler.complete_verification(number_info['number_id'])
 - [How To Use Signal Without Linking Phone Number Privacy Worka](/privacy-tools-guide/how-to-use-signal-without-linking-phone-number-privacy-worka/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

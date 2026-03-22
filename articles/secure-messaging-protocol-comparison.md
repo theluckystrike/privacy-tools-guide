@@ -277,5 +277,4 @@ If you're choosing a protocol for team communication:
 - [Signal Protocol Explained for Developers](/signal-protocol-explained-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

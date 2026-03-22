@@ -442,5 +442,4 @@ The optimal approach depends on your specific use case: baseline privacy for cas
 - [How VPN Reconnection Works After Network Switch Mobile](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

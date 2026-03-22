@@ -222,5 +222,4 @@ Choose the method matching your threat model. For most users, a VoIP number comb
 - [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

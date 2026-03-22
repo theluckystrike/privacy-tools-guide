@@ -264,5 +264,4 @@ notifier.notify_group(
 - [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

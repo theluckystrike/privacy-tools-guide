@@ -240,7 +240,7 @@ Tor Browser specifically minimizes browser fingerprinting, but users often accid
 1. **Installing fonts** - Browser fonts are fingerprint vectors. Tor Browser intentionally ships with limited fonts.
 
 2. **Changing default zoom level** - Tor Browser zooms at 100%. Changing zoom creates a unique fingerprint:
-   ```
+ ```
    Ctrl+0 (Windows/Linux) or Cmd+0 (macOS) to reset zoom to default
    ```
 
@@ -364,5 +364,4 @@ tor --validate-config -f /etc/tor/torrc
 - [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

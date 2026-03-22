@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Significant Locations Tracking How To View"
+title: "iPhone Significant Locations Tracking How To View"
 description: "Learn how to access, review, and delete iPhone Significant Locations data. Complete technical guide for developers and privacy-conscious users"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -319,5 +319,4 @@ This phased approach restores privacy while minimizing service disruption.
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -247,5 +247,4 @@ Run this script nightly to maintain an independent backup without duplicating co
 - [Cloud Storage Security Breach History: Compromised.](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

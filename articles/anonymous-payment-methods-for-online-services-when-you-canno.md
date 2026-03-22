@@ -206,5 +206,4 @@ Consider your specific threat model. For pseudonymity (separate identity from ac
 - [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -315,5 +315,4 @@ Store your plan in a location accessible even if primary systems are compromised
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

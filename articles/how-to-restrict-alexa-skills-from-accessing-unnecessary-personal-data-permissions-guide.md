@@ -291,6 +291,7 @@ Regularly audit what skills are actually doing:
 
 Many power users maintain a spreadsheet tracking each skill, its permissions, and last used date. This documentation helps quickly identify and remove problematic skills.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

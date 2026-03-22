@@ -336,7 +336,5 @@ Most devices auto-update at night if enabled. Verify the version monthly and man
 - [Detect If Smart Home Devices Have Hidden Microphones](/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
 - [How to Secure Your Home Router Firmware](home-router-firmware-security-guide)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

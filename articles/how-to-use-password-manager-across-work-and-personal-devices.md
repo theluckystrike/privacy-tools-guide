@@ -172,7 +172,7 @@ The key principle remains consistent: maintain clear boundaries between contexts
 - [Qubes OS Compartmentalized Workflow Guide](/privacy-tools-guide/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
 - [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Advanced Sync Architecture and Cryptography
 
@@ -443,4 +443,6 @@ Bitwarden Emergency Access feature:
 3. After 7 days, they get access to your vault
 4. Useful for: medical emergencies, death, incapacity
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

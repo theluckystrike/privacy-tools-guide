@@ -51,10 +51,10 @@ brew install veracrypt
 3. Choose "Encrypt a non-system partition/drive"
 4. Select your external drive
 5. Configure encryption:
-   - Volume type: Standard (simplest) or Hidden (plausible deniability)
-   - Encryption algorithm: AES-256
-   - Hash algorithm: SHA-512
-   - File system: NTFS (compatible across OS), exFAT (best for portable use), APFS (macOS only)
+ - Volume type: Standard (simplest) or Hidden (plausible deniability)
+ - Encryption algorithm: AES-256
+ - Hash algorithm: SHA-512
+ - File system: NTFS (compatible across OS), exFAT (best for portable use), APFS (macOS only)
 6. Set password (minimum 20 characters, mix upper/lower, numbers, special characters)
 7. Move mouse randomly to generate encryption key
 8. Wait for encryption (1-2 hours for 1TB drive depending on hardware)
@@ -184,12 +184,12 @@ BitLocker is Windows's built-in encryption, available only in Pro/Enterprise edi
 1. Right-click external drive in File Explorer
 2. Select "Turn on BitLocker"
 3. Choose encryption method:
-   - "Compatible mode": Accessible from older Windows versions
-   - "New encryption mode": Faster, only works with Windows 10 1511 and newer
+ - "Compatible mode": Accessible from older Windows versions
+ - "New encryption mode": Faster, only works with Windows 10 1511 and newer
 4. Choose unlock method:
-   - Password (enter every time drive is plugged in)
-   - Smart card (physical token required)
-   - TPM (automatic unlock on this computer only)
+ - Password (enter every time drive is plugged in)
+ - Smart card (physical token required)
+ - TPM (automatic unlock on this computer only)
 5. Save recovery key (critical for disaster recovery)
 6. Choose whether to encrypt entire drive or used space only (encrypt entire drive is safer)
 7. BitLocker begins encryption (can continue using drive during process)
@@ -490,5 +490,4 @@ mount /dev/sdb1 /mnt/test
 - [AI Tools for Automating Cloud Security Compliance Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

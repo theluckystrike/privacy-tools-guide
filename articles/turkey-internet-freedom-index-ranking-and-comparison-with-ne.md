@@ -550,5 +550,4 @@ Integrating this type of monitoring into your infrastructure alerting gives you 
 - [Turkey Secure Communication Guide For Activists And Ngos Ope](/privacy-tools-guide/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

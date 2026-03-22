@@ -230,5 +230,4 @@ The right configuration depends on your specific location, your office network i
 - [VPN for Remote Desktop Connection from Hotel WiFi Safely](/privacy-tools-guide/vpn-for-remote-desktop-connection-from-hotel-wifi-safely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Set Up Github Repository With Encrypted Estate"
+title: "How To Set Up GitHub Repository With Encrypted Estate"
 description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This"
 date: 2026-03-19
 last_modified_at: 2026-03-19
@@ -347,6 +347,7 @@ Test your recovery procedures before relying on them. Create a test repository w
 
 Store this documentation alongside the keys or with your estate planning documents.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

@@ -220,5 +220,4 @@ Test your setup regularly. Verify you can decrypt messages, sign commits, and ac
 - [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

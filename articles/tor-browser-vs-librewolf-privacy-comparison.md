@@ -316,5 +316,4 @@ Both browsers can use Firefox extensions, but with caveats:
 - [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

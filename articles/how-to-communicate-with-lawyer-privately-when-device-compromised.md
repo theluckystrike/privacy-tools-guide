@@ -321,24 +321,24 @@ This documentation demonstrates good faith security practices if privilege is ch
 Coordinate security practices with your legal team:
 
 1. **Initial discussion**: Ask about their security practices
-   - "What communication methods do you use?"
-   - "What if I need to send documents securely?"
-   - "How do you protect client communications?"
+ - "What communication methods do you use?"
+ - "What if I need to send documents securely?"
+ - "How do you protect client communications?"
 
 2. **Establish preferences**: Work with their preferences
-   - Use their recommended methods
-   - Follow their instructions on encryption
-   - Respect their compromise comfort level
+ - Use their recommended methods
+ - Follow their instructions on encryption
+ - Respect their compromise comfort level
 
 3. **Maintain documentation**: Keep records of your practices
-   - Why you chose each method
-   - When you verified their identity
-   - What precautions you took
+ - Why you chose each method
+ - When you verified their identity
+ - What precautions you took
 
 4. **Escalation procedures**: Know what to do if suspected compromise
-   - How to reach them in emergency
-   - Alternative contact methods
-   - In-person meeting procedures
+ - How to reach them in emergency
+ - Alternative contact methods
+ - In-person meeting procedures
 
 A good attorney will have thought through these issues already.
 

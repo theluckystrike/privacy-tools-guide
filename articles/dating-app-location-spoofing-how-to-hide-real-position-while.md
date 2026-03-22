@@ -377,5 +377,4 @@ If your primary concern is privacy, consider disclosing your general location to
 - [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

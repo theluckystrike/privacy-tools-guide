@@ -255,5 +255,4 @@ This setup gives you granular control over which applications receive Tor's anon
 - [How To Implement Encrypted Webhooks For Secure Application T](/privacy-tools-guide/how-to-implement-encrypted-webhooks-for-secure-application-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

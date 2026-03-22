@@ -576,5 +576,4 @@ If any tests fail: VPN has a leak, contact support or switch providers
 - [Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test](/privacy-tools-guide/how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

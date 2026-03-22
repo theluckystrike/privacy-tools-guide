@@ -318,5 +318,4 @@ print(verify_correction(before, after, 'phone'))
 - [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

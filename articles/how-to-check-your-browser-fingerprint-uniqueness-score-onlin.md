@@ -247,5 +247,4 @@ Set `privacy.resistFingerprinting = true` in about:config to normalize many expo
 - [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

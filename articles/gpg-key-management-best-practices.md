@@ -255,5 +255,4 @@ gpg --fingerprint KEYID
 - [Best AI Tools for Container Security Scanning in Deployment](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

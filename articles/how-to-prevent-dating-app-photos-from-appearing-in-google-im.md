@@ -258,5 +258,4 @@ The goal is raising the difficulty barrier rather than achieving absolute protec
 - [Prevent Reverse Image Search from Linking Dating Profile](/privacy-tools-guide/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

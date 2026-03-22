@@ -225,5 +225,4 @@ Browser developer tools also show the GPC header in the Network tab when making 
 - [iPhone Mail Privacy Protection: How It Works](/privacy-tools-guide/iphone-mail-privacy-protection-how-it-works/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

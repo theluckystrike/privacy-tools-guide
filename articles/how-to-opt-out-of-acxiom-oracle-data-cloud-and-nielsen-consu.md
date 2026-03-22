@@ -250,5 +250,4 @@ Taking control of your data requires ongoing attention. The steps outlined here 
 - [Facial Recognition Search Opt Out How To Remove Your Face Fr](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

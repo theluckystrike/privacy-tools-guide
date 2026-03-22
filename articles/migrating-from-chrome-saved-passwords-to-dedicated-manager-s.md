@@ -266,5 +266,4 @@ After migration, enhance your security posture:
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

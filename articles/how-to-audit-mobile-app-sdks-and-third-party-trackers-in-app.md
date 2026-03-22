@@ -276,5 +276,4 @@ Regular auditing of mobile apps reveals the constantly evolving tracking ecosyst
 - [Third Party Cookie Deprecation Chrome Timeline What Replaces](/privacy-tools-guide/third-party-cookie-deprecation-chrome-timeline-what-replaces/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

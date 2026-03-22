@@ -229,5 +229,4 @@ Many developers use a combination—Matrix for work and community, Session or Si
 - [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -193,7 +193,7 @@ After addressing the technical incident, document what happened for compliance, 
 
 ### Incident Report Documentation
 
-Create a comprehensive incident report covering:
+Create an incident report covering:
 
 1. **Timeline**: When was the breach discovered? When did it occur? What did you do and when?
 2. **Scope**: What data was accessed? How many files? What size?

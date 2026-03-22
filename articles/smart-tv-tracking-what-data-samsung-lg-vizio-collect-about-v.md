@@ -565,7 +565,5 @@ Different jurisdictions treat tracking blocking differently:
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 - [Smart Plug Energy Monitoring Privacy What Data Manufacturers](/privacy-tools-guide/smart-plug-energy-monitoring-privacy-what-data-manufacturers/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

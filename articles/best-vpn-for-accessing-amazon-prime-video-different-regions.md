@@ -299,5 +299,4 @@ Smart TVs rarely support VPN clients natively. Options include: installing the V
 - [Best VPN for Accessing French TV Abroad](/privacy-tools-guide/best-vpn-for-accessing-french-tv-abroad-free-servers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

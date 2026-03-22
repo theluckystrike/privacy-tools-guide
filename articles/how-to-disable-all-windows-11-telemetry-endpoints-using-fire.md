@@ -295,5 +295,4 @@ Save this as `Set-TelemetryFirewall.ps1` and run with `-RemoveRules` to revert.
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

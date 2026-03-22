@@ -363,8 +363,7 @@ Organizations can deploy custom tracking protection policies:
 
 This configuration forces Strict tracking protection while allowing exceptions for specific trusted domains.
 
-
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

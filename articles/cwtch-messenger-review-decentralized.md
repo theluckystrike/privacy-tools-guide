@@ -250,5 +250,4 @@ def verify_contact_fingerprint(cwtch_client, contact_onion):
 - [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

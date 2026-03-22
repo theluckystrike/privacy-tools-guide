@@ -473,5 +473,4 @@ This quarterly testing confirms the vault works without revealing sensitive cont
 - [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

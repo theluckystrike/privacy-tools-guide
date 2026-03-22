@@ -250,5 +250,4 @@ SimpleLogin suits Proton ecosystem users and those who need PGP encryption. Addy
 - [Firefox Focus Vs Duckduckgo Browser Comparison](/privacy-tools-guide/firefox-focus-vs-duckduckgo-browser-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

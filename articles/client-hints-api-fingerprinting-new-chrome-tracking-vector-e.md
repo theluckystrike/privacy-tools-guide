@@ -175,7 +175,7 @@ The fundamental tension: Chrome positions Client Hints as a privacy-respecting a
 - [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
 - [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Fingerprinting Entropy Analysis
 
@@ -448,4 +448,6 @@ All these APIs face similar concerns: they provide tracking capabilities without
 | Journalist/Activist | Tor Browser | Already hardened |
 
 For maximum protection, Tor Browser standardizes all Client Hints to identical values, eliminating fingerprinting differences.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

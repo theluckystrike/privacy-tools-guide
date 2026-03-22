@@ -288,5 +288,4 @@ For developers integrating these features into privacy-focused applications, con
 - [How to Set Up a Burner Phone for Protests](/privacy-tools-guide/how-to-set-up-a-burner-phone-for-protests/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

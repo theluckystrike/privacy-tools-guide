@@ -260,5 +260,4 @@ Kibana provides pre-built dashboards for Suricata that show alert trends, top so
 - [Pi-hole DNS Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

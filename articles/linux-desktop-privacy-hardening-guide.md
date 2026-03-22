@@ -528,5 +528,4 @@ This hardened Linux desktop now refuses telemetry, limits network exposure, encr
 - [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

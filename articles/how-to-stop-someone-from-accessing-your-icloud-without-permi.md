@@ -216,59 +216,59 @@ If you suspect someone has accessed your account:
 ### Immediate Actions (First 24 Hours)
 
 1. **Change password immediately** from a different device
-   - Go to appleid.apple.com
-   - Select "Change Password"
-   - Create a strong password (16+ characters, unique to Apple)
+ - Go to appleid.apple.com
+ - Select "Change Password"
+ - Create a strong password (16+ characters, unique to Apple)
 
 2. **Review active sessions**
-   - In Settings > [Your Name] > Sign-In & Security
-   - Check "Devices"
-   - Sign out any unrecognized devices
+ - In Settings > [Your Name] > Sign-In & Security
+ - Check "Devices"
+ - Sign out any unrecognized devices
 
 3. **Check Find My settings**
-   - Verify Find My iPhone/Mac is enabled
-   - Review shared locations and remove unwanted access
-   - Disable screen time if someone has set restrictions
+ - Verify Find My iPhone/Mac is enabled
+ - Review shared locations and remove unwanted access
+ - Disable screen time if someone has set restrictions
 
 ### Follow-up Actions (48 Hours)
 
 4. **Generate recovery key**
-   - Go to appleid.apple.com > Account Security
-   - Create new recovery key
-   - Save in secure location or password manager
+ - Go to appleid.apple.com > Account Security
+ - Create new recovery key
+ - Save in secure location or password manager
 
 5. **Update trusted phone numbers**
-   - Remove old phone numbers from recovery options
-   - Add only current, secure phone numbers
-   - Verify SMS delivery works
+ - Remove old phone numbers from recovery options
+ - Add only current, secure phone numbers
+ - Verify SMS delivery works
 
 6. **Audit third-party app access**
-   - Settings > [Your Name] > Apps & Websites
-   - Review "Apps and Websites that use your Apple ID"
-   - Revoke access for apps you don't recognize
+ - Settings > [Your Name] > Apps & Websites
+ - Review "Apps and Websites that use your Apple ID"
+ - Revoke access for apps you don't recognize
 
 7. **Enable additional 2FA options**
-   - Consider adding a security key (hardware token)
-   - This prevents even sophisticated attackers from accessing your account
+ - Consider adding a security key (hardware token)
+ - This prevents even sophisticated attackers from accessing your account
 
 ### If You've Lost Control of Your Account
 
 If you cannot reset your password and someone else clearly has control:
 
 1. **Contact Apple Support immediately**
-   - Call 1-800-MY-APPLE
-   - Describe the situation, have your recovery email and phone ready
-   - Apple may require identity verification (billing address, last 4 of payment method)
+ - Call 1-800-MY-APPLE
+ - Describe the situation, have your recovery email and phone ready
+ - Apple may require identity verification (billing address, last 4 of payment method)
 
 2. **Check for ongoing unauthorized access**
-   - Request Apple disable all sessions
-   - Apple can force logout all devices and require re-authentication
-   - This is a temporary solution but regains immediate control
+ - Request Apple disable all sessions
+ - Apple can force logout all devices and require re-authentication
+ - This is a temporary solution but regains immediate control
 
 3. **Monitor billing**
-   - Check Apple ID billing history for unauthorized purchases
-   - Dispute any fraudulent charges with Apple Support
-   - Monitor for unexpected subscriptions or app purchases
+ - Check Apple ID billing history for unauthorized purchases
+ - Dispute any fraudulent charges with Apple Support
+ - Monitor for unexpected subscriptions or app purchases
 
 ## Developer Considerations
 
@@ -376,5 +376,4 @@ Lost Mode remotely secures your device and can send a custom message to whoever 
 - [How To Demand Company Stop Selling Your Personal Data Under](/privacy-tools-guide/how-to-demand-company-stop-selling-your-personal-data-under-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

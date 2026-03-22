@@ -271,5 +271,4 @@ For developers building tools for this population, prioritize privacy by design:
 - [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

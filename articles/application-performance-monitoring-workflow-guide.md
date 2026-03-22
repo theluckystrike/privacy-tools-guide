@@ -260,5 +260,4 @@ Start with foundational monitoring before adding complexity:
 - [How To Migrate From Windows To Linux Without Losing Workflow](/privacy-tools-guide/how-to-migrate-from-windows-to-linux-without-losing-workflow/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

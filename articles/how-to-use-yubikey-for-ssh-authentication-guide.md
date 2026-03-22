@@ -50,7 +50,7 @@ Recommended for most users. Supports:
 - FIDO U2F
 - Yubico OTP
 - Smart Card (CCID with OpenPGP)
-- Supports USB-A only (need USB-C adapter for modern laptops)
+- Supports USB-An only (need USB-C adapter for modern laptops)
 
 **Best For:** Linux engineers, macOS developers, Windows users with backward compatibility needs.
 
@@ -70,7 +70,7 @@ Same functionality as YubiKey 5, smaller form factor (fits in USB slot without e
 
 **Cost:** $55-70
 
-USB-C only (no USB-A adapter needed). Same functionality as YubiKey 5.
+USB-C only (no USB-An adapter needed). Same functionality as YubiKey 5.
 
 **Best For:** Modern USB-C only laptops (MacBook Pro, newer Linux machines), tablet authentication.
 
@@ -583,5 +583,4 @@ grep "Accepted publickey" /var/log/auth.log | \
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

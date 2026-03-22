@@ -466,5 +466,4 @@ Document all changes in your policy version history:
 - [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

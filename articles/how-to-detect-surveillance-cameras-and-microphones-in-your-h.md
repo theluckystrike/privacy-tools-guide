@@ -306,5 +306,4 @@ Post public reviews on the booking platform documenting what you found and that 
 - [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -282,19 +282,19 @@ For developers building privacy tools, install these extensions across all brows
 ### Essential Extensions (All Browsers)
 
 1. **uBlock Origin**
-   ```bash
+ ```bash
    # Firefox: addons.mozilla.org/en-US/firefox/addon/ublock-origin/
    # Brave: Already included in Shields
    ```
 
 2. **HTTPS Everywhere**
-   ```bash
+ ```bash
    # Now mostly unnecessary (modern browsers force HTTPS)
    # But still useful for backwards compatibility
    ```
 
 3. **Privacy Badger**
-   ```bash
+ ```bash
    # Firefox: addons.mozilla.org/en-US/firefox/addon/privacy-badger/
    # Tracks which third parties track you
    ```
@@ -302,16 +302,16 @@ For developers building privacy tools, install these extensions across all brows
 ### Developer-Specific Extensions
 
 1. **Cookie AutoDelete**
-   - Automatically delete cookies except those on whitelist
-   - Prevents persistent tracking across sessions
+ - Automatically delete cookies except those on whitelist
+ - Prevents persistent tracking across sessions
 
 2. **Containers (Firefox)**
-   - Isolate websites in separate containers
-   - Test multiple account scenarios simultaneously
+ - Isolate websites in separate containers
+ - Test multiple account scenarios simultaneously
 
 3. **LibRedirect**
-   - Redirect to privacy-respecting alternatives
-   - Google → DuckDuckGo, YouTube → Invidious, etc.
+ - Redirect to privacy-respecting alternatives
+ - Google → DuckDuckGo, YouTube → Invidious, etc.
 
 ## Mobile-Specific Privacy Configuration
 

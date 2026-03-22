@@ -236,5 +236,4 @@ Several organizations provide data broker removal services:
 - [How to Remove Personal Data from Data Brokers](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

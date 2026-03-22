@@ -294,5 +294,4 @@ Each platform has its own policies and timelines. Building an unified tracking s
 - [Smart Device Deregistration After Death How To Remove Deceas](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

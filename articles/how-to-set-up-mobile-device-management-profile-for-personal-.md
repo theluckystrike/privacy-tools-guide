@@ -221,5 +221,4 @@ Store your profile configurations in a secure location (encrypted external drive
 - [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

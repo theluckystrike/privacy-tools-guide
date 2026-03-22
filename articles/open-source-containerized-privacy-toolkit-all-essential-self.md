@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Open Source Containerized Privacy Toolkit: All Essential Self-Hosted Tools in One Stack"
+title: "Open Source Containerized Privacy Toolkit: All Essential"
 description: "Build a complete privacy-focused self-hosted toolkit using Docker containers. Essential tools for password management, file sync, VPN, and more."
 date: 2026-03-16
 author: "Privacy Tools Guide"
@@ -10,8 +10,8 @@ voice-checked: true
 tags: [privacy-tools-guide, self-hosted, docker, containerization, privacy]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
 {% raw %}
 
 Running your own privacy-focused services gives you control over your data without relying on third-party providers. A containerized approach using Docker simplifies deployment, makes updates straightforward, and lets you run multiple services on a single host. This guide covers essential self-hosted tools that form a complete privacy toolkit.
@@ -145,7 +145,7 @@ services:
 
 ## Orchestrating Your Stack
 
-Create a unified `docker-compose.yml` that includes all services:
+Create an unified `docker-compose.yml` that includes all services:
 
 ```yaml
 version: '3.8'
@@ -275,6 +275,7 @@ docker compose ps
 
 Access each service through its designated port. Configure TLS certificates through your reverse proxy for production use.
 
+<<<<<<< HEAD
 ## Conclusion
 
 Building a self-hosted privacy toolkit doesn't require expert knowledge—it requires starting with essential services and expanding as needed. Start with Vaultwarden for passwords, add AdGuard for ad-blocking, then layer in VPN access and file synchronization. Containerization makes this manageable for individuals, turning what would be complex infrastructure into maintainable, portable configurations.
@@ -286,6 +287,7 @@ Building a self-hosted privacy toolkit doesn't require expert knowledge—it req
 - [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
 - [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
 
+=======
+>>>>>>> b900bdda56765d71068413d810978b9f118b0721
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

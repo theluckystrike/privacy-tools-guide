@@ -334,5 +334,4 @@ Apps that request background location without a valid use case face manual revie
 - [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

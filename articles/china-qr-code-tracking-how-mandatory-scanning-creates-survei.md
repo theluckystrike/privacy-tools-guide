@@ -329,5 +329,4 @@ The technical lesson from China's QR system demonstrates how routine convenience
 - [Challenge Employer Mandatory Biometric Clock](/privacy-tools-guide/how-to-challenge-employer-mandatory-biometric-clock-in-fingerprint-face-scan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

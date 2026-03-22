@@ -188,19 +188,19 @@ chromium --profile-directory="PaymentOnly" https://your-shopping-destination.com
 Even with perfect protection, breaches happen. Establish a recovery workflow:
 
 1. **Immediate actions** (within 24 hours):
-   - Contact your card issuer to report fraud
-   - Request temporary card freeze while dispute processing
-   - Ask for credit monitoring enrollment
+ - Contact your card issuer to report fraud
+ - Request temporary card freeze while dispute processing
+ - Ask for credit monitoring enrollment
 
 2. **Documentation** (within a week):
-   - Collect email receipts from compromised transactions
-   - Screenshot your statement showing disputed charges
-   - Document merchant websites where card was used
+ - Collect email receipts from compromised transactions
+ - Screenshot your statement showing disputed charges
+ - Document merchant websites where card was used
 
 3. **Long-term monitoring** (continuous):
-   - Set credit freeze with Equifax, Experian, TransUnion
-   - Monitor credit reports via AnnualCreditReport.com
-   - Check credit monitoring services (often free after breach)
+ - Set credit freeze with Equifax, Experian, TransUnion
+ - Monitor credit reports via AnnualCreditReport.com
+ - Check credit monitoring services (often free after breach)
 
 The Fair Credit Billing Act (FCBA) protects consumers for unauthorized charges up to $50, and most card issuers waive even this amount. Recovery typically takes 1-2 billing cycles, but documentation speeds the process.
 
@@ -284,5 +284,4 @@ Merchants demonstrating security awareness correlate with lower skimming risk. C
 - [How To Protect Your Child From Online Predators Safety Setup](/privacy-tools-guide/how-to-protect-your-child-from-online-predators-safety-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

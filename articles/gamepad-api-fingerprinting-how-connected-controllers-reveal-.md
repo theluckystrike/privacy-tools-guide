@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gamepad Api Fingerprinting How Connected Controllers Reveal"
+title: "Gamepad API Fingerprinting How Connected Controllers Reveal"
 description: "The Gamepad API enables web browsers to communicate with game controllers connected via USB or Bluetooth. Originally designed for browser-based gaming, this"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -411,5 +411,4 @@ Clearly document gamepad usage in privacy policies:
 - [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

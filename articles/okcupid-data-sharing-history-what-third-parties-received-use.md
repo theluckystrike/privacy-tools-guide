@@ -214,5 +214,4 @@ Building trust in dating applications requires prioritizing user privacy over ad
 - [How To Disable Macos Analytics Sharing That Sends Crash Data](/privacy-tools-guide/how-to-disable-macos-analytics-sharing-that-sends-crash-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

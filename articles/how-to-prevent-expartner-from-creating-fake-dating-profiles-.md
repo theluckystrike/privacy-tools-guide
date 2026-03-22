@@ -312,5 +312,4 @@ This isn't about paranoia—it's about recognizing that once photos are online, 
 - [How To Make Payments Without Creating Digital Transaction Re](/privacy-tools-guide/how-to-make-payments-without-creating-digital-transaction-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

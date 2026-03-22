@@ -173,7 +173,7 @@ For developers working with location data:
 - [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
 - [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Data Retention and Cross-Platform Sharing
 
@@ -435,4 +435,6 @@ Instead of Passport, interact only on secure platforms where location remains pr
 - Physical burner phone
 - Account created in safe jurisdiction
 - Assume all location data compromised
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

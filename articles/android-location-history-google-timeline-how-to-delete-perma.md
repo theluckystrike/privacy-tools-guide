@@ -215,5 +215,4 @@ For maximum privacy, consider using a separate Google account for Android device
 - [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

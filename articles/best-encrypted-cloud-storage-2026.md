@@ -417,5 +417,4 @@ du -sh ~/critical-data/*
 - [Encrypted Cloud Storage Gdpr Compliant 2026](/privacy-tools-guide/encrypted-cloud-storage-gdpr-compliant-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

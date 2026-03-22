@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How To Disable Macos Analytics Sharing That Sends Crash"
+title: "How To Disable macOS Analytics Sharing That Sends Crash"
 description: "A practical guide for developers and power users to disable macOS analytics, diagnostic data sharing, and crash reports sent to Apple. Includes"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -305,5 +305,4 @@ Most privacy-focused users disable all analytics. The tradeoff is minimal—syst
 - [Best Secure File Sharing Tools for Teams Handling.](/privacy-tools-guide/best-secure-file-sharing-tools-for-teams-handling-sensitive-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -255,5 +255,4 @@ Use these methods responsibly. Respect platform terms of service where legal. Co
 - [Employee Social Media Privacy Can Employer Fire You For Priv](/privacy-tools-guide/employee-social-media-privacy-can-employer-fire-you-for-priv/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

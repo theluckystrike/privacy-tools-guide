@@ -87,9 +87,9 @@ HexChat provides a straightforward GUI for Tor connections:
 1. Open HexChat → Network List → Add a new network
 2. Set the server hostname to a Tor-based IRC network (e.g., `irc6.oftc.net.onion`)
 3. Navigate to the server and enable "Proxy" with these settings:
-   - Proxy type: SOCKS5
-   - Proxy host: 127.0.0.1
-   - Proxy port: 9050
+ - Proxy type: SOCKS5
+ - Proxy host: 127.0.0.1
+ - Proxy port: 9050
 
 For OFTC, which maintains an official Tor hidden service:
 
@@ -344,5 +344,4 @@ Matrix (Element) and XMPP both support Tor routing and offer end-to-end encrypti
 - [I2P vs Tor: Anonymous Network Comparison 2026](/privacy-tools-guide/i2p-vs-tor-anonymous-network-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

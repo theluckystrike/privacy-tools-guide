@@ -236,5 +236,4 @@ Autofill requires layered defenses: strict CSP headers, explicit user interactio
 - [Passkey vs Password Security Comparison: A Developer Guide](/privacy-tools-guide/passkey-vs-password-security-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

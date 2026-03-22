@@ -339,5 +339,4 @@ These roles can coexist and often work together during supervisory authority inq
 - [Enterprise Privacy Compliance Tool Comparison for GDPR.](/privacy-tools-guide/enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -712,5 +712,4 @@ Annual:
 - [Best Way to Encrypt Google Drive Files: A Developer Guide](/privacy-tools-guide/best-way-to-encrypt-google-drive-files/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -336,5 +336,4 @@ For teams operating in regulated industries (healthcare, finance, government), e
 - [Dashlane vs LastPass After Breach: Security Comparison](/privacy-tools-guide/dashlane-vs-lastpass-after-breach-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

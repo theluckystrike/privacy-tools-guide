@@ -259,7 +259,7 @@ Persona B posts on Twitter at 4 AM EST (same unusual time)
 Analyst: Likely same person, timezone UTC
 ```
 
-Vary your activity times across personas. If your real work is 9-5 EST, have Persona A active during those hours, Persona B in opposite hours.
+Vary your activity times across personas. If your real work is 9-5 EST, have Persona An active during those hours, Persona B in opposite hours.
 
 ### Language and Writing Style Analysis
 
@@ -353,5 +353,4 @@ Document exactly what was exposed. This informs recovery procedures.
 - [Best Password Generator Strategy 2026: A Developer's Guide](/privacy-tools-guide/best-password-generator-strategy-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}
