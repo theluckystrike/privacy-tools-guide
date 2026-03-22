@@ -198,6 +198,319 @@ If you determine someone is reading your messages:
 4. **Contact your carrier** to check for unauthorized forwarding
 5. **Document evidence** before resetting if you plan to pursue legal action
 
+## Advanced SMS Interception Techniques
+
+Understanding how SMS can be intercepted helps you protect against it:
+
+### SIM Swapping
+
+A sophisticated attack where the attacker convinces your carrier to switch your phone number to a new SIM card they control:
+
+```bash
+# Signs of SIM swapping:
+# 1. Service suddenly drops (SIM no longer recognized)
+# 2. Can't make calls or receive texts
+# 3. Account recovery codes arrive on new device
+# 4. Accounts accessed without your authorization
+
+# Prevention:
+# 1. Add a PIN or passcode to your account with carrier
+# 2. Contact carrier to restrict SIM changes
+# 3. Use authenticator apps instead of SMS 2FA
+# 4. Monitor for suspicious account activity
+```
+
+### SS7 Interception
+
+SS7 (Signaling System 7) is the protocol cellular networks use. Attackers with network access can intercept SMS:
+
+```python
+class SS7Vulnerability:
+    def __init__(self):
+        self.vulnerability_details = {
+            'protocol': 'SS7 (Signaling System 7)',
+            'scope': 'All SMS messages',
+            'attack_vector': 'Network-level access required',
+            'mitigation': 'Use encrypted messaging apps'
+        }
+
+    def assess_ss7_risk(self):
+        """SS7 attacks are sophisticated nation-state level"""
+        risk_level = {
+            'threat_actor': 'Government/Law Enforcement/Advanced Criminals',
+            'likelihood_consumer': 'Very Low',
+            'likelihood_activist_journalist': 'Medium-High',
+            'detection': 'Nearly impossible for typical user',
+            'protection': 'Only via encryption (Signal, etc.)'
+        }
+        return risk_level
+
+    def protection_requirements(self):
+        """Only real protection against SS7"""
+        return {
+            'requirement': 'End-to-end encryption',
+            'tools': [
+                'Signal (most recommended)',
+                'WhatsApp',
+                'ProtonMail (for email)',
+                'Riot.im / Element (matrix protocol)'
+            ],
+            'why': 'SMS cannot be protected; encryption necessary'
+        }
+```
+
+## Comprehensive Device Security Assessment
+
+Perform a full security audit of your device:
+
+```bash
+#!/bin/bash
+# Comprehensive device security assessment
+
+security_audit() {
+  echo "=== DEVICE SECURITY ASSESSMENT ==="
+
+  # 1. Check for unauthorized apps
+  echo -e "\n[*] Checking for unauthorized applications..."
+
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS
+    ls /Applications | grep -i "spy\|monitor\|track\|keylog"
+  else
+    # Linux
+    dpkg -l | grep -i "spy\|monitor\|track\|keylog"
+  fi
+
+  # 2. Check running processes
+  echo -e "\n[*] Checking running processes..."
+  ps aux | grep -i "sms\|message\|forward" | grep -v grep
+
+  # 3. Check open network connections
+  echo -e "\n[*] Checking active network connections..."
+  netstat -an | grep ESTABLISHED | head -20
+
+  # 4. Check browser history/cache
+  echo -e "\n[*] Checking browser data..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Check Safari
+    sqlite3 ~/Library/Safari/History.db "SELECT url, title FROM history ORDER BY visit_time DESC LIMIT 10"
+  fi
+
+  # 5. Check for mdm profiles (device management)
+  echo -e "\n[*] Checking for device management profiles..."
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    profiles show
+  fi
+
+  # 6. Check system logs for suspicious activity
+  echo -e "\n[*] Recent system logs..."
+  log show --level notice | tail -50
+}
+
+security_audit
+```
+
+## SMS Encryption Alternatives
+
+Since SMS itself cannot be encrypted, use these alternatives:
+
+```python
+sms_alternatives_comparison = {
+    'Signal': {
+        'encryption': 'End-to-end (AES-256)',
+        'metadata_protection': 'Excellent',
+        'open_source': True,
+        'platform': ['iOS', 'Android', 'Desktop'],
+        'recommendation': 'BEST - Most secure option'
+    },
+    'WhatsApp': {
+        'encryption': 'End-to-end (Signal Protocol)',
+        'metadata_protection': 'Limited',
+        'open_source': False,
+        'platform': ['iOS', 'Android', 'Desktop'],
+        'note': 'Owned by Meta; metadata could be shared'
+    },
+    'Telegram': {
+        'encryption': 'Optional (Secret Chats)',
+        'metadata_protection': 'Poor (default)',
+        'open_source': False,
+        'note': 'Only Secret Chats are encrypted'
+    },
+    'iMessage': {
+        'encryption': 'End-to-end (proprietary)',
+        'metadata_protection': 'Moderate',
+        'open_source': False,
+        'platform': ['iOS', 'macOS'],
+        'note': 'Good for Apple users, requires Apple ecosystem'
+    },
+    'ProtonMail': {
+        'encryption': 'End-to-end',
+        'use_case': 'Email, not SMS',
+        'note': 'Separate from SMS, uses email protocol'
+    }
+}
+```
+
+## Detecting Specific Spyware
+
+Different spyware leaves different fingerprints:
+
+```python
+class SpywareDetection:
+    def __init__(self):
+        self.indicators = {}
+
+    def check_pegasus_signs(self):
+        """Pegasus spyware indicators"""
+        return {
+            'battery_drain': 'Excessive even when idle',
+            'heat_generation': 'Device warm even when not in use',
+            'network_activity': 'Background data usage spikes',
+            'call_quality': 'Echo or distortion on calls',
+            'sms_delays': 'Incoming/outgoing message delays'
+        }
+
+    def check_commercial_spyware(self):
+        """Commercial spy app indicators (FlexiSPY, mSpy, etc.)"""
+        return {
+            'permission_requests': 'Excessive permissions in recent updates',
+            'battery_usage': 'Specific apps consuming unusual battery',
+            'background_activity': 'Apps running when not opened',
+            'memory_usage': 'High memory usage for basic functions',
+            'phone_locking': 'Phone locks/unlocks without user action'
+        }
+
+    def check_carrier_monitoring(self):
+        """Legal carrier monitoring (lawful intercept)"""
+        return {
+            'detection': 'Very difficult to identify',
+            'indicators': [
+                'Your number appears in unusual places',
+                'SMS forwarding enabled through carrier',
+                'Calls have delays or quality issues'
+            ],
+            'protection': 'Requires encrypted apps (Signal, etc.)'
+        }
+```
+
+## Legal and Regulatory Framework
+
+Understanding the legal aspects of SMS interception:
+
+```yaml
+Legal Framework for SMS Interception:
+
+United States:
+  Wiretap Act:
+    - Unauthorized interception is federal crime
+    - Penalties: Up to 5 years prison
+    - Civil damages available
+
+  Federal Stored Communications Act:
+    - Unauthorized access to stored messages
+    - Penalties: 2-10 years prison
+    - Civil damages: Up to $1000 per day
+
+  State Laws:
+    - Many states have separate laws
+    - Some require two-party consent for recording
+
+Europe (GDPR):
+  - SMS interception violates privacy rights
+  - Potential €20 million or 4% revenue fine
+  - Right to lodge complaints with data protection authority
+
+  GDPR Requirements:
+    - Right to be informed
+    - Right of access
+    - Right to rectification
+    - Right to erasure
+
+Reporting Options:
+  - FBI Internet Crime Complaint Center (IC3)
+  - FCC Cybersecurity and Communications Security Bureau
+  - State Attorney General
+  - Data Protection Authority (EU)
+```
+
+## Creating a Recovery Plan
+
+If your SMS has been compromised:
+
+```yaml
+Recovery Plan (72 hours):
+
+Hour 0-1 (Immediate):
+  - [ ] Document evidence (screenshots, timestamps)
+  - [ ] Call carrier to report issue
+  - [ ] Change all critical passwords (non-SMS)
+  - [ ] Contact financial institutions
+
+Hour 1-24 (First Day):
+  - [ ] Enable 2FA on all accounts (use authenticator app)
+  - [ ] Review account access logs
+  - [ ] Check for fraudulent transactions
+  - [ ] File police report if applicable
+
+Day 1-3 (First 3 Days):
+  - [ ] Factory reset affected device
+  - [ ] Restore from clean backup (if available)
+  - [ ] Update all software
+  - [ ] Install updated antivirus/antimalware
+  - [ ] Consider switching phone carrier
+
+Ongoing (Weeks 1+):
+  - [ ] Monitor credit/financial accounts
+  - [ ] Use credit monitoring service
+  - [ ] Update to more secure communication apps
+  - [ ] Maintain regular security audits
+  - [ ] Consider consulting security professional
+```
+
+## Professional Help Resources
+
+When to seek professional help:
+
+```python
+professional_resources = {
+    'Local Resources': [
+        'FBI field office',
+        'State police cyber crime unit',
+        'Local attorney (for civil action)',
+        'Private security consultant'
+    ],
+
+    'Organizations': {
+        'EFF (Electronic Frontier Foundation)': 'https://eff.org',
+        'Access Now': 'Digital security support',
+        'Freedom of the Press': 'Journalist protection'
+    },
+
+    'When to Call Police': [
+        'Active fraud/identity theft',
+        'Threatening messages',
+        'Extortion attempts',
+        'Evidence of stalking'
+    ],
+
+    'When to Hire Attorney': [
+        'Civil harassment suit',
+        'Intellectual property theft',
+        'Business espionage',
+        'Creating liability documentation'
+    ],
+
+    'When to Hire Security Consultant': [
+        'Sophisticated attack suspected',
+        'Evidence of government surveillance',
+        'Business/organizational security',
+        'Need professional forensics'
+    ]
+}
+```
+
+Protecting your text messages requires understanding both technical vulnerabilities and legal remedies. Migrate to encrypted messaging apps like Signal for sensitive communications, and remain vigilant for signs of interception or compromise.
+
 
 
 ## Frequently Asked Questions

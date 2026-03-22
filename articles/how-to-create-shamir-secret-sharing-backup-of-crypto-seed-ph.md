@@ -197,6 +197,234 @@ Estate coordination requires clear documentation. Your will or trust should spec
 
 Legal frameworks vary by jurisdiction. Consult with an estate planning attorney familiar with cryptocurrency to ensure your arrangement complies with local laws and your wishes will be honored.
 
+## Implementing Time-Locked Recovery
+
+Add time-locked conditions to prevent premature access:
+
+```python
+from datetime import datetime, timedelta
+import hashlib
+import hmac
+
+class TimeLockedSSS:
+    def __init__(self, unlock_date, shared_secret=None):
+        """Create time-locked SSS shares"""
+        self.unlock_date = unlock_date
+        self.shared_secret = shared_secret or self._generate_secret()
+
+    def _generate_secret(self):
+        """Generate a random release secret"""
+        import secrets
+        return secrets.token_hex(32)
+
+    def create_locked_shares(self, seed_hex, threshold, shares):
+        """Generate shares with time-lock metadata"""
+        secret = Secret.from_hex(seed_hex)
+        share_objects = secret.split(threshold=threshold, shares=shares)
+
+        locked_shares = []
+        for i, share in enumerate(share_objects):
+            locked_share = {
+                'share': share.to_hex(),
+                'share_number': i + 1,
+                'unlock_date': self.unlock_date.isoformat(),
+                'time_lock_hash': self._compute_time_lock_hash(),
+                'unlock_secret_hash': hashlib.sha256(
+                    self.shared_secret.encode()
+                ).hexdigest()
+            }
+            locked_shares.append(locked_share)
+
+        return locked_shares
+
+    def _compute_time_lock_hash(self):
+        """Create verifiable time-lock proof"""
+        time_component = self.unlock_date.isoformat().encode()
+        return hashlib.sha256(time_component).hexdigest()
+
+    def can_unlock(self, current_time):
+        """Check if shares can be unlocked"""
+        return current_time >= self.unlock_date
+```
+
+## Advanced: Multi-Signature Integration
+
+Combine SSS with multi-signature wallets for additional security:
+
+```bash
+#!/bin/bash
+# Setup 2-of-3 multi-sig wallet with SSS backup
+
+# Create 3-of-5 SSS shares of master seed
+python3 sss_split.py $MASTER_SEED 3 5
+
+# Create 2-of-3 multi-sig wallet using the recovered seed
+# This adds signature-level protection on top of key-level protection
+
+bitcoin-cli createmultisig 2 '["key1_pubkey","key2_pubkey","key3_pubkey"]'
+
+# Combine benefits:
+# - SSS protects the master seed (requires 3 of 5 family members)
+# - Multi-sig protects transaction signing (requires 2 of 3 signers)
+# - Double protection against single point of failure
+```
+
+This creates a system where both key recovery AND transaction signing require multiple parties.
+
+## Testing Your SSS Setup
+
+Before relying on SSS for production, thoroughly test recovery:
+
+```python
+def test_sss_recovery():
+    """Test share recovery process end-to-end"""
+    import random
+
+    # Original seed
+    original_seed = "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+
+    # Generate shares
+    shares = split_seed_phrase(original_seed, shares=5, threshold=3)
+
+    # Test: Can we recover with exactly 3 shares?
+    test_shares = random.sample(shares, 3)
+    recovered = combine_shares(test_shares)
+
+    assert recovered == original_seed, "Recovery failed!"
+
+    # Test: Can we recover with 4 shares? (should still work)
+    test_shares = random.sample(shares, 4)
+    recovered = combine_shares(test_shares)
+
+    assert recovered == original_seed, "4-share recovery failed!"
+
+    # Test: Can we recover with 2 shares? (should fail)
+    test_shares = random.sample(shares, 2)
+    try:
+        recovered = combine_shares(test_shares)
+        assert False, "2-share recovery should fail!"
+    except Exception:
+        print("2-share recovery correctly failed")
+
+    print("All SSS recovery tests passed!")
+
+# Run tests
+test_sss_recovery()
+```
+
+## Physical Share Storage Best Practices
+
+How to physically secure your shares:
+
+**Share 1 (Attorney):**
+- Store in sealed envelope with instructions
+- Include recovery procedure document
+- Specify trigger conditions (death, incapacity)
+
+**Share 2 (Safe Deposit Box):**
+- Use a tamper-evident container
+- Include instructions and recovery tools
+- Consider a secondary copy if feasible
+
+**Share 3 (Family Member):**
+- Provide clear written instructions
+- Include contact info for other share holders
+- Consider whether this person will be available
+
+**Storage Medium Considerations:**
+- Laminated paper: cheap, durable, no single point of failure
+- Metal tablets: more durable, harder to copy
+- Encrypted USB drives: vulnerable if lost, needs backup
+- Avoid: unencrypted digital storage, cloud services with SSS shares
+
+## Verifying Share Integrity
+
+Over time, shares might become damaged or altered. Implement verification:
+
+```python
+class ShareVerification:
+    def __init__(self, original_shares):
+        self.original_shares = original_shares
+        self.share_hashes = {}
+
+        # Store hashes of original shares
+        for i, share in enumerate(original_shares):
+            self.share_hashes[i] = hashlib.sha256(share.encode()).hexdigest()
+
+    def verify_share_integrity(self, share_number, share_data):
+        """Verify a share hasn't been modified"""
+        current_hash = hashlib.sha256(share_data.encode()).hexdigest()
+
+        if current_hash != self.share_hashes[share_number]:
+            return False, "Share may be corrupted"
+
+        return True, "Share verified"
+
+    def generate_verification_report(self, shares):
+        """Generate a report of all shares"""
+        report = []
+        for i, share in enumerate(shares):
+            verified, message = self.verify_share_integrity(i, share)
+            report.append({
+                'share': i + 1,
+                'status': message,
+                'verified': verified,
+                'hash': self.share_hashes[i]
+            })
+
+        return report
+```
+
+## Comparing SSS with Hardware Wallets
+
+Modern hardware wallets offer native SSS support:
+
+| Feature | SSS Implementation | Hardware Wallet SSS |
+|---------|-------------------|-------------------|
+| Setup complexity | Medium | Low |
+| Share generation | Manual | Automated |
+| Recovery process | Manual combination | Automated recovery |
+| Verification | Manual hashing | Built-in verification |
+| Cost | Free (DIY) | $50-300 per wallet |
+| Security auditing | Open source | Vendor closed source |
+
+Consider using a hardware wallet's native SSS if you prioritize ease of use. DIY SSS provides more transparency but requires careful implementation.
+
+## Post-Recovery Key Management
+
+After recovering your seed from shares:
+
+```bash
+#!/bin/bash
+# After recovering seed from SSS shares
+
+# 1. Import into air-gapped device only
+# 2. Generate fresh keys
+# 3. Transfer funds to new addresses
+# 4. Securely destroy the recovered seed
+
+# Secure destruction (multiple overwrites)
+shred -vfz -n 7 /path/to/recovered_seed.txt
+
+# Verify destruction
+ls -la /path/to/recovered_seed.txt  # Should not exist
+
+# Test new addresses before transferring full amount
+transfer_funds_incremental() {
+  local total=$1
+  local address=$2
+
+  # Send 10% to verify
+  bitcoin-cli sendtoaddress "$address" $(($total / 10))
+  sleep 300  # Wait for confirmation
+
+  # Send remaining 90%
+  bitcoin-cli sendtoaddress "$address" $(($total * 9 / 10))
+}
+```
+
+This staged approach ensures your recovery process works before committing all funds.
+
 
 
 ## Frequently Asked Questions

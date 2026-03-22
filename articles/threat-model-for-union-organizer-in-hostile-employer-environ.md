@@ -197,6 +197,374 @@ Threat models require regular updates as conditions change. Schedule quarterly r
 
 Document these reviews and adjust countermeasures accordingly. Security is an ongoing process, not an one-time configuration.
 
+## Advanced Counter-Surveillance Tradecraft
+
+### TEMPEST and Eavesdropping Mitigation
+
+Protect against sophisticated electronic surveillance:
+
+```python
+# Counter-surveillance device detection
+class CounterSurveillanceAssessment:
+    def __init__(self, meeting_location):
+        self.location = meeting_location
+        self.issues = []
+
+    def check_for_hidden_devices(self):
+        """Provide framework for checking for devices"""
+        return {
+            'visual_inspection': [
+                'Check for unusual fixtures',
+                'Look for small holes or lenses',
+                'Examine smoke detectors, clocks, plants'
+            ],
+            'radio_frequency_check': [
+                'Use RF detector in range 100MHz - 2.7GHz',
+                'Check for active transmitters',
+                'Scan multiple times from different positions'
+            ],
+            'physical_security': [
+                'Verify windows are closed',
+                'Confirm doors can be monitored',
+                'Check for sight lines from outside'
+            ]
+        }
+
+    def assess_acoustic_environment(self):
+        """Assess for audio surveillance"""
+        return {
+            'ambient_noise': 'Is background noise sufficient? (60-70dB preferred)',
+            'reflection_points': 'Avoid reflective surfaces opposite speakers',
+            'background_music': 'Consider using white noise or music',
+            'distance': 'Maintain 2-3 feet minimum distance for conversation'
+        }
+
+    def thermal_considerations(self):
+        """Reduce thermal signatures"""
+        return {
+            'door_seals': 'Use weather stripping under doors',
+            'window_coverage': 'Use thermal curtains',
+            'room_temperature': 'Keep consistent with outside',
+            'body_heat': 'Multiple people reduce individual heat signature'
+        }
+```
+
+### Social Engineering Defense
+
+Build resistance to infiltration and social engineering:
+
+```yaml
+Social Engineering Prevention:
+  Training:
+    - Recognize common pretexting techniques
+    - Verify identity through established channels
+    - Be suspicious of new members seeking information
+    - Report unusual questions to security officer
+
+  Operational Security:
+    - Compartmentalize information (need-to-know)
+    - Rotate meeting locations frequently
+    - Use code words for sensitive discussions
+    - Verify communications before acting
+
+  Vetting Process:
+    - Longer relationship building before trust
+    - References from established members
+    - Multiple interviews by different people
+    - Observation of behavior patterns
+
+  Red Flags:
+    - Excessive interest in leadership structure
+    - Questions about meeting schedules
+    - Attempts to gain physical access
+    - Suspicious documentation requests
+```
+
+## Legal Defense Framework
+
+Prepare for potential legal actions:
+
+```python
+class LegalDefenseFramework:
+    def __init__(self):
+        self.evidence_collection = []
+        self.document_retention = {}
+        self.attorney_contact = {}
+
+    def establish_attorney_relationship(self):
+        """Establish relationship with labor attorney before problems occur"""
+        return {
+            'attorney_selection': [
+                'Labor law specialty',
+                'Experience with union defense',
+                'Local jurisdiction expertise',
+                'Confidentiality agreement'
+            ],
+            'retainer': 'Establish retainer before issues arise',
+            'communication_protocol': 'Secure communication methods',
+            'representation_scope': 'Define what attorney covers'
+        }
+
+    def document_adverse_actions(self):
+        """Document all employer adverse actions"""
+        adverse_event = {
+            'date': '2026-03-15',
+            'time': '14:30',
+            'location': 'conference room A',
+            'witnesses': ['name1', 'name2'],
+            'description': 'detailed description',
+            'why_adverse': 'explain connection to protected activity',
+            'potential_damages': 'estimate impact',
+            'evidence': [
+                'emails',
+                'messages',
+                'performance reviews',
+                'witnesses'
+            ]
+        }
+        return adverse_event
+
+    def preserve_electronic_evidence(self):
+        """Properly preserve electronic evidence"""
+        return {
+            'email_archiving': [
+                'Export emails before they are deleted',
+                'Save in native format (PST/MBOX)',
+                'Document chain of custody',
+                'Use forensic tools if necessary'
+            ],
+            'message_preservation': [
+                'Screenshot with metadata',
+                'Export with timestamps',
+                'Include full conversation threads',
+                'Save before account deletion'
+            ],
+            'metadata_preservation': [
+                'Keep file modification dates',
+                'Preserve creation timestamps',
+                'Document access logs',
+                'Archive complete headers'
+            ]
+        }
+
+    def retaliation_documentation_template(self):
+        """Template for documenting retaliation"""
+        return {
+            'protected_activity': 'What union activity did you engage in?',
+            'knowledge_of_activity': 'How did employer learn of it?',
+            'timeline_of_actions': 'When did adverse action occur?',
+            'causation': 'Why do you believe it was retaliation?',
+            'witnesses': 'Who can corroborate the connection?',
+            'damages': 'What harm resulted?',
+            'notice_to_employer': 'When did you notify HR/employer?'
+        }
+```
+
+## Secure Information Sharing Infrastructure
+
+Build secure systems for organizing communication:
+
+```bash
+#!/bin/bash
+# Setup secure information sharing infrastructure
+
+setup_secure_communication() {
+  # 1. Encrypted file sharing server
+  # Requirements: Self-hosted, encrypted at rest, TLS in transit
+
+  # Example using Nextcloud with encryption
+  docker run -d \
+    --name nextcloud \
+    -e MYSQL_ROOT_PASSWORD="$SECURE_PASSWORD" \
+    -e MYSQL_DATABASE="nextcloud" \
+    -v /encrypted_volume/nextcloud:/var/www/html \
+    nextcloud:latest
+
+  # 2. Organize-specific chat/messaging
+  # Use self-hosted Mattermost or Rocket.Chat
+
+  docker run -d \
+    --name mattermost \
+    -e MM_SQLSETTINGS_DATASOURCENAME="$DB_CONNECTION" \
+    -v /encrypted_volume/mattermost:/mattermost/data \
+    mattermost/mattermost-team-edition:latest
+
+  # 3. Encrypted document management
+  # Setup with access controls
+
+  setup_document_permissions() {
+    # Only share documents with explicit recipients
+    # Maintain audit logs of who accessed what
+    # Implement expiring access tokens
+    # Log all document downloads
+  }
+}
+```
+
+### Access Control Matrix
+
+Define precise access controls:
+
+```python
+class SecureAccessControl:
+    def __init__(self):
+        self.roles = {
+            'leadership': {
+                'strategy_documents': True,
+                'member_list': True,
+                'meeting_locations': True,
+                'legal_information': True
+            },
+            'member': {
+                'strategy_documents': False,
+                'member_list': False,
+                'meeting_locations': True,
+                'legal_information': False
+            },
+            'coordinator': {
+                'strategy_documents': True,
+                'member_list': False,
+                'meeting_locations': True,
+                'legal_information': False
+            }
+        }
+
+    def grant_access(self, user_id, role):
+        """Grant role with associated permissions"""
+        if role not in self.roles:
+            raise ValueError(f"Unknown role: {role}")
+
+        # Update user role in system
+        # Log access grant with reason and duration
+
+    def audit_access(self):
+        """Generate access audit log"""
+        return {
+            'timestamp': datetime.utcnow(),
+            'access_grants': [],
+            'access_revocations': [],
+            'anomalies': []
+        }
+```
+
+## Risk Assessment Matrix
+
+Formalize threat evaluation:
+
+```python
+class ThreatRiskMatrix:
+    def evaluate_threat(self, threat_name, likelihood, impact):
+        """
+        Likelihood: 1-5 (1=rare, 5=almost certain)
+        Impact: 1-5 (1=minimal, 5=catastrophic)
+        """
+        risk_score = likelihood * impact
+        risk_level = self._categorize_risk(risk_score)
+
+        return {
+            'threat': threat_name,
+            'likelihood': likelihood,
+            'impact': impact,
+            'risk_score': risk_score,
+            'risk_level': risk_level,
+            'mitigation_required': risk_level in ['HIGH', 'CRITICAL']
+        }
+
+    def _categorize_risk(self, score):
+        if score <= 3:
+            return 'LOW'
+        elif score <= 9:
+            return 'MEDIUM'
+        elif score <= 16:
+            return 'HIGH'
+        else:
+            return 'CRITICAL'
+
+    def prioritize_mitigations(self, threats):
+        """Sort threats by risk level for resource allocation"""
+        sorted_threats = sorted(
+            threats,
+            key=lambda x: x['risk_score'],
+            reverse=True
+        )
+
+        return {
+            'critical': [t for t in sorted_threats if t['risk_score'] >= 16],
+            'high': [t for t in sorted_threats if 9 <= t['risk_score'] < 16],
+            'medium': [t for t in sorted_threats if 3 < t['risk_score'] < 9],
+            'low': [t for t in sorted_threats if t['risk_score'] <= 3]
+        }
+```
+
+## Budgeting for Security
+
+Allocate resources appropriately:
+
+```python
+security_budget_allocation = {
+    'technology': {
+        'encrypted_messaging': '$100/month',
+        'vpn_services': '$60/month',
+        'device_security': '$500 one-time',
+        'password_management': '$50/month'
+    },
+    'training': {
+        'initial_security_training': '$500',
+        'quarterly_refresher': '$200',
+        'new_member_onboarding': '$100'
+    },
+    'professional_services': {
+        'security_audit': '$2000 one-time',
+        'legal_consultation': '$300/month',
+        'threat_modeling': '$1500 one-time'
+    },
+    'operations': {
+        'counter_surveillance_equipment': '$1000',
+        'safe_meeting_spaces': '$200/month',
+        'document_destruction': '$50/month'
+    }
+}
+```
+
+## Incident Response During Active Threat
+
+If security incident occurs:
+
+```yaml
+Incident Response Protocol:
+  Detection (immediately):
+    - Notify security officer
+    - Preserve all evidence
+    - Isolate affected systems
+    - Contact attorney
+
+  Containment (first hour):
+    - Change critical passwords
+    - Notify affected members
+    - Pause organizing activities if necessary
+    - Document timeline
+
+  Investigation (first 24 hours):
+    - Forensic analysis of affected systems
+    - Interview witnesses
+    - Gather evidence for legal case
+    - Assess scope of breach
+
+  Recovery (ongoing):
+    - Restore clean systems
+    - Revise security procedures
+    - Conduct security training
+    - Follow up with attorney
+
+  Lessons Learned (1 week):
+    - Update threat model
+    - Modify procedures
+    - Improve controls
+    - Document for future reference
+```
+
+This threat model for union organizers emphasizes that security is both technical and procedural—both aspects are equally important for protecting your organizing work.
+
 
 
 ## Frequently Asked Questions
