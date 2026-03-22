@@ -1,5 +1,7 @@
 ---
 permalink: /tresorit-review-is-it-worth-the-price-2026/
+description: "Learn tresorit review is it worth the price 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tresorit Review Is It Worth The Price 2026"

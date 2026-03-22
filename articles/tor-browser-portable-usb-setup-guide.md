@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-portable-usb-setup-guide/
+description: "Follow this guide to tor browser portable usb setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"

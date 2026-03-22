@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-threat-model-explained-developers/
+description: "Learn tor browser threat model explained developers with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Browser Threat Model Explained for Developers"

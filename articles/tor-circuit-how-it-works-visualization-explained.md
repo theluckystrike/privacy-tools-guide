@@ -1,5 +1,7 @@
 ---
 permalink: /tor-circuit-how-it-works-visualization-explained/
+description: "Learn tor circuit how it works visualization explained with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Circuit: How It Works and Visualization Explained"

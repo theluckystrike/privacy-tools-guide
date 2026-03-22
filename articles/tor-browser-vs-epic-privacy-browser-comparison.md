@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-vs-epic-privacy-browser-comparison/
+description: "Compare tor browser vs epic privacy browser comparison with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, comparison, privacy]
 ---
 layout: default
 title: "Tor Browser vs Epic Privacy Browser Comparison"

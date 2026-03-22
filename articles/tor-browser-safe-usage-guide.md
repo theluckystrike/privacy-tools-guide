@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-safe-usage-guide/
+description: "Follow this guide to tor browser safe usage guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Use Tor Browser Safely"

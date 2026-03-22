@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-for-journalists-safety-guide-2026/
+description: "Follow this guide to tor browser for journalists safety guide 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"

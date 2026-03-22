@@ -1,5 +1,7 @@
 ---
 permalink: /totp-backup-codes-best-practices/
+description: "Discover the best totp backup codes best practices with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, best-of]
 ---
 layout: default
 title: "TOTP Backup Codes Best Practices: A Developer's Guide"

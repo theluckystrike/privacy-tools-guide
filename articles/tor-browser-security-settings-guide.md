@@ -1,5 +1,7 @@
 ---
 permalink: /tor-browser-security-settings-guide/
+description: "Follow this guide to tor browser security settings guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, security]
 ---
 layout: default
 title: "Tor Browser Security Settings Configuration Guide"

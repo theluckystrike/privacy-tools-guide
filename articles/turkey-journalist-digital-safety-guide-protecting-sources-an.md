@@ -1,5 +1,7 @@
 ---
 permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
+description: "Follow this guide to turkey journalist digital safety guide protecting sources an with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources"

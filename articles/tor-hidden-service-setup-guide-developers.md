@@ -1,5 +1,7 @@
 ---
 permalink: /tor-hidden-service-setup-guide-developers/
+description: "Follow this guide to tor hidden service setup guide developers with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Hidden Service Setup Guide Developers"

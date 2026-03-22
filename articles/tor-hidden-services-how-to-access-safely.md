@@ -1,5 +1,7 @@
 ---
 permalink: /tor-hidden-services-how-to-access-safely/
+description: "Follow this guide to tor hidden services how to access safely with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Hidden Services: How to Access Safely"

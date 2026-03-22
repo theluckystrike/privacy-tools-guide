@@ -1,5 +1,7 @@
 ---
 permalink: /tor-network-censorship-resistance-explained/
+description: "Learn tor network censorship resistance explained with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tor Network Censorship Resistance Explained"
