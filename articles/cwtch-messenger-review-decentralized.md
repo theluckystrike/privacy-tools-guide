@@ -13,34 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Cwtch Messenger Review: A Decentralized Privacy Solution"
-description: "A technical review of Cwtch messenger for developers and power users, covering its decentralized architecture, Tor-based routing, and self-hosted"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cwtch-messenger-review-decentralized/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 Cwtch stands as a unique entrant in the privacy-focused messaging space. Built on the Tor network, it offers decentralized, metadata-resistant communication without requiring phone numbers or centralized servers. This review examines Cwtch from a developer's perspective, evaluating its architecture, security properties, and practical deployment options.
-
-## Key Takeaways
-
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **Cwtch stands as a**: unique entrant in the privacy-focused messaging space.
-- **One user creates a**: "group profile" 2.
-- **Free and basic plans**: typically get community forum support and documentation.
-- **Each user runs a**: Cwtch client that functions as both a message sender and relay node.
-- **Share this address with contacts**: no username or phone number required.
 
 ## Understanding Cwtch's Design Philosophy
 

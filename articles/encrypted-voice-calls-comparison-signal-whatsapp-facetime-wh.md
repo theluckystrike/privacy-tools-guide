@@ -12,39 +12,11 @@ voice-checked: true
 reviewed: true
 score: 9
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
 ---
----
-layout: default
-title: "Encrypted Voice Calls Comparison"
-description: "A technical analysis of metadata leakage in Signal, WhatsApp, and FaceTime voice calls. Learn what data each platform collects and how to minimize your"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 9
-tags: [privacy-tools-guide]
----
-=======
----
->>>>>>> Stashed changes
 
 {% raw %}
 
 When evaluating privacy-focused communication tools, the encryption itself is only part of the equation. Metadata—what gets logged, stored, and potentially shared with third parties—can reveal as much about your communications as the content itself. This analysis examines what metadata Signal, WhatsApp, and FaceTime collect during voice calls, providing developers and power users with practical recommendations for minimizing exposure.
-
-## Key Takeaways
-
-- **Session provides phone-number-free calls**: but with smaller user adoption.
-- **When evaluating privacy-focused communication**: tools, the encryption itself is only part of the equation.
-- **Verify TLS is in**: use (should see valid certificates) # 5.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 ## Table of Contents
 

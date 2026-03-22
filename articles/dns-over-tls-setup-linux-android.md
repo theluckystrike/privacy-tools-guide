@@ -11,40 +11,13 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
 ---
----
-layout: default
-title: "DNS over TLS Setup on Linux"
-description: "Configure DNS over TLS (DoT) on Linux with systemd-resolved and on Android's Private DNS feature to encrypt DNS queries and prevent ISP snooping"
-date: 2026-03-21
-author: theluckystrike
-permalink: /dns-over-tls-setup-linux-android/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
-=======
----
->>>>>>> Stashed changes
 
 {% raw %}
 
 Every domain name lookup you make is normally sent as plaintext UDP to port 53. Your ISP, your router, anyone on the network, and any government with access to network infrastructure can read exactly which websites you're looking up. DNS over TLS (DoT) encrypts these queries over a TCP connection to port 853, making them unreadable to network observers.
 
 DoT is simpler than DNS over HTTPS (DoH) for system-level deployment: one dedicated port, standard TLS, no HTTP overhead. This guide covers setting it up on Linux using systemd-resolved and on Android using the built-in Private DNS feature.
-
-## Key Takeaways
-
-- **If you're in a**: restrictive environment where port 853 is blocked, DoH is the better choice.
-- **For most privacy use**: cases (ISP snooping prevention, protecting queries on public Wi-Fi), DoT is simpler and sufficient.
-- **If you use Mullvad VPN**: their resolver is the most privacy-preserving option since it operates entirely within their no-log infrastructure.
-- **Use VPN DNS from**: provider that supports DoT # 2.
-- **Cloudflare offers better performance**: in many regions but retains some logs for up to 24 hours.
-- **Use these steps to confirm**: 1.
 
 ## Table of Contents
 

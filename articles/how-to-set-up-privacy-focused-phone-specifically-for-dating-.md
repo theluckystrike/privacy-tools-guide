@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How To Set Up Privacy Focused Phone Specifically For Dating"
-description: "A technical guide for developers and power users to configure a privacy-focused phone for dating apps, secure meetup planning, and safe online dating"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-privacy-focused-phone-specifically-for-dating-/
-categories: [guides]
-tags: [privacy-tools-guide, tools, privacy]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 Set up a dedicated Android phone with CalyxOS (not GrapheneOS, since it's harder to get dating apps working) running only the essential dating apps you need. Buy a used Google Pixel 4an or 7a, unlock the bootloader, flash CalyxOS with Play Services disabled by default, then install dating apps individually and enable Play Services only for those apps. This gives you complete isolation: if that phone gets compromised, your real identity on your primary phone remains untouched, and you can discard or reset the dating phone instantly without losing access to your main accounts.
-
-## Key Takeaways
-
-- **Buy a used Google Pixel 4an or 7a**: unlock the bootloader, flash CalyxOS with Play Services disabled by default, then install dating apps individually and enable Play Services only for those apps.
-- **The Google Pixel 4a**: (discontinued but available used) or newer budget devices like the Pixel 7a provide excellent support for privacy-oriented custom ROMs.
-- **For dating app use specifically**: CalyxOS with Google Play Services disabled by default provides the best balance.
-- **Avoid iOS devices because**: they offer limited options for user control over app permissions and network traffic.
-- **However, GrapheneOS does not support the Google Play Store directly**: you'll need to use the Aurora Store or sideload APKs.
-- **Install only the apps you need**: and enable Play Services only for specific applications that refuse to work otherwise.
 
 ## Table of Contents
 

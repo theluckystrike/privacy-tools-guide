@@ -11,22 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, integration, vpn]---
+tags: [privacy-tools-guide, integration, vpn]
+---
 
 {% raw %}
 
 When you use ProtonMail without a VPN, your traffic leaves their encrypted servers and travels across the open internet to reach its destination. While ProtonMail secures the contents of your emails through end-to-end encryption, metadata such as IP addresses, connection timestamps, and access patterns remain visible to your ISP and potentially to network observers. Combining ProtonMail with a VPN creates layered protection that shields this metadata while maintaining the cryptographic security ProtonMail provides.
 
 This guide covers the technical integration methods, configuration patterns, and automation approaches that developers and power users can implement to maximize privacy when using encrypted email services.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does ProtonMail offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **When you use ProtonMail without a VPN**: your traffic leaves their encrypted servers and travels across the open internet to reach its destination.
-- **Use privacy-focused email clients**: that minimize header information.
 
 ## Understanding the Privacy Layers
 

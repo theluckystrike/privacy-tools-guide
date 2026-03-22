@@ -20,15 +20,6 @@ Email aliases—disposable email addresses that forward to your real inbox—pro
 
 This guide compares the leading privacy-focused email alias services, evaluating encryption, pricing, ease of use, and self-hosting options. Email privacy is fundamental to digital security; this is essential infrastructure for anyone serious about privacy.
 
-## Key Takeaways
-
-- **For Apple users**: this is the path of least resistance.
-- **The $2.99/month cost is**: negligible relative to privacy gained.
-- **Choose AnonAddy if**: You're budget-conscious, want open source, or prefer transparent pricing.
-- **Instead of using your**: actual email address for signups, use a unique alias for each service.
-- **Rather than revealing your**: primary email to dozens of services, you use unique aliases that forward to your inbox.
-- **Ease of Use**: integrated into iOS, macOS, and iCloud web.
-
 ## Table of Contents
 
 - [Why Email Aliases Matter](#why-email-aliases-matter)

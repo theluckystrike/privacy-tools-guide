@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 OSSEC is a host-based intrusion detection system (HIDS) that monitors your server in real time. It watches log files for suspicious patterns, checks file integrity against known-good baselines, runs rootkit detection scans, and sends alerts when something changes. Unlike network IDS (which monitors traffic), OSSEC runs on the host and sees inside the system.
 
-## Key Takeaways
-
-- **Topics covered**: what ossec monitors, installation, configuration overview
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## What OSSEC Monitors
 
 - **File Integrity Monitoring (FIM):** Alerts when a monitored file is added, modified, or deleted

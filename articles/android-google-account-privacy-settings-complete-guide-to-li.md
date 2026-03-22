@@ -19,17 +19,6 @@ Your Android phone and your Google account work together to collect a significan
 
 This guide walks you through the most effective settings and configurations to minimize data collection while still enjoying the functionality of your Android device.
 
-## Key Takeaways
-
-- **Use Google Play less frequently for app updates**: consider the F-Droid open-source app store instead
-2.
-- **Use a dedicated Google**: account for app purchases only, not everyday spending 4.
-- **For maximum privacy**: disable biometric data collection and use PIN-only authentication instead
-5.
-- **For privacy-conscious users**: understanding how to limit this data collection is essential for maintaining control over your digital footprint.
-- **Select Turn off (or**: choose auto-delete to automatically remove data after 3, 18, or 36 months) 3.
-- **Go to Settings >**: Google > Contacts preferences 2.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

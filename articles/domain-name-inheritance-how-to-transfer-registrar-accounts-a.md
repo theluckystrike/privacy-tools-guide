@@ -11,34 +11,12 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Domain Name Inheritance How To Transfer Registrar Accounts"
-description: "Domain names can be transferred after death by providing the registrar with a death certificate, letter of testamentary or administration, and court order"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /domain-name-inheritance-how-to-transfer-registrar-accounts-a/
-reviewed: true
-score: 9
-voice-checked: true
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-intent-checked: true---
 
 {% raw %}
 
 Domain names can be transferred after death by providing the registrar with a death certificate, letter of testamentary or administration, and court order appointing you as personal representative, then obtaining the AUTH code to complete the ICANN transfer process (typically 5-7 days). For web hosting, you'll need to transfer cPanel backups, export databases, and manage SSL certificates separately. This guide covers the technical and procedural steps developers and power users need to transfer domain names and hosting after death, including preventing transfer delays with advance planning.
-
-## Key Takeaways
-
-- **Use FTP/SFTP to download**: public_html contents 2.
-- **Export databases via phpMyAdmin**: or command line: ```bash mysqldump -u username -p database_name > backup.sql ``` 3.
-- **Developers and power users**: can take several proactive steps: ### Enable Transfer-on-Death Provisions Some registrars (notably GoDaddy and certain TLDs) support transfer-on-death designations.
-- **This guide covers the**: technical and procedural steps developers and power users need to transfer domain names and hosting after death, including preventing transfer delays with advance planning.
-- **Log into the deceased's**: registrar account (or have support unlock it) 2.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 

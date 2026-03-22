@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, security, privacy]
 
 Baby monitors have evolved from simple audio devices to sophisticated WiFi-enabled cameras that stream video globally. While this connectivity provides convenience, it also introduces significant security and privacy risks. This guide covers methods to secure your baby monitor and protect your family from unauthorized access.
 
-## Key Takeaways
-
-- **Owlet Cam 2 ($199)**: Focuses on encrypted transmission with two-factor authentication standard.
-- **Use a strong**: unique WiFi password with WPA3 encryption if your router supports it.
-- **Eufy SpaceView Pro ($149-249)**: No-WiFi option with closed 720p signal.
-- **Motorola Halo+ ($179)**: Established brand with good firmware update track record.
-- **Most modern routers support**: guest networks or can be configured with separate SSIDs.
-- **Use a password manager**: to generate and store these credentials rather than reusing passwords from other accounts.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

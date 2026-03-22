@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Both LUKS (Linux Unified Key Setup) and BitLocker protect data at rest by encrypting the entire disk volume. A stolen laptop with either enabled reveals nothing without the key. But they differ significantly in how they manage keys, what trust they place in hardware, and what happens when you need to recover data.
 
-## Key Takeaways
-
-- **BitLocker uses the Windows**: CryptoAPI and stores the Volume Master Key (VMK) protected by one or more key protectors: TPM, TPM+PIN, password, USB startup key, or recovery key.
-- **This is transparent to**: users but provides no protection against someone with physical access who can boot into Windows normally (e.g., if someone steals a logged-in machine that is not locked).
-- **Both tools target different**: user segments with distinct pricing and feature sets
-- **This guide covers architecture overview**: encryption algorithms, luks2, with specific setup instructions
-
 ## Table of Contents
 
 - [Architecture Overview](#architecture-overview)
@@ -150,7 +143,7 @@ Add-BitLockerKeyProtector -MountPoint "C:" -RecoveryPasswordProtector
 
 ## Performance
 
-The performance difference is small on modern hardware with AES-NI instruction support (present in virtually all CPUs since 2012).
+The performance difference is small on modern hardware with AES-NI instruction support (present in nearly all CPUs since 2012).
 
 ```bash
 # LUKS: benchmark ciphers on your hardware

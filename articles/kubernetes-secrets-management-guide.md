@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Kubernetes `Secret` objects are base64 encoded, not encrypted. Anyone with read access to the cluster can decode them. Storing them in Git is even worse — they are permanently visible in history. This guide covers the full stack of Kubernetes secrets management from etcd encryption to GitOps-safe patterns.
 
-## Key Takeaways
-
-- **Storing them in Git is even worse**: they are permanently visible in history.
-- **Topics covered**: the problem with default kubernetes secrets, step 1: encrypt etcd at rest, step 2: sealed secrets for gitops
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## The Problem with Default Kubernetes Secrets
 
 ```bash

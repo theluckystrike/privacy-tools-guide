@@ -18,15 +18,6 @@ tags: [privacy-tools-guide]
 
 Creating anonymous social media accounts requires more than simply using a fake name. True anonymity demands a layered approach combining email isolation, device hardening, network-level protections, and disciplined operational security. This guide walks through practical steps for developers and power users who need to maintain separate online identities without compromising their primary accounts or exposing personal information.
 
-## Key Takeaways
-
-- **Use Tor Browser for**: initial account creation 2.
-- **Use separate payment methods**: for any purchases related to the account 5.
-- **Use Tor Browser (randomizes**: fingerprint between sessions) // 2.
-- **Use Firefox Containers (separate**: cookies/storage per container) // 3.
-- **Check WebRTC leaks #**: Use Firefox Extension: WebRTC Leak Prevent # 4.
-- **This guide walks through**: practical steps for developers and power users who need to maintain separate online identities without compromising their primary accounts or exposing personal information.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

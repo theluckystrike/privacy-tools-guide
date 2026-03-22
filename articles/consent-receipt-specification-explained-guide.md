@@ -13,34 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Consent Receipt Specification Explained: A Developer Guide"
-description: "A practical guide to implementing the Consent Receipt Specification for developers and power users. Learn the JSON structure, key components, and code"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /consent-receipt-specification-explained-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 The Consent Receipt Specification is a JSON-based standard from the Kantara Initiative that records exactly what a user consented to, when, under which jurisdiction, and for which purposes -- giving you a machine-readable, cryptographically verifiable proof of consent for GDPR, CCPA, and similar compliance. To implement it, you generate a signed JSON document containing the subject identifier, issuer details, granular per-service consent records, and a cryptographic signature, then store it immutably as legal evidence. This guide walks through the full JSON structure, required fields, and working Python code for generating and verifying consent receipts.
-
-## Key Takeaways
-
-- **Each consent receipt represents a single consent action**: a user agreeing to a specific purpose or data processing activity.
-- **Unlike vague audit logs**: a consent receipt contains explicit information about what the user consented to, when they gave consent, how they provided it, and what the organization must do in response.
-- **This clarity matters for**: compliance audits, user rights requests, and demonstrating due diligence.
-- **The specification builds on**: the ISO/IEC 29100 framework and integrates with the OpenID Connect ecosystem.
-- **It addresses a common problem**: organizations collect consent but lack a reliable way to prove what users actually agreed to.
-- **Service deprecation**: When you remove a service, existing consent receipts document which users had consented to that service and when their consent was obtained.
 
 ## Prerequisites
 

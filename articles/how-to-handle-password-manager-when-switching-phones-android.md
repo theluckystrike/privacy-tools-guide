@@ -11,34 +11,12 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Handle Password Manager When Switching Phones"
-description: "A practical guide for developers and power users on transferring your password vault from Android to iPhone, covering export methods, import processes"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-handle-password-manager-when-switching-phones-android/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Switching from Android to iPhone presents a unique challenge for password manager users. Unlike moving between devices of the same platform, cross-platform migration requires careful attention to export formats, encryption, and compatibility. This guide provides practical methods for power users and developers who want full control over their credential transfer.
-
-## Key Takeaways
-
-- **Backup original vault before**: any export cp ~/.password-manager/vault.db vault-backup-$(date +%s).db gpg --symmetric vault-backup-*.db # 2.
-- **If you already use 1Password**: Bitwarden, or similar services with cross-platform support, simply install the iOS app and sign in.
-- **For developers**: cloud sync provides the most reliable experience because it handles encryption consistently across platforms.
-- **Most password managers accept**: CSV with columns like `url`, `username`, `password`, `totp`, `note`, and `name`.
-- **Document migration in audit**: log echo "[$(date)] Password manager migration started" >> migration.log # 5.
-- **Switching from Android to**: iPhone presents a unique challenge for password manager users.
 
 ## Table of Contents
 

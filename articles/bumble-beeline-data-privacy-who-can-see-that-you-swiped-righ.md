@@ -13,37 +13,10 @@ voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
 ---
----
-layout: default
-title: "Bumble Beeline Data Privacy Who Can See That You Swiped"
-description: "A technical deep dive into Bumble Beeline privacy controls. Learn exactly what data is exposed, who can see your swipes, and how to manage your"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /bumble-beeline-data-privacy-who-can-see-that-you-swiped-righ/
-categories: [security, guides]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide, privacy]
----
 
 {% raw %}
 
 Beeline shows you users who have swiped right on you, but your own swipes are never revealed to free users—only premium subscribers see your likes through Beeline. You can hide from Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest. This guide explains exactly what data Bumble exposes, how privacy controls work, and practical mitigation strategies.
-
-## Key Takeaways
-
-- **Use Incognito mode to limit visibility**: - Only users you've already matched or those with premium can see you
- - Your profile won't appear in swipe stacks for free users
-
-3.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Beeline shows you users who have swiped right on you, but your own swipes are never revealed to free users**: only premium subscribers see your likes through Beeline.
-- **Incognito Mode**: If enabled, your profile won't appear in Beeline for free users—only premium users who have also liked you can see you.
-- **You can hide from**: Beeline entirely or enable Incognito Mode to limit visibility to premium users only, giving you direct control over who can see your interest.
-- **Both free and premium**: users have data collection risks.
 
 ## Table of Contents
 

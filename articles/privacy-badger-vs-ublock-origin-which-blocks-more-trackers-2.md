@@ -20,15 +20,6 @@ If you care about blocking trackers, you've likely encountered both Privacy Badg
 
 This comparison cuts through the marketing claims and examines real-world blocking performance, configuration flexibility, and technical implementation details.
 
-## Key Takeaways
-
-- **The extension processes these**: rules efficiently, typically adding only 2-5ms latency per page load.
-- **Cookie-block analytics service ||custom-analytics.example.com^$cookie**: ``` Share this list with others via the uBlock Origin subscription mechanism.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **The difference is most**: pronounced with advertising and analytics networks that have been catalogued for years.
-
 ## Table of Contents
 
 - [How Privacy Badger Works](#how-privacy-badger-works)

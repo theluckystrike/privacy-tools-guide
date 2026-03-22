@@ -11,21 +11,19 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 
 Google tracks everything. Your searches, watched videos, visited websites, location history, and device activity are stored indefinitely. Google Takeout lets you export this data, and the Activity dashboard lets you delete it—but it's fragmented across multiple dashboards and settings. This guide walks through complete deletion in 30 minutes, with verification steps to confirm Google complies.
 
-## Key Takeaways
-
-- **---
-
 ## Part 1**: Backup Your Data (Optional but Recommended)
 
 Before deleting, export a copy via Google Takeout.
 - **Toggle OFF This stops**: Google from logging: - Your Google searches - Websites you visit (if Chrome synced) - Apps you use - All Google services activity ### Step 2: Disable YouTube History 1.
-- **---
+- **
+---
 
 ## Part 7**: Chrome Sync & Data Deletion
 

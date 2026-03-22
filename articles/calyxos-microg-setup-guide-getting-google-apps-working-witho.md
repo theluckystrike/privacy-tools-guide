@@ -20,15 +20,6 @@ CalyxOS provides a privacy-focused Android distribution that excludes Google Pla
 
 This guide walks through setting up microG on CalyxOS, configuring signature spoofing, and getting popular Google apps working without sending data to Google's servers.
 
-## Key Takeaways
-
-- **Install an app that**: supports microG push notifications and check the logs: ```bash adb logcat -s GcmService:d | grep -i token ``` The output displays a registration token you can use for testing.
-- **This works with many**: open-source applications and provides real-time notifications without Google infrastructure.
-- **Configure it to use**: microG as the backend 3.
-- **CalyxOS provides a privacy-focused**: Android distribution that excludes Google Play Services by default.
-- **MicroG bridges this gap**: by implementing a free and open-source replacement for Google's proprietary Play Services, allowing you to run Google-dependent apps while maintaining your privacy.
-- **Install Aurora Store and**: try a few applications you regularly use.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

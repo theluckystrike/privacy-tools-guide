@@ -13,34 +13,10 @@ score: 9
 intent-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Anonymous IRC Over Tor Setup Guide 2026"
-description: "A practical guide to configuring IRC over Tor for anonymous communications. Learn to set up Tor daemon, configure IRC clients, connect to onion-service"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /anonymous-irc-over-tor-setup-guide-2026/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 To set up anonymous IRC over Tor, install the Tor daemon, configure your IRC client (like WeeChat or Irssi) to connect through SOCKS5 on localhost:9050, then connect to Tor-hidden IRC networks that operate as .onion services for near-complete anonymity. Standard IRC exposes your IP address to all network observers, while running IRC over Tor hides your IP and adds multiple layers of routing obfuscation, protecting you from traffic analysis and deanonymization.
-
-## Key Takeaways
-
-- **In the Network List**: ensure "Use proxy for DNS lookups" is enabled, or better yet, always use .onion addresses that require no DNS resolution.
-- **IRC over Tor is**: best suited for communities that already use IRC and want privacy improvements without switching platforms.
-- **Always use SSL/TLS on**: port 6697 rather than plaintext port 6667, even when routing through Tor, to protect against malicious exit nodes.
-- **- Malicious exit nodes**: Always use SSL (port 6697) to protect against exit node eavesdropping when connecting to clearnet IRC servers.
-- **Even if you use a VPN**: the VPN provider sees your traffic and can be compelled to hand over logs.
-- **Tor's layered encryption with**: circuit rotation provides meaningfully stronger anonymity because no single node ever sees both who you are and what you're sending.
 
 ## Table of Contents
 

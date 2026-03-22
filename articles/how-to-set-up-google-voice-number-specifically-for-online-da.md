@@ -20,16 +20,6 @@ When you meet someone through online dating apps, the typical next step involves
 
 This guide walks through setting up Google Voice specifically for online dating conversations, with configuration choices that maximize your privacy while maintaining usability.
 
-## Key Takeaways
-
-- **Google Voice app only**: Some users prefer receiving all communication through the app only
-3.
-- **Here's my number -**: feel free to text me there # if you prefer.
-- **Google Voice is available**: in most countries, though some regions have limited features.
-- **Take your time**: once you choose a number, changing it later is possible but requires additional steps.
-- **This proves useful if**: you ever need documentation of conversations for safety reasons.
-- **This prevents someone from transferring your forwarding number to another carrier**: a technique used in SIM swapping attacks.
-
 ## Table of Contents
 
 - [Why Use Google Voice for Dating Apps](#why-use-google-voice-for-dating-apps)

@@ -18,17 +18,6 @@ voice-checked: true
 
 Qubes OS implements security through compartmentalization: run every application (browser, email, document editing) in a separate virtual machine (qube) so one compromised app cannot access others' data or your entire system. Create domain-specific qubes: personal (browsing), work (confidential documents), banking (air-gapped payments), untrusted (opening suspicious files). Use disposable qubes for one-time tasks. Configure split-GPG to keep private keys isolated in a dedicated qube. Integrate USB devices into specific qubes to prevent cross-qube data leaks. Qubes demands higher hardware (16GB+ RAM, fast SSD) and patience with complexity, but provides defense-in-depth against malware, credential theft, and data exfiltration unmatched by traditional operating systems.
 
-## Key Takeaways
-
-- **User opens file or**: runs application 3.
-- User closes all windows
-4.
-- **User approves in gpg-vault**: # 4.
-- **For untrusted dependencies**: use disposable VMs to test
-7.
-- **Use disposable qubes for**: one-time tasks.
-- **Memory is the most**: precious resource in Qubes.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

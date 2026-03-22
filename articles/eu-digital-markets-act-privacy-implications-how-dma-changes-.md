@@ -18,17 +18,6 @@ tags: [privacy-tools-guide, privacy]
 
 The European Union's Digital Markets Act (DMA) represents the most significant shift in platform regulation since GDPR. Now that the enforcement phase has matured through 2024 and into 2026, developers and power users are seeing tangible changes in how big tech companies handle personal data. This article breaks down the privacy implications of DMA and provides practical guidance for adapting to these regulatory changes.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Now that the enforcement**: phase has matured through 2024 and into 2026, developers and power users are seeing tangible changes in how big tech companies handle personal data.
-- **Reduced tracking pressure**: Many users report fewer tracking consent prompts as services make granular controls the default
-3.
-- **Interoperability**: You can now use Signal to message WhatsApp contacts, reducing lock-in
-4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [What the DMA Actually Requires](#what-the-dma-actually-requires)
@@ -252,7 +241,7 @@ If you serve EU users or integrate with gatekeeper platforms, your application a
 
 **App store sideloading on iOS**: Apple is required under DMA to allow alternative app distribution in the EU. If you distribute iOS applications, you may be able to reach EU users through alternative channels that have different data collection requirements than the App Store. Review the privacy policy requirements for each distribution channel you use.
 
-**Data portability automation**: Users increasingly expect one-click data exports as DMA normalizes this capability. Building robust export functionality into your applications now — before it is required — positions you ahead of regulatory requirements and reduces the engineering cost of compliance when it becomes mandatory in your jurisdiction.
+**Data portability automation**: Users increasingly expect one-click data exports as DMA normalizes this capability. Building strong export functionality into your applications now — before it is required — positions you ahead of regulatory requirements and reduces the engineering cost of compliance when it becomes mandatory in your jurisdiction.
 ---
 
 
