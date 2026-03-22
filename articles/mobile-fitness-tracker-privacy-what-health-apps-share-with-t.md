@@ -9,7 +9,7 @@ permalink: /mobile-fitness-tracker-privacy-what-health-apps-share-with-t/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

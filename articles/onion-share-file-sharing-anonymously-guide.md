@@ -9,7 +9,7 @@ permalink: /onion-share-file-sharing-anonymously-guide/
 categories: [guides]
 voice-checked: true
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 tags: [privacy-tools-guide]
 ---
