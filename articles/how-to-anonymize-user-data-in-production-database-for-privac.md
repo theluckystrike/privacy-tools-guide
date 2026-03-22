@@ -25,6 +25,8 @@ Before implementing any data handling strategy, distinguish between these two ap
 
 For privacy compliance, your goal is often complete anonymization. However, you might need pseudonymization when you must retain the ability to re-identify data for legitimate business purposes.
 
+The legal distinction matters significantly in practice. Under GDPR Article 4(5), pseudonymized data is still personal data and subject to all GDPR obligations including data subject rights, breach notification timelines, and lawful basis requirements. Truly anonymized data falls outside GDPR's scope entirely — meaning you can retain it indefinitely, share it freely, and use it without a legal basis. Courts and data protection authorities have increasingly scrutinized anonymization claims, so your technique must withstand re-identification attempts using auxiliary datasets, not just look anonymized on the surface.
+
 ## Core Techniques for Anonymizing Database Data
 
 ### 1. Direct Masking
@@ -123,6 +125,28 @@ SET latitude = ROUND(latitude, 1),
     longitude = ROUND(longitude, 1);
 ```
 
+### Dates and Ages
+
+Exact birthdates are highly identifying — combining them with zip code and gender re-identifies 87% of Americans according to Latanya Sweeney's foundational k-anonymity research. Replace precise dates with ranges:
+
+```sql
+-- Replace birthdate with age band
+ALTER TABLE users ADD COLUMN age_band VARCHAR(10);
+
+UPDATE users
+SET age_band = CASE
+    WHEN EXTRACT(YEAR FROM AGE(birthdate)) < 18 THEN 'under_18'
+    WHEN EXTRACT(YEAR FROM AGE(birthdate)) BETWEEN 18 AND 24 THEN '18-24'
+    WHEN EXTRACT(YEAR FROM AGE(birthdate)) BETWEEN 25 AND 34 THEN '25-34'
+    WHEN EXTRACT(YEAR FROM AGE(birthdate)) BETWEEN 35 AND 44 THEN '35-44'
+    WHEN EXTRACT(YEAR FROM AGE(birthdate)) BETWEEN 45 AND 54 THEN '45-54'
+    ELSE '55+'
+END;
+
+-- Drop original column after verification
+ALTER TABLE users DROP COLUMN birthdate;
+```
+
 ## Production-Safe Implementation
 
 ### Always Test on a Copy First
@@ -185,6 +209,59 @@ def anonymize_in_batches(batch_size=10000):
     conn.close()
 ```
 
+## Automated Anonymization Pipelines
+
+For teams that regularly extract production data to staging or analytics environments, manual anonymization is error-prone. Automate the process using a dedicated pipeline that runs on every export:
+
+```python
+import psycopg2
+import hashlib
+import os
+
+ANONYMIZATION_SALT = os.environ.get('ANON_SALT', 'change-this-secret')
+
+FIELD_RULES = {
+    'users': {
+        'email': lambda val: hashlib.sha256(
+            (val + ANONYMIZATION_SALT).encode()
+        ).hexdigest()[:12] + '@anon.local',
+        'phone': lambda val: '+15550000000',
+        'first_name': lambda val: 'Anonymous',
+        'last_name': lambda val: 'User',
+    },
+    'orders': {
+        'shipping_address': lambda val: '123 Anonymized St',
+        'billing_zip': lambda val: '00000',
+    }
+}
+
+def anonymize_table(cursor, table, rules):
+    set_clauses = []
+    for field, transform in rules.items():
+        cursor.execute(f"SELECT id, {field} FROM {table}")
+        rows = cursor.fetchall()
+        for row_id, value in rows:
+            if value:
+                new_value = transform(value)
+                cursor.execute(
+                    f"UPDATE {table} SET {field} = %s WHERE id = %s",
+                    (new_value, row_id)
+                )
+
+def run_full_anonymization(conn_string):
+    conn = psycopg2.connect(conn_string)
+    cursor = conn.cursor()
+    for table, rules in FIELD_RULES.items():
+        print(f"Anonymizing {table}...")
+        anonymize_table(cursor, table, rules)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("Anonymization complete.")
+```
+
+Storing the salt in an environment variable keeps it out of source code while ensuring consistent output — the same email always hashes to the same anonymized value within a run, preserving foreign key relationships across tables.
+
 ## Verification and Compliance
 
 After anonymization, verify that re-identification is impossible:
@@ -194,6 +271,19 @@ After anonymization, verify that re-identification is impossible:
 3. **Document your process**: Maintain records of what was anonymized, when, and how
 
 For GDPR compliance, document your anonymization approach in your data processing records. Under Article 32, you must demonstrate "appropriate technical and organisational measures" including pseudonymization and encryption of personal data.
+
+A useful validation query checks whether any field combinations in your anonymized dataset could still uniquely identify individuals:
+
+```sql
+-- k-anonymity check: find records where combination of quasi-identifiers is unique
+SELECT age_band, location, COUNT(*) as group_size
+FROM users
+GROUP BY age_band, location
+HAVING COUNT(*) < 5
+ORDER BY group_size ASC;
+```
+
+Any group with fewer than 5 members may be re-identifiable through combination. Generalize those fields further or suppress the records from the exported dataset.
 
 ## When to Use Each Technique
 
