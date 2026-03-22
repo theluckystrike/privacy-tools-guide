@@ -212,7 +212,7 @@ For the highest-quality on-device prediction without any cloud dependency, consi
 
 ## Configuring iOS Built-In Keyboard for Motor Impairments
 
-While iOS doesn't offer third-party keyboards with the same accessibility depth as Android, the built-in keyboard's accessibility settings are comprehensive.
+While iOS doesn't offer third-party keyboards with the same accessibility depth as Android, the built-in keyboard's accessibility settings are full.
 
 ```
 Settings → Accessibility → Keyboards:
