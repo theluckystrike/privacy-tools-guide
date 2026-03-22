@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-android-without-google-play-services-alternative-/
 description: "Follow this guide to how to use android without google play services alternative  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Use Android Without Google Play Services"
 description: "A technical guide for developers and power users on running Android without Google Play Services using F-Droid, Aurora Store, and other alternative app"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-outline-vpn-server-for-creating-personal-proxy-in/
 description: "Follow this guide to how to use outline vpn server for creating personal proxy in with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "How To Use Outline Vpn Server For Creating Personal Proxy"
 description: "A practical guide for developers and power users on setting up Outline VPN server to create personal proxy tunnels for bypassing network restrictions"

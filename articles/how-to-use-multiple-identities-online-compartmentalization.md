@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-use-multiple-identities-online-compartmentalization/
 description: "Follow this guide to how to use multiple identities online compartmentalization with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Use Multiple Identities Online: Compartmentalization"
 description: "Learn how to create and manage multiple online identities through digital compartmentalization. Practical strategies for separating personal"
