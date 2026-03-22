@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /youtube-alternative-private-video-platforms-2026/
 description: "Learn youtube alternative private video platforms 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Youtube Alternative Private Video Platforms 2026"
 description: "Explore private video hosting solutions for developers and power users in 2026. Compare self-hosted options, privacy-focused platforms, and deployment"

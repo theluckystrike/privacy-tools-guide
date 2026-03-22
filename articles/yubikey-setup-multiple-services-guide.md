@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /yubikey-setup-multiple-services-guide/
 description: "Follow this guide to yubikey setup multiple services guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "YubiKey Setup for Multiple Services Guide"
 description: "How to configure a single YubiKey for SSH authentication, GPG signing, TOTP codes, passkeys, and password manager 2FA — step-by-step for YubiKey 5 series"

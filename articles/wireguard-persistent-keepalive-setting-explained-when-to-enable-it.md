@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /wireguard-persistent-keepalive-setting-explained-when-to-enable-it/
 description: "Learn wireguard persistent keepalive setting explained when to enable it with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "WireGuard Persistent Keepalive Setting Explained"
 description: "Learn when to enable WireGuard persistent keepalive. Practical guide covering NAT traversal, firewall timeouts, and configuration examples for developers"

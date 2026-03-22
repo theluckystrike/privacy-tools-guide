@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/
 description: "Compare wireguard vs openvpn speed difference on mobile data 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, comparison, vpn]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [vpn]
 ---
+
 layout: default
 title: "WireGuard vs OpenVPN Speed Difference on Mobile Data"
 description: "Technical comparison of WireGuard and OpenVPN performance on mobile networks. Includes benchmarks, protocol overhead analysis, and configuration"
