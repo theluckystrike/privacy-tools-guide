@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"
 permalink: /best-vpn-protocols-that-still-work-inside-china-after-deep-p/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 categories: [guides]

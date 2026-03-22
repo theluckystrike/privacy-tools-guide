@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /bitcoin-dust-attack-explained-how-small-transactions-deanony/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
