@@ -363,9 +363,6 @@ dpa_requirements:
     - Report to authority, not processor finding
 ```
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

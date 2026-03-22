@@ -365,9 +365,6 @@ def respond_to_compromise():
     return steps
 ```
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

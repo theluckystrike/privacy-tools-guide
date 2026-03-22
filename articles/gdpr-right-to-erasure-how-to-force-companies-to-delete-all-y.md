@@ -409,9 +409,6 @@ Article 82 Compensation Claim (parallel to DPA):
     → European courts increasingly award €500-2000 per violation
 ```
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

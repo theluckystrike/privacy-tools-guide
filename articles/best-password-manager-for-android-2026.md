@@ -314,9 +314,6 @@ def migrate_passwords(source_manager, target_manager, master_password):
 
 Never delete the source account until the target is fully verified and tested.
 
-## Related Reading
-
-
 ## Frequently Asked Questions
 
 

@@ -489,12 +489,6 @@ compliant_architecture = {
 }
 ```
 
-## Related Reading
-
-Turkey has enacted data localization requirements for certain categories of user data. Social media platforms with over one million daily users must store Turkish user data on servers physically located in Turkey. For application developers with significant Turkish user bases, this creates a conflict: data stored locally is more accessible to Turkish authorities.
-
-Legal advice specific to your situation is essential if your application collects personal data from Turkish users at scale. The general principle of data minimization — collecting only what you actually need — reduces both compliance burden and the harm potential of any compelled disclosure.
-
 ### Responding to Content Removal Orders
 
 If you operate a web property, Turkish authorities can issue content removal orders through the BTK. Failure to comply within 48 hours can result in bandwidth throttling of your entire domain by 50%, and non-compliance beyond 24 more hours can lead to full blocking.
