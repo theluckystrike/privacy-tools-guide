@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-mac-address-randomization-on-linux-to-prevent-wif/
+description: "Follow this guide to how to use mac address randomization on linux to prevent wif with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Mac Address Randomization On Linux To Prevent"

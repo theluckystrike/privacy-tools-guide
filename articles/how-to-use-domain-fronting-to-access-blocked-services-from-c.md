@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-domain-fronting-to-access-blocked-services-from-c/
+description: "Follow this guide to how to use domain fronting to access blocked services from c with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Domain Fronting To Access Blocked Services"

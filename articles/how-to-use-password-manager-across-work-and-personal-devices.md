@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-password-manager-across-work-and-personal-devices/
+description: "Follow this guide to how to use password manager across work and personal devices with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Password Manager Across Work And Personal"

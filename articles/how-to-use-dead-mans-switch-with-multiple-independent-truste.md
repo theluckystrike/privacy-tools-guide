@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-dead-mans-switch-with-multiple-independent-truste/
+description: "Follow this guide to how to use dead mans switch with multiple independent truste with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Use Dead Man's Switch with Multiple Independent Trustees"

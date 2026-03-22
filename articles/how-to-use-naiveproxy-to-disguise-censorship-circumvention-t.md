@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-naiveproxy-to-disguise-censorship-circumvention-t/
+description: "Follow this guide to how to use naiveproxy to disguise censorship circumvention t with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Use Naiveproxy To Disguise Censorship Circumvention"

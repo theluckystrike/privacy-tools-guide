@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-test-if-your-anti-fingerprinting-setup-actually-works/
+description: "Follow this guide to how to test if your anti fingerprinting setup actually works with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "How to Test if Your Anti-Fingerprinting Setup Actually"
 description: "Browser fingerprinting has become one of the most sophisticated tracking techniques used across the web. Unlike cookies, which can be blocked or deleted"

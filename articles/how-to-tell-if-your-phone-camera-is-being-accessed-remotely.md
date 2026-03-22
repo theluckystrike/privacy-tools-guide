@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
+description: "Follow this guide to how to tell if your phone camera is being accessed remotely with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, remote-work]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Tell If Your Phone Camera Is Being Accessed Remotely"
 description: "Learn technical methods to detect unauthorized camera access on Android and iOS. Practical verification steps, system logs, and code-level inspection"

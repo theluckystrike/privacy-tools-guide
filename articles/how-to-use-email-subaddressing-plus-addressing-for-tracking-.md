@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-email-subaddressing-plus-addressing-for-tracking-/
+description: "Follow this guide to how to use email subaddressing plus addressing for tracking  with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Use Email Subaddressing Plus Addressing For Tracking Which"

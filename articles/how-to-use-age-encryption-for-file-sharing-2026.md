@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-age-encryption-for-file-sharing-2026/
+description: "Follow this guide to how to use age encryption for file sharing 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, encryption]
 ---
 title: "How to Use Age Encryption for File Sharing 2026"
 slug: how-to-use-age-encryption-for-file-sharing-2026

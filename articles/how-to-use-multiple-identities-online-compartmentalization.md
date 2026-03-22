@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-multiple-identities-online-compartmentalization/
+description: "Follow this guide to how to use multiple identities online compartmentalization with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Use Multiple Identities Online: Compartmentalization"

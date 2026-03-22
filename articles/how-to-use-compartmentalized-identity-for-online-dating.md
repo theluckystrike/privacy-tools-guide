@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-compartmentalized-identity-for-online-dating/
+description: "Follow this guide to how to use compartmentalized identity for online dating with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Use Compartmentalized Identity for Online Dating"

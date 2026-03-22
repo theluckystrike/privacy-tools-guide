@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/
+description: "Follow this guide to how to tell if someone has access to your apple id with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple"
 description: "Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, they could"

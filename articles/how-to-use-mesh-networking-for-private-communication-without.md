@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-use-mesh-networking-for-private-communication-without/
+description: "Follow this guide to how to use mesh networking for private communication without with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Use Mesh Networking for Private Communication"
