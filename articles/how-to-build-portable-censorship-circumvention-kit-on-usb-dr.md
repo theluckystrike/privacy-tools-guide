@@ -49,7 +49,17 @@ Many countries implement network-level censorship that blocks access to news sit
 
 The key components you need are a Tor Browser bundle configured with bridges, portable VPN clients, and tools for DNS tunneling. Each component serves different scenarios, and having all three ensures you can adapt to varying network restrictions.
 
-## Preparing the USB Drive
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Preparing the USB Drive
 
 Select an USB 3.0 drive with at least 16GB of storage. The extra space accommodates the Tor Browser bundle, additional tools, and any cached bridges or configuration files you download while traveling.
 
@@ -67,7 +77,7 @@ Create a folder structure that keeps your tools organized:
 
 This separation makes it easy to locate specific tools and update individual components without affecting others.
 
-## Setting Up Tor Browser with Bridges
+### Step 2: Set Up Tor Browser with Bridges
 
 The Tor Network provides the most reliable method for circumventing censorship in most situations. However, many censored networks block direct connections to Tor entry nodes. Using pluggable transports like obfs4 makes your traffic appear random and bypasses deep packet inspection.
 
@@ -86,7 +96,7 @@ Before traveling, obtain fresh bridge addresses from sources like `https://bridg
 
 Launch Tor Browser using the portable executable on your USB drive. The first connection may take longer as Tor establishes circuits through the bridge. Once connected, verify your IP address at `https://check.torproject.org` to confirm the connection works.
 
-## Configuring Portable VPN Tools
+### Step 3: Configure Portable VPN Tools
 
 Some situations require VPN protocols that Tor cannot handle, such as streaming services that block Tor exit nodes. Having a portable VPN client provides an alternative when one method fails.
 
@@ -102,7 +112,7 @@ ssh -D 1080 -N -f user@your-server.com
 
 Configure your applications to use `localhost:1080` as a SOCKS5 proxy. This tunnels all traffic through your SSH server, bypassing local network filters.
 
-## DNS Tunneling for Restricted Networks
+### Step 4: DNS Tunneling for Restricted Networks
 
 Some networks block direct connections but allow DNS queries through. DNS tunneling tools like `dnscat2` encode data within DNS queries, providing a fallback when other methods fail.
 
@@ -120,7 +130,7 @@ ruby dnscat2.rb --exec "cmd.exe" --secret=your-secret-key
 
 When standard connections fail, run the dnscat2 client from your USB drive. The tool encapsulates traffic within DNS queries that most networks allow. This method works slowly but provides a last-resort connection option.
 
-## Automating Connection Scripts
+### Step 5: Automate Connection Scripts
 
 Create wrapper scripts that simplify switching between methods. A simple bash script on Linux and macOS or a batch file on Windows can check connectivity and automatically try alternative methods.
 
@@ -150,7 +160,7 @@ Your USB drive contains sensitive configuration files and potentially bridge add
 
 When using public computers, be aware of keyloggers and surveillance software. The portable kit protects against installed malware, but hardware keyloggers on USB ports can still capture keystrokes. Use on-screen keyboards when entering sensitive credentials on public machines.
 
-## Maintaining Your Kit
+### Step 6: Maintaining Your Kit
 
 Update your tools before each trip. New censorship techniques emerge constantly, and tool developers release updates to address them. Check for new bridge addresses, software updates, and configuration improvements.
 
@@ -158,7 +168,7 @@ Test your complete setup in a restrictive environment before relying on it durin
 
 Keep backup copies of important configuration files. If your USB drive fails or gets lost, having backups ensures you can quickly restore your working setup.
 
-## Building a Tor Browser Configuration with Fallback Chains
+### Step 7: Build a Tor Browser Configuration with Fallback Chains
 
 The most reliable portable kit includes multiple Tor bridge configurations. If your primary bridges get blocked, fallback bridges provide continued access without downloading new configurations.
 
@@ -216,7 +226,7 @@ kill_layer() {
 
 This architecture provides automatic fallback—if your VPN gets blocked, Tor attempts to work directly. If that fails, you still have SSH tunnel access.
 
-## Mobile Circumvention Toolkit
+### Step 8: Mobile Circumvention Toolkit
 
 Mobile devices require different tools since you cannot install arbitrary software on iOS or Android.
 
@@ -247,7 +257,7 @@ Mobile devices require different tools since you cannot install arbitrary softwa
 
 Document which apps and configurations work on your specific devices before travel.
 
-## Maintaining Your Kit During Long Trips
+### Step 9: Maintaining Your Kit During Long Trips
 
 Extended travel requires kit maintenance procedures:
 
@@ -289,7 +299,7 @@ timeout 10 ./dns/dnscat2 client --secret=key --domain example.com && \
 
 Run these tests every 2-3 days when traveling to identify problems early.
 
-## Hardware Redundancy for USB Kit
+### Step 10: Hardware Redundancy for USB Kit
 
 A single USB drive failing ruins your trip. Maintain hardware redundancy:
 
@@ -304,7 +314,7 @@ rsync -av /Volumes/KitDrive /Volumes/BackupKitDrive --delete
 
 Store backup drives separately from your primary device. If your primary USB drive gets confiscated or damaged, you still have working backups.
 
-## Legal Considerations by Region
+### Step 11: Legal Considerations by Region
 
 Circumvention tools are legal in most countries but prohibited in others. Research before traveling:
 
@@ -322,7 +332,7 @@ Circumvention tools are legal in most countries but prohibited in others. Resear
 
 Consult with lawyers in your destination country before travel. Some organizations provide legal guidance for journalists and activists operating in restricted environments.
 
-## Emergency Procedures
+### Step 12: Emergency Procedures
 
 If authorities discover your circumvention kit:
 
@@ -346,6 +356,21 @@ If authorities discover your circumvention kit:
 ```
 
 Preparation before travel prevents panic and poor decisions during interactions.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

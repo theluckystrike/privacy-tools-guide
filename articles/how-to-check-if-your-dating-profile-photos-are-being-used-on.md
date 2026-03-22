@@ -44,7 +44,17 @@ The legal remedies for photo theft remain limited in most jurisdictions. Cease-a
 - **The scale of this**: problem exceeds most people's awareness.
 - **Your images are particularly vulnerable because dating platform photos are optimized for catfishing**: clear, recent, social.
 
-## The Romance Scam Ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Romance Scam Ecosystem
 
 Understanding how romance scammers operate helps you both detect fake profiles faster and protect yourself more effectively. Romance scams generate billions in losses globally—creating sophisticated operations with specialized roles.
 
@@ -67,13 +77,13 @@ Dating platform photos are attractive targets because they typically show your f
 
 The motivation ranges from financial fraud (romance scams) to identity theft and harassment. Once your photo circulates in scammer networks, it becomes nearly impossible to track manually. Automated tools and APIs provide the only scalable solution for monitoring your image footprint.
 
-## Method 1: Reverse Image Search Platforms
+### Step 2: Method 1: Reverse Image Search Platforms
 
 The simplest approach uses established reverse image search engines. Upload your dating profile photo to Google Images, Bing Visual Search, or Yandex Images. These platforms return visually similar images across the web, including on dating sites, forums, and scammer databases.
 
 For developers, integrating reverse search into your monitoring workflow requires understanding platform limitations. Google and Bing require manual interaction for most searches, while Yandex offers more accessible API endpoints for automated queries.
 
-## Method 2: Python-Based Image Hash Monitoring
+### Step 3: Method 2: Python-Based Image Hash Monitoring
 
 For developers seeking automated monitoring, computing perceptual hashes allows efficient large-scale comparison. This approach converts images into fingerprint vectors that remain similar even after compression or minor edits.
 
@@ -108,7 +118,7 @@ print(f"Reference hash: {reference_photo_hash}")
 
 This script computes a 64-bit perceptual hash. When comparing hashes, a Hamming distance below 10 indicates high visual similarity. This method detects resized, compressed, or slightly edited copies of your image.
 
-## Method 3: TinEye API Integration
+### Step 4: Method 3: TinEye API Integration
 
 TinEye offers one of the most reverse image search databases. Their API allows programmatic queries, though it requires an API key. For developers building monitoring systems, TinEye provides:
 
@@ -138,7 +148,7 @@ print(f"Found {results.get('total_matches', 0)} matches")
 
 TinEye maintains an extensive database of indexed images from across the web, making it particularly effective for finding older copies of your photos that may have circulated in scammer communities.
 
-## Method 4: Building a Custom Image Monitor
+### Step 5: Method 4: Building a Custom Image Monitor
 
 For ongoing protection, build a scheduled monitoring system using Python and cloud functions. This approach polls image databases periodically and alerts you to new matches.
 
@@ -184,7 +194,7 @@ while True:
 
 Deploy this script on a cloud platform like AWS Lambda or Google Cloud Functions with a cron trigger to maintain continuous monitoring without local infrastructure.
 
-## Method 5: Metadata Stripping and Protection
+### Step 6: Method 5: Metadata Stripping and Protection
 
 Prevention complements detection. Before uploading photos to dating sites, strip metadata that could aid scammers in profiling you:
 
@@ -211,7 +221,7 @@ strip_metadata("my-profile-photo.jpg")
 
 Removing EXIF data prevents discovery of camera models, GPS coordinates, and timestamps that scammers could use to build a more convincing fake identity or track your location.
 
-## Practical Workflow for Photo Protection
+### Step 7: Practical Workflow for Photo Protection
 
 Combine these methods into a systematic workflow:
 
@@ -231,7 +241,7 @@ Combine these methods into a systematic workflow:
 
 For developers, the Python-based approach using perceptual hashing provides the best balance of cost control and customization. Combine it with API access to search engines for coverage.
 
-## Understanding Scammer Networks and Image Reuse
+### Step 8: Understand Scammer Networks and Image Reuse
 
 Scammer networks operate with sophisticated infrastructure. Romance scammers maintain databases of stolen photos, sharing collections across criminal groups. Once your photo enters these networks, it spreads to new profiles frequently—appearing on multiple dating apps sometimes within hours of being stolen.
 
@@ -239,7 +249,7 @@ Catfishing operations often target specific demographics or relationship goals. 
 
 Some platforms deliberately host stolen photos knowingly. Romance scam support sites and warning communities sometimes store images of known scammers, perpetuating the circulation of victim photos. Requesting removal from these databases requires contacting site administrators directly.
 
-## Taking Action Against Image Theft
+### Step 9: Taking Action Against Image Theft
 
 When you discover unauthorized use of your photos, document everything immediately. Screenshot the fake profile including username, creation date, location, and description. Save the URL and any comments or messages from other users. This documentation strengthens requests for removal and supports potential legal action.
 
@@ -251,7 +261,7 @@ For serious cases involving financial fraud or harassment, consider filing a pol
 
 Legal action requires consulting with attorneys experienced in internet harassment and defamation. Cease-and-desist letters sent to determined scammers rarely work, but lawsuits against platforms for failing to remove illegal content can motivate faster action.
 
-## Preventing Future Theft
+### Step 10: Preventing Future Theft
 
 Use different photos on different dating platforms. Scammers doing reverse image searches will find legitimate platforms more easily than fake ones, so varying your photos reduces the chances of profile theft.
 
@@ -260,6 +270,21 @@ Watermark photos with your username or a unique identifier if the platform allow
 Be selective about which photos you share. Avoid clear photos showing identifying landmarks in the background—scammers use location details for spear phishing and social engineering. Avoid photos taken at your workplace or clearly identifiable home locations.
 
 Regularly audit your own dating profiles for activity changes, profile information modifications, or suspicious comments. Many scammers access accounts after stealing photos and use those accounts for additional fraud.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

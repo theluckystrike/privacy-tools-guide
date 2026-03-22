@@ -40,7 +40,17 @@ Social media share buttons appear on nearly every website, from news articles to
 - **The key is to**: replace automatic script loading with user-initiated loading.
 - **Ensure users can still**: share content through all intended platforms.
 
-## How Social Media Share Buttons Track You
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Social Media Share Buttons Track You
 
 When you visit a page with social media share buttons, the browser loads scripts from the social media company's servers. Even if you never click the button, these scripts execute and transmit information back to the social media platform. The data collected typically includes:
 
@@ -52,7 +62,7 @@ When you visit a page with social media share buttons, the browser loads scripts
 
 Facebook's Like button, for example, sets cookies on your device regardless of whether you have a Facebook account or click anything. Twitter's share button similarly tracks page views across the web. This data builds a profile of your browsing habits, interests, and behavior.
 
-## Blocking Tracking at the Browser Level
+### Step 2: Blocking Tracking at the Browser Level
 
 Users can block social media tracking through browser extensions. uBlock Origin filters out known tracking domains at the network level. Privacy Badger learns to block trackers based on observed behavior. These extensions work automatically and require no configuration.
 
@@ -60,7 +70,7 @@ For Firefox users, enable Enhanced Tracking Protection in browser settings. This
 
 Browser developers also offer native solutions. Firefox's Facebook Container extension isolates Facebook tracking to prevent it from following you across other websites. Safari's Intelligent Tracking Prevention automatically identifies and blocks cross-site trackers.
 
-## JavaScript-Based Solutions for Website Owners
+### Step 3: JavaScript-Based Solutions for Website Owners
 
 Web developers can implement solutions that preserve share functionality while blocking tracking. The key is to replace automatic script loading with user-initiated loading.
 
@@ -97,7 +107,7 @@ Create custom share buttons using your own styling:
 
 This method gives you full control over appearance while eliminating unwanted tracking scripts.
 
-## Using Content Security Policy Headers
+### Step 4: Use Content Security Policy Headers
 
 Server-side configuration provides another layer of protection. Content Security Policy (CSP) headers let you specify which domains can load resources on your site.
 
@@ -117,7 +127,7 @@ add_header Content-Security-Policy "default-src 'self'; script-src 'self' https:
 
 This configuration prevents iframe-based share buttons from loading while allowing your own scripts. Adjust the policy to match your site's legitimate requirements.
 
-## Implementing a Privacy-First Share Component
+### Step 5: Implementing a Privacy-First Share Component
 
 Build a custom share component that works without external dependencies:
 
@@ -163,7 +173,7 @@ Use it in your HTML:
 
 The `noopener,noreferrer` attributes in the window.open call provide security benefits by preventing the opened page from accessing your page through `window.opener`.
 
-## Server-Side Rendering Approach
+### Step 6: Server-Side Rendering Approach
 
 For static sites or server-rendered applications, generate share links without any client-side JavaScript:
 
@@ -177,7 +187,7 @@ For static sites or server-rendered applications, generate share links without a
 
 This works for users with JavaScript disabled and provides a baseline sharing capability without any tracking scripts.
 
-## Testing Your Implementation
+### Step 7: Test Your Implementation
 
 Verify that tracking scripts are blocked using browser developer tools. Open the Network tab and filter by domain names like facebook.com, twitter.com, or linkedin.com. Reload your page and confirm no requests go to these domains.
 
@@ -189,7 +199,7 @@ Use online privacy testing tools to check for residual tracking:
 
 Test share functionality manually across different browsers and devices. Ensure users can still share content through all intended platforms.
 
-## Real-World Tracking Threat Model
+### Step 8: Real-World Tracking Threat Model
 
 Understanding what data social media platforms capture helps justify implementation effort:
 
@@ -318,7 +328,7 @@ Removing social tracking scripts provides measurable performance improvements:
 
 Sites that removed social share buttons report 10-15% reduction in page load time and corresponding improvements in user engagement.
 
-## Accessibility Considerations
+### Step 9: Accessibility Considerations
 
 When building custom share buttons, ensure accessibility:
 
@@ -344,6 +354,21 @@ When building custom share buttons, ensure accessibility:
   </button>
 </div>
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

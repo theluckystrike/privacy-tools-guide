@@ -42,7 +42,17 @@ This guide covers practical methods to check if someone is reading your text mes
 - **Enable two-factor authentication on**: critical accounts (use authenticator apps, not SMS) 3.
 - **Use authenticator apps instead**: of SMS 2FA # 4.
 
-## Understanding SMS Security Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand SMS Security Architecture
 
 Before detecting interception, you need to understand how SMS works. When you send a text message, it passes through several points:
 
@@ -55,7 +65,7 @@ At each point, the message exists in plaintext. Cellular carriers and anyone wit
 - Attackers who compromise network equipment
 - Someone with physical access to your phone who configured message forwarding
 
-## Signs Someone May Be Reading Your Messages
+### Step 2: Signs Someone May Be Reading Your Messages
 
 Watch for these indicators that suggest unauthorized access:
 
@@ -74,7 +84,7 @@ Watch for these indicators that suggest unauthorized access:
 - Unexpected auto-reply or out-of-office responses to your texts
 - New apps installed that request SMS permissions
 
-## Technical Methods to Check for Interception
+### Step 3: Technical Methods to Check for Interception
 
 ### Method 1: Inspect Message Forwarding Rules
 
@@ -155,7 +165,7 @@ Various USSD codes can reveal forwarding settings:
 
 Note: These codes work on most GSM networks but may differ by carrier.
 
-## Prevention and Hardening
+### Step 4: Prevention and Hardening
 
 ### For Android Users
 
@@ -210,7 +220,7 @@ class SecureSmsReceiver : BroadcastReceiver() {
 }
 ```
 
-## What to Do If You Detect Compromise
+### Step 5: What to Do If You Detect Compromise
 
 If you determine someone is reading your messages:
 
@@ -281,7 +291,7 @@ class SS7Vulnerability:
         }
 ```
 
-## Device Security Assessment
+### Step 6: Device Security Assessment
 
 Perform a full security audit of your device:
 
@@ -332,7 +342,7 @@ security_audit() {
 security_audit
 ```
 
-## SMS Encryption Alternatives
+### Step 7: SMS Encryption Alternatives
 
 Since SMS itself cannot be encrypted, use these alternatives:
 
@@ -373,7 +383,7 @@ sms_alternatives_comparison = {
 }
 ```
 
-## Detecting Specific Spyware
+### Step 8: Detecting Specific Spyware
 
 Different spyware leaves different fingerprints:
 
@@ -415,7 +425,7 @@ class SpywareDetection:
         }
 ```
 
-## Legal and Regulatory Framework
+### Step 9: Legal and Regulatory Framework
 
 Understanding the legal aspects of SMS interception:
 
@@ -455,7 +465,7 @@ Reporting Options:
   - Data Protection Authority (EU)
 ```
 
-## Creating a Recovery Plan
+### Step 10: Create a Recovery Plan
 
 If your SMS has been compromised:
 
@@ -489,7 +499,7 @@ Ongoing (Weeks 1+):
   - [ ] Consider consulting security professional
 ```
 
-## Professional Help Resources
+### Step 11: Professional Help Resources
 
 When to seek professional help:
 
@@ -532,6 +542,21 @@ professional_resources = {
 ```
 
 Protecting your text messages requires understanding both technical vulnerabilities and legal remedies. Migrate to encrypted messaging apps like Signal for sensitive communications, and remain vigilant for signs of interception or compromise.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
