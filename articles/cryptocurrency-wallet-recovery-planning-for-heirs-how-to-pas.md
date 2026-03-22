@@ -379,11 +379,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
-- [How To Protect Cryptocurrency Wallet From Being Hacked Secur](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
-- [Bitcoin Inheritance Planning Using Multisig With Family Memb](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
-
+- [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
+- [Ethereum Wallet Inheritance: Using Social Recovery Smart](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
+- [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
+- [Bitcoin Inheritance Planning Using Multisig With Family](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
+- [How To Set Up Dedicated Hardware Wallet For Each Crypto](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

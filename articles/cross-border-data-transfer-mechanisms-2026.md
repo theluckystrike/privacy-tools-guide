@@ -273,11 +273,10 @@ Verify the provider's DPF certification at dataprivacyframework.gov, document th
 
 ## Related Articles
 
-- [How To Handle Cross Border Data Transfers After Privacy Shie](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
-- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
-- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [How To Handle Cross Border Data Transfers After Privacy](/privacy-tools-guide/how-to-handle-cross-border-data-transfers-after-privacy-shie/)
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
-- [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
-
+- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [Gdpr Pseudonymization Vs Anonymization Explained](/privacy-tools-guide/gdpr-pseudonymization-vs-anonymization-explained/)
+- [How To Anonymize User Data In Production Database](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

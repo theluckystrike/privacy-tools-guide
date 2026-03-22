@@ -11,22 +11,14 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Automated decision-making systems influence everything from credit approvals and hiring decisions to social media content ranking and insurance premiums. If you've ever been denied a loan, rejected for a job, or noticed your content feed mysteriously changed, you may have wondered: *why did this happen*? The answer often lies in proprietary algorithms that companies are under no obligation to explain.
 
 That is beginning to change. Regulatory frameworks in the European Union, consumer protection laws in the United States, and emerging privacy regulations worldwide are creating new rights for individuals to request transparency about automated decisions. This guide shows you how to exercise those rights effectively.
-
-## Key Takeaways
-
-- **EU AI Act (2025)**: While primarily focused on high-risk AI systems, this regulation increases transparency requirements for providers of AI systems that interact with individuals.
-- **The categories of personal**: data used in making such decisions.
-- **The specific criteria and**: thresholds used in the decision-making process.
-- **Access to my personal**: data used for these purposes.
-- **Whether the business uses**: automated decision-making, including profiling, to make decisions about me.
-- **The categories of personal**: information used in automated decision-making.
 
 ## Prerequisites
 
@@ -548,11 +540,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Request Data Deletion From Companies Not Covered By G](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
-- [Ios App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
-- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
-- [GDPR Legitimate Interest: What Companies Can Do With.](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
-- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
-
+- [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
+- [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [How To Submit Subject Access Request To Employer For All](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
+- [Challenge Automated Credit Decision Using GDPR Right](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
+- [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -11,25 +11,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
 When you connect to a VPN, all your network traffic routes through an encrypted tunnel to the VPN server. This protects your privacy and security, but it also isolates you from local network resources—printers, NAS devices, smart home hubs, and local development servers become inaccessible. The solution is configuring a VPN exempt list (also called a split-tunnel exclusion list) that tells your VPN client which IP ranges or hosts to access directly, bypassing the tunnel.
 
 This guide covers how to configure VPN exempt lists across common VPN protocols and clients, with practical examples for developers and power users managing local network infrastructure.
-
-## Key Takeaways
-
-- **Open System Preferences →**: Network 2.
-- **Confirm VPN path**: Use `traceroute` or `tracert` to verify internet traffic goes through VPN
-4.
-- **DNS resolution**: Local hostnames won't resolve over VPN—use IP addresses or configure local DNS
-4.
-- **VPN protocol limitations**: Some VPN protocols or providers don't support split tunneling—check with your provider
-5.
-- **This guide covers how**: to configure VPN exempt lists across common VPN protocols and clients, with practical examples for developers and power users managing local network infrastructure.
-- **Third-party clients like Tunnelblick**: (OpenVPN) or WireGuard for macOS offer better exempt list functionality.
 
 ## Prerequisites
 
@@ -273,11 +262,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How To Configure Per App Vpn On Android](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
+- [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
+- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
+- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
 - [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-- [How To Configure Openwrt Guest Network With Separate Dns And](/privacy-tools-guide/how-to-configure-openwrt-guest-network-with-separate-dns-and/)
-- [VPN for Accessing Local Bank Account from Abroad Safely](/privacy-tools-guide/vpn-for-accessing-local-bank-account-from-abroad-safely/)
-- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

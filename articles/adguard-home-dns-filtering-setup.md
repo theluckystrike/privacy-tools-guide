@@ -471,9 +471,8 @@ upstream_mode: fastest  # Use fastest upstream, not load-balanced
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
+- [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 - [Privacy-Focused DNS over QUIC Setup](/privacy-tools-guide/dns-over-quic-setup-guide/)
-- [How to Set Up a Privacy Focused Home](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

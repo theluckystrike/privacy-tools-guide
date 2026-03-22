@@ -251,17 +251,18 @@ done
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)
 - [Privacy-Focused DNS over QUIC Setup](/privacy-tools-guide/dns-over-quic-setup-guide/)
 - [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 ---
 
 ## Related Articles
 
 - [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
+- [How to Configure Pi-hole with Unbound DNS](/privacy-tools-guide/how-to-configure-pihole-with-unbound-dns/)
 - [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 - [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-- [Self-Hosted Password Manager Comparison](/privacy-tools-guide/self-hosted-password-manager-comparison)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

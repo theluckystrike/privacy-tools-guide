@@ -292,14 +292,13 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-## Related Reading
+## Related Articles
 
+- [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
+- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 - [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

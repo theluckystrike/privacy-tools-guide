@@ -292,14 +292,13 @@ VLAN isolation is particularly important if you have a mix of ESPHome devices an
 
 Disable the ESPHome dashboard's external access if you do not need it. The dashboard itself does not require authentication by default, so anyone on your local network can modify device configurations. Adding an API key or enabling Home Assistant's built-in authentication layer for the ESPHome addon adds a meaningful layer of protection.
 
-## Related Reading
+## Related Articles
 
-- [Replace Google Home with Local Voice Assistant Using](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
 - [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
-- [How To Use Tailscale To Access Home Assistant Remotely Witho](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-
+- [How To Use Tailscale To Access Home Assistant Remotely](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

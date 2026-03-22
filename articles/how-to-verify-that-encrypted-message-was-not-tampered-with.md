@@ -11,20 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append an HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
-
-## Key Takeaways
-
-- **Modern protocols like Signal**: and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
-- **Ed25519 is the recommended algorithm for new implementations**: it offers fast verification, small signature sizes, and strong security guarantees.
-- **Reuse of nonces with AEAD modes completely breaks security**: ensure nonces are unique per message.
-- **Always use `hmac.compare_digest()` for**: timing-safe comparison to prevent timing attacks.
-- **This is useful for**: encrypting a message while authenticating metadata like headers or sequence numbers.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Prerequisites
 
@@ -476,11 +468,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How To Verify That Your Encrypted Messages Are Not Being](/privacy-tools-guide/how-to-verify-that-your-encrypted-messages-are-not-being-int/)
 - [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [How To Verify That Your Encrypted Messages Are Not Being Int](/privacy-tools-guide/how-to-verify-that-your-encrypted-messages-are-not-being-int/)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
-- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
-
+- [Encrypted Messaging for Journalists Guide](/privacy-tools-guide/encrypted-messaging-for-journalists-guide/)
+- [Signal vs Telegram: Privacy Comparison 2026](/privacy-tools-guide/signal-vs-telegram-privacy-comparison-2026/)
+- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

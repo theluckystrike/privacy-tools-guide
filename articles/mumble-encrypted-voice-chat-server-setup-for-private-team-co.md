@@ -11,20 +11,12 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Mumble is an open-source voice chat application that provides low-latency, encrypted communication suitable for development teams, gaming groups, and organizations requiring private voice channels. Unlike cloud-based alternatives, self-hosting a Mumble server gives you complete control over your data and encryption keys. This guide walks through setting up a Mumble server with proper encryption configuration for private team communication.
-
-## Key Takeaways
-
-- **The client also supports**: end-to-end encryption through the use of certificates, ensuring that even the server operator cannot listen to your communications.
-- **The default Mumble encryption**: uses AES-128, but you can increase this to AES-256 by recompiling with OpenSSL 1.0+ or using a custom build.
-- **Monitor active users echo**: "" echo "Active Connections:" netstat -tu | grep 64738 | wc -l # 5.
-- **Mumble is an open-source**: voice chat application that provides low-latency, encrypted communication suitable for development teams, gaming groups, and organizations requiring private voice channels.
-- **The first time a user connects**: they can create a certificate that gets stored locally.
-- **Certificate Management**: Have each user generate a certificate in Settings > Certificate > Create New Certificate.
 
 ## Table of Contents
 

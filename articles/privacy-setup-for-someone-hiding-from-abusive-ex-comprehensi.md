@@ -268,7 +268,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Stalking Victim Digital](/privacy-tools-guide/privacy-setup-for-stalking-victim--digital-prot/)
 - [How To Set Up Emergency Access For Password Manager](/privacy-tools-guide/how-to-set-up-emergency-access-for-password-manager-spouse/)
-- [How To Stop Someone From Accessing Your Icloud](/privacy-tools-guide/how-to-stop-someone-from-accessing-your-icloud-without-permi/)
+- [Password Manager For Shared Accounts Between Roommates](/privacy-tools-guide/password-manager-for-shared-accounts-between-roommates-secure-method/)
 - [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 ### Step 6: Ongoing Monitoring and Maintenance
 

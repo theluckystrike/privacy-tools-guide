@@ -348,8 +348,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Privacy & Security Guides Hub](/privacy-tools-guide/guides-hub/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
-- [How to Flash OpenWRT on Common Routers for Privacy Beginners](/privacy-tools-guide/how-to-flash-openwrt-on-common-routers-step-by-step-for-priv/)
-- [Windows Sandbox Privacy Testing Guide 2026](/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/)
-- [How to Create Enterprise Privacy Risk Register Template](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
+- [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Browser Autofill Privacy Security](/privacy-tools-guide/browser-autofill-privacy-security-risks/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

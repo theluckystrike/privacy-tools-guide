@@ -20,15 +20,6 @@ Active probing detection represents one of the most sophisticated censorship tec
 
 This guide walks through installing and configuring the Cloak plugin to transform your Shadowsocks setup into something that resists active probing detection.
 
-## Key Takeaways
-
-- **Each user entry includes their UID**: data transfer limits, and connection parameters.
-- **Active probing detection represents**: one of the most sophisticated censorship techniques deployed by authoritarian networks.
-- **Unlike simple port blocking**: active probing involves censors sending crafted packets to your server to identify the protocol being used.
-- **The UID serves as a user identifier**: while the public and private keys handle authentication.
-- **The `AdminUID` is a**: special UID that grants administrative access, allowing you to manage connected users without authentication.
-- **In production deployments**: you typically run a separate instance for administration or use the management API.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

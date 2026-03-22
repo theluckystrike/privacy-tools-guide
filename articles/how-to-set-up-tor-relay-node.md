@@ -10,33 +10,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How to Set Up a Tor Relay"
-description: "Step-by-step guide to configuring a Tor middle relay on Linux, including torrc settings, bandwidth limits, firewall rules, and monitoring your relay"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-set-up-tor-relay-node/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Running a Tor relay contributes bandwidth to the Tor network and helps more people access the internet privately. This guide covers setting up a **middle relay** — the most appropriate choice for most people. Middle relays carry encrypted traffic between other Tor nodes; they never see plaintext traffic and have a much lower legal risk profile than exit relays.
 
 Exit relays (where traffic exits onto the public internet) carry more legal complexity and are outside the scope of this guide. If you want to run an exit relay, read the Tor Project's legal guidance first.
-
-## Key Takeaways
-
-- **This guide covers setting up a middle relay**: the most appropriate choice for most people.
-- **[notice] Your Tor server's**: identity key fingerprint is 'MyPrivacyRelay ABCD1234...' ``` The identity fingerprint is your relay's unique identifier in the Tor directory.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Prerequisites
 

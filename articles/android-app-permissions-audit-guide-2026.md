@@ -287,10 +287,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
 - [How to Audit Android App Permissions Privacy Guide 2026](/privacy-tools-guide/how-to-audit-android-app-permissions-privacy-guide-2026/)
 - [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
 - [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/privacy-tools-guide/android-adb-app-permissions-audit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

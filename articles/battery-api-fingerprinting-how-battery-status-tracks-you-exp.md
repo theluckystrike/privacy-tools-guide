@@ -294,8 +294,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Optimize CalyxOS Battery Life with Privacy Features Enabled](/privacy-tools-guide/how-to-optimize-calyx-os-battery-life-with-privacy-features-/)
 - [Device Memory API Fingerprinting How Ram Amount Narrows](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Optimize CalyxOS Battery Life with Privacy Features Enabled](/privacy-tools-guide/how-to-optimize-calyx-os-battery-life-with-privacy-features-/)
 - [Wireguard Android Battery Optimization Settings: Breaking](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [Topics API Chrome Replacement For Cookies How It Tracks](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
 - [Gamepad API Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)

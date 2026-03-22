@@ -418,11 +418,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
-- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
-- [Mailbox Forwarding Service Comparison For Using Business Add](/privacy-tools-guide/mailbox-forwarding-service-comparison-for-using-business-add/)
-- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
-
+- [How To Tell If Someone Has Access To Your Apple](/privacy-tools-guide/how-to-tell-if-someone-has-access-to-your-apple-id/)
+- [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
+- [How To Configure iPhone To Minimize Data Shared With Apple](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [iOS Advanced Data Protection For Icloud End To End](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [Tutanota Encrypted Calendar And Contacts How End To End](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

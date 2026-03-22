@@ -352,10 +352,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
 - [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
-- [Cookie Alternatives After Third-Party Deprecation: A.](/privacy-tools-guide/cookie-alternatives-after-third-party-deprecation-2026-guide/)
-- [How To Audit Mobile App Sdks And Third Party Trackers In App](/privacy-tools-guide/how-to-audit-mobile-app-sdks-and-third-party-trackers-in-app/)
-
+- [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
+- [How To Exercise Right To Restrict Processing Under Gdpr](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

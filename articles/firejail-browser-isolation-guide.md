@@ -20,13 +20,6 @@ tags: [privacy-tools-guide]
 Firejail is a SUID sandbox that restricts what processes can access using Linux namespaces, seccomp-bpf, and capabilities. When your browser is sandboxed with Firejail, a successful exploit — remote code execution via a malicious PDF or JavaScript vulnerability — is contained: the attacker's code can't read your SSH keys, home directory files, or make arbitrary system calls.
 ---
 
-## Key Takeaways
-
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers what firejail does**: install firejail, basic usage, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## What Firejail Does
 
 Firejail creates restricted containers using:
@@ -352,14 +345,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [How to Use Qubes OS for Maximum Compartmentalization](/privacy-tools-guide/how-to-use-qubes-os-for-maximum-compartmentalization-2026/)
-- [Browser Fingerprinting and Privacy](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [How to Use Whonix for Anonymous Browsing](/privacy-tools-guide/whonix-anonymous-browsing-setup-guide/)
-
----
-
+- [Tor Browser Isolation Container Setup Guide](/privacy-tools-guide/tor-browser-isolation-container-setup-guide/)
+- [Browser First-Party Isolation: What It Does and How It Works](/privacy-tools-guide/browser-first-party-isolation-what-it-does/)
+- [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
+- [Browser Storage Isolation Explained](/privacy-tools-guide/browser-storage-isolation-explained-privacy/)
+- [Tor Browser Android Setup Guide](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

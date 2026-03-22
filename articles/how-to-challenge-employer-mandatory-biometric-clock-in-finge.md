@@ -271,11 +271,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Challenge Automated Credit Decision Using GDPR Right to](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
-- [China Qr Code Tracking How Mandatory Scanning Creates.](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
-- [How To Configure Postfix With Mandatory Tls Encryption For E](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
+- [What To Do If Your Biometric Data Fingerprint Was Compromise](/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/)
 - [Opt Out of Aadhaar-Based Surveillance and Limit Biometric](/privacy-tools-guide/how-to-opt-out-of-aadhaar-based-surveillance-and-limit-biome/)
-- [India Aadhaar Privacy Risks What Biometric Data Government C](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
-
+- [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [India Aadhaar Privacy Risks What Biometric Data Government](/privacy-tools-guide/india-aadhaar-privacy-risks-what-biometric-data-government-c/)
+- [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

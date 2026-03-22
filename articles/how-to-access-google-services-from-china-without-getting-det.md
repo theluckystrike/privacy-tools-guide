@@ -277,9 +277,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Best VPN for Using Google in China Without Detection](/privacy-tools-guide/best-vpn-for-using-google-in-china-without-detection/)
 - [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
-- [Calyxos Microg Setup Guide Getting Google Apps Working.](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-- [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
-- [How To Use Domain Fronting To Access Blocked Services From C](/privacy-tools-guide/how-to-use-domain-fronting-to-access-blocked-services-from-c/)
-
+- [China VPN Crackdown: Penalties and Consequences](/privacy-tools-guide/china-vpn-crackdown-penalties-what-happens-if-caught-using-unauthorized-vpn-service/)
+- [Tor Hidden Services: How to Access Safely](/privacy-tools-guide/tor-hidden-services-how-to-access-safely/)
+- [Calyxos Microg Setup Guide Getting Google Apps Working](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

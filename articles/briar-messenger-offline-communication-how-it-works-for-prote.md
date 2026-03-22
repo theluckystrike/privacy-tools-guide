@@ -465,9 +465,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
 - [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
-- [How To Use Briar Messenger During Iran Internet Blackout Pee](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [How To Set Up Offline Encrypted Communication Between Two Pe](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
-- [Email Provider Jurisdiction Comparison Which Countries Prote](/privacy-tools-guide/email-provider-jurisdiction-comparison-which-countries-prote/)
-
+- [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [How To Set Up Offline Encrypted Communication Between Two](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
+- [Use Mesh Networking for Private Communication](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -19,15 +19,6 @@ tags: [privacy-tools-guide, privacy]
 Google Photos and Apple iCloud analyze every photo you upload — detecting faces, locations, objects, and content. This analysis powers their search features, but also creates detailed behavioral profiles. Alternatives range from self-hosted solutions you run yourself to zero-knowledge cloud options where the provider can't read your photos.
 ---
 
-## Key Takeaways
-
-- **Google's privacy policy allows**: them to use your content to improve their AI models on the free plan.
-- **Ente cannot see your photos**: and this is verifiable because the client is open source (`github.com/ente-io/ente`).
-- **For most users**: Ente's paid cloud is the practical choice.
-- **For large libraries (100**:000+ photos), MariaDB performs substantially better.
-- **This is useful if**: you have years of photos already on disk and want browsing capabilities without restructuring.
-- **Ente also offers an**: open-source self-hosted backend (`ente-server`) with your own storage, but the server setup is complex.
-
 ## Table of Contents
 
 - [What Photo Services Analyze](#what-photo-services-analyze)
@@ -364,13 +355,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Photographer Client Photo Privacy Protection Cloud Storage](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
-- [Best Encrypted Cloud Storage 2026](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
-- [How to Audit Your Cloud Storage Privacy](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
-
----
-
+- [How To Remove Personal Photos From Google Images](/privacy-tools-guide/how-to-remove-personal-photos-from-google-images-and-reverse/)
+- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
+- [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [iOS Advanced Data Protection For Icloud End To End](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

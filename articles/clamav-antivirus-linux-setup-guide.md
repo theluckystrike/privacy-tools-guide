@@ -350,13 +350,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
+- [How to Set Up Mullvad VPN on Linux](/privacy-tools-guide/mullvad-vpn-linux-setup-guide/)
+- [How To Migrate From Windows To Linux Without Losing Workflow](/privacy-tools-guide/how-to-migrate-from-windows-to-linux-without-losing-workflow/)
+- [Privacy-Focused Antivirus Software: Performance Impact](/privacy-tools-guide/privacy-focused-antivirus-software-performance-impact-compar/)
 - [Setting Up Fail2ban for Server Protection](/privacy-tools-guide/fail2ban-server-protection-setup-guide/)
-- [How to Set Up a Honeypot for Intrusion Detection](/privacy-tools-guide/honeypot-intrusion-detection-guide/)
-- [Securing Redis and MongoDB for Production](/privacy-tools-guide/securing-redis-mongodb-production-guide/)
-
----
-
+- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -297,10 +297,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
-- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
 - [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [Best Privacy-Focused Email Alternatives to Gmail 2026](/privacy-tools-guide/best-privacy-focused-email-alternatives-to-gmail-2026/)
+- [How To Detect If Your Email Address Has Been Sold](/privacy-tools-guide/how-to-detect-if-your-email-address-has-been-sold-to-marketi/)
 - [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
-- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

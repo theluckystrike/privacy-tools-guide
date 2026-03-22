@@ -281,14 +281,13 @@ OSSEC logs grow fast:
 }
 ```
 
-## Related Reading
+## Related Articles
 
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
+- [How to Set Up a Honeypot for Intrusion Detection](/privacy-tools-guide/honeypot-intrusion-detection-guide/)
 - [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [How to Use chkrootkit and rkhunter](/privacy-tools-guide/chkrootkit-rkhunter-rootkit-detection-guide/)
-
----
-
+- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
+- [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
+- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

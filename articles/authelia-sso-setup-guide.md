@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Authelia is a self-hosted authentication proxy that puts a login screen (with optional 2FA) in front of any HTTP service. Instead of setting up authentication in each of your self-hosted apps individually, Authelia intercepts requests to your internal services and handles authentication centrally.
 
-## Key Takeaways
-
-- **Topics covered**: architecture, prerequisites, step 1: docker compose setup
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Architecture
 
 ```

@@ -460,9 +460,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
-- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
-- [Browser Fingerprinting How It Works and How to Prevent It](/privacy-tools-guide/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [Browser Fingerprinting: What It Is and How to Block It](/privacy-tools-guide/browser-fingerprinting-what-it-is-how-to-block/)
-- [Audio Context Fingerprinting How Websites Use Sound API](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Login Fingerprinting How Websites Detect Which Accounts You](/privacy-tools-guide/login-fingerprinting-how-websites-detect-which-accounts-you-/)
+- [How Browser Fingerprinting Works Explained](/privacy-tools-guide/how-browser-fingerprinting-works-explained/)
+- [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

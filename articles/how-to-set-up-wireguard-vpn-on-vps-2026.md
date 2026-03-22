@@ -742,9 +742,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
-- [Set Up a Personal VPN with WireGuard](wireguard-personal-vpn-setup-guide)
-
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
+- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

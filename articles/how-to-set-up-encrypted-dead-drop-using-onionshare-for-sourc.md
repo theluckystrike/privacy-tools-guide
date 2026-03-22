@@ -11,41 +11,11 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How To Set Up Encrypted Dead Drop Using Onionshare"
-description: "A practical guide for developers and power users to create secure, anonymous drop boxes using OnionShare"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-encrypted-dead-drop-using-onionshare-for-sourc/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Set up an OnionShare dead drop by installing the application, creating a receive-only mode, and hosting it as a Tor onion service that accepts file uploads over encrypted channels. Sources access the service via an one-time URL over Tor, submit documents, and disconnect without leaving identifying information. OnionShare never logs IP addresses, doesn't require accounts, and automatically deletes files after retrieval—creating truly anonymous submission channels for developers and power users protecting sources.
-
-## Key Takeaways
-
-- **DigitalOcean's $6/month Droplet running**: Ubuntu 22.04 is sufficient.
-- **For most use cases**: Tor alone provides sufficient anonymity for the server-side operator.
-- **Use MAT2 or exiftool**: to strip metadata from documents before uploading Important: Close Tor Browser after submission to protect your session.
-- **The key advantage over**: alternatives like SecureDrop (the Freedom of the Press Foundation's journalism-grade submission system) is deployment simplicity.
-- **Keep this message minimal**: instructions to use Tor Browser, an assurance that no logs are kept, and a contact method for questions if needed.
-- **Add Encryption Layer (Optional**: but Recommended) For additional security, encrypt files before processing them.
-
-### Step 1: Understand the Dead Drop Model
-
-A dead drop works like a physical mailbox in espionage tradecraft: one party leaves information at a predetermined location for another party to retrieve later. In digital form, this means your source can submit encrypted documents or messages that only you can decrypt, without any direct communication or IP address correlation.
-
-OnionShare provides the infrastructure by hosting a Tor onion service—a private, encrypted website accessible only through the Tor browser. The connection is end-to-end encrypted, and the server leaves no logs on traditional internet infrastructure.
-
-The key advantage over alternatives like SecureDrop (the Freedom of the Press Foundation's journalism-grade submission system) is deployment simplicity. SecureDrop requires a dedicated air-gapped server and significant operational overhead. OnionShare runs on a standard laptop or VPS and can be operational in under ten minutes. For individuals, small publications, and researchers rather than large newsrooms, OnionShare hits a practical balance between security and setup burden.
 
 ## Prerequisites
 
@@ -327,9 +297,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [Secure File Sharing with OnionShare](/privacy-tools-guide/onionshare-secure-file-sharing-guide/)
+- [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [How To Send Large Encrypted Files Without Uploading](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/privacy-tools-guide/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [Set Up a Dead Man's Switch Email That Sends Credentials If](/privacy-tools-guide/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
-- [Onionshare Secure File Sharing Over Tor Network Setup And Us](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
-- [Business Email Privacy: How to Set Up Encrypted Email.](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

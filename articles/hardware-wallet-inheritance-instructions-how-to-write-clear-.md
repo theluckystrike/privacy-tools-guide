@@ -383,11 +383,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Configure Trezor Hardware Wallet For Maximum Transact](/privacy-tools-guide/how-to-configure-trezor-hardware-wallet-for-maximum-transact/)
-- [How To Set Up Dedicated Hardware Wallet For Each Crypto Spen](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
-- [Ledger Data Breach Lessons How Hardware Wallet Companies Can](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
-- [Ethereum Wallet Inheritance: Using Social Recovery Smart.](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
-- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
-
+- [Cryptocurrency Wallet Recovery Planning For Heirs How](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
+- [How To Set Up Dedicated Hardware Wallet For Each Crypto](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
+- [Ethereum Wallet Inheritance: Using Social Recovery Smart](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
+- [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
+- [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

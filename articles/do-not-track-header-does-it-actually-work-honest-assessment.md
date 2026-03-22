@@ -272,7 +272,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
 - [Email Header Analysis What Metadata Reveals About Your](/privacy-tools-guide/email-header-analysis-what-metadata-reveals-about-your-locat/)
 - [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
+- [Proton Drive Review: Honest Assessment 2026](/privacy-tools-guide/proton-drive-review-honest-assessment-2026/)
 - [How To Spoof Browser User Agent](/privacy-tools-guide/how-to-spoof-browser-user-agent-privacy/)
-- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

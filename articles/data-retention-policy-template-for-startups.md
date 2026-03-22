@@ -18,15 +18,6 @@ voice-checked: true
 
 Below is a ready-to-use data retention policy template for startups, with recommended retention periods by data type: 7 years for transaction records, 90 days for application logs, 2 years for marketing data, and active-plus-30-days for account data. Copy the template, adapt the retention schedules to your business, and implement the included PostgreSQL and Python automation scripts to enforce deletion automatically. This prevents GDPR and CCPA penalties, reduces storage costs, and minimizes your breach surface.
 
-## Key Takeaways
-
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **GDPR Article 5(1)(e) explicitly**: requires that personal data be kept only for as long as necessary for the purposes for which it was collected.
-- **Communication records are retained**: for 2 years for customer support and dispute resolution.
-- **Build a data lineage**: map that tracks user identifiers across tables.
-- **Small teams can often**: implement changes faster because there are fewer people to coordinate.
-- **Track them weekly for**: at least a month to see trends.
-
 ## Table of Contents
 
 - [Why Startups Need a Data Retention Policy](#why-startups-need-a-data-retention-policy)

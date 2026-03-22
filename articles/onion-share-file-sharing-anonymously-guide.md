@@ -279,8 +279,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
 - [Secure File Sharing with OnionShare](/privacy-tools-guide/onionshare-secure-file-sharing-guide/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 - [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
 - [How To Use Age Encryption For Secure File Sharing Command](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

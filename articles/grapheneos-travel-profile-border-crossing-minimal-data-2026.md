@@ -13,34 +13,10 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
 ---
----
-layout: default
-title: "GrapheneOS Travel Profile Border Crossing Minimal Data 2026"
-description: "A technical guide for developers and power users on configuring GrapheneOS travel profile to minimize data exposure during border crossings"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /grapheneos-travel-profile-border-crossing-minimal-data-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, grapheneos, privacy, travel, border-crossing]
----
 
 {% raw %}
 
 When crossing international borders, your smartphone becomes a potential liability. Customs agents can request access to your device, examine your data, and copy information for later analysis. For developers and power users who value digital privacy, GrapheneOS offers a Travel Profile feature designed specifically for these scenarios. This guide covers how to configure your GrapheneOS device to minimize data exposure during border crossings in 2026.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Navigate to System →**: Multiple users 3.
-- **Tap "Add user" and**: select "Set up now" 4.
-- **Delete the Travel Profile**: entirely using Settings → System → Multiple Users 3.
 
 ## What Is the GrapheneOS Travel Profile
 

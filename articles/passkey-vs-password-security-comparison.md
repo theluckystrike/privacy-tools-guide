@@ -11,21 +11,13 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, security]---
+tags: [privacy-tools-guide, comparison, security]
+---
 
 
 {% raw %}
 
 Choose passkeys over passwords when your users have modern devices (iOS 16+, Android 9+, recent browsers) and you can implement proper recovery flows -- passkeys eliminate phishing, credential stuffing, and server-side secret exposure entirely via FIDO2/WebAuthn cryptographic challenge-response. Choose passwords (with strong hashing and MFA) when you need universal device compatibility or serve legacy environments. For most new applications, implement both with passkeys as primary and password as fallback during migration. This guide covers the technical security differences, WebAuthn implementation code, and a practical migration strategy.
-
-## Key Takeaways
-
-- **Choose passwords (with strong**: hashing and MFA) when you need universal device compatibility or serve legacy environments.
-- **Each passkey is unique to a service**: so users cannot accidentally reuse credentials across sites.
-- **Choose passwords when you**: need universal compatibility or operate in environments with legacy device requirements.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **For most new applications**: implement both with passkeys as primary and password as fallback during migration.
 
 ## How Passwords Fail
 
@@ -395,24 +387,24 @@ curl -X POST https://yourdomain.com/api/auth/register/complete \
 For services with millions of existing password users:
 
 1. **Phase 1 (Month 1-2)**: Add passkey option alongside password login
-   - Deploy passkey registration UI
-   - Do not require it yet
-   - Gather adoption metrics
+ - Deploy passkey registration UI
+ - Do not require it yet
+ - Gather adoption metrics
 
 2. **Phase 2 (Month 3-4)**: Encourage passkey adoption
-   - Show promotion to users logging in
-   - Offer incentives (reduced 2FA friction)
-   - Measure conversion rate
+ - Show promotion to users logging in
+ - Offer incentives (reduced 2FA friction)
+ - Measure conversion rate
 
 3. **Phase 3 (Month 5-6)**: Make passkey preferred
-   - Default to passkey during registration
-   - Offer password as fallback
-   - Maintain both indefinitely
+ - Default to passkey during registration
+ - Offer password as fallback
+ - Maintain both indefinitely
 
 4. **Phase 4 (Month 7+)**: Support both permanently
-   - Never force password-only users to switch
-   - But encourage it during account recovery flows
-   - Maintain password support for accessibility
+ - Never force password-only users to switch
+ - But encourage it during account recovery flows
+ - Maintain password support for accessibility
 
 This approach maintains backward compatibility while transitioning toward better security.
 

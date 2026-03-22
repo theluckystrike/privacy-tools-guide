@@ -271,11 +271,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
-- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
-- [How To Opt Out Of Acxiom Oracle Data Cloud And Nielsen Consu](/privacy-tools-guide/how-to-opt-out-of-acxiom-oracle-data-cloud-and-nielsen-consu/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 - [How To Remove Personal Information From Ai Training Datasets](/privacy-tools-guide/how-to-remove-personal-information-from-ai-training-datasets/)
-
+- [How To Protect LinkedIn Profile From Being Discovered](/privacy-tools-guide/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
+- [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

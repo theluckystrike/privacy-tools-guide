@@ -5,7 +5,7 @@ description: "Strip author names, creation timestamps, GPS coordinates, and hidd
 date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-remove-metadata-from-pdf-files/
-categories: [guides]
+categories: [guides, privacy]
 reviewed: true
 score: 8
 intent-checked: true
@@ -233,7 +233,6 @@ For maximum anonymity, re-type or re-create the document from scratch rather tha
 - [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
 - [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
 - [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -294,9 +294,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
-- [Facebook Dating Privacy Does Meta Use Your Dating Activity](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 - [How To Use Compartmentalized Identity For Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
+- [Facebook Dating Privacy Does Meta Use Your Dating Activity](/privacy-tools-guide/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
+- [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Dating App Data Breach History Which Platforms Have Leaked](/privacy-tools-guide/dating-app-data-breach-history-which-platforms-have-leaked-u/)
-- [How To Prevent Dating App Photos From Appearing In Google](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

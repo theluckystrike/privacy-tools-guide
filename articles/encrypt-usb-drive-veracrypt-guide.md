@@ -20,16 +20,6 @@ Carrying sensitive data on a USB drive is a liability without encryption. If it'
 This guide covers full-drive encryption, hidden volumes, keyfile setup, and cross-platform mounting.
 ---
 
-## Key Takeaways
-
-- **For an USB drive**: used only for sensitive files, an encrypted partition is the better choice.
-- **--- ## Traveler Mode**: (Windows-Only) If you need to use the encrypted USB on a Windows machine without installing VeraCrypt, use Traveler mode: 1.
-- **Choose Standard VeraCrypt volume (or Hidden**: covered below)
-4.
-- **Click Select Device →**: pick your USB drive (e.g., `/dev/sdb`) 5.
-- **Choose Encrypt partition in**: place if data already exists, or Create encrypted volume and format it for a blank drive 6.
-- **Set a strong passphrase**: (25+ characters) or use a keyfile 8.
-
 ## Table of Contents
 
 - [What VeraCrypt Provides](#what-veracrypt-provides)

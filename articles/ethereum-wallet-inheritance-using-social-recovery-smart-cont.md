@@ -251,11 +251,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cryptocurrency Wallet Recovery Planning For Heirs How To Pas](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
+- [Cryptocurrency Wallet Recovery Planning For Heirs How](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
 - [Hardware Wallet Inheritance Instructions How To Write Clear](/privacy-tools-guide/hardware-wallet-inheritance-instructions-how-to-write-clear-/)
-- [Hinge Connected Friends Feature Privacy Risk](/privacy-tools-guide/hinge-connected-friends-feature-privacy-risk-how-mutual-cont/)
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [How To Set Up Encrypted Usb Drive With Recovery Instructions](/privacy-tools-guide/how-to-set-up-encrypted-usb-drive-with-recovery-instructions/)
-
+- [Nft And Digital Asset Inheritance How To Transfer Ownership](/privacy-tools-guide/nft-and-digital-asset-inheritance-how-to-transfer-ownership-/)
+- [Bitcoin Inheritance Planning Using Multisig With Family](/privacy-tools-guide/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
+- [Crypto Dead Man Switch Services That Transfer Wallet Access](/privacy-tools-guide/crypto-dead-man-switch-services-that-transfer-wallet-access-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

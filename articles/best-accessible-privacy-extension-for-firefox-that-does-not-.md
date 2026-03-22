@@ -342,9 +342,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Anonymous Conference Call Services That Do Not Log](/anonymous-conference-call-services-that-do-not-log-participa/)
-- [Best Password Manager For Firefox Extension](/best-password-manager-for-firefox-extension/)
-- [Do Not Track Header Does It Actually Work Honest Assessment](/do-not-track-header-does-it-actually-work-honest-assessment/)
-
+- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
+- [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
+- [How to Harden Firefox for Privacy (2026)](/privacy-tools-guide/how-to-harden-firefox-for-privacy-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

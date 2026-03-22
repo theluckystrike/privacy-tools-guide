@@ -11,18 +11,12 @@ tags: [privacy-tools-guide, privacy, security, dating-apps]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 8---
+score: 8
+---
 
 {% raw %}
 
 Dating app photos can unexpectedly appear in Google Image Search results, creating unexpected connections between your private dating life and your public identity. This happens through various technical mechanisms that index, cache, and share image data across platforms. This guide provides actionable techniques for developers and power users who want to maintain separation between their dating profile photos and public search results.
-
-## Key Takeaways
-
-- **This guide provides actionable**: techniques for developers and power users who want to maintain separation between their dating profile photos and public search results.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers how**: dating app photos end up in google images, direct indexing, third-party data sharing, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
 ## Prerequisites
 

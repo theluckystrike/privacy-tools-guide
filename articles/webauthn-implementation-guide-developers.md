@@ -11,33 +11,11 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "WebAuthn Implementation Guide for Developers"
-description: "A practical developer guide to implementing WebAuthn authentication. Code examples for registration, authentication, and best practices"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "theluckystrike"
-permalink: /webauthn-implementation-guide-developers/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 
 {% raw %}To implement WebAuthn, generate a cryptographic challenge on your server, call `navigator.credentials.create()` for registration or `navigator.credentials.get()` for authentication on the client, then verify the signed response server-side against the stored public key. This guide provides copy-ready Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
-
-## Key Takeaways
-
-- **Implement rate limiting on**: registration and authentication endpoints to prevent abuse.
-- **This guide provides copy-ready**: Python and JavaScript code for the full registration and authentication flow, plus best practices for challenge management, credential storage, and error handling.
-- **For `app.example.com`**: you can use either `app.example.com` or `example.com`.
-- **For local development**: use `localhost` or configure self-signed certificates.
-- **Offer as alternative login**: Users who have registered a passkey can use it in place of the password + OTP flow.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 
@@ -480,11 +458,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
 - [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
 - [WebAuthn vs FIDO2 vs Passkeys: Key Differences Explained](/privacy-tools-guide/webauthn-vs-fido2-vs-passkey-differences/)
-- [Arti Tor Rust Implementation Explained 2026](/privacy-tools-guide/arti-tor-rust-implementation-explained-2026/)
-- [Enterprise Privacy by Design Framework Implementation.](/privacy-tools-guide/enterprise-privacy-by-design-framework-implementation-guide-/)
-- [GDPR Article 17 Erasure Implementation Code](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-
+- [Two-Factor Authentication Setup Guide 2026](/privacy-tools-guide/two-factor-authentication-setup-2026)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

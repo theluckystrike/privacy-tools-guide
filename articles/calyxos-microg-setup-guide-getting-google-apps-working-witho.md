@@ -464,11 +464,10 @@ Keep your microG setup current:
 
 ## Related Articles
 
-- [How To Access Google Services From China Without Getting Det](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [Split Tunneling VPN Setup for Work Apps Only Guide](/privacy-tools-guide/split-tunneling-vpn-setup-for-work-apps-only-guide/)
-- [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose Co](/privacy-tools-guide/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
-- [How To Build Privacy Respecting Email Marketing System Witho](/privacy-tools-guide/how-to-build-privacy-respecting-email-marketing-system-witho/)
-
+- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
+- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
+- [How To Access Google Services From China Without Getting](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
+- [Privacy-Focused Android ROM Comparison 2026](/privacy-tools-guide/privacy-android-rom-comparison-2026/)
+- [Android Google Account Privacy Settings: Complete Guide to](/privacy-tools-guide/android-google-account-privacy-settings-complete-guide-to-li/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

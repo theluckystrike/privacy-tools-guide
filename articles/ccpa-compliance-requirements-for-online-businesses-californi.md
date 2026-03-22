@@ -18,17 +18,6 @@ tags: [privacy-tools-guide]
 
 CCPA requires California businesses to disclose what data they collect, allow users to delete and opt-out, avoid selling data without explicit consent, and respond to data access requests within 45 days. You must comply if you handle California residents' data and meet revenue or data thresholds, implementing privacy policies, opt-out mechanisms, and data request processes. The CPRA (2023 successor) adds more consumer rights including data correction and algorithm opt-out, increasing compliance complexity and potential penalties for non-compliance.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Right to Know**: Consumers can request what personal data you collect and how it's used
-2.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Configure opt-out mechanisms**: Add GPC support and do-not-sell links
-5.
-
 ## Table of Contents
 
 - [Who Must Comply?](#who-must-comply)

@@ -417,10 +417,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Vpn Interacts With Firewall Rules Iptables Nftables.](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
-- [Configure Little Snitch On Macos To Block All Unnecessary](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
-- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-
+- [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
+- [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [Configure Little Snitch On macOS To Block All Unnecessary](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
+- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

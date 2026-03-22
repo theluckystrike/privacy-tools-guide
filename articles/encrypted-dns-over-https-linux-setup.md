@@ -13,36 +13,12 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
 ---
----
-layout: default
-title: "Encrypted DNS over HTTPS on Linux"
-description: "Configure DNS over HTTPS on Linux using systemd-resolved, dnscrypt-proxy, or AdGuard Home. Stop your ISP from logging every domain you visit"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: encrypted-dns-over-https-linux-setup
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
----
 
 {% raw %}
 
 By default, DNS queries on Linux go to your ISP's resolver in plaintext on UDP port 53. Anyone between you and that resolver — your ISP, your network admin, a rogue router — can log every domain you visit. DNS over HTTPS (DoH) encrypts those queries inside standard HTTPS traffic on port 443.
 
 This guide covers three approaches: the built-in `systemd-resolved` (no extra software), `dnscrypt-proxy` (flexible, supports filters), and `AdGuard Home` (self-hosted with a web UI).
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **The `#hostname` part is**: used to verify the TLS certificate.
-- **Good for households or**: small networks.
 
 ## Prerequisites
 

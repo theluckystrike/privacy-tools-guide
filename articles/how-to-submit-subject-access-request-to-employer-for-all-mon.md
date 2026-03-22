@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Submit Subject Access Request To Employer For All"
-description: "A practical guide for employees to exercise their data subject rights under GDPR and similar privacy laws. Learn how to request all monitoring data"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-submit-subject-access-request-to-employer-for-all-mon/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Employee monitoring has become increasingly sophisticated, with employers tracking keystrokes, screen activity, communication metadata, location data, and more. Privacy regulations like GDPR (in Europe), CCPA (in California), and similar laws worldwide give you the right to access this data. This guide walks through submitting a Subject Access Request (SAR) to obtain all monitoring information your employer holds about you.
-
-## Key Takeaways
-
-- **You can also request**: a copy of this data in a commonly used electronic format.
-- **All analytics or reports**: generated about my activity Please provide this data in a commonly used electronic format (such as CSV, JSON, or PDF).
-- **Map which applications and**: websites received the most recording attention 5.
-- **Identify the most egregious**: or unnecessary monitoring practices 2.
-- **Document the monitoring tools**: you know your employer uses.
-- **Check your company's privacy policy**: employee handbook, or acceptable use policy.
 
 ## Prerequisites
 

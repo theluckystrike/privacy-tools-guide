@@ -10,44 +10,12 @@ tags: [privacy-tools-guide, encryption, storage, external-drives]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Encrypt External Hard Drive: Complete Guide 2026"
-description: "Encrypt external hard drives with VeraCrypt, LUKS, BitLocker, and FileVault. Compare tools, setup procedures, password strength, and recovery strategies"
-date: 2026-03-21
-author: "Privacy Tools Guide"
-permalink: /how-to-encrypt-external-hard-drive-guide-2026/
-categories: [security, guides]
-tags: [privacy-tools-guide, encryption, storage, external-drives]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 External drives carrying portable data require encryption before you physically leave your desk. An unencrypted drive lost on a plane, in a coffee shop, or stolen from a car exposes all files to anyone with basic forensic tools. Encrypting external drives protects against physical theft while maintaining portability and ease of access. This guide covers encrypting external hard drives on Windows, macOS, and Linux—comparing VeraCrypt (cross-platform, maximum control), LUKS (Linux-native, best integration), BitLocker (Windows enterprise feature), and FileVault (macOS built-in). Learn setup, performance implications, password management, and disaster recovery procedures.
-
-## Key Takeaways
-
-- **Choose encryption method**: - "Compatible mode": Accessible from older Windows versions
- - "New encryption mode": Faster, only works with Windows 10 1511 and newer
-4.
-- **Choose unlock method**: - Password (enter every time drive is plugged in)
- - Smart card (physical token required)
- - TPM (automatic unlock on this computer only)
-5.
-- **Choose whether to encrypt**: entire drive or used space only (encrypt entire drive is safer) 7.
-- **Choose "Encrypt a non-system**: partition/drive" 4.
-- **Move mouse randomly to**: generate encryption key 8.
-- **Requirements**: - Windows 10/11 Pro or Enterprise
-- TPM 2.0 chip (or software TPM, though hardware TPM recommended)
-- Administrator privileges
-
-Setup for External Drive:
-
-1.
 
 ## Table of Contents
 

@@ -11,33 +11,12 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Windows Activity History Disable Privacy Guide"
-description: "Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck 'Store my activity history on this device' and 'Send my"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /windows-activity-history-disable-privacy-guide/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck "Store my activity history on this device" and "Send my activity history to Microsoft"), which stops it from recording app launches, file access, browser history from Edge, and voice commands. For Pro/Enterprise editions, use Group Policy (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → System → OS Policies and set "Allow activity history" to Disabled. Activity History feeds data to Timeline for resuming work across devices, but also creates a persistent log of sensitive activities like code files accessed, passwords potentially visible in window titles, and voice commands—disabling it eliminates this tracking vector for developers handling sensitive code or security researchers.
-
-## Key Takeaways
-
-- **For Pro/Enterprise editions**: use Group Policy (gpldit.msc) to navigate to Computer Configuration → Administrative Templates → System → OS Policies and set "Allow activity history" to Disabled.
-- **This prevents Microsoft from**: using your activity data to provide personalized recommendations and content.
-- **Windows stores Activity History**: data in a Windows.db database located at `%APPDATA%\Microsoft\Windows\Activities\Cache`.
-- **For maximum assurance**: use a full-disk wiper after disabling Activity History, as deleted files may remain recoverable through unallocated space analysis.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Table of Contents
 

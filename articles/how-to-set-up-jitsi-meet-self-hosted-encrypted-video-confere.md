@@ -11,35 +11,12 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "How To Set Up Jitsi Meet Self Hosted Encrypted Video"
-description: "A practical guide for developers and power users to deploy a self-hosted Jitsi Meet server with end-to-end encryption. Covers Docker deployment"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 8
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Deploying a self-hosted Jitsi Meet instance with end-to-end encryption gives you complete control over your video conferencing infrastructure. This guide walks through setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
-
-## Key Takeaways
-
-- **For organizations requiring E2EE**: communicate these limitations to users before deployment.
-- **Jitsi Meet can use coturn**: an open-source TURN server.
-- **Rate limiting**: Prevent abuse through nginx rate limits
-4.
-- **This guide walks through**: setting up Jitsi Meet with Docker, enabling encryption, and hardening the deployment for production use in 2026.
-- **Jitsi Meet supports E2EE**: using the WebRTC Insertable Streams API, which allows JavaScript to process media frames before transmission.
-- **Guests can still join**: meetings started by authenticated users, but they cannot initiate new conferences.
 
 ## Table of Contents
 
@@ -327,10 +304,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
-- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-
+- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
+- [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

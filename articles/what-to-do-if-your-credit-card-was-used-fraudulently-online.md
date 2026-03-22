@@ -299,8 +299,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [How To Protect Credit Card From Being Skimmed Online](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 - [How To Use Virtual Credit Card Numbers From Privacy Com](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
-- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
 - [How To Purchase Phone And Sim Card Anonymously Complete](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
-- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
+- [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
+- [Challenge Automated Credit Decision Using GDPR Right](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

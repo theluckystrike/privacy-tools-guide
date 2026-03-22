@@ -353,11 +353,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [What to Do If Your Credit Card Was Used Fraudulently Online](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
-- [How To Use Virtual Credit Card Numbers From Privacy Com For](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
+- [How To Use Virtual Credit Card Numbers From Privacy Com](/privacy-tools-guide/how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/)
+- [What to Do If Your Credit Card Was Used Fraudulently](/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/)
 - [How To Use Masked Credit Cards For Online Purchases Privacy](/privacy-tools-guide/how-to-use-masked-credit-cards-for-online-purchases-privacy-/)
-- [How To Protect Elderly Parents From Online Scams Setup Guide](/privacy-tools-guide/how-to-protect-elderly-parents-from-online-scams-setup-guide/)
-- [How To Protect Your Child From Online Predators Safety Setup](/privacy-tools-guide/how-to-protect-your-child-from-online-predators-safety-setup/)
-
+- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
+- [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

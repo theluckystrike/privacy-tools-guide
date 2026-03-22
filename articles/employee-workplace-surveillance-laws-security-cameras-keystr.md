@@ -18,15 +18,6 @@ tags: [privacy-tools-guide, security]
 
 US federal law permits workplace surveillance for legitimate business purposes under ECPA, but states add restrictions—California prohibits keystroke logging and GPS tracking without consent, while New York requires reasonable notice and Connecticut restricts keystroke monitoring to detecting data theft. Security cameras in common areas are generally permitted, but bathrooms, changing rooms, and private areas are always protected. Employers must balance monitoring with employee privacy rights and NLRA protection of wage/working condition discussions, while employees should understand state laws and document any illegal surveillance.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Texas requires notice before**: installing GPS tracking devices on company vehicles used by employees.
-
 ## Table of Contents
 
 - [Federal Baseline for Workplace Surveillance](#federal-baseline-for-workplace-surveillance)
@@ -377,11 +368,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Detect Surveillance Cameras And Microphones In Your H](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
-- [Iran Facial Recognition Surveillance How Cameras In Public S](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
-- [Smart City Surveillance: What Data Municipal Cameras and.](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
-- [Set Up Local Network Storage For Security Cameras Without](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-- [Dark Pattern Regulations Which Privacy Laws Ban Manipulative](/privacy-tools-guide/dark-pattern-regulations-which-privacy-laws-ban-manipulative/)
-
+- [Smart City Surveillance: What Data Municipal Cameras](/privacy-tools-guide/smart-city-surveillance-privacy-rights-what-data-municipal-c/)
+- [Workplace Drug Testing Privacy Rights](/privacy-tools-guide/workplace-drug-testing-privacy-rights-what-employers-can-and/)
+- [How To Detect Surveillance Cameras And Microphones In Your](/privacy-tools-guide/how-to-detect-surveillance-cameras-and-microphones-in-your-h/)
+- [Iran Facial Recognition Surveillance How Cameras In Public](/privacy-tools-guide/iran-facial-recognition-surveillance-how-cameras-in-public-s/)
+- [Employee Email Monitoring Legal Requirements And Privacy](/privacy-tools-guide/employee-email-monitoring-legal-requirements-and-privacy-bou/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

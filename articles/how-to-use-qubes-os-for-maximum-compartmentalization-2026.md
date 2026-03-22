@@ -649,7 +649,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Qubes OS Compartmentalized Workflow Guide](/privacy-tools-guide/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
 - [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [Verify Your Devices Are Not Compromised](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Browser Compartmentalization Guide Separating Identities 2026](/privacy-tools-guide/browser-compartmentalization-guide-separating-identities-2026/)
 - [How To Use Multiple Identities Online Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization-c/)
 - [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

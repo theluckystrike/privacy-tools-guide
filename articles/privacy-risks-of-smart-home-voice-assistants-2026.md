@@ -25,7 +25,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]---
+tags: [privacy-tools-guide, smart-home, voice-assistant, alexa, google-home, siri]
+---
 
 {% raw %}
 
@@ -34,25 +35,6 @@ Smart home voice assistants are always listening. Technically, they listen local
 The core privacy question: what do these companies record, how long do they keep it, and who has access to it? The answers vary significantly by vendor and are often more invasive than most users realize.
 
 This guide compares Alexa, Google Home, and Siri on privacy practices, data retention, and what you can actually control.
-
-## Key Takeaways
-
-- **Option 3**: Use a Privacy-Focused Alternative
-
-Several privacy-focused voice assistant projects exist:
-
-Mycroft (now Selene OS) - Open-source voice assistant you can run locally.
-- **Option 2**: Use Siri Only
-
-If you're in the Apple ecosystem, Siri is the privacy-friendly option.
-- **Step 3**: Limit Always-Listening Devices
-
-If you use Alexa or Google Home, consider limiting how many devices you have.
-- **Step 7**: Use Wake Word Alternatives
-
-Some devices support multiple wake words.
-- **There's no competitive advantage**: so significant that it justifies the privacy trade-off for most users.
-- **Set auto-delete to 3**: months (the most privacy-friendly option).
 
 ## Table of Contents
 
@@ -361,11 +343,10 @@ Carefully. Children can accidentally order things, but more importantly, their v
 
 ## Related Articles
 
-- [How to Audit Browser Extensions for Privacy Risks](/privacy-tools-guide/how-to-audit-browser-extensions-for-privacy-risks-2026/)
-- [Complete Guide to Home Network Privacy and Security](/privacy-tools-guide/complete-guide-to-home-network-privacy-and-security-2026/)
-- [Comparing VPN Services: Speed, Logging, and Privacy](/privacy-tools-guide/comparing-vpn-services-speed-logging-privacy-2026/)
-- [How to Identify and Block Tracking Cookies and Scripts](/privacy-tools-guide/how-to-identify-and-block-tracking-cookies-and-scripts/)
-- [IoT Device Security: Protecting Smart Devices from Hacking](/privacy-tools-guide/iot-device-security-protecting-smart-devices-from-hacking-2026/)
-
+- [Privacy Risks of Voice Assistants Guide](/privacy-tools-guide/voice-assistant-privacy-risks-guide/)
+- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-tools-guide/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [macOS Siri Privacy Controls How To Prevent Voice Data](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
+- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

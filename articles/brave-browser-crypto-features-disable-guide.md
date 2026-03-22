@@ -254,9 +254,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Brave Browser Honest Review 2026](/privacy-tools-guide/brave-browser-honest-review-2026/)
-- [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
-- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
-- [Brave New Tab Page Privacy Review](/privacy-tools-guide/brave-new-tab-page-privacy-review/)
 - [Brave Browser Ad Blocking vs uBlock](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
+- [Brave New Tab Page Privacy Review](/privacy-tools-guide/brave-new-tab-page-privacy-review/)
+- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
+- [Tor Browser Security Settings Configuration Guide](/privacy-tools-guide/tor-browser-security-settings-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

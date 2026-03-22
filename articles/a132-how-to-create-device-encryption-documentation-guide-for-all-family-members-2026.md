@@ -5,7 +5,7 @@ description: "A step-by-step guide to documenting device encryption setup for ev
 date: 2026-03-22
 author: theluckystrike
 permalink: /a132-how-to-create-device-encryption-documentation-guide-for-all-family-members-2026/
-categories: [guides, security]
+categories: [guides, security, family]
 reviewed: true
 score: 8
 intent-checked: true
@@ -200,6 +200,14 @@ Set a recurring calendar reminder to:
 2. **Update device lists** — new phones, new computers
 3. **Test that family members can still unlock their devices** — a forgotten password discovered during an emergency is too late
 4. **Update documentation** — new devices, new procedures, new family members
+
+## Related Articles
+
+- [Best Encrypted Cloud for Family Photo Sharing](/privacy-tools-guide/best-encrypted-cloud-for-family-photo-sharing/)
+- [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
+- [How Does Bitwarden Encryption Work Zero Knowledge](/privacy-tools-guide/how-does-bitwarden-encryption-work-zero-knowledge/)
+- [Smart Refrigerator Data Collection What Samsung Family Hub](/privacy-tools-guide/smart-refrigerator-data-collection-what-samsung-family-hub-s/)
+- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 
 ---
 

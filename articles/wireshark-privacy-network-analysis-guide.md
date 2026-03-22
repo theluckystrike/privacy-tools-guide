@@ -10,35 +10,14 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Wireshark Basics for Privacy Network Analysis"
-description: "How to use Wireshark to inspect network traffic from your own devices, identify unexpected connections, detect trackers, and verify encryption is working"
-date: 2026-03-21
-author: theluckystrike
-permalink: /wireshark-privacy-network-analysis-guide/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Wireshark is a graphical network protocol analyzer that lets you capture and inspect every packet flowing through your network interface. For privacy work, it answers questions that no other tool can: what is that app actually sending home, is my VPN leaking, which domains does my phone contact when I'm not touching it, and is this connection actually encrypted?
 
 This guide covers the privacy-relevant use cases: finding unexpected connections, verifying encryption, and detecting data exfiltration.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Stop the capture after 60 seconds**: even idle systems generate a lot of traffic.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **To find POST requests**: with bodies (most likely to contain sensitive data): ``` http.request.method == "POST" ``` Follow the stream on each result to inspect the posted content.
-- **This is a known privacy limitation of TLS**: only Encrypted Client Hello (ECH) hides the SNI.
 
 ## Table of Contents
 
@@ -259,14 +238,13 @@ tshark -r capture.pcapng -Y dns -T fields -e dns.qry.name | sort -u
 tshark -r capture.pcapng -Y "http.request.method == POST" -V | grep -A5 "Host:"
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [VPN Kill Switch: How It Works and Which VPNs Have Real Ones](/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
-- [How to Detect Hidden Trackers in Android Apps](/detect-hidden-trackers-android-apps/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-
+- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
+- [macOS Privacy Settings For Remote Workers 2026](/privacy-tools-guide/macos-privacy-settings-for-remote-workers-2026/)
+- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
+- [Mobile Fitness Tracker Privacy](/privacy-tools-guide/mobile-fitness-tracker-privacy-what-health-apps-share-with-t/)
+- [Lightning Network Privacy Risks](/privacy-tools-guide/lightning-network-privacy-risks-what-information-channel-partners-can-see-about-you/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

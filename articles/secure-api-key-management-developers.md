@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 Leaked API keys cause real breaches. GitHub's secret scanning detects millions of exposed credentials per year. Most of them are committed accidentally in `.env` files, hardcoded in source, or left in shell history. This guide covers how to handle keys properly from development through production.
 
-## Key Takeaways
-
-- **Most of them are**: committed accidentally in `.env` files, hardcoded in source, or left in shell history.
-- **This guide covers the core rule**: never store keys in code, setting up `.gitignore` correctly, pre-commit hook to block accidental commits, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-- **Practical recommendations**: Specific use-case guidance based on team size and requirements
-
 ## The Core Rule: Never Store Keys in Code
 
 API keys do not belong in:
@@ -314,14 +307,13 @@ aws iam create-policy \
   }'
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
+- [Privacy-Focused Git Workflow: Preventing Accidental Commits](/privacy-tools-guide/privacy-focused-git-workflow-preventing-accidental-commits/)
 - [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
-
----
-
+- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
+- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
+- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

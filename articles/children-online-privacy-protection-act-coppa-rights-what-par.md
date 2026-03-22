@@ -11,37 +11,12 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Children's Online Privacy Protection Act"
-description: "Learn what rights parents have under COPPA and what companies must do to protect children's privacy online"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /children-online-privacy-protection-act-coppa-rights-what-par/
-categories: [guides]
-tags: [privacy-tools-guide, tools, privacy]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 COPPA requires companies to obtain verifiable parental consent before collecting any personal information from children under 13, provide parents access to child data within 30 days, delete data upon parental request, and never retain data longer than necessary. For developers, this means implementing age-gate verification, parental consent email flows, and data minimization practices (storing age ranges instead of birthdates, using display names instead of real names). FTC enforcement includes six-figure fines, making compliance essential for any service potentially used by children.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **To consent to data collection**: please click the link below:
-${consentUrl}
-
-This link will expire in 24 hours.
-- **In one notable case**: a social networking platform was fined $170 million for violating the act.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use built-in parental controls**: Many services offer parental control features that allow parents to monitor or restrict data collection.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Table of Contents
 

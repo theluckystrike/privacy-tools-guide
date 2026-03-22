@@ -413,10 +413,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Tell If Your Phone Has Been Jailbroken](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
 - [How To Check If Your Phone Number Is Being Spoofed](/privacy-tools-guide/how-to-check-if-your-phone-number-is-being-spoofed/)
-- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
-- [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
+- [How To Tell If Your Phone Has Been Jailbroken](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
+- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [How To Purchase Phone And Sim Card Anonymously Complete](/privacy-tools-guide/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
+- [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 HashiCorp Vault centralizes secret storage, enforces access policies, and issues short-lived dynamic credentials. Instead of hardcoding a database password in your app, Vault issues a temporary credential that expires in 1 hour. When it's gone, so is the attack surface.
 
-## Key Takeaways
-
-- **You need 3 of**: the 5 to unseal.
-- **Topics covered**: installation, development mode (testing only), production installation with systemd
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Installation
 
 ```bash

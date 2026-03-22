@@ -272,14 +272,13 @@ sudo aa-status | grep "enforce mode" -A 50 | grep "   /"
 sudo aa-status --json | jq '.processes | to_entries[] | {profile: .key, pids: .value}'
 ```
 
-## Related Reading
+## Related Articles
 
-- [Linux AppArmor vs SELinux](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [Secure Container Registry Setup Guide](/privacy-tools-guide/secure-container-registry-setup-guide/)
-
----
-
+- [Create Separate Browser Profiles For Each Online Identity](/privacy-tools-guide/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
+- [Android Work Profile for Isolating Apps That Require](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
+- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

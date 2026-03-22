@@ -309,14 +309,13 @@ What allowed it to occur? (e.g., no patch management process, no secret rotation
 | Add anomaly detection for auth | Engineering | +30 days | Medium |
 ```
 
-## Related Reading
+## Related Articles
 
-- [Threat Modeling Basics for Developers](/privacy-tools-guide/threat-modeling-basics-developers/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-
----
-
+- [How To Set Up Incident Response Plan For Data Breach](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)
+- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
+- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
+- [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

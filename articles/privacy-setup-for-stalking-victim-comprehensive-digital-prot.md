@@ -300,10 +300,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Witness Protection Program Participant](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
 - [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-tools-guide/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Safe House Protecting Location](/privacy-tools-guide/privacy-setup-for-safe-house-protecting-location-from-digita/)
+- [Encrypt Your Entire Digital Life: A Checklist](/privacy-tools-guide/encrypt-entire-digital-life--checklist/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

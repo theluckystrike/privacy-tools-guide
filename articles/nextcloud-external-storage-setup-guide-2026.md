@@ -11,29 +11,13 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Nextcloud External Storage Setup Guide 2026"
-description: "A technical guide to configuring external storage in Nextcloud for developers and power users. Connect S3, WebDAV, FTP, and local storage"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /nextcloud-external-storage-setup-guide-2026/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 8
-intent-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating an unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
 
-## Key Takeaways
-
-- **Enter the WebDAV URL**: ```bash
 # WebDAV URL format
 https://remote-server.com/remote.php/dav/files/username/
 ```
@@ -129,19 +113,19 @@ occ files_external:list
 
 # Create an S3 mount
 occ files_external:amazon-s3 \
-  --bucket=my-bucket \
-  --hostname=s3.amazonaws.com \
-  --region=us-east-1 \
-  --access-key=AKIAIOSFODNN7EXAMPLE \
-  --secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
-  --mount-point=s3-archive \
-  --user=admin
+ --bucket=my-bucket \
+ --hostname=s3.amazonaws.com \
+ --region=us-east-1 \
+ --access-key=AKIAIOSFODNN7EXAMPLE \
+ --secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY \
+ --mount-point=s3-archive \
+ --user=admin
 
 # Create a local mount
 occ files_external:local \
-  --path=/mnt/external-drive \
-  --mount-point=archive \
-  --user=admin
+ --path=/mnt/external-drive \
+ --mount-point=archive \
+ --user=admin
 ```
 
 The `occ files_external:applicable` command controls which users or groups can access specific mounts.
@@ -159,22 +143,22 @@ auth = HTTPBasicAuth("admin", "your-app-password")
 
 # List files in external storage mount
 response = requests.request(
-    "PROPFIND",
-    base_url + "s3-archive/",
-    auth=auth,
-    headers={"Depth": "1"}
+ "PROPFIND",
+ base_url + "s3-archive/",
+ auth=auth,
+ headers={"Depth": "1"}
 )
 
 print(response.text)
 
 # Upload a file
 with open("backup.tar.gz", "rb") as f:
-    response = requests.put(
-        base_url + "s3-archive/backup.tar.gz",
-        auth=auth,
-        data=f,
-        headers={"Content-Type": "application/gzip"}
-    )
+ response = requests.put(
+ base_url + "s3-archive/backup.tar.gz",
+ auth=auth,
+ data=f,
+ headers={"Content-Type": "application/gzip"}
+ )
 ```
 
 This approach works with any external storage backend — Nextcloud handles the translation between its WebDAV interface and the underlying storage type.
@@ -256,12 +240,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Self Hosted Cloud Storage Comparison Nextcloud vs.](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
-- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
-- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [Nextcloud Talk Video Calls Setup Guide](/privacy-tools-guide/nextcloud-talk-video-calls-setup-guide/)
-
+- [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Self Hosted Cloud Storage Comparison Nextcloud vs](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
+- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Best Private Cloud Storage for Android in 2026](/privacy-tools-guide/best-private-cloud-storage-for-android-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

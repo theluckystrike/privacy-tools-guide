@@ -11,20 +11,12 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
 Catfishing on dating apps is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional manipulation. Dating platforms' built-in verification isn't enough to catch sophisticated catfish. This guide teaches you OSINT verification techniques—reverse image search, EXIF metadata analysis, username enumeration, and social media timeline analysis—that reliably detect fake profiles before you invest time or trust in someone who isn't real.
-
-## Key Takeaways
-
-- **Most catfish use photos**: stolen from social media accounts, stock photo libraries, or influencer profiles.
-- **A catfish may claim**: to be "AlexSmith92" but might have used "alex.smith" or "alexsmith_official" on Instagram, Twitter, or other sites.
-- **Search for the username**: across social platforms 4.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Catfishing on dating apps**: is widespread and dangerous, with scammers using stolen photos and fake identities to deceive users for money or emotional manipulation.
-- **When applied to dating apps**: it means analyzing photos, usernames, bio text, and behavioral patterns to identify inconsistencies that signal a fake account.
 
 ## Why OSINT Matters for Dating App Verification
 
@@ -349,11 +341,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
-- [How To Spot Romance Scam Red Flags On Dating Apps Comprehens](/privacy-tools-guide/how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/)
-- [Use Separate Phone Number for Dating Apps Without Revealing](/privacy-tools-guide/how-to-use-separate-phone-number-for-dating-apps-without-rev/)
-- [Using exiftool on photos:](/privacy-tools-guide/how-to-audit-your-digital-footprint-with-osint-tools/)
-
+- [How To Check If Your Dating Profile Photos Are Being Used](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
+- [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
+- [How To Prevent Dating App Photos From Appearing In Google](/privacy-tools-guide/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
+- [How To Prevent Expartner From Creating Fake Dating Profiles](/privacy-tools-guide/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

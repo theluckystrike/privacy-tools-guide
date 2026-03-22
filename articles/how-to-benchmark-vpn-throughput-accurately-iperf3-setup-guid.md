@@ -11,36 +11,14 @@ tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How To Benchmark Vpn Throughput Accurately Iperf3 Setup"
-description: "To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with iperf3 -c <server-ip> -p 5201 -t"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-benchmark-vpn-throughput-accurately-iperf3-setup-guid/
-categories: [guides]
-tags: [privacy-tools-guide, tools, vpn]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
 To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with `iperf3 -c <server-ip> -p 5201 -t 30`, then compare results against a baseline test without the VPN to calculate exact overhead. This approach gives you controllable, repeatable measurements of actual throughput, latency impact, and protocol efficiency -- unlike browser-based speed tests that hide multiple variables behind a single number.
 
 This guide walks through setting up iperf3 for VPN benchmarking, explaining each step with practical examples you can implement immediately.
-
-## Key Takeaways
-
-- **If CPU reaches 100% during testing**: your results reflect server limitations rather than network performance.
-- **This control matters for**: VPN testing because you need to isolate VPN overhead from network limitations.
-- **If your baseline is**: 100 Mbits/sec and VPN throughput is 65 Mbits/sec, your VPN is delivering 65% of available bandwidth.
-- **Tests under 10 seconds**: don't allow TCP congestion control to stabilize.
-- **Use 30-second minimum durations**: for reliable measurements.
-- **Ignoring server CPU limits**: causes false conclusions.
 
 ## Table of Contents
 

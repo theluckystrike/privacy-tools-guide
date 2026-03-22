@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Threat Model For Human Rights Worker In Conflict Zone Guide"
-description: "A threat modeling guide for human rights workers in conflict zones. Learn to identify assets, analyze adversaries, and implement"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /threat-model-for-human-rights-worker-in-conflict-zone-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Human rights workers in conflict zones face nation-state and paramilitary threats with capabilities including physical surveillance, device seizure with forensic extraction, social network analysis, and sophisticated network eavesdropping. Protect evidence of human rights abuses using Tails Linux for documentation work, Signal encrypted communications, encrypted storage vaults for sensitive documents, and regular device wipes. Establish secure communication with international organizations, separate your work device from personal phone, use dead drops or air-gapped document transfer, and implement strict access controls on victim testimony. This guide provides a practical threat modeling framework covering asset identification, adversary capability analysis, and actionable mitigations tailored to conflict zone environments.
-
-## Key Takeaways
-
-- **Protect evidence of human**: rights abuses using Tails Linux for documentation work, Signal encrypted communications, encrypted storage vaults for sensitive documents, and regular device wipes.
-- **Mitigation**: Use end-to-end encrypted communication tools.
-- **Use ephemeral messaging systems**: that do not store message history locally.
-- **Use dedicated communication channels**: for sensitive contacts.
-- **Mitigation**: Use reproducible builds to verify software integrity.
-- **Dead drops for critical documentation**: Arrange secure locations (unattended) where encrypted drives are deposited and picked up by trusted contacts.
 
 ## Table of Contents
 
@@ -337,11 +315,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Threat Model For Sex Worker Protecting Real Identity And.](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
 - [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Activist In Authoritarian Country Digital S](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 - [Threat Model For Corporate Whistleblower Protecting Evidence](/privacy-tools-guide/threat-model-for-corporate-whistleblower-protecting-evidence/)
-- [Threat Model For Medical Marijuana Patient In Non Legal Stat](/privacy-tools-guide/threat-model-for-medical-marijuana-patient-in-non-legal-stat/)
-
+- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
+- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Activist In Authoritarian Country Digital](/privacy-tools-guide/threat-model-for-activist-in-authoritarian-country-digital-s/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

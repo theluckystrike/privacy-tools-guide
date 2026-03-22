@@ -11,20 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
 Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you and authorized team members hold the encryption keys—your files sync to Keybase's servers encrypted and inaccessible even to the provider. Mount KBFS as a regular filesystem and work with familiar tools while your data stays protected with zero-knowledge encryption.
-
-## Key Takeaways
-
-- **Store development credentials in**: KBFS mkdir -p /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials # 2.
-- **Symlink to project (never**: commit credentials) ln -s /keybase/private/$(keybase status --json | jq -r '.username')/dev-credentials/.env ./dev.env # 4.
-- **Source in dev environment**: export $(cat dev.env | grep -v '^#') # 6.
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **The filesystem also generates**: a unique public folder where you can share files with specific Keybase users or teams.
-- **Free and basic plans**: typically get community forum support and documentation.
 
 ## Table of Contents
 

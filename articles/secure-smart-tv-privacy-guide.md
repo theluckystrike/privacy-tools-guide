@@ -450,16 +450,16 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Network Segmentation for IoT Devices](/privacy-tools-guide/iot-network-segmentation-vlan-guide/)
 - [Disable Firmware Telemetry in IoT Devices](/privacy-tools-guide/iot-firmware-telemetry-disable/)
 - [Private Home Networking Setup Guide](/privacy-tools-guide/private-home-network-setup/)
+- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 
 ## Related Articles
 
 - [Smart Tv Tracking What Data Samsung Lg Vizio Collect About](/privacy-tools-guide/smart-tv-tracking-what-data-samsung-lg-vizio-collect-about-v/)
-- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 - [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
 - [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
-- [macOS Siri Privacy Controls How To Prevent Voice Data](/privacy-tools-guide/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
-
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

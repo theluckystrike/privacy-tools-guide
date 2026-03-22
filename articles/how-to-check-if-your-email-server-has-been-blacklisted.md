@@ -389,9 +389,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
-- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
-- [How To Check If Your Email Is Being Forwarded Without Knowle](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
-- [Does Mullvad Work in Turkmenistan? 2026 Technical Analysis](/privacy-tools-guide/does-mullvad-work-in-turkmenistan-2026-any-server-works/)
-
+- [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
+- [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

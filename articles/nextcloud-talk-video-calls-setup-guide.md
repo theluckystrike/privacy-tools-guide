@@ -11,33 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Nextcloud Talk Video Calls Setup Guide"
-description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "theluckystrike"
-permalink: /nextcloud-talk-video-calls-setup-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Nextcloud Talk provides a self-hosted video conferencing solution that gives you complete control over your communication infrastructure. Unlike cloud-based alternatives, your data stays on your servers, making it an attractive option for privacy-conscious developers and organizations with compliance requirements. This guide walks through the complete setup process, from basic installation to advanced configurations that optimize performance for production environments.
-
-## Key Takeaways
-
-- **For most small to medium deployments**: a single well-configured server handles 50-100 concurrent users effectively.
-- **Document the required ports**: and IP ranges, noting that UDP is preferred but TCP fallback improves compatibility.
-- **For calls with more**: than a few participants, the system uses a Selective Forwarding Unit (SFU) architecture that reduces client-side processing requirements.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
 
 ## Table of Contents
 
@@ -475,11 +454,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Telehealth Privacy Rights What Therapist Doctor Video Calls](/privacy-tools-guide/telehealth-privacy-rights-what-therapist-doctor-video-calls-/)
-- [Secure VoIP Setup for Private Phone Calls Without Carrier](/privacy-tools-guide/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
 - [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
 - [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
-
+- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -351,8 +351,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How to Create a Security Incident Response Plan](/privacy-tools-guide/security-incident-response-plan-guide/)
 - [Gdpr Data Breach Notification Requirements 2026](/privacy-tools-guide/gdpr-data-breach-notification-requirements-2026/)
-- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
 - [Data Breach Notification Requirements Timeline And Process](/privacy-tools-guide/data-breach-notification-requirements-timeline-and-process-f/)
-- [How to Monitor the Dark Web for Data Breaches](/privacy-tools-guide/dark-web-breach-monitoring-guide/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

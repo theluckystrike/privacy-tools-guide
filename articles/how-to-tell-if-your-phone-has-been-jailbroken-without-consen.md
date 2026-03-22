@@ -343,7 +343,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [How to Check if Someone Cloned Your Phone: Signs](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
+- [How to Detect Stalkerware on Your Phone 2026](/privacy-tools-guide/how-to-detect-stalkerware-on-your-phone-2026/)
 - [How to Check If Someone Is Reading Your Text Messages](/privacy-tools-guide/how-to-check-if-someone-is-reading-your-text-messages/)
-- [How To Tell If Someone Installed Spyware On Your](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

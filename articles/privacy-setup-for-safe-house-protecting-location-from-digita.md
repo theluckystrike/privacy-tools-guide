@@ -503,9 +503,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Privacy Setup For Domestic Abuse Shelter Staff: Protecting](/privacy-tools-guide/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
-- [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
 - [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
-- [How To Safely Share Location With Date Without Giving](/privacy-tools-guide/how-to-safely-share-location-with-date-without-giving-perman/)
 - [How To Prevent Someone From Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
+- [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
+- [Disable Location Services Before Crossing Border](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

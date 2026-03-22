@@ -11,32 +11,13 @@ tags: [privacy-tools-guide, vpn]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Verify VPN is Actually Working: DNS, WebRTC, IPv6 Leak Test"
-description: "Step-by-step VPN verification guide. Test DNS leaks, WebRTC leaks, IPv6 leaks, kill switch verification. Real commands and tools"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /how-to-verify-vpn-is-actually-working-dns-webrtc-ipv6-leak-test-guide/
-categories: [guides]
-tags: [privacy-tools-guide, vpn]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 Installing a VPN doesn't guarantee your traffic is private. Misconfigured VPNs leak your real IP through DNS queries, WebRTC connections, or IPv6 traffic—all while the VPN indicator shows green. Your ISP can still see your browsing, and websites can still fingerprint you. This guide walks through verification tests you can run right now: DNS leak detection (nslookup command), WebRTC leak tests (browser console), IPv6 leak detection (running a local server), and kill switch verification (testing connection drop behavior). Each test reveals whether your VPN is actually working. Real tools: dnsleak.com, ipleak.net, whoami.akamai.com, and tcpdump for advanced users.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Ping a server to confirm internet works**: ```bash
-ping 8.8.8.8
 # Output: 64 bytes from 8.8.8.8: icmp_seq=0 ttl=119 time=45ms
 ```
 
@@ -137,11 +118,11 @@ If you see your ISP's servers while connected to VPN, you have a DNS leak.
 nslookup google.com
 
 # Output on VPN should show VPN's DNS:
-# Server:  10.0.0.1 (VPN's DNS)
+# Server: 10.0.0.1 (VPN's DNS)
 # Address: 10.0.0.1#53
 
 # Non-VPN output shows ISP's DNS:
-# Server:  8.8.8.8
+# Server: 8.8.8.8
 # Address: 8.8.8.8#53
 ```
 
@@ -205,16 +186,16 @@ For technical users, test WebRTC directly in browser console:
 // Open browser dev tools (F12) and paste this into console:
 
 const pc = new RTCPeerConnection({
-  iceServers: [{ urls: ["stun:stun.l.google.com:19302"] }]
+ iceServers: [{ urls: ["stun:stun.l.google.com:19302"] }]
 });
 
 const candidates = [];
 
 pc.onicecandidate = (ice) => {
-  if (!ice || !ice.candidate) return;
-  const candidate = ice.candidate.candidate;
-  console.log("WebRTC Candidate:", candidate);
-  candidates.push(candidate);
+ if (!ice || !ice.candidate) return;
+ const candidate = ice.candidate.candidate;
+ console.log("WebRTC Candidate:", candidate);
+ candidates.push(candidate);
 };
 
 pc.createDataChannel("test");
@@ -222,13 +203,13 @@ pc.createOffer().then(offer => pc.setLocalDescription(offer));
 
 // After 3 seconds, check the logged candidates:
 setTimeout(() => {
-  console.log("All WebRTC candidates:", candidates);
-  // Look for IP addresses in the output
-  candidates.forEach(c => {
-    if (c.match(/(\d{1,3}\.){3}\d{1,3}/)) {
-      console.log("IP found:", c);
-    }
-  });
+ console.log("All WebRTC candidates:", candidates);
+ // Look for IP addresses in the output
+ candidates.forEach(c => {
+ if (c.match(/(\d{1,3}\.){3}\d{1,3}/)) {
+ console.log("IP found:", c);
+ }
+ });
 }, 3000);
 ```
 
@@ -365,7 +346,7 @@ For technical users, use netstat to monitor connections:
 netstat -an | grep ESTABLISHED
 
 # Before VPN disconnect: Shows connection to VPN endpoint
-# tcp4  0  0  192.168.1.100.54321  198.51.100.42.1194  ESTABLISHED
+# tcp4 0 0 192.168.1.100.54321 198.51.100.42.1194 ESTABLISHED
 
 # After VPN disconnect with kill switch ON:
 # No ESTABLISHED connections appear
@@ -373,7 +354,7 @@ netstat -an | grep ESTABLISHED
 
 # After VPN disconnect with kill switch OFF:
 # Direct connections to ISP reappear
-# tcp4  0  0  192.168.1.100.54322  8.8.8.8.443  ESTABLISHED
+# tcp4 0 0 192.168.1.100.54322 8.8.8.8.443 ESTABLISHED
 ```
 
 ### Step 6: Test 6: Check Leak Test Sites Themselves
@@ -393,34 +374,34 @@ Before you trust a VPN, run this full verification:
 
 ```
 1. Real IP check:
-   [ ] Record your real IP (disconnect from VPN, check on 3 sites)
+ [ ] Record your real IP (disconnect from VPN, check on 3 sites)
 
 2. DNS leak test:
-   [ ] Visit dnsleak.com on VPN
-   [ ] Verify DNS servers are VPN provider's, not ISP's
-   [ ] Run nslookup command, check DNS server address
+ [ ] Visit dnsleak.com on VPN
+ [ ] Verify DNS servers are VPN provider's, not ISP's
+ [ ] Run nslookup command, check DNS server address
 
 3. WebRTC leak test:
-   [ ] Visit ipleak.net and check WebRTC section
-   [ ] Run browser console test
-   [ ] Verify WebRTC shows VPN IP, not real IP
+ [ ] Visit ipleak.net and check WebRTC section
+ [ ] Run browser console test
+ [ ] Verify WebRTC shows VPN IP, not real IP
 
 4. IPv6 leak test:
-   [ ] Visit ipleak.net and check IPv6 address
-   [ ] Run ifconfig/ipconfig command
-   [ ] Verify no global IPv6 address is visible
+ [ ] Visit ipleak.net and check IPv6 address
+ [ ] Run ifconfig/ipconfig command
+ [ ] Verify no global IPv6 address is visible
 
 5. Kill switch test:
-   [ ] Ping 8.8.8.8 while connected to VPN (works)
-   [ ] Disconnect VPN
-   [ ] Ping 8.8.8.8 immediately (should fail)
-   [ ] Verify ping doesn't recover
+ [ ] Ping 8.8.8.8 while connected to VPN (works)
+ [ ] Disconnect VPN
+ [ ] Ping 8.8.8.8 immediately (should fail)
+ [ ] Verify ping doesn't recover
 
 6. Cross-reference:
-   [ ] Check IP on dnsleak.com
-   [ ] Check IP on ipleak.net
-   [ ] Check IP on whoami.akamai.com
-   [ ] All three should show VPN provider's IP
+ [ ] Check IP on dnsleak.com
+ [ ] Check IP on ipleak.net
+ [ ] Check IP on whoami.akamai.com
+ [ ] All three should show VPN provider's IP
 ```
 
 ### Step 8: Common Leaks and Fixes
@@ -523,12 +504,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [VPN IPv6 Leak Explained: Why Most VPNs Still Fail the Test](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
+- [How to Verify VPN Is Working Correctly 2026](/privacy-tools-guide/how-to-verify-vpn-is-working-correctly-2026/)
 - [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [How To Test Vpn For Webrtc Leaks Testing Guide](/privacy-tools-guide/how-to-test-vpn-for-webrtc-leaks--testing-guide/)
-- [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
-- [How to Disable WebRTC Leaks in Tor Browser](/privacy-tools-guide/tor-browser-disable-webrtc-leak-guide/)
-
+- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+- [VPN IPv6 Leak Explained: Why Most VPNs Still Fail](/privacy-tools-guide/vpn-ipv6-leak-explained-why-most-vpns-still-fail-test/)
+- [How to Verify Your VPN is Not Leaking DNS Requests in 2026](/privacy-tools-guide/how-to-verify-your-vpn-is-not-leaking-dns-requests/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

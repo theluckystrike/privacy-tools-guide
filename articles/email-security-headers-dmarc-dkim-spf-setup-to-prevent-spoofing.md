@@ -20,15 +20,6 @@ Email spoofing remains one of the most common attack vectors used by malicious a
 
 This guide walks through setting up each protocol with practical examples you can implement immediately.
 
-## Key Takeaways
-
-- **Email spoofing remains one**: of the most common attack vectors used by malicious actors.
-- **Use the `-all` (hard**: fail) only after thoroughly testing with `~all`.
-- **Use `p=reject` only after confirming all legitimate mail streams authenticate properly**: rejecting mail can cause legitimate messages to bounce.
-- **When someone sends emails**: that appear to originate from your domain, they can phishing your users, damage your sender reputation, and compromise communications with your customers.
-- **Most providers give you**: the complete record to copy.
-- **Use `spf=aligned` in your**: DMARC record or ensure consistent domain usage.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -423,11 +414,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Dkim Spf Dmarc Email Authentication How They Protect Against](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
-- [Baby Monitor Security And Privacy How To Prevent.](/privacy-tools-guide/baby-monitor-security-and-privacy-how-to-prevent-unauthorized-access/)
-- [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
-
+- [Dkim Spf Dmarc Email Authentication How They Protect](/privacy-tools-guide/dkim-spf-dmarc-email-authentication-how-they-protect-against/)
+- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
+- [How to Detect Phishing Emails with Headers](/privacy-tools-guide/detect-phishing-emails-headers-guide/)
+- [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

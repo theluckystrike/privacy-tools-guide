@@ -289,9 +289,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Optimize LibreWolf Browser Speed and Compatibility with Websites](/how-to-optimize-librewolf-browser-speed-and-compatibility-wi/)
-- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
-- [Best Browser for Tor Network 2026: A Technical Guide](/best-browser-for-tor-network-2026/)
-
+- [Best Browser for Tor Network 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-tor-network-2026/)
+- [Tor Browser for Journalists Safety Guide 2026](/privacy-tools-guide/tor-browser-for-journalists-safety-guide-2026/)
+- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
+- [How to Use Tor Browser Safely](/privacy-tools-guide/tor-browser-safe-usage-guide)
+- [Tor Browser Portable USB Setup Guide](/privacy-tools-guide/tor-browser-portable-usb-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

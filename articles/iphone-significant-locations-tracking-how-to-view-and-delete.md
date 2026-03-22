@@ -381,7 +381,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [iPhone Significant Locations History What Apple Tracks How](/privacy-tools-guide/iphone-significant-locations-history-what-apple-tracks-how-t/)
 - [iPhone Privacy Settings Complete Guide Turn Off All Tracking](/privacy-tools-guide/iphone-privacy-settings-complete-guide-turn-off-all-tracking/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/privacy-tools-guide/iphone-location-tracking-how-to-stop-it/)
-- [Disable Location Services Completely On macOS While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
-- [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [iOS App Tracking Transparency Explained 2026](/privacy-tools-guide/ios-app-tracking-transparency-explained-2026/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

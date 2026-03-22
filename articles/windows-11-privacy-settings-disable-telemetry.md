@@ -11,34 +11,12 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
 ---
-layout: default
-title: "Windows 11 Privacy Settings: How to Disable Telemetry"
-description: "A practical guide for developers and power users to disable Windows 11 telemetry through Settings, Group Policy, and Registry modifications"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /windows-11-privacy-settings-disable-telemetry/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
 
 Reduce Windows 11 telemetry by changing diagnostic data from Enhanced/Full to Basic through Settings (Privacy & security → Diagnostics & feedback), disabling Tailored experiences and Feedback frequency. For Pro/Enterprise editions, use Group Policy (gpldit.msc) to set Computer Configuration → Administrative Templates → Windows Components → Data Collection and On-Demand Diagnostics to Diagnostic data off (minimum level). Home edition users must edit Registry (HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection) and disable telemetry services manually. Complete telemetry blocking requires disabling multiple background services (DiagTrack, dmwappushservice) and blocking Microsoft's telemetry endpoints at the firewall level, which is more aggressive but removes crash reporting and usage statistics sent to Microsoft.
-
-## Key Takeaways
-
-- **For fine-grained control**: use firewall rules selectively on the most intrusive endpoints (telemetry.microsoft.com is the primary concern).
-- **The default setting on**: most systems is Enhanced or Full, which sends substantial diagnostic data including crash reports, usage statistics, and app performance metrics.
-- **Power users prefer programmatic**: methods for repeatable, auditable configurations.
-- **For more granular control**: you can set it to "1 - Basic" for minimal data collection while maintaining compatibility with enterprise management tools.
-- **For developers comfortable with scripts**: manually applying each setting provides better understanding and control.
-- **Tailored Experiences**: Disable personalized recommendations at Settings → Privacy & security → Diagnostics & feedback.
 
 ## Table of Contents
 
@@ -344,11 +322,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Disable All Windows 11 Telemetry Endpoints Using Fire](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
-- [Windows 11 Telemetry Disable Guide: Step by Step](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
-- [Windows 11 Cortana Disable Privacy Guide](/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/)
-- [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
-- [Macos Spotlight Privacy Settings Disable Tracking](/privacy-tools-guide/macos-spotlight-privacy-settings-disable-tracking/)
-
+- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
+- [How To Disable All Windows 11 Telemetry Endpoints](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [Windows 11 Telemetry Disable Guide](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
+- [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
+- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -11,34 +11,12 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Wifi Probe Request Tracking How Your Phone Broadcasts"
-description: "Learn how WiFi probe requests work, what data your phone broadcasts, and how developers can capture and analyze these signals for privacy research"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /wifi-probe-request-tracking-how-your-phone-broadcasts-identi/
-categories: [guides]
-tags: [privacy-tools-guide, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 
 Your phone continuously broadcasts WiFi probe requests containing its MAC address and the names (SSIDs) of previously connected networks, which anyone with a basic wireless adapter and tools like Wireshark or airodump-ng can capture to track your location and movement patterns. While modern iOS and Android devices use MAC address randomization to mitigate this, the randomization is imperfect—devices often revert to their real MAC when connecting, and the list of probed SSIDs itself creates a unique fingerprint. To reduce exposure, disable WiFi when not actively connected, periodically clear saved network lists, and use a device that supports full probe request suppression.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **IPhone X sends requests every 10-20 seconds**: while Android 11 devices use different intervals.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **To reduce exposure**: disable WiFi when not actively connected, periodically clear saved network lists, and use a device that supports full probe request suppression.
-- **Research from the University**: of Hamburg demonstrated that 90% of devices could still be tracked despite MAC randomization through these fingerprinting techniques.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Table of Contents
 
@@ -359,11 +337,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Prevent Cross Device Tracking Between Phone Tablet An](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
-- [Iphone Hotspot Naming Privacy Why Your Name Broadcasts To Ev](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
+- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [What to Do If You Find an Unknown Device on Your](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [How To Use Mac Address Randomization On Linux To Prevent](/privacy-tools-guide/how-to-use-mac-address-randomization-on-linux-to-prevent-wif/)
 - [Anonymous Wifi Access Strategies For Connecting To Internet](/privacy-tools-guide/anonymous-wifi-access-strategies-for-connecting-to-internet-/)
-- [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
-- [How To Disable Wifi Scanning And Bluetooth Scanning On Andro](/privacy-tools-guide/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
-
+- [How To Prevent Cross Device Tracking Between Phone Tablet](/privacy-tools-guide/how-to-prevent-cross-device-tracking-between-phone-tablet-an/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

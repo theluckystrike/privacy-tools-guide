@@ -427,11 +427,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Disable Macos Analytics Sharing That Sends Crash Data](/privacy-tools-guide/how-to-disable-macos-analytics-sharing-that-sends-crash-data/)
-- [Prevent Android Keyboard From Sending Typing Data To Google](/privacy-tools-guide/how-to-prevent-android-keyboard-from-sending-typing-data-to-google-or-samsung/)
-- [Ios Communication Safety Features Parental Controls Versus P](/privacy-tools-guide/ios-communication-safety-features-parental-controls-versus-p/)
-- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
+- [Privacy Risks of Voice Assistants Guide](/privacy-tools-guide/voice-assistant-privacy-risks-guide/)
+- [How to Configure macOS Privacy Settings 2026](/privacy-tools-guide/how-to-configure-macos-privacy-settings-2026/)
+- [How To Configure iPhone To Minimize Data Shared With Apple](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [How to Secure Your Smart TV Privacy](/privacy-tools-guide/secure-smart-tv-privacy-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

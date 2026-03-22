@@ -287,9 +287,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Create Untraceable Email For Anonymous Tips](/privacy-tools-guide/how-to-create-untraceable-email-for-anonymous-tips-to-report/)
-- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 - [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-- [How to Block Tracking Pixels in Email Clients: Setup Guide](/privacy-tools-guide/how-to-block-tracking-pixels-in-email-clients-setup-guide/)
-- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
+- [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [How To Create Throwaway Email Accounts Safely For One Time](/privacy-tools-guide/how-to-create-throwaway-email-accounts-safely-for-one-time-s/)
+- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

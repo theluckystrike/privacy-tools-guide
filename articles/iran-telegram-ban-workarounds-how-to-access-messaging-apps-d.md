@@ -296,7 +296,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [VPN for Using Telegram in Iran 2026: Working Methods](/privacy-tools-guide/vpn-for-using-telegram-in-iran-2026-working-method/)
 - [Vpn That Works In Iran 2026 Tested And Confirmed](/privacy-tools-guide/vpn-that-works-in-iran-2026-tested-and-confirmed/)
 - [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [How To Communicate Securely When All Messaging Apps Are](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
 - [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

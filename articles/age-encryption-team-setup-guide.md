@@ -21,13 +21,6 @@ tags: [privacy-tools-guide]
 
 This guide covers multi-recipient encryption, key distribution workflows, and automating age in CI/CD pipelines.
 
-## Key Takeaways
-
-- **Only share the `age1...`**: public key line.
-- Useful for long-term archival keys.
-- **This guide covers prerequisites**: key generation for each team member, creating a team recipients file, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-
 ## Prerequisites
 
 - age 1.1+ installed on all machines

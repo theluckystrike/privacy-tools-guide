@@ -504,10 +504,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
-- [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
-- [How to Delete All Traces of Your Online Presence Completely](/privacy-tools-guide/how-to-delete-all-traces-of-your-online-presence-completely/)
+- [Android Location History Google Timeline How To Delete](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
 - [Windows Activity History Disable Privacy Guide](/privacy-tools-guide/windows-activity-history-disable-privacy-guide/)
-- [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
-
+- [Set Up Google Inactive Account Manager for Automatic Data](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [How To Remove Personal Data From ChatGPT Bing Ai And Google](/privacy-tools-guide/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

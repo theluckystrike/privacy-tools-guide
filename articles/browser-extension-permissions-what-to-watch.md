@@ -321,10 +321,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [Password Manager Browser Extension Attack Surface](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
-- [How to Check if Someone Cloned Your Phone: Signs to Watch](/privacy-tools-guide/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
-- [Ai Sentiment Analyzer Chrome Extension](/privacy-tools-guide/ai-sentiment-analyzer-chrome-extension/)
-- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
-
+- [Password Manager Browser Extension Attack](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
+- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
+- [How to Audit Browser Extensions for Privacy Risks 2026](/privacy-tools-guide/how-to-audit-browser-extensions-for-privacy-risks-2026/)
+- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

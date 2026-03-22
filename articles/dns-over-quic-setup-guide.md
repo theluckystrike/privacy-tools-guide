@@ -19,13 +19,6 @@ tags: [privacy-tools-guide]
 
 DNS over QUIC (DoQ, RFC 9250) is the newest encrypted DNS protocol. It uses QUIC transport — the same protocol behind HTTP/3 — which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks. DoQ also prevents DNS traffic from being identified and blocked by DPI (Deep Packet Inspection) as easily as DoT.
 
-## Key Takeaways
-
-- **It uses QUIC transport**: the same protocol behind HTTP/3 — which means lower connection setup latency than DNS over TLS (DoT) and better performance on unreliable networks.
-- **Topics covered**: why doq over dot or doh, public doq resolvers, configuration on linux (adguard home)
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Table of Contents
 
 - [Why DoQ Over DoT or DoH](#why-doq-over-dot-or-doh)
@@ -493,14 +486,13 @@ jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
   | sort | uniq -c | sort -rn | head -10
 ```
 
-## Related Reading
+## Related Articles
 
-- [How to Configure DNS over HTTPS for Privacy](/privacy-tools-guide/how-to-configure-dns-over-https-for-privacy-2026/)
+- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
+- [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-tools-guide/privacy-focused-dns-providers-comparison/)
 - [Privacy-Focused DNS Filtering with AdGuard Home](/privacy-tools-guide/adguard-home-dns-filtering-setup/)
-- [Privacy-Focused DNS Resolver Comparison 2026](/privacy-tools-guide/privacy-dns-resolver-comparison-2026/)
-
----
-
+- [Privacy-Focused DNS Providers Comparison 2026](/privacy-tools-guide/privacy-focused-dns-providers-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

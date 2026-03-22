@@ -447,7 +447,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Tor Browser Fingerprinting Protection How It Makes Everyone](/privacy-tools-guide/tor-browser-fingerprinting-protection-how-it-makes-everyone-/)
 - [Tor Browser Canvas Fingerprinting Protection](/privacy-tools-guide/tor-browser-canvas-fingerprinting-protection/)
 - [Tor Browser Font Fingerprinting Protection](/privacy-tools-guide/tor-browser-font-fingerprinting-protection/)
-- [Screen Resolution Fingerprinting Why Changing Display](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
 - [Browser Fingerprinting Protection Techniques](/privacy-tools-guide/browser-fingerprint-protection-guide)
+- [Screen Resolution Fingerprinting Why Changing Display](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

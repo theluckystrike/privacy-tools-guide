@@ -366,7 +366,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Proton Pass vs Bitwarden Security Comparison for Developers](/privacy-tools-guide/proton-pass-vs-bitwarden-security-comparison/)
 - [Bitwarden vs NordPass Comparison 2026](/privacy-tools-guide/bitwarden-vs-nordpass-comparison-2026/)
 - [Internxt Vs Proton Drive Comparison 2026](/privacy-tools-guide/internxt-vs-proton-drive-comparison-2026/)
-- [Bitwarden vs LastPass Migration Guide](/privacy-tools-guide/bitwarden-vs-lastpass-migration-guide/)
 - [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
+- [Proton Drive vs Tresorit: Which to Pick in 2026](/privacy-tools-guide/proton-drive-vs-tresorit-which-to-pick-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

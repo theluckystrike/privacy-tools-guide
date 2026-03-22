@@ -469,6 +469,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
 - [How To File Gdpr Complaint Against Company That Refuses](/privacy-tools-guide/how-to-file-gdpr-complaint-against-company-that-refuses-to-d/)
 - [GDPR Article 17 Erasure Implementation](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
-- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Gdpr Data Breach Notification Rights What Company Must](/privacy-tools-guide/gdpr-data-breach-notification-rights-what-company-must-tell-you-within-seventy-two-hours/)
+- [GDPR Legitimate Interest: What Companies Can Do](/privacy-tools-guide/gdpr-legitimate-interest-what-companies-can-do-with-your-dat/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -457,11 +457,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [China Real Name Registration Requirements How Online Identit](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
+- [China Real Name Registration Requirements How Online](/privacy-tools-guide/china-real-name-registration-requirements-how-online-identit/)
 - [Identity Compartmentalization Strategy Separating Real Name](/privacy-tools-guide/identity-compartmentalization-strategy-separating-real-name-/)
-- [Complete Guide To Removing Yourself From Internet Databases](/privacy-tools-guide/complete-guide-to-removing-yourself-from-internet-databases-/)
-- [How To Purchase Items Online Without Revealing Real Identity](/privacy-tools-guide/how-to-purchase-items-online-without-revealing-real-identity/)
-- [Android Adb Commands For Removing Bloatware That Tracks User](/privacy-tools-guide/android-adb-commands-for-removing-bloatware-that-tracks-user/)
-
+- [iPhone Hotspot Naming Privacy Why Your Name Broadcasts](/privacy-tools-guide/iphone-hotspot-naming-privacy-why-your-name-broadcasts-to-ev/)
+- [Llmnr Netbios Name Resolution Privacy Disabling Windows](/privacy-tools-guide/llmnr-netbios-name-resolution-privacy-disabling-windows-prot/)
+- [How to Use Multiple Identities Online: Compartmentalization](/privacy-tools-guide/how-to-use-multiple-identities-online-compartmentalization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

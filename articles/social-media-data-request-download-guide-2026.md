@@ -11,30 +11,13 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
 ---
-layout: default
-title: "Using curl for LinkedIn API"
-description: "Learn how to request and download your social media data from major platforms. Includes API methods, automation scripts, and best practices for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /social-media-data-request-download-guide-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 
 {% raw %}
 
 Privacy regulations like GDPR and CCPA have given users powerful rights over their personal data. As a developer or power user, understanding how to exercise these rights—and automate the process—provides significant value. This guide covers data request mechanisms across major social platforms, with practical code examples for automating your data downloads.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Never commit tokens to version control**: {% highlight bash %}
 # Use .env files with dotenv
 export FACEBOOK_TOKEN="your_token_here"
 export TWITTER_BEARER="your_bearer_token"

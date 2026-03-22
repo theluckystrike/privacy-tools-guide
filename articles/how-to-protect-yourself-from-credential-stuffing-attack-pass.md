@@ -466,9 +466,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Protect Yourself From Swatting Attack Prevention Measures](/privacy-tools-guide/how-to-protect-yourself-from-swatting-attack-prevention-measures/)
+- [Password Manager Browser Extension Attack](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
 - [How To Protect Yourself From Sim Swap Attack Prevention](/privacy-tools-guide/how-to-protect-yourself-from-sim-swap-attack-prevention-guid/)
-- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [How to Protect Yourself from Evil Twin WiFi Attack Detection](/privacy-tools-guide/how-to-protect-yourself-from-evil-twin-wifi-attack-detection/)
 - [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
+- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
