@@ -194,6 +194,318 @@ Begin by auditing your current conversion tracking implementation. Identify the 
 
 The transition away from third-party cookies represents both a challenge and an opportunity to build more privacy-respecting measurement systems. The Attribution Reporting API provides the technical foundation for continuing to understand advertising effectiveness while respecting user privacy.
 
+## Privacy Budget and Noise in Detail
+
+The Attribution Reporting API applies "differential privacy" to protect users:
+
+### How Privacy Budget Works
+
+```
+Each user has a privacy budget that limits leakage:
+
+Example scenario:
+- User clicks ad for "running shoes"
+- User purchases shoes
+- Browser generates attribution report
+
+Privacy protection:
+- Report delayed randomly (1-48 hours)
+- Conversion count affected by noise
+- Exact timing not revealed
+- Individual attribution not exposable
+```
+
+### Noise Injection Example
+
+```javascript
+// Browser applies noise before report generation
+const trueValue = 100;  // Actual purchase count
+const privacyBudget = 10;  // 10% noise range
+
+// Browser calculates noisy value
+const noisyValue = trueValue + Math.floor((Math.random() - 0.5) *
+  (trueValue * privacyBudget / 100));
+
+// Report contains noisy value, not true value
+console.log(`True: ${trueValue}, Reported: ${noisyValue}`);
+// Example output: True: 100, Reported: 97
+```
+
+Understanding noise levels helps set realistic expectations for measurement accuracy.
+
+### Budget Depletion Strategies
+
+Wise campaigns manage privacy budget allocation:
+
+```
+Privacy budget allocation strategy:
+- High-value conversions (purchases): Allocate 50% of budget
+- Medium-value conversions (signups): Allocate 30% of budget
+- Low-value conversions (page views): Allocate 20% of budget
+
+Once budget depletes for a conversion type:
+- No further reports generated
+- Measurement becomes impossible
+- Campaign optimization stops
+- Plan budget carefully to avoid mid-campaign depletion
+```
+
+## Debugging Attribution Reports
+
+Developers need tools to diagnose measurement issues:
+
+### Chrome DevTools Integration
+
+```
+DevTools > Privacy Sandbox Debug > Attribution Reporting
+- View registered sources
+- View triggered conversions
+- See generated reports
+- Monitor privacy budget usage
+```
+
+### Local Testing with Attribution Debug Reports
+
+```bash
+# Enable debug mode for testing (only in dev/staging)
+# Add to attribution registration headers:
+
+Attribution-Reporting-Debug: true
+
+# Generates immediate, undelayed reports for testing
+# Reports include full data (no noise)
+# Never enable in production
+```
+
+## Cross-Browser Attribution Fragmentation
+
+Not all browsers support Attribution Reporting:
+
+### Browser Support Matrix
+
+| Browser | Support | Timeline |
+|---------|---------|----------|
+| Chrome | Yes | 2024+ |
+| Edge | Yes | 2024+ (Chromium-based) |
+| Safari | Partial | Private Click Measurement (different API) |
+| Firefox | No | No stated plans |
+
+### Fragmentation Handling
+
+```javascript
+// Implement for all browsers using fallback detection
+
+function setupAttribution() {
+  if (window.AttributionReporting) {
+    // Chrome: Use Attribution Reporting API
+    useAttributionReportingAPI();
+  } else if (navigator.privateBrowsingMode === false &&
+             'hasStorageAccess' in document) {
+    // Safari: Use Private Click Measurement
+    useSafariMeasurement();
+  } else {
+    // Fallback: Server-side tracking with consent
+    useServerSideTracking();
+  }
+}
+```
+
+## Real-World Campaign Example
+
+### Multi-Touch Attribution With Attribution Reporting API
+
+```python
+# Campaign measurement strategy using Attribution Reporting
+
+class CampaignAttribution:
+    def __init__(self, campaign_id):
+        self.campaign_id = campaign_id
+        self.sources = []
+        self.conversions = []
+
+    def register_ad_click(self, ad_id, event_id):
+        """User clicks ad - register attribution source"""
+        return {
+            'destination': 'https://advertiser.example/checkout',
+            'expiry': '2592000',  # 30 days
+            'source_event_id': f"{ad_id}_{event_id}",
+            'priority': '1'
+        }
+
+    def process_conversion(self, purchase_value):
+        """User completes purchase - register trigger"""
+        return {
+            'trigger_data': 'purchase',
+            'event_report_window': '2592000',
+            'priority': '1',
+            'value': purchase_value
+        }
+
+    def aggregate_measurement(self, reports):
+        """Combine noisy reports into useful metrics"""
+        conversions = len(reports)
+        revenue = sum(r['value'] for r in reports if 'value' in r)
+
+        # Adjust for expected noise
+        estimated_actual = conversions * 1.15  # Assume 15% attribution loss
+
+        return {
+            'reported_conversions': conversions,
+            'estimated_actual': estimated_actual,
+            'total_revenue': revenue
+        }
+
+# Usage
+campaign = CampaignAttribution('summer_campaign')
+
+# Collect reports over time
+reports = [
+    {'trigger_data': 'purchase', 'value': 49.99},
+    {'trigger_data': 'purchase', 'value': 129.99},
+    # ... many more reports
+]
+
+metrics = campaign.aggregate_measurement(reports)
+print(f"Reported: {metrics['reported_conversions']} conversions")
+print(f"Estimated actual: {metrics['estimated_actual']} conversions")
+print(f"Revenue: ${metrics['total_revenue']}")
+```
+
+## Migration From Existing Attribution Systems
+
+### Parallel Running Period (8-12 weeks)
+
+```python
+# Maintain existing attribution while testing API
+
+class HybridAttribution:
+    def record_conversion(self, user_id, purchase_data):
+        # Legacy system: track user directly
+        self.legacy_system.log_purchase(user_id, purchase_data)
+
+        # Attribution API: register trigger
+        self.register_attribution_trigger(purchase_data)
+
+        # Compare results after stabilization period
+        results = self.compare_systems()
+        if results['correlation'] > 0.95:
+            # Systems agree sufficiently
+            return 'ready_to_migrate'
+```
+
+### Reporting Adjustments
+
+New measurement requires different KPIs:
+
+```
+Legacy system metrics → Attribution API adjustments:
+
+ROAS (Return on Ad Spend):
+- Legacy: Individual user tracking
+- Attribution API: Aggregate reporting
+- Adjustment: Account for 10-20% noise in conversion counts
+
+Attribution windows:
+- Legacy: Flexible (can extend to 90+ days)
+- Attribution API: Limited (7-30 days typical)
+- Adjustment: Focus on immediate conversions
+
+Cross-domain tracking:
+- Legacy: Third-party cookie-based
+- Attribution API: Single destination only
+- Adjustment: Set up separate measurements per destination
+```
+
+## Advanced Configuration: Custom Aggregation Buckets
+
+For sophisticated measurement needs:
+
+```javascript
+// Define custom aggregation dimensions
+const aggregatableKeys = {
+  "source_campaign": {
+    "summer_2026": "0",
+    "fall_2026": "1"
+  },
+  "conversion_region": {
+    "us_east": "0",
+    "us_west": "1",
+    "europe": "2"
+  },
+  "product_category": {
+    "electronics": "0",
+    "apparel": "1",
+    "home": "2"
+  }
+};
+
+// When source registers:
+const source = {
+  destination: "https://advertiser.example",
+  aggregatable_keys: aggregatableKeys
+};
+
+// When conversion happens, combine buckets:
+const trigger = {
+  aggregatable_trigger_data: [
+    {
+      key_piece: "summer_2026/us_west/electronics",
+      source_keys: ["source_campaign", "conversion_region", "product_category"]
+    }
+  ],
+  value: 4999  // Revenue in cents
+};
+
+// Aggregation service groups reports by these dimensions
+// enabling measurement across multiple variables simultaneously
+```
+
+## Monitoring and Alerting on Attribution Data
+
+Track measurement health continuously:
+
+```python
+# Monitor Attribution Reporting health
+import time
+from datetime import datetime, timedelta
+
+class AttributionMonitor:
+    def __init__(self):
+        self.thresholds = {
+            'low_conversions': 50,  # Alert if < 50/day
+            'high_noise': 0.25,  # Alert if > 25% variance
+            'delayed_reports': 0.1  # Alert if > 10% delayed > 24hrs
+        }
+
+    def check_health(self, recent_reports):
+        """Monitor attribution system health"""
+        alerts = []
+
+        if len(recent_reports) < self.thresholds['low_conversions']:
+            alerts.append('LOW_CONVERSION_VOLUME')
+
+        variance = self.calculate_variance(recent_reports)
+        if variance > self.thresholds['high_noise']:
+            alerts.append(f'HIGH_NOISE_DETECTED: {variance}')
+
+        delayed = self.count_delayed_reports(recent_reports, hours=24)
+        if delayed / len(recent_reports) > self.thresholds['delayed_reports']:
+            alerts.append(f'REPORT_DELAYS: {delayed} delayed')
+
+        return alerts
+
+# Run continuously
+monitor = AttributionMonitor()
+while True:
+    reports = fetch_recent_reports(hours=1)
+    alerts = monitor.check_health(reports)
+    if alerts:
+        send_alert_to_team(alerts)
+    time.sleep(300)  # Check every 5 minutes
+```
+
+---
+
 
 
 ## Frequently Asked Questions

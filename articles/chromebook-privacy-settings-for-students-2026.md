@@ -195,6 +195,342 @@ Review these settings periodically:
 - [ ] Review site permissions (camera, microphone, location)
 
 
+## Application-Level Privacy: Going Deeper
+
+
+Beyond browser and OS settings, student workflows often involve third-party web applications that collect data independently. Managing privacy at the application level requires strategic choices.
+
+
+### Evaluating Web Application Privacy
+
+
+When using academic tools (Google Workspace, Microsoft 365, learning management systems), evaluate their data practices:
+
+
+```bash
+# Check what data a website collects using browser DevTools
+# Open DevTools (F12) → Network tab → Filter for "beacon", "analytics", "log"
+
+# Identify tracking requests:
+# Look for domains like:
+# - google-analytics.com
+# - doubleclick.net
+# - facebook.com (pixel)
+# - mixpanel.com
+# - segment.com
+
+# These indicate data collection for analytics or profiling
+```
+
+
+For mandatory academic applications you cannot avoid, implement isolation strategies:
+
+
+```bash
+# Chrome: Create separate profile for sensitive academic work
+# Settings → Profiles → Add Profile
+# Use separate profile specifically for:
+# - Learning management system login
+# - Submission of sensitive coursework
+# - Academic records access
+
+# This profile can have stricter settings:
+# - No sync
+# - Third-party cookies blocked
+# - Limited extensions
+```
+
+
+### Building a Privacy-First Workflow
+
+
+Students balancing convenience with privacy can adopt tiered strategies:
+
+
+**Tier 1: Maximum Privacy (for sensitive work)**
+- Separate Chrome profile
+- Isolated from other browsing
+- No auto-fill, no saved passwords
+- VPN required for access
+
+**Tier 2: Standard Privacy (for general browsing)**
+- Default Chrome settings with hardening
+- Blocks third-party cookies
+- Custom DNS configured
+- Extensions audited
+
+**Tier 3: Minimal Privacy (for services requiring it)**
+- Separate profile for services that refuse privacy settings
+- Canvas LMS, legacy systems that demand Flash
+- Isolated from main work
+
+
+Example workflow configuration:
+
+
+```bash
+#!/bin/bash
+# Setup multiple Chrome profiles with different privacy levels
+
+# Profile 1: Secure Academic Work
+mkdir -p ~/.config/chrome/ProfileSecure
+
+# Profile 2: General Browsing
+mkdir -p ~/.config/chrome/ProfileGeneral
+
+# Profile 3: Required Services
+mkdir -p ~/.config/chrome/ProfileRequired
+
+# Launch Chrome with specific profile:
+# google-chrome --profile-directory=ProfileSecure
+
+# Automate profile selection:
+cat > ~/bin/chrome-academic.sh << 'EOF'
+#!/bin/bash
+google-chrome --profile-directory=ProfileSecure \
+  --disable-sync \
+  --disable-component-extensions-with-background-pages \
+  "$@"
+EOF
+
+chmod +x ~/bin/chrome-academic.sh
+```
+
+
+### Handling Canvas, Google Classroom, and LMS
+
+
+Learning Management Systems typically require heavy data collection. Minimize exposure:
+
+
+```javascript
+// Browser console script: Verify LMS data collection
+// Run in DevTools Console while viewing Canvas, Google Classroom, etc.
+
+const requests = performance.getEntriesByType('resource');
+const externalRequests = requests.filter(req => {
+  const url = new URL(req.name);
+  return url.hostname !== window.location.hostname;
+});
+
+console.log('External requests from LMS:');
+externalRequests.forEach(req => {
+  console.log(`${req.name.split('?')[0]}`);
+});
+
+// Flag concerning requests:
+const concerning = externalRequests.filter(req => {
+  const url = req.name.toLowerCase();
+  return url.includes('track') || url.includes('analytics') || url.includes('ga/');
+});
+
+if (concerning.length > 0) {
+  console.warn(`⚠️ Found ${concerning.length} tracking requests`);
+}
+```
+
+
+This reveals what data your LMS sends to external services.
+
+
+## Advanced Privacy with Linux Container
+
+
+Chromebooks allow developers to run Linux, opening access to command-line privacy tools:
+
+
+### Network Auditing from Linux Container
+
+
+```bash
+# Inside ChromeOS Linux container
+# Monitor all network connections from your Chrome browser
+
+# Install monitoring tools
+sudo apt install -y nethogs iftop
+
+# Watch which IPs your browser connects to
+sudo nethogs wlp0s20f3  # Replace with your wireless interface name
+
+# Example output:
+# google-analytics.com - typical of logged-in Google Workspace
+# doubleclick.net - tracking
+# accounts.google.com - legitimate Google auth
+```
+
+
+If you see unexpected domains being contacted, you have concrete evidence of data collection.
+
+
+### Setting Up a Local Privacy Proxy
+
+
+A proxy running on your Chromebook can inspect and block requests:
+
+
+```bash
+# Install mitmproxy: intercept all HTTPS traffic for inspection
+sudo apt install -y mitmproxy
+
+# Configure Chrome to use localhost proxy:
+# Settings → Advanced → System → Open your computer's proxy settings
+# Set HTTP proxy: 127.0.0.1:8080
+
+# Launch mitmproxy
+mitmproxy -p 8080
+
+# mitmproxy will show:
+# - Every request your browser makes
+# - Response data sizes
+# - Redirect chains
+# - Cookie details
+```
+
+
+With a proxy, you can see exactly what data flows in and out of your browser.
+
+
+### Blocking Trackers at System Level
+
+
+Once you identify tracking domains, block them system-wide:
+
+
+```bash
+# /etc/hosts: Block tracking domains
+127.0.0.1 google-analytics.com
+127.0.0.1 www.google-analytics.com
+127.0.0.1 doubleclick.net
+127.0.0.1 facebook.com
+127.0.0.1 gstatic.com
+127.0.0.1 platform.twitter.com
+127.0.0.1 pagead2.googlesyndication.com
+
+# Reload DNS cache
+sudo systemctl restart systemd-resolved
+```
+
+
+Blocking at `/etc/hosts` level prevents these domains from being contacted by any application, not just Chrome.
+
+
+## Privacy Monitoring Script
+
+
+Automate privacy audits on your Chromebook:
+
+
+```python
+#!/usr/bin/env python3
+# chromebook-privacy-audit.py
+# Run weekly to check privacy settings
+
+import subprocess
+import json
+from datetime import datetime
+from pathlib import Path
+
+class ChromebookPrivacyAudit:
+    def __init__(self):
+        self.report = {
+            'timestamp': datetime.now().isoformat(),
+            'checks': {}
+        }
+
+    def check_sync_enabled(self):
+        """Verify Chrome sync is disabled or encrypted."""
+        # Check Chrome policy
+        policy_file = Path.home() / '.config/google-chrome/Default/Preferences'
+
+        if policy_file.exists():
+            with open(policy_file) as f:
+                prefs = json.load(f)
+                sync_enabled = prefs.get('sync', {}).get('enabled', False)
+                self.report['checks']['sync'] = {
+                    'enabled': sync_enabled,
+                    'status': 'FAIL' if sync_enabled else 'PASS'
+                }
+
+    def check_dns_configuration(self):
+        """Verify custom DNS is configured."""
+        result = subprocess.run(
+            ['cat', '/etc/resolv.conf'],
+            capture_output=True,
+            text=True
+        )
+
+        custom_dns = any(
+            dns in result.stdout
+            for dns in ['1.1.1.1', '9.9.9.9', '94.140.14.14']
+        )
+
+        self.report['checks']['dns'] = {
+            'custom_configured': custom_dns,
+            'status': 'PASS' if custom_dns else 'WARN'
+        }
+
+    def check_extensions(self):
+        """Count installed extensions and flag suspicious ones."""
+        extensions_dir = Path.home() / '.config/google-chrome/Default/Extensions'
+
+        if extensions_dir.exists():
+            extension_count = len(list(extensions_dir.iterdir()))
+            self.report['checks']['extensions'] = {
+                'count': extension_count,
+                'status': 'WARN' if extension_count > 10 else 'PASS',
+                'warning': 'Many extensions increase attack surface'
+            }
+
+    def check_management_policies(self):
+        """Check if device is managed and what policies apply."""
+        result = subprocess.run(
+            ['curl', '-s', 'chrome://policy'],
+            capture_output=True,
+            text=True
+        )
+
+        managed = 'Managed policies' in result.stdout
+        self.report['checks']['managed'] = {
+            'device_managed': managed,
+            'note': 'Check chrome://policy for full list'
+        }
+
+    def generate_report(self):
+        """Produce human-readable privacy audit report."""
+        print(f"\n=== ChromeOS Privacy Audit ===")
+        print(f"Date: {self.report['timestamp']}\n")
+
+        for check_name, result in self.report['checks'].items():
+            status = result.get('status', 'INFO')
+            symbol = '✓' if status == 'PASS' else '⚠' if status == 'WARN' else '✗'
+            print(f"{symbol} {check_name.upper()}: {status}")
+
+            for key, value in result.items():
+                if key != 'status':
+                    print(f"  → {key}: {value}")
+
+# Run audit
+if __name__ == '__main__':
+    audit = ChromebookPrivacyAudit()
+    audit.check_sync_enabled()
+    audit.check_dns_configuration()
+    audit.check_extensions()
+    audit.check_management_policies()
+    audit.generate_report()
+```
+
+
+Run this weekly to catch privacy configuration drift:
+
+
+```bash
+# Make it executable
+chmod +x chromebook-privacy-audit.py
+
+# Run weekly via cron
+echo "0 9 * * 1 /home/student/chromebook-privacy-audit.py" | crontab -
+```
+
 
 ## Frequently Asked Questions
 

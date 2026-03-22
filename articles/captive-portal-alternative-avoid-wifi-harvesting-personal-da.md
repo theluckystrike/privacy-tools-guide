@@ -193,6 +193,158 @@ The optimal approach depends on your specific constraints:
 
 For most developers, combining methods works best: test HTTPS probe first, then fall back to DNS tunneling or mobile hotspot if needed.
 
+## Advanced Captive Portal Detection and Evasion
+
+### Understanding Captive Portal Detection Mechanisms
+
+Modern operating systems use specific techniques to detect captive portals:
+
+```bash
+# Android's captive portal detection
+# Makes HTTP request to http://clients3.google.com/generate_204
+# Expects 204 No Content response
+
+# iOS uses multiple endpoints:
+# http://www.apple.com/library/test/success.html
+# http://www.apple.com/captive
+
+# Windows uses:
+# http://www.msftncsi.com/ncsi.txt
+# Expected response: "Microsoft NCSI"
+```
+
+Custom captive portal detection can be bypassed by intercepting these requests at the network level.
+
+### HTTPS MITM Bypass Technique
+
+Some captive portals attempt HTTPS MITM (man-in-the-middle) attacks by injecting self-signed certificates:
+
+```bash
+# Test certificate validity before accepting
+# In Python:
+import ssl
+import socket
+
+def check_certificate(hostname):
+    context = ssl.create_default_context()
+    try:
+        with socket.create_connection((hostname, 443)) as sock:
+            with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+                cert = ssock.getpeercert()
+                print(f"Valid cert: {cert['subject']}")
+                return True
+    except ssl.SSLError as e:
+        print(f"Certificate error (likely MITM): {e}")
+        return False
+
+check_certificate("www.google.com")
+```
+
+If the certificate check fails, the captive portal is attempting MITM—route around it using VPN or DNS tunneling.
+
+## Captive Portal Threat Models
+
+### Threat Model 1: Data Collection
+
+**Attack**: Captive portal requests email, phone number, or social media login
+
+**Protection**:
+- Use HTTPS bypass methods
+- Provide false credentials (test@test.com, 555-1234)
+- Use temporary email services (temp-mail.org, 10minutemail.com)
+
+### Threat Model 2: Location Tracking
+
+**Attack**: WiFi network owner logs MAC addresses and timestamps to track repeat visitors
+
+**Protection**:
+- Enable MAC address randomization (Android 6+, iOS 8+)
+- Use a separate device for public WiFi access
+- Rotate between multiple VPN providers
+
+### Threat Model 3: Network-Level Surveillance
+
+**Attack**: Captive portal network monitors traffic for credentials, payment info
+
+**Protection**:
+- All traffic through VPN or DNS tunnel
+- Only visit HTTPS sites (even better: HTTPS + VPN)
+- Use password manager to avoid typing credentials
+
+## Building a Firewall-Based Captive Portal Blocker
+
+For power users with server access:
+
+```bash
+#!/bin/bash
+# Local DNS server that blocks captive portal detection
+
+# Install dnsmasq
+apt-get install dnsmasq
+
+# Configure dnsmasq to respond to portal detection
+cat > /etc/dnsmasq.d/captive-portal.conf <<EOF
+# Redirect portal detection to local service
+address=/clients3.google.com/127.0.0.1
+address=/www.apple.com/127.0.0.1
+address=/www.msftncsi.com/127.0.0.1
+
+# Set up HTTP response for captive portal bypass
+dhcp-option=3,192.168.1.1
+EOF
+
+# Run lightweight HTTP server for 204 responses
+python3 -m http.server 80 &
+echo "HTTP/1.1 204 No Content" > response.txt
+```
+
+This approach requires a local network router where you control DNS, but makes all devices immune to captive portal detection.
+
+## Captive Portal Bypass Legality and Ethics
+
+**Legal status by region:**
+- **US/EU**: Bypassing captive portals for network access is legal (unauthorized access laws don't apply to public networks)
+- **Data harvesting refusal**: You have no legal obligation to provide personal data to access public networks
+- **Network ToS violation**: While legal, bypassing portals may violate network terms of service
+
+**Ethical considerations:**
+- Many networks genuinely require portal acceptance for liability reasons
+- Consider whether refusing data collection is worth network inconvenience
+- In emergency situations (needing medical info, emergency communications), data collection may be justified
+
+## Practical Bypass Hierarchy
+
+Apply these methods in order of least to most technical complexity:
+
+1. **Check email portal acceptance** (often allows access after 20 seconds)
+2. **Use fake credentials** (non-existent email address)
+3. **Try HTTP HTTPS bypass** (curl to specific IP)
+4. **Enable mobile hotspot** if available
+5. **Deploy DNS tunneling** for full internet access
+6. **Use obfuscated VPN** as last resort
+
+## Monitoring Captive Portal Attempts
+
+Detect when networks attempt to redirect you to portals:
+
+```bash
+#!/bin/bash
+# Monitor for DNS redirects and HTTP redirects
+
+# Check if DNS is resolving consistently
+for i in {1..5}; do
+  nslookup example.com | grep "Address:"
+  sleep 2
+done
+
+# Monitor HTTP traffic for 302/307 redirects
+tcpdump -i eth0 'tcp port 80' -A | grep -i "location:"
+
+# If Location header points to 192.168.x.x or portal, captive portal is active
+```
+
+Automated monitoring reveals whether networks are actively attempting to intercept traffic.
+
 
 
 ## Frequently Asked Questions

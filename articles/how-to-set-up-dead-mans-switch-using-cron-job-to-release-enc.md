@@ -193,6 +193,192 @@ You can enhance this basic implementation:
 - **Multiple files** — Modify the release script to handle directories or multiple encrypted files
 - **External triggers** — Add HTTP callbacks or file uploads to transfer decrypted content to a secure location
 
+## Multi-Recipient Dead Man's Switch
+
+For scenarios where multiple trustees should receive information simultaneously:
+
+```bash
+#!/bin/bash
+# ~/deadman-switch/scripts/multi-recipient-release.sh
+
+DATA_DIR="$HOME/deadman-switch/data"
+RECIPIENTS_FILE="$DATA_DIR/recipients.txt"
+LOG_FILE="$HOME/deadman-switch/release.log"
+
+# Load recipient list (one email per line)
+mapfile -t recipients < "$RECIPIENTS_FILE"
+
+# Decrypt for each recipient separately
+for recipient_email in "${recipients[@]}"; do
+  gpg --batch --yes --passphrase-file "$DATA_DIR/.passphrase" \
+      --recipient "$recipient_email" \
+      --armor \
+      --encrypt "$DATA_DIR/secret.txt" > \
+      "$DATA_DIR/secret-for-$recipient_email.asc"
+
+  echo "$(date): Encrypted copy for $recipient_email" >> "$LOG_FILE"
+done
+
+# Send notifications (customize per recipient)
+for recipient_email in "${recipients[@]}"; do
+  echo "Your emergency contact information is ready." | \
+    mail -s "Dead Man's Switch Activated" "$recipient_email"
+done
+```
+
+This approach ensures multiple trustees can access information without sharing a single decryption key.
+
+## Health Check Monitoring Alternative
+
+Instead of manual check-ins, automate health checks:
+
+```bash
+# ~/deadman-switch/scripts/health-check.sh
+#!/bin/bash
+
+# Use web-based health check service
+curl -X POST https://healthcheck.example.com/$(cat ~/.deadman-id)
+
+# Or run automated tasks that prove you're still responsive
+# If this script fails three times, trigger release
+
+FAILURES=0
+MAX_FAILURES=3
+
+while true; do
+  # Try to perform a task that requires your interaction
+  if ! timeout 30 ssh-keyscan example.com > /dev/null 2>&1; then
+    FAILURES=$((FAILURES + 1))
+    echo "$(date): Health check failed ($FAILURES/$MAX_FAILURES)" >> "$HOME/.deadman-health"
+
+    if [ $FAILURES -ge $MAX_FAILURES ]; then
+      /home/username/deadman-switch/scripts/release.sh
+      exit 0
+    fi
+  else
+    FAILURES=0
+  fi
+
+  sleep 86400  # Check daily
+done
+```
+
+This approach allows background processes to verify you're still active, triggering release only if multiple attempts fail.
+
+## Cloud-Based Dead Man's Switch Integration
+
+For users wanting cloud backup of the dead man's switch state:
+
+```python
+# Upload encrypted backup to cloud storage
+import requests
+import json
+from datetime import datetime
+
+def backup_to_cloud(local_path, cloud_endpoint):
+    """Upload encrypted dead man's switch backup to cloud"""
+
+    with open(local_path, 'rb') as f:
+        encrypted_data = f.read()
+
+    payload = {
+        'timestamp': datetime.now().isoformat(),
+        'data': encrypted_data.hex(),  # Send as hex string
+        'checksum': hash(encrypted_data)
+    }
+
+    response = requests.post(
+        cloud_endpoint,
+        json=payload,
+        headers={'Authorization': f'Bearer {api_token}'}
+    )
+
+    return response.status_code == 200
+
+# Run nightly
+if backup_to_cloud('/home/user/deadman.gpg',
+                   'https://api.cloud-backup.example/upload'):
+    print("Backup successful")
+else:
+    print("Backup failed - check connectivity")
+```
+
+This ensures your encrypted dead man's switch data persists even if your local device fails.
+
+## Testing Dead Man's Switch Reliability
+
+Verify your system actually works before depending on it:
+
+```bash
+#!/bin/bash
+# Comprehensive test suite for dead man's switch
+
+test_encryption() {
+  echo "Testing encryption..."
+  gpg --batch --yes --passphrase-file "$HOME/.deadman-pass" \
+      --decrypt "$DATA_DIR/secret.txt.gpg" > /tmp/test-decrypt.txt
+
+  if [ -s /tmp/test-decrypt.txt ]; then
+    echo "✓ Encryption/decryption works"
+    return 0
+  else
+    echo "✗ Decryption failed"
+    return 1
+  fi
+}
+
+test_cron() {
+  echo "Testing cron trigger..."
+  # Simulate threshold exceeded
+  echo $(($(date +%s) - 864000)) > "$DATA_DIR/.lastcheckin"
+
+  # Run release script
+  /home/username/deadman-switch/scripts/release.sh
+
+  if [ -f "$DATA_DIR/.released" ]; then
+    echo "✓ Cron trigger works"
+    rm "$DATA_DIR/.released"  # Reset for actual use
+    return 0
+  else
+    echo "✗ Cron trigger failed"
+    return 1
+  fi
+}
+
+test_notification() {
+  echo "Testing email notification..."
+  echo "Test message" | mail -s "Test from Dead Man Switch" "$NOTIFY_EMAIL"
+  echo "✓ Check email (manual verification required)"
+}
+
+test_log_rotation() {
+  echo "Testing log cleanup..."
+  find "$HOME/deadman-switch" -name "*.log" -mtime +30 -delete
+  echo "✓ Log rotation configured"
+}
+
+# Run all tests
+test_encryption && test_cron && test_notification && test_log_rotation
+echo "All tests passed"
+```
+
+Run this test suite monthly to ensure the dead man's switch remains functional.
+
+## Privacy Considerations for Dead Man's Switches
+
+Using a dead man's switch creates metadata risks:
+
+- **Cron logs** may reveal switch operation (check /var/log/syslog)
+- **File timestamps** indicate when scripts run
+- **Email notifications** create communication records
+- **Cloud backups** add dependencies on third parties
+
+Mitigations:
+- Use a dedicated user account with limited logging
+- Disable bash history for sensitive operations
+- Encrypt backup cloud accounts with strong passwords
+- Consider air-gapped storage for maximum security
+
 
 
 ## Frequently Asked Questions

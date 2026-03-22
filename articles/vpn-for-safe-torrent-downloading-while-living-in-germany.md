@@ -183,6 +183,40 @@ While this guide focuses on technical protection, you should understand the lega
 - **DMCA/GEZ**: Some VPN providers respond to DMCA notices; choose one with a clear no-log policy
 - **EU privacy laws**: GDPR provides some protection for your data, but VPN providers outside EU jurisdiction may not be subject to these requirements
 
+## Threat Model for German Torrent Users
+
+Understanding the threat actors helps clarify which protections matter most:
+
+### Primary Threat: Copyright Monitoring Organizations
+
+German copyright enforcement operates through specialized companies that monitor BitTorrent swarms. These organizations collect IP addresses of peers downloading copyrighted material, then file Abmahnung (cease-and-desist) notices through German courts.
+
+**Organizational approach:**
+- Monitor popular torrents in real-time
+- Record IP addresses participating in swarms
+- Cross-reference IPs with ISP registration databases
+- Generate legal fees ranging from €500-€5,000+ per IP
+
+The threat level depends on torrent content popularity. Obscure torrents receive minimal monitoring, while mainstream entertainment content gets extensive surveillance.
+
+### Secondary Threat: ISP Surveillance
+
+German ISPs operate under different legal frameworks than US providers. They're required to:
+- Retain IP assignment logs for 6 months
+- Comply with German court orders
+- Cooperate with copyright enforcement organizations
+
+VPN adoption directly counteracts ISP surveillance by masking your real IP from ISP logs—the VPN provider's IP appears in logs, not yours.
+
+### Tertiary Threat: Device Compromise
+
+If your computer is compromised with malware:
+- Local traffic logs may reveal torrent activity
+- File names and hashes could be extracted
+- VPN encryption prevents network monitoring but doesn't protect against local malware
+
+Combine VPN usage with standard malware prevention: keep systems updated, avoid suspicious downloads, use antivirus software.
+
 ## Alternatives to Torrenting
 
 For developers seeking open-source software or legal content, consider these alternatives:
@@ -191,6 +225,92 @@ For developers seeking open-source software or legal content, consider these alt
 2. **GitHub releases** - Most open-source software is available here
 3. **Package managers** - Use apt, brew, or other package managers when possible
 4. **Official mirrors** - Universities and organizations often host legal content
+5. **USENET** - Legal downloads with different threat profiles than torrenting
+6. **Private trackers** - Invite-only sites with stricter content policies reduce legal risk
+
+## Advanced VPN Configuration for Torrenting
+
+For users wanting additional layers beyond basic VPN setup:
+
+### Persistent Kill Switch with systemd
+
+```bash
+# Create systemd service for kill switch
+# /etc/systemd/system/vpn-killswitch.service
+[Unit]
+Description=VPN Kill Switch
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/enable-killswitch.sh
+ExecStop=/usr/local/bin/disable-killswitch.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+# Enable the service
+sudo systemctl enable vpn-killswitch
+sudo systemctl start vpn-killswitch
+```
+
+The kill switch blocks all network traffic by default, then permits only VPN-tunnel traffic through firewall rules.
+
+### Leak Testing Script
+
+```bash
+#!/bin/bash
+# Test for various types of leaks while torrenting
+
+test_ip_leak() {
+  echo "Testing IP leak..."
+  REAL_IP=$(curl -s https://api.ipify.org)
+  VPN_IP=$(curl -s -x socks5://127.0.0.1:1080 https://api.ipify.org)
+
+  if [ "$REAL_IP" == "$VPN_IP" ]; then
+    echo "LEAK DETECTED: IPs match - $REAL_IP"
+    return 1
+  fi
+  echo "OK: Real IP $REAL_IP, VPN IP $VPN_IP"
+  return 0
+}
+
+test_dns_leak() {
+  echo "Testing DNS leak..."
+  nslookup example.com | grep Server | grep -v 1.1.1.1
+  if [ $? -eq 0 ]; then
+    echo "LEAK DETECTED: DNS leaking to ISP"
+    return 1
+  fi
+  echo "OK: DNS using configured resolver"
+  return 0
+}
+
+test_ipv6_leak() {
+  echo "Testing IPv6 leak..."
+  curl -s https://ipv6leak.com/ | grep -i "your ipv6"
+  echo "OK: Review IPv6 status above"
+}
+
+test_ip_leak && test_dns_leak && test_ipv6_leak
+```
+
+Run this script before and after downloading torrents to verify no leaks occurred.
+
+## Provider Recommendations by Jurisdiction
+
+Different VPN providers maintain varying positions on German copyright enforcement:
+
+**Providers with strong German privacy stance:**
+- Mullvad: Based in Sweden, explicit no-logging policy, frequently audited
+- ProtonVPN: Swiss company, GDPR-compliant, transparent logging policies
+- Windscribe: Canadian jurisdiction, extended privacy commitments
+
+**Providers to avoid for German torrenting:**
+- VPN services based in Five Eyes countries (US, UK, Australia, Canada, NZ)
+- Providers with documented history of responding to copyright notices
+- Free VPN services (often monitored and logged)
 
 
 
