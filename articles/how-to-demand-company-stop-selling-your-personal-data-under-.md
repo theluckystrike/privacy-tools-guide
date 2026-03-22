@@ -40,7 +40,17 @@ The California Consumer Privacy Act (CCPA) and its successor, the California Pri
 - **Global Privacy Control (GPC)**: a browser signal you can enable, automatically transmits opt-out preferences to websites.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Your CCPA Opt-Out Rights
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your CCPA Opt-Out Rights
 
 Under CCPA/CPRA, California residents have the right to direct businesses that sell or share their personal information to stop doing so. The law defines "sale" broadly—it includes renting, releasing, disclosing, disseminating, making available, transferring, or communicating your personal information to third parties for monetary or other valuable consideration.
 
@@ -48,7 +58,7 @@ Companies must provide a clear "Do Not Sell or Share My Personal Information" li
 
 This right applies to businesses that meet CCPA thresholds: those with annual gross revenues over $25 million, those that buy/sell/share data of 100,000+ consumers, or those deriving 50%+ revenue from selling personal information.
 
-## Finding Companies That Sell Your Data
+### Step 2: Finding Companies That Sell Your Data
 
 Before you can opt out, you need to identify which companies have your data. Common sources include:
 
@@ -58,7 +68,7 @@ Before you can opt out, you need to identify which companies have your data. Com
 
 For developers, you can programmatically scan for trackers using tools like `puppeteer-extra-plugin-stealth` combined with request logging to identify which domains receive your data.
 
-## Methods for Submitting Opt-Out Requests
+### Step 3: Methods for Submitting Opt-Out Requests
 
 ### Method 1: Direct Website Submission
 
@@ -80,7 +90,7 @@ When no web form exists, email serves as a valid request method. Your email must
 
 Some companies offer phone-based opt-out. Document the representative's name, call reference number, and any confirmation provided.
 
-## Automating Opt-Out Requests with Scripts
+### Step 4: Automate Opt-Out Requests with Scripts
 
 For power users managing opt-outs across multiple companies, automation saves significant time. Below are practical scripts for sending properly formatted CCPA opt-out requests.
 
@@ -234,7 +244,7 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-## Documenting Your Opt-Out Requests
+### Step 5: Documenting Your Opt-Out Requests
 
 Always keep records of your opt-out submissions:
 
@@ -261,6 +271,21 @@ The CPRA introduced a "share" right, covering behavioral advertising and cross-c
 Global Privacy Control (GPC), a browser signal you can enable, automatically transmits opt-out preferences to websites. However, manually submitting requests provides stronger legal documentation.
 
 For developers building opt-out into applications, implement proper handling: honor GPC signals server-side, provide prominent opt-out mechanisms, and maintain audit logs of consumer requests.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ This guide provides technical methods for identifying stalkerware using Android 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: stalkerware behavior, detection methods using adb, listing all installed packages, with specific setup instructions
 
-## Understanding Stalkerware Behavior
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Stalkerware Behavior
 
 Stalkerware applications typically operate by requesting excessive permissions during installation. Once granted, they run in the background with varying levels of obfuscation. Some common indicators include:
 
@@ -51,7 +61,7 @@ Stalkerware applications typically operate by requesting excessive permissions d
 
 Modern stalkerware often hides its icon from the app drawer, making visual detection difficult. The application may appear under generic names like "System Service," "Google Update," or "Device Helper."
 
-## Detection Methods Using ADB
+### Step 2: Detection Methods Using ADB
 
 Android Debug Bridge provides the most reliable method for identifying hidden applications. Connect your device via USB with debugging enabled, then execute the following commands.
 
@@ -87,7 +97,7 @@ adb shell ps -A | grep -v "system\|android\|com.google"
 
 This filters out system processes, leaving only third-party applications currently running on the device.
 
-## Identifying Device Admin Applications
+### Step 3: Identifying Device Admin Applications
 
 Device Admin access provides deep system privileges that make removal difficult. To identify applications with this status:
 
@@ -103,7 +113,7 @@ To remove device admin access programmatically:
 adb shell dpm remove-active-admin --user 0 com.example.suspiciouspackage/.DeviceAdminReceiver
 ```
 
-## Network Traffic Analysis
+### Step 4: Network Traffic Analysis
 
 Stalkerware must transmit collected data to remote servers. Monitoring network connections can reveal suspicious activity:
 
@@ -132,7 +142,7 @@ def get_connections():
     return connections
 ```
 
-## Removal Strategies
+### Step 5: Removal Strategies
 
 ### Standard Uninstall
 
@@ -168,7 +178,7 @@ When factory reset is necessary, follow these steps for maximum effectiveness:
 3. After reset, avoid restoring from backups that might include the stalkerware
 4. Flash a clean factory image if available for your device
 
-## Prevention and Hardening
+### Step 6: Prevention and Hardening
 
 ### Restricting Installation Sources
 
@@ -192,7 +202,7 @@ adb shell pm create-user --profileOf 0 --managed WorkProfile
 
 This isolates applications, limiting their access to personal data.
 
-## Automated Detection Script
+### Step 7: Automated Detection Script
 
 For power users managing multiple devices, this Python script provides automated scanning:
 
@@ -253,6 +263,21 @@ if __name__ == "__main__":
 ```
 
 Run this script periodically to audit devices for suspicious permission patterns.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

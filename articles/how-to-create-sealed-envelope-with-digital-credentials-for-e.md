@@ -38,7 +38,17 @@ Estate lawyers handling sensitive client documents face a unique challenge: how 
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers understanding**: the sealed envelope concept, using age for sealed envelope creation, generating recipient keys, with specific setup instructions
 
-## Understanding the Sealed Envelope Concept
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Sealed Envelope Concept
 
 A sealed envelope in digital terms is encrypted content that remains inaccessible until specific conditions are met. For estate lawyers, this typically means:
 
@@ -49,7 +59,7 @@ A sealed envelope in digital terms is encrypted content that remains inaccessibl
 
 The technical implementation involves encryption with either time-based release mechanisms or multi-party authorization requirements.
 
-## Using Age for Sealed Envelope Creation
+### Step 2: Use Age for Sealed Envelope Creation
 
 The `age` encryption tool provides a modern, simple approach to creating sealed envelopes. Unlike PGP, age has no key server dependencies and uses modern encryption primitives.
 
@@ -103,7 +113,7 @@ age -d -i executor-key.txt sealed-envelope.age > decrypted-documents.tar.gz
 age -d -p sealed-envelope.age > decrypted-documents.tar.gz
 ```
 
-## Time-Locked Envelopes with GPG
+### Step 3: Time-Locked Envelopes with GPG
 
 For envelopes that should remain sealed until a specific date, GPG provides time-based encryption capabilities through the `gpg-agent` configuration.
 
@@ -147,7 +157,7 @@ age -r recipient1.pub -r recipient2.pub -r recipient3.pub \
 # Any two recipients can collaborate to decrypt
 ```
 
-## Digital Credential Storage Patterns
+### Step 4: Digital Credential Storage Patterns
 
 For a safe deposit box scenario, consider this layered approach:
 
@@ -200,7 +210,7 @@ if [ $DIFF -gt 2592000 ]; then
 fi
 ```
 
-## Practical Implementation for Estate Lawyers
+### Step 5: Practical Implementation for Estate Lawyers
 
 ### Document Organization Structure
 
@@ -286,7 +296,7 @@ When implementing sealed envelopes for estate documents:
 4. **Access Protocols**: Document clear procedures for authorized access
 5. **Legal Compliance**: Ensure your approach meets jurisdiction-specific requirements
 
-## Verification and Testing
+### Step 6: Verification and Testing
 
 Regularly verify envelope integrity:
 
@@ -300,6 +310,21 @@ sha256sum sealed-envelope.age > sealed-envelope.sha256
 ```
 
 Building this sealed envelope system requires careful planning around access control, key management, and clear legal procedures. The technical implementation provides the encryption layer, but the operational procedures determine whether the system actually protects client interests as intended.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

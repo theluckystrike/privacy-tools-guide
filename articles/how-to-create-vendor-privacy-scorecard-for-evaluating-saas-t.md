@@ -32,7 +32,17 @@ SaaS vendors handle your data, and the terms they offer vary significantly. Some
 
 Rather than relying on marketing claims or surface-level privacy policies, you will evaluate vendors against concrete criteria. This approach ensures you document your reasoning and have a defensible basis for your choice.
 
-## Core Evaluation Categories
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Evaluation Categories
 
 Your scorecard should cover five key areas. Each category deserves weighted scoring based on how critical it is for your use case.
 
@@ -66,7 +76,7 @@ Your scorecard should cover five key areas. Each category deserves weighted scor
 - Do they provide DPA (Data Processing Agreements)?
 - Are HIPAA BAA available if you handle health data?
 
-## Building Your Scoring System
+### Step 2: Build Your Scoring System
 
 Assign each category a point value based on importance for your specific needs. The following example uses a 100-point scale, but you should adjust weights to match your priorities.
 
@@ -177,12 +187,12 @@ Consider evaluating two project management tools, Vendor An and Vendor B, using 
 
 Using the scoring system above, Vendor A would likely score in the 80-90 range, while Vendor B would score significantly lower, possibly below 50. The difference reflects genuine privacy posture, not marketing claims.
 
-## Creating Your Evaluation Template
+### Step 3: Create Your Evaluation Template
 
 Beyond the scoring system, create a standardized questionnaire to send to vendors. This ensures you compare consistent data points across all options. Your template should include direct questions about each criterion in your scorecard.
 
 ```markdown
-## Vendor Privacy Questionnaire
+### Step 4: Vendor Privacy Questionnaire
 
 ### Data Handling
 1. Do you encrypt data at rest? If yes, what algorithm?
@@ -212,7 +222,7 @@ Beyond the scoring system, create a standardized questionnaire to send to vendor
 
 Send this questionnaire to vendors during your evaluation process. Written responses give you documentation for your scorecard and use if concerns arise later.
 
-## Red Flags to Watch For
+### Step 5: Red Flags to Watch For
 
 Certain responses should disqualify vendors immediately, regardless of score. Watch for these warning signs:
 
@@ -225,7 +235,7 @@ Certain responses should disqualify vendors immediately, regardless of score. Wa
 
 If a vendor cannot or will not answer basic privacy questions, that itself tells you something important about their priorities.
 
-## Automating Your Workflow
+### Step 6: Automate Your Workflow
 
 For teams evaluating multiple tools, consider building a simple database to track scores over time. A basic spreadsheet or Notion database with columns for vendor name, score, evaluation date, and notes works well. As you evaluate more tools, you will build institutional knowledge about what constitutes acceptable privacy practices in each product category.
 
@@ -233,6 +243,21 @@ Document your evaluations. Future you will thank present you when revisiting a v
 ---
 
 Building a vendor privacy scorecard takes initial effort but pays dividends across every SaaS purchase you make. You will make faster decisions, identify problems before they become issues, and build a consistent standard for evaluating tools. The privacy ecosystem continues to evolve, and your scorecard should evolve with it. Periodically review and update your criteria as regulations change and new threats emerge.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
