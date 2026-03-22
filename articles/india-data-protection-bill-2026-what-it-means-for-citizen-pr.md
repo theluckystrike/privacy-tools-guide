@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /india-data-protection-bill-2026-what-it-means-for-citizen-pr/
 description: "Learn india data protection bill 2026 what it means for citizen pr with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "India Data Protection Bill 2026 What It Means For Citizen"
 description: "India Data Protection Bill 2026: What It Means for. — privacy guide covering tools, techniques, and best practices to protect your data and digital"

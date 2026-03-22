@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /india-internet-shutdown-tracker-which-states-restrict-access/
 description: "Learn india internet shutdown tracker which states restrict access with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "India Internet Shutdown Tracker Which States Restrict"
 description: "A practical guide to tracking internet shutdowns in India, focusing on which states restrict access most frequently in 2026"

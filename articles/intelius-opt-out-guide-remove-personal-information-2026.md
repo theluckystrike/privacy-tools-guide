@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /intelius-opt-out-guide-remove-personal-information-2026/
 description: "Follow this guide to intelius opt out guide remove personal information 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Intelius Opt-Out Guide: Remove Personal Information in 2026"
 description: "A practical guide for developers and power users to remove personal data from Intelius. Includes automation scripts, API verification, and batch"

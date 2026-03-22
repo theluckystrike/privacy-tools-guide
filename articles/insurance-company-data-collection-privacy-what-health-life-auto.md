@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /insurance-company-data-collection-privacy-what-health-life-auto/
 description: "Learn insurance company data collection privacy what health life auto with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Insurance Company Data Collection Privacy What Health"
 description: "A technical guide for developers and power users explaining exactly what data insurance companies collect, how they obtain it, and the legal frameworks"
