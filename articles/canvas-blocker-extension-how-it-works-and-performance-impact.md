@@ -20,7 +20,7 @@ Canvas fingerprinting is one of the most persistent tracking techniques used by 
 
 ## Understanding Canvas Fingerprinting
 
-Before examining blockers, you need to understand what canvas fingerprinting actually does. When a website renders text or graphics to an HTML5 canvas element, the browser produces an unique image based on your operating system, GPU, installed fonts, driver version, and rendering pipeline. The website then converts this image to a hash string that serves as a persistent identifier.
+Before examining blockers, you need to understand what canvas fingerprinting actually does. When a website renders text or graphics to an HTML5 canvas element, the browser produces a unique image based on your operating system, GPU, installed fonts, driver version, and rendering pipeline. The website then converts this image to a hash string that serves as a persistent identifier.
 
 Here's a minimal example of how fingerprinting works from the tracking side:
 
@@ -42,7 +42,7 @@ function generateCanvasFingerprint() {
 }
 ```
 
-The resulting data URL varies between machines because each GPU and font rendering engine produces subtly different pixel outputs. Trackers hash this string to create a device identifier that persists across browsing sessions.
+The resulting data URL varies between machines because each GPU and font rendering engine produces subtly different pixel outputs. Trackers hash this string to create a device identifier that persists across browsing sessions. According to research from Princeton's Web Transparency and Accountability Project, canvas fingerprinting was found on over 5% of the top 100,000 websites as of their Enumerating Privacy Leaks study, making it one of the most widely deployed tracking techniques after cookies.
 
 ## How Canvas Blocker Extensions Work
 
@@ -93,13 +93,36 @@ HTMLCanvasElement.prototype.toDataURL = function(type) {
 };
 ```
 
+This approach is the most compatible because normal canvas rendering remains untouched — only the data extraction step is intercepted.
+
+### 4. Prototype Chain Interception Timing
+
+A subtle but important implementation detail is when the interception happens. Extensions that inject at `document_start` (before any page scripts run) can override prototype methods before any tracking code has a chance to cache the original references. Extensions that inject too late may find that fingerprinting scripts have already captured references to the original `toDataURL` function and call it directly, bypassing the wrapper entirely.
+
+This is why the `manifest.json` content script configuration matters:
+
+```json
+{
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["canvas-blocker.js"],
+    "run_at": "document_start",
+    "world": "MAIN"
+  }]
+}
+```
+
+The `"world": "MAIN"` field (introduced in Manifest V3) ensures the script runs in the page's JavaScript context rather than an isolated extension context, which is required for prototype overrides to affect page scripts.
+
 ## Performance Impact Analysis
 
-The performance overhead of canvas blockers varies significantly based on implementation quality. Here are the key factors:
+The performance overhead of canvas blockers varies significantly based on implementation quality.
 
 ### CPU Overhead
 
-Noise injection adds minimal CPU overhead—typically 0.1-0.5ms per canvas operation. The randomization calculations are simple arithmetic operations that modern JavaScript engines optimize aggressively. In practice, you won't notice CPU differences during normal browsing.
+Noise injection adds minimal CPU overhead — typically 0.1-0.5ms per canvas operation. The randomization calculations are simple arithmetic operations that modern JavaScript engines optimize aggressively. In practice, you won't notice CPU differences during normal browsing.
+
+The exception is WebGL-heavy applications. WebGL uses a different rendering path (`getContext('webgl')`) and some blockers intercept WebGL draw calls, which can introduce measurable frame rate drops in WebGL games and 3D visualizations.
 
 ### Memory Usage
 
@@ -108,67 +131,31 @@ Canvas blockers maintain minimal additional memory footprint. Most implementatio
 - Wrapper functions that reference original methods
 - Optional: a cache of randomized outputs
 
+The CanvasBlocker Firefox extension uses a per-session random seed stored in memory. Each new browser session gets a different seed, meaning your fingerprint changes with each session while remaining consistent within a session (important for sites that verify fingerprint consistency across page loads).
+
 ### Page Load Time
 
 The most measurable impact appears in page load timing. Extensions that hook into many canvas methods add slight latency during initialization. Benchmarks from privacy tool testing communities show:
 
 - Lightweight blockers: 5-15ms added load time
-- blockers with randomization: 20-50ms added load time
+- Blockers with full randomization: 20-50ms added load time
 
-These differences are negligible for human perception but statistically measurable.
+These differences are negligible for human perception but statistically measurable. On a typical 3-second page load, 50ms represents less than 2% overhead.
 
 ### Compatibility Issues
 
-The real cost of canvas blockers isn't performance—it's compatibility. Sites using canvas for:
-- PDF rendering
-- Image editors
-- Games
-- Chart libraries
-- WebGL applications
+The real cost of canvas blockers isn't performance — it's compatibility. Sites using canvas for:
+- PDF rendering (Mozilla PDF.js)
+- Image editors (Photopea, Canva)
+- Games (Unity WebGL exports)
+- Chart libraries (Chart.js, D3.js with canvas rendering)
+- WebGL applications (Google Maps, 3D product viewers)
 
 may break or behave erratically when canvas methods are intercepted. Quality blockers include allowlists for known-benign sites, but this maintenance burden affects user experience.
 
-## Implementation Considerations for Developers
+## Testing Effectiveness
 
-If you're building a privacy-focused application or evaluating canvas blockers, consider these technical factors:
-
-### Extension Architecture
-
-Modern canvas blockers use content scripts that inject at document start:
-
-```json
-{
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["canvas-blocker.js"],
-    "run_at": "document_start"
-  }]
-}
-```
-
-Running at `document_start` ensures the blocker activates before any page scripts execute, preventing fingerprinting during initial page load.
-
-### MutationObserver Integration
-
-Sophisticated blockers also monitor DOM changes to catch dynamically created canvas elements:
-
-```javascript
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    mutation.addedNodes.forEach((node) => {
-      if (node.tagName === 'CANVAS') {
-        applyCanvasProtection(node);
-      }
-    });
-  });
-});
-```
-
-This catches canvas elements injected via JavaScript after page load.
-
-### Testing Your Implementation
-
-Verify blocker effectiveness with fingerprinting test pages:
+You can verify whether a canvas blocker is working by visiting a fingerprint testing page and checking whether your canvas fingerprint changes between page loads:
 
 ```javascript
 function testCanvasUniqueness() {
@@ -186,17 +173,47 @@ function testCanvasUniqueness() {
 }
 ```
 
-A working blocker produces different hashes on each call.
+A working noise injection blocker produces different hashes on each call. Dedicated testing sites include:
+- **coveryourtracks.eff.org** (EFF's Cover Your Tracks): Tests canvas fingerprinting alongside dozens of other fingerprinting vectors and shows whether your protection is unique or shares characteristics with other users
+- **browserleaks.com/canvas**: Shows the raw canvas fingerprint image side-by-side with your hash, making it easy to see whether noise is being injected
+- **fingerprintjs.com/demo**: Commercial fingerprinting library demo, useful for testing against a production-grade fingerprinter
+
+## Implementation Considerations for Developers
+
+If you're building a privacy-focused application or evaluating canvas blockers, consider these technical factors:
+
+### MutationObserver Integration
+
+Sophisticated blockers also monitor DOM changes to catch dynamically created canvas elements:
+
+```javascript
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    mutation.addedNodes.forEach((node) => {
+      if (node.tagName === 'CANVAS') {
+        applyCanvasProtection(node);
+      }
+    });
+  });
+});
+```
+
+This catches canvas elements injected via JavaScript after page load — a common pattern in single-page applications where content loads dynamically after the initial DOM is built.
+
+### Allowlisting Legitimate Canvas Usage
+
+A robust implementation needs to distinguish between canvas used for display (where blocking causes visible breakage) and canvas used for fingerprinting (where extraction calls follow no user-visible operation). One heuristic: if `toDataURL()` is called on a canvas that was never attached to the DOM and never displayed to the user, it's almost certainly for fingerprinting purposes.
 
 ## Popular Canvas Blocker Extensions
 
 Several extensions implement these techniques with varying trade-offs:
 
-- **CanvasBlocker** (Firefox): Uses the randomization-on-read approach, open-source and audited
-- **Privacy Badger**: Learns blocking behavior based on tracking attempts
-- **uBlock Origin**: Blocks known tracking canvas operations as part of broader filtering
+- **CanvasBlocker** (Firefox, by kkapsner): Uses the randomization-on-read approach. Open-source, audited, and highly configurable. Lets you choose between noise injection, read blocking, and fake canvas data. The most technically mature option for Firefox users.
+- **Privacy Badger** (EFF, Chrome/Firefox): Learns blocking behavior based on tracking domain patterns rather than API-level interception. Less aggressive on canvas specifically but broader in scope.
+- **uBlock Origin** (Chrome/Firefox): Blocks known tracking canvas operations through filter lists rather than API interception. Combines well with CanvasBlocker for defense in depth.
+- **Tor Browser**: Implements canvas blocking at the browser level using a permission prompt — any `toDataURL()` call triggers a user-visible warning, giving the user explicit control.
 
-Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches.
+Each handles the performance-compatibility tradeoff differently. Privacy-focused power users often accept some compatibility loss, while general users prefer allowlist-heavy approaches. For the strongest protection without breakage, use CanvasBlocker in "fake readout" mode combined with a comprehensive domain blocklist in uBlock Origin.
 
 
 
