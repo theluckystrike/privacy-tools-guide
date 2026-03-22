@@ -18,6 +18,15 @@ voice-checked: true---
 
 FIDO2 is phishing-resistant, hardware-backed, and uses public-key cryptography with no shared secrets -- making it the stronger choice for high-security applications. TOTP is simpler to implement, requires no special hardware, and works with existing authenticator apps -- making it better for broad compatibility and low-friction deployments. Choose FIDO2 for financial services, enterprise environments, or passwordless migration; choose TOTP when hardware authenticator adoption is impractical or you need legacy compatibility. Below is a full technical breakdown of how each protocol works, their security properties, and implementation code.
 
+## Key Takeaways
+
+- **Choose FIDO2 for financial services**: enterprise environments, or passwordless migration; choose TOTP when hardware authenticator adoption is impractical or you need legacy compatibility.
+- **Adding TOTP requires minimal infrastructure changes compared to FIDO2, and users only need a smartphone or authenticator app**: no hardware purchase required.
+- **FIDO2 is phishing-resistant**: hardware-backed, and uses public-key cryptography with no shared secrets -- making it the stronger choice for high-security applications.
+- **TOTP is simpler to implement**: requires no special hardware, and works with existing authenticator apps -- making it better for broad compatibility and low-friction deployments.
+- **This temporal constraint limits replay attacks but also introduces usability challenges**: users must enter codes quickly or request new ones.
+- **Instead of shared secrets**: FIDO2 uses public-key cryptography with private keys stored on dedicated hardware or platform authenticators.
+
 ## How TOTP Works
 
 TOTP generates temporary passwords using a shared secret and the current time. The algorithm follows RFC 6238, which combines a secret key with the current Unix timestamp divided into 30-second intervals.

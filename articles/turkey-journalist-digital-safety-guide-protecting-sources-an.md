@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 Turkish journalists must protect against DPI surveillance and mandatory data retention using Tor for anonymous browsing, Signal for encrypted messaging with disappearing messages enabled, and Tails OS for secure reporting devices. Use a separate SIM card and phone for source communications, store documents in encrypted vaults with plausible deniability (VeraCrypt hidden partitions), and establish secure protocols with trusted sources. Maintain dead man's switches for source information release if arrested, and document surveillance incidents for international press freedom organizations.
 
+## Key Takeaways
+
+- **Use an old laptop**: with no network interface 2.
+- **Dead man's switch**: Use a timed encrypted message service that releases information if you don't check in
+3.
+- **Maintain dead man's switches**: for source information release if arrested, and document surveillance incidents for international press freedom organizations.
+- **Never store private keys on devices that could be seized**: use YubiKey or similar hardware security modules.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding the Threat Model
 
 Turkish authorities employ deep packet inspection (DPI), mandatory data retention laws, and periodic social media restrictions. Internet service providers (ISPs) collaborate with government requests, and journalists have been prosecuted based on communication metadata. Your threat model must account for:

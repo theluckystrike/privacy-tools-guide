@@ -31,6 +31,15 @@ intent-checked: true---
 
 Turkey has a documented history of internet throttling and censorship during election periods. For developers and power users, understanding how these restrictions work and knowing technical countermeasures is essential for maintaining access to information and communication channels.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Documentation of censorship**: OONI Probe exports, speed test logs, screenshots — is valuable to advocacy organizations like Freedom House and Article 19.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **For developers and power users**: understanding how these restrictions work and knowing technical countermeasures is essential for maintaining access to information and communication channels.
+- **Ports 443 and 80**: are the last ports ISPs will block, since blocking them breaks ordinary web browsing for all users.
+- **Use dedicated devices that**: are never linked to personal accounts, and configure all encrypted communication channels before restrictions activate.
+
 ## How Turkey Implements Election-Period Internet Restrictions
 
 The Turkish government uses several technical mechanisms to throttle and restrict internet access during sensitive periods:

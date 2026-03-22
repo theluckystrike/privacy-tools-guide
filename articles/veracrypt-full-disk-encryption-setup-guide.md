@@ -31,6 +31,16 @@ intent-checked: true---
 
 VeraCrypt provides multiple encryption layers from full disk encryption to hidden volumes containing deniable volumes. The setup process varies significantly by scenario: encrypting an existing system requires 1-2 hours and generates a rescue disk, while creating hidden volumes adds complexity to hide sensitive data from coercion. Performance impact is minimal on modern SSDs (2-5% CPU overhead), though mechanical drives slow considerably. Recovery planning is critical—without a rescue disk backup or password, encrypted data becomes permanently inaccessible.
 
+## Key Takeaways
+
+- **This guide covers full disk encryption and hidden volumes**: the most common use cases.
+- **For most users**: the difference is imperceptible.
+- **Performance impact is minimal**: on modern SSDs (2-5% CPU overhead), though mechanical drives slow considerably.
+- **Password selection**: Choose strong password (40+ characters recommended).
+- **Prevention**: Use password manager (1Password, Bitwarden) to store VeraCrypt password securely.
+- **Scenario 2**: VeraCrypt refuses to mount volume
+Cause: Corruption (rare) or wrong password (common).
+
 ## Understanding VeraCrypt's Encryption Modes
 
 VeraCrypt offers distinct encryption approaches serving different scenarios:

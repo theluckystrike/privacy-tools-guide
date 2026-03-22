@@ -31,6 +31,16 @@ tags: [privacy-tools-guide]---
 
 The Tor network relies on a decentralized system of relays to provide anonymity, but clients need a reliable way to discover which relays exist and which ones to trust. This is where the **consensus** mechanism and **directory authorities** come into play. Understanding this infrastructure is essential for developers building Tor-integrated applications, security researchers auditing network integrity, or power users who want to verify their connection's reliability.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Step 4**: Distribution
+The final consensus document is signed by at least 5 of 9 authorities (a quorum requirement).
+- **Expired consensus**: If your client hasn't downloaded a fresh consensus (older than 24 hours), it will refuse to use it.
+- **The Tor network's security**: model depends on having at least 5 honest authorities.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## What Are Directory Authorities
 
 Directory authorities (DAs) are specially designated servers that form the backbone of Tor's directory system. There are nine primary authorities operated by different entities around the world—each managed by trusted organizations or individuals committed to the Tor project's mission.

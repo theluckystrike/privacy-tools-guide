@@ -18,6 +18,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose ProtonMail if you need IMAP/SMTP access via Bridge, PGP interoperability with external contacts, or a mature API for automation. Choose Tuta Mail if you want simpler automatic encryption, a more fully open-source client, and lower-cost premium plans without needing standard protocol support. Both provide end-to-end encrypted email with zero-access architecture, but ProtonMail offers significantly more flexibility for developers and power users, while Tuta delivers a more improved experience at the cost of interoperability.
 
+## Key Takeaways
+
+- **Choose Tuta Mail if**: you want simpler automatic encryption, a more fully open-source client, and lower-cost premium plans without needing standard protocol support.
+- **It works with Thunderbird**: Apple Mail, and most desktop clients.
+- **Tuta Mail's encryption flow**: Tuta uses a combination of AES-256 for message encryption and RSA for key wrapping, but the implementation is internal to their client.
+- **ProtonMail's Bridge provides the**: best desktop experience if you need local client integration.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Encryption Models at a Glance
 
 **ProtonMail** uses PGP (Pretty Good Privacy) with its own key management layer. You can import existing PGP keys, export your keys, and communicate with anyone using standard OpenPGP. This means interoperability with other PGP users outside the Proton ecosystem.
