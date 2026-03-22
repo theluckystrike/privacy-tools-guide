@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ea-app-origin-replacement-privacy-data-collection-review-ana/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]

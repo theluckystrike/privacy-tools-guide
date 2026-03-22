@@ -9,7 +9,7 @@ permalink: /enterprise-privacy-by-design-framework-implementation-guide-/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 
 intent-checked: true

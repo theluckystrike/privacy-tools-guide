@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-communicate-securely-when-all-messaging-apps-are-moni/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

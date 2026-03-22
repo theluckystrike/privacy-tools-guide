@@ -9,7 +9,7 @@ permalink: /gdpr-joint-controller-agreement-template/
 intent-checked: true
 voice-checked: true
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 tags: [privacy-tools-guide]
 ---

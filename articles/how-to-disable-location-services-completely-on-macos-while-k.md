@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-disable-location-services-completely-on-macos-while-k/
+description: "Follow this guide to how to disable location services completely on macos while k with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Disable Location Services Completely On macOS While Keeping"
 description: "A guide for developers and power users to disable macOS location services while maintaining app functionality through alternative methods"

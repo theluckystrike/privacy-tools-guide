@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /china-qr-code-tracking-how-mandatory-scanning-creates-survei/
+description: "Learn china qr code tracking how mandatory scanning creates survei with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "China Qr Code Tracking How Mandatory Scanning Creates"
 description: "A technical guide for developers and power users exploring how mandatory QR code scanning in China creates surveillance trails, tracking"

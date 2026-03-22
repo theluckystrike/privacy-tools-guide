@@ -9,7 +9,7 @@ permalink: /how-to-migrate-from-windows-to-linux-without-losing-workflow/
 categories: [guides]
 tags: [privacy-tools-guide, tools, workflow]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

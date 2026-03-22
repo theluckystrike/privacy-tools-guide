@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-export-passwords-from-any-manager/
+description: "Follow this guide to how to export passwords from any manager with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Export Passwords from Any Manager"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-implement-right-to-be-forgotten-in-your-application-d/
+description: "Follow this guide to how to implement right to be forgotten in your application d with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Implement Right To Be Forgotten In Your Application"

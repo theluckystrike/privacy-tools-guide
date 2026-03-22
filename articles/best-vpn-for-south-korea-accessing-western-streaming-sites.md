@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /best-vpn-for-south-korea-accessing-western-streaming-sites/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of, vpn]

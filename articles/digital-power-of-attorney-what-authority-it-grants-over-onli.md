@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /digital-power-of-attorney-what-authority-it-grants-over-onli/
 categories: [guides, security, enterprise]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

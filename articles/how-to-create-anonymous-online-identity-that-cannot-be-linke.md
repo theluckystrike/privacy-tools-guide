@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-create-anonymous-online-identity-that-cannot-be-linke/
+description: "Follow this guide to how to create anonymous online identity that cannot be linke with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Create Anonymous Online Identity That Cannot Be"
 description: "A practical guide for developers and power users on creating unlinkable anonymous online identities using cryptographic techniques"

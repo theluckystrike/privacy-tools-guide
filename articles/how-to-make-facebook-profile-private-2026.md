@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-make-facebook-profile-private-2026/
+description: "Follow this guide to how to make facebook profile private 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Make Facebook Profile Private 2026"

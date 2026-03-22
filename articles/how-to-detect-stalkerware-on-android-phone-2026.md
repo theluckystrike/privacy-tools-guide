@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-detect-stalkerware-on-android-phone-2026/
+description: "Follow this guide to how to detect stalkerware on android phone 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Detect Stalkerware on Android Phone 2026"
 description: "Detection methods, ADB commands, battery/data usage analysis, recommended scanning tools, removal steps for finding and removing stalkerware."

@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/
+description: "Follow this guide to how to detect if dating app is selling your data to third pa with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Detect If Dating App Is Selling Your Data To Third"
 description: "Learn how to identify if dating apps are monetizing your personal data through third-party brokers. This technical guide covers network analysis, API"

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /dating-profile-image-recognition-how-ai-can-match-your-face-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, artificial-intelligence]

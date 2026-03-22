@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /enterprise-privacy-compliance-tool-comparison-for-gdpr-and-ccpa/
 categories: [guides, security, enterprise]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, gdpr, ccpa, privacy-compliance, enterprise, privacy]

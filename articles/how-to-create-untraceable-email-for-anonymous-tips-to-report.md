@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-create-untraceable-email-for-anonymous-tips-to-report/
+description: "Follow this guide to how to create untraceable email for anonymous tips to report with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How To Create Untraceable Email For Anonymous Tips"
 description: "A technical guide for developers and power users on setting up untraceable email accounts for submitting anonymous tips. Covers Tor, GPG encryption"

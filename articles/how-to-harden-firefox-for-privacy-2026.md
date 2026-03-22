@@ -5,11 +5,11 @@ author: "Privacy Tools Guide"
 date: 2026-03-22
 updated: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 slug: how-to-harden-firefox-for-privacy-2026
-tags: ["firefox", "privacy", "security", "browser-hardening", "tracking"]
+tags: [privacy-tools-guide, firefox, privacy, security, browser-hardening, tracking]
 permalink: /how-to-harden-firefox-for-privacy-2026/
 ---
 

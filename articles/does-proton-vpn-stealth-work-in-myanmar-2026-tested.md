@@ -9,7 +9,7 @@ permalink: /does-proton-vpn-stealth-work-in-myanmar-2026-tested/
 categories: [guides]
 tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

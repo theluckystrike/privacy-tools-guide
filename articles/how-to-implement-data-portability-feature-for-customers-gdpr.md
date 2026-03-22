@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-implement-data-portability-feature-for-customers-gdpr/
+description: "Follow this guide to how to implement data portability feature for customers gdpr with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Implement Data Portability Feature For Customers Gdpr Right"

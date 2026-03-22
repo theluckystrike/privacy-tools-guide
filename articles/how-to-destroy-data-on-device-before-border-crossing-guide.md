@@ -1,6 +1,16 @@
 ---
+layout: default
+
 permalink: /how-to-destroy-data-on-device-before-border-crossing-guide/
+description: "Follow this guide to how to destroy data on device before border crossing guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Destroy Data on Device Before Border Crossing Guide"
 description: "A practical guide for developers and power users on securely destroying data on devices before crossing borders. Learn command-line tools, techniques"

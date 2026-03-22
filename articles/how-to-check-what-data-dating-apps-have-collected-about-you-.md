@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-check-what-data-dating-apps-have-collected-about-you-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

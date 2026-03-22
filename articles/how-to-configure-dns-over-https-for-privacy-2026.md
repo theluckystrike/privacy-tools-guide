@@ -4,10 +4,11 @@ description: "Set up DNS over HTTPS on Windows, macOS, iOS, and Android. Cloudfl
 author: Privacy Tools Guide
 date: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /how-to-configure-dns-over-https-for-privacy-2026/
+tags: [privacy-tools-guide, privacy]
 ---
 
 {% raw %}

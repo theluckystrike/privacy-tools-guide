@@ -9,7 +9,7 @@ permalink: /how-to-disable-google-amp-tracking-in-search-results-guide/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, google, amp, tracking, search]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
