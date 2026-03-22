@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /securing-redis-mongodb-production-guide/
 description: "Follow this guide to securing redis mongodb production guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Securing Redis and MongoDB for Production"
 description: "Harden Redis and MongoDB for production with authentication, TLS encryption, network binding, access control lists, and audit logging to prevent data exposure"

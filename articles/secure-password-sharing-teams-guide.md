@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-password-sharing-teams-guide/
 description: "Follow this guide to secure password sharing teams guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Secure Password Sharing for Teams"
 description: "How to share credentials securely across teams. Covers Bitwarden Organizations, Passbolt, 1Password Teams, and one-time secret links for guests."

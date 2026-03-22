@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /self-hosted-password-manager-comparison/
 description: "Learn self hosted password manager comparison with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [passwords]
 ---
+
 layout: default
 title: "Self-Hosted Password Manager Comparison"
 description: "Compare Vaultwarden, KeePass, Passbolt, and Padloc for self-hosting. Covers setup complexity, sync, team features, and security model."
