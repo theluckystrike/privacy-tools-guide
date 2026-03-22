@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 chkrootkit and rkhunter are command-line rootkit scanners for Linux. They check for known rootkit signatures, suspicious file permissions, hidden processes, and system binary modifications. Neither tool is perfect — rootkits can evade them — but they catch common infections and are worth running regularly as part of a defense-in-depth strategy.
 
+## Key Takeaways
+
+- **They use different detection**: methods and catch different things.
+- **Topics covered**: installing both tools, running chkrootkit, interpreting chkrootkit output
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+
 ## Installing Both Tools
 
 ```bash

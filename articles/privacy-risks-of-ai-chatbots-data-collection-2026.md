@@ -12,6 +12,8 @@ slug: privacy-risks-of-ai-chatbots-data-collection-2026
 tags: ["ai-privacy", "data-collection", "chatgpt", "claude", "gemini", "security"]
 permalink: /privacy-risks-of-ai-chatbots-data-collection-2026/---
 ---
+
+
 title: "Privacy Risks of AI Chatbots: Data Collection (2026)"
 description: "What ChatGPT, Claude, Gemini collect. Data retention policies, opt-out procedures, enterprise vs consumer, self-hosted alternatives."
 author: "Privacy Tools Guide"
@@ -26,6 +28,16 @@ tags: ["ai-privacy", "data-collection", "chatgpt", "claude", "gemini", "security
 permalink: /privacy-risks-of-ai-chatbots-data-collection-2026/---
 
 {% raw %}
+
+## Key Takeaways
+
+- **Cost**: $20/month for Pro, or free tier.
+- **Not use Gemini (best**: option) 2.
+- **OpenAI states "we retain**: chat history to improve our models and services." ChatGPT Plus ($20/month): Same data collection, same indefinite retention.
+- **You're generating unpaid training**: data for a $1+ billion company.
+- **Never use free ChatGPT**: for sensitive data.
+- **Don't include personal identifiers**: Instead of "My employee Alice makes $120k", say "A team member makes $120k"
+2.
 
 ## The Chatbot Privacy Trap
 

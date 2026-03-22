@@ -13,6 +13,8 @@ intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]---
 ---
+
+
 layout: default
 title: "macOS Firewall Configuration"
 description: "Configure macOS firewall for privacy using pf, Application Firewall, and command-line tools. Block trackers, control inbound connections, and secure your"
@@ -28,6 +30,13 @@ voice-checked: true
 tags: [privacy-tools-guide, privacy]---
 
 {% raw %}
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Open-source options can fill**: some gaps if you are willing to handle setup and maintenance yourself.
 
 ## Introduction
 

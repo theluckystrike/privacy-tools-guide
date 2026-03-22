@@ -19,6 +19,13 @@ tags: [privacy-tools-guide]
 
 Self-hosting your analytics means visitor data never leaves your infrastructure. No third-party JavaScript on your pages, no cross-site tracking, no GDPR consent banners required (for cookie-free analytics), and no feeding behavioral data to ad networks. This guide covers deploying Plausible, Umami, and Matomo on your own server.
 
+## Key Takeaways
+
+- **No third-party JavaScript on your pages**: no cross-site tracking, no GDPR consent banners required (for cookie-free analytics), and no feeding behavioral data to ad networks.
+- **Topics covered**: why self-host vs. cloud analytics, option 1: plausible (lightweight, cookie-free), option 2: umami (minimal, multi-site)
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+
 ## Why Self-Host vs. Cloud Analytics
 
 | Factor | Google Analytics | Plausible Cloud | Self-Hosted |
