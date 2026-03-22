@@ -9,7 +9,7 @@ permalink: /how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/
 categories: [guides, security]
 tags: [privacy-tools-guide, security, vpn]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
