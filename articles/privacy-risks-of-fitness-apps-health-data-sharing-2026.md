@@ -8,6 +8,7 @@ score: 9
 voice-checked: true
 intent-checked: true
 permalink: /privacy-risks-of-fitness-apps-health-data-sharing-2026/
+tags: [privacy-tools-guide, privacy]
 ---
 tags: [privacy-tools-guide, privacy]
 ---

@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/
+description: "Learn privacy setup for domestic abuse shelter staff protecting location with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Privacy Setup For Domestic Abuse Shelter Staff: Protecting"

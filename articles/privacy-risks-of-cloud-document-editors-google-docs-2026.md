@@ -1,5 +1,7 @@
 ---
 permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
+description: "Learn privacy risks of cloud document editors google docs 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 title: "Privacy Risks of Cloud Document Editors - Google Docs 2026"
 description: "What Google Docs, Notion, and Office365 collect. Includes collaboration metadata, access logs, privacy risks, and alternatives like CryptPad."
