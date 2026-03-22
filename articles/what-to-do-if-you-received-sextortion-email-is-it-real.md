@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /what-to-do-if-you-received-sextortion-email-is-it-real/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
