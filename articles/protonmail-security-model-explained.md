@@ -16,6 +16,15 @@ tags: [privacy-tools-guide, security]---
 
 ProtonMail's security model relies on three pillars: end-to-end encryption (RSA-2048 + AES-256) so only you and your recipient can read messages, zero-access architecture so ProtonMail's own servers never store decryptable content, and client-side key generation so your private key never leaves your device in plaintext. This means ProtonMail cannot read your emails even if compelled by a court order or compromised by an attacker. Here is how each layer works in practice.
 
+## Key Takeaways
+
+- **ProtonMail ($119.88/year Unlimited)**: 500GB storage, unlimited addresses, custom domain support.
+- **Tutanota ($96/year Pro)**: 10GB storage, open-source client, more aggressive zero-knowledge architecture.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Posteo ($1.25/month, €12/year)**: 40GB storage, German hosting, hardware-level encryption.
+- **Hey ($99/year)**: Privacy-focused email from Basecamp.
+- **Does ProtonMail offer a**: free tier? Most major tools offer some form of free tier or trial period.
+
 ## End-to-End Encryption Fundamentals
 
 ProtonMail employs end-to-end encryption (E2EE) as its foundational principle. Unlike traditional email services that encrypt messages only during transmission (transport layer security), ProtonMail ensures that only the intended recipient can decrypt and read the message content.

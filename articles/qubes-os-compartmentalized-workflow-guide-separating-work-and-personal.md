@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, workflow]---
 
 Modern threat models require more than antivirus software and strong passwords. Whether you're a developer handling sensitive code, a professional working with confidential client data, or an privacy-conscious user wanting strict separation between your personal digital life and work, Qubes OS provides the strongest isolation model available for desktop computing. This guide walks you through implementing a practical compartmentalized workflow that keeps your work and personal activities strictly separated while maintaining usability.
 
+## Key Takeaways
+
+- **The goal is compartmentalization**: not convenience—it's better to have too many qubes initially than to realize too late that you needed separation.
+- **Select your partitioning scheme—use**: automatic partitioning for first installations 2.
+- **The most effective compartmentalization**: mirrors your real-world digital boundaries.
+- **This mechanism enforces that**: you consciously choose each transfer.
+- **Keep this minimal and**: delete files immediately after use.
+- **This prevents credential reuse**: attacks from compromising multiple aspects of your digital life.
+
 ## Understanding Qubes OS Security Architecture
 
 Qubes OS implements a security-through-isolation approach using virtualization. Unlike traditional operating systems where all applications run with equal privilege, Qubes creates multiple isolated environments called "qubes" (virtual machines) that contain specific tasks. If one qube is compromised, the attacker cannot automatically access your other qubes or the data within them.

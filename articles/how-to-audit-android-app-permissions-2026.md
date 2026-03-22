@@ -91,6 +91,19 @@ Android groups related permissions. Granting one permission in a group may provi
 - WAKE_LOCK
 - These don't require explicit consent
 
+## Key Takeaways
+
+- **Verify in Settings >**: Apps > $PACKAGE > Permissions" ``` ### Step 8: Permission Monitoring: Know When Apps Request Permissions Once revoked, monitor when apps try to use revoked permissions.
+- **Use work profiles**: Separate work apps from personal, restrict permissions in each
+9.
+- **Recommendation**: Deny ACCESS_FINE_LOCATION, allow ACCESS_COARSE_LOCATION only.
+- **Prefer coarse over fine location**: Use network location when possible
+4.
+- **Don't use app-specific folders**: Avoid WRITE_EXTERNAL_STORAGE if possible
+6.
+- **Remove unused apps**: Uninstall apps with excessive permissions you don't use
+8.
+
 ## Prerequisites: Set Up ADB
 
 Android Debug Bridge (adb) is the command-line tool for interacting with Android devices.

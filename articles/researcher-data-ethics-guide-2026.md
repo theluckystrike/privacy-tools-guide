@@ -31,6 +31,13 @@ intent-checked: true---
 
 Data ethics has become a critical discipline for anyone handling sensitive information in 2026. Whether you are a developer building research platforms, a data scientist analyzing user behavior, or a power user managing personal research projects, understanding data ethics is no longer optional. This researcher data ethics guide provides practical frameworks, code examples, and actionable strategies to help you handle data responsibly while maintaining utility.
 
+## Key Takeaways
+
+- **Review collection immediately." elif**: utilization < 0.8: return "RECOMMENDED: Some fields are unused.
+- **Data ethics has become**: a critical discipline for anyone handling sensitive information in 2026.
+- **Users should understand exactly**: what data you collect and how you use it.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Data Ethics Fundamentals
 
 Data ethics goes beyond legal compliance. It encompasses the moral obligations surrounding data collection, storage, processing, and sharing. The core principles remain consistent across jurisdictions: minimize harm, maximize consent, ensure transparency, and maintain accountability.

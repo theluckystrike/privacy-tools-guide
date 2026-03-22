@@ -19,6 +19,15 @@ When you use ProtonMail without a VPN, your traffic leaves their encrypted serve
 
 This guide covers the technical integration methods, configuration patterns, and automation approaches that developers and power users can implement to maximize privacy when using encrypted email services.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does ProtonMail offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **When you use ProtonMail without a VPN**: your traffic leaves their encrypted servers and travels across the open internet to reach its destination.
+- **Use privacy-focused email clients**: that minimize header information.
+
 ## Understanding the Privacy Layers
 
 ProtonMail provides client-side encryption for message contents using OpenPGP. When you send an email to another ProtonMail user, the message is encrypted before leaving your device and can only be decrypted by the recipient. However, the following metadata remains accessible to ProtonMail's servers and potentially to external observers:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, comparison]---
 
 Choose ProtonMail if zero-knowledge encryption is non-negotiable and you need a complete privacy ecosystem (encrypted Drive, Calendar, Pass) under Swiss jurisdiction. Choose FastMail if you need native IMAP/SMTP without Bridge software, a full-featured JMAP API for building integrations, and superior search and filtering powered by server-side indexing. Below is the full technical breakdown of how these two services differ.
 
+## Key Takeaways
+
+- **Choose FastMail if you**: need native IMAP/SMTP without Bridge software, a full-featured JMAP API for building integrations, and superior search and filtering powered by server-side indexing.
+- **ProtonMail has no equivalent**: external developers must use Bridge's local IMAP interface or ProtonMail's limited first-party API.
+- **Choose ProtonMail if zero-knowledge**: encryption is non-negotiable and you need a complete privacy ecosystem (encrypted Drive, Calendar, Pass) under Swiss jurisdiction.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **This is a trade-off**: less privacy from the provider, but better usability.
+
 ## Encryption Architecture
 
 ### ProtonMail

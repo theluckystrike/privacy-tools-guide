@@ -33,6 +33,17 @@ When evaluating email privacy for development workflows, the ProtonMail vs Gmail
 
 This comparison focuses on practical aspects: encryption models, third-party access, API capabilities, and integration patterns. Whether you're building a secure notification system or evaluating personal email infrastructure, these technical details will guide your choice.
 
+## Key Takeaways
+
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Applicable to Swiss residents**: only # 3.
+- **Cannot be enforced for**: foreign entities ``` ### Gmail Data Ecosystem Gmail's free model relies on data collection.
+- **ProtonMail and the second**: tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
+- **Which is better for beginners**: ProtonMail or the second tool?
+
+It depends on your background.
+
 ## Encryption Models
 
 ### ProtonMail Encryption Architecture
