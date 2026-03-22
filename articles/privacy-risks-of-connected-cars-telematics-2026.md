@@ -4,10 +4,10 @@ description: "What Tesla, GM, Toyota collect via telematics. How OnStar works, d
 author: "Privacy Tools Guide"
 date: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
-tags: ["connected cars", "telematics", "privacy", "vehicle tracking", "data collection"]
+tags: [privacy-tools-guide, connected cars, telematics, privacy, vehicle tracking, data collection]
 permalink: /privacy-risks-of-connected-cars-telematics-2026/---
 ---
 title: "Privacy Risks of Connected Cars & Telematics 2026: What"

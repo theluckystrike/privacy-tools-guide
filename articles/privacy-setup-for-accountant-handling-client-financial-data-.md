@@ -9,7 +9,7 @@ permalink: /privacy-setup-for-accountant-handling-client-financial-data-/
 categories: [guides]
 tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true---
 

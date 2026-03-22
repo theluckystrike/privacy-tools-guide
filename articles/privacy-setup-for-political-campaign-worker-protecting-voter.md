@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /privacy-setup-for-political-campaign-worker-protecting-voter/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]---

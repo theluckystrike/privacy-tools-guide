@@ -5,11 +5,11 @@ author: "Privacy Tools Guide"
 date: 2026-03-22
 updated: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 slug: privacy-risks-of-ai-chatbots-data-collection-2026
-tags: ["ai-privacy", "data-collection", "chatgpt", "claude", "gemini", "security"]
+tags: [privacy-tools-guide, ai-privacy, data-collection, chatgpt, claude, gemini, security, privacy]
 permalink: /privacy-risks-of-ai-chatbots-data-collection-2026/---
 ---
 

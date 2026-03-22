@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /privacy-risks-of-smart-speakers-alexa-google-home-2026/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, surveillance, smart-home, privacy]---
