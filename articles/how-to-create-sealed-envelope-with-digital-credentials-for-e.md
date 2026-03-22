@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-create-sealed-envelope-with-digital-credentials-for-e/
-description: "Follow this guide to how to create sealed envelope with digital credentials for e with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to create sealed envelope with digital credentials for e with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

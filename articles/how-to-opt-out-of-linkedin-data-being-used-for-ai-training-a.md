@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-opt-out-of-linkedin-data-being-used-for-ai-training-a/
-description: "Follow this guide to how to opt out of linkedin data being used for ai training a with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to opt out of linkedin data being used for ai training a with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide, artificial-intelligence]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -360,7 +360,6 @@ Organizations should pre-plan ransomware response:
 
 ```
 INCIDENT RESPONSE RUNBOOK
-=========================
 T+0 min: Detection and Isolation
   - Kill network connection
   - Notify incident commander

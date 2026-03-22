@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-detect-and-remove-stalkerware-from-android-phone-comp/
-description: "Follow this guide to how to detect and remove stalkerware from android phone comp with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to detect and remove stalkerware from android phone comp with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

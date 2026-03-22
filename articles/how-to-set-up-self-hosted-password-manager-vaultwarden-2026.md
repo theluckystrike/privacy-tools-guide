@@ -1,6 +1,6 @@
 ---
 permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
-description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 ---
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-prevent-screenshots-of-dating-conversations-from-being-shared-without-your-consent-guide/
-description: "Follow this guide to how to prevent screenshots of dating conversations from being shared without your consent guide with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to prevent screenshots of dating conversations from being shared without your consent guide with practical examples, tips, and..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

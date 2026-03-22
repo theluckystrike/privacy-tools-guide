@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /is-someone-monitoring-my-home-wifi-network-how-to-check/
-description: "Follow this guide to is someone monitoring my home wifi network how to check with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to is someone monitoring my home wifi network how to check with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-onion-routing-for-email-using-tor-hidden-servi/
-description: "Follow this guide to how to set up onion routing for email using tor hidden servi with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up onion routing for email using tor hidden servi with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/
-description: "Follow this guide to how to disable wifi scanning and bluetooth scanning on andro with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to disable wifi scanning and bluetooth scanning on andro with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-encrypted-usb-drive-with-recovery-instructions/
-description: "Follow this guide to how to set up encrypted usb drive with recovery instructions with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up encrypted usb drive with recovery instructions with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
@@ -176,9 +176,7 @@ Always create a physical backup of recovery information. Print a recovery sheet 
 - Brief recovery instructions
 
 ```text
-========================================
 ESTATE RECOVERY INFORMATION
-========================================
 USB Drive Label: "Estate Documents"
 Container File: /backup/estate.vc
 
@@ -196,7 +194,6 @@ RECOVERY STEPS:
 2. Mount using key file + password
 3. Access /Documents/Estate/
 
-========================================
 ```
 
 ## Automating Backup Verification
@@ -241,7 +238,6 @@ Your executor needs clear, step-by-step instructions. Create a README file insid
 
 ```
 ESTATE EXECUTOR RECOVERY GUIDE
-===============================
 
 This USB drive contains encrypted estate documents.
 

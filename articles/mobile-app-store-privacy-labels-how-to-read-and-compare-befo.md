@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /mobile-app-store-privacy-labels-how-to-read-and-compare-befo/
-description: "Follow this guide to mobile app store privacy labels how to read and compare befo with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to mobile app store privacy labels how to read and compare befo with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide, comparison, privacy]
 author: "Privacy Tools Guide"
 reviewed: true

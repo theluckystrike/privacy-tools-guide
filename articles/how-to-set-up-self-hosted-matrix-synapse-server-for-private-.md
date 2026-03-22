@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-self-hosted-matrix-synapse-server-for-private-/
-description: "Follow this guide to how to set up self hosted matrix synapse server for private  with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up self hosted matrix synapse server for private  with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

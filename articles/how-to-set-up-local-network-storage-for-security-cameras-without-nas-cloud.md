@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/
-description: "Follow this guide to how to set up local network storage for security cameras without nas cloud with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up local network storage for security cameras without nas cloud with practical examples, tips, and step-by-step..."
 tags: [privacy-tools-guide, security]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/
-description: "Follow this guide to wasabi wallet coinjoin setup guide for bitcoin transaction p with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to wasabi wallet coinjoin setup guide for bitcoin transaction p with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

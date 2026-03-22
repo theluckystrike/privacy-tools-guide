@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /real-estate-agent-client-data-protection-privacy-best-practi/
-description: "Discover the best real estate agent client data protection privacy best practi with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Discover the best real estate agent client data protection privacy best practi with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, best-of, privacy]
 author: "Privacy Tools Guide"
 reviewed: true

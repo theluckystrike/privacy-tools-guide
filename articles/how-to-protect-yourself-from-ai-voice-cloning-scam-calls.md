@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-protect-yourself-from-ai-voice-cloning-scam-calls/
-description: "Follow this guide to how to protect yourself from ai voice cloning scam calls with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to protect yourself from ai voice cloning scam calls with practical examples, tips, and step-by-step instructions for getting..."
 tags: [privacy-tools-guide, artificial-intelligence]
 author: "Privacy Tools Guide"
 reviewed: true

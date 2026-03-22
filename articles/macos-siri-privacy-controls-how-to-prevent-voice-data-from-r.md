@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/
-description: "Follow this guide to macos siri privacy controls how to prevent voice data from r with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to macos siri privacy controls how to prevent voice data from r with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide, privacy]
 author: "Privacy Tools Guide"
 reviewed: true

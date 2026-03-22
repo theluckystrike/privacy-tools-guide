@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
-description: "Follow this guide to how to set up automatic account deletion triggers if you bec with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to set up automatic account deletion triggers if you bec with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true

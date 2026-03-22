@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-email-required/
-description: "Follow this guide to how to pay for vpn subscription anonymously using cryptocurrency no email required with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to how to pay for vpn subscription anonymously using cryptocurrency no email required with practical examples, tips, and step-by-step..."
 tags: [privacy-tools-guide, vpn]
 author: "Privacy Tools Guide"
 reviewed: true

@@ -2,7 +2,7 @@
 layout: default
 
 permalink: /qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/
-description: "Follow this guide to qubes os compartmentalized workflow guide separating work and personal with practical examples, tips, and step-by-step instructions for getting the best results."
+description: "Follow this guide to qubes os compartmentalized workflow guide separating work and personal with practical examples, tips, and step-by-step..."
 tags: [privacy-tools-guide, workflow]
 author: "Privacy Tools Guide"
 reviewed: true

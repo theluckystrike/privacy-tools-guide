@@ -176,7 +176,6 @@ sha256sum $EVIDENCE_DIR/* > $EVIDENCE_DIR/evidence_manifest.txt
 # Generate chain of custody document
 cat > $EVIDENCE_DIR/chain_of_custody.txt << EOF
 Evidence Collection Record
-==========================
 Date: $(date)
 Collector: $(whoami)
 Incident ID: $1
