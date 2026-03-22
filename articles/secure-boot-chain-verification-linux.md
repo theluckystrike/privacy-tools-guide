@@ -151,6 +151,148 @@ tpm2_quote \
 
 The attestation quote can be sent to a remote server that verifies PCR values match the expected baseline before issuing a VPN certificate or access token.
 
+## Automated Boot Chain Verification Script
+
+Monitor your boot chain continuously:
+
+```bash
+#!/bin/bash
+# boot-verify.sh — automated PCR monitoring
+
+BASELINE="/root/pcr-baseline.txt"
+CURRENT="/tmp/pcr-current.txt"
+ALERT_EMAIL="admin@example.com"
+
+# Read current PCR values
+tpm2_pcrread sha256:0,1,2,3,4,5,6,7 > "$CURRENT"
+
+# Compare to baseline
+if ! diff "$BASELINE" "$CURRENT" > /dev/null; then
+    echo "WARNING: Boot chain modified!" | mail -s "TPM PCR Mismatch Alert" "$ALERT_EMAIL"
+    echo "Baseline:" && cat "$BASELINE"
+    echo "Current:" && cat "$CURRENT"
+    diff "$BASELINE" "$CURRENT"
+    exit 1
+fi
+
+echo "Boot chain verified OK at $(date)"
+exit 0
+```
+
+Run this at startup via cron:
+```bash
+# /etc/cron.d/boot-verify
+@reboot root /root/boot-verify.sh
+```
+
+## UEFI Firmware Validation
+
+Beyond kernel signing, verify the firmware itself has not been modified:
+
+```bash
+# Check firmware updates applied
+fwupdmgr get-devices
+fwupdmgr get-history
+
+# If using Dell, HP, or Lenovo firmware:
+# Download the BIOS file and verify its signature
+# Most OEMs publish GPG keys for BIOS firmware
+
+# Example: Dell
+gpg --recv-key 0x1234ABCD  # Dell's key
+gpg --verify BIOS_update.sig BIOS_update.bin
+```
+
+Firmware is rarely compromised but is the hardest component to validate post-deployment. This verification works only if you establish a trusted baseline immediately after OS installation.
+
+## TPM Limitations and Assumptions
+
+TPM Measured Boot does NOT protect against:
+
+1. **Supply chain attacks**: Compromised firmware at manufacturing
+2. **Evil maid attacks**: Physical replacement of boot components
+3. **Rootkits loaded after boot**: Only the boot chain is measured, not runtime code
+4. **Insider threats**: Someone with root access can re-measure and create new baselines
+
+TPM IS effective against:
+1. Software-based BIOS/firmware rootkits
+2. Unauthorized bootloader modifications
+3. Kernel tampering
+4. Detecting when your system was compromised (post-incident)
+
+It's an audit tool, not a complete security solution. Use alongside:
+- Full disk encryption (LUKS)
+- Immutable system binaries (dm-verity)
+- Audit logging (auditd)
+- File integrity monitoring (aide, tripwire)
+
+## Bootloader Hardening Beyond Secureboot
+
+### GRUB Password Protection
+
+```bash
+# Generate a password hash
+grub-mkpasswd-pbkdf2
+
+# Edit /etc/grub.d/40_custom and add:
+set superusers="root"
+password_pbkdf2 root grub.pbkdf2.sha512.10000.HASH_HERE
+
+# Rebuild GRUB config
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Now GRUB menu is password protected — cannot boot into single-user mode without the password.
+
+### Immutable Boot Directory (systemd-protect-system)
+
+On systemd systems, mark the boot directory immutable:
+
+```bash
+sudo chattr +i /boot
+sudo chattr +i /boot/vmlinuz-*
+```
+
+An attacker cannot modify the kernel even with root access (requires special CAP_LINUX_IMMUTABLE capability).
+
+## Validating Your Own System Configuration
+
+Create a comprehensive boot chain report:
+
+```bash
+#!/bin/bash
+# system-security-report.sh
+
+echo "=== SECURE BOOT CONFIGURATION ==="
+mokutil --sb-state
+bootctl status
+
+echo -e "\n=== TPM STATUS ==="
+ls /dev/tpm* 2>/dev/null && echo "TPM present" || echo "TPM NOT present"
+tpm2_getcap properties-fixed 2>/dev/null | grep TPM_PT_FIRMWARE
+
+echo -e "\n=== PCR VALUES (SHA256) ==="
+tpm2_pcrread sha256:0,4,7,11
+
+echo -e "\n=== BOOTLOADER SIGNING ==="
+sbverify --list /boot/efi/EFI/*/grubx64.efi 2>/dev/null
+
+echo -e "\n=== KERNEL MODULE SIGNING ==="
+grep -r "CONFIG_MODULE_SIG" /boot/config-$(uname -r) 2>/dev/null
+
+echo -e "\n=== DISK ENCRYPTION STATUS ==="
+cryptsetup luksDump /dev/sda3 2>/dev/null | grep "TPM"
+
+echo -e "\n=== AUDIT LOG CONFIG ==="
+auditctl -l | head -5
+```
+
+Run regularly:
+```bash
+chmod +x system-security-report.sh
+./system-security-report.sh > security-baseline-$(date +%Y%m%d).txt
+```
+
 ## Related Articles
 
 - [Secure Boot and TPM Explained for Linux](/privacy-tools-guide/secure-boot-tpm-linux-explained/)

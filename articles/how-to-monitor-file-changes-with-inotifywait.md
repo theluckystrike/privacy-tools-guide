@@ -181,6 +181,288 @@ done
 
 inotifywait gives real-time alerting for immediate response. AIDE provides forensic baseline comparison that detects rootkit-level changes. Use both: inotifywait for rapid alerting, AIDE for periodic deep verification.
 
+## Advanced Monitoring Patterns
+
+### Detecting Supply Chain Attacks via File Integrity
+
+Supply chain attacks often modify trusted binaries. Detect them by watching for unexpected changes to system executables:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/detect-supply-chain-changes.sh
+
+CRITICAL_BINARIES=(
+  "/usr/bin/sudo"
+  "/usr/bin/ssh"
+  "/usr/bin/curl"
+  "/usr/bin/wget"
+  "/bin/bash"
+  "/bin/sh"
+)
+
+BASELINE_DIR="/var/lib/file-baseline"
+mkdir -p "$BASELINE_DIR"
+
+# Create baseline hashes on first run
+for binary in "${CRITICAL_BINARIES[@]}"; do
+  sha256sum "$binary" > "$BASELINE_DIR/$(basename $binary).hash"
+done
+
+# Monitor for changes
+inotifywait -m -e modify,attrib "${CRITICAL_BINARIES[@]}" | \
+while read path action file; do
+  current_hash=$(sha256sum "${path}${file}" | cut -d' ' -f1)
+  stored_hash=$(cat "$BASELINE_DIR/$(basename ${path}${file}).hash" 2>/dev/null | cut -d' ' -f1)
+
+  if [ "$current_hash" != "$stored_hash" ]; then
+    logger -p auth.crit "SUPPLY_CHAIN_ALERT: ${path}${file} modified"
+    echo "ALERT: $current_hash vs $stored_hash"
+
+    # Quarantine immediately
+    mv "${path}${file}" "${path}${file}.quarantined"
+    logger -p auth.crit "Binary quarantined: ${path}${file}"
+  fi
+done
+```
+
+This catches scenarios where compromised package updates or repository mirrors replace binaries with malicious versions.
+
+### Detecting Privilege Escalation via setuid Changes
+
+Attackers often create setuid binaries as persistence mechanisms. Monitor for suspicious setuid assignments:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/detect-setuid-changes.sh
+
+WATCH_DIRS=(
+  "/usr/bin"
+  "/usr/sbin"
+  "/bin"
+  "/sbin"
+  "/usr/local/bin"
+  "/home"
+)
+
+# Build baseline of current setuid binaries
+BASELINE="/var/lib/setuid-baseline.txt"
+find "${WATCH_DIRS[@]}" -perm /4000 -type f -exec ls -lh {} \; > "$BASELINE" 2>/dev/null
+
+log() { echo "[$(date '+%Y-%m-%dT%H:%M:%S')] $*" >> /var/log/setuid-monitor.log; }
+
+log "Starting setuid monitoring"
+
+inotifywait -m -r -e attrib "${WATCH_DIRS[@]}" 2>/dev/null | \
+while read path action file; do
+  filepath="${path}${file}"
+
+  # Check if file now has setuid
+  if [ -u "$filepath" ]; then
+    # Check if it's in baseline
+    if ! grep -q "$filepath" "$BASELINE" 2>/dev/null; then
+      log "ALERT: New setuid binary detected: $filepath"
+      ls -lh "$filepath" >> /var/log/setuid-monitor.log
+
+      # Log to syslog
+      logger -p auth.crit "SETUID_ALERT: New setuid binary: $filepath"
+
+      # Optional: remove setuid bit immediately
+      chmod u-s "$filepath"
+      log "Removed setuid bit from $filepath"
+    fi
+  fi
+done
+```
+
+### Real-Time Backup Triggering
+
+Use inotifywait to trigger backups the moment critical files change, rather than relying on scheduled backups:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/realtime-backup.sh
+
+CRITICAL_PATHS=(
+  "/etc"
+  "/var/www"
+  "/srv/app"
+  "/home"
+)
+
+BACKUP_DEST="/backup/realtime-$(date +%Y%m%d)"
+LOG="/var/log/realtime-backup.log"
+
+mkdir -p "$BACKUP_DEST"
+
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG"; }
+
+# Track recently backed-up files to avoid redundant backups
+BACKUP_WINDOW_SECONDS=300
+declare -A last_backup_time
+
+log "Starting real-time backup monitor"
+
+inotifywait -m -r \
+  --format '%w%f' \
+  -e modify,create,delete \
+  "${CRITICAL_PATHS[@]}" 2>/dev/null | \
+while read filepath; do
+  # Skip common temp/cache files
+  case "$filepath" in
+    */.git/*|*/__pycache__/*|*/.venv/*|*/node_modules/*|*/.cache/*) continue ;;
+  esac
+
+  # Debounce: don't back up same file more than once per 5 minutes
+  file_key=$(echo "$filepath" | md5sum | cut -d' ' -f1)
+  current_time=$(date +%s)
+  last_time=${last_backup_time[$file_key]:-0}
+
+  if [ $((current_time - last_time)) -lt $BACKUP_WINDOW_SECONDS ]; then
+    continue
+  fi
+
+  last_backup_time[$file_key]=$current_time
+
+  # Backup the file
+  backup_subdir=$(dirname "$filepath" | sed 's|/|_|g')
+  mkdir -p "$BACKUP_DEST/$backup_subdir"
+
+  if [ -e "$filepath" ]; then
+    cp -p "$filepath" "$BACKUP_DEST/$backup_subdir/$(basename $filepath).$(date +%s)"
+    log "Backed up: $filepath"
+  else
+    log "Deleted (not backed up): $filepath"
+  fi
+done
+```
+
+### Detecting Configuration Drift in Container Orchestration
+
+For Kubernetes clusters, detect when config files drift from their committed versions:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/detect-k8s-config-drift.sh
+
+KUBECONFIG_DIR="/etc/kubernetes"
+GIT_REPO="/var/lib/k8s-config-repo"
+
+log() { echo "[$(date '+%Y-%m-%dT%H:%M:%S')] $*" | logger -p user.notice; }
+
+# Initial commit of configs
+if [ ! -d "$GIT_REPO/.git" ]; then
+  mkdir -p "$GIT_REPO"
+  cd "$GIT_REPO"
+  git init
+  cp -r "$KUBECONFIG_DIR"/* .
+  git add -A
+  git commit -m "Initial K8s config baseline"
+  log "Created initial K8s config baseline"
+fi
+
+# Monitor for changes
+inotifywait -m -r \
+  --format '%w%f' \
+  -e modify,create,delete \
+  "$KUBECONFIG_DIR" 2>/dev/null | \
+while read filepath; do
+  # Sync to git repo
+  relative_path=${filepath#$KUBECONFIG_DIR/}
+  repo_path="$GIT_REPO/$relative_path"
+
+  mkdir -p "$(dirname "$repo_path")"
+
+  if [ -e "$filepath" ]; then
+    cp "$filepath" "$repo_path"
+  else
+    rm -f "$repo_path"
+  fi
+
+  # Commit the change
+  cd "$GIT_REPO"
+  git add -A
+  git commit -m "Config change: $relative_path" 2>/dev/null && \
+    log "Config drift detected and committed: $relative_path"
+done
+```
+
+### Monitoring Log Files for Security Events
+
+Watch application logs in real-time for security-relevant patterns:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/monitor-security-logs.sh
+
+SECURITY_PATTERNS=(
+  "Failed password"
+  "authentication failure"
+  "DENIED"
+  "SUSPICIOUS"
+  "ERROR.*auth"
+  "invalid user"
+  "root.*attempt"
+)
+
+LOG_FILES=(
+  "/var/log/auth.log"
+  "/var/log/secure"
+  "/var/log/audit/audit.log"
+  "/var/log/apache2/error.log"
+)
+
+inotifywait -m -e modify "${LOG_FILES[@]}" 2>/dev/null | \
+while read path action file; do
+  # Get new lines added since last check
+  tail -f "$path" 2>/dev/null &
+  tail_pid=$!
+
+  sleep 0.5
+
+  # Check each security pattern
+  for pattern in "${SECURITY_PATTERNS[@]}"; do
+    if grep -i "$pattern" "$path" | tail -5 | grep -q .; then
+      matching_lines=$(grep -i "$pattern" "$path" | tail -5)
+      logger -p auth.warning "Security event detected in $path:
+$matching_lines"
+    fi
+  done
+
+  kill $tail_pid 2>/dev/null
+done
+```
+
+### CPU-Efficient Long-Term Monitoring
+
+For large directory trees, inotifywait can consume CPU. Optimize with strategic watches:
+
+```bash
+#!/bin/bash
+# /usr/local/bin/efficient-dir-monitor.sh
+
+# Watch only directories, not every file
+# This drastically reduces inotify event volume
+
+inotifywait -m -r \
+  --exclude '(\.git|\.venv|node_modules|__pycache__|\.cache)' \
+  --format '%w %e' \
+  -e create,delete,moved_to,moved_from \
+  /var/www /srv/app 2>/dev/null | \
+while read dir event; do
+  # Filter out noise
+  case "$event" in
+    CREATE|DELETE|MOVED_TO|MOVED_FROM)
+      # Only process directory-level changes
+      if [ -d "$dir" ]; then
+        logger "Directory event: $event in $dir"
+      fi
+      ;;
+  esac
+done
+```
+
+Performance note: Watching 1 million files costs significant memory. Use `--exclude` aggressively to watch only what matters.
+
 ## Related Articles
 
 - [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
