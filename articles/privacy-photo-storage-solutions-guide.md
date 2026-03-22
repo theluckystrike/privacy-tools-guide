@@ -31,11 +31,15 @@ Google Photos and Apple iCloud analyze every photo you upload — detecting face
 - Content moderation scanning (federal legal requirement for CSAM; Google also scans for policy violations)
 - Results tied to your Google account for advertising
 
+Google's face recognition clusters photos of the same person and links them to contacts in your address book. This analysis runs server-side on uploaded originals. Google's privacy policy allows them to use your content to improve their AI models on the free plan.
+
 **Apple iCloud**:
 - On-device face recognition (Memories, People albums — stays on device)
 - CSAM scanning was proposed (paused indefinitely after backlash)
 - Advanced Data Protection (opt-in E2EE) encrypts photos so Apple can't see them
 - Without Advanced Data Protection: Apple holds encryption keys
+
+Apple's differentiation is that most AI analysis happens on-device rather than in the cloud. However, without Advanced Data Protection enabled, Apple has the technical ability to access your iCloud photos. Law enforcement requests to Apple are far more common than requests to Ente or self-hosted providers.
 
 **Amazon Photos** (with Prime):
 - Face recognition for People album
@@ -46,7 +50,7 @@ Google Photos and Apple iCloud analyze every photo you upload — detecting face
 
 ## Option 1: Self-Hosted — Immich
 
-Immich is the most actively developed self-hosted Google Photos alternative. Face recognition, map view, timeline, mobile backup — feature parity with Google Photos without the surveillance.
+Immich is the most actively developed self-hosted Google Photos alternative. Face recognition, map view, timeline, mobile backup — feature parity with Google Photos without the surveillance. The project has grown from a side project to a dedicated team with over 40,000 GitHub stars as of 2026.
 
 ```bash
 # Install Immich via Docker Compose
@@ -61,7 +65,7 @@ nano .env
 
 ```ini
 # .env
-UPLOAD_LOCATION=./library     # Where photos are stored
+UPLOAD_LOCATION=./library     # Where photos are stored on disk
 DB_PASSWORD=your_db_password
 IMMICH_VERSION=release
 ```
@@ -80,11 +84,15 @@ docker compose ps
 ```
 
 **Immich features**:
-- Local face recognition (runs on your server, not cloud)
-- Machine learning object tagging (local)
-- Shared albums
+- Local face recognition (runs on your server using the InsightFace model, not cloud)
+- Machine learning object tagging (CLIP embeddings for natural language search)
+- Shared albums with external link sharing
 - Map view using photo GPS metadata
-- External library support (non-destructive)
+- External library support (points Immich at an existing photo folder without moving files)
+- Partner sharing (share libraries between multiple Immich accounts)
+- Duplicate detection
+
+The machine learning features in Immich run on the `immich-machine-learning` container using your server's CPU or GPU. On a modest server (4-core, 8GB RAM), initial indexing of 50,000 photos takes several hours in the background. After that, new photos are indexed within minutes of upload.
 
 ### Expose Immich Securely
 
@@ -111,11 +119,19 @@ server {
 }
 ```
 
+Use Certbot to obtain a free Let's Encrypt TLS certificate:
+
+```bash
+sudo certbot --nginx -d photos.yourdomain.com
+```
+
+If you don't want a public DNS record, run Immich over Tailscale — assign a Tailscale IP to your server and access it via `https://server-name.tailnet-name.ts.net:2283` from any Tailscale device without exposing a port to the internet.
+
 ---
 
 ## Option 2: Self-Hosted — PhotoPrism
 
-PhotoPrism is more privacy-conservative in its AI features — you control which analysis runs. It's optimized for browsing large libraries.
+PhotoPrism is more privacy-conservative in its AI features — you control which analysis runs. It's optimized for browsing large libraries and works well as a read-heavy archive viewer rather than a live backup target.
 
 ```bash
 # Install PhotoPrism via Docker
@@ -147,11 +163,15 @@ EOF
 docker compose up -d
 ```
 
+PhotoPrism works well with existing file structures — point it at directories organized by year/month and it indexes them without moving anything. This is useful if you have years of photos already on disk and want browsing capabilities without restructuring.
+
+PhotoPrism requires a MariaDB or SQLite database for its index. For large libraries (100,000+ photos), MariaDB performs substantially better. Run `photoprism index` from the container shell to re-index after adding files manually.
+
 ---
 
 ## Option 3: Ente Photos (Zero-Knowledge Cloud)
 
-Ente Photos is a cloud service with zero-knowledge encryption — your photos are encrypted on your device before upload. Ente cannot see your photos.
+Ente Photos is a cloud service with zero-knowledge encryption — your photos are encrypted on your device before upload. Ente cannot see your photos, and this is verifiable because the client is open source (`github.com/ente-io/ente`).
 
 ```bash
 # Ente Photos: ente.io
@@ -166,7 +186,6 @@ Ente Photos is a cloud service with zero-knowledge encryption — your photos ar
 # - Face recognition runs on-device (not on Ente's servers)
 
 # CLI tool for bulk operations:
-# https://github.com/ente-io/ente
 npm install -g @ente/cli
 
 # Configure
@@ -180,7 +199,11 @@ ente upload /path/to/photos "Album Name"
 ente download --album "Album Name" /local/path
 ```
 
-**Trade-off**: Ente lacks advanced search and organization features compared to Google Photos. No object search or automatic location tagging (these would require server-side analysis).
+Ente's encryption uses libsodium (ChaCha20-Poly1305 for content, XSalsa20-Poly1305 for key derivation). The master key is derived from your password client-side using Argon2 — Ente's servers never see the password or the master key.
+
+**Trade-off**: Ente lacks advanced search and organization features compared to Google Photos. No object search or automatic location tagging (these would require server-side analysis). The mobile app is well-polished and supports automatic backup from camera roll. The desktop app and CLI are suitable for bulk uploads from existing photo libraries.
+
+Ente also offers an open-source self-hosted backend (`ente-server`) with your own storage, but the server setup is complex. For most users, Ente's paid cloud is the practical choice.
 
 ---
 
@@ -197,7 +220,7 @@ Keep photos in any cloud provider (Dropbox, S3, Backblaze) but encrypt them firs
 flatpak install org.cryptomator.Cryptomator
 
 # Create new vault in your cloud sync folder (e.g., ~/Dropbox/Photos-Vault)
-# Set a strong password
+# Set a strong password (20+ characters, random)
 # Mount the vault → drag photos in
 # Dropbox/cloud syncs the encrypted files
 
@@ -205,11 +228,15 @@ flatpak install org.cryptomator.Cryptomator
 # Thumbnails are NOT generated server-side (provider sees only ciphertext)
 ```
 
+Cryptomator encrypts both file contents and file names — Dropbox sees files with names like `6IQFHU4APB3MSNB.c9r` rather than `vacation-2025.jpg`. This prevents the cloud provider from inferring anything about your library structure.
+
+The main limitation is browsing: you can only view photos while the vault is mounted on a device with Cryptomator installed. There is no web interface for browsing your encrypted photos remotely, and no server-side search or organization tools.
+
 ---
 
 ## Strip EXIF Metadata Before Sharing
 
-Photos contain metadata that reveals: GPS location, camera model, date/time, sometimes even software used.
+Photos contain metadata that reveals: GPS location, camera model, date/time, sometimes even software used. Before sharing photos publicly or with services that might retain metadata, strip it.
 
 ```bash
 # Install ExifTool
@@ -226,41 +253,59 @@ exiftool -gps:all= photo.jpg
 exiftool -all= ~/photos/to-share/
 
 # Verify metadata was removed
-exiftool -gps:all photo.jpg
-# Should show no GPS data
+exiftool photo.jpg | grep GPS
+# Should show nothing
 
-# Python alternative using Pillow
-python3 -c "
-from PIL import Image
-import piexif
+# Keep originals as backup (exiftool renames originals to .jpg_original by default)
+# To skip backup creation:
+exiftool -all= -overwrite_original photo.jpg
+```
 
-img = Image.open('photo.jpg')
-# Remove all EXIF
-data = list(img.getdata())
-img_no_exif = Image.new(img.mode, img.size)
-img_no_exif.putdata(data)
-img_no_exif.save('photo_clean.jpg')
-"
+MAT2 (Metadata Anonymization Toolkit) is an alternative that handles a broader range of file formats including PDF, LibreOffice documents, and audio:
+
+```bash
+sudo apt install mat2
+mat2 photo.jpg
+mat2 --inplace photo.jpg   # overwrite original
 ```
 
 ---
 
 ## Backup Strategy for Self-Hosted Photos
 
+Self-hosted photos require a separate backup strategy — the server itself can fail.
+
 ```bash
 # 3-2-1 backup rule: 3 copies, 2 different media, 1 offsite
 
 # Immich: backup the originals directory and database
-# Database backup:
+# Database backup (run as cron job):
 docker exec immich_postgres pg_dump -U postgres immich > ~/backup/immich-db-$(date +%Y%m%d).sql
 
 # Photo files backup to external drive:
 rsync -av --delete ~/immich/library/ /media/external-backup/immich/
 
-# Offsite: encrypted backup to Backblaze B2 or similar
+# Offsite encrypted backup to Backblaze B2 using rclone with crypt remote:
+# Configure rclone with a crypt remote pointing at your B2 bucket
 rclone sync ~/immich/library/ b2crypt:photos-backup/
-# (using rclone's crypt remote for E2EE)
+
+# Verify rclone backup integrity:
+rclone check ~/immich/library/ b2crypt:photos-backup/
 ```
+
+Configure rclone's crypt remote with Backblaze B2 for zero-knowledge offsite backup:
+
+```bash
+rclone config
+# name: b2crypt
+# type: crypt
+# remote: b2:your-photos-bucket/encrypted
+# filename_encryption: standard
+# directory_name_encryption: true
+# password: (generate a strong random password)
+```
+
+This gives you encrypted off-site copies that Backblaze cannot read, even though your local Immich installation stores photos unencrypted for performance.
 
 ---
 
@@ -274,6 +319,8 @@ rclone sync ~/immich/library/ b2crypt:photos-backup/
 | Cryptomator + cloud | High | None (browsing only) | Cloud cost | Low-Medium |
 | Google Photos | Low | Best | Free/paid | None |
 | iCloud + ADP | Medium | Good | $1+/month | Low |
+
+For most users starting from scratch: Ente Photos is the quickest path to meaningful privacy improvement — install the app, pay $2/month, and your photos are encrypted before they leave your device. For developers with a home server: Immich combined with rclone/Backblaze B2 offsite backup delivers Google Photos parity with full control.
 
 ---
 
