@@ -31,6 +31,24 @@ tags: [privacy-tools-guide, privacy]---
 
 Entering a witness protection program marks a significant transition in your life, requiring not just physical security but also digital privacy. Your digital footprint can reveal your location, connections, and identity if not properly managed. This guide provides practical steps to secure your digital presence while maintaining the anonymity that witness protection requires.
 
+## Key Takeaways
+
+- **DNS Leak Test**: "
+echo "   Visit: https://www.dnsleaktest.com"
+echo "   Verify VPN DNS servers are used, not ISP DNS"
+
+# Test 3: IPv6 Leak Testing
+echo ""
+echo "3.
+- **Details saved to**: $REVIEW_LOG"
+```
+
+Remember that security is an ongoing process, not an one-time configuration.
+- **Go through each app**: in your settings and revoke location permissions except for navigation apps used temporarily.
+- **Third**: use a privacy-focused mobile operating system if possible.
+- **Signal offers the best**: combination of security and usability, with features like disappearing messages that automatically delete communications after a set time.
+- **Abandoned accounts can be**: compromised and used to gather information about you.
+
 ## Understanding the Digital Threat Market
 
 When you enter witness protection, your adversaries may attempt to track you through digital means. This includes analyzing your social media activity, tracking device signals, monitoring online accounts, and exploiting any remaining connections to your previous life. The goal is to create a complete digital separation from your past identity while maintaining essential connectivity for legitimate needs.

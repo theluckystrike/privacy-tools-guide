@@ -18,6 +18,16 @@ tags: [privacy-tools-guide]---
 
 Proton Mail accounts cannot be inherited because encryption keys are destroyed when you die—even Proton itself cannot access your emails. Plan for this by designating a legacy contact in Proton account settings, exporting encrypted backups with a password shared in your will, or directing heirs to your dead man's switch credentials. For long-term family email access, consider using emergency contacts within Proton's recovery system, but understand that truly encrypted email is incompatible with traditional inheritance.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Proton does have a**: deceased user process, but its scope is limited.
+- **Google can technically fulfill such requests because they hold the decryption keys for their encrypted-at-rest storage**: a fundamentally different security model than true E2EE.
+- **For users with significant**: digital assets stored in encrypted email, consider these practical steps: 1.
+- **Separating roles**: Use personal Proton Mail for truly private communications, separate business email (potentially non-encrypted) for matters that need succession
+2.
+
 ## Understanding Proton Mail's Encryption Architecture
 
 Proton Mail implements end-to-end encryption (E2EE) by default for all messages stored on their servers. When you compose an email, it's encrypted on your device using your private key before transmission. The server only ever sees encrypted ciphertext. Your private key itself is derived from your password through Proton Mail's zero-knowledge architecture — meaning Proton never stores or has access to the actual key material.

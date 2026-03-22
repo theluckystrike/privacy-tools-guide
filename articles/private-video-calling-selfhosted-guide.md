@@ -19,6 +19,18 @@ tags: [privacy-tools-guide]---
 Zoom sends meeting metadata to Amazon, Google Meet processes video through Google's infrastructure, and Microsoft Teams is tied to a Microsoft account. Self-hosted video calling gives you control over who has access to call data, recordings, and participant information. This guide covers three options: Jitsi Meet (easiest to deploy), Matrix + Element (federated, persistent rooms), and Galene (minimal, for small groups).
 ---
 
+## Key Takeaways
+
+- **Galene requires almost no maintenance after setup**: the binary has no external dependencies and uses minimal server resources.
+- **---
+## Option 1**: Jitsi Meet
+
+Jitsi Meet is the most widely deployed self-hosted video conferencing platform.
+- **Browser-based**: no account required for participants, and supports E2EE for small meetings.
+- **CPU and memory monitoring for Jitsi**: The Jitsi Video Bridge (JVB) process is the most CPU-intensive component.
+- **Choose Jitsi Meet when**: You need quick meeting links you can share with external participants who have no accounts.
+- **Choose Matrix + Element when**: Your team needs persistent rooms, asynchronous chat alongside video, and the ability to federate with other Matrix servers.
+
 ## Option 1: Jitsi Meet
 
 Jitsi Meet is the most widely deployed self-hosted video conferencing platform. Browser-based, no account required for participants, and supports E2EE for small meetings.

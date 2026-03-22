@@ -13,7 +13,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Protect election observer witness testimony using Signal for encrypted communications, exiftool to strip GPS from photos, encrypted storage containers (VeraCrypt) for case notes, and Tor for communications. Never store unencrypted witness identities with evidence, and use separate devices for different operations to compartmentalize data.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use a PIN longer**: than 6 digits 3.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Never store unencrypted witness**: identities with evidence, and use separate devices for different operations to compartmentalize data.
 
 ## Understanding the Threat Model
 
