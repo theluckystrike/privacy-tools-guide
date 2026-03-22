@@ -17,6 +17,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Federal law (Drug-Free Workplace Act) sets minimum standards but doesn't mandate testing; state laws create the real restrictions—California bans pre-employment drug testing for most positions, Texas allows broad employer freedom, and other states create complex frameworks. Employers can legally test for marijuana (THC), cocaine, opiates, amphetamines, and PCP in most states, but marijuana testing is increasingly prohibited pre-employment in states where it's legal. For developers building compliance tools, you must implement state-by-state validation: a simple boolean "testing allowed" fails because regulations vary by job position, test type (pre-employment, random, reasonable suspicion), and state.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **State Variation The federal**: government sets minimum standards through the Drug-Free Workplace Act of 1988, which requires federal contractors to maintain drug-free workplaces.
+- **However**: this act does not mandate drug testing—it only requires employers to certify they will provide drug-free workplaces.
+- **California**: for example, prohibits most pre-employment drug testing except for certain positions, while Texas allows employers significant freedom in testing policies.
+- **AB 2776 prohibits most**: pre-employment drug screening unless the position involves federal compliance requirements.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Federal Baseline vs. State Variation
 
 The federal government sets minimum standards through the Drug-Free Workplace Act of 1988, which requires federal contractors to maintain drug-free workplaces. However, this act does not mandate drug testing—it only requires employers to certify they will provide drug-free workplaces.
