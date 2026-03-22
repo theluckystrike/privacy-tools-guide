@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Trojan GFW proxy represents a sophisticated approach to network traffic obfuscation, designed specifically to bypass the Great Firewall of China (GFW). Unlike traditional VPN protocols that rely on known signatures, Trojan imitates regular HTTPS traffic, making it significantly harder for deep packet inspection (DPI) systems to detect and block. This guide walks you through the complete setup process, from server configuration to client installation, with practical code examples you can implement immediately.
 
+## Key Takeaways
+
+- **The GFW cannot distinguish**: between legitimate HTTPS traffic and Trojan-encrypted data because both use the same port (443) and identical TLS handshakes.
+- **What differentiates Trojan from**: earlier protocols like Shadowsocks or V2Ray VMess is its use of authentic TLS certificates issued by trusted certificate authorities.
+- **When the GFW probes a Trojan server, it receives a valid TLS handshake and then sees what appears to be normal HTTPS responses**: because the server also runs a real web server on the fallback port 80.
+- **For developers who prefer**: command-line tools or need to integrate Trojan into scripts, use the trojan-go client.
+- **This makes active probing**: by censors significantly harder than with protocols that use custom encryption schemes.
+- **For browsers**: both Firefox and Chrome support SOCKS5 proxy configuration.
+
 ## Understanding How Trojan Works
 
 Trojan operates on a deceptively simple principle: it wraps encrypted traffic in the TLS protocol, the same encryption used by every secure website on the internet. When you connect to a Trojan server, your traffic appears identical to a normal HTTPS connection to any web server. The GFW cannot distinguish between legitimate HTTPS traffic and Trojan-encrypted data because both use the same port (443) and identical TLS handshakes.

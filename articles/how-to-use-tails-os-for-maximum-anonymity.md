@@ -31,6 +31,17 @@ intent-checked: true---
 
 Tails OS (The Amnesic Incognito Live System) is a security-focused operating system designed for maximum anonymity and privacy. Unlike VPNs or encrypted messaging apps, Tails isolates your entire operating environment—every network connection routes through Tor, all data is encrypted, and no traces remain on disk after shutdown. It's built for journalists, activists, and security researchers who need operational security stronger than standard consumer software.
 
+## Key Takeaways
+
+- **[●●●●●●●●●●] 10%
+
+Status**: Connecting to Tor...
+- This typically takes 30-60 seconds.
+- **Use Tor Browser to**: access secure communication: - Ricochet IM (decentralized messaging) - Jami (P2P calling) - ProtonMail (encrypted email) 4.
+- **Turns off computer This**: takes 10-15 seconds.
+- **Tails OS (The Amnesic**: Incognito Live System) is a security-focused operating system designed for maximum anonymity and privacy.
+- **For journalists/activists keeping research**: files, set up encrypted persistent storage: First time only: 1.
+
 ## What Tails OS Actually Does
 
 Tails is a Linux distribution that boots from USB and runs entirely in RAM. Key differences from Windows/macOS:

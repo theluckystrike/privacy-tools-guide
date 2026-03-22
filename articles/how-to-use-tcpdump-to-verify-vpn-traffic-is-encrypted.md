@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, vpn]---
 
 When you connect to a VPN, you expect all your internet traffic to be encrypted and protected from eavesdropping. But how can you actually verify that the encryption is working? The standard tool for network packet analysis, tcpdump, lets you inspect network traffic directly and confirm that your VPN tunnel is properly encrypting your data. This guide walks through practical tcpdump commands and techniques to verify VPN encryption is active and functioning correctly.
 
+## Key Takeaways
+
+- **For WireGuard**: UDP port 51820 is used.
+- **Always use root privileges**: tcpdump requires elevated access
+2.
+- **Use filters wisely**: avoid capturing excessive data
+4.
+- **Use Wireshark with the**: WireGuard protocol decoder.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Why Verify VPN Encryption?
 
 Even when using a reputable VPN service, several issues can cause encryption to fail or degrade:

@@ -31,6 +31,13 @@ tags: [privacy-tools-guide]---
 
 Share credentials securely using SafeNote or PrivNote: paste your API key or password, set an expiration time, and send the link. The recipient views it once and it auto-deletes, leaving no server copy. For extra security, use browser-side encryption variants and avoid sending the link through logged communication channels. This approach eliminates password history vulnerabilities and reduces the window for credentials to be intercepted.
 
+## Key Takeaways
+
+- **For extra security**: use browser-side encryption variants and avoid sending the link through logged communication channels.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers understanding**: one-time secure notes, safenote: open-source self-hosting option, setting up safenote, with specific setup instructions
+
 ## Understanding One-Time Secure Notes
 
 One-time note services work on a simple but powerful principle: the secret is stored, a unique link is generated, and after the link is visited once, the content is permanently deleted from the server. This eliminates the risk of the credential lingering in inboxes, chat logs, or server logs where it could be discovered later.

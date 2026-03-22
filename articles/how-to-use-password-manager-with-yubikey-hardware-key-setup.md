@@ -31,6 +31,19 @@ tags: [privacy-tools-guide]---
 
 Configure YubiKey as a second authentication factor in Bitwarden or 1Password settings using the FIDO2/WebAuthn protocol: during login, after entering your master password, the system prompts you to physically touch your YubiKey. This creates cryptographic proof of presence that cannot be phished or reused. Buy two YubiKeys (keep one as backup), register both to your account, and store the backup in a secure location. This combination—master password plus hardware key—provides near-unbreakable protection even if your master password is compromised.
 
+## Key Takeaways
+
+- **Prioritize fixing reused passwords on financial and email accounts first**: those provide the most pivot opportunity for attackers.
+- **For Linux users**: ensure FIDO middleware is installed: `sudo apt install libfido2-1`
+
+### Browser Permission Issues
+
+Some browsers block WebAuthn requests by default.
+- **Firefox users should check `about**: config` for `webauthn.enableU2FApi` settings.
+- **This creates cryptographic proof**: of presence that cannot be phished or reused.
+- **Password managers support YubiKey**: through the FIDO2/WebAuthn standard.
+- **This means your YubiKey**: becomes a second authentication factor that cannot be intercepted or reused on fraudulent websites.
+
 ## Understanding YubiKey and Password Manager Integration
 
 YubiKey devices provide cryptographic authentication that resists phishing, SIM swapping, and man-in-the-middle attacks. Unlike time-based one-time passwords (TOTPs) stored in your phone, hardware keys store private keys in tamper-resistant hardware that never leaves your possession.

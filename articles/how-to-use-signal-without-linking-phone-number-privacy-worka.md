@@ -31,6 +31,17 @@ tags: [privacy-tools-guide, privacy]---
 
 Signal's phone number requirement creates a significant privacy challenge for users who want to maintain separation between their messaging identity and their real-world phone number. This guide provides practical technical methods for using Signal without exposing your primary phone number, with focus on implementation details for developers and power users.
 
+## Key Takeaways
+
+- **For most users**: a VoIP number combined with proper privacy settings provides adequate protection.
+- **Use a secondary/old smartphone**: # 3.
+- **Signal's phone number requirement**: creates a significant privacy challenge for users who want to maintain separation between their messaging identity and their real-world phone number.
+- **This guide provides practical**: technical methods for using Signal without exposing your primary phone number, with focus on implementation details for developers and power users.
+- **This design decision**: while simplifying user experience, introduces several privacy concerns:
+
+Your phone number links directly to your carrier account, which carries identification information.
+- **Law enforcement can obtain**: carrier records to identify Signal users.
+
 ## The Phone Number Privacy Problem
 
 Signal uses your phone number as your unique identifier for account registration and contact discovery. When someone has your phone number, they can find you on Signal regardless of whether you've saved their contact information. This design decision, while simplifying user experience, introduces several privacy concerns:
