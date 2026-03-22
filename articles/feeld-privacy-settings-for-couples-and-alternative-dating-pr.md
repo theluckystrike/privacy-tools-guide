@@ -70,7 +70,7 @@ When creating a Couple profile, Feeld generates a linked entity that connects in
 
 2. **Enable Incognito mode**: Navigate to **Me → Settings → Privacy** and toggle **Incognito** to on. This hides your individual profile from Discovery while maintaining functionality.
 
-   ```
+ ```
    Note: Incognito requires Feeld Majors subscription. This is a non-negotiable privacy requirement for couples.
    ```
 
@@ -210,5 +210,4 @@ Run this periodically to maintain consistent privacy posture.
 - [Firefox Privacy Settings Guide 2026](/privacy-tools-guide/firefox-privacy-settings-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

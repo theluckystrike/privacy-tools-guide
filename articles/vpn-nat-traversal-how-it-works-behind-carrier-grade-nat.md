@@ -206,5 +206,4 @@ nmap -p 500,4500,1701,51820 -sU your-isp-gateway
 - [How Vpn Reconnection Works After Network Switch Mobile.](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

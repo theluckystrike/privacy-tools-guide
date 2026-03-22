@@ -246,5 +246,4 @@ If results appear, a tag manager or plugin is still injecting GA. Find and remov
 - [Secure Document Collaboration Alternatives to Google.](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

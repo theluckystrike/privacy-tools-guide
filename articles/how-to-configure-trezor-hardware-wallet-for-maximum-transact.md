@@ -224,5 +224,4 @@ Cloudflare (1.1.1.1) and Quad9 (9.9.9.9) both offer strong privacy policies and 
 - [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

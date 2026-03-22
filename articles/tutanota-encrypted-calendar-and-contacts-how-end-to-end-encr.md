@@ -386,5 +386,4 @@ For users in jurisdictions with aggressive data access laws, Tutanota's model pr
 - [End-to-End Encryption Explained Simply: A Developer's Guide](/privacy-tools-guide/end-to-end-encryption-explained-simply/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

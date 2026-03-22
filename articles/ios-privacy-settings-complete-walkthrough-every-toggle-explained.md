@@ -320,6 +320,5 @@ sqlite3 ~/Library/Application\ Support/MobileSync/Backup/*/Health/health.db \
 - [Facebook Privacy Settings 2026 Complete Guide](/privacy-tools-guide/facebook-privacy-settings-2026-complete-guide/)
 - [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)*
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

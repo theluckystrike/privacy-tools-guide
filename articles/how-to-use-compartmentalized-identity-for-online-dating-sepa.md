@@ -277,5 +277,4 @@ When compartmentalization fails:
 - [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

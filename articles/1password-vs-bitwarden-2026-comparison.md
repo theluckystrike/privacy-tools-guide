@@ -264,5 +264,4 @@ Both are excellent choices in 2026—the decision ultimately depends on your inf
 - [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

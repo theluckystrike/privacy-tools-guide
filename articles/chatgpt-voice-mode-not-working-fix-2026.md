@@ -194,6 +194,8 @@ If you've tried all these solutions and voice mode still doesn't work:
 ---
 
 *Last updated: March 2026*
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

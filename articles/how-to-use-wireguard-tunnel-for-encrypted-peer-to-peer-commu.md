@@ -273,5 +273,4 @@ WireGuard provides strong encryption by default, but follow these practices:
 - [How To Configure Wireguard With Obfuscation To Bypass Russia](/privacy-tools-guide/how-to-configure-wireguard-with-obfuscation-to-bypass-russia/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -245,5 +245,4 @@ Location data requires enhanced security measures:
 - [How To Run Background Check On Dating Match Using Public Rec](/privacy-tools-guide/how-to-run-background-check-on-dating-match-using-public-rec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

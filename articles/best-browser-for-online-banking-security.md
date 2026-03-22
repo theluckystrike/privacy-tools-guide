@@ -225,5 +225,4 @@ console.log('Configured banking sites:', bankingSites.length);
 - [VPN for Accessing European Banking Apps from United States](/privacy-tools-guide/vpn-for-accessing-european-banking-apps-from-united-states/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

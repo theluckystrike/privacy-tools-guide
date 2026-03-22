@@ -227,5 +227,4 @@ Custom apps: Display explicit "Key rotated" banner with verification option
 - [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

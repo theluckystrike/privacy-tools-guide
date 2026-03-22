@@ -542,8 +542,8 @@ After hardening, expect:
 
 - **Speed**: 5-10% slower (minor). Ad/tracker blocking saves time loading ads.
 - **Breakage**: 10-15% of websites have issues
-  - Example: Some banking sites require JavaScript
-  - Solution: Whitelist in NoScript
+ - Example: Some banking sites require JavaScript
+ - Solution: Whitelist in NoScript
 - **Memory usage**: 10-15% higher (more extensions)
 
 ## Maintenance
@@ -589,5 +589,4 @@ Firefox hardening prevents *tracking*, but doesn't prevent:
 - [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

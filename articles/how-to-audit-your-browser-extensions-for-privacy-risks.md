@@ -401,6 +401,7 @@ If you want to actively protect your privacy (not just avoid malware), these are
 
 Start with uBlock Origin + Privacy Badger. That covers 90% of tracking.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 ## Related Articles
 

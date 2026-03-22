@@ -301,5 +301,4 @@ This allows you to match VPN configuration to the specific threat model for each
 - [Firefox Total Cookie Protection How It Isolates Trackers Exp](/privacy-tools-guide/firefox-total-cookie-protection-how-it-isolates-trackers-exp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

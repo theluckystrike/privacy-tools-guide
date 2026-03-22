@@ -322,7 +322,7 @@ Browser fingerprinting is complex. Truly defeating it requires tools like Tor Br
 
 **Fix:**
 1. Temporarily disable HTTPS only mode for that domain:
-   ```
+ ```
    about:preferences → Privacy & Security → HTTPS only mode → Off
    ```
 2. Or whitelist in uBlock Origin
@@ -396,5 +396,4 @@ Configuration:
 - [How To Configure Per App Vpn On Android Without Root](/privacy-tools-guide/how-to-configure-per-app-vpn-on-android-without-root/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

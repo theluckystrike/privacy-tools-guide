@@ -827,26 +827,26 @@ Intermittent unresponsiveness:
 **After basic setup:**
 
 1. **Add more rooms**
-   - Bulbs, motion sensors, temperature sensors in each room
-   - Cost: $15-30/room
+ - Bulbs, motion sensors, temperature sensors in each room
+ - Cost: $15-30/room
 
 2. **Advanced automation**
-   - Sunrise/sunset lighting
-   - Occupancy-based climate control
-   - Voice commands (Rhasspy, wake word detection)
+ - Sunrise/sunset lighting
+ - Occupancy-based climate control
+ - Voice commands (Rhasspy, wake word detection)
 
 3. **Energy monitoring**
-   - Add smart plugs to measure consumption
-   - Track which devices use most power
+ - Add smart plugs to measure consumption
+ - Track which devices use most power
 
 4. **Home security**
-   - Local cameras (Reolink, not cloud-based)
-   - Door locks (Nuki, Aqara)
-   - Glass break sensors
+ - Local cameras (Reolink, not cloud-based)
+ - Door locks (Nuki, Aqara)
+ - Glass break sensors
 
 5. **Media server**
-   - Plex for local movies/TV
-   - Runs on same Raspberry Pi
+ - Plex for local movies/TV
+ - Runs on same Raspberry Pi
 
 ---
 
@@ -860,5 +860,4 @@ Intermittent unresponsiveness:
 - [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -262,6 +262,7 @@ Test the migration in stages:
 3. Update session management to use first-party tokens only
 4. Monitor error logs for 2 weeks to catch edge cases
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

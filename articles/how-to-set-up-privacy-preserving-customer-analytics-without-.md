@@ -290,5 +290,4 @@ The best analytics respect user privacy while still answering the questions that
 - [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

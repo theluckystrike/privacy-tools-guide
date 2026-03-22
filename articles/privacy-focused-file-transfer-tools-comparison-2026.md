@@ -455,6 +455,7 @@ All four are free, open-source, and actively maintained. Pick one based on your 
 
 ---
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

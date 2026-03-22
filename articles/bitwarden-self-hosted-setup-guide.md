@@ -227,14 +227,14 @@ After initial setup, implement these hardening measures:
 
 1. **Enable fail2ban** to protect against brute force attempts
 2. **Configure a firewall** allowing only HTTP, HTTPS, and SSH:
-   ```bash
+ ```bash
    sudo ufw allow 22/tcp
    sudo ufw allow 80/tcp
    sudo ufw allow 443/tcp
    sudo ufw enable
    ```
 3. **Set up automatic security updates**:
-   ```bash
+ ```bash
    sudo apt install unattended-upgrades
    sudo dpkg-reconfigure -plow unattended-upgrades
    ```

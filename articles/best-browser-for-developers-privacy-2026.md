@@ -201,5 +201,4 @@ Spend time configuring your chosen browser properly, and the setup will serve bo
 - [How Browser Supercookies Track You: A Technical Explanation](/privacy-tools-guide/how-browser-supercookies-track-you-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -296,5 +296,4 @@ These improvements will address current limitations, though the rate of developm
 - [Cwtch Messenger Review: A Decentralized Privacy Solution](/privacy-tools-guide/cwtch-messenger-review-decentralized/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

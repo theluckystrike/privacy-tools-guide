@@ -315,5 +315,4 @@ A full node validates blocks and transactions but does not produce new blocks. A
 - [How to Set Up a Privacy Focused Home Network](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

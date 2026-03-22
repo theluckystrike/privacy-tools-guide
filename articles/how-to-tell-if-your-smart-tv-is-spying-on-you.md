@@ -230,5 +230,4 @@ Watch for these indicators:
 - [How To Tell If Your Computer Is Part Of Botnet Check](/privacy-tools-guide/how-to-tell-if-your-computer-is-part-of-botnet-check/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

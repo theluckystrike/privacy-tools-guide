@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Disable Location Services Completely On Macos While Keeping"
+title: "Disable Location Services Completely On macOS While Keeping"
 description: "A guide for developers and power users to disable macOS location services while maintaining app functionality through alternative methods"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -260,5 +260,4 @@ No. iOS and iPadOS have a different architecture and different system paths. The
 - [Anonymous Vehicle Registration Options For Keeping Home Addr](/privacy-tools-guide/anonymous-vehicle-registration-options-for-keeping-home-addr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -347,5 +347,4 @@ This script creates a baseline that helps identify unusual changes.
 - [How to Secure Your Home Router Firmware](/privacy-tools-guide/home-router-firmware-security-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

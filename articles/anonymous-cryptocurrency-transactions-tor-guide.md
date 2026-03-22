@@ -217,13 +217,13 @@ This approach avoids centralized services entirely, though it requires more tech
 Here's a step-by-step workflow combining all elements:
 
 1. **Setup Tor-only Bitcoin Core**
-   ```bash
+ ```bash
    # Already covered above in Tor configuration
    bitcoin-cli getblockcount  # Verify sync complete
    ```
 
 2. **Generate Fresh Address**
-   ```bash
+ ```bash
    # Generate new address
    bitcoin-cli getnewaddress "anonymous-receive"
 
@@ -231,19 +231,19 @@ Here's a step-by-step workflow combining all elements:
    ```
 
 3. **Receive Funds via Monero Atomic Swap** (if available)
-   ```bash
+ ```bash
    # Atomic swap Bitcoin to Monero
    # Using tools like XMR-Monero-Atomic-Swap for better privacy
    ```
 
 4. **Consolidate with Coinjoin** (if aggregating multiple inputs)
-   ```bash
+ ```bash
    # Send through Whirlpool or JoinMarket
    # Document the output addresses for tracking
    ```
 
 5. **Send Final Transaction**
-   ```bash
+ ```bash
    bitcoin-cli sendtoaddress "destination-address" 0.5 "" "" true
    ```
 

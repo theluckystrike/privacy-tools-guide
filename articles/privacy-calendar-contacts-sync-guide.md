@@ -173,8 +173,8 @@ Install DAVx5 from F-Droid: https://f-droid.org/packages/at.bitfire.davdroid/
 1. Open DAVx5 → **Add account**
 2. Select **Login with URL and user name**
 3. Base URL:
-   - Nextcloud: `https://cloud.yourdomain.com/remote.php/dav/`
-   - Radicale: `https://cal.yourdomain.com/`
+ - Nextcloud: `https://cloud.yourdomain.com/remote.php/dav/`
+ - Radicale: `https://cal.yourdomain.com/`
 4. Username and password as configured
 5. DAVx5 auto-discovers calendars and address books
 6. Select which to sync → tap **Create account**
@@ -291,5 +291,4 @@ Nextcloud supports server-side encryption per-file, though it adds overhead.
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

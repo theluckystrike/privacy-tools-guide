@@ -203,5 +203,4 @@ For threat models requiring defense against sophisticated adversaries, consider 
 - [Android Notification Privacy: How to Hide Sensitive.](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

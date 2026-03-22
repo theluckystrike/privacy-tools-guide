@@ -261,5 +261,4 @@ if (window.location.origin !== 'https://your-app.com') {
 - [What To Do After Clicking Suspicious Link In Email Immediate](/privacy-tools-guide/what-to-do-after-clicking-suspicious-link-in-email-immediate/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

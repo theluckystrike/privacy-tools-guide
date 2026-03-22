@@ -213,5 +213,4 @@ Both platforms maintain active development and regular updates addressing new pr
 - [How To Implement Consent Receipts Giving Customers Proof Of](/privacy-tools-guide/how-to-implement-consent-receipts-giving-customers-proof-of-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

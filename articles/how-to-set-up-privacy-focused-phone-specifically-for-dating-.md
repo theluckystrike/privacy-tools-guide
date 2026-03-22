@@ -360,5 +360,4 @@ If your dating phone is lost or stolen:
 - [How to Set Up Panic Button on Phone: Emergency Privacy Wipe](/privacy-tools-guide/how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

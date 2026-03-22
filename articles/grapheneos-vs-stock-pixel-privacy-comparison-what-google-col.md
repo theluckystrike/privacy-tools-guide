@@ -215,6 +215,5 @@ For those building privacy-conscious applications or evaluating mobile security 
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
 - [Iphone Analytics And Improvement Data What Apple Collects An](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)*
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

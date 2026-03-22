@@ -352,6 +352,7 @@ server=/private-network.local/1.1.1.1
 bogus-priv
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

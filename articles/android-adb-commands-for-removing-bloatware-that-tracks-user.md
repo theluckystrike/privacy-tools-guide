@@ -229,5 +229,4 @@ If your device becomes unstable, perform a factory reset to restore all packages
 - [Privacy Setup for Survivor of Revenge Porn](/privacy-tools-guide/privacy-setup-for-survivor-of-revenge-porn-removing-images-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

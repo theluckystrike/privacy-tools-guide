@@ -273,5 +273,4 @@ PayJoin represents one of the most effective practical improvements in Bitcoin t
 - [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

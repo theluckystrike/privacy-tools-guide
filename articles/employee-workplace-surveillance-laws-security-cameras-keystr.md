@@ -202,5 +202,4 @@ For developers building enterprise monitoring tools, prioritize consent workflow
 - [Dark Pattern Regulations Which Privacy Laws Ban Manipulative](/privacy-tools-guide/dark-pattern-regulations-which-privacy-laws-ban-manipulative/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

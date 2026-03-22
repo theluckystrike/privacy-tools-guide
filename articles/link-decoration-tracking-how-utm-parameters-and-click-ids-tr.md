@@ -459,5 +459,4 @@ recommendations:
 - [Bumble Location Tracking Precision How Accurately The App Pi](/privacy-tools-guide/bumble-location-tracking-precision-how-accurately-the-app-pi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -220,5 +220,4 @@ Five EFF words yield ~64 bits of entropy — equivalent to a 12-character random
 - [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -467,6 +467,7 @@ Result: If anyone sees device, private communications are invisible, no badges r
 6. Check that page switching doesn't reveal hidden pages
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

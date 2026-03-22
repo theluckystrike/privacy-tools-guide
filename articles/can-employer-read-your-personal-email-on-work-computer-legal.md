@@ -217,5 +217,4 @@ Regardless of jurisdiction, there are some limits:
 - [Air Gapped Computer Setup For Maximum Security Practical Gui](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

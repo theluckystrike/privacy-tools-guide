@@ -200,5 +200,4 @@ Set up rate limiting and account lockout. Even strong passwords cannot compensat
 - [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

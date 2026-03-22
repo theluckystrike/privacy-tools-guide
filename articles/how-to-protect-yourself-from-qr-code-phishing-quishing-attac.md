@@ -231,6 +231,7 @@ If you or your organization encounters a quishing attempt:
 4. **Notify affected users**: If the QR code reached multiple people, warn potential victims
 5. **Block malicious domains**: Add identified malicious URLs to blocklists
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

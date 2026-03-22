@@ -226,5 +226,4 @@ Beyond requesting your data, implement ongoing privacy practices:
 - [How To Spot Romance Scam Red Flags On Dating Apps Comprehens](/privacy-tools-guide/how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

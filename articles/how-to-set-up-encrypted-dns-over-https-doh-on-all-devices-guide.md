@@ -373,8 +373,8 @@ Setting DoH on your router encrypts DNS for all connected devices automatically.
 3. Find DNS settings
 4. Select "Manual DNS Configuration"
 5. Enter primary and secondary DoH providers:
-   - Cloudflare: dns.cloudflare.com
-   - Quad9: dns.quad9.net
+ - Cloudflare: dns.cloudflare.com
+ - Quad9: dns.quad9.net
 6. Save and reboot router
 
 All connected devices now use encrypted DNS automatically.
@@ -487,5 +487,4 @@ If DNS queries appear in plaintext, DoH isn't enabled or fallback occurred.
 - [How to Set Up Burner Devices for Protest Organization Safety](/privacy-tools-guide/how-to-set-up-burner-devices-for-protest-organization-safety/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

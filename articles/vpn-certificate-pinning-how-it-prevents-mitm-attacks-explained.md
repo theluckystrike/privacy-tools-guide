@@ -233,6 +233,7 @@ Test your VPN's security periodically. Tools and techniques exist to verify that
 
 **Disclaimer:** This article is for informational purposes only and does not constitute security advice. Security practices should be evaluated based on your specific threat model and requirements.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

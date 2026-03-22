@@ -337,5 +337,4 @@ Planning consolidation in advance prevents emotional decisions or tax mistakes d
 - [Browser Password Manager Vs Dedicated App](/privacy-tools-guide/browser-password-manager-vs-dedicated-app/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

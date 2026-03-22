@@ -454,7 +454,5 @@ Recommended only if high threat model justifies it
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/guides-hub/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/privacy-tools-guide/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

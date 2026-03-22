@@ -174,7 +174,7 @@ disable_delivery_confirmation = true
 strip_metadata = true
 ```
 
-Most email clients, including Thunderbird and Mutt, send detailed headers about the client version and operating system. On Tails OS, the Tor Browser's built-in webmail approach avoids this problem by presenting a uniform browser fingerprint. If you must use a local client, Thunderbird with the "Header modification" extension allows you to strip or replace identifying headers before messages leave your machine.
+Most email clients, including Thunderbird and Mutt, send detailed headers about the client version and operating system. On Tails OS, the Tor Browser's built-in webmail approach avoids this problem by presenting an uniform browser fingerprint. If you must use a local client, Thunderbird with the "Header modification" extension allows you to strip or replace identifying headers before messages leave your machine.
 
 ## Practical Tip Submission Workflow
 

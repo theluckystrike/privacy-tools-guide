@@ -171,7 +171,7 @@ The Tor network's security model depends on having at least 5 honest authorities
 - [Android Work Profile Privacy Separation Guide](/privacy-tools-guide/android-work-profile-privacy-separation-guide/)
 - [Best No Kyc Cryptocurrency Exchanges That Still Work In 2026](/privacy-tools-guide/best-no-kyc-cryptocurrency-exchanges-that-still-work-in-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ## Directory Authority Network Architecture
 
 The nine Tor directory authorities are geographically distributed to prevent coordinated attacks. Each authority maintains independently:
@@ -326,4 +326,6 @@ Understanding past problems helps operators maintain integrity:
 - **2022 - Authority Availability**: Extended downtime of one authority reduced signature count. Network degraded gracefully
 
 The consensus mechanism's redundancy and cryptography have held against sustained attacks for 17+ years.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

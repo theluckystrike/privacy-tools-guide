@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Audio Context Fingerprinting How Websites Use Sound Api"
+title: "Audio Context Fingerprinting How Websites Use Sound API"
 description: "Learn how websites exploit the Web Audio API to create unique browser fingerprints, and what developers and privacy-conscious users can do about it"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -333,5 +333,4 @@ This approach requests consent and processes data locally rather than transmitti
 - [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Significant Locations History What Apple Tracks How"
+title: "iPhone Significant Locations History What Apple Tracks How"
 description: "A technical guide to understanding iPhone Significant Locations history, what Apple collects, how the data is stored, and step-by-step methods to view"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -252,5 +252,4 @@ The fundamental principle: location data is one of the most sensitive data types
 - [Apple Digital Legacy Program How To Add Legacy Contacts For](/privacy-tools-guide/apple-digital-legacy-program-how-to-add-legacy-contacts-for-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

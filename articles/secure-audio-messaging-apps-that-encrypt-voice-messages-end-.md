@@ -346,5 +346,4 @@ This workflow allows journalists to rapidly coordinate protocol changes if a pla
 - [How To Communicate Securely When All Messaging Apps Are Moni](/privacy-tools-guide/how-to-communicate-securely-when-all-messaging-apps-are-moni/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

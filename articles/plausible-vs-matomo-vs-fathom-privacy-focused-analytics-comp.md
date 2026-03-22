@@ -203,5 +203,4 @@ All three platforms provide genuine privacy-focused alternatives to Google Analy
 - [Best Privacy-Focused DNS Resolvers Compared](/privacy-tools-guide/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

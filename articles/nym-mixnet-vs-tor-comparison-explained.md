@@ -172,7 +172,7 @@ For developers building privacy applications:
  - Rust: `arti` (Tor implementation in Rust)
 
 2. **Nym integration** requires the SDK:
-   ```javascript
+ ```javascript
    // JavaScript/TypeScript Nym SDK
    import { createNym } from '@nymproject/sdk';
 

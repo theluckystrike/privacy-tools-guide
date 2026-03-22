@@ -220,5 +220,4 @@ The most subtle issue involves derived data. If you combine data from two purpos
 - [Simplex Chat Review: No Identifiers Architecture Analysis](/privacy-tools-guide/simplex-chat-review-no-identifiers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

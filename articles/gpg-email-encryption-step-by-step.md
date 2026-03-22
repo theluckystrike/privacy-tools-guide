@@ -196,26 +196,26 @@ GPG automatically detects which private key to use based on the recipient field 
 Thunderbird 78+ has native OpenPGP support — no Enigmail required.
 
 1. **Import your key into Thunderbird:**
-   - Account Settings > End-To-End Encryption > Add Key
-   - Choose "Use your external key" or import the `.asc` file
+ - Account Settings > End-To-End Encryption > Add Key
+ - Choose "Use your external key" or import the `.asc` file
 
 2. **Set default behavior:**
-   - Require encryption: enable if all your contacts use GPG
-   - Sign unencrypted messages: enables recipients to verify identity
+ - Require encryption: enable if all your contacts use GPG
+ - Sign unencrypted messages: enables recipients to verify identity
 
 3. **Import a contact's public key:**
-   - Open a signed email from them > Security tab > Import their key
-   - Or: Tools > OpenPGP Key Manager > Import from file
+ - Open a signed email from them > Security tab > Import their key
+ - Or: Tools > OpenPGP Key Manager > Import from file
 
 4. **Send an encrypted email:**
-   - Compose a message to a recipient whose key you have
-   - Click the lock icon in the toolbar
-   - If their key is available, "Encrypt" option becomes active
-   - Send — Thunderbird encrypts automatically
+ - Compose a message to a recipient whose key you have
+ - Click the lock icon in the toolbar
+ - If their key is available, "Encrypt" option becomes active
+ - Send — Thunderbird encrypts automatically
 
 5. **Receive and decrypt:**
-   - Thunderbird decrypts automatically when you open the message
-   - Displays "This message was encrypted and signed by..."
+ - Thunderbird decrypts automatically when you open the message
+ - Displays "This message was encrypted and signed by..."
 
 ## Sign-Only Mode (For Authenticity Without Encryption)
 
@@ -278,5 +278,4 @@ gpg --keyserver keys.openpgp.org --send-keys YOUR_KEY_ID
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

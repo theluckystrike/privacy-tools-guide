@@ -259,5 +259,4 @@ Retention requirements vary by jurisdiction and case type. Most PI licensing boa
 - [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

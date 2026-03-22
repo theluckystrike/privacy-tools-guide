@@ -294,5 +294,4 @@ The threat landscape changes constantly. Maintaining awareness through security 
 - [How to Tell if Your Bluetooth Is Being Intercepted Nearby](/privacy-tools-guide/how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

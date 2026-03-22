@@ -301,5 +301,4 @@ This measured approach prevents accidentally blocking legitimate email while bui
 - [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

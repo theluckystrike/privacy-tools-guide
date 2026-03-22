@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Device Memory Api Fingerprinting How Ram Amount Narrows"
+title: "Device Memory API Fingerprinting How Ram Amount Narrows"
 description: "Learn how the Device Memory API enables browser fingerprinting by exposing available RAM, and how developers can detect and mitigate this tracking vector"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -227,7 +227,7 @@ This example shows how device memory, when combined with GPU information, screen
 Third-party analytics providers regularly collect this data. Here's what a realistic tracking scenario looks like:
 
 **Scenario 1: Analytics Provider Baseline**
-An analytics script loads on Page A and collects device memory. The user has 4GB RAM. This is stored in a profile database. When the same user visits Page B three weeks later, the analytics provider (present on both sites through shared tracking pixels) again collects device memory. The match on 4GB combined with matching screen resolution, timezone, and browser type confirms the same user across sessions.
+An analytics script loads on Page An and collects device memory. The user has 4GB RAM. This is stored in a profile database. When the same user visits Page B three weeks later, the analytics provider (present on both sites through shared tracking pixels) again collects device memory. The match on 4GB combined with matching screen resolution, timezone, and browser type confirms the same user across sessions.
 
 **Scenario 2: Device Upgrade Tracking**
 A user replaces their laptop, which had 8GB RAM, with a new one with 16GB RAM. Analytics providers tracking them across months notice the memory bucket changed from "8+" to "Infinity" (16GB+). This creates a new fingerprint category but can still be linked to previous activity through other persistent identifiers like email.

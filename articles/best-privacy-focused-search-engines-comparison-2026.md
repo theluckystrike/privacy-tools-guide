@@ -441,6 +441,7 @@ Privacy-focused search engines lag Google by 5-15% on general queries, but most 
 
 The trade-off: 5-10% quality loss for 100% privacy gain. For most users, that's an acceptable trade.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ---

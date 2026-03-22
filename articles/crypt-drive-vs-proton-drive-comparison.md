@@ -314,6 +314,7 @@ If you're migrating from another provider, consider these migration expenses:
 | Power user with automation | CryptDrive | CLI tools enable complex workflows |
 | Privacy-focused but ecosystem-agnostic | CryptDrive | No lock-in to Proton services |
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

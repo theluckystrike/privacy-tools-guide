@@ -303,5 +303,4 @@ Website Scanning If you maintain a practice website, scan it regularly for vulne
 - [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

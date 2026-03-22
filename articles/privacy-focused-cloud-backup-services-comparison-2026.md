@@ -330,10 +330,10 @@ brew install sync
 **4. Select Folders to Sync:**
 - Create local sync folder: `~/Sync`
 - Select which folders back up:
-  - Documents (home office files)
-  - Photos (family photos)
-  - Financial (tax records)
-  - NOT: System files, apps (waste space)
+ - Documents (home office files)
+ - Photos (family photos)
+ - Financial (tax records)
+ - NOT: System files, apps (waste space)
 
 **5. Enable Versioning:**
 - Settings > Versioning > Keep 30 days
@@ -530,4 +530,5 @@ sha256sum ~/backup_location/test_file.zip
 # Should match: Backup integrity confirmed
 ```
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

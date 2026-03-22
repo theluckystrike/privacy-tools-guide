@@ -215,4 +215,4 @@ For developers building applications that may be used in Russia, understanding t
 - [How To Anonymize User Data In Production Database For Privac](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
 - [Russia Data Localization Law: How Requirement to Store.](/privacy-tools-guide/russia-data-localization-law-how-requirement-to-store-data-l/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)**
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

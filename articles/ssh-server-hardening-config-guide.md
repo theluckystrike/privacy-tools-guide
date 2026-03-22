@@ -365,5 +365,4 @@ The tool outputs a color-coded report of algorithms, highlighting deprecated ent
 - [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

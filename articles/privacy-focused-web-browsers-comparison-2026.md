@@ -278,6 +278,8 @@ LibreWolf is Firefox ESR with privacy tweaks pre-applied, patches, and telemetry
 | Updates | Monthly (rapid) | Slower, more stable |
 | Fingerprinting protection | Optional | Enabled |
 | Privacy settings | Complex | Simplified |
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 **Performance:**

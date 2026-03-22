@@ -173,7 +173,7 @@ A layered approach provides the strongest protection:
 - [How To Detect If Dating App Is Selling Your Data To Third Pa](/privacy-tools-guide/how-to-detect-if-dating-app-is-selling-your-data-to-third-pa/)
 - [Privacy Implications Of Robot Vacuum Lidar Mapping Selling H](/privacy-tools-guide/privacy-implications-of-robot-vacuum-lidar-mapping-selling-h/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 
 ## Advanced SDK Analysis Techniques
 
@@ -368,4 +368,6 @@ class PrivacyLocationManager(context: Context) {
 ```
 
 This approach gives games the location data they need while protecting user privacy.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

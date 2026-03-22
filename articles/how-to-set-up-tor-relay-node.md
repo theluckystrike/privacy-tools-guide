@@ -232,5 +232,4 @@ Running a middle relay is the most accessible way to contribute to Tor. You hand
 - [Air-Gapped Computer Setup for Maximum Security](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

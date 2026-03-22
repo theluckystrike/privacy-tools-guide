@@ -245,5 +245,4 @@ Non-compliance with Yarovaya Law requirements carries significant penalties:
 - [Privacy Law Updates Tracker March 2026](/privacy-tools-guide/privacy-law-updates-tracker-march-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

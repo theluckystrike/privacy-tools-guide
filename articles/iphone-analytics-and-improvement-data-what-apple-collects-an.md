@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Iphone Analytics And Improvement Data What Apple Collects"
+title: "iPhone Analytics And Improvement Data What Apple Collects"
 description: "Apple markets itself as a privacy-focused company, but like all technology companies, it collects data from your iPhone. Understanding what analytics and"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -371,5 +371,4 @@ If you see analytics.apple.com or metrics.apple.com despite disabling analytics,
 - [How To Disable Macos Analytics Sharing That Sends Crash Data](/privacy-tools-guide/how-to-disable-macos-analytics-sharing-that-sends-crash-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

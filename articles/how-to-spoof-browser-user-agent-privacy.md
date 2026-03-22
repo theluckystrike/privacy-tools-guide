@@ -322,13 +322,13 @@ Mullvad's free browser randomizes User-Agent with every page load:
 ```javascript
 // Simplified version of what Mullvad does
 function randomizeUserAgent() {
-  const browserVariants = [
-    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0',
-    'Mozilla/5.0 (X11; Linux x86_64) Chrome/120.0.0.0'
-  ];
+ const browserVariants = [
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0',
+ 'Mozilla/5.0 (X11; Linux x86_64) Chrome/120.0.0.0'
+ ];
 
-  return browserVariants[Math.floor(Math.random() * browserVariants.length)];
+ return browserVariants[Math.floor(Math.random() * browserVariants.length)];
 }
 ```
 
@@ -340,41 +340,41 @@ Create a simple extension that randomizes User-Agent:
 
 ```json
 {
-  "manifest_version": 3,
-  "name": "User-Agent Randomizer",
-  "permissions": ["webRequest", "webRequestBlocking"],
-  "host_permissions": ["<all_urls>"],
+ "manifest_version": 3,
+ "name": "User-Agent Randomizer",
+ "permissions": ["webRequest", "webRequestBlocking"],
+ "host_permissions": ["<all_urls>"],
 
-  "background": {
-    "service_worker": "background.js"
-  }
+ "background": {
+ "service_worker": "background.js"
+ }
 }
 ```
 
 ```javascript
 // background.js
 const userAgents = [
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari/537.36',
-  'Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0'
+ 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0',
+ 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Safari/537.36',
+ 'Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0'
 ];
 
 chrome.webRequest.onBeforeSendHeaders.addListener(
-  (details) => {
-    return {
-      requestHeaders: details.requestHeaders.map(header => {
-        if (header.name === 'User-Agent') {
-          return {
-            name: 'User-Agent',
-            value: userAgents[Math.floor(Math.random() * userAgents.length)]
-          };
-        }
-        return header;
-      })
-    };
-  },
-  { urls: ['<all_urls>'] },
-  ['blocking', 'requestHeaders']
+ (details) => {
+ return {
+ requestHeaders: details.requestHeaders.map(header => {
+ if (header.name === 'User-Agent') {
+ return {
+ name: 'User-Agent',
+ value: userAgents[Math.floor(Math.random() * userAgents.length)]
+ };
+ }
+ return header;
+ })
+ };
+ },
+ { urls: ['<all_urls>'] },
+ ['blocking', 'requestHeaders']
 );
 ```
 
@@ -390,7 +390,7 @@ For developers testing cross-browser compatibility:
 ```javascript
 const browser = await chromium.launch();
 const context = await browser.newContext({
-  userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)'
+ userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)'
 });
 const page = await context.newPage();
 ```
@@ -424,6 +424,8 @@ For organizational deployments:
 - [Password Manager For Real Estate Agent Managing Listing.](/privacy-tools-guide/password-manager-for-real-estate-agent-managing-listing-accounts-guide/)
 - [Password Manager for Travel Agent Managing Booking Platform](/privacy-tools-guide/password-manager-for-travel-agent-managing-booking-platform-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

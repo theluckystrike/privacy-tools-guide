@@ -251,6 +251,8 @@ Both provide solid security for developers, with the choice depending on your sp
 - [1Password Families Plan Review 2026: Is It Worth It](/privacy-tools-guide/1password-families-plan-review-2026/)
 - [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

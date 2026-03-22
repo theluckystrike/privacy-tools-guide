@@ -274,5 +274,4 @@ Test your implementation by reviewing the ICO's legitimate interest checklist an
 - [International Data Transfer Impact Assessment](/privacy-tools-guide/international-data-transfer-impact-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

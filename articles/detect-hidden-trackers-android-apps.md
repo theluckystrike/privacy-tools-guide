@@ -46,9 +46,9 @@ Exodus Privacy (exodus-privacy.eu.org) maintains a database of known Android tra
 1. Go to reports.exodus-privacy.eu.org
 2. Search for any app by package name (e.g., `com.instagram.android`)
 3. The report shows:
-   - List of identified trackers with descriptions
-   - All permissions requested by the app
-   - Network endpoints the app can contact
+ - List of identified trackers with descriptions
+ - All permissions requested by the app
+ - Network endpoints the app can contact
 
 This is the fastest way to check a specific app before installing it.
 
@@ -250,5 +250,4 @@ For developers shipping Android apps, this detection methodology reflects what s
 - [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

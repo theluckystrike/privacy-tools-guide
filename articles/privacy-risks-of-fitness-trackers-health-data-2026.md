@@ -123,81 +123,81 @@ These are weaker than HIPAA.
 **Minimize data collection:**
 
 1. Disable location sharing:
-   ```
+ ```
    Watch Settings → Privacy → Location
    → Turn OFF location services
    ```
-   Downside: Outdoor workout maps won't work.
+Downside: Outdoor workout maps won't work.
 
 2. Disable Siri on lock screen:
-   ```
+ ```
    Watch Settings → Siri
    → Turn OFF "Siri on Lock Screen"
    ```
-   Prevents data from unintended voice commands.
+Prevents data from unintended voice commands.
 
 3. Disable health notifications:
-   ```
+ ```
    Watch Settings → Notifications → Health
    → Mute irregular rhythm notifications
    ```
-   Apple won't log notification metadata.
+Apple won't log notification metadata.
 
 4. Don't enable fall detection:
-   ```
+ ```
    Watch Settings → Emergency SOS
    → Turn OFF "Fall Detection"
    ```
-   Fall detection logs acceleration patterns continuously.
+Fall detection logs acceleration patterns continuously.
 
 5. Encrypt iCloud backup:
-   ```
+ ```
    iPhone Settings → [Your Name] → iCloud → App Privacy
    → Ensure Health is toggled ON (encrypts server-side)
    ```
-   Health data remains encrypted, but Apple still has keys.
+Health data remains encrypted, but Apple still has keys.
 
 6. Block Health app network access:
-   ```
+ ```
    iPhone Settings → Privacy → Local Network
    → Health → Turn OFF
    ```
-   Prevents Health from sending data to connected apps.
+Prevents Health from sending data to connected apps.
 
 ### Fitbit/Google Fit
 
 **Minimize data collection:**
 
 1. Disable GPS:
-   ```
+ ```
    Fitbit App → Profile → [Your Device]
    → GPS → Turn OFF (if Fitbit has GPS)
    ```
-   Prevents location tracking. Outdoor runs won't record routes.
+Prevents location tracking. Outdoor runs won't record routes.
 
 2. Disable sleep detection:
-   ```
+ ```
    Fitbit App → Profile → Sleep
    → Disable automatic sleep tracking
    ```
-   Manually log sleep only when needed.
+Manually log sleep only when needed.
 
 3. Disable Fitbit Premium:
-   ```
+ ```
    Fitbit App → Profile → Subscription
    → Cancel (prevents paid features that require more data)
    ```
-   Fitbit Premium shows detailed insights (but requires more data access).
+Fitbit Premium shows detailed insights (but requires more data access).
 
 4. Limit Google integration:
-   ```
+ ```
    Fitbit App → Profile → Connected Apps
    → Google Fit → Disconnect or set to "manual sync only"
    ```
-   Prevents automatic sync to Google's ecosystem.
+Prevents automatic sync to Google's ecosystem.
 
 5. Reduce app permissions:
-   ```
+ ```
    Phone Settings → Apps → Fitbit
    → Permissions → Location, Contacts, Calendar
    → Deny all but "approximate location only"
@@ -208,24 +208,24 @@ These are weaker than HIPAA.
 **Minimize data collection:**
 
 1. Disable Connect cloud sync:
-   ```
+ ```
    Garmin Connect App → Settings → Data Sync
    → Automatic Upload → OFF
    → Sync only when I choose
    ```
 
 2. Disable location history:
-   ```
+ ```
    Garmin Device → Settings → Location History
    → OFF
    ```
 
 3. Disable WiFi auto-sync:
-   ```
+ ```
    Garmin Device → Settings → Connections → WiFi
    → OFF
    ```
-   Forces manual USB sync only.
+Forces manual USB sync only.
 
 ## Alternatives: Privacy-Hardened Trackers
 
@@ -282,24 +282,24 @@ These are weaker than HIPAA.
 **If you don't want to change devices:**
 
 1. **Use tracker, minimize sync:**
-   - Sync only once a week (or monthly)
-   - Disable cloud backup
-   - Use airplane mode except during workouts
+ - Sync only once a week (or monthly)
+ - Disable cloud backup
+ - Use airplane mode except during workouts
 
 2. **Separate health ecosystem:**
-   - Don't link Fitbit to Google, Apple, Amazon
-   - Don't participate in employer wellness programs that share individual data
-   - Opt out of research studies
+ - Don't link Fitbit to Google, Apple, Amazon
+ - Don't participate in employer wellness programs that share individual data
+ - Opt out of research studies
 
 3. **De-identify data:**
-   - Export data from Fitbit/Apple
-   - Remove identifiers (timestamp randomization)
-   - Use for personal analysis only (spreadsheet, local scripts)
+ - Export data from Fitbit/Apple
+ - Remove identifiers (timestamp randomization)
+ - Use for personal analysis only (spreadsheet, local scripts)
 
 4. **Insurance navigation:**
-   - Buy disability/life insurance before fitness data exists
-   - When asked about health history, you only have to disclose diagnosed conditions (fitness data is theoretical risk)
-   - Check insurance company data sharing policies (some explicitly exclude fitness data)
+ - Buy disability/life insurance before fitness data exists
+ - When asked about health history, you only have to disclose diagnosed conditions (fitness data is theoretical risk)
+ - Check insurance company data sharing policies (some explicitly exclude fitness data)
 
 **If you want maximum privacy:**
 - Withings or Oura Ring (minimal cloud, European companies)
@@ -311,7 +311,7 @@ These are weaker than HIPAA.
 Even if using US companies, if you're in EU:
 
 1. **Right to access:** Request all data company holds on you
-   ```
+ ```
    Email: privacy@fitbit.com (or Apple, Garmin)
    Subject: GDPR Article 15 - Data Access Request
    Body: "Please provide all personal data you hold about me"
@@ -319,19 +319,19 @@ Even if using US companies, if you're in EU:
    ```
 
 2. **Right to deletion:** Request data deletion
-   ```
+ ```
    Subject: GDPR Article 17 - Right to be Forgotten
    → Company must delete unless legal obligation to retain
    ```
 
 3. **Right to data portability:** Get your data in portable format
-   ```
+ ```
    Subject: GDPR Article 20 - Data Portability
    → Must provide in machine-readable format (CSV, JSON)
    ```
 
 4. **Right to object:** Opt-out of data processing
-   ```
+ ```
    Subject: GDPR Article 21 - Object to Processing
    → Must comply for non-essential processing
    ```
@@ -342,7 +342,7 @@ Even if using US companies, if you're in EU:
 
 **New York (SHIELD Act):** Biometric data (like fitness data) requires explicit consent before collection.
 
-**Federal (pending):** No comprehensive US health privacy law yet, but bills have been proposed (e.g., HEALTH Act) that would create national standards similar to HIPAA.
+**Federal (pending):** No US health privacy law yet, but bills have been proposed (e.g., HEALTH Act) that would create national standards similar to HIPAA.
 
 **Europe (GDPR):** Strongest: health data is "special category" data, requires explicit consent to process.
 
@@ -355,15 +355,5 @@ Even if using US companies, if you're in EU:
 - "Research partnerships" (Apple, Fitbit both do this)
 - "Secure storage" without "encrypted" (security ≠ privacy)
 
-## Conclusion
-
-Fitness trackers are surveillance devices if you don't understand the risks. Apple and Fitbit collect intimate health data and monetize it (directly or indirectly). Garmin is more transparent, but still syncs to cloud. Withings and Oura Ring minimize data collection.
-
-**Choose based on your threat model:**
-- **Paranoid about health privacy?** Withings + export data + local analysis
-- **Okay with Apple ecosystem?** Apple Watch + disable location + encrypt iCloud backup
-- **Don't care much?** Fitbit is fine (it's convenient, even if not private)
-
-The baseline: understand what you're sharing. Your fitness data reveals medical conditions, income level, and daily routines. It's not "just steps."
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

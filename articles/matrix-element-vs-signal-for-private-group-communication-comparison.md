@@ -241,53 +241,53 @@ docker run -d \
 ### Use Signal If:
 
 1. **Simplicity matters most**
-   - Setup: Download app, enter phone number, done
-   - No account management, no server selection
-   - Friends/family already using Signal
+ - Setup: Download app, enter phone number, done
+ - No account management, no server selection
+ - Friends/family already using Signal
 
 2. **1:1 private conversations**
-   - Signal's protocol is strongest for pairs
-   - Best-in-class encryption security
-   - Simple verification (scan QR code once)
+ - Signal's protocol is strongest for pairs
+ - Best-in-class encryption security
+ - Simple verification (scan QR code once)
 
 3. **Ephemeral messaging (disappearing messages)**
-   - Set message delete time (seconds to days)
-   - Automatic cleanup
-   - Good for sensitive conversations
+ - Set message delete time (seconds to days)
+ - Automatic cleanup
+ - Good for sensitive conversations
 
 4. **You trust Signal Foundation's nonprofit structure**
-   - No financial incentive to misuse metadata
-   - Strong transparency reports
-   - Regular security audits
+ - No financial incentive to misuse metadata
+ - Strong transparency reports
+ - Regular security audits
 
 **Real example:** Lawyer with sensitive 1:1 client consultations. Signal's strength in pair communication, simplicity, and legal precedent (Signal is defendant choice in US legal system) makes it ideal.
 
 ### Use Matrix/Element If:
 
 1. **Group communication (teams, organizations)**
-   - Better than Signal for groups > 20 people
-   - Thread support, topic organization
-   - Integration with bots, automation
+ - Better than Signal for groups > 20 people
+ - Thread support, topic organization
+ - Integration with bots, automation
 
 2. **Federation and decentralization matter**
-   - Want to message users across servers
-   - Build internal communication infrastructure
-   - Avoid vendor lock-in
+ - Want to message users across servers
+ - Build internal communication infrastructure
+ - Avoid vendor lock-in
 
 3. **Self-hosting is required (compliance, privacy)**
-   - HIPAA compliance (healthcare): self-host Matrix
-   - GDPR (EU): data residency on your server
-   - Regulated industries: control over infrastructure
+ - HIPAA compliance (healthcare): self-host Matrix
+ - GDPR (EU): data residency on your server
+ - Regulated industries: control over infrastructure
 
 4. **Rich features and extensibility**
-   - Custom bots (RSS feeds, alerts, reminders)
-   - Webhooks and integrations
-   - White-label deployments for teams
+ - Custom bots (RSS feeds, alerts, reminders)
+ - Webhooks and integrations
+ - White-label deployments for teams
 
 5. **Metadata privacy is paramount**
-   - Use self-hosted server + encrypted rooms
-   - Control who sees your room memberships
-   - Hide metadata from service provider
+ - Use self-hosted server + encrypted rooms
+ - Control who sees your room memberships
+ - Hide metadata from service provider
 
 **Real example:** NGO in authoritarian regime. Self-hosted Matrix on secure infrastructure hides room memberships (what the org discusses) from government surveillance while keeping message content encrypted even if they raid the server.
 
@@ -428,5 +428,4 @@ Joins rooms
 - [Use Mesh Networking for Private Communication Without](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

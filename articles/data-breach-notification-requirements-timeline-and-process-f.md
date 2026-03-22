@@ -257,5 +257,4 @@ Many organizations struggle with these areas:
 - [How To Set Up Incident Response Plan For Data Breach Busines](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

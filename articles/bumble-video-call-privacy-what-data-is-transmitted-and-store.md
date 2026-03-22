@@ -392,5 +392,4 @@ Bumble's approach is reasonable for a dating app, though stricter privacy would 
 - [Bumble Private Detector Ai Scanning Privacy How Uploaded.](/privacy-tools-guide/bumble-private-detector-ai-scanning-privacy-how-uploaded-photos-are-analyzed-and-stored/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

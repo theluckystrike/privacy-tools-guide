@@ -130,7 +130,7 @@ Forward emails through forwarding services, but never link these to your real ac
 # Each alias forwards to your anonymous inbox
 ```
 
-For maximum isolation, create your anonymous email account entirely over Tor, paying with Monero or cash for any paid tier. Use a username that contains no personally identifying information and was generated randomly, not chosen based on your preferences.
+For maximum isolation, create your anonymous email account entirely over Tor, paying with Monero or cash for any paid tier. Use an username that contains no personally identifying information and was generated randomly, not chosen based on your preferences.
 
 ### Password Management
 
@@ -271,5 +271,4 @@ Building a truly anonymous online identity requires ongoing vigilance. Start wit
 - [Use Compartmentalized Identity for Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -206,5 +206,4 @@ Regular DNS health checks and awareness of hijacking symptoms protect your brows
 - [How To Tell If Someone Installed Spyware On Your Iphone](/privacy-tools-guide/how-to-tell-if-someone-installed-spyware-on-your-iphone/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -203,5 +203,4 @@ The passkey ecosystem in 2026 offers security for most use cases. While some edg
 - [Passkey vs Password Security Comparison: A Developer Guide](/privacy-tools-guide/passkey-vs-password-security-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

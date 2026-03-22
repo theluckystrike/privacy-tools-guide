@@ -276,5 +276,4 @@ For developers: choose based on your specific requirements. Monero if you need p
 - [How To Configure Ublock Origin For Maximum Anti Tracking Pro](/privacy-tools-guide/how-to-configure-ublock-origin-for-maximum-anti-tracking-pro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

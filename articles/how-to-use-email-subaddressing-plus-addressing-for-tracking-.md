@@ -354,8 +354,8 @@ from:(developer+github@example.com) OR to:(developer+github@example.com)
 ```
 
 3. Assign multiple labels:
-   - `services/github` (primary)
-   - `services/github-unexpected` (for unexpected senders)
+ - `services/github` (primary)
+ - `services/github-unexpected` (for unexpected senders)
 
 4. Use label hierarchy to organize:
 
@@ -374,7 +374,7 @@ services/
 When aliases are leaked and sold to data brokers, multiple services can correlate your activity. Mitigate this by:
 
 1. **Using unique patterns per service**:
-   ```
+ ```
    github: developer+gh-abc123@example.com
    aws: developer+aws-xyz789@example.com
    linkedin: developer+li-def456@example.com
@@ -392,5 +392,4 @@ When aliases are leaked and sold to data brokers, multiple services can correlat
 - [How To Set Up Secureboot Plus Encryption On Fedora Linux For](/privacy-tools-guide/how-to-set-up-secureboot-plus-encryption-on-fedora-linux-for/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -208,5 +208,4 @@ Developers should monitor the Chrome Privacy Sandbox developer documentation for
 - [India Data Protection Bill 2026 What It Means For Citizen Pr](/privacy-tools-guide/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

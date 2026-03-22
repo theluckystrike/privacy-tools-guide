@@ -216,6 +216,7 @@ If you determine your device was compromised:
 9. **Report the incident** to the device manufacturer
 10. **Consider identity monitoring** if sensitive personal data was exposed
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

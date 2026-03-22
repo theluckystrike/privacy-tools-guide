@@ -141,10 +141,10 @@ You can configure automatic deletion of location history through your Google Acc
 1. Open myactivity.google.com
 2. Navigate to Location History settings
 3. Select "Delete automatically" and choose a time period:
-   - No auto-deletion (default)
-   - Older than 3 months
-   - Older than 18 months
-   - Older than 36 months
+ - No auto-deletion (default)
+ - Older than 3 months
+ - Older than 18 months
+ - Older than 36 months
 
 However, setting auto-deletion doesn't guarantee all copies are purged from Google's backup systems or security logs.
 

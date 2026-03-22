@@ -352,11 +352,11 @@ If you run OpenWrt (home router firmware), change DNS for all devices:
 
 1. SSH into router: `ssh root@192.168.1.1`
 2. Edit `/etc/config/dhcp`:
-   ```bash
+ ```bash
    vi /etc/config/dhcp
    ```
 3. Change DNS servers:
-   ```
+ ```
    option dns '9.9.9.9 149.112.112.112'  # Quad9
    # OR
    option dns '193.19.202.114 2a07:e340::114'  # Mullvad
@@ -364,7 +364,7 @@ If you run OpenWrt (home router firmware), change DNS for all devices:
    option dns '76.76.19.19 76.76.2.0'  # Control D
    ```
 4. Save, restart dnsmasq:
-   ```bash
+ ```bash
    /etc/init.d/dnsmasq restart
    ```
 
@@ -408,14 +408,5 @@ If your ISP appears in the results, your DNS is leaking. Solution:
 - Verify configuration (System Preferences, Settings, etc.).
 - Clear DNS cache: `sudo dscacheutil -flushcache` (macOS).
 
-## Conclusion
-
-Switching to a privacy-focused DNS provider is the easiest privacy win. Pick one based on your needs:
-
-- **Max privacy:** Mullvad.
-- **Best features:** NextDNS or Control D.
-- **Simplicity:** Quad9 or AdGuard.
-
-Setup takes 5 minutes, costs $0-20/year, and immediately hides your browsing from your ISP. Every online activity benefits from this change. Start today.
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

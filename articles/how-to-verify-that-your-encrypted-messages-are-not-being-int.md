@@ -279,5 +279,4 @@ For power users handling sensitive information, make verification a standard pra
 - [How to Verify That Encrypted Message Was Not Tampered With](/privacy-tools-guide/how-to-verify-that-encrypted-message-was-not-tampered-with/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

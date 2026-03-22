@@ -235,5 +235,4 @@ If your audit reveals compromise indicators:
 - [Communicate with Lawyer Privately When Device is Compromised](/privacy-tools-guide/how-to-communicate-with-lawyer-privately-when-device-compromised/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

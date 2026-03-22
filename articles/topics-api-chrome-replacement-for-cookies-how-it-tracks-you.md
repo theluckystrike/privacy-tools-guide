@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Topics Api Chrome Replacement For Cookies How It Tracks"
+title: "Topics API Chrome Replacement For Cookies How It Tracks"
 description: "Topics API: Chrome Replacement for Cookies and How It. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -223,5 +223,4 @@ The API's design includes some privacy safeguards: no user identifiers are share
 - [Federated Learning Cohorts: FLoC Replacement Explained](/privacy-tools-guide/federated-learning-cohorts-floc-replacement-what-happened-ex/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

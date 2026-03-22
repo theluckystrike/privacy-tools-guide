@@ -399,5 +399,4 @@ Maintain a current inventory of every third-party integration, what data it rece
 - [Password Manager For Accountant Managing Client Financial Po](/privacy-tools-guide/password-manager-for-accountant-managing-client-financial-po/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

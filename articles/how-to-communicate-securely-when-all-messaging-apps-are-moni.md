@@ -226,5 +226,4 @@ Start with Signal, understand its limitations, then add layers as your requireme
 - [Post Quantum Encryption In Messaging Apps Preparing For Quan](/privacy-tools-guide/post-quantum-encryption-in-messaging-apps-preparing-for-quan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

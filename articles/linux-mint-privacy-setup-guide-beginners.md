@@ -22,7 +22,7 @@ Linux Mint provides a user-friendly Debian-based distribution, but default setti
 
 Linux Mint derives from Ubuntu's repositories, meaning it receives timely security updates. The Cinnamon desktop environment remains lightweight, and the absence of mandatory telemetry (unlike Windows or macOS) makes it a solid privacy foundation. However, default configurations still leave gaps that require manual hardening.
 
-Compared to distributions like Tails or Whonix, Linux Mint does not route traffic through Tor by default and has no amnesic mode. It trades maximum anonymity for a usable daily-driver experience. For threat models that require a persistent, privacy-hardened desktop rather than an ephemeral anonymity environment, Mint is a practical choice.
+Compared to distributions like Tails or Whonix, Linux Mint does not route traffic through Tor by default and has no amnesic mode. It trades maximum anonymity for an usable daily-driver experience. For threat models that require a persistent, privacy-hardened desktop rather than an ephemeral anonymity environment, Mint is a practical choice.
 
 ## First Steps: System Updates and Repository Configuration
 

@@ -228,5 +228,4 @@ Run `https://www.grc.com/x/ne.dll?bh0bkyd2` (Shields Up) from a browser to test 
 - [How To Tell If Your Router Has Been Compromised Check Guide](/privacy-tools-guide/how-to-tell-if-your-router-has-been-compromised-check-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

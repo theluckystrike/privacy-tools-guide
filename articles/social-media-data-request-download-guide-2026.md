@@ -191,9 +191,9 @@ async def collect_platform_data(config: SocialDataConfig) -> Dict:
 
 async def main():
  configs = [
- SocialDataConfig("facebook", fb_token, ["posts", "photos"]),
- SocialDataConfig("twitter", tw_token, ["tweets"]),
- SocialDataConfig("reddit", rd_token, ["submissions"])
+SocialDataConfig("facebook", fb_token, ["posts", "photos"]),
+SocialDataConfig("twitter", tw_token, ["tweets"]),
+SocialDataConfig("reddit", rd_token, ["submissions"])
  ]
 
  tasks = [collect_platform_data(config) for config in configs]

@@ -347,8 +347,8 @@ qrencode -t ansiutf8 < /etc/wireguard/wg-client.conf
 ```
 
 3. In WireGuard app:
-   - Tap + → Scan from camera → Point at QR code
-   - Connection activates immediately
+ - Tap + → Scan from camera → Point at QR code
+ - Connection activates immediately
 
 ---
 
@@ -670,6 +670,8 @@ Save as `wg-setup.sh`, then run:
 chmod +x wg-setup.sh
 sudo ./wg-setup.sh
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ## Advanced: Site-to-Site VPN (Office Network)

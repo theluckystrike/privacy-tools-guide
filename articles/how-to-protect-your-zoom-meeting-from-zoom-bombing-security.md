@@ -217,5 +217,4 @@ This ensures only authenticated Zoom users with verified email domains can join.
 - [How To Protect Credit Card From Being Skimmed Online Shoppin](/privacy-tools-guide/how-to-protect-credit-card-from-being-skimmed-online-shoppin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

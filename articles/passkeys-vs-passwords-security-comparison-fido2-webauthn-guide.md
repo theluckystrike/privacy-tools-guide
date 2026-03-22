@@ -74,17 +74,17 @@ A passkey is a FIDO2 credential stored on your device (phone, laptop, hardware k
 **Passkey types:**
 
 1. **Platform passkeys (built-in):**
-   - Uses device biometrics (Touch ID, Face ID, Windows Hello)
-   - Stored securely on device hardware (Secure Enclave, TPM)
-   - No additional hardware needed
-   - Examples: Apple Keychain, Windows Credential Manager, Android Passkeys
+ - Uses device biometrics (Touch ID, Face ID, Windows Hello)
+ - Stored securely on device hardware (Secure Enclave, TPM)
+ - No additional hardware needed
+ - Examples: Apple Keychain, Windows Credential Manager, Android Passkeys
 
 2. **Roaming authenticators (external hardware):**
-   - Physical security keys (Yubikey, Google Titan, Varonis)
-   - Bluetooth, NFC, or USB connection
-   - Work across devices (any phone, laptop, tablet)
-   - More secure (compromised device doesn't compromise key)
-   - Cost: $20-70 per key
+ - Physical security keys (Yubikey, Google Titan, Varonis)
+ - Bluetooth, NFC, or USB connection
+ - Work across devices (any phone, laptop, tablet)
+ - More secure (compromised device doesn't compromise key)
+ - Cost: $20-70 per key
 
 **Real example: Apple passkey registration**
 
@@ -439,5 +439,4 @@ By 2027-2028, expect:
 - [How to Export Passwords from Any Manager](/privacy-tools-guide/how-to-export-passwords-from-any-manager/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

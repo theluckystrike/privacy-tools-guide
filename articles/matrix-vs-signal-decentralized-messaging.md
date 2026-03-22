@@ -131,7 +131,7 @@ Signal's sealed sender feature partially addresses the metadata problem by hidin
 
 Signal requires a valid phone number for registration. This is both a feature and a limitation. Phone numbers provide a familiar contact discovery mechanism—you can message anyone in your contacts who has Signal installed. But phone numbers are real-world identifiers tied to SIM cards and carrier accounts, which creates linkability between your Signal identity and your physical identity.
 
-Matrix has no such requirement. Users register with a username and password on any homeserver. Many homeservers allow anonymous registration. This makes Matrix significantly more suitable for pseudonymous or anonymous communication use cases, or for organizations that want to provision accounts without requiring employees to use personal phone numbers.
+Matrix has no such requirement. Users register with an username and password on any homeserver. Many homeservers allow anonymous registration. This makes Matrix significantly more suitable for pseudonymous or anonymous communication use cases, or for organizations that want to provision accounts without requiring employees to use personal phone numbers.
 
 ## Developer Integration
 
@@ -242,5 +242,4 @@ The Matrix bridge ecosystem supports integration with Signal through various com
 - [Cwtch Decentralized Metadata Resistant Messenger How It Diff](/privacy-tools-guide/cwtch-decentralized-metadata-resistant-messenger-how-it-diff/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

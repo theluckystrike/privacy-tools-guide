@@ -244,5 +244,4 @@ Run this script periodically to audit devices for suspicious permission patterns
 - [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics Comp](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

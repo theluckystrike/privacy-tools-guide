@@ -239,5 +239,4 @@ For budget-conscious teams prioritizing privacy, Signal provides excellent secur
 - [Digital Business Asset Inheritance How To Transfer Saas Acco](/privacy-tools-guide/digital-business-asset-inheritance-how-to-transfer-saas-acco/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

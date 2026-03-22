@@ -161,7 +161,7 @@ external:
 For developers building applications:
 
 1. **Embed Jitsi** — Use the Jitsi Meet iframe API for quick integration:
-   ```javascript
+ ```javascript
    const domain = 'meet.your-server.com';
    const options = {
        roomName: 'your-room-id',
@@ -180,7 +180,7 @@ For developers building applications:
    ```
 
 2. **Matrix for custom solutions** — Build on Matrix's client-server API for full control:
-   ```javascript
+ ```javascript
    import { MatrixClient } from 'matrix-js-sdk';
    const client = MatrixClient.createClient({
        baseUrl: 'https://matrix.your-server.com'

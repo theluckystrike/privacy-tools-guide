@@ -212,5 +212,4 @@ Additionally, the specification requires careful key management for signatures. 
 - [CookieYes vs Osano Consent Tools Comparison 2026](/privacy-tools-guide/cookieyes-vs-osano-consent-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

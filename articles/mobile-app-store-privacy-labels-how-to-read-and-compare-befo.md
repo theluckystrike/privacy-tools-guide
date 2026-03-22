@@ -281,5 +281,4 @@ Use this systematic approach when evaluating apps:
 - [Mobile Keyboard Privacy: Which Keyboards Send Keystrokes.](/privacy-tools-guide/mobile-keyboard-privacy-which-keyboards-send-keystrokes-to-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

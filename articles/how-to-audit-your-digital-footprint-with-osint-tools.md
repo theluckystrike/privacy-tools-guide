@@ -387,6 +387,8 @@ You'll never achieve total privacy, but you can significantly reduce your exposu
 - [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2.](/privacy-tools-guide/metadata-removal-tools-comparison-2026/)
 - [How To Check If Your Dating Profile Photos Are Being Used On](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

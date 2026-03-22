@@ -421,5 +421,4 @@ Provider Signature: ________________  Date: ________
 - [Bumble Video Call Privacy What Data Is Transmitted And Store](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

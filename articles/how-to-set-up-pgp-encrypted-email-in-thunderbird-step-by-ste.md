@@ -307,5 +307,4 @@ For organizations, consider whether PGP is necessary or if simpler transport enc
 - [PGP Email Encryption Setup Guide 2026](/privacy-tools-guide/pgp-email-encryption-setup-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

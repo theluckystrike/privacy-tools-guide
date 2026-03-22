@@ -299,7 +299,7 @@ spec:
 
 ## Monitoring and Security Auditing
 
-Set up comprehensive logging and monitoring:
+Set up logging and monitoring:
 
 ```bash
 #!/bin/bash
@@ -481,5 +481,4 @@ timeout=30
 - [Best Encrypted Voice Call App 2026](/privacy-tools-guide/best-encrypted-voice-call-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

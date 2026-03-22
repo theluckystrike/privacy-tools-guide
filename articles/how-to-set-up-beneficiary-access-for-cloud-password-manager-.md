@@ -236,5 +236,4 @@ This approach requires multiple trusted parties to combine their shares, providi
 - [How to Set Up Password Manager for Elderly Parent Remotely](/privacy-tools-guide/how-to-set-up-password-manager-for-elderly-parent-remotely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

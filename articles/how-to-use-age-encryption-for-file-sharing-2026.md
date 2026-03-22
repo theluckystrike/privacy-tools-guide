@@ -312,12 +312,12 @@ age -d -i ~/.age/key.txt secret.yaml.age | kubectl apply -f -
 ### Rotate to a new key
 
 1. Generate a new key pair:
-   ```bash
+ ```bash
    age-keygen > ~/.age/new-key.txt
    ```
 
 2. Re-encrypt old files with new public key:
-   ```bash
+ ```bash
    age -d -i ~/.age/old-key.txt secrets.age | age -r age1_new_pubkey > secrets.age
    ```
 
@@ -369,13 +369,13 @@ For most modern workflows, age is the better choice.
 ## Security Considerations
 
 1. **Never commit secret keys to Git.** Add `~/.age/key.txt` to `.gitignore` globally:
-   ```bash
+ ```bash
    echo "~/.age/key.txt" >> ~/.gitignore_global
    git config --global core.excludesfile ~/.gitignore_global
    ```
 
 2. **Protect key files.** Set proper permissions:
-   ```bash
+ ```bash
    chmod 600 ~/.age/key.txt
    ```
 
@@ -385,21 +385,11 @@ For most modern workflows, age is the better choice.
 
 5. **Verify public keys.** For critical sharing, verify the public key with the recipient out-of-band (call them, check their website, compare in person).
 
-## Conclusion
-
-age is simpler, faster, and more modern than GPG for file sharing and backup encryption. If you're starting a new project, encrypt files, or protect backups, age is the right choice. The learning curve is shallow (30 minutes), and the command-line syntax is intuitive. Integrate it into your workflows for SSH key encryption, Git secrets, cloud backups, and CI/CD pipelines.
-
-For existing GPG setups, there's no urgent need to migrate. For new projects, age is the default.
-
-
-
 ## Related Articles
 
 - [How To Use Age Encryption For Secure File Sharing Command](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
 - [Age Encryption Tool Tutorial for Developers](/age-encryption-tool-tutorial-developers/)
 - [Best Accessible Encrypted File Sharing Tool for Users With Cognitive Impairments 2026](/best-accessible-encrypted-file-sharing-tool-for-users-with-c/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

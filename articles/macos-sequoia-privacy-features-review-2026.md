@@ -245,20 +245,20 @@ For Sequoia specifically, focus on extensions that provide DNS-level or system-l
 Organizations deploying Sequoia should understand privacy implications:
 
 1. **Local Network Discovery**: Apps can discover devices on corporate networks
-   - Risk: Unauthorized network scanning by compromised app
-   - Mitigation: Use Network Segmentation policy to restrict app network access
+ - Risk: Unauthorized network scanning by compromised app
+ - Mitigation: Use Network Segmentation policy to restrict app network access
 
 2. **Focus Mode Sync**: Focus states sync through iCloud
-   - Risk: Status information reveals work/personal boundaries
-   - Mitigation: Disable iCloud sync for corporate devices, use MDM for enforcement
+ - Risk: Status information reveals work/personal boundaries
+ - Mitigation: Disable iCloud sync for corporate devices, use MDM for enforcement
 
 3. **Bluetooth Privacy**: Increased privacy for Bluetooth device connection
-   - Benefit: Reduces device fingerprinting through BLE scanning
-   - Implementation: Bluetooth MAC randomization enabled by default
+ - Benefit: Reduces device fingerprinting through BLE scanning
+ - Implementation: Bluetooth MAC randomization enabled by default
 
 4. **Private Relay on Corporate Networks**: May conflict with proxy/firewall
-   - Issue: Private Relay bypass corporate inspection
-   - Solution: Disable Private Relay via MDM configuration profile
+ - Issue: Private Relay bypass corporate inspection
+ - Solution: Disable Private Relay via MDM configuration profile
 
 Deploy this MDM configuration to disable Private Relay on corporate machines:
 

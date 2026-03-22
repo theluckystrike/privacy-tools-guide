@@ -337,5 +337,4 @@ Stripping EXIF metadata from your dating app photos is a straightforward privacy
 - [Dating App Api Vulnerabilities How Security Researchers Have](/privacy-tools-guide/dating-app-api-vulnerabilities-how-security-researchers-have/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -386,5 +386,4 @@ Your display settings matter more than they might initially seem. The pixels on 
 - [What To Do If You Accidentally Shared Screen With Sensitive](/privacy-tools-guide/what-to-do-if-you-accidentally-shared-screen-with-sensitive-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

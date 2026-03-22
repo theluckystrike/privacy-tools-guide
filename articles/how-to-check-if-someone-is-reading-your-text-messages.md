@@ -138,7 +138,7 @@ Note: These codes work on most GSM networks but may differ by carrier.
 ### For Android Users
 
 1. **Review App Permissions Regularly**
-   ```bash
+ ```bash
    # Revoke SMS permission from unnecessary apps
    adb shell appops set <package_name> SMS deny
    ```
@@ -150,12 +150,12 @@ Note: These codes work on most GSM networks but may differ by carrier.
  - Session (decentralized, encrypted)
 
 3. **Enable Google Play Protect**
-   ```bash
+ ```bash
    adb shell pm enable com.android.vending
    ```
 
 4. **Consider a Custom ROM**
- Privacy-focused ROMs like GrapheneOS or CalyxOS offer better security defaults and more granular permission controls.
+Privacy-focused ROMs like GrapheneOS or CalyxOS offer better security defaults and more granular permission controls.
 
 ### For iOS Users
 
@@ -208,5 +208,4 @@ If you determine someone is reading your messages:
 - [China Wechat Surveillance What Messages And Activity Tencent](/privacy-tools-guide/china-wechat-surveillance-what-messages-and-activity-tencent/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}
