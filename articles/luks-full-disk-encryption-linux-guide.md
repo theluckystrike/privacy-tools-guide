@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /luks-full-disk-encryption-linux-guide/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, encryption]---

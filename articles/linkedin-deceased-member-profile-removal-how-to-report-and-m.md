@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]---

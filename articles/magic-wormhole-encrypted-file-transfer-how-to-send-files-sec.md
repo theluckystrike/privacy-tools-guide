@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]---
