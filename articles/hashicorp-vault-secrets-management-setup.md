@@ -255,6 +255,99 @@ spec:
         medium: Memory  # tmpfs — secrets never written to disk
 ```
 
+## Vault Agent for CI/CD Pipelines
+
+Hardcoding a Vault token in your CI/CD environment is a security smell — the token can be printed in logs, copied to test environments, or leaked through environment variable exposure. Vault's AppRole auth method is designed for machine-to-machine authentication: your CI runner gets a `role_id` (not secret) and a short-lived `secret_id` (vended per job) to authenticate.
+
+```bash
+# Enable AppRole auth method
+vault auth enable approle
+
+# Create a role for CI — short TTL, limited policies
+vault write auth/approle/role/ci-deployer \
+  token_policies="deploy-policy" \
+  token_ttl=10m \
+  token_max_ttl=30m \
+  secret_id_ttl=5m \       # secret_id expires in 5 minutes
+  secret_id_num_uses=1      # single-use secret_id (most secure)
+
+# Get the role_id (not secret — safe to store in CI env var)
+vault read auth/approle/role/ci-deployer/role-id
+```
+
+In your CI pipeline, generate a fresh `secret_id` per job using a trusted CI agent that has a long-lived token with minimal permissions (only `auth/approle/role/ci-deployer/secret-id`):
+
+```bash
+# GitHub Actions / CI step
+# Step 1: Generate a one-time secret_id
+SECRET_ID=$(vault write -f -field=secret_id \
+  auth/approle/role/ci-deployer/secret-id)
+
+# Step 2: Exchange role_id + secret_id for a short-lived token
+VAULT_TOKEN=$(vault write -field=token auth/approle/login \
+  role_id="$ROLE_ID" \
+  secret_id="$SECRET_ID")
+
+# Step 3: Use the token to read deploy secrets
+export DB_PASSWORD=$(VAULT_TOKEN="$VAULT_TOKEN" \
+  vault kv get -field=password secret/myapp/database)
+```
+
+The `secret_id` is consumed on first use and expires in 5 minutes regardless — even if it is leaked, it cannot be reused.
+
+---
+
+## Audit Logging and Compliance
+
+Vault logs every read and write operation. Enable the audit device to capture a structured log of all secret accesses:
+
+```bash
+# Enable file audit log
+vault audit enable file file_path=/var/log/vault/audit.log
+
+# Enable syslog audit (to ship to your SIEM)
+vault audit enable syslog tag="vault" facility="AUTH"
+
+# Verify audit is enabled
+vault audit list
+```
+
+The audit log contains JSON entries for each operation:
+
+```json
+{
+  "time": "2026-03-22T14:32:01.000Z",
+  "type": "response",
+  "auth": {
+    "client_token": "hmac-sha256:...",
+    "accessor": "auth/approle/...",
+    "display_name": "approle-ci-deployer",
+    "policies": ["deploy-policy"]
+  },
+  "request": {
+    "operation": "read",
+    "path": "secret/data/myapp/database"
+  },
+  "response": {
+    "data": {
+      "username": "hmac-sha256:..."
+    }
+  }
+}
+```
+
+Secret values are HMAC-hashed in the audit log — you can verify whether a specific value was accessed without storing it in plaintext. Query who accessed production database credentials in the last hour:
+
+```bash
+# Parse audit log for reads of the database secret
+jq 'select(.request.path == "secret/data/myapp/database" and .request.operation == "read")
+    | {time: .time, user: .auth.display_name}' /var/log/vault/audit.log
+```
+
+For compliance reporting, these logs satisfy SOC 2, PCI DSS, and ISO 27001 secret access logging requirements when retained for 90+ days.
+
+---
+
 ## Related Articles
 
 - [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
