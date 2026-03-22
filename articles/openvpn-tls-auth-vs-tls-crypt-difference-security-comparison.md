@@ -44,11 +44,11 @@ This is where `tls-auth` and `tls-crypt` enter the picture—they add pre-TLS au
 
 ## What is tls-auth?
 
-The `tls-auth` directive adds an additional HMAC signature to the initial TLS handshake. OpenVPN computes an HMAC-SHA256 over the entire first packet (the TLS ClientHello), signed with a pre-shared key (PSK).
+The `tls-auth` directive adds an additional HMAC signature to the initial TLS handshake. OpenVPN computes a HMAC-SHA256 over the entire first packet (the TLS ClientHello), signed with a pre-shared key (PSK).
 
 ### How tls-auth Works
 
-When a client connects, the server and client both possess a shared secret key file (typically named `ta.key`). Before the TLS handshake begins, OpenVPN computes an HMAC signature on the initial packet. The recipient verifies this signature before processing the TLS ClientHello. If the signature is invalid, the packet is dropped immediately without any TLS processing.
+When a client connects, the server and client both possess a shared secret key file (typically named `ta.key`). Before the TLS handshake begins, OpenVPN computes a HMAC signature on the initial packet. The recipient verifies this signature before processing the TLS ClientHello. If the signature is invalid, the packet is dropped immediately without any TLS processing.
 
 This creates a powerful filtering mechanism: attackers cannot trigger TLS processing on the server without knowing the pre-shared key.
 

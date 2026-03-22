@@ -96,7 +96,7 @@ const recommendedSettings = {
 
 Brave has gained significant popularity among privacy-conscious users, and its developer-friendly features make it suitable for development work. The browser blocks ads and trackers by default, reducing noise in your network logs and improving performance.
 
-Brave includes a built-in tor onion service for private browsing—an useful feature when testing applications that need to work over tor or when you need to verify tor compatibility.
+Brave includes a built-in tor onion service for private browsing—a useful feature when testing applications that need to work over tor or when you need to verify tor compatibility.
 
 Test Brave's fingerprinting protection:
 
@@ -442,10 +442,6 @@ Acknowledge that strict privacy settings may impact performance:
 - Reduced personalization (slower autocomplete)
 
 **Development Solution**: Use separate profiles. Maximum privacy for general browsing, development-friendly for testing.
-
-## Conclusion: Privacy-First Development
-
-Developers have responsibility beyond their own privacy. The tools you build shape how users experience digital privacy. By prioritizing privacy in your development workflow—testing with privacy browsers, building privacy-conscious applications, and rejecting unnecessary tracking—you contribute to a more privacy-respecting web. Choose Firefox or Brave, configure thoroughly, and model good privacy practices for your users.
 
 ## Frequently Asked Questions
 

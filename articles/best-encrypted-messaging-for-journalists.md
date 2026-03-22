@@ -145,7 +145,7 @@ SimpleX takes a different approach entirely—eliminating persistent user identi
 
 ### How It Works
 
-Unlike Signal or Matrix, SimpleX doesn't assign you a permanent identity. Instead, each contact connection generates an unique, revocable identifier:
+Unlike Signal or Matrix, SimpleX doesn't assign you a permanent identity. Instead, each contact connection generates a unique, revocable identifier:
 
 ```bash
 # SimpleX CLI basic usage

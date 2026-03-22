@@ -49,7 +49,7 @@ Edit your Tor configuration file to enable hidden service functionality for SMTP
 sudo nano /etc/tor/torrc
 ```
 
-Add the following configuration to create an SMTP hidden service:
+Add the following configuration to create a SMTP hidden service:
 
 ```
 HiddenServiceDir /var/lib/tor/mail_hidden_service

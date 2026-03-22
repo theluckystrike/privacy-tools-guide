@@ -155,7 +155,7 @@ Threema, developed in Switzerland, offers an European alternative with strong pr
 
 ### Identity System
 
-Threema uses an unique approach to identity:
+Threema uses a unique approach to identity:
 
 ```javascript
 // Threema Identity structure

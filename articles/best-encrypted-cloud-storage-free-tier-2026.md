@@ -100,7 +100,7 @@ tresor sync ~/Projects/sensitive-data/env-files
 
 ### Rclone Integration
 
-Most encrypted storage services work with rclone, providing an unified interface:
+Most encrypted storage services work with rclone, providing a unified interface:
 
 ```bash
 # Configure rclone with Internxt

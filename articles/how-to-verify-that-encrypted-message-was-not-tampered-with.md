@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append an HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
+Use authenticated encryption (AES-GCM, ChaCha20-Poly1305) which automatically detects tampering by validating an authentication tag—if anyone modifies the ciphertext, decryption fails and the tampering is detected. Alternatively, append a HMAC computed over the encrypted message using a secret key, send both the ciphertext and HMAC, and have the recipient recompute the HMAC to verify it matches. Modern protocols like Signal and TLS use authenticated encryption by default, so for most use cases you inherit this protection automatically.
 
 ## Prerequisites
 

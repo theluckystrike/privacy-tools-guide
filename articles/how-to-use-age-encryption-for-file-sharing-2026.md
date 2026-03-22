@@ -257,7 +257,7 @@ The `-p` flag means "use passphrase instead of keys." This is simpler than GPG f
 
 ### SSH Key Import
 
-If you have an SSH key pair, you can use it with age directly (no need to generate separate age keys):
+If you have a SSH key pair, you can use it with age directly (no need to generate separate age keys):
 
 ```bash
 age -r ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... file.txt > file.txt.age

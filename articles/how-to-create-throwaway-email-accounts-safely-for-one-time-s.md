@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-When you need to sign up for a service you'll use once—testing a trial, downloading a resource, accessing an one-off discount—your primary email inbox becomes cluttered with marketing emails, verification requests, and potential data breaches. Throwaway email accounts provide a buffer between your real identity and services that don't need long-term communication.
+When you need to sign up for a service you'll use once—testing a trial, downloading a resource, accessing a one-off discount—your primary email inbox becomes cluttered with marketing emails, verification requests, and potential data breaches. Throwaway email accounts provide a buffer between your real identity and services that don't need long-term communication.
 
 This guide covers methods for creating throwaway email accounts that actually protect your privacy, rather than simply adding another disposable address to your already overflowing inbox.
 

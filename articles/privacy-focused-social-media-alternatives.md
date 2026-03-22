@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Social Media Alternatives 2026"
-description: "Compare Mastodon, Pixelfed, Lemmy, Nostr, and Bluesky on data collection, federation model, content moderation, and self-hosting options for leaving surveillance platforms"
+description: "Compare Mastodon, Pixelfed, Lemmy, Nostr, and Bluesky on data collection, federation model, content moderation, and self-hosting options for leaving
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-social-media-alternatives/

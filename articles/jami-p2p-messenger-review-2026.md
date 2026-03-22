@@ -172,7 +172,7 @@ systemctl start jami
 # Contacts see consistent identity across devices
 ```
 
-This approach maintains an unified identity across devices, though it introduces security trade-offs (both devices access the same private key).
+This approach maintains a unified identity across devices, though it introduces security trade-offs (both devices access the same private key).
 
 ## Group Messaging Limitations
 

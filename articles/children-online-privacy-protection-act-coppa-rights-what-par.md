@@ -279,7 +279,7 @@ Understanding which category your service falls into helps determine specific co
 
 ## International COPPA Equivalents
 
-COPPA is an US law, but other countries have similar protections:
+COPPA is a US law, but other countries have similar protections:
 
 **GDPR (EU)**: Requires parental consent for children under 16 (member states can lower to 13), provides stronger deletion rights, and emphasizes data minimization.
 

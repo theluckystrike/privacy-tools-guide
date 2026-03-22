@@ -111,7 +111,7 @@ Chrome requires an extension to disable WebRTC, as no native configuration optio
 
 ### Timezone and Language Settings
 
-The browser's timezone and language settings should match your VPN location. If your VPN connects to an US server, configure your browser:
+The browser's timezone and language settings should match your VPN location. If your VPN connects to a US server, configure your browser:
 
 ```javascript
 // Override timezone in JavaScript

@@ -199,7 +199,7 @@ EU residents have stronger rights under GDPR Article 17 (Right to Erasure). Send
 
 ## Step 4: Monitor and Maintain
 
-Data removal is not an one-time task. Brokers continuously republish and update information.
+Data removal is not a one-time task. Brokers continuously republish and update information.
 
 ### Setting Up Alerts
 

@@ -279,7 +279,7 @@ Tailscale's hosted coordination service is fast to set up but involves a third-p
 | MagicDNS / split-DNS | Yes | Yes (via Headscale config) |
 | SSO integration | Yes (Google, GitHub, etc.) | Manual via OIDC |
 
-For privacy-sensitive workloads where node metadata should not leave your infrastructure, Headscale is the right choice. For a development team that wants VPN access in under an hour and trusts a SaaS vendor, Tailscale's hosted offering is difficult to beat on convenience.
+For privacy-sensitive workloads where node metadata should not leave your infrastructure, Headscale is the right choice. For a development team that wants VPN access in under a hour and trusts a SaaS vendor, Tailscale's hosted offering is difficult to beat on convenience.
 
 ## Frequently Asked Questions
 

@@ -229,7 +229,7 @@ curl --socks5-hostname 127.0.0.1:1080 https://example.com
 | Tor | Minutes | Slow | Via browser/torsocks | Built-in |
 | HTTP proxy | Simple | Fast | Yes | No |
 
-SSH SOCKS5 is the right choice when you already have an SSH server, need app-level proxying, and do not want to install VPN software.
+SSH SOCKS5 is the right choice when you already have a SSH server, need app-level proxying, and do not want to install VPN software.
 
 ## Advanced SSH Configuration for SOCKS Proxies
 

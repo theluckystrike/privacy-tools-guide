@@ -15,7 +15,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Deleting a file on an SSD does not erase the data. Neither does running `shred` or `wipe` — tools designed for magnetic hard drives that simply do not work correctly on solid-state storage. This is a well-understood problem with serious privacy implications that most guides still get wrong.
+Deleting a file on a SSD does not erase the data. Neither does running `shred` or `wipe` — tools designed for magnetic hard drives that simply do not work correctly on solid-state storage. This is a well-understood problem with serious privacy implications that most guides still get wrong.
 
 This article explains why, and gives you the methods that actually work.
 
@@ -31,11 +31,11 @@ This article explains why, and gives you the methods that actually work.
 
 On a traditional spinning hard drive, data lives at a known physical location on the platter. When you delete a file and overwrite that sector multiple times, the data is gone.
 
-SSDs work differently. They use a technique called **wear leveling**: the controller spreads writes across all available flash cells to prevent any single cell from wearing out too fast. When you write to a "location" on an SSD, the controller may write to a completely different physical cell and just update a mapping table. The old data may remain in the original cell — unlinked from any filesystem path but physically present and readable with forensic tools.
+SSDs work differently. They use a technique called **wear leveling**: the controller spreads writes across all available flash cells to prevent any single cell from wearing out too fast. When you write to a "location" on a SSD, the controller may write to a completely different physical cell and just update a mapping table. The old data may remain in the original cell — unlinked from any filesystem path but physically present and readable with forensic tools.
 
 Additionally, SSDs have **over-provisioned space** — reserved cells invisible to the operating system that the controller uses for wear leveling. Data written to this space is inaccessible via normal read commands but not cryptographically erased.
 
-`shred -v /path/to/file` on an SSD overwrites the logical blocks the file currently occupies. Due to wear leveling, the old data may still sit in unmapped physical blocks.
+`shred -v /path/to/file` on a SSD overwrites the logical blocks the file currently occupies. Due to wear leveling, the old data may still sit in unmapped physical blocks.
 
 ## Prerequisites
 

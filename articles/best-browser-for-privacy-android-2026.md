@@ -59,7 +59,7 @@ Firefox's container tabs provide additional isolation for managing multiple iden
 
 Brave's Android browser ships with aggressive blocking by default, intercepting ads, trackers, and fingerprinting scripts. The Chromium base provides full extension compatibility, so developers can install the same privacy tools they use on desktop.
 
-Brave's Shields panel offers per-site controls. You can adjust blocking levels for specific domains without affecting your global settings—an useful feature when testing how your own web applications handle aggressive content blocking.
+Brave's Shields panel offers per-site controls. You can adjust blocking levels for specific domains without affecting your global settings—a useful feature when testing how your own web applications handle aggressive content blocking.
 
 ```javascript
 // Test Brave's fingerprinting resistance

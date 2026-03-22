@@ -82,17 +82,17 @@ Phone numbers are a primary vector for identity linkage. Use separate numbers fo
 ```python
 # Phone number separation strategy
 PHONE_CONFIG = {
-    "personal": {
-        "number": "+1-555-0100-xxxx",  # Your real number
-        "usage": ["banking", "family", "personal"],
-        "location": "home"
-    },
-    "professional": {
-        "number": None,  # Never give this out
-        "voip_apps": ["Signal", "Google Voice"],
-        "usage": ["client communication"],
-        "never_linked_to_personal": True
-    }
+ "personal": {
+ "number": "+1-555-0100-xxxx", # Your real number
+ "usage": ["banking", "family", "personal"],
+ "location": "home"
+ },
+ "professional": {
+ "number": None, # Never give this out
+ "voip_apps": ["Signal", "Google Voice"],
+ "usage": ["client communication"],
+ "never_linked_to_personal": True
+ }
 }
 
 # Recommended setup:
@@ -144,8 +144,8 @@ Always route work traffic through VPN or Tor:
 # - IPv6: disabled or routed through VPN
 #
 # Testing your protection:
-curl ifconfig.me           # Your visible IP without VPN
-curl --socks5 127.0.0.1:9050 ifconfig.me  # Through Tor
+curl ifconfig.me # Your visible IP without VPN
+curl --socks5 127.0.0.1:9050 ifconfig.me # Through Tor
 
 # Verify DNS leaks:
 dig +short myip.opendns.com @resolver1.opendns.com
@@ -163,26 +163,26 @@ from PIL import Image
 import piexif
 
 def remove_location_metadata(image_path):
-    """Remove GPS metadata from images before sharing."""
-    img = Image.open(image_path)
+ """Remove GPS metadata from images before sharing."""
+ img = Image.open(image_path)
 
-    # Check if image has exif data
-    exif_dict = {}
-    if "exif" in img.info:
-        exif_dict = piexif.load(img.info["exif"])
+ # Check if image has exif data
+ exif_dict = {}
+ if "exif" in img.info:
+ exif_dict = piexif.load(img.info["exif"])
 
-    # Remove GPS IFD (International Fingerprint Directory)
-    if "GPS" in exif_dict:
-        exif_dict["GPS"] = {}
+ # Remove GPS IFD (International Fingerprint Directory)
+ if "GPS" in exif_dict:
+ exif_dict["GPS"] = {}
 
-    # Create new exif without GPS data
-    exif_bytes = piexif.dump(exif_dict)
+ # Create new exif without GPS data
+ exif_bytes = piexif.dump(exif_dict)
 
-    # Save to new file
-    new_path = image_path.replace(".jpg", "_clean.jpg")
-    img.save(new_path, "jpeg", exif=exif_bytes)
+ # Save to new file
+ new_path = image_path.replace(".jpg", "_clean.jpg")
+ img.save(new_path, "jpeg", exif=exif_bytes)
 
-    return new_path
+ return new_path
 
 # Usage
 clean_file = remove_location_metadata("client_photo.jpg")
@@ -223,37 +223,37 @@ Client communications require encrypted, ephemeral messaging:
 ```python
 # Secure communication checklist
 COMMUNICATION_SECURITY = {
-    "messaging": {
-        "preferred": ["Signal", "Session", "Threema"],
-        "avoid": ["SMS", "Telegram (unless verified)", "WhatsApp"],
-        "settings": {
-            "disappearing_messages": True,
-            "screen_lock": True,
-            "notification_content": False
-        }
-    },
-    "calls": {
-        "preferred": ["Signal", "Phone (via VoIP number)"],
-        "avoid": ["Regular phone calls from personal number"]
-    },
-    "video": {
-        "preferred": ["Signal", "Jitsi (with VPN)"],
-        "consider": "Obscuring backgrounds, using VPN"
-    }
+ "messaging": {
+ "preferred": ["Signal", "Session", "Threema"],
+ "avoid": ["SMS", "Telegram (unless verified)", "WhatsApp"],
+ "settings": {
+ "disappearing_messages": True,
+ "screen_lock": True,
+ "notification_content": False
+ }
+ },
+ "calls": {
+ "preferred": ["Signal", "Phone (via VoIP number)"],
+ "avoid": ["Regular phone calls from personal number"]
+ },
+ "video": {
+ "preferred": ["Signal", "Jitsi (with VPN)"],
+ "consider": "Obscuring backgrounds, using VPN"
+ }
 }
 
 # Signal configuration for maximum privacy
 SIGNAL_SETTINGS = {
-    "privacy": {
-        "read_receipts": False,
-        "typing_indicators": False,
-        "link_previews": False
-    },
-    "security": {
-        "screen_lock": True,
-        "registration_lock": True,
-        "incognito_keyboard": True
-    }
+ "privacy": {
+ "read_receipts": False,
+ "typing_indicators": False,
+ "link_previews": False
+ },
+ "security": {
+ "screen_lock": True,
+ "registration_lock": True,
+ "incognito_keyboard": True
+ }
 }
 ```
 

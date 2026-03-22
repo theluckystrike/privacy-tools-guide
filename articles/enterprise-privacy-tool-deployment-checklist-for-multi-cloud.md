@@ -34,7 +34,7 @@ Deploying privacy tools across multiple cloud providers requires careful coordin
 
 ## Phase 1: Identity and Access Management
 
-Before deploying any privacy tool, establish an unified identity foundation across all cloud environments.
+Before deploying any privacy tool, establish a unified identity foundation across all cloud environments.
 
 ### 1.1 Centralized Identity Provider Integration
 

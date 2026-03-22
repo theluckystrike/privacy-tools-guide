@@ -179,7 +179,7 @@ Conduct regular security audits of your practices. Threat fields evolve rapidly 
 
 ## Continuous Threat Model Maintenance
 
-A threat model is not an one-time document but a living reference that requires regular updates. Review and update your threat model when:
+A threat model is not a one-time document but a living reference that requires regular updates. Review and update your threat model when:
 
 - Operating in new geographic areas
 - Taking on new types of documentation work

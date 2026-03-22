@@ -246,7 +246,7 @@ Begin by testing several VPN providers with free trials or short-term plans. Eva
 
 1. Server availability in the US
 2. Protocol options and performance
-3. Streaming reliability over an one-week period
+3. Streaming reliability over a one-week period
 4. Customer support responsiveness
 
 Document your working configuration so you can replicate it if changes become necessary. Netflix regularly updates their detection systems, so maintaining multiple access methods provides redundancy.

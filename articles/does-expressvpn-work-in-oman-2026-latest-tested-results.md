@@ -194,7 +194,7 @@ Oman's network filtering operates at the ISP level. Connection success depends o
 
 ## Port-Level Obfuscation Techniques
 
-When standard Lightway UDP fails due to port-level blocking, forcing traffic through port 443 over TCP creates a HTTPS-mimicking tunnel:
+When standard Lightway UDP fails due to port-level blocking, forcing traffic through port 443 over TCP creates an HTTPS-mimicking tunnel:
 
 ```bash
 # Force Lightway TCP on port 443

@@ -230,7 +230,7 @@ Store this backup in a separate encrypted location from the device itself.
 
 - [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
 - [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
-- [How to Encrypt a USB Drive with VeraCrypt](/privacy-tools-guide/encrypt-usb-drive-veracrypt-guide/)
+- [How to Encrypt an USB Drive with VeraCrypt](/privacy-tools-guide/encrypt-usb-drive-veracrypt-guide/)
 - [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
 - [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

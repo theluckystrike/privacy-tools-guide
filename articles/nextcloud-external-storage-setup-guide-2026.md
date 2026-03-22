@@ -17,7 +17,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating an unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
+Nextcloud's external storage app lets you mount S3 buckets, WebDAV servers, FTP sites, and local directories directly into your Nextcloud file browser, creating a unified interface for all your data regardless of where it physically lives. Enable the External Storage support app in the admin interface, then create mount points by specifying storage type, credentials, and mount path. This guide covers configuration for all major backends with practical examples for developers managing multiple storage sources.
 
 # WebDAV URL format
 https://remote-server.com/remote.php/dav/files/username/
@@ -112,7 +112,7 @@ For automated deployments or scripted setups, use the Nextcloud `occ` command:
 # List current external storage mounts
 occ files_external:list
 
-# Create an S3 mount
+# Create a S3 mount
 occ files_external:amazon-s3 \
  --bucket=my-bucket \
  --hostname=s3.amazonaws.com \

@@ -117,7 +117,7 @@ ping -M do -s 1400 <vpn-server-ip>
 # Then add 28 bytes for headers (ICMP adds 8, IP adds 20)
 ```
 
-If smaller packets work but larger ones fail, you have an MTU problem.
+If smaller packets work but larger ones fail, you have a MTU problem.
 
 **Solutions:**
 

@@ -108,7 +108,7 @@ A healthcare worker using epix to track personal sleep quality keeps all data of
 
 ### Withings ScanWatch
 
-Withings is a European company (France) with strong GDPR compliance woven into product design.
+Withings is an European company (France) with strong GDPR compliance woven into product design.
 
 **Privacy Architecture:**
 - All vital signs (ECG, blood oxygen, temperature) processed on device

@@ -17,7 +17,7 @@ tags: [privacy-tools-guide, privacy]
 
 {% raw %}
 
-When a company mishandles your personal data or suffers a breach that exposes your information, the Federal Trade Commission (FTC) provides a formal complaint mechanism. This guide walks through the process of filing an FTC complaint specifically targeting privacy violations and data breaches, with practical steps tailored for developers and power users who understand the technical nuances of data exposure.
+When a company mishandles your personal data or suffers a breach that exposes your information, the Federal Trade Commission (FTC) provides a formal complaint mechanism. This guide walks through the process of filing a FTC complaint specifically targeting privacy violations and data breaches, with practical steps tailored for developers and power users who understand the technical nuances of data exposure.
 
 # 3.
 - **While the FTC does**: not pursue individual disputes, it uses complaints to identify patterns of behavior that indicate broader violations.

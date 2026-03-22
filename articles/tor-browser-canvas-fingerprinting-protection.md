@@ -83,7 +83,7 @@ This randomization means the same webpage produces different canvas fingerprints
 
 ### 2. Resistance Fingerprinting
 
-Tor Browser presents an uniform fingerprint regardless of your actual system configuration. This "resistance" mode makes all Tor users appear identical to websites:
+Tor Browser presents a uniform fingerprint regardless of your actual system configuration. This "resistance" mode makes all Tor users appear identical to websites:
 
 - Standardized screen resolution
 - Common window sizes

@@ -159,7 +159,7 @@ Outdated Chrome versions may be vulnerable to drive-by attacks that execute code
 
 ## How Chrome Safe Browsing Works (and Where It Fails)
 
-Chrome's Safe Browsing system checks URLs against Google's constantly updated database of known phishing and malware sites. When you navigate to an URL, Chrome sends a hashed version of the address to Google's servers and receives a verdict. If the site is flagged, you'll see a red interstitial warning before the page loads.
+Chrome's Safe Browsing system checks URLs against Google's constantly updated database of known phishing and malware sites. When you navigate to a URL, Chrome sends a hashed version of the address to Google's servers and receives a verdict. If the site is flagged, you'll see a red interstitial warning before the page loads.
 
 The limitation is timing. A newly registered phishing domain typically has a window of 30 minutes to several hours before it appears in the Safe Browsing database. Attackers know this and design their campaigns around rapid deployment and short operational windows — send the phishing email, harvest credentials for a few hours, abandon the domain before it gets flagged.
 

@@ -29,7 +29,7 @@ Webhooks are HTTP callbacks — when an event occurs on a third-party service, i
 
 ## 1. Sender Side: Sign Every Webhook
 
-The sender (your service or a third-party you control) computes an HMAC of the request body and includes it in a header. The receiver verifies it.
+The sender (your service or a third-party you control) computes a HMAC of the request body and includes it in a header. The receiver verifies it.
 
 ### Python (FastAPI webhook sender)
 

@@ -28,7 +28,7 @@ In countries with mandatory SIM registration (India, Pakistan, Turkey), use Sign
 
 ## Understanding Signal's Verification Requirements
 
-Signal's architecture relies on phone numbers as unique identifiers. When you register, the app requests an SMS or voice call to verify you control that number. This design choice has tradeoffs: it simplifies contact discovery but creates friction in regions with restrictive SIM laws.
+Signal's architecture relies on phone numbers as unique identifiers. When you register, the app requests a SMS or voice call to verify you control that number. This design choice has tradeoffs: it simplifies contact discovery but creates friction in regions with restrictive SIM laws.
 
 The current verification methods Signal supports include:
 

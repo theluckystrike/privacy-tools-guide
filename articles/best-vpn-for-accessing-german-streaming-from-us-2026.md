@@ -205,7 +205,7 @@ For users requiring more solutions, consider these alternatives beyond tradition
 
 **Self-Hosted VPN on a German VPS**: Renting a German VPS and configuring your own WireGuard server provides maximum control and reliability. Providers like Hetzner, Contabo, and Netcup offer German-based VPS instances starting around €5/month.
 
-**SSH Tunnel**: For developers with German server access, create an SSH tunnel:
+**SSH Tunnel**: For developers with German server access, create a SSH tunnel:
 
 ```bash
 ssh -D 8080 -N -f user@german-server.example.com

@@ -219,7 +219,7 @@ vault read database/creds/myapp
 # lease_duration     1h
 ```
 
-The credentials expire automatically. If the app is compromised, the attacker's DB access expires within an hour.
+The credentials expire automatically. If the app is compromised, the attacker's DB access expires within a hour.
 
 ---
 

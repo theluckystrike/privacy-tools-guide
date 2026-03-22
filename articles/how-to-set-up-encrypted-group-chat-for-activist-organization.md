@@ -39,7 +39,7 @@ Before selecting tools, define your threat model. Consider these attack vectors:
 
 Different tools address these threats differently. No single solution provides perfect security, but layered approaches reduce your attack surface significantly.
 
-Threat modeling is not an one-time activity. As your organization grows and as the political environment changes, revisit your model. A group facing low-level online harassment has different requirements than one operating in a country with active surveillance of civil society. Start with a realistic assessment of who your likely adversaries are and what capabilities they have, then choose tools accordingly.
+Threat modeling is not a one-time activity. As your organization grows and as the political environment changes, revisit your model. A group facing low-level online harassment has different requirements than one operating in a country with active surveillance of civil society. Start with a realistic assessment of who your likely adversaries are and what capabilities they have, then choose tools accordingly.
 
 ## Prerequisites
 

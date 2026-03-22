@@ -88,7 +88,7 @@ Key facts:
 
 Apps to stay away from if privacy is a concern:
 
-**Glow, Flo, BabyCenter** — All have histories of sharing data with third parties. Flo signed an FTC consent order in 2021 after sharing health data with Facebook and Google despite promises not to. They've improved somewhat, but their business model depends on data monetization.
+**Glow, Flo, BabyCenter** — All have histories of sharing data with third parties. Flo signed a FTC consent order in 2021 after sharing health data with Facebook and Google despite promises not to. They've improved somewhat, but their business model depends on data monetization.
 
 **The Bump, What to Expect** — These are content/community platforms owned by large media companies. Extensive ad tracking, data sharing with partners.
 

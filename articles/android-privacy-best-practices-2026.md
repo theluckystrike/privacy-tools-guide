@@ -497,7 +497,7 @@ Key things to check:
 - Does SDK phone home without user consent?
 - Does SDK request unnecessary permissions?
 
-Create an SDK audit matrix:
+Create a SDK audit matrix:
 
 ```yaml
 sdk_audit_matrix:

@@ -124,7 +124,7 @@ Each social media account should have a completely different password. If one ac
 
 If you encounter harassment or unwanted contact, use platform reporting tools immediately. Document any concerning interactions by taking screenshots before blocking, as blocked users cannot see your content but may have already saved information.
 
-Most platforms allow you to download your data—an useful step if you're considering deleting your account or want to understand what information the platform has collected about you. Review this data periodically to understand your digital footprint.
+Most platforms allow you to download your data—a useful step if you're considering deleting your account or want to understand what information the platform has collected about you. Review this data periodically to understand your digital footprint.
 
 ### Privacy Self-Audit
 

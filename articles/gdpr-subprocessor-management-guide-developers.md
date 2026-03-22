@@ -245,7 +245,7 @@ This workflow prevents infrastructure changes that introduce untracked subproces
 
 ## Maintaining Compliance Over Time
 
-Subprocessor management is not an one-time setup. Implement these ongoing practices:
+Subprocessor management is not a one-time setup. Implement these ongoing practices:
 
 - **Review cycles**: Schedule quarterly reviews of all active subprocessors
 - **Contract expiry alerts**: Track contract dates and flag renewals

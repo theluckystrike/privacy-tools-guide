@@ -186,7 +186,7 @@ Software-level isolation has limits. Hardware identifiers, CPU microarchitecture
 - Install a privacy-focused OS such as Tails (amnesic, leaves no trace) or Whonix (routes all traffic through Tor)
 - Never connect this device to your home or work network
 
-**Tails** is the strongest option for episodic anonymous work: it boots from a USB drive, stores nothing on the host machine, and routes all traffic through Tor by default. When you shut it down, the session is gone.
+**Tails** is the strongest option for episodic anonymous work: it boots from an USB drive, stores nothing on the host machine, and routes all traffic through Tor by default. When you shut it down, the session is gone.
 
 **Whonix** splits the environment into a Gateway (runs Tor) and a Workstation (routes through Gateway). Even if the Workstation is compromised, the attacker cannot learn your real IP.
 

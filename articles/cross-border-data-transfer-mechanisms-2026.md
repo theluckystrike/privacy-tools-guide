@@ -31,7 +31,7 @@ To legally transfer personal data across borders in 2026, use the EU-US Data Pri
 
 The European Union's GDPR remains the foundational regulation for cross-border data transfers. The Data Privacy Framework (DPF) between the EU and US provides a valid transfer mechanism for US companies, while Standard Contractual Clauses (SCCs) and Binding Corporate Rules (BCRs) continue to serve as alternative pathways. Other jurisdictions have implemented their own frameworks, including:
 
-- **UK GDPR**: Post-Brexit, the UK maintains substantially similar data protection standards. The UK's International Data Transfer Agreement (IDTA) serves as a UK-specific equivalent to the EU SCCs.
+- **UK GDPR**: Post-Brexit, the UK maintains substantially similar data protection standards. The UK's International Data Transfer Agreement (IDTA) serves as an UK-specific equivalent to the EU SCCs.
 - **Brazil's LGPD**: Similar structure to GDPR with its own transfer requirements; Brazil's ANPD is actively issuing guidance on adequacy standards.
 - **Japan's APPI**: Updated in 2025 to enhance cross-border transfer provisions and align more closely with GDPR's adequacy framework.
 - **India's DPDPA**: Phased implementation continues through 2026; cross-border restrictions apply to certain "significant data fiduciaries" designated by the Indian government.

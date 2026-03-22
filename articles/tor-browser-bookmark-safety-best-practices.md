@@ -253,7 +253,7 @@ if __name__ == "__main__":
 
 ## Common Mistakes to Avoid
 
-Avoid bookmarking login pages — any such bookmark reveals your account existence. Tor Browser sync sends metadata to Mozilla servers, so disable it. Delete inactive bookmarks quarterly rather than letting them accumulate. Bookmarking an URL on clearnet and then accessing it through Tor creates timing correlation. Deep nested folder hierarchies also create behavioral fingerprints, so keep your structure flat and generic.
+Avoid bookmarking login pages — any such bookmark reveals your account existence. Tor Browser sync sends metadata to Mozilla servers, so disable it. Delete inactive bookmarks quarterly rather than letting them accumulate. Bookmarking a URL on clearnet and then accessing it through Tor creates timing correlation. Deep nested folder hierarchies also create behavioral fingerprints, so keep your structure flat and generic.
 
 ## Quick Reference Checklist
 

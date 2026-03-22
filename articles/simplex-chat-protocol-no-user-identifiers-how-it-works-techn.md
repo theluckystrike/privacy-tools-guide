@@ -31,7 +31,7 @@ SimpleX addresses these by removing the permanent identifier entirely. Instead, 
 
 ## Queue-Based Architecture
 
-The SimpleX protocol organizes communication around message queues rather than user accounts. Each queue serves as an one-way communication channel between two participants. For bidirectional messaging, you need two queues—one for each direction.
+The SimpleX protocol organizes communication around message queues rather than user accounts. Each queue serves as a one-way communication channel between two participants. For bidirectional messaging, you need two queues—one for each direction.
 
 ### Queue Types
 

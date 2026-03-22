@@ -483,7 +483,7 @@ Pi-hole is the highest apply privacy tool for home networks.
 One setup protects all devices automatically.
 ```
 
-Pi-hole transforms your home network from a data collection pipe into a privacy fortress. It's an one-time investment that protects every device automatically—phones, tablets, smart TVs, even that sketchy IoT device your family insisted on buying.
+Pi-hole transforms your home network from a data collection pipe into a privacy fortress. It's a one-time investment that protects every device automatically—phones, tablets, smart TVs, even that sketchy IoT device your family insisted on buying.
 
 ## Hardening Pi-hole Against Bypass
 

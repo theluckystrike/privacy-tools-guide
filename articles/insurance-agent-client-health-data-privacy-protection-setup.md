@@ -221,7 +221,7 @@ Many organizations discover breaches too late because they lack effective detect
 
 ### Complacency After Initial Setup
 
-Privacy protection isn't an one-time project—it's an ongoing commitment. Review and update your protections regularly, especially as threats evolve and regulations change.
+Privacy protection isn't a one-time project—it's an ongoing commitment. Review and update your protections regularly, especially as threats evolve and regulations change.
 
 ### Insufficient Employee Training
 

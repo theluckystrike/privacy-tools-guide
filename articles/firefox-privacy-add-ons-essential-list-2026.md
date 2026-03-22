@@ -100,7 +100,7 @@ NoScript integrates with Firefox's tracking protection, blocking scripts from kn
 
 ### 6. Firefox Multi-Account Containers
 
-While not strictly a privacy add-on, Multi-Account Containers isolate cookies and site data by context. This prevents trackers from building an unified profile across different browsing sessions.
+While not strictly a privacy add-on, Multi-Account Containers isolate cookies and site data by context. This prevents trackers from building a unified profile across different browsing sessions.
 
 **Use case example:**
 

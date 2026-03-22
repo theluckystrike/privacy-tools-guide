@@ -150,7 +150,7 @@ ping -s 1472 -M do example.com
 ping -s 1500 -M do example.com
 ```
 
-If small pings work but large ones fail, you have an MTU problem.
+If small pings work but large ones fail, you have a MTU problem.
 
 ## PMTUD Black Hole Problem
 

@@ -15,7 +15,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-Carrying sensitive data on a USB drive is a liability without encryption. If it's lost or stolen, anyone can read every file. VeraCrypt gives you strong AES-256 encryption with the option of hidden volumes — a deniability layer that lets you show a decoy partition under pressure.
+Carrying sensitive data on an USB drive is a liability without encryption. If it's lost or stolen, anyone can read every file. VeraCrypt gives you strong AES-256 encryption with the option of hidden volumes — a deniability layer that lets you show a decoy partition under pressure.
 
 This guide covers full-drive encryption, hidden volumes, keyfile setup, and cross-platform mounting.
 ---

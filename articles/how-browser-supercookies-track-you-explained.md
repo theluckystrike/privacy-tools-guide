@@ -87,7 +87,7 @@ A particularly clever technique uses the favicon to store tracking data. By serv
 
 ## The Evercookie Approach
 
-The most sophisticated supercookie implementations combine multiple storage mechanisms into an unified tracking system. The original "evercookie" library demonstrated this by storing the same identifier in cookies, localStorage, sessionStorage, IndexedDB, the Cache API, and various browser caching mechanisms. When a user deletes one storage channel, the identifier regenerates from another.
+The most sophisticated supercookie implementations combine multiple storage mechanisms into a unified tracking system. The original "evercookie" library demonstrated this by storing the same identifier in cookies, localStorage, sessionStorage, IndexedDB, the Cache API, and various browser caching mechanisms. When a user deletes one storage channel, the identifier regenerates from another.
 
 Modern tracking scripts use similar multi-channel approaches, ensuring that removing any single storage mechanism fails to eliminate the tracker.
 
