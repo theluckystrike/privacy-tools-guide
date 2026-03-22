@@ -230,11 +230,119 @@ Before election periods, verify these items:
 6. **Proxy lists**: Maintain working proxy server list
 7. **Critical contacts**: Establish out-of-band communication methods
 
+## Detecting Active Throttling vs Complete Blocking
+
+Understanding whether you are facing bandwidth throttling or outright blocking determines which countermeasure to apply. Throttling slows connections while keeping them functional; blocking drops packets entirely.
+
+### Using OONI Probe
+
+The Open Observatory of Network Interference (OONI) project provides a CLI tool and mobile app for detecting censorship in real time:
+
+```bash
+# Install OONI Probe CLI on Linux
+curl https://ooni.org/install/cli/ooniprobe-install.sh | bash
+
+# Run web connectivity test and VPN reachability test
+ooniprobe run websites --input https://twitter.com
+ooniprobe run tor
+```
+
+OONI Probe submits results to the public OONI Explorer database. If multiple users in the same city show anomalies for the same domain simultaneously, that points to active filtering rather than a local network issue.
+
+### Distinguishing Throttling from Blocking
+
+Run parallel speed tests against both domestic and international endpoints:
+
+```bash
+# Test download speed to a Turkish CDN node
+curl -o /dev/null -s -w "%{speed_download}\n" https://hizliresim.com/test-file.bin
+
+# Test download speed to an international server
+curl -o /dev/null -s -w "%{speed_download}\n" https://speed.hetzner.de/10MB.bin
+```
+
+A ratio below 0.3 (international less than 30% of domestic speed) is a reliable throttling indicator. Below 0.05, the service is effectively blocked.
+
+## Advanced Protocol Selection During Election Periods
+
+When standard VPN protocols fail, layer your transport choices based on what the ISP is actively filtering.
+
+### VLESS with XTLS-Reality
+
+VLESS with XTLS-Reality borrows TLS certificates and SNI from real HTTPS websites, making the traffic cryptographically indistinguishable from a legitimate connection to that site. It is currently one of the hardest protocols to fingerprint.
+
+The server component (Xray-core) runs on your VPS:
+
+```json
+{
+  "inbounds": [{
+    "port": 443,
+    "protocol": "vless",
+    "settings": {
+      "clients": [{"id": "your-uuid", "flow": "xtls-rprx-vision"}],
+      "decryption": "none"
+    },
+    "streamSettings": {
+      "network": "tcp",
+      "security": "reality",
+      "realitySettings": {
+        "dest": "www.microsoft.com:443",
+        "serverNames": ["www.microsoft.com"],
+        "privateKey": "your-private-key",
+        "shortIds": ["your-short-id"]
+      }
+    }
+  }]
+}
+```
+
+Client apps supporting VLESS with Reality include v2rayNG (Android) and Nekoray (Linux/Windows).
+
+### Psiphon as a Fallback
+
+Psiphon is specifically designed for circumvention in high-censorship environments and is funded in part by the US State Department for press freedom purposes. It automatically selects the best protocol (VPN, SSH, or HTTP proxy) based on what is reachable from your location.
+
+Download from `psiphon3.com` or request a copy via `get@psiphon3.com` — email distribution is designed for situations where the website is blocked. Psiphon needs no configuration: install, launch, connect.
+
+## Preparing a Resilience Kit Before Election Periods
+
+Turkey's restrictions historically activate within hours of polls closing. Preparation must happen before filtering starts — you may not be able to download tools once blocking is active.
+
+### Offline Tool Cache
+
+Maintain a local copy of essential tools on a USB drive or secondary device:
+
+- Tor Browser (bundled with obfs4 bridge support)
+- Psiphon installer for your platform
+- WireGuard client with pre-configured profiles for 2-3 servers
+- F-Droid APK for Android (installs apps without Play Store)
+- Current obfs4 bridge addresses from `bridges.torproject.org`
+
+### Pre-Configure Multiple Server Profiles
+
+Configure at least three WireGuard or OpenVPN profiles pointing to servers in different jurisdictions and ports:
+
+```ini
+# Profile 1: Frankfurt, port 443
+[Peer]
+Endpoint = de1.yourvpn.com:443
+
+# Profile 2: Netherlands, port 8443
+[Peer]
+Endpoint = nl1.yourvpn.com:8443
+
+# Profile 3: Singapore via TCP 80 (often unfiltered for HTTP traffic)
+[Peer]
+Endpoint = sg1.yourvpn.com:80
+```
+
+Test all profiles before the election period. Ports 443 and 80 are the last ports ISPs will block, since blocking them breaks ordinary web browsing for all users.
+
 ## Legal and Safety Considerations
 
-Users in Turkey should understand that while technical tools exist, legal risks vary. VPN usage itself is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship (screenshots, logs) can be valuable for advocacy organizations.
+VPN usage in Turkey is not criminalized, but circumvention tools should be used responsibly. Documentation of censorship — OONI Probe exports, speed test logs, screenshots — is valuable to advocacy organizations like Freedom House and Article 19.
 
-For those at higher risk (journalists, activists), the threat model should include device seizure, account compromise, and physical surveillance. In these cases, specialized security training and infrastructure (burner devices, dedicated communication channels) becomes necessary.
+For higher-risk users (journalists, activists, election observers), the threat model must include device seizure and account compromise. Use dedicated devices that are never linked to personal accounts, and configure all encrypted communication channels before restrictions activate.
 
 
 
