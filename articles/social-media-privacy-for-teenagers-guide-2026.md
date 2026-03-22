@@ -31,6 +31,15 @@ tags: [privacy-tools-guide, privacy]---
 
 Protect your social media privacy by making all accounts private, disabling location sharing and metadata collection in app settings, limiting friend/follower lists to people you know, and using platform-specific privacy controls like Instagram's Restrict feature and TikTok's comment filtering. Review privacy policies to understand what each platform collects—Instagram tracks location and interactions, TikTok collects keystroke patterns and browser history, and Snapchat stores messages on servers. This guide provides platform-specific privacy configuration steps, details about what each major platform collects, and practical strategies for maintaining your digital identity while staying socially connected.
 
+## Key Takeaways
+
+- **Most platforms allow you to download your data**: an useful step if you're considering deleting your account or want to understand what information the platform has collected about you.
+- **Use Blocking and Filtering Features**: Most platforms allow blocking users and filtering comments.
+- **Use authentication apps like**: Google Authenticator or Authy rather than SMS-based 2FA, as SIM swapping attacks can compromise text messages.
+- **On platforms with close friends lists**: ensure only trusted individuals have access to your most personal content.
+- **Apps you haven't used**: in 90 days should be removed immediately.
+- **Many parents are confused**: about the difference between "friends only" and "public" posts, so taking time to explain helps them understand your privacy strategy.
+
 ## Understanding Social Media Data Collection
 
 Every post, like, and search contributes to your digital footprint. Platforms collect extensive data including your location, interests, behavioral patterns, and social connections. For teenagers, this data collection begins at an age when many don't fully understand the implications.

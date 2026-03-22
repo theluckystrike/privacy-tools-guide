@@ -33,6 +33,18 @@ Spokeo aggregates and publishes personal information sourced from public records
 
 This guide walks through the Spokeo opt-out process with practical steps, automation considerations for developers, and verification methods to ensure your information stays removed.
 
+## Key Takeaways
+
+- **Note the unique URL for your profile**: it contains an alphanumeric identifier used in the removal process.
+- **Search using name variations**: you have used: maiden names, middle names, nicknames, and hyphenated surnames.
+- **Spokeo's privacy policy indicates**: they may use your submitted email address for other communications.
+- **If you are logged into a Google account, search result personalization may also affect what you see**: use Startpage or DuckDuckGo to check independently.
+- **Limit public data sharing**: Review privacy settings on social media
+3.
+- **Use a removal service**: Consider recurring removal services for ongoing protection
+
+Spokeo re-ingests data on an ongoing basis from its source feeds.
+
 ## Understanding What Spokeo Collects
 
 Spokeo operates as a people search engine that compiles data from multiple sources:

@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 SpiderOak has carved out a niche in the encrypted cloud storage space, positioning itself as a zero-knowledge backup and sync solution that operates across Windows, macOS, Linux, and mobile platforms. This review examines the service through the lens of developers and power users who prioritize cryptographic privacy while needing file synchronization capabilities.
 
+## Key Takeaways
+
+- **Define backup targets PROJECT_DIRS=(**: "$HOME/Projects/important-app" "$HOME/Code/client-work" "$HOME/Documents/research" ) # 4.
+- **Configure exclusions for project**: in "${PROJECT_DIRS[@]}"; do spideroak select "$project" done # 6.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **Free and basic plans**: typically get community forum support and documentation.
+- **This review examines the**: service through the lens of developers and power users who prioritize cryptographic privacy while needing file synchronization capabilities.
+- **Only encrypted blobs travel**: across the network 4.
+
 ## Encryption Architecture
 
 SpiderOak employs client-side encryption using AES-256 for data at rest and TLS 1.3 for data in transit. The critical differentiator in the zero-knowledge ecosystem is how encryption keys are managed. With SpiderOak, your password never leaves your device—the service never stores or has access to your encryption keys.

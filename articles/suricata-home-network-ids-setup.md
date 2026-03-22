@@ -31,6 +31,13 @@ Suricata is an open-source network threat detection engine that can analyze all 
 
 This guide sets up Suricata in IDS (Intrusion Detection System) mode on a Linux host that sees your network traffic — either a router running OpenWrt, a Pi-hole server, or any always-on Linux machine positioned to see your LAN traffic.
 
+## Key Takeaways
+
+- **Suricata is an open-source**: network threat detection engine that can analyze all traffic passing through your home network in real time.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers architecture options**: installation, debian/ubuntu, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
+
 ## Architecture Options
 
 **Inline mode (IPS)**: Suricata sits in the traffic path and can drop packets. Requires the machine to be a router or bridge device.

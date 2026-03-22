@@ -19,6 +19,14 @@ tags: [privacy-tools-guide]
 
 SSH's built-in dynamic port forwarding turns any SSH connection into a SOCKS5 proxy. Traffic you route through it exits at the remote server, not your local machine. Unlike a VPN, it works at the application level — you choose which apps use it — and requires no additional server software beyond sshd.
 
+## Key Takeaways
+
+- **This key can be**: passphrase-free since it runs as a service, but restrict it server-side.
+- **The key can only**: be used for forwarding.
+- **The basic SOCKS5 proxy via SSH has no username/password layer**: rely on network-level access controls.
+- **Unlike a VPN, it works at the application level**: you choose which apps use it — and requires no additional server software beyond sshd.
+- **Any app that supports**: SOCKS5 can route traffic through it.
+
 ## Basic SOCKS5 Proxy in One Command
 
 ```bash

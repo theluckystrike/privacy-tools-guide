@@ -31,6 +31,15 @@ tags: [privacy-tools-guide]---
 
 Tails is a privacy-focused operating system that runs from an USB stick, routing all traffic through the Tor network. By default, Tails leaves no trace on the computer you use—but this anonymity comes with a trade-off: every shutdown wipes your session clean. The persistent storage feature solves this problem by creating an encrypted volume on your USB drive that survives reboots. This guide explains how to set it up, what belongs in persistent storage, and what data should remain ephemeral for maximum security.
 
+## Key Takeaways
+
+- **Enter a strong passphrase**: (use a password manager to generate 20+ random characters) 4.
+- **Use separate USB drives**: for different personas or activities 2.
+- **Enable the "Eraser" feature**: in Tails to securely wipe unused persistent space 5.
+- **Tails is a privacy-focused**: operating system that runs from an USB stick, routing all traffic through the Tor network.
+- **By default, Tails leaves no trace on the computer you use**: but this anonymity comes with a trade-off: every shutdown wipes your session clean.
+- **This partition uses LUKS**: (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup.
+
 ## How Persistent Storage Works in Tails
 
 When you activate persistent storage, Tails creates an encrypted partition alongside the operating system on your USB stick. This partition uses LUKS (Linux Unified Key Setup) encryption, protected by a passphrase you choose during setup. The encryption key is derived from your passphrase using PBKDF2, making it resistant to brute-force attacks.
