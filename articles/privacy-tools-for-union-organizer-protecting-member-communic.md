@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Tools For Union Organizer Protecting Member Communic"
-description: "Union organizers face unique challenges when protecting member communications. Unlike typical enterprise environments, union communications often involve"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /privacy-tools-for-union-organizer-protecting-member-communic/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Tools For Union Organizer Protecting Member Communic"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

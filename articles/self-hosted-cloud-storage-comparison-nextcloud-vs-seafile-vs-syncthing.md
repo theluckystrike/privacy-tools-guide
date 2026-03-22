@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Self Hosted Cloud Storage Comparison Nextcloud vs"
 description: "Compare self-hosted cloud storage solutions: Nextcloud, Seafile, and Syncthing. Covers Docker setup, performance, encryption, and hardware requirements"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal App Disappearing Messages Guide"
 description: "Signal App Disappearing Messages Guide: Technical. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -258,7 +260,8 @@ Organizations using Signal for team communication can establish disappearing mes
 
 ### Step 9: Disappearing Message Policy
 
-Confidentiality Level | Timer Duration---
+Confidentiality Level | Timer Duration
+---
 -----------------|----------------
 Public team updates | None (permanent)
 Project discussions | 1 week

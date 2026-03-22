@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Onionshare Secure File Sharing Over Tor Network Setup"
-description: "OnionShare uses Tor hidden services to enable direct, peer-to-peer file sharing that exposes neither your IP address nor any files to third-party servers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /onionshare-secure-file-sharing-over-tor-network-setup-and-us/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 8
-intent-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Onionshare Secure File Sharing Over Tor Network Setup"
@@ -25,7 +12,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

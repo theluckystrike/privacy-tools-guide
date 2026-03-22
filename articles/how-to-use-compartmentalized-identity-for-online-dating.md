@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Use Compartmentalized Identity for Online Dating"
 description: "Learn how to create and manage separate digital identities for online dating to protect your privacy. Practical strategies for keeping your personal"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

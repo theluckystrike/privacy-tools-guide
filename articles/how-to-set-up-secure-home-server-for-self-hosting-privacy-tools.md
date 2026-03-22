@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up a Secure Home Server for Self-Hosting Privacy Tools"
 description: "Build a self-hosted privacy server: hardware selection, OS hardening, Docker containers for VPN, DNS, and email on local infrastructure."
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, privacy, self-hosting, security, networking, infrast
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

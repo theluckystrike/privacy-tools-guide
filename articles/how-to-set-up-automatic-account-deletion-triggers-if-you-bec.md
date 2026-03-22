@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Set Up Automatic Account Deletion Triggers If You"
-description: "Learn how to configure automatic account deletion triggers to protect your digital legacy. This guide covers dead man's switches, cron jobs, cloud functions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-automatic-account-deletion-triggers-if-you-bec/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Set Up Automatic Account Deletion Triggers If You"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

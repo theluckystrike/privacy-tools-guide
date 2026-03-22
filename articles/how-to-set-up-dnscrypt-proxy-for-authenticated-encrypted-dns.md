@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted"
-description: "DNS encryption is a critical layer of privacy infrastructure. While DoH (DNS over HTTPS) and DoT (DNS over TLS) have gained popularity, DNSCrypt offers an"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Set Up Dnscrypt Proxy For Authenticated Encrypted"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

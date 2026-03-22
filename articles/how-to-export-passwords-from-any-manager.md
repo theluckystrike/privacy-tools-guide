@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Export Passwords from Any Manager"
-description: "To export passwords from any manager, use its CLI tool for the most control: op vault export for 1Password, bw export --format json for Bitwarden, lpass export"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /how-to-export-passwords-from-any-manager/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Export Passwords from Any Manager"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

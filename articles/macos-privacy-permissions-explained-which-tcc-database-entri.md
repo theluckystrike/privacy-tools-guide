@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "macOS Privacy Permissions Explained Which Tcc Database"
 description: "A guide for developers and power users on understanding macOS TCC database, identifying granted permissions, and revoking unnecessary"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 Inspect and revoke macOS TCC (Transparency, Consent, and Control) database entries to audit which apps have permission to access camera, microphone, location, contacts, and screen recording. Query the SQLite database directly with `sqlite3` commands to see granted permissions (auth_value=2), then delete entries for apps you no longer trust. This guide includes practical examples for revoking specific permissions and automating TCC audits across multiple machines.

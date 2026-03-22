@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Set Up GitHub Repository With Encrypted Estate"
-description: "Learn how to securely store sensitive estate planning documents, passwords, and financial information in a GitHub repository using encryption. This"
-date: 2026-03-19
-last_modified_at: 2026-03-19
-author: "Privacy Tools Guide"
-permalink: /how-to-set-up-github-repository-with-encrypted-estate-instru/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Set Up GitHub Repository With Encrypted Estate"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

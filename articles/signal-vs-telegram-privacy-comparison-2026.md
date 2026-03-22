@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal vs Telegram: Privacy Comparison 2026"
 description: "Choosing a messaging app in 2026 means evaluating not just features, but fundamental privacy architectures. Signal and Telegram represent two different"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
+tags: [privacy-tools-guide, comparison, privacy]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Threat Model For Source Communicating With Journalist"
-description: "A threat model guide for sources communicating with journalists anonymously. Learn practical tools, encryption methods, and operational"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /threat-model-for-source-communicating-with-journalist-anonym/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Threat Model For Source Communicating With Journalist"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

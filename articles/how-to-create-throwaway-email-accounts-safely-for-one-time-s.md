@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Throwaway Email Accounts Safely For One Time"
 description: "A practical guide for developers and power users on creating secure throwaway email accounts for one-time service signups. Covers alias services"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

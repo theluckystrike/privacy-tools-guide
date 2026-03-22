@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Set Up Secure Communication for Labor Strike Organizing"
-description: "A practical guide for developers and power users setting up secure communication infrastructure for labor strike organizing. Covers encrypted"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
-categories: [guides, security]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Set Up Secure Communication for Labor Strike Organizing"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

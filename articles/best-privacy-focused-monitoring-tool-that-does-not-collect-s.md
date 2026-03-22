@@ -1,4 +1,5 @@
 ---
+---
 
 layout: default
 title: "Best Privacy-Focused Monitoring Tool That Does Not Collect"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 categories: [best-of]
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 {% raw %}

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Password Manager Death Plan"
 description: "A technical comparison of password managers with built-in emergency access and death plan features. Covers 1Password, Bitwarden, Dashlane, Keeper"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

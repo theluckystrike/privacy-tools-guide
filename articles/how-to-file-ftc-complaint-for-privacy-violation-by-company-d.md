@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To File Ftc Complaint For Privacy Violation By Company"
-description: "A practical guide for developers and power users on filing FTC complaints after a company data breach. Includes documentation steps, API references"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-file-ftc-complaint-for-privacy-violation-by-company-d/
-categories: [guides, security, enterprise]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "How To File Ftc Complaint For Privacy Violation By Company"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

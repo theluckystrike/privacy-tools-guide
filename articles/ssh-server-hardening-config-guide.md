@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "SSH Server Hardening Config Guide"
-description: "Step-by-step guide to hardening sshd_config on Linux servers. Disable root login, enforce key auth, restrict ciphers, and set up fail2ban"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: ssh-server-hardening-config-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "SSH Server Hardening Config Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

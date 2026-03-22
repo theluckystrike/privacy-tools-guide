@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Temporary Phone Number For Receiving Sms Verification Codes"
-description: "When you need to verify a phone number for account creation but want to avoid exposing your personal cell number, temporary phone numbers provide a practical"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /temporary-phone-number-for-receiving-sms-verification-codes-/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Temporary Phone Number For Receiving Sms Verification Codes"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

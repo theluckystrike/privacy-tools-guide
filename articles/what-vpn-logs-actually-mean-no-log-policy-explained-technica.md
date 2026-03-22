@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "What VPN Logs Actually Mean: No-Log Policy Explained"
 description: "A technical breakdown of VPN logging practices. Learn what connection logs, traffic logs, and no-log policies really mean for your privacy"
@@ -11,7 +12,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 8
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

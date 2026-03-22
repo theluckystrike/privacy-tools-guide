@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Password Manager Browser Extension Attack"
-description: "Explore the security risks and attack vectors of password manager browser extensions. Learn how developers and power users can assess and mitigate"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /password-manager-browser-extension-attack-surface/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Password Manager Browser Extension Attack"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

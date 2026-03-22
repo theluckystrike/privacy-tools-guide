@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Proton Drive Bridge Desktop Integration Guide"
-description: "A practical guide for developers and power users integrating Proton Drive Bridge with desktop applications. Covers WebDAV configuration, CLI"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /proton-drive-bridge-desktop-integration-guide/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of, integration]---
 ---
 layout: default
 title: "Proton Drive Bridge Desktop Integration Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, integration]---
+tags: [privacy-tools-guide, best-of, integration]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

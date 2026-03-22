@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Reproductive Healthcare Provider"
 description: "A technical guide for developers and power users securing patient data and operational communications in states with restricted reproductive healthcare"
@@ -11,7 +12,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

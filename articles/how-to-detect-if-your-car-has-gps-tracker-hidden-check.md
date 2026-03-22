@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Detect if Your Car Has GPS Tracker Hidden"
 description: "A technical guide for developers and power users on detecting hidden GPS trackers in vehicles using physical inspection, RF analysis, and network"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

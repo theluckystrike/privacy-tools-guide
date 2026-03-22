@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up Password Manager for New Employee Onboarding"
 description: "Deploy 1Password or Bitwarden with team vaults during onboarding: provision employees with pre-populated shared vaults containing their role-specific"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

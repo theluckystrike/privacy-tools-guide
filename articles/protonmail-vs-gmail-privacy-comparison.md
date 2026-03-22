@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Protonmail Vs Gmail Privacy Comparison"
-description: "When evaluating email privacy for development workflows, the ProtonMail vs Gmail decision hinges on technical architecture rather than marketing claims. Both"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /protonmail-vs-gmail-privacy-comparison/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
 ---
 layout: default
 title: "Protonmail Vs Gmail Privacy Comparison"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
+tags: [privacy-tools-guide, comparison, privacy]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "OpenPGP vs S/MIME Email Encryption: A Technical Comparison"
 description: "Choose OpenPGP if you need decentralized key management, cross-organizational communication, or full control over your cryptographic identity -- it uses a"
@@ -11,7 +12,8 @@ score: 7
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, encryption]---
+tags: [privacy-tools-guide, comparison, encryption]
+---
 
 
 {% raw %}

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Syncthing Setup Guide for Private File Sync"
-description: "A practical guide to setting up Syncthing for secure, decentralized file synchronization between your devices. Perfect for developers and power users"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /syncthing-setup-guide-private-file-sync/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 8
-intent-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Syncthing Setup Guide for Private File Sync"
@@ -25,7 +12,8 @@ voice-checked: true
 reviewed: true
 score: 8
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Protect Your Child From Online Predators Safety Setup"
 description: "A practical technical guide for developers and power users to protect children from online predators. Learn device configuration, network-level"
@@ -11,7 +12,8 @@ intent-checked: true
 voice-checked: true
 reviewed: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "India Cctv Surveillance Expansion Privacy Implications"
-description: "India has deployed over 28 million CCTV cameras across smart cities with real-time facial recognition and AI tracking integrated into surveillance networks. To"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /india-cctv-surveillance-expansion-privacy-implications-of-sm/
-categories: [guides]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "India Cctv Surveillance Expansion Privacy Implications"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

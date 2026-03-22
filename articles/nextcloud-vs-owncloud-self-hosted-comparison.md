@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Nextcloud vs OwnCloud Self-Hosted Comparison"
 description: "A technical comparison of Nextcloud and OwnCloud for self-hosted deployment. Evaluate features, performance, and customization for developers and power"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 7
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 

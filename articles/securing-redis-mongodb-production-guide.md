@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Securing Redis and MongoDB for Production"
 description: "Harden Redis and MongoDB for production with authentication, TLS encryption, network binding, access control lists, and audit logging to prevent data exposure"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

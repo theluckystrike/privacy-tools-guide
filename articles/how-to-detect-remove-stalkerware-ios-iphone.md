@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Detect and Remove Stalkerware From Your iPhone and iPad"
-description: "Complete technical guide to finding hidden surveillance apps on iOS. Includes account security checks, iCloud analysis, and removal procedures"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /how-to-detect-remove-stalkerware-ios-iphone/
-categories: [guides, security]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Detect and Remove Stalkerware From Your iPhone and iPad"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

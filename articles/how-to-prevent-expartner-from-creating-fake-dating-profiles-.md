@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Prevent Expartner From Creating Fake Dating Profiles"
 description: "Immediately reduce your attack surface by making social media profiles private, removing photos from public galleries, and stripping EXIF metadata from any"
@@ -11,7 +12,8 @@ reviewed: true
 voice-checked: true
 intent-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

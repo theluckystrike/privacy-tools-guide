@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Passkey Adoption Timeline by Platform: A Developer Guide"
-description: "A timeline of passkey adoption across major platforms, with technical details and implementation guidance for developers and power users"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /passkey-adoption-timeline-by-platform/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Passkey Adoption Timeline by Platform: A Developer Guide"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 As of 2026, passkey support is mature across all major platforms: Apple shipped passkeys in iOS 16/macOS Ventura (2022) with iCloud Keychain sync, Google followed with Android 14 and Chrome in 2023 via Google Password Manager, and Microsoft added support through Windows Hello across Windows 11 and 10 (2022-2023). All three ecosystems now support WebAuthn Level 2 with discoverable credentials, meaning developers can implement passkey authentication today with full cross-platform coverage. Below is the detailed adoption timeline with implementation guidance and code examples.

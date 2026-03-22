@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Set Up Secure File Sharing for Sensitive Documents"
-description: "A practical guide for developers and power users to implement secure file sharing using encryption, self-hosted solutions, and command-line tools"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-secure-file-sharing-for-sensitive-documents/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Set Up Secure File Sharing for Sensitive Documents"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

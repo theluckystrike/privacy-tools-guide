@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Verify That Encrypted Message Was Not Tampered"
 description: "A technical guide for developers and power users on verifying encrypted message integrity using HMACs, digital signatures, and authenticated encryption"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

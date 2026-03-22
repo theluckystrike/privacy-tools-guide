@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Notice Vs Privacy Policy Difference"
 description: "A privacy notice is a brief, context-specific disclosure about a single data practice (shown before collecting email addresses or requesting location), while a"
@@ -11,7 +12,8 @@ voice-checked: true
 reviewed: true
 score: 7
 intent-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
+tags: [privacy-tools-guide, comparison, privacy]
+---
 
 {% raw %}
 

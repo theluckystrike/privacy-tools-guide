@@ -12,22 +12,6 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
----
----
-layout: default
-title: "Crypto Dead Man Switch Services That Transfer Wallet Access"
-description: "A review of crypto dead man switch services that automatically transfer wallet access after inactivity. Designed for developers and power"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /crypto-dead-man-switch-services-that-transfer-wallet-access-/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
 ---
 =======
 ---

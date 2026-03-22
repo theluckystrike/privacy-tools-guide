@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Browser for Journalists Safety Guide 2026"
-description: "A technical guide to Tor Browser configuration for journalists. Learn advanced security settings, configuration tweaks, and best"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-browser-for-journalists-safety-guide-2026/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Tor Browser for Journalists Safety Guide 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

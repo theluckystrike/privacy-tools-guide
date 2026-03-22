@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Implement Data Portability Feature For Customers Gdpr Right"
-description: "A technical guide for developers on implementing GDPR data portability features. Learn API design, data export formats, authentication"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Implement Data Portability Feature For Customers Gdpr Right"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

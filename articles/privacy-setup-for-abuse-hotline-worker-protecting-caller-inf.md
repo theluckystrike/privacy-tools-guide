@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Setup For Abuse Hotline Worker Protecting Caller"
-description: "A technical guide for developers and power users implementing privacy measures for abuse hotline workers. Learn secure communications, metadata"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/
-categories: [guides, security]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Setup For Abuse Hotline Worker Protecting Caller"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

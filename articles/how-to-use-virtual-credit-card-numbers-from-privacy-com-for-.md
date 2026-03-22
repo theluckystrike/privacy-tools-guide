@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Use Virtual Credit Card Numbers From Privacy Com"
-description: "A practical guide for developers and power users on using Privacy.com virtual cards for enhanced privacy in online transactions"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-use-virtual-credit-card-numbers-from-privacy-com-for-/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "How To Use Virtual Credit Card Numbers From Privacy Com"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

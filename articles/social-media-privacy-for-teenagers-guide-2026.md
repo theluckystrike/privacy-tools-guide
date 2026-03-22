@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Social Media Privacy For Teenagers Guide 2026"
-description: "Protect teen accounts on Instagram, TikTok, Snapchat, and Discord. Privacy settings, data minimization, and parental monitoring options for 2026."
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /social-media-privacy-for-teenagers-guide-2026/
-categories: [guides, security]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Social Media Privacy For Teenagers Guide 2026"
@@ -25,7 +12,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Youtube Alternative Private Video Platforms 2026"
 description: "Explore private video hosting solutions for developers and power users in 2026. Compare self-hosted options, privacy-focused platforms, and deployment"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

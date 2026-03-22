@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Nextcloud Talk Video Calls Setup Guide"
-description: "Learn how to configure Nextcloud Talk for video calls. This guide covers server requirements, TURN/STUN setup, firewall configuration, and advanced"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "theluckystrike"
-permalink: /nextcloud-talk-video-calls-setup-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Nextcloud Talk Video Calls Setup Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Prepare Phone For Crossing Border Into High Surveilla"
-description: "A practical security checklist for developers and power users preparing phones for high-surveillance border crossings. Includes encryption, airplane"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-prepare-phone-for-crossing-border-into-high-surveilla/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Prepare Phone For Crossing Border Into High Surveilla"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

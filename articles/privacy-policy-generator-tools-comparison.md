@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Policy Generator Tools Comparison: A Developer Guide"
 description: "A technical comparison of privacy policy generator tools for developers, with code examples for automated generation and customization"
@@ -11,7 +12,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Rotate Encryption Keys In Messaging Apps"
-description: "A practical guide for developers and power users on rotating encryption keys in messaging apps while preserving chat history. Covers Signal, WhatsApp"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-rotate-encryption-keys-in-messaging-apps-without-losi/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 ---
 layout: default
 title: "How To Rotate Encryption Keys In Messaging Apps"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 

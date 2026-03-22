@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "Linux File Permissions Privacy"
-description: "How to audit Linux file permissions to find world-readable sensitive files, SUID binaries, insecure home directories, and misconfigured shared directories"
-date: 2026-03-21
-author: theluckystrike
-permalink: /linux-file-permissions-privacy-audit/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Linux File Permissions Privacy"
@@ -23,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

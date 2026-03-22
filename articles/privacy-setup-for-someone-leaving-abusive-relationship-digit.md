@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Setup For Someone Leaving Abusive Relationship"
-description: "A technical guide for developers and power users helping someone leave an abusive relationship. Covers device hardening, account security, secure"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /privacy-setup-for-someone-leaving-abusive-relationship-digit/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Setup For Someone Leaving Abusive Relationship"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

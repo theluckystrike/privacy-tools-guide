@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "SSH Server Hardening Guide"
-description: "Step-by-step SSH server hardening for Linux: disable password auth, configure key-only login, change default port, set up fail2ban, and audit active sessions"
-date: 2026-03-21
-author: theluckystrike
-permalink: /ssh-server-hardening-guide/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "SSH Server Hardening Guide"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

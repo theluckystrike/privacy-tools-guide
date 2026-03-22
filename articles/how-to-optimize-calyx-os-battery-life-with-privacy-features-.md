@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"
-description: "Extend CalyxOS battery life without disabling privacy features. MicroG tuning, background app limits, and radio management techniques."
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [calyxos, android, privacy, battery-optimization]---
 ---
 layout: default
 title: "Optimize CalyxOS Battery Life with Privacy Features Enabled"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [calyxos, android, privacy, battery-optimization]---
+tags: [calyxos, android, privacy, battery-optimization]
+---
 
 {% raw %}
 

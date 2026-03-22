@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Verify Dating Profile Authenticity Without Revealing"
-description: "Verifying whether a dating profile is authentic represents a common privacy challenge. You want to confirm the person behind the profile is who they claim to"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-verify-dating-profile-authenticity-without-revealing-/
-categories: [security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Verify Dating Profile Authenticity Without Revealing"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

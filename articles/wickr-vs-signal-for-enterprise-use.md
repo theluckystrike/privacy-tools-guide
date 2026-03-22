@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Wickr vs Signal for Enterprise Use: A Technical Comparison"
-description: "A practical comparison of Wickr and Signal for enterprise messaging. Learn about encryption, API access, admin controls, and deployment considerations"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /wickr-vs-signal-for-enterprise-use/
-reviewed: true
-score: 9
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison]---
 ---
 layout: default
 title: "Wickr vs Signal for Enterprise Use: A Technical Comparison"
@@ -25,7 +12,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Passkey vs Password Security Comparison: A Developer Guide"
 description: "Choose passkeys over passwords when your users have modern devices (iOS 16+, Android 9+, recent browsers) and you can implement proper recovery flows --"
@@ -11,7 +12,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, security]---
+tags: [privacy-tools-guide, comparison, security]
+---
 
 
 {% raw %}

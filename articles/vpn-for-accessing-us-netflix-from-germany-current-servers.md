@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN for Accessing US Netflix from Germany"
 description: "A technical guide for developers and power users on using VPNs to access US Netflix from Germany. Covers server selection, protocol configuration, and"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

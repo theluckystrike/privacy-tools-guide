@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Detect and Remove Hidden Tracking Devices on Your"
-description: "A practical guide for developers and power users to identify, locate, and remove hidden GPS trackers and tracking devices from vehicles using technical"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-detect-and-remove-hidden-tracking-devices-on-your-car/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Detect and Remove Hidden Tracking Devices on Your"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

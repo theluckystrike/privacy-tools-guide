@@ -1,4 +1,5 @@
 ---
+---
 
 layout: default
 title: "Best Accessible Encrypted Cloud Backup With One Button"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 | Service | Encryption Type | Storage | Max File Size | Price |

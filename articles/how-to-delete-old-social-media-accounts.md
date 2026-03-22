@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Delete Old Social Media Accounts"
-description: "Learn how to permanently delete old social media accounts with step-by-step instructions, automation scripts, and privacy-focused tools. Includes code"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /how-to-delete-old-social-media-accounts/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Delete Old Social Media Accounts"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

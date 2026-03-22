@@ -12,22 +12,6 @@ voice-checked: true
 reviewed: true
 score: 9
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
----
----
-layout: default
-title: "Encrypted Voice Calls Comparison"
-description: "A technical analysis of metadata leakage in Signal, WhatsApp, and FaceTime voice calls. Learn what data each platform collects and how to minimize your"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-reviewed: true
-score: 9
-tags: [privacy-tools-guide]
 ---
 =======
 ---

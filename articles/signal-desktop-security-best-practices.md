@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "Signal Desktop Security Best Practices"
-description: "How to harden Signal Desktop on Windows, macOS, and Linux with screen lock, proxy settings, notification privacy, linked device audits, and local database"
-date: 2026-03-21
-author: theluckystrike
-permalink: /signal-desktop-security-best-practices/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
 ---
 layout: default
 title: "Signal Desktop Security Best Practices"
@@ -23,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, best-of, security]---
+tags: [privacy-tools-guide, best-of, security]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

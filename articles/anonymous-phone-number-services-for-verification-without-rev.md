@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Anonymous Phone Number Services for Verification"
 description: "A technical guide to anonymous phone number services for verification in 2026. Covers SMS forwarding, VoIP alternatives, API integration"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

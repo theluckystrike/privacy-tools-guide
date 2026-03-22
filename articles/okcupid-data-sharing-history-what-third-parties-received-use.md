@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Okcupid Data Sharing History What Third Parties Received"
-description: "OkCupid Data Sharing History: What Third Parties. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /okcupid-data-sharing-history-what-third-parties-received-use/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Okcupid Data Sharing History What Third Parties Received"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Browser vs Epic Privacy Browser Comparison"
-description: "A technical comparison of Tor Browser and Epic Privacy Browser for developers and power users. Understand the architectural differences, privacy"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /tor-browser-vs-epic-privacy-browser-comparison/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
 ---
 layout: default
 title: "Tor Browser vs Epic Privacy Browser Comparison"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, privacy]---
+tags: [privacy-tools-guide, comparison, privacy]
+---
 
 {% raw %}
 

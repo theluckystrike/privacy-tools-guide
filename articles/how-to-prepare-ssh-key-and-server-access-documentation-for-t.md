@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Prepare Ssh Key And Server Access Documentation"
-description: "A practical guide for developers and power users on documenting SSH keys, server credentials, and access details for technical estate inheritance"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-prepare-ssh-key-and-server-access-documentation-for-t/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Prepare Ssh Key And Server Access Documentation"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

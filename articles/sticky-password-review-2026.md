@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Sticky Password Review 2026: A Developer's Perspective"
-description: "An in-depth analysis of Sticky Password for developers and power users. Covers CLI access, secure sharing, API integration, and technical"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /sticky-password-review-2026/
-categories: [comparisons, guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Sticky Password Review 2026: A Developer's Perspective"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"
-description: "A technical guide for developers and power users to disable LLMNR and NetBIOS name resolution on Windows, preventing hostname leakage that exposes your"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /llmnr-netbios-name-resolution-privacy-disabling-windows-prot/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy, llm]---
 ---
 layout: default
 title: "Llmnr Netbios Name Resolution Privacy Disabling Windows"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy, llm]---
+tags: [privacy-tools-guide, privacy, llm]
+---
 
 {% raw %}
 

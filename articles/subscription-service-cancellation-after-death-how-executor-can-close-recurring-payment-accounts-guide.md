@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Subscription Service Cancellation After Death"
 description: "A technical guide for executors and power users on how to identify, access, and cancel subscription services after someone passes away. Includes"
@@ -11,7 +12,8 @@ voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
 reviewed: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 {% raw %}

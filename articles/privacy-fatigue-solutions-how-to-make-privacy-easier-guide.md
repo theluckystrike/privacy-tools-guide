@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Fatigue Solutions: How to Make Privacy Easier Guide"
-description: "Practical strategies and tools to overcome privacy fatigue. Learn automation techniques, privacy-focused tooling, and habits that reduce cognitive load"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /privacy-fatigue-solutions-how-to-make-privacy-easier-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Fatigue Solutions: How to Make Privacy Easier Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

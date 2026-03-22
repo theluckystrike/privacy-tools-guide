@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "Encrypt Cloud Storage with Rclone Before Uploading"
-description: "Use rclone crypt to encrypt files client-side before syncing to Dropbox, Google Drive, or S3 so the provider never has access to your plaintext data"
-date: 2026-03-21
-author: theluckystrike
-permalink: /secure-cloud-storage-encryption-rclone/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 ---
 layout: default
 title: "Encrypt Cloud Storage with Rclone Before Uploading"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 

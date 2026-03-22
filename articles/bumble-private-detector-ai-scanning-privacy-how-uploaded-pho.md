@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Bumble Private Detector AI Scanning Privacy How Uploaded"
 description: "Bumble Private Detector: How AI Scans Your Uploaded. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

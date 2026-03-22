@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Set Up a Personal VPN with WireGuard"
-description: "Build a personal WireGuard VPN on a cheap VPS. Covers server setup, key generation, client configs for Linux, macOS, Windows, iOS, and Android."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: wireguard-personal-vpn-setup-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "Set Up a Personal VPN with WireGuard"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

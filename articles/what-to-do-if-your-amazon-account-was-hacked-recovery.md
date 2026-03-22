@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "What to Do If Your Amazon Account Was Hacked: Recovery Guide"
-description: "Learn how to recover a compromised Amazon account, secure your personal data, and prevent future unauthorized access. Practical steps for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /what-to-do-if-your-amazon-account-was-hacked-recovery/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "What to Do If Your Amazon Account Was Hacked: Recovery Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

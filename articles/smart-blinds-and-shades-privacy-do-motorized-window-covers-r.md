@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Smart Blinds And Shades Privacy Do Motorized Window Covers"
-description: "An in-depth technical analysis of motorized smart blinds privacy concerns, occupancy detection capabilities, and how to maintain control over your home"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /smart-blinds-and-shades-privacy-do-motorized-window-covers-r/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Smart Blinds And Shades Privacy Do Motorized Window Covers"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "India Aadhaar Privacy Risks What Biometric Data Government"
 description: "India Aadhaar Privacy Risks: What Biometric Data the. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
@@ -11,7 +12,8 @@ score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

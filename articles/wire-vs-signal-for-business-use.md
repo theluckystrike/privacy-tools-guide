@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Wire vs Signal for Business Use: A Technical Comparison"
-description: "A developer-focused comparison of Wire and Signal for business communications, covering encryption, API access, self-hosting, and integration capabilities"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /wire-vs-signal-for-business-use/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison]---
 ---
 layout: default
 title: "Wire vs Signal for Business Use: A Technical Comparison"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 
 | Feature | Wire | Signal |

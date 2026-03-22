@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "macOS Sequoia Privacy Features Review 2026: Complete Guide"
 description: "Explore macOS Sequoia privacy features for developers and power users. Learn about Privacy Manifests, App Sandbox enhancements, Private Relay, and more"
@@ -11,7 +12,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

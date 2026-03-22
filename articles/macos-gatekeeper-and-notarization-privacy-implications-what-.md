@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "macOS Gatekeeper And Notarization Privacy Implications What"
-description: "Discover what Apple knows about your applications when you use Gatekeeper and notarization. A developer guide to macOS security mechanisms and privacy"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /macos-gatekeeper-and-notarization-privacy-implications-what-/
-categories: [troubleshooting]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "macOS Gatekeeper And Notarization Privacy Implications What"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

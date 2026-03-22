@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Tunnel Interface Vs Full Tunnel Routing Difference"
 description: "Understand the difference between VPN tunnel interface and full tunnel routing. Learn when to use split tunneling vs full tunnel, security"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, vpn]---
+tags: [privacy-tools-guide, comparison, vpn]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Use Multiple Identities Online Compartmentalization"
 description: "A practical guide to managing multiple online identities through compartmentalization. Learn browser isolation, email aliasing, container strategies"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -11,7 +11,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, vpn]
-
+---
 {% raw %}
 
 # How to Set Up Mullvad VPN on Linux

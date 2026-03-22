@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Use Domain Fronting To Access Blocked Services"
-description: "Learn how domain fronting works and how to use it to bypass network restrictions. Technical guide with code examples for developers and power users"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-domain-fronting-to-access-blocked-services-from-c/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Use Domain Fronting To Access Blocked Services"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

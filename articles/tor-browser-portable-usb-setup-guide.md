@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Browser Portable USB Setup Guide"
-description: "A guide for developers and power users on running Tor Browser from an USB drive for enhanced privacy. Includes verification"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-browser-portable-usb-setup-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Tor Browser Portable USB Setup Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

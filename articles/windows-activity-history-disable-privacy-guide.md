@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Windows Activity History Disable Privacy Guide"
-description: "Disable Windows Activity History through Settings (Privacy & security → Activity history: uncheck 'Store my activity history on this device' and 'Send my"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /windows-activity-history-disable-privacy-guide/
-categories: [guides]
-voice-checked: true
-reviewed: true
-score: 9
-intent-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Windows Activity History Disable Privacy Guide"
@@ -25,7 +12,8 @@ voice-checked: true
 reviewed: true
 score: 9
 intent-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

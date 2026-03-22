@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy-Focused Network Speed Test Comparison Tools That"
 description: "Compare network speed test tools that prioritize user privacy. Learn about open-source alternatives, data handling practices, and implementation for developers."
@@ -10,7 +11,8 @@ voice-checked: true
 tags: [privacy-tools-guide, network, speed-test]
 reviewed: true
 score: 8
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

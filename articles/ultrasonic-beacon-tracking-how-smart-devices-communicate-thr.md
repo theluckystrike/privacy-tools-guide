@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Ultrasonic beacon tracking represents one of the most insidious tracking techniques deployed by modern smart devices. While most users are aware that their phones and tablets can be tracked through GPS, WiFi, and Bluetooth, fewer people realize that inaudible sound waves in the 18-22kHz range can serve as a hidden communication channel between devices—and between devices and nearby receivers. This technique operates completely below human hearing threshold, making it nearly impossible to detect without specialized tools.

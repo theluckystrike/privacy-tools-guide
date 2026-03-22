@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Use Tor Browser Safely"
-description: "Practical safety guide for Tor Browser. Covers setup, common mistakes, circuit management, security levels, and when Tor doesn't protect you."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: tor-browser-safe-usage-guide
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Use Tor Browser Safely"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

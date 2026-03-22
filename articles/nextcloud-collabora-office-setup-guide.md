@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Nextcloud Collabora Office Setup Guide"
-description: "Deploy Collabora Online with your Nextcloud instance to enable real-time document editing, spreadsheets, and presentations directly in your private cloud. This"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /nextcloud-collabora-office-setup-guide/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Nextcloud Collabora Office Setup Guide"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

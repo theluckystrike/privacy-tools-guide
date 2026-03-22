@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "WireGuard Performance Tuning for Large File Transfer"
 description: "A technical guide for developers and power users on optimizing WireGuard VPN performance for large file transfers, covering MTU tuning"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Protect LinkedIn Profile From Being Discovered"
-description: "LinkedIn is one of the most publicly available professional databases, containing your employment history, skills, connections, and often personal details that"
-date: 2026-03-19
-last_modified_at: 2026-03-19
-author: theluckystrike
-permalink: /how-to-protect-linkedin-profile-from-being-discovered-by-dat/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Protect LinkedIn Profile From Being Discovered"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

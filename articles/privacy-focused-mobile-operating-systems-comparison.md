@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, best-of, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 ## Why Your Phone Spies on You

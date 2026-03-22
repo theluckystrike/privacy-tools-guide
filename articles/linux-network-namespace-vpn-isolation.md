@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "Linux Network Namespaces for VPN Isolation"
-description: "Use Linux network namespaces to run specific applications through a VPN tunnel while the rest of your system uses normal routing — no kill switch gaps"
-date: 2026-03-21
-author: theluckystrike
-permalink: /linux-network-namespace-vpn-isolation/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "Linux Network Namespaces for VPN Isolation"
@@ -23,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, best-of, vpn]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

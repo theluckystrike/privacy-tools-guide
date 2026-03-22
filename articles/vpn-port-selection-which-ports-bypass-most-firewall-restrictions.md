@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN Port Selection Which Ports Bypass Most Firewall"
 description: "When you're connecting to a VPN from a restrictive network— whether at work, school, or in a country with internet restrictions— the difference between getting"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 
 {% raw %}

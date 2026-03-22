@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Network Censorship Resistance Explained"
-description: "Learn how Tor provides censorship resistance through onion routing, bridges, and pluggable transports. Practical examples for developers and power users"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-network-censorship-resistance-explained/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Tor Network Censorship Resistance Explained"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

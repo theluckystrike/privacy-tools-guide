@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 tags: [privacy-tools-guide, tools]
-intent-checked: true---
+intent-checked: true
+---
 
 
 {% raw %}

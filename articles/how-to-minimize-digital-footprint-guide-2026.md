@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Minimize Digital Footprint Guide 2026"
-description: "Your digital footprint encompasses every data point you leave behind while using the internet—search queries, browsing history, social media activity, device"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /how-to-minimize-digital-footprint-guide-2026/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Minimize Digital Footprint Guide 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

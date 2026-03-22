@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Self-Hosted Password Manager Comparison"
-description: "Compare Vaultwarden, KeePass, Passbolt, and Padloc for self-hosting. Covers setup complexity, sync, team features, and security model."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: self-hosted-password-manager-comparison
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Self-Hosted Password Manager Comparison"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

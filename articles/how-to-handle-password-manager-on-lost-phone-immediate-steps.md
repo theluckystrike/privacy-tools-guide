@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Handle Password Manager on Lost Phone: Immediate"
-description: "A practical guide for developers and power users on securing your password manager when your phone goes missing. Learn immediate actions to protect your"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-handle-password-manager-on-lost-phone-immediate-steps/
-categories: [security, guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Handle Password Manager on Lost Phone: Immediate"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

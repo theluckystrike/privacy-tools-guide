@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Audit Checklist for Small Businesses"
-description: "A practical privacy audit checklist for small businesses. Covers data inventory, vendor review, employee access, and basic compliance steps."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: small-business-privacy-audit-checklist
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Audit Checklist for Small Businesses"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

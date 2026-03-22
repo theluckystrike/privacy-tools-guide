@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Send Encrypted Attachments That Recipients Can Open"
-description: "A practical guide for developers and power users on sending encrypted file attachments that recipients can decrypt and open using only standard tools"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-send-encrypted-attachments-that-recipients-can-open-w/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Send Encrypted Attachments That Recipients Can Open"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

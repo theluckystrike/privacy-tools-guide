@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Verify Your Browser is Not Leaking Information"
-description: "A checklist for developers and power users to verify their browser is not leaking sensitive information. Includes code examples and testing methods"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-verify-your-browser-is-not-leaking-information-checkl/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Verify Your Browser is Not Leaking Information"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

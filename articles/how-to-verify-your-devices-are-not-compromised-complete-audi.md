@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Verify Your Devices Are Not Compromised"
-description: "A practical guide for developers and power users to audit device security, detect compromises, and verify system integrity through command-line tools"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-verify-your-devices-are-not-compromised-complete-audi/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Verify Your Devices Are Not Compromised"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

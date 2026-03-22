@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Create an Encrypted Container with LUKS"
 description: "Create portable LUKS encrypted containers as loop device files on Linux, separate from full-disk encryption, for encrypting specific directories and files"
@@ -10,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

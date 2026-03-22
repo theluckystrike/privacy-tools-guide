@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Proton Drive Review: Honest Assessment 2026"
-description: "Proton Drive has evolved significantly since its initial release, emerging as a viable option for developers and privacy-conscious users who need encrypted"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /proton-drive-review-honest-assessment-2026/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Proton Drive Review: Honest Assessment 2026"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

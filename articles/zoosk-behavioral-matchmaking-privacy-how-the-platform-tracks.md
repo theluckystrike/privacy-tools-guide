@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Zoosk Behavioral Matchmaking Privacy How The Platform"
-description: "Zoosk Behavioral Matchmaking Privacy: How the Platform. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Zoosk Behavioral Matchmaking Privacy How The Platform"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

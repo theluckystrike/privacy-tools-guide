@@ -12,7 +12,8 @@ permalink: /wireguard-postup-postdown-scripts-for-advanced-routing-configuration
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 categories: [guides]

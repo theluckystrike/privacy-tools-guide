@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "iPhone Hotspot Naming Privacy Why Your Name Broadcasts"
 description: "Technical analysis of iPhone personal hotspot naming behavior. Learn how your device broadcasts your name to nearby users and how to change it for privacy"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 6
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

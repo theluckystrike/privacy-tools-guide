@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Zero Knowledge Proof Messaging How Future Protocols Will Pro"
-description: "Learn how zero knowledge proof messaging works and how future protocols will protect conversation metadata using cryptographic techniques"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /zero-knowledge-proof-messaging-how-future-protocols-will-pro/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Zero Knowledge Proof Messaging How Future Protocols Will Pro"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

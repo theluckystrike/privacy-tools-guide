@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Verify That Your Encrypted Messages Are Not Being"
-description: "Learn practical techniques to verify your encrypted messages are not being intercepted. A technical guide for developers and power users"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-verify-that-your-encrypted-messages-are-not-being-int/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Verify That Your Encrypted Messages Are Not Being"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

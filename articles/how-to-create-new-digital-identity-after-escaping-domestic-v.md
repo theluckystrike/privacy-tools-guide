@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Create a New Digital Identity After Escaping Domestic"
 description: "A technical guide for developers and power users on creating a new digital identity after escaping domestic violence. Covers secure email, phone separation"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, api]---
+tags: [privacy-tools-guide, api]
+---
 
 {% raw %}
 

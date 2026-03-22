@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Twitter X Account After Death: How to Request"
 description: "A practical guide for developers and power users on handling Twitter X accounts of deceased users. Learn the memorialization and deactivation processes"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}

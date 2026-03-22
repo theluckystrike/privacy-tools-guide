@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Verify Your VPN Is Actually Bypassing Censorship (Not"
-description: "Learn practical methods to confirm your VPN is bypassing censorship and not leaking your real IP address or location. Includes code examples and diagnostic"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-verify-vpn-is-actually-bypassing-censorship-and-not-l/
-categories: [security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "Verify Your VPN Is Actually Bypassing Censorship (Not"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

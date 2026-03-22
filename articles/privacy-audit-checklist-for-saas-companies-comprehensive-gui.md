@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Audit Checklist for SaaS Companies"
-description: "A practical privacy audit checklist for SaaS companies with templates, code examples, and implementation guide. Covers GDPR, CCPA compliance and data"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /privacy-audit-checklist-for-saas-companies--gui/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Audit Checklist for SaaS Companies"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

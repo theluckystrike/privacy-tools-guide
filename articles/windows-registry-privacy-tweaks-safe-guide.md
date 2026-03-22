@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"
-description: "A practical guide to Windows registry privacy tweaks for developers and power users. Learn safe registry modifications to enhance your privacy without"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /windows-registry-privacy-tweaks-safe-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Windows Registry Privacy Tweaks: A Safe Practical Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

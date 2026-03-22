@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "VPN over Tor vs Tor over VPN: A Technical Comparison"
-description: "VPN-over-Tor vs Tor-over-VPN: when each architecture makes sense, latency tradeoffs, threat model differences, and setup instructions."
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /vpn-over-tor-vs-tor-over-vpn/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison, vpn]---
 ---
 layout: default
 title: "VPN over Tor vs Tor over VPN: A Technical Comparison"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison, vpn]---
+tags: [privacy-tools-guide, comparison, vpn]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Windows Privacy Tools Open Source 2026: A Developer Guide"
-description: "A practical guide to open source privacy tools for Windows in 2026. Explore command-line utilities, encryption tools, network monitors, and more"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /windows-privacy-tools-open-source-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Windows Privacy Tools Open Source 2026: A Developer Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

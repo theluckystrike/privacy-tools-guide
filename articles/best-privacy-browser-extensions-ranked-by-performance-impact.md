@@ -1,4 +1,5 @@
 ---
+---
 
 layout: default
 title: "Best Privacy Browser Extensions Ranked by Performance"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 {% raw %}

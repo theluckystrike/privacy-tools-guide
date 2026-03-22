@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How VPN Reconnection Works After Network Switch: Detecting"
 description: "VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, vpn]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 VPN reconnection after a network switch works by detecting the broken tunnel via Dead Peer Detection keepalives, then performing a fresh key exchange and authentication handshake over the new network interface. WireGuard completes this in under 100ms, IKEv2 with MOBIKE handles it by updating the network path without tearing down the tunnel, and OpenVPN typically requires a full reconnection using `persist-tun` and `persist-key` to reduce overhead. The speed of reconnection depends on your protocol choice, keepalive interval configuration, and whether the VPN client implements session persistence.

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Screen Resolution Fingerprinting Why Changing Display"
-description: "Websites use the JavaScript screen object to collect your screen resolution, color depth, and pixel ratio, combining these with other browser properties to"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /screen-resolution-fingerprinting-why-changing-display-settin/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Screen Resolution Fingerprinting Why Changing Display"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

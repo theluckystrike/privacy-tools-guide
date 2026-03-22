@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 To optimize WireGuard battery life on Android without breaking your connection, increase `PersistentKeepalive` from the default to 60-120 seconds, use split tunneling to route only necessary traffic through the VPN, and exempt the WireGuard app from Android's battery optimization (Settings > Apps > WireGuard > Battery > Unrestricted). These three changes address the main battery drains -- frequent wake events, unnecessary encrypted traffic volume, and aggressive Doze mode killing the connection. This guide covers the exact configuration values and additional automation strategies using Tasker.

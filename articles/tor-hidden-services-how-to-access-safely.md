@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Hidden Services: How to Access Safely"
-description: "A practical guide for developers and power users on accessing Tor hidden services safely. Learn configuration, security best practices, and real-world"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-hidden-services-how-to-access-safely/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Tor Hidden Services: How to Access Safely"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

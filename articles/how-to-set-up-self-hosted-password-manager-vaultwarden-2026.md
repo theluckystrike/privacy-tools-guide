@@ -1,14 +1,4 @@
 ---
-title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
-date: 2026-03-21
-author: "Privacy Tools Guide"
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
-description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for getting"
-tags: [privacy-tools-guide]---
 ---
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
 date: 2026-03-21
@@ -19,7 +9,8 @@ voice-checked: true
 intent-checked: true
 permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
 description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for getting"
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

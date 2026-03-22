@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN TLS Fingerprinting: How Censors Identify VPN Protocols"
 description: "Learn how TLS fingerprinting enables network censors to detect and block VPN traffic. Understand the mechanics, see practical examples, and learn"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

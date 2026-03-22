@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, privacy, exif, metadata, photos, security]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

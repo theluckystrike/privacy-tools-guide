@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth"
-description: "Learn practical methods to secure your WiFi network from bandwidth theft. Includes router configuration, network monitoring tools, and advanced"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-protect-your-wifi-from-neighbor-stealing-bandwidth-se/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Protect Your Wifi From Neighbor Stealing Bandwidth"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

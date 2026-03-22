@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Vpn For Remote Access To Home Network While Traveling"
-description: "A practical guide to setting up VPN access to your home network while traveling. Covers WireGuard, OpenVPN, and cloud tunnel solutions for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /vpn-for-remote-access-to-home-network-while-traveling/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn, remote-work]---
 ---
 layout: default
 title: "Vpn For Remote Access To Home Network While Traveling"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn, remote-work]---
+tags: [privacy-tools-guide, vpn, remote-work]
+---
 
 {% raw %}
 

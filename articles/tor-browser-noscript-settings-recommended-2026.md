@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tor Browser NoScript Settings Recommended 2026"
-description: "Learn the recommended NoScript settings for Tor Browser in 2026. This guide covers configuration options, security tradeoffs, and practical tips for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /tor-browser-noscript-settings-recommended-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Tor Browser NoScript Settings Recommended 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

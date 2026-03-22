@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser Connection Troubleshooting Guide"
 description: "A guide for troubleshooting Tor Browser connection issues in 2026. Learn how to diagnose and resolve common connection problems, bridge"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

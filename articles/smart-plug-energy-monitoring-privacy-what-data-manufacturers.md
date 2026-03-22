@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Smart Plug Energy Monitoring Privacy What Data Manufacturers"
 description: "A technical guide for developers and power users exploring what data smart plugs collect, how manufacturers use appliance usage patterns, and privacy"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

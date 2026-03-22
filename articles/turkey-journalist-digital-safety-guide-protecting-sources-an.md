@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Turkey Journalist Digital Safety Guide Protecting Sources"
-description: "A technical guide for Turkish journalists on securing communications, protecting sources, and mitigating government surveillance threats using"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /turkey-journalist-digital-safety-guide-protecting-sources-an/
-categories: [guides]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Turkey Journalist Digital Safety Guide Protecting Sources"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

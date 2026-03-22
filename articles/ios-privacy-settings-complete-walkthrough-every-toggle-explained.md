@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "iOS Privacy Settings Complete Walkthrough Every Toggle"
 description: "Review every iOS privacy setting with step-by-step walkthrough: disable tracking (advertising ID), restrict location services (turn off location-based"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools, privacy]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

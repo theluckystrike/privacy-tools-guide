@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

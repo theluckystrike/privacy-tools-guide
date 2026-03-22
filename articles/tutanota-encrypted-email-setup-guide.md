@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Setting Up Encrypted Email with Tutanota"
 description: "Set up Tutanota encrypted email: custom domains, desktop client configuration, and external tool integration for end-to-end encrypted messaging."
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

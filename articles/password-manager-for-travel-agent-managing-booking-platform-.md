@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Password Manager for Travel Agent Managing Booking Platform"
-description: "Learn how to securely manage multiple booking platform credentials as a travel agent. This guide covers password manager setup, CLI automation, and best"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /password-manager-for-travel-agent-managing-booking-platform-/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Password Manager for Travel Agent Managing Booking Platform"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

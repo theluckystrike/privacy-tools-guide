@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Tor Browser Android Setup Guide"
 description: "A guide for setting up Tor Browser on Android using Orbot. Learn how to configure Orbot as a VPN, integrate with Tor Browser, and maximize privacy on"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"
-description: "iPhone Focus Mode hides notification previews, restricts app access, and filters contacts. Configure profiles that reduce your data exposure."
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /iphone-focus-mode-privacy-features-explained/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "iPhone Focus Mode Privacy Features Explained: Complete Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

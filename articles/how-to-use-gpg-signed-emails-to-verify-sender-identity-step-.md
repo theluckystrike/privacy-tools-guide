@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Use GPG Signed Emails to Verify Sender Identity"
 description: "Generate a GPG key pair with gpg --gen-key, export your public key with gpg --armor --export [email], and share it with contacts. To sign an email, use gpg"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

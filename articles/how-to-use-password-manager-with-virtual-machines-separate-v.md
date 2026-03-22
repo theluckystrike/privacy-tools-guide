@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Use a Password Manager with Virtual Machines"
-description: "Learn how to set up separate password vaults for each virtual machine to enhance security isolation. Practical configuration examples for Bitwarden, 1Password"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-password-manager-with-virtual-machines-separate-vaults/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Use a Password Manager with Virtual Machines"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

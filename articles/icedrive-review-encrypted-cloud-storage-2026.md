@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "IceDrive Review: Encrypted Cloud Storage for 2026"
-description: "IceDrive Review: Encrypted Cloud Storage for 2026 — privacy guide covering tools, techniques, and best practices to protect your data and digital"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /icedrive-review-encrypted-cloud-storage-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "IceDrive Review: Encrypted Cloud Storage for 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

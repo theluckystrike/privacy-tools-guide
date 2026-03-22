@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "What to Do If You Find an Unknown Device on Your"
-description: "A guide for discovering unknown devices on your network, investigating suspicious connections, and securing your home network against"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /what-to-do-if-you-find-unknown-device-on-your-network/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "What to Do If You Find an Unknown Device on Your"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

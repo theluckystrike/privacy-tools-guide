@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Best Password Managers With Emergency Access Features"
 description: "Emergency access lets trusted contacts retrieve passwords if you die or become incapacitated—comparison of implementations"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, password-manager, security, emergency-access, privac
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Set Up Mail In A Box Private Email Server Complete 2026"
-description: "Install Mail-in-a-Box on Ubuntu for self-hosted email: DNS records, TLS certificates, spam filtering, and ongoing maintenance steps covered."
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Set Up Mail In A Box Private Email Server Complete 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

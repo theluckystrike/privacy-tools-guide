@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"
-description: "Modern web development demands awareness of browser fingerprinting techniques, and the navigator.plugins API represents one of the most effective methods"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /navigator-plugins-fingerprinting-how-browser-plugins-betray-/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Navigator Plugins Fingerprinting How Browser Plugins Betray"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

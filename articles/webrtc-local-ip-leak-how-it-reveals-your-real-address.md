@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "WebRTC Local IP Leak: How It Reveals Your Real"
-description: "WebRTC leaks your local IP even behind a VPN. Test for the leak, disable WebRTC in Chrome and Firefox, and verify your fix works."
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /webrtc-local-ip-leak-how-it-reveals-your-real-address/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "WebRTC Local IP Leak: How It Reveals Your Real"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

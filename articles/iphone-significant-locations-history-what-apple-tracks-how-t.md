@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "iPhone Significant Locations History What Apple Tracks How"
-description: "A technical guide to understanding iPhone Significant Locations history, what Apple collects, how the data is stored, and step-by-step methods to view"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /iphone-significant-locations-history-what-apple-tracks-how-t/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "iPhone Significant Locations History What Apple Tracks How"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

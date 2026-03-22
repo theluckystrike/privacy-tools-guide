@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Vendor Privacy Scorecard For Evaluating Saas"
 description: "Evaluating SaaS vendors for privacy and data protection is a critical step before committing to any tool. A well-structured vendor privacy scorecard gives you"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Keeper Security Review For Enterprise 2026"
-description: "A technical review of Keeper Security for enterprise deployment in 2026, covering architecture, admin controls, and integration capabilities"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /keeper-security-review-for-enterprise-2026/
-categories: [troubleshooting]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, security]---
 ---
 layout: default
 title: "Keeper Security Review For Enterprise 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 

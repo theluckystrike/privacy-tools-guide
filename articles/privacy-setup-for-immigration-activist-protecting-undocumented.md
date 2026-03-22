@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Setup for Immigration Activist"
-description: "A technical guide for developers and power users setting up privacy tools for immigration activists working to protect undocumented community members"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /privacy-setup-for-immigration-activist-protecting-undocumented/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Setup for Immigration Activist"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

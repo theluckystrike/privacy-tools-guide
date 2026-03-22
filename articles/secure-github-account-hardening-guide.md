@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Secure Your GitHub Account"
 description: "Harden your GitHub account with 2FA, SSH key management, token auditing, branch protection, and secret scanning to prevent account takeovers"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

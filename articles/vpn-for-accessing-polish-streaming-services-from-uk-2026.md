@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "VPN for Accessing Polish Streaming Services from UK 2026"
-description: "A technical guide for developers and power users on using VPNs to access Polish streaming services from the UK. Covers protocol configuration, DNS"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /vpn-for-accessing-polish-streaming-services-from-uk-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "VPN for Accessing Polish Streaming Services from UK 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

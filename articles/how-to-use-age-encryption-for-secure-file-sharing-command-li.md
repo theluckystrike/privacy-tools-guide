@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Use Age Encryption For Secure File Sharing Command"
-description: "Install age (brew install age on macOS, apt install age on Linux), generate recipient keys with age-keygen, then encrypt files using age -r [public-key]"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-use-age-encryption-for-secure-file-sharing-command-li/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 ---
 layout: default
 title: "How To Use Age Encryption For Secure File Sharing Command"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 

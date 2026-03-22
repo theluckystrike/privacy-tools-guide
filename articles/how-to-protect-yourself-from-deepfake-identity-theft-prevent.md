@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Protect Yourself from Deepfake Identity Theft"
-description: "Learn practical strategies to protect yourself from deepfake identity theft. This guide covers detection tools, verification methods, and technical"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "theluckystrike"
-permalink: /how-to-protect-yourself-from-deepfake-identity-theft-prevent/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Protect Yourself from Deepfake Identity Theft"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

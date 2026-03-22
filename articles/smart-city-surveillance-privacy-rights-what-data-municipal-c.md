@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Smart City Surveillance: What Data Municipal Cameras"
 description: "A technical breakdown of smart city surveillance systems, the data they collect, privacy implications, and what developers need to know about municipal"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

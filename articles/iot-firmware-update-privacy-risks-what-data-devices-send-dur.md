@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Iot Firmware Update Privacy Risks What Data Devices Send"
 description: "Discover what data your IoT devices transmit during firmware update checks. A technical guide for developers and power users on privacy implications"
@@ -11,7 +12,8 @@ reviewed: true
 score: 7
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

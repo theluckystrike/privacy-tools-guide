@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Secure NAS Storage for Home Use"
 description: "Harden a Synology, QNAP, or TrueNAS home NAS with disk encryption, network isolation, firewall rules, 2FA, and audit logging to prevent unauthorized access"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

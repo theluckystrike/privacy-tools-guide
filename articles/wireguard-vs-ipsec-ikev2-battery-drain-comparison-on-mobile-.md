@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile"
-description: "A technical comparison of WireGuard and IPSec IKEv2 VPN protocols focusing on battery consumption, performance metrics, and practical recommendations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, comparison]---
 ---
 layout: default
 title: "Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, comparison]---
+tags: [privacy-tools-guide, comparison]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

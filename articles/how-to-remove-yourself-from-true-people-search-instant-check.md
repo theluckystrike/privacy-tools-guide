@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Remove Yourself From True People Search Instant"
-description: "A practical guide for developers and power users to remove personal data from people search sites. Includes automation scripts and API strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-remove-yourself-from-true-people-search-instant-check/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Remove Yourself From True People Search Instant"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "VPN Kill Switch Configuration on Linux with iptables"
-description: "How to configure a VPN kill switch on Linux using iptables and nftables so that all traffic stops if the VPN drops, preventing IP address exposure"
-date: 2026-03-21
-author: theluckystrike
-permalink: /vpn-kill-switch-linux-iptables-setup/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "VPN Kill Switch Configuration on Linux with iptables"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

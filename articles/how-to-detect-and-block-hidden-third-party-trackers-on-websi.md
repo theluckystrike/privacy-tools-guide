@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Detect And Block Hidden Third Party Trackers On"
-description: "Third-party trackers have become ubiquitous across the web, collecting user data through scripts that load silently in the background. For developers building"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-detect-and-block-hidden-third-party-trackers-on-websi/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Detect And Block Hidden Third Party Trackers On"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

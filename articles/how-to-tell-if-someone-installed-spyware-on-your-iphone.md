@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Tell If Someone Installed Spyware On Your"
-description: "Watch for behavioral red flags: unusual battery drain, unexpected data usage spikes, overheating, slow performance, or strange app behavior. Check Settings →"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-tell-if-someone-installed-spyware-on-your-iphone/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Tell If Someone Installed Spyware On Your"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

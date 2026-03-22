@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"
-description: "A technical guide to tenant privacy rights covering what landlords can legally monitor in rental property. State-by-state breakdown with code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /tenant-privacy-rights-what-landlords-can-legally-monitor-in-/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Tenant Privacy Rights: What Landlords Can Legally Monitor"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

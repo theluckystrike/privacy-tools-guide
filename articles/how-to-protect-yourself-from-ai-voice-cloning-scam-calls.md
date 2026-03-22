@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Protect Yourself From Ai Voice Cloning Scam"
-description: "Learn how to recognize and protect yourself from AI voice cloning scam calls. Discover warning signs, verification techniques, and technical solutions"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: "Privacy Tools Guide"
-permalink: /how-to-protect-yourself-from-ai-voice-cloning-scam-calls/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
 ---
 layout: default
 title: "How To Protect Yourself From Ai Voice Cloning Scam"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, artificial-intelligence]---
+tags: [privacy-tools-guide, artificial-intelligence]
+---
 
 {% raw %}
 

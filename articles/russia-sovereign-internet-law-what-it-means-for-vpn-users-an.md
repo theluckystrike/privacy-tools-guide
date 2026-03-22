@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Russia Sovereign Internet Law What It Means For Vpn Users"
-description: "Russia Sovereign Internet Law: What It Means for VPN. — privacy guide covering tools, techniques, and best practices to protect your data and digital"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "Privacy Tools Guide"
-permalink: /russia-sovereign-internet-law-what-it-means-for-vpn-users-an/
-categories: [guides]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "Russia Sovereign Internet Law What It Means For Vpn Users"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

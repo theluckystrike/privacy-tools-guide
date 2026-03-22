@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Request Algorithmic Transparency From Companies"
 description: "A practical guide for developers and power users on exercising your right to understand how automated systems impact your life. Includes templates"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

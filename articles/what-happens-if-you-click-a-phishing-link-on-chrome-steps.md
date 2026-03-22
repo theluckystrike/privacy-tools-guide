@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "What Happens If You Click A Phishing Link On Chrome"
-description: "Learn exactly what happens when you click a phishing link in Chrome and the technical steps to take. A practical guide for developers and power users"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /what-happens-if-you-click-a-phishing-link-on-chrome-steps/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "What Happens If You Click A Phishing Link On Chrome"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Set Up Panic Button on Phone: Emergency Privacy"
 description: "Setting up a panic button on your phone enables rapid data destruction when you face an emergency situation. Whether you're a journalist protecting sources, a"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

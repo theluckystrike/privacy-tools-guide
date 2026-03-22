@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, note-taking, encryption, comparison, privacy]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

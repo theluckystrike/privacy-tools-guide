@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Prevent Cross Device Tracking Between Phone Tablet"
 description: "Cross-device tracking represents one of the most insidious privacy threats in modern computing. Advertisers, data brokers, and even some operating system"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

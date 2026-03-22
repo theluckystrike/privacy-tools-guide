@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How to Use the I2P Anonymous Network"
 description: "Install and configure I2P for anonymous browsing, set up eepsites, use I2P-Bote for email, and understand how I2P differs from Tor for threat modeling"
@@ -10,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

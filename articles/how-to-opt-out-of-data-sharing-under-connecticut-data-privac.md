@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"
-description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal data"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-opt-out-of-data-sharing-under-connecticut-data-privac/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

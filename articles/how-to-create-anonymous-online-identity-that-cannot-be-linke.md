@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Create Anonymous Online Identity That Cannot Be"
 description: "A practical guide for developers and power users on creating unlinkable anonymous online identities using cryptographic techniques"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

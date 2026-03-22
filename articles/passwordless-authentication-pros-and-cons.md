@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Passwordless Authentication Pros and Cons: A Developer Guide"
-description: "A technical analysis of passwordless authentication methods for developers and power users. Explore FIDO2, passkeys, biometrics, and implementation"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "Privacy Tools Guide"
-permalink: /passwordless-authentication-pros-and-cons/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Passwordless Authentication Pros and Cons: A Developer Guide"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

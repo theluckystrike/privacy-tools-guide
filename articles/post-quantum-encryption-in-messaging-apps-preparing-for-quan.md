@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Post Quantum Encryption In Messaging Apps Preparing"
-description: "A practical guide for developers and power users on post-quantum cryptography in messaging apps, featuring code examples and implementation strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /post-quantum-encryption-in-messaging-apps-preparing-for-quan/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, encryption]---
 ---
 layout: default
 title: "Post Quantum Encryption In Messaging Apps Preparing"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, encryption]---
+tags: [privacy-tools-guide, encryption]
+---
 
 {% raw %}
 

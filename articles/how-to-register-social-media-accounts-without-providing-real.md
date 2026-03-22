@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Register Social Media Accounts Without Providing Real Phone"
-description: "Learn privacy-focused methods for creating social media accounts without exposing personal phone numbers or email addresses. Tools, techniques, and code"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-register-social-media-accounts-without-providing-real/
-categories: [security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Register Social Media Accounts Without Providing Real Phone"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

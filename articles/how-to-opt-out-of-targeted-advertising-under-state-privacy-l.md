@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Opt Out Of Targeted Advertising Under State Privacy"
 description: "A practical guide for developers and power users to exercise privacy rights under CCPA, VCDPA, and other state privacy laws. Includes API methods, code"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

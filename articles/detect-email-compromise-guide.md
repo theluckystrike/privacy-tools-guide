@@ -12,22 +12,6 @@ score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
----
----
-layout: default
-title: "How to Detect if Your Email Is Compromised"
-description: "Practical steps to find out if your email account has been breached. Check breach databases, audit login activity, and secure your account fast."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: detect-email-compromise-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
 ---
 =======
 ---

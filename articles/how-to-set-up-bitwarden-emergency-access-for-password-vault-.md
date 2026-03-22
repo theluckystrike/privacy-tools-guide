@@ -11,7 +11,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 
@@ -316,7 +317,8 @@ For businesses managing shared credentials:
 # Tier 2: Infrastructure accounts (CTO + DevOps Lead)
 # Tier 3: Communications accounts (CEO + Communications Director)
 
-# Configure per-tier access---
+# Configure per-tier access
+---
 org:
  finance:
  emergency_contacts: ["treasurer@company.com", "legal@company.com"]

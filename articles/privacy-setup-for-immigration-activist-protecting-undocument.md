@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Privacy Setup For Immigration Activist Protecting Undocument"
-description: "A technical guide for developers and power users implementing privacy measures for immigration activists. Learn secure communications, data protection"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /privacy-setup-for-immigration-activist-protecting-undocument/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Privacy Setup For Immigration Activist Protecting Undocument"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

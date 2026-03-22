@@ -12,22 +12,6 @@ score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
-<<<<<<< Updated upstream
----
----
-layout: default
-title: "Dkim Spf Dmarc Email Authentication How They Protect"
-description: "Learn how DKIM, SPF, and DMARC work together to prevent email spoofing. A practical guide for developers and power users configuring email security"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /dkim-spf-dmarc-email-authentication-how-they-protect-against/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]
 ---
 =======
 ---

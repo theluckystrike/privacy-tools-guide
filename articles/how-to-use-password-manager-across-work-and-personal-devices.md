@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Use Password Manager Across Work And Personal"
-description: "Managing credentials across multiple devices while maintaining clear boundaries between work and personal accounts is a common challenge. Password managers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-password-manager-across-work-and-personal-devices/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Use Password Manager Across Work And Personal"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 

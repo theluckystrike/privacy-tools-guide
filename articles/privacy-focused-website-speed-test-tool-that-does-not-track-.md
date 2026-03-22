@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy-Focused Website Speed Test Tool That Does Not Track"
 description: "Website speed test tools that never log tested URLs. Self-hosted options, CLI tools, and offline benchmarks for privacy-conscious developers."
@@ -10,7 +11,8 @@ voice-checked: true
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Set Up Encrypted Local Backup Of iPhone"
 description: "If you value privacy and want full control over your iPhone backups, skipping iCloud is a smart move. Local backups give you ownership of your data, eliminate"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 
 {% raw %}

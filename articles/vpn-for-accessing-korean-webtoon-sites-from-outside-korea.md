@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "VPN for Accessing Korean Webtoon Sites from Outside"
 description: "A technical guide for developers and power users on using VPN solutions to access Korean webtoon platforms like Naver Webtoon and Kakao Page from"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 
@@ -474,7 +476,8 @@ vpn_failover_monitor() {
 Access considerations for different jurisdictions:
 
 ```yaml
-# Content legality and regional availability---
+# Content legality and regional availability
+---
 naver_webtoon:
  # Many titles free in Korea, paid elsewhere
  # Regional licensing agreements restrict availability

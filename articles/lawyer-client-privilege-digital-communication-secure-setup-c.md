@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Lawyer Client Privilege Digital Communication Secure Setup"
-description: "A practical guide for developers and power users setting up secure digital communication channels that maintain lawyer-client privilege. Covers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /lawyer-client-privilege-digital-communication-secure-setup-c/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Lawyer Client Privilege Digital Communication Secure Setup"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Privacy Setup For Domestic Abuse Shelter Staff: Protecting"
 description: "Location data represents one of the most critical privacy vulnerabilities for domestic abuse survivors. When a survivor accesses support services, their device"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 7
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

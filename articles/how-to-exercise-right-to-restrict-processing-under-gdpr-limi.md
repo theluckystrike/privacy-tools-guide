@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "How To Exercise Right To Restrict Processing Under Gdpr"
 description: "Learn how to exercise your right to restrict processing under GDPR. Practical guide for developers and power users on limiting data use with code examples"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

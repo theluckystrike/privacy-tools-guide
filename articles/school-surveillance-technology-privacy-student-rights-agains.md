@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "School Surveillance Technology Privacy"
-description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /school-surveillance-technology-privacy-student-rights-against/
-reviewed: true
-score: 8
-categories: [security, guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "School Surveillance Technology Privacy"
@@ -25,7 +12,8 @@ score: 8
 categories: [security, guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

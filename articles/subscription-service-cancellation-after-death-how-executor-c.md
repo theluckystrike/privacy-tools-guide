@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Subscription Service Cancellation After Death How Executor"
 description: "A practical guide for executors on how to cancel subscription services and recurring payments after death. Includes documentation requirements"
@@ -11,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

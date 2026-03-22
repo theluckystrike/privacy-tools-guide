@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Withdraw Crypto from Exchange Without Linking to Personal"
-description: "A practical guide for developers and power users on withdrawing cryptocurrency from exchanges while maintaining financial privacy. Covers P2P trading, crypto"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-withdraw-crypto-from-exchange-without-linking-to-pers/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Withdraw Crypto from Exchange Without Linking to Personal"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

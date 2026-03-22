@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Signal Disappearing Messages Best Practices: Sensitive"
 description: "Configure Signal disappearing messages for sensitive conversations. Timer settings, screenshot risks, backup implications, and group chat strategies."
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide, best-of]---
+tags: [privacy-tools-guide, best-of]
+---
 
 
 | Tool | Privacy Feature | Open Source | Platform | Pricing |

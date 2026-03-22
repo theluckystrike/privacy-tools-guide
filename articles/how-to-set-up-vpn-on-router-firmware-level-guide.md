@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Set Up VPN on Router Firmware: Complete Guide"
-description: "A technical guide for developers and power users on configuring VPN directly on router firmware including OpenWrt, DD-WRT, and ASUSWRT-Merlin setups"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-vpn-on-router-firmware-level-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "How to Set Up VPN on Router Firmware: Complete Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

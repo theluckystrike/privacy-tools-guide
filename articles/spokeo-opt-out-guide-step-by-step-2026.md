@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Spokeo Opt Out Guide: Step by Step 2026"
-description: "A practical guide for developers and power users to remove personal information from Spokeo people search engine. Includes automated removal methods"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /spokeo-opt-out-guide-step-by-step-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Spokeo Opt Out Guide: Step by Step 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

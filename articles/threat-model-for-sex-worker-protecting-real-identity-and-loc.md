@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Threat Model For Sex Worker Protecting Real Identity"
 description: "A practical technical guide for developers and power users on building a threat model to protect real identity and physical location for sex workers"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How VPN Reconnection Works After Network Switch: Technical"
-description: "A technical deep-dive into VPN reconnection mechanisms during network transitions, mobile handoffs, and IP changes. Includes code examples for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-vpn-reconnection-works-after-network-switch-mobile-hando/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "How VPN Reconnection Works After Network Switch: Technical"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

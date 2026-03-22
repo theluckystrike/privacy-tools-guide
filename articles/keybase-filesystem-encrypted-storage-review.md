@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Keybase Filesystem (KBFS) Review"
 description: "A review of Keybase Filesystem (KBFS) - explore how this zero-knowledge encrypted storage solution works for individuals and teams"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

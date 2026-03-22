@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Someone Signed Up for Services Using My Email"
-description: "Received a verification email for an account you didn't create? This guide covers technical solutions, privacy protection steps, and preventive measures for"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /someone-signed-up-for-services-using-my-email-what-to-do/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Someone Signed Up for Services Using My Email"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Mumble Encrypted Voice Chat Server Setup For Private Team"
 description: "A practical guide to setting up a self-hosted Mumble server with encryption for private team voice communication. Complete installation, configuration"
@@ -11,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 
@@ -274,7 +276,8 @@ data:
     bandwidth=128000
     maxusers=200
     sslCert=/etc/mumble-certs/cert.pem
-    sslKey=/etc/mumble-certs/key.pem---
+    sslKey=/etc/mumble-certs/key.pem
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:

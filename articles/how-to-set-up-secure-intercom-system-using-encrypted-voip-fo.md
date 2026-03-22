@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Set Up Secure Intercom System Using Encrypted Voip"
-description: "A practical guide for developers and power users on building secure intercom systems using encrypted VoIP protocols. Learn about self-hosted solutions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-secure-intercom-system-using-encrypted-voip-fo/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Set Up Secure Intercom System Using Encrypted Voip"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

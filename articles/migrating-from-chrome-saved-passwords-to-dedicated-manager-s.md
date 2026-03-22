@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Migrating From Chrome Saved Passwords To Dedicated Manager"
-description: "A practical guide for developers and power users moving Chrome passwords to a dedicated password manager. Export, import, and secure your credentials"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /migrating-from-chrome-saved-passwords-to-dedicated-manager-s/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Migrating From Chrome Saved Passwords To Dedicated Manager"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

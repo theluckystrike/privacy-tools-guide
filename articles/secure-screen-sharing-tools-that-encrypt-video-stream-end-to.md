@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Secure Screen Sharing Tools That Encrypt Video Stream End"
-description: "A practical guide to screen sharing solutions with true end-to-end encryption for developers and power users who need to protect sensitive visual data"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /secure-screen-sharing-tools-that-encrypt-video-stream-end-to/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Secure Screen Sharing Tools That Encrypt Video Stream End"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

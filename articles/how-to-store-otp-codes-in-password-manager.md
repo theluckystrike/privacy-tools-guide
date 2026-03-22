@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Store Otp Codes In Password Manager"
-description: "Managing multiple authenticator apps across devices creates friction. Developers and power users often prefer consolidating OTP (One-Time Password) codes"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /how-to-store-otp-codes-in-password-manager/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How To Store Otp Codes In Password Manager"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

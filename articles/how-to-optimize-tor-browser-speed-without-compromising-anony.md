@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "How to Optimize Tor Browser Speed Without Compromising"
-description: "A technical guide for developers and power users on optimizing Tor Browser performance while maintaining strong anonymity guarantees. Includes"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-optimize-tor-browser-speed-without-compromising-anony/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, tor, privacy, anonymity, browser-optimization]---
 ---
 layout: default
 title: "How to Optimize Tor Browser Speed Without Compromising"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, tor, privacy, anonymity, browser-optimization]---
+tags: [privacy-tools-guide, tor, privacy, anonymity, browser-optimization]
+---
 
 {% raw %}
 

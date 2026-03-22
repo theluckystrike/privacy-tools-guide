@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Password Manager For Shared Accounts Between Roommates"
 description: "Use a password manager's shared vault feature to securely share streaming services, utilities, and smart home credentials with roommates instead of text"
@@ -11,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

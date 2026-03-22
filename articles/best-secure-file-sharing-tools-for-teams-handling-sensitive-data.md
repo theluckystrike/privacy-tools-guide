@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: "Best Secure File Sharing Tools for Teams Handling"
 description: "Compare secure file sharing platforms for teams with compliance requirements. Evaluate encryption, audit trails, access controls, and integration"
@@ -11,7 +12,8 @@ tags: [privacy-tools-guide, collaboration, security, best-of]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

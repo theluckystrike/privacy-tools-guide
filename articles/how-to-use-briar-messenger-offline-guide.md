@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Use Briar Messenger Offline: A Developer's Guide"
-description: "A technical guide to using Briar messenger for offline-first, decentralized communication via Bluetooth and Wi-Fi Direct"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /how-to-use-briar-messenger-offline-guide/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Use Briar Messenger Offline: A Developer's Guide"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

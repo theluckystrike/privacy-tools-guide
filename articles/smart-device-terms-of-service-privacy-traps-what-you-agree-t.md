@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Smart Device Terms of Service Privacy Traps"
-description: "Discover the hidden privacy risks in smart device terms of service. Learn to analyze ToS, understand data collection practices, and protect your"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /smart-device-terms-of-service-privacy-traps-what-you-agree-t/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "Smart Device Terms of Service Privacy Traps"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 

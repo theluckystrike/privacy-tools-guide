@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Delete All Traces of Your Online Presence Completely"
-description: "Removing yourself from the internet requires a systematic approach. Most people believe complete deletion is impossible, but with the right tools and"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-delete-all-traces-of-your-online-presence-completely/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Delete All Traces of Your Online Presence Completely"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

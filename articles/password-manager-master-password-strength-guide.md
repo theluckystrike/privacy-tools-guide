@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Password Manager Master Password Strength Guide"
-description: "Create a master password with at least 80 bits of entropy: use a random 6-8 word passphrase (e.g., generated via diceware) or a 16+ character random string"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: "Privacy Tools Guide"
-permalink: /password-manager-master-password-strength-guide/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Password Manager Master Password Strength Guide"
@@ -25,7 +12,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

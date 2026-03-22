@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Use Multiple Identities Online: Compartmentalization"
-description: "Learn how to create and manage multiple online identities through digital compartmentalization. Practical strategies for separating personal"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: theluckystrike
-permalink: /how-to-use-multiple-identities-online-compartmentalization/
-categories: [guides, security]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 9
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Use Multiple Identities Online: Compartmentalization"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

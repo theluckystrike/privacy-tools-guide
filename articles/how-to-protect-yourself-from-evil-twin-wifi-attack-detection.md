@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How to Protect Yourself from Evil Twin WiFi Attack Detection"
-description: "Learn how to detect and protect against evil twin WiFi attacks. Practical detection techniques, network monitoring tools, and security best practices"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-protect-yourself-from-evil-twin-wifi-attack-detection/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Protect Yourself from Evil Twin WiFi Attack Detection"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "macOS Privacy Settings For Remote Workers 2026"
-description: "Working remotely introduces unique privacy challenges that differ significantly from office environments. Your MacBook becomes the gateway to corporate"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /macos-privacy-settings-for-remote-workers-2026/
-categories: [guides, security]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy, remote-work]---
 ---
 layout: default
 title: "macOS Privacy Settings For Remote Workers 2026"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy, remote-work]---
+tags: [privacy-tools-guide, privacy, remote-work]
+---
 
 {% raw %}
 

@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Password Manager Autofill Security"
-description: "The main security risks of password manager autofill are hidden-form credential theft (invisible login fields that capture autofilled data), XSS-based"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /password-manager-autofill-security-risks/
-categories: [security, guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, security]---
 ---
 layout: default
 title: "Password Manager Autofill Security"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, security]---
+tags: [privacy-tools-guide, security]
+---
 
 {% raw %}
 

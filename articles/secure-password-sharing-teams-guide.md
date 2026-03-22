@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "Secure Password Sharing for Teams"
-description: "How to share credentials securely across teams. Covers Bitwarden Organizations, Passbolt, 1Password Teams, and one-time secret links for guests."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: secure-password-sharing-teams-guide
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "Secure Password Sharing for Teams"
@@ -25,7 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

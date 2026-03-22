@@ -11,7 +11,8 @@ voice-checked: true
 tags: [privacy-tools-guide, privacy, networking, self-hosted, best-of]
 reviewed: true
 score: 8
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

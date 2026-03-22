@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "How To Run Concurrent Vpn Connections For Different Applicat"
-description: "A technical guide for developers and power users on running multiple simultaneous VPN connections, routing specific applications through different VPN"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-run-concurrent-vpn-connections-for-different-applicat/
-categories: [guides]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [privacy-tools-guide, vpn]---
 ---
 layout: default
 title: "How To Run Concurrent Vpn Connections For Different Applicat"
@@ -25,7 +12,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [privacy-tools-guide, vpn]---
+tags: [privacy-tools-guide, vpn]
+---
 
 {% raw %}
 

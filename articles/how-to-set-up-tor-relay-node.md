@@ -1,16 +1,4 @@
 ---
-layout: default
-title: "How to Set Up a Tor Relay"
-description: "Step-by-step guide to configuring a Tor middle relay on Linux, including torrc settings, bandwidth limits, firewall rules, and monitoring your relay"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-set-up-tor-relay-node/
-categories: [guides, security]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide]---
 ---
 layout: default
 title: "How to Set Up a Tor Relay"
@@ -23,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide]---
+tags: [privacy-tools-guide]
+---
 
 {% raw %}
 

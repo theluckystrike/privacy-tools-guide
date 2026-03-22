@@ -1,17 +1,4 @@
 ---
-layout: default
-title: "macOS Siri Privacy Controls How To Prevent Voice Data"
-description: "A technical guide for developers and power users to disable Siri voice recording collection, prevent audio data from being sent to Apple, and configure"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [privacy-tools-guide, privacy]---
 ---
 layout: default
 title: "macOS Siri Privacy Controls How To Prevent Voice Data"
@@ -25,7 +12,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [privacy-tools-guide, privacy]---
+tags: [privacy-tools-guide, privacy]
+---
 
 {% raw %}
 
