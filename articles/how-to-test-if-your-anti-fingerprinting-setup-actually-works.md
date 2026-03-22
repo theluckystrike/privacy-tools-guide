@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-test-if-your-anti-fingerprinting-setup-actually-works/
+description: "Follow this guide to how to test if your anti fingerprinting setup actually works with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Test if Your Anti-Fingerprinting Setup Actually"

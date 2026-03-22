@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-submit-privacy-complaint-to-california-attorney-gener/
+description: "Follow this guide to how to submit privacy complaint to california attorney gener with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "Submit a Privacy Complaint to California Attorney General"

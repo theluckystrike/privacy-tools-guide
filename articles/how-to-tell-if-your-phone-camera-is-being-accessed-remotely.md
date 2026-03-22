@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-your-phone-camera-is-being-accessed-remotely/
+description: "Follow this guide to how to tell if your phone camera is being accessed remotely with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, remote-work]
 ---
 layout: default
 title: "How To Tell If Your Phone Camera Is Being Accessed Remotely"

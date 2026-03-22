@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/
+description: "Follow this guide to how to tell if your dns has been hijacked symptoms check with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Tell If Your Dns Has Been Hijacked Symptoms"

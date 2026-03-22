@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-someone-has-access-to-your-apple-id/
+description: "Follow this guide to how to tell if someone has access to your apple id with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple"

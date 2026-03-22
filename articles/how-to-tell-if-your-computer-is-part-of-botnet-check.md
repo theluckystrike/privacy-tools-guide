@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-your-computer-is-part-of-botnet-check/
+description: "Follow this guide to how to tell if your computer is part of botnet check with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Tell If Your Computer Is Part Of Botnet"

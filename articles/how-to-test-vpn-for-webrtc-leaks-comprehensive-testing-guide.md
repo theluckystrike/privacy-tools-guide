@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-test-vpn-for-webrtc-leaks-comprehensive-testing-guide/
+description: "Follow this guide to how to test vpn for webrtc leaks comprehensive testing guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "How To Test Vpn For Webrtc Leaks Testing Guide"

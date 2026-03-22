@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-store-otp-codes-in-password-manager/
+description: "Follow this guide to how to store otp codes in password manager with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Store Otp Codes In Password Manager"

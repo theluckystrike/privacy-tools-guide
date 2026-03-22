@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-spot-romance-scam-red-flags-on-dating-apps-comprehens/
+description: "Follow this guide to how to spot romance scam red flags on dating apps comprehens with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Spot Romance Scam Red Flags On Dating Apps Comprehens"

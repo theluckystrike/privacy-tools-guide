@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-spoof-browser-user-agent-privacy/
+description: "Follow this guide to how to spoof browser user agent privacy with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, privacy]
 ---
 layout: default
 title: "How To Spoof Browser User Agent"

@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-someone-installed-spyware-on-your-iphone/
+description: "Follow this guide to how to tell if someone installed spyware on your iphone with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Tell If Someone Installed Spyware On Your"

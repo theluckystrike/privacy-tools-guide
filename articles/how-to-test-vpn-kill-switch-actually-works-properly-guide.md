@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-test-vpn-kill-switch-actually-works-properly-guide/
+description: "Follow this guide to how to test vpn kill switch actually works properly guide with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide, vpn]
 ---
 layout: default
 title: "How To Test Vpn Kill Switch Actually Works Properly Guide"

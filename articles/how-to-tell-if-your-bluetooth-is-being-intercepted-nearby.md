@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-your-bluetooth-is-being-intercepted-nearby/
+description: "Follow this guide to how to tell if your bluetooth is being intercepted nearby with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How to Tell if Your Bluetooth Is Being Intercepted"

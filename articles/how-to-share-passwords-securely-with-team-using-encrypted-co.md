@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-share-passwords-securely-with-team-using-encrypted-co/
+description: "Follow this guide to how to share passwords securely with team using encrypted co with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "How To Share Passwords Securely With Team Using Encrypted"

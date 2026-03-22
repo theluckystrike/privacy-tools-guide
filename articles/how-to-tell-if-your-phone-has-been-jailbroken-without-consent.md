@@ -1,5 +1,7 @@
 ---
 permalink: /how-to-tell-if-your-phone-has-been-jailbroken-without-consent/
+description: "Follow this guide to how to tell if your phone has been jailbroken without consent with practical examples, tips, and step-by-step instructions for getting the best results."
+tags: [privacy-tools-guide]
 ---
 layout: default
 title: "Tell If Your Phone Has Been Jailbroken Without Consent"
