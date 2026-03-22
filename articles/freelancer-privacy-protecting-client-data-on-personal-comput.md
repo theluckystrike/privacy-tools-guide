@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /freelancer-privacy-protecting-client-data-on-personal-comput/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
