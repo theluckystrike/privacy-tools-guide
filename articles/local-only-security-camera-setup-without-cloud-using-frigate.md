@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /local-only-security-camera-setup-without-cloud-using-frigate/
 description: "Learn local only security camera setup without cloud using frigate with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, security]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Local-Only Security Camera Setup Without Cloud Using Frigate"
 description: "A practical guide for setting up Frigate NVR for completely local security camera monitoring without cloud dependencies. Keep your video footage private"

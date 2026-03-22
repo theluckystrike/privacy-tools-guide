@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /legitimate-interest-assessment-template-for-processing-perso/
 description: "Learn legitimate interest assessment template for processing perso with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Legitimate Interest Assessment Template For Processing"
 description: "When building applications that process personal data, GDPR requires a lawful basis for each processing activity. While consent (Article 6(1)(a)) gets most of"

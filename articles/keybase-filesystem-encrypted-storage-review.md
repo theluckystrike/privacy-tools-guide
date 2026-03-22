@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /keybase-filesystem-encrypted-storage-review/
 description: "Learn keybase filesystem encrypted storage review with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Keybase Filesystem (KBFS) Review"
 description: "A review of Keybase Filesystem (KBFS) - explore how this zero-knowledge encrypted storage solution works for individuals and teams"
@@ -44,7 +52,7 @@ Keybase Filesystem (KBFS) provides end-to-end encrypted storage where only you a
 
 Keybase Filesystem (KBFS) is a cryptographic filesystem that provides end-to-end encrypted storage using the same encryption technology that protects Keybase's messaging platform. Unlike traditional cloud storage solutions where the provider holds encryption keys, KBFS ensures that only you—and those you explicitly share with—can access your data.
 
-The system operates as a virtual drive on your computer, mounting like any other filesystem but with automatic encryption happening in the background. This means you can work with your files using familiar drag-and-drop or command-line operations while knowing they're protected by military-grade encryption.
+The system operates as a virtual drive on your computer, mounting like any other filesystem but with automatic encryption happening in the background. This means you can work with your files using familiar drag-and-drop or command-line operations while knowing they're protected by AES-256 encryption.
 
 ## Installation and Initial Setup
 

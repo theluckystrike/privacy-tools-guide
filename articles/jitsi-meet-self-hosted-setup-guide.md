@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /jitsi-meet-self-hosted-setup-guide/
 description: "Follow this guide to jitsi meet self hosted setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"
 description: "Deploy a self-hosted Jitsi Meet instance by running docker-compose up -d with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name"

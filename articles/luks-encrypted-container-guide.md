@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /luks-encrypted-container-guide/
 description: "Follow this guide to luks encrypted container guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Create an Encrypted Container with LUKS"
 description: "Create portable LUKS encrypted containers as loop device files on Linux, separate from full-disk encryption, for encrypting specific directories and files"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /linux-kernel-hardening-sysctl-guide/
 description: "Follow this guide to linux kernel hardening sysctl guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Linux Kernel Hardening with sysctl"
 description: "Harden a Linux server with sysctl settings. Covers network stack hardening, kernel pointer hiding, ASLR, dmesg restriction, and persistence."

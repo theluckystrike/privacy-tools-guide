@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /linkedin-deceased-member-profile-removal-how-to-report-and-m/
 description: "Follow this guide to linkedin deceased member profile removal how to report and m with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "LinkedIn Deceased Member Profile Removal How To Report"
 description: "Report a deceased LinkedIn member's profile through the memorial request form in profile settings or via LinkedIn's support page. Provide a death certificate"

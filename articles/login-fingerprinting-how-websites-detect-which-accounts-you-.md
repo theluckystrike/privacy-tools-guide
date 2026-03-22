@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /login-fingerprinting-how-websites-detect-which-accounts-you-/
 description: "Learn login fingerprinting how websites detect which accounts you  with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Login Fingerprinting How Websites Detect Which Accounts You"
 description: "A technical deep-dive into login fingerprinting techniques that allow websites to identify your accounts without authentication. Learn how timing"

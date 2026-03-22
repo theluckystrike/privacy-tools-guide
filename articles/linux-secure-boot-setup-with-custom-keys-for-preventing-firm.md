@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /linux-secure-boot-setup-with-custom-keys-for-preventing-firm/
 description: "Learn linux secure boot setup with custom keys for preventing firm with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [setup]
 ---
+
 layout: default
 title: "Linux Secure Boot Setup with Custom Keys for Preventing"
 description: "Learn how to set up Secure Boot on Linux with custom keys to protect against firmware-level attacks and ensure boot integrity"
