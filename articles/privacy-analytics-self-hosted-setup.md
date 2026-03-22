@@ -5,7 +5,7 @@ description: "Deploy Plausible, Umami, or Matomo on your own server for GDPR-com
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-analytics-self-hosted-setup/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "Compare Mullvad DNS, Quad9, NextDNS, Cloudflare 1.1.1.1, and Contr
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-dns-resolver-comparison-2026/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

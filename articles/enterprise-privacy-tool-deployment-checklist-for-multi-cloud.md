@@ -331,14 +331,14 @@ vendors:
   - name: "DataDog"
     dpa_signed: "2025-11-01"
     dpa_expiry: "2027-11-01"
-    data_categories: ["logs", "metrics", "traces"]
+    data_categories: [guides]
     sub_processors_listed: true
     storage_regions: ["us-east-1", "eu-west-1"]
 
   - name: "Snowflake"
     dpa_signed: "2025-09-15"
     dpa_expiry: "2027-09-15"
-    data_categories: ["analytics", "pii-pseudonymized"]
+    data_categories: [guides]
     sub_processors_listed: true
     storage_regions: ["us-east-1"]
 ```

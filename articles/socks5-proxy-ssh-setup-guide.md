@@ -5,7 +5,7 @@ description: "Create a SOCKS5 proxy over SSH for traffic routing, application-le
 date: 2026-03-22
 author: theluckystrike
 permalink: /socks5-proxy-ssh-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

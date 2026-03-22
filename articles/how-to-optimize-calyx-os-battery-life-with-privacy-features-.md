@@ -5,7 +5,7 @@ description: "Extend CalyxOS battery life without disabling privacy features. Mi
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
-categories: [guides, android, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -18,7 +18,7 @@ description: "Learn how to optimize CalyxOS battery life while maintaining stron
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
-categories: [guides, android, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

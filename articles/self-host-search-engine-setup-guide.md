@@ -5,7 +5,7 @@ description: "Deploy SearXNG or Whoogle as a self-hosted, privacy-respecting met
 date: 2026-03-22
 author: theluckystrike
 permalink: /self-host-search-engine-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -179,7 +179,7 @@ search:
 engines:
   - name: duckduckgo
     engine: duckduckgo
-    categories: [general, news]
+    categories: [guides]
     disabled: false
 
   - name: startpage

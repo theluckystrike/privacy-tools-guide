@@ -5,7 +5,7 @@ description: "Compare GrapheneOS, CalyxOS, DivestOS, and LineageOS for privacy f
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-android-rom-comparison-2026/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 9
 intent-checked: true

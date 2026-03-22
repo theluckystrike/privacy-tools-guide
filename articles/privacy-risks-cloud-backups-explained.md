@@ -5,7 +5,7 @@ description: "What cloud backup providers can access: encryption models, metadat
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-risks-cloud-backups-explained/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

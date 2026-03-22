@@ -5,7 +5,7 @@ description: "Configure DNS over QUIC (DoQ) on Linux, Android, and routers for f
 date: 2026-03-22
 author: theluckystrike
 permalink: /dns-over-quic-setup-guide/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

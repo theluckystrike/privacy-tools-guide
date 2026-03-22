@@ -5,7 +5,7 @@ description: "Set up Home Assistant with local-only control and accessibility fe
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-focused-home-assistant-setup-accessible-for-users-wi/
-categories: [guides, home-automation, accessibility]
+categories: [guides]
 tags: [privacy-tools-guide, home-assistant, privacy, accessibility, smart-home]
 reviewed: true
 intent-checked: true
@@ -17,7 +17,7 @@ description: "A guide to setting up Home Assistant with privacy-first principles
 date: 2026-03-21
 author: theluckystrike
 permalink: /privacy-focused-home-assistant-setup-accessible-for-users-wi/
-categories: [guides, home-automation, accessibility]
+categories: [guides]
 tags: [home-assistant, privacy, accessibility, smart-home]
 reviewed: true
 intent-checked: true

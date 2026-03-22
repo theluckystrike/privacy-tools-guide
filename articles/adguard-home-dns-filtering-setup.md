@@ -5,7 +5,7 @@ description: "Install AdGuard Home on your server or Raspberry Pi, configure blo
 date: 2026-03-22
 author: theluckystrike
 permalink: /adguard-home-dns-filtering-setup/
-categories: [guides, privacy]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

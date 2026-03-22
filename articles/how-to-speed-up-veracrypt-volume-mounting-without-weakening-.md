@@ -6,7 +6,7 @@ date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-speed-up-veracrypt-volume-mounting-without-weakening-/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 9
 intent-checked: true
@@ -20,7 +20,7 @@ date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-speed-up-veracrypt-volume-mounting-without-weakening-/
-categories: [guides, security, encryption]
+categories: [guides, security]
 reviewed: true
 score: 9
 intent-checked: true

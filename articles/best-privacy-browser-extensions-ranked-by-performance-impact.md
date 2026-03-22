@@ -6,7 +6,7 @@ description: "A technical analysis of privacy browser extensions and their impac
 date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
-categories: [privacy, security, browser-extensions]
+categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
 score: 8
