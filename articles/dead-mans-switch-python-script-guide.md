@@ -318,6 +318,112 @@ echo "{}" > /var/dms/state.json
 # Contact trusted contacts to confirm you're OK
 ```
 
+## Hardening the Check-In Server
+
+The simple Flask check-in server works for personal use, but a production deployment on an internet-facing server needs additional hardening to prevent the token from being brute-forced or the server from being disrupted.
+
+**Rate limiting**: Add rate limiting to the check-in endpoint to prevent brute-force token guessing. With a 32-character random token, brute force is computationally infeasible, but rate limiting reduces noise in your logs and prevents your server from being used as part of a larger scanning campaign:
+
+```python
+from flask import Flask, request, jsonify, abort
+from functools import wraps
+import time
+import hmac
+
+app = Flask(__name__)
+
+# Simple in-memory rate limiter (use Redis for multi-process deployments)
+request_times = {}
+
+def rate_limit(max_requests=5, window_seconds=60):
+    def decorator(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            ip = request.remote_addr
+            now = time.time()
+            times = request_times.get(ip, [])
+            # Remove old timestamps outside the window
+            times = [t for t in times if now - t < window_seconds]
+            if len(times) >= max_requests:
+                abort(429)
+            times.append(now)
+            request_times[ip] = times
+            return f(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@app.route("/dms/checkin", methods=["POST", "GET"])
+@rate_limit(max_requests=10, window_seconds=60)
+def checkin():
+    token = request.args.get("token") or request.form.get("token")
+    if not token:
+        return jsonify({"error": "Missing token"}), 400
+    if not hmac.compare_digest(token.encode(), VALID_TOKEN.encode()):
+        time.sleep(1)  # Slow down invalid attempts
+        return jsonify({"error": "Invalid token"}), 403
+    # ... rest of check-in logic
+```
+
+**Nginx authentication layer**: Put nginx in front of the Flask server with an additional IP allowlist if you always check in from known locations:
+
+```nginx
+location /dms/checkin {
+    # Only allow check-ins from your known IP ranges
+    allow 203.0.113.0/24;    # Home IP range
+    allow 198.51.100.5;      # Mobile carrier NAT exit
+    deny all;
+
+    proxy_pass http://127.0.0.1:5000;
+    proxy_set_header X-Real-IP $remote_addr;
+}
+```
+
+This provides defense-in-depth: even if your token is compromised, attackers from unknown IPs cannot use it to reset the DMS state.
+
+## Distributing DMS Across Multiple Servers
+
+A single-server DMS has a significant failure mode: if that server goes down—due to payment lapse, infrastructure failure, or targeted attack—the DMS stops checking and either fires prematurely or fails to fire at all. For high-assurance use cases, distribute the check-in across multiple independent servers.
+
+The simplest approach runs the same DMS script on two servers from different providers (e.g., Hetzner and Vultr). Both receive check-ins. The payload releases only when both servers agree the threshold has been exceeded:
+
+```python
+# Distributed check-in: sends the check-in token to multiple servers simultaneously
+import requests
+import concurrent.futures
+
+DMS_ENDPOINTS = [
+    "https://dms1.yourserver.com/dms/checkin",
+    "https://dms2.backupserver.net/dms/checkin",
+]
+TOKEN = "YOUR_SECRET_TOKEN"
+
+def checkin_server(url):
+    try:
+        r = requests.post(url, params={"token": TOKEN}, timeout=10)
+        return url, r.status_code == 200
+    except Exception as e:
+        return url, False
+
+def checkin_all():
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        results = list(executor.map(checkin_server, DMS_ENDPOINTS))
+
+    all_ok = all(ok for _, ok in results)
+    for url, ok in results:
+        status = "OK" if ok else "FAILED"
+        print(f"{status}: {url}")
+
+    if not all_ok:
+        print("WARNING: Not all DMS servers received check-in")
+
+    return all_ok
+
+if __name__ == "__main__":
+    checkin_all()
+```
+
+Run this script as your check-in command instead of a raw `curl` call. The console output tells you immediately if a server failed to receive the check-in, giving you time to investigate the issue before the DMS timer expires.
+
 ---
 
 ## Related Reading
