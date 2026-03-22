@@ -9,7 +9,7 @@ permalink: /international-data-transfer-impact-assessment/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
