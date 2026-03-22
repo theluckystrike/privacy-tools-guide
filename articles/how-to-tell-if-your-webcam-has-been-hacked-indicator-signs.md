@@ -42,7 +42,17 @@ Webcam compromises represent a serious threat to privacy. Whether you're a devel
 - **Implement application whitelisting**: Only allow approved applications to run
 4.
 
-## Understanding Webcam Attack Vectors
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Webcam Attack Vectors
 
 Before detecting compromises, you need to understand how attackers gain access to your webcam. The primary attack vectors include:
 
@@ -53,7 +63,7 @@ Before detecting compromises, you need to understand how attackers gain access t
 
 Modern operating systems have implemented various protections, but determined attackers can still find ways around them. The key to detection lies in understanding your system's normal behavior and recognizing anomalies.
 
-## Physical Indicator Signs
+### Step 2: Physical Indicator Signs
 
 The first line of defense involves observing physical signs that may indicate your webcam is being accessed without your knowledge.
 
@@ -73,7 +83,7 @@ Watch for these system-level indicators:
 - Unusual hard drive activity suggesting video recording
 - Increased network traffic to unknown destinations
 
-## Operating System Level Detection
+### Step 3: Configure the Operating System Level Detection
 
 Modern operating systems provide built-in tools to monitor camera access. Here's how to use them on different platforms.
 
@@ -130,7 +140,7 @@ sudo ausearch -k webcam
 sudo lsof /dev/video*
 ```
 
-## Network Traffic Analysis
+### Step 4: Network Traffic Analysis
 
 For advanced users, network monitoring can reveal unauthorized camera streaming. This is particularly useful if you suspect a compromised application is transmitting video data.
 
@@ -153,7 +163,7 @@ For more sophisticated analysis, Wireshark can inspect encrypted traffic pattern
 3. Check for data transmission patterns consistent with video streaming (regular packet sizes, consistent timing)
 4. Compare network activity when you intentionally use your webcam versus idle periods
 
-## Application and Process Monitoring
+### Step 5: Application and Process Monitoring
 
 ### Windows Process Monitoring
 
@@ -185,7 +195,7 @@ done
 watch -n 1 'ps aux | grep -i camera\|video\|stream'
 ```
 
-## Browser-Level Detection
+### Step 6: Browser-Level Detection
 
 Many webcam compromises occur through browser permissions. Modern browsers provide controls to manage camera access.
 
@@ -207,7 +217,7 @@ Malicious browser extensions can request camera permissions:
 // Check for extensions with excessive permissions
 ```
 
-## Webcam Malware Detection Tools
+### Step 7: Webcam Malware Detection Tools
 
 Several specialized tools can help detect webcam compromises:
 
@@ -216,7 +226,7 @@ Several specialized tools can help detect webcam compromises:
 - **ClamAV**: Open-source antivirus that can detect known webcam spyware
 - **Rkhunter**: Rootkit detection tool for Linux systems
 
-## Prevention Strategies
+### Step 8: Prevention Strategies
 
 ### Physical Security
 
@@ -256,7 +266,7 @@ def log_camera_access(app_name, access_type):
     # Log to secure, tamper-resistant location
 ```
 
-## Response Steps If Compromised
+### Step 9: Response Steps If Compromised
 
 If you determine your webcam has been compromised:
 
@@ -267,6 +277,21 @@ If you determine your webcam has been compromised:
 5. **Reinstall your operating system** from trusted media
 6. **Change all passwords** for accounts accessed from that system
 7. **Enable two-factor authentication** on all critical accounts
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

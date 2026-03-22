@@ -44,7 +44,17 @@ On Linux, age is available through most package managers.
 - **Key derivation uses Argon2id**: resistant to both GPU and ASIC-based attacks when password-protected.
 - **For best results**: share your public key through a trusted channel, have recipients encrypt their files using your key, and decrypt using your private key.
 
-## Installing AGE
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install AGE
 
 The installation process varies by operating system, but most developers can install age with a single command. On macOS, use Homebrew:
 
@@ -66,7 +76,7 @@ age --version
 
 You should see version information confirming a successful installation.
 
-## Generating Encryption Keys
+### Step 2: Generate Encryption Keys
 
 Before encrypting files, you need to generate a keypair. AGE supports two types of keys: identity files (password-protected) and SSH keys. For most use cases, generating a dedicated identity file provides the best balance of security and convenience.
 
@@ -92,7 +102,7 @@ age-keygen -y ~/.ssh/id_ed25519
 
 This outputs the age-format public key derived from your SSH private key, allowing you to use existing credentials for age encryption.
 
-## Encrypting Files
+### Step 3: Encrypt Files
 
 With your keypair ready, encrypting files becomes straightforward. The basic syntax uses `age` with the `-p` flag for password-based encryption, or the `-r` flag for recipient-based encryption using public keys.
 
@@ -125,7 +135,7 @@ For encrypting directories, combine age with tar:
 tar czf - /path/to/directory | age -p -o backup.tar.gz.age
 ```
 
-## Decrypting Files
+### Step 4: Decrypt Files
 
 Decryption requires the corresponding private key or the correct passphrase. The `age-decrypt` command handles both recipient-based and password-based encrypted files.
 
@@ -149,7 +159,7 @@ age-decrypt -p -o original-file.txt encrypted-file.txt.age
 
 The `-p` flag prompts for the passphrase used during encryption.
 
-## Automation Patterns
+### Step 5: Automation Patterns
 
 Integrating age into scripts and workflows requires understanding how to pass keys securely. Avoid hardcoding keys in scripts. Instead, use environment variables or file references with appropriate permissions.
 
@@ -194,7 +204,7 @@ Developers familiar with GPG might wonder why age exists. Age prioritizes simpli
 
 For teams already using SSH, age's SSH key compatibility reduces the credential management burden. You can encrypt files using keys you already use for server authentication.
 
-## Age Cryptography Deep-Dive
+### Step 6: Age Cryptography Deep-Dive
 
 Understanding age's cryptographic foundation ensures proper security assumptions:
 
@@ -241,7 +251,7 @@ X25519: Elliptic curve Diffie-Hellman
 - Widely considered cryptographically sound
 ```
 
-## Batch Encryption Operations
+### Step 7: Batch Encryption Operations
 
 For processing many files:
 
@@ -275,7 +285,7 @@ done
 find "$OUTPUT_DIR" -type f -exec sha256sum {} \; > "$OUTPUT_DIR/manifest.sha256"
 ```
 
-## Integration with Backup Tools
+### Step 8: Integration with Backup Tools
 
 Age integrates with backup workflows:
 
@@ -323,7 +333,7 @@ touch /tmp/last-backup-marker
 ls -lh "$BACKUP_ROOT"/incremental-*.age | tail -5
 ```
 
-## Secure Key Sharing Protocols
+### Step 9: Secure Key Sharing Protocols
 
 Distributing keys securely is critical:
 
@@ -385,7 +395,7 @@ find data -type f | \
 # This is because age streams data rather than loading entirely
 ```
 
-## Decryption in Restricted Environments
+### Step 10: Decryption in Restricted Environments
 
 Recovering files when tools are limited:
 
@@ -401,7 +411,7 @@ from cryptography.hazmat.primitives.ciphers.aead import ChaCha20Poly1305
 # For production, always compile/install proper age binary
 ```
 
-## Integration with Git for Encrypted Repositories
+### Step 11: Integration with Git for Encrypted Repositories
 
 Store sensitive config in git with age encryption:
 
@@ -438,6 +448,21 @@ NOT protected against:
 - Brute-force of weak passphrases
 - Side-channel attacks on implementation
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

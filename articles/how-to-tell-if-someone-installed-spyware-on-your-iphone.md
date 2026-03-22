@@ -42,13 +42,23 @@ Watch for behavioral red flags: unusual battery drain, unexpected data usage spi
 - **Use the iPhone's Activity**: Monitor (developer mode) to check for background processes consuming unusual resources, and periodically restart your phone in Safe Mode.
 - **If you suspect sophisticated**: spyware like Pegasus, fully backup your data and reset your device as the most reliable detection/removal method.
 
-## Understanding the Threat ecosystem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Threat ecosystem
 
 iOS spyware typically enters devices through one of several pathways. Enterprise MDM (Mobile Device Management) profiles installed without explicit user consent represent one vector. Malicious apps that request excessive permissions provide another. Physical access exploitation—where someone gains brief possession of your device—remains a practical concern, especially for devices left unattended.
 
 The most sophisticated iOS spyware, such as NSO Group's Pegasus, exploits zero-day vulnerabilities to achieve kernel-level access. These attacks are typically nation-state level and difficult to detect through conventional means. However, most consumer-facing spyware operates at the application level, making detection more feasible.
 
-## Behavioral Indicators
+### Step 2: Behavioral Indicators
 
 Before exploring technical diagnostics, watch for these behavioral signs that may indicate compromise:
 
@@ -60,7 +70,7 @@ Before exploring technical diagnostics, watch for these behavioral signs that ma
 
 **Strange Messages**: Some spyware communicates via iMessage with invisible payloads. Watch for messages containing only a link or unusual characters, even if they appear to self-delete.
 
-## Technical Detection Methods
+### Step 3: Technical Detection Methods
 
 ### Analyzing Installed Profiles
 
@@ -129,7 +139,7 @@ For enterprise and sideloaded apps, verify the signing certificate:
 codesign -dv /path/to/app.app
 ```
 
-## Protecting Your Device
+### Step 4: Protecting Your Device
 
 Prevention remains the strongest defense against iOS spyware. Implement these measures:
 
@@ -145,7 +155,7 @@ Prevention remains the strongest defense against iOS spyware. Implement these me
 
 **Enable Two-Factor Authentication**: Protect your Apple ID with two-factor authentication to prevent account takeover, which could enable remote device management.
 
-## Responding to Detection
+### Step 5: Responding to Detection
 
 If you believe you've found spyware on your iPhone, take these steps immediately:
 
@@ -222,7 +232,7 @@ nm -D /var/mobile/Applications/*/executable
 # Suspicious injected libraries load from /var/tmp or /private directories
 ```
 
-## Spyware Families and Detection Indicators
+### Step 6: Spyware Families and Detection Indicators
 
 Different spyware exhibits distinct behavioral patterns. Understanding these helps prioritize investigation:
 
@@ -234,7 +244,7 @@ Different spyware exhibits distinct behavioral patterns. Understanding these hel
 
 **Enterprise MDM abuse**: Configuration profiles visible in Settings. May show unusual VPN profiles, certificate pinning for app stores.
 
-## Proactive Hardening
+### Step 7: Proactive Hardening
 
 Rather than reactive detection, implement hardening measures to minimize vulnerability:
 
@@ -269,7 +279,7 @@ Indicators that warrant professional help:
 3. **Targeted attack indicators**: If you have reason to believe a nation-state or sophisticated attacker targets you specifically
 4. **Legal proceedings**: If device data becomes evidence in legal matters, engage forensic specialists to preserve evidence properly
 
-## Post-Detection Response Procedures
+### Step 8: Post-Detection Response Procedures
 
 If you identify spyware, follow this sequence to minimize exposure:
 
@@ -281,7 +291,7 @@ If you identify spyware, follow this sequence to minimize exposure:
 6. **Factory reset**: Reset the device completely (Settings → General → Transfer or Reset → Erase All Content and Settings)
 7. **Monitor accounts**: For weeks after detection, monitor for unauthorized access attempts
 
-## Spyware Removal Verification
+### Step 9: Spyware Removal Verification
 
 After factory reset, verify the device is actually clean:
 
@@ -297,7 +307,7 @@ After factory reset, verify the device is actually clean:
 # Wait 24 hours between each installation, monitoring for suspicious behavior
 ```
 
-## Resources for High-Risk Users
+### Step 10: Resources for High-Risk Users
 
 Organizations working with journalists, activists, or human rights defenders should establish relationships with:
 
@@ -307,6 +317,21 @@ Organizations working with journalists, activists, or human rights defenders sho
 - **Open-source security tools communities**: For ongoing defense improvements
 
 The threat environment changes constantly. Maintaining awareness through security research communities, following updates from organizations like Amnesty Tech, and understanding emerging attack vectors helps keep defensive measures current.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -44,13 +44,23 @@ Email subaddressing (also known as plus addressing or tagged addressing) is a po
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Choose your base email**: - use a privacy-respecting provider 2.
 
-## Understanding Email Subaddressing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Email Subaddressing
 
 Most email providers support a simple syntax: anything after a plus sign (`+`) in your email address gets ignored during delivery but gets preserved in the recipient metadata. If your primary email is `developer@example.com`, you can use `developer+github@example.com` for GitHub registrations. Both addresses deliver to the same inbox, but the recipient sees the full address.
 
 This RFC 5233 compliant feature works with Gmail, Outlook, iCloud, Proton Mail, and most modern email services. The key advantage is that you can create unique addresses for every service without managing multiple accounts.
 
-## Setting Up Subaddressing for Tracking
+### Step 2: Set Up Subaddressing for Tracking
 
 Create a systematic approach to tracking email usage across services. Generate aliases using a consistent format that identifies the service name:
 
@@ -76,7 +86,7 @@ console.log(serviceEmails.aws);      // developer+aws@example.com
 
 This script generates predictable aliases that you can document in a password manager or dedicated tracking system. When you sign up for a new service, create a subaddress that clearly identifies the service name.
 
-## Detecting Address Leaks
+### Step 3: Detecting Address Leaks
 
 Once you've been using subaddresses for a while, detecting leaks becomes straightforward. Create a dedicated email filter that labels incoming mail by the alias used:
 
@@ -109,7 +119,7 @@ For maximum control, pair subaddressing with a custom domain. This approach prov
 
 Services like Cloudflare Email Routing, Forward Email, and ImprovMX offer free catch-all forwarding. Combined with a privacy-respecting inbox provider, you gain full control over incoming mail.
 
-## Identifying Service Data Breaches
+### Step 4: Identifying Service Data Breaches
 
 When a service you registered with experiences a breach, attackers often obtain email addresses. If you're using subaddresses, you can identify the compromised service immediately:
 
@@ -144,7 +154,7 @@ function detectLeak(serviceName) {
 }
 ```
 
-## Practical Implementation Strategy
+### Step 5: Practical Implementation Strategy
 
 Start with these steps to build your tracking system:
 
@@ -159,7 +169,7 @@ When you notice a leak, you have options:
 - Contact the service to request data removal
 - Use the alias for targeted spam filtering in your email client
 
-## Common Pitfalls to Avoid
+### Step 6: Common Pitfalls to Avoid
 
 Some services don't accept plus addresses due to poor validation. Workarounds include:
 
@@ -169,7 +179,7 @@ Some services don't accept plus addresses due to poor validation. Workarounds in
 
 Avoid using easily guessable patterns like sequential numbers (`user+1@example.com`, `user+2@example.com`) as these can be trivially stripped by spam systems.
 
-## Automating Alias Management
+### Step 7: Automate Alias Management
 
 For power users managing many services, automate the process:
 
@@ -206,7 +216,7 @@ class EmailAliasManager {
 
 This approach creates discoverable aliases that include service name, purpose, and a timestamp for uniqueness while remaining readable.
 
-## Domain-Based Aliasing for Professional Separation
+### Step 8: Domain-Based Aliasing for Professional Separation
 
 For developers and power users managing separate professional identities, custom domain aliases provide stronger separation than plus addressing:
 
@@ -222,7 +232,7 @@ curl -X POST https://api.mailgun.net/v3/mg.yourdomain.com/routes \
 
 This approach scales better than plus addressing and provides professional aliases for different personas (dev@yourdomain.com, security@yourdomain.com, etc.).
 
-## Integrating with Password Managers for Tracking
+### Step 9: Integrate with Password Managers for Tracking
 
 Store subaddresses in your password manager with metadata tags to correlate with leak detection:
 
@@ -368,7 +378,7 @@ leak_rate = (leaked_services / total_services) * 100
 print(f"Leak rate: {leak_rate}% of services ({leaked_services}/{total_services})")
 ```
 
-## Gmail-Specific Advanced Filters
+### Step 10: Gmail-Specific Advanced Filters
 
 Gmail's powerful filter system enables sophisticated leak detection without third-party tools:
 
@@ -395,7 +405,7 @@ services/
   │   └── unexpected
 ```
 
-## Preventing Cross-Service Correlation
+### Step 11: Preventing Cross-Service Correlation
 
 When aliases are leaked and sold to data brokers, multiple services can correlate your activity. Mitigate this by:
 
@@ -408,6 +418,21 @@ When aliases are leaked and sold to data brokers, multiple services can correlat
 
 2. **Rotating aliases periodically**: Every 90 days, create new aliases and migrate accounts
 3. **Monitoring for pattern-based tracking**: Check if multiple leaked emails follow a predictable sequence
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

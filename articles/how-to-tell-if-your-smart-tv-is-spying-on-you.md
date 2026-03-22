@@ -43,7 +43,17 @@ This guide provides practical methods to identify whether your smart TV is colle
 3.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Smart TV Data Collection
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Smart TV Data Collection
 
 Modern smart TVs from major manufacturers collect various types of data:
 
@@ -55,7 +65,7 @@ Modern smart TVs from major manufacturers collect various types of data:
 
 Manufacturers typically justify this collection under terms of service agreements that most users accept without reading. The real question is what happens to this data and whether you can control it.
 
-## Network Traffic Analysis
+### Step 2: Network Traffic Analysis
 
 The most effective method for detecting data transmission involves monitoring your network traffic. By analyzing outbound connections, you can identify which servers your TV communicates with and what data it sends.
 
@@ -123,7 +133,7 @@ def extract_domains(pcap_file):
 # Usage: python3 extract_domains.py tv_traffic.pcap
 ```
 
-## Examining TV Privacy Settings
+### Step 3: Examining TV Privacy Settings
 
 While network analysis reveals transmission, checking your TV's built-in privacy settings helps identify what data collection is enabled.
 
@@ -161,7 +171,7 @@ Roku provides limited privacy controls:
 2. Disable **Device Usage Data**
 3. Turn off **Interest-Based Ads**
 
-## Automated Monitoring with Home Assistant
+### Step 4: Automated Monitoring with Home Assistant
 
 For continuous monitoring, integrate your TV into a Home Assistant setup:
 
@@ -233,7 +243,7 @@ echo "quantserve.com" >> /etc/pihole/blacklist.txt
 pihole -g
 ```
 
-## Signs Your TV May Be Spying
+### Step 5: Signs Your TV May Be Spying
 
 Watch for these indicators:
 
@@ -242,6 +252,21 @@ Watch for these indicators:
 3. **Microphone or camera indicator**: Some TVs have physical indicators for voice activation
 4. **Updated privacy policies**: Manufacturers frequently update terms to expand data collection
 5. **Ads in menu interfaces**: Free ad-supported models often transmit more data
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

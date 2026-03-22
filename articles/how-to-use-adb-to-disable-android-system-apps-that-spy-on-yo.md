@@ -75,7 +75,7 @@ Verify the installation by running:
 adb version
 ```
 
-## Enabling Developer Options and USB Debugging
+### Step 1: Enable Developer Options and USB Debugging
 
 Your Android device requires Developer Options enabled and USB Debugging turned on to accept ADB commands.
 
@@ -87,7 +87,7 @@ Your Android device requires Developer Options enabled and USB Debugging turned 
 
 When you connect your device to the computer via USB, a prompt appears requesting authorization. Check the box for "Always allow from this computer" and tap **Allow**.
 
-## Discovering Package Names
+### Step 2: Discovering Package Names
 
 Before disabling an app, you need its package name. Android assigns unique identifiers to each app, such as `com.android.providers.telephony` or `com.google.android.gms`.
 
@@ -125,7 +125,7 @@ For a more detailed view showing app names alongside package names:
 adb shell pm list packages -3 | while read pkg; do echo "$pkg $(adb shell dumpsys package $pkg | grep 'versionName' | head -1)"; done
 ```
 
-## Disabling System Apps
+### Step 3: Disable System Apps
 
 Once you have the package name, disabling the app requires a single command:
 
@@ -149,7 +149,7 @@ Several system apps are known for background data collection:
 
 Exercise caution when disabling core system components. Disabling `com.google.android.gms` may cause crashes or prevent app updates from working.
 
-## Disabling vs. Uninstalling
+### Step 4: Disable vs. Uninstalling
 
 ADB offers two approaches for removing apps:
 
@@ -177,7 +177,7 @@ The `-k` flag keeps the app's data and cache, while `--user 0` targets the prima
 
 On non-rooted devices, this command only uninstalls updates for system apps, not the app itself. The system reverts to the original version on the next boot.
 
-## Re-enabling Disabled Apps
+### Step 5: Re-enabling Disabled Apps
 
 If you accidentally disable an essential app or change your mind, re-enable it:
 
@@ -218,7 +218,7 @@ adb shell pm disable-user --user 0 com.samsung.android.bixby.agent
 adb shell pm disable-user --user 0 com.samsung.android.bixby.agent.dummy
 ```
 
-## Safety Precautions
+### Step 6: Safety Precautions
 
 When using ADB to disable apps, follow these guidelines:
 
@@ -268,7 +268,7 @@ adb shell pm enable com.android.vending
 adb shell pm enable com.google.android.gms
 ```
 
-## Checking Disabled Apps
+### Step 7: Checking Disabled Apps
 
 To see all disabled packages on your device:
 

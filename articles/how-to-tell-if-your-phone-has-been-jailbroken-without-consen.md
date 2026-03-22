@@ -52,7 +52,17 @@ When someone gains root or jailbreak access to your device, they can:
 
 Detecting an unauthorized jailbreak quickly allows you to wipe the device and secure your accounts before significant damage occurs.
 
-## Detecting iOS Jailbreaks
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Detecting iOS Jailbreaks
 
 iOS jailbreaks typically leave observable artifacts. Check these indicators systematically.
 
@@ -167,7 +177,7 @@ Jailbreaks sometimes install configuration profiles for malicious purposes:
 
 Remove any profiles you do not recognize.
 
-## Detecting Android Rooting
+### Step 2: Detecting Android Rooting
 
 Android rooting modifies the system partition to grant superuser access. Detection requires checking for root binaries and Superuser apps.
 
@@ -280,7 +290,7 @@ mount -o rw,remount /system
 echo "test" > /system/test_file
 ```
 
-## What To Do If You Detect Unauthorized Access
+### Step 3: What To Do If You Detect Unauthorized Access
 
 If you discover your phone has been jailbroken or rooted without consent:
 
@@ -293,7 +303,7 @@ If you discover your phone has been jailbroken or rooted without consent:
 
 For iOS, restore through iTunes or Finder rather than simply erasing, to ensure a clean firmware reinstall.
 
-## Prevention Strategies
+### Step 4: Prevention Strategies
 
 Reduce the risk of unauthorized jailbreaking:
 
@@ -303,6 +313,21 @@ Reduce the risk of unauthorized jailbreaking:
 - Avoid sideloading apps from untrusted sources
 - Keep iOS and Android updated with latest security patches
 - Disable developer modes and USB debugging when not needed
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

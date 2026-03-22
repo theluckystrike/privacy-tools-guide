@@ -44,7 +44,7 @@ This guide explains how domain fronting works at a technical level, provides pra
 - **These examples involve defensive**: privacy use.
 - **The same technique can**: also be misused for malicious command-and-control channels, which is part of why CDN providers have tightened their policies over time.
 
-## How Domain Fronting Works
+### Step 1: How Domain Fronting Works
 
 When you make an HTTPS request, two different hostnames appear in the request:
 
@@ -62,7 +62,7 @@ Here's what happens:
 
 The censorship infrastructure sees only the trusted SNI and allows the connection through. The CDN acts as an unwitting relay.
 
-## Real-World Use Cases
+### Step 2: Real-World Use Cases
 
 Domain fronting has been used in several high-profile scenarios:
 
@@ -80,7 +80,7 @@ To implement domain fronting, you need:
 - A domain you control (for the frontend)
 - Target services that use the same CDN
 
-## Implementation with cURL
+### Step 3: Implementation with cURL
 
 The simplest way to demonstrate domain fronting is using cURL with the `--resolve` flag:
 
@@ -96,7 +96,7 @@ This command:
 - Sends the TLS handshake with SNI for `trusted-cdn-frontend.com`
 - Sends HTTP Host header pointing to the blocked service
 
-## Implementation in Python
+### Step 4: Implementation in Python
 
 For more complex scenarios, here's a Python implementation using the `requests` library:
 
@@ -151,7 +151,7 @@ result = domain_fronted_request(
 print(result.status_code, result.json())
 ```
 
-## Using Domain Fronting with Tor
+### Step 5: Use Domain Fronting with Tor
 
 For enhanced privacy, combine domain fronting with Tor's Pluggable Transport system. The `meek` connector uses Amazon's content delivery infrastructure:
 
@@ -168,7 +168,7 @@ tor -f ~/.torrc.meek
 
 This approach routes your Tor traffic through Microsoft's Azure CDN, with the SNI showing `meek.azureedge.net` while the actual traffic targets Tor's bridges.
 
-## Finding Working Frontends
+### Step 6: Finding Working Frontends
 
 Not all CDN domains support domain fronting. Here's how to find working frontends:
 
@@ -198,7 +198,7 @@ def check_domain_fronting_works(front_domain, back_domain):
             return b"200" in response or b"403" in response
 ```
 
-## Limitations and Countermeasures
+### Step 7: Limitations and Countermeasures
 
 Domain fronting has faced increased scrutiny and significant restrictions since 2018:
 
@@ -207,7 +207,7 @@ Domain fronting has faced increased scrutiny and significant restrictions since 
 - **Deep packet inspection**: Advanced censorship systems operated by nation-states can analyze traffic patterns, timing, and payload characteristics beyond simple header inspection.
 - **CDN policy enforcement**: Providers increasingly scan for mismatched Host headers and terminate connections that violate their acceptable use policies.
 
-## Comparing Censorship Circumvention Methods
+### Step 8: Comparing Censorship Circumvention Methods
 
 | Method | Ease of Use | Detection Resistance | Infrastructure Cost | Maintained |
 |--------|-------------|---------------------|---------------------|-----------|
@@ -220,7 +220,7 @@ Domain fronting has faced increased scrutiny and significant restrictions since 
 
 For users in high-censorship environments today, **Tor Browser with obfs4 bridges** or a commercial VPN with obfuscation (Mullvad, Proton VPN) typically provide better reliability than raw domain fronting. Domain fronting remains valuable as a component within larger tools like meek, but building a standalone implementation from scratch faces increasing friction from CDN policy changes.
 
-## Legal and Ethical Considerations
+### Step 9: Legal and Ethical Considerations
 
 The legality of domain fronting varies by jurisdiction:
 
@@ -240,6 +240,21 @@ When implementing domain fronting:
 3. **Rotate frontends**: Change frontend domains periodically to avoid detection and adapt to CDN policy changes
 4. **Layer with encryption**: Add VPN or Tor for sensitive use cases — domain fronting alone does not anonymize you
 5. **Understand your CDN contract**: Read the acceptable use policy before deploying fronting in production
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

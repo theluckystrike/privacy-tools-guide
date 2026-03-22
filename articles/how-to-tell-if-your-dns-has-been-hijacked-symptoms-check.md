@@ -43,7 +43,17 @@ Detect DNS hijacking by running `nslookup` or `dig` to verify which DNS server i
 - **Use online DNS checkers**: (DNS Leak Test) to confirm your ISP's DNS or a hijacking attempt.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Common Symptoms of DNS Hijacking
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common Symptoms of DNS Hijacking
 
 Recognizing DNS hijacking early prevents further compromise. Watch for these indicators:
 
@@ -57,7 +67,7 @@ Recognizing DNS hijacking early prevents further compromise. Watch for these ind
 
 **Inconsistent DNS Responses**: Querying the same domain multiple times returns different IP addresses. Legitimate DNS responses should be consistent for the same recursive resolver.
 
-## Diagnostic Commands and Tools
+### Step 2: Diagnostic Commands and Tools
 
 ### Using dig for DNS Verification
 
@@ -155,7 +165,7 @@ tail -f /var/log/syslog | grep dnsmasq
 
 Unusual query patterns or unexpected DNS server contact warrant investigation.
 
-## Router-Level Hijacking
+### Step 3: Router-Level Hijacking
 
 Many DNS hijacking attacks target home routers rather than individual devices. Attackers exploit default credentials or firmware vulnerabilities to change your router's DNS settings.
 
@@ -174,7 +184,7 @@ Many DNS hijacking attacks target home routers rather than individual devices. A
 - Consider installing open-source firmware like OpenWrt
 - Set static DNS servers in router rather than using ISP defaults
 
-## Scripting DNS Health Checks
+### Step 4: Scripting DNS Health Checks
 
 Automate DNS verification with a simple bash script:
 
@@ -200,7 +210,7 @@ done
 
 Run this script periodically to detect DNS hijacking early.
 
-## What To Do If Hijacked
+### Step 5: What To Do If Hijacked
 
 If you confirm DNS hijacking:
 
@@ -211,7 +221,7 @@ If you confirm DNS hijacking:
 5. Enable DNSSEC where available
 6. Consider using encrypted DNS: DoH (DNS over HTTPS) or DoT (DNS over TLS)
 
-## Prevention Strategies
+### Step 6: Prevention Strategies
 
 - Use DNS over HTTPS in browsers and operating systems
 - Configure static DNS servers on devices rather than relying on DHCP
@@ -220,6 +230,21 @@ If you confirm DNS hijacking:
 - Monitor your network for unusual DNS traffic patterns
 
 Regular DNS health checks and awareness of hijacking symptoms protect your browsing privacy and security. The methods outlined here work without special equipment, using tools already available on most systems.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -243,7 +268,7 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
-## DNS Hijacking Attack Vectors
+### Step 7: DNS Hijacking Attack Vectors
 
 Understanding how attacks happen helps you protect against them:
 
@@ -314,7 +339,7 @@ dig +dnssec www.dnssec-failed.org
 
 If bad DNSSEC zones resolve successfully, your resolver is compromised.
 
-## Implementation: Continuous DNS Monitoring
+### Step 8: Implementation: Continuous DNS Monitoring
 
 ```python
 #!/usr/bin/env python3
@@ -392,7 +417,7 @@ monitor.continuous_monitor()
 
 Run this script to continuously verify DNS integrity.
 
-## DNS Leak Tests: Services and Tools
+### Step 9: DNS Leak Tests: Services and Tools
 
 ```
 Online DNS Leak Testers:
@@ -407,7 +432,7 @@ $ curl -L https://dns.google/resolve?name=example.com&type=A
 Your resolver's IP will be visible in response metadata
 ```
 
-## Incident Response: If Hijacked
+### Step 10: Plan Incident Response : If Hijacked
 
 Immediate steps (before normal troubleshooting):
 
@@ -427,7 +452,7 @@ Immediate steps (before normal troubleshooting):
 # Confirm DNS requests actually use your configured resolver
 ```
 
-## Encrypted DNS Protocols
+### Step 11: Encrypted DNS Protocols
 
 Use these to prevent DNS hijacking:
 
@@ -453,7 +478,7 @@ Implementation:
   OpenWrt routers: UCI configuration
 ```
 
-## Network Segregation: Router-Level Protection
+### Step 12: Network Segregation: Router-Level Protection
 
 Protect your home network:
 
@@ -472,7 +497,7 @@ nvram commit
 service dnsmasq restart
 ```
 
-## Testing After Recovery
+### Step 13: Test After Recovery
 
 Verify hijacking is resolved:
 

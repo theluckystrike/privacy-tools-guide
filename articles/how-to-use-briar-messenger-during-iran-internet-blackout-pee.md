@@ -48,7 +48,17 @@ The application creates an encrypted mesh network where messages hop between nea
 
 Unlike VPN-based solutions that attempt to bypass blocks, Briar doesn't need external connectivity at all. This makes it particularly effective for protest coordination, news dissemination, and family communication during complete internet blackouts.
 
-## Installing Briar on Android
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Briar on Android
 
 Briar is available exclusively on Android through F-Droid and Google Play. For maximum privacy, install from F-Droid, which provides reproducible builds and eliminates Google Play tracking.
 
@@ -61,7 +71,7 @@ Installation steps:
 
 The initial setup takes approximately two minutes. You'll need to remember your passphrase—there's no password recovery mechanism since Briar operates without cloud infrastructure.
 
-## Setting Up Peer-to-Peer Communication
+### Step 2: Set Up Peer-to-Peer Communication
 
 Briar offers two primary connection methods for adding contacts without internet access: Bluetooth and Wi-Fi Direct. Each has distinct advantages depending on your situation.
 
@@ -88,7 +98,7 @@ To add a contact via Wi-Fi Direct:
 3. Wait for discovery to find nearby contacts
 4. Select the contact and confirm on both devices
 
-## Connecting Without Physical Proximity
+### Step 3: Connecting Without Physical Proximity
 
 During internet blackouts, you may need to connect with contacts you've never met in person. Two methods solve this challenge:
 
@@ -116,7 +126,7 @@ For scenarios where visual exchange is possible, QR codes provide a quick method
 
 This method works well at protest gatherings, community meetings, or any situation where participants can see each other.
 
-## Message Propagation Across the Mesh
+### Step 4: Message Propagation Across the Mesh
 
 Once connected to even one other Briar user, your messages can reach surprising distances through message propagation. When your contact's device connects to another device, your messages sync automatically—no action required from you.
 
@@ -124,7 +134,7 @@ This creates remarkable resilience. In a protest scenario with many participants
 
 The propagation continues as long as devices remain online. Even if you power down your phone, messages queue and sync when you reconnect to any mesh peer.
 
-## Practical Considerations for Iran
+### Step 5: Practical Considerations for Iran
 
 For users in Iran specifically, several factors improve Briar effectiveness:
 
@@ -136,7 +146,7 @@ For users in Iran specifically, several factors improve Briar effectiveness:
 
 **Battery management**: Bluetooth and Wi-Fi Direct consume significant power. Carry portable chargers when expecting extended blackout periods.
 
-## Limitations to Understand
+### Step 6: Limitations to Understand
 
 Briar cannot solve every communication challenge. Consider these constraints:
 
@@ -146,7 +156,7 @@ Briar cannot solve every communication challenge. Consider these constraints:
 - No voice or video calls—text and images only
 - Requires Android device; iOS version remains under development
 
-## Security Architecture
+### Step 7: Security Architecture
 
 Briar's security model deserves understanding. All messages use end-to-end encryption based on the Signal protocol. Keys are generated locally and never leave your device unless you explicitly share them.
 
@@ -154,7 +164,7 @@ The application stores all data locally, not on remote servers. This eliminates 
 
 Importantly, Briar's peer-to-peer nature makes traffic analysis extremely difficult. Unlike server-based messaging where metadata reveals who communicates with whom, mesh networks create ambiguous communication patterns that resist surveillance.
 
-## Building Your Communication Plan
+### Step 8: Build Your Communication Plan
 
 Effective crisis communication requires preparation:
 
@@ -206,7 +216,7 @@ sudo systemctl start briar-desktop
 3. Messages will sync when both devices are in range
 4. This allows asynchronous communication without real-time availability
 
-## Community Coordination Using Briar
+### Step 9: Community Coordination Using Briar
 
 Briar's peer-to-peer nature enables new forms of community coordination:
 
@@ -230,7 +240,7 @@ Use these features for coordination during blackouts:
 - Spread information about safe locations
 - Organize translations of important information
 
-## Briar for Other Offline Scenarios
+### Step 10: Briar for Other Offline Scenarios
 
 Beyond Iran internet blackouts, Briar applies to other scenarios:
 
@@ -272,7 +282,7 @@ While using Briar in crisis situations, maintain security awareness:
 3. Unusual communication patterns might draw attention
 4. Use communication inconsistently to avoid patterns
 
-## Integrating Briar Into Crisis Planning
+### Step 11: Integrate Briar Into Crisis Planning
 
 Organizations preparing for potential blackouts should plan Briar integration:
 
@@ -295,7 +305,7 @@ Organizations preparing for potential blackouts should plan Briar integration:
 3. Review what worked and what didn't
 4. Improve procedures for future scenarios
 
-## Limitations You Should Know
+### Step 12: Limitations You Should Know
 
 Briar isn't a complete communication replacement. Understand what it can't do:
 
@@ -308,7 +318,7 @@ Briar isn't a complete communication replacement. Understand what it can't do:
 
 For critical operations, supplement Briar with other communication methods you can access during blackouts.
 
-## Success Stories and Lessons
+### Step 13: Success Stories and Lessons
 
 Briar proved itself during internet blackouts in multiple contexts:
 
@@ -317,6 +327,21 @@ During Hong Kong 2019-2020 protests, activists used Briar to coordinate despite 
 During Iran 2022 protests, Briar enabled communication when cellular networks were blocked. Participants traveled to public squares with Briar running on phones—messages synced through the gathering crowd enabling real-time coordination.
 
 The key lesson: **infrastructure independence is powerful**. When you remove dependency on centralized servers, you gain resilience that oppressive systems cannot easily suppress.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
