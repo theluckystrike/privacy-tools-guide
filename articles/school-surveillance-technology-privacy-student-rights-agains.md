@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /school-surveillance-technology-privacy-student-rights-agains/
 description: "Learn school surveillance technology privacy student rights agains with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "School Surveillance Technology Privacy"
 description: "A technical guide for developers and power users on facial recognition surveillance in schools, privacy concerns, legal frameworks, and protective measures"

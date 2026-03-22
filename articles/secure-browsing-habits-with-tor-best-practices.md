@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-browsing-habits-with-tor-best-practices/
 description: "Discover the best secure browsing habits with tor best practices with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, best-of]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [best-of]
 ---
+
 layout: default
 title: "Secure Browsing Habits With Tor Best Practices"
 description: "Tor remains one of the most effective tools for anonymous communication on the internet. Unlike standard browsing, Tor routes your traffic through a"

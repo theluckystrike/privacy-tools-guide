@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-cloud-storage-encryption-rclone/
 description: "Learn secure cloud storage encryption rclone with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, encryption]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "Encrypt Cloud Storage with Rclone Before Uploading"
 description: "Use rclone crypt to encrypt files client-side before syncing to Dropbox, Google Drive, or S3 so the provider never has access to your plaintext data"

@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-document-collaboration-alternatives-to-google-docs-wi/
 description: "Learn secure document collaboration alternatives to google docs wi with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, collaboration]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [comparisons]
 ---
+
 layout: default
 title: "Secure Document Collaboration Alternatives to Google"
 description: "When you need to collaborate on sensitive documents, Google Docs offers convenience but falls short on privacy. Most 'collaborative' document tools store your"

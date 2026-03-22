@@ -1,8 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-github-account-hardening-guide/
 description: "Follow this guide to secure github account hardening guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+date: 2026-03-15
+categories: [guides]
 ---
+
 layout: default
 title: "How to Secure Your GitHub Account"
 description: "Harden your GitHub account with 2FA, SSH key management, token auditing, branch protection, and secret scanning to prevent account takeovers"
