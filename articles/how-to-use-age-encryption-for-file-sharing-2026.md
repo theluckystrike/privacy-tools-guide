@@ -8,7 +8,7 @@ permalink: /how-to-use-age-encryption-for-file-sharing-2026/
 categories: [guides]
 tags: [privacy-tools-guide, encryption]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 slug: how-to-use-age-encryption-for-file-sharing-2026

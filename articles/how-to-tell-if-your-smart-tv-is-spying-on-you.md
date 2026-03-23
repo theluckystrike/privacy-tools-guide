@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-tell-if-your-smart-tv-is-spying-on-you/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]

@@ -9,7 +9,7 @@ permalink: /how-to-use-domain-fronting-to-access-blocked-services-from-c/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
