@@ -9,7 +9,7 @@ permalink: /how-to-prevent-expartner-from-creating-fake-dating-profiles-/
 categories: [troubleshooting]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

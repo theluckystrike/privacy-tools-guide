@@ -9,7 +9,7 @@ permalink: /how-to-purchase-items-online-without-revealing-real-identity/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
