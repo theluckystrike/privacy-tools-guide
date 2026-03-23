@@ -14,6 +14,12 @@ voice-checked: true
 tags: [privacy-tools-guide, best-of, vpn]
 ---
 
+<div class="quick-answer">
+
+**Quick answer:** Use a VPN with obfuscation support like NordVPN or a Shadowsocks proxy to access YouTube in China. Standard VPN protocols get blocked by the Great Firewall.
+
+</div>
+
 
 | VPN Provider | Obfuscation | Speed | Server Count | Price |
 |---|---|---|---|---|
