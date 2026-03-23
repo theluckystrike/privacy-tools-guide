@@ -1,9 +1,16 @@
 ---
+layout: default
+
 permalink: /openwrt-vpn-router-wireguard-setup/
 description: "Learn openwrt vpn router wireguard setup with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
 date: 2026-03-23
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+categories: [vpn]
 ---
+
 layout: default
 title: "OpenWrt VPN Router Setup with WireGuard"
 description: "How to configure OpenWrt as a WireGuard VPN router so that all devices on your home network route through the VPN without per-device configuration"

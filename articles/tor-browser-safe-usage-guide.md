@@ -1,9 +1,16 @@
 ---
+layout: default
+
 permalink: /tor-browser-safe-usage-guide/
 description: "Follow this guide to tor browser safe usage guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
 date: 2026-03-23
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+categories: [browser-privacy]
 ---
+
 layout: default
 title: "How to Use Tor Browser Safely"
 description: "Practical safety guide for Tor Browser. Covers setup, common mistakes, circuit management, security levels, and when Tor doesn't protect you."

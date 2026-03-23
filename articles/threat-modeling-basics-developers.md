@@ -1,9 +1,16 @@
 ---
+layout: default
+
 permalink: /threat-modeling-basics-developers/
 description: "Learn threat modeling basics developers with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
 date: 2026-03-23
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 layout: default
 title: "Threat Modeling Basics for Developers"
 description: "Learn the STRIDE and PASTA frameworks for threat modeling your applications, with practical examples for web APIs, CI/CD pipelines, and data stores"

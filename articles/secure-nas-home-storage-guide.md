@@ -1,9 +1,16 @@
 ---
+layout: default
+
 permalink: /secure-nas-home-storage-guide/
 description: "Follow this guide to secure nas home storage guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
 date: 2026-03-23
+author: "Privacy Tools Guide"
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 layout: default
 title: "How to Secure NAS Storage for Home Use"
 description: "Harden a Synology, QNAP, or TrueNAS home NAS with disk encryption, network isolation, firewall rules, 2FA, and audit logging to prevent unauthorized access"
