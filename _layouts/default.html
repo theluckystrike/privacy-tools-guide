@@ -16,14 +16,18 @@
     "headline": "{{ page.title | escape }}",
     "description": "{{ page.description | escape }}",
     "author": {
-      "@type": "Person",
-      "name": "{{ page.author | default: 'theluckystrike' | escape }}",
-      "url": "https://github.com/theluckystrike"
+      "@type": "Organization",
+      "name": "Privacy Tools Guide",
+      "url": "https://securetoolsguide.com/about/"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Privacy Tools Guide",
-      "url": "https://securetoolsguide.com/privacy-tools-guide"
+      "url": "https://securetoolsguide.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://securetoolsguide.com/assets/og-default.svg"
+      }
     },
     "datePublished": "{{ page.date | date_to_xmlschema }}",
     "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
@@ -71,7 +75,7 @@
   </nav>
   {% endif %}
   <main>{{ content }}</main>
-  <footer>Built by theluckystrike. More tips at <a href="https://zovo.one">zovo.one</a></footer>
+  <footer>Built by theluckystrike. <a href="/about/">About</a> &middot; More tips at <a href="https://zovo.one">zovo.one</a></footer>
   <div class="site-nav-footer" style="background:#f8f9fa;padding:20px;margin-top:40px;border-top:2px solid #e9ecef;text-align:center;">
     <p style="margin-bottom:10px;font-weight:bold;color:#333;">Explore Our Developer Guides</p>
     <nav>
