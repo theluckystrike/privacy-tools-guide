@@ -6,7 +6,7 @@ description: "Follow this guide to how to use tor browser for creating anonymous
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [browser-privacy]
 ---

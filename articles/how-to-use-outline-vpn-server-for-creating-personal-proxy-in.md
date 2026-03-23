@@ -6,7 +6,7 @@ description: "Follow this guide to how to use outline vpn server for creating pe
 tags: [privacy-tools-guide, vpn]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 8
+score: 9
 date: 2026-03-15
 categories: [vpn]
 ---
