@@ -331,9 +331,9 @@ s := grpc.NewServer(
 
 ## Related Reading
 
-- [Secure GraphQL API Hardening Guide](/privacy-tools-guide/secure-graphql-api-hardening-guide/)
-- [Secure MQTT Broker Setup for IoT](/privacy-tools-guide/secure-mqtt-broker-setup-iot/)
-- [How to Set Up Cilium for Network Security](/privacy-tools-guide/cilium-network-security-setup-guide/)
+- [Secure GraphQL API Hardening Guide](/secure-graphql-api-hardening-guide/)
+- [Secure MQTT Broker Setup for IoT](/secure-mqtt-broker-setup-iot/)
+- [How to Set Up Cilium for Network Security](/cilium-network-security-setup-guide/)
 
 ---
 

@@ -397,12 +397,12 @@ After each tabletop, update the IRP with any gaps discovered. The exercise is on
 
 ## Related Articles
 
-- [How To Set Up Incident Response Plan For Data Breach](/privacy-tools-guide/how-to-set-up-incident-response-plan-for-data-breach-busines/)
-- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
-- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Set Up Incident Response Plan For Data Breach](/how-to-set-up-incident-response-plan-for-data-breach-busines/)
+- [Secure Communication Plan Template for Organizations](/secure-communication-plan-template-for-organizations-handlin/)
+- [Cloud Storage Security Breach History: Compromised](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
+- [Air Gapped Computer Setup For Maximum Security Practical](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

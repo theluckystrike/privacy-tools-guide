@@ -317,12 +317,12 @@ Run through this quarterly:
 
 ## Related Articles
 
-- [Signal Disappearing Messages Best Practices: Sensitive](/privacy-tools-guide/signal-disappearing-messages-best-practices-for-sensitive-co/)
-- [Signal Disappearing Messages Best Practices](/privacy-tools-guide/signal-disappearing-messages-best-practices/)
-- [Signal Number Privacy Workaround Guide](/privacy-tools-guide/signal-number-privacy-workaround-guide/)
-- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
-- [Signal vs Session vs Briar: Secure Messaging (2026)](/privacy-tools-guide/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Signal Disappearing Messages Best Practices: Sensitive](/signal-disappearing-messages-best-practices-for-sensitive-co/)
+- [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
+- [Signal Number Privacy Workaround Guide](/signal-number-privacy-workaround-guide/)
+- [Signal vs Session vs SimpleX](/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Signal vs Session vs Briar: Secure Messaging (2026)](/secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

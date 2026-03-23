@@ -2,6 +2,7 @@
 permalink: /how-to-set-up-tor-relay-node/
 description: "Follow this guide to how to set up tor relay node with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+date: 2026-03-23
 ---
 layout: default
 title: "How to Set Up a Tor Relay"
@@ -231,12 +232,12 @@ Running a middle relay is the most accessible way to contribute to Tor. You hand
 
 ## Related Articles
 
-- [Tor Hidden Service Setup Guide Developers](/privacy-tools-guide/tor-hidden-service-setup-guide-developers/)
-- [How To Use Tor With Specific Application Routing Only](/privacy-tools-guide/how-to-use-tor-with-specific-application-routing-only-select/)
-- [Tor Browser for Whistleblowers Safety Guide](/privacy-tools-guide/tor-browser-for-whistleblowers-safety-guide/)
-- [Onionshare Secure File Sharing Over Tor Network Setup](/privacy-tools-guide/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
-- [Tor Browser Connection Troubleshooting Guide](/privacy-tools-guide/tor-browser-connection-troubleshooting-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Tor Hidden Service Setup Guide Developers](/tor-hidden-service-setup-guide-developers/)
+- [How To Use Tor With Specific Application Routing Only](/how-to-use-tor-with-specific-application-routing-only-select/)
+- [Tor Browser for Whistleblowers Safety Guide](/tor-browser-for-whistleblowers-safety-guide/)
+- [Onionshare Secure File Sharing Over Tor Network Setup](/onionshare-secure-file-sharing-over-tor-network-setup-and-us/)
+- [Tor Browser Connection Troubleshooting Guide](/tor-browser-connection-troubleshooting-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

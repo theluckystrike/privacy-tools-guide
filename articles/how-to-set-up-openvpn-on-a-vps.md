@@ -280,12 +280,12 @@ dig +short whoami.akamai.net  # Should resolve through VPS IP
 
 ## Related Articles
 
-- [Configure Openvpn With Obfuscation For Censored Networks](/privacy-tools-guide/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
-- [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
-- [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Configure Openvpn With Obfuscation For Censored Networks](/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
+- [OpenVPN Access Server vs Community Edition](/openvpn-access-server-vs-community-edition-differences-features-2026/)
+- [Openvpn Push Route Configuration Selective Routing Explained](/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

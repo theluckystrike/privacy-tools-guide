@@ -258,9 +258,9 @@ echo "Certificate renewed for ${DEVICE}. Deploy ${DEVICE}.key and ${DEVICE}.crt 
 
 ## Related Reading
 
-- [How to Run Zigbee2MQTT Locally Without Vendor Cloud](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
-- [How to Set Up Falco for Container Runtime Security](/privacy-tools-guide/falco-container-runtime-security-setup/)
-- [How to Configure iptables Rules from Scratch](/privacy-tools-guide/iptables-rules-from-scratch-guide/)
+- [How to Run Zigbee2MQTT Locally Without Vendor Cloud](/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
+- [How to Set Up Falco for Container Runtime Security](/falco-container-runtime-security-setup/)
+- [How to Configure iptables Rules from Scratch](/iptables-rules-from-scratch-guide/)
 
 ---
 

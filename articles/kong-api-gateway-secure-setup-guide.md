@@ -321,11 +321,11 @@ Key metrics: `kong_http_requests_total`, `kong_latency_bucket`, `kong_bandwidth_
 
 ## Related Articles
 
-- [How to Secure PostgreSQL for Production](/privacy-tools-guide/secure-postgresql-production-guide/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-- [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Secure PostgreSQL for Production](/secure-postgresql-production-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Set Up Caddy with Automatic HTTPS](/how-to-set-up-caddy-with-automatic-https/)
+- [How to Set Up a Tor Relay](/how-to-set-up-tor-relay-node/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

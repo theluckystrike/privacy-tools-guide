@@ -1654,9 +1654,9 @@ SELECT usename, count(*) FROM pg_stat_activity GROUP BY usename;
 
 ## Related Reading
 
-- [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
+- [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
 
 ---
 

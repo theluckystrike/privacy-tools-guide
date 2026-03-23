@@ -188,9 +188,9 @@ None of these prevent identification of a real person's face. They only prevent 
 
 ## Related Reading
 
-- [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
-- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-tools-guide/privacy-focused-messaging-app-comparison/)
-- [How to Prevent Someone from Tracking Your Location](/privacy-tools-guide/how-to-prevent-someone-from-tracking-your-location-through-p/)
+- [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
+- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-focused-messaging-app-comparison/)
+- [How to Prevent Someone from Tracking Your Location](/how-to-prevent-someone-from-tracking-your-location-through-p/)
 
 ---
 

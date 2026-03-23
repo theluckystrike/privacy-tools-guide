@@ -280,10 +280,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
-- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
-- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/privacy-tools-guide/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
-- [Gamepad Api Fingerprinting How Connected Controllers Reveal](/privacy-tools-guide/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
+- [Topics Api Chrome Replacement For Cookies How It Tracks You](/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
+- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Device Memory Api Fingerprinting How Ram Amount Narrows Iden](/device-memory-api-fingerprinting-how-ram-amount-narrows-iden/)
+- [Gamepad Api Fingerprinting How Connected Controllers Reveal](/gamepad-api-fingerprinting-how-connected-controllers-reveal-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

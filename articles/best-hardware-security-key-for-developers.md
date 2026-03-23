@@ -458,11 +458,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
-- [Stretching Routine for Remote Developers: A Practical Guide](/privacy-tools-guide/stretching-routine-for-remote-developers-guide/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [Stretching Routine for Remote Developers: A Practical Guide](/stretching-routine-for-remote-developers-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

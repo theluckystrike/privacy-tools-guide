@@ -648,12 +648,12 @@ Option 3: Local recording only (tech-forward)
 
 ## Related Articles
 
-- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
-- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-- [Smart Sleep Tracker Privacy Comparison](/privacy-tools-guide/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
-- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-tools-guide/privacy-risks-of-smart-home-voice-assistants-2026/)
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Smart Doorbell Alternatives That Store Video Locally](/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Smart Sleep Tracker Privacy Comparison](/smart-sleep-tracker-privacy-comparison-what-oura-whoop-eight/)
+- [Privacy Risks of Smart Home Voice Assistants 2026](/privacy-risks-of-smart-home-voice-assistants-2026/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 {% endraw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

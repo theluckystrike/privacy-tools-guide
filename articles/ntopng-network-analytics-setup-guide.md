@@ -216,9 +216,9 @@ Look for:
 
 ## Related Reading
 
-- [How to Set Up Pi-hole for DNS-Level Ad Blocking](/privacy-tools-guide/pihole-setup-guide/)
-- [How to Use tcpdump for Packet Analysis](/privacy-tools-guide/tcpdump-packet-analysis-guide/)
-- [VPN Kill Switch with iptables on Linux](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [How to Set Up Pi-hole for DNS-Level Ad Blocking](/pihole-setup-guide/)
+- [How to Use tcpdump for Packet Analysis](/tcpdump-packet-analysis-guide/)
+- [VPN Kill Switch with iptables on Linux](/vpn-kill-switch-linux-iptables-setup/)
 
 ---
 

@@ -433,11 +433,11 @@ Choose based on your threat model and acceptance of complexity.
 
 ## Related Articles
 
-- [Anonymous Conference Call Services That Do Not Log](/privacy-tools-guide/anonymous-conference-call-services-that-do-not-log-participa/)
-- [Anonymous Phone Number Services for Verification Without.](/privacy-tools-guide/anonymous-phone-number-services-for-verification-without-rev/)
-- [Anonymous Online Shopping How To Order Physical Goods.](/privacy-tools-guide/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
-- [How To Create Anonymous Online Identity That Cannot Be Linke](/privacy-tools-guide/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
-- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
+- [Anonymous Conference Call Services That Do Not Log](/anonymous-conference-call-services-that-do-not-log-participa/)
+- [Anonymous Phone Number Services for Verification Without.](/anonymous-phone-number-services-for-verification-without-rev/)
+- [Anonymous Online Shopping How To Order Physical Goods.](/anonymous-online-shopping-how-to-order-physical-goods-without-revealing-home-address/)
+- [How To Create Anonymous Online Identity That Cannot Be Linke](/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
+- [Vpn Authentication Methods Compared Certificate Vs.](/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

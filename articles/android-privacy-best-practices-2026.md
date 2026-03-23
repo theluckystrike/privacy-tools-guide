@@ -550,11 +550,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
-- [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
-- [Privacy Compliance API Design Best Practices](/privacy-tools-guide/privacy-compliance-api-design-best-practices/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
+- [Android Location Permissions Best Practices](/android-location-permissions-best-practices/)
+- [Protect Client Photos: Privacy Best Practices](/photographer-client-photo-privacy-protection-cloud-storage/)
+- [Privacy Compliance API Design Best Practices](/privacy-compliance-api-design-best-practices/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

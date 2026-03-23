@@ -230,9 +230,9 @@ Session removes phone numbers. Your identity is an Ed25519 public key. Messages 
 
 ## Related Reading
 
-- [How to Set Up a Tor Relay](/privacy-tools-guide/how-to-set-up-tor-relay-node/)
-- [Anonymous Email Services Compared 2026](/privacy-tools-guide/best-anonymous-email-service-2026/)
-- [Privacy Risks of Facial Recognition Technology](/privacy-tools-guide/privacy-risks-facial-recognition-technology/)
+- [How to Set Up a Tor Relay](/how-to-set-up-tor-relay-node/)
+- [Anonymous Email Services Compared 2026](/best-anonymous-email-service-2026/)
+- [Privacy Risks of Facial Recognition Technology](/privacy-risks-facial-recognition-technology/)
 
 ---
 

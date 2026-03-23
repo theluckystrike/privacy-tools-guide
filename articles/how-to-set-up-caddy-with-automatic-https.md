@@ -269,22 +269,22 @@ curl -vI https://example.com
 
 ## Related Reading
 
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
-- [Secure WebSocket Connections Setup Guide](/privacy-tools-guide/secure-websocket-connections-setup-guide/)
-- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
+- [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
+- [Secure WebSocket Connections Setup Guide](/secure-websocket-connections-setup-guide/)
+- [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
 
-- [How To Set Up Automatic Account Deletion Triggers If You](/privacy-tools-guide/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How To Set Up Automatic Account Deletion Triggers If You](/how-to-set-up-automatic-account-deletion-triggers-if-you-bec/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
 ## Related Articles
 
-- [How to Set Up Mullvad VPN on Linux](/privacy-tools-guide/mullvad-vpn-linux-setup-guide/)
-- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
-- [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/privacy-tools-guide/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
-- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
+- [How to Set Up Mullvad VPN on Linux](/mullvad-vpn-linux-setup-guide/)
+- [Encrypted DNS over HTTPS on Linux](/encrypted-dns-over-https-linux-setup)
+- [Setting Up Vault for Secrets Management](/hashicorp-vault-secrets-management-setup/)
+- [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
+- [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

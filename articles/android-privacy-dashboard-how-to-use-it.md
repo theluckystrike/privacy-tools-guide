@@ -291,11 +291,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
-- [How To Build Privacy Dashboard For Customers To Manage Their](/privacy-tools-guide/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
-- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [How To Build Privacy Dashboard For Customers To Manage Their](/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
+- [Android Find My Device Privacy Implications](/android-find-my-device-privacy-implications/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

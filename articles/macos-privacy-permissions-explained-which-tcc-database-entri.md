@@ -316,11 +316,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
-- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-- [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
-- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Macos Privacy Permissions Manager Guide 2026](/macos-privacy-permissions-manager-guide-2026/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [MacOS Firewall Configuration for Privacy](/macos-firewall-configuration-for-privacy/)
+- [Macos Gatekeeper And Notarization Privacy Implications What](/macos-gatekeeper-and-notarization-privacy-implications-what-/)
+- [macOS Network Privacy Settings Complete Guide 2026](/macos-network-privacy-settings-complete-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

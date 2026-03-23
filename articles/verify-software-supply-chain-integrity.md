@@ -251,12 +251,12 @@ rm -f "$TMPFILE"
 
 ## Related Articles
 
-- [How to Verify PGP Signatures on Software Downloads](/privacy-tools-guide/verify-pgp-signatures-software-downloads/)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
-- [Use GPG Signed Emails to Verify Sender Identity](/privacy-tools-guide/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
-- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [AI Coding Tools for Writing Chainguard Image Supply Chain](https://theluckystrike.github.io/ai-tools-compared/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
+- [How to Verify PGP Signatures on Software Downloads](/verify-pgp-signatures-software-downloads/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
+- [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
+- [AI Coding Tools for Writing Chainguard Image Supply Chain](https://bestremotetools.com/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

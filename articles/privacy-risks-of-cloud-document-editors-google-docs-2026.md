@@ -2,6 +2,7 @@
 permalink: /privacy-risks-of-cloud-document-editors-google-docs-2026/
 description: "Learn privacy risks of cloud document editors google docs 2026 with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, privacy]
+date: 2026-03-23
 ---
 title: "Privacy Risks of Cloud Document Editors - Google Docs 2026"
 description: "What Google Docs, Notion, and Office365 collect. Includes collaboration metadata, access logs, privacy risks, and alternatives like CryptPad."
@@ -571,11 +572,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Secure Document Collaboration Alternatives to Google](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
-- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
-- [Android Google Account Privacy Settings: Complete Guide to](/privacy-tools-guide/android-google-account-privacy-settings-complete-guide-to-li/)
-- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
-- [Use Android Without Google Play Services](/privacy-tools-guide/how-to-use-android-without-google-play-services-alternative-stores/)
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](https://theluckystrike.github.io/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [How to Delete Your Google Activity History Completely](/how-to-delete-your-google-activity-history-completely/)
+- [Android Google Account Privacy Settings: Complete Guide to](/android-google-account-privacy-settings-complete-guide-to-li/)
+- [Google Nest Hub Data Collection](/google-nest-hub-data-collection-what-information-google-capt/)
+- [Use Android Without Google Play Services](/how-to-use-android-without-google-play-services-alternative-stores/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](https://bestremotetools.com/gemini-in-google-docs-not-showing-up-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

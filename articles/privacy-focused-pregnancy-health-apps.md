@@ -147,9 +147,9 @@ Send this via email to the privacy contact listed in the app's privacy policy. S
 
 ## Related Reading
 
-- [Privacy Risks of Period Tracking Apps](/privacy-tools-guide/privacy-risks-of-period-tracking-apps-2026/)
-- [How to Use a Masked Email Address for App Signups](/privacy-tools-guide/masked-email-address-guide/)
-- [Android App Permissions Audit Guide](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Privacy Risks of Period Tracking Apps](/privacy-risks-of-period-tracking-apps-2026/)
+- [How to Use a Masked Email Address for App Signups](/masked-email-address-guide/)
+- [Android App Permissions Audit Guide](/android-app-permissions-audit-guide-2026/)
 
 ---
 

@@ -433,12 +433,12 @@ Passkeys are significantly better than passwords, but they're not a complete sec
 
 ## Related Articles
 
-- [Passkey Adoption Timeline by Platform: A Developer Guide](/privacy-tools-guide/passkey-adoption-timeline-by-platform/)
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
-- [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
-- [Password Manager Clipboard Security Best Practices](/privacy-tools-guide/password-manager-clipboard-security-best-practices/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Passkey Adoption Timeline by Platform: A Developer Guide](/passkey-adoption-timeline-by-platform/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/yubikey-vs-titan-security-key-comparison/)
+- [Password Manager Autofill Security Risks](/password-manager-autofill-security-risks/)
+- [Password Manager Clipboard Security Best Practices](/password-manager-clipboard-security-best-practices/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

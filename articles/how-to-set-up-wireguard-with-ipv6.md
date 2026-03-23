@@ -227,22 +227,22 @@ If `curl -6 https://ifconfig.me` returns your home IPv6, the tunnel is not captu
 
 ## Related Reading
 
-- [How to Set Up WireGuard on VPS for Personal VPN](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
-- [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Set Up WireGuard on VPS for Personal VPN](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
+- [How to Set Up Nebula Mesh VPN for Teams](/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
 ## Related Articles
 
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
-- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [How to Set Up WireGuard VPN on VPS 2026](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-vps-2026/)
-- [WireGuard Dynamic Endpoint Update](/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard VPN on VPS 2026](/how-to-set-up-wireguard-vpn-on-vps-2026/)
+- [WireGuard Dynamic Endpoint Update](/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

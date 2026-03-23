@@ -298,10 +298,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
-- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Religious Minority In Persecuting Country](/privacy-tools-guide/threat-model-for-religious-minority-in-persecuting-country-d/)
-- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
-- [Threat Model For Union Organizer In Hostile Employer](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Threat Model for Undocumented Immigrant Protecting](/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Religious Minority In Persecuting Country](/threat-model-for-religious-minority-in-persecuting-country-d/)
+- [Threat Model For Political Dissident In Surveillance State](/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Union Organizer In Hostile Employer](/threat-model-for-union-organizer-in-hostile-employer-environ/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

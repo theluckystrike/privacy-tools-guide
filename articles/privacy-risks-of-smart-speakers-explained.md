@@ -284,12 +284,12 @@ These are not "smart speakers" in the Alexa/Google sense — they're music devic
 
 ## Related Reading
 
-- [Privacy-Focused Weather App Alternatives](/privacy-tools-guide/privacy-focused-weather-app-alternatives/)
-- [Privacy-Focused Maps and Navigation Apps](/privacy-tools-guide/privacy-focused-maps-and-navigation-apps/)
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-tools-guide/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Best Free AI Tool for Generating Regex Patterns Explained](https://theluckystrike.github.io/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
+- [Privacy-Focused Weather App Alternatives](/privacy-focused-weather-app-alternatives/)
+- [Privacy-Focused Maps and Navigation Apps](/privacy-focused-maps-and-navigation-apps/)
+- [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
+- [Privacy Risks of Smart Speakers Alexa Google Home 2026](/privacy-risks-of-smart-speakers-alexa-google-home-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](https://bestremotetools.com/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
 ---
 

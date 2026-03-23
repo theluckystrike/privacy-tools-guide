@@ -281,11 +281,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
-- [Linux Desktop Privacy Hardening Guide](/privacy-tools-guide/linux-desktop-privacy-hardening-guide/)
-- [How To Disable All Windows 11 Telemetry Endpoints](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
-- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
-- [Windows 11 Privacy Settings: How to Disable Telemetry](/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/)
-- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+- [Linux Mint Privacy Setup Guide for Beginners](/linux-mint-privacy-setup-guide-beginners/)
+- [Linux Desktop Privacy Hardening Guide](/linux-desktop-privacy-hardening-guide/)
+- [How To Disable All Windows 11 Telemetry Endpoints](/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
+- [Windows 11 Privacy Settings: How to Disable Telemetry](/windows-11-privacy-settings-disable-telemetry/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://bestremotetools.com/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

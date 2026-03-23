@@ -287,12 +287,12 @@ sudo apt upgrade wazuh-manager wazuh-indexer wazuh-dashboard
 
 ## Related Reading
 
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
-- [How to Use Zeek for Network Monitoring](/privacy-tools-guide/zeek-network-monitoring-guide/)
-- [How to Set Up OpenSCAP for Compliance Scanning](/privacy-tools-guide/openscap-compliance-scanning-setup-guide/)
-- [How to Set Up age Encryption for Teams](/privacy-tools-guide/age-encryption-team-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
+- [How to Use Zeek for Network Monitoring](/zeek-network-monitoring-guide/)
+- [How to Set Up OpenSCAP for Compliance Scanning](/openscap-compliance-scanning-setup-guide/)
+- [How to Set Up age Encryption for Teams](/age-encryption-team-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 

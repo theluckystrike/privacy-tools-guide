@@ -262,9 +262,9 @@ nc -zv YOUR_SERVER_IP 80
 
 ## Related Reading
 
-- [VPN Kill Switch with iptables on Linux](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
-- [How VPN Interacts with Firewall Rules](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
-- [How to Set Up Cilium for Network Security](/privacy-tools-guide/cilium-network-security-setup-guide/)
+- [VPN Kill Switch with iptables on Linux](/vpn-kill-switch-linux-iptables-setup/)
+- [How VPN Interacts with Firewall Rules](/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [How to Set Up Cilium for Network Security](/cilium-network-security-setup-guide/)
 
 ---
 

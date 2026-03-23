@@ -306,11 +306,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set up Local Network Storage for Security](/privacy-tools-guide/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
-- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-- [Air Gapped Computer Setup For Maximum Security Practical](/privacy-tools-guide/air-gapped-computer-setup-for-maximum-security-practical-gui/)
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+- [How to Set up Local Network Storage for Security](/how-to-set-up-local-network-storage-for-security-cameras-without-nas-cloud/)
+- [Cloud Storage Security Breach History: Compromised](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Air Gapped Computer Setup For Maximum Security Practical](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://bestremotetools.com/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

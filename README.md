@@ -2,7 +2,7 @@
 
 Comprehensive guides for privacy tools, VPNs, and digital security.
 
-**Browse:** [theluckystrike.github.io/privacy-tools-guide](https://theluckystrike.github.io/privacy-tools-guide/)
+**Browse:** [theluckystrike.github.io/privacy-tools-guide](https://securetoolsguide.com/)
 
 ### Topics
 
@@ -21,7 +21,7 @@ Jekyll on GitHub Pages.
 ### More Free Guides
 
 - [Claude Skills Guide](https://theluckystrike.github.io/claude-skills-guide/) — Claude Code tutorials and automation guides
-- [Chrome Tips](https://theluckystrike.github.io/chrome-tips/) — Chrome optimization and performance guides
-- [Chrome Extension Guide](https://theluckystrike.github.io/chrome-extension-guide/) — Chrome extension development tutorials
-- [AI Tools Compared](https://theluckystrike.github.io/ai-tools-compared/) — AI tool comparisons and reviews
-- [Remote Work Tools](https://theluckystrike.github.io/remote-work-tools/) — Remote work software guides
+- [Chrome Tips](https://chrometipsguide.com/) — Chrome optimization and performance guides
+- [Chrome Extension Guide](https://bestchromeextensions.com/) — Chrome extension development tutorials
+- [AI Tools Compared](https://bestremotetools.com/) — AI tool comparisons and reviews
+- [Remote Work Tools](https://welikeremotestack.com/) — Remote work software guides

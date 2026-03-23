@@ -387,11 +387,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [GDPR Article 17 Erasure Implementation](/privacy-tools-guide/gdpr-article-17-erasure-implementation-code/)
-- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
-- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
-- [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
-- [GDPR Compliant Data Backup Retention Guide](/privacy-tools-guide/gdpr-compliant-data-backup-retention-guide/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [GDPR Article 17 Erasure Implementation](/gdpr-article-17-erasure-implementation-code/)
+- [Set Up Data Subject Access Request Workflow](/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [Implement Purpose Limitation in Data Architecture](/how-to-implement-purpose-limitation-in-data-architecture-res/)
+- [GDPR Compliant Data Backup Retention Guide](/gdpr-compliant-data-backup-retention-guide/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

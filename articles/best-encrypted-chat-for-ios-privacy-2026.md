@@ -429,11 +429,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
-- [How To Set Up Encrypted Group Chat For Activist Organization](/privacy-tools-guide/how-to-set-up-encrypted-group-chat-for-activist-organization/)
-- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
-- [Best Encrypted Email for Business 2026: A Technical Guide](/privacy-tools-guide/best-encrypted-email-for-business-2026/)
-- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
+- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
+- [How To Set Up Encrypted Group Chat For Activist Organization](/how-to-set-up-encrypted-group-chat-for-activist-organization/)
+- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [Best Encrypted Email for Business 2026: A Technical Guide](/best-encrypted-email-for-business-2026/)
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/best-encrypted-messaging-for-journalists/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

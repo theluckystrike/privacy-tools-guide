@@ -425,10 +425,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [How To Protect Yourself From Qr Code Phishing Quishing](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
-- [How To Protect Your Zoom Meeting From Zoom Bombing Security](/privacy-tools-guide/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)
-- [GitHub Pull Request Workflow For Distributed Teams](/privacy-tools-guide/github-pull-request-workflow-for-distributed-teams/)
-- [China Qr Code Tracking How Mandatory Scanning Creates](/privacy-tools-guide/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
-- [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
-- [AI Code Generation Quality for JavaScript Async Await Patter](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [How To Protect Yourself From Qr Code Phishing Quishing](/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
+- [How To Protect Your Zoom Meeting From Zoom Bombing Security](/how-to-protect-your-zoom-meeting-from-zoom-bombing-security/)
+- [GitHub Pull Request Workflow For Distributed Teams](/github-pull-request-workflow-for-distributed-teams/)
+- [China Qr Code Tracking How Mandatory Scanning Creates](/china-qr-code-tracking-how-mandatory-scanning-creates-surveillance-trail-of-movements/)
+- [Encrypted Voice Calls Comparison](/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](https://bestremotetools.com/ai-code-generation-quality-for-javascript-async-await-patter/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

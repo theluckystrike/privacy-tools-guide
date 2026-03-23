@@ -276,12 +276,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/privacy-tools-guide/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
-- [How to Set Up a Password Manager for Home Server SSH Keys](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [How To Configure Openpgp Key Server For Organization Interna](/privacy-tools-guide/how-to-configure-openpgp-key-server-for-organization-interna/)
-- [OpenVPN Access Server vs Community Edition](/privacy-tools-guide/openvpn-access-server-vs-community-edition-differences-features-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Prepare Pgp Key Revocation Certificate For Publicatio](/a121-how-to-prepare-pgp-key-revocation-certificate-for-publicatio/)
+- [How to Set Up a Password Manager for Home Server SSH Keys](/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
+- [How To Configure Openpgp Key Server For Organization Interna](/how-to-configure-openpgp-key-server-for-organization-interna/)
+- [OpenVPN Access Server vs Community Edition](/openvpn-access-server-vs-community-edition-differences-features-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

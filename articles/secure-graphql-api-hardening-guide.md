@@ -299,9 +299,9 @@ For maximum hardening in production, reject any query not on a pre-approved allo
 
 ## Related Reading
 
-- [Secure CORS Configuration Guide](/privacy-tools-guide/secure-cors-configuration-guide/)
-- [Secure OAuth2 Implementation Checklist](/privacy-tools-guide/secure-oauth2-implementation-checklist/)
-- [Secure gRPC Communication Setup Guide](/privacy-tools-guide/secure-grpc-communication-setup-guide/)
+- [Secure CORS Configuration Guide](/secure-cors-configuration-guide/)
+- [Secure OAuth2 Implementation Checklist](/secure-oauth2-implementation-checklist/)
+- [Secure gRPC Communication Setup Guide](/secure-grpc-communication-setup-guide/)
 
 ---
 

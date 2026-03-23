@@ -393,11 +393,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Matrix/Element vs Signal for Private Group Communication](/privacy-tools-guide/matrix-element-vs-signal-for-private-group-communication-comparison/)
-- [How To Configure Element Matrix Client For Maximum Privacy](/privacy-tools-guide/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
-- [Matrix Vs Signal Decentralized Messaging](/privacy-tools-guide/matrix-vs-signal-decentralized-messaging/)
-- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Matrix/Element vs Signal for Private Group Communication](/matrix-element-vs-signal-for-private-group-communication-comparison/)
+- [How To Configure Element Matrix Client For Maximum Privacy](/how-to-configure-element-matrix-client-for-maximum-privacy-a/)
+- [Matrix Vs Signal Decentralized Messaging](/matrix-vs-signal-decentralized-messaging/)
+- [Self-Hosted Private Git Server with Gitea](/private-git-server-gitea-setup-guide/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://bestremotetools.com/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

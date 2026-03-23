@@ -2,6 +2,7 @@
 permalink: /ssh-server-hardening-guide/
 description: "Follow this guide to ssh server hardening guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+date: 2026-03-23
 ---
 layout: default
 title: "SSH Server Hardening Guide"
@@ -277,12 +278,12 @@ A well-hardened server should score an "A" or "A+" on ssh-audit with no flagged 
 
 ## Related Articles
 
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
-- [How To Prepare Ssh Key And Server Access Documentation](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
-- [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
-- [How to Set Up a Password Manager for Home Server SSH](/privacy-tools-guide/how-to-set-up-password-manager-for-home-server-ssh-keys/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
+- [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
+- [How To Prepare Ssh Key And Server Access Documentation](/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [How To Use Ssh Tunneling For Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [How to Set Up a Password Manager for Home Server SSH](/how-to-set-up-password-manager-for-home-server-ssh-keys/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

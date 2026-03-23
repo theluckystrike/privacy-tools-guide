@@ -294,11 +294,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
-- [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
-- [Aegis Authenticator vs Google Authenticator](/privacy-tools-guide/aegis-authenticator-vs-google-authenticator/)
-- [How To Use Password Manager Totp Authenticator Replace Googl](/privacy-tools-guide/how-to-use-password-manager-totp-authenticator-replace-googl/)
-- [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
+- [Best Encrypted Calendar App 2026: A Developer's Guide](/best-encrypted-calendar-app-2026/)
+- [Best Encrypted Notes App 2026: A Developer Guide](/best-encrypted-notes-app-2026/)
+- [Aegis Authenticator vs Google Authenticator](/aegis-authenticator-vs-google-authenticator/)
+- [How To Use Password Manager Totp Authenticator Replace Googl](/how-to-use-password-manager-totp-authenticator-replace-googl/)
+- [1Password Masked Email Feature Review: A Developer Guide](/1password-masked-email-feature-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

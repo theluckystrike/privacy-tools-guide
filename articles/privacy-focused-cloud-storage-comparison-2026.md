@@ -204,9 +204,9 @@ This gives you zero-knowledge properties even with non-zero-knowledge providers 
 
 ## Related Reading
 
-- [Audit Cloud Storage Privacy Guide](/privacy-tools-guide/audit-cloud-storage-privacy-guide/)
-- [Self-Hosted Cloud Storage Comparison: Nextcloud vs Seafile vs Syncthing](/privacy-tools-guide/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
-- [How to Encrypt Files Before Cloud Upload](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
+- [Audit Cloud Storage Privacy Guide](/audit-cloud-storage-privacy-guide/)
+- [Self-Hosted Cloud Storage Comparison: Nextcloud vs Seafile vs Syncthing](/self-hosted-cloud-storage-comparison-nextcloud-vs-seafile-vs-syncthing/)
+- [How to Encrypt Files Before Cloud Upload](/how-to-encrypt-files-before-cloud-upload/)
 
 ---
 

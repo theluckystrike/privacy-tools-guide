@@ -339,11 +339,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
-- [How To Tell If Your Dns Has Been Hijacked Symptoms](/privacy-tools-guide/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
-- [How to Set Up Encrypted DNS on All Devices 2026](/privacy-tools-guide/how-to-set-up-encrypted-dns-on-all-devices-2026/)
-- [DNS over TLS Setup on Linux](/privacy-tools-guide/dns-over-tls-setup-linux-android/)
-- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/privacy-tools-guide/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
-- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [How To Tell If Your Dns Has Been Hijacked Symptoms](/how-to-tell-if-your-dns-has-been-hijacked-symptoms-check/)
+- [How to Set Up Encrypted DNS on All Devices 2026](/how-to-set-up-encrypted-dns-on-all-devices-2026/)
+- [DNS over TLS Setup on Linux](/dns-over-tls-setup-linux-android/)
+- [How To Set Up Encrypted Dns To Bypass Dns Poisoning](/how-to-set-up-encrypted-dns-to-bypass-dns-poisoning-in-censo/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://bestremotetools.com/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -298,20 +298,20 @@ Running Zigbee2MQTT locally transforms your smart home from vendor-dependent to 
 
 ## Related Reading
 
-- [Smart Doorbell Alternatives That Store Video Locally Without](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
-- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
-- [Detect If Smart Home Devices Have Hidden Microphones or](/privacy-tools-guide/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
-- [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Smart Doorbell Alternatives That Store Video Locally Without](/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [Detect If Smart Home Devices Have Hidden Microphones or](/how-to-detect-if-smart-home-devices-have-hidden-microphones-or-cameras/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home.](/privacy-friendly-smart-home-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ## Related Articles
 
-- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
-- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
-- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [How to Set Up a Privacy Focused Home](/privacy-tools-guide/how-to-set-up-a-privacy-focused-home-network/)
-- [How To Set Up Home Assistant Esphome For Completely Local](/privacy-tools-guide/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-friendly-smart-home-setup-guide-2026/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [How to Set Up a Privacy Focused Home](/how-to-set-up-a-privacy-focused-home-network/)
+- [How To Set Up Home Assistant Esphome For Completely Local](/how-to-set-up-home-assistant-esphome-for-completely-local-sm/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

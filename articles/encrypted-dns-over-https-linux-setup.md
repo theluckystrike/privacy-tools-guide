@@ -344,12 +344,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/privacy-tools-guide/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
-- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/privacy-tools-guide/how-to-configure-dns-over-https-inside-vpn-tunnel/)
-- [Linux Mint Privacy Setup Guide for Beginners](/privacy-tools-guide/linux-mint-privacy-setup-guide-beginners/)
-- [Linux Secure Boot Setup with Custom Keys for Preventing.](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-- [Proton Drive Linux Client Setup Guide 2026](/privacy-tools-guide/proton-drive-linux-client-setup-guide-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Set Up Encrypted DNS-over-HTTPS (DoH) on All Devices](/how-to-set-up-encrypted-dns-over-https-doh-on-all-devices-guide/)
+- [How to Configure DNS over HTTPS Inside a VPN Tunnel](/how-to-configure-dns-over-https-inside-vpn-tunnel/)
+- [Linux Mint Privacy Setup Guide for Beginners](/linux-mint-privacy-setup-guide-beginners/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing.](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [Proton Drive Linux Client Setup Guide 2026](/proton-drive-linux-client-setup-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

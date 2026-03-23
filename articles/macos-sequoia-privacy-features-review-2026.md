@@ -379,12 +379,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Harden Macos Sequoia Privacy Settings Beyond Default](/privacy-tools-guide/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
-- [iPhone Focus Mode Privacy Features Explained: Complete Guide](/privacy-tools-guide/iphone-focus-mode-privacy-features-explained/)
-- [macOS Network Privacy Settings Complete Guide 2026](/privacy-tools-guide/macos-network-privacy-settings-complete-guide/)
-- [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/privacy-tools-guide/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
-- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [Harden Macos Sequoia Privacy Settings Beyond Default](/how-to-harden-macos-sequoia-privacy-settings-beyond-default-configuration-complete-guide/)
+- [iPhone Focus Mode Privacy Features Explained: Complete Guide](/iphone-focus-mode-privacy-features-explained/)
+- [macOS Network Privacy Settings Complete Guide 2026](/macos-network-privacy-settings-complete-guide/)
+- [Mimblewimble Protocol Privacy Features How Grin And Beam Pro](/mimblewimble-protocol-privacy-features-how-grin-and-beam-pro/)
+- [MacOS Firewall Configuration for Privacy](/macos-firewall-configuration-for-privacy/)
+- [AI Assistants for Creating Security Architecture Review](https://bestremotetools.com/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -560,11 +560,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Protect Client Photos: Privacy Best Practices](/privacy-tools-guide/photographer-client-photo-privacy-protection-cloud-storage/)
-- [How to set up encrypted emergency access your family can](/privacy-tools-guide/encrypted-emergency-access-setup-family-password-recovery/)
-- [Best Encrypted File Sharing Service 2026](/privacy-tools-guide/best-encrypted-file-sharing-service-2026/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted.](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
-- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-cloud-storage-2026/)
+- [Protect Client Photos: Privacy Best Practices](/photographer-client-photo-privacy-protection-cloud-storage/)
+- [How to set up encrypted emergency access your family can](/encrypted-emergency-access-setup-family-password-recovery/)
+- [Best Encrypted File Sharing Service 2026](/best-encrypted-file-sharing-service-2026/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted.](/secure-file-sharing-tools-comparison/)
+- [Best Encrypted Cloud Storage 2026: A Developer's Guide](/best-encrypted-cloud-storage-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

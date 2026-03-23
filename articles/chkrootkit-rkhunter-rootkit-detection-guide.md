@@ -265,22 +265,22 @@ Run both. They use different detection methods and catch different things.
 
 ## Related Reading
 
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [Email Tracking Pixel Detection](/privacy-tools-guide/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Best AI Tools for Automated API Rate Limiting and Abuse](https://theluckystrike.github.io/ai-tools-compared/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
+- [Lynis Linux Security Audit Guide](/lynis-linux-security-audit-guide/)
+- [Email Tracking Pixel Detection](/email-tracking-pixel-detection-how-to-identify-and-block-spy/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best AI Tools for Automated API Rate Limiting and Abuse](https://bestremotetools.com/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
 
 ---
 
 ## Related Articles
 
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [How to Use Lynis for Linux Security Auditing](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
+- [How to Use Lynis for Linux Security Auditing](/lynis-linux-security-audit-guide/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
+- [Setting Up Vault for Secrets Management](/hashicorp-vault-secrets-management-setup/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -341,18 +341,18 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Reading
 
-- [Configure Firewall Rules on OPNsense to Block Known](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
-- [Vpn Port Selection Which Ports Bypass Most Firewall.](/privacy-tools-guide/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
-- [MacOS Firewall Configuration for Privacy](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Configure Firewall Rules on OPNsense to Block Known](/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Vpn Port Selection Which Ports Bypass Most Firewall.](/vpn-port-selection-which-ports-bypass-most-firewall-restrictions/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [How To Bypass China Great Firewall Using Shadowsocks With Ob](/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [MacOS Firewall Configuration for Privacy](/macos-firewall-configuration-for-privacy/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ## Related Articles
 
-- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
-- [Verify That Your VPN Is Actually Working and Not Leaking](/privacy-tools-guide/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
-- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [VPN Connection Timeout Troubleshooting](/privacy-tools-guide/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
-- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
+- [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)
+- [Verify That Your VPN Is Actually Working and Not Leaking](/how-to-verify-that-your-vpn-is-actually-working-and-not-leaking/)
+- [Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [VPN Connection Timeout Troubleshooting](/vpn-connection-timeout-troubleshooting-tcp-handshake-failure/)
+- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

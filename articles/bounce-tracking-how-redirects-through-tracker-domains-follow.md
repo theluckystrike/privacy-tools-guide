@@ -331,11 +331,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/privacy-tools-guide/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
-- [Etag Tracking How Server Caching Headers Follow You Across W](/privacy-tools-guide/etag-tracking-how-server-caching-headers-follow-you-across-w/)
-- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
-- [How to Detect if Your Car Has GPS Tracker Hidden Check](/privacy-tools-guide/how-to-detect-if-your-car-has-gps-tracker-hidden-check/)
-- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
+- [Dating App Cross Platform Tracking How Ad Networks Follow Yo](/dating-app-cross-platform-tracking-how-ad-networks-follow-yo/)
+- [Etag Tracking How Server Caching Headers Follow You Across W](/etag-tracking-how-server-caching-headers-follow-you-across-w/)
+- [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [How to Detect if Your Car Has GPS Tracker Hidden Check](/how-to-detect-if-your-car-has-gps-tracker-hidden-check/)
+- [India Internet Shutdown Tracker Which States Restrict Access](/india-internet-shutdown-tracker-which-states-restrict-access/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

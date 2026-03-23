@@ -411,12 +411,12 @@ Client certificates can be rotated independently — the CA validates them, so a
 
 ## Related Articles
 
-- [How To Configure Postfix With Mandatory Tls Encryption](/privacy-tools-guide/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
-- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/privacy-tools-guide/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
-- [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
-- [Tls Fingerprinting How Your Browser Handshake Identifies](/privacy-tools-guide/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
-- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/privacy-tools-guide/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Configure Postfix With Mandatory Tls Encryption](/how-to-configure-postfix-with-mandatory-tls-encryption-for-e/)
+- [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
+- [How to Set Up mTLS for Microservices](/mtls-microservices-setup-guide/)
+- [Tls Fingerprinting How Your Browser Handshake Identifies](/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
+- [VPN TLS Fingerprinting: How Censors Identify VPN Protocols](/vpn-tls-fingerprinting-how-censors-identify-vpn-protocols-ex/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

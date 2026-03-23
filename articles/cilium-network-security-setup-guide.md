@@ -298,9 +298,9 @@ This stops data exfiltration and supply chain attack callbacks at the network la
 
 ## Related Reading
 
-- [How to Set Up Falco for Container Runtime Security](/privacy-tools-guide/falco-container-runtime-security-setup/)
-- [How to Configure iptables Rules from Scratch](/privacy-tools-guide/iptables-rules-from-scratch-guide/)
-- [Secure gRPC Communication Setup Guide](/privacy-tools-guide/secure-grpc-communication-setup-guide/)
+- [How to Set Up Falco for Container Runtime Security](/falco-container-runtime-security-setup/)
+- [How to Configure iptables Rules from Scratch](/iptables-rules-from-scratch-guide/)
+- [Secure gRPC Communication Setup Guide](/secure-grpc-communication-setup-guide/)
 
 ---
 

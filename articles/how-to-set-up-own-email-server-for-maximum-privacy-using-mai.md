@@ -237,11 +237,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Business Email Privacy: How to Set Up Encrypted Email](/privacy-tools-guide/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
-- [Self-Hosted Email Server Privacy Comparison](/privacy-tools-guide/self-hosted-email-privacy-comparison/)
-- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/privacy-tools-guide/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
-- [Email Encryption with GPG](/privacy-tools-guide/gpg-email-encryption-step-by-step)
-- [How to Set Up Model Context Protocol Server for Custom](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Business Email Privacy: How to Set Up Encrypted Email](/business-email-privacy-how-to-set-up-encrypted-email-for-com/)
+- [Self-Hosted Email Server Privacy Comparison](/self-hosted-email-privacy-comparison/)
+- [Use Tor With Encrypted Email for Maximum Sender Anonymity](/how-to-use-tor-with-encrypted-email-for-maximum-sender-anonymity/)
+- [Email Encryption with GPG](/gpg-email-encryption-step-by-step)
+- [How to Set Up Model Context Protocol Server for Custom](https://bestremotetools.com/how-to-set-up-model-context-protocol-server-for-custom-proje/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

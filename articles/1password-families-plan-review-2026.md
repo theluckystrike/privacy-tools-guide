@@ -369,11 +369,11 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Privacy Focused Password Sharing for Families Guide](/privacy-tools-guide/privacy-focused-password-sharing-for-families-guide/)
-- [Bitwarden Premium Worth the Cost 2026](/privacy-tools-guide/bitwarden-premium-worth-the-cost-2026/)
-- [Tresorit Review Is It Worth The Price 2026](/privacy-tools-guide/tresorit-review-is-it-worth-the-price-2026/)
-- [How To Create Tiered Access Plan Giving Executor Immediate A](/privacy-tools-guide/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
-- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/privacy-tools-guide/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
+- [Privacy Focused Password Sharing for Families Guide](/privacy-focused-password-sharing-for-families-guide/)
+- [Bitwarden Premium Worth the Cost 2026](/bitwarden-premium-worth-the-cost-2026/)
+- [Tresorit Review Is It Worth The Price 2026](/tresorit-review-is-it-worth-the-price-2026/)
+- [How To Create Tiered Access Plan Giving Executor Immediate A](/how-to-create-tiered-access-plan-giving-executor-immediate-a/)
+- [How To Set Up Casa Multisig Bitcoin Inheritance Plan With Co](/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

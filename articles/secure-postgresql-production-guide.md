@@ -274,12 +274,12 @@ echo "Password rotated. Restart application to pick up new credentials."
 
 ## Related Articles
 
-- [Secure Redis Deployment Without Exposure](/privacy-tools-guide/secure-redis-deployment-without-exposure/)
-- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
-- [How to Secure NAS Storage for Home Use](/privacy-tools-guide/secure-nas-home-storage-guide/)
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-- [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Secure Redis Deployment Without Exposure](/secure-redis-deployment-without-exposure/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [How to Secure NAS Storage for Home Use](/secure-nas-home-storage-guide/)
+- [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
+- [Best Password Manager with Secure Notes: A Technical Guide](/best-password-manager-with-secure-notes/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

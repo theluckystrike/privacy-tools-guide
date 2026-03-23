@@ -1,7 +1,7 @@
 title: "Privacy Tools Guide"
 description: "In-depth guides and reviews of privacy tools, encrypted services, and security software for everyday users"
-url: "https://theluckystrike.github.io"
-baseurl: "/privacy-tools-guide"
+url: "https://securetoolsguide.com"
+baseurl: ""
 permalink: /:title/
 theme: minima
 twitter:
@@ -21,4 +21,4 @@ defaults:
       path: "articles"
     values:
       layout: default
-      image: /privacy-tools-guide/assets/og-default.svg
+      image: /assets/og-default.svg

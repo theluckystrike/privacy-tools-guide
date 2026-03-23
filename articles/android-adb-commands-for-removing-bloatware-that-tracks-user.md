@@ -267,11 +267,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [How To Use Adb To Disable Android System Apps That Spy On Yo](/privacy-tools-guide/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
-- [Complete Guide To Removing Real Name From All Online Account](/privacy-tools-guide/complete-guide-to-removing-real-name-from-all-online-account/)
-- [Complete Guide To Removing Yourself From Internet Databases](/privacy-tools-guide/complete-guide-to-removing-yourself-from-internet-databases-/)
-- [Privacy Setup for Survivor of Revenge Porn](/privacy-tools-guide/privacy-setup-for-survivor-of-revenge-porn-removing-images-g/)
+- [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
+- [How To Use Adb To Disable Android System Apps That Spy On Yo](/how-to-use-adb-to-disable-android-system-apps-that-spy-on-yo/)
+- [Complete Guide To Removing Real Name From All Online Account](/complete-guide-to-removing-real-name-from-all-online-account/)
+- [Complete Guide To Removing Yourself From Internet Databases](/complete-guide-to-removing-yourself-from-internet-databases-/)
+- [Privacy Setup for Survivor of Revenge Porn](/privacy-setup-for-survivor-of-revenge-porn-removing-images-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

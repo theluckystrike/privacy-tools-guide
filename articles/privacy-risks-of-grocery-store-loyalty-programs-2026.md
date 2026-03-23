@@ -509,7 +509,7 @@ Target:
 - [Payment Privacy: Cash vs. Cards vs. Crypto](/articles/payment-privacy/)
 - [Health Data Privacy and HIPAA Loopholes](/articles/health-data-privacy/)
 - [Understanding Your Data Broker Profile](/articles/data-broker-profile/)
-- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://bestremotetools.com/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

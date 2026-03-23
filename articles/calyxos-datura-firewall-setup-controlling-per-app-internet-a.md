@@ -450,11 +450,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-- [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
-- [Configure Firewall Rules on OPNsense to Block Known](/privacy-tools-guide/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
-- [Calyxos Microg Setup Guide Getting Google Apps Working](/privacy-tools-guide/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
-- [How To Bypass China Great Firewall Using Shadowsocks](/privacy-tools-guide/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [macOS Firewall Configuration](/macos-firewall-configuration-for-privacy/)
+- [How VPN Interacts With Firewall Rules Iptables Nftables](/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [Configure Firewall Rules on OPNsense to Block Known](/how-to-configure-firewall-rules-on-opnsense-to-block-known-t/)
+- [Calyxos Microg Setup Guide Getting Google Apps Working](/calyxos-microg-setup-guide-getting-google-apps-working-without-google-services/)
+- [How To Bypass China Great Firewall Using Shadowsocks](/how-to-bypass-china-great-firewall-using-shadowsocks-with-ob/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

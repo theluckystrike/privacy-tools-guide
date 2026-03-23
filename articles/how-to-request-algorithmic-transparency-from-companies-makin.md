@@ -552,11 +552,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Request Human Review of AI Automated Decision That Affects](/privacy-tools-guide/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
-- [How To Request Data Deletion From Companies Not Covered](/privacy-tools-guide/how-to-request-data-deletion-from-companies-not-covered-by-g/)
-- [How To Submit Subject Access Request To Employer For All](/privacy-tools-guide/how-to-submit-subject-access-request-to-employer-for-all-mon/)
-- [Challenge Automated Credit Decision Using GDPR Right](/privacy-tools-guide/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
-- [Right To Be Forgotten In Search Engines How To Request](/privacy-tools-guide/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Request Human Review of AI Automated Decision That Affects](/how-to-request-human-review-of-ai-automated-decision-that-affects-you/)
+- [How To Request Data Deletion From Companies Not Covered](/how-to-request-data-deletion-from-companies-not-covered-by-g/)
+- [How To Submit Subject Access Request To Employer For All](/how-to-submit-subject-access-request-to-employer-for-all-mon/)
+- [Challenge Automated Credit Decision Using GDPR Right](/how-to-challenge-automated-credit-decision-using-gdpr-right-/)
+- [Right To Be Forgotten In Search Engines How To Request](/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

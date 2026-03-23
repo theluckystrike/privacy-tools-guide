@@ -294,12 +294,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Set Up Own Email Server For Maximum Privacy Using Mail In](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
-- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
-- [How To Set Up Proton Mail Bridge With Local Email Client For](/privacy-tools-guide/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
-- [Set Up Catch All Email Domain For Unlimited Private Aliases](/privacy-tools-guide/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
-- [to Physical Mail Privacy: Preventing Address Harvesting](/privacy-tools-guide/complete-guide-to-physical-mail-privacy-preventing-address-h/)
-- [How to Set Up Ollama as Private AI Coding Assistant](https://theluckystrike.github.io/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail In](/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
+- [How To Set Up Proton Mail Bridge With Local Email Client For](/how-to-set-up-proton-mail-bridge-with-local-email-client-for/)
+- [Set Up Catch All Email Domain For Unlimited Private Aliases](/how-to-set-up-catch-all-email-domain-for-unlimited-private-aliases/)
+- [to Physical Mail Privacy: Preventing Address Harvesting](/complete-guide-to-physical-mail-privacy-preventing-address-h/)
+- [How to Set Up Ollama as Private AI Coding Assistant](https://bestremotetools.com/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

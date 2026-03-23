@@ -392,10 +392,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/privacy-tools-guide/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
-- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/privacy-tools-guide/totp-vs-fido2-authentication-explained/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [Passkey Support By Website 2026](/privacy-tools-guide/passkey-support-by-website-2026/)
-- [Passwordless Authentication Pros and Cons: A Developer Guide](/privacy-tools-guide/passwordless-authentication-pros-and-cons/)
-- [Switching from ChatGPT Search to Perplexity Pro: Explained](https://theluckystrike.github.io/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Passkeys vs Passwords: Security Comparison FIDO2 WebAuthn](/passkeys-vs-passwords-security-comparison-fido2-webauthn-guide/)
+- [TOTP vs FIDO2 Authentication Explained: A Developer's Guide](/totp-vs-fido2-authentication-explained/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
+- [Passkey Support By Website 2026](/passkey-support-by-website-2026/)
+- [Passwordless Authentication Pros and Cons: A Developer Guide](/passwordless-authentication-pros-and-cons/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](https://bestremotetools.com/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

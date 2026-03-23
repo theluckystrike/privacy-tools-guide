@@ -281,11 +281,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
-- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/privacy-tools-guide/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
-- [Encrypted Messaging Metadata Protection: A Developer's Guide](/privacy-tools-guide/encrypted-messaging-metadata-protection/)
-- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/privacy-tools-guide/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
-- [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/best-encrypted-messaging-for-journalists/)
+- [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
+- [Encrypted Messaging Metadata Protection: A Developer's Guide](/encrypted-messaging-metadata-protection/)
+- [Threema Vs Signal Vs Wickr Enterprise Encrypted Messaging Co](/threema-vs-signal-vs-wickr-enterprise-encrypted-messaging-co/)
+- [Best Encrypted Calendar App 2026: A Developer's Guide](/best-encrypted-calendar-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

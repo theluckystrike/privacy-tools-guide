@@ -298,11 +298,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
-- [Password Manager Browser Extension Attack](/privacy-tools-guide/password-manager-browser-extension-attack-surface/)
-- [Privacy Implications of Browser Extensions](/privacy-tools-guide/privacy-implications-browser-extensions/)
-- [How to Audit Browser Extensions for Privacy Risks 2026](/privacy-tools-guide/how-to-audit-browser-extensions-for-privacy-risks-2026/)
-- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://theluckystrike.github.io/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Protect Yourself from Browser Extension Malware Installed](/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Password Manager Browser Extension Attack](/password-manager-browser-extension-attack-surface/)
+- [Privacy Implications of Browser Extensions](/privacy-implications-browser-extensions/)
+- [How to Audit Browser Extensions for Privacy Risks 2026](/how-to-audit-browser-extensions-for-privacy-risks-2026/)
+- [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](https://bestremotetools.com/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

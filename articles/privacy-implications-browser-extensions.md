@@ -344,12 +344,12 @@ This allows only explicitly approved extensions and blocks all others.
 
 ## Related Articles
 
-- [How to Audit Your Browser Extensions for Privacy](/privacy-tools-guide/how-to-audit-your-browser-extensions-for-privacy-risks/)
-- [How to Audit Browser Extensions for Privacy Risks 2026](/privacy-tools-guide/how-to-audit-browser-extensions-for-privacy-risks-2026/)
-- [How to Audit Chrome Extensions for Privacy](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
-- [Best Privacy Browser Extensions Ranked by Performance](/privacy-tools-guide/best-privacy-browser-extensions-ranked-by-performance-impact/)
-- [Browser Extension Permissions What](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit Your Browser Extensions for Privacy](/how-to-audit-your-browser-extensions-for-privacy-risks/)
+- [How to Audit Browser Extensions for Privacy Risks 2026](/how-to-audit-browser-extensions-for-privacy-risks-2026/)
+- [How to Audit Chrome Extensions for Privacy](/audit-chrome-extensions-privacy-guide/)
+- [Best Privacy Browser Extensions Ranked by Performance](/best-privacy-browser-extensions-ranked-by-performance-impact/)
+- [Browser Extension Permissions What](/browser-extension-permissions-what-to-watch/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

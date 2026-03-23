@@ -260,9 +260,9 @@ Regardless of which hub you choose, isolate IoT devices on a dedicated VLAN:
 
 ## Related Reading
 
-- [How to Run Zigbee2MQTT Locally for Smart Home Without Vendor Cloud](/privacy-tools-guide/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
-- [How to Secure Smart Home Devices Privacy Guide 2026](/privacy-tools-guide/how-to-secure-smart-home-devices-privacy-guide-2026/)
-- [Privacy-Focused Cloud Storage Comparison 2026](/privacy-tools-guide/privacy-focused-cloud-storage-comparison-2026/)
+- [How to Run Zigbee2MQTT Locally for Smart Home Without Vendor Cloud](/how-to-run-zigbee2mqtt-locally-for-smart-home-without-vendor/)
+- [How to Secure Smart Home Devices Privacy Guide 2026](/how-to-secure-smart-home-devices-privacy-guide-2026/)
+- [Privacy-Focused Cloud Storage Comparison 2026](/privacy-focused-cloud-storage-comparison-2026/)
 
 ---
 

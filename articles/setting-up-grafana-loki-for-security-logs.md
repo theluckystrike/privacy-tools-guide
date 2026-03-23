@@ -382,22 +382,22 @@ To import a dashboard JSON:
 
 ## Related Reading
 
-- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [How to Use syslog-ng for Centralized Logging](/privacy-tools-guide/how-to-use-syslog-ng-for-centralized-logging/)
-- [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
+- [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
+- [How to Use syslog-ng for Centralized Logging](/how-to-use-syslog-ng-for-centralized-logging/)
+- [How to Monitor File Changes with inotifywait](/how-to-monitor-file-changes-with-inotifywait/)
 
-- [Setting Up ClamAV Antivirus on Linux](/privacy-tools-guide/clamav-antivirus-linux-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Setting Up ClamAV Antivirus on Linux](/clamav-antivirus-linux-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
 ## Related Articles
 
-- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [What VPN Logs Actually Mean No Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
-- [What VPN Logs Actually Mean: No-Log Policy Explained](/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
-- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/privacy-tools-guide/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
+- [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
+- [What VPN Logs Actually Mean No Log Policy Explained](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
+- [What VPN Logs Actually Mean: No-Log Policy Explained](/what-vpn-logs-actually-mean-no-log-policy-explained-technically/)
+- [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
+- [Cloud Storage Security Breach History: Compromised](/cloud-storage-security-breach-history-compromised-services-t/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

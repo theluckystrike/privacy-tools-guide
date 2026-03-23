@@ -399,7 +399,7 @@ If privacy is critical:
 - [Health Insurance Discrimination: Genetic and Fitness Data](/articles/health-insurance-discrimination-2026.md)
 - [Best Privacy-Focused Wearables 2026](/articles/privacy-wearables-2026.md)
 - [Opting Out of Data Brokers: Complete Guide 2026](/articles/opting-out-data-brokers-2026.md)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

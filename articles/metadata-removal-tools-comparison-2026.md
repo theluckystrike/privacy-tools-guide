@@ -502,12 +502,12 @@ Metadata removal is a core privacy practice. The right tool depends on your plat
 
 ## Related Articles
 
-- [How to Remove Metadata from PDF Files](/privacy-tools-guide/how-to-remove-metadata-from-pdf-files/)
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
-- [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
-- [Mobile Photo Metadata Exif Location Data How To Strip](/privacy-tools-guide/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
-- [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [How to Remove Metadata from PDF Files](/how-to-remove-metadata-from-pdf-files/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [iPhone Photo Metadata Location Strip Guide for Developers](/iphone-photo-metadata-location-strip-guide/)
+- [Mobile Photo Metadata Exif Location Data How To Strip](/mobile-photo-metadata-exif-location-data-how-to-strip-before/)
+- [Remove EXIF Data from Photos Automatically](/remove-exif-data-photos-automated)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

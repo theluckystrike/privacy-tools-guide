@@ -217,22 +217,22 @@ For maximum anonymity, re-type or re-create the document from scratch rather tha
 
 ## Related Reading
 
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-- [Privacy Risks of QR Codes Explained](/privacy-tools-guide/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
-- [Privacy-Focused Cloud Email Providers Compared](/privacy-tools-guide/privacy-focused-cloud-email-comparison-2026/)
+- [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
+- [Privacy Risks of QR Codes Explained](/how-to-protect-yourself-from-qr-code-phishing-quishing-attac/)
+- [Privacy-Focused Cloud Email Providers Compared](/privacy-focused-cloud-email-comparison-2026/)
 
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](https://theluckystrike.github.io/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](https://bestremotetools.com/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ---
 
 ## Related Articles
 
-- [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2](/privacy-tools-guide/metadata-removal-tools-comparison-2026/)
-- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/privacy-tools-guide/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
-- [How to Remove EXIF Metadata from Photos Before Sharing](/privacy-tools-guide/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
-- [iPhone Photo Metadata Location Strip Guide for Developers](/privacy-tools-guide/iphone-photo-metadata-location-strip-guide/)
-- [Remove EXIF Data from Photos Automatically](/privacy-tools-guide/remove-exif-data-photos-automated)
+- [Metadata Removal Tools Comparison 2026: ExifTool vs MAT2](/metadata-removal-tools-comparison-2026/)
+- [Dating App Photo Metadata Stripping How To Remove Exif Gps](/dating-app-photo-metadata-stripping-how-to-remove-exif-gps-d/)
+- [How to Remove EXIF Metadata from Photos Before Sharing](/how-to-remove-exif-metadata-from-photos-before-sharing-guide/)
+- [iPhone Photo Metadata Location Strip Guide for Developers](/iphone-photo-metadata-location-strip-guide/)
+- [Remove EXIF Data from Photos Automatically](/remove-exif-data-photos-automated)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

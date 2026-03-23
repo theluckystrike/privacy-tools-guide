@@ -374,11 +374,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cryptocurrency Wallet Recovery Planning For Heirs How](/privacy-tools-guide/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
-- [How To Set Up Dedicated Hardware Wallet For Each Crypto](/privacy-tools-guide/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
-- [Ethereum Wallet Inheritance: Using Social Recovery Smart](/privacy-tools-guide/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
-- [How To Protect Cryptocurrency Wallet From Being Hacked](/privacy-tools-guide/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
-- [Ledger Data Breach Lessons How Hardware Wallet Companies](/privacy-tools-guide/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
-- [How to Write ChatGPT Custom Instructions](https://theluckystrike.github.io/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [Cryptocurrency Wallet Recovery Planning For Heirs How](/cryptocurrency-wallet-recovery-planning-for-heirs-how-to-pas/)
+- [How To Set Up Dedicated Hardware Wallet For Each Crypto](/how-to-set-up-dedicated-hardware-wallet-for-each-crypto-spen/)
+- [Ethereum Wallet Inheritance: Using Social Recovery Smart](/ethereum-wallet-inheritance-using-social-recovery-smart-cont/)
+- [How To Protect Cryptocurrency Wallet From Being Hacked](/how-to-protect-cryptocurrency-wallet-from-being-hacked-secur/)
+- [Ledger Data Breach Lessons How Hardware Wallet Companies](/ledger-data-breach-lessons-how-hardware-wallet-companies-can/)
+- [How to Write ChatGPT Custom Instructions](https://bestremotetools.com/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

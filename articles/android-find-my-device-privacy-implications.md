@@ -343,11 +343,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [What to Do If You Find an Unknown Device on Your Network](/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/)
-- [China Social Credit System Digital Privacy Implications What](/privacy-tools-guide/china-social-credit-system-digital-privacy-implications-what/)
-- [Eu Digital Markets Act Privacy Implications How Dma Changes](/privacy-tools-guide/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
-- [India Cctv Surveillance Expansion Privacy Implications Of Sm](/privacy-tools-guide/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
-- [Macos Gatekeeper And Notarization Privacy Implications What](/privacy-tools-guide/macos-gatekeeper-and-notarization-privacy-implications-what-/)
+- [What to Do If You Find an Unknown Device on Your Network](/what-to-do-if-you-find-unknown-device-on-your-network/)
+- [China Social Credit System Digital Privacy Implications What](/china-social-credit-system-digital-privacy-implications-what/)
+- [Eu Digital Markets Act Privacy Implications How Dma Changes](/eu-digital-markets-act-privacy-implications-how-dma-changes-/)
+- [India Cctv Surveillance Expansion Privacy Implications Of Sm](/india-cctv-surveillance-expansion-privacy-implications-of-sm/)
+- [Macos Gatekeeper And Notarization Privacy Implications What](/macos-gatekeeper-and-notarization-privacy-implications-what-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

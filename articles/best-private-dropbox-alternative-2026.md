@@ -353,11 +353,11 @@ age -d -i ~/.age/keys.txt \
 
 ## Related Reading
 
-- [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
-- [Youtube Alternative Private Video Platforms 2026](/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/)
-- [Best Secure Alternative to Gmail 2026: A Developer Guide](/privacy-tools-guide/best-secure-alternative-to-gmail-2026/)
-- [Best Lightweight Private Browser 2026: A Developer Guide](/privacy-tools-guide/best-lightweight-private-browser-2026/)
-- [Best Alternative To Signal Messenger 2026](/privacy-tools-guide/best-alternative-to-signal-messenger-2026/)
+- [Best Private Alternative To Google Drive 2026](/best-private-alternative-to-google-drive-2026/)
+- [Youtube Alternative Private Video Platforms 2026](/youtube-alternative-private-video-platforms-2026/)
+- [Best Secure Alternative to Gmail 2026: A Developer Guide](/best-secure-alternative-to-gmail-2026/)
+- [Best Lightweight Private Browser 2026: A Developer Guide](/best-lightweight-private-browser-2026/)
+- [Best Alternative To Signal Messenger 2026](/best-alternative-to-signal-messenger-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

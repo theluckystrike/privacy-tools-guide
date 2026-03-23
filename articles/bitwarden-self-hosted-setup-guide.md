@@ -187,7 +187,7 @@ For privacy-conscious deployments, consider using a transactional email provider
 
 Self-hosted Bitwarden supports multiple 2FA methods. For organizational deployments, duo and email-based 2FA are available on free tiers. TOTP (authenticator app) 2FA is supported for individual accounts.
 
-For administrative access, strongly consider using a hardware security key. Configure this through your account settings after logging in. See the [Best Hardware Security Key for Developers guide](/privacy-tools-guide/best-hardware-security-key-for-developers/) for hardware selection advice.
+For administrative access, strongly consider using a hardware security key. Configure this through your account settings after logging in. See the [Best Hardware Security Key for Developers guide](/best-hardware-security-key-for-developers/) for hardware selection advice.
 
 ### Step 7: Backup Strategy
 
@@ -306,11 +306,11 @@ Yes. In the Bitwarden mobile app, tap the region selector on the login screen an
 
 ## Related Articles
 
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
-- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [Jitsi Meet Self Hosted Setup Guide](/jitsi-meet-self-hosted-setup-guide/)
+- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/best-self-hosted-file-sync-alternative-2026/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

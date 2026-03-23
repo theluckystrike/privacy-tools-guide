@@ -480,11 +480,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/privacy-tools-guide/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
-- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/privacy-tools-guide/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [Migrating from Sticky Password to Bitwarden: A Guide](/privacy-tools-guide/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
+- [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
+- [Email Security Headers Dmarc Dkim Spf Setup To Prevent.](/email-security-headers-dmarc-dkim-spf-setup-to-prevent-spoofing/)
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Migrating from Sticky Password to Bitwarden: A Guide](/migrating-from-sticky-password-to-bitwarden-step-by-step-gui/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

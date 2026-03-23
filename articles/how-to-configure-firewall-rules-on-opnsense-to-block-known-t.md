@@ -395,10 +395,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [macOS Firewall Configuration](/privacy-tools-guide/macos-firewall-configuration-for-privacy/)
-- [How VPN Interacts With Firewall Rules Iptables Nftables](/privacy-tools-guide/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
-- [Configure Little Snitch On macOS To Block All Unnecessary](/privacy-tools-guide/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
-- [Configure Private DNS on Android for System-Wide Tracker](/privacy-tools-guide/how-to-configure-private-dns-on-android-for-system-wide-trac/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [How to Configure Cursor AI Rules for Consistent CSS](https://theluckystrike.github.io/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
+- [macOS Firewall Configuration](/macos-firewall-configuration-for-privacy/)
+- [How VPN Interacts With Firewall Rules Iptables Nftables](/how-vpn-interacts-with-firewall-rules-iptables-nftables-guide/)
+- [Configure Little Snitch On macOS To Block All Unnecessary](/how-to-configure-little-snitch-on-macos-to-block-all-unnecessary-outbound-connections/)
+- [Configure Private DNS on Android for System-Wide Tracker](/how-to-configure-private-dns-on-android-for-system-wide-trac/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [How to Configure Cursor AI Rules for Consistent CSS](https://bestremotetools.com/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

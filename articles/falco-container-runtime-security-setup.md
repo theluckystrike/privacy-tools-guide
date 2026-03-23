@@ -256,9 +256,9 @@ sudo journalctl -u falco -f
 
 ## Related Reading
 
-- [How to Set Up Cilium for Network Security](/privacy-tools-guide/cilium-network-security-setup-guide/)
-- [How to Set Up Graylog for Log Management](/privacy-tools-guide/graylog-log-management-setup-guide/)
-- [Secure MQTT Broker Setup for IoT](/privacy-tools-guide/secure-mqtt-broker-setup-iot/)
+- [How to Set Up Cilium for Network Security](/cilium-network-security-setup-guide/)
+- [How to Set Up Graylog for Log Management](/graylog-log-management-setup-guide/)
+- [Secure MQTT Broker Setup for IoT](/secure-mqtt-broker-setup-iot/)
 
 ---
 

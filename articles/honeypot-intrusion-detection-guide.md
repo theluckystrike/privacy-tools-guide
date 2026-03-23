@@ -368,12 +368,12 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
-- [How To Tell If Your Phone Has Been Jailbroken](/privacy-tools-guide/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
-- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
-- [How To Access Google Services From China Without Getting](/privacy-tools-guide/how-to-access-google-services-from-china-without-getting-det/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
+- [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
+- [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
+- [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
+- [How To Access Google Services From China Without Getting](/how-to-access-google-services-from-china-without-getting-det/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

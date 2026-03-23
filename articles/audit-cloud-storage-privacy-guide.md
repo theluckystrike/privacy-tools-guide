@@ -412,11 +412,11 @@ Complete this before storing sensitive data.
 
 ## Related Reading
 
-- [Best Zero Knowledge Cloud Storage 2026](/privacy-tools-guide/best-zero-knowledge-cloud-storage-2026/)
-- [Encrypted Cloud Storage Comparison 2026](/privacy-tools-guide/encrypted-cloud-storage-comparison-2026/)
-- [Secure Cloud Storage Encryption Rclone](/privacy-tools-guide/secure-cloud-storage-encryption-rclone/)
-- [GDPR Compliance Cloud Storage Requirements](/privacy-tools-guide/gdpr-cloud-storage-compliance/)
-- [Data Residency and Cloud Storage Legal Implications](/privacy-tools-guide/cloud-data-residency-legal/)
+- [Best Zero Knowledge Cloud Storage 2026](/best-zero-knowledge-cloud-storage-2026/)
+- [Encrypted Cloud Storage Comparison 2026](/encrypted-cloud-storage-comparison-2026/)
+- [Secure Cloud Storage Encryption Rclone](/secure-cloud-storage-encryption-rclone/)
+- [GDPR Compliance Cloud Storage Requirements](/gdpr-cloud-storage-compliance/)
+- [Data Residency and Cloud Storage Legal Implications](/cloud-data-residency-legal/)
 
 ---
 

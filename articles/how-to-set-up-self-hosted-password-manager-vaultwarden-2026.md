@@ -2,6 +2,7 @@
 permalink: /how-to-set-up-self-hosted-password-manager-vaultwarden-2026/
 description: "Follow this guide to how to set up self hosted password manager vaultwarden 2026 with practical examples, tips, and step-by-step instructions for..."
 tags: [privacy-tools-guide]
+date: 2026-03-23
 ---
 title: "How to Set Up Self-Hosted Password Manager Vaultwarden 2026"
 date: 2026-03-21
@@ -501,11 +502,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
-- [Self-Hosted Password Manager Comparison](/privacy-tools-guide/self-hosted-password-manager-comparison)
-- [How To Set Up Enterprise Password Manager With Zero Knowledg](/privacy-tools-guide/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
-- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
+- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
+- [Self-Hosted Password Manager Comparison](/self-hosted-password-manager-comparison)
+- [How To Set Up Enterprise Password Manager With Zero Knowledg](/how-to-set-up-enterprise-password-manager-with-zero-knowledg/)
+- [Best Password Manager for Developers: A Technical Guide](/best-password-manager-for-developers/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

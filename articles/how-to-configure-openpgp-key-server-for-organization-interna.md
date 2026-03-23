@@ -523,12 +523,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
-- [How to Check If Your Email Server Has Been Blacklisted](/privacy-tools-guide/how-to-check-if-your-email-server-has-been-blacklisted/)
-- [VPN Provider Server Infrastructure How To Evaluate](/privacy-tools-guide/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [Best Way to Configure Claude Code to Understand Your](https://theluckystrike.github.io/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Self-Hosted Private Git Server with Gitea](/private-git-server-gitea-setup-guide/)
+- [How to Check If Your Email Server Has Been Blacklisted](/how-to-check-if-your-email-server-has-been-blacklisted/)
+- [VPN Provider Server Infrastructure How To Evaluate](/vpn-provider-server-infrastructure-how-to-evaluate-trustworthiness/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
+- [Best Way to Configure Claude Code to Understand Your](https://bestremotetools.com/best-way-to-configure-claude-code-to-understand-your-interna/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

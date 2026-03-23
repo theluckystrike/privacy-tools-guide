@@ -263,11 +263,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Tell If Your Smart Tv Is Spying On](/privacy-tools-guide/how-to-tell-if-your-smart-tv-is-spying-on-you/)
-- [Smart Device Deregistration After Death How To Remove](/privacy-tools-guide/smart-device-deregistration-after-death-how-to-remove-deceas/)
-- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
-- [Smart Device Terms of Service Privacy Traps](/privacy-tools-guide/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
-- [How To Disable Smart App Control In Windows 11 That Reports](/privacy-tools-guide/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
-- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+- [How To Tell If Your Smart Tv Is Spying On](/how-to-tell-if-your-smart-tv-is-spying-on-you/)
+- [Smart Device Deregistration After Death How To Remove](/smart-device-deregistration-after-death-how-to-remove-deceas/)
+- [Smart Doorbell Alternatives That Store Video Locally](/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [Smart Device Terms of Service Privacy Traps](/smart-device-terms-of-service-privacy-traps-what-you-agree-t/)
+- [How To Disable Smart App Control In Windows 11 That Reports](/how-to-disable-smart-app-control-in-windows-11-that-reports-/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://bestremotetools.com/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -376,12 +376,12 @@ Removing from history does not help if the secret was already exposed — rotate
 
 ## Related Articles
 
-- [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
-- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
-- [Setting Up Vault for Secrets Management](/privacy-tools-guide/hashicorp-vault-secrets-management-setup/)
-- [AI Tools for Automated Secrets Rotation and Vault Management](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
+- [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
+- [Secure API Key Management for Developers](/secure-api-key-management-developers/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/1password-secrets-automation-devops-guide/)
+- [Setting Up Vault for Secrets Management](/hashicorp-vault-secrets-management-setup/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](https://bestremotetools.com/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

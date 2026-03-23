@@ -2,6 +2,7 @@
 permalink: /openwrt-vpn-router-wireguard-setup/
 description: "Learn openwrt vpn router wireguard setup with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+date: 2026-03-23
 ---
 layout: default
 title: "OpenWrt VPN Router Setup with WireGuard"
@@ -247,12 +248,12 @@ curl -s --max-time 5 https://api.ipify.org
 
 ## Related Articles
 
-- [How to Set Up a VPN on Your Router](/privacy-tools-guide/vpn-on-router-setup-guide/)
-- [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [How to Set Up WireGuard VPN on VPS 2026](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-vps-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Set Up a VPN on Your Router](/vpn-on-router-setup-guide/)
+- [How to Set Up VPN on Router Firmware: Complete Guide](/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard VPN on VPS 2026](/how-to-set-up-wireguard-vpn-on-vps-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

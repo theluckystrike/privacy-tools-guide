@@ -493,11 +493,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
-- [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-- [Gdpr Consent Management Platform Comparison 2026](/privacy-tools-guide/gdpr-consent-management-platform-comparison-2026/)
-- [GDPR Subprocessor Management Guide for Developers](/privacy-tools-guide/gdpr-subprocessor-management-guide-developers/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/1password-secrets-automation-devops-guide/)
+- [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/best-password-manager-cli-tools/)
+- [Gdpr Consent Management Platform Comparison 2026](/gdpr-consent-management-platform-comparison-2026/)
+- [GDPR Subprocessor Management Guide for Developers](/gdpr-subprocessor-management-guide-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

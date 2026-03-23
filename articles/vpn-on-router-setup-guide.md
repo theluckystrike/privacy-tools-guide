@@ -2,6 +2,7 @@
 permalink: /vpn-on-router-setup-guide/
 description: "Follow this guide to vpn on router setup guide with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide, vpn]
+date: 2026-03-23
 ---
 layout: default
 title: "How to Set Up a VPN on Your Router"
@@ -400,12 +401,12 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
-- [How to Set Up VPN on Router Firmware: Complete Guide](/privacy-tools-guide/how-to-set-up-vpn-on-router-firmware-level-guide/)
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [Best VPN for Linux Desktop: A Developer Guide](/privacy-tools-guide/best-vpn-for-linux-desktop/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [OpenWrt VPN Router Setup with WireGuard](/openwrt-vpn-router-wireguard-setup/)
+- [How to Set Up VPN on Router Firmware: Complete Guide](/how-to-set-up-vpn-on-router-firmware-level-guide/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [Best VPN for Linux Desktop: A Developer Guide](/best-vpn-for-linux-desktop/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

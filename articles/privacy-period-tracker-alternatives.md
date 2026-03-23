@@ -171,9 +171,9 @@ Before deleting your account, export your data and submit a deletion request:
 
 ## Related Reading
 
-- [Privacy Risks of Period Tracking Apps](/privacy-tools-guide/privacy-risks-of-period-tracking-apps-2026/)
-- [Privacy-Focused Pregnancy and Health Apps](/privacy-tools-guide/privacy-focused-pregnancy-health-apps/)
-- [Android App Permissions Audit Guide](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Privacy Risks of Period Tracking Apps](/privacy-risks-of-period-tracking-apps-2026/)
+- [Privacy-Focused Pregnancy and Health Apps](/privacy-focused-pregnancy-health-apps/)
+- [Android App Permissions Audit Guide](/android-app-permissions-audit-guide-2026/)
 
 ---
 

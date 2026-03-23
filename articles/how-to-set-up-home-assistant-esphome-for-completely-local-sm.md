@@ -284,12 +284,12 @@ Disable the ESPHome dashboard's external access if you do not need it. The dashb
 
 ## Related Articles
 
-- [Replace Google Home with Local Voice Assistant](/privacy-tools-guide/how-to-replace-google-home-with-local-voice-assistant-using-/)
-- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-tools-guide/privacy-friendly-smart-home-setup-guide-2026/)
-- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-tools-guide/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
-- [Tell If Your Home Assistant or Alexa Was Compromised](/privacy-tools-guide/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
-- [How To Use Tailscale To Access Home Assistant Remotely](/privacy-tools-guide/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Replace Google Home with Local Voice Assistant](/how-to-replace-google-home-with-local-voice-assistant-using-/)
+- [Privacy-Friendly Smart Home Setup Guide 2026: Home](/privacy-friendly-smart-home-setup-guide-2026/)
+- [Privacy-Focused Home Assistant Setup Accessible for Users](/privacy-focused-home-assistant-setup-accessible-for-users-wi/)
+- [Tell If Your Home Assistant or Alexa Was Compromised](/how-to-tell-if-your-home-assistant-alexa-was-compromised/)
+- [How To Use Tailscale To Access Home Assistant Remotely](/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

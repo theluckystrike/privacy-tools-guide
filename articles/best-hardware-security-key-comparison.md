@@ -483,11 +483,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
-- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/yubikey-vs-titan-security-key-comparison/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

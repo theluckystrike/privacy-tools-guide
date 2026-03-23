@@ -317,10 +317,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
-- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
-- [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
-- [Session Messenger Review 2026: Technical Analysis](/privacy-tools-guide/session-messenger-review-2026/)
-- [AI Tools for Database Schema Migration Review 2026](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
+- [How to Use Briar Messenger Offline: A Developer's Guide](/how-to-use-briar-messenger-offline-guide/)
+- [Briar Messenger Offline Communication](/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [How To Use Briar Messenger During Iran Internet Blackout](/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [Iran Internet Shutdown Survival Guide](/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [Session Messenger Review 2026: Technical Analysis](/session-messenger-review-2026/)
+- [AI Tools for Database Schema Migration Review 2026](https://bestremotetools.com/ai-tools-for-database-schema-migration-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

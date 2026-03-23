@@ -341,8 +341,8 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet
 # Test by monitoring network traffic during cloud operations
 ```
 
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
-- [Privacy Tools Guides Hub](/privacy-tools-guide/guides-hub/)
+- [Privacy Tools Guides Hub](/guides-hub/)
+- [Privacy Tools Guides Hub](/guides-hub/)
 
 ## Frequently Asked Questions
 
@@ -368,11 +368,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Twitter X Privacy Settings Recommended 2026](/privacy-tools-guide/twitter-x-privacy-settings-recommended-2026/)
-- [Set Up Google Inactive Account Manager for Automatic Data](/privacy-tools-guide/how-to-set-up-google-inactive-account-manager-for-automatic-/)
-- [Windows OneDrive Privacy Settings Guide 2026](/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/)
-- [What to Do If Your Amazon Account Was Hacked: Recovery Guide](/privacy-tools-guide/what-to-do-if-your-amazon-account-was-hacked-recovery/)
-- [What to Do If Your Cloud Storage Account Was Breached](/privacy-tools-guide/what-to-do-if-your-cloud-storage-account-was-breached/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Twitter X Privacy Settings Recommended 2026](/twitter-x-privacy-settings-recommended-2026/)
+- [Set Up Google Inactive Account Manager for Automatic Data](/how-to-set-up-google-inactive-account-manager-for-automatic-/)
+- [Windows OneDrive Privacy Settings Guide 2026](/windows-onedrive-privacy-settings-guide-2026/)
+- [What to Do If Your Amazon Account Was Hacked: Recovery Guide](/what-to-do-if-your-amazon-account-was-hacked-recovery/)
+- [What to Do If Your Cloud Storage Account Was Breached](/what-to-do-if-your-cloud-storage-account-was-breached/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

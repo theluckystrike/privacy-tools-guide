@@ -310,9 +310,9 @@ Start with Network Policy for immediate blast-radius reduction, then layer in mT
 
 ## Related Reading
 
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
+- [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
+- [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
 
 ---
 

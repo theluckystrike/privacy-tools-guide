@@ -480,11 +480,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Android Privacy Dashboard How To Use It To Audit App Access](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
-- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-- [Police Body Camera Footage Privacy Rights Who Can Request An](/privacy-tools-guide/police-body-camera-footage-privacy-rights-who-can-request-an/)
-- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [How To Tell If Your Phone Camera Is Being Accessed Remotely](/privacy-tools-guide/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Background Location Access Which Apps Track You When](/android-background-location-access-which-apps-track-you-when/)
+- [Police Body Camera Footage Privacy Rights Who Can Request An](/police-body-camera-footage-privacy-rights-who-can-request-an/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [How To Tell If Your Phone Camera Is Being Accessed Remotely](/how-to-tell-if-your-phone-camera-is-being-accessed-remotely/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

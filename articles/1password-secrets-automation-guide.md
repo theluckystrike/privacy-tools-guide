@@ -309,11 +309,11 @@ Network errors in CI environments often indicate a firewall or proxy blocking ou
 
 ## Related Reading
 
-- [1Password Secrets Automation for DevOps: A Practical Guide](/privacy-tools-guide/1password-secrets-automation-devops-guide/)
-- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
-- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
-- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
-- [Ios Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
+- [1Password Secrets Automation for DevOps: A Practical Guide](/1password-secrets-automation-devops-guide/)
+- [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/data-subject-rights-automation-tools-2026/)
+- [Ios Shortcuts Automation Privacy Considerations](/ios-shortcuts-automation-privacy-considerations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

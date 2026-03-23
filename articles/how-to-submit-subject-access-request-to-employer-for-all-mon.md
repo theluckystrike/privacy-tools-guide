@@ -314,12 +314,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
-- [Set Up Data Subject Access Request Workflow](/privacy-tools-guide/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
-- [Submit a Privacy Complaint to California Attorney General](/privacy-tools-guide/how-to-submit-privacy-complaint-to-california-attorney-general/)
-- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
-- [Can Employer Read Your Personal Email On Work Computer Legal](/privacy-tools-guide/can-employer-read-your-personal-email-on-work-computer-legal/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [GDPR Data Subject Access Request Template](/gdpr-data-subject-access-request-template/)
+- [Set Up Data Subject Access Request Workflow](/how-to-set-up-data-subject-access-request-workflow-for-gdpr-/)
+- [Submit a Privacy Complaint to California Attorney General](/how-to-submit-privacy-complaint-to-california-attorney-general/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/data-subject-rights-automation-tools-2026/)
+- [Can Employer Read Your Personal Email On Work Computer Legal](/can-employer-read-your-personal-email-on-work-computer-legal/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

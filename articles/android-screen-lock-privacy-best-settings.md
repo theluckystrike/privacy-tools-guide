@@ -274,11 +274,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Android Battery Optimization Settings Without Brea](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/)
-- [Wireguard Android Battery Optimization Settings Without.](/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/)
-- [Screen Resolution Fingerprinting Why Changing Display Settin](/privacy-tools-guide/screen-resolution-fingerprinting-why-changing-display-settin/)
-- [Secure Screen Sharing Tools That Encrypt Video Stream End To](/privacy-tools-guide/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
-- [Tor Browser Screen Size Fingerprint Protection](/privacy-tools-guide/tor-browser-screen-size-fingerprint-protection/)
+- [Wireguard Android Battery Optimization Settings Without Brea](/wireguard-android-battery-optimization-settings-without-brea/)
+- [Wireguard Android Battery Optimization Settings Without.](/wireguard-android-battery-optimization-settings-without-breaking-connection/)
+- [Screen Resolution Fingerprinting Why Changing Display Settin](/screen-resolution-fingerprinting-why-changing-display-settin/)
+- [Secure Screen Sharing Tools That Encrypt Video Stream End To](/secure-screen-sharing-tools-that-encrypt-video-stream-end-to/)
+- [Tor Browser Screen Size Fingerprint Protection](/tor-browser-screen-size-fingerprint-protection/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

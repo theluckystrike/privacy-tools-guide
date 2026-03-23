@@ -581,11 +581,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/privacy-tools-guide/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
-- [How To Set Up Self Hosted Matrix Synapse Server For Private](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
+- [How to Self-Host Bitwarden Vaultwarden: Complete Setup Guide](/how-to-self-host-bitwarden-vaultwarden-complete-setup-guide/)
+- [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/best-self-hosted-file-sync-alternative-2026/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [How To Set Up Self Hosted Matrix Synapse Server For Private](/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

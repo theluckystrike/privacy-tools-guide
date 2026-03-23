@@ -509,11 +509,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Digital Power of Attorney: What Authority It Grants Over](/privacy-tools-guide/digital-power-of-attorney-what-authority-it-grants-over-onli/)
-- [How To Audit Your Digital Footprint And Find All Accounts](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
-- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
-- [Protect Yourself from Deepfake Identity Theft](/privacy-tools-guide/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
-- [How To Create Sealed Envelope With Digital Credentials](/privacy-tools-guide/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
-- [How to Create Custom System Prompt for ChatGPT API That](https://theluckystrike.github.io/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [Digital Power of Attorney: What Authority It Grants Over](/digital-power-of-attorney-what-authority-it-grants-over-onli/)
+- [How To Audit Your Digital Footprint And Find All Accounts](/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [Threat Model For Sex Worker Protecting Real Identity](/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Protect Yourself from Deepfake Identity Theft](/how-to-protect-yourself-from-deepfake-identity-theft-prevent/)
+- [How To Create Sealed Envelope With Digital Credentials](/how-to-create-sealed-envelope-with-digital-credentials-for-e/)
+- [How to Create Custom System Prompt for ChatGPT API That](https://bestremotetools.com/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

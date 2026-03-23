@@ -28,7 +28,7 @@ tags: [privacy-tools-guide]
 
 {% raw %}
 
-To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. For a technical deep explore Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
+To use Briar offline, install the app from F-Droid or Google Play, enable Bluetooth or Wi-Fi Direct in Settings, and add contacts by scanning QR codes or exchanging contact links while physically nearby. Briar then forms an encrypted mesh network between devices, delivering messages without any internet connection. For a technical deep explore Briar's architecture and protocol design, see the [Briar Messenger Offline Mesh Review](/briar-messenger-offline-mesh-review/).
 
 ## Table of Contents
 
@@ -123,7 +123,7 @@ For enhanced security when using Briar:
 - Set a strong passphrase for Briar's local database
 - Be aware that Bluetooth/Wi-Fi radio activity is visible to nearby observers
 
-For a full security model analysis including threat model details, see the [Briar Messenger Offline Mesh Review](/privacy-tools-guide/briar-messenger-offline-mesh-review/).
+For a full security model analysis including threat model details, see the [Briar Messenger Offline Mesh Review](/briar-messenger-offline-mesh-review/).
 
 ## Advanced Configuration
 
@@ -358,11 +358,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
-- [Briar Messenger Offline Communication](/privacy-tools-guide/briar-messenger-offline-communication-how-it-works-for-prote/)
-- [Iran Internet Shutdown Survival Guide](/privacy-tools-guide/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
-- [How To Communicate During Internet Shutdown Alternative](/privacy-tools-guide/how-to-communicate-during-internet-shutdown-alternative-netw/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](https://theluckystrike.github.io/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [How To Use Briar Messenger During Iran Internet Blackout](/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/briar-messenger-offline-mesh-review/)
+- [Briar Messenger Offline Communication](/briar-messenger-offline-communication-how-it-works-for-prote/)
+- [Iran Internet Shutdown Survival Guide](/iran-internet-shutdown-survival-guide-mesh-networking-and-of/)
+- [How To Communicate During Internet Shutdown Alternative](/how-to-communicate-during-internet-shutdown-alternative-netw/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](https://bestremotetools.com/ai-ci-cd-pipeline-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

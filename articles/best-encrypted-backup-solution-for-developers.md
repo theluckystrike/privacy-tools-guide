@@ -305,11 +305,11 @@ The backup repository password is now as critical as the data it protects. Apply
 
 ## Related Reading
 
-- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/privacy-tools-guide/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
-- [Encrypted Backup Solutions Comparison 2026](/privacy-tools-guide/encrypted-backup-solutions-comparison-2026/)
-- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/privacy-tools-guide/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
-- [Restic Encrypted Backup Setup Guide](/privacy-tools-guide/restic-encrypted-backup-setup-guide)
-- [Age Encryption Tool Tutorial for Developers](/privacy-tools-guide/age-encryption-tool-tutorial-developers/)
+- [Encrypted Backup Of Chat History How To Preserve Messages Wi](/encrypted-backup-of-chat-history-how-to-preserve-messages-wi/)
+- [Encrypted Backup Solutions Comparison 2026](/encrypted-backup-solutions-comparison-2026/)
+- [Set Up Encrypted Local Backup Of Iphone Without Using Icloud](/how-to-set-up-encrypted-local-backup-of-iphone-without-using-icloud/)
+- [Restic Encrypted Backup Setup Guide](/restic-encrypted-backup-setup-guide)
+- [Age Encryption Tool Tutorial for Developers](/age-encryption-tool-tutorial-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

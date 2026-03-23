@@ -334,11 +334,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Windows 10 Privacy Settings Complete Checklist](/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/)
-- [How To Disable All Windows 11 Telemetry Endpoints](/privacy-tools-guide/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
-- [Windows 11 Telemetry Disable Guide](/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/)
-- [How to Harden Windows 10 and 11 Privacy Settings](/privacy-tools-guide/harden-windows-11-privacy-settings/)
-- [Windows Group Policy Privacy Settings Guide](/privacy-tools-guide/windows-group-policy-privacy-settings-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Windows 10 Privacy Settings Complete Checklist](/windows-10-privacy-settings-complete-checklist/)
+- [How To Disable All Windows 11 Telemetry Endpoints](/how-to-disable-all-windows-11-telemetry-endpoints-using-fire/)
+- [Windows 11 Telemetry Disable Guide](/windows-11-telemetry-disable-guide-step-by-step/)
+- [How to Harden Windows 10 and 11 Privacy Settings](/harden-windows-11-privacy-settings/)
+- [Windows Group Policy Privacy Settings Guide](/windows-group-policy-privacy-settings-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
