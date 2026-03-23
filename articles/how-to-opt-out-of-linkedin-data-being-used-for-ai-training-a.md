@@ -253,7 +253,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Using curl for LinkedIn API](/social-media-data-request-download-guide-2026/)
 - [How To Remove Personal Information From Ai Training Datasets](/how-to-remove-personal-information-from-ai-training-datasets/)
 - [How To Protect LinkedIn Profile From Being Discovered](/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

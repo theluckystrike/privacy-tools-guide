@@ -332,7 +332,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
 - [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
-- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [VPN over Tor vs Tor over VPN: A Technical Comparison](/vpn-over-tor-vs-tor-over-vpn/)
 - [How to Set Up VPN on Router Firmware: Complete Guide](/how-to-set-up-vpn-on-router-firmware-level-guide/)
 - [How to Reduce AI Autocomplete Ghost Text Distractions While](https://bestremotetools.com/how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/)

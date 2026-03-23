@@ -273,7 +273,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Dentist Patient Records Privacy Hipaa Compliant Digital Stor](/dentist-patient-records-privacy-hipaa-compliant-digital-stor/)
-- [VPN for Accessing Medical Records Abroad While Traveling](/vpn-for-accessing-medical-records-abroad-while-traveling-sec/)
+- [VPN for Accessing Medical Records Abroad While Traveling](/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)
 - [VPN for Accessing Medical Records Abroad While Traveling.](/vpn-for-accessing-medical-records-abroad-while-traveling-securely/)
 - [How To Run Background Check On Dating Match Using Public Rec](/how-to-run-background-check-on-dating-match-using-public-rec/)
 - [How to Use Public Computers Safely Without Leaving Any Trace](/how-to-use-public-computers-safely-without-leaving-any-trace/)

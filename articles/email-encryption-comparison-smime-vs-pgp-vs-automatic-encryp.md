@@ -410,7 +410,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
-- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption/)
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/openpgp-vs-smime-email-encryption/)
 - [PGP Email Encryption Setup Guide 2026](/pgp-email-encryption-setup-guide-2026/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)

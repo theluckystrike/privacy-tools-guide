@@ -285,7 +285,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Use Compartmentalized Identity For Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity](/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
 - [How to Check What Data Dating Apps Have Collected About You](/how-to-check-what-data-dating-apps-have-collected-about-you-/)

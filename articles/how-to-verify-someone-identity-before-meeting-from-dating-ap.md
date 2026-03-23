@@ -298,7 +298,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Protect Yourself from Doxxing After Meeting Someone](/how-to-protect-yourself-from-doxxing-after-meeting-someone-t/)
 - [How To Use Compartmentalized Identity For Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Verify Dating Profile Authenticity Without Revealing](/how-to-verify-dating-profile-authenticity-without-revealing-/)
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Prevent Dating App Photos From Appearing In Google](/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

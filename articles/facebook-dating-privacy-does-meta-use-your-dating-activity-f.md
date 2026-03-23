@@ -367,7 +367,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Set Up Privacy Focused Phone Specifically For Dating](/how-to-set-up-privacy-focused-phone-specifically-for-dating-/)
 - [How To Use Compartmentalized Identity For Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Create Burner Email Specifically For Dating Site](/how-to-create-burner-email-specifically-for-dating-site-regi/)

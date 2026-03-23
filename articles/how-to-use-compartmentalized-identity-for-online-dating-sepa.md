@@ -316,7 +316,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Create Anonymous Online Identity That Cannot Be Linke](/how-to-create-anonymous-online-identity-that-cannot-be-linke/)
 - [Create Separate Browser Profiles For Each Online Identity](/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [How To Purchase Items Online Without Revealing Real Identity](/how-to-purchase-items-online-without-revealing-real-identity/)

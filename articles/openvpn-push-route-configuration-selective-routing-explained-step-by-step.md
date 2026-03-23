@@ -325,8 +325,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Configure Openvpn With Obfuscation For Censored Networks](/how-to-configure-openvpn-with-obfuscation-for-censored-networks/)
 - [How To Use Tor With Specific Application Routing Only](/how-to-use-tor-with-specific-application-routing-only-select/)
-- [VPN Tunnel Interface Vs Full Tunnel Routing Difference](/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [VPN Tunnel Interface Vs Full Tunnel Routing Difference](/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 - [VPN Tunnel Interface vs Full Tunnel Routing](/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 - [Openvpn Compression Vulnerability Voracle Attack Explained](/openvpn-compression-vulnerability-voracle-attack-explained-a/)
-- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://bestremotetools.com/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://bestremotetools.com/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

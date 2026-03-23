@@ -408,7 +408,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Openvpn Push Route Configuration Selective Routing Explained](/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
 - [WireGuard DNS Configuration Options Explained](/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
 - [Arch Linux Hardened Kernel Installation Guide For Advanced P](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)

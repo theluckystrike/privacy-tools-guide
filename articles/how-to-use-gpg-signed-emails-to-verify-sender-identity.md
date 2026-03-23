@@ -274,7 +274,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Email Encryption with GPG](/gpg-email-encryption-step-by-step)
 - [GPG Key Management Best Practices](/gpg-key-management-best-practices/)
 - [Someone Signed Up for Services Using My Email](/someone-signed-up-for-services-using-my-email-what-to-do/)

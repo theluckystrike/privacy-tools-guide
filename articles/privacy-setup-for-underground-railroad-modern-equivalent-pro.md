@@ -308,7 +308,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 ## Related Articles
 
 - [Encrypted Dns Messaging Combination How To Layer Privacy Pro](/encrypted-dns-messaging-combination-how-to-layer-privacy-pro/)
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
 - [Android Find My Device Privacy Implications](/android-find-my-device-privacy-implications/)

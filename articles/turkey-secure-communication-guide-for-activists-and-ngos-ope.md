@@ -321,8 +321,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Set Up Secure Communication for Labor Strike Organizing](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
+- [Set Up Secure Communication for Labor Strike Organizing](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
 - [Best Encrypted Communication For Activists](/best-encrypted-communication-for-activists/)
 - [Lawyer Client Privilege Digital Communication Secure Setup](/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [Secure Communication Plan Template for Organizations](/secure-communication-plan-template-for-organizations-handlin/)

@@ -303,7 +303,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Right To Be Forgotten In Search Engines How To Request](/right-to-be-forgotten-in-search-engines-how-to-request-googl/)
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Setup for Immigration Activist](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
 - [Privacy Setup for Confidential Informant](/privacy-setup-for-confidential-informant-protecting-identity/)

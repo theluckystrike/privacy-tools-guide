@@ -384,7 +384,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
 - [Email Encryption with GPG Step by Step](/gpg-email-encryption-step-by-step)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
-- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

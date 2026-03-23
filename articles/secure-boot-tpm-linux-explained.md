@@ -274,7 +274,7 @@ sudo mokutil --import db.crt
 - [Linux Secure Boot Setup with Custom Keys for Preventing](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
 - [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
 - [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
-- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
 - [LUKS Full Disk Encryption on Linux](/luks-full-disk-encryption-linux-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

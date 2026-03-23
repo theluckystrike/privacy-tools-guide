@@ -494,7 +494,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Domestic Abuse Shelter Staff: Protecting](/privacy-setup-for-domestic-abuse-shelter-staff-protecting-location/)
+- [Privacy Setup For Domestic Abuse Shelter Staff: Protecting](/privacy-setup-for-domestic-abuse-shelter-staff-protecting-lo/)
 - [Facebook Location History Deletion How To Remove All Stored](/facebook-location-history-deletion-how-to-remove-all-stored-/)
 - [How To Prevent Someone From Tracking Your Location](/how-to-prevent-someone-from-tracking-your-location-through-p/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/iphone-location-tracking-how-to-stop-it/)

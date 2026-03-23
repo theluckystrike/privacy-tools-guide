@@ -304,7 +304,7 @@ Run through this quarterly:
 
 ## Related Articles
 
-- [Signal Disappearing Messages Best Practices: Sensitive](/signal-disappearing-messages-best-practices-for-sensitive-co/)
+- [Signal Disappearing Messages Best Practices: Sensitive](/signal-disappearing-messages-best-practices/)
 - [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
 - [Signal Number Privacy Workaround Guide](/signal-number-privacy-workaround-guide/)
 - [Signal vs Session vs SimpleX](/signal-vs-session-vs-simplex-secure-messaging-comparison/)

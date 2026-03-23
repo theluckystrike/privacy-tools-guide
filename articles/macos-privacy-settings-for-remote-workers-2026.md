@@ -343,7 +343,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [How to Configure macOS Privacy Settings 2026](/how-to-configure-macos-privacy-settings-2026/)
 - [macOS Network Privacy Settings Complete Guide 2026](/macos-network-privacy-settings-complete-guide/)
-- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

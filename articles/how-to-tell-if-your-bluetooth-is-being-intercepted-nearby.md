@@ -466,7 +466,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Disable Wifi Scanning And Bluetooth Scanning On](/how-to-disable-wifi-scanning-and-bluetooth-scanning-on-andro/)
-- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Use Briar Messenger Offline: A Developer's Guide](/how-to-use-briar-messenger-offline-guide/)
 - [What to Do If You Find an Unknown Device on Your](/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)

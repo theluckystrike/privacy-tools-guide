@@ -308,7 +308,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
 - [Create Separate Browser Profiles For Each Online Identity](/how-to-create-separate-browser-profiles-for-each-online-identity-compartmentalization/)
 - [How To Purchase Items Online Without Revealing Real Identity](/how-to-purchase-items-online-without-revealing-real-identity/)
 - [Identity Compartmentalization Strategy Separating Real Name](/identity-compartmentalization-strategy-separating-real-name-/)

@@ -343,7 +343,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Tenant Privacy Rights: What Landlords Can Legally Monitor](/tenant-privacy-rights-what-landlords-can-legally-monitor-in-/)
 - [Macos Siri Privacy Controls How To Prevent Voice Data From R](/macos-siri-privacy-controls-how-to-prevent-voice-data-from-r/)
 - [China Exit Ban Digital Surveillance How Authorities Monitor](/china-exit-ban-digital-surveillance-how-authorities-monitor-/)
-- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

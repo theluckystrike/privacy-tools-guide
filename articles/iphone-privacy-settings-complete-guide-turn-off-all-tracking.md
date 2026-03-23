@@ -312,7 +312,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [iPhone Location Tracking How to Stop It: A Practical Guide](/iphone-location-tracking-how-to-stop-it/)
 - [Facebook Privacy Settings 2026 Complete Guide](/facebook-privacy-settings-2026-complete-guide/)
-- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [Windows 10 Privacy Settings Complete Checklist](/windows-10-privacy-settings-complete-checklist/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

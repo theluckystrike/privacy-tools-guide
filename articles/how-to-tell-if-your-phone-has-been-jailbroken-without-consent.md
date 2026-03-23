@@ -292,7 +292,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
+- [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [Register Social Media Accounts Without Providing Real Phone](/how-to-register-social-media-accounts-without-providing-real/)
 - [How to Check if Someone Cloned Your Phone: Signs](/how-to-check-if-someone-cloned-your-phone-signs-to-watch/)
 - [Handle Password Manager on Lost Phone: Immediate](/how-to-handle-password-manager-on-lost-phone-immediate-steps/)

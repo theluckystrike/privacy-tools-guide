@@ -261,7 +261,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Android Find My Device Privacy Implications](/android-find-my-device-privacy-implications/)
 - [How To Tell If Your Wifi Password Has Been Cracked](/how-to-tell-if-your-wifi-password-has-been-cracked/)

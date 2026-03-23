@@ -242,8 +242,8 @@ echo "  CPU: <5% for WireGuard, <15% for OpenVPN"
 - [Wireguard Vs Ipsec Ikev2 Battery Drain Comparison On Mobile](/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/)
 - [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
 - [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [Wireguard Android Battery Optimization Settings](/wireguard-android-battery-optimization-settings-without-brea/)
+- [Wireguard Android Battery Optimization Settings](/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [Tailscale vs WireGuard for Self-Hosted VPN 2026](/tailscale-vs-wireguard-for-self-hosted-vpn-2026/)
-- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://bestremotetools.com/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](https://bestremotetools.com/vpn-tunnel-interface-vs-full-tunnel-routing-difference-expla/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

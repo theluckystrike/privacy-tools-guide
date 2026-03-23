@@ -563,7 +563,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [How to Use Tails OS for Maximum Privacy Complete Setup Guide](/how-to-use-tails-os-for-maximum-privacy-complete-setup-guide/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)

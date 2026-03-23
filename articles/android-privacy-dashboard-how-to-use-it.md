@@ -291,7 +291,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it/)
 - [How To Build Privacy Dashboard For Customers To Manage Their](/how-to-build-privacy-dashboard-for-customers-to-manage-their/)
 - [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
 - [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)

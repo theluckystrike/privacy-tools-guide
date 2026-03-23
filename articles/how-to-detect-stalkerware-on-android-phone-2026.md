@@ -55,7 +55,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Detect And Remove Stalkerware From Android Phone](/how-to-detect-and-remove-stalkerware-from-android-phone-comp/)
+- [How To Detect And Remove Stalkerware From Android Phone](/how-to-detect-and-remove-stalkerware-from-phone-2026/)
 - [How to Detect Stalkerware on Your Phone 2026](/how-to-detect-stalkerware-on-your-phone-2026/)
 - [How to Detect and Remove Stalkerware From Phone 2026](/how-to-detect-and-remove-stalkerware-from-phone-2026/)
 - [Detect and Remove Stalkerware From Your iPhone and iPad](/how-to-detect-remove-stalkerware-ios-iphone/)

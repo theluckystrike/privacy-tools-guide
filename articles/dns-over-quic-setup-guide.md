@@ -490,7 +490,7 @@ jq -r 'select(.Protocol == "quic") | .QH' /opt/AdGuardHome/data/querylog.json \
 
 - [DNS over TLS Setup on Linux](/dns-over-tls-setup-linux-android/)
 - [Best Privacy-Focused DNS Resolvers Compared](/best-privacy-dns-resolvers-cloudflare-quad9-nextdns-adguard/)
-- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-focused-dns-providers-comparison/)
+- [Privacy-Focused DNS Providers Comparison 2026: Privacy](/privacy-focused-dns-providers-comparison-2026/)
 - [Privacy-Focused DNS Filtering with AdGuard Home](/adguard-home-dns-filtering-setup/)
 - [Privacy-Focused DNS Providers Comparison 2026](/privacy-focused-dns-providers-comparison-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

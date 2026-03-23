@@ -252,7 +252,7 @@ rm -f "$TMPFILE"
 ## Related Articles
 
 - [How to Verify PGP Signatures on Software Downloads](/verify-pgp-signatures-software-downloads/)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)

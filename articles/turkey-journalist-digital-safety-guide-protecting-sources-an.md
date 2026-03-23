@@ -267,7 +267,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [How To Verify Signal Safety Numbers To Prevent Man](/how-to-verify-signal-safety-numbers-to-prevent-man-in-middle/)
 - [How to Set Up Secure Dead Drop for Digital Information](/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [Best Encrypted Messaging for Journalists: A Technical Guide](/best-encrypted-messaging-for-journalists/)

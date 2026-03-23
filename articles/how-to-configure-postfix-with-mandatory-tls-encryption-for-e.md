@@ -354,7 +354,7 @@ DANE uses DNSSEC-signed TLSA records to publish certificate fingerprints; remote
 - [Openvpn Tls Auth Vs Tls Crypt Difference Security Comparison](/openvpn-tls-auth-vs-tls-crypt-difference-security-comparison/)
 - [Tls Fingerprinting How Your Browser Handshake Identifies](/tls-fingerprinting-how-your-browser-handshake-identifies-you/)
 - [DNS over TLS Setup on Linux](/dns-over-tls-setup-linux-android/)
-- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
 - [AI Code Generation Producing Syntax Errors in Rust Fix Guide](https://bestremotetools.com/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
