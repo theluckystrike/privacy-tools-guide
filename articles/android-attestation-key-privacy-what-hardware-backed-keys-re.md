@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /android-attestation-key-privacy-what-hardware-backed-keys-re/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]
