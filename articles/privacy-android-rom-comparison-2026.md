@@ -353,7 +353,7 @@ Your device model may not be maintained. Check the device list before flashing t
 - [Calyxos Vs Grapheneos Which Privacy Rom Should You Choose](/calyxos-vs-grapheneos-which-privacy-rom-should-you-choose-co/)
 - [Privacy-Focused Mobile Operating Systems Comparison](/privacy-mobile-operating-systems-comparison/)
 - [GrapheneOS vs Stock Pixel: What Google Collects](/grapheneos-vs-stock-pixel-privacy-comparison-what-google-col/)
-- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-tools-guide/privacy-focused-note-taking-apps-comparison/)
+- [Privacy-Focused Note-Taking Apps Comparison (2026)](/privacy-focused-note-taking-apps-comparison/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
