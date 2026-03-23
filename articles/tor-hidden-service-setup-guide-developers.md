@@ -6,7 +6,7 @@ description: "Follow this guide to tor hidden service setup guide developers wit
 tags: [privacy-tools-guide]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 9
+score: 8
 date: 2026-03-15
 categories: [guides]
 ---
