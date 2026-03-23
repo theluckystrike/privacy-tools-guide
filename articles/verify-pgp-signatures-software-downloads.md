@@ -242,7 +242,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Verify Software Supply Chain Integrity](/verify-software-supply-chain-integrity/)
 - [PGP Email Encryption Setup Guide 2026](/pgp-email-encryption-setup-guide-2026/)
 - [How To Set Up Pgp Encrypted Email In Thunderbird Step](/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Syncthing Setup Guide for Private File Sync](/syncthing-setup-guide-private-file-sync/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

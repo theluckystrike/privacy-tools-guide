@@ -389,7 +389,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Make Facebook Profile Private 2026](/how-to-make-facebook-profile-private-2026/)
 - [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
 - [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

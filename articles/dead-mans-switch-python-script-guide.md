@@ -463,7 +463,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Set Up a Dead Man's Switch Email That Sends Credentials If](/how-to-set-up-dead-mans-switch-email-that-sends-credentials-/)
 - [Use Dead Man's Switch with Multiple Independent Trustees](/how-to-use-dead-mans-switch-with-multiple-independent-truste/)
 - [Set Up Dead Man's Switch Using Cron Job to Release Encrypted](/how-to-set-up-dead-mans-switch-using-cron-job-to-release-enc/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -577,7 +577,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Casa Multisig Bitcoin Inheritance Plan](/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-collaborative-custody-guide/)
+- [Set Up Casa Multisig Bitcoin Inheritance Plan](/how-to-set-up-casa-multisig-bitcoin-inheritance-plan-with-co/)
 - [Bitcoin Inheritance Planning Using Multisig With Family Memb](/bitcoin-inheritance-planning-using-multisig-with-family-memb/)
 - [How To Set Up Incident Response Plan For Data Breach Busines](/how-to-set-up-incident-response-plan-for-data-breach-busines/)
 - [Set Up Bitcoin Payjoin Transactions For Sender Receiver](/how-to-set-up-bitcoin-payjoin-transactions-for-sender-receiver/)

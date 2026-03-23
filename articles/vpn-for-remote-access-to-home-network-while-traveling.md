@@ -343,7 +343,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Linux Network Namespaces for VPN Isolation](/linux-network-namespace-vpn-isolation/)
-- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [How To Use Tailscale To Access Home Assistant Remotely](/how-to-use-tailscale-to-access-home-assistant-remotely-witho/)
 - [How to Configure VPN Exempt List for Local Network](/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [How VPN Reconnection Works After Network Switch: Detecting](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)

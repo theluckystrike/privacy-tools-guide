@@ -479,7 +479,7 @@ A: Logout is good practice. Compartmentalization means logout isn't required (di
 ## Related Articles
 
 - [Identity Compartmentalization Strategy Separating Real Name](/identity-compartmentalization-strategy-separating-real-name-/)
-- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
 - [Best Browser for Avoiding Google Tracking: A Developer Guide](/best-browser-for-avoiding-google-tracking/)
 - [How to Use Multiple Identities Online: Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
 - [Tor Browser Cookies Tracking Prevention Guide](/tor-browser-cookies-tracking-prevention-guide/)

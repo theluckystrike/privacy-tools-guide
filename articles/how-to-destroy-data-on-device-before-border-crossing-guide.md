@@ -324,7 +324,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How To Prepare Phone For Crossing Border Into High Surveilla](/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
 - [Researcher Data Ethics Guide 2026](/researcher-data-ethics-guide-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

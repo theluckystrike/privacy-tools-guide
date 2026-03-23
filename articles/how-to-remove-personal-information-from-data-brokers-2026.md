@@ -317,7 +317,7 @@ A: File complaint with state AG (US) or data protection authority (EU). DeleteMe
 
 ## Related Articles
 
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
 - [How to remove yourself from data broker sites step by step](/how-to-remove-yourself-from-data-broker-sites-step-by-step-guide/)
 - [Identity Graph What Data Brokers Know About You And How](/identity-graph-what-data-brokers-know-about-you-and-how-they/)

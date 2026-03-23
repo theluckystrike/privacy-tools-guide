@@ -298,7 +298,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Check If Your Email Is Being Forwarded](/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
 - [Email Encryption with GPG](/gpg-email-encryption-step-by-step)
-- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

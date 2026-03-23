@@ -325,7 +325,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
 - [Hardened Firefox Privacy Configuration Guide](/hardened-firefox-privacy-configuration/)
 - [Ios Advanced Data Protection For Icloud End To End.](/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
-- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [Wireguard Postup Postdown Scripts For Advanced Routing.](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

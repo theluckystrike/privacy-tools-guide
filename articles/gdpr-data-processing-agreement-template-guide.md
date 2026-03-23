@@ -426,7 +426,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Exercise Right To Restrict Processing Under Gdpr](/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
 - [Implement Data Portability Feature For Customers Gdpr Right](/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
 - [GDPR Data Subject Access Request Template](/gdpr-data-subject-access-request-template/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

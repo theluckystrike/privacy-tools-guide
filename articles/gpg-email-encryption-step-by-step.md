@@ -320,7 +320,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Email Encryption Plugin Thunderbird](/best-email-encryption-plugin-thunderbird/)
 - [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
 - [Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
-- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity-step-/)
+- [How to Use GPG Signed Emails to Verify Sender Identity](/how-to-use-gpg-signed-emails-to-verify-sender-identity/)
 - [Secure Email Forwarding With Encryption How To Set Up](/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

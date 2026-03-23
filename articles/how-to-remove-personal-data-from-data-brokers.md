@@ -598,7 +598,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [How to Remove Personal Information from Data Brokers 2026](/how-to-remove-personal-information-from-data-brokers-2026/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
 - [How To Verify If Data Broker Actually Deleted Your Personal](/how-to-verify-if-data-broker-actually-deleted-your-personal-/)

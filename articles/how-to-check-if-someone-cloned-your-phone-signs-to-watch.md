@@ -407,7 +407,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How To Check If Your Phone Number Is Being Spoofed](/how-to-check-if-your-phone-number-is-being-spoofed/)
-- [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consen/)
+- [How To Tell If Your Phone Has Been Jailbroken](/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
 - [Secure VoIP Setup for Private Phone Calls Without Carrier](/secure-voip-setup-for-private-phone-calls-without-carrier-in/)
 - [How To Purchase Phone And Sim Card Anonymously Complete](/how-to-purchase-phone-and-sim-card-anonymously-complete-guid/)
 - [How to Check If Someone Is Reading Your Text Messages](/how-to-check-if-someone-is-reading-your-text-messages/)

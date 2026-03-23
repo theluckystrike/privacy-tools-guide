@@ -368,7 +368,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
 - [Cloud Storage Security Breach History: Compromised.](/cloud-storage-security-breach-history-compromised-services-t/)
 - [How to Detect if Your Email Is Compromised](/detect-email-compromise-guide)

@@ -491,7 +491,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Check If Your Dating Profile Photos Are Being Used](/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
 - [Prevent Reverse Image Search from Linking Dating Profile](/how-to-prevent-reverse-image-search-from-linking-dating-prof/)
 - [Facebook Dating Privacy Does Meta Use Your Dating Activity](/facebook-dating-privacy-does-meta-use-your-dating-activity-f/)
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Prevent Dating App Photos From Appearing In Google](/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

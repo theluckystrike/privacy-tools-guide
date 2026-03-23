@@ -113,7 +113,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Signal Disappearing Messages Best Practices](/signal-disappearing-messages-best-practices/)
-- [Signal Disappearing Messages Best Practices: Sensitive](/signal-disappearing-messages-best-practices-for-sensitive-co/)
+- [Signal Disappearing Messages Best Practices: Sensitive](/signal-disappearing-messages-best-practices/)
 - [Best Private Messaging App for Mobile with Disappearing](/best-private-messaging-app-for-mobile-with-disappearing-mess/)
 - [Signal Number Privacy Workaround Guide](/signal-number-privacy-workaround-guide/)
 - [Signal Desktop Security Best Practices](/signal-desktop-security-best-practices/)

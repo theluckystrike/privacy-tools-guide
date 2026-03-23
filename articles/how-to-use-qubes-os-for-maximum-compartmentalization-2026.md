@@ -639,7 +639,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Qubes OS Compartmentalized Workflow Guide](/qubes-os-compartmentalized-workflow-guide-separating-work-and-personal/)
 - [Air Gapped Computer Setup For Maximum Security Practical](/air-gapped-computer-setup-for-maximum-security-practical-gui/)
 - [Browser Compartmentalization Guide Separating Identities 2026](/browser-compartmentalization-guide-separating-identities-2026/)
-- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization-c/)
+- [How To Use Multiple Identities Online Compartmentalization](/how-to-use-multiple-identities-online-compartmentalization/)
 - [Implement Data Minimization Principle in Application Design](/how-to-implement-data-minimization-principle-in-application-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

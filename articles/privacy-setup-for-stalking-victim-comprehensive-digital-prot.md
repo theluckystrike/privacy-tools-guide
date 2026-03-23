@@ -292,7 +292,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Privacy Setup For Witness Protection Program Participant](/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Setup For Someone Leaving Abusive Relationship](/privacy-setup-for-someone-leaving-abusive-relationship-digit/)
 - [Privacy Setup For Safe House Protecting Location](/privacy-setup-for-safe-house-protecting-location-from-digita/)
 - [Encrypt Your Entire Digital Life: A Checklist](/encrypt-entire-digital-life--checklist/)

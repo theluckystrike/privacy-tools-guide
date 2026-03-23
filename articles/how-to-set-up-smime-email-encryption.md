@@ -600,7 +600,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption/)
 - [Best Email Encryption Plugin Thunderbird](/best-email-encryption-plugin-thunderbird/)
 - [OpenPGP vs S/MIME Email Encryption: A Technical Comparison](/openpgp-vs-smime-email-encryption/)
 - [Email Encryption Comparison Smime Vs Pgp Vs Automatic](/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)

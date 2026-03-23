@@ -328,7 +328,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Nextcloud App Ecosystem: Best Privacy Apps for 2026](/nextcloud-app-ecosystem-best-privacy-apps-2026/)
-- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it-to-audit-app-access-/)
+- [Android Privacy Dashboard How To Use It To Audit App Access](/android-privacy-dashboard-how-to-use-it/)
 - [EA App Origin Replacement Privacy Data Collection Review](/ea-app-origin-replacement-privacy-data-collection-review-ana/)
 - [Privacy Focused Two Factor Authentication Apps Comparison](/privacy-focused-two-factor-authentication-apps-comparison-2026/)
 - [Tinder Privacy Settings What Personal Data The App Collects](/tinder-privacy-settings-what-personal-data-the-app-collects-/)

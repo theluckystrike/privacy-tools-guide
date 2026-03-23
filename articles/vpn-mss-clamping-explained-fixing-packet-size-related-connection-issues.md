@@ -402,7 +402,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [VPN Packet Inspection Explained](/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
-- [VPN Mtu Settings Optimization For Faster Connection](/vpn-mtu-settings-optimization-for-faster-connection-speed-guide/)
+- [VPN Mtu Settings Optimization For Faster Connection](/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
 - [VPN MTU Settings Optimization for Faster Connection Speed](/vpn-mtu-settings-optimization-for-faster-connection-speed-gu/)
 - [How VPN Encryption Key Exchange Works Diffie Hellman](/how-vpn-encryption-key-exchange-works-diffie-hellman-explained/)
 - [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)

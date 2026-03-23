@@ -581,7 +581,7 @@ EOF
 
 Import into your project management tool and set weekly reviews.
 
-- [CCPA Compliance Requirements for Online Businesses](/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [CCPA Compliance Requirements for Online Businesses](/ccpa-compliance-requirements-for-online-businesses-californi/)
 - [GDPR Compliance Tools for Developers 2026](/gdpr-compliance-tools-for-developers-2026/)
 - [CCPA vs GDPR Comparison Guide 2026](/ccpa-vs-gdpr-comparison-guide-2026/)
 

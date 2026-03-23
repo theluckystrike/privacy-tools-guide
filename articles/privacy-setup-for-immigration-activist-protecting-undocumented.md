@@ -271,7 +271,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [Privacy Setup for Confidential Informant](/privacy-setup-for-confidential-informant-protecting-identity/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
 - [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)

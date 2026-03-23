@@ -337,9 +337,9 @@ Compliance impact:
 
 - [Data Protection Officer Role Responsibilities When Your](/data-protection-officer-role-responsibilities-when-your-business-needs-one-guide/)
 - [India Data Protection Bill 2026 What It Means For Citizen](/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
-- [Data Protection Officer Role Responsibilities Guide](/data-protection-officer-role-responsibilities-guide/)
+- [Data Protection Officer Role Responsibilities Guide](/data-protection-officer-role-responsibilities-when-your-busi/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

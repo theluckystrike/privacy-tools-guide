@@ -445,7 +445,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-hando/)
+- [How VPN Reconnection Works After Network Switch: Technical](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
 - [Linux Network Namespaces for VPN Isolation](/linux-network-namespace-vpn-isolation/)
 - [How to Configure VPN Exempt List for Local Network](/how-to-configure-vpn-exempt-list-for-local-network-access/)
 - [Vpn For Remote Access To Home Network While Traveling](/vpn-for-remote-access-to-home-network-while-traveling/)

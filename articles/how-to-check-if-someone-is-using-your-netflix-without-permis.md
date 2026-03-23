@@ -679,7 +679,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Check If Someone Is Using Your Netflix Without Permission](/how-to-check-if-someone-is-using-your-netflix-without-permission/)
+- [Check If Someone Is Using Your Netflix Without Permission](/how-to-check-if-someone-is-using-your-netflix-without-permis/)
 - [How to Check If Someone Is Reading Your Text Messages](/how-to-check-if-someone-is-reading-your-text-messages/)
 - [How To Tell If Your Router Has Been Compromised Check Guide](/how-to-tell-if-your-router-has-been-compromised-check-guide/)
 - [How To Tell If Someone Has Access To Your Apple](/how-to-tell-if-someone-has-access-to-your-apple-id/)

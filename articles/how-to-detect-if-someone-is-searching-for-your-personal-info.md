@@ -375,7 +375,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [What To Do If Your Personal Data Appears On People](/what-to-do-if-your-personal-data-appears-on-people-search/)
 - [How To Remove Personal Information From Ai Training Datasets](/how-to-remove-personal-information-from-ai-training-datasets/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [Intelius Opt-Out Guide: Remove Personal Information in 2026](/intelius-opt-out-guide-remove-personal-information-2026/)
 - [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

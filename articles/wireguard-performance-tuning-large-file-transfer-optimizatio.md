@@ -405,11 +405,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Wireguard Android Battery Optimization Settings](/wireguard-android-battery-optimization-settings-without-brea/)
+- [Wireguard Android Battery Optimization Settings](/wireguard-android-battery-optimization-settings-without-breaking-connection/)
 - [WireGuard Dynamic Endpoint Update](/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/)
 - [WireGuard Postup Postdown Scripts For Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/)
 - [AI-Powered Database Performance Tuning Tools](https://bestremotetools.com/ai-powered-database-performance-tuning)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

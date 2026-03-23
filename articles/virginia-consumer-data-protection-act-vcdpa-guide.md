@@ -261,7 +261,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Exercise Virginia Consumer Data Protection Act Vcdpa](/how-to-exercise-virginia-consumer-data-protection-act-vcdpa-/)
 - [How To Exercise Montana Consumer Data Privacy Act Rights](/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
 - [Opt Out of Data Sharing Under Connecticut Data Privacy Act](/how-to-opt-out-of-data-sharing-under-connecticut-data-privac/)
-- [Data Protection Officer Role Responsibilities Guide](/data-protection-officer-role-responsibilities-guide/)
+- [Data Protection Officer Role Responsibilities Guide](/data-protection-officer-role-responsibilities-when-your-busi/)
 - [India Data Protection Bill 2026 What It Means For Citizen](/india-data-protection-bill-2026-what-it-means-for-citizen-pr/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

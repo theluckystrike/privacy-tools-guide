@@ -504,8 +504,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Turkey Secure Communication Guide For Activists And Ngos](/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
-- [Set Up Secure Communication for Labor Strike Organizing](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
 - [How to Set Up Secure Dead Drop for Digital Information](/how-to-set-up-secure-dead-drop-for-digital-information/)
 - [Secure Email Forwarding With Encryption How To Set Up](/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
 - [AI Assistants for Writing Correct AWS IAM Policies](https://bestremotetools.com/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

@@ -391,7 +391,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Browser Permission Prompt Fingerprinting How Notification](/browser-permission-prompt-fingerprinting-how-notification-re/)
+- [Browser Permission Prompt Fingerprinting How Notification](/browser-permission-prompt-fingerprinting-how-notification/)
 - [Browser Fingerprinting: What It Is and How to Block It](/browser-fingerprinting-what-it-is-how-to-block/)
 - [Browser Fingerprinting How It Works and How to Prevent It](/browser-fingerprinting-how-it-works-and-how-to-prevent-it-guide/)
 - [How Browser Fingerprinting Works Explained](/how-browser-fingerprinting-works-explained/)

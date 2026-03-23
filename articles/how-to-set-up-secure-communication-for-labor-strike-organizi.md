@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users setting up secure
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
-permalink: /how-to-set-up-secure-communication-for-labor-strike-organizing/
+permalink: /how-to-set-up-secure-communication-for-labor-strike-organizi/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
@@ -272,7 +272,7 @@ Yes, through MDM software that can log keystrokes or take screenshots at the OS 
 
 ## Related Articles
 
-- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizi/)
 - [Turkey Secure Communication Guide For Activists And Ngos](/turkey-secure-communication-guide-for-activists-and-ngos-ope/)
 - [Lawyer Client Privilege Digital Communication Secure Setup](/lawyer-client-privilege-digital-communication-secure-setup-c/)
 - [How to Set Up Encrypted Communication for Mutual Aid](/how-to-set-up-encrypted-communication-for-mutual-aid-network/)

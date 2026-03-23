@@ -338,7 +338,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Privacy Setup for Confidential Informant](/privacy-setup-for-confidential-informant-protecting-identity/)
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocumented/)
 - [iPhone Mail Privacy Protection: How It](/iphone-mail-privacy-protection-how-it-works/)
 - [Veterinarian Client Pet Data Privacy Protection Setup Guide](/veterinarian-client-pet-data-privacy-protection-setup-guide/)
 - [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)

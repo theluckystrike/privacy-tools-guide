@@ -57,7 +57,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [How to Check What Data Dating Apps Have Collected About You](/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [How To Check If Your Dating Profile Photos Are Being Used](/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
-- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating/)
+- [Use Compartmentalized Identity for Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
 - [How To Prevent Dating App Photos From Appearing In Google](/how-to-prevent-dating-app-photos-from-appearing-in-google-im/)
 - [How To Prevent Expartner From Creating Fake Dating Profiles](/how-to-prevent-expartner-from-creating-fake-dating-profiles-/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)

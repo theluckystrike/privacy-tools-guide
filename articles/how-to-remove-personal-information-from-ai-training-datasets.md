@@ -305,7 +305,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
-- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers/---)
 - [How To Remove Personal Data From ChatGPT Bing Ai And Google](/how-to-remove-personal-data-from-chatgpt-bing-ai-and-google-/)
 - [Intelius Opt-Out Guide: Remove Personal Information in 2026](/intelius-opt-out-guide-remove-personal-information-2026/)
 - [How to Remove Personal Information from Data Brokers 2026](/how-to-remove-personal-information-from-data-brokers-2026/)

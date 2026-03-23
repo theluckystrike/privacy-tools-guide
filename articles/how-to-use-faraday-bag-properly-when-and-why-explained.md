@@ -341,7 +341,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Communicate with Lawyer Privately When Device is Compromised](/how-to-communicate-with-lawyer-privately-when-device-compromised/)
-- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audi/)
+- [Verify Your Devices Are Not Compromised](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [What to Do If You Find an Unknown Device on Your](/what-to-do-if-you-find-unknown-device-on-your-network/)
 - [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
 - [Tell If Your Phone Has Been Jailbroken Without Consent](/how-to-tell-if-your-phone-has-been-jailbroken-without-consent/)
