@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser for iOS Privacy 2026: A Developer Guide"
-description: "Onion Browser offers the strongest iOS privacy by routing all traffic through Tor, while DuckDuckGo provides built-in tracking protection and privacy-friendly"
+description: "Onion Browser offers the strongest iOS privacy by routing all traffic through Tor, while DuckDuckGo provides built-in tracking protection and privacy-fr..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

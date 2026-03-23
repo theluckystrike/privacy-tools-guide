@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Location Permissions Best Practices"
-description: "Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing between"
+description: "Android location permission best practices require requesting fine location through runtime permissions (not manifest-only), explicitly distinguishing b..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

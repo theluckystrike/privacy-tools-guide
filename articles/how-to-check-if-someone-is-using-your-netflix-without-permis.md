@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Check If Someone Is Using Your Netflix"
-description: "Netflix accounts get compromised through data breaches, phishing attacks, or simply sharing credentials with friends who later share them further. Unlike some"
+description: "Netflix accounts get compromised through data breaches, phishing attacks, or simply sharing credentials with friends who later share them further. Unlik..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

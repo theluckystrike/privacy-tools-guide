@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Password Manager Clipboard Security Best Practices"
-description: "Clipboard security represents one of the most overlooked attack vectors in password management. When you copy a password from your vault, that sensitive data"
+description: "Clipboard security represents one of the most overlooked attack vectors in password management. When you copy a password from your vault, that sensitive..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

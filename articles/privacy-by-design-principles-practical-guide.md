@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy by Design Principles: A Practical Guide"
-description: "Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, embed"
+description: "Implement privacy by design by applying these seven principles during development: be proactive with threat modeling, make privacy the default setting, ..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

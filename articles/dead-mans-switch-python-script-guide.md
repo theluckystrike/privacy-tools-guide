@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up a Dead Man's Switch for Data"
-description: "Build a Python-based dead man's switch that automatically releases encrypted data or sends alerts if you fail to check in, with configurable escalation logic"
+description: "Build a Python-based dead man's switch that automatically releases encrypted data or sends alerts if you fail to check in, with configurable escalation ..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /dead-mans-switch-python-script-guide/

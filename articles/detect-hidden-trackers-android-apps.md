@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Detect Hidden Trackers in Android"
-description: "Use ADB, TrackerControl, Exodus Privacy, and network analysis to find which Android apps are sending your data to ad networks, analytics firms, and data brokers"
+description: "Use ADB, TrackerControl, Exodus Privacy, and network analysis to find which Android apps are sending your data to ad networks, analytics firms, and data..."
 date: 2026-03-21
 author: theluckystrike
 permalink: /detect-hidden-trackers-android-apps/

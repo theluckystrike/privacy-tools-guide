@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Researcher Data Ethics Guide 2026"
-description: "Data ethics has become a critical discipline for anyone handling sensitive information in 2026. Whether you are a developer building research platforms, a data"
+description: "Data ethics has become a critical discipline for anyone handling sensitive information in 2026. Whether you are a developer building research platforms,..."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Use Compartmentalized Identity For Online Dating"
-description: "Create a compartmentalized dating identity by using a dedicated email (ProtonMail or SimpleLogin), separate phone number (Google Voice or Burner app), unique"
+description: "Create a compartmentalized dating identity by using a dedicated email (ProtonMail or SimpleLogin), separate phone number (Google Voice or Burner app), u..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"

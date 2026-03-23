@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Forwarding Only Email Address That Hides Your"
-description: "Every developer knows the pain of exposing their primary email address across the internet. Whether you're signing up for a new service, contributing to open"
+description: "Every developer knows the pain of exposing their primary email address across the internet. Whether you're signing up for a new service, contributing to..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

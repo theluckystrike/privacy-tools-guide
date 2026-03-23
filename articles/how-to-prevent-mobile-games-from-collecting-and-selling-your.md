@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Prevent Mobile Games From Collecting And Selling"
-description: "Stop mobile games from collecting your location data using app permission controls, network traffic inspection, and specialized privacy tools. Games harvest"
+description: "Stop mobile games from collecting your location data using app permission controls, network traffic inspection, and specialized privacy tools. Games har..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

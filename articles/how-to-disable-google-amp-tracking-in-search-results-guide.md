@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Disable Google AMP Tracking in Search Results Guide"
-description: "Google AMP (Accelerated Mobile Pages) was introduced to speed up mobile web browsing, but it also creates significant privacy concerns. When you click an AMP"
+description: "Google AMP (Accelerated Mobile Pages) was introduced to speed up mobile web browsing, but it also creates significant privacy concerns. When you click a..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

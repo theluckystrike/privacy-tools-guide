@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Prevent Android Keyboard From Sending Typing Data To Google"
-description: "Modern Android keyboards collect and transmit typing data to their developers—Google's Gboard and Samsung Keyboard are no exceptions. This guide explains how"
+description: "Modern Android keyboards collect and transmit typing data to their developers—Google's Gboard and Samsung Keyboard are no exceptions. This guide explain..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

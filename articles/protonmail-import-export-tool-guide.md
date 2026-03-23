@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ProtonMail Import Export Tool Guide"
-description: "Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (brew install --cask"
+description: "Export Proton Mail data using three methods: the web interface (Settings > Download my data) for one-time MBOX exports, the IMAP Bridge (brew install --..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

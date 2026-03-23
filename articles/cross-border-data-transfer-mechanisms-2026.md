@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cross Border Data Transfer Mechanisms 2026"
-description: "To legally transfer personal data across borders in 2026, use the EU-US Data Privacy Framework (DPF) for US transfers, Standard Contractual Clauses (SCCs) for"
+description: "To legally transfer personal data across borders in 2026, use the EU-US Data Privacy Framework (DPF) for US transfers, Standard Contractual Clauses (SCC..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike

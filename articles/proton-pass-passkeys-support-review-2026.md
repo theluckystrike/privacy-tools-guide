@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Proton Pass Passkeys Support Review 2026"
-description: "This review examines Proton Pass passkeys support in 2026—its technical capabilities, implementation details, and practical considerations for developers and"
+description: "This review examines Proton Pass passkeys support in 2026—its technical capabilities, implementation details, and practical considerations for developer..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

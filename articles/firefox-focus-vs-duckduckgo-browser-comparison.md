@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Focus Vs Duckduckgo Browser Comparison"
-description: "When choosing a privacy-focused mobile browser, developers and power users need more than marketing claims. Firefox Focus and DuckDuckGo Browser represent two"
+description: "When choosing a privacy-focused mobile browser, developers and power users need more than marketing claims. Firefox Focus and DuckDuckGo Browser represe..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Cross Platform Tracking How Ad Networks Follow"
-description: "Ad networks track you across dating apps and social platforms using device fingerprinting (IDFA, Android ID), shared SDKs, and behavioral signal correlation"
+description: "Ad networks track you across dating apps and social platforms using device fingerprinting (IDFA, Android ID), shared SDKs, and behavioral signal correla..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Email Service 2026: A Developer Guide"
-description: "Proton Mail is the best encrypted email service for most developers in 2026, combining full PGP support, SMTP/IMAP access via its Bridge, and a zero-knowledge"
+description: "Proton Mail is the best encrypted email service for most developers in 2026, combining full PGP support, SMTP/IMAP access via its Bridge, and a zero-kno..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

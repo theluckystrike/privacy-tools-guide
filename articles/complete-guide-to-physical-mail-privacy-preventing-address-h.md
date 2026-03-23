@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "to Physical Mail Privacy: Preventing Address Harvesting"
-description: "A technical guide for protecting your physical mail from address harvesting. Learn privacy-forward strategies, mail handling scripts, and address obfuscation"
+description: "A technical guide for protecting your physical mail from address harvesting. Learn privacy-forward strategies, mail handling scripts, and address obfusc..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

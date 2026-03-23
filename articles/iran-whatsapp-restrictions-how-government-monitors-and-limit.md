@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Iran Whatsapp Restrictions How Government Monitors"
-description: "Iran's government monitors and restricts WhatsApp through flow-based Deep Packet Inspection that analyzes traffic signatures, TLS handshakes, and SNI values"
+description: "Iran's government monitors and restricts WhatsApp through flow-based Deep Packet Inspection that analyzes traffic signatures, TLS handshakes, and SNI va..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

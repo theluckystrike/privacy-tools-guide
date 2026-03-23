@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Sensor Permissions How Accelerometer Gyroscope Can"
-description: "Modern Android devices contain a variety of sensors that measure physical phenomena. Among the most common are the accelerometer and gyroscope, which detect"
+description: "Modern Android devices contain a variety of sensors that measure physical phenomena. Among the most common are the accelerometer and gyroscope, which de..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

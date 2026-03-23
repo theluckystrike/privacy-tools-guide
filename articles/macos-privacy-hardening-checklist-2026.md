@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "macOS Privacy Hardening Checklist 2026"
-description: "A complete macOS privacy checklist covering Gatekeeper, Siri, telemetry, location services, firewall, iCloud, and system-level settings for Sequoia and later"
+description: "A complete macOS privacy checklist covering Gatekeeper, Siri, telemetry, location services, firewall, iCloud, and system-level settings for Sequoia and ..."
 date: 2026-03-21
 author: theluckystrike
 permalink: /macos-privacy-hardening-checklist-2026/

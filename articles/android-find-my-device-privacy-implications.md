@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Find My Device Privacy Implications"
-description: "Android's Find My Device service is a powerful tool for locating lost or stolen phones, but it comes with significant privacy implications that developers and"
+description: "Android's Find My Device service is a powerful tool for locating lost or stolen phones, but it comes with significant privacy implications that develope..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

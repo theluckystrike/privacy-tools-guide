@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Protect Yourself From Sim Swap Attack Prevention"
-description: "Set a PIN or security code on your carrier account, replace SMS-based two-factor authentication with hardware security keys or authenticator apps, and enable"
+description: "Set a PIN or security code on your carrier account, replace SMS-based two-factor authentication with hardware security keys or authenticator apps, and e..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

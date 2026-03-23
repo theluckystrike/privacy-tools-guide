@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Self Hosted Matrix Synapse Server For Private"
-description: "Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse instance"
+description: "Matrix is an open protocol for real-time communication, and Synapse is the reference implementation of a Matrix homeserver. Running your own Synapse ins..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

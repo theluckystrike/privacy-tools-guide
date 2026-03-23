@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Protect Credit Card From Being Skimmed Online"
-description: "Online credit card skimming represents one of the most insidious threats in e-commerce. Unlike physical card skimmers at ATMs or gas stations, online skimming"
+description: "Online credit card skimming represents one of the most insidious threats in e-commerce. Unlike physical card skimmers at ATMs or gas stations, online sk..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

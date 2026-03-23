@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Enterprise Identity Governance Platform"
-description: "Managing team access reviews at scale represents one of the most challenging aspects of enterprise security. As organizations grow, the number of applications"
+description: "Managing team access reviews at scale represents one of the most challenging aspects of enterprise security. As organizations grow, the number of applic..."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

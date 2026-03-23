@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure Shell Hardening Beyond SSH Config"
-description: "Harden Linux shell access with PAM restrictions, login banners, session timeouts, sudo auditing, fail2ban tuning, and port-knocking for SSH exposure reduction"
+description: "Harden Linux shell access with PAM restrictions, login banners, session timeouts, sudo auditing, fail2ban tuning, and port-knocking for SSH exposure red..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-shell-hardening-beyond-ssh-config/

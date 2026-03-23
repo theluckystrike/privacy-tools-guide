@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GPG Key Management Best Practices"
-description: "How to structure GPG keys with a master key offline and subkeys in daily use, set expiry dates, back up keys securely, and handle key rotation and revocation"
+description: "How to structure GPG keys with a master key offline and subkeys in daily use, set expiry dates, back up keys securely, and handle key rotation and revoc..."
 date: 2026-03-21
 author: theluckystrike
 permalink: /gpg-key-management-best-practices/

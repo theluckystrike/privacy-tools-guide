@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure Video Messaging Apps That Do Not Store Recordings On"
-description: "When building privacy-focused applications or selecting communication tools for security-sensitive teams, understanding where video recordings actually live is"
+description: "When building privacy-focused applications or selecting communication tools for security-sensitive teams, understanding where video recordings actually ..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "VPN for Accessing Medical Records Abroad While"
-description: "Accessing your medical records while traveling abroad is increasingly important in today's interconnected world. Whether you need to consult with your primary"
+description: "Accessing your medical records while traveling abroad is increasingly important in today's interconnected world. Whether you need to consult with your p..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Opt Out of Data Sharing Under Connecticut Data Privacy Act"
-description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal data"
+description: "A practical guide for developers and power users on exercising opt-out rights under the Connecticut Data Privacy Act. Learn how to control your personal..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

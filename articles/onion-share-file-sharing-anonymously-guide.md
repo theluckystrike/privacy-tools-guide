@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Onion Share File Sharing Anonymously Guide"
-description: "Onion Share is an open-source tool that creates temporary .onion services allowing you to share files anonymously through Tor without exposing your IP address"
+description: "Onion Share is an open-source tool that creates temporary .onion services allowing you to share files anonymously through Tor without exposing your IP a..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

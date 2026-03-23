@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Briar Messenger Offline Communication"
-description: "When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organizers"
+description: "When traditional communication networks fail—whether through infrastructure shutdowns, internet blackouts, or deliberate throttling—activists and organi..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encrypted Cloud Storage Gdpr Compliant 2026"
-description: "For GDPR compliance with cloud storage, implement client-side encryption using AES-256-GCM with separate key management (BYOK, HYOK, or customer-managed keys)"
+description: "For GDPR compliance with cloud storage, implement client-side encryption using AES-256-GCM with separate key management (BYOK, HYOK, or customer-managed..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

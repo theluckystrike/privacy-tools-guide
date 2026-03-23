@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dating App Notification Privacy Preventing Matches"
-description: "Lock screen privacy remains a critical concern for dating app users. When a match sends a message or your profile appears in someone's stack, that notification"
+description: "Lock screen privacy remains a critical concern for dating app users. When a match sends a message or your profile appears in someone's stack, that notif..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

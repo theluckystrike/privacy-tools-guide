@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Document DNS and SSL Certificate Renewal Procedures"
-description: "Documenting DNS and SSL certificate renewal procedures is essential for maintaining continuous website availability and security. Without proper documentation"
+description: "Documenting DNS and SSL certificate renewal procedures is essential for maintaining continuous website availability and security. Without proper documen..."
 date: 2026-03-19
 last_modified_at: 2026-03-19
 author: theluckystrike

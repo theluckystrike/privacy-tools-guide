@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Analytics: Self-Hosted Options"
-description: "Deploy Plausible, Umami, or Matomo on your own server for GDPR-compliant analytics without sending visitor data to third parties or requiring cookie banners"
+description: "Deploy Plausible, Umami, or Matomo on your own server for GDPR-compliant analytics without sending visitor data to third parties or requiring cookie ban..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-analytics-self-hosted-setup/

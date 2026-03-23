@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Turkey Content Removal Orders How Government Forces Platform"
-description: "A technical guide for developers and power users on Turkey's content removal orders, legal mechanisms, and how the government forces platforms to censor user"
+description: "A technical guide for developers and power users on Turkey's content removal orders, legal mechanisms, and how the government forces platforms to censor..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

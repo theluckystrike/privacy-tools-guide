@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Set Up Encrypted Dns To Bypass Dns Poisoning"
-description: "DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific websites"
+description: "DNS poisoning represents one of the most common censorship techniques employed by governments and network administrators to block access to specific web..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"

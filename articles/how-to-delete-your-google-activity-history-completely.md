@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Delete Your Google Activity History Completely"
-description: "Google tracks everything. Your searches, watched videos, visited websites, location history, and device activity are stored indefinitely. Google Takeout lets"
+description: "Google tracks everything. Your searches, watched videos, visited websites, location history, and device activity are stored indefinitely. Google Takeout..."
 date: 2026-03-20
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
