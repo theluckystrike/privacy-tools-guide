@@ -7,7 +7,7 @@ last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"
 permalink: /best-encrypted-email-service-2026/
 reviewed: true
-score: 9
+score: 8
 categories: [best-of]
 intent-checked: true
 voice-checked: true
