@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /how-to-prepare-pgp-key-revocation-certificate-for-publicatio/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide]

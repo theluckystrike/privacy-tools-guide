@@ -9,7 +9,7 @@ permalink: /how-to-implement-customer-data-encryption-at-rest-and-in-tra/
 categories: [guides, security]
 tags: [privacy-tools-guide, encryption]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

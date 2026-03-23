@@ -9,7 +9,7 @@ permalink: /how-to-pay-for-vpn-subscription-anonymously-using-cryptocurrency-no-
 categories: [guides, security]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

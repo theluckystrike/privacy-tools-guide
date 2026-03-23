@@ -6,7 +6,7 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-optimize-calyx-os-battery-life-with-privacy-features-/
 categories: [guides]
-tags: [calyxos, android, privacy, battery-optimization]
+tags: [privacy-tools-guide, calyxos, android, privacy, battery-optimization]
 reviewed: true
 score: 8
 intent-checked: true
