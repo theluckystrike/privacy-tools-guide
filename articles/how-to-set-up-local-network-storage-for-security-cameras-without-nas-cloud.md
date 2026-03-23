@@ -9,7 +9,7 @@ permalink: /how-to-set-up-local-network-storage-for-security-cameras-without-nas
 categories: [guides]
 tags: [privacy-tools-guide, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

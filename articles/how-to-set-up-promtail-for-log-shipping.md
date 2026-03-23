@@ -8,7 +8,7 @@ permalink: /how-to-set-up-promtail-for-log-shipping/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 server: http_listen_port: 9080

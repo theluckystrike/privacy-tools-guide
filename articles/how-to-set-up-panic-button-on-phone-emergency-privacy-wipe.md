@@ -9,7 +9,7 @@ permalink: /how-to-set-up-panic-button-on-phone-emergency-privacy-wipe/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

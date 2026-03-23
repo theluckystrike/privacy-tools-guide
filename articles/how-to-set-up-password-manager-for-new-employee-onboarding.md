@@ -9,7 +9,7 @@ permalink: /how-to-set-up-password-manager-for-new-employee-onboarding/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

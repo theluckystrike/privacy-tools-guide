@@ -9,7 +9,7 @@ permalink: /how-to-set-up-offline-encrypted-communication-between-two-pe/
 categories: [guides, security]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
