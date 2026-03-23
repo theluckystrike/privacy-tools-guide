@@ -43,12 +43,12 @@ Browse articles by topic:
 ## Recently Published
 
 <div style="display: grid; gap: 0.75rem; margin-bottom: 2rem;">
-{% for p in all_articles limit:10 %}
+{% for p in all_articles limit:10 %}{% if p.title %}
 <div style="border: 1px solid #e8e8e8; border-radius: 6px; padding: 0.9rem 1.1rem;">
   <a href="{{ p.url | relative_url }}" style="font-size: 1.05rem; font-weight: 600; text-decoration: none;">{{ p.title }}</a>
   {% if p.description %}<p style="margin: 0.3rem 0 0; font-size: 0.88rem; color: #666;">{{ p.description | truncate: 160 }}</p>{% endif %}
 </div>
-{% endfor %}
+{% endif %}{% endfor %}
 </div>
 
 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1.5rem 0;">
@@ -107,9 +107,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>VPN comparisons, setup guides, and use-case recommendations</summary>
 <ul>
-{% for p in vpn_articles %}
+{% for p in vpn_articles %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -119,9 +119,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>1Password, Bitwarden, KeePass, and password security guides</summary>
 <ul>
-{% for p in password_mgr %}
+{% for p in password_mgr %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -131,9 +131,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>PGP, GPG, file encryption, and disk encryption tutorials</summary>
 <ul>
-{% for p in encryption %}
+{% for p in encryption %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -143,9 +143,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>Signal, Matrix, E2E encryption, and secure communication</summary>
 <ul>
-{% for p in messaging %}
+{% for p in messaging %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -155,9 +155,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>Firefox, Tor, cookie management, and tracker blocking</summary>
 <ul>
-{% for p in browser %}
+{% for p in browser %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -167,9 +167,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>Android permissions, custom ROMs, and mobile privacy</summary>
 <ul>
-{% for p in android %}
+{% for p in android %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -179,9 +179,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>Threat model guides for different professions and use cases</summary>
 <ul>
-{% for p in threat_model %}
+{% for p in threat_model %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -191,9 +191,9 @@ Browse articles by topic for focused reading:
 
 <details><summary>Step-by-step privacy setup and configuration tutorials</summary>
 <ul>
-{% for p in how_to %}
+{% for p in how_to %}{% if p.title %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
+{% endif %}{% endfor %}
 </ul>
 </details>
 {% endif %}
@@ -204,7 +204,7 @@ Browse articles by topic for focused reading:
 
 {% assign sorted_alpha = all_articles | sort: "title" %}
 {% assign current_letter = "" %}
-{% for p in sorted_alpha limit:50 %}
+{% for p in sorted_alpha limit:50 %}{% if p.title %}
   {% assign first = p.title | slice: 0 | upcase %}
   {% if first != current_letter %}
     {% assign current_letter = first %}
@@ -212,6 +212,6 @@ Browse articles by topic for focused reading:
 ### {{ current_letter }}
   {% endif %}
 - [{{ p.title }}]({{ p.url | relative_url }})
-{% endfor %}
+{% endif %}{% endfor %}
 
 Browse the [topic guides](#topic-guides) above for the full catalog of {{ all_articles.size }}+ articles.
