@@ -21,6 +21,22 @@ Choose Brave if you want the most aggressive tracker blocking, granular fingerpr
 # 2.
 - **Use Safari when**: Building for Apple ecosystems, needing consistent extension support, or prioritizing battery life and system integration.
 
+
+## Head-to-Head Comparison
+
+| Feature | Brave | Safari |
+|---------|-------|--------|
+| Tracker Blocking | Shields (40k+ domains) | ITP (Intelligent Tracking Prevention) |
+| Fingerprint Protection | Randomized APIs | Limited canvas noise |
+| Built-in Ad Blocker | Yes | No (content blockers via extensions) |
+| Private Browsing | Tor window available | iCloud Private Relay (paid) |
+| Open Source | Yes | WebKit only |
+| Extension Ecosystem | Chrome Web Store | Safari Extensions (limited) |
+| Cross-Platform | Windows, macOS, Linux, Android, iOS | macOS, iOS only |
+| Default Search | Brave Search | Google |
+| Battery Efficiency | Good | Excellent (Apple optimized) |
+| Cookie Isolation | Partitioned by default | ITP with 7-day expiry |
+
 ## Table of Contents
 
 - [Tracking Prevention Mechanisms](#tracking-prevention-mechanisms)

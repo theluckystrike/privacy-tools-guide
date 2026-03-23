@@ -18,6 +18,22 @@ tags: [privacy-tools-guide, comparison]
 
 Choose Bitwarden if you need open-source transparency, self-hosting, extensive API/CLI access, or the lowest premium price ($10/year). Choose NordPass if you already use the Nord ecosystem, prefer XChaCha20-Poly1305 encryption with Argon2id key derivation, or want built-in masked email aliases. For most developers, Bitwarden wins on flexibility, cost, and auditability. Below is a detailed technical comparison of encryption architecture, CLI tooling, self-hosting, and security features.
 
+
+## Head-to-Head Comparison
+
+| Feature | Bitwarden | NordPass |
+|---------|-----------|----------|
+| Price (Individual) | Free / $10/yr | Free / $1.49/mo |
+| Price (Family) | $40/yr (6 users) | $3.69/mo (6 users) |
+| Encryption | AES-256 | XChaCha20-Poly1305 |
+| Key Derivation | PBKDF2 (600k iterations) | Argon2id |
+| Open Source | Yes (client + server) | No |
+| Self-Hosting | Yes (Docker) | No |
+| CLI Access | Full CLI (npm) | No |
+| Masked Email | Via SimpleLogin integration | Built-in |
+| Password Sharing | Yes (Organizations) | Yes |
+| Breach Monitoring | Yes (premium) | Yes (premium) |
+
 ## Key Takeaways
 
 - **Choose Bitwarden if you**: need open-source transparency, self-hosting, extensive API/CLI access, or the lowest premium price ($10/year).
