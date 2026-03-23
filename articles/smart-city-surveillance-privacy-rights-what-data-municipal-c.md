@@ -9,7 +9,7 @@ permalink: /smart-city-surveillance-privacy-rights-what-data-municipal-c/
 categories: [security, guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

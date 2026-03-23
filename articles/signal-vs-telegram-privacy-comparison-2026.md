@@ -9,7 +9,7 @@ permalink: /signal-vs-telegram-privacy-comparison-2026/
 categories: [guides, security]
 tags: [privacy-tools-guide, comparison, privacy]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

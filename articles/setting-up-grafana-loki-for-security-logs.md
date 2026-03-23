@@ -8,7 +8,7 @@ permalink: /setting-up-grafana-loki-for-security-logs/
 categories: [guides, security]
 tags: [privacy-tools-guide, security]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
 version: "3.8"
