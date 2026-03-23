@@ -9,7 +9,7 @@ permalink: /macos-sequoia-privacy-features-review-2026/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

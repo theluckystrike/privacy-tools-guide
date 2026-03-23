@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /living-without-smartphone-digital-privacy-extreme-approach-p/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 tags: [privacy-tools-guide, privacy]
