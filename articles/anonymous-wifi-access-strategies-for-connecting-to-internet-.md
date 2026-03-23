@@ -326,11 +326,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [India Internet Shutdown Tracker Which States Restrict Access](/privacy-tools-guide/india-internet-shutdown-tracker-which-states-restrict-access/)
-- [Vpn For Remote Workers Connecting To Us Office From Asia](/privacy-tools-guide/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
-- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/privacy-tools-guide/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
-- [Captive Portal Alternative Avoid WiFi Harvesting.](/privacy-tools-guide/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
-- [Complete Guide To Removing Yourself From Internet Databases](/privacy-tools-guide/complete-guide-to-removing-yourself-from-internet-databases-/)
+- [India Internet Shutdown Tracker Which States Restrict Access](/india-internet-shutdown-tracker-which-states-restrict-access/)
+- [Vpn For Remote Workers Connecting To Us Office From Asia](/vpn-for-remote-workers-connecting-to-us-office-from-asia/)
+- [CalyxOS Datura Firewall Setup: Controlling Per-App.](/calyxos-datura-firewall-setup-controlling-per-app-internet-a/)
+- [Captive Portal Alternative Avoid WiFi Harvesting.](/captive-portal-alternative-avoid-wifi-harvesting-personal-da/)
+- [Complete Guide To Removing Yourself From Internet Databases](/complete-guide-to-removing-yourself-from-internet-databases-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -380,22 +380,22 @@ curl "http://loki-server:3100/loki/api/v1/query?query=%7Bjob%3D%22nginx%22%7D&li
 
 ## Related Reading
 
-- [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
-- [How to Use syslog-ng for Centralized Logging](/privacy-tools-guide/how-to-use-syslog-ng-for-centralized-logging/)
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+- [Setting Up Grafana Loki for Security Logs](/setting-up-grafana-loki-for-security-logs/)
+- [How to Use syslog-ng for Centralized Logging](/how-to-use-syslog-ng-for-centralized-logging/)
+- [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
 
-- [How to Set Up age Encryption for Teams](/privacy-tools-guide/age-encryption-team-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Set Up age Encryption for Teams](/age-encryption-team-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
 ## Related Articles
 
-- [Setting Up Grafana Loki for Security Logs](/privacy-tools-guide/setting-up-grafana-loki-for-security-logs/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
+- [Setting Up Grafana Loki for Security Logs](/setting-up-grafana-loki-for-security-logs/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
+- [How to Set Up Caddy with Automatic HTTPS](/how-to-set-up-caddy-with-automatic-https/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

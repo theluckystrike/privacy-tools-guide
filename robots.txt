@@ -1,13 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://theluckystrike.github.io/privacy-tools-guide/sitemap.xml
-Sitemap: https://theluckystrike.github.io/privacy-tools-guide/sitemap-topics.xml
-
-# Crawl-delay (be polite)
-Crawl-delay: 1
-
-# Block non-content paths
-Disallow: /assets/
-Disallow: /404.html
+Sitemap: https://securetoolsguide.com/sitemap.xml

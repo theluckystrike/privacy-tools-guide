@@ -297,12 +297,12 @@ Test multiple platforms with sample content before committing. Most open-source 
 
 ## Related Articles
 
-- [Bumble Video Call Privacy What Data Is Transmitted](/privacy-tools-guide/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
-- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
-- [Google Analytics Tracking Alternatives That Respect User](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
-- [Best Private Dropbox Alternative 2026: A Developer Guide](/privacy-tools-guide/best-private-dropbox-alternative-2026/)
-- [Secure Video Messaging Apps That Do Not Store Recordings On](/privacy-tools-guide/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Bumble Video Call Privacy What Data Is Transmitted](/bumble-video-call-privacy-what-data-is-transmitted-and-store/)
+- [Self-Hosted Private Video Calling Setup Guide](/private-video-calling-selfhosted-guide/)
+- [Google Analytics Tracking Alternatives That Respect User](/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [Best Private Dropbox Alternative 2026: A Developer Guide](/best-private-dropbox-alternative-2026/)
+- [Secure Video Messaging Apps That Do Not Store Recordings On](/secure-video-messaging-apps-that-do-not-store-recordings-on-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

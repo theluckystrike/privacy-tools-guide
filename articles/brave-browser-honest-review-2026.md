@@ -362,11 +362,11 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Brave Browser Ad Blocking vs uBlock Origin](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
-- [Brave Browser vs Chrome Battery Drain Comparison](/privacy-tools-guide/brave-browser-battery-drain-vs-chrome-comparison/)
-- [Brave Browser Crypto Features Disable Guide](/privacy-tools-guide/brave-browser-crypto-features-disable-guide/)
-- [Brave Browser Vs Edge Privacy Comparison 2026](/privacy-tools-guide/brave-browser-vs-edge-privacy-comparison-2026/)
-- [Do Not Track Header Does It Actually Work Honest Assessment](/privacy-tools-guide/do-not-track-header-does-it-actually-work-honest-assessment/)
+- [Brave Browser Ad Blocking vs uBlock Origin](/brave-browser-ad-blocking-vs-ublock-origin/)
+- [Brave Browser vs Chrome Battery Drain Comparison](/brave-browser-battery-drain-vs-chrome-comparison/)
+- [Brave Browser Crypto Features Disable Guide](/brave-browser-crypto-features-disable-guide/)
+- [Brave Browser Vs Edge Privacy Comparison 2026](/brave-browser-vs-edge-privacy-comparison-2026/)
+- [Do Not Track Header Does It Actually Work Honest Assessment](/do-not-track-header-does-it-actually-work-honest-assessment/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -299,9 +299,9 @@ Server Validation
 
 ## Related Reading
 
-- [Secure GraphQL API Hardening Guide](/privacy-tools-guide/secure-graphql-api-hardening-guide/)
-- [Secure CORS Configuration Guide](/privacy-tools-guide/secure-cors-configuration-guide/)
-- [Secure WebRTC Implementation Guide](/privacy-tools-guide/secure-webrtc-implementation-guide/)
+- [Secure GraphQL API Hardening Guide](/secure-graphql-api-hardening-guide/)
+- [Secure CORS Configuration Guide](/secure-cors-configuration-guide/)
+- [Secure WebRTC Implementation Guide](/secure-webrtc-implementation-guide/)
 
 ---
 

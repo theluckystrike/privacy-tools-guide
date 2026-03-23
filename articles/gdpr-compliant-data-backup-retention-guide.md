@@ -322,11 +322,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Data Retention Policy Template What To Keep And For How](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
-- [Data Retention Policy Template for Startups](/privacy-tools-guide/data-retention-policy-template-for-startups/)
-- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
-- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-- [Coffee Meets Bagel Data Retention Policy How Long The App](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Data Retention Policy Template What To Keep And For How](/data-retention-policy-template-what-to-keep-and-for-how-long/)
+- [Data Retention Policy Template for Startups](/data-retention-policy-template-for-startups/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [GDPR Data Processing Agreement Template Guide](/gdpr-data-processing-agreement-template-guide/)
+- [Coffee Meets Bagel Data Retention Policy How Long The App](/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

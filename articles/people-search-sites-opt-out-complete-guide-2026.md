@@ -307,11 +307,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Disappear From People Search Sites Complete Removal](/privacy-tools-guide/how-to-disappear-from-people-search-sites-complete-removal-g/)
-- [How To Remove Yourself From True People Search Instant](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
-- [What To Do If Your Personal Data Appears On People](/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/)
-- [Facial Recognition Search Opt Out How To Remove Your Face](/privacy-tools-guide/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
-- [Spokeo Opt Out Guide: Step by Step 2026](/privacy-tools-guide/spokeo-opt-out-guide-step-by-step-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Disappear From People Search Sites Complete Removal](/how-to-disappear-from-people-search-sites-complete-removal-g/)
+- [How To Remove Yourself From True People Search Instant](/how-to-remove-yourself-from-true-people-search-instant-check/)
+- [What To Do If Your Personal Data Appears On People](/what-to-do-if-your-personal-data-appears-on-people-search/)
+- [Facial Recognition Search Opt Out How To Remove Your Face](/facial-recognition-search-opt-out-how-to-remove-your-face-fr/)
+- [Spokeo Opt Out Guide: Step by Step 2026](/spokeo-opt-out-guide-step-by-step-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

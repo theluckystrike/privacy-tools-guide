@@ -359,12 +359,12 @@ LoginGraceTime 10     # close unauthenticated connection after 10 seconds
 
 ## Related Articles
 
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
-- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
+- [How To Use Ssh Tunneling For Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
+- [How to Use YubiKey for SSH Authentication](/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

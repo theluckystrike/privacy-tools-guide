@@ -82,7 +82,7 @@ def send_signal_message(recipient, message):
 
 Community members who cannot safely register Signal with their personal phone number can use a VoIP number from a provider that accepts cash or cryptocurrency payment. MySudo (US-based) offers disposable phone numbers that can receive SMS verification codes. After registration, the VoIP number can be abandoned — Signal accounts persist independently of the registration number once set up.
 
-Alternatively, **Session** requires no phone number at all. It uses the Signal protocol over an onion routing network. The tradeoff is that Session's network is smaller and message delivery can be slower. For community members who need a secure channel but cannot risk linking a phone number, Session is the safer choice. See the [self-hosted Matrix Synapse server guide](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for an organization-controlled messaging alternative.
+Alternatively, **Session** requires no phone number at all. It uses the Signal protocol over an onion routing network. The tradeoff is that Session's network is smaller and message delivery can be slower. For community members who need a secure channel but cannot risk linking a phone number, Session is the safer choice. See the [self-hosted Matrix Synapse server guide](/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for an organization-controlled messaging alternative.
 
 ### Step 2: Set Up Encrypted Storage and Document Management
 
@@ -283,11 +283,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-tools-guide/privacy-setup-for-immigration-activist-protecting-undocument/)
-- [Privacy Setup for Confidential Informant](/privacy-tools-guide/privacy-setup-for-confidential-informant-protecting-identity/)
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
-- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
-- [How to Create Enterprise Privacy Risk Register Template](/privacy-tools-guide/how-to-create-enterprise-privacy-risk-register-template-for-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Privacy Setup For Immigration Activist Protecting Undocument](/privacy-setup-for-immigration-activist-protecting-undocument/)
+- [Privacy Setup for Confidential Informant](/privacy-setup-for-confidential-informant-protecting-identity/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [How to Create Enterprise Privacy Risk Register Template](/how-to-create-enterprise-privacy-risk-register-template-for-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

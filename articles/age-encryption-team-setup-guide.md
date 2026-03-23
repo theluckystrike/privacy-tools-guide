@@ -288,9 +288,9 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [How to Use age Encryption for Secure File Sharing](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [Encrypted File Sync for Teams Comparison](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
+- [How to Use age Encryption for Secure File Sharing](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [Encrypted File Sync for Teams Comparison](/encrypted-file-sync-for-teams-comparison/)
+- [Secure API Key Management for Developers](/secure-api-key-management-developers/)
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

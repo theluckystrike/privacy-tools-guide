@@ -404,11 +404,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy Risks of Cloud Document Editors - Google Docs 2026](/privacy-tools-guide/privacy-risks-of-cloud-document-editors-google-docs-2026/)
-- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
-- [Encrypted Collaboration Tools For Remote Teams That Respect](/privacy-tools-guide/encrypted-collaboration-tools-for-remote-teams-that-respect-/)
-- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
-- [Best Self-Hosted File Sync Alternatives in 2026](/privacy-tools-guide/best-self-hosted-file-sync-alternative-2026/)
-- [Notion AI vs Google Docs AI: Complete Writing Features](https://theluckystrike.github.io/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [Privacy Risks of Cloud Document Editors - Google Docs 2026](/privacy-risks-of-cloud-document-editors-google-docs-2026/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-analytics-alternatives-google)
+- [Encrypted Collaboration Tools For Remote Teams That Respect](/encrypted-collaboration-tools-for-remote-teams-that-respect-/)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Best Self-Hosted File Sync Alternatives in 2026](/best-self-hosted-file-sync-alternative-2026/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](https://bestremotetools.com/notion-ai-writing-features-vs-google-docs-ai-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

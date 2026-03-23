@@ -376,11 +376,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Migrating From NordPass to Bitwarden](/privacy-tools-guide/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
-- [1password Vs Bitwarden 2026 Comparison](/privacy-tools-guide/1password-vs-bitwarden-2026-comparison/)
-- [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)
-- [Bitwarden Premium Worth the Cost 2026](/privacy-tools-guide/bitwarden-premium-worth-the-cost-2026/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
+- [Migrating From NordPass to Bitwarden](/migrating-from-nordpass-to-bitwarden-export-import-process-guide/)
+- [1password Vs Bitwarden 2026 Comparison](/1password-vs-bitwarden-2026-comparison/)
+- [Bitwarden Custom Fields Usage Guide](/bitwarden-custom-fields-usage-guide/)
+- [Bitwarden Premium Worth the Cost 2026](/bitwarden-premium-worth-the-cost-2026/)
+- [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

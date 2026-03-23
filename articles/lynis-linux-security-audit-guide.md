@@ -411,12 +411,12 @@ A realistic improvement path for a default Ubuntu server: 60 → 72 (SSH hardeni
 
 ## Related Articles
 
-- [How to Audit npm Packages for Security](/privacy-tools-guide/audit-npm-packages-security-guide/)
-- [VPN Provider Annual Audit Results: Independent Security](/privacy-tools-guide/vpn-provider-annual-audit-results-independent-security-verified/)
-- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
-- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Audit npm Packages for Security](/audit-npm-packages-security-guide/)
+- [VPN Provider Annual Audit Results: Independent Security](/vpn-provider-annual-audit-results-independent-security-verified/)
+- [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

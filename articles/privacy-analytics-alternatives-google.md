@@ -272,11 +272,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Google Analytics Tracking Alternatives That Respect User](/privacy-tools-guide/google-analytics-tracking-alternatives-that-respect-user-pri/)
-- [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
-- [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
-- [Privacy-Focused Analytics: Self-Hosted Options](/privacy-tools-guide/privacy-analytics-self-hosted-setup/)
-- [Google Nest Hub Data Collection](/privacy-tools-guide/google-nest-hub-data-collection-what-information-google-capt/)
-- [Best AI for Analyzing Google Analytics Data Exports](https://theluckystrike.github.io/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
+- [Google Analytics Tracking Alternatives That Respect User](/google-analytics-tracking-alternatives-that-respect-user-pri/)
+- [How To Configure Google Analytics Alternative For Gdpr](/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [iPhone Analytics And Improvement Data What Apple Collects](/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [Privacy-Focused Analytics: Self-Hosted Options](/privacy-analytics-self-hosted-setup/)
+- [Google Nest Hub Data Collection](/google-nest-hub-data-collection-what-information-google-capt/)
+- [Best AI for Analyzing Google Analytics Data Exports](https://bestremotetools.com/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

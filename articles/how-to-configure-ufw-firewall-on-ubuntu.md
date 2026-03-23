@@ -259,22 +259,22 @@ sudo ufw --dry-run enable
 
 ## Related Reading
 
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-- [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
-- [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
-- [How to Set Up AppArmor Profiles on Ubuntu](/privacy-tools-guide/apparmor-profiles-ubuntu-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
+- [Securing Docker Containers Best Practices](/securing-docker-containers-best-practices/)
+- [How to Set Up Nebula Mesh VPN for Teams](/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [How to Set Up AppArmor Profiles on Ubuntu](/apparmor-profiles-ubuntu-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
 ## Related Articles
 
-- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-- [SSH Server Hardening Guide](/privacy-tools-guide/ssh-server-hardening-guide/)
-- [How To Use Ssh Tunneling For Encrypted Communication](/privacy-tools-guide/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
-- [SSH Server Hardening Config Guide](/privacy-tools-guide/ssh-server-hardening-config-guide)
+- [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
+- [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
+- [SSH Server Hardening Guide](/ssh-server-hardening-guide/)
+- [How To Use Ssh Tunneling For Encrypted Communication](/how-to-use-ssh-tunneling-for-encrypted-communication-between/)
+- [SSH Server Hardening Config Guide](/ssh-server-hardening-config-guide)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

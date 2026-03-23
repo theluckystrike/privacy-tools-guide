@@ -292,22 +292,22 @@ docker compose -f /opt/authentik/docker-compose.yml start server worker
 
 ## Related Reading
 
-- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-- [How to Set Up Nebula Mesh VPN for Teams](/privacy-tools-guide/how-to-set-up-nebula-mesh-vpn-for-teams/)
-- [Secure Code Signing Setup for Developers](/privacy-tools-guide/secure-code-signing-setup-for-developers/)
+- [How to Set Up Caddy with Automatic HTTPS](/how-to-set-up-caddy-with-automatic-https/)
+- [How to Set Up Nebula Mesh VPN for Teams](/how-to-set-up-nebula-mesh-vpn-for-teams/)
+- [Secure Code Signing Setup for Developers](/secure-code-signing-setup-for-developers/)
 
-- [How To Set Up Mobile Device Management Profile For Personal](/privacy-tools-guide/how-to-set-up-mobile-device-management-profile-for-personal-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [AI Tools for Automated Secrets Rotation and Vault Management](https://theluckystrike.github.io/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [How To Set Up Mobile Device Management Profile For Personal](/how-to-set-up-mobile-device-management-profile-for-personal-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](https://bestremotetools.com/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 ---
 
 ## Related Articles
 
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Best Privacy-Focused Email Aliases Service Comparison 2026](/privacy-tools-guide/best-privacy-focused-email-aliases-service-comparison-2026/)
-- [How to Check If Your Email Server Has Been Blacklisted](/privacy-tools-guide/how-to-check-if-your-email-server-has-been-blacklisted/)
-- [1Password Masked Email Feature Review: A Developer Guide](/privacy-tools-guide/1password-masked-email-feature-review/)
-- [How to Set Up Self-Hosted Password Manager Vaultwarden 2026](/privacy-tools-guide/how-to-set-up-self-hosted-password-manager-vaultwarden-2026/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Best Privacy-Focused Email Aliases Service Comparison 2026](/best-privacy-focused-email-aliases-service-comparison-2026/)
+- [How to Check If Your Email Server Has Been Blacklisted](/how-to-check-if-your-email-server-has-been-blacklisted/)
+- [1Password Masked Email Feature Review: A Developer Guide](/1password-masked-email-feature-review/)
+- [How to Set Up Self-Hosted Password Manager Vaultwarden 2026](/how-to-set-up-self-hosted-password-manager-vaultwarden-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

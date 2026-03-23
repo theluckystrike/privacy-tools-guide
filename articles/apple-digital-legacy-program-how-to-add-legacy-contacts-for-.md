@@ -410,11 +410,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-tools-guide/privacy-setup-for-witness-protection-program-participant-dig/)
-- [Tutanota Encrypted Calendar And Contacts How End To End Encr](/privacy-tools-guide/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
-- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
-- [Mailbox Forwarding Service Comparison For Using Business Add](/privacy-tools-guide/mailbox-forwarding-service-comparison-for-using-business-add/)
-- [How To Configure Iphone To Minimize Data Shared With Apple S](/privacy-tools-guide/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
+- [Privacy Setup For Witness Protection Program Participant Dig](/privacy-setup-for-witness-protection-program-participant-dig/)
+- [Tutanota Encrypted Calendar And Contacts How End To End Encr](/tutanota-encrypted-calendar-and-contacts-how-end-to-end-encr/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/firefox-privacy-add-ons-essential-list-2026/)
+- [Mailbox Forwarding Service Comparison For Using Business Add](/mailbox-forwarding-service-comparison-for-using-business-add/)
+- [How To Configure Iphone To Minimize Data Shared With Apple S](/how-to-configure-iphone-to-minimize-data-shared-with-apple-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

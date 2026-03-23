@@ -469,12 +469,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Disable Location Services Completely On Macos While Keeping](/privacy-tools-guide/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
-- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
-- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/privacy-tools-guide/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
-- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
-- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Disable Location Services Completely On Macos While Keeping](/how-to-disable-location-services-completely-on-macos-while-keeping-apps-functional/)
+- [Border Crossing Phone Search Rights What Customs Agents Can](/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [GrapheneOS Travel Profile Border Crossing Minimal Data 2026](/grapheneos-travel-profile-border-crossing-minimal-data-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -2,6 +2,7 @@
 permalink: /threat-modeling-basics-developers/
 description: "Learn threat modeling basics developers with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+date: 2026-03-23
 ---
 layout: default
 title: "Threat Modeling Basics for Developers"
@@ -289,11 +290,11 @@ Scope: [What is included / excluded]
 
 ## Related Articles
 
-- [How To Anonymize User Data In Production Database](/privacy-tools-guide/how-to-anonymize-user-data-in-production-database-for-privac/)
-- [Implement Data Portability Feature For Customers Gdpr Right](/privacy-tools-guide/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
-- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-- [Threat Model for Undocumented Immigrant Protecting](/privacy-tools-guide/threat-model-for-undocumented-immigrant-protecting-location-/)
-- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/privacy-tools-guide/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Anonymize User Data In Production Database](/how-to-anonymize-user-data-in-production-database-for-privac/)
+- [Implement Data Portability Feature For Customers Gdpr Right](/how-to-implement-data-portability-feature-for-customers-gdpr-right-explained/)
+- [GDPR Data Processing Agreement Template Guide](/gdpr-data-processing-agreement-template-guide/)
+- [Threat Model for Undocumented Immigrant Protecting](/threat-model-for-undocumented-immigrant-protecting-location-/)
+- [Her Dating App Privacy What Lgbtq Specific Data Is Collected](/her-dating-app-privacy-what-lgbtq-specific-data-is-collected/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

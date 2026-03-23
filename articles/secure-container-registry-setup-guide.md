@@ -312,22 +312,22 @@ jobs:
 
 ## Related Reading
 
-- [How to Verify Software Supply Chain Integrity](/privacy-tools-guide/verify-software-supply-chain-integrity/)
-- [How to Set Up mTLS for Microservices](/privacy-tools-guide/mtls-microservices-setup-guide/)
-- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
-- [Secure WebSocket Connections Setup Guide](/privacy-tools-guide/secure-websocket-connections-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [AI Container Security Scanning](https://theluckystrike.github.io/ai-tools-compared/ai-container-security-scanning/)
+- [How to Verify Software Supply Chain Integrity](/verify-software-supply-chain-integrity/)
+- [How to Set Up mTLS for Microservices](/mtls-microservices-setup-guide/)
+- [Secure Kubernetes Secrets Management Guide](/kubernetes-secrets-management-guide/)
+- [Secure WebSocket Connections Setup Guide](/secure-websocket-connections-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Container Security Scanning](https://bestremotetools.com/ai-container-security-scanning/)
 
 ---
 
 ## Related Articles
 
-- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/)
-- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
-- [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
-- [Container Security Basics for Developers](/privacy-tools-guide/container-security-basics-developers)
-- [How to Set Up Authelia for SSO](/privacy-tools-guide/authelia-sso-setup-guide/)
+- [Windows Registry Privacy Tweaks: A Safe Practical Guide](/windows-registry-privacy-tweaks-safe-guide/)
+- [Wireguard Container Setup Docker Network Namespace Isolation](/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Securing Docker Containers Best Practices](/securing-docker-containers-best-practices/)
+- [Container Security Basics for Developers](/container-security-basics-developers)
+- [How to Set Up Authelia for SSO](/authelia-sso-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

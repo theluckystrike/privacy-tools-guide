@@ -338,9 +338,9 @@ aws cloudtrail lookup-events \
 
 ## Related Reading
 
-- [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
+- [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
 
 ---
 

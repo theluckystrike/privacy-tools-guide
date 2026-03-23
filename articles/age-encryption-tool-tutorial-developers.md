@@ -348,11 +348,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Use Age Encryption For Secure File Sharing Command Li](/privacy-tools-guide/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
-- [How to Encrypt Git Repos with git-crypt and age](/privacy-tools-guide/how-to-encrypt-git-repos-with-git-crypt-and-age/)
-- [Best Browser for Developers Privacy 2026: A Technical Guide](/privacy-tools-guide/best-browser-for-developers-privacy-2026/)
-- [Best Encrypted Backup Solution For Developers](/privacy-tools-guide/best-encrypted-backup-solution-for-developers/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
+- [How To Use Age Encryption For Secure File Sharing Command Li](/how-to-use-age-encryption-for-secure-file-sharing-command-li/)
+- [How to Encrypt Git Repos with git-crypt and age](/how-to-encrypt-git-repos-with-git-crypt-and-age/)
+- [Best Browser for Developers Privacy 2026: A Technical Guide](/best-browser-for-developers-privacy-2026/)
+- [Best Encrypted Backup Solution For Developers](/best-encrypted-backup-solution-for-developers/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

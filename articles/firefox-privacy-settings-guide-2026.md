@@ -351,11 +351,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
-- [How to Harden Firefox for Privacy (2026)](/privacy-tools-guide/how-to-harden-firefox-for-privacy-2026/---)
-- [Hardened Firefox Privacy Configuration Guide](/privacy-tools-guide/hardened-firefox-privacy-configuration/)
-- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/privacy-tools-guide/firefox-privacy-add-ons-essential-list-2026/)
-- [Best Accessible Privacy Extension for Firefox That Does Not](/privacy-tools-guide/best-accessible-privacy-extension-for-firefox-that-does-not-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Configure Firefox for Maximum Privacy Without Breaking](/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
+- [How to Harden Firefox for Privacy (2026)](/how-to-harden-firefox-for-privacy-2026/---)
+- [Hardened Firefox Privacy Configuration Guide](/hardened-firefox-privacy-configuration/)
+- [Firefox Privacy Add-ons Essential List 2026: Complete Guide](/firefox-privacy-add-ons-essential-list-2026/)
+- [Best Accessible Privacy Extension for Firefox That Does Not](/best-accessible-privacy-extension-for-firefox-that-does-not-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

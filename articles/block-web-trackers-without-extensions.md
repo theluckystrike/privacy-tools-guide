@@ -411,11 +411,11 @@ HTMLCanvasElement.prototype.toDataURL = () => {
 
 ## Related Reading
 
-- [Android Privacy Dashboard How to Use It](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
-- [Audio Context Fingerprinting How Websites Use Sound API to Track](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [Browser Fingerprinting Detection and Prevention Guide](/privacy-tools-guide/browser-fingerprinting-detection/)
-- [DNS Leaks How To Test and Prevent](/privacy-tools-guide/dns-leaks-test-prevent/)
+- [Android Privacy Dashboard How to Use It](/android-privacy-dashboard-how-to-use-it/)
+- [Audio Context Fingerprinting How Websites Use Sound API to Track](/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
+- [Browser Fingerprinting Detection and Prevention Guide](/browser-fingerprinting-detection/)
+- [DNS Leaks How To Test and Prevent](/dns-leaks-test-prevent/)
 
 ---
 

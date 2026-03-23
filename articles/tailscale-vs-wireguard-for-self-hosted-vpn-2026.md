@@ -316,11 +316,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Use WireGuard for Self-Hosted VPN in 2026](/privacy-tools-guide/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
-- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/privacy-tools-guide/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
-- [OpenWrt VPN Router Setup with WireGuard](/privacy-tools-guide/openwrt-vpn-router-wireguard-setup/)
-- [Set Up a Personal VPN with WireGuard](/privacy-tools-guide/wireguard-personal-vpn-setup-guide)
-- [How to Set Up WireGuard on VPS for Personal](/privacy-tools-guide/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
-- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
+- [How to Use WireGuard for Self-Hosted VPN in 2026](/articles/how-to-use-wireguard-for-self-hosted-vpn-2026/---)
+- [How to Set Up WireGuard VPN on iPhone for Always-On Privacy](/how-to-set-up-wireguard-vpn-on-iphone-for-always-on-privacy-/)
+- [OpenWrt VPN Router Setup with WireGuard](/openwrt-vpn-router-wireguard-setup/)
+- [Set Up a Personal VPN with WireGuard](/wireguard-personal-vpn-setup-guide)
+- [How to Set Up WireGuard on VPS for Personal](/how-to-set-up-wireguard-on-vps-for-personal-vpn/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

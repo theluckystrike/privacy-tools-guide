@@ -275,22 +275,22 @@ gpg -c /root/tripwire-keys-$(date +%Y%m%d).tar.gz
 
 ## Related Reading
 
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
-- [How to Use chkrootkit and rkhunter](/privacy-tools-guide/chkrootkit-rkhunter-rootkit-detection-guide/)
-- [Lynis Linux Security Audit Guide](/privacy-tools-guide/lynis-linux-security-audit-guide/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
+- [How to Use chkrootkit and rkhunter](/chkrootkit-rkhunter-rootkit-detection-guide/)
+- [Lynis Linux Security Audit Guide](/lynis-linux-security-audit-guide/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
 ## Related Articles
 
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [Privacy Focused File Transfer Tools Comparison 2026](/privacy-tools-guide/privacy-focused-file-transfer-tools-comparison-2026/)
-- [Magic Wormhole Encrypted File Transfer How To Send Files](/privacy-tools-guide/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
-- [Secure File Sharing Tools Comparison: E2E Encrypted](/privacy-tools-guide/secure-file-sharing-tools-comparison/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
+- [Privacy Focused File Transfer Tools Comparison 2026](/privacy-focused-file-transfer-tools-comparison-2026/)
+- [Magic Wormhole Encrypted File Transfer How To Send Files](/magic-wormhole-encrypted-file-transfer-how-to-send-files-sec/)
+- [Secure File Sharing Tools Comparison: E2E Encrypted](/secure-file-sharing-tools-comparison/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

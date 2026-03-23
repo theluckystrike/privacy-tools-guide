@@ -311,11 +311,11 @@ sudo update-crypto-policies --set CUSTOM
 
 ## Related Reading
 
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
-- [How to Set Up ModSecurity WAF with Nginx](/privacy-tools-guide/modsecurity-waf-nginx-setup-guide/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [How to Set Up age Encryption for Teams](/privacy-tools-guide/age-encryption-team-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
+- [How to Set Up ModSecurity WAF with Nginx](/modsecurity-waf-nginx-setup-guide/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [How to Set Up age Encryption for Teams](/age-encryption-team-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

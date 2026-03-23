@@ -351,9 +351,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
 - [How to Check What Data Dating Apps Have Collected About You](/how-to-check-what-data-dating-apps-have-collected-about-you-/)
 - [Identity Graph What Data Brokers Know About You And How](/identity-graph-what-data-brokers-know-about-you-and-how-they/)
-- [Implement Data Minimization Principle in Application Design](/privacy-tools-guide/how-to-implement-data-minimization-principle-in-application-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Does Cursor AI Store Your Code on Their Servers Data](https://theluckystrike.github.io/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Implement Data Minimization Principle in Application Design](/how-to-implement-data-minimization-principle-in-application-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Does Cursor AI Store Your Code on Their Servers Data](https://bestremotetools.com/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

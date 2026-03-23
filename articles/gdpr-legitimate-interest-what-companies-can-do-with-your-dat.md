@@ -371,12 +371,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [GDPR Legitimate Interest Assessment Guide](/privacy-tools-guide/gdpr-legitimate-interest-assessment-guide/)
-- [Legitimate Interest Assessment Template For Processing Perso](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
-- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/privacy-tools-guide/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
-- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/privacy-tools-guide/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
-- [How To Protect Linkedin Profile From Being Discovered By Dat](/privacy-tools-guide/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [GDPR Legitimate Interest Assessment Guide](/gdpr-legitimate-interest-assessment-guide/)
+- [Legitimate Interest Assessment Template For Processing Perso](/legitimate-interest-assessment-template-for-processing-perso/)
+- [Gdpr Right To Erasure How To Force Companies To Delete All Y](/gdpr-right-to-erasure-how-to-force-companies-to-delete-all-y/)
+- [How To Exercise Montana Consumer Data Privacy Act Rights Dat](/how-to-exercise-montana-consumer-data-privacy-act-rights-dat/)
+- [How To Protect Linkedin Profile From Being Discovered By Dat](/how-to-protect-linkedin-profile-from-being-discovered-by-dat/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

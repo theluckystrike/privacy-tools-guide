@@ -253,11 +253,11 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Simplex Chat Protocol No User Identifiers How It Works Techn](/privacy-tools-guide/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
-- [Firefox Vs Chromium Privacy Architecture](/privacy-tools-guide/firefox-vs-chromium-privacy-architecture/)
-- [Implement Purpose Limitation in Data Architecture](/privacy-tools-guide/how-to-implement-purpose-limitation-in-data-architecture-res/)
-- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
-- [How Blockchain Analysis Companies Track Your Crypto.](/privacy-tools-guide/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
-- [AI Assistants for Creating Security Architecture Review](https://theluckystrike.github.io/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [Simplex Chat Protocol No User Identifiers How It Works Techn](/simplex-chat-protocol-no-user-identifiers-how-it-works-techn/)
+- [Firefox Vs Chromium Privacy Architecture](/firefox-vs-chromium-privacy-architecture/)
+- [Implement Purpose Limitation in Data Architecture](/how-to-implement-purpose-limitation-in-data-architecture-res/)
+- [Signal vs Session vs SimpleX](/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [How Blockchain Analysis Companies Track Your Crypto.](/blockchain-analysis-companies-how-chainalysis-elliptic-track/)
+- [AI Assistants for Creating Security Architecture Review](https://bestremotetools.com/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

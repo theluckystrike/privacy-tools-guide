@@ -332,12 +332,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Audit Your Password Manager Vault: A Practical Guide](/privacy-tools-guide/how-to-audit-your-password-manager-vault/)
-- [How to Manage Team Password Vault Permissions Across.](/privacy-tools-guide/how-to-manage-team-password-vault-permissions-across-enterpr/)
-- [Set Up Bitwarden Emergency Access for Password Vault](/privacy-tools-guide/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
-- [What to Do If Your Password Manager Vault Was Compromised](/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/)
-- [Bitwarden Vault Export Backup Guide](/privacy-tools-guide/bitwarden-vault-export-backup-guide/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Audit Your Password Manager Vault: A Practical Guide](/how-to-audit-your-password-manager-vault/)
+- [How to Manage Team Password Vault Permissions Across.](/how-to-manage-team-password-vault-permissions-across-enterpr/)
+- [Set Up Bitwarden Emergency Access for Password Vault](/how-to-set-up-bitwarden-emergency-access-for-password-vault-/)
+- [What to Do If Your Password Manager Vault Was Compromised](/what-to-do-if-your-password-manager-vault-was-compromised/)
+- [Bitwarden Vault Export Backup Guide](/bitwarden-vault-export-backup-guide/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

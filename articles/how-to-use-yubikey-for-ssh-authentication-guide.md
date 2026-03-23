@@ -584,12 +584,12 @@ grep "Accepted publickey" /var/log/auth.log | \
 
 ## Related Articles
 
-- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
-- [How to Use YubiKey for Maximum Security in 2026](/privacy-tools-guide/how-to-use-yubikey-for-maximum-security-2026/)
-- [YubiKey Setup for Multiple Services Guide](/privacy-tools-guide/yubikey-setup-multiple-services-guide/)
-- [YubiKey vs Titan Security Key: A Developer Comparison](/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/)
-- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
+- [How to Use YubiKey for Maximum Security in 2026](/how-to-use-yubikey-for-maximum-security-2026/)
+- [YubiKey Setup for Multiple Services Guide](/yubikey-setup-multiple-services-guide/)
+- [YubiKey vs Titan Security Key: A Developer Comparison](/yubikey-vs-titan-security-key-comparison/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

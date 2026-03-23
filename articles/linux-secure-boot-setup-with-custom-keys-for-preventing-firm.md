@@ -259,12 +259,12 @@ Document the GUID used when creating your EFI signature lists. If you need to re
 
 ## Related Articles
 
-- [Secure Boot and TPM Explained for Linux](/privacy-tools-guide/secure-boot-tpm-linux-explained/)
-- [Secure Boot Chain Verification on Linux](/privacy-tools-guide/secure-boot-chain-verification-linux/)
-- [How To Rotate Encryption Keys In Messaging Apps](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
-- [Bitwarden Custom Fields Usage Guide](/privacy-tools-guide/bitwarden-custom-fields-usage-guide/)
-- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Secure Boot and TPM Explained for Linux](/secure-boot-tpm-linux-explained/)
+- [Secure Boot Chain Verification on Linux](/secure-boot-chain-verification-linux/)
+- [How To Rotate Encryption Keys In Messaging Apps](/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [Bitwarden Custom Fields Usage Guide](/bitwarden-custom-fields-usage-guide/)
+- [How to Use YubiKey for SSH Authentication](/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

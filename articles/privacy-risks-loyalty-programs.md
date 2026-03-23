@@ -145,9 +145,9 @@ Treat loyalty programs as a tool, not a relationship. Extract the discount, prot
 
 ## Related Reading
 
-- [Privacy Risks of Grocery Store Loyalty Programs](/privacy-tools-guide/privacy-risks-of-grocery-store-loyalty-programs-2026/)
-- [How to Use Masked Email for App Signups](/privacy-tools-guide/masked-email-address-guide/)
-- [Android App Permissions Audit Guide](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
+- [Privacy Risks of Grocery Store Loyalty Programs](/privacy-risks-of-grocery-store-loyalty-programs-2026/)
+- [How to Use Masked Email for App Signups](/masked-email-address-guide/)
+- [Android App Permissions Audit Guide](/android-app-permissions-audit-guide-2026/)
 
 ---
 

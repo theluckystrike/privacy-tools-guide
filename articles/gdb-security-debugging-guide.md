@@ -303,9 +303,9 @@ gdb ./unknown_binary
 
 ## Related Reading
 
-- [How to Use radare2 for Binary Analysis](/privacy-tools-guide/radare2-binary-analysis-guide/)
-- [How to Use Ghidra for Reverse Engineering](/privacy-tools-guide/ghidra-reverse-engineering-guide/)
-- [How to Use strace for Security Analysis](/privacy-tools-guide/strace-security-analysis-guide/)
+- [How to Use radare2 for Binary Analysis](/radare2-binary-analysis-guide/)
+- [How to Use Ghidra for Reverse Engineering](/ghidra-reverse-engineering-guide/)
+- [How to Use strace for Security Analysis](/strace-security-analysis-guide/)
 
 ---
 

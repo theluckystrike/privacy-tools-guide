@@ -378,12 +378,12 @@ OIDC is more secure than forwardAuth for apps that support it — the applicatio
 
 ## Related Articles
 
-- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
-- [Self-Hosted Private Git Server with Gitea](/privacy-tools-guide/private-git-server-gitea-setup-guide/)
-- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted](/privacy-tools-guide/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
-- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
-- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
+- [Self-Hosted Private Git Server with Gitea](/private-git-server-gitea-setup-guide/)
+- [How To Set Up Dnscrypt Proxy For Authenticated Encrypted](/how-to-set-up-dnscrypt-proxy-for-authenticated-encrypted-dns/)
+- [Nextcloud Collabora Office Setup Guide](/nextcloud-collabora-office-setup-guide/)
+- [Jitsi Meet Self Hosted Setup Guide](/jitsi-meet-self-hosted-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

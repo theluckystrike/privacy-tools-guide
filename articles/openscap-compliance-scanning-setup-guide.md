@@ -260,9 +260,9 @@ Focus on **severity=high** failures first. Many low-severity failures are cosmet
 
 ## Related Reading
 
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
-- [How to Configure SELinux Policies Step by Step](/privacy-tools-guide/selinux-policy-configuration-guide/)
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
+- [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
+- [How to Configure SELinux Policies Step by Step](/selinux-policy-configuration-guide/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
 
 ---
 

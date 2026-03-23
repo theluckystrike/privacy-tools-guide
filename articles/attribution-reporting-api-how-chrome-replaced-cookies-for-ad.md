@@ -539,11 +539,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Topics Api Chrome Replacement For Cookies How It Tracks You](/privacy-tools-guide/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
-- [Client Hints API: The New Chrome Tracking Vector Explained](/privacy-tools-guide/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
-- [Tor Browser Cookies Tracking Prevention Guide](/privacy-tools-guide/tor-browser-cookies-tracking-prevention-guide/)
-- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/privacy-tools-guide/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
-- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/privacy-tools-guide/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
+- [Topics Api Chrome Replacement For Cookies How It Tracks You](/topics-api-chrome-replacement-for-cookies-how-it-tracks-you/)
+- [Client Hints API: The New Chrome Tracking Vector Explained](/client-hints-api-fingerprinting-new-chrome-tracking-vector-e/)
+- [Tor Browser Cookies Tracking Prevention Guide](/tor-browser-cookies-tracking-prevention-guide/)
+- [Audio Context Fingerprinting How Websites Use Sound Api Trac](/audio-context-fingerprinting-how-websites-use-sound-api-trac/)
+- [Battery Api Fingerprinting How Battery Status Tracks You Exp](/battery-api-fingerprinting-how-battery-status-tracks-you-exp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -409,12 +409,12 @@ time docker run --security-opt seccomp=unconfined myapp:test workload
 
 ## Related Reading
 
-- [Wireguard Container Setup Docker Network Namespace Isolation](/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
-- [Firefox Multi Account Containers Guide 2026](/privacy-tools-guide/firefox-multi-account-containers-guide-2026/)
-- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Wireguard Container Setup Docker Network Namespace Isolation](/wireguard-container-setup-docker-network-namespace-isolation/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Audit Docker Images for Vulnerabilities](/how-to-audit-docker-images-for-vulnerabilities/)
+- [Firefox Multi Account Containers Guide 2026](/firefox-multi-account-containers-guide-2026/)
+- [Jitsi Meet Self Hosted Setup Guide](/jitsi-meet-self-hosted-setup-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

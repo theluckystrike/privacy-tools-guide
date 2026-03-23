@@ -425,10 +425,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model For Protest Medic Protecting Patient Encounter](/privacy-tools-guide/threat-model-for-protest-medic-protecting-patient-encounter-/)
-- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Sex Worker Protecting Real Identity](/privacy-tools-guide/threat-model-for-sex-worker-protecting-real-identity-and-location/)
-- [Threat Model For Political Dissident In Surveillance State](/privacy-tools-guide/threat-model-for-political-dissident-in-surveillance-state-2/)
-- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
-- [How to Evaluate AI Coding Tool Model Training Data Provenanc](https://theluckystrike.github.io/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [Threat Model For Protest Medic Protecting Patient Encounter](/threat-model-for-protest-medic-protecting-patient-encounter-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Sex Worker Protecting Real Identity](/threat-model-for-sex-worker-protecting-real-identity-and-location/)
+- [Threat Model For Political Dissident In Surveillance State](/threat-model-for-political-dissident-in-surveillance-state-2/)
+- [Threat Model For Transgender Person Protecting Deadname](/threat-model-for-transgender-person-protecting-deadname-and-/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](https://bestremotetools.com/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

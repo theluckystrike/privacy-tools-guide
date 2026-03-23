@@ -466,11 +466,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Nextcloud Collabora Office Setup Guide](/privacy-tools-guide/nextcloud-collabora-office-setup-guide/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [Nextcloud End to End Encryption Setup Guide](/privacy-tools-guide/nextcloud-end-to-end-encryption-setup-guide/)
-- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
-- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Nextcloud Collabora Office Setup Guide](/nextcloud-collabora-office-setup-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
+- [Nextcloud End to End Encryption Setup Guide](/nextcloud-end-to-end-encryption-setup-guide/)
+- [Nextcloud External Storage Setup Guide 2026](/nextcloud-external-storage-setup-guide-2026/)
+- [Self-Hosted Private Video Calling Setup Guide](/private-video-calling-selfhosted-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

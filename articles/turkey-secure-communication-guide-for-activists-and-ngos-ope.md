@@ -60,7 +60,7 @@ npm install && npm run build:linux
 
 Configure Session with a dedicated device, never linked to your primary phone number. Generate a random display name and store your seed phrase in a password manager—not on the device itself.
 
-**Element on Matrix** provides a third option with federated infrastructure. Unlike centralized apps, Matrix allows your organization to control its own server. Even if Turkish authorities compel one homeserver to comply, federated rooms continue functioning across other servers. See the [self-hosted Matrix Synapse server guide](/privacy-tools-guide/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for full deployment instructions.
+**Element on Matrix** provides a third option with federated infrastructure. Unlike centralized apps, Matrix allows your organization to control its own server. Even if Turkish authorities compel one homeserver to comply, federated rooms continue functioning across other servers. See the [self-hosted Matrix Synapse server guide](/how-to-set-up-self-hosted-matrix-synapse-server-for-private-/) for full deployment instructions.
 
 ### Choosing Messenger by Risk Level
 
@@ -334,11 +334,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Secure Communication For Labor Strike: Practical](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Set Up Secure Communication for Labor Strike Organizing](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [Best Encrypted Communication For Activists](/privacy-tools-guide/best-encrypted-communication-for-activists/)
-- [Lawyer Client Privilege Digital Communication Secure Setup](/privacy-tools-guide/lawyer-client-privilege-digital-communication-secure-setup-c/)
-- [Secure Communication Plan Template for Organizations](/privacy-tools-guide/secure-communication-plan-template-for-organizations-handlin/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Set Up Secure Communication for Labor Strike Organizing](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [Best Encrypted Communication For Activists](/best-encrypted-communication-for-activists/)
+- [Lawyer Client Privilege Digital Communication Secure Setup](/lawyer-client-privilege-digital-communication-secure-setup-c/)
+- [Secure Communication Plan Template for Organizations](/secure-communication-plan-template-for-organizations-handlin/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -329,11 +329,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [GDPR Data Processing Agreement Template Guide](/privacy-tools-guide/gdpr-data-processing-agreement-template-guide/)
-- [GDPR Data Subject Access Request Template](/privacy-tools-guide/gdpr-data-subject-access-request-template/)
-- [Gdpr Joint Controller Agreement Template](/privacy-tools-guide/gdpr-joint-controller-agreement-template/)
-- [Legitimate Interest Assessment Template For Processing](/privacy-tools-guide/legitimate-interest-assessment-template-for-processing-perso/)
-- [How To Exercise Right To Restrict Processing Under Gdpr](/privacy-tools-guide/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [GDPR Data Processing Agreement Template Guide](/gdpr-data-processing-agreement-template-guide/)
+- [GDPR Data Subject Access Request Template](/gdpr-data-subject-access-request-template/)
+- [Gdpr Joint Controller Agreement Template](/gdpr-joint-controller-agreement-template/)
+- [Legitimate Interest Assessment Template For Processing](/legitimate-interest-assessment-template-for-processing-perso/)
+- [How To Exercise Right To Restrict Processing Under Gdpr](/how-to-exercise-right-to-restrict-processing-under-gdpr-limi/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

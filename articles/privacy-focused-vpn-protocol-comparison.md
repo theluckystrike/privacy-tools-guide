@@ -228,9 +228,9 @@ curl -s https://www.dnsleaktest.com/results.json | python3 -m json.tool
 
 ## Related Reading
 
-- [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/privacy-tools-guide/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [How to Diagnose Slow VPN Connection Speeds Step by Step](/privacy-tools-guide/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
-- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-tools-guide/privacy-focused-messaging-app-comparison/)
+- [How to Use Tcpdump to Verify VPN Traffic Is Encrypted](/a140-how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How to Diagnose Slow VPN Connection Speeds Step by Step](/a123-how-to-diagnose-slow-vpn-connection-speeds-step-by-step/)
+- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-focused-messaging-app-comparison/)
 
 ---
 

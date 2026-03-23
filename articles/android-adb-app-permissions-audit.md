@@ -339,11 +339,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
-- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
-- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
+- [How to Audit Android App Permissions (2026)](/android-adb-app-permissions-audit/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/how-to-audit-android-app-permissions-guide/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

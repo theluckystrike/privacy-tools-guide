@@ -315,11 +315,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Jitsi Meet Self Hosted Setup Guide](/privacy-tools-guide/jitsi-meet-self-hosted-setup-guide/)
-- [Self-Hosted Private Video Calling Setup Guide](/privacy-tools-guide/private-video-calling-selfhosted-guide/)
-- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
-- [Best Secure Video Calling App 2026: A Technical Guide](/privacy-tools-guide/best-secure-video-calling-app-2026/)
-- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/privacy-tools-guide/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
-- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
+- [Jitsi Meet Self Hosted Setup Guide](/jitsi-meet-self-hosted-setup-guide/)
+- [Self-Hosted Private Video Calling Setup Guide](/private-video-calling-selfhosted-guide/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
+- [Best Secure Video Calling App 2026: A Technical Guide](/best-secure-video-calling-app-2026/)
+- [Cryptpad Encrypted Collaboration Suite Self Hosting Setup](/cryptpad-encrypted-collaboration-suite-self-hosting-setup-gu/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](https://bestremotetools.com/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

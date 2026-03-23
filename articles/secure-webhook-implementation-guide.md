@@ -349,11 +349,11 @@ async def delivery_worker(queue: asyncio.Queue):
 
 ## Related Reading
 
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
-- [Best Password Manager with Secure Notes: A Technical Guide](/privacy-tools-guide/best-password-manager-with-secure-notes/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
+- [Best Password Manager with Secure Notes: A Technical Guide](/best-password-manager-with-secure-notes/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 ---
 

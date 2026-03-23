@@ -366,11 +366,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
-- [Best Hardware Security Key Comparison: A Developer's Guide](/privacy-tools-guide/best-hardware-security-key-comparison/)
-- [Best Hardware Security Key for Developers: A Practical Guide](/privacy-tools-guide/best-hardware-security-key-for-developers/)
-- [How to Use Password Manager with YubiKey Hardware Key Setup](/privacy-tools-guide/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
-- [How To Rotate Encryption Keys In Messaging Apps Without Losi](/privacy-tools-guide/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [Best Hardware Security Key Comparison: A Developer's Guide](/best-hardware-security-key-comparison/)
+- [Best Hardware Security Key for Developers: A Practical Guide](/best-hardware-security-key-for-developers/)
+- [How to Use Password Manager with YubiKey Hardware Key Setup](/how-to-use-password-manager-with-yubikey-hardware-key-setup/)
+- [How To Rotate Encryption Keys In Messaging Apps Without Losi](/how-to-rotate-encryption-keys-in-messaging-apps-without-losi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1685,9 +1685,9 @@ async def handle_upload(file: UploadFile) -> dict:
 
 ## Related Reading
 
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [How to Set Up ModSecurity WAF with Nginx](/privacy-tools-guide/modsecurity-waf-nginx-setup-guide/)
-- [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [How to Set Up ModSecurity WAF with Nginx](/modsecurity-waf-nginx-setup-guide/)
+- [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
 
 ---
 

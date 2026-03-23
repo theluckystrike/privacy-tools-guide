@@ -317,11 +317,11 @@ Review and update your uBlock configurations quarterly as tracking methods evolv
 
 ## Related Articles
 
-- [Brave Browser Ad Blocking vs uBlock](/privacy-tools-guide/brave-browser-ad-blocking-vs-ublock-origin/)
-- [Privacy Badger Vs Ublock Origin Which Blocks More Trackers](/privacy-tools-guide/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)
-- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
-- [Configure Firefox for Maximum Privacy Without Breaking](/privacy-tools-guide/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
-- [Firefox Strict Tracking Protection Vs](/privacy-tools-guide/firefox-strict-tracking-protection-vs-custom/)
-- [Cursor Pro Privacy Mode Does It Cost Extra](https://theluckystrike.github.io/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Brave Browser Ad Blocking vs uBlock](/brave-browser-ad-blocking-vs-ublock-origin/)
+- [Privacy Badger Vs Ublock Origin Which Blocks More Trackers](/privacy-badger-vs-ublock-origin-which-blocks-more-trackers-2/)
+- [Best Browser for Avoiding Google Tracking: A Developer Guide](/best-browser-for-avoiding-google-tracking/)
+- [Configure Firefox for Maximum Privacy Without Breaking](/how-to-configure-firefox-maximum-privacy-without-breaking-sites/)
+- [Firefox Strict Tracking Protection Vs](/firefox-strict-tracking-protection-vs-custom/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](https://bestremotetools.com/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

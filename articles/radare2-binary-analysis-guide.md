@@ -288,9 +288,9 @@ wx <bytes>  Write hex bytes at current position
 
 ## Related Reading
 
-- [How to Use GDB for Security Debugging](/privacy-tools-guide/gdb-security-debugging-guide/)
-- [How to Use Ghidra for Reverse Engineering](/privacy-tools-guide/ghidra-reverse-engineering-guide/)
-- [How to Use binwalk for Firmware Analysis](/privacy-tools-guide/binwalk-firmware-analysis-guide/)
+- [How to Use GDB for Security Debugging](/gdb-security-debugging-guide/)
+- [How to Use Ghidra for Reverse Engineering](/ghidra-reverse-engineering-guide/)
+- [How to Use binwalk for Firmware Analysis](/binwalk-firmware-analysis-guide/)
 
 ---
 

@@ -278,11 +278,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Chrome Extension File Sharing Quick Upload](/privacy-tools-guide/chrome-extension-file-sharing-quick-upload/)
-- [Best Password Manager For Firefox Extension](/privacy-tools-guide/best-password-manager-for-firefox-extension/)
-- [Browser Extension Permissions What To Watch](/privacy-tools-guide/browser-extension-permissions-what-to-watch/)
-- [Canvas Blocker Extension How It Works And Performance Impact](/privacy-tools-guide/canvas-blocker-extension-how-it-works-and-performance-impact/)
-- [Protect Yourself from Browser Extension Malware Installed](/privacy-tools-guide/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
+- [Chrome Extension File Sharing Quick Upload](/chrome-extension-file-sharing-quick-upload/)
+- [Best Password Manager For Firefox Extension](/best-password-manager-for-firefox-extension/)
+- [Browser Extension Permissions What To Watch](/browser-extension-permissions-what-to-watch/)
+- [Canvas Blocker Extension How It Works And Performance Impact](/canvas-blocker-extension-how-it-works-and-performance-impact/)
+- [Protect Yourself from Browser Extension Malware Installed](/how-to-protect-yourself-from-browser-extension-malware-installed-secretly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

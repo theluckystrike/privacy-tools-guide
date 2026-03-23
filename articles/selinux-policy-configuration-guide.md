@@ -300,11 +300,11 @@ podman run -v /data/shared:/app:z myimage # :z = shared label (all containers)
 
 ## Related Articles
 
-- [Linux Apparmor Vs Selinux Which Mandatory Access Control Pro](/privacy-tools-guide/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
-- [Nextcloud Setup Guide Raspberry Pi 2026](/privacy-tools-guide/nextcloud-setup-guide-raspberry-pi-2026/)
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
-- [Suricata Home Network IDS Setup Guide](/privacy-tools-guide/suricata-home-network-ids-setup/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Linux Apparmor Vs Selinux Which Mandatory Access Control Pro](/linux-apparmor-vs-selinux-which-mandatory-access-control-pro/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
+- [Nextcloud Setup Guide Raspberry Pi 2026](/nextcloud-setup-guide-raspberry-pi-2026/)
+- [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
+- [Suricata Home Network IDS Setup Guide](/suricata-home-network-ids-setup/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

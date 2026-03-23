@@ -328,9 +328,9 @@ EOF
 
 ## Related Reading
 
-- [Secure Microservice Communication Patterns](/privacy-tools-guide/secure-microservice-communication-patterns/)
-- [Secure JWT Implementation Best Practices](/privacy-tools-guide/secure-jwt-implementation-best-practices/)
-- [Secure Environment Variable Management](/privacy-tools-guide/secure-environment-variable-management-guide/)
+- [Secure Microservice Communication Patterns](/secure-microservice-communication-patterns/)
+- [Secure JWT Implementation Best Practices](/secure-jwt-implementation-best-practices/)
+- [Secure Environment Variable Management](/secure-environment-variable-management-guide/)
 
 ---
 

@@ -290,9 +290,9 @@ sudo suricata -c /etc/suricata/suricata.yaml \
 
 ## Related Reading
 
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
-- [How to Detect ARP Spoofing Attacks](/privacy-tools-guide/detect-arp-spoofing-attacks-guide/)
-- [How to Set Up CrowdSec for Server Security](/privacy-tools-guide/crowdsec-server-security-setup-guide/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
+- [How to Detect ARP Spoofing Attacks](/detect-arp-spoofing-attacks-guide/)
+- [How to Set Up CrowdSec for Server Security](/crowdsec-server-security-setup-guide/)
 
 ---
 

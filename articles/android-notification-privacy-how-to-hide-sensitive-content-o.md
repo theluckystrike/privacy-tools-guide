@@ -261,11 +261,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-guide/privacy-tools-for-social-worker-handling-sensitive-case-file/)
-- [Dating App Notification Privacy Preventing Matches And Messa](/privacy-tools-guide/dating-app-notification-privacy-preventing-matches-and-messa/)
-- [Turkey Content Removal Orders How Government Forces Platform](/privacy-tools-guide/turkey-content-removal-orders-how-government-forces-platform/)
-- [Dating App Location Spoofing How To Hide Real Position While](/privacy-tools-guide/dating-app-location-spoofing-how-to-hide-real-position-while/)
-- [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)
+- [Privacy Tools For Social Worker Handling Sensitive Case File](/privacy-tools-for-social-worker-handling-sensitive-case-file/)
+- [Dating App Notification Privacy Preventing Matches And Messa](/dating-app-notification-privacy-preventing-matches-and-messa/)
+- [Turkey Content Removal Orders How Government Forces Platform](/turkey-content-removal-orders-how-government-forces-platform/)
+- [Dating App Location Spoofing How To Hide Real Position While](/dating-app-location-spoofing-how-to-hide-real-position-while/)
+- [Use Steganography to Hide Messages Inside Normal Files](/how-to-use-steganography-to-hide-messages-inside-normal-file/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

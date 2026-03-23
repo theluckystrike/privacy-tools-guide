@@ -217,9 +217,9 @@ Single-user instances (just you) eliminate the trust issue entirely. You're both
 
 ## Related Reading
 
-- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-tools-guide/privacy-focused-messaging-app-comparison/)
-- [Anonymous Email Services Compared 2026](/privacy-tools-guide/best-anonymous-email-service-2026/)
-- [Privacy Risks of Location Tracking Explained](/privacy-tools-guide/privacy-risks-location-tracking-explained/)
+- [Privacy-Focused Instant Messaging Comparison 2026](/privacy-focused-messaging-app-comparison/)
+- [Anonymous Email Services Compared 2026](/best-anonymous-email-service-2026/)
+- [Privacy Risks of Location Tracking Explained](/privacy-risks-location-tracking-explained/)
 
 ---
 

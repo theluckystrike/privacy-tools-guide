@@ -217,22 +217,22 @@ Store this backup in a separate encrypted location from the device itself.
 
 ## Related Reading
 
-- [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)
-- [Secure Boot Chain Verification on Linux](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
+- [How to Use BorgBackup for Encrypted Backups](/how-to-use-borgbackup-for-encrypted-backups/)
+- [Secure Boot Chain Verification on Linux](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
 
-- [How To Create Encrypted Mailing List For Private Group](/privacy-tools-guide/how-to-create-encrypted-mailing-list-for-private-group-commu/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How To Create Encrypted Mailing List For Private Group](/how-to-create-encrypted-mailing-list-for-private-group-commu/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
 ## Related Articles
 
-- [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
-- [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
-- [How to Encrypt an USB Drive with VeraCrypt](/privacy-tools-guide/encrypt-usb-drive-veracrypt-guide/)
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
+- [How to Create an Encrypted Container with LUKS](/luks-encrypted-container-guide/)
+- [LUKS Full Disk Encryption on Linux](/luks-full-disk-encryption-linux-guide/)
+- [How to Encrypt an USB Drive with VeraCrypt](/encrypt-usb-drive-veracrypt-guide/)
+- [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
+- [Best Encrypted Messaging App 2026](/best-encrypted-messaging-app-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

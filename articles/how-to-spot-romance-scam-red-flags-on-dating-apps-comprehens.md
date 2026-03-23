@@ -264,11 +264,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Check What Data Dating Apps Have Collected About You](/privacy-tools-guide/how-to-check-what-data-dating-apps-have-collected-about-you-/)
-- [How To Detect Catfish On Dating Apps Using Osint Verificatio](/privacy-tools-guide/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)
-- [How To Verify Dating Profile Authenticity Without Revealing](/privacy-tools-guide/how-to-verify-dating-profile-authenticity-without-revealing-/)
-- [How To Check If Your Dating Profile Photos Are Being Used](/privacy-tools-guide/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
-- [How To Use Compartmentalized Identity For Online Dating](/privacy-tools-guide/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Check What Data Dating Apps Have Collected About You](/how-to-check-what-data-dating-apps-have-collected-about-you-/)
+- [How To Detect Catfish On Dating Apps Using Osint Verificatio](/how-to-detect-catfish-on-dating-apps-using-osint-verificatio/)
+- [How To Verify Dating Profile Authenticity Without Revealing](/how-to-verify-dating-profile-authenticity-without-revealing-/)
+- [How To Check If Your Dating Profile Photos Are Being Used](/how-to-check-if-your-dating-profile-photos-are-being-used-on/)
+- [How To Use Compartmentalized Identity For Online Dating](/how-to-use-compartmentalized-identity-for-online-dating-sepa/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

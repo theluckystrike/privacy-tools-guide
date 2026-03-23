@@ -281,11 +281,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up Secure File Sharing for Sensitive Documents](/privacy-tools-guide/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
-- [Secure Email Forwarding With Encryption How To Set Up](/privacy-tools-guide/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
-- [Secure Password Sharing for Teams](/privacy-tools-guide/secure-password-sharing-teams-guide)
-- [Set Up Secure Communication For Labor Strike: Practical](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [How to Set Up Secure Dead Drop for Digital Information](/privacy-tools-guide/how-to-set-up-secure-dead-drop-for-digital-information/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Set Up Secure File Sharing for Sensitive Documents](/how-to-set-up-secure-file-sharing-for-sensitive-documents/)
+- [Secure Email Forwarding With Encryption How To Set Up](/secure-email-forwarding-with-encryption-how-to-set-up-anonad/)
+- [Secure Password Sharing for Teams](/secure-password-sharing-teams-guide)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [How to Set Up Secure Dead Drop for Digital Information](/how-to-set-up-secure-dead-drop-for-digital-information/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

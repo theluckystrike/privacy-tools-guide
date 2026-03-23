@@ -353,11 +353,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/privacy-tools-guide/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
-- [How to Verify a VPN Is Actually Encrypting Your Traffic](/privacy-tools-guide/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
-- [How to Detect If Your ISP Is Throttling VPN Traffic](/privacy-tools-guide/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
-- [VPN Packet Inspection Explained](/privacy-tools-guide/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
-- [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/privacy-tools-guide/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
+- [How To Use Tcpdump To Verify Vpn Traffic Is Encrypted](/how-to-use-tcpdump-to-verify-vpn-traffic-is-encrypted/)
+- [How to Verify a VPN Is Actually Encrypting Your Traffic](/how-to-verify-a-vpn-is-actually-encrypting-your-traffic/)
+- [How to Detect If Your ISP Is Throttling VPN Traffic](/how-to-detect-if-your-isp-is-throttling-vpn-traffic/)
+- [VPN Packet Inspection Explained](/vpn-packet-inspection-how-deep-packet-inspection-detects-vpn-traffic/)
+- [Vpn Traffic Obfuscation Techniques Shadowsocks Stunnel Compa](/vpn-traffic-obfuscation-techniques-shadowsocks-stunnel-compa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

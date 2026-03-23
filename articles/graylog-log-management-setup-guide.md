@@ -293,9 +293,9 @@ echo "5 2 * * * root /usr/local/bin/archive-graylog-logs.sh >> /var/log/graylog-
 
 ## Related Reading
 
-- [How to Set Up ntopng for Network Analytics](/privacy-tools-guide/ntopng-network-analytics-setup-guide/)
-- [How to Set Up Falco for Container Runtime Security](/privacy-tools-guide/falco-container-runtime-security-setup/)
-- [How to Use strace for Security Analysis](/privacy-tools-guide/strace-security-analysis-guide/)
+- [How to Set Up ntopng for Network Analytics](/ntopng-network-analytics-setup-guide/)
+- [How to Set Up Falco for Container Runtime Security](/falco-container-runtime-security-setup/)
+- [How to Use strace for Security Analysis](/strace-security-analysis-guide/)
 
 ---
 

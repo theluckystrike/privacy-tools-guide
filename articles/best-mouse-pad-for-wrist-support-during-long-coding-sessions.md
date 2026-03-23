@@ -311,11 +311,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-tools-guide/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
-- [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/privacy-tools-guide/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
-- [Data Retention Policy Template What To Keep And For How Long](/privacy-tools-guide/data-retention-policy-template-what-to-keep-and-for-how-long/)
-- [Passkey Support By Website 2026](/privacy-tools-guide/passkey-support-by-website-2026/)
-- [Proton Pass Passkeys Support Review 2026](/privacy-tools-guide/proton-pass-passkeys-support-review-2026/)
+- [Privacy Setup For Psychologist Telehealth Sessions Encrypted](/privacy-setup-for-psychologist-telehealth-sessions-encrypted/)
+- [Coffee Meets Bagel Data Retention Policy How Long The App Ke](/coffee-meets-bagel-data-retention-policy-how-long-the-app-ke/)
+- [Data Retention Policy Template What To Keep And For How Long](/data-retention-policy-template-what-to-keep-and-for-how-long/)
+- [Passkey Support By Website 2026](/passkey-support-by-website-2026/)
+- [Proton Pass Passkeys Support Review 2026](/proton-pass-passkeys-support-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

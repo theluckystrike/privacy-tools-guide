@@ -294,12 +294,12 @@ sudo zeekctl deploy
 
 ## Related Reading
 
-- [How to Set Up Snort IDS on Linux](/privacy-tools-guide/snort-ids-linux-setup-guide/)
-- [How to Set Up Wazuh SIEM for Small Teams](/privacy-tools-guide/wazuh-siem-small-teams-setup-guide/)
-- [How to Detect ARP Spoofing Attacks](/privacy-tools-guide/detect-arp-spoofing-attacks-guide/)
-- [How to Monitor the Dark Web for Data Breaches](/privacy-tools-guide/dark-web-breach-monitoring-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Enterprise AI Coding Tool Network Security Requirements](https://theluckystrike.github.io/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [How to Set Up Snort IDS on Linux](/snort-ids-linux-setup-guide/)
+- [How to Set Up Wazuh SIEM for Small Teams](/wazuh-siem-small-teams-setup-guide/)
+- [How to Detect ARP Spoofing Attacks](/detect-arp-spoofing-attacks-guide/)
+- [How to Monitor the Dark Web for Data Breaches](/dark-web-breach-monitoring-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Enterprise AI Coding Tool Network Security Requirements](https://bestremotetools.com/enterprise-ai-coding-tool-network-security-requirements-and-/)
 
 ---
 

@@ -442,11 +442,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/privacy-tools-guide/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
-- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
-- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [Sensor Api Fingerprinting How Accelerometer Gyroscope Data I](/sensor-api-fingerprinting-how-accelerometer-gyroscope-data-i/)
+- [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
+- [Android Location Permissions Best Practices](/android-location-permissions-best-practices/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

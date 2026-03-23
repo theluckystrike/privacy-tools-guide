@@ -456,11 +456,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use Briar Messenger Offline: A Developer's Guide](/privacy-tools-guide/how-to-use-briar-messenger-offline-guide/)
-- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
-- [How To Use Briar Messenger During Iran Internet Blackout](/privacy-tools-guide/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
-- [How To Set Up Offline Encrypted Communication Between Two](/privacy-tools-guide/how-to-set-up-offline-encrypted-communication-between-two-pe/)
-- [Use Mesh Networking for Private Communication](/privacy-tools-guide/how-to-use-mesh-networking-for-private-communication-without/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Use Briar Messenger Offline: A Developer's Guide](/how-to-use-briar-messenger-offline-guide/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/briar-messenger-offline-mesh-review/)
+- [How To Use Briar Messenger During Iran Internet Blackout](/how-to-use-briar-messenger-during-iran-internet-blackout-pee/)
+- [How To Set Up Offline Encrypted Communication Between Two](/how-to-set-up-offline-encrypted-communication-between-two-pe/)
+- [Use Mesh Networking for Private Communication](/how-to-use-mesh-networking-for-private-communication-without/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

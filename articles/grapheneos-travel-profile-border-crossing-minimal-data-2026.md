@@ -299,12 +299,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Destroy Data on Device Before Border Crossing Guide](/privacy-tools-guide/how-to-destroy-data-on-device-before-border-crossing-guide/)
-- [Border Crossing Phone Search Rights What Customs Agents Can](/privacy-tools-guide/border-crossing-phone-search-rights-what-customs-agents-can-/)
-- [Disable Location Services Before Crossing Border.](/privacy-tools-guide/disable-location-services-before-crossing-border-smartphone-/)
-- [How To Prepare Phone For Crossing Border Into High Surveilla](/privacy-tools-guide/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
-- [Cross Border Data Transfer Mechanisms 2026](/privacy-tools-guide/cross-border-data-transfer-mechanisms-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Destroy Data on Device Before Border Crossing Guide](/how-to-destroy-data-on-device-before-border-crossing-guide/)
+- [Border Crossing Phone Search Rights What Customs Agents Can](/border-crossing-phone-search-rights-what-customs-agents-can-/)
+- [Disable Location Services Before Crossing Border.](/disable-location-services-before-crossing-border-smartphone-/)
+- [How To Prepare Phone For Crossing Border Into High Surveilla](/how-to-prepare-phone-for-crossing-border-into-high-surveilla/)
+- [Cross Border Data Transfer Mechanisms 2026](/cross-border-data-transfer-mechanisms-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -479,11 +479,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Prepare Ssh Key And Server Access Documentation For T](/privacy-tools-guide/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
-- [How To Manage Pgp Keys Securely Using Hardware Security Key](/privacy-tools-guide/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
-- [How to Document DNS and SSL Certificate Renewal Procedures](/privacy-tools-guide/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
-- [Vpn Authentication Methods Compared Certificate Vs.](/privacy-tools-guide/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
-- [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/privacy-tools-guide/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
+- [How To Prepare Ssh Key And Server Access Documentation For T](/how-to-prepare-ssh-key-and-server-access-documentation-for-t/)
+- [How To Manage Pgp Keys Securely Using Hardware Security Key](/how-to-manage-pgp-keys-securely-using-hardware-security-key-/)
+- [How to Document DNS and SSL Certificate Renewal Procedures](/how-to-document-dns-and-ssl-certificate-renewal-procedures/)
+- [Vpn Authentication Methods Compared Certificate Vs.](/vpn-authentication-methods-compared-certificate-vs-username-password-security/)
+- [Vpn Certificate Pinning How It Prevents Mitm Attacks.](/vpn-certificate-pinning-how-it-prevents-mitm-attacks-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

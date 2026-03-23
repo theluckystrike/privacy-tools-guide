@@ -263,11 +263,11 @@ gh api /user/personal-access-tokens --jq '.[] | "\(.name) expires:\(.expires_at)
 
 ## Related Articles
 
-- [How to Use YubiKey for SSH Authentication](/privacy-tools-guide/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
-- [How to Harden SSH Server Configuration](/privacy-tools-guide/how-to-harden-ssh-server-configuration/)
-- [How To Create Anonymous GitHub Account For Open Source](/privacy-tools-guide/how-to-create-anonymous-github-account-for-open-source-contr/)
-- [Secure Shell Hardening Beyond SSH Config](/privacy-tools-guide/secure-shell-hardening-beyond-ssh-config/)
-- [Secure API Key Management for Developers](/privacy-tools-guide/secure-api-key-management-developers/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Use YubiKey for SSH Authentication](/articles/how-to-use-yubikey-for-ssh-authentication-guide/)
+- [How to Harden SSH Server Configuration](/how-to-harden-ssh-server-configuration/)
+- [How To Create Anonymous GitHub Account For Open Source](/how-to-create-anonymous-github-account-for-open-source-contr/)
+- [Secure Shell Hardening Beyond SSH Config](/secure-shell-hardening-beyond-ssh-config/)
+- [Secure API Key Management for Developers](/secure-api-key-management-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

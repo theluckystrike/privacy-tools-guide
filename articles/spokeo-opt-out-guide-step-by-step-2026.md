@@ -296,12 +296,12 @@ Prioritize brokers that appear prominently in search results for your name, sinc
 
 ## Related Articles
 
-- [People Search Sites Opt Out Complete Guide 2026](/privacy-tools-guide/people-search-sites-opt-out-complete-guide-2026/)
-- [Intelius Opt-Out Guide: Remove Personal Information in 2026](/privacy-tools-guide/intelius-opt-out-guide-remove-personal-information-2026/)
-- [How To Remove Yourself From True People Search Instant](/privacy-tools-guide/how-to-remove-yourself-from-true-people-search-instant-check/)
-- [How to Remove Personal Data from Data Brokers 2026:](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers-2026/---)
-- [Fastpeoplesearch Opt Out Guide Step By Step 2026](/privacy-tools-guide/fastpeoplesearch-opt-out-guide-step-by-step-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [People Search Sites Opt Out Complete Guide 2026](/people-search-sites-opt-out-complete-guide-2026/)
+- [Intelius Opt-Out Guide: Remove Personal Information in 2026](/intelius-opt-out-guide-remove-personal-information-2026/)
+- [How To Remove Yourself From True People Search Instant](/how-to-remove-yourself-from-true-people-search-instant-check/)
+- [How to Remove Personal Data from Data Brokers 2026:](/how-to-remove-personal-data-from-data-brokers-2026/---)
+- [Fastpeoplesearch Opt Out Guide Step By Step 2026](/fastpeoplesearch-opt-out-guide-step-by-step-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

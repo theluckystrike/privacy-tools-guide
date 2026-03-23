@@ -305,11 +305,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [1password Secrets Automation Guide](/privacy-tools-guide/1password-secrets-automation-guide/)
-- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
-- [Data Subject Rights Automation Tools 2026: A Practical Guide](/privacy-tools-guide/data-subject-rights-automation-tools-2026/)
-- [Data Broker Opt Out Automation Tools That Continuously Remov](/privacy-tools-guide/data-broker-opt-out-automation-tools-that-continuously-remov/)
-- [Ios Shortcuts Automation Privacy Considerations](/privacy-tools-guide/ios-shortcuts-automation-privacy-considerations/)
+- [1password Secrets Automation Guide](/1password-secrets-automation-guide/)
+- [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
+- [Data Subject Rights Automation Tools 2026: A Practical Guide](/data-subject-rights-automation-tools-2026/)
+- [Data Broker Opt Out Automation Tools That Continuously Remov](/data-broker-opt-out-automation-tools-that-continuously-remov/)
+- [Ios Shortcuts Automation Privacy Considerations](/ios-shortcuts-automation-privacy-considerations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

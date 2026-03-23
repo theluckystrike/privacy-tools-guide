@@ -277,11 +277,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Delete Your Google Activity History Completely](/privacy-tools-guide/how-to-delete-your-google-activity-history-completely/)
-- [Facebook Location History Deletion How To Remove All Stored](/privacy-tools-guide/facebook-location-history-deletion-how-to-remove-all-stored-/)
-- [Google My Activity Privacy Delete Guide 2026](/privacy-tools-guide/google-my-activity-privacy-delete-guide-2026/)
-- [Android Background Location Access Which Apps Track You When](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
+- [How to Delete Your Google Activity History Completely](/how-to-delete-your-google-activity-history-completely/)
+- [Facebook Location History Deletion How To Remove All Stored](/facebook-location-history-deletion-how-to-remove-all-stored-/)
+- [Google My Activity Privacy Delete Guide 2026](/google-my-activity-privacy-delete-guide-2026/)
+- [Android Background Location Access Which Apps Track You When](/android-background-location-access-which-apps-track-you-when/)
+- [Android Location Permissions Best Practices](/android-location-permissions-best-practices/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -233,9 +233,9 @@ PCAPs can grow quickly. At 100 Mbps traffic, a 5-minute capture can be several G
 
 ## Related Reading
 
-- [How to Set Up ntopng for Network Analytics](/privacy-tools-guide/ntopng-network-analytics-setup-guide/)
-- [How to Use strace for Security Analysis](/privacy-tools-guide/strace-security-analysis-guide/)
-- [VPN Kill Switch with iptables on Linux](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
+- [How to Set Up ntopng for Network Analytics](/ntopng-network-analytics-setup-guide/)
+- [How to Use strace for Security Analysis](/strace-security-analysis-guide/)
+- [VPN Kill Switch with iptables on Linux](/vpn-kill-switch-linux-iptables-setup/)
 
 ---
 

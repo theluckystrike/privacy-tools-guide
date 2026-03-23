@@ -409,11 +409,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/privacy-tools-guide/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
-- [Anonymous Email Over Tor Setup Guide](/privacy-tools-guide/anonymous-email-over-tor-setup-guide/)
-- [Anonymous IRC Over Tor Setup Guide 2026](/privacy-tools-guide/anonymous-irc-over-tor-setup-guide-2026/)
-- [Anonymous Cryptocurrency Transactions Tor Guide](/privacy-tools-guide/anonymous-cryptocurrency-transactions-tor-guide/)
-- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/privacy-tools-guide/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
+- [Wasabi Wallet Coinjoin Setup Guide For Bitcoin Transaction P](/wasabi-wallet-coinjoin-setup-guide-for-bitcoin-transaction-p/)
+- [Anonymous Email Over Tor Setup Guide](/anonymous-email-over-tor-setup-guide/)
+- [Anonymous IRC Over Tor Setup Guide 2026](/anonymous-irc-over-tor-setup-guide-2026/)
+- [Anonymous Cryptocurrency Transactions Tor Guide](/anonymous-cryptocurrency-transactions-tor-guide/)
+- [How To Use Tor Browser For Creating Anonymous Accounts Witho](/how-to-use-tor-browser-for-creating-anonymous-accounts-witho/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

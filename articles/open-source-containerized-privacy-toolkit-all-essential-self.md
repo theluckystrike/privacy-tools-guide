@@ -391,11 +391,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy Engineer Toolkit: Essential Tools Every Data](/privacy-tools-guide/privacy-engineer-toolkit-essential-tools-every-data-protecti/)
-- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
-- [iOS Privacy Settings: Complete Walkthrough](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
-- [Windows Privacy Tools Open Source 2026: A Developer Guide](/privacy-tools-guide/windows-privacy-tools-open-source-2026/)
-- [Best Self Hosted AI Model for Writing SQL Queries from](https://theluckystrike.github.io/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
+- [Privacy Engineer Toolkit: Essential Tools Every Data](/privacy-engineer-toolkit-essential-tools-every-data-protecti/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
+- [iOS Privacy Settings: Complete Walkthrough](/ios-privacy-settings-complete-walkthrough-every-toggle-expla/)
+- [Windows Privacy Tools Open Source 2026: A Developer Guide](/windows-privacy-tools-open-source-2026/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](https://bestremotetools.com/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

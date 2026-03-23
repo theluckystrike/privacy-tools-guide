@@ -420,11 +420,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Dating App Background Location Tracking What Happens When Ap](/privacy-tools-guide/dating-app-background-location-tracking-what-happens-when-ap/)
-- [Android Location History Google Timeline How To Delete Perma](/privacy-tools-guide/android-location-history-google-timeline-how-to-delete-perma/)
-- [Android Location Permissions Best Practices](/privacy-tools-guide/android-location-permissions-best-practices/)
-- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/privacy-tools-guide/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
-- [Android Work Profile for Isolating Apps That Require.](/privacy-tools-guide/android-work-profile-for-isolating-apps-that-require-invasiv/)
+- [Dating App Background Location Tracking What Happens When Ap](/dating-app-background-location-tracking-what-happens-when-ap/)
+- [Android Location History Google Timeline How To Delete Perma](/android-location-history-google-timeline-how-to-delete-perma/)
+- [Android Location Permissions Best Practices](/android-location-permissions-best-practices/)
+- [Iran Telegram Ban Workarounds How To Access Messaging Apps D](/iran-telegram-ban-workarounds-how-to-access-messaging-apps-d/)
+- [Android Work Profile for Isolating Apps That Require.](/android-work-profile-for-isolating-apps-that-require-invasiv/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

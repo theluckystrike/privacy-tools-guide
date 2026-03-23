@@ -261,12 +261,12 @@ A key rotation schedule — annually at minimum, quarterly for high-security pro
 
 ## Related Reading
 
-- [How to Set Up Authentik for Identity Management](/privacy-tools-guide/how-to-set-up-authentik-for-identity-management/)
-- [How to Audit Docker Images for Vulnerabilities](/privacy-tools-guide/how-to-audit-docker-images-for-vulnerabilities/)
-- [Securing Docker Containers Best Practices](/privacy-tools-guide/securing-docker-containers-best-practices/)
-- [Secure API Gateway Setup with Kong](/privacy-tools-guide/kong-api-gateway-secure-setup-guide/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [AI Code Generation Quality for Java Spring Security](https://theluckystrike.github.io/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [How to Set Up Authentik for Identity Management](/how-to-set-up-authentik-for-identity-management/)
+- [How to Audit Docker Images for Vulnerabilities](/how-to-audit-docker-images-for-vulnerabilities/)
+- [Securing Docker Containers Best Practices](/securing-docker-containers-best-practices/)
+- [Secure API Gateway Setup with Kong](/kong-api-gateway-secure-setup-guide/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [AI Code Generation Quality for Java Spring Security](https://bestremotetools.com/ai-code-generation-quality-for-java-spring-security-configur/)
 
 ---
 

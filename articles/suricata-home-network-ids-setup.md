@@ -2,6 +2,7 @@
 permalink: /suricata-home-network-ids-setup/
 description: "Learn suricata home network ids setup with practical examples, tips, and step-by-step instructions for getting the best results."
 tags: [privacy-tools-guide]
+date: 2026-03-23
 ---
 layout: default
 title: "Suricata Home Network IDS Setup Guide"
@@ -259,12 +260,12 @@ Kibana provides pre-built dashboards for Suricata that show alert trends, top so
 
 ## Related Articles
 
-- [Is Someone Monitoring My Home WiFi Network? How](/privacy-tools-guide/is-someone-monitoring-my-home-wifi-network-how-to-check/)
-- [Create Separate Network Segment for Smart Home Isolating](/privacy-tools-guide/how-to-create-separate-network-segment-for-smart-home-isolat/)
-- [How to Check if Your Smart Home Devices Are Compromised](/privacy-tools-guide/how-to-check-if-your-smart-home-devices-are-compromised/)
-- [Vpn For Remote Access To Home Network While Traveling](/privacy-tools-guide/vpn-for-remote-access-to-home-network-while-traveling/)
-- [Home Network Privacy Pihole Dns Filtering Guide 2026](/privacy-tools-guide/home-network-privacy-pihole-dns-filtering-guide-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Is Someone Monitoring My Home WiFi Network? How](/is-someone-monitoring-my-home-wifi-network-how-to-check/)
+- [Create Separate Network Segment for Smart Home Isolating](/how-to-create-separate-network-segment-for-smart-home-isolat/)
+- [How to Check if Your Smart Home Devices Are Compromised](/how-to-check-if-your-smart-home-devices-are-compromised/)
+- [Vpn For Remote Access To Home Network While Traveling](/vpn-for-remote-access-to-home-network-while-traveling/)
+- [Home Network Privacy Pihole Dns Filtering Guide 2026](/home-network-privacy-pihole-dns-filtering-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -321,11 +321,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Encrypt Files Before Cloud Upload](/privacy-tools-guide/how-to-encrypt-files-before-cloud-upload/)
-- [Best Private Alternative To Google Drive 2026](/privacy-tools-guide/best-private-alternative-to-google-drive-2026/)
-- [Best Browser for Avoiding Google Tracking: A Developer Guide](/privacy-tools-guide/best-browser-for-avoiding-google-tracking/)
-- [How To Send Large Encrypted Files Without Uploading To Third](/privacy-tools-guide/how-to-send-large-encrypted-files-without-uploading-to-third/)
-- [Use Steganography to Hide Messages Inside Normal Files](/privacy-tools-guide/how-to-use-steganography-to-hide-messages-inside-normal-file/)
+- [How to Encrypt Files Before Cloud Upload](/how-to-encrypt-files-before-cloud-upload/)
+- [Best Private Alternative To Google Drive 2026](/best-private-alternative-to-google-drive-2026/)
+- [Best Browser for Avoiding Google Tracking: A Developer Guide](/best-browser-for-avoiding-google-tracking/)
+- [How To Send Large Encrypted Files Without Uploading To Third](/how-to-send-large-encrypted-files-without-uploading-to-third/)
+- [Use Steganography to Hide Messages Inside Normal Files](/how-to-use-steganography-to-hide-messages-inside-normal-file/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

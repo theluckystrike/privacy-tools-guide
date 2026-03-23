@@ -365,11 +365,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Arch Linux Hardened Kernel Installation Guide For Advanced](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [Encrypted DNS over HTTPS on Linux](/privacy-tools-guide/encrypted-dns-over-https-linux-setup)
-- [Complete Guide To Operating System Hardening For Extreme](/privacy-tools-guide/complete-guide-to-operating-system-hardening-for-extreme-pri/)
-- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
-- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Encrypted DNS over HTTPS on Linux](/encrypted-dns-over-https-linux-setup)
+- [Complete Guide To Operating System Hardening For Extreme](/complete-guide-to-operating-system-hardening-for-extreme-pri/)
+- [Linux Network Namespaces for VPN Isolation](/linux-network-namespace-vpn-isolation/)
+- [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

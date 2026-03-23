@@ -317,11 +317,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
-- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
-- [Android Privacy Dashboard: Guide](/privacy-tools-guide/android-privacy-dashboard-how-to-use-it/)
-- [iOS Privacy Settings Complete Walkthrough Every Toggle](/privacy-tools-guide/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
+- [Android Privacy Dashboard: Guide](/android-privacy-dashboard-how-to-use-it/)
+- [iOS Privacy Settings Complete Walkthrough Every Toggle](/ios-privacy-settings-complete-walkthrough-every-toggle-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

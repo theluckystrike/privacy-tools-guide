@@ -227,9 +227,9 @@ Note: `autocomplete="off"` is treated as a suggestion by browsers, not a hard re
 
 ## Related Reading
 
-- [Audit Chrome Extensions Privacy Guide](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
-- [Password Manager Autofill Security Risks](/privacy-tools-guide/password-manager-autofill-security-risks/)
-- [How to Use Zeek for Network Monitoring](/privacy-tools-guide/zeek-network-monitoring-guide/)
+- [Audit Chrome Extensions Privacy Guide](/audit-chrome-extensions-privacy-guide/)
+- [Password Manager Autofill Security Risks](/password-manager-autofill-security-risks/)
+- [How to Use Zeek for Network Monitoring](/zeek-network-monitoring-guide/)
 
 ---
 

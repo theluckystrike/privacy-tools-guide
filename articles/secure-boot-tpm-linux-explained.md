@@ -260,22 +260,22 @@ sudo mokutil --import db.crt
 
 ## Related Reading
 
-- [Linux Secure Boot Setup with Custom Keys](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-- [LUKS Full Disk Encryption Linux Guide](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
-- [How to Create an Encrypted Container with LUKS](/privacy-tools-guide/luks-encrypted-container-guide/)
-- [Android Privacy Indicators: Camera and Mic Access Explained](/privacy-tools-guide/android-privacy-indicators-camera-mic-explained/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Linux Secure Boot Setup with Custom Keys](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [LUKS Full Disk Encryption Linux Guide](/luks-full-disk-encryption-linux-guide/)
+- [How to Create an Encrypted Container with LUKS](/luks-encrypted-container-guide/)
+- [Android Privacy Indicators: Camera and Mic Access Explained](/android-privacy-indicators-camera-mic-explained/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
 ## Related Articles
 
-- [Linux Secure Boot Setup with Custom Keys for Preventing](/privacy-tools-guide/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
-- [Secure Document Collaboration Alternatives to Google](/privacy-tools-guide/secure-document-collaboration-alternatives-to-google-docs-wi/)
-- [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
-- [Set Up Secure Communication For Labor Strike: Practical](/privacy-tools-guide/how-to-set-up-secure-communication-for-labor-strike-organizing/)
-- [LUKS Full Disk Encryption on Linux](/privacy-tools-guide/luks-full-disk-encryption-linux-guide/)
+- [Linux Secure Boot Setup with Custom Keys for Preventing](/linux-secure-boot-setup-with-custom-keys-for-preventing-firm/)
+- [Secure Document Collaboration Alternatives to Google](/secure-document-collaboration-alternatives-to-google-docs-wi/)
+- [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
+- [Set Up Secure Communication For Labor Strike: Practical](/how-to-set-up-secure-communication-for-labor-strike-organizing/)
+- [LUKS Full Disk Encryption on Linux](/luks-full-disk-encryption-linux-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

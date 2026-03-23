@@ -408,10 +408,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
-- [Openvpn Push Route Configuration Selective Routing Explained](/privacy-tools-guide/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
-- [WireGuard DNS Configuration Options Explained](/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
-- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/privacy-tools-guide/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
-- [Ios Advanced Data Protection For Icloud End To End.](/privacy-tools-guide/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
+- [WireGuard PostUp/PostDown Scripts for Advanced Routing](/wireguard-postup-postdown-scripts-for-advanced-routing-confi/)
+- [Openvpn Push Route Configuration Selective Routing Explained](/openvpn-push-route-configuration-selective-routing-explained-step-by-step/)
+- [WireGuard DNS Configuration Options Explained](/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/)
+- [Arch Linux Hardened Kernel Installation Guide For Advanced P](/arch-linux-hardened-kernel-installation-guide-for-advanced-p/)
+- [Ios Advanced Data Protection For Icloud End To End.](/ios-advanced-data-protection-for-icloud-end-to-end-encryption-setup-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -309,12 +309,12 @@ aws iam create-policy \
 
 ## Related Articles
 
-- [Privacy-Focused Git Workflow: Preventing Accidental Commits](/privacy-tools-guide/privacy-focused-git-workflow-preventing-accidental-commits/)
-- [How to Secure Your GitHub Account](/privacy-tools-guide/secure-github-account-hardening-guide/)
-- [Secure Kubernetes Secrets Management Guide](/privacy-tools-guide/kubernetes-secrets-management-guide/)
-- [1password Cli Secrets Management Guide](/privacy-tools-guide/1password-cli-secrets-management-guide/)
-- [Using curl for LinkedIn API](/privacy-tools-guide/social-media-data-request-download-guide-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Privacy-Focused Git Workflow: Preventing Accidental Commits](/privacy-focused-git-workflow-preventing-accidental-commits/)
+- [How to Secure Your GitHub Account](/secure-github-account-hardening-guide/)
+- [Secure Kubernetes Secrets Management Guide](/kubernetes-secrets-management-guide/)
+- [1password Cli Secrets Management Guide](/1password-cli-secrets-management-guide/)
+- [Using curl for LinkedIn API](/social-media-data-request-download-guide-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

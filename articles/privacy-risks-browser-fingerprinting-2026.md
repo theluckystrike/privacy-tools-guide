@@ -246,9 +246,9 @@ Adding extensions (uBlock Origin, Privacy Badger) helps with first-party trackin
 
 ## Related Reading
 
-- [Audit Chrome Extensions Privacy Guide](/privacy-tools-guide/audit-chrome-extensions-privacy-guide/)
-- [Privacy Risks of Location Tracking Explained](/privacy-tools-guide/privacy-risks-location-tracking-explained/)
-- [Anonymous Browsing on Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
+- [Audit Chrome Extensions Privacy Guide](/audit-chrome-extensions-privacy-guide/)
+- [Privacy Risks of Location Tracking Explained](/privacy-risks-location-tracking-explained/)
+- [Anonymous Browsing on Mobile Devices Guide 2026](/anonymous-browsing-mobile-devices-guide-2026/)
 
 ---
 

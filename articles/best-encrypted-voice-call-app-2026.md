@@ -314,11 +314,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Encrypted Voice Calls Comparison](/privacy-tools-guide/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
-- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/privacy-tools-guide/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
-- [Best Encrypted Calendar App 2026: A Developer's Guide](/privacy-tools-guide/best-encrypted-calendar-app-2026/)
-- [Best Encrypted Messaging App 2026](/privacy-tools-guide/best-encrypted-messaging-app-2026/)
-- [Best Encrypted Notes App 2026: A Developer Guide](/privacy-tools-guide/best-encrypted-notes-app-2026/)
+- [Encrypted Voice Calls Comparison](/encrypted-voice-calls-comparison-signal-whatsapp-facetime-wh/)
+- [Mumble Encrypted Voice Chat Server Setup For Private Team Co](/mumble-encrypted-voice-chat-server-setup-for-private-team-co/)
+- [Best Encrypted Calendar App 2026: A Developer's Guide](/best-encrypted-calendar-app-2026/)
+- [Best Encrypted Messaging App 2026](/best-encrypted-messaging-app-2026/)
+- [Best Encrypted Notes App 2026: A Developer Guide](/best-encrypted-notes-app-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

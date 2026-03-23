@@ -228,22 +228,22 @@ AIDE provides cryptographic verification that survives system reboots and can be
 
 ## Related Reading
 
-- [How to Monitor File Changes with inotifywait](/privacy-tools-guide/how-to-monitor-file-changes-with-inotifywait/)
-- [How to Detect Keyloggers on Your System](/privacy-tools-guide/how-to-detect-keyloggers-on-your-system/)
-- [How to Use BorgBackup for Encrypted Backups](/privacy-tools-guide/how-to-use-borgbackup-for-encrypted-backups/)
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Monitor File Changes with inotifywait](/how-to-monitor-file-changes-with-inotifywait/)
+- [How to Detect Keyloggers on Your System](/how-to-detect-keyloggers-on-your-system/)
+- [How to Use BorgBackup for Encrypted Backups](/how-to-use-borgbackup-for-encrypted-backups/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 ---
 
 ## Related Articles
 
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
-- [Verify Your Devices Are Not Compromised: A Complete](/privacy-tools-guide/how-to-verify-your-devices-are-not-compromised-complete-audit/)
-- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [How to Use OSSEC for Host Intrusion Detection](/privacy-tools-guide/ossec-host-intrusion-detection-setup/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
+- [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
+- [Verify Your Devices Are Not Compromised: A Complete](/how-to-verify-your-devices-are-not-compromised-complete-audit/)
+- [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
+- [How to Use OSSEC for Host Intrusion Detection](/ossec-host-intrusion-detection-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

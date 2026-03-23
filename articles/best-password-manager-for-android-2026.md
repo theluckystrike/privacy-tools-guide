@@ -362,11 +362,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Handle Password Manager When Switching Phones Android](/privacy-tools-guide/how-to-handle-password-manager-when-switching-phones-android/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-- [Best Password Manager for iPhone 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-iphone-2026/)
-- [Best Password Manager for Linux in 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-linux/)
-- [Best Password Manager With Travel Mode: A Developer Guide](/privacy-tools-guide/best-password-manager-with-travel-mode/)
+- [How To Handle Password Manager When Switching Phones Android](/how-to-handle-password-manager-when-switching-phones-android/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/best-password-manager-cli-tools/)
+- [Best Password Manager for iPhone 2026: A Developer's Guide](/best-password-manager-for-iphone-2026/)
+- [Best Password Manager for Linux in 2026: A Developer's Guide](/best-password-manager-for-linux/)
+- [Best Password Manager With Travel Mode: A Developer Guide](/best-password-manager-with-travel-mode/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

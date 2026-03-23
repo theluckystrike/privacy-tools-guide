@@ -360,11 +360,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cloud Storage Security Breach History: Compromised](/privacy-tools-guide/cloud-storage-security-breach-history-compromised-services-t/)
-- [Eufy Camera Cloud Upload Controversy What Local Storage](/privacy-tools-guide/eufy-camera-cloud-upload-controversy-what-local-storage/)
-- [Local-Only Security Camera Setup Without Cloud Using Frigate](/privacy-tools-guide/local-only-security-camera-setup-without-cloud-using-frigate/)
-- [Nextcloud External Storage Setup Guide 2026](/privacy-tools-guide/nextcloud-external-storage-setup-guide-2026/)
-- [Best Cloud Storage for Researchers Privacy 2026](/privacy-tools-guide/best-cloud-storage-for-researchers-privacy-2026/)
-- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://theluckystrike.github.io/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+- [Cloud Storage Security Breach History: Compromised](/cloud-storage-security-breach-history-compromised-services-t/)
+- [Eufy Camera Cloud Upload Controversy What Local Storage](/eufy-camera-cloud-upload-controversy-what-local-storage/)
+- [Local-Only Security Camera Setup Without Cloud Using Frigate](/local-only-security-camera-setup-without-cloud-using-frigate/)
+- [Nextcloud External Storage Setup Guide 2026](/nextcloud-external-storage-setup-guide-2026/)
+- [Best Cloud Storage for Researchers Privacy 2026](/best-cloud-storage-for-researchers-privacy-2026/)
+- [Best Local LLM Alternatives to Cloud AI Coding Assistants](https://bestremotetools.com/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

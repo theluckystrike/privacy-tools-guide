@@ -170,9 +170,9 @@ A visible notice ("Video and audio recording in use") is the minimum compliance 
 
 ## Related Reading
 
-- [Privacy Risks of Smart Doorbells](/privacy-tools-guide/privacy-risks-of-smart-doorbells-ring-cameras-2026/)
-- [Smart Doorbell Alternatives That Store Video Locally](/privacy-tools-guide/smart-doorbell-alternatives-that-store-video-locally-without/)
-- [How to Use tcpdump for Packet Analysis](/privacy-tools-guide/tcpdump-packet-analysis-guide/)
+- [Privacy Risks of Smart Doorbells](/privacy-risks-of-smart-doorbells-ring-cameras-2026/)
+- [Smart Doorbell Alternatives That Store Video Locally](/smart-doorbell-alternatives-that-store-video-locally-without/)
+- [How to Use tcpdump for Packet Analysis](/tcpdump-packet-analysis-guide/)
 
 ---
 

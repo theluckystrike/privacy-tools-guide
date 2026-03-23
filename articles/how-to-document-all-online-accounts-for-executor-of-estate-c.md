@@ -395,11 +395,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How To Delete Old Social Media Accounts](/privacy-tools-guide/how-to-delete-old-social-media-accounts/)
-- [How To Prepare Social Media Accounts For Memorialization](/privacy-tools-guide/how-to-prepare-social-media-accounts-for-memorialization-com/)
-- [How To Audit Your Digital Footprint And Find All Accounts](/privacy-tools-guide/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
-- [What To Do If Your Identity Was Stolen Online Step Guide](/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/)
-- [How To Create Anonymous Social Media Accounts](/privacy-tools-guide/how-to-create-anonymous-social-media-accounts/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How To Delete Old Social Media Accounts](/how-to-delete-old-social-media-accounts/)
+- [How To Prepare Social Media Accounts For Memorialization](/how-to-prepare-social-media-accounts-for-memorialization-com/)
+- [How To Audit Your Digital Footprint And Find All Accounts](/how-to-audit-your-digital-footprint-and-find-all-accounts-li/)
+- [What To Do If Your Identity Was Stolen Online Step Guide](/what-to-do-if-your-identity-was-stolen-online-step-guide/)
+- [How To Create Anonymous Social Media Accounts](/how-to-create-anonymous-social-media-accounts/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

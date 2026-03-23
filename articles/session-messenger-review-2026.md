@@ -356,11 +356,11 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Session Messenger Decentralized Onion Routing How It](/privacy-tools-guide/session-messenger-decentralized-onion-routing-how-it-protect/)
-- [Signal vs Session vs SimpleX](/privacy-tools-guide/signal-vs-session-vs-simplex-secure-messaging-comparison/)
-- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/privacy-tools-guide/briar-messenger-offline-mesh-review/)
-- [Best Encrypted Messaging for Journalists: A Technical Guide](/privacy-tools-guide/best-encrypted-messaging-for-journalists/)
-- [Signal Alternatives That Offer End To End Encryption](/privacy-tools-guide/signal-alternatives-that-offer-end-to-end-encryption-without/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Session Messenger Decentralized Onion Routing How It](/session-messenger-decentralized-onion-routing-how-it-protect/)
+- [Signal vs Session vs SimpleX](/signal-vs-session-vs-simplex-secure-messaging-comparison/)
+- [Briar Messenger Offline Mesh Review: Technical Deep Dive](/briar-messenger-offline-mesh-review/)
+- [Best Encrypted Messaging for Journalists: A Technical Guide](/best-encrypted-messaging-for-journalists/)
+- [Signal Alternatives That Offer End To End Encryption](/signal-alternatives-that-offer-end-to-end-encryption-without/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

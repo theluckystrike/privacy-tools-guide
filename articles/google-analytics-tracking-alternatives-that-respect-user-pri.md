@@ -291,11 +291,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Privacy-Focused Alternatives to Google Analytics](/privacy-tools-guide/privacy-analytics-alternatives-google)
-- [How To Set Up Privacy Preserving Customer Analytics](/privacy-tools-guide/how-to-set-up-privacy-preserving-customer-analytics-without-/)
-- [How To Configure Google Analytics Alternative For Gdpr](/privacy-tools-guide/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
-- [iPhone Analytics And Improvement Data What Apple Collects](/privacy-tools-guide/iphone-analytics-and-improvement-data-what-apple-collects-an/)
-- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics](/privacy-tools-guide/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
-- [Best AI Coding Tool for Generating Mobile Analytics Event](https://theluckystrike.github.io/ai-tools-compared/best-ai-coding-tool-for-generating-mobile-analytics-event-tr/)
+- [Privacy-Focused Alternatives to Google Analytics](/privacy-analytics-alternatives-google)
+- [How To Set Up Privacy Preserving Customer Analytics](/how-to-set-up-privacy-preserving-customer-analytics-without-/)
+- [How To Configure Google Analytics Alternative For Gdpr](/how-to-configure-google-analytics-alternative-for-gdpr-compl/)
+- [iPhone Analytics And Improvement Data What Apple Collects](/iphone-analytics-and-improvement-data-what-apple-collects-an/)
+- [Plausible Vs Matomo Vs Fathom Privacy Focused Analytics](/plausible-vs-matomo-vs-fathom-privacy-focused-analytics-comp/)
+- [Best AI Coding Tool for Generating Mobile Analytics Event](https://bestremotetools.com/best-ai-coding-tool-for-generating-mobile-analytics-event-tr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -370,11 +370,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Macos Privacy Permissions Manager Guide 2026](/privacy-tools-guide/macos-privacy-permissions-manager-guide-2026/)
-- [Best Password Manager CLI Tools: A Developer's Guide](/privacy-tools-guide/best-password-manager-cli-tools/)
-- [Best Password Manager for Android 2026: A Developer's Guide](/privacy-tools-guide/best-password-manager-for-android-2026/)
-- [Best Password Manager for Developers: A Technical Guide](/privacy-tools-guide/best-password-manager-for-developers/)
-- [Best Password Manager for Enterprise: A Technical Guide](/privacy-tools-guide/best-password-manager-for-enterprise/)
+- [Macos Privacy Permissions Manager Guide 2026](/macos-privacy-permissions-manager-guide-2026/)
+- [Best Password Manager CLI Tools: A Developer's Guide](/best-password-manager-cli-tools/)
+- [Best Password Manager for Android 2026: A Developer's Guide](/best-password-manager-for-android-2026/)
+- [Best Password Manager for Developers: A Technical Guide](/best-password-manager-for-developers/)
+- [Best Password Manager for Enterprise: A Technical Guide](/best-password-manager-for-enterprise/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

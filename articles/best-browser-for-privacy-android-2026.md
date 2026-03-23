@@ -424,11 +424,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Tor Browser Android Setup Guide with Orbot](/privacy-tools-guide/tor-browser-android-setup-guide-orbot/)
-- [Android Attestation Key Privacy What Hardware Backed Keys Re](/privacy-tools-guide/android-attestation-key-privacy-what-hardware-backed-keys-re/)
-- [Android Custom ROM Privacy Comparison 2026](/privacy-tools-guide/android-custom-rom-privacy-comparison-2026/)
-- [Android Find My Device Privacy Implications](/privacy-tools-guide/android-find-my-device-privacy-implications/)
-- [Android Notification Privacy: How to Hide Sensitive.](/privacy-tools-guide/android-notification-privacy-how-to-hide-sensitive-content-o/)
+- [Tor Browser Android Setup Guide with Orbot](/tor-browser-android-setup-guide-orbot/)
+- [Android Attestation Key Privacy What Hardware Backed Keys Re](/android-attestation-key-privacy-what-hardware-backed-keys-re/)
+- [Android Custom ROM Privacy Comparison 2026](/android-custom-rom-privacy-comparison-2026/)
+- [Android Find My Device Privacy Implications](/android-find-my-device-privacy-implications/)
+- [Android Notification Privacy: How to Hide Sensitive.](/android-notification-privacy-how-to-hide-sensitive-content-o/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

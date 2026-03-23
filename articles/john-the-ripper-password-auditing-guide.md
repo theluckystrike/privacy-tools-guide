@@ -1660,9 +1660,9 @@ def is_pwned_password(password: str) -> int:
 
 ## Related Reading
 
-- [How to Use Volatility for Memory Forensics](/privacy-tools-guide/volatility-memory-forensics-guide/)
-- [How to Use Metasploit for Authorized Pentesting](/privacy-tools-guide/metasploit-authorized-pentesting-guide/)
-- [How to Use Nessus for Vulnerability Scanning](/privacy-tools-guide/nessus-vulnerability-scanning-guide/)
+- [How to Use Volatility for Memory Forensics](/volatility-memory-forensics-guide/)
+- [How to Use Metasploit for Authorized Pentesting](/metasploit-authorized-pentesting-guide/)
+- [How to Use Nessus for Vulnerability Scanning](/nessus-vulnerability-scanning-guide/)
 
 ---
 

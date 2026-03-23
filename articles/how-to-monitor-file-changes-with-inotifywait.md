@@ -465,12 +465,12 @@ Performance note: Watching 1 million files costs significant memory. Use `--excl
 
 ## Related Articles
 
-- [How to Use AIDE for File Integrity Checking](/privacy-tools-guide/how-to-use-aide-for-file-integrity-checking/)
-- [How to Set Up Promtail for Log Shipping](/privacy-tools-guide/how-to-set-up-promtail-for-log-shipping/)
-- [How to Use Tripwire for File Integrity Monitoring](/privacy-tools-guide/tripwire-file-integrity-monitoring-guide/)
-- [Linux Kernel Hardening with sysctl](/privacy-tools-guide/linux-kernel-hardening-sysctl-guide)
-- [Linux File Permissions Privacy](/privacy-tools-guide/linux-file-permissions-privacy-audit/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Use AIDE for File Integrity Checking](/how-to-use-aide-for-file-integrity-checking/)
+- [How to Set Up Promtail for Log Shipping](/how-to-set-up-promtail-for-log-shipping/)
+- [How to Use Tripwire for File Integrity Monitoring](/tripwire-file-integrity-monitoring-guide/)
+- [Linux Kernel Hardening with sysctl](/linux-kernel-hardening-sysctl-guide)
+- [Linux File Permissions Privacy](/linux-file-permissions-privacy-audit/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

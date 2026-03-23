@@ -287,11 +287,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
-- [How To Audit Android App Permissions And Revoke Unnecessary](/privacy-tools-guide/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
-- [How to Audit Android App Permissions: Step-by-Step Guide](/privacy-tools-guide/how-to-audit-android-app-permissions-guide/)
-- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
+- [How to Audit Android App Permissions (2026)](/android-adb-app-permissions-audit/)
+- [How To Audit Android App Permissions And Revoke Unnecessary](/how-to-audit-android-app-permissions-and-revoke-unnecessary-/)
+- [How to Audit Android App Permissions: Step-by-Step Guide](/how-to-audit-android-app-permissions-guide/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/android-storage-scopes-how-modern-permissions-limit-app-acce/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
@@ -299,7 +299,7 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [How to Audit Android App Permissions Privacy Guide 2026](/how-to-audit-android-app-permissions-privacy-guide-2026/)
 - [How to Audit Android App Permissions: Step-by-Step Guide](/how-to-audit-android-app-permissions-guide/)
-- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
+- [How to Audit Android App Permissions (2026)](/android-adb-app-permissions-audit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

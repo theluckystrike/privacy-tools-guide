@@ -1568,9 +1568,9 @@ GrapheneOS (Android 13+) provides the strongest software-level location privacy:
 
 ## Related Reading
 
-- [Android Privacy Best Practices 2026](/privacy-tools-guide/android-privacy-best-practices-2026/)
-- [Android Background Location Access Guide](/privacy-tools-guide/android-background-location-access-which-apps-track-you-when/)
-- [Anonymous Browsing on Mobile Devices Guide 2026](/privacy-tools-guide/anonymous-browsing-mobile-devices-guide-2026/)
+- [Android Privacy Best Practices 2026](/android-privacy-best-practices-2026/)
+- [Android Background Location Access Guide](/android-background-location-access-which-apps-track-you-when/)
+- [Anonymous Browsing on Mobile Devices Guide 2026](/anonymous-browsing-mobile-devices-guide-2026/)
 
 ---
 

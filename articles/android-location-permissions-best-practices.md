@@ -382,11 +382,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Audit Android App Permissions with ADB](/privacy-tools-guide/android-adb-app-permissions-audit)
-- [Android App Permissions Audit Guide 2026](/privacy-tools-guide/android-app-permissions-audit-guide-2026/)
-- [Android Sensor Permissions How Accelerometer Gyroscope Can B](/privacy-tools-guide/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
-- [Android Storage Scopes How Modern Permissions Limit App Acce](/privacy-tools-guide/android-storage-scopes-how-modern-permissions-limit-app-acce/)
-- [How to Audit Android App Permissions (2026)](/privacy-tools-guide/android-adb-app-permissions-audit/)
+- [Audit Android App Permissions with ADB](/android-adb-app-permissions-audit)
+- [Android App Permissions Audit Guide 2026](/android-app-permissions-audit-guide-2026/)
+- [Android Sensor Permissions How Accelerometer Gyroscope Can B](/android-sensor-permissions-how-accelerometer-gyroscope-can-b/)
+- [Android Storage Scopes How Modern Permissions Limit App Acce](/android-storage-scopes-how-modern-permissions-limit-app-acce/)
+- [How to Audit Android App Permissions (2026)](/android-adb-app-permissions-audit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

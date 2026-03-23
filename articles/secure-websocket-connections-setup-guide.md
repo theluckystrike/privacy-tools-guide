@@ -306,22 +306,22 @@ location /ws {
 
 ## Related Reading
 
-- [How to Set Up Caddy with Automatic HTTPS](/privacy-tools-guide/how-to-set-up-caddy-with-automatic-https/)
-- [Secure Redis Deployment Without Exposure](/privacy-tools-guide/secure-redis-deployment-without-exposure/)
-- [How to Configure UFW Firewall on Ubuntu](/privacy-tools-guide/how-to-configure-ufw-firewall-on-ubuntu/)
+- [How to Set Up Caddy with Automatic HTTPS](/how-to-set-up-caddy-with-automatic-https/)
+- [Secure Redis Deployment Without Exposure](/secure-redis-deployment-without-exposure/)
+- [How to Configure UFW Firewall on Ubuntu](/how-to-configure-ufw-firewall-on-ubuntu/)
 
-- [Secure Code Signing Setup for Developers](/privacy-tools-guide/secure-code-signing-setup-for-developers/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [How to Audit What Source Code AI Coding Tools Transmit](https://theluckystrike.github.io/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Secure Code Signing Setup for Developers](/secure-code-signing-setup-for-developers/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](https://bestremotetools.com/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 ---
 
 ## Related Articles
 
-- [How To Use Outline Vpn Server For Creating Personal Proxy](/privacy-tools-guide/how-to-use-outline-vpn-server-for-creating-personal-proxy-in/)
-- [How to Set Up a SOCKS5 Proxy with SSH](/privacy-tools-guide/socks5-proxy-ssh-setup-guide/)
-- [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/privacy-tools-guide/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
-- [Configure Xray Reality Protocol for Undetectable Proxy](/privacy-tools-guide/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
-- [How to Secure PostgreSQL for Production](/privacy-tools-guide/secure-postgresql-production-guide/)
+- [How To Use Outline Vpn Server For Creating Personal Proxy](/how-to-use-outline-vpn-server-for-creating-personal-proxy-in/)
+- [How to Set Up a SOCKS5 Proxy with SSH](/socks5-proxy-ssh-setup-guide/)
+- [How To Use Trojan Gfw Proxy To Disguise Traffic As Https](/how-to-use-trojan-gfw-proxy-to-disguise-traffic-as-https-fro/)
+- [Configure Xray Reality Protocol for Undetectable Proxy](/how-to-configure-xray-reality-protocol-for-undetectable-prox/)
+- [How to Secure PostgreSQL for Production](/secure-postgresql-production-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -380,11 +380,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/privacy-tools-guide/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
-- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/privacy-tools-guide/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
-- [Email Encryption with GPG Step by Step](/privacy-tools-guide/gpg-email-encryption-step-by-step)
-- [How to Set Up S/MIME Email Encryption: A Practical Guide](/privacy-tools-guide/how-to-set-up-smime-email-encryption/)
-- [OpenPGP vs S/MIME Email Encryption Comparison](/privacy-tools-guide/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
+- [How To Set Up Pgp Encrypted Email In Thunderbird Step By Ste](/how-to-set-up-pgp-encrypted-email-in-thunderbird-step-by-ste/)
+- [Email Encryption Comparison Smime Vs Pgp Vs Automatic Encryp](/email-encryption-comparison-smime-vs-pgp-vs-automatic-encryp/)
+- [Email Encryption with GPG Step by Step](/gpg-email-encryption-step-by-step)
+- [How to Set Up S/MIME Email Encryption: A Practical Guide](/how-to-set-up-smime-email-encryption/)
+- [OpenPGP vs S/MIME Email Encryption Comparison](/openpgp-vs-smime-email-encryption-comparison-which-to-choose/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

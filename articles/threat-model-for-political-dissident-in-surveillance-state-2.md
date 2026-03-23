@@ -283,11 +283,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Threat Model Assessment For High Risk Journalist In Hostile](/privacy-tools-guide/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
-- [Threat Model For Transgender Person Protecting Deadname](/privacy-tools-guide/threat-model-for-transgender-person-protecting-deadname-and-/)
-- [Threat Model For Union Organizer In Hostile Employer](/privacy-tools-guide/threat-model-for-union-organizer-in-hostile-employer-environ/)
-- [Tor Browser Threat Model Explained for Developers](/privacy-tools-guide/tor-browser-threat-model-explained-developers/)
-- [Threat Model For Source Communicating With Journalist](/privacy-tools-guide/threat-model-for-source-communicating-with-journalist-anonym/)
-- [AI Code Completion for Flutter BLoC Pattern Event and State](https://theluckystrike.github.io/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [Threat Model Assessment For High Risk Journalist In Hostile](/threat-model-assessment-for-high-risk-journalist-in-hostile-/)
+- [Threat Model For Transgender Person Protecting Deadname](/threat-model-for-transgender-person-protecting-deadname-and-/)
+- [Threat Model For Union Organizer In Hostile Employer](/threat-model-for-union-organizer-in-hostile-employer-environ/)
+- [Tor Browser Threat Model Explained for Developers](/tor-browser-threat-model-explained-developers/)
+- [Threat Model For Source Communicating With Journalist](/threat-model-for-source-communicating-with-journalist-anonym/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](https://bestremotetools.com/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

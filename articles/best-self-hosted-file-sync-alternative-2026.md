@@ -424,11 +424,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Encrypted File Sync for Teams Comparison: A Developer Guide](/privacy-tools-guide/encrypted-file-sync-for-teams-comparison/)
-- [Syncthing Setup Guide for Private File Sync](/privacy-tools-guide/syncthing-setup-guide-private-file-sync/)
-- [Bitwarden Self-Hosted Setup Guide](/privacy-tools-guide/bitwarden-self-hosted-setup-guide/)
-- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/privacy-tools-guide/bitwarden-vs-vaultwarden-self-hosted-comparison/)
-- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/privacy-tools-guide/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
+- [Encrypted File Sync for Teams Comparison: A Developer Guide](/encrypted-file-sync-for-teams-comparison/)
+- [Syncthing Setup Guide for Private File Sync](/syncthing-setup-guide-private-file-sync/)
+- [Bitwarden Self-Hosted Setup Guide](/bitwarden-self-hosted-setup-guide/)
+- [Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison](/bitwarden-vs-vaultwarden-self-hosted-comparison/)
+- [How To Set Up Jitsi Meet Self Hosted Encrypted Video Confere](/how-to-set-up-jitsi-meet-self-hosted-encrypted-video-confere/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

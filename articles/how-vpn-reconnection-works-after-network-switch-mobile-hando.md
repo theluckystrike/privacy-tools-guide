@@ -279,11 +279,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How VPN Reconnection Works After Network Switch: Detecting](/privacy-tools-guide/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
-- [How To Test Vpn Kill Switch Actually Works Properly Guide](/privacy-tools-guide/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
-- [Linux Network Namespaces for VPN Isolation](/privacy-tools-guide/linux-network-namespace-vpn-isolation/)
-- [VPN Kill Switch: How It Works and Which VPNs Have Real](/privacy-tools-guide/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
-- [VPN Kill Switch Configuration on Linux with iptables](/privacy-tools-guide/vpn-kill-switch-linux-iptables-setup/)
-- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://theluckystrike.github.io/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+- [How VPN Reconnection Works After Network Switch: Detecting](/how-vpn-reconnection-works-after-network-switch-mobile-handoff/)
+- [How To Test Vpn Kill Switch Actually Works Properly Guide](/how-to-test-vpn-kill-switch-actually-works-properly-guide/)
+- [Linux Network Namespaces for VPN Isolation](/linux-network-namespace-vpn-isolation/)
+- [VPN Kill Switch: How It Works and Which VPNs Have Real](/vpn-kill-switch-how-it-works-which-vpns-have-real-ones/)
+- [VPN Kill Switch Configuration on Linux with iptables](/vpn-kill-switch-linux-iptables-setup/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](https://bestremotetools.com/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

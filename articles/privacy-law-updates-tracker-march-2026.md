@@ -248,12 +248,12 @@ Adapt your implementations based on your specific user base and data processing 
 
 ## Related Articles
 
-- [Privacy by Design Principles: A Practical Guide](/privacy-tools-guide/privacy-by-design-principles-practical-guide/)
-- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-tools-guide/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
-- [Privacy Notice Vs Privacy Policy Difference](/privacy-tools-guide/privacy-notice-vs-privacy-policy-difference/)
-- [Global Privacy Control Header How It Works And Who Supports](/privacy-tools-guide/global-privacy-control-header-how-it-works-and-who-supports-/)
-- [Chromebook Privacy Settings for Students 2026](/privacy-tools-guide/chromebook-privacy-settings-for-students-2026/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Privacy by Design Principles: A Practical Guide](/privacy-by-design-principles-practical-guide/)
+- [Privacy Fatigue Solutions: How to Make Privacy Easier Guide](/privacy-fatigue-solutions-how-to-make-privacy-easier-guide/)
+- [Privacy Notice Vs Privacy Policy Difference](/privacy-notice-vs-privacy-policy-difference/)
+- [Global Privacy Control Header How It Works And Who Supports](/global-privacy-control-header-how-it-works-and-who-supports-/)
+- [Chromebook Privacy Settings for Students 2026](/chromebook-privacy-settings-for-students-2026/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 ## Virginia Consumer Data Protection Act (VCDPA) Implementation
 
 Virginia's VCDPA (effective Jan 1, 2023, enforcement March 2025) applies to businesses processing data of Virginia residents. The requirements overlap with other states but have distinct features:
@@ -307,8 +307,8 @@ def delete_virginia_user_data(user_id, deletion_reason):
 ```
 
 Key difference from CPA/TDPSA: VCDPA requires a 45-day response period (vs 15 days for CPA). Plan infrastructure accordingly.
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://theluckystrike.github.io/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-- [Cursor AI Privacy Mode How to Use AI Features](https://theluckystrike.github.io/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](https://bestremotetools.com/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Cursor AI Privacy Mode How to Use AI Features](https://bestremotetools.com/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 ## UK Online Safety Bill (Duty of Care)
 
@@ -581,9 +581,9 @@ EOF
 
 Import into your project management tool and set weekly reviews.
 
-- [CCPA Compliance Requirements for Online Businesses](/privacy-tools-guide/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
-- [GDPR Compliance Tools for Developers 2026](/privacy-tools-guide/gdpr-compliance-tools-for-developers-2026/)
-- [CCPA vs GDPR Comparison Guide 2026](/privacy-tools-guide/ccpa-vs-gdpr-comparison-guide-2026/)
+- [CCPA Compliance Requirements for Online Businesses](/ccpa-compliance-requirements-for-online-businesses-california-privacy-law-guide-2026/)
+- [GDPR Compliance Tools for Developers 2026](/gdpr-compliance-tools-for-developers-2026/)
+- [CCPA vs GDPR Comparison Guide 2026](/ccpa-vs-gdpr-comparison-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

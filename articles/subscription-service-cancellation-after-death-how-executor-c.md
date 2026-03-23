@@ -337,11 +337,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Subscription Service Cancellation After Death](/privacy-tools-guide/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
-- [How to Remove Personal Data from Data](/privacy-tools-guide/how-to-remove-personal-data-from-data-brokers/)
-- [Email Account Inheritance Can Executor Legally Access](/privacy-tools-guide/email-account-inheritance-can-executor-legally-access-deceas/)
-- [Twitter X Account After Death: How to Request](/privacy-tools-guide/twitter-x-account-after-death-how-to-request-memorialization/)
-- [Social Media Will What Legal Authority Executor Has Over](/privacy-tools-guide/social-media-will-what-legal-authority-executor-has-over-you/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Subscription Service Cancellation After Death](/subscription-service-cancellation-after-death-how-executor-can-close-recurring-payment-accounts-guide/)
+- [How to Remove Personal Data from Data](/how-to-remove-personal-data-from-data-brokers/)
+- [Email Account Inheritance Can Executor Legally Access](/email-account-inheritance-can-executor-legally-access-deceas/)
+- [Twitter X Account After Death: How to Request](/twitter-x-account-after-death-how-to-request-memorialization/)
+- [Social Media Will What Legal Authority Executor Has Over](/social-media-will-what-legal-authority-executor-has-over-you/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

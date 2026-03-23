@@ -3,7 +3,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/</loc>
+    <loc>https://securetoolsguide.com/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,49 +11,49 @@
 
   <!-- Topic hub pages -->
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/browser-privacy/</loc>
+    <loc>https://securetoolsguide.com/topics/browser-privacy/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/data-removal-guides/</loc>
+    <loc>https://securetoolsguide.com/topics/data-removal-guides/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/email-privacy/</loc>
+    <loc>https://securetoolsguide.com/topics/email-privacy/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/encrypted-messaging/</loc>
+    <loc>https://securetoolsguide.com/topics/encrypted-messaging/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/network-security/</loc>
+    <loc>https://securetoolsguide.com/topics/network-security/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/password-managers/</loc>
+    <loc>https://securetoolsguide.com/topics/password-managers/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/privacy-for-developers/</loc>
+    <loc>https://securetoolsguide.com/topics/privacy-for-developers/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/topics/vpn-guides/</loc>
+    <loc>https://securetoolsguide.com/topics/vpn-guides/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -61,252 +61,252 @@
 
   <!-- 50 most recent articles -->
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/</loc>
+    <loc>https://securetoolsguide.com/zoosk-behavioral-matchmaking-privacy-how-the-platform-tracks/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/zero-knowledge-proof-messaging-how-future-protocols-will-pro/</loc>
+    <loc>https://securetoolsguide.com/zero-knowledge-proof-messaging-how-future-protocols-will-pro/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/yubikey-vs-titan-security-key-comparison/</loc>
+    <loc>https://securetoolsguide.com/yubikey-vs-titan-security-key-comparison/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/yubikey-setup-multiple-services-guide/</loc>
+    <loc>https://securetoolsguide.com/yubikey-setup-multiple-services-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/youtube-alternative-private-video-platforms-2026/</loc>
+    <loc>https://securetoolsguide.com/youtube-alternative-private-video-platforms-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/xmpp-omemo-encryption-setup-guide/</loc>
+    <loc>https://securetoolsguide.com/xmpp-omemo-encryption-setup-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/workplace-drug-testing-privacy-rights-what-employers-can-and/</loc>
+    <loc>https://securetoolsguide.com/workplace-drug-testing-privacy-rights-what-employers-can-and/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireshark-privacy-network-analysis-guide/</loc>
+    <loc>https://securetoolsguide.com/wireshark-privacy-network-analysis-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/</loc>
+    <loc>https://securetoolsguide.com/wireguard-vs-openvpn-speed-difference-on-mobile-data-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/</loc>
+    <loc>https://securetoolsguide.com/wireguard-vs-ipsec-ikev2-battery-drain-comparison-on-mobile-/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/</loc>
+    <loc>https://securetoolsguide.com/wireguard-postup-postdown-scripts-for-advanced-routing-configuration/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-postup-postdown-scripts-for-advanced-routing-confi/</loc>
+    <loc>https://securetoolsguide.com/wireguard-postup-postdown-scripts-for-advanced-routing-confi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-personal-vpn-setup-guide/</loc>
+    <loc>https://securetoolsguide.com/wireguard-personal-vpn-setup-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/</loc>
+    <loc>https://securetoolsguide.com/wireguard-persistent-keepalive-setting-explained-when-to-enable-it/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-performance-tuning-large-file-transfer-optimizatio/</loc>
+    <loc>https://securetoolsguide.com/wireguard-performance-tuning-large-file-transfer-optimizatio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-key-rotation-best-practices-how-often-to-regenerate/</loc>
+    <loc>https://securetoolsguide.com/wireguard-key-rotation-best-practices-how-often-to-regenerate/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/</loc>
+    <loc>https://securetoolsguide.com/wireguard-dynamic-endpoint-update-how-roaming-between-networks-works/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/</loc>
+    <loc>https://securetoolsguide.com/wireguard-dns-configuration-options-explained-resolv-conf-vs-systemd/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-container-setup-docker-network-namespace-isolation/</loc>
+    <loc>https://securetoolsguide.com/wireguard-container-setup-docker-network-namespace-isolation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-breaking-connection/</loc>
+    <loc>https://securetoolsguide.com/wireguard-android-battery-optimization-settings-without-breaking-connection/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wireguard-android-battery-optimization-settings-without-brea/</loc>
+    <loc>https://securetoolsguide.com/wireguard-android-battery-optimization-settings-without-brea/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wire-vs-signal-for-business-use/</loc>
+    <loc>https://securetoolsguide.com/wire-vs-signal-for-business-use/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-sandbox-privacy-testing-guide-2026/</loc>
+    <loc>https://securetoolsguide.com/windows-sandbox-privacy-testing-guide-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-registry-privacy-tweaks-safe-guide/</loc>
+    <loc>https://securetoolsguide.com/windows-registry-privacy-tweaks-safe-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-privacy-tools-open-source-2026/</loc>
+    <loc>https://securetoolsguide.com/windows-privacy-tools-open-source-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-onedrive-privacy-settings-guide-2026/</loc>
+    <loc>https://securetoolsguide.com/windows-onedrive-privacy-settings-guide-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-local-account-vs-microsoft-account-privacy/</loc>
+    <loc>https://securetoolsguide.com/windows-local-account-vs-microsoft-account-privacy/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-group-policy-privacy-settings-guide/</loc>
+    <loc>https://securetoolsguide.com/windows-group-policy-privacy-settings-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-activity-history-disable-privacy-guide/</loc>
+    <loc>https://securetoolsguide.com/windows-activity-history-disable-privacy-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-11-telemetry-disable-guide-step-by-step/</loc>
+    <loc>https://securetoolsguide.com/windows-11-telemetry-disable-guide-step-by-step/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-11-privacy-settings-disable-telemetry/</loc>
+    <loc>https://securetoolsguide.com/windows-11-privacy-settings-disable-telemetry/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-11-cortana-disable-privacy-guide/</loc>
+    <loc>https://securetoolsguide.com/windows-11-cortana-disable-privacy-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/windows-10-privacy-settings-complete-checklist/</loc>
+    <loc>https://securetoolsguide.com/windows-10-privacy-settings-complete-checklist/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wifi-probe-request-tracking-how-your-phone-broadcasts-identi/</loc>
+    <loc>https://securetoolsguide.com/wifi-probe-request-tracking-how-your-phone-broadcasts-identi/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wifi-deauthentication-attack-detection-how-to-identify-and-p/</loc>
+    <loc>https://securetoolsguide.com/wifi-deauthentication-attack-detection-how-to-identify-and-p/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/wickr-vs-signal-for-enterprise-use/</loc>
+    <loc>https://securetoolsguide.com/wickr-vs-signal-for-enterprise-use/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/whonix-vs-tails-for-anonymous-browsing-2026/</loc>
+    <loc>https://securetoolsguide.com/whonix-vs-tails-for-anonymous-browsing-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/whatsapp-privacy-settings-best-configuration-2026/</loc>
+    <loc>https://securetoolsguide.com/whatsapp-privacy-settings-best-configuration-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technically/</loc>
+    <loc>https://securetoolsguide.com/what-vpn-logs-actually-mean-no-log-policy-explained-technically/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-vpn-logs-actually-mean-no-log-policy-explained-technica/</loc>
+    <loc>https://securetoolsguide.com/what-vpn-logs-actually-mean-no-log-policy-explained-technica/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-personal-data-appears-on-people-search/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-personal-data-appears-on-people-search/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-password-manager-vault-was-compromised/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-password-manager-vault-was-compromised/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-identity-was-stolen-online-step-guide/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-identity-was-stolen-online-step-guide/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-credit-card-was-used-fraudulently-online/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-credit-card-was-used-fraudulently-online/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-cloud-storage-account-was-breached/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-cloud-storage-account-was-breached/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-biometric-data-fingerprint-was-compromise/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-biometric-data-fingerprint-was-compromise/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-your-amazon-account-was-hacked-recovery/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-your-amazon-account-was-hacked-recovery/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-you-received-sextortion-email-is-it-real/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-you-received-sextortion-email-is-it-real/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-you-find-unknown-device-on-your-network/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-you-find-unknown-device-on-your-network/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/privacy-tools-guide/what-to-do-if-you-accidentally-shared-screen-with-sensitive-/</loc>
+    <loc>https://securetoolsguide.com/what-to-do-if-you-accidentally-shared-screen-with-sensitive-/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

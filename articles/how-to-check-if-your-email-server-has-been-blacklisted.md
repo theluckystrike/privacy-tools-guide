@@ -359,10 +359,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Set Up Mail In A Box Private Email Server Complete 2026](/privacy-tools-guide/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
-- [Set Up Own Email Server For Maximum Privacy Using Mail](/privacy-tools-guide/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
-- [How To Tell If Your Email Account Was Hacked Right](/privacy-tools-guide/how-to-tell-if-your-email-account-was-hacked-right-now/)
-- [How to Detect if Your Email Is Compromised](/privacy-tools-guide/detect-email-compromise-guide)
-- [How To Check If Your Email Is Being Forwarded](/privacy-tools-guide/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
-- [AI Coding Assistant Session Data Lifecycle](https://theluckystrike.github.io/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Set Up Mail In A Box Private Email Server Complete 2026](/how-to-set-up-mail-in-a-box-private-email-server-complete-2026-guide/)
+- [Set Up Own Email Server For Maximum Privacy Using Mail](/how-to-set-up-own-email-server-for-maximum-privacy-using-mail-in-box/)
+- [How To Tell If Your Email Account Was Hacked Right](/how-to-tell-if-your-email-account-was-hacked-right-now/)
+- [How to Detect if Your Email Is Compromised](/detect-email-compromise-guide)
+- [How To Check If Your Email Is Being Forwarded](/how-to-check-if-your-email-is-being-forwarded-without-knowle/)
+- [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
