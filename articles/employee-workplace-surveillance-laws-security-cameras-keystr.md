@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /employee-workplace-surveillance-laws-security-cameras-keystr/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]
