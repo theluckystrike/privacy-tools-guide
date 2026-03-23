@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "iPhone Location Tracking How to Stop It: A Practical Guide"
-description: "Your iPhone collects location data through multiple pathways—some obvious, others buried deep in system services. For developers and power users seeking true"
+description: "Your iPhone collects location data through multiple pathways—some obvious, others buried deep in system services. For developers and power users seeking..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

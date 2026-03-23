@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Tell If Someone Has Access To Your Apple"
-description: "Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, they could"
+description: "Your Apple ID is the gateway to everything Apple—iCloud, App Store purchases, FaceTime, iMessage, and Find My. If someone gains unauthorized access, the..."
 date: 2026-03-17
 last_modified_at: 2026-03-17
 author: "Privacy Tools Guide"

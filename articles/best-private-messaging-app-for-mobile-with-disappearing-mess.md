@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Private Messaging App for Mobile with Disappearing"
-description: "A privacy-focused comparison of mobile messaging apps that offer disappearing messages and minimal metadata logging. Find the best option for your threat model."
+description: "A privacy-focused comparison of mobile messaging apps that offer disappearing messages and minimal metadata logging. Find the best option for your threa..."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

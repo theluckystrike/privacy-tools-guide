@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gamepad API Fingerprinting How Connected Controllers Reveal"
-description: "The Gamepad API enables web browsers to communicate with game controllers connected via USB or Bluetooth. Originally designed for browser-based gaming, this"
+description: "The Gamepad API enables web browsers to communicate with game controllers connected via USB or Bluetooth. Originally designed for browser-based gaming, ..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

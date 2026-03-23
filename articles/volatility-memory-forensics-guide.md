@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Volatility for Memory Forensics"
-description: "Analyze RAM dumps with Volatility 3 to recover running processes, network connections, injected code, and malware artifacts from Windows and Linux memory images"
+description: "Analyze RAM dumps with Volatility 3 to recover running processes, network connections, injected code, and malware artifacts from Windows and Linux memor..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /volatility-memory-forensics-guide/

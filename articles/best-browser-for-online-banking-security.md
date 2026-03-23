@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Browser for Online Banking Security 2026"
-description: "A developer-focused comparison of browsers for secure online banking in 2026, with code examples showing how to test security features and configure hardened"
+description: "A developer-focused comparison of browsers for secure online banking in 2026, with code examples showing how to test security features and configure har..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

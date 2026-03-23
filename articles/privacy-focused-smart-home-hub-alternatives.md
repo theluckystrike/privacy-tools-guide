@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy-Focused Smart Home Hub Alternatives"
-description: "Replace Alexa, Google Home, and SmartThings with Home Assistant, openHAB, or Hubitat for local automation that never sends your device data to vendor clouds"
+description: "Replace Alexa, Google Home, and SmartThings with Home Assistant, openHAB, or Hubitat for local automation that never sends your device data to vendor cl..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /privacy-focused-smart-home-hub-alternatives/

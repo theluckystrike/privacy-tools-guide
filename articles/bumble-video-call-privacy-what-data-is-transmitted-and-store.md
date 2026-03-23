@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bumble Video Call Privacy What Data Is Transmitted"
-description: "Understanding what happens during a Bumble video call requires examining the data flow from both network and application perspectives. This article provides a"
+description: "Understanding what happens during a Bumble video call requires examining the data flow from both network and application perspectives. This article prov..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

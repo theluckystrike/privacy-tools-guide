@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Check If Your Phone Number Is Being Spoofed"
-description: "Phone number spoofing occurs when a caller deliberately falsifies the caller ID information transmitted to disguise their identity. For developers and power"
+description: "Phone number spoofing occurs when a caller deliberately falsifies the caller ID information transmitted to disguise their identity. For developers and p..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

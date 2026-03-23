@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Secure GraphQL API Hardening Guide"
-description: "Harden GraphQL APIs against introspection abuse, query depth attacks, batching exploits, and injection vulnerabilities with practical configuration examples"
+description: "Harden GraphQL APIs against introspection abuse, query depth attacks, batching exploits, and injection vulnerabilities with practical configuration exam..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /secure-graphql-api-hardening-guide/

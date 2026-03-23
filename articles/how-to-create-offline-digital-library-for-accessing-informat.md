@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Create Offline Digital Library For Accessing Informat"
-description: "Building an offline digital library ensures you have access to critical information when the internet fails or becomes restricted. This guide teaches you how"
+description: "Building an offline digital library ensures you have access to critical information when the internet fails or becomes restricted. This guide teaches yo..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: "Privacy Tools Guide"

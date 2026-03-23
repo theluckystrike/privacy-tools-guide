@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Jitsi Meet Self Hosted Setup Guide"
-description: "Deploy a self-hosted Jitsi Meet instance by running docker-compose up -d with the official Jitsi Docker images on a VPS with at least 2GB RAM and a domain name"
+description: "Deploy a self-hosted Jitsi Meet instance by running docker-compose up -d with the official Jitsi Docker images on a VPS with at least 2GB RAM and a doma..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

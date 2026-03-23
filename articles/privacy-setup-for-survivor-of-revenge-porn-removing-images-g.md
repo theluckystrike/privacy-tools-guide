@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup for Survivor of Revenge Porn"
-description: "A practical technical guide for removing non-consensual intimate images from the internet. Covers content removal requests, image hashing, platform policies"
+description: "A practical technical guide for removing non-consensual intimate images from the internet. Covers content removal requests, image hashing, platform poli..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

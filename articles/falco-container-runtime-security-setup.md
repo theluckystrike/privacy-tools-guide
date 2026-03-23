@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Falco for Container Runtime Security"
-description: "Deploy Falco to detect suspicious container behavior in real time: kernel syscall monitoring, custom rules, alerting integrations, and Kubernetes deployment"
+description: "Deploy Falco to detect suspicious container behavior in real time: kernel syscall monitoring, custom rules, alerting integrations, and Kubernetes deploy..."
 date: 2026-03-22
 author: theluckystrike
 permalink: /falco-container-runtime-security-setup/

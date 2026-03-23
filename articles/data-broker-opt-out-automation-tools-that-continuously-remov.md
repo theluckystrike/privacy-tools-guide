@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Data Broker Opt Out Automation Tools That Continuously"
-description: "Data broker websites compile and sell personal information without your consent. These platforms aggregate public records, social media activity, and purchase"
+description: "Data broker websites compile and sell personal information without your consent. These platforms aggregate public records, social media activity, and pu..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

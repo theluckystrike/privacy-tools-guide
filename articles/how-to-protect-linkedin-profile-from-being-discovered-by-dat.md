@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Protect LinkedIn Profile From Being Discovered"
-description: "LinkedIn is one of the most publicly available professional databases, containing your employment history, skills, connections, and often personal details that"
+description: "LinkedIn is one of the most publicly available professional databases, containing your employment history, skills, connections, and often personal detai..."
 date: 2026-03-19
 last_modified_at: 2026-03-19
 author: theluckystrike

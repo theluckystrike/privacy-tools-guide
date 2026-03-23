@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tuta Mail vs ProtonMail 2026 Review: A Technical Comparison"
-description: "Choose ProtonMail if you need IMAP/SMTP access via Bridge, PGP interoperability with external contacts, or a mature API for automation. Choose Tuta Mail if you"
+description: "Choose ProtonMail if you need IMAP/SMTP access via Bridge, PGP interoperability with external contacts, or a mature API for automation. Choose Tuta Mail..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: "Privacy Tools Guide"

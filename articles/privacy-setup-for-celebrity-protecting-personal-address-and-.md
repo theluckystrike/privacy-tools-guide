@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Setup for Celebrity: Protecting Personal Address"
-description: "Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerified) using automated services or manual opt-outs, then prevent future exposure by"
+description: "Remove your home address from data broker sites (Spokeo, Whitepages, BeenVerified) using automated services or manual opt-outs, then prevent future expo..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

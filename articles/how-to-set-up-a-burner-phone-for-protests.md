@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up a Burner Phone for Protests"
-description: "Practical guide to setting up a burner phone for protests. Covers phone selection, communication tools, digital evidence protection, and operational security."
+description: "Practical guide to setting up a burner phone for protests. Covers phone selection, communication tools, digital evidence protection, and operational sec..."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: "Privacy Tools Guide"

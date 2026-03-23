@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Linux Apparmor Vs Selinux Which Mandatory Access Control Pro"
-description: "Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Access"
+description: "Mandatory Access Control (MAC) systems represent a critical layer of Linux security beyond the traditional Unix permission model. While Discretionary Ac..."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

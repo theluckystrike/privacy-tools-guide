@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How VPN Affects Gaming Latency Actual Measurements"
-description: "VPNs typically add 10-50ms of additional latency depending on the VPN server's location relative to the game server. If your baseline ping is 30ms, a VPN might"
+description: "VPNs typically add 10-50ms of additional latency depending on the VPN server's location relative to the game server. If your baseline ping is 30ms, a VP..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

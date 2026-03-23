@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Encrypted Calendar App 2026: A Developer's Guide"
-description: "The best encrypted calendar app for developers in 2026 depends on your priorities: Proton Calendar offers the strongest out-of-the-box E2E encryption with a"
+description: "The best encrypted calendar app for developers in 2026 depends on your priorities: Proton Calendar offers the strongest out-of-the-box E2E encryption wi..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

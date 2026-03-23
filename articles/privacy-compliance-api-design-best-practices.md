@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Privacy Compliance API Design Best Practices"
-description: "Privacy-compliant API design requires five core practices: minimize data in responses by returning only required fields, enforce purpose-based consent checks"
+description: "Privacy-compliant API design requires five core practices: minimize data in responses by returning only required fields, enforce purpose-based consent c..."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike

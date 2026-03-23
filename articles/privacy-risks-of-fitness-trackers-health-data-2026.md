@@ -8,7 +8,7 @@ score: 9
 voice-checked: true
 intent-checked: true
 permalink: /privacy-risks-of-fitness-trackers-health-data-2026/
-description: "Fitness trackers collect heart rate, sleep, location, and behavioral data. Learn what data is shared, who receives it, HIPAA gaps, and how to harden privacy."
+description: "Fitness trackers collect heart rate, sleep, location, and behavioral data. Learn what data is shared, who receives it, HIPAA gaps, and how to harden pri..."
 tags: [privacy-tools-guide, privacy]
 ---
 

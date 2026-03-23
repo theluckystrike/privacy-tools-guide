@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Android Storage Scopes How Modern Permissions Limit App"
-description: "Scoped storage (introduced in Android 10 and mandatory since Android 12) limits apps to their own sandbox directories and prevents broad read-write access to"
+description: "Scoped storage (introduced in Android 10 and mandatory since Android 12) limits apps to their own sandbox directories and prevents broad read-write acce..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"

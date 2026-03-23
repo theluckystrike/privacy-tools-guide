@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Communicate with Lawyer Privately When Device is Compromised"
-description: "A practical guide for individuals who need to maintain attorney-client privilege while dealing with a compromised device. Learn secure communication methods"
+description: "A practical guide for individuals who need to maintain attorney-client privilege while dealing with a compromised device. Learn secure communication met..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

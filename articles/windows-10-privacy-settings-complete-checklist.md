@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windows 10 Privacy Settings Complete Checklist"
-description: "Windows 10 collects significant telemetry data by default, and while Microsoft has softened some practices since its initial release, privacy-conscious users"
+description: "Windows 10 collects significant telemetry data by default, and while Microsoft has softened some practices since its initial release, privacy-conscious ..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

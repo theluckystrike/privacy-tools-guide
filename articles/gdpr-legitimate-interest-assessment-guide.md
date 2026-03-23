@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GDPR Legitimate Interest Assessment Guide"
-description: "A technical guide to conducting GDPR legitimate interest assessments for developers and power users, with practical code examples and implementation patterns"
+description: "A technical guide to conducting GDPR legitimate interest assessments for developers and power users, with practical code examples and implementation pat..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

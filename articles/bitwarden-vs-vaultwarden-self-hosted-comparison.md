@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bitwarden vs Vaultwarden Self-Hosted: A Technical Comparison"
-description: "Running your own password manager gives you full control over your data, eliminates subscription costs, and removes dependencies on third-party services. Two"
+description: "Running your own password manager gives you full control over your data, eliminates subscription costs, and removes dependencies on third-party services..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How To Benchmark Vpn Throughput Accurately Iperf3 Setup"
-description: "To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with iperf3 -c <server-ip> -p 5201 -t"
+description: "To benchmark VPN throughput accurately, install iperf3 on a server and client machine, run tests through your VPN tunnel with iperf3 -c <server-ip> -p 5..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

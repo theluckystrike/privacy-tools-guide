@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How VPN Encryption Key Exchange Works Diffie Hellman"
-description: "Diffie-Hellman key exchange enables two parties to establish a shared encryption secret over an insecure channel without transmitting the secret itself—by each"
+description: "Diffie-Hellman key exchange enables two parties to establish a shared encryption secret over an insecure channel without transmitting the secret itself—..."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
