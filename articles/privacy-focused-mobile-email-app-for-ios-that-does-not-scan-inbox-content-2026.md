@@ -8,7 +8,7 @@ permalink: /privacy-focused-mobile-email-app-for-ios-that-does-not-scan-inbox-co
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy, email, ios]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---
