@@ -266,7 +266,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Password Manager Security Model Explained Simply](/password-manager-security-model-explained-simply/)
 - [Browser Autofill Privacy Security](/browser-autofill-privacy-security-risks/)
 - [Best Password Manager For Firefox Extension](/best-password-manager-for-firefox-extension/)
-- [Privacy Risks of Browser Autofill and How to Mitigate 2026](/privacy-tools-guide/privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/)
+- [Privacy Risks of Browser Autofill and How to Mitigate 2026](/privacy-risks-of-browser-autofill-and-how-to-mitigate-2026/)
 - [AI Coding Assistant Session Data Lifecycle](https://bestremotetools.com/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
