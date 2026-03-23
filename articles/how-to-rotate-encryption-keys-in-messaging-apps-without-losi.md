@@ -6,7 +6,7 @@ description: "Follow this guide to how to rotate encryption keys in messaging ap
 tags: [privacy-tools-guide, encryption]
 author: "Privacy Tools Guide"
 reviewed: true
-score: 9
+score: 8
 date: 2026-03-15
 categories: [guides]
 ---
