@@ -9,7 +9,7 @@ permalink: /tor-browser-vs-vpn-comparison-which-is-better/
 categories: [guides]
 tags: [privacy-tools-guide, comparison, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

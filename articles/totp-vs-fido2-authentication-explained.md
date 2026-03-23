@@ -9,7 +9,7 @@ permalink: /totp-vs-fido2-authentication-explained/
 categories: [guides]
 tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
