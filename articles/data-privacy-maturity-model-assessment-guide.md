@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /data-privacy-maturity-model-assessment-guide/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, privacy]

@@ -8,7 +8,7 @@ author: "Privacy Tools Guide"
 permalink: /dating-app-cross-platform-tracking-how-ad-networks-follow-yo/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
