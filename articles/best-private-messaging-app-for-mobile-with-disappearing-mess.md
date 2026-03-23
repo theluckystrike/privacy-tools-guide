@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /best-private-messaging-app-for-mobile-with-disappearing-mess/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, best-of]

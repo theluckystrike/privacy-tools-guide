@@ -7,7 +7,7 @@ date: 2026-03-22
 author: "theluckystrike"
 permalink: /best-privacy-focused-wiki-for-recording-penetration-test-findings-securely-2026/
 reviewed: true
-score: 8
+score: 6
 categories: [security, guides]
 intent-checked: true
 voice-checked: true

@@ -8,7 +8,7 @@ permalink: /best-privacy-focused-monitoring-tool-that-does-not-collect-s/
 categories: [best-of]
 tags: [privacy-tools-guide, best-of, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

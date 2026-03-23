@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "Privacy Tools Guide"
 permalink: /best-password-manager-for-small-teams-2026/
 reviewed: true
-score: 9
+score: 7
 categories: [guides]
 intent-checked: true
 voice-checked: true

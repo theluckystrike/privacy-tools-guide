@@ -10,7 +10,7 @@ categories: [guides]
 voice-checked: true
 tags: [privacy-tools-guide, privacy, networking, self-hosted, best-of]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 ---
 

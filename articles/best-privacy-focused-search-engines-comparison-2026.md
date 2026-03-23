@@ -9,7 +9,7 @@ permalink: /best-privacy-focused-search-engines-comparison-2026/
 categories: [guides]
 tags: [privacy-tools-guide, privacy, search-engines, security, privacy-tools, best-of]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 ---

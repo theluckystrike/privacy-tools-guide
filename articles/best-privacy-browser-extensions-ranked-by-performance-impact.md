@@ -6,9 +6,9 @@ date: 2026-03-21
 author: "Privacy Tools Guide"
 permalink: /best-privacy-browser-extensions-ranked-by-performance-impact/
 categories: [guides, security]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, best-of, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
