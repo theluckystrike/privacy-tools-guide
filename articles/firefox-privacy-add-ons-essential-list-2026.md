@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Firefox Privacy Add-ons Essential List 2026: Complete Guide"
-description: "Discover the best Firefox privacy add-ons for developers and power users in 2026. Includes practical setup guides, code configurations, and security"
+description: "Install these seven Firefox privacy add-ons for a hardened browsing setup in 2026: uBlock Origin for ad/tracker blocking, Privacy Badger for invisible t..."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike
