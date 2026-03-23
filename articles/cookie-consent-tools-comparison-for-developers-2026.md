@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /cookie-consent-tools-comparison-for-developers-2026/
 categories: [guides, enterprise]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide]
