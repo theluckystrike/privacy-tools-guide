@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /security-incident-response-plan-guide/
 categories: [guides, security]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [privacy-tools-guide, security]

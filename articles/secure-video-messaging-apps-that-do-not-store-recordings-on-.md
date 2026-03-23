@@ -9,7 +9,7 @@ permalink: /secure-video-messaging-apps-that-do-not-store-recordings-on-/
 categories: [guides]
 tags: [privacy-tools-guide]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---

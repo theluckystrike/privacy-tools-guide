@@ -9,7 +9,7 @@ permalink: /secure-messaging-app-comparison-signal-vs-session-vs-briar-2026/
 categories: [guides]
 tags: [privacy-tools-guide, tools, comparison]
 reviewed: true
-score: 9
+score: 6
 voice-checked: true
 intent-checked: true
 ---
