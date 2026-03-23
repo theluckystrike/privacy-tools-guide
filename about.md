@@ -1,28 +1,22 @@
 ---
 layout: default
-title: "About Privacy Tools Guide"
-description: "Independent privacy tool reviews and security guides. No sponsored content. No affiliate bias."
+title: "About"
+description: "Independent privacy and security tool reviews. No sponsored content."
 permalink: /about/
 ---
 
 # About Privacy Tools Guide
 
-Privacy Tools Guide is an independent resource covering VPNs, password managers, encrypted messaging, browser privacy, and digital security.
+This site publishes independent reviews of privacy and security tools. No content is sponsored. No recommendations are paid placements.
 
-## What We Cover
+## What We Test
 
-We publish in-depth reviews and guides across privacy and security topics including VPN comparisons with real-world testing, password manager evaluations, encrypted communication setup guides, browser hardening tutorials, and threat models for specific professions and situations.
-
-## Our Approach
-
-Every guide includes actionable steps and honest assessments of trade-offs. We test tools ourselves before recommending them. When a tool has problems, we say so. We do not accept sponsored placements or paid reviews.
+VPNs are tested for speed from multiple locations, evaluated for their logging policies and jurisdiction, and reviewed for usability across platforms. Password managers are evaluated for encryption implementation, breach history, and cross-platform support. Browser privacy tools are tested against fingerprinting, tracker blocking, and real-world compatibility.
 
 ## Content Standards
 
-Articles are reviewed for factual accuracy, technical correctness, and practical usefulness. We update guides when tools change their features, pricing, or privacy policies.
+Every factual claim is verifiable. When we reference speed test results, the methodology is documented. When we recommend a tool, we explain who it is for and who should use something else instead. When a tool has a serious flaw, we say so clearly.
 
 ## Contact
 
-For corrections, suggestions, or questions: [GitHub Issues](https://github.com/theluckystrike/privacy-tools-guide/issues)
-
-Built by [theluckystrike](https://github.com/theluckystrike)
+Report errors or suggest corrections via [GitHub Issues](https://github.com/theluckystrike/privacy-tools-guide/issues).
