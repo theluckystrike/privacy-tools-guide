@@ -9,7 +9,7 @@ permalink: /vpn-for-using-viber-in-countries-where-voip-blocked/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

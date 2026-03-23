@@ -9,7 +9,7 @@ permalink: /vpn-for-accessing-us-netflix-from-germany-current-servers/
 categories: [guides]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

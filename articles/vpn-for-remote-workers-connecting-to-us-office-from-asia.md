@@ -9,7 +9,7 @@ permalink: /vpn-for-remote-workers-connecting-to-us-office-from-asia/
 categories: [guides]
 tags: [privacy-tools-guide, vpn, remote-work]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

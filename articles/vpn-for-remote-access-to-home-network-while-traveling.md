@@ -9,7 +9,7 @@ permalink: /vpn-for-remote-access-to-home-network-while-traveling/
 categories: [guides]
 tags: [privacy-tools-guide, vpn, remote-work]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

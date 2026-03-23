@@ -9,7 +9,7 @@ permalink: /vpn-kill-switch-how-it-works-which-vpns-have-real-ones/
 categories: [guides, security]
 tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /vpn-on-router-setup-guide/
 categories: [guides]
-tags: [privacy-tools-guide]
+tags: [privacy-tools-guide, vpn]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
