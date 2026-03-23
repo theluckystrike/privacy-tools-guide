@@ -9,7 +9,7 @@ permalink: /privacy-setup-for-psychologist-telehealth-sessions-encrypted/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

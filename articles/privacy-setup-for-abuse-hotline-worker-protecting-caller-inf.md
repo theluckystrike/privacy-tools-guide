@@ -9,7 +9,7 @@ permalink: /privacy-setup-for-abuse-hotline-worker-protecting-caller-inf/
 categories: [guides, security]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

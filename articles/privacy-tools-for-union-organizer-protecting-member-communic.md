@@ -9,7 +9,7 @@ permalink: /privacy-tools-for-union-organizer-protecting-member-communic/
 categories: [guides]
 tags: [privacy-tools-guide, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

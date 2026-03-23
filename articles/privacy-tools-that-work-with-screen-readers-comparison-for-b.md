@@ -8,7 +8,7 @@ permalink: /privacy-tools-that-work-with-screen-readers-comparison-for-b/
 categories: [guides]
 tags: [privacy-tools-guide, accessibility, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
